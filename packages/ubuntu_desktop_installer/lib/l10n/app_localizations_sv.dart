@@ -613,10 +613,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Lösenorden stämmer inte överens';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Visa';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Dölj';
 
   @override
   String get writeChangesToDisk => 'Skriv ändringar till disk';

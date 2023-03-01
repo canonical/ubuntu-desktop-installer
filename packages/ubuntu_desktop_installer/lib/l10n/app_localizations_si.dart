@@ -49,7 +49,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get repairInstallation => 'ස්ථාපනය අලුත්වැඩියාව';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'ලේඛන හෝ සැකසුම් ස්පර්ශ නොකර ස්ථාපිත සියළුම මෘදුකාංග යළි ස්ථාපනය අළුත්වැඩියාව මගින් සිදුවේ.';
 
   @override
   String tryUbuntu(Object RELEASE) {
@@ -58,7 +58,7 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'ඔබගේ පරිගණකයට කිසිදු වෙනසක් නොකර $RELEASE බැලීමට හැකිය.';
   }
 
   @override
@@ -68,23 +68,23 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'ඔබගේ වත්මන් මෙහෙයුම් පද්ධතිය සමඟ (හෝ ඒ වෙනුවට) $RELEASE ස්ථාපනය කරන්න. මෙයට එතරම් කාලයක් ගත නොවේ.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'මෙතැනින් <a href=\"$url\">නිකුතු සටහන්</a> කියවීමට හැකිය.';
   }
 
   @override
   String get turnOffRST => 'RST අක්‍රිය කරන්න';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'මෙම පරිගණකය ඉන්ටෙල් RST (ශ්‍රීඝ්‍ර ආචයන තාක්‍ෂණය) භාවිතා කරයි. උබුන්ටු ස්ථාපනයට පෙර වින්ඩෝස් හි RST අක්‍රිය කළ යුතුය.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'උපදෙස් සඳහා, දුරකථනයක හෝ වෙනත් උපාංගයක මෙම පිටුව අරින්න: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -109,7 +109,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get configureSecureBootTitle => 'ආරක්‍ෂිත ඇරඹුම හැඩගසන්න';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get configureSecureBootDescription => 'ඔබ තෙවන පාර්ශ්ව ධාවක මෘදුකාංග ස්ථාපනයට තෝරාගෙන ඇත. මේ සඳහා ආරක්‍ෂිත ඇරඹුම අක්‍රිය කළ යුතුය.\nමෙය සිදු කිරීම සඳහා, ඔබ දැන් ආරක්‍ෂණ යතුරක් තෝරාගෙන පද්ධතිය යළි ආරම්භ වන විට එය ඇතුල් කරන්න.';
 
   @override
   String get configureSecureBootOption => 'ආරක්‍ෂිත ඇරඹුම හැඩගසන්න';
@@ -139,7 +139,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get connectToInternetPageTitle => 'අන්තර්ජාලයට සබඳින්න';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'මෙම පරිගණකය අන්තර්ජාලයට සම්බන්ධ කිරීමෙන් උබුන්ටු සඳහා අවශ්‍ය ඕනෑම අමතර මෘදුකාංගයක් ස්ථාපනයට මෙන්ම ඔබගේ වේලා කලාපය තෝරා ගැනීමට හැකිය.\n\nඊතර්නෙට් රැහැන සම්බන්ධ කරන්න හෝ වයි-ෆයි ජාලයක් තෝරන්න';
 
   @override
   String get useWiredConnection => 'රැහැන් සම්බන්ධතාවය යොදාගන්න';
@@ -151,10 +151,10 @@ class AppLocalizationsSi extends AppLocalizations {
   String get wiredDisabled => 'රැහැන් සම්බන්ධතාවය අක්‍රියයි';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get wiredMustBeEnabled => 'මෙම පරිගණකයේ ඊතර්නෙට් භාවිතයට, රැහැන්ගත සම්බන්ධතාවයක් සබල කළ යුතුය';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get enableWired => 'රැහැන්ගත සබල කරන්න';
 
   @override
   String get selectWifiNetwork => 'වයි-ෆයි ජාලයකට සබඳින්න';
@@ -190,7 +190,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'යාවත්කාල හා වෙනත් මෘදුකාංග';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'ස්ථාපනයට කැමති යෙදුම් මොනවාද?';
 
   @override
   String get normalInstallationTitle => 'සාමාන්‍ය ස්ථාපනය';
@@ -208,37 +208,37 @@ class AppLocalizationsSi extends AppLocalizations {
   String get otherOptions => 'වෙනත් විකල්ප';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => 'චිත්‍රක හා වයි-ෆයි දෘඪාංග සඳහා තෙවන පාර්ශ්ව මෘදුකාංග මෙන්ම අතිරේක මාධ්‍ය ආකෘති ස්ථාපනය කරන්න';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle => 'මෙම මෘදුකාංගය එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඇතැම් දෑ ස්වාම්‍යයි.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'චිත්‍රක හා වයි-ෆයි දෘඪාංග සඳහා තෙවන පාර්ශ්ව මෘදුකාංග ස්ථාපනය කරන්න';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'මෙම ධාවක එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඒවා ස්වාම්‍යයි.';
 
   @override
-  String get installCodecsTitle => 'Download and install support for additional media formats';
+  String get installCodecsTitle => 'අතිරේක මාධ්‍ය ආකෘති සඳහා සහාය බාගෙන ස්ථාපනය කරන්න';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'මෙම මෘදුකාංගය එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඇතැම් දෑ ස්වාම්‍යයි.';
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">අවවාදයයි</font>: පරිගණකය බල ප්‍රභවයකට පේනුගත කර නැත.';
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'ඔබ දැනට මාර්ගඅපගතයි';
 
   @override
   String get chooseSecurityKeyTitle => 'ආරක්‍ෂණ යතුරක් තෝරන්න';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return 'ඔබගේ පරිගණකය නැති වුවහොත් තැටි සංකේතනය මඟින් ඔබගේ ගොනු රැකදෙයි. පරිගණකය අරඹන සැමවිට ආරක්‍ෂණ යතුරක් ඇතුල් කිරීමට සිදුවනු ඇත.\n\n$RELEASE න් පිටත කිසිදු ගොනුවක් සංකේතනය නොකෙරේ.';
   }
 
   @override
@@ -255,27 +255,27 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+    return '<font color=\"$color\">අවවාදයයි</font>: මෙම ආරක්‍ෂණ යතුර නැති වුවහොත්, සියළුම දත්ත නැති වනු ඇත. ඔබට අවශ්‍ය නම්, ඔබගේ යතුර වෙනත් තැනක ලියා ආරක්‍ෂිතව තබන්න.';
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'ස්ථාපන වර්ගය';
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return 'මෙම පරිගණකයෙහි දැනට $os තිබේ. ඔබ කිරීමට කැමති කුමක්ද?';
   }
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'මෙම පරිගණකයෙහි දැනට $os1 හා $os2 තිබේ. ඔබ කිරීමට කැමති කුමක්ද?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'මෙම පරිගණකයෙහි දැනට මෙහෙයුම් පද්ධති කිහිපයක් තිබේ. ඔබ කිරීමට කැමති කුමක්ද?';
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => 'මෙම පරිගණකයෙහි කිසිදු මෙහෙයුම් පද්ධතියක් අනාවරණය වී නැත. ඔබ කිරීමට කැමති කුමක්ද?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -284,7 +284,7 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+    return '<font color=\"$color\">අවවාදයයි:</font> මෙය ඔබගේ සියළුම වැඩසටහන්, ලේඛන, ඡායාරූප, ගීත සහ මෙහෙයුම් පද්ධතිවල තිබෙන වෙනත් ගොනු සියල්ල මකා දමයි.';
   }
 
   @override
@@ -301,7 +301,7 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Use LVM with the new $RELEASE installation';
+    return 'නව $RELEASE ස්ථාපනය සමඟ LVM භාවිතා කරන්න';
   }
 
   @override
@@ -319,7 +319,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get installationTypeEncryptInfo => 'ඔබ ඊළඟ පියවරේදී ආරක්‍ෂණ යතුරක් තෝරා ගනු ඇත.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => 'පරීක්‍ෂාත්මක: තැටිය මකාදමා ZFS භාවිතා කරන්න';
 
   @override
   String get installationTypeZFSSelected => 'ZFS තෝරා ඇත';
@@ -331,38 +331,38 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+    return '<font color=\"$color\">අවවාදයයි:</font> මෙය ඔබගේ සියළුම $os වැඩසටහන්, ලේඛන, ඡායාරූප, ගීත සහ අනෙකුත් ගොනු මකා දමයි.';
   }
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
+    return '$os සමඟ $product ස්ථාපනය කරන්න';
   }
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return '$os1 සහ $os2 සමඟ $product ස්ථාපනය කරන්න';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'ඒවා සමඟ $product ස්ථාපනය කරන්න';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'අන් පංගුවලට පසකින් $product ස්ථාපනය කරන්න';
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => 'ලේඛන, ගීත සහ අනෙකුත් පෞද්. ගොනු රඳවා ගැනෙයි. පරිගණකය ආරම්භ වන සැමවිට අවශ්‍ය මෙහෙයුම් පද්ධතිය තේරීමට හැකිය.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'වෙන යමක්';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+    return 'ඔබටම පංගු සෑදීමට හෝ යළි ප්‍රමාණනයට, හෝ $DISTRO සඳහා පංගු කිහිපයක් තේරීමට හැකිය';
   }
 
   @override
@@ -380,24 +380,24 @@ class AppLocalizationsSi extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'ස්ථාපනය කරන්න';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'පහත වෙන්කුරුව ඇදීමෙන් ධාවකයේ ඉඩ වෙන් කරන්න:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return 'කුඩා පංගු $num ක් සඟවා ඇත, තවත් පාලනයට <a href=\"$url\">සංකීර්ණ පංගුකරණ මෙවලම</a> යොදා ගන්න';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'පංගුව යළි ප්‍රමාණනය';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'ඉඩ වෙන් කරන්න';
 
   @override
   String get installAlongsideFiles => 'ගොනු';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'පංගුව:';
 
   @override
   String get installAlongsideSize => 'ප්‍රමාණය:';
@@ -406,7 +406,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get installAlongsideAvailable => 'තිබේ:';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => 'තැටියේ ඉඩ වෙන් කරන්න';
 
   @override
   String get startInstallingButtonText => 'ස්ථාපනය අරඹන්න';
@@ -418,7 +418,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get diskHeadersType => 'වර්ගය';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'රැඳවුම් ස්ථානය';
 
   @override
   String get diskHeadersSize => 'ප්‍රමාණය';
@@ -430,34 +430,34 @@ class AppLocalizationsSi extends AppLocalizations {
   String get diskHeadersSystem => 'පද්ධතිය';
 
   @override
-  String get diskHeadersFormat => 'Format';
+  String get diskHeadersFormat => 'පවිත්‍ර';
 
   @override
   String get freeDiskSpace => 'නිදහස් ඉඩ';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => 'නව පංගු වගුවක්';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'මෙම උපාංගයෙහි නව හිස් පංගු වගුවක් සාදන්නද?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on it, all its current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'ඔබ පංගුකරණයට සමස්ත උපාංගයක් තෝරාගෙන ඇත. ඔබ එහි නව පංගු වගුවක් සෑදීමට ගියහොත්, පවතින සියළුම පංගු ඉවත් කෙරෙනු ඇත.\n\nඔබට අවශ්‍ය නම් මෙම මෙහෙයුම පසුව අහෝසි කිරීමට හැකිය.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'ප්‍රාථමික පංගු බොහෝය';
 
   @override
   String get partitionLimitReached => 'සීමාවට ළඟා විය';
 
   @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
+  String get bootLoaderDevice => 'ඇරඹුම්කාරකය ස්ථාපනයට උපාංගය';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'පංගුව සාදන්න';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'පංගුව සංස්කරණය';
 
   @override
   String get partitionSizeLabel => 'ප්‍රමාණය:';
@@ -475,7 +475,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionUnitGB => 'ගි.බ.';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => 'නව පංගුව සඳහා වර්ගය:';
 
   @override
   String get partitionTypePrimary => 'ප්‍රාථමික';
@@ -484,34 +484,34 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionTypeLogical => 'තාර්කික';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => 'නව පංගුව සඳහා ස්ථානය:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'මෙම ඉඩෙහි ආරම්භය';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'මෙම ඉඩෙහි අවසානය';
 
   @override
-  String get partitionFormatLabel => 'Used as:';
+  String get partitionFormatLabel => 'භාවිතය:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Ext4 සගනු ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Ext3 සගනු ගොනු පද්ධතිය';
 
   @override
   String get partitionFormatExt2 => 'Ext2 ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'btrfs සගනු ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'JFS සගනු ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'XFS සගනු ගොනු පද්ධතිය';
 
   @override
   String get partitionFormatFat => 'FAT ගොනු පද්ධතිය';
@@ -526,7 +526,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionFormatFat32 => 'FAT32 ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => 'හුවමාරු පෙදෙස';
 
   @override
   String get partitionFormatIso9660 => 'ISO 9660 ගොනු පද්ධතිය';
@@ -544,13 +544,13 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS මූල ගොනු පද්ධතිය';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'පවිත්‍ර නොකර තබන්න';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get partitionErase => 'පංගුව පවිත්‍ර කරන්න';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => 'රැඳවුම් ස්ථානය:';
 
   @override
   String get whoAreYouPageTitle => 'ඔබ කවුද?';
@@ -577,7 +577,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get whoAreYouPageComputerNameRequired => 'පරිගණකයට නමක් වුවමනාය';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'පරිගණකයේ නම වලංගු නොවේ';
+  String get whoAreYouPageInvalidComputerName => 'පරිගණකයේ නම වැරදිය';
 
   @override
   String get whoAreYouPageUsernameLabel => 'පරිශ්‍රීලක නාමයක් තෝරන්න';
@@ -586,10 +586,10 @@ class AppLocalizationsSi extends AppLocalizations {
   String get whoAreYouPageUsernameRequired => 'පරිශ්‍රීලක නාමයක් වුවමනාය';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'පරිශ්‍රීලක නාමය වලංගු නොවේ';
+  String get whoAreYouPageInvalidUsername => 'පරිශ්‍රීලක නාමය වැරදිය';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'එම පරිශ්‍රීලක නාමය දැනටමත් පවතී.';
+  String get whoAreYouPageUsernameInUse => 'පරිශ්‍රීලක නාමය දැනටමත් පවතී.';
 
   @override
   String get whoAreYouPageUsernameSystemReserved => 'එම නම පද්ධතියේ භාවිතයට වෙන් කර ඇත.';
@@ -598,7 +598,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get whoAreYouPageUsernameTooLong => 'නම ඉතා දිගයි.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'එම නමෙහි වලංගු නොවන අකුරු අඩංගු වේ.';
+  String get whoAreYouPageUsernameInvalidChars => 'නමෙහි වලංගු නොවන අකුරු අඩංගුය.';
 
   @override
   String get whoAreYouPagePasswordLabel => 'මුරපදයක් තෝරන්න';
@@ -613,10 +613,10 @@ class AppLocalizationsSi extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'මුරපද නොගැළපේ';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'පෙන්වන්න';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'සඟවන්න';
 
   @override
   String get writeChangesToDisk => 'වෙනස්කම් තැටියට ලියන්න';
@@ -625,10 +625,10 @@ class AppLocalizationsSi extends AppLocalizations {
   String get writeChangesFallbackSerial => 'තැටිය';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get writeChangesDescription => 'ඔබ ඉදිරියට ගියහොත්, පහත ලැයිස්තුගත වෙනස්කම් තැටියට ලියනු ඇත. ඔබට අතින් තවත් වෙනස්කම් සිදු කිරීමට හැකි වනු ඇත.';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesPartitionTablesHeader => 'පහත උපාංගවල පංගු වගු වෙනස් වේ:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -636,31 +636,31 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partition changes are going to be applied:';
+  String get writeChangesPartitionsHeader => 'පහත පංගු වෙනස්කම් යෙදෙනු ඇත:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk$partition resized from $oldsize to $newsize';
+    return '#$disk$partition පංගුව $oldsize සිට $newsize දක්වා ප්‍රමාණනය කෙරිණි';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk$partition formatted as $format used for $mount';
+    return '#$disk$partition පංගුව $mount සඳහා භාවිතයට $format ලෙස පවිත්‍රව ඇත';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk$partition formatted as $format';
+    return '#$disk$partition පංගුව $format ලෙස පවිත්‍රව ඇත';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk$partition used for $mount';
+    return '#$disk$partition පංගුව $mount සඳහා භාවිතා වේ';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk$partition created';
+    return '#$disk$partition පංගුව සෑදිණි';
   }
 
   @override
@@ -690,7 +690,7 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'ඔබට දැන් දිගටම $RELEASE අත්හදා බැලීමට හැකිය, නමුත් පරිගණකය යළි ආරම්භ කරන තුරු ඔබ සුරකින ලේඛන හෝ සිදුකරන වෙනස්කම් රැඳෙන්නේ නැත.';
   }
 
   @override
@@ -700,7 +700,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get restartNow => 'යළි අරඹන්න';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'අත්හදා බැලීම දිගටම';
 
   @override
   String get turnOffBitlockerTitle => 'බිට්ලොකර් අක්‍රිය කරන්න';
@@ -732,7 +732,7 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'වේගවත් සහ නව විශේෂාංග වලින් පිරුණු $RELEASE හි නවතම අනුවාදය අන් කවරදාටත් වඩා පරිගණනය පහසු කරයි. මෙන්න බලන්න අළුත් දේවල් ටිකක්...';
   }
 
   @override
@@ -740,47 +740,47 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+    return 'නව මෘදුකාංග සඳහා අන්තර්ජාලයේ සෙවීමට සමුදෙන්න. ස්නැප් ස්ටෝර් සහ $RELEASE මෘදුකාංග සංරක්‍ෂිතය වෙත ප්‍රවේශයෙන් ඔබට පහසුවෙන් නව යෙදුම් සොයා ගැනීමට මෙන්ම ස්ථාපනයට හැකිය. ඔබ සොයන දේ ලියන්න, හෝ චිත්‍රක හා ඡායාරූපකරණය, ක්‍රීඩා හා ඵලදායිතාව වැනි ප්‍රවර්ග ගවේෂණය කරන්න. තවද, අනෙක් පරිශ්‍රීලකයින්ගේ ප්‍රයෝජනවත් සමාලෝචන ද ඇත.';
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
+  String get musicSlideTitle => 'ගීත ඔබ සමඟ ගෙන යන්න';
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+    return 'විස්මිත රිදම්බොක්ස් සංගීත වාදකය සමඟ $RELEASE පැමිණේ. සංකීර්ණ පිළිවැයීමේ විකල්ප මගින් ශ්‍රේෂ්ඨ ගීත පෝලිමට තැබීම සරලයි. තවද එය සුසංහිත තැටි සහ සුවහ සංගීත වාදක සමඟ හොඳින් වැඩ කරයි, එබැවින් ඔබ යන ඕනෑම තැනක දී ඔබගේ සියළුම ගීත රස විඳීමට හැකිය.';
   }
 
   @override
   String get musicSlideRhythmbox => 'රිදම්බොක්ස් සංගීත වාදකය';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
+  String get musicSlideSpotify => 'ස්පොටිෆයි';
 
   @override
   String get musicSlideVLC => 'VLC';
 
   @override
-  String get photoSlideTitle => 'Have fun with your photos';
+  String get photoSlideTitle => 'ඡායාරූප සමඟ විනෝද වන්න';
 
   @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
+  String get photoSlideDescription => 'ෂොට්වෙල් යනු ඔබගේ කුඩා උපාංග සඳහා උචිත පහසු ඡායාරූප කළමනාකරුවෙකි. ඔබගේ ඡායාරූප මාරු කිරීමට රූගතයක් හෝ දුරකථනයක් සම්බන්ධ කරන්න. ඉන්පසු ඒවා බෙදා ගැනීමට සහ ඒවා ආරක්‍ෂිතව තැබීමට පහසු වේ. ඔබට නිර්මාණශ්‍රීලී බවක් හැඟෙයි නම්, උබුන්ටු මෘදුකාංගය හරහා තවත් බොහෝ ඡායාරූප යෙදුම් සොයා ගැනීමට හැකිය.';
 
   @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
+  String get photoSlideShotwell => 'ෂොට්වෙල් ඡායාරූප කළමනාකරු';
 
   @override
-  String get photoSlideGimp => 'GIMP Image Editor';
+  String get photoSlideGimp => 'ගිම්ප් සළරූ සංස්කරකය';
 
   @override
   String get photoSlideShotcut => 'ෂොට්කට් දෘශ්‍යක සංස්කරකය';
 
   @override
-  String get webSlideTitle => 'Make the most of the web';
+  String get webSlideTitle => 'වියමනෙන් උපරිම ප්‍රයෝජනට';
 
   @override
   String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+    return 'ලොව පුරා දශ ලක්‍ෂ ගණනක් භාවිතා කරන ෆයර්ෆොක්ස් අතිරික්සුව $RELEASE හි ඇතුළත් වේ. තවද, ඔබ නිතර භාවිතා කරන යෙදුම් (ෆේස්බුක් හෝ ජීමේල් ආදී) වෙත ඉක්මනින් ප්‍රවේශය සඳහා ඔබගේ වැඩතලයට ඇමිණීමට හැකිය.';
   }
 
   @override
@@ -793,10 +793,10 @@ class AppLocalizationsSi extends AppLocalizations {
   String get webSlideChromium => 'ක්‍රෝමියම්';
 
   @override
-  String get officeSlideTitle => 'Everything you need for the office';
+  String get officeSlideTitle => 'කාර්යාලයට අවශ්‍ය සියළු දෑ';
 
   @override
-  String get officeSlideDescription => 'LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.';
+  String get officeSlideDescription => 'ලිබ්රේඔෆිස් යනු ඔබට ලේඛන, පැතුරුම්පත් සහ සමර්පණ සෑදීමට අවශ්‍ය සියල්ල අසුරා තිබෙන නිදහස් කාර්යාල කට්ටලයකි. මයික්‍රොසොෆ්ට් ඔෆිස් ගොනු ආකෘති සඳහා අනුකූල වන අතර එය ඔබට අවශ්‍ය සියළුම විශේෂාංග ලබා දෙයි.';
 
   @override
   String get officeSlideWriter => 'ලිබ්රේඔෆිස් රයිටර්';
@@ -808,11 +808,11 @@ class AppLocalizationsSi extends AppLocalizations {
   String get officeSlideImpress => 'ලිබ්රේඔෆිස් ඉම්ප්‍රෙස්';
 
   @override
-  String get accessSlideTitle => 'Access for everyone';
+  String get accessSlideTitle => 'සැමට ප්‍රවේශය';
 
   @override
   String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colors and text size, $RELEASE makes computing easy — whoever and wherever you are.';
+    return '$RELEASE දැක්මෙහි හරය පරිගණනය සැමට යන විශ්වාසයයි. සංකීර්ණ ප්‍රවේශ්‍යතා මෙවලම් සහ භාෂාව, වර්ණ මෙන්ම පෙළ ප්‍රමාණය සැකසීමට විකල්ප සමඟින් කවුරුන් හෝ කොතැනක සිටියත් — $RELEASE පරිගණනය පහසු කරයි.';
   }
 
   @override
@@ -822,7 +822,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get accessSlideAppearance => 'පෙනුම';
 
   @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
+  String get accessSlideAssistiveTechnologies => 'උපකාරක තාක්‍ෂණ';
 
   @override
   String get accessSlideLanguageSupport => 'භාෂා සහාය';
@@ -832,14 +832,14 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common aspects of $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+    return '$RELEASE හි වඩාත් සුලබ අංග බොහොමයක් නිල ප්‍රලේඛනය මගින් ආවරණය කෙරේ. එය <a href=\"https://help.ubuntu.com\">මාර්ගගතව</a> සහ තටාකයේ උදව් නිරූපකය හරහා කියවීමට හැකිය.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get supportSlideQuestions => '<a href=\"https://askubuntu.com\">Ask Ubuntu</a> හි ඔබට ප්‍රශ්න ඇසීමට සහ දැනටමත් උත්තර දී ඇති ප්‍රශ්න සෙවීමට හැකිය. වඩාත් පහසුවෙන් ගැටළු සාකච්ඡා කිරීමට මෙන්ම ආකර්ෂණීය පැණ විසඳුම් එකතුවක් කියවීමට ඔබගේ භාෂාවෙන් සහාය ලබාදෙන <a href=\"https://loco.ubuntu.com/teams\">ප්‍රාදේශීය ප්‍රජා කණ්ඩායම</a> වෙත යන්න.';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String get supportSlideResources => 'වෙනත් ප්‍රයෝජනවත් සම්පත් වෙත යොමු සඳහා, කරුණාකර <a href=\"https://www.ubuntu.com/support/community-support\">ප්‍රජා සහාය</a> හෝ <a href=\"https://www.ubuntu.com/support\">වාණිජ සහාය</a> වෙත ගොඩවදින්න.';
 
   @override
   String get includedSoftware => 'අඩංගු මෘදුකාංග';
@@ -867,16 +867,16 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+    return '$RELEASE ස්ථාපනයට අවම වශයෙන් $SIZE තැටි ඉඩක් අවශ්‍යයි.';
   }
 
   @override
   String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+    return 'මෙම පරිගණකය සතුව $SIZE පමණක් ඇත.';
   }
 
   @override
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+    return 'මෙම පරිගණකයේ විශාලම තැටිය $SIZE පමණි.';
   }
 }
