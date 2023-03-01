@@ -738,5 +738,7 @@
   "whoAreYouPagePasswordShow": "Mostrar",
   "@whoAreYouPagePasswordShow": {},
   "whoAreYouPagePasswordHide": "Ocultar",
-  "@whoAreYouPagePasswordHide": {}
+  "@whoAreYouPagePasswordHide": {},
+  "partitionFormatNone": "Deixar sem formatação",
+  "@partitionFormatNone": {}
 }
