@@ -31,7 +31,7 @@ class WizardAction {
     WizardCallback? onBack,
   }) {
     return WizardAction(
-      label: UbuntuLocalizations.of(context).backAction,
+      label: UbuntuLocalizations.of(context).backLabel,
       visible: visible,
       enabled: enabled ?? Wizard.maybeOf(context)?.hasPrevious ?? false,
       onActivated: onBack,

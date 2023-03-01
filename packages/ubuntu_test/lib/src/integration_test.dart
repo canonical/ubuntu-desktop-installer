@@ -138,7 +138,7 @@ Future<void> _testCloseWindow() async {
 /// Helpers for interacting with widgets.
 extension IntegrationTester on WidgetTester {
   /// Taps a "Go Back" button.
-  Future<void> tapBack() => tapButton(ulang.backAction);
+  Future<void> tapBack() => tapButton(ulang.backLabel);
 
   /// Taps a "Continue" button.
   Future<void> tapContinue() => tapButton(ulang.continueAction);

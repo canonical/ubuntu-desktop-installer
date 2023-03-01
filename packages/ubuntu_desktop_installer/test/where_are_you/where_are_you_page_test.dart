@@ -297,7 +297,7 @@ void main() {
 
     final backButton = find.widgetWithText(
       OutlinedButton,
-      tester.ulang.backAction,
+      tester.ulang.backLabel,
     );
     expect(backButton, findsOneWidget);
     expect(tester.widget<OutlinedButton>(backButton).enabled, isFalse);
