@@ -115,26 +115,29 @@ class _WizardPageState extends State<WizardPage> {
             SizedBox(height: widget.contentSpacing),
           ],
         ),
-        bottomNavigationBar: Padding(
-          padding: widget.footerPadding,
-          child: Row(
-            children: [
-              _buildAction(context, leading) ?? const SizedBox.shrink(),
-              const Spacer(),
-              if (currentStep != null && totalSteps != null)
-                YaruPageIndicator(
-                  page: currentStep,
-                  length: totalSteps,
-                  dotSize: 12,
-                  dotSpacing: 8,
-                ),
-              const Spacer(),
-              for (final action in trailing)
-                Padding(
-                  padding: const EdgeInsets.only(left: kButtonBarSpacing),
-                  child: _buildAction(context, action),
-                ),
-            ],
+        bottomNavigationBar: Hero(
+          tag: 'wizard-bottom-bar', // keep in place during page transitions
+          child: Padding(
+            padding: widget.footerPadding,
+            child: Row(
+              children: [
+                _buildAction(context, leading) ?? const SizedBox.shrink(),
+                const Spacer(),
+                if (currentStep != null && totalSteps != null)
+                  YaruPageIndicator(
+                    page: currentStep,
+                    length: totalSteps,
+                    dotSize: 12,
+                    dotSpacing: 8,
+                  ),
+                const Spacer(),
+                for (final action in trailing)
+                  Padding(
+                    padding: const EdgeInsets.only(left: kButtonBarSpacing),
+                    child: _buildAction(context, action),
+                  ),
+              ],
+            ),
           ),
         ),
       ),
