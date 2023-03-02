@@ -433,7 +433,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get diskHeadersFormat => 'פורמט';
 
   @override
-  String get freeDiskSpace => 'מקום פנוי';
+  String get freeDiskSpace => 'שטח פנוי';
 
   @override
   String get newPartitionTable => 'טבלת מחיצות חדשה';
@@ -448,7 +448,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'יותר מדי מחיצות ראשיות';
 
   @override
-  String get partitionLimitReached => 'הגעת לגבול';
+  String get partitionLimitReached => 'הגעת למגבלה';
 
   @override
   String get bootLoaderDevice => 'התקן להתקנת מנהל טעינה';

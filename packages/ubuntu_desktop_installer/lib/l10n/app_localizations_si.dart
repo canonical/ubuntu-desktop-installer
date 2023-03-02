@@ -418,7 +418,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get diskHeadersType => 'වර්ගය';
 
   @override
-  String get diskHeadersMountPoint => 'රැඳවුම් ස්ථානය';
+  String get diskHeadersMountPoint => 'සවිවන ස්ථානය';
 
   @override
   String get diskHeadersSize => 'ප්‍රමාණය';
@@ -550,7 +550,7 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionErase => 'පංගුව පවිත්‍ර කරන්න';
 
   @override
-  String get partitionMountPointLabel => 'රැඳවුම් ස්ථානය:';
+  String get partitionMountPointLabel => 'සවිවන ස්ථානය:';
 
   @override
   String get whoAreYouPageTitle => 'ඔබ කවුද?';

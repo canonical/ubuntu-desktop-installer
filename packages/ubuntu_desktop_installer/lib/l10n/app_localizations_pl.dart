@@ -433,7 +433,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get diskHeadersFormat => 'Formatowanie';
 
   @override
-  String get freeDiskSpace => 'dostępna przestrzeń';
+  String get freeDiskSpace => 'Wolna przestrzeń';
 
   @override
   String get newPartitionTable => 'Nowa tablica partycji';
@@ -448,7 +448,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Zbyt wiele partycji podstawowych';
 
   @override
-  String get partitionLimitReached => 'osiągnięto limit';
+  String get partitionLimitReached => 'Osiągnięto limit';
 
   @override
   String get bootLoaderDevice => 'Urządzenie do instalacji programu rozruchowego';

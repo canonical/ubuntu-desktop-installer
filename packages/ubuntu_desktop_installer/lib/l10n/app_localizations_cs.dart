@@ -433,7 +433,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get diskHeadersFormat => 'Formátovat';
 
   @override
-  String get freeDiskSpace => 'volné místo';
+  String get freeDiskSpace => 'Volné místo';
 
   @override
   String get newPartitionTable => 'Nová tabulka rozdělení na oddíly';
@@ -448,7 +448,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Příliš mnoho primárních oddílů';
 
   @override
-  String get partitionLimitReached => 'dosaženo limitu';
+  String get partitionLimitReached => 'Dosaženo limitu';
 
   @override
   String get bootLoaderDevice => 'Zařízení na které nainstalovat zavaděč systému';
