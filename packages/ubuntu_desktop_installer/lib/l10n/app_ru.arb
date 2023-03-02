@@ -117,7 +117,7 @@
   "@diskHeadersUsed": {},
   "diskHeadersSystem": "Система",
   "@diskHeadersSystem": {},
-  "freeDiskSpace": "свободное место",
+  "freeDiskSpace": "Свободное место",
   "@freeDiskSpace": {},
   "selectGuidedStorageInfoLabel": "Диск будет использован целиком:",
   "@selectGuidedStorageInfoLabel": {},
@@ -731,6 +731,6 @@
   "@continueTesting": {},
   "tooManyPrimaryPartitions": "Слишком много первичных разделов",
   "@tooManyPrimaryPartitions": {},
-  "partitionLimitReached": "достигнут предел",
+  "partitionLimitReached": "Достигнут предел",
   "@partitionLimitReached": {}
 }
