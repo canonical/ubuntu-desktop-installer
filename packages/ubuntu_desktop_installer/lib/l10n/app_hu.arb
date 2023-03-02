@@ -423,7 +423,7 @@
   "@diskHeadersSystem": {},
   "diskHeadersFormat": "Formátum",
   "@diskHeadersFormat": {},
-  "freeDiskSpace": "szabad hely",
+  "freeDiskSpace": "Szabad hely",
   "@freeDiskSpace": {},
   "newPartitionTable": "Új partíciós tábla",
   "@newPartitionTable": {},
