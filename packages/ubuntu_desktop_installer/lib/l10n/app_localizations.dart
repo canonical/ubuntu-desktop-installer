@@ -995,7 +995,7 @@ abstract class AppLocalizations {
   /// No description provided for @freeDiskSpace.
   ///
   /// In en, this message translates to:
-  /// **'free space'**
+  /// **'Free space'**
   String get freeDiskSpace;
 
   /// No description provided for @newPartitionTable.
@@ -1025,7 +1025,7 @@ abstract class AppLocalizations {
   /// No description provided for @partitionLimitReached.
   ///
   /// In en, this message translates to:
-  /// **'limit reached'**
+  /// **'Limit reached'**
   String get partitionLimitReached;
 
   /// No description provided for @bootLoaderDevice.

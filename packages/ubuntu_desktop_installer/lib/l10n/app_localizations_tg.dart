@@ -433,7 +433,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get diskHeadersFormat => 'Format';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'Free space';
 
   @override
   String get newPartitionTable => 'New partition table';
@@ -448,7 +448,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Too many primary partitions';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'Limit reached';
 
   @override
   String get bootLoaderDevice => 'Device for boot loader installation';

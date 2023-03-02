@@ -448,7 +448,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Too many primary partitions';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'Limit reached';
 
   @override
   String get bootLoaderDevice => '부트 로더 설치에 사용할 장치';
