@@ -448,7 +448,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Too many primary partitions';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'Limit reached';
 
   @override
   String get bootLoaderDevice => '用于安装引导程序的设备';
