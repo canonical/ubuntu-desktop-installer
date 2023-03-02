@@ -12,6 +12,20 @@ import 'installation_type_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService, TelemetryService])
 void main() {
+  test('init', () async {
+    final service = MockDiskStorageService();
+    when(service.useLvm).thenReturn(true);
+    when(service.useEncryption).thenReturn(true);
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => testGuidedStorageResponse());
+
+    final model = InstallationTypeModel(service, MockTelemetryService());
+    await model.init();
+
+    expect(model.advancedFeature, AdvancedFeature.lvm);
+    expect(model.encryption, isTrue);
+  });
+
   test('existing OS', () async {
     const ubuntu2110 = OsProber(
       long: 'Ubuntu 21.10',
@@ -113,7 +127,7 @@ void main() {
     reset(telemetry);
   });
 
-  test('save lvm', () {
+  test('set lvm', () {
     final storage = MockDiskStorageService();
     when(storage.hasMultipleDisks).thenReturn(false);
     when(storage.useEncryption).thenReturn(false);
@@ -123,19 +137,18 @@ void main() {
       MockTelemetryService(),
     );
 
-    model.advancedFeature = AdvancedFeature.none;
-    model.save();
-    verify(storage.useLvm = false).called(1);
-
     model.advancedFeature = AdvancedFeature.lvm;
-    model.save();
     verify(storage.useLvm = true).called(1);
+
+    model.advancedFeature = AdvancedFeature.none;
+    verify(storage.useLvm = false).called(1);
   });
 
   test('single reformat target', () async {
     final reformat = GuidedStorageTargetReformat(diskId: '');
 
     final service = MockDiskStorageService();
+    when(service.useLvm).thenReturn(false);
     when(service.useEncryption).thenReturn(false);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [reformat]));
@@ -151,6 +164,11 @@ void main() {
 
   test('can install alongside', () async {
     final service = MockDiskStorageService();
+    when(service.useLvm).thenReturn(false);
+    when(service.useEncryption).thenReturn(false);
+    when(service.useLvm).thenReturn(false);
+    when(service.useEncryption).thenReturn(false);
+
     final model = InstallationTypeModel(service, MockTelemetryService());
 
     // none
@@ -196,6 +214,8 @@ void main() {
 
   test('pre-select target', () async {
     final service = MockDiskStorageService();
+    when(service.useLvm).thenReturn(false);
+    when(service.useEncryption).thenReturn(false);
     final model = InstallationTypeModel(service, MockTelemetryService());
 
     // none

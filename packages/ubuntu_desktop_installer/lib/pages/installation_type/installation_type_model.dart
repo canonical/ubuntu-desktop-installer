@@ -57,6 +57,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   set advancedFeature(AdvancedFeature feature) {
     if (_advancedFeature == feature) return;
     _advancedFeature = feature;
+    _syncService();
     notifyListeners();
   }
 
@@ -65,7 +66,14 @@ class InstallationTypeModel extends SafeChangeNotifier {
   set encryption(bool encryption) {
     if (_encryption == encryption) return;
     _encryption = encryption;
+    _syncService();
     notifyListeners();
+  }
+
+  void _syncService() {
+    _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
+    _diskService.useEncryption =
+        encryption && advancedFeature == AdvancedFeature.lvm;
   }
 
   /// The version of the OS.
@@ -94,6 +102,9 @@ class InstallationTypeModel extends SafeChangeNotifier {
     _installationType = canInstallAlongside
         ? InstallationType.alongside
         : InstallationType.erase;
+    _advancedFeature =
+        _diskService.useLvm ? AdvancedFeature.lvm : AdvancedFeature.none;
+    _encryption = _diskService.useEncryption;
     notifyListeners();
   }
 
@@ -124,10 +135,6 @@ class InstallationTypeModel extends SafeChangeNotifier {
   /// Saves the installation type selection and applies the guide storage
   /// if appropriate (single guided storage).
   Future<void> save() async {
-    _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
-    _diskService.useEncryption =
-        encryption && advancedFeature == AdvancedFeature.lvm;
-
     // automatically pre-select a guided storage target if possible
     _diskService.guidedTarget = preselectTarget(installationType);
 
