@@ -69,7 +69,7 @@ void main() {
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
     await tester.tap(continueButton);
@@ -300,6 +300,6 @@ void main() {
       tester.ulang.backLabel,
     );
     expect(backButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(backButton).enabled, isFalse);
+    expect(tester.widget<ButtonStyleButton>(backButton).enabled, isFalse);
   });
 }

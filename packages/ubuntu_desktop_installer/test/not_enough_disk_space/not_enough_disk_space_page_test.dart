@@ -66,7 +66,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final button =
-        find.widgetWithText(OutlinedButton, tester.lang.quitButtonText);
+        find.widgetWithText(FilledButton, tester.lang.quitButtonText);
     expect(button, findsOneWidget);
 
     var windowClosed = false;

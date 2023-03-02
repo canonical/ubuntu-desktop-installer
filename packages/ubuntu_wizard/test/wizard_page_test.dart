@@ -21,7 +21,7 @@ void main() {
     );
 
     await tester.tap(find.descendant(
-      of: find.byType(OutlinedButton),
+      of: find.byType(FilledButton),
       matching: find.text('action'),
     ));
     expect(activated, isTrue);
@@ -72,30 +72,21 @@ void main() {
         tester.getCenter(next).dx, greaterThan(tester.getCenter(content).dx));
   });
 
-  testWidgets('highlighted action', (tester) async {
+  testWidgets('normal/flat/highlighted action', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
           actions: const <WizardAction>[
-            WizardAction(label: 'action', highlighted: false),
+            WizardAction(label: 'normal'),
+            WizardAction(label: 'flat', flat: true),
+            WizardAction(label: 'highlighted', highlighted: true),
           ],
         ),
       ),
     );
-    expect(find.widgetWithText(OutlinedButton, 'action'), findsOneWidget);
-    expect(find.widgetWithText(ElevatedButton, 'action'), findsNothing);
-
-    await tester.pumpWidget(
-      MaterialApp(
-        home: WizardPage(
-          actions: const <WizardAction>[
-            WizardAction(label: 'action', highlighted: true),
-          ],
-        ),
-      ),
-    );
-    expect(find.widgetWithText(OutlinedButton, 'action'), findsNothing);
-    expect(find.widgetWithText(ElevatedButton, 'action'), findsOneWidget);
+    expect(find.widgetWithText(FilledButton, 'normal'), findsOneWidget);
+    expect(find.widgetWithText(OutlinedButton, 'flat'), findsOneWidget);
+    expect(find.widgetWithText(ElevatedButton, 'highlighted'), findsOneWidget);
   });
 
   testWidgets('disabled action', (tester) async {
@@ -116,7 +107,7 @@ void main() {
     );
 
     await tester.tap(find.descendant(
-      of: find.byType(OutlinedButton),
+      of: find.byType(FilledButton),
       matching: find.text('action'),
     ));
     expect(activated, isFalse);
@@ -174,7 +165,7 @@ void main() {
 
     expect(
       find.descendant(
-        of: find.byType(OutlinedButton),
+        of: find.byType(FilledButton),
         matching: find.text(lang.continueAction),
       ),
       findsOneWidget,
