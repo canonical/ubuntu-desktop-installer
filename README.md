@@ -15,7 +15,7 @@ The new Ubuntu Desktop installer is *planned* to ship with the next Ubuntu Deskt
 
 If you want to test the new installer before 22.04 goes live, you can download a preview canary image below and install it for example in a virtual machine:
 
-[Download](https://cdimage.ubuntu.com/daily-canary/current/)
+[Download](https://cdimage.ubuntu.com/daily-live/current/)
 
 
 ## Building and running manually
