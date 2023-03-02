@@ -134,11 +134,10 @@ class _WizardPageState extends State<WizardPage> {
                   : null,
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
-                children: _withSpacing(
-                    trailing
-                        .map((action) => _buildAction(context, action))
-                        .whereNotNull(),
-                    kButtonBarSpacing),
+                children: trailing
+                    .map((action) => _buildAction(context, action))
+                    .whereNotNull()
+                    .withSpacing(kButtonBarSpacing),
               ),
             ),
           ),
@@ -169,12 +168,11 @@ class _WizardPageState extends State<WizardPage> {
   }
 }
 
-List<Widget> _withSpacing(Iterable<Widget> children, double spacing) {
-  return children
-      .expand((item) sync* {
-        yield SizedBox(width: spacing);
-        yield item;
-      })
-      .skip(1)
-      .toList();
+extension on Iterable<Widget> {
+  List<Widget> withSpacing(double spacing) {
+    return expand((item) sync* {
+      yield SizedBox(width: spacing);
+      yield item;
+    }).skip(1).toList();
+  }
 }
