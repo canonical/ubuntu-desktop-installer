@@ -7,13 +7,15 @@ This project is a modern implementation of the Ubuntu Desktop installer, using [
 
 ![Preview Screenshot](.github/docs/images/preview_screenshot.png)
 
-## Availability
+## Availability and release
 
-The new Ubuntu Desktop installer is *planned* to ship with the next Ubuntu Desktop LTS 22.04 Jammy Jellyfish.
+Ubuntu Desktop Installer will replace Ubiquity as the default installer starting from Ubuntu Desktop 23.04 (Lunar Lobster).
+
+Ubuntu Desktop Installer was originally planned to ship with Ubuntu Desktop LTS 22.04 Jammy Jellyfish, however given that the new installer needs to exceed Ubiquity in terms of features and stability, the plan is now to mature the installer in 23.04 and 23.10 before it is ready for the 24.04 LTS.
 
 ## Test a live image
 
-If you want to test the new installer before 22.04 goes live, you can download a preview canary image below and install it for example in a virtual machine:
+If you want to test the new installer before 23.04 goes live, you can download a daily preview image below and install it for example in a virtual machine:
 
 [Download](https://cdimage.ubuntu.com/daily-live/current/)
 
