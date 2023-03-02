@@ -130,7 +130,7 @@
   "@diskHeadersSystem": {},
   "diskHeadersFormat": "Alusta",
   "@diskHeadersFormat": {},
-  "freeDiskSpace": "vapaata tilaa",
+  "freeDiskSpace": "Vapaata tilaa",
   "@freeDiskSpace": {},
   "newPartitionTable": "Uusi osiotaulu",
   "@newPartitionTable": {},
@@ -684,7 +684,7 @@
   },
   "tooManyPrimaryPartitions": "Liian monta ensisijaista osiota",
   "@tooManyPrimaryPartitions": {},
-  "partitionLimitReached": "raja saavutettu",
+  "partitionLimitReached": "Raja saavutettu",
   "@partitionLimitReached": {},
   "writeChangesPartitionResized": "osion #{disk}{partition} koko {oldsize} muutettu kokoon {newsize}",
   "@writeChangesPartitionResized": {
@@ -731,5 +731,9 @@
       "disk": {},
       "partition": {}
     }
-  }
+  },
+  "whoAreYouPagePasswordShow": "Näytä",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Piilota",
+  "@whoAreYouPagePasswordHide": {}
 }
