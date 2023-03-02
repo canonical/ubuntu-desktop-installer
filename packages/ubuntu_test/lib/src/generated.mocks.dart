@@ -1130,6 +1130,17 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
         returnValue: _i6.Future<_i3.AdPasswordValidation>.value(
             _i3.AdPasswordValidation.OK),
       ) as _i6.Future<_i3.AdPasswordValidation>);
+  @override
+  _i6.Future<_i3.AdJoinResult> getActiveDirectoryJoinResult(
+          {bool? wait = true}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getActiveDirectoryJoinResult,
+          [],
+          {#wait: wait},
+        ),
+        returnValue: _i6.Future<_i3.AdJoinResult>.value(_i3.AdJoinResult.OK),
+      ) as _i6.Future<_i3.AdJoinResult>);
 }
 
 /// A class which mocks [SubiquityServer].
