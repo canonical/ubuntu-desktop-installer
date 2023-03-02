@@ -412,7 +412,7 @@
       "system": {}
     }
   },
-  "restartInto": "{system} 으(로) 다시 시작",
+  "restartInto": "{system} (으)로 다시 시작",
   "@restartInto": {
     "type": "text",
     "placeholders": {
@@ -657,7 +657,7 @@
   "@installDriversTitle": {},
   "installCodecsSubtitle": "이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.",
   "@installCodecsSubtitle": {},
-  "installCodecsTitle": "추가 미디어 포맷 지원 설치",
+  "installCodecsTitle": "추가 미디어 포맷 지원을 내려받아 설치",
   "@installCodecsTitle": {},
   "installDriversSubtitle": "이러한 드라이버는 문서에 포함된 라이선스 조건의 적용을 받습니다. 또한 독점 소프트웨어 입니다.",
   "@installDriversSubtitle": {},
@@ -713,5 +713,57 @@
       "partition": {},
       "format": {}
     }
-  }
+  },
+  "restartNow": "지금 다시 시작",
+  "@restartNow": {},
+  "continueTesting": "체험 계속하기",
+  "@continueTesting": {},
+  "writeChangesPartitionFormattedMounted": "파티션 #{disk}{partition}을(를) {format}(으)로 포맷하고 {mount}에 마운트",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionMounted": "파티션 #{disk}{partition}을(를) {mount}에 마운트",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "offlineWarning": "현재 오프라인",
+  "@offlineWarning": {},
+  "partitionFormatNone": "포맷하지 않기",
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordHide": "숨기기",
+  "@whoAreYouPagePasswordHide": {},
+  "whoAreYouPagePasswordShow": "표시",
+  "@whoAreYouPagePasswordShow": {},
+  "restartWarning": "{RELEASE}을(를) 계속 사용할 수 있습니다. 하지만 컴퓨터를 다시 시작하지 않으면 바뀐 내용이나 저장한 문서를 잃게 됩니다.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionResized": "파티션 #{disk}{partition}의 크기를 {oldsize}에서 {newsize}로 조정",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "tooManyPrimaryPartitions": "주 파티션이 너무 많음",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "한도 도달",
+  "@partitionLimitReached": {}
 }
