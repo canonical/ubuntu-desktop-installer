@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/widgets.dart';
@@ -133,7 +134,9 @@ class _WizardPageState extends State<WizardPage> {
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: _withSpacing(
-                    trailing.map((action) => _buildAction(context, action)),
+                    trailing
+                        .map((action) => _buildAction(context, action))
+                        .whereNotNull(),
                     kButtonBarSpacing),
               ),
             ),
@@ -143,9 +146,9 @@ class _WizardPageState extends State<WizardPage> {
     );
   }
 
-  Widget _buildAction(BuildContext context, WizardAction? action) {
+  Widget? _buildAction(BuildContext context, WizardAction? action) {
     if (action == null || action.visible == false) {
-      return const SizedBox.shrink();
+      return null;
     }
 
     final maybeActivate = action.enabled ?? true
