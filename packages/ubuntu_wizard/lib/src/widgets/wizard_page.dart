@@ -117,27 +117,31 @@ class _WizardPageState extends State<WizardPage> {
         ),
         bottomNavigationBar: Hero(
           tag: 'wizard-bottom-bar', // keep in place during page transitions
-          child: Padding(
-            padding: widget.footerPadding,
-            child: Row(
-              children: [
-                _buildAction(context, leading),
-                const Spacer(),
-                if (currentStep != null && totalSteps != null)
-                  YaruPageIndicator(
-                    page: currentStep,
-                    length: totalSteps,
-                    dotSize: 12,
-                    dotSpacing: 8,
-                  ),
-                const Spacer(),
-                for (final action in trailing)
-                  _buildAction(
-                    context,
-                    action,
-                    padding: const EdgeInsets.only(left: kButtonBarSpacing),
-                  ),
-              ],
+          child: Container(
+            margin: widget.footerPadding,
+            constraints: const BoxConstraints(maxHeight: 36),
+            child: NavigationToolbar(
+              leading: _buildAction(context, leading),
+              middle: currentStep != null && totalSteps != null
+                  ? YaruPageIndicator(
+                      page: currentStep,
+                      length: totalSteps,
+                      dotSize: 12,
+                      dotSpacing: 8,
+                    )
+                  : null,
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  for (final action in trailing)
+                    _buildAction(
+                      context,
+                      action,
+                      padding: const EdgeInsetsDirectional.only(
+                          start: kButtonBarSpacing),
+                    ),
+                ],
+              ),
             ),
           ),
         ),
