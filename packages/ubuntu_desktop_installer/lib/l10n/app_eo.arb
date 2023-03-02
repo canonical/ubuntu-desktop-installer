@@ -67,7 +67,7 @@
   "@installationTypeTitle": {},
   "partitionFormatFat32": "Dosiersistemo FAT32",
   "@partitionFormatFat32": {},
-  "freeDiskSpace": "disponebla spaco",
+  "freeDiskSpace": "Disponebla spaco",
   "@freeDiskSpace": {},
   "partitionFormatBtrfs": "Protokoliga dosiersistemo Btrfs",
   "@partitionFormatBtrfs": {},
