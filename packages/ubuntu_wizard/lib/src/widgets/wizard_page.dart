@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/widgets.dart';
@@ -117,26 +118,27 @@ class _WizardPageState extends State<WizardPage> {
         ),
         bottomNavigationBar: Hero(
           tag: 'wizard-bottom-bar', // keep in place during page transitions
-          child: Padding(
-            padding: widget.footerPadding,
-            child: Row(
-              children: [
-                _buildAction(context, leading) ?? const SizedBox.shrink(),
-                const Spacer(),
-                if (currentStep != null && totalSteps != null)
-                  YaruPageIndicator(
-                    page: currentStep,
-                    length: totalSteps,
-                    dotSize: 12,
-                    dotSpacing: 8,
-                  ),
-                const Spacer(),
-                for (final action in trailing)
-                  Padding(
-                    padding: const EdgeInsets.only(left: kButtonBarSpacing),
-                    child: _buildAction(context, action),
-                  ),
-              ],
+          child: Container(
+            margin: widget.footerPadding,
+            constraints:
+                const BoxConstraints(maxHeight: 36), // TODO: kYaruButtonHeight
+            child: NavigationToolbar(
+              leading: _buildAction(context, leading),
+              middle: currentStep != null && totalSteps != null
+                  ? YaruPageIndicator(
+                      page: currentStep,
+                      length: totalSteps,
+                      dotSize: 12,
+                      dotSpacing: 8,
+                    )
+                  : null,
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: trailing
+                    .map((action) => _buildAction(context, action))
+                    .whereNotNull()
+                    .withSpacing(kButtonBarSpacing),
+              ),
             ),
           ),
         ),
@@ -163,5 +165,14 @@ class _WizardPageState extends State<WizardPage> {
           : OutlinedButton(
               onPressed: maybeActivate, child: Text(action.label!)),
     );
+  }
+}
+
+extension on Iterable<Widget> {
+  List<Widget> withSpacing(double spacing) {
+    return expand((item) sync* {
+      yield SizedBox(width: spacing);
+      yield item;
+    }).skip(1).toList();
   }
 }
