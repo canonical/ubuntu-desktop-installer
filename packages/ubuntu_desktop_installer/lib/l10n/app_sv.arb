@@ -128,7 +128,7 @@
       "DISTRO": {}
     }
   },
-  "freeDiskSpace": "ledigt utrymme",
+  "freeDiskSpace": "Ledigt utrymme",
   "@freeDiskSpace": {},
   "newPartitionTable": "Ny partitionstabell",
   "@newPartitionTable": {},
@@ -781,7 +781,7 @@
   "@continueTesting": {},
   "tooManyPrimaryPartitions": "För många primära partitioner",
   "@tooManyPrimaryPartitions": {},
-  "partitionLimitReached": "gränsen nådd",
+  "partitionLimitReached": "Gränsen nådd",
   "@partitionLimitReached": {},
   "offlineWarning": "Du är för närvarande offline",
   "@offlineWarning": {},
