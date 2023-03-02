@@ -132,15 +132,9 @@ class _WizardPageState extends State<WizardPage> {
                   : null,
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
-                children: [
-                  for (final action in trailing)
-                    _buildAction(
-                      context,
-                      action,
-                      padding: const EdgeInsetsDirectional.only(
-                          start: kButtonBarSpacing),
-                    ),
-                ],
+                children: _withSpacing(
+                    trailing.map((action) => _buildAction(context, action)),
+                    kButtonBarSpacing),
               ),
             ),
           ),
@@ -149,11 +143,7 @@ class _WizardPageState extends State<WizardPage> {
     );
   }
 
-  Widget _buildAction(
-    BuildContext context,
-    WizardAction? action, {
-    EdgeInsetsGeometry? padding,
-  }) {
+  Widget _buildAction(BuildContext context, WizardAction? action) {
     if (action == null || action.visible == false) {
       return const SizedBox.shrink();
     }
@@ -165,16 +155,22 @@ class _WizardPageState extends State<WizardPage> {
           }
         : null;
 
-    return Padding(
-      padding: padding ?? EdgeInsets.zero,
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(minWidth: 136),
-        child: action.highlighted == true
-            ? ElevatedButton(
-                onPressed: maybeActivate, child: Text(action.label!))
-            : OutlinedButton(
-                onPressed: maybeActivate, child: Text(action.label!)),
-      ),
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minWidth: 136),
+      child: action.highlighted == true
+          ? ElevatedButton(onPressed: maybeActivate, child: Text(action.label!))
+          : OutlinedButton(
+              onPressed: maybeActivate, child: Text(action.label!)),
     );
   }
+}
+
+List<Widget> _withSpacing(Iterable<Widget> children, double spacing) {
+  return children
+      .expand((item) sync* {
+        yield SizedBox(width: spacing);
+        yield item;
+      })
+      .skip(1)
+      .toList();
 }
