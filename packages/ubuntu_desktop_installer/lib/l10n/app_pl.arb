@@ -715,7 +715,7 @@
   "@installDriversSubtitle": {},
   "tooManyPrimaryPartitions": "Zbyt wiele partycji podstawowych",
   "@tooManyPrimaryPartitions": {},
-  "partitionLimitReached": "osiągnięto limit",
+  "partitionLimitReached": "Osiągnięto limit",
   "@partitionLimitReached": {},
   "restartNow": "Uruchom ponownie komputer",
   "@restartNow": {},
