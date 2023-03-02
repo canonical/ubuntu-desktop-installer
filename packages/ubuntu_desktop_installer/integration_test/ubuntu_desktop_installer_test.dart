@@ -17,8 +17,8 @@ import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaml/yaml.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test/test_utils.dart';
 
@@ -326,13 +326,13 @@ Future<void> testTryOrInstallPage(
       tester, TryOrInstallPage, (lang) => lang.tryOrInstallPageTitle);
 
   if (option != null) {
-    const assets = {
-      Option.repairUbuntu: 'repair-wrench',
-      Option.tryUbuntu: 'steering-wheel',
-      Option.installUbuntu: 'hard-drive',
+    final labels = {
+      Option.repairUbuntu: tester.lang.repairInstallation,
+      Option.tryUbuntu: tester.lang.tryUbuntu('Ubuntu'),
+      Option.installUbuntu: tester.lang.installUbuntu('Ubuntu'),
     };
-    await tester.tap(find.widgetWithImage(
-        OptionCard, AssetImage('assets/try_or_install/${assets[option]}.png')));
+    await tester
+        .tap(find.widgetWithText(YaruRadioButton<Option>, labels[option]!));
     await tester.pump();
   }
   await tester.pumpAndSettle();
