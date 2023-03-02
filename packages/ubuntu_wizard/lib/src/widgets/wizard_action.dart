@@ -18,6 +18,7 @@ class WizardAction {
     this.label,
     this.visible,
     this.highlighted,
+    this.flat,
     this.enabled,
     this.onActivated,
     this.execute,
@@ -33,6 +34,7 @@ class WizardAction {
     return WizardAction(
       label: UbuntuLocalizations.of(context).backLabel,
       visible: visible,
+      flat: true,
       enabled: enabled ?? Wizard.maybeOf(context)?.hasPrevious ?? false,
       onActivated: onBack,
       execute: () => Wizard.maybeOf(context)?.back(),
@@ -45,6 +47,7 @@ class WizardAction {
     String? label,
     bool? visible,
     bool? enabled,
+    bool? flat,
     bool? highlighted,
     Object? arguments,
     WizardCallback? onNext,
@@ -54,6 +57,7 @@ class WizardAction {
       label: label ?? UbuntuLocalizations.of(context).continueAction,
       visible: visible,
       enabled: enabled,
+      flat: flat,
       highlighted: highlighted,
       onActivated: onNext,
       execute: () async {
@@ -69,6 +73,7 @@ class WizardAction {
     String? label,
     bool? visible,
     bool? enabled,
+    bool? flat,
     bool? highlighted,
     Object? result,
     WizardCallback? onDone,
@@ -77,6 +82,7 @@ class WizardAction {
       label: label,
       visible: visible,
       enabled: enabled,
+      flat: flat,
       highlighted: highlighted,
       onActivated: onDone,
       execute: () => Wizard.maybeOf(context)?.done(result: result),
@@ -90,6 +96,11 @@ class WizardAction {
   ///
   /// The default value is `true`
   final bool? visible;
+
+  /// Determines whether the action is flat (no background).
+  ///
+  /// The default value is `false`.
+  final bool? flat;
 
   /// Determines whether the action is highlighted (green);
   ///

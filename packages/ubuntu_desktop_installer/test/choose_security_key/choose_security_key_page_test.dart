@@ -64,10 +64,10 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
+    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isTrue);
   });
 
   testWidgets('invalid input', (tester) async {
@@ -75,10 +75,10 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
+    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isFalse);
   });
 
   testWidgets('show security key', (tester) async {
@@ -98,7 +98,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
-      OutlinedButton,
+      FilledButton,
       tester.ulang.continueAction,
     );
     expect(continueButton, findsOneWidget);

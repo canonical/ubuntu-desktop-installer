@@ -160,7 +160,7 @@ void main() {
   testWidgets('should continue to next page', (tester) async {
     await setUpApp(tester);
 
-    final continueButton = find.widgetWithText(OutlinedButton, 'Continue');
+    final continueButton = find.widgetWithText(FilledButton, 'Continue');
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);

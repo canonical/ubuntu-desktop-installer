@@ -158,12 +158,15 @@ class _WizardPageState extends State<WizardPage> {
           }
         : null;
 
+    final child = Text(action.label!);
+
     return ConstrainedBox(
       constraints: const BoxConstraints(minWidth: 136),
       child: action.highlighted == true
-          ? ElevatedButton(onPressed: maybeActivate, child: Text(action.label!))
-          : OutlinedButton(
-              onPressed: maybeActivate, child: Text(action.label!)),
+          ? ElevatedButton(onPressed: maybeActivate, child: child)
+          : action.flat == true
+              ? OutlinedButton(onPressed: maybeActivate, child: child)
+              : FilledButton(onPressed: maybeActivate, child: child),
     );
   }
 }
