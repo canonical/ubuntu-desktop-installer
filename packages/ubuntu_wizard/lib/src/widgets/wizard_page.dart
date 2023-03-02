@@ -120,7 +120,8 @@ class _WizardPageState extends State<WizardPage> {
           tag: 'wizard-bottom-bar', // keep in place during page transitions
           child: Container(
             margin: widget.footerPadding,
-            constraints: const BoxConstraints(maxHeight: 36),
+            constraints:
+                const BoxConstraints(maxHeight: 36), // TODO: kYaruButtonHeight
             child: NavigationToolbar(
               leading: _buildAction(context, leading),
               middle: currentStep != null && totalSteps != null
