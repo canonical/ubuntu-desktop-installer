@@ -397,6 +397,10 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
           userData: InstallationStep.type.index,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
+        Routes.turnOffBitlocker: WizardRoute(
+          builder: TurnOffBitLockerPage.create,
+          userData: InstallationStep.storage.index,
+        ),
         Routes.installAlongside: WizardRoute(
           builder: InstallAlongsidePage.create,
           userData: InstallationStep.storage.index,
@@ -419,11 +423,6 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
         ),
         Routes.writeChangesToDisk: WizardRoute(
           builder: WriteChangesToDiskPage.create,
-          userData: InstallationStep.storage.index,
-          onNext: (_) => !service.hasBitLocker ? Routes.whereAreYou : null,
-        ),
-        Routes.turnOffBitlocker: WizardRoute(
-          builder: TurnOffBitLockerPage.create,
           userData: InstallationStep.storage.index,
         ),
         Routes.whereAreYou: WizardRoute(
@@ -457,12 +456,16 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
 
   String? _nextStorageRoute(DiskStorageService service, dynamic arguments) {
     if (arguments == InstallationType.manual) {
-      return Routes.allocateDiskSpace;
+      return service.hasBitLocker
+          ? Routes.turnOffBitlocker
+          : Routes.allocateDiskSpace;
     } else if (service.guidedTarget == null) {
       if (arguments == InstallationType.erase) {
         return Routes.selectGuidedStorage;
       } else if (arguments == InstallationType.alongside) {
-        return Routes.installAlongside;
+        return service.hasBitLocker
+            ? Routes.turnOffBitlocker
+            : Routes.installAlongside;
       }
     } else if (service.useEncryption && service.securityKey == null) {
       return Routes.chooseSecurityKey;

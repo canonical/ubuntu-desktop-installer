@@ -272,11 +272,11 @@ void main() {
       '--machine-config',
       'examples/win10.json',
       '--initial-route',
-      Routes.writeChangesToDisk,
+      Routes.installationType,
     ]);
     await tester.pumpAndSettle();
 
-    await testWriteChangesToDiskPage(tester);
+    await testInstallationTypePage(tester, type: InstallationType.manual);
     await tester.pumpAndSettle();
 
     await testTurnOffBitLockerPage(tester);
