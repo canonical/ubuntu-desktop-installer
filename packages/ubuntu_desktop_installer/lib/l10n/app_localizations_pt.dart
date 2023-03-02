@@ -1101,7 +1101,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installDriversSubtitle => 'Esses drivers estão sujeitos aos termos de licença incluídos em sua documentação. Eles são proprietários.';
 
   @override
-  String get installCodecsTitle => 'Instalar suporte para formatos de mídia adicionais';
+  String get installCodecsTitle => 'Baixar e instalar suporte para formatos de mídia adicionais';
 
   @override
   String get installCodecsSubtitle => 'Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.';
@@ -1110,6 +1110,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String onBatteryWarning(Object color) {
     return '<font color=\"$color\">Atenção</font>: O computador não está conectado a uma fonte de energia.';
   }
+
+  @override
+  String get offlineWarning => 'Você está off-line no momento';
 
   @override
   String get chooseSecurityKeyTitle => 'Escolha uma chave de segurança';
@@ -1323,6 +1326,12 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get newPartitionTableConfirmationMessage => 'Você selecionou dispositivo inteiro para particionar. Se prosseguir com a criação de uma nova tabela de partições no dispositivo, como resultado serão removidas todas as partições atuais.\n\nObserve que você poderá desfazer esta operação mais tarde, se desejar.';
 
   @override
+  String get tooManyPrimaryPartitions => 'Há partições primárias demais';
+
+  @override
+  String get partitionLimitReached => 'limite atingido';
+
+  @override
   String get bootLoaderDevice => 'Dispositivo para instalação do boot loader';
 
   @override
@@ -1416,6 +1425,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get partitionFormatZfsroot => 'Sistema de arquivos raiz ZFS';
 
   @override
+  String get partitionFormatNone => 'Deixar sem formatação';
+
+  @override
   String get partitionErase => 'Formatar a partição';
 
   @override
@@ -1480,6 +1492,12 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get whoAreYouPagePasswordMismatch => 'As senhas não correspondem';
+
+  @override
+  String get whoAreYouPagePasswordShow => 'Mostrar';
+
+  @override
+  String get whoAreYouPagePasswordHide => 'Ocultar';
 
   @override
   String get writeChangesToDisk => 'Gravar alterações no disco';
@@ -1552,7 +1570,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
+  String restartWarning(Object RELEASE) {
+    return 'Você pode continuar testando o $RELEASE agora, mas ao reiniciar o computador, todas as alterações feitas ou documentos armazenados não serão preservados.';
+  }
+
+  @override
   String get shutdown => 'Desligar';
+
+  @override
+  String get restartNow => 'Reiniciar agora';
+
+  @override
+  String get continueTesting => 'Continuar testando';
 
   @override
   String get turnOffBitlockerTitle => 'Desligar BitLocker';

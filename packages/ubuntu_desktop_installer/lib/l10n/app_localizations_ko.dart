@@ -220,7 +220,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installDriversSubtitle => '이러한 드라이버는 문서에 포함된 라이선스 조건의 적용을 받습니다. 또한 독점 소프트웨어 입니다.';
 
   @override
-  String get installCodecsTitle => '추가 미디어 포맷 지원 설치';
+  String get installCodecsTitle => '추가 미디어 포맷 지원을 내려받아 설치';
 
   @override
   String get installCodecsSubtitle => '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
@@ -231,7 +231,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => '현재 오프라인';
 
   @override
   String get chooseSecurityKeyTitle => '보안 키 선택';
@@ -445,10 +445,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => '장치 전체를 파티션으로 지정하셨습니다. 계속해서 장치에 새 파티션을 생성하시면, 기존 파티션은 모두 삭제됩니다.\n\n원하시는 경우 추후 이 작업을 되돌리실 수 있습니다.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => '주 파티션이 너무 많음';
 
   @override
-  String get partitionLimitReached => 'Limit reached';
+  String get partitionLimitReached => '한도 도달';
 
   @override
   String get bootLoaderDevice => '부트 로더 설치에 사용할 장치';
@@ -544,7 +544,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS 루트 파일 시스템';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => '포맷하지 않기';
 
   @override
   String get partitionErase => '파티션 포맷';
@@ -613,10 +613,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => '암호가 일치하지 않습니다';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => '표시';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => '숨기기';
 
   @override
   String get writeChangesToDisk => '디스크에 변경사항 쓰기';
@@ -640,12 +640,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk$partition resized from $oldsize to $newsize';
+    return '파티션 #$disk$partition의 크기를 $oldsize에서 $newsize로 조정';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk$partition formatted as $format used for $mount';
+    return '파티션 #$disk$partition을(를) $format(으)로 포맷하고 $mount에 마운트';
   }
 
   @override
@@ -655,7 +655,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk$partition used for $mount';
+    return '파티션 #$disk$partition을(를) $mount에 마운트';
   }
 
   @override
@@ -685,22 +685,22 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String restartInto(Object system) {
-    return '$system 으(로) 다시 시작';
+    return '$system (으)로 다시 시작';
   }
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return '$RELEASE을(를) 계속 사용할 수 있습니다. 하지만 컴퓨터를 다시 시작하지 않으면 바뀐 내용이나 저장한 문서를 잃게 됩니다.';
   }
 
   @override
   String get shutdown => '시스템 종료';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => '지금 다시 시작';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => '체험 계속하기';
 
   @override
   String get turnOffBitlockerTitle => 'BitLocker 끄기';
