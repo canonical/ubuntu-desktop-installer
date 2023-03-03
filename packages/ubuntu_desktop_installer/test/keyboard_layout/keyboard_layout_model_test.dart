@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:platform/platform.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -107,7 +108,8 @@ void main() {
         ], layout: '', variant: '');
       });
 
-      model = KeyboardLayoutModel(client);
+      model = KeyboardLayoutModel(client,
+          platform: FakePlatform(environment: {'USERNAME': 'usr'}));
       await model.init();
     });
 
@@ -166,16 +168,19 @@ void main() {
 
     test('selection updates input source', () async {
       await model.selectLayout(0);
-      verify(client.setInputSource(KeyboardSetting(layout: 'bar'))).called(1);
+      verify(client.setInputSource(KeyboardSetting(layout: 'bar'), user: 'usr'))
+          .called(1);
 
       await model.selectLayout(1);
-      verify(client
-              .setInputSource(KeyboardSetting(layout: 'foo', variant: 'baz')))
+      verify(client.setInputSource(
+              KeyboardSetting(layout: 'foo', variant: 'baz'),
+              user: 'usr'))
           .called(1);
 
       await model.selectVariant(1);
-      verify(client
-              .setInputSource(KeyboardSetting(layout: 'foo', variant: 'qux')))
+      verify(client.setInputSource(
+              KeyboardSetting(layout: 'foo', variant: 'qux'),
+              user: 'usr'))
           .called(1);
     });
 
