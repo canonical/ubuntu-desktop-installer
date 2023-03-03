@@ -796,6 +796,8 @@
   "@activeDirectoryDomainEndHyphen": {},
   "activeDirectoryDomainMultipleDots": "Contains multiple sequenced dots (..)",
   "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryDomainNotFound": "Domain not found",
+  "@activeDirectoryDomainNotFound": {},
   "activeDirectoryAdminLabel": "Domain Administrator",
   "@activeDirectoryAdminLabel": {},
   "activeDirectoryAdminEmpty": "Required",

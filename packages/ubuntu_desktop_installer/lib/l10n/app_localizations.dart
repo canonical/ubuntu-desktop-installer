@@ -1886,6 +1886,12 @@ abstract class AppLocalizations {
   /// **'Contains multiple sequenced dots (..)'**
   String get activeDirectoryDomainMultipleDots;
 
+  /// No description provided for @activeDirectoryDomainNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain not found'**
+  String get activeDirectoryDomainNotFound;
+
   /// No description provided for @activeDirectoryAdminLabel.
   ///
   /// In en, this message translates to:

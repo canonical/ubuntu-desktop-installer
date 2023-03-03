@@ -23,8 +23,8 @@ extension AdDomainNameValidationL10n on AdDomainNameValidation {
         return lang.activeDirectoryDomainEndHyphen;
       case AdDomainNameValidation.MULTIPLE_DOTS:
         return lang.activeDirectoryDomainMultipleDots;
-      default:
-        throw UnimplementedError(name);
+      case AdDomainNameValidation.REALM_NOT_FOUND:
+        return lang.activeDirectoryDomainNotFound;
     }
   }
 }

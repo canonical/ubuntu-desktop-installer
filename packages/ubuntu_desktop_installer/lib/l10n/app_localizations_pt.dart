@@ -920,6 +920,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
 
   @override
+  String get activeDirectoryDomainNotFound => 'Domain not found';
+
+  @override
   String get activeDirectoryAdminLabel => 'Domain Administrator';
 
   @override
