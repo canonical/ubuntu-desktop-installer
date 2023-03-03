@@ -1807,6 +1807,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The biggest disk on this computer is only {SIZE}.'**
   String notEnoughDiskSpaceBiggestDisk(Object SIZE);
+
+  /// No description provided for @activeDirectoryOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Active Directory'**
+  String get activeDirectoryOption;
+
+  /// No description provided for @activeDirectoryInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll enter domain and other details in the next step.'**
+  String get activeDirectoryInfo;
+
+  /// No description provided for @activeDirectoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure Active Directory'**
+  String get activeDirectoryTitle;
+
+  /// No description provided for @activeDirectoryTestConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Connection'**
+  String get activeDirectoryTestConnection;
+
+  /// No description provided for @activeDirectoryDomainLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain'**
+  String get activeDirectoryDomainLabel;
+
+  /// No description provided for @activeDirectoryDomainEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get activeDirectoryDomainEmpty;
+
+  /// No description provided for @activeDirectoryDomainTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Too long'**
+  String get activeDirectoryDomainTooLong;
+
+  /// No description provided for @activeDirectoryDomainInvalidChars.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid characters'**
+  String get activeDirectoryDomainInvalidChars;
+
+  /// No description provided for @activeDirectoryDomainStartDot.
+  ///
+  /// In en, this message translates to:
+  /// **'Starts with a dot (.)'**
+  String get activeDirectoryDomainStartDot;
+
+  /// No description provided for @activeDirectoryDomainEndDot.
+  ///
+  /// In en, this message translates to:
+  /// **'Ends with a dot (.)'**
+  String get activeDirectoryDomainEndDot;
+
+  /// No description provided for @activeDirectoryDomainStartHyphen.
+  ///
+  /// In en, this message translates to:
+  /// **'Starts with a hyphen (-)'**
+  String get activeDirectoryDomainStartHyphen;
+
+  /// No description provided for @activeDirectoryDomainEndHyphen.
+  ///
+  /// In en, this message translates to:
+  /// **'Ends with a hyphen (-)'**
+  String get activeDirectoryDomainEndHyphen;
+
+  /// No description provided for @activeDirectoryDomainMultipleDots.
+  ///
+  /// In en, this message translates to:
+  /// **'Contains multiple sequenced dots (..)'**
+  String get activeDirectoryDomainMultipleDots;
+
+  /// No description provided for @activeDirectoryAdminLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain Administrator'**
+  String get activeDirectoryAdminLabel;
+
+  /// No description provided for @activeDirectoryAdminEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get activeDirectoryAdminEmpty;
+
+  /// No description provided for @activeDirectoryAdminInvalidChars.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid characters'**
+  String get activeDirectoryAdminInvalidChars;
+
+  /// No description provided for @activeDirectoryPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get activeDirectoryPasswordLabel;
+
+  /// No description provided for @activeDirectoryPasswordEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get activeDirectoryPasswordEmpty;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
