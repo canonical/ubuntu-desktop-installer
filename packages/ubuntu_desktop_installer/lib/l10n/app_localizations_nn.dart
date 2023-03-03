@@ -879,4 +879,58 @@ class AppLocalizationsNn extends AppLocalizations {
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
     return 'The biggest disk on this computer is only $SIZE.';
   }
+
+  @override
+  String get activeDirectoryOption => 'Use Active Directory';
+
+  @override
+  String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
+
+  @override
+  String get activeDirectoryTitle => 'Configure Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Test Connection';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domain';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Required';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Too long';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Invalid characters';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Ends with a dot (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Starts with a hyphen (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Domain Administrator';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Required';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Invalid characters';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Password';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Required';
 }
