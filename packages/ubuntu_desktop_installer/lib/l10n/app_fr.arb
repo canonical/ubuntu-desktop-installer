@@ -705,7 +705,7 @@
   "@continueTesting": {},
   "restartNow": "Redémarrer maintenant",
   "@restartNow": {},
-  "restartWarning": "Vous pouvez maintenant continuer à tester ${RELEASE}, mais tant que vous n’aurez pas redémarré votre ordinateur, les changements effectués ou les documents créés ne seront pas préservés.",
+  "restartWarning": "Vous pouvez maintenant continuer à tester {RELEASE}, mais tant que vous n’aurez pas redémarré votre ordinateur, les changements effectués ou les documents créés ne seront pas préservés.",
   "@restartWarning": {
     "type": "text",
     "placeholders": {
