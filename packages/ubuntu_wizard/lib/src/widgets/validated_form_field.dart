@@ -126,11 +126,15 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
   @override
   void didUpdateWidget(ValidatedFormField oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (!focusNode.hasFocus &&
-        widget.initialValue != null &&
-        oldWidget.initialValue != widget.initialValue) {
+    if (widget.initialValue != null &&
+        widget.initialValue != _controller.text &&
+        widget.initialValue != oldWidget.initialValue) {
       scheduleMicrotask(() {
-        _controller.text = widget.initialValue!;
+        _controller.value = TextEditingValue(
+          text: widget.initialValue!,
+          selection:
+              TextSelection.collapsed(offset: widget.initialValue!.length),
+        );
       });
     }
   }

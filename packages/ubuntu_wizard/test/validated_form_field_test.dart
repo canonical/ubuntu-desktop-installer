@@ -86,6 +86,7 @@ void main() {
       return MaterialApp(
         home: Material(
           child: ValidatedFormField(
+            autofocus: true,
             controller: controller,
             initialValue: initialValue,
           ),
