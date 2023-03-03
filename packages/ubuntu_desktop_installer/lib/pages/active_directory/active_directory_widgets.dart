@@ -21,9 +21,11 @@ class DomainNameFormField extends StatelessWidget {
         context.select((ActiveDirectoryModel m) => m.domainNameValidation);
 
     return ValidatedFormField(
+      autofocus: true,
       fieldWidth: fieldWidth,
       labelText: lang.activeDirectoryDomainLabel,
       initialValue: domainName,
+      successWidget: const SuccessIcon(),
       validator: CallbackValidator(
         (_) =>
             validation == null ||
@@ -51,6 +53,7 @@ class AdminNameFormField extends StatelessWidget {
       fieldWidth: fieldWidth,
       labelText: lang.activeDirectoryAdminLabel,
       initialValue: adminName,
+      successWidget: const SuccessIcon(),
       validator: CallbackValidator(
         (_) => validation == AdAdminNameValidation.OK,
         errorText: validation?.localize(lang) ?? '',
