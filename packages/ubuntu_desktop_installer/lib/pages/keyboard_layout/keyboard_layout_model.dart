@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:dartx/dartx.dart';
 import 'package:diacritic/diacritic.dart';
+import 'package:meta/meta.dart';
+import 'package:platform/platform.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -13,9 +15,11 @@ final log = Logger('keyboard_layout');
 /// Implements the business logic of the Keyboard Layout page.
 class KeyboardLayoutModel extends SafeChangeNotifier {
   /// Creates a model with the specified client.
-  KeyboardLayoutModel(this._client);
+  KeyboardLayoutModel(this._client, {@visibleForTesting Platform? platform})
+      : _platform = platform ?? const LocalPlatform();
 
   final SubiquityClient _client;
+  final Platform _platform;
   List<KeyboardLayout> _layouts = [];
 
   /// The number of available keyboard layouts.
@@ -140,7 +144,10 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     final variant = _selectedVariant?.code;
     final keyboard = KeyboardSetting(layout: layout, variant: variant ?? '');
     log.info('Updated $layout ($variant) input source');
-    return _client.setInputSource(keyboard);
+    return _client.setInputSource(
+      keyboard,
+      user: _platform.environment['USERNAME'],
+    );
   }
 
   /// Saves the selected keyboard layout and variant.
