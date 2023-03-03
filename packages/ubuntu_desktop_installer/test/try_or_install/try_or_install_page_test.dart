@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_model.dart';
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_page.dart';
+import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_widgets.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/settings.dart';
@@ -98,7 +99,7 @@ void main() {
         (continueButton.evaluate().single.widget as ButtonStyleButton).enabled,
         false);
 
-    final options = find.byType(OptionCard);
+    final options = find.byType(OptionButton);
     expect(options, findsWidgets);
 
     await tester.tap(options.first);
@@ -113,7 +114,7 @@ void main() {
     await setUpApp(tester);
 
     final option =
-        find.widgetWithText(OptionCard, tester.lang.installUbuntu('Ubuntu'));
+        find.widgetWithText(OptionButton, tester.lang.installUbuntu('Ubuntu'));
     expect(option, findsOneWidget);
 
     await tester.tap(option);
@@ -137,7 +138,7 @@ void main() {
     expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isFalse);
 
     final option =
-        find.widgetWithText(OptionCard, tester.lang.tryUbuntu('Ubuntu'));
+        find.widgetWithText(OptionButton, tester.lang.tryUbuntu('Ubuntu'));
     expect(option, findsOneWidget);
 
     await tester.tap(option);
