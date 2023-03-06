@@ -137,6 +137,7 @@ Future<void> runInstallerApp(
   // Use the default values for a number of endpoints
   // for which a UI page isn't implemented yet.
   await subiquityClient.markConfigured([
+    'ad',
     'mirror',
     'proxy',
     'ssh',
