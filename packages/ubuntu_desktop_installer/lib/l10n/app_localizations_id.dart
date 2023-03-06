@@ -433,7 +433,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get diskHeadersFormat => 'Format';
 
   @override
-  String get freeDiskSpace => 'ruang bebas';
+  String get freeDiskSpace => 'Ruang bebas';
 
   @override
   String get newPartitionTable => 'Tabel partisi baru';

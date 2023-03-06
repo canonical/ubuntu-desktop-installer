@@ -433,7 +433,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get diskHeadersFormat => 'Alusta';
 
   @override
-  String get freeDiskSpace => 'vapaata tilaa';
+  String get freeDiskSpace => 'Vapaata tilaa';
 
   @override
   String get newPartitionTable => 'Uusi osiotaulu';
@@ -448,7 +448,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Liian monta ensisijaista osiota';
 
   @override
-  String get partitionLimitReached => 'raja saavutettu';
+  String get partitionLimitReached => 'Raja saavutettu';
 
   @override
   String get bootLoaderDevice => 'Laite, jolle alkulatausohjelma asennetaan';
@@ -613,10 +613,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Salasanat eivät täsmää';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Näytä';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Piilota';
 
   @override
   String get writeChangesToDisk => 'Tallenna muutokset levylle';

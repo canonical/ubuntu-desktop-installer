@@ -433,7 +433,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get diskHeadersFormat => 'Formato';
 
   @override
-  String get freeDiskSpace => 'espaço livre';
+  String get freeDiskSpace => 'Espaço livre';
 
   @override
   String get newPartitionTable => 'Nova tabela de partições';
@@ -448,7 +448,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Demasiadas partições primárias';
 
   @override
-  String get partitionLimitReached => 'limite atingido';
+  String get partitionLimitReached => 'Limite atingido';
 
   @override
   String get bootLoaderDevice => 'Aparelho para instalação do boot loader';
@@ -1314,7 +1314,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get diskHeadersFormat => 'Formato';
 
   @override
-  String get freeDiskSpace => 'espaço livre';
+  String get freeDiskSpace => 'Espaço livre';
 
   @override
   String get newPartitionTable => 'Nova tabela de partições';
@@ -1329,7 +1329,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get tooManyPrimaryPartitions => 'Há partições primárias demais';
 
   @override
-  String get partitionLimitReached => 'limite atingido';
+  String get partitionLimitReached => 'Limite atingido';
 
   @override
   String get bootLoaderDevice => 'Dispositivo para instalação do boot loader';
