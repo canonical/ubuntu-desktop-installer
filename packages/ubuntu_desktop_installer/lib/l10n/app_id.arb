@@ -313,7 +313,7 @@
   "@selectGuidedStorageInfoLabel": {},
   "diskHeadersUsed": "Dipakai",
   "@diskHeadersUsed": {},
-  "freeDiskSpace": "ruang bebas",
+  "freeDiskSpace": "Ruang bebas",
   "@freeDiskSpace": {},
   "newPartitionTable": "Tabel partisi baru",
   "@newPartitionTable": {},

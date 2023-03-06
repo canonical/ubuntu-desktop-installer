@@ -128,7 +128,7 @@
       "DISTRO": {}
     }
   },
-  "freeDiskSpace": "ledigt utrymme",
+  "freeDiskSpace": "Ledigt utrymme",
   "@freeDiskSpace": {},
   "newPartitionTable": "Ny partitionstabell",
   "@newPartitionTable": {},
@@ -553,7 +553,7 @@
   },
   "hiddenWifiNetwork": "Anslut till ett dolt Wi-Fi-nätverk",
   "@hiddenWifiNetwork": {},
-  "musicSlideDescription": "{RELEASE} kommer med den fantastiska musikspelaren Rhythmbox. Med avancerade uppspelningsalternativ är det enkelt att ställa de perfekta låtarna i kö. Och det fungerar utmärkt med CD-skivor och bärbara musikspelare, så att du kan njuta av all din musik var du än går.",
+  "musicSlideDescription": "{RELEASE} kommer med den fantastiska musikspelaren Rhythmbox. Med avancerade uppspelningsalternativ är det enkelt att sätta de perfekta låtarna på kö. Och den fungerar utmärkt med CD-skivor och bärbara musikspelare, så att du kan njuta av all din musik var du än går.",
   "@musicSlideDescription": {
     "type": "text",
     "placeholders": {
@@ -569,7 +569,7 @@
   },
   "supportSlideQuestions": "På <a href=\"https://askubuntu.com\">Fråga Ubuntu</a> kan du ställa frågor och söka i en imponerande samling av redan besvarade frågor. Support på ditt eget språk kan tillhandahållas av ditt <a href=\"https://loco.ubuntu.com/teams\">lokala gruppteam</a>.",
   "@supportSlideQuestions": {},
-  "supportSlideDocumentation": "Den officiella dokumentationen täcker många av de vanligaste aspekter om {RELEASE}. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.",
+  "supportSlideDocumentation": "Den officiella dokumentationen täcker många av de vanligaste aspekterna om {RELEASE}. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.",
   "@supportSlideDocumentation": {
     "type": "text",
     "placeholders": {
@@ -587,7 +587,7 @@
   },
   "photoSlideTitle": "Ha kul med dina bilder",
   "@photoSlideTitle": {},
-  "photoSlideDescription": "Shotwell är en praktisk fotohanterare som är redo för dina prylar. Anslut en kamera eller en telefon för att överföra dina foton, så är det enkelt att dela dem och förvara dem säkra. Och om du känner dig kreativ kan du hitta många andra fotoappar i Ubuntu Software.",
+  "photoSlideDescription": "Shotwell är en praktisk fotohanterare som är redo för dina prylar. Anslut en kamera eller en telefon för att överföra dina foton, så är det enkelt att dela dem och förvara dem säkert. Och om du känner dig kreativ kan du hitta många andra fotoappar i Programvara för Ubuntu.",
   "@photoSlideDescription": {},
   "photoSlideGimp": "GIMP bildredigerare",
   "@photoSlideGimp": {},
@@ -781,7 +781,7 @@
   "@continueTesting": {},
   "tooManyPrimaryPartitions": "För många primära partitioner",
   "@tooManyPrimaryPartitions": {},
-  "partitionLimitReached": "gränsen nådd",
+  "partitionLimitReached": "Gränsen nådd",
   "@partitionLimitReached": {},
   "offlineWarning": "Du är för närvarande offline",
   "@offlineWarning": {},
