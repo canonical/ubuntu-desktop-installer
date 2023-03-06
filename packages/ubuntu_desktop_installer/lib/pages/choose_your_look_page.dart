@@ -3,7 +3,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
-import '../../settings.dart';
+import '../../services.dart';
 
 class ChooseYourLookPage extends StatelessWidget {
   const ChooseYourLookPage({super.key});
@@ -14,7 +14,7 @@ class ChooseYourLookPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final width = MediaQuery.of(context).size.width;
-    final settings = Settings.of(context, listen: false);
+    final desktop = getService<DesktopService>();
     return WizardPage(
       header: Text(lang.chooseYourLookPageHeader),
       actions: <WizardAction>[
@@ -33,9 +33,7 @@ class ChooseYourLookPage extends StatelessWidget {
                 width: width / 3,
                 assetName: 'assets/choose_your_look/light-theme.png',
                 selected: Theme.of(context).brightness == Brightness.light,
-                onTap: () {
-                  settings.applyTheme(Brightness.light);
-                },
+                onTap: () => desktop.setTheme(Brightness.light),
                 preferenceName: lang.chooseYourLookPageLightSetting,
               ),
               SizedBox(
@@ -45,9 +43,7 @@ class ChooseYourLookPage extends StatelessWidget {
                 width: width / 3,
                 assetName: 'assets/choose_your_look/dark-theme.png',
                 selected: Theme.of(context).brightness == Brightness.dark,
-                onTap: () {
-                  settings.applyTheme(Brightness.dark);
-                },
+                onTap: () => desktop.setTheme(Brightness.dark),
                 preferenceName: lang.chooseYourLookPageDarkSetting,
               ),
             ]),

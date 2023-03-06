@@ -8,15 +8,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import 'choose_your_look/choose_your_look_page_test.mocks.dart';
 import 'installation_slides/installation_slides_model_test.mocks.dart';
 import 'test_utils.dart';
 
@@ -93,13 +92,11 @@ extension on WidgetTester {
     when(journal.start(any, output: anyNamed('output')))
         .thenAnswer((_) => const Stream.empty());
 
+    registerMockService<DesktopService>(MockDesktopService());
     registerMockService<DiskStorageService>(DiskStorageService(client));
     registerMockService<JournalService>(journal);
     registerMockService<TelemetryService>(TelemetryService());
 
-    return ChangeNotifierProvider(
-      create: (_) => Settings(MockGSettings()),
-      child: UbuntuDesktopInstallerApp(),
-    );
+    return UbuntuDesktopInstallerApp();
   }
 }
