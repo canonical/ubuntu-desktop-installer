@@ -33,15 +33,4 @@ class Settings extends SafeChangeNotifier {
         break;
     }
   }
-
-  /// The current application locale.
-  Locale get locale => _locale;
-  Locale _locale = WidgetsBinding.instance.window.locale;
-
-  /// Applies the given [locale].
-  void applyLocale(Locale locale) {
-    if (_locale == locale) return;
-    _locale = locale;
-    notifyListeners();
-  }
 }

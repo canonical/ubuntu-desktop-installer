@@ -3,10 +3,10 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:ui' as _i2;
+import 'dart:ui' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_desktop_installer/settings.dart' as _i3;
+import 'package:ubuntu_desktop_installer/settings.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -19,32 +19,14 @@ import 'package:ubuntu_desktop_installer/settings.dart' as _i3;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeLocale_0 extends _i1.SmartFake implements _i2.Locale {
-  _FakeLocale_0(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
 /// A class which mocks [Settings].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSettings extends _i1.Mock implements _i3.Settings {
+class MockSettings extends _i1.Mock implements _i2.Settings {
   MockSettings() {
     _i1.throwOnMissingStub(this);
   }
 
-  @override
-  _i2.Locale get locale => (super.noSuchMethod(
-        Invocation.getter(#locale),
-        returnValue: _FakeLocale_0(
-          this,
-          Invocation.getter(#locale),
-        ),
-      ) as _i2.Locale);
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
@@ -56,7 +38,7 @@ class MockSettings extends _i1.Mock implements _i3.Settings {
         returnValue: false,
       ) as bool);
   @override
-  void applyTheme(_i2.Brightness? brightness) => super.noSuchMethod(
+  void applyTheme(_i3.Brightness? brightness) => super.noSuchMethod(
         Invocation.method(
           #applyTheme,
           [brightness],
@@ -64,15 +46,7 @@ class MockSettings extends _i1.Mock implements _i3.Settings {
         returnValueForMissingStub: null,
       );
   @override
-  void applyLocale(_i2.Locale? locale) => super.noSuchMethod(
-        Invocation.method(
-          #applyLocale,
-          [locale],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void addListener(_i2.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i3.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -80,7 +54,7 @@ class MockSettings extends _i1.Mock implements _i3.Settings {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i2.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i3.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],

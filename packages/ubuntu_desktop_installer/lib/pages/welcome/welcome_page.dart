@@ -5,12 +5,12 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
-import '../../settings.dart';
 import 'welcome_model.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -40,8 +40,7 @@ class _WelcomePageState extends State<WelcomePage> {
 
     final model = Provider.of<WelcomeModel>(context, listen: false);
     model.loadLanguages().then((_) {
-      final settings = Settings.of(context, listen: false);
-      model.selectLocale(settings.locale);
+      model.selectLocale(InheritedLocale.of(context));
 
       _selectAndScrollToLanguage(
           model.selectedLanguageIndex, AutoScrollPosition.middle);
@@ -61,8 +60,7 @@ class _WelcomePageState extends State<WelcomePage> {
     final model = context.read<WelcomeModel>();
     model.selectedLanguageIndex = index;
 
-    final settings = Settings.of(context, listen: false);
-    settings.applyLocale(model.locale(index));
+    InheritedLocale.apply(context, model.locale(index));
 
     _languageListFocusNode.requestFocus();
     _languageListScrollController.scrollToIndex(index,

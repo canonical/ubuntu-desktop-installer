@@ -8,7 +8,6 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
-import '../../settings.dart';
 import 'try_or_install_model.dart';
 import 'try_or_install_widgets.dart';
 
@@ -76,7 +75,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           Html(
             shrinkWrap: true,
             data: lang.releaseNotesLabel(
-                model.releaseNotesURL(Settings.of(context).locale)),
+                model.releaseNotesURL(InheritedLocale.of(context))),
             style: {
               'body': Style(margin: Margins.zero),
               'a': Style(color: context.linkColor),
