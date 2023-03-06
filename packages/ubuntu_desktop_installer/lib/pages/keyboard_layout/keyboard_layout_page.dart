@@ -159,24 +159,27 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
               ],
             ),
           ),
-          const SizedBox(height: 20),
-          TextField(
-            decoration: InputDecoration(
-              hintText: lang.typeToTest,
-            ),
-          ),
-          const SizedBox(height: 20),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: OutlinedButton(
-              child: Text(lang.detectLayout),
-              onPressed: () async {
-                final result = await showDetectKeyboardLayoutDialog(context);
-                if (result != null) {
-                  model.trySelectLayoutVariant(result.layout, result.variant);
-                }
-              },
-            ),
+          const SizedBox(height: kContentSpacing),
+          Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: lang.typeToTest,
+                  ),
+                ),
+              ),
+              const SizedBox(width: kContentSpacing),
+              OutlinedButton(
+                child: Text(lang.detectLayout),
+                onPressed: () async {
+                  final result = await showDetectKeyboardLayoutDialog(context);
+                  if (result != null) {
+                    model.trySelectLayoutVariant(result.layout, result.variant);
+                  }
+                },
+              ),
+            ],
           ),
         ],
       ),
