@@ -179,7 +179,7 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Alocar espaço em disco",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Iniciar instalação",
+  "startInstallingButtonText": "Instalar",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Dispositivo",
   "@diskHeadersDevice": {},
