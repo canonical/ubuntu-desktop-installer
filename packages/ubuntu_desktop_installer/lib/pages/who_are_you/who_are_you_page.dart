@@ -25,10 +25,12 @@ class WhoAreYouPage extends StatefulWidget {
 
   /// Creates an instance with [WhoAreYouModel].
   static Widget create(BuildContext context) {
-    final client = getService<SubiquityClient>();
-    final config = getService<ConfigService>();
     return ChangeNotifierProvider(
-      create: (_) => WhoAreYouModel(client, config),
+      create: (_) => WhoAreYouModel(
+        client: getService<SubiquityClient>(),
+        config: getService<ConfigService>(),
+        network: getService<NetworkService>(),
+      ),
       child: const WhoAreYouPage(),
     );
   }

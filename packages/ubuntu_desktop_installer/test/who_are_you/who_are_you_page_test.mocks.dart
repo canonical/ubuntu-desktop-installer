@@ -115,6 +115,11 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
         returnValueForMissingStub: null,
       );
   @override
+  bool get isConnectedSite => (super.noSuchMethod(
+        Invocation.getter(#isConnectedSite),
+        returnValue: false,
+      ) as bool);
+  @override
   bool get isValid => (super.noSuchMethod(
         Invocation.getter(#isValid),
         returnValue: false,
@@ -181,6 +186,54 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
         returnValueForMissingStub: _i5.Future<void>.value(),
       ) as _i5.Future<void>);
   @override
+  void setProperties(_i5.Stream<List<String>>? properties) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #setProperties,
+          [properties],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void addPropertyListener(
+    String? property,
+    _i6.VoidCallback? onChanged,
+  ) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #addPropertyListener,
+          [
+            property,
+            onChanged,
+          ],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void enablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #enablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void disablePropertyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #disablePropertyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
@@ -193,14 +246,6 @@ class MockWhoAreYouModel extends _i1.Mock implements _i2.WhoAreYouModel {
         Invocation.method(
           #removeListener,
           [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void dispose() => super.noSuchMethod(
-        Invocation.method(
-          #dispose,
-          [],
         ),
         returnValueForMissingStub: null,
       );
