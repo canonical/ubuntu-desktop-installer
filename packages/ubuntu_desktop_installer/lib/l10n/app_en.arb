@@ -367,7 +367,7 @@
   "@installAlongsideAvailable": {},
   "allocateDiskSpace": "Allocate disk space",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Start Installing",
+  "startInstallingButtonText": "Install",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Device",
   "@diskHeadersDevice": {},
