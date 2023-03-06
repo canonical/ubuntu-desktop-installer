@@ -13,6 +13,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'welcome_page_test.mocks.dart';
@@ -55,7 +56,7 @@ void main() {
         ChangeNotifierProvider<Settings>(
           create: (_) => Settings(MockGSettings()),
         ),
-      ], child: app),
+      ], child: InheritedLocale(child: app)),
     );
     await tester.pumpAndSettle();
     expect(find.byType(WelcomePage), findsOneWidget);
@@ -67,8 +68,7 @@ void main() {
     final languageList = find.byType(ListView);
     expect(languageList, findsOneWidget);
 
-    final settings = Settings.of(tester.element(languageList), listen: false);
-    expect(settings.locale.languageCode, 'en');
+    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'en');
 
     final listItems = find.descendant(
         of: languageList, matching: find.byType(ListTile), skipOffstage: false);
@@ -99,7 +99,7 @@ void main() {
     await tester.tap(itemItalian);
     await tester.pump();
     expect((itemItalian.evaluate().single.widget as ListTile).selected, true);
-    expect(settings.locale.languageCode, 'it');
+    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'it');
 
     // scroll backward to English
     await tester.scrollUntilVisible(itemEnglish, kMinInteractiveDimension / 2);
@@ -107,7 +107,7 @@ void main() {
     await tester.tap(itemEnglish);
     await tester.pump();
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, true);
-    expect(settings.locale.languageCode, 'en');
+    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'en');
 
     // scroll forward to French
     await tester.scrollUntilVisible(itemFrench, -kMinInteractiveDimension / 2);
@@ -118,7 +118,7 @@ void main() {
     expect((itemItalian.evaluate().single.widget as ListTile).selected, false);
     expect((itemEnglish.evaluate().single.widget as ListTile).selected, false);
     expect((itemFrench.evaluate().single.widget as ListTile).selected, true);
-    expect(settings.locale.languageCode, 'fr');
+    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'fr');
   });
 
   testWidgets('key search', (tester) async {
@@ -134,27 +134,25 @@ void main() {
     expect(focusNode, isNotNull);
     expect(focusNode!.hasFocus, isTrue);
 
-    final settings = Settings.of(tester.element(languageList), listen: false);
-
     // french
     await tester.sendKeyEvent(LogicalKeyboardKey.keyF);
     await tester.pumpAndSettle(kKeySearchInterval);
     await tester.pumpAndSettle();
-    expect(settings.locale.languageCode, 'fr');
+    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'fr');
 
     // danish
     await tester.sendKeyEvent(LogicalKeyboardKey.keyD);
     await tester.sendKeyEvent(LogicalKeyboardKey.keyA);
     await tester.pumpAndSettle(kKeySearchInterval);
     await tester.pumpAndSettle();
-    expect(settings.locale.languageCode, 'da');
+    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'da');
 
     // swedish
     await tester.sendKeyEvent(LogicalKeyboardKey.keyS);
     await tester.sendKeyEvent(LogicalKeyboardKey.keyV);
     await tester.pumpAndSettle(kKeySearchInterval);
     await tester.pumpAndSettle();
-    expect(settings.locale.languageCode, 'sv');
+    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'sv');
   });
 
   testWidgets('should continue to next page', (tester) async {

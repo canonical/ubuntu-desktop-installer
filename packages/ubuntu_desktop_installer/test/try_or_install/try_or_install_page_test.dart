@@ -11,7 +11,6 @@ import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_pag
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_widgets.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -21,44 +20,44 @@ import 'try_or_install_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([Settings, UrlLauncher])
+@GenerateMocks([UrlLauncher])
 void main() {
   late MaterialApp app;
   late TryOrInstallModel model;
 
   Future<void> setUpApp(WidgetTester tester) async {
     model = TryOrInstallModel();
-    final settings = MockSettings();
-    when(settings.locale).thenReturn(Locale('en'));
 
     app = MaterialApp(
       supportedLocales: supportedLocales,
       localizationsDelegates: localizationsDelegates,
       locale: Locale('en'),
-      home: Flavor(
-        data: const FlavorData(name: 'Ubuntu'),
-        child: Wizard(
-          routes: {
-            Routes.tryOrInstall: WizardRoute(
-              builder: (_) => TryOrInstallPage(),
-              onNext: (settings) {
-                switch (model.option) {
-                  case Option.repairUbuntu:
-                    return Routes.repairUbuntu;
-                  case Option.installUbuntu:
-                    return Routes.keyboardLayout;
-                  default:
-                    return null;
-                }
-              },
-            ),
-            Routes.repairUbuntu: WizardRoute(
-              builder: (context) => Text(Routes.repairUbuntu),
-            ),
-            Routes.keyboardLayout: WizardRoute(
-              builder: (context) => Text(Routes.keyboardLayout),
-            ),
-          },
+      home: InheritedLocale(
+        child: Flavor(
+          data: const FlavorData(name: 'Ubuntu'),
+          child: Wizard(
+            routes: {
+              Routes.tryOrInstall: WizardRoute(
+                builder: (_) => TryOrInstallPage(),
+                onNext: (settings) {
+                  switch (model.option) {
+                    case Option.repairUbuntu:
+                      return Routes.repairUbuntu;
+                    case Option.installUbuntu:
+                      return Routes.keyboardLayout;
+                    default:
+                      return null;
+                  }
+                },
+              ),
+              Routes.repairUbuntu: WizardRoute(
+                builder: (context) => Text(Routes.repairUbuntu),
+              ),
+              Routes.keyboardLayout: WizardRoute(
+                builder: (context) => Text(Routes.keyboardLayout),
+              ),
+            },
+          ),
         ),
       ),
     );
@@ -66,9 +65,8 @@ void main() {
     await tester.pumpWidget(MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: model, child: app),
-        ChangeNotifierProvider<Settings>.value(value: settings),
       ],
-      child: app,
+      child: InheritedLocale(child: app),
     ));
 
     expect(find.byType(TryOrInstallPage), findsOneWidget);

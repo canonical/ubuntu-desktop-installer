@@ -201,42 +201,45 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
         data: widget.flavor,
         child: SlidesContext(
           slides: widget.slides,
-          child: YaruTheme(
-            data: const YaruThemeData(
-              extensions: [
-                YaruTitleBarThemeData(
-                  backgroundColor: MaterialStatePropertyAll(Colors.transparent),
-                )
-              ],
-            ),
-            builder: (context, yaru, child) {
-              return MaterialApp(
-                locale: Settings.of(context).locale,
-                onGenerateTitle: (context) {
-                  final lang = AppLocalizations.of(context);
-                  final window = YaruWindow.of(context);
-                  window.setTitle(lang.windowTitle(widget.flavor.name));
-                  return lang.appTitle;
-                },
-                theme: widget.flavor.theme ?? yaru.theme,
-                darkTheme: widget.flavor.darkTheme ?? yaru.darkTheme,
-                debugShowCheckedModeBanner: false,
-                localizationsDelegates: <LocalizationsDelegate>[
-                  ...localizationsDelegates,
-                  ...?widget.flavor.localizationsDelegates,
+          child: InheritedLocale(
+            child: YaruTheme(
+              data: const YaruThemeData(
+                extensions: [
+                  YaruTitleBarThemeData(
+                    backgroundColor:
+                        MaterialStatePropertyAll(Colors.transparent),
+                  )
                 ],
-                supportedLocales: supportedLocales,
-                home: buildApp(context),
-                builder: (context, child) => Stack(
-                  children: [
-                    const Positioned.fill(
-                      child: _UbuntuDesktopInstallerBackground(),
-                    ),
-                    Positioned.fill(child: child!),
+              ),
+              builder: (context, yaru, child) {
+                return MaterialApp(
+                  locale: InheritedLocale.of(context),
+                  onGenerateTitle: (context) {
+                    final lang = AppLocalizations.of(context);
+                    final window = YaruWindow.of(context);
+                    window.setTitle(lang.windowTitle(widget.flavor.name));
+                    return lang.appTitle;
+                  },
+                  theme: widget.flavor.theme ?? yaru.theme,
+                  darkTheme: widget.flavor.darkTheme ?? yaru.darkTheme,
+                  debugShowCheckedModeBanner: false,
+                  localizationsDelegates: <LocalizationsDelegate>[
+                    ...localizationsDelegates,
+                    ...?widget.flavor.localizationsDelegates,
                   ],
-                ),
-              );
-            },
+                  supportedLocales: supportedLocales,
+                  home: buildApp(context),
+                  builder: (context, child) => Stack(
+                    children: [
+                      const Positioned.fill(
+                        child: _UbuntuDesktopInstallerBackground(),
+                      ),
+                      Positioned.fill(child: child!),
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ),

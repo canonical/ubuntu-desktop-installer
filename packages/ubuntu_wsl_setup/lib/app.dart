@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wsl_setup/app_model.dart';
 import 'package:ubuntu_wsl_setup/splash_screen.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'l10n.dart';
-import 'locale.dart';
 import 'wizard.dart';
 import 'routes.dart';
 
