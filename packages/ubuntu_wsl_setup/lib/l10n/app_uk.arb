@@ -102,7 +102,7 @@
   "@advancedSetupGUIIntegrationSubtitle": {},
   "configurationUIWSLNewsSubtitle": "Ця опція дозволяє вам керувати новинами MOTD. Увімкнувши його, ви зможете побачити повідомлення дня (MOTD).",
   "@configurationUIWSLNewsSubtitle": {},
-  "setupCompleteHeader": "Вітаємо, {user}!\nВи успішно завершили встановлення.",
+  "setupCompleteHeader": "Вітаємо, {user}!\nВи завершили встановлення.",
   "@setupCompleteHeader": {
     "type": "text",
     "placeholders": {
@@ -112,5 +112,23 @@
   "setupCompleteManage": "Ви можете використовувати вбудовану команду ubuntuwsl для керування параметрами WSL:",
   "@setupCompleteManage": {},
   "configurationUIAdvancedIPDetectionSubtitle": "Цей параметр дозволяє розширити визначення IP-адреси за IPv4-адресою Windows, яка є більш надійною для використання з WSL2.\nПотребує ввімкнення взаємодії WSL.",
-  "@configurationUIAdvancedIPDetectionSubtitle": {}
+  "@configurationUIAdvancedIPDetectionSubtitle": {},
+  "configurationUISystemdHeader": "ЕКСПЕРИМЕНТАЛЬНИЙ - Systemd",
+  "@configurationUISystemdHeader": {},
+  "installationSlidesWelcome": "Ласкаво просимо до Ubuntu WSL",
+  "@installationSlidesWelcome": {},
+  "installationSlidesCancel": "Скасувати",
+  "@installationSlidesCancel": {},
+  "installationSlidesUbuntuOnWsl": "Ubuntu WSL",
+  "@installationSlidesUbuntuOnWsl": {},
+  "installationSlidesOk": "Гаразд",
+  "@installationSlidesOk": {},
+  "installationSlidesInitializing": "Ініціалізація…",
+  "@installationSlidesInitializing": {},
+  "installationSlidesFindOutMoreLink": "Ubuntu.com/wsl",
+  "@installationSlidesFindOutMoreLink": {},
+  "configurationUISystemdTitle": "Увімкнено",
+  "@configurationUISystemdTitle": {},
+  "configurationUIInteroperabilityTitle": "Увімкнено",
+  "@configurationUIInteroperabilityTitle": {}
 }
