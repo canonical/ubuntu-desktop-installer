@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -24,9 +23,15 @@ const kValidUsernamePattern = r'^[a-z][a-z0-9-_]*$';
 const kValidHostnamePattern = r'^[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])*$';
 
 /// [WhoAreYouPage]'s view model.
-class WhoAreYouModel extends SafeChangeNotifier {
+class WhoAreYouModel extends PropertyStreamNotifier {
   /// Creates the model with the given client.
-  WhoAreYouModel(this._client, this._config) {
+  WhoAreYouModel({
+    required SubiquityClient client,
+    required ConfigService config,
+    required NetworkService network,
+  })  : _client = client,
+        _config = config,
+        _network = network {
     Listenable.merge([
       _realName,
       _hostname,
@@ -38,10 +43,15 @@ class WhoAreYouModel extends SafeChangeNotifier {
       _productName,
       _showPassword,
     ]).addListener(notifyListeners);
+
+    addPropertyListener('State', notifyListeners);
+    setProperties(_network.propertiesChanged);
   }
 
   final SubiquityClient _client;
   final ConfigService _config;
+  final NetworkService _network;
+
   final _realName = ValueNotifier<String?>(null);
   final _username = ValueNotifier<String?>(null);
   final _usernameValidation =
@@ -85,6 +95,9 @@ class WhoAreYouModel extends SafeChangeNotifier {
   /// Whether to enable automatic login, or require password.
   bool get autoLogin => _autoLogin.value;
   set autoLogin(bool value) => _autoLogin.value = value;
+
+  /// Returns true if there is a site-wide connectivity.
+  bool get isConnectedSite => _network.isConnectedSite;
 
   /// Whether the current input is valid.
   bool get isValid {
