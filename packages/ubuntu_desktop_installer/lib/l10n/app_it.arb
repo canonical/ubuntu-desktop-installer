@@ -268,5 +268,7 @@
   "installationFailed": "Installazione non riuscita",
   "@installationFailed": {},
   "installingSystem": "Installazione del sistema…",
-  "@installingSystem": {}
+  "@installingSystem": {},
+  "showSecurityKey": "Mostra chiave di sicurezza",
+  "@showSecurityKey": {}
 }
