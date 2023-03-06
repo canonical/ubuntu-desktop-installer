@@ -433,7 +433,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get diskHeadersFormat => 'Formatter';
 
   @override
-  String get freeDiskSpace => 'espace libre';
+  String get freeDiskSpace => 'Espace libre';
 
   @override
   String get newPartitionTable => 'Nouvelle table de partition';
@@ -448,7 +448,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Trop de partitions primaires';
 
   @override
-  String get partitionLimitReached => 'limite atteinte';
+  String get partitionLimitReached => 'Limite atteinte';
 
   @override
   String get bootLoaderDevice => 'Périphérique pour installer le chargeur d’amorçage';
@@ -690,7 +690,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'Vous pouvez maintenant continuer à tester \$$RELEASE, mais tant que vous n’aurez pas redémarré votre ordinateur, les changements effectués ou les documents créés ne seront pas préservés.';
+    return 'Vous pouvez maintenant continuer à tester $RELEASE, mais tant que vous n’aurez pas redémarré votre ordinateur, les changements effectués ou les documents créés ne seront pas préservés.';
   }
 
   @override
