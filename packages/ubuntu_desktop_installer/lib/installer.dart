@@ -117,6 +117,7 @@ Future<void> runInstallerApp(
         '--bootloader=${options['bootloader']}',
       '--storage-version=2',
     ],
+    dispose: () => getService<DesktopService>().close(),
   );
 
   await subiquityClient.setVariant(Variant.DESKTOP);
