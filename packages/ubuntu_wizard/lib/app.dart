@@ -34,6 +34,7 @@ Future<bool?> runWizardApp(
   SubiquityStatusMonitor? subiquityMonitor,
   List<String>? serverArgs,
   Map<String, String>? serverEnvironment,
+  FutureOr<void> Function()? dispose,
 }) async {
   if (options != null) {
     Logger.setup(
@@ -62,6 +63,7 @@ Future<bool?> runWizardApp(
     await subiquityMonitor?.stop();
     await subiquityClient.close();
     await subiquityServer.stop();
+    await dispose?.call();
     return true;
   });
 
