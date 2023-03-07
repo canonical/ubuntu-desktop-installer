@@ -24,6 +24,9 @@ class ValidatedFormField extends StatefulWidget {
   /// Called when the user changes the text in the field.
   final ValueChanged<String>? onChanged;
 
+  /// Called when the user finishes editing the text in the field.
+  final VoidCallback? onEditingComplete;
+
   /// The validator used to validate the [TextField] value.
   final FieldValidator<String?> validator;
 
@@ -70,6 +73,7 @@ class ValidatedFormField extends StatefulWidget {
     this.controller,
     this.initialValue,
     this.onChanged,
+    this.onEditingComplete,
     FieldValidator<String?>? validator,
     this.autofocus = false,
     this.focusNode,
@@ -147,6 +151,7 @@ class _ValidatedFormFieldState extends State<ValidatedFormField> {
       controller: _controller,
       focusNode: focusNode,
       onChanged: widget.onChanged,
+      onEditingComplete: widget.onEditingComplete,
       validator: widget.validator,
       obscureText: widget.obscureText,
       enabled: widget.enabled,
