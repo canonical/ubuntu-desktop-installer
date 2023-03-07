@@ -50,6 +50,10 @@ Future<void> runInstallerApp(
         valueHelp: 'path',
         defaultsTo: 'examples/simple.json',
         help: 'Path of the machine config (dry-run only)');
+    parser.addOption('source-catalog',
+        valueHelp: 'path',
+        defaultsTo: 'examples/mixed-sources.yaml',
+        help: 'Path of the source catalog (dry-run only)');
     parser.addOption('bootloader', hide: true);
     parser.addFlag('try-or-install', hide: true);
   })!;
@@ -125,6 +129,8 @@ Future<void> runInstallerApp(
     serverArgs: [
       if (options['machine-config'] != null)
         '--machine-config=${options['machine-config']}',
+      if (options['source-catalog'] != null)
+        '--source-catalog=${options['source-catalog']}',
       if (options['bootloader'] != null)
         '--bootloader=${options['bootloader']}',
       '--storage-version=2',
