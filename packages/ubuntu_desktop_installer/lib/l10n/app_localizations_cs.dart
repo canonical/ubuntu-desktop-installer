@@ -409,7 +409,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get allocateDiskSpace => 'Přidělit prostor na disku';
 
   @override
-  String get startInstallingButtonText => 'Zahájit instalaci';
+  String get startInstallingButtonText => 'Instalace';
 
   @override
   String get diskHeadersDevice => 'Zařízení';

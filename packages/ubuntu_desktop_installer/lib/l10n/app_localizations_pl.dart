@@ -409,7 +409,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get allocateDiskSpace => 'Przydziel przestrzeń dyskową';
 
   @override
-  String get startInstallingButtonText => 'Rozpocznij instalację';
+  String get startInstallingButtonText => 'Instaluj';
 
   @override
   String get diskHeadersDevice => 'Urządzenie';

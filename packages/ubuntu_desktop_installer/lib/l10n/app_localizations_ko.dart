@@ -409,7 +409,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get allocateDiskSpace => '디스크 공간 할당';
 
   @override
-  String get startInstallingButtonText => '설치 시작하기';
+  String get startInstallingButtonText => '설치';
 
   @override
   String get diskHeadersDevice => '장치';

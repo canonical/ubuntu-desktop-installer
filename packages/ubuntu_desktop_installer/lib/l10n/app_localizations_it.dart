@@ -133,7 +133,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Le chiavi di sicurezza non corrispondono';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Mostra chiave di sicurezza';
 
   @override
   String get connectToInternetPageTitle => 'Connetti alla rete';
@@ -223,7 +223,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get installCodecsTitle => 'Download and install support for additional media formats';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Questo software è soggetto ai termini di licenza inclusi nella documentazione. Alcuni sono proprietari.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -259,27 +259,27 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'Tipo d\'installazione';
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return 'Questo computer ha installato $os. Come procedere?';
   }
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'Questo computer ha installato $os1 e $os2. Come procedere?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'Questo computer ha installato più di un sistema operativo. Come procedere?';
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => 'Non è stato trovato alcun sistema operativo installato su questo computer. Come procedere?';
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'Cancella il disco e installa $DISTRO';
   }
 
   @override
@@ -288,16 +288,16 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Caratteristiche avanzate…';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'Caratteristiche avanzate';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'Nessuno';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => 'Nessuna selezione';
 
   @override
   String installationTypeLVM(Object RELEASE) {
@@ -305,7 +305,7 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'Selezionato LVM';
 
   @override
   String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
@@ -319,14 +319,14 @@ class AppLocalizationsIt extends AppLocalizations {
   String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => 'SPERIMENTALE: Cancella il disco e usa ZFS';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'Selezionato ZFS';
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
+    return 'Cancella $os e reinstalla';
   }
 
   @override
@@ -358,7 +358,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'Altro';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -371,16 +371,16 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'Seleziona il disco:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'Verrà utilizzato l\'intero disco:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Installa ora';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Suddividere lo spazio sul disco trascinando la barra verticale sottostante:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -394,13 +394,13 @@ class AppLocalizationsIt extends AppLocalizations {
   String get installAlongsideAllocateSpace => 'Allocate space';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'File';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Partizione:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Dimensione:';
 
   @override
   String get installAlongsideAvailable => 'Available:';
@@ -409,7 +409,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get allocateDiskSpace => 'Allocate disk space';
 
   @override
-  String get startInstallingButtonText => 'Install';
+  String get startInstallingButtonText => 'Installa';
 
   @override
   String get diskHeadersDevice => 'Device';
@@ -418,7 +418,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get diskHeadersType => 'Type';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'Punto di mount';
 
   @override
   String get diskHeadersSize => 'Size';
@@ -553,10 +553,10 @@ class AppLocalizationsIt extends AppLocalizations {
   String get partitionMountPointLabel => 'Mount point:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'Informazioni personali';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'Accedere automaticamente';
 
   @override
   String get whoAreYouPageRequirePassword => 'Require my password to log in';
@@ -568,7 +568,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'A name is required';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'Il nome del computer';
 
   @override
   String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
@@ -580,7 +580,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'Scegli uno username';
 
   @override
   String get whoAreYouPageUsernameRequired => 'A username is required';
@@ -601,22 +601,22 @@ class AppLocalizationsIt extends AppLocalizations {
   String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'Scegli una password';
 
   @override
   String get whoAreYouPagePasswordRequired => 'A password is required';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'Conferma la password';
 
   @override
   String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Mostra';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Nascondi';
 
   @override
   String get writeChangesToDisk => 'Write changes to disk';
@@ -664,7 +664,7 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'Scegli il aspetto';
 
   @override
   String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
@@ -723,7 +723,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get whereAreYouLocationLabel => 'Location';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Fuso orario';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
@@ -819,7 +819,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get accessSlideCustomizationOptions => 'Customization options';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
+  String get accessSlideAppearance => 'Aspetto';
 
   @override
   String get accessSlideAssistiveTechnologies => 'Assistive technologies';
@@ -828,7 +828,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get accessSlideLanguageSupport => 'Language support';
 
   @override
-  String get supportSlideTitle => 'Help and support';
+  String get supportSlideTitle => 'Aiuto e supporto';
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
@@ -851,19 +851,19 @@ class AppLocalizationsIt extends AppLocalizations {
   String get supportedSoftware => 'Supported software';
 
   @override
-  String get copyingFiles => 'Copying files…';
+  String get copyingFiles => 'Copia dei file…';
 
   @override
-  String get installingSystem => 'Installing the system…';
+  String get installingSystem => 'Installazione del sistema…';
 
   @override
-  String get configuringSystem => 'Setting up the system…';
+  String get configuringSystem => 'Configurazione del sistema…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Installazione non riuscita';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
+  String get notEnoughDiskSpaceTitle => 'Spiacenti';
 
   @override
   String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {

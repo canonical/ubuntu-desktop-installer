@@ -409,7 +409,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get allocateDiskSpace => 'הקצאת מקום בכונן';
 
   @override
-  String get startInstallingButtonText => 'להתחיל בהתקנה';
+  String get startInstallingButtonText => 'התקנה';
 
   @override
   String get diskHeadersDevice => 'התקן';

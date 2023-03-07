@@ -409,7 +409,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get allocateDiskSpace => 'Festplattenspeicher zuweisen';
 
   @override
-  String get startInstallingButtonText => 'Installation starten';
+  String get startInstallingButtonText => 'Installieren';
 
   @override
   String get diskHeadersDevice => 'Laufwerk';

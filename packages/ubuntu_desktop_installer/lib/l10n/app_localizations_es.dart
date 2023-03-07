@@ -409,7 +409,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get allocateDiskSpace => 'Asignar espacio de disco';
 
   @override
-  String get startInstallingButtonText => 'Comenzar la instalación';
+  String get startInstallingButtonText => 'Instalar';
 
   @override
   String get diskHeadersDevice => 'Dispositivo';
