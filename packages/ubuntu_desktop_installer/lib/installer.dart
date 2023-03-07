@@ -84,24 +84,16 @@ Future<void> runInstallerApp(
 
   final baseName = p.basename(Platform.resolvedExecutable);
 
-  final telemetry = TelemetryService();
-  await telemetry.init({
-    'Type': 'Flutter',
-    'OEM': false,
-    'Media': ProductInfoExtractor().getProductInfo().toString(),
-  });
-
-  final storage = DiskStorageService(subiquityClient);
-
-  registerService(() => ConfigService('/tmp/$baseName.conf'));
-  registerServiceInstance(storage);
-  registerService(() => GeoService(sources: [geodata, geoname]));
-  registerService(JournalService.new);
-  registerService(() => NetworkService(subiquityClient));
-  registerService(PowerService.new);
-  registerServiceInstance(telemetry);
-  registerService(UdevService.new);
-  registerService(UrlLauncher.new);
+  // conditional registration if not already registered by flavors or tests
+  tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
+  tryRegisterService(() => DiskStorageService(subiquityClient));
+  tryRegisterService(() => GeoService(sources: [geodata, geoname]));
+  tryRegisterService(JournalService.new);
+  tryRegisterService(() => NetworkService(subiquityClient));
+  tryRegisterService(PowerService.new);
+  tryRegisterService(TelemetryService.new);
+  tryRegisterService(UdevService.new);
+  tryRegisterService(UrlLauncher.new);
 
   final interfaceSettings = GSettings('org.gnome.desktop.interface');
 
@@ -151,6 +143,14 @@ Future<void> runInstallerApp(
     'ubuntu_pro',
   ]);
 
+  final telemetry = getService<TelemetryService>();
+  await telemetry.init({
+    'Type': 'Flutter',
+    'OEM': false,
+    'Media': ProductInfoExtractor().getProductInfo().toString(),
+  });
+
+  final storage = getService<DiskStorageService>();
   await storage.init();
 }
 
