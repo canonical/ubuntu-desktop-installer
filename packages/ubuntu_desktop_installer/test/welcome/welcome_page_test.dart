@@ -10,7 +10,6 @@ import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_desktop_installer/settings.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -52,9 +51,6 @@ void main() {
       MultiProvider(providers: [
         ChangeNotifierProvider(
           create: (_) => WelcomeModel(client),
-        ),
-        ChangeNotifierProvider<Settings>(
-          create: (_) => Settings(MockGSettings()),
         ),
       ], child: InheritedLocale(child: app)),
     );

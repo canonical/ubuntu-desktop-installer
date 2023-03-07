@@ -3,10 +3,11 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:ui' as _i3;
+import 'dart:async' as _i3;
+import 'dart:ui' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_desktop_installer/settings.dart' as _i2;
+import 'package:ubuntu_desktop_installer/services/desktop_service.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -19,62 +20,30 @@ import 'package:ubuntu_desktop_installer/settings.dart' as _i2;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [Settings].
+/// A class which mocks [DesktopService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSettings extends _i1.Mock implements _i2.Settings {
-  MockSettings() {
+class MockDesktopService extends _i1.Mock implements _i2.DesktopService {
+  MockDesktopService() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  bool get hasListeners => (super.noSuchMethod(
-        Invocation.getter(#hasListeners),
-        returnValue: false,
-      ) as bool);
-  @override
-  bool get isDisposed => (super.noSuchMethod(
-        Invocation.getter(#isDisposed),
-        returnValue: false,
-      ) as bool);
-  @override
-  void applyTheme(_i3.Brightness? brightness) => super.noSuchMethod(
+  _i3.Future<void> setTheme(_i4.Brightness? brightness) => (super.noSuchMethod(
         Invocation.method(
-          #applyTheme,
+          #setTheme,
           [brightness],
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  void addListener(_i3.VoidCallback? listener) => super.noSuchMethod(
+  _i3.Future<void> close() => (super.noSuchMethod(
         Invocation.method(
-          #addListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void removeListener(_i3.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #removeListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void dispose() => super.noSuchMethod(
-        Invocation.method(
-          #dispose,
+          #close,
           [],
         ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void notifyListeners() => super.noSuchMethod(
-        Invocation.method(
-          #notifyListeners,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }

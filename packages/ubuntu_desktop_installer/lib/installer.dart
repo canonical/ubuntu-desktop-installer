@@ -5,9 +5,7 @@ import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gsettings/gsettings.dart';
 import 'package:path/path.dart' as p;
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:timezone_map/timezone_map.dart';
@@ -22,7 +20,6 @@ import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
 import 'services.dart';
-import 'settings.dart';
 import 'slides.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
@@ -86,6 +83,7 @@ Future<void> runInstallerApp(
 
   // conditional registration if not already registered by flavors or tests
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
+  tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService(() => DiskStorageService(subiquityClient));
   tryRegisterService(() => GeoService(sources: [geodata, geoname]));
   tryRegisterService(JournalService.new);
@@ -95,24 +93,12 @@ Future<void> runInstallerApp(
   tryRegisterService(UdevService.new);
   tryRegisterService(UrlLauncher.new);
 
-  final interfaceSettings = GSettings('org.gnome.desktop.interface');
-
-  WidgetsFlutterBinding.ensureInitialized();
-  final window = await YaruWindow.ensureInitialized();
-  await window.onClose(() async {
-    await interfaceSettings.close();
-    return true;
-  });
-
   await runWizardApp(
-    ChangeNotifierProvider(
-      create: (_) => Settings(interfaceSettings),
-      child: UbuntuDesktopInstallerApp(
-        flavor: flavor,
-        slides: slides,
-        initialRoute: options['initial-route'],
-        tryOrInstall: options['try-or-install'],
-      ),
+    UbuntuDesktopInstallerApp(
+      flavor: flavor,
+      slides: slides,
+      initialRoute: options['initial-route'],
+      tryOrInstall: options['try-or-install'],
     ),
     options: options,
     subiquityClient: subiquityClient,
