@@ -38,9 +38,13 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
   Future<void> validateDomainName() {
     return _client
         .checkActiveDirectoryDomainName(domainName)
-        .then((validation) {
-      _domainNameValidation.value = validation;
-    });
+        .then((validation) => _domainNameValidation.value = validation);
+  }
+
+  Future<void> pingDomainController() async {
+    return _client
+        .pingActiveDirectoryDomainController(domainName)
+        .then((validation) => _domainNameValidation.value = [validation]);
   }
 
   String get adminName => _adminName.value ?? '';
@@ -54,9 +58,9 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
   }
 
   Future<void> validateAdminName() {
-    return _client.checkActiveDirectoryAdminName(adminName).then((validation) {
-      _adminNameValidation.value = validation;
-    });
+    return _client
+        .checkActiveDirectoryAdminName(adminName)
+        .then((validation) => _adminNameValidation.value = validation);
   }
 
   String get password => _password.value ?? '';
@@ -70,9 +74,9 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
   }
 
   Future<void> validatePassword() {
-    return _client.checkActiveDirectoryPassword(password).then((validation) {
-      _passwordValidation.value = validation;
-    });
+    return _client
+        .checkActiveDirectoryPassword(password)
+        .then((validation) => _passwordValidation.value = validation);
   }
 
   bool get isValid => isDomainNameValid && isAdminNameValid && isPasswordValid;

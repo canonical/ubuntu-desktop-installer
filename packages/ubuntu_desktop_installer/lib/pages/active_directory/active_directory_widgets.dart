@@ -33,6 +33,8 @@ class DomainNameFormField extends StatelessWidget {
         errorText: validation?.firstOrNull?.localize(lang) ?? '',
       ),
       onChanged: context.read<ActiveDirectoryModel>().setDomainName,
+      onEditingComplete:
+          context.read<ActiveDirectoryModel>().pingDomainController,
     );
   }
 }

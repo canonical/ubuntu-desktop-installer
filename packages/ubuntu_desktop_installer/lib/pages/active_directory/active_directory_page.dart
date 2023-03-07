@@ -53,7 +53,7 @@ class _ActiveDirectoryPageState extends State<ActiveDirectoryPage> {
               alignment: AlignmentDirectional.centerStart,
               child: OutlinedButton(
                 onPressed:
-                    context.read<ActiveDirectoryModel>().validateDomainName,
+                    context.read<ActiveDirectoryModel>().pingDomainController,
                 child: Text(lang.activeDirectoryTestConnection),
               ),
             ),
