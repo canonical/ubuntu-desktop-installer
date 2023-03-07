@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/choose_your_look_page.dart';
-import 'package:ubuntu_desktop_installer/settings.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -12,17 +11,13 @@ import 'choose_your_look_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([Settings])
+@GenerateMocks([DesktopService])
 void main() {
   testWidgets('ChooseYourLookPage applies theme', (tester) async {
-    final Settings settings = MockSettings();
+    final DesktopService desktop = MockDesktopService();
+    registerMockService(desktop);
 
-    await tester.pumpWidget(
-      ChangeNotifierProvider.value(
-        value: settings,
-        child: tester.buildApp(ChooseYourLookPage.create),
-      ),
-    );
+    await tester.pumpWidget(tester.buildApp(ChooseYourLookPage.create));
 
     final lightOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
@@ -30,7 +25,7 @@ void main() {
     );
     expect(lightOptionCard, findsOneWidget);
     await tester.tap(lightOptionCard);
-    verify(settings.applyTheme(Brightness.light));
+    verify(desktop.setTheme(Brightness.light));
 
     final darkOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
@@ -38,6 +33,6 @@ void main() {
     );
     expect(darkOptionCard, findsOneWidget);
     await tester.tap(darkOptionCard);
-    verify(settings.applyTheme(Brightness.dark));
+    verify(desktop.setTheme(Brightness.dark));
   });
 }

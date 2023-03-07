@@ -5,9 +5,7 @@ import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gsettings/gsettings.dart';
 import 'package:path/path.dart' as p;
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:timezone_map/timezone_map.dart';
@@ -22,7 +20,6 @@ import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
 import 'services.dart';
-import 'settings.dart';
 import 'slides.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
@@ -50,6 +47,10 @@ Future<void> runInstallerApp(
         valueHelp: 'path',
         defaultsTo: 'examples/simple.json',
         help: 'Path of the machine config (dry-run only)');
+    parser.addOption('source-catalog',
+        valueHelp: 'path',
+        defaultsTo: 'examples/mixed-sources.yaml',
+        help: 'Path of the source catalog (dry-run only)');
     parser.addOption('bootloader', hide: true);
     parser.addFlag('try-or-install', hide: true);
   })!;
@@ -80,43 +81,24 @@ Future<void> runInstallerApp(
 
   final baseName = p.basename(Platform.resolvedExecutable);
 
-  final telemetry = TelemetryService();
-  await telemetry.init({
-    'Type': 'Flutter',
-    'OEM': false,
-    'Media': ProductInfoExtractor().getProductInfo().toString(),
-  });
-
-  final storage = DiskStorageService(subiquityClient);
-
-  registerService(() => ConfigService('/tmp/$baseName.conf'));
-  registerServiceInstance(storage);
-  registerService(() => GeoService(sources: [geodata, geoname]));
-  registerService(JournalService.new);
-  registerService(() => NetworkService(subiquityClient));
-  registerService(PowerService.new);
-  registerServiceInstance(telemetry);
-  registerService(UdevService.new);
-  registerService(UrlLauncher.new);
-
-  final interfaceSettings = GSettings('org.gnome.desktop.interface');
-
-  WidgetsFlutterBinding.ensureInitialized();
-  final window = await YaruWindow.ensureInitialized();
-  await window.onClose(() async {
-    await interfaceSettings.close();
-    return true;
-  });
+  // conditional registration if not already registered by flavors or tests
+  tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
+  tryRegisterService<DesktopService>(() => GnomeService());
+  tryRegisterService(() => DiskStorageService(subiquityClient));
+  tryRegisterService(() => GeoService(sources: [geodata, geoname]));
+  tryRegisterService(JournalService.new);
+  tryRegisterService(() => NetworkService(subiquityClient));
+  tryRegisterService(PowerService.new);
+  tryRegisterService(TelemetryService.new);
+  tryRegisterService(UdevService.new);
+  tryRegisterService(UrlLauncher.new);
 
   await runWizardApp(
-    ChangeNotifierProvider(
-      create: (_) => Settings(interfaceSettings),
-      child: UbuntuDesktopInstallerApp(
-        flavor: flavor,
-        slides: slides,
-        initialRoute: options['initial-route'],
-        tryOrInstall: options['try-or-install'],
-      ),
+    UbuntuDesktopInstallerApp(
+      flavor: flavor,
+      slides: slides,
+      initialRoute: options['initial-route'],
+      tryOrInstall: options['try-or-install'],
     ),
     options: options,
     subiquityClient: subiquityClient,
@@ -125,6 +107,8 @@ Future<void> runInstallerApp(
     serverArgs: [
       if (options['machine-config'] != null)
         '--machine-config=${options['machine-config']}',
+      if (options['source-catalog'] != null)
+        '--source-catalog=${options['source-catalog']}',
       if (options['bootloader'] != null)
         '--bootloader=${options['bootloader']}',
       '--storage-version=2',
@@ -145,6 +129,14 @@ Future<void> runInstallerApp(
     'ubuntu_pro',
   ]);
 
+  final telemetry = getService<TelemetryService>();
+  await telemetry.init({
+    'Type': 'Flutter',
+    'OEM': false,
+    'Media': ProductInfoExtractor().getProductInfo().toString(),
+  });
+
+  final storage = getService<DiskStorageService>();
   await storage.init();
 }
 
