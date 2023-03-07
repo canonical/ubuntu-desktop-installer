@@ -409,7 +409,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get allocateDiskSpace => 'ディスク領域の割り当て';
 
   @override
-  String get startInstallingButtonText => 'インストールを開始する';
+  String get startInstallingButtonText => 'インストール';
 
   @override
   String get diskHeadersDevice => 'デバイス';

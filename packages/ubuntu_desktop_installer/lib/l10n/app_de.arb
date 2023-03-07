@@ -200,7 +200,7 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Festplattenspeicher zuweisen",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Installation starten",
+  "startInstallingButtonText": "Installieren",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Laufwerk",
   "@diskHeadersDevice": {},

@@ -409,7 +409,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get allocateDiskSpace => 'Asigni diskospacon';
 
   @override
-  String get startInstallingButtonText => 'Komenci instaladon';
+  String get startInstallingButtonText => 'Instali';
 
   @override
   String get diskHeadersDevice => 'Aparato';

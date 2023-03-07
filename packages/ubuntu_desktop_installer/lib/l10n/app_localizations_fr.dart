@@ -409,7 +409,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get allocateDiskSpace => 'Allouer de l’espace disque';
 
   @override
-  String get startInstallingButtonText => 'Commencer l’installation';
+  String get startInstallingButtonText => 'Installer';
 
   @override
   String get diskHeadersDevice => 'Périphérique';

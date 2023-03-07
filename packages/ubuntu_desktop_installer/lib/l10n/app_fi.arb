@@ -384,7 +384,7 @@
   "@partitionFormatLabel": {},
   "chooseSecurityKeyHeader": "Kiintolevyn salaus suojaa tiedostoja jos tietokone katoaa tai se varastetaan. Suojaus edellyttää salausavaimen syöttämistä jokaisella tietokoneen käynnistyskerralla.\n\n{RELEASE}-asennuksen ulkopuolisia tiedostoja ei salata.",
   "@chooseSecurityKeyHeader": {},
-  "startInstallingButtonText": "Aloita asennus",
+  "startInstallingButtonText": "Asennus",
   "@startInstallingButtonText": {},
   "chooseYourLookPageTitle": "Valitse ulkoasu",
   "@chooseYourLookPageTitle": {},

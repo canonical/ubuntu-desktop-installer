@@ -216,7 +216,7 @@
   "@installationTypeZFSSelected": {},
   "selectGuidedStorageDropdownLabel": "ドライブを選択してください:",
   "@selectGuidedStorageDropdownLabel": {},
-  "startInstallingButtonText": "インストールを開始する",
+  "startInstallingButtonText": "インストール",
   "@startInstallingButtonText": {},
   "diskHeadersSize": "サイズ",
   "@diskHeadersSize": {},
