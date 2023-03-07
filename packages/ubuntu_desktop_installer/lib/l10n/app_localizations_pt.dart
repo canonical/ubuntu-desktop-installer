@@ -409,7 +409,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get allocateDiskSpace => 'Alocar espaço em disco';
 
   @override
-  String get startInstallingButtonText => 'Iniciar instalação';
+  String get startInstallingButtonText => 'Instalar';
 
   @override
   String get diskHeadersDevice => 'Aparelho';
@@ -1347,7 +1347,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get allocateDiskSpace => 'Alocar espaço em disco';
 
   @override
-  String get startInstallingButtonText => 'Iniciar instalação';
+  String get startInstallingButtonText => 'Instalar';
 
   @override
   String get diskHeadersDevice => 'Dispositivo';

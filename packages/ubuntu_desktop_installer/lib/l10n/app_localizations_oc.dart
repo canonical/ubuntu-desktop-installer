@@ -409,7 +409,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get allocateDiskSpace => 'Atribuir l’espaci disc';
 
   @override
-  String get startInstallingButtonText => 'Començar l’installacion';
+  String get startInstallingButtonText => 'Installar';
 
   @override
   String get diskHeadersDevice => 'Disc';

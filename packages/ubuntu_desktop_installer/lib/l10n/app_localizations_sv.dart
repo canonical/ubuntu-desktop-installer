@@ -409,7 +409,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get allocateDiskSpace => 'Tilldela diskutrymme';
 
   @override
-  String get startInstallingButtonText => 'Börja installera';
+  String get startInstallingButtonText => 'Installera';
 
   @override
   String get diskHeadersDevice => 'Enhet';

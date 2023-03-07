@@ -409,7 +409,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get allocateDiskSpace => 'Varaa levytilaa';
 
   @override
-  String get startInstallingButtonText => 'Aloita asennus';
+  String get startInstallingButtonText => 'Asennus';
 
   @override
   String get diskHeadersDevice => 'Laite';
