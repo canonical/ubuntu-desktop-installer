@@ -433,7 +433,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get diskHeadersFormat => 'Formater';
 
   @override
-  String get freeDiskSpace => 'ledig plass';
+  String get freeDiskSpace => 'Ledig plass';
 
   @override
   String get newPartitionTable => 'Ny partisjonstabell';

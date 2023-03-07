@@ -433,7 +433,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get diskHeadersFormat => 'Format';
 
   @override
-  String get freeDiskSpace => 'espai lliure';
+  String get freeDiskSpace => 'Espai lliure';
 
   @override
   String get newPartitionTable => 'Taula de particions nova';

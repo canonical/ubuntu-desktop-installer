@@ -433,7 +433,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get diskHeadersFormat => 'Формат';
 
   @override
-  String get freeDiskSpace => 'вільний простір';
+  String get freeDiskSpace => 'Вільний простір';
 
   @override
   String get newPartitionTable => 'Нова таблиця розділів';

@@ -433,7 +433,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get diskHeadersFormat => 'Формат';
 
   @override
-  String get freeDiskSpace => 'свободное место';
+  String get freeDiskSpace => 'Свободное место';
 
   @override
   String get newPartitionTable => 'Новая таблица разделов';
@@ -448,7 +448,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Слишком много первичных разделов';
 
   @override
-  String get partitionLimitReached => 'достигнут предел';
+  String get partitionLimitReached => 'Достигнут предел';
 
   @override
   String get bootLoaderDevice => 'Устройство для установки загрузчика';

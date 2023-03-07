@@ -433,7 +433,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get diskHeadersFormat => 'Formatar';
 
   @override
-  String get freeDiskSpace => 'espaci liure';
+  String get freeDiskSpace => 'Espaci liure';
 
   @override
   String get newPartitionTable => 'Taula de particion novèla';
@@ -448,7 +448,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Tròp de particions primàrias';
 
   @override
-  String get partitionLimitReached => 'limit atenh';
+  String get partitionLimitReached => 'Limit atenh';
 
   @override
   String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';

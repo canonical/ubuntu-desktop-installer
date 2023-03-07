@@ -433,7 +433,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get diskHeadersFormat => 'Strukturo';
 
   @override
-  String get freeDiskSpace => 'disponebla spaco';
+  String get freeDiskSpace => 'Disponebla spaco';
 
   @override
   String get newPartitionTable => 'Nova subdiskotabelo';

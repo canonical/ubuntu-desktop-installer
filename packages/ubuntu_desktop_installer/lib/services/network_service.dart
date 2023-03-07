@@ -15,6 +15,11 @@ class NetworkService extends NetworkManagerClient {
     return connectivity == NetworkManagerConnectivityState.full;
   }
 
+  /// `true` if there is a limited site-wide connectivity.
+  bool get isConnectedSite {
+    return state == NetworkManagerState.connectedSite;
+  }
+
   /// The list of wired network devices.
   List<NetworkManagerDevice> get wiredDevices {
     return devices.where((device) => device.wired != null).toList();

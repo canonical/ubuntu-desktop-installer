@@ -433,7 +433,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get diskHeadersFormat => 'Biçim';
 
   @override
-  String get freeDiskSpace => 'boş alan';
+  String get freeDiskSpace => 'Boş alan';
 
   @override
   String get newPartitionTable => 'Yeni bölüm tablosu';
@@ -448,7 +448,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'Çok fazla birincil bölüm';
 
   @override
-  String get partitionLimitReached => 'sınıra ulaşıldı';
+  String get partitionLimitReached => 'Sınıra ulaşıldı';
 
   @override
   String get bootLoaderDevice => 'Önyükleyici kurulumu yapılacak cihaz';

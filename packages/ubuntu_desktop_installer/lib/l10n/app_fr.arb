@@ -150,7 +150,7 @@
   "@selectGuidedStorageDropdownLabel": {},
   "selectGuidedStorageInfoLabel": "La totalité du disque sera utilisée :",
   "@selectGuidedStorageInfoLabel": {},
-  "freeDiskSpace": "espace libre",
+  "freeDiskSpace": "Espace libre",
   "@freeDiskSpace": {},
   "partitionCreateTitle": "Créer une partition",
   "@partitionCreateTitle": {},
@@ -705,7 +705,7 @@
   "@continueTesting": {},
   "restartNow": "Redémarrer maintenant",
   "@restartNow": {},
-  "restartWarning": "Vous pouvez maintenant continuer à tester ${RELEASE}, mais tant que vous n’aurez pas redémarré votre ordinateur, les changements effectués ou les documents créés ne seront pas préservés.",
+  "restartWarning": "Vous pouvez maintenant continuer à tester {RELEASE}, mais tant que vous n’aurez pas redémarré votre ordinateur, les changements effectués ou les documents créés ne seront pas préservés.",
   "@restartWarning": {
     "type": "text",
     "placeholders": {
@@ -714,7 +714,7 @@
   },
   "tooManyPrimaryPartitions": "Trop de partitions primaires",
   "@tooManyPrimaryPartitions": {},
-  "partitionLimitReached": "limite atteinte",
+  "partitionLimitReached": "Limite atteinte",
   "@partitionLimitReached": {},
   "offlineWarning": "Vous êtes actuellement hors ligne",
   "@offlineWarning": {},

@@ -433,7 +433,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get diskHeadersFormat => 'Formatera';
 
   @override
-  String get freeDiskSpace => 'ledigt utrymme';
+  String get freeDiskSpace => 'Ledigt utrymme';
 
   @override
   String get newPartitionTable => 'Ny partitionstabell';
@@ -448,7 +448,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get tooManyPrimaryPartitions => 'För många primära partitioner';
 
   @override
-  String get partitionLimitReached => 'gränsen nådd';
+  String get partitionLimitReached => 'Gränsen nådd';
 
   @override
   String get bootLoaderDevice => 'Enhet för installation av starthanteraren';
@@ -748,7 +748,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE kommer med den fantastiska musikspelaren Rhythmbox. Med avancerade uppspelningsalternativ är det enkelt att ställa de perfekta låtarna i kö. Och det fungerar utmärkt med CD-skivor och bärbara musikspelare, så att du kan njuta av all din musik var du än går.';
+    return '$RELEASE kommer med den fantastiska musikspelaren Rhythmbox. Med avancerade uppspelningsalternativ är det enkelt att sätta de perfekta låtarna på kö. Och den fungerar utmärkt med CD-skivor och bärbara musikspelare, så att du kan njuta av all din musik var du än går.';
   }
 
   @override
@@ -764,7 +764,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get photoSlideTitle => 'Ha kul med dina bilder';
 
   @override
-  String get photoSlideDescription => 'Shotwell är en praktisk fotohanterare som är redo för dina prylar. Anslut en kamera eller en telefon för att överföra dina foton, så är det enkelt att dela dem och förvara dem säkra. Och om du känner dig kreativ kan du hitta många andra fotoappar i Ubuntu Software.';
+  String get photoSlideDescription => 'Shotwell är en praktisk fotohanterare som är redo för dina prylar. Anslut en kamera eller en telefon för att överföra dina foton, så är det enkelt att dela dem och förvara dem säkert. Och om du känner dig kreativ kan du hitta många andra fotoappar i Programvara för Ubuntu.';
 
   @override
   String get photoSlideShotwell => 'Shotwell fotohanterare';
@@ -832,7 +832,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String supportSlideDocumentation(Object RELEASE) {
-    return 'Den officiella dokumentationen täcker många av de vanligaste aspekter om $RELEASE. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.';
+    return 'Den officiella dokumentationen täcker många av de vanligaste aspekterna om $RELEASE. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.';
   }
 
   @override

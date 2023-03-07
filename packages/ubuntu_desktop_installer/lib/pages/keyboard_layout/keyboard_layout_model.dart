@@ -146,7 +146,7 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     log.info('Updated $layout ($variant) input source');
     return _client.setInputSource(
       keyboard,
-      user: _platform.environment['USERNAME'],
+      user: _platform.environment['USERNAME'] ?? _platform.environment['USER'],
     );
   }
 

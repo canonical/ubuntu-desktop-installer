@@ -947,7 +947,7 @@ abstract class AppLocalizations {
   /// No description provided for @startInstallingButtonText.
   ///
   /// In en, this message translates to:
-  /// **'Start Installing'**
+  /// **'Install'**
   String get startInstallingButtonText;
 
   /// No description provided for @diskHeadersDevice.

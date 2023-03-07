@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -21,7 +22,7 @@ class MockProductNameFile extends Mock implements File {
   Future<String> readAsString({Encoding encoding = utf8}) async => _product;
 }
 
-@GenerateMocks([ConfigService])
+@GenerateMocks([ConfigService, NetworkService])
 void main() {
   test('load identity', () async {
     const identity = IdentityData(
@@ -38,7 +39,14 @@ void main() {
     when(config.get(WhoAreYouModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
-    final model = WhoAreYouModel(client, config);
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
 
     await IOOverrides.runZoned(() async {
       await model.loadIdentity();
@@ -61,7 +69,14 @@ void main() {
     when(config.get(WhoAreYouModel.kAutoLoginUser))
         .thenAnswer((_) async => 'someone');
 
-    final model = WhoAreYouModel(client, config);
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
 
     await IOOverrides.runZoned(() async {
       await model.loadIdentity();
@@ -80,7 +95,14 @@ void main() {
     when(config.get(WhoAreYouModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
-    final model = WhoAreYouModel(client, config);
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
     await IOOverrides.runZoned(() async {
       await model.loadIdentity();
     }, createFile: (path) => MockProductNameFile('impish'));
@@ -99,7 +121,14 @@ void main() {
     when(config.get(WhoAreYouModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
-    final model = WhoAreYouModel(client, config);
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
     await IOOverrides.runZoned(() async {
       await model.loadIdentity();
     }, createFile: (path) => MockProductNameFile('impish'));
@@ -121,7 +150,14 @@ void main() {
     when(config.get(WhoAreYouModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
-    final model = WhoAreYouModel(client, config);
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
     model.realName = identity.realname;
     model.username = identity.username;
     model.hostname = identity.hostname;
@@ -141,7 +177,14 @@ void main() {
     when(config.get(WhoAreYouModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
-    final model = WhoAreYouModel(client, config);
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
     model.username = 'someone';
     model.password = 'not-empty';
 
@@ -156,7 +199,15 @@ void main() {
 
   test('password strength', () {
     // see password_test.dart for more detailed password strength tests
-    final model = WhoAreYouModel(MockSubiquityClient(), MockConfigService());
+    final client = MockSubiquityClient();
+    final config = MockConfigService();
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
 
     void testPasswordStrength(String password, Matcher matcher) {
       model.password = password;
@@ -170,7 +221,15 @@ void main() {
   });
 
   test('notify changes', () {
-    final model = WhoAreYouModel(MockSubiquityClient(), MockConfigService());
+    final client = MockSubiquityClient();
+    final config = MockConfigService();
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -207,7 +266,16 @@ void main() {
   });
 
   test('validation', () {
-    final model = WhoAreYouModel(MockSubiquityClient(), MockConfigService());
+    final client = MockSubiquityClient();
+    final config = MockConfigService();
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
+
     expect(model.isValid, isFalse);
 
     void testValid(
@@ -261,7 +329,14 @@ void main() {
     when(client.validateUsername(kTooLong))
         .thenAnswer((_) async => UsernameValidation.TOO_LONG);
 
-    final model = WhoAreYouModel(client, MockConfigService());
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final model = WhoAreYouModel(
+      client: client,
+      config: MockConfigService(),
+      network: network,
+    );
     expect(model.isValid, isFalse);
 
     void testValid(
@@ -298,7 +373,14 @@ void main() {
     when(config.get(WhoAreYouModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
-    final model = WhoAreYouModel(client, config);
+    final network = MockNetworkService();
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
     model.realName = 'User';
     model.username = 'user';
     model.hostname = 'ubuntu';
@@ -311,5 +393,31 @@ void main() {
     expect(model.realName, equals('User'));
     expect(model.username, equals('user'));
     expect(model.hostname, equals('ubuntu'));
+  });
+
+  test('site connectivity', () async {
+    final networkChanged = StreamController<List<String>>(sync: true);
+
+    final client = MockSubiquityClient();
+    final config = MockConfigService();
+    final network = MockNetworkService();
+    when(network.isConnectedSite).thenReturn(false);
+    when(network.propertiesChanged).thenAnswer((_) => networkChanged.stream);
+
+    final model = WhoAreYouModel(
+      client: client,
+      config: config,
+      network: network,
+    );
+    expect(model.isConnectedSite, isFalse);
+
+    var wasNotified = false;
+    model.addListener(() => wasNotified = true);
+
+    when(network.isConnectedSite).thenReturn(true);
+    networkChanged.add(['State']);
+
+    expect(wasNotified, isTrue);
+    expect(model.isConnectedSite, isTrue);
   });
 }

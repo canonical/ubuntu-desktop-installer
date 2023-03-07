@@ -547,6 +547,11 @@ class MockNetworkService extends _i1.Mock implements _i5.NetworkService {
         returnValue: false,
       ) as bool);
   @override
+  bool get isConnectedSite => (super.noSuchMethod(
+        Invocation.getter(#isConnectedSite),
+        returnValue: false,
+      ) as bool);
+  @override
   List<_i2.NetworkManagerDevice> get wiredDevices => (super.noSuchMethod(
         Invocation.getter(#wiredDevices),
         returnValue: <_i2.NetworkManagerDevice>[],

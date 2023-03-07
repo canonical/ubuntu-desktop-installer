@@ -19,20 +19,31 @@ static void my_application_get_workarea(GtkWindow* window,
   GdkMonitor* monitor =
       gdk_display_get_monitor_at_window(gdk_display, gdk_window);
   gdk_monitor_get_workarea(monitor, workarea);
+
+  // gdk_monitor_get_workarea() is not reliable early on startup. compare the
+  // reported workarea to the full geometry and subtract some margins if the
+  // system is not reporting the correct workarea with the dock and the top bar
+  // excluded.
+  GdkRectangle geometry;
+  gdk_monitor_get_geometry(monitor, &geometry);
+  if (workarea->width == geometry.width &&
+      workarea->height == geometry.height) {
+    // by default, the dock is ~90px wide and the top bar is ~30px high.
+    workarea->width -= 100;
+    workarea->height -= 40;
+  }
 }
 
 static gboolean my_application_fit_to_workarea(GtkWindow* window) {
-  GtkAllocation allocation;
-  gtk_widget_get_allocation(GTK_WIDGET(window), &allocation);
+  gint window_width = 0;
+  gint window_height = 0;
+  gtk_window_get_default_size(window, &window_width, &window_height);
 
   GdkRectangle workarea;
   my_application_get_workarea(window, &workarea);
 
-  // the workarea is not reported correctly early on startup, so subtract some
-  // extra space to be sure the window fits. by default, the dock is ~90px wide
-  // and the top bar is ~30px high.
-  gboolean fits_workarea = allocation.width < workarea.width - 100 ||
-                           allocation.height < workarea.height - 40;
+  gboolean fits_workarea =
+      window_width <= workarea.width && window_height <= workarea.height;
   if (!fits_workarea) {
     gtk_window_fullscreen(window);
   }

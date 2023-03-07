@@ -46,7 +46,7 @@ parts:
     plugin: python
     source-type: git
     source: https://git.launchpad.net/curtin
-    source-commit: b08eecd68cf5f1bccf4255b3d00a77af51c159f7
+    source-commit: b1f4da3bec92356e8ef389c1c581cfdcd1b36c42
     build-packages:
       - shared-mime-info
       - zlib1g-dev
@@ -128,7 +128,7 @@ parts:
 
   flutter-git:
     source: https://github.com/flutter/flutter.git
-    source-tag: 3.7.6
+    source-tag: 3.7.6 # run local/flutter/update-artifacts.sh [x.y.z]
     source-depth: 1
     plugin: nil
     override-build: |
@@ -137,6 +137,9 @@ parts:
       cp -r $SNAPCRAFT_PART_SRC $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter
       ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $SNAPCRAFT_PART_INSTALL/usr/bin/flutter
       $SNAPCRAFT_PART_INSTALL/usr/bin/flutter doctor
+      if [[ "$SNAPCRAFT_TARGET_ARCH" == "arm64" ]]; then
+        cp -R $SNAPCRAFT_PROJECT_DIR/snap/local/flutter/shader_lib $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/cache/artifacts/engine/linux-arm64
+      fi
     build-packages:
       - clang
       - cmake

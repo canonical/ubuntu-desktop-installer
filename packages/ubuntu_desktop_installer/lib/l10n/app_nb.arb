@@ -316,7 +316,7 @@
       "RELEASE": {}
     }
   },
-  "freeDiskSpace": "ledig plass",
+  "freeDiskSpace": "Ledig plass",
   "@freeDiskSpace": {},
   "whoAreYouPageShowPassword": "Vis passord",
   "@whoAreYouPageShowPassword": {},

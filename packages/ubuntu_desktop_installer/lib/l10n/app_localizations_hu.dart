@@ -433,7 +433,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get diskHeadersFormat => 'Formátum';
 
   @override
-  String get freeDiskSpace => 'szabad hely';
+  String get freeDiskSpace => 'Szabad hely';
 
   @override
   String get newPartitionTable => 'Új partíciós tábla';

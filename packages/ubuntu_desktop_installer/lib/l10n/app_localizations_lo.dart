@@ -409,7 +409,7 @@ class AppLocalizationsLo extends AppLocalizations {
   String get allocateDiskSpace => 'Allocate disk space';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get startInstallingButtonText => 'Install';
 
   @override
   String get diskHeadersDevice => 'Device';
