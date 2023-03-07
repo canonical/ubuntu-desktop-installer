@@ -1113,6 +1113,17 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
             <_i3.AdDomainNameValidation>[]),
       ) as _i6.Future<List<_i3.AdDomainNameValidation>>);
   @override
+  _i6.Future<_i3.AdDomainNameValidation> pingActiveDirectoryDomainController(
+          String? domain) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #pingActiveDirectoryDomainController,
+          [domain],
+        ),
+        returnValue: _i6.Future<_i3.AdDomainNameValidation>.value(
+            _i3.AdDomainNameValidation.OK),
+      ) as _i6.Future<_i3.AdDomainNameValidation>);
+  @override
   _i6.Future<_i3.AdAdminNameValidation> checkActiveDirectoryAdminName(
           String? admin) =>
       (super.noSuchMethod(
