@@ -271,7 +271,7 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Tilldela diskutrymme",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Börja installera",
+  "startInstallingButtonText": "Installera",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Enhet",
   "@diskHeadersDevice": {},

@@ -204,7 +204,7 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Přidělit prostor na disku",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Zahájit instalaci",
+  "startInstallingButtonText": "Instalace",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Zařízení",
   "@diskHeadersDevice": {},

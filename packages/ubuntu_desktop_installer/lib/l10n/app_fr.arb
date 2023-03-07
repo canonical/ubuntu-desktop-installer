@@ -58,7 +58,7 @@
   "@installThirdPartySubtitle": {},
   "allocateDiskSpace": "Allouer de l’espace disque",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Commencer l’installation",
+  "startInstallingButtonText": "Installer",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Périphérique",
   "@diskHeadersDevice": {},

@@ -111,7 +111,7 @@
   },
   "selectGuidedStorageInstallNow": "Zainstaluj teraz",
   "@selectGuidedStorageInstallNow": {},
-  "startInstallingButtonText": "Rozpocznij instalację",
+  "startInstallingButtonText": "Instaluj",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Urządzenie",
   "@diskHeadersDevice": {},

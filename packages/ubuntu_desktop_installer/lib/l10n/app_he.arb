@@ -274,7 +274,7 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "הקצאת מקום בכונן",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "להתחיל בהתקנה",
+  "startInstallingButtonText": "התקנה",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "התקן",
   "@diskHeadersDevice": {},

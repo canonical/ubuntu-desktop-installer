@@ -68,7 +68,7 @@
   "@installThirdPartySubtitle": {},
   "allocateDiskSpace": "Asignar espacio de disco",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Comenzar la instalación",
+  "startInstallingButtonText": "Instalar",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Dispositivo",
   "@diskHeadersDevice": {},
