@@ -103,7 +103,7 @@ class WhoAreYouModel extends PropertyStreamNotifier {
   /// Returns true if there is at least site-wide connectivity.
   bool get isConnected => _network.isConnected || _network.isConnectedSite;
 
-  /// Whether Active Directory is support available or null when unknown.
+  /// Whether Active Directory support is available or null when unknown.
   bool? get hasActiveDirectorySupport => _hasActiveDirectorySupport.value;
 
   /// Whether to use Active Directory.
