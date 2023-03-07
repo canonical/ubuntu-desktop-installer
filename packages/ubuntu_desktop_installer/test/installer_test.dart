@@ -14,6 +14,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import 'choose_your_look/choose_your_look_page_test.mocks.dart';
 import 'installation_slides/installation_slides_model_test.mocks.dart';
@@ -97,6 +98,6 @@ extension on WidgetTester {
     registerMockService<JournalService>(journal);
     registerMockService<TelemetryService>(TelemetryService());
 
-    return UbuntuDesktopInstallerApp();
+    return InheritedLocale(child: UbuntuDesktopInstallerApp());
   }
 }
