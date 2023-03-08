@@ -117,6 +117,7 @@ Future<void> runInstallerApp(
         '--bootloader=${options['bootloader']}',
       '--storage-version=2',
     ],
+    dispose: () => getService<DesktopService>().close(),
   );
 
   await subiquityClient.setVariant(Variant.DESKTOP);
@@ -142,6 +143,11 @@ Future<void> runInstallerApp(
 
   final storage = getService<DiskStorageService>();
   await storage.init();
+
+  final desktop = getService<DesktopService>();
+  await desktop.disableAutoMounting();
+  await desktop.disableScreenBlanking();
+  await desktop.disableScreensaver();
 }
 
 class UbuntuDesktopInstallerApp extends StatefulWidget {
