@@ -568,6 +568,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Je třeba zadat jméno';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Název pro váš počítač';
 
   @override
@@ -575,6 +578,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Je třeba zadat název pro počítač';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Daný název pro počítač nelze použít (neplatný znak)';

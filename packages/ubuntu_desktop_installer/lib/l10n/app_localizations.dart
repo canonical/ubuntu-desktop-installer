@@ -1262,6 +1262,12 @@ abstract class AppLocalizations {
   /// **'A name is required'**
   String get whoAreYouPageRealNameRequired;
 
+  /// No description provided for @whoAreYouPageRealNameTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'That name is too long.'**
+  String get whoAreYouPageRealNameTooLong;
+
   /// No description provided for @whoAreYouPageComputerNameLabel.
   ///
   /// In en, this message translates to:
@@ -1279,6 +1285,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'A computer name is required'**
   String get whoAreYouPageComputerNameRequired;
+
+  /// No description provided for @whoAreYouPageComputerNameTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'That computer name is too long.'**
+  String get whoAreYouPageComputerNameTooLong;
 
   /// No description provided for @whoAreYouPageInvalidComputerName.
   ///

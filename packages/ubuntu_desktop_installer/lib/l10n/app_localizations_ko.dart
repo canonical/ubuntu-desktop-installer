@@ -568,6 +568,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => '이름이 필요합니다';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => '컴퓨터 이름';
 
   @override
@@ -575,6 +578,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => '컴퓨터 이름이 필요합니다';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
 
   @override
   String get whoAreYouPageInvalidComputerName => '올바르지 않은 컴퓨터 이름 입니다';

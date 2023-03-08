@@ -568,6 +568,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => '需要名字';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => '您的电脑主机名';
 
   @override
@@ -575,6 +578,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => '需要计算机名称';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
 
   @override
   String get whoAreYouPageInvalidComputerName => '电脑主机名无效';
