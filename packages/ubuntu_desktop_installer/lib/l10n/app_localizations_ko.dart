@@ -881,25 +881,25 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get activeDirectoryOption => 'Use Active Directory';
+  String get activeDirectoryOption => '액티브 디렉토리 사용';
 
   @override
-  String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
+  String get activeDirectoryInfo => '다음 단계에서 도메인 및 기타 세부 사항을 입력합니다.';
 
   @override
-  String get activeDirectoryTitle => 'Configure Active Directory';
+  String get activeDirectoryTitle => '액티브 디렉토리 구성';
 
   @override
-  String get activeDirectoryTestConnection => 'Test Connection';
+  String get activeDirectoryTestConnection => '연결 테스트';
 
   @override
-  String get activeDirectoryDomainLabel => 'Domain';
+  String get activeDirectoryDomainLabel => '도메인';
 
   @override
-  String get activeDirectoryDomainEmpty => 'Required';
+  String get activeDirectoryDomainEmpty => '필수';
 
   @override
-  String get activeDirectoryDomainTooLong => 'Too long';
+  String get activeDirectoryDomainTooLong => '너무 깁니다.';
 
   @override
   String get activeDirectoryDomainInvalidChars => 'Invalid characters';
@@ -920,20 +920,20 @@ class AppLocalizationsKo extends AppLocalizations {
   String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
 
   @override
-  String get activeDirectoryDomainNotFound => 'Domain not found';
+  String get activeDirectoryDomainNotFound => '도메인을 찾을 수 없습니다.';
 
   @override
-  String get activeDirectoryAdminLabel => 'Domain Administrator';
+  String get activeDirectoryAdminLabel => '도메인 관리자';
 
   @override
-  String get activeDirectoryAdminEmpty => 'Required';
+  String get activeDirectoryAdminEmpty => '필수';
 
   @override
   String get activeDirectoryAdminInvalidChars => 'Invalid characters';
 
   @override
-  String get activeDirectoryPasswordLabel => 'Password';
+  String get activeDirectoryPasswordLabel => '비밀 번호';
 
   @override
-  String get activeDirectoryPasswordEmpty => 'Required';
+  String get activeDirectoryPasswordEmpty => '필수';
 }
