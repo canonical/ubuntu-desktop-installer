@@ -214,9 +214,9 @@ class _FakeChange_17 extends _i1.SmartFake implements _i3.Change {
         );
 }
 
-class _FakeADConnectionInfo_18 extends _i1.SmartFake
-    implements _i3.ADConnectionInfo {
-  _FakeADConnectionInfo_18(
+class _FakeAdConnectionInfo_18 extends _i1.SmartFake
+    implements _i3.AdConnectionInfo {
+  _FakeAdConnectionInfo_18(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -835,6 +835,14 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
         )),
       ) as _i6.Future<_i3.StorageResponseV2>);
   @override
+  _i6.Future<List<String>> getPotentialBootDisksV2() => (super.noSuchMethod(
+        Invocation.method(
+          #getPotentialBootDisksV2,
+          [],
+        ),
+        returnValue: _i6.Future<List<String>>.value(<String>[]),
+      ) as _i6.Future<List<String>>);
+  @override
   _i6.Future<_i3.StorageResponseV2> addBootPartitionV2(_i3.Disk? disk) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -1077,22 +1085,22 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
         returnValue: _i6.Future<bool>.value(false),
       ) as _i6.Future<bool>);
   @override
-  _i6.Future<_i3.ADConnectionInfo> getActiveDirectory() => (super.noSuchMethod(
+  _i6.Future<_i3.AdConnectionInfo> getActiveDirectory() => (super.noSuchMethod(
         Invocation.method(
           #getActiveDirectory,
           [],
         ),
         returnValue:
-            _i6.Future<_i3.ADConnectionInfo>.value(_FakeADConnectionInfo_18(
+            _i6.Future<_i3.AdConnectionInfo>.value(_FakeAdConnectionInfo_18(
           this,
           Invocation.method(
             #getActiveDirectory,
             [],
           ),
         )),
-      ) as _i6.Future<_i3.ADConnectionInfo>);
+      ) as _i6.Future<_i3.AdConnectionInfo>);
   @override
-  _i6.Future<void> setActiveDirectory(_i3.ADConnectionInfo? info) =>
+  _i6.Future<void> setActiveDirectory(_i3.AdConnectionInfo? info) =>
       (super.noSuchMethod(
         Invocation.method(
           #setActiveDirectory,
