@@ -773,5 +773,9 @@
   "activeDirectoryDomainStartHyphen": "מתחיל במינוס (-)",
   "@activeDirectoryDomainStartHyphen": {},
   "activeDirectoryAdminInvalidChars": "תווים שגויים",
-  "@activeDirectoryAdminInvalidChars": {}
+  "@activeDirectoryAdminInvalidChars": {},
+  "whoAreYouPageRealNameTooLong": "השם ארוך מדי.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "שם המחשב הזה ארוך מדי.",
+  "@whoAreYouPageComputerNameTooLong": {}
 }
