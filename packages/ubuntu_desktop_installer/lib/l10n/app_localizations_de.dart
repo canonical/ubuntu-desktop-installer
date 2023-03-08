@@ -881,59 +881,59 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get activeDirectoryOption => 'Use Active Directory';
+  String get activeDirectoryOption => 'Active Directory verwenden';
 
   @override
-  String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
+  String get activeDirectoryInfo => 'Im nächsten Schritt geben Sie die Domäne und andere Details ein.';
 
   @override
-  String get activeDirectoryTitle => 'Configure Active Directory';
+  String get activeDirectoryTitle => 'Active Directory konfigurieren';
 
   @override
-  String get activeDirectoryTestConnection => 'Test Connection';
+  String get activeDirectoryTestConnection => 'Verbindung testen';
 
   @override
-  String get activeDirectoryDomainLabel => 'Domain';
+  String get activeDirectoryDomainLabel => 'Domäne';
 
   @override
-  String get activeDirectoryDomainEmpty => 'Required';
+  String get activeDirectoryDomainEmpty => 'Erforderlich';
 
   @override
-  String get activeDirectoryDomainTooLong => 'Too long';
+  String get activeDirectoryDomainTooLong => 'Zu lang';
 
   @override
-  String get activeDirectoryDomainInvalidChars => 'Invalid characters';
+  String get activeDirectoryDomainInvalidChars => 'Ungültige Zeichen';
 
   @override
-  String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
+  String get activeDirectoryDomainStartDot => 'Beginnt mit einem Punkt (.)';
 
   @override
-  String get activeDirectoryDomainEndDot => 'Ends with a dot (.)';
+  String get activeDirectoryDomainEndDot => 'Endet mit einem Punkt (.)';
 
   @override
-  String get activeDirectoryDomainStartHyphen => 'Starts with a hyphen (-)';
+  String get activeDirectoryDomainStartHyphen => 'Beginnt mit einem Bindestrich (-)';
 
   @override
-  String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
+  String get activeDirectoryDomainEndHyphen => 'Endet mit einem Bindestrich (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+  String get activeDirectoryDomainMultipleDots => 'Enthält mehrere aufeinanderfolgende Punkte (..)';
 
   @override
-  String get activeDirectoryDomainNotFound => 'Domain not found';
+  String get activeDirectoryDomainNotFound => 'Domäne nicht gefunden';
 
   @override
-  String get activeDirectoryAdminLabel => 'Domain Administrator';
+  String get activeDirectoryAdminLabel => 'Domänenadministrator';
 
   @override
-  String get activeDirectoryAdminEmpty => 'Required';
+  String get activeDirectoryAdminEmpty => 'Erforderlich';
 
   @override
-  String get activeDirectoryAdminInvalidChars => 'Invalid characters';
+  String get activeDirectoryAdminInvalidChars => 'Ungültige Zeichen';
 
   @override
-  String get activeDirectoryPasswordLabel => 'Password';
+  String get activeDirectoryPasswordLabel => 'Passwort';
 
   @override
-  String get activeDirectoryPasswordEmpty => 'Required';
+  String get activeDirectoryPasswordEmpty => 'Erforderlich';
 }

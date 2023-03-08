@@ -220,7 +220,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get installDriversSubtitle => 'Disse driverrutinene har lisensvilkår som er å finne i dokumentasjonen av dem. De er ufrie.';
 
   @override
-  String get installCodecsTitle => 'Installer støtte for ytterligere mediaformater';
+  String get installCodecsTitle => 'Last ned og installer støtte for ytterligere mediaformater';
 
   @override
   String get installCodecsSubtitle => 'Denne programvaren har lisensvilkår som er å finnen i dokumentasjonen av den. Noen av dem er ufrie.';
@@ -231,7 +231,7 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Du er frakoblet';
 
   @override
   String get chooseSecurityKeyTitle => 'Velg en sikkerhetsnøkkel';
@@ -409,7 +409,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get allocateDiskSpace => 'Tildel diskplass';
 
   @override
-  String get startInstallingButtonText => 'Start Installering';
+  String get startInstallingButtonText => 'Installer';
 
   @override
   String get diskHeadersDevice => 'Enhet';
@@ -445,10 +445,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => 'Du har valgt en hel enhet å partisjonere. Hvis du fortsetter med opprettelse av en ny partisjonstabell på enheten vil alle nåværende partisjoner på den fjernes.\n\nMerk at du også vil kunne angre operasjonen senere hvis du ønsker det.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'For mange primære partisjoner';
 
   @override
-  String get partitionLimitReached => 'Limit reached';
+  String get partitionLimitReached => 'Grense nådd';
 
   @override
   String get bootLoaderDevice => 'Enhet å installere oppstartslaster på';
@@ -544,7 +544,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS-rotfilsystem';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'Levn uformatert';
 
   @override
   String get partitionErase => 'Formater partisjonen';
@@ -613,10 +613,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Passordene samsvarer ikke';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Vis';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Skjul';
 
   @override
   String get writeChangesToDisk => 'Skriv endringer til disk';
@@ -690,17 +690,17 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Du kan fortsette å teste $RELEASE, men før du starter datamaskinen på ny vil ingen endringer du gjør eller dokumenter du lagrer bevares.';
   }
 
   @override
   String get shutdown => 'Slå av';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Utfør omstart nå';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Fortsett testingen';
 
   @override
   String get turnOffBitlockerTitle => 'Skru av BitLocker';
@@ -881,59 +881,59 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get activeDirectoryOption => 'Use Active Directory';
+  String get activeDirectoryOption => 'Bruk Active Directory';
 
   @override
-  String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
+  String get activeDirectoryInfo => 'Du skriver inn domene og andre detaljer i neste steg.';
 
   @override
-  String get activeDirectoryTitle => 'Configure Active Directory';
+  String get activeDirectoryTitle => 'Sett opp Active Directory';
 
   @override
-  String get activeDirectoryTestConnection => 'Test Connection';
+  String get activeDirectoryTestConnection => 'Test tilknytning';
 
   @override
-  String get activeDirectoryDomainLabel => 'Domain';
+  String get activeDirectoryDomainLabel => 'Domene';
 
   @override
-  String get activeDirectoryDomainEmpty => 'Required';
+  String get activeDirectoryDomainEmpty => 'Påkrevd';
 
   @override
-  String get activeDirectoryDomainTooLong => 'Too long';
+  String get activeDirectoryDomainTooLong => 'For langt';
 
   @override
-  String get activeDirectoryDomainInvalidChars => 'Invalid characters';
+  String get activeDirectoryDomainInvalidChars => 'Ugyldige tegn';
 
   @override
-  String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
+  String get activeDirectoryDomainStartDot => 'Starter med punktum (.)';
 
   @override
-  String get activeDirectoryDomainEndDot => 'Ends with a dot (.)';
+  String get activeDirectoryDomainEndDot => 'Slutter med punktum (.)';
 
   @override
-  String get activeDirectoryDomainStartHyphen => 'Starts with a hyphen (-)';
+  String get activeDirectoryDomainStartHyphen => 'Starter med bindestrek (-)';
 
   @override
-  String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
+  String get activeDirectoryDomainEndHyphen => 'Slutter med bindestrek (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+  String get activeDirectoryDomainMultipleDots => 'Inneholder flere gjentagende punktum (..)';
 
   @override
-  String get activeDirectoryDomainNotFound => 'Domain not found';
+  String get activeDirectoryDomainNotFound => 'Fant ikke domenet';
 
   @override
-  String get activeDirectoryAdminLabel => 'Domain Administrator';
+  String get activeDirectoryAdminLabel => 'Domeneadministrator';
 
   @override
-  String get activeDirectoryAdminEmpty => 'Required';
+  String get activeDirectoryAdminEmpty => 'Påkrevd';
 
   @override
-  String get activeDirectoryAdminInvalidChars => 'Invalid characters';
+  String get activeDirectoryAdminInvalidChars => 'Ugyldige tegn';
 
   @override
-  String get activeDirectoryPasswordLabel => 'Password';
+  String get activeDirectoryPasswordLabel => 'Passord';
 
   @override
-  String get activeDirectoryPasswordEmpty => 'Required';
+  String get activeDirectoryPasswordEmpty => 'Påkrevd';
 }
