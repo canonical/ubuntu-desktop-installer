@@ -32,6 +32,7 @@ class PartitionFormat {
   @override
   String toString() => type;
 
+  static const none = PartitionFormat._('');
   static const btrfs = PartitionFormat._('btrfs');
   static const ext2 = PartitionFormat._('ext2');
   static const ext3 = PartitionFormat._('ext3');

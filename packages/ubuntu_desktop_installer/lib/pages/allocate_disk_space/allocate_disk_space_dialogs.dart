@@ -94,7 +94,10 @@ Future<void> showCreatePartitionDialog(
               Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
               _PartitionFormatSelector(
                 partitionFormat: partitionFormat,
-                partitionFormats: [...PartitionFormat.supported, null],
+                partitionFormats: [
+                  ...PartitionFormat.supported,
+                  PartitionFormat.none,
+                ],
               )
             ],
             <Widget>[
@@ -134,6 +137,8 @@ Future<void> showCreatePartitionDialog(
 extension _PartitionFormatLang on PartitionFormat {
   String localize(AppLocalizations lang) {
     switch (this) {
+      case PartitionFormat.none:
+        return lang.partitionFormatNone;
       case PartitionFormat.btrfs:
         return lang.partitionFormatBtrfs;
       case PartitionFormat.ext2:
