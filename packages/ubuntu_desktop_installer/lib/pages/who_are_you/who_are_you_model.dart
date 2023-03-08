@@ -22,6 +22,15 @@ const kValidUsernamePattern = r'^[a-z][a-z0-9-_]*$';
 /// - may contain letters, digits, hyphens, and dots
 const kValidHostnamePattern = r'^[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])*$';
 
+/// The maximum length for valid real names
+const kMaxRealNameLength = 160;
+
+/// The maximum length for valid hostnames
+const kMaxHostnameLength = 64;
+
+/// The maximum length for valid usernames
+const kMaxUsernameLength = 32;
+
 /// [WhoAreYouPage]'s view model.
 class WhoAreYouModel extends PropertyStreamNotifier {
   /// Creates the model with the given client.
@@ -102,8 +111,11 @@ class WhoAreYouModel extends PropertyStreamNotifier {
   /// Whether the current input is valid.
   bool get isValid {
     return realName.isNotEmpty &&
+        realName.length <= kMaxRealNameLength &&
         hostname.isNotEmpty &&
+        hostname.length <= kMaxHostnameLength &&
         username.isNotEmpty &&
+        username.length <= kMaxUsernameLength &&
         usernameOk &&
         password.isNotEmpty &&
         password == confirmedPassword &&
