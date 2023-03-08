@@ -6,22 +6,26 @@ import 'package:ubuntu_desktop_installer/services/desktop_service.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 void main() {
+  late MockGSettings dingSettings;
   late MockGSettings interfaceSettings;
   late MockGSettings mediaHandlingSettings;
   late MockGSettings sessionSettings;
   late MockGSettings screensaverSettings;
   late DesktopService service;
   setUp(() {
+    dingSettings = MockGSettings();
     interfaceSettings = MockGSettings();
     mediaHandlingSettings = MockGSettings();
     sessionSettings = MockGSettings();
     screensaverSettings = MockGSettings();
+    when(dingSettings.set(any, any)).thenAnswer((_) async {});
     when(interfaceSettings.set(any, any)).thenAnswer((_) async {});
     when(mediaHandlingSettings.set(any, any)).thenAnswer((_) async {});
     when(sessionSettings.set(any, any)).thenAnswer((_) async {});
     when(screensaverSettings.set(any, any)).thenAnswer((_) async {});
 
     service = GnomeService(
+        dingSettings: dingSettings,
         interfaceSettings: interfaceSettings,
         mediaHandlingSettings: mediaHandlingSettings,
         sessionSettings: sessionSettings,
@@ -55,17 +59,25 @@ void main() {
         .thenAnswer((_) async => const DBusBoolean(true));
     when(mediaHandlingSettings.get('autorun-never'))
         .thenAnswer((_) async => const DBusBoolean(false));
+    when(dingSettings.get('show-volumes'))
+        .thenAnswer((_) async => const DBusBoolean(true));
+    when(dingSettings.get('show-network-volumes'))
+        .thenAnswer((_) async => const DBusBoolean(true));
     await service.disableAutoMounting();
     verifyInOrder([
       mediaHandlingSettings.set('automount', const DBusBoolean(false)),
       mediaHandlingSettings.set('automount-open', const DBusBoolean(false)),
       mediaHandlingSettings.set('autorun-never', const DBusBoolean(true)),
+      dingSettings.set('show-volumes', const DBusBoolean(false)),
+      dingSettings.set('show-network-volumes', const DBusBoolean(false)),
     ]);
     await service.close();
     verifyInOrder([
       mediaHandlingSettings.set('automount', const DBusBoolean(true)),
       mediaHandlingSettings.set('automount-open', const DBusBoolean(true)),
       mediaHandlingSettings.set('autorun-never', const DBusBoolean(false)),
+      dingSettings.set('show-volumes', const DBusBoolean(true)),
+      dingSettings.set('show-network-volumes', const DBusBoolean(true)),
     ]);
   });
 

@@ -29,11 +29,14 @@ class GnomeService implements DesktopService {
   /// Creates a GNOME settings instance using the given GSettings as a backend
   /// for storing the settings.
   GnomeService({
+    @visibleForTesting GSettings? dingSettings,
     @visibleForTesting GSettings? interfaceSettings,
     @visibleForTesting GSettings? mediaHandlingSettings,
     @visibleForTesting GSettings? sessionSettings,
     @visibleForTesting GSettings? screensaverSettings,
-  })  : _interfaceSettings =
+  })  : _dingSettings =
+            dingSettings ?? GSettings('org.gnome.shell.extensions.ding'),
+        _interfaceSettings =
             interfaceSettings ?? GSettings('org.gnome.desktop.interface'),
         _mediaHandlingSettings = mediaHandlingSettings ??
             GSettings('org.gnome.desktop.media-handling'),
@@ -42,6 +45,7 @@ class GnomeService implements DesktopService {
         _sessionSettings =
             sessionSettings ?? GSettings('org.gnome.desktop.session');
 
+  final GSettings _dingSettings;
   final GSettings _interfaceSettings;
   final GSettings _mediaHandlingSettings;
   final GSettings _screensaverSettings;
@@ -57,14 +61,22 @@ class GnomeService implements DesktopService {
         await _mediaHandlingSettings.get('automount-open');
     final previousAutoRunNever =
         await _mediaHandlingSettings.get('autorun-never');
+    final previousShowVolumes = await _dingSettings.get('show-volumes');
+    final previousShowNetworkVolumes =
+        await _dingSettings.get('show-network-volumes');
     await _mediaHandlingSettings.set('automount', const DBusBoolean(false));
     await _mediaHandlingSettings.set(
         'automount-open', const DBusBoolean(false));
     await _mediaHandlingSettings.set('autorun-never', const DBusBoolean(true));
+    await _dingSettings.set('show-volumes', const DBusBoolean(false));
+    await _dingSettings.set('show-network-volumes', const DBusBoolean(false));
     restoreSettings.add(() async {
       await _mediaHandlingSettings.set('automount', previousAutoMount);
       await _mediaHandlingSettings.set('automount-open', previousAutoMountOpen);
       await _mediaHandlingSettings.set('autorun-never', previousAutoRunNever);
+      await _dingSettings.set('show-volumes', previousShowVolumes);
+      await _dingSettings.set(
+          'show-network-volumes', previousShowNetworkVolumes);
     });
   }
 
