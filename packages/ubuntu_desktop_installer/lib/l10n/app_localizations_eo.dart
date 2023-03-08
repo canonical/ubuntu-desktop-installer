@@ -568,6 +568,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Nomo bezoniĝas';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Nomo de via komputilo';
 
   @override
@@ -575,6 +578,9 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Nomo de komputilo bezoniĝas';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'La nomo de komputilo ne validas';

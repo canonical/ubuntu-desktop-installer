@@ -304,16 +304,34 @@ void main() {
     testValid('real', 'host', '123', 'passwd', 'passwd', isFalse);
     testValid('real', 'host', 'UBUNTU', 'passwd', 'passwd', isFalse);
     testValid('real', 'host', 'inv@lid', 'passwd', 'passwd', isFalse);
+    testValid('real', 'host', 'thisusernameislongerthanitshouldbe', 'passwd',
+        'passwd', isFalse);
 
     // host name validation
     testValid('real', 'ubuntu-21.10', 'user', 'passwd', 'passwd', isTrue);
     testValid('real', '.ubuntu', 'user', 'passwd', 'passwd', isFalse);
     testValid('real', 'ubuntu-', 'user', 'passwd', 'passwd', isFalse);
     testValid('real', 'inv@lid', 'user', 'passwd', 'passwd', isFalse);
+    testValid(
+        'real',
+        'thishostnameiswaytoolongandyoureallyshoulduseashorteroneimeanitduh',
+        'user',
+        'passwd',
+        'passwd',
+        isFalse);
 
     // password matching
     testValid('real', 'host', 'user', 'passwd', 'passwd', isTrue);
     testValid('real', 'host', 'user', 'passwd', 'mismatch', isFalse);
+
+    // reale name validation
+    testValid(
+        'these are slightly more than the allowed one hundred and sixty characters for the extraordinarily lengthy name of the user who is currently running the installer',
+        'host',
+        'user',
+        'passwd',
+        'passwd',
+        isFalse);
   });
 
   test('server validation', () async {

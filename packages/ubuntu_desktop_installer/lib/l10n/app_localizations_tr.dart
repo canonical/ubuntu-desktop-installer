@@ -568,6 +568,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'İsim gereklidir';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Bilgisayar adı';
 
   @override
@@ -575,6 +578,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Bilgisayar adı gereklidir';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Bilgisayar adı geçersiz';

@@ -568,6 +568,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Votre nom est requis';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Le nom de votre ordinateur';
 
   @override
@@ -575,6 +578,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Un nom pour l’ordinateur est requis';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Ce nom d’ordinateur est invalide';

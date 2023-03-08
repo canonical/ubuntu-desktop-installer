@@ -568,6 +568,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Ett namn krävs';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Din dators namn';
 
   @override
@@ -575,6 +578,9 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Ett datornamn krävs';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Datornamnet är ogiltigt';

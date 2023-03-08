@@ -568,6 +568,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Nimi vaaditaan';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Tietokoneen nimi';
 
   @override
@@ -575,6 +578,9 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Tietokoneen nimi vaaditaan';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Tietokoneen nimi on virheellinen';

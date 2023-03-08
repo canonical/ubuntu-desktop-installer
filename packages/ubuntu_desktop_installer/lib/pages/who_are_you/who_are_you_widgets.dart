@@ -17,12 +17,19 @@ class _RealNameFormField extends StatelessWidget {
       labelText: lang.whoAreYouPageRealNameLabel,
       successWidget: const SuccessIcon(),
       initialValue: realName,
-      validator: RequiredValidator(
-        errorText: lang.whoAreYouPageRealNameRequired,
-      ),
-      onChanged: (value) {
+      validator: MultiValidator([
+        RequiredValidator(
+          errorText: lang.whoAreYouPageRealNameRequired,
+        ),
+        MaxLengthValidator(
+          kMaxRealNameLength,
+          errorText: lang.whoAreYouPageRealNameTooLong,
+        ),
+      ]),
+      onChanged: (value) async {
         final model = Provider.of<WhoAreYouModel>(context, listen: false);
         model.realName = value;
+        await model.validate();
       },
     );
   }
@@ -52,6 +59,10 @@ class _HostnameFormField extends StatelessWidget {
         PatternValidator(
           kValidHostnamePattern,
           errorText: lang.whoAreYouPageInvalidComputerName,
+        ),
+        MaxLengthValidator(
+          kMaxHostnameLength,
+          errorText: lang.whoAreYouPageComputerNameTooLong,
         )
       ]),
       onChanged: (value) {

@@ -568,6 +568,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Név megadása kötelező';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Az Ön számítógépének neve';
 
   @override
@@ -575,6 +578,9 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'A számítógép neve kötelező';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'A számítógép neve érvénytelen';

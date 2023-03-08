@@ -22,6 +22,15 @@ const kValidUsernamePattern = r'^[a-z][a-z0-9-_]*$';
 /// - may contain letters, digits, hyphens, and dots
 const kValidHostnamePattern = r'^[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])*$';
 
+/// The maximum length for valid real names
+const kMaxRealNameLength = 160;
+
+/// The maximum length for valid hostnames
+const kMaxHostnameLength = 64;
+
+/// The maximum length for valid usernames
+const kMaxUsernameLength = 32;
+
 /// [WhoAreYouPage]'s view model.
 class WhoAreYouModel extends PropertyStreamNotifier {
   /// Creates the model with the given client.
@@ -74,11 +83,13 @@ class WhoAreYouModel extends PropertyStreamNotifier {
   // Generates a hostname `<username>-<system hostname>`.
   String _generateHostname() {
     if (username.isEmpty || _productName.value.isEmpty) return '';
-    return '$username-${_productName.value}';
+    return '$username-${_productName.value}'.truncate(kMaxHostnameLength);
   }
 
   /// The current username or a sanitized real name if not set.
-  String get username => _username.value ?? realName.sanitize().toLowerCase();
+  String get username =>
+      _username.value ??
+      realName.sanitize().toLowerCase().truncate(kMaxUsernameLength);
   set username(String value) => _username.value = value;
 
   /// The current password.
@@ -102,8 +113,11 @@ class WhoAreYouModel extends PropertyStreamNotifier {
   /// Whether the current input is valid.
   bool get isValid {
     return realName.isNotEmpty &&
+        realName.length <= kMaxRealNameLength &&
         hostname.isNotEmpty &&
+        hostname.length <= kMaxHostnameLength &&
         username.isNotEmpty &&
+        username.length <= kMaxUsernameLength &&
         usernameOk &&
         password.isNotEmpty &&
         password == confirmedPassword &&
@@ -180,4 +194,9 @@ extension _IdentityDescription on IdentityData {
   String get description {
     return 'realname: "$realname", hostname: "$hostname", username: "$username"';
   }
+}
+
+extension _StringTruncate on String {
+  String truncate(int length) =>
+      this.length > length ? substring(0, length) : this;
 }
