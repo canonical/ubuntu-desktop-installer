@@ -83,11 +83,13 @@ class WhoAreYouModel extends PropertyStreamNotifier {
   // Generates a hostname `<username>-<system hostname>`.
   String _generateHostname() {
     if (username.isEmpty || _productName.value.isEmpty) return '';
-    return '$username-${_productName.value}';
+    return '$username-${_productName.value}'.truncate(kMaxHostnameLength);
   }
 
   /// The current username or a sanitized real name if not set.
-  String get username => _username.value ?? realName.sanitize().toLowerCase();
+  String get username =>
+      _username.value ??
+      realName.sanitize().toLowerCase().truncate(kMaxUsernameLength);
   set username(String value) => _username.value = value;
 
   /// The current password.
@@ -192,4 +194,9 @@ extension _IdentityDescription on IdentityData {
   String get description {
     return 'realname: "$realname", hostname: "$hostname", username: "$username"';
   }
+}
+
+extension _StringTruncate on String {
+  String truncate(int length) =>
+      this.length > length ? substring(0, length) : this;
 }
