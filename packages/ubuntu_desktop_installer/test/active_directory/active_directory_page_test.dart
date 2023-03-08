@@ -174,7 +174,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.getActiveDirectory())
-        .thenAnswer((_) async => const ADConnectionInfo());
+        .thenAnswer((_) async => const AdConnectionInfo());
     when(client.checkActiveDirectoryDomainName(any))
         .thenAnswer((_) async => [AdDomainNameValidation.OK]);
     when(client.checkActiveDirectoryAdminName(any))

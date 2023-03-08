@@ -6,7 +6,7 @@ import 'package:ubuntu_test/mocks.dart';
 
 void main() {
   test('load AD connection info', () async {
-    const info = ADConnectionInfo(
+    const info = AdConnectionInfo(
       domainName: 'ubuntu.com',
       adminName: 'admin',
       password: 'password',
@@ -71,7 +71,7 @@ void main() {
   });
 
   test('save AD connection info', () async {
-    const info = ADConnectionInfo(
+    const info = AdConnectionInfo(
       domainName: 'ubuntu.com',
       adminName: 'admin',
       password: 'password',

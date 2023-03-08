@@ -96,7 +96,7 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
   }
 
   Future<void> save() {
-    return _client.setActiveDirectory(ADConnectionInfo(
+    return _client.setActiveDirectory(AdConnectionInfo(
       domainName: domainName,
       adminName: adminName,
       password: password,
