@@ -31,7 +31,7 @@ class StorageSelector extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        DropdownBuilder<int>(
+        MenuButtonBuilder<int>(
           values: List.generate(storages.length, (index) => index),
           selected: selected,
           onSelected: onSelected,
