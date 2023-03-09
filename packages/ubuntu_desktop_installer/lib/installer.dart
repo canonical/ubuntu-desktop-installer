@@ -225,6 +225,8 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
                 },
                 theme: theme?.customize(),
                 darkTheme: darkTheme?.customize(),
+                highContrastTheme: yaruHighContrastLight.customize(),
+                highContrastDarkTheme: yaruHighContrastDark.customize(),
                 debugShowCheckedModeBanner: false,
                 localizationsDelegates: <LocalizationsDelegate>[
                   ...localizationsDelegates,
