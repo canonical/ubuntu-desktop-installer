@@ -360,7 +360,7 @@ class _PartitionFormatSelector extends StatelessWidget {
     return ValueListenableBuilder<PartitionFormat?>(
       valueListenable: partitionFormat,
       builder: (context, type, child) {
-        return DropdownBuilder<PartitionFormat?>(
+        return MenuButtonBuilder<PartitionFormat?>(
           selected: type,
           values: partitionFormats,
           itemBuilder: (context, format, _) {
