@@ -1933,6 +1933,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Required'**
   String get activeDirectoryPasswordEmpty;
+
+  /// No description provided for @activeDirectoryErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Error configuring connection to Active Directory'**
+  String get activeDirectoryErrorTitle;
+
+  /// No description provided for @activeDirectoryErrorMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.'**
+  String get activeDirectoryErrorMessage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

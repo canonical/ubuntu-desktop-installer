@@ -4,11 +4,14 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../test_utils.dart';
 import 'active_directory_page_test.mocks.dart';
@@ -21,7 +24,7 @@ final adminNameValidationVariant =
 final passwordValidationVariant =
     ValueVariant(AdPasswordValidation.values.toSet());
 
-@GenerateMocks([ActiveDirectoryModel])
+@GenerateMocks([ActiveDirectoryModel, UrlLauncher])
 void main() {
   ActiveDirectoryModel buildModel({
     bool? isValid,
@@ -31,6 +34,7 @@ void main() {
     List<AdDomainNameValidation>? domainNameValidation,
     AdAdminNameValidation? adminNameValidation,
     AdPasswordValidation? passwordValidation,
+    AdJoinResult? joinResult,
   }) {
     final model = MockActiveDirectoryModel();
     when(model.isValid).thenReturn(isValid ?? false);
@@ -43,6 +47,8 @@ void main() {
         .thenReturn(adminNameValidation ?? AdAdminNameValidation.OK);
     when(model.passwordValidation)
         .thenReturn(passwordValidation ?? AdPasswordValidation.OK);
+    when(model.getJoinResult())
+        .thenAnswer((_) async => joinResult ?? AdJoinResult.OK);
     return model;
   }
 
@@ -169,6 +175,39 @@ void main() {
 
     await tester.tap(continueButton);
     verify(model.save()).called(1);
+
+    verify(model.getJoinResult()).called(1);
+    await tester.pumpAndSettle();
+    expect(find.byType(ActiveDirectoryErrorDialog), findsNothing);
+  });
+
+  testWidgets('AD join error', (tester) async {
+    final model =
+        buildModel(isValid: true, joinResult: AdJoinResult.JOIN_ERROR);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final continueButton = find.widgetWithText(
+      FilledButton,
+      tester.ulang.continueAction,
+    );
+    expect(continueButton, findsOneWidget);
+
+    await tester.tap(continueButton);
+    verify(model.save()).called(1);
+
+    verify(model.getJoinResult()).called(1);
+    await tester.pumpAndSettle();
+    expect(find.byType(ActiveDirectoryErrorDialog), findsOneWidget);
+
+    final urlLauncher = MockUrlLauncher();
+    when(urlLauncher.launchUrl('https://help.ubuntu.com/activedirectory'))
+        .thenAnswer((_) async => true);
+    registerMockService<UrlLauncher>(urlLauncher);
+
+    await tester.tapLink('help.ubuntu.com/activedirectory');
+
+    verify(urlLauncher.launchUrl('https://help.ubuntu.com/activedirectory'))
+        .called(1);
   });
 
   testWidgets('creates a model', (tester) async {

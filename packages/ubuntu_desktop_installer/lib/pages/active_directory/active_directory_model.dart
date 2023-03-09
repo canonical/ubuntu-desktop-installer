@@ -102,4 +102,8 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
       password: password,
     ));
   }
+
+  Future<AdJoinResult> getJoinResult() {
+    return _client.getActiveDirectoryJoinResult();
+  }
 }

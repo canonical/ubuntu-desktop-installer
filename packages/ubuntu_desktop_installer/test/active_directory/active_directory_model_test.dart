@@ -152,4 +152,17 @@ void main() {
     expect(model.isPasswordValid, isTrue);
     expect(model.isValid, isTrue);
   });
+
+  test('join result', () async {
+    final client = MockSubiquityClient();
+    when(client.getActiveDirectoryJoinResult())
+        .thenAnswer((_) async => AdJoinResult.JOIN_ERROR);
+
+    final model = ActiveDirectoryModel(client);
+    expect(await model.getJoinResult(), AdJoinResult.JOIN_ERROR);
+
+    when(client.getActiveDirectoryJoinResult())
+        .thenAnswer((_) async => AdJoinResult.OK);
+    expect(await model.getJoinResult(), AdJoinResult.OK);
+  });
 }
