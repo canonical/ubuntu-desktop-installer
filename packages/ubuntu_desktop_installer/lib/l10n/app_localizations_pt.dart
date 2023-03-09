@@ -109,7 +109,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get configureSecureBootTitle => 'Configurar o Arranque Seguro';
 
   @override
-  String get configureSecureBootDescription => 'Optou por instalar drivers de terceiros. Isso requer desativar o Arranque Seguro.\nPara isso, é preciso escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.';
+  String get configureSecureBootDescription => 'Optou por instalar controladores de terceiros. Isto requer desativar o Arranque Seguro.\nPara isso, é preciso escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.';
 
   @override
   String get configureSecureBootOption => 'Configurar o Arranque Seguro';
@@ -121,7 +121,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get confirmSecurityKey => 'Confirme a chave de segurança';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Não instalar os drivers agora';
+  String get dontInstallDriverSoftwareNow => 'Não instalar os controladores por agora';
 
   @override
   String get dontInstallDriverSoftwareNowDescription => 'Pode instalar depois pelo Software e Atualizações.';
@@ -214,7 +214,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installThirdPartySubtitle => 'Este software está sujeito aos termos de licença incluídos nas suas documentações. Alguns são proprietários.';
 
   @override
-  String get installDriversTitle => 'Instalar controladores de gráficos e Wi-Fi de terceiros';
+  String get installDriversTitle => 'Instalar software de terceiros para placas gráficas e Wi-Fi';
 
   @override
   String get installDriversSubtitle => 'Estes controladores estão sujeitos aos termos de licença incluídos com sua documentação. São proprietários.';
@@ -541,7 +541,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partitionFormatReiserFS => 'Sistema de ficheiros ReiserFS';
 
   @override
-  String get partitionFormatZfsroot => 'Sistema de ficheiros raiz ZFS';
+  String get partitionFormatZfsroot => 'Sistema de ficheiros root ZFS';
 
   @override
   String get partitionFormatNone => 'Deixar sem formatação';
@@ -805,13 +805,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get officeSlideDescription => 'O LibreOffice é uma suite de escritório livre com tudo o que precisa para criar documentos, folhas de cálculo e apresentações. Compatível com formatos de ficheiros Microsoft Office, dá-lhe todas as funcionalidades de que necessita.';
 
   @override
-  String get officeSlideWriter => 'LibreOffice Writer';
+  String get officeSlideWriter => 'Processador de texto LibreOffice';
 
   @override
-  String get officeSlideCalc => 'LibreOffice Calc';
+  String get officeSlideCalc => 'Folha de cálculo LibreOffice';
 
   @override
-  String get officeSlideImpress => 'LibreOffice Impress';
+  String get officeSlideImpress => 'Apresentação de diapositivos LibreOffice';
 
   @override
   String get accessSlideTitle => 'Acesso para todos';
@@ -887,61 +887,61 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get activeDirectoryOption => 'Use Active Directory';
+  String get activeDirectoryOption => 'Usar o Active Directory';
 
   @override
-  String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
+  String get activeDirectoryInfo => 'Irá introduzir o domínio e outros detalhes no próximo passo.';
 
   @override
-  String get activeDirectoryTitle => 'Configure Active Directory';
+  String get activeDirectoryTitle => 'Configurar o Active Directory';
 
   @override
-  String get activeDirectoryTestConnection => 'Test Connection';
+  String get activeDirectoryTestConnection => 'Testar ligação';
 
   @override
-  String get activeDirectoryDomainLabel => 'Domain';
+  String get activeDirectoryDomainLabel => 'Domínio';
 
   @override
-  String get activeDirectoryDomainEmpty => 'Required';
+  String get activeDirectoryDomainEmpty => 'Obrigatório';
 
   @override
-  String get activeDirectoryDomainTooLong => 'Too long';
+  String get activeDirectoryDomainTooLong => 'Demasiado comprido';
 
   @override
-  String get activeDirectoryDomainInvalidChars => 'Invalid characters';
+  String get activeDirectoryDomainInvalidChars => 'Caracteres inválidos';
 
   @override
-  String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
+  String get activeDirectoryDomainStartDot => 'Começa com um ponto (.)';
 
   @override
-  String get activeDirectoryDomainEndDot => 'Ends with a dot (.)';
+  String get activeDirectoryDomainEndDot => 'Termina com um ponto (.)';
 
   @override
-  String get activeDirectoryDomainStartHyphen => 'Starts with a hyphen (-)';
+  String get activeDirectoryDomainStartHyphen => 'Começa com um hífen (-)';
 
   @override
-  String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
+  String get activeDirectoryDomainEndHyphen => 'Termina com um hífen (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+  String get activeDirectoryDomainMultipleDots => 'Contém vários pontos sequenciados (..)';
 
   @override
-  String get activeDirectoryDomainNotFound => 'Domain not found';
+  String get activeDirectoryDomainNotFound => 'Domínio não encontrado';
 
   @override
-  String get activeDirectoryAdminLabel => 'Domain Administrator';
+  String get activeDirectoryAdminLabel => 'Administrador de domínio';
 
   @override
-  String get activeDirectoryAdminEmpty => 'Required';
+  String get activeDirectoryAdminEmpty => 'Obrigatório';
 
   @override
-  String get activeDirectoryAdminInvalidChars => 'Invalid characters';
+  String get activeDirectoryAdminInvalidChars => 'Caracteres inválidos';
 
   @override
-  String get activeDirectoryPasswordLabel => 'Password';
+  String get activeDirectoryPasswordLabel => 'Palavra-passe';
 
   @override
-  String get activeDirectoryPasswordEmpty => 'Required';
+  String get activeDirectoryPasswordEmpty => 'Obrigatório';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).

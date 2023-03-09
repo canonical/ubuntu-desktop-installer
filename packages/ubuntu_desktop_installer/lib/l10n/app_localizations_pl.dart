@@ -568,7 +568,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Wymagane jest podanie imienia i nazwiska';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get whoAreYouPageRealNameTooLong => 'To imię i nazwisko jest za długie.';
 
   @override
   String get whoAreYouPageComputerNameLabel => 'Nazwa tego komputera';
@@ -580,7 +580,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get whoAreYouPageComputerNameRequired => 'Wymagane jest podanie nazwy komputera';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get whoAreYouPageComputerNameTooLong => 'Ta nazwa komputera jest za długa.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Nazwa komputera jest nieprawidłowa';
