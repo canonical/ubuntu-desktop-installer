@@ -34,7 +34,7 @@ class _StorageSelector extends StatelessWidget {
         Text(lang.selectGuidedStorageDropdownLabel),
         const SizedBox(width: kContentSpacing),
         Expanded(
-          child: DropdownBuilder<int>(
+          child: MenuButtonBuilder<int>(
             values: List.generate(count, (index) => index),
             selected: selectedIndex != null &&
                     selectedIndex! >= 0 &&
