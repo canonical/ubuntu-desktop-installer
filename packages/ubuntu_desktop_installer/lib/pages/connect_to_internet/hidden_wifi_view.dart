@@ -94,7 +94,7 @@ class _HiddenWifiViewState extends State<HiddenWifiView> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 if (model.devices.length > 1)
-                  DropdownBuilder<WifiDevice>(
+                  MenuButtonBuilder<WifiDevice>(
                     values: model.devices,
                     selected: model.selectedDevice,
                     onSelected: model.selectDevice,
