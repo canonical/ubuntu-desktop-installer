@@ -773,5 +773,9 @@
   "activeDirectoryPasswordLabel": "Hasło",
   "@activeDirectoryPasswordLabel": {},
   "activeDirectoryPasswordEmpty": "Wymagane",
-  "@activeDirectoryPasswordEmpty": {}
+  "@activeDirectoryPasswordEmpty": {},
+  "whoAreYouPageRealNameTooLong": "To imię i nazwisko jest za długie.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Ta nazwa komputera jest za długa.",
+  "@whoAreYouPageComputerNameTooLong": {}
 }
