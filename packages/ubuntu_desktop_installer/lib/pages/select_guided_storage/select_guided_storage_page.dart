@@ -72,16 +72,15 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
               Text(lang.selectGuidedStorageDropdownLabel),
               const SizedBox(width: kContentSpacing),
               Expanded(
-                child: DropdownBuilder<int>(
+                child: MenuButtonBuilder<int>(
                   values: List.generate(model.storages.length, (i) => i),
                   selected: model.selectedIndex,
-                  onSelected: (i) => model.selectStorage(i!),
+                  onSelected: (i) => model.selectStorage(i),
                   itemBuilder: (context, index, child) {
-                    final disk = model.getDisk(index)!;
-                    return Text(
-                      prettyFormatDisk(disk),
-                      key: ValueKey(index),
-                    );
+                    final disk = model.getDisk(index);
+                    return disk != null
+                        ? Text(prettyFormatDisk(disk), key: ValueKey(index))
+                        : const SizedBox.shrink();
                   },
                 ),
               )

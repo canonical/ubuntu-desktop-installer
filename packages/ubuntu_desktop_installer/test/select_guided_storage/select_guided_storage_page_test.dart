@@ -9,6 +9,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../test_utils.dart';
 import 'select_guided_storage_model_test.mocks.dart';
@@ -57,13 +58,13 @@ void main() {
     final model = buildModel(storages: testStorages, disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    await tester.tap(find.byType(DropdownButton<int>));
+    await tester.tap(find.byType(MenuButtonBuilder<int>));
     await tester.pumpAndSettle();
 
     for (final disk in testDisks) {
       expect(
         find.descendant(
-          of: find.byType(DropdownButton<int>),
+          of: find.byType(MenuItemButton),
           matching: find.textContaining(disk.path!),
         ),
         findsOneWidget,
@@ -75,12 +76,12 @@ void main() {
     final model = buildModel(storages: testStorages, disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    await tester.tap(find.byType(DropdownButton<int>));
+    await tester.tap(find.byType(MenuButtonBuilder<int>));
     await tester.pumpAndSettle();
     await tester.pump();
 
     final dropdownItem = find.descendant(
-      of: find.byType(DropdownMenuItem<int>),
+      of: find.byType(MenuItemButton),
       matching: find.byKey(ValueKey(1)),
     );
     await tester.ensureVisible(dropdownItem.last);
