@@ -7,6 +7,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/hidden_wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/hidden_wifi_view.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import 'hidden_wifi_view_test.mocks.dart';
 
@@ -86,7 +87,7 @@ void main() {
     await pumpHiddenWifiView(tester, model: model);
 
     expect(find.byType(TextField), findsNothing);
-    expect(find.byType(DropdownButton<WifiDevice>), findsNothing);
+    expect(find.byType(MenuButtonBuilder<WifiDevice>), findsNothing);
   });
 
   testWidgets('no wifi devices', (tester) async {
@@ -98,7 +99,7 @@ void main() {
     await pumpHiddenWifiView(tester, model: model);
 
     expect(find.byType(TextField), findsNothing);
-    expect(find.byType(DropdownButton<WifiDevice>), findsNothing);
+    expect(find.byType(MenuButtonBuilder<WifiDevice>), findsNothing);
   });
 
   testWidgets('one wifi device', (tester) async {
@@ -113,7 +114,7 @@ void main() {
     await pumpHiddenWifiView(tester, model: model);
 
     expect(find.byType(TextField), findsOneWidget);
-    expect(find.byType(DropdownButton<WifiDevice>), findsNothing);
+    expect(find.byType(MenuButtonBuilder<WifiDevice>), findsNothing);
   });
 
   testWidgets('multiple wifi devices', (tester) async {
@@ -132,13 +133,13 @@ void main() {
     await pumpHiddenWifiView(tester, model: model);
 
     expect(find.byType(TextField), findsOneWidget);
-    expect(find.byType(DropdownButton<WifiDevice>), findsOneWidget);
+    expect(find.byType(MenuButtonBuilder<WifiDevice>), findsOneWidget);
 
-    await tester.tap(find.byType(DropdownButton<WifiDevice>));
+    await tester.tap(find.byType(MenuButtonBuilder<WifiDevice>));
     await tester.pumpAndSettle();
 
     final item1 = find.descendant(
-      of: find.byType(ListView),
+      of: find.byType(MenuItemButton),
       matching: find.text('device 1'),
     );
     expect(item1, findsOneWidget);
@@ -147,11 +148,11 @@ void main() {
     await tester.pumpAndSettle();
     verify(model.selectDevice(device1));
 
-    await tester.tap(find.byType(DropdownButton<WifiDevice>));
+    await tester.tap(find.byType(MenuButtonBuilder<WifiDevice>));
     await tester.pumpAndSettle();
 
     final item2 = find.descendant(
-      of: find.byType(ListView),
+      of: find.byType(MenuItemButton),
       matching: find.text('device 2'),
     );
     expect(item2, findsOneWidget);
