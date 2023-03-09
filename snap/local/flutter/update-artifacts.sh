@@ -1,6 +1,6 @@
 #!/bin/bash
 
-project_dir=$(cd "$(dirname "$0")/.." && pwd)
+snap_local=$(cd "$(dirname "$0")/.." && pwd)
 version="$1"
 
 pushd /tmp > /dev/null
@@ -19,5 +19,5 @@ curl -o flutter-stable.tar.xz $url
 echo "Extracting shader_lib"
 tar -xvf flutter-stable.tar.xz flutter/bin/cache/artifacts/engine/linux-x64/shader_lib
 echo "Updating shader_lib"
-rsync -avu --delete flutter/bin/cache/artifacts/engine/linux-x64/shader_lib $project_dir/snap/local/
+rsync -avu --delete flutter/bin/cache/artifacts/engine/linux-x64/shader_lib $snap_local/flutter
 popd  > /dev/null
