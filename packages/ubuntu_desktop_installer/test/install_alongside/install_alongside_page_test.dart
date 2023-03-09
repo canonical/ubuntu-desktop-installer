@@ -10,6 +10,7 @@ import 'package:ubuntu_desktop_installer/pages/install_alongside/install_alongsi
 import 'package:ubuntu_desktop_installer/pages/install_alongside/install_alongside_page.dart';
 import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../test_utils.dart';
@@ -91,16 +92,16 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final item1 = find.descendant(
-      of: find.byType(DropdownMenuItem<int>),
+      of: find.byType(MenuButtonBuilder<int>),
       matching: find.byKey(const ValueKey(1)),
     );
     expect(item1, findsOneWidget);
 
-    await tester.tap(find.byType(DropdownButton<int>));
+    await tester.tap(find.byType(MenuButtonBuilder<int>));
     await tester.pumpAndSettle();
 
     final item2 = find.descendant(
-      of: find.byType(DropdownMenuItem<int>),
+      of: find.byType(MenuItemButton),
       matching: find.byKey(const ValueKey(2)),
     );
     await tester.ensureVisible(item2.last);
