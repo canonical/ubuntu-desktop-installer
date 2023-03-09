@@ -2,20 +2,16 @@ import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_session/ubuntu_session.dart';
 
 /// @internal
 final logger = Logger('desktop');
 
 /// An interface for accessing to desktop settings.
 abstract class DesktopService {
-  /// Disables automatic volume mounting to avoid problems during partitioning.
-  Future<void> disableAutoMounting();
-
-  /// Disables the screensaver.
-  Future<void> disableScreensaver();
-
-  /// Disables screen blanking.
-  Future<void> disableScreenBlanking();
+  /// Inhibits potentially disruptive events, such as automatic volume mounting,
+  /// screen blanking, suspending, logging out, etc.
+  Future<void> inhibit() async {}
 
   /// Applies a desktop theme matching the given [brightness].
   Future<void> setTheme(Brightness brightness);
@@ -34,6 +30,7 @@ class GnomeService implements DesktopService {
     @visibleForTesting GSettings? mediaHandlingSettings,
     @visibleForTesting GSettings? sessionSettings,
     @visibleForTesting GSettings? screensaverSettings,
+    @visibleForTesting GnomeSessionManager? gnomeSessionManager,
   })  : _dingSettings =
             dingSettings ?? GSettings('org.gnome.shell.extensions.ding'),
         _interfaceSettings =
@@ -43,18 +40,19 @@ class GnomeService implements DesktopService {
         _screensaverSettings =
             screensaverSettings ?? GSettings('org.gnome.desktop.screensaver'),
         _sessionSettings =
-            sessionSettings ?? GSettings('org.gnome.desktop.session');
+            sessionSettings ?? GSettings('org.gnome.desktop.session'),
+        _gnomeSessionManager = gnomeSessionManager ?? GnomeSessionManager();
 
   final GSettings _dingSettings;
   final GSettings _interfaceSettings;
   final GSettings _mediaHandlingSettings;
   final GSettings _screensaverSettings;
   final GSettings _sessionSettings;
+  final GnomeSessionManager _gnomeSessionManager;
 
   final restoreSettings = <Future<void> Function()>[];
 
-  @override
-  Future<void> disableAutoMounting() async {
+  Future<void> _disableAutoMounting() async {
     logger.debug('Disabling automounting');
     final previousAutoMount = await _mediaHandlingSettings.get('automount');
     final previousAutoMountOpen =
@@ -80,8 +78,7 @@ class GnomeService implements DesktopService {
     });
   }
 
-  @override
-  Future<void> disableScreenBlanking() async {
+  Future<void> _disableScreenBlanking() async {
     logger.debug('Disabling screen blanking');
     final previousValue = await _sessionSettings.get('idle-delay');
     await _sessionSettings.set('idle-delay', const DBusUint32(0));
@@ -89,8 +86,7 @@ class GnomeService implements DesktopService {
         .add(() => _sessionSettings.set('idle-delay', previousValue));
   }
 
-  @override
-  Future<void> disableScreensaver() async {
+  Future<void> _disableScreensaver() async {
     logger.debug('Disabling screensaver');
     final previousValue =
         await _screensaverSettings.get('idle-activation-enabled');
@@ -98,6 +94,28 @@ class GnomeService implements DesktopService {
         'idle-activation-enabled', const DBusBoolean(false));
     restoreSettings.add(() =>
         _screensaverSettings.set('idle-activation-enabled', previousValue));
+  }
+
+  @override
+  Future<void> inhibit() async {
+    await _disableAutoMounting();
+    await _disableScreenBlanking();
+    await _disableScreensaver();
+
+    await _gnomeSessionManager.connect();
+    final cookie = await _gnomeSessionManager.inhibit(
+      appId: 'com.canonical.ubuntu_desktop_installer',
+      topLevelXId: 0,
+      reason: 'Installing Ubuntu',
+      flags: {
+        GnomeInhibitionFlag.autoMount,
+        GnomeInhibitionFlag.idle,
+        GnomeInhibitionFlag.logout,
+        GnomeInhibitionFlag.suspend,
+        GnomeInhibitionFlag.switchUser,
+      },
+    );
+    restoreSettings.add(() => _gnomeSessionManager.uninhibit(cookie));
   }
 
   @override
@@ -127,6 +145,7 @@ class GnomeService implements DesktopService {
     await _interfaceSettings.close();
     await _sessionSettings.close();
     await _screensaverSettings.close();
+    await _gnomeSessionManager.close();
   }
 }
 

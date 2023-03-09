@@ -144,9 +144,7 @@ Future<void> runInstallerApp(
   await storage.init();
 
   final desktop = getService<DesktopService>();
-  await desktop.disableAutoMounting();
-  await desktop.disableScreenBlanking();
-  await desktop.disableScreensaver();
+  await desktop.inhibit();
 }
 
 class UbuntuDesktopInstallerApp extends StatefulWidget {
