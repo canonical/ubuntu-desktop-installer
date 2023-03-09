@@ -6,14 +6,15 @@
 import 'dart:async' as _i6;
 
 import 'package:dbus/dbus.dart' as _i2;
-import 'package:gsettings/src/gsettings.dart' as _i5;
+import 'package:gsettings/src/gsettings.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/src/client.dart' as _i7;
+import 'package:subiquity_client/src/client.dart' as _i8;
 import 'package:subiquity_client/src/endpoint.dart' as _i4;
-import 'package:subiquity_client/src/server.dart' as _i8;
-import 'package:subiquity_client/src/server/process.dart' as _i9;
-import 'package:subiquity_client/src/status_monitor.dart' as _i10;
+import 'package:subiquity_client/src/server.dart' as _i9;
+import 'package:subiquity_client/src/server/process.dart' as _i10;
+import 'package:subiquity_client/src/status_monitor.dart' as _i11;
 import 'package:subiquity_client/src/types.dart' as _i3;
+import 'package:ubuntu_session/src/gnome_session_manager.dart' as _i5;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -235,10 +236,143 @@ class _FakeEndpoint_19 extends _i1.SmartFake implements _i4.Endpoint {
         );
 }
 
+/// A class which mocks [GnomeSessionManager].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGnomeSessionManager extends _i1.Mock
+    implements _i5.GnomeSessionManager {
+  MockGnomeSessionManager() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  String get renderer => (super.noSuchMethod(
+        Invocation.getter(#renderer),
+        returnValue: '',
+      ) as String);
+  @override
+  bool get sessionIsActive => (super.noSuchMethod(
+        Invocation.getter(#sessionIsActive),
+        returnValue: false,
+      ) as bool);
+  @override
+  String get sessionName => (super.noSuchMethod(
+        Invocation.getter(#sessionName),
+        returnValue: '',
+      ) as String);
+  @override
+  _i6.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+        Invocation.getter(#propertiesChanged),
+        returnValue: _i6.Stream<List<String>>.empty(),
+      ) as _i6.Stream<List<String>>);
+  @override
+  _i6.Future<void> logout(
+          {_i5.GnomeLogoutMode? mode = _i5.GnomeLogoutMode.normal}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #logout,
+          [],
+          {#mode: mode},
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<void> reboot() => (super.noSuchMethod(
+        Invocation.method(
+          #reboot,
+          [],
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<void> shutdown() => (super.noSuchMethod(
+        Invocation.method(
+          #shutdown,
+          [],
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<bool> canShutdown() => (super.noSuchMethod(
+        Invocation.method(
+          #canShutdown,
+          [],
+        ),
+        returnValue: _i6.Future<bool>.value(false),
+      ) as _i6.Future<bool>);
+  @override
+  _i6.Future<bool> isSessionRunning() => (super.noSuchMethod(
+        Invocation.method(
+          #isSessionRunning,
+          [],
+        ),
+        returnValue: _i6.Future<bool>.value(false),
+      ) as _i6.Future<bool>);
+  @override
+  _i6.Future<int> inhibit({
+    required String? appId,
+    required int? topLevelXId,
+    required String? reason,
+    required Set<_i5.GnomeInhibitionFlag>? flags,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #inhibit,
+          [],
+          {
+            #appId: appId,
+            #topLevelXId: topLevelXId,
+            #reason: reason,
+            #flags: flags,
+          },
+        ),
+        returnValue: _i6.Future<int>.value(0),
+      ) as _i6.Future<int>);
+  @override
+  _i6.Future<void> uninhibit(int? cookie) => (super.noSuchMethod(
+        Invocation.method(
+          #uninhibit,
+          [cookie],
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<bool> isInhibited(Set<_i5.GnomeInhibitionFlag>? flags) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #isInhibited,
+          [flags],
+        ),
+        returnValue: _i6.Future<bool>.value(false),
+      ) as _i6.Future<bool>);
+  @override
+  _i6.Future<void> connect() => (super.noSuchMethod(
+        Invocation.method(
+          #connect,
+          [],
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+  @override
+  _i6.Future<void> close() => (super.noSuchMethod(
+        Invocation.method(
+          #close,
+          [],
+        ),
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
+}
+
 /// A class which mocks [GSettings].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockGSettings extends _i1.Mock implements _i5.GSettings {
+class MockGSettings extends _i1.Mock implements _i7.GSettings {
   MockGSettings() {
     _i1.throwOnMissingStub(this);
   }
@@ -346,7 +480,7 @@ class MockGSettings extends _i1.Mock implements _i5.GSettings {
 /// A class which mocks [SubiquityClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
+class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
   MockSubiquityClient() {
     _i1.throwOnMissingStub(this);
   }
@@ -393,15 +527,15 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
-  _i6.Future<_i7.Variant> variant() => (super.noSuchMethod(
+  _i6.Future<_i8.Variant> variant() => (super.noSuchMethod(
         Invocation.method(
           #variant,
           [],
         ),
-        returnValue: _i6.Future<_i7.Variant>.value(_i7.Variant.SERVER),
-      ) as _i6.Future<_i7.Variant>);
+        returnValue: _i6.Future<_i8.Variant>.value(_i8.Variant.SERVER),
+      ) as _i6.Future<_i8.Variant>);
   @override
-  _i6.Future<void> setVariant(_i7.Variant? variant) => (super.noSuchMethod(
+  _i6.Future<void> setVariant(_i8.Variant? variant) => (super.noSuchMethod(
         Invocation.method(
           #setVariant,
           [variant],
@@ -1169,13 +1303,13 @@ class MockSubiquityClient extends _i1.Mock implements _i7.SubiquityClient {
 /// A class which mocks [SubiquityServer].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
+class MockSubiquityServer extends _i1.Mock implements _i9.SubiquityServer {
   MockSubiquityServer() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  set process(_i9.SubiquityProcess? _process) => super.noSuchMethod(
+  set process(_i10.SubiquityProcess? _process) => super.noSuchMethod(
         Invocation.setter(
           #process,
           _process,
@@ -1231,7 +1365,7 @@ class MockSubiquityServer extends _i1.Mock implements _i8.SubiquityServer {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockSubiquityStatusMonitor extends _i1.Mock
-    implements _i10.SubiquityStatusMonitor {
+    implements _i11.SubiquityStatusMonitor {
   MockSubiquityStatusMonitor() {
     _i1.throwOnMissingStub(this);
   }
