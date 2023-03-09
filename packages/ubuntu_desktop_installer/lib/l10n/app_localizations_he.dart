@@ -568,7 +568,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'דרוש שם';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get whoAreYouPageRealNameTooLong => 'השם ארוך מדי.';
 
   @override
   String get whoAreYouPageComputerNameLabel => 'שם המחשב שלך';
@@ -580,7 +580,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get whoAreYouPageComputerNameRequired => 'דרוש שם מחשב';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get whoAreYouPageComputerNameTooLong => 'שם המחשב הזה ארוך מדי.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'שם המחשב שגוי';

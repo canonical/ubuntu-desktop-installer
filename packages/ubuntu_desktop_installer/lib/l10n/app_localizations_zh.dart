@@ -220,7 +220,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installDriversSubtitle => '这些驱动受它们文档中的许可条款约束。它们是专有软件。';
 
   @override
-  String get installCodecsTitle => '为其他媒体格式提供支持';
+  String get installCodecsTitle => '下载并安装对其他媒体格式的支持';
 
   @override
   String get installCodecsSubtitle => '这些软件受其文档中包含的许可条款约束。其中部分软件是专有软件。';
@@ -231,7 +231,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => '您当前处于离线状态';
 
   @override
   String get chooseSecurityKeyTitle => '选择一个安全密钥';
@@ -409,7 +409,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get allocateDiskSpace => '分配磁盘空间';
 
   @override
-  String get startInstallingButtonText => '开始安装';
+  String get startInstallingButtonText => '安装';
 
   @override
   String get diskHeadersDevice => '设备';
@@ -445,10 +445,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get newPartitionTableConfirmationMessage => '您已选择要分区的整个设备。如果继续在该设备上创建新的分区表，那么其上的所有当前分区都将被删除。\n\n请注意，如果您愿意，稍后可以撤消此操作。';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => '主分区过多';
 
   @override
-  String get partitionLimitReached => 'Limit reached';
+  String get partitionLimitReached => '已达上限';
 
   @override
   String get bootLoaderDevice => '用于安装引导程序的设备';
@@ -544,7 +544,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionFormatZfsroot => 'ZFS 根文件系统';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => '保持未格式化';
 
   @override
   String get partitionErase => '格式化分区';
@@ -568,7 +568,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => '需要名字';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get whoAreYouPageRealNameTooLong => '名字过长。';
 
   @override
   String get whoAreYouPageComputerNameLabel => '您的电脑主机名';
@@ -580,7 +580,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPageComputerNameRequired => '需要计算机名称';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get whoAreYouPageComputerNameTooLong => '电脑名称太长了。';
 
   @override
   String get whoAreYouPageInvalidComputerName => '电脑主机名无效';
@@ -619,10 +619,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => '密码不匹配';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => '显示';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => '隐藏';
 
   @override
   String get writeChangesToDisk => '将更改写入磁盘';
@@ -696,17 +696,17 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return '你现在可以继续试用$RELEASE ，但在你重新启动计算机之前，你所做的任何修改或保存的文件都不会被保留。';
   }
 
   @override
   String get shutdown => '关机';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => '立即重启';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => '继续试用';
 
   @override
   String get turnOffBitlockerTitle => '关闭 BitLocker';
@@ -887,59 +887,59 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get activeDirectoryOption => 'Use Active Directory';
+  String get activeDirectoryOption => '使用活动目录';
 
   @override
-  String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
+  String get activeDirectoryInfo => '您将在下一步中输入域和其他详细信息。';
 
   @override
-  String get activeDirectoryTitle => 'Configure Active Directory';
+  String get activeDirectoryTitle => '配置活动目录';
 
   @override
-  String get activeDirectoryTestConnection => 'Test Connection';
+  String get activeDirectoryTestConnection => '测试连接';
 
   @override
-  String get activeDirectoryDomainLabel => 'Domain';
+  String get activeDirectoryDomainLabel => '域';
 
   @override
-  String get activeDirectoryDomainEmpty => 'Required';
+  String get activeDirectoryDomainEmpty => '必填';
 
   @override
-  String get activeDirectoryDomainTooLong => 'Too long';
+  String get activeDirectoryDomainTooLong => '太长了';
 
   @override
-  String get activeDirectoryDomainInvalidChars => 'Invalid characters';
+  String get activeDirectoryDomainInvalidChars => '无效字符';
 
   @override
-  String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
+  String get activeDirectoryDomainStartDot => '以点（.）开头';
 
   @override
-  String get activeDirectoryDomainEndDot => 'Ends with a dot (.)';
+  String get activeDirectoryDomainEndDot => '以点（.）结尾';
 
   @override
-  String get activeDirectoryDomainStartHyphen => 'Starts with a hyphen (-)';
+  String get activeDirectoryDomainStartHyphen => '以连字符 （-） 开头';
 
   @override
-  String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
+  String get activeDirectoryDomainEndHyphen => '以连字符 （-） 结尾';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+  String get activeDirectoryDomainMultipleDots => '包含多个有序点 (..)';
 
   @override
-  String get activeDirectoryDomainNotFound => 'Domain not found';
+  String get activeDirectoryDomainNotFound => '未找到域';
 
   @override
-  String get activeDirectoryAdminLabel => 'Domain Administrator';
+  String get activeDirectoryAdminLabel => '域管理员';
 
   @override
-  String get activeDirectoryAdminEmpty => 'Required';
+  String get activeDirectoryAdminEmpty => '必填';
 
   @override
-  String get activeDirectoryAdminInvalidChars => 'Invalid characters';
+  String get activeDirectoryAdminInvalidChars => '无效字符';
 
   @override
-  String get activeDirectoryPasswordLabel => 'Password';
+  String get activeDirectoryPasswordLabel => '密码';
 
   @override
-  String get activeDirectoryPasswordEmpty => 'Required';
+  String get activeDirectoryPasswordEmpty => '必填';
 }
