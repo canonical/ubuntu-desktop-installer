@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/pages/install_alongside/storage_size_dialog.dart';
 import 'package:ubuntu_desktop_installer/widgets/storage_size_box.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../test_utils.dart';
@@ -60,7 +61,7 @@ void main() {
     await tester.pumpAndSettle();
 
     for (final unit in DataUnit.values) {
-      await tester.tap(find.byType(DropdownButton<DataUnit>));
+      await tester.tap(find.byType(MenuButtonBuilder<DataUnit>));
       await tester.pumpAndSettle();
 
       await tester.ensureVisible(find.byKey(ValueKey(unit)).last);

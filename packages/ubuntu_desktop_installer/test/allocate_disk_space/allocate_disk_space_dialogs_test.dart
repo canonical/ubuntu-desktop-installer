@@ -8,6 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -38,7 +39,7 @@ void main() {
         tester.element(find.byType(AllocateDiskSpacePage)), disk, gap);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byType(DropdownButton<DataUnit>));
+    await tester.tap(find.byType(MenuButtonBuilder<DataUnit>));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byKey(ValueKey(DataUnit.bytes)).last);
@@ -106,7 +107,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byType(DropdownButton<DataUnit>));
+    await tester.tap(find.byType(MenuButtonBuilder<DataUnit>));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byKey(ValueKey(DataUnit.bytes)).last);

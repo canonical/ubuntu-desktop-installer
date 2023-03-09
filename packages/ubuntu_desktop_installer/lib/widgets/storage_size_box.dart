@@ -62,10 +62,10 @@ class StorageSizeBox extends StatelessWidget {
         ),
         SizedBox(width: spacing),
         IntrinsicWidth(
-          child: DropdownBuilder<DataUnit>(
+          child: MenuButtonBuilder<DataUnit>(
             values: DataUnit.values,
             selected: unit,
-            onSelected: (value) => onUnitSelected(value!),
+            onSelected: (value) => onUnitSelected(value),
             itemBuilder: (context, unit, _) {
               return Text(unit.l10n(context), key: ValueKey(unit));
             },

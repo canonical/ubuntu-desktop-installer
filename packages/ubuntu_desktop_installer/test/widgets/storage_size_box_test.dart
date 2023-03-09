@@ -47,7 +47,7 @@ void main() {
       ),
     );
 
-    await tester.tap(find.byType(DropdownButton<DataUnit>));
+    await tester.tap(find.byType(MenuAnchor));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byKey(ValueKey(DataUnit.megabytes)).last);
