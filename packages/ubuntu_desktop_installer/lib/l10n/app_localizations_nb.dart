@@ -430,7 +430,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get diskHeadersSystem => 'System';
 
   @override
-  String get diskHeadersFormat => 'Formater';
+  String get diskHeadersFormat => 'Format';
 
   @override
   String get freeDiskSpace => 'Ledig plass';
@@ -568,7 +568,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Navn er påkrevd';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get whoAreYouPageRealNameTooLong => 'Navnet er for langt.';
 
   @override
   String get whoAreYouPageComputerNameLabel => 'Datamaskinens navn';
@@ -580,7 +580,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get whoAreYouPageComputerNameRequired => 'Et datamaskinsnavn er påkrevd';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get whoAreYouPageComputerNameTooLong => 'Datamaskinsnavnet er for langt.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Datamaskinsnavnet er ugyldig';
@@ -944,8 +944,8 @@ class AppLocalizationsNb extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Påkrevd';
 
   @override
-  String get activeDirectoryErrorTitle => 'Error configuring connection to Active Directory';
+  String get activeDirectoryErrorTitle => 'Kunne ikke sette opp tilkobling til Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage => 'Active Directory kan ikke settes opp for øyeblikket. Når systemet er oppe og går kan du besøke <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for hjelp.';
 }
