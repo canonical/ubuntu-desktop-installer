@@ -4,11 +4,13 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
-import 'dart:ui' as _i4;
+import 'dart:ui' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:subiquity_client/subiquity_client.dart' as _i4;
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart'
     as _i2;
+import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i6;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -157,7 +159,15 @@ class MockActiveDirectoryModel extends _i1.Mock
         returnValueForMissingStub: _i3.Future<void>.value(),
       ) as _i3.Future<void>);
   @override
-  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+  _i3.Future<_i4.AdJoinResult> getJoinResult() => (super.noSuchMethod(
+        Invocation.method(
+          #getJoinResult,
+          [],
+        ),
+        returnValue: _i3.Future<_i4.AdJoinResult>.value(_i4.AdJoinResult.OK),
+      ) as _i3.Future<_i4.AdJoinResult>);
+  @override
+  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -165,7 +175,7 @@ class MockActiveDirectoryModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -188,4 +198,22 @@ class MockActiveDirectoryModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+}
+
+/// A class which mocks [UrlLauncher].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockUrlLauncher extends _i1.Mock implements _i6.UrlLauncher {
+  MockUrlLauncher() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i3.Future<bool> launchUrl(String? url) => (super.noSuchMethod(
+        Invocation.method(
+          #launchUrl,
+          [url],
+        ),
+        returnValue: _i3.Future<bool>.value(false),
+      ) as _i3.Future<bool>);
 }

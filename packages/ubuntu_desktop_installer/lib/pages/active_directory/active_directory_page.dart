@@ -7,6 +7,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+import 'active_directory_dialogs.dart';
 import 'active_directory_model.dart';
 import 'active_directory_widgets.dart';
 
@@ -69,7 +70,17 @@ class _ActiveDirectoryPageState extends State<ActiveDirectoryPage> {
         WizardAction.next(
           context,
           enabled: context.select((ActiveDirectoryModel m) => m.isValid),
-          onNext: context.read<ActiveDirectoryModel>().save,
+          onNext: () async {
+            final model = context.read<ActiveDirectoryModel>();
+            await model.save();
+            model.getJoinResult().then((result) {
+              if (mounted &&
+                  (result == AdJoinResult.JOIN_ERROR ||
+                      result == AdJoinResult.PAM_ERROR)) {
+                showActiveDirectoryErrorDialog(context);
+              }
+            });
+          },
         ),
       ],
     );
