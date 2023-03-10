@@ -773,5 +773,9 @@
   "activeDirectoryDomainEndHyphen": "Finiĝas per dividstreko (-)",
   "@activeDirectoryDomainEndHyphen": {},
   "activeDirectoryAdminLabel": "Administranto de domanio",
-  "@activeDirectoryAdminLabel": {}
+  "@activeDirectoryAdminLabel": {},
+  "whoAreYouPageRealNameTooLong": "Tiu nomo estas tro longa.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Tiu nomo estas tro longa.",
+  "@whoAreYouPageComputerNameTooLong": {}
 }

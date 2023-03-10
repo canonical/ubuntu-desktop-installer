@@ -775,5 +775,9 @@
   "activeDirectoryAdminInvalidChars": "Ungültige Zeichen",
   "@activeDirectoryAdminInvalidChars": {},
   "activeDirectoryPasswordEmpty": "Erforderlich",
-  "@activeDirectoryPasswordEmpty": {}
+  "@activeDirectoryPasswordEmpty": {},
+  "whoAreYouPageRealNameTooLong": "Dieser Name ist zu lang.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Dieser Rechnername ist zu lang.",
+  "@whoAreYouPageComputerNameTooLong": {}
 }

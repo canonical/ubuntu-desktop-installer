@@ -783,5 +783,9 @@
   "activeDirectoryDomainNotFound": "Domínio não encontrado",
   "@activeDirectoryDomainNotFound": {},
   "activeDirectoryDomainMultipleDots": "Contém vários pontos sequenciados (..)",
-  "@activeDirectoryDomainMultipleDots": {}
+  "@activeDirectoryDomainMultipleDots": {},
+  "whoAreYouPageRealNameTooLong": "Esse nome é demasiado longo.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Esse nome é demasiado longo.",
+  "@whoAreYouPageComputerNameTooLong": {}
 }
