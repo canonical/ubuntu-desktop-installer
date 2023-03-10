@@ -782,5 +782,9 @@
   "activeDirectoryAdminInvalidChars": "Caracteres incorrectos",
   "@activeDirectoryAdminInvalidChars": {},
   "activeDirectoryPasswordEmpty": "Obligatorio",
-  "@activeDirectoryPasswordEmpty": {}
+  "@activeDirectoryPasswordEmpty": {},
+  "whoAreYouPageRealNameTooLong": "Este nombre es demasiado largo.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "El nombre del ordenador es demasiado largo.",
+  "@whoAreYouPageComputerNameTooLong": {}
 }
