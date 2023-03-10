@@ -568,7 +568,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => '名前を入力してください';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get whoAreYouPageRealNameTooLong => 'その名前は長すぎます。';
 
   @override
   String get whoAreYouPageComputerNameLabel => 'コンピューターの名前';
@@ -580,7 +580,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get whoAreYouPageComputerNameRequired => 'コンピューターの名前を入力してください';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get whoAreYouPageComputerNameTooLong => 'その名前は長すぎます。';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'このコンピューターの名前は使用できません';
@@ -908,22 +908,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String get activeDirectoryDomainTooLong => '長すぎます';
 
   @override
-  String get activeDirectoryDomainInvalidChars => 'Invalid characters';
+  String get activeDirectoryDomainInvalidChars => '無効な文字が含まれています。';
 
   @override
-  String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
+  String get activeDirectoryDomainStartDot => 'ピリオド「.」で始まります。';
 
   @override
-  String get activeDirectoryDomainEndDot => 'Ends with a dot (.)';
+  String get activeDirectoryDomainEndDot => 'ピリオド「.」で終わります。';
 
   @override
-  String get activeDirectoryDomainStartHyphen => 'Starts with a hyphen (-)';
+  String get activeDirectoryDomainStartHyphen => 'ハイフン「-」で始まります。';
 
   @override
-  String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
+  String get activeDirectoryDomainEndHyphen => 'ハイフン「-」で終わります。';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+  String get activeDirectoryDomainMultipleDots => '二つのピリオド「..」を含んでいます。';
 
   @override
   String get activeDirectoryDomainNotFound => 'ドメインが見つかりません';
@@ -935,7 +935,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get activeDirectoryAdminEmpty => '必須';
 
   @override
-  String get activeDirectoryAdminInvalidChars => 'Invalid characters';
+  String get activeDirectoryAdminInvalidChars => '無効な文字が含まれています。';
 
   @override
   String get activeDirectoryPasswordLabel => 'パスワード';
