@@ -51,6 +51,8 @@ class WhoAreYouModel extends PropertyStreamNotifier {
       _autoLogin,
       _productName,
       _showPassword,
+      _hasActiveDirectorySupport,
+      _useActiveDirectory,
     ]).addListener(notifyListeners);
 
     addPropertyListener('State', notifyListeners);
@@ -71,6 +73,8 @@ class WhoAreYouModel extends PropertyStreamNotifier {
   final _autoLogin = ValueNotifier<bool>(false);
   final _productName = ValueNotifier<String>('');
   final _showPassword = ValueNotifier<bool>(false);
+  final _hasActiveDirectorySupport = ValueNotifier<bool?>(null);
+  final _useActiveDirectory = ValueNotifier<bool>(false);
 
   /// The current real name.
   String get realName => _realName.value ?? '';
@@ -107,8 +111,15 @@ class WhoAreYouModel extends PropertyStreamNotifier {
   bool get autoLogin => _autoLogin.value;
   set autoLogin(bool value) => _autoLogin.value = value;
 
-  /// Returns true if there is a site-wide connectivity.
-  bool get isConnectedSite => _network.isConnectedSite;
+  /// Returns true if there is at least site-wide connectivity.
+  bool get isConnected => _network.isConnected || _network.isConnectedSite;
+
+  /// Whether Active Directory support is available or null when unknown.
+  bool? get hasActiveDirectorySupport => _hasActiveDirectorySupport.value;
+
+  /// Whether to use Active Directory.
+  bool get useActiveDirectory => _useActiveDirectory.value;
+  set useActiveDirectory(bool value) => _useActiveDirectory.value = value;
 
   /// Whether the current input is valid.
   bool get isValid {
@@ -137,7 +148,7 @@ class WhoAreYouModel extends PropertyStreamNotifier {
   }
 
   /// Loads the identity data from the server, and resolves the system hostname.
-  Future<void> loadIdentity() async {
+  Future<void> init() async {
     final identity = await _client.identity();
     _realName.value ??= identity.realname.orIfEmpty(null);
     _hostname.value ??= identity.hostname.orIfEmpty(null);
@@ -147,6 +158,8 @@ class WhoAreYouModel extends PropertyStreamNotifier {
     log.info('Read product name: ${_productName.value}');
 
     _autoLogin.value = await _config.get(kAutoLoginUser) != null;
+    _hasActiveDirectorySupport.value =
+        await _client.hasActiveDirectorySupport();
   }
 
   /// The auto-login user config key for testing purposes.
@@ -154,7 +167,7 @@ class WhoAreYouModel extends PropertyStreamNotifier {
   static const kAutoLoginUser = 'AutoLoginUser';
 
   /// Saves the identity data to the server.
-  Future<void> saveIdentity({@visibleForTesting String? salt}) async {
+  Future<void> save({@visibleForTesting String? salt}) async {
     final identity = IdentityData(
       realname: realName,
       hostname: hostname,
@@ -169,6 +182,13 @@ class WhoAreYouModel extends PropertyStreamNotifier {
     } else {
       log.info('Disabled auto-login');
       await _config.set(kAutoLoginUser, null);
+    }
+
+    if (!useActiveDirectory) {
+      // the active directory endpoint is not optional so we need to explicitly
+      // mark it as configured even if not used to avoid subiquity getting stuck
+      // at waiting for it to be configured.
+      await _client.markConfigured(['active_directory']);
     }
 
     return _client.setIdentity(identity);
