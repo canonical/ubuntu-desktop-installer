@@ -74,7 +74,9 @@ class _ActiveDirectoryPageState extends State<ActiveDirectoryPage> {
             final model = context.read<ActiveDirectoryModel>();
             await model.save();
             model.getJoinResult().then((result) {
-              if (mounted && (result == AdJoinResult.JOIN_ERROR || result == AdJoinResult.PAM_ERROR)) {
+              if (mounted &&
+                  (result == AdJoinResult.JOIN_ERROR ||
+                      result == AdJoinResult.PAM_ERROR)) {
                 showActiveDirectoryErrorDialog(context);
               }
             });
