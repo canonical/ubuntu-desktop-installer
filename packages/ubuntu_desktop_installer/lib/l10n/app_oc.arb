@@ -811,5 +811,9 @@
   "activeDirectoryPasswordLabel": "Senhal",
   "@activeDirectoryPasswordLabel": {},
   "activeDirectoryPasswordEmpty": "Obligatòri",
-  "@activeDirectoryPasswordEmpty": {}
+  "@activeDirectoryPasswordEmpty": {},
+  "activeDirectoryErrorMessage": "O planhèm, se pòt pas configurar Active Directory pel moment. Un còp lo sistèma operacional, consultatz <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> per d’ajuda.",
+  "@activeDirectoryErrorMessage": {},
+  "activeDirectoryErrorTitle": "Error en configurant la connexion a l’Active Directory",
+  "@activeDirectoryErrorTitle": {}
 }
