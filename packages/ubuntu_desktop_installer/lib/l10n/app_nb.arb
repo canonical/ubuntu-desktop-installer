@@ -339,7 +339,7 @@
   "@availableSoftware": {},
   "diskHeadersSystem": "System",
   "@diskHeadersSystem": {},
-  "diskHeadersFormat": "Formater",
+  "diskHeadersFormat": "Format",
   "@diskHeadersFormat": {},
   "newPartitionTable": "Ny partisjonstabell",
   "@newPartitionTable": {},
@@ -809,5 +809,13 @@
   "tooManyPrimaryPartitions": "For mange primære partisjoner",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "Grense nådd",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "whoAreYouPageRealNameTooLong": "Navnet er for langt.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Datamaskinsnavnet er for langt.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryErrorMessage": "Active Directory kan ikke settes opp for øyeblikket. Når systemet er oppe og går kan du besøke <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for hjelp.",
+  "@activeDirectoryErrorMessage": {},
+  "activeDirectoryErrorTitle": "Kunne ikke sette opp tilkobling til Active Directory",
+  "@activeDirectoryErrorTitle": {}
 }
