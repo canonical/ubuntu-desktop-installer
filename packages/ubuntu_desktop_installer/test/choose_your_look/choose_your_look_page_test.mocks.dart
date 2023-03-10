@@ -29,27 +29,9 @@ class MockDesktopService extends _i1.Mock implements _i2.DesktopService {
   }
 
   @override
-  _i3.Future<void> disableAutoMounting() => (super.noSuchMethod(
+  _i3.Future<void> inhibit() => (super.noSuchMethod(
         Invocation.method(
-          #disableAutoMounting,
-          [],
-        ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
-  @override
-  _i3.Future<void> disableScreensaver() => (super.noSuchMethod(
-        Invocation.method(
-          #disableScreensaver,
-          [],
-        ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
-  @override
-  _i3.Future<void> disableScreenBlanking() => (super.noSuchMethod(
-        Invocation.method(
-          #disableScreenBlanking,
+          #inhibit,
           [],
         ),
         returnValue: _i3.Future<void>.value(),
