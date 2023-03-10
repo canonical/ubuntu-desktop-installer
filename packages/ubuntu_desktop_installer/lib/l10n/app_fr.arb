@@ -761,5 +761,9 @@
   "activeDirectoryPasswordEmpty": "Obligatoire",
   "@activeDirectoryPasswordEmpty": {},
   "activeDirectoryDomainEndHyphen": "Se termine par un trait d’union (-)",
-  "@activeDirectoryDomainEndHyphen": {}
+  "@activeDirectoryDomainEndHyphen": {},
+  "whoAreYouPageRealNameTooLong": "Ce nom est trop long.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Ce nom est trop long.",
+  "@whoAreYouPageComputerNameTooLong": {}
 }
