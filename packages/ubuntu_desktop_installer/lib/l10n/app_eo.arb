@@ -257,7 +257,7 @@
       "color": {}
     }
   },
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Averto</font>: Se vi perdos ĉi tiun sekurigan ŝlosilon, vi perdos ĉiom da datenoj. Skribu vian ŝlosilon kaj konservu ĝin en sekura alia loko, se tio necesas.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Averto:</font> Se vi perdos ĉi tiun sekurigan ŝlosilon, vi perdos ĉiom da datenoj. Skribu vian ŝlosilon kaj konservu ĝin en sekura alia loko, se tio necesas.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
