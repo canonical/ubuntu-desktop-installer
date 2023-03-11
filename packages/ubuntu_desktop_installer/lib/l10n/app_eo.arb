@@ -374,7 +374,7 @@
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.",
   "@chooseYourLookPageHeader": {},
-  "readyToUse": "**{system}** estas instalita kaj preta por uzo.",
+  "readyToUse": "**{system}** estas instalita kaj preta por uzo",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -426,7 +426,7 @@
   "@newPartitionTableConfirmationMessage": {},
   "newPartitionTableConfirmationTitle": "Ĉu krei novan subdiskotabelon sur ĉi tiun aparaton?",
   "@newPartitionTableConfirmationTitle": {},
-  "onBatteryWarning": "<font color=\"{color}\">Averto</font>: La komputilo ne estas konektita al energifonto.",
+  "onBatteryWarning": "<font color=\"{color}\">Averto:</font> La komputilo ne estas konektita al energifonto.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
