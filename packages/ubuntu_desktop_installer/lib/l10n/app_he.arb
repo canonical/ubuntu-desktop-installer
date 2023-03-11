@@ -777,5 +777,7 @@
   "whoAreYouPageRealNameTooLong": "השם ארוך מדי.",
   "@whoAreYouPageRealNameTooLong": {},
   "whoAreYouPageComputerNameTooLong": "שם המחשב הזה ארוך מדי.",
-  "@whoAreYouPageComputerNameTooLong": {}
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryErrorTitle": "שגיאה בהגדרת החיבור ל־Active Directory",
+  "@activeDirectoryErrorTitle": {}
 }
