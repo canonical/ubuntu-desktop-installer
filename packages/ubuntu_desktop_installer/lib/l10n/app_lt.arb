@@ -271,5 +271,370 @@
     "placeholders": {
       "RELEASE": {}
     }
-  }
+  },
+  "whereAreYouTimezoneLabel": "Laiko juosta",
+  "@whereAreYouTimezoneLabel": {},
+  "restartNow": "Paleisti iš naujo dabar",
+  "@restartNow": {},
+  "whereAreYouPageTitle": "Kur esate?",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouLocationLabel": "Vieta",
+  "@whereAreYouLocationLabel": {},
+  "startInstallingButtonText": "Įdiegti",
+  "@startInstallingButtonText": {},
+  "turnOffBitlockerTitle": "Išjungti „BitLocker“",
+  "@turnOffBitlockerTitle": {},
+  "installDriversTitle": "Įdiegti trečiųjų šalių programinę įrangą, skirtą grafikos ir belaidžio ryšio (Wi-Fi) aparatinei įrangai",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "Šios tvarkyklės yra platinamos pagal licencijas, nurodytas jų dokumentacijoje. Tvarkyklės yra nuosavybinės.",
+  "@installDriversSubtitle": {},
+  "restartIntoWindows": "Paleisti iš naujo į „Windows“",
+  "@restartIntoWindows": {},
+  "whoAreYouPageRealNameTooLong": "Šis vardas per ilgas.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameInfo": "Pavadinimas yra naudojamas bendraujant su kitais kompiuteriais.",
+  "@whoAreYouPageComputerNameInfo": {},
+  "whoAreYouPagePasswordRequired": "Reikia nurodyti slaptažodį",
+  "@whoAreYouPagePasswordRequired": {},
+  "whoAreYouPagePasswordShow": "Rodyti",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Slėpti",
+  "@whoAreYouPagePasswordHide": {},
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "writeChangesPartitionsHeader": "Bus pritaikyti šie skaidinių pakeitimai:",
+  "@writeChangesPartitionsHeader": {},
+  "writeChangesPartitionResized": "skaidinio #{disk}{partition} dydis pakeistas iš {oldsize} į {newsize}",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "restartInto": "Paleisti iš naujo į {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "restartWarning": "Galite toliau bandyti {RELEASE}, tačiau, kol nepaleisite kompiuterio iš naujo, tol jokie atlikti pakeitimai bei sukurti ar atsiųsti dokumentai (failai) nebus išsaugoti.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "turnOffBitlockerDescription": "Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nPrieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti „BitLocker“.",
+  "@turnOffBitlockerDescription": {},
+  "welcomeSlideDescription": "Greita ir pilna naujų ypatybių, naujausia {RELEASE} versija leidžia naudotis kompiuteriu dar lengviau nei bet kada anksčiau. Štai keli naudingi dalykai, į kuriuos verta atkreipti dėmesį...",
+  "@welcomeSlideDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "newPartitionTableConfirmationMessage": "Jūs pasirinkote skaidyti visą įrenginį. Jeigu jame pratęsite naujos skaidinių lentelės kūrimą, visi esami jo skaidiniai bus pašalinti.\n\nTurėkite omenyje, kad vėliau, jei norėsite, galėsite šią operaciją atšaukti.",
+  "@newPartitionTableConfirmationMessage": {},
+  "installationTypeAlongsideInfo": "Dokumentai, muzika ir kiti asmeniniai failai bus išsaugoti. Kas kartą įjungę kompiuterį, galėsite pasirinkti, kurią operacinę sistemą paleisti.",
+  "@installationTypeAlongsideInfo": {},
+  "showSecurityKey": "Rodyti saugumo raktą",
+  "@showSecurityKey": {},
+  "installationTypeLVMEncryptionSelected": "Pasirinkta LVM ir šifravimas",
+  "@installationTypeLVMEncryptionSelected": {},
+  "selectGuidedStorageInstallNow": "Įdiegti dabar",
+  "@selectGuidedStorageInstallNow": {},
+  "installAlongsideAllocateSpace": "Paskirstyti vietą",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsideFiles": "Failai",
+  "@installAlongsideFiles": {},
+  "installAlongsidePartition": "Skaidinys:",
+  "@installAlongsidePartition": {},
+  "installAlongsideAvailable": "Prieinama:",
+  "@installAlongsideAvailable": {},
+  "installAlongsideSize": "Dydis:",
+  "@installAlongsideSize": {},
+  "partitionCreateTitle": "Kurti skaidinį",
+  "@partitionCreateTitle": {},
+  "newPartitionTable": "Nauja skaidinių lentelė",
+  "@newPartitionTable": {},
+  "bootLoaderDevice": "Įrenginys, skirtas pradinio įkėliklio diegimui",
+  "@bootLoaderDevice": {},
+  "partitionEditTitle": "Taisyti skaidinį",
+  "@partitionEditTitle": {},
+  "partitionTypeLabel": "Naujo skaidinio tipas:",
+  "@partitionTypeLabel": {},
+  "partitionTypePrimary": "Pirminis",
+  "@partitionTypePrimary": {},
+  "partitionLocationBeginning": "Šios vietos pradžia",
+  "@partitionLocationBeginning": {},
+  "whoAreYouPagePasswordMismatch": "Slaptažodžiai nesutampa",
+  "@whoAreYouPagePasswordMismatch": {},
+  "writeChangesPartitionTablesHeader": "Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:",
+  "@writeChangesPartitionTablesHeader": {},
+  "writeChangesPartitionCreated": "skaidinys #{disk}{partition} sukurtas",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "chooseYourLookPageHeader": "Vėliau bet kada galėsite tai pakeisti išvaizdos nustatymuose.",
+  "@chooseYourLookPageHeader": {},
+  "chooseYourLookPageDarkSetting": "Tamsi",
+  "@chooseYourLookPageDarkSetting": {},
+  "chooseYourLookPageLightSetting": "Šviesi",
+  "@chooseYourLookPageLightSetting": {},
+  "welcomeSlideTitle": "Jus sveikina {RELEASE}",
+  "@welcomeSlideTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "softwareSlideTitle": "Atraskite dar daugiau programinės įrangos",
+  "@softwareSlideTitle": {},
+  "appTitle": "Ubuntu darbalaukio diegimo programa",
+  "@appTitle": {},
+  "diskHeadersType": "Tipas",
+  "@diskHeadersType": {},
+  "diskHeadersMountPoint": "Prijungimo taškas",
+  "@diskHeadersMountPoint": {},
+  "partitionFormatFat16": "FAT16 failų sistema",
+  "@partitionFormatFat16": {},
+  "installationTypeManual": "Kažkas kito",
+  "@installationTypeManual": {},
+  "partitionLocationLabel": "Naujo skaidinio vieta:",
+  "@partitionLocationLabel": {},
+  "partitionLocationEnd": "Šios vietos pabaiga",
+  "@partitionLocationEnd": {},
+  "dontInstallDriverSoftwareNowDescription": "Vėliau galėsite ją įdiegti, atvėrę Programinę įrangą ir atnaujinimus.",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "partitionFormatVfat": "VFAT failų sistema",
+  "@partitionFormatVfat": {},
+  "partitionFormatLabel": "Naudojamas kaip:",
+  "@partitionFormatLabel": {},
+  "offlineWarning": "Šiuo metu nesate prisijungę prie interneto",
+  "@offlineWarning": {},
+  "installationTypeAlongsideDual": "Įdiegti {product} šalia {os1} ir {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "Įdiegti {product} šalia jų",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeManualInfo": "Jūs galite kurti skaidinius, keisti jų dydį arba pasirinkti kelis skaidinius, skirtus {DISTRO}",
+  "@installationTypeManualInfo": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "diskHeadersFormat": "Formatuoti",
+  "@diskHeadersFormat": {},
+  "newPartitionTableConfirmationTitle": "Sukurti šiame įrenginyje naują tuščią skaidinių lentelę?",
+  "@newPartitionTableConfirmationTitle": {},
+  "partitionUnitB": "B",
+  "@partitionUnitB": {},
+  "partitionUnitGB": "GB",
+  "@partitionUnitGB": {},
+  "writeChangesToDisk": "Rašyti pakeitimus į diską",
+  "@writeChangesToDisk": {},
+  "writeChangesPartitionFormattedMounted": "skaidinys #{disk}{partition} formatuotas kaip {format} ir panaudotas {mount}",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "continueTesting": "Tęsti sistemos bandymą",
+  "@continueTesting": {},
+  "updatesOtherSoftwarePageDescription": "Kokias programas pradžiai norėtumėte įdiegti?",
+  "@updatesOtherSoftwarePageDescription": {},
+  "installCodecsTitle": "Atsisiųsti ir įdiegti papildomų medijos formatų palaikymą",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Ši programinė įranga yra platinama pagal licencijas, nurodytas jos dokumentacijoje. Kai kuri programinė įranga yra nuosavybinė.",
+  "@installCodecsSubtitle": {},
+  "installationTypeZFS": "EKSPERIMENTINIS: Ištrinti diską ir naudoti ZFS",
+  "@installationTypeZFS": {},
+  "installationTypeAlongsideUnknown": "Įdiegti {product} šalia kitų skaidinių",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "selectGuidedStoragePageTitle": "Ištrinti diską ir įdiegti {DISTRO}",
+  "@selectGuidedStoragePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "selectGuidedStorageDropdownLabel": "Pasirinkite diską:",
+  "@selectGuidedStorageDropdownLabel": {},
+  "selectGuidedStorageInfoLabel": "Bus naudojamas visas diskas:",
+  "@selectGuidedStorageInfoLabel": {},
+  "installAlongsideSpaceDivider": "Paskirstykite vietą diske, tempdami žemiau esantį dalytuvą:",
+  "@installAlongsideSpaceDivider": {},
+  "diskHeadersSize": "Dydis",
+  "@diskHeadersSize": {},
+  "allocateDiskSpace": "Paskirstyti vietą diske",
+  "@allocateDiskSpace": {},
+  "installAlongsideHiddenPartitions": "{num} mažesni skaidiniai yra paslėpti. Norėdami didesnių valdymo galimybių, naudokite <a href=\"{url}\">išplėstinį skaidymo įrankį</a>",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "installAlongsideResizePartition": "Keisti skaidinio dydį",
+  "@installAlongsideResizePartition": {},
+  "partitionFormatReiserFS": "ReiserFS failų sistema",
+  "@partitionFormatReiserFS": {},
+  "diskHeadersDevice": "Įrenginys",
+  "@diskHeadersDevice": {},
+  "diskHeadersUsed": "Panaudotas",
+  "@diskHeadersUsed": {},
+  "partitionUnitMB": "MB",
+  "@partitionUnitMB": {},
+  "diskHeadersSystem": "Sistema",
+  "@diskHeadersSystem": {},
+  "partitionLimitReached": "Pasiekta riba",
+  "@partitionLimitReached": {},
+  "partitionFormatIso9660": "ISO 9660 failų sistema",
+  "@partitionFormatIso9660": {},
+  "partitionFormatNtfs": "NTFS failų sistema",
+  "@partitionFormatNtfs": {},
+  "partitionTypeLogical": "Loginis",
+  "@partitionTypeLogical": {},
+  "partitionUnitKB": "kB",
+  "@partitionUnitKB": {},
+  "writeChangesFallbackSerial": "diskas",
+  "@writeChangesFallbackSerial": {
+    "description": "Default display name for a disk without a serial (unlikely)"
+  },
+  "partitionSizeLabel": "Dydis:",
+  "@partitionSizeLabel": {},
+  "partitionFormatFat32": "FAT32 failų sistema",
+  "@partitionFormatFat32": {},
+  "partitionFormatSwap": "Mainų sritis",
+  "@partitionFormatSwap": {},
+  "partitionFormatFat12": "FAT12 failų sistema",
+  "@partitionFormatFat12": {},
+  "partitionFormatZfsroot": "ZFS šakninė failų sistema",
+  "@partitionFormatZfsroot": {},
+  "partitionErase": "Formatuoti skaidinį",
+  "@partitionErase": {},
+  "whoAreYouPageTitle": "Kas jūs esate?",
+  "@whoAreYouPageTitle": {},
+  "whoAreYouPageComputerNameTooLong": "Šis kompiuterio pavadinimas per ilgas.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "partitionMountPointLabel": "Prijungimo taškas:",
+  "@partitionMountPointLabel": {},
+  "whoAreYouPageInvalidComputerName": "Kompiuterio pavadinimas yra netinkamas",
+  "@whoAreYouPageInvalidComputerName": {},
+  "whoAreYouPageUsernameRequired": "Reikia nurodyti naudotojo vardą",
+  "@whoAreYouPageUsernameRequired": {},
+  "whoAreYouPageInvalidUsername": "Netinkamas naudotojo vardas",
+  "@whoAreYouPageInvalidUsername": {},
+  "whoAreYouPageUsernameTooLong": "Šis vardas per ilgas.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInvalidChars": "Šiame varde yra netinkamų simbolių.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "whoAreYouPagePasswordLabel": "Pasirinkite slaptažodį",
+  "@whoAreYouPagePasswordLabel": {},
+  "writeChangesDescription": "Jei tęsite, žemiau išvardyti pakeitimai bus įrašyti į diskus. Tolimesnius pakeitimus galėsite atlikti rankiniu būdu.",
+  "@writeChangesDescription": {},
+  "whoAreYouPageUsernameSystemReserved": "Šis vardas yra rezervuotas sisteminiam naudojimui.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameInUse": "Šis naudotojo vardas jau yra.",
+  "@whoAreYouPageUsernameInUse": {},
+  "installationCompleteTitle": "Įdiegimas baigtas",
+  "@installationCompleteTitle": {},
+  "writeChangesPartitionMounted": "skaidinys #{disk}{partition} panaudotas {mount}",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "skaidinys #{disk}{partition} formatuotas kaip {format}",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "chooseYourLookPageTitle": "Pasirinkite išvaizdą",
+  "@chooseYourLookPageTitle": {},
+  "turnOffBitlockerLinkInstructions": "Norėdami gauti instrukcijas, atverkite savo telefone ar kitame įrenginyje šią internetinę svetainę: <a href=\"https://{url}\">{url}</a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "partitionFormatNone": "Palikti neformatuotą",
+  "@partitionFormatNone": {},
+  "whoAreYouPageAutoLogin": "Automatiškai prisijungti prie paskyros",
+  "@whoAreYouPageAutoLogin": {},
+  "whoAreYouPageRequirePassword": "Prisijungiant prie paskyros reikalauti slaptažodžio",
+  "@whoAreYouPageRequirePassword": {},
+  "whoAreYouPageRealNameLabel": "Jūsų vardas",
+  "@whoAreYouPageRealNameLabel": {},
+  "whoAreYouPageRealNameRequired": "Reikia nurodyti vardą",
+  "@whoAreYouPageRealNameRequired": {},
+  "whoAreYouPageComputerNameLabel": "Jūsų kompiuterio pavadinimas",
+  "@whoAreYouPageComputerNameLabel": {},
+  "whoAreYouPageComputerNameRequired": "Reikia nurodyti kompiuterio pavadinimą",
+  "@whoAreYouPageComputerNameRequired": {},
+  "whoAreYouPageConfirmPasswordLabel": "Pakartokite slaptažodį",
+  "@whoAreYouPageConfirmPasswordLabel": {},
+  "freeDiskSpace": "Laisva vieta",
+  "@freeDiskSpace": {},
+  "partitionFormatExt2": "Ext2 failų sistema",
+  "@partitionFormatExt2": {},
+  "tooManyPrimaryPartitions": "Per daug pirminių skaidinių",
+  "@tooManyPrimaryPartitions": {},
+  "partitionFormatFat": "FAT failų sistema",
+  "@partitionFormatFat": {},
+  "whoAreYouPageUsernameLabel": "Pasirinkite naudotojo vardą",
+  "@whoAreYouPageUsernameLabel": {},
+  "readyToUse": "**{system}** įdiegta ir paruošta naudoti.",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "shutdown": "Išjungti",
+  "@shutdown": {}
 }
