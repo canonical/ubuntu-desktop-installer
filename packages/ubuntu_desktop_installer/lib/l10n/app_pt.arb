@@ -338,7 +338,7 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "Instalação concluída",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** está instalado e pronto para usar.",
+  "readyToUse": "**{system}** está instalado e pronto para usar",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
