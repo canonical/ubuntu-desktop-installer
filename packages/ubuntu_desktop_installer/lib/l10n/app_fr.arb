@@ -362,7 +362,7 @@
       "format": {}
     }
   },
-  "readyToUse": "**{system}** est installé et prêt à être utilisé.",
+  "readyToUse": "**{system}** est installé et prêt à être utilisé",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -414,7 +414,7 @@
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "Vous avez sélectionné un périphérique entier à partitionner. Si vous continuez en créant une nouvelle table de partitions, toutes les partitions actuellement sur ce périphérique seront supprimées.\n\nVous pourrez annuler cette opération plus tard si vous le souhaitez.",
   "@newPartitionTableConfirmationMessage": {},
-  "onBatteryWarning": "<font color=\"{color}\"> Avertissement </font> : L’ordinateur n’est pas branché à une source d’alimentation.",
+  "onBatteryWarning": "<font color=\"{color}\"> Avertissement:</font> L’ordinateur n’est pas branché à une source d’alimentation.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
