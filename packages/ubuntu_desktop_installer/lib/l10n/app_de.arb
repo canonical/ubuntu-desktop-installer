@@ -367,7 +367,7 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "Installation abgeschlossen",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** ist installiert und einsatzbereit.",
+  "readyToUse": "**{system}** ist installiert und einsatzbereit",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -428,7 +428,7 @@
   "@enableWifi": {},
   "connectButtonText": "Verbinden",
   "@connectButtonText": {},
-  "onBatteryWarning": "<font color=\"{color}\">Warnung</font>: Der Rechner ist nicht an eine Stromquelle angeschlossen.",
+  "onBatteryWarning": "<font color=\"{color}\">Warnung:</font> Der Rechner ist nicht an eine Stromquelle angeschlossen.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
