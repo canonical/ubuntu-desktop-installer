@@ -832,5 +832,7 @@
   "activeDirectoryPasswordEmpty": "Krävs",
   "@activeDirectoryPasswordEmpty": {},
   "whoAreYouPageComputerNameTooLong": "Det datornamnet är för långt.",
-  "@whoAreYouPageComputerNameTooLong": {}
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryErrorTitle": "Fel vid konfiguration av anslutning till Active Directory",
+  "@activeDirectoryErrorTitle": {}
 }
