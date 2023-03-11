@@ -779,5 +779,7 @@
   "whoAreYouPageRealNameTooLong": "Dieser Name ist zu lang.",
   "@whoAreYouPageRealNameTooLong": {},
   "whoAreYouPageComputerNameTooLong": "Dieser Rechnername ist zu lang.",
-  "@whoAreYouPageComputerNameTooLong": {}
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryErrorTitle": "Fehler beim Einrichten der Verbindung zum Active Directory",
+  "@activeDirectoryErrorTitle": {}
 }
