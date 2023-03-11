@@ -114,7 +114,7 @@
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "Die Sicherheitsschlüssel stimmen nicht überein",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Warnung</font>: Falls Sie diesen Sicherheitsschlüssel verlieren, sind alle Daten verloren. Bei Bedarf können Sie sich den Schlüssel aufschreiben und ihn an einem sicheren Ort verwahren.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Warnung:</font> Falls Sie diesen Sicherheitsschlüssel verlieren, sind alle Daten verloren. Bei Bedarf können Sie sich den Schlüssel aufschreiben und ihn an einem sicheren Ort verwahren.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -394,7 +394,7 @@
       "url": {}
     }
   },
-  "restartIntoWindows": "Neustart unter Windows",
+  "restartIntoWindows": "Neustart in Windows",
   "@restartIntoWindows": {},
   "whoAreYouPagePasswordRequired": "Ein Passwort ist erforderlich",
   "@whoAreYouPagePasswordRequired": {},
@@ -781,5 +781,7 @@
   "whoAreYouPageComputerNameTooLong": "Dieser Rechnername ist zu lang.",
   "@whoAreYouPageComputerNameTooLong": {},
   "activeDirectoryErrorTitle": "Fehler beim Einrichten der Verbindung zum Active Directory",
-  "@activeDirectoryErrorTitle": {}
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "Entschuldigung, Active Directory kann im Moment nicht eingerichtet werden. Besuchen Sie für Hilfe <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, sobald Ihr System hochgefahren und in Betrieb ist.",
+  "@activeDirectoryErrorMessage": {}
 }
