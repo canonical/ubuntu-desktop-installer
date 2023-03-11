@@ -347,7 +347,7 @@
   "@chooseYourLookPageHeader": {},
   "installationCompleteTitle": "インストールが完了しました",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** のインストールは完了し、使い始める準備が整いました。",
+  "readyToUse": "**{system}** のインストールは完了し、使い始める準備が整いました",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
