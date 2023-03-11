@@ -199,7 +199,7 @@
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "The security keys do not match",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Warning:</font> If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -587,7 +587,7 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "Installation complete",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** is installed and ready to use.",
+  "readyToUse": "**{system}** is installed and ready to use",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
