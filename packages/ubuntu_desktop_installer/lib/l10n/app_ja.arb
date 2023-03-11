@@ -832,5 +832,7 @@
   "activeDirectoryAdminInvalidChars": "無効な文字が含まれています。",
   "@activeDirectoryAdminInvalidChars": {},
   "activeDirectoryDomainStartHyphen": "ハイフン「-」で始まります。",
-  "@activeDirectoryDomainStartHyphen": {}
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryErrorTitle": "アクティブディレクトリへの接続設定エラー",
+  "@activeDirectoryErrorTitle": {}
 }

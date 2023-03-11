@@ -787,5 +787,7 @@
   "whoAreYouPageRealNameTooLong": "Esse nome é demasiado longo.",
   "@whoAreYouPageRealNameTooLong": {},
   "whoAreYouPageComputerNameTooLong": "Esse nome é demasiado longo.",
-  "@whoAreYouPageComputerNameTooLong": {}
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryErrorTitle": "Erro ao configurando a ligação ao Active Directory",
+  "@activeDirectoryErrorTitle": {}
 }
