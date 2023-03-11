@@ -148,7 +148,7 @@
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "Las claves de seguridad no coinciden",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Advertencia</font>: Si pierde esta clave de seguridad, se perderán todos los datos. Si lo necesita, anote su clave y guárdela en un lugar seguro en algún otro sitio.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Advertencia:</font> Si pierde esta clave de seguridad, se perderán todos los datos. Si lo necesita, anote su clave y guárdela en un lugar seguro en algún otro sitio.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -492,7 +492,7 @@
   "@officeSlideCalc": {},
   "photoSlideDescription": "Shotwell es un práctico gestor de imágenes que está preparado para sus dispositivos. Conecte una cámara o un teléfono para transferir sus fotos; es fácil compartirlas y mantenerlas seguras. Y, para sacar provecho de su creatividad, hallará otras aplicaciones de retoque fotográfico en Software de Ubuntu.",
   "@photoSlideDescription": {},
-  "onBatteryWarning": "<font color=\"{color}\">Advertencia</font>: El equipo no está conectado a una fuente de alimentación.",
+  "onBatteryWarning": "<font color=\"{color}\">Advertencia:</font> El equipo no está conectado a una fuente de alimentación.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -788,5 +788,7 @@
   "whoAreYouPageComputerNameTooLong": "El nombre del ordenador es demasiado largo.",
   "@whoAreYouPageComputerNameTooLong": {},
   "activeDirectoryErrorTitle": "Error al configurar la conexión con Active Directory",
-  "@activeDirectoryErrorTitle": {}
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "Lo sentimos, Active Directory no se puede configurar en este momento. Una vez que el sistema esté en funcionamiento, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para obtener ayuda.",
+  "@activeDirectoryErrorMessage": {}
 }
