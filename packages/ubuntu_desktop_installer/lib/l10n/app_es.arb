@@ -382,7 +382,7 @@
       "system": {}
     }
   },
-  "readyToUse": "**{system}** está instalado y listo para usarse.",
+  "readyToUse": "**{system}** está instalado y listo para usarse",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
