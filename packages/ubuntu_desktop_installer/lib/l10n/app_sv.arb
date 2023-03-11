@@ -68,7 +68,7 @@
   "@whoAreYouPageTitle": {},
   "whoAreYouPageRealNameRequired": "Ett namn krävs",
   "@whoAreYouPageRealNameRequired": {},
-  "readyToUse": "**{system}** är installerat och redo att användas.",
+  "readyToUse": "**{system}** är installerat och redo att användas",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
