@@ -5,7 +5,7 @@ class AppLocalizationsLt extends AppLocalizations {
   AppLocalizationsLt([String locale = 'lt']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Ubuntu darbalaukio diegimo programa';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -124,7 +124,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get dontInstallDriverSoftwareNow => 'Kol kas neįdiegti tvarkyklės programinės įrangos';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get dontInstallDriverSoftwareNowDescription => 'Vėliau galėsite ją įdiegti, atvėrę Programinę įrangą ir atnaujinimus.';
 
   @override
   String get configureSecureBootSecurityKeyRequired => 'Reikia nurodyti saugumo raktą';
@@ -133,7 +133,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get secureBootSecurityKeysDontMatch => 'Saugumo raktai nesutampa';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get showSecurityKey => 'Rodyti saugumo raktą';
 
   @override
   String get connectToInternetPageTitle => 'Prisijunkite prie interneto';
@@ -190,7 +190,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Atnaujinimai ir kita programinė įranga';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get updatesOtherSoftwarePageDescription => 'Kokias programas pradžiai norėtumėte įdiegti?';
 
   @override
   String get normalInstallationTitle => 'Įprastas programų paketas';
@@ -214,16 +214,16 @@ class AppLocalizationsLt extends AppLocalizations {
   String get installThirdPartySubtitle => 'Šiai programinei įrangai taikomos licencijos sąlygos, kurias rasite jos dokumentacijoje. Kai kuri programinė įranga yra nuosavybinė.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Įdiegti trečiųjų šalių programinę įrangą, skirtą grafikos ir belaidžio ryšio (Wi-Fi) aparatinei įrangai';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Šios tvarkyklės yra platinamos pagal licencijas, nurodytas jų dokumentacijoje. Tvarkyklės yra nuosavybinės.';
 
   @override
-  String get installCodecsTitle => 'Download and install support for additional media formats';
+  String get installCodecsTitle => 'Atsisiųsti ir įdiegti papildomų medijos formatų palaikymą';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Ši programinė įranga yra platinama pagal licencijas, nurodytas jos dokumentacijoje. Kai kuri programinė įranga yra nuosavybinė.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -231,7 +231,7 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Šiuo metu nesate prisijungę prie interneto';
 
   @override
   String get chooseSecurityKeyTitle => 'Pasirinkite saugumo raktą';
@@ -308,7 +308,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM pasirinkta';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'Pasirinkta LVM ir šifravimas';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -319,7 +319,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get installationTypeEncryptInfo => 'Kitame žingsnyje pasirinksite saugumo raktą.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => 'EKSPERIMENTINIS: Ištrinti diską ir naudoti ZFS';
 
   @override
   String get installationTypeZFSSelected => 'ZFS pasirinkta';
@@ -341,126 +341,126 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'Įdiegti $product šalia $os1 ir $os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Įdiegti $product šalia jų';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'Įdiegti $product šalia kitų skaidinių';
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => 'Dokumentai, muzika ir kiti asmeniniai failai bus išsaugoti. Kas kartą įjungę kompiuterį, galėsite pasirinkti, kurią operacinę sistemą paleisti.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'Kažkas kito';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+    return 'Jūs galite kurti skaidinius, keisti jų dydį arba pasirinkti kelis skaidinius, skirtus $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'Ištrinti diską ir įdiegti $DISTRO';
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'Pasirinkite diską:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'Bus naudojamas visas diskas:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Įdiegti dabar';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Paskirstykite vietą diske, tempdami žemiau esantį dalytuvą:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num mažesni skaidiniai yra paslėpti. Norėdami didesnių valdymo galimybių, naudokite <a href=\"$url\">išplėstinį skaidymo įrankį</a>';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'Keisti skaidinio dydį';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'Paskirstyti vietą';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Failai';
 
   @override
-  String get installAlongsidePartition => 'Partition:';
+  String get installAlongsidePartition => 'Skaidinys:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Dydis:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Prieinama:';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => 'Paskirstyti vietą diske';
 
   @override
-  String get startInstallingButtonText => 'Install';
+  String get startInstallingButtonText => 'Įdiegti';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get diskHeadersDevice => 'Įrenginys';
 
   @override
-  String get diskHeadersType => 'Type';
+  String get diskHeadersType => 'Tipas';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'Prijungimo taškas';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'Dydis';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'Panaudotas';
 
   @override
-  String get diskHeadersSystem => 'System';
+  String get diskHeadersSystem => 'Sistema';
 
   @override
-  String get diskHeadersFormat => 'Format';
+  String get diskHeadersFormat => 'Formatuoti';
 
   @override
-  String get freeDiskSpace => 'Free space';
+  String get freeDiskSpace => 'Laisva vieta';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => 'Nauja skaidinių lentelė';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'Sukurti šiame įrenginyje naują tuščią skaidinių lentelę?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on it, all its current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Jūs pasirinkote skaidyti visą įrenginį. Jeigu jame pratęsite naujos skaidinių lentelės kūrimą, visi esami jo skaidiniai bus pašalinti.\n\nTurėkite omenyje, kad vėliau, jei norėsite, galėsite šią operaciją atšaukti.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'Per daug pirminių skaidinių';
 
   @override
-  String get partitionLimitReached => 'Limit reached';
+  String get partitionLimitReached => 'Pasiekta riba';
 
   @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
+  String get bootLoaderDevice => 'Įrenginys, skirtas pradinio įkėliklio diegimui';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'Kurti skaidinį';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'Taisyti skaidinį';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'Dydis:';
 
   @override
   String get partitionUnitB => 'B';
@@ -475,25 +475,25 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => 'Naujo skaidinio tipas:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'Pirminis';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'Loginis';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => 'Naujo skaidinio vieta:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'Šios vietos pradžia';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'Šios vietos pabaiga';
 
   @override
-  String get partitionFormatLabel => 'Used as:';
+  String get partitionFormatLabel => 'Naudojamas kaip:';
 
   @override
   String get partitionFormatExt4 => 'Ext4 journaling file system';
@@ -502,7 +502,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionFormatExt3 => 'Ext3 journaling file system';
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionFormatExt2 => 'Ext2 failų sistema';
 
   @override
   String get partitionFormatBtrfs => 'btrfs journaling file system';
@@ -514,127 +514,127 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionFormatXfs => 'XFS journaling file system';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get partitionFormatFat => 'FAT failų sistema';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get partitionFormatFat12 => 'FAT12 failų sistema';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get partitionFormatFat16 => 'FAT16 failų sistema';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get partitionFormatFat32 => 'FAT32 failų sistema';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get partitionFormatSwap => 'Mainų sritis';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get partitionFormatIso9660 => 'ISO 9660 failų sistema';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get partitionFormatVfat => 'VFAT failų sistema';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get partitionFormatNtfs => 'NTFS failų sistema';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get partitionFormatReiserFS => 'ReiserFS failų sistema';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get partitionFormatZfsroot => 'ZFS šakninė failų sistema';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'Palikti neformatuotą';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get partitionErase => 'Formatuoti skaidinį';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get partitionMountPointLabel => 'Prijungimo taškas:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'Kas jūs esate?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageAutoLogin => 'Automatiškai prisijungti prie paskyros';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageRequirePassword => 'Prisijungiant prie paskyros reikalauti slaptažodžio';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPageRealNameLabel => 'Jūsų vardas';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPageRealNameRequired => 'Reikia nurodyti vardą';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get whoAreYouPageRealNameTooLong => 'Šis vardas per ilgas.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageComputerNameLabel => 'Jūsų kompiuterio pavadinimas';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPageComputerNameInfo => 'Pavadinimas yra naudojamas bendraujant su kitais kompiuteriais.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPageComputerNameRequired => 'Reikia nurodyti kompiuterio pavadinimą';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get whoAreYouPageComputerNameTooLong => 'Šis kompiuterio pavadinimas per ilgas.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPageInvalidComputerName => 'Kompiuterio pavadinimas yra netinkamas';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
+  String get whoAreYouPageUsernameLabel => 'Pasirinkite naudotojo vardą';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
+  String get whoAreYouPageUsernameRequired => 'Reikia nurodyti naudotojo vardą';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
+  String get whoAreYouPageInvalidUsername => 'Netinkamas naudotojo vardas';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get whoAreYouPageUsernameInUse => 'Šis naudotojo vardas jau yra.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get whoAreYouPageUsernameSystemReserved => 'Šis vardas yra rezervuotas sisteminiam naudojimui.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get whoAreYouPageUsernameTooLong => 'Šis vardas per ilgas.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get whoAreYouPageUsernameInvalidChars => 'Šiame varde yra netinkamų simbolių.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
+  String get whoAreYouPagePasswordLabel => 'Pasirinkite slaptažodį';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
+  String get whoAreYouPagePasswordRequired => 'Reikia nurodyti slaptažodį';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
+  String get whoAreYouPageConfirmPasswordLabel => 'Pakartokite slaptažodį';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
+  String get whoAreYouPagePasswordMismatch => 'Slaptažodžiai nesutampa';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Rodyti';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Slėpti';
 
   @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get writeChangesToDisk => 'Rašyti pakeitimus į diską';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get writeChangesFallbackSerial => 'diskas';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get writeChangesDescription => 'Jei tęsite, žemiau išvardyti pakeitimai bus įrašyti į diskus. Tolimesnius pakeitimus galėsite atlikti rankiniu būdu.';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesPartitionTablesHeader => 'Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -642,107 +642,107 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partition changes are going to be applied:';
+  String get writeChangesPartitionsHeader => 'Bus pritaikyti šie skaidinių pakeitimai:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk$partition resized from $oldsize to $newsize';
+    return 'skaidinio #$disk$partition dydis pakeistas iš $oldsize į $newsize';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk$partition formatted as $format used for $mount';
+    return 'skaidinys #$disk$partition formatuotas kaip $format ir panaudotas $mount';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk$partition formatted as $format';
+    return 'skaidinys #$disk$partition formatuotas kaip $format';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk$partition used for $mount';
+    return 'skaidinys #$disk$partition panaudotas $mount';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk$partition created';
+    return 'skaidinys #$disk$partition sukurtas';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'Pasirinkite išvaizdą';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => 'Vėliau bet kada galėsite tai pakeisti išvaizdos nustatymuose.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'Tamsi';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'Šviesi';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'Įdiegimas baigtas';
 
   @override
   String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
+    return '**$system** įdiegta ir paruošta naudoti.';
   }
 
   @override
   String restartInto(Object system) {
-    return 'Restart into $system';
+    return 'Paleisti iš naujo į $system';
   }
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Galite toliau bandyti $RELEASE, tačiau, kol nepaleisite kompiuterio iš naujo, tol jokie atlikti pakeitimai bei sukurti ar atsiųsti dokumentai (failai) nebus išsaugoti.';
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => 'Išjungti';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Paleisti iš naujo dabar';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Tęsti sistemos bandymą';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'Išjungti „BitLocker“';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String get turnOffBitlockerDescription => 'Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nPrieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti „BitLocker“.';
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'Norėdami gauti instrukcijas, atverkite savo telefone ar kitame įrenginyje šią internetinę svetainę: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Paleisti iš naujo į „Windows“';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Kur esate?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get whereAreYouLocationLabel => 'Vieta';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get whereAreYouTimezoneLabel => 'Laiko juosta';
 
   @override
   String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Jus sveikina $RELEASE';
   }
 
   @override
   String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+    return 'Greita ir pilna naujų ypatybių, naujausia $RELEASE versija leidžia naudotis kompiuteriu dar lengviau nei bet kada anksčiau. Štai keli naudingi dalykai, į kuriuos verta atkreipti dėmesį...';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get softwareSlideTitle => 'Atraskite dar daugiau programinės įrangos';
 
   @override
   String softwareSlideDescription(Object RELEASE) {
