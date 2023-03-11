@@ -944,7 +944,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Obligatorio';
 
   @override
-  String get activeDirectoryErrorTitle => 'Error configuring connection to Active Directory';
+  String get activeDirectoryErrorTitle => 'Error al configurar la conexión con Active Directory';
 
   @override
   String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';

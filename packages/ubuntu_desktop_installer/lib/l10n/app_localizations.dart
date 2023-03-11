@@ -701,7 +701,7 @@ abstract class AppLocalizations {
   /// No description provided for @chooseSecurityKeyWarning.
   ///
   /// In en, this message translates to:
-  /// **'<font color=\"{color}\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.'**
+  /// **'<font color=\"{color}\">Warning:</font> If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.'**
   String chooseSecurityKeyWarning(Object color);
 
   /// No description provided for @installationTypeTitle.
@@ -1475,7 +1475,7 @@ abstract class AppLocalizations {
   /// No description provided for @readyToUse.
   ///
   /// In en, this message translates to:
-  /// **'**{system}** is installed and ready to use.'**
+  /// **'**{system}** is installed and ready to use'**
   String readyToUse(Object system);
 
   /// No description provided for @restartInto.
