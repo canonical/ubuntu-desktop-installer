@@ -779,5 +779,7 @@
   "whoAreYouPageComputerNameTooLong": "שם המחשב הזה ארוך מדי.",
   "@whoAreYouPageComputerNameTooLong": {},
   "activeDirectoryErrorTitle": "שגיאה בהגדרת החיבור ל־Active Directory",
-  "@activeDirectoryErrorTitle": {}
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "אי אפשר להגדיר חיבור ל־Active Directory כרגע, עמך הסליחה. לאחר סיום התקנת המערכת, יש לבקר בכתובת <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> לקבלת עזרה.",
+  "@activeDirectoryErrorMessage": {}
 }
