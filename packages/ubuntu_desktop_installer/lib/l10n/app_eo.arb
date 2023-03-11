@@ -777,5 +777,9 @@
   "whoAreYouPageRealNameTooLong": "Tiu nomo estas tro longa.",
   "@whoAreYouPageRealNameTooLong": {},
   "whoAreYouPageComputerNameTooLong": "Tiu nomo estas tro longa.",
-  "@whoAreYouPageComputerNameTooLong": {}
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryErrorTitle": "Eraro agordante konekton al Aktiva Dosierujo",
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "Pardonu, Aktiva Dosierujo ne estas agordebla nuntempe. Post kiam via sistemo funkcias, vizitu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> por helpo.",
+  "@activeDirectoryErrorMessage": {}
 }
