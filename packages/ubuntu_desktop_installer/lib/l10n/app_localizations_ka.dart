@@ -40,6 +40,11 @@ class AppLocalizationsKa extends AppLocalizations {
   String get welcome => 'მოგესალმებით';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'აირჩიეთ თქვენი ენა:';
 
   @override

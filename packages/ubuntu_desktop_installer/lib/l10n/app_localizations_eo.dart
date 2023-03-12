@@ -40,6 +40,11 @@ class AppLocalizationsEo extends AppLocalizations {
   String get welcome => 'Bonvenon';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Elektu vian lingvon:';
 
   @override

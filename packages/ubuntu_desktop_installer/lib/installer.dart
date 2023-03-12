@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -233,7 +232,12 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
                   ...?widget.flavor.localizationsDelegates,
                 ],
                 supportedLocales: supportedLocales,
-                home: buildApp(context),
+                home: AnimatedSwitcher(
+                  duration: const Duration(seconds: 1),
+                  switchInCurve: Curves.easeInExpo,
+                  switchOutCurve: Curves.easeOutExpo,
+                  child: buildApp(context),
+                ),
                 builder: (context, child) => Stack(
                   children: [
                     const Positioned.fill(
@@ -283,36 +287,27 @@ class _UbuntuDesktopInstallerBackground extends StatelessWidget {
 }
 
 class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
-  const _UbuntuDesktopInstallerLoadingPage();
+  const _UbuntuDesktopInstallerLoadingPage()
+      : super(key: const ValueKey(_UbuntuDesktopInstallerLoadingPage));
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    // final lang = AppLocalizations.of(context);
+    final flavor = Flavor.of(context);
+    final lang = AppLocalizations.of(context);
+    final style = Theme.of(context).textTheme.headlineSmall!;
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(AppLocalizations.of(context).welcome),
       ),
-      // TODO: "Choose your language" makes no sense in autoinstall mode so it's
-      //  temporarily hidden until we have a dedicated loading screen.
-      header: const Text(''), // Text(lang.welcomeHeader),
-      content: Row(
+      content: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            child: YaruBorderContainer(
-              height: height,
-              child: const Center(
-                child: YaruCircularProgressIndicator(),
-              ),
-            ),
+          const SizedBox.square(
+            dimension: 72,
+            child: YaruCircularProgressIndicator(),
           ),
-          const SizedBox(width: kContentSpacing),
-          Expanded(
-            child: SvgPicture.asset(
-              'assets/welcome/logo.svg',
-              height: height / 2,
-            ),
-          ),
+          const SizedBox(height: kContentSpacing * 2),
+          Text(lang.preparingUbuntu(flavor.name), style: style),
         ],
       ),
       actions: <WizardAction>[

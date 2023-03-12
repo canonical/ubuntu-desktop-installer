@@ -40,6 +40,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get welcome => '欢迎';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => '选择您的语言：';
 
   @override

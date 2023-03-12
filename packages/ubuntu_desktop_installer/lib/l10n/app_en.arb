@@ -27,6 +27,13 @@
   "@quitButtonText": {},
   "welcome": "Welcome",
   "@welcome": {},
+  "preparingUbuntu": "Preparing {DISTRO}...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
   "welcomeHeader": "Choose your language:",
   "@welcomeHeader": {},
   "tryOrInstallPageTitle": "Try or install",

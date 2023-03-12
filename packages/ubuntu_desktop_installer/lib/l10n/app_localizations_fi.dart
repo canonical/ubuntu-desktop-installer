@@ -40,6 +40,11 @@ class AppLocalizationsFi extends AppLocalizations {
   String get welcome => 'Tervetuloa';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Valitse kieli:';
 
   @override

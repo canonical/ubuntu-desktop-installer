@@ -40,6 +40,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get welcome => '환영합니다';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => '언어를 선택하십시오:';
 
   @override

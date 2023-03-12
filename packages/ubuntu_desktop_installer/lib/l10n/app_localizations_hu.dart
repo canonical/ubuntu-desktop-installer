@@ -40,6 +40,11 @@ class AppLocalizationsHu extends AppLocalizations {
   String get welcome => 'Üdvözöljük';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Válassza ki a nyelvet:';
 
   @override
