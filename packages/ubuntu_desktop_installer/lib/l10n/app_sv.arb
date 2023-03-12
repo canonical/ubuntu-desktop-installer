@@ -216,7 +216,7 @@
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "Säkerhetsnycklarna stämmer inte överens",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Varning</font>: Om du tappar den här säkerhetsnyckeln kommer all data att gå förlorad. Om du behöver, skriv ner din nyckel och förvara den på ett säkert ställe någon annanstans.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Varning:</font> Om du tappar den här säkerhetsnyckeln kommer all data att gå förlorad. Om du behöver, skriv ner din nyckel och förvara den på ett säkert ställe någon annanstans.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -397,7 +397,7 @@
       "RELEASE": {}
     }
   },
-  "onBatteryWarning": "<font color=\"{color}\">Varning</font>: Datorn är inte ansluten till en strömkälla.",
+  "onBatteryWarning": "<font color=\"{color}\">Varning:</font> Denna dator är inte ansluten till en strömkälla.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -834,5 +834,7 @@
   "whoAreYouPageComputerNameTooLong": "Det datornamnet är för långt.",
   "@whoAreYouPageComputerNameTooLong": {},
   "activeDirectoryErrorTitle": "Fel vid konfiguration av anslutning till Active Directory",
-  "@activeDirectoryErrorTitle": {}
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "Tyvärr, Active Directory kan inte ställas in just nu. när ditt system är igång, besök <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> för hjälp.",
+  "@activeDirectoryErrorMessage": {}
 }
