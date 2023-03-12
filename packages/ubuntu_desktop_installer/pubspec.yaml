@@ -83,7 +83,11 @@ flutter:
     - assets/installation_complete/
     - assets/installation_slides/
     - assets/installation_slides/icons/
+    - assets/installation_slides/icons/dark/
+    - assets/installation_slides/icons/light/
     - assets/installation_slides/screenshots/
+    - assets/installation_slides/screenshots/dark/
+    - assets/installation_slides/screenshots/light/
     - assets/select_guided_storage/
     - assets/try_or_install/
     - assets/turn_off_bitlocker/

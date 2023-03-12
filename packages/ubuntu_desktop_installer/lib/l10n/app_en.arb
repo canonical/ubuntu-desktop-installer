@@ -633,115 +633,108 @@
   "@whereAreYouLocationLabel": {},
   "whereAreYouTimezoneLabel": "Timezone",
   "@whereAreYouTimezoneLabel": {},
-  "welcomeSlideTitle": "Welcome to {RELEASE}",
-  "@welcomeSlideTitle": {
+  "installationSlidesTitle": "Welcome to {RELEASE}",
+  "@installationSlidesTitle": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "welcomeSlideDescription": "Fast and full of new features, the latest version of {RELEASE} makes computing easier than ever. Here are just a few cool new things to look out for...",
-  "@welcomeSlideDescription": {
+  "installationSlidesAvailable": "Available:",
+  "installationSlidesIncluded": "Included:",
+  "installationSlidesWelcomeTitle": "Fast, free and full of new features",
+  "installationSlidesWelcomeHeader": "The latest version of {DISTRO} makes computing easier than ever.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "Whether you're a developer, creator, gamer or administrator you'll find new tools to improve your productivity and enhance your experience in {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "softwareSlideTitle": "Find even more software",
-  "@softwareSlideTitle": {},
-  "softwareSlideDescription": "Say goodbye to searching the web for new software. With access to the Snap Store and the {RELEASE} software archive, you can find and install new apps with ease. Just type in what you're looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.",
-  "@softwareSlideDescription": {
+  "installationSlidesSoftwareTitle": "All the applications you need",
+  "installationSlidesSoftwareBody": "Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and {DISTRO} archive.",
+  "@installationSlidesSoftwareBody": {
     "type": "text",
     "placeholders": {
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "musicSlideTitle": "Take your music with you",
-  "@musicSlideTitle": {},
-  "musicSlideDescription": "{RELEASE} comes with the amazing Rhythmbox music player. With advanced playback options, it's simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.",
-  "@musicSlideDescription": {
+  "installationSlidesDevelopmentTitle": "Develop with the best of open source",
+  "installationSlidesDevelopmentBody": "{DISTRO} is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every {DISTRO} release includes the latest toolchains and supports all major IDEs.",
+  "@installationSlidesDevelopmentBody": {
     "type": "text",
     "placeholders": {
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "musicSlideRhythmbox": "Rhythmbox Music Player",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideTitle": "Have fun with your photos",
-  "@photoSlideTitle": {},
-  "photoSlideDescription": "Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it's easy to share them and keep them safe. And if you're feeling creative, you can find many other photo apps in Ubuntu Software.",
-  "@photoSlideDescription": {},
-  "photoSlideShotwell": "Shotwell Photo Manager",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "GIMP Image Editor",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Shotcut Video Editor",
-  "@photoSlideShotcut": {},
-  "webSlideTitle": "Make the most of the web",
-  "@webSlideTitle": {},
-  "webSlideDescription": "{RELEASE} includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.",
-  "@webSlideDescription": {
+  "installationSlidesCreativityTitle": "Enhance your creativity",
+  "installationSlidesCreativityBody": "If you're an animator, designer, video creator or game developer it's easy to bring your workflows to {DISTRO} with support for open source and industry standard software and applications.",
+  "@installationSlidesCreativityBody": {
     "type": "text",
     "placeholders": {
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "webSlideFirefox": "Firefox web browser",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Everything you need for the office",
-  "@officeSlideTitle": {},
-  "officeSlideDescription": "LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.",
-  "@officeSlideDescription": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideTitle": "Access for everyone",
-  "@accessSlideTitle": {},
-  "accessSlideDescription": "At the heart of the {RELEASE} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colors and text size, {RELEASE} makes computing easy — whoever and wherever you are.",
-  "@accessSlideDescription": {
+  "installationSlidesGamingTitle": "Great for gaming",
+  "installationSlidesGamingBody": "{DISTRO} supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on {DISTRO} via applications like Steam with no additional configuration.",
+  "@installationSlidesGamingBody": {
     "type": "text",
     "placeholders": {
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "accessSlideCustomizationOptions": "Customization options",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "Appearance",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Assistive technologies",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Language support",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Help and support",
-  "@supportSlideTitle": {},
-  "supportSlideDocumentation": "The official documentation covers many of the most common aspects of {RELEASE}. It's available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.",
-  "@supportSlideDocumentation": {
+  "installationSlidesSecurityTitle": "Private and secure",
+  "installationSlidesSecurityBody": "{DISTRO} provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.",
+  "@installationSlidesSecurityBody": {
     "type": "text",
     "placeholders": {
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "supportSlideQuestions": "At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.",
-  "@supportSlideQuestions": {},
-  "supportSlideResources": "For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.",
-  "@supportSlideResources": {},
-  "includedSoftware": "Included software",
-  "@includedSoftware": {},
-  "availableSoftware": "Available software",
-  "@availableSoftware": {},
-  "supportedSoftware": "Supported software",
-  "@supportedSoftware": {},
+  "installationSlidesSecurityLts": "All {DISTRO} LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "Power up your productivity",
+  "installationSlidesProductivityBody": "{DISTRO} Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "Access for everyone",
+  "installationSlidesAccessibilityBody": "At the heart of the {DISTRO} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, {DISTRO} makes computing easy - whoever and wherever you are.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Orca Screen Reader",
+  "installationSlidesAccessibilityLanguages": "Language support",
+  "installationSlidesSupportTitle": "Help & Support",
+  "installationSlidesSupportHeader": "The official {DISTRO} documentation is available both online and via the Help icon in the dock.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.",
+  "installationSlidesSupportEnterprise": "For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.",
+  "installationSlidesSupportResources": "Helpful resources:",
+  "installationSlidesSupportDocumentation": "Official documentation",
+  "installationSlidesSupportUbuntuPro": "Enterprise-grade 24/7 support with Ubuntu Pro",
   "copyingFiles": "Copying files…",
   "@copyingFiles": {},
   "installingSystem": "Installing the system…",

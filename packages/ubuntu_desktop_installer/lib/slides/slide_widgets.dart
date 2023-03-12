@@ -1,18 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
-/// Defines an installation slide.
-class Slide {
-  /// Creates a slide with the specified builders.
-  const Slide({required this.title, required this.body});
-
-  /// The title of the slide.
-  final WidgetBuilder title;
-
-  /// The body of the slide.
-  final WidgetBuilder body;
-}
-
 /// Provides access to the slides in the current context.
 class SlidesContext extends InheritedWidget {
   /// Creates an inherited slide widget with the specified slides.
@@ -23,10 +11,10 @@ class SlidesContext extends InheritedWidget {
   });
 
   /// The installation slides.
-  final List<Slide> slides;
+  final List<WidgetBuilder> slides;
 
   /// Returns the flavor data for the given context.
-  static List<Slide> of(BuildContext context) {
+  static List<WidgetBuilder> of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<SlidesContext>()!.slides;
   }
 

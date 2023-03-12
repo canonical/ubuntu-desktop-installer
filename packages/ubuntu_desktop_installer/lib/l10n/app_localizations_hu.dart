@@ -732,129 +732,118 @@ class AppLocalizationsHu extends AppLocalizations {
   String get whereAreYouTimezoneLabel => 'Időzóna';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
-    return 'Üdvözöljük $RELEASE oldalon.';
+  String installationSlidesTitle(Object RELEASE) {
+    return 'Welcome to $RELEASE';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return 'A gyors és új funkciókkal teli $RELEASE legújabb verziója minden eddiginél könnyebbé teszi a számítástechnikát. Íme néhány újdonság, amire érdemes odafigyelni...';
+  String get installationSlidesAvailable => 'Available:';
+
+  @override
+  String get installationSlidesIncluded => 'Included:';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return 'The latest version of $DISTRO makes computing easier than ever.';
   }
 
   @override
-  String get softwareSlideTitle => 'Keressen még több szoftvert';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return 'Búcsúzzon el az új szoftverek keresgélésétől a világhálón. A Snap Store és a $RELEASE szoftverarchívum elérésével könnyedén megtalálhatja és telepítheti az új alkalmazásokat. Csak írja be, hogy mit keres, vagy fedezze fel az olyan kategóriákat, mint a Grafika és fényképezés, Játékok és Termelékenység, más felhasználók hasznos véleményei mellett.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in $RELEASE.';
   }
 
   @override
-  String get musicSlideTitle => 'Vigye magával a zenét';
+  String get installationSlidesSoftwareTitle => 'All the applications you need';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE a csodálatos Rhythmbox zenelejátszóval érkezik. A fejlett lejátszási lehetőségekkel egyszerűen sorbarendezheti a tökéletes dalokat. És nagyszerűen működik CD-kkel és hordozható zenelejátszókkal, így bárhol élvezheti a zenét.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and $DISTRO archive.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox zenelejátszó';
+  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => 'Jó szórakozást a fotóihoz';
-
-  @override
-  String get photoSlideDescription => 'A Shotwell egy praktikus fotókezelő, amely készen áll a kütyükre. Csatlakoztasson egy fényképezőgépet vagy egy telefont a fényképek átviteléhez, majd könnyen megoszthatja és biztonságban tarthatja őket. Ha pedig kreatívnak érzi magát, az Ubuntu szoftverek között számos más fotóalkalmazást is találhat.';
-
-  @override
-  String get photoSlideShotwell => 'Shotwell fotókezelő';
-
-  @override
-  String get photoSlideGimp => 'GIMP képszerkesztő';
-
-  @override
-  String get photoSlideShotcut => 'Shotcut videószerkesztő';
-
-  @override
-  String get webSlideTitle => 'Használja ki a webet a lehető legjobban';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE tartalmazza a Firefoxot, a világszerte emberek milliói által használt webböngészőt. A gyakran használt webes alkalmazásokat (például a Facebookot vagy a Gmailt) pedig a gyorsabb elérés érdekében az asztalra teheti, akárcsak a számítógépen lévő alkalmazásokat.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every $DISTRO release includes the latest toolchains and supports all major IDEs.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox webböngésző';
+  String get installationSlidesCreativityTitle => 'Enhance your creativity';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
-
-  @override
-  String get webSlideChromium => 'Chromium';
-
-  @override
-  String get officeSlideTitle => 'Minden, amire az irodában szüksége van';
-
-  @override
-  String get officeSlideDescription => 'A LibreOffice egy ingyenes irodai programcsomag, amely mindent tartalmaz, ami dokumentumok, táblázatok és prezentációk készítéséhez szükséges. Kompatibilis a Microsoft Office fájlformátumokkal, így az összes szükséges funkciót biztosítja, fizetés nélkül.';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => 'Hozzáférés mindenkinek';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return 'A $RELEASE filozófia középpontjában az a meggyőződés áll, hogy a számítástechnika mindenkié. A fejlett akadálymentesítési eszközökkel és a nyelv, a színséma és a szövegméret megváltoztatásának lehetőségeivel a $RELEASE megkönnyíti a számítástechnikát - bárki és bárhol is legyen.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'If you\'re an animator, designer, video creator or game developer it\'s easy to bring your workflows to $DISTRO with support for open source and industry standard software and applications.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Testreszabási lehetőségek';
+  String get installationSlidesGamingTitle => 'Great for gaming';
 
   @override
-  String get accessSlideAppearance => 'Megjelenés';
-
-  @override
-  String get accessSlideAssistiveTechnologies => 'Támogató technológiák';
-
-  @override
-  String get accessSlideLanguageSupport => 'Nyelvi támogatás';
-
-  @override
-  String get supportSlideTitle => 'Segítség és támogatás';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return 'A hivatalos dokumentáció számos, a $RELEASE-val kapcsolatos leggyakoribb területet lefed. Elérhető mind <a href=\"https://help.ubuntu.com\">online</a>, mind a dokkolóban található Súgó ikonon keresztül.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on $DISTRO via applications like Steam with no additional configuration.';
   }
 
   @override
-  String get supportSlideQuestions => 'A <a href=\"https://askubuntu.com\">Ask Ubuntu</a> oldalon kérdéseket tehet fel, és a már megválaszolt kérdések lenyűgöző gyűjteményében kereshet. A saját nyelvén a <a href=\"https://loco.ubuntu.com/teams\">Lokális közösségi csapat</a> nyújt támogatást.';
+  String get installationSlidesSecurityTitle => 'Private and secure';
 
   @override
-  String get supportSlideResources => 'Egyéb hasznos forrásokra mutató hivatkozásokért látogasson el a <a href=\"https://www.ubuntu.com/support/community-support\">Közösségi támogatás</a> vagy a <a href=\"https://www.ubuntu.com/support\">Kereskedelmi támogatás</a> oldalra.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.';
+  }
 
   @override
-  String get includedSoftware => 'Mellékelt szoftver';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'All $DISTRO LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.';
+  }
 
   @override
-  String get availableSoftware => 'Elérhető szoftver';
+  String get installationSlidesProductivityTitle => 'Power up your productivity';
 
   @override
-  String get supportedSoftware => 'Támogatott szoftver';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'Access for everyone';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return 'At the heart of the $DISTRO philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, $DISTRO makes computing easy - whoever and wherever you are.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'Language support';
+
+  @override
+  String get installationSlidesSupportTitle => 'Help & Support';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+
+  @override
+  String get installationSlidesSupportResources => 'Helpful resources:';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'Official documentation';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Fájlok másolása...';

@@ -732,129 +732,118 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whereAreYouTimezoneLabel => '시간대';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
-    return '$RELEASE에 오신 것을 환영합니다';
+  String installationSlidesTitle(Object RELEASE) {
+    return 'Welcome to $RELEASE';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return '빠르고 새로운 기능으로 가득한 최신 버전의 $RELEASE가 그 어느 때 보다 컴퓨팅을 쉽게 해 줄 것입니다. 여기에 몇 가지의 눈 여겨 볼 만한 새로운 기능이 있습니다...';
+  String get installationSlidesAvailable => 'Available:';
+
+  @override
+  String get installationSlidesIncluded => 'Included:';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return 'The latest version of $DISTRO makes computing easier than ever.';
   }
 
   @override
-  String get softwareSlideTitle => '더 많은 소프트웨어 찾아보기';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return '더 이상 웹에서 새로운 소프트웨어를 검색하지 않아도 됩니다. Snap 스토어와 $RELEASE 소프트웨어 아카이브를 통해, 새 소프트웨어를 쉽게 찾아 설치할 수 있습니다. 찾고 있는 것을 입력하거나, 다른 사용자의 유용한 후기와 함께 그래픽 및 사진, 게임 및 생산성과 같은 카테고리를 탐색 해 보십시오.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in $RELEASE.';
   }
 
   @override
-  String get musicSlideTitle => '항상 음악과 함께 하십시오';
+  String get installationSlidesSoftwareTitle => 'All the applications you need';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE에는 메우 훌룡한 리듬박스 음악 연주기가 포함되어 있습니다. 고급 재생 옵션으로 완벽한 노래를 간단히 선택할 수 있습니다. 또한 CD와 휴대용 음악 재생기와 잘 작동해서 어디를 가든 항상 음악을 즐길 수 있습니다.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and $DISTRO archive.';
   }
 
   @override
-  String get musicSlideRhythmbox => '리듬박스 음악 연주기';
+  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => '사진과 함께하는 즐거운 시간';
-
-  @override
-  String get photoSlideDescription => '샷웰은 당신의 전자기기를 위해 준비된 편리한 사진 관리자 입니다. 카메라나 휴대전화를 연결하여 사진을 옮긴 후, 쉽게 공유하고 안전하게 보관할 수 있습니다. 번뜩이는 아이디어가 있다면 우분투 소프트웨어에서 수많은 사진 프로그램을 찾을 수 있습니다.';
-
-  @override
-  String get photoSlideShotwell => '샷웰 사진 관리자';
-
-  @override
-  String get photoSlideGimp => '김프 이미지 편집기';
-
-  @override
-  String get photoSlideShotcut => '샷컷 동영상 편집기';
-
-  @override
-  String get webSlideTitle => '웹을 최대한 활용하십시오';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE에는 전 세계 수백만 명이 사용하는 웹 브라우저인 파이어폭스가 포함되어 있습니다. 또한 페이스북이나 지메일 같은 웹 응용 프로그램을 데스크탑에 고정하여 컴퓨터에 설치된 프로그램처럼 빠르게 접근할 수 있습니다.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every $DISTRO release includes the latest toolchains and supports all major IDEs.';
   }
 
   @override
-  String get webSlideFirefox => '파이어폭스 웹 브라우저';
+  String get installationSlidesCreativityTitle => 'Enhance your creativity';
 
   @override
-  String get webSlideThunderbird => '썬더버드';
-
-  @override
-  String get webSlideChromium => '크로미움';
-
-  @override
-  String get officeSlideTitle => '사무에 필요한 모든 것';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice는 문서, 스프레드시트와 발표 자료를 만드는데 필요한 모든 것을 제공하는 자유로운 사무용 프로그램 입니다. Microsoft Office 파일과 호환되며, 필요한 모든 기능을 제공합니다.';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => '누구나 사용할 수 있습니다';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return '$RELEASE의 철학의 중심에는 컴퓨팅은 모두를 위한 것이라는 믿음이 있습니다. 고급 접근성 도구와 언어, 색상 및 글자 크기 변경 옵션으로, $RELEASE는 누구든 어디에서든 컴퓨팅을 쉽게 합니다.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'If you\'re an animator, designer, video creator or game developer it\'s easy to bring your workflows to $DISTRO with support for open source and industry standard software and applications.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => '사용자 정의 옵션';
+  String get installationSlidesGamingTitle => 'Great for gaming';
 
   @override
-  String get accessSlideAppearance => '모습';
-
-  @override
-  String get accessSlideAssistiveTechnologies => '보조 기술';
-
-  @override
-  String get accessSlideLanguageSupport => '언어 지원';
-
-  @override
-  String get supportSlideTitle => '도움말과 지원';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return '공식 문서에는 $RELEASE에 대한 가장 일반적인 사항이 포함되어 있습니다. <a href=\"https://help.ubuntu.com\">온라인 도움말</a>과 독에 있는 도움말 아이콘으로 확인하실 수 있습니다.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on $DISTRO via applications like Steam with no additional configuration.';
   }
 
   @override
-  String get supportSlideQuestions => '<a href=\"https://askubuntu.com\">Ask Ubuntu</a>에서 질문을 하거나 이미 답변된 질문 모음에서 검색할 수 있습니다. 모국어 지원은 <a href=\"https://loco.ubuntu.com/teams\">로컬 커뮤니티 팀</a>에서 받아볼 수 있습니다.';
+  String get installationSlidesSecurityTitle => 'Private and secure';
 
   @override
-  String get supportSlideResources => '다른 유용한 리소스를 찾아보려면, <a href=\"https://www.ubuntu.com/support/community-support\">커뮤니티 지원</a> 또는<a href=\"https://www.ubuntu.com/support\">상용 지원</a>을 방문하십시오.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.';
+  }
 
   @override
-  String get includedSoftware => '포함된 소프트웨어';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'All $DISTRO LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.';
+  }
 
   @override
-  String get availableSoftware => '사용할 수 있는 소프트웨어';
+  String get installationSlidesProductivityTitle => 'Power up your productivity';
 
   @override
-  String get supportedSoftware => '지원되는 소프트웨어';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'Access for everyone';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return 'At the heart of the $DISTRO philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, $DISTRO makes computing easy - whoever and wherever you are.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'Language support';
+
+  @override
+  String get installationSlidesSupportTitle => 'Help & Support';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+
+  @override
+  String get installationSlidesSupportResources => 'Helpful resources:';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'Official documentation';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
 
   @override
   String get copyingFiles => '파일 복사 중…';

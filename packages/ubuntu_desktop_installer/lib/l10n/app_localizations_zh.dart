@@ -732,129 +732,118 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whereAreYouTimezoneLabel => '时区';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
-    return '欢迎使用 $RELEASE';
+  String installationSlidesTitle(Object RELEASE) {
+    return 'Welcome to $RELEASE';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return '最新版本的 $RELEASE 不仅快，功能也多，您从此使用电脑更加方便了！我们将介绍一些非常酷炫的新东西......';
+  String get installationSlidesAvailable => 'Available:';
+
+  @override
+  String get installationSlidesIncluded => 'Included:';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return 'The latest version of $DISTRO makes computing easier than ever.';
   }
 
   @override
-  String get softwareSlideTitle => '千万软件，一站搞定';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return '无需在网上搜索新软件。通过访问Snap Store和$RELEASE软件存档，只需输入你想要的内容，或探索图形与摄影、游戏和生产力等类别，您就可以轻松找到并安装新的应用程序，以及其他用户提供的有用评论。';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in $RELEASE.';
   }
 
   @override
-  String get musicSlideTitle => '随时畅听，随地畅享';
+  String get installationSlidesSoftwareTitle => 'All the applications you need';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE 带有令人惊叹的 Rhythmbox 音乐播放器。通过高级播放选项，您可以轻松的为这些完美的歌曲排序。它与 CD 和便携式音乐播放器配合得很好，因此您可以随时随地欣赏所有音乐。';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and $DISTRO archive.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox 音乐播放器';
+  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => '记录瞬间，珍藏回忆';
-
-  @override
-  String get photoSlideDescription => 'Shotwell 是一个精妙的照片管理器。 可通过连接相机或手机来传输图片， 以便于分享和安全地存储。 如果您想发挥更多的创造力， 您可以在 Ubuntu Software 中找到更多照片应用。';
-
-  @override
-  String get photoSlideShotwell => 'Shotwell 图片管理器';
-
-  @override
-  String get photoSlideGimp => 'GIMP 图像处理程序';
-
-  @override
-  String get photoSlideShotcut => 'Shotcut 视频编辑器';
-
-  @override
-  String get webSlideTitle => '网络之旅，一路顺畅';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE 包括了在世界上有数百万人使用的网络浏览器 Firefox 。为了便利访问，您可以像添加您本机上的应用程序一样，添加一些您经常使用的网站（例如 Facebook 或 Gmail）到您的桌面上。';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every $DISTRO release includes the latest toolchains and supports all major IDEs.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox 浏览器';
+  String get installationSlidesCreativityTitle => 'Enhance your creativity';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
-
-  @override
-  String get webSlideChromium => 'Chromium 浏览器';
-
-  @override
-  String get officeSlideTitle => '便捷工作，效率翻倍';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice 是一个自由的办公套件，包含了创建文档、表格以及幻灯片所需的工具，并完全兼容 Microsoft Office 的文件格式。';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => '轻松使用，体验无界';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return '$RELEASE 哲学的核心是“计算为每个人服务”。无论您是谁，抑或是身在何处，$RELEASE 都可凭先进的无障碍工具和更改语言、色彩、字体大小的选项，为您随时随地地轻松访问计算服务。';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'If you\'re an animator, designer, video creator or game developer it\'s easy to bring your workflows to $DISTRO with support for open source and industry standard software and applications.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => '个性化选项';
+  String get installationSlidesGamingTitle => 'Great for gaming';
 
   @override
-  String get accessSlideAppearance => '外观';
-
-  @override
-  String get accessSlideAssistiveTechnologies => '协助技术';
-
-  @override
-  String get accessSlideLanguageSupport => '语言支持';
-
-  @override
-  String get supportSlideTitle => '获取支持，提供帮助';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return '官方文档覆盖了 $RELEASE 的常用问题，可通过 <a href=\"https://help.ubuntu.com\">官方网站</a> 和应用坞（dock）上的帮助图标访问。';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on $DISTRO via applications like Steam with no additional configuration.';
   }
 
   @override
-  String get supportSlideQuestions => '在<a href=\"https://askubuntu.com\">Ask Ubuntu</a>网站，您可以提问，或者查看已获答复的精选问题。您的<a href=\"https://loco.ubuntu.com/teams\">本地社区团队</a>可能会使用您使用的语言为您提供帮助。';
+  String get installationSlidesSecurityTitle => 'Private and secure';
 
   @override
-  String get supportSlideResources => '要获取其它有用的信息，请访问 <a href=\"https://www.ubuntu.com/support/community-support\">社区支持</a> 或 <a href=\"https://www.ubuntu.com/support\">商业支持</a>.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.';
+  }
 
   @override
-  String get includedSoftware => '包含软件';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'All $DISTRO LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.';
+  }
 
   @override
-  String get availableSoftware => '可选软件';
+  String get installationSlidesProductivityTitle => 'Power up your productivity';
 
   @override
-  String get supportedSoftware => '支持的软件';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'Access for everyone';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return 'At the heart of the $DISTRO philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, $DISTRO makes computing easy - whoever and wherever you are.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'Language support';
+
+  @override
+  String get installationSlidesSupportTitle => 'Help & Support';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+
+  @override
+  String get installationSlidesSupportResources => 'Helpful resources:';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'Official documentation';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
 
   @override
   String get copyingFiles => '正在复制文件……';

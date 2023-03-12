@@ -10,7 +10,9 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../../l10n.dart';
 import '../../services.dart';
 import '../../slides.dart';
+import 'bottom_bar.dart';
 import 'installation_slides_model.dart';
+import 'slide_view.dart';
 
 extension InstallationActionL10n on InstallationAction {
   String localize(AppLocalizations lang) {
@@ -50,7 +52,7 @@ class InstallationSlidesPage extends StatefulWidget {
 }
 
 class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
-  final _titleController = PageController();
+  final _slideController = ValueNotifier(0);
 
   @override
   void initState() {
@@ -72,105 +74,99 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
 
   @override
   void dispose() {
-    _titleController.dispose();
+    _slideController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final flavor = Flavor.of(context);
     final lang = AppLocalizations.of(context);
     final model = Provider.of<InstallationSlidesModel>(context);
     final slides = SlidesContext.of(context);
-    final titlePadding = kYaruWindowControlSize +
-        (YaruTitleBarTheme.of(context).buttonPadding ?? EdgeInsets.zero)
-            .horizontal;
     return Scaffold(
       appBar: YaruWindowTitleBar(
-        titleSpacing: 0,
-        centerTitle: false,
-        title: SizedBox(
-          height: kYaruTitleBarHeight,
-          child: PageView.builder(
-            controller: _titleController,
-            itemCount: slides.length,
-            itemBuilder: (context, index) => Padding(
-              padding: EdgeInsetsDirectional.only(start: titlePadding),
-              child: Center(
-                child: slides[index].title(context),
+        title: Text(lang.installationSlidesTitle(flavor.name)),
+      ),
+      body: Stack(
+        children: [
+          SlideView(
+            controller: _slideController,
+            interval:
+                model.isPlaying ? const Duration(seconds: 50) : Duration.zero,
+            slides: slides,
+          ),
+          Positioned.fill(
+            child: AnimatedOpacity(
+              curve: Curves.easeIn,
+              duration: const Duration(milliseconds: 150),
+              opacity: model.isLogVisible ? 1 : 0,
+              child: AnimatedSlide(
+                curve: Curves.easeIn,
+                duration: const Duration(milliseconds: 150),
+                offset: Offset(0, model.isLogVisible ? 0 : 1),
+                child: Container(
+                  color: Theme.of(context).colorScheme.background,
+                  padding: const EdgeInsets.only(
+                    top: kContentSpacing,
+                    left: kContentSpacing,
+                    right: kContentSpacing,
+                  ),
+                  child: _JournalView(journal: model.log),
+                ),
               ),
             ),
-          ),
-        ),
-      ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: Stack(
-              children: [
-                SlideShow(
-                  interval: const Duration(seconds: 50),
-                  slides: slides.map((slide) => slide.body(context)).toList(),
-                  onSlide: (index) {
-                    _titleController.animateToPage(
-                      index,
-                      curve: kSlideCurve,
-                      duration: kSlideDuration,
-                    );
-                  },
-                ),
-                Positioned.fill(
-                  child: AnimatedSlide(
-                    curve: Curves.easeIn,
-                    duration: const Duration(milliseconds: 150),
-                    offset: Offset(0, model.isLogVisible ? 0 : 1),
-                    child: Container(
-                      color: Theme.of(context).colorScheme.background,
-                      padding: const EdgeInsets.only(
-                        top: kContentSpacing,
-                        left: kContentSpacing,
-                        right: kContentSpacing,
-                      ),
-                      child: _JournalView(journal: model.log),
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            color: Theme.of(context).colorScheme.background,
-            padding: const EdgeInsets.all(kContentSpacing),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      model.hasError
-                          ? lang.installationFailed
-                          : model.event.action.localize(lang),
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: model.hasError
-                              ? Theme.of(context).colorScheme.error
-                              : null),
-                    ),
-                    const Spacer(),
-                    YaruIconButton(
-                      isSelected: model.isLogVisible,
-                      icon: const Icon(YaruIcons.terminal),
-                      onPressed: model.toggleLogVisibility,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: kContentSpacing),
-                LinearProgressIndicator(
-                  value: model.isInstalling ? null : 0,
-                  backgroundColor: Theme.of(context).primaryColor.withAlpha(62),
-                ),
-              ],
-            ),
-          ),
+          )
         ],
+      ),
+      bottomNavigationBar: ValueListenableBuilder(
+        valueListenable: _slideController,
+        builder: (context, value, child) {
+          return BottomBar(
+            title: Text(
+              model.hasError
+                  ? lang.installationFailed
+                  : model.event.action.localize(lang),
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  color: model.hasError
+                      ? Theme.of(context).colorScheme.error
+                      : null),
+            ),
+            subtitle:
+                LinearProgressIndicator(value: model.isInstalling ? null : 0),
+            trailing: IconButton(
+              icon: Icon(YaruIcons.terminal,
+                  color: model.isLogVisible
+                      ? Theme.of(context).primaryColor
+                      : null),
+              onPressed: model.toggleLogVisibility,
+            ),
+            leading: Row(
+              children: [
+                IconButton(
+                  onPressed: _slideController.value > 0
+                      ? () => --_slideController.value
+                      : null,
+                  icon: const Icon(YaruIcons.pan_start),
+                ),
+                const SizedBox(width: 10),
+                IconButton(
+                  onPressed: model.togglePlaying,
+                  icon: model.isPlaying
+                      ? const Icon(YaruIcons.media_pause)
+                      : const Icon(YaruIcons.media_play),
+                ),
+                const SizedBox(width: 10),
+                IconButton(
+                  onPressed: _slideController.value < slides.length - 1
+                      ? () => ++_slideController.value
+                      : null,
+                  icon: const Icon(YaruIcons.pan_end),
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

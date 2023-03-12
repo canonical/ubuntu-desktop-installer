@@ -8,10 +8,10 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_page.dart';
+import 'package:ubuntu_desktop_installer/pages/installation_slides/slide_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 
 import '../test_utils.dart';
@@ -31,6 +31,7 @@ void main() {
     Stream<String>? log,
     InstallationEvent? event,
     bool? isLogVisible,
+    bool? isPlaying,
   }) {
     final model = MockInstallationSlidesModel();
     when(model.state).thenReturn(state);
@@ -40,6 +41,7 @@ void main() {
     when(model.log).thenAnswer((_) => log ?? Stream<String>.empty());
     when(model.event).thenReturn(event ?? InstallationEvent.fromString(''));
     when(model.isLogVisible).thenReturn(isLogVisible ?? false);
+    when(model.isPlaying).thenReturn(isPlaying ?? false);
     return model;
   }
 
@@ -47,14 +49,8 @@ void main() {
     return ChangeNotifierProvider<InstallationSlidesModel>.value(
       value: model,
       child: SlidesContext(slides: [
-        Slide(
-          title: (context) => Text('title1'),
-          body: (context) => SizedBox.expand(child: Text('body1')),
-        ),
-        Slide(
-          title: (context) => Text('title2'),
-          body: (context) => SizedBox.expand(child: Text('body2')),
-        ),
+        (context) => SizedBox.expand(child: Text('slide1')),
+        (context) => SizedBox.expand(child: Text('slide2')),
       ], child: InstallationSlidesPage()),
     );
   }
@@ -68,7 +64,7 @@ void main() {
 
   Finder findsSlide(String text) {
     return find.descendant(
-      of: find.byType(PageView),
+      of: find.byType(SlideView),
       matching: find.text(text),
     );
   }
@@ -78,10 +74,9 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
-    expect(find.byType(SlideShow), findsOneWidget);
+    expect(find.byType(SlideView), findsOneWidget);
 
-    expect(findsSlide('title1'), findsOneWidget);
-    expect(findsSlide('body1'), findsOneWidget);
+    expect(findsSlide('slide1'), findsOneWidget);
   });
 
   testWidgets('navigate slides', (tester) async {
@@ -89,33 +84,33 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
+    final backButton = find.widgetWithIcon(IconButton, YaruIcons.pan_start);
+    expect(backButton, findsOneWidget);
+
+    final nextButton = find.widgetWithIcon(IconButton, YaruIcons.pan_end);
+    expect(nextButton, findsOneWidget);
+
     // initially at first slide
-    expect(findsSlide('title1'), findsOneWidget);
-    expect(findsSlide('body1'), findsOneWidget);
-    expect(findsSlide('title2'), findsNothing);
-    expect(findsSlide('body2'), findsNothing);
-    expect(find.byIcon(Icons.chevron_left), findsNothing);
-    expect(find.byIcon(Icons.chevron_right), findsOneWidget);
+    expect(findsSlide('slide1'), findsOneWidget);
+    expect(findsSlide('slide2'), findsNothing);
+    expect(tester.widget<IconButton>(backButton).onPressed, isNull);
+    expect(tester.widget<IconButton>(nextButton).onPressed, isNotNull);
 
     // go to second slide
-    await tester.tap(find.byIcon(Icons.chevron_right));
+    await tester.tap(find.byIcon(YaruIcons.pan_end));
     await tester.pumpAndSettle();
-    expect(findsSlide('title1'), findsNothing);
-    expect(findsSlide('body1'), findsNothing);
-    expect(findsSlide('title2'), findsOneWidget);
-    expect(findsSlide('body2'), findsOneWidget);
-    expect(find.byIcon(Icons.chevron_left), findsOneWidget);
-    expect(find.byIcon(Icons.chevron_right), findsNothing);
+    expect(findsSlide('slide1'), findsNothing);
+    expect(findsSlide('slide2'), findsOneWidget);
+    expect(tester.widget<IconButton>(backButton).onPressed, isNotNull);
+    expect(tester.widget<IconButton>(nextButton).onPressed, isNull);
 
     // back to first slide
-    await tester.tap(find.byIcon(Icons.chevron_left));
+    await tester.tap(find.byIcon(YaruIcons.pan_start));
     await tester.pumpAndSettle();
-    expect(findsSlide('title1'), findsOneWidget);
-    expect(findsSlide('body1'), findsOneWidget);
-    expect(findsSlide('title2'), findsNothing);
-    expect(findsSlide('body2'), findsNothing);
-    expect(find.byIcon(Icons.chevron_left), findsNothing);
-    expect(find.byIcon(Icons.chevron_right), findsOneWidget);
+    expect(findsSlide('slide1'), findsOneWidget);
+    expect(findsSlide('slide2'), findsNothing);
+    expect(tester.widget<IconButton>(backButton).onPressed, isNull);
+    expect(tester.widget<IconButton>(nextButton).onPressed, isNotNull);
   });
 
   double getLogOffset(WidgetTester tester) {
@@ -208,10 +203,7 @@ void main() {
     await tester.pumpWidget(
       SlidesContext(
         slides: [
-          Slide(
-            title: (_) => SizedBox.shrink(),
-            body: (_) => SizedBox.shrink(),
-          )
+          (_) => SizedBox.shrink(),
         ],
         child: tester.buildApp(InstallationSlidesPage.create),
       ),
