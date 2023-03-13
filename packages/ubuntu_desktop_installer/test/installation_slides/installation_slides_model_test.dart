@@ -17,9 +17,9 @@ void main() async {
   test('client status query loop', () async {
     final client = MockSubiquityClient();
     final journal = MockJournalService();
-    when(journal.start('log', output: JournalOutput.short))
+    when(journal.start(['log', 'event'], output: JournalOutput.short))
         .thenAnswer((_) => Stream.empty());
-    when(journal.start('event', output: JournalOutput.cat))
+    when(journal.start(['event'], output: JournalOutput.cat))
         .thenAnswer((_) => Stream.empty());
     final model = InstallationSlidesModel(client, journal);
 
@@ -57,9 +57,9 @@ void main() async {
     }
 
     final journal = MockJournalService();
-    when(journal.start('log', output: JournalOutput.short))
+    when(journal.start(['log', 'event'], output: JournalOutput.short))
         .thenAnswer((_) => Stream.empty());
-    when(journal.start('event', output: JournalOutput.cat))
+    when(journal.start(['event'], output: JournalOutput.cat))
         .thenAnswer((_) => Stream.empty());
 
     final model = InstallationSlidesModel(client, journal);
@@ -103,9 +103,9 @@ void main() async {
     );
 
     final journal = MockJournalService();
-    when(journal.start('log', output: JournalOutput.short))
+    when(journal.start(['log', 'event'], output: JournalOutput.short))
         .thenAnswer((_) => Stream.empty());
-    when(journal.start('event', output: JournalOutput.cat))
+    when(journal.start(['event'], output: JournalOutput.cat))
         .thenAnswer((_) => Stream.empty());
 
     final model = InstallationSlidesModel(client, journal);
@@ -140,9 +140,9 @@ void main() async {
     final events = StreamController<String>(sync: true);
 
     final journal = MockJournalService();
-    when(journal.start('log', output: JournalOutput.short))
+    when(journal.start(['log', 'event'], output: JournalOutput.short))
         .thenAnswer((_) => Stream.empty());
-    when(journal.start('event', output: JournalOutput.cat))
+    when(journal.start(['event'], output: JournalOutput.cat))
         .thenAnswer((_) => events.stream);
 
     final client = MockSubiquityClient();
