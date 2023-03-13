@@ -34,7 +34,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get yesButtonText => 'Sì';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Quit installation';
 
   @override
   String get welcome => 'Benvenuto';
@@ -703,10 +703,10 @@ class AppLocalizationsIt extends AppLocalizations {
   String get shutdown => 'Shut Down';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Restart now';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Continue testing';
 
   @override
   String get turnOffBitlockerTitle => 'Turn off BitLocker';
@@ -720,7 +720,7 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Restart into Windows';
 
   @override
   String get whereAreYouPageTitle => 'Where are you?';

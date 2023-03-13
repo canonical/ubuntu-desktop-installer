@@ -227,7 +227,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Averto</font>: La komputilo ne estas konektita al energifonto.';
+    return '<font color=\"$color\">Averto:</font> La komputilo ne estas konektita al energifonto.';
   }
 
   @override
@@ -255,7 +255,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Averto</font>: Se vi perdos ĉi tiun sekurigan ŝlosilon, vi perdos ĉiom da datenoj. Skribu vian ŝlosilon kaj konservu ĝin en sekura alia loko, se tio necesas.';
+    return '<font color=\"$color\">Averto:</font> Se vi perdos ĉi tiun sekurigan ŝlosilon, vi perdos ĉiom da datenoj. Skribu vian ŝlosilon kaj konservu ĝin en sekura alia loko, se tio necesas.';
   }
 
   @override
@@ -686,7 +686,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** estas instalita kaj preta por uzo.';
+    return '**$system** estas instalita kaj preta por uzo';
   }
 
   @override

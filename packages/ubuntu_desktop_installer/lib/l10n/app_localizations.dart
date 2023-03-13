@@ -293,7 +293,7 @@ abstract class AppLocalizations {
   /// No description provided for @quitButtonText.
   ///
   /// In en, this message translates to:
-  /// **'Quit Installation'**
+  /// **'Quit installation'**
   String get quitButtonText;
 
   /// No description provided for @welcome.
@@ -395,7 +395,7 @@ abstract class AppLocalizations {
   /// No description provided for @detectLayout.
   ///
   /// In en, this message translates to:
-  /// **'Detect Keyboard Layout'**
+  /// **'Detect keyboard layout'**
   String get detectLayout;
 
   /// No description provided for @pressOneKey.
@@ -653,7 +653,7 @@ abstract class AppLocalizations {
   /// No description provided for @onBatteryWarning.
   ///
   /// In en, this message translates to:
-  /// **'<font color=\"{color}\">Warning</font>: The computer is not plugged in to a power source.'**
+  /// **'<font color=\"{color}\">Warning:</font> The computer is not plugged in to a power source.'**
   String onBatteryWarning(Object color);
 
   /// No description provided for @offlineWarning.
@@ -887,7 +887,7 @@ abstract class AppLocalizations {
   /// No description provided for @selectGuidedStorageInstallNow.
   ///
   /// In en, this message translates to:
-  /// **'Install Now'**
+  /// **'Install now'**
   String get selectGuidedStorageInstallNow;
 
   /// No description provided for @installAlongsideSpaceDivider.
@@ -1499,13 +1499,13 @@ abstract class AppLocalizations {
   /// No description provided for @restartNow.
   ///
   /// In en, this message translates to:
-  /// **'Restart Now'**
+  /// **'Restart now'**
   String get restartNow;
 
   /// No description provided for @continueTesting.
   ///
   /// In en, this message translates to:
-  /// **'Continue Testing'**
+  /// **'Continue testing'**
   String get continueTesting;
 
   /// No description provided for @turnOffBitlockerTitle.
@@ -1529,7 +1529,7 @@ abstract class AppLocalizations {
   /// No description provided for @restartIntoWindows.
   ///
   /// In en, this message translates to:
-  /// **'Restart Into Windows'**
+  /// **'Restart into Windows'**
   String get restartIntoWindows;
 
   /// No description provided for @whereAreYouPageTitle.

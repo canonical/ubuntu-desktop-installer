@@ -227,7 +227,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warnung</font>: Der Rechner ist nicht an eine Stromquelle angeschlossen.';
+    return '<font color=\"$color\">Warnung:</font> Der Rechner ist nicht an eine Stromquelle angeschlossen.';
   }
 
   @override
@@ -255,7 +255,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warnung</font>: Falls Sie diesen Sicherheitsschlüssel verlieren, sind alle Daten verloren. Bei Bedarf können Sie sich den Schlüssel aufschreiben und ihn an einem sicheren Ort verwahren.';
+    return '<font color=\"$color\">Warnung:</font> Falls Sie diesen Sicherheitsschlüssel verlieren, sind alle Daten verloren. Bei Bedarf können Sie sich den Schlüssel aufschreiben und ihn an einem sicheren Ort verwahren.';
   }
 
   @override
@@ -686,7 +686,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** ist installiert und einsatzbereit.';
+    return '**$system** ist installiert und einsatzbereit';
   }
 
   @override
@@ -720,7 +720,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => 'Neustart unter Windows';
+  String get restartIntoWindows => 'Neustart in Windows';
 
   @override
   String get whereAreYouPageTitle => 'Wo bist du?';
@@ -947,5 +947,5 @@ class AppLocalizationsDe extends AppLocalizations {
   String get activeDirectoryErrorTitle => 'Fehler beim Einrichten der Verbindung zum Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage => 'Entschuldigung, Active Directory kann im Moment nicht eingerichtet werden. Besuchen Sie für Hilfe <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, sobald Ihr System hochgefahren und in Betrieb ist.';
 }

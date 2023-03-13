@@ -703,10 +703,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get shutdown => 'Вимкнути';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Restart now';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Continue testing';
 
   @override
   String get turnOffBitlockerTitle => 'Вимкнути BitLocker';

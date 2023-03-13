@@ -34,7 +34,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get yesButtonText => 'Taip';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Quit installation';
 
   @override
   String get welcome => 'Sveiki,';
@@ -686,7 +686,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** įdiegta ir paruošta naudoti.';
+    return '**$system** įdiegta ir paruošta naudoti';
   }
 
   @override

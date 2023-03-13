@@ -686,7 +686,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** está instalado e pronto para usar.';
+    return '**$system** está instalado e pronto para usar';
   }
 
   @override

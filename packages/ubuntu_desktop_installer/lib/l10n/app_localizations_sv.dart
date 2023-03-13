@@ -227,7 +227,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Varning</font>: Datorn är inte ansluten till en strömkälla.';
+    return '<font color=\"$color\">Varning:</font> Denna dator är inte ansluten till en strömkälla.';
   }
 
   @override
@@ -255,7 +255,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Varning</font>: Om du tappar den här säkerhetsnyckeln kommer all data att gå förlorad. Om du behöver, skriv ner din nyckel och förvara den på ett säkert ställe någon annanstans.';
+    return '<font color=\"$color\">Varning:</font> Om du tappar den här säkerhetsnyckeln kommer all data att gå förlorad. Om du behöver, skriv ner din nyckel och förvara den på ett säkert ställe någon annanstans.';
   }
 
   @override
@@ -686,7 +686,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** är installerat och redo att användas.';
+    return '**$system** är installerat och redo att användas';
   }
 
   @override
@@ -947,5 +947,5 @@ class AppLocalizationsSv extends AppLocalizations {
   String get activeDirectoryErrorTitle => 'Fel vid konfiguration av anslutning till Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage => 'Tyvärr, Active Directory kan inte ställas in just nu. när ditt system är igång, besök <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> för hjälp.';
 }

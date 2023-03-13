@@ -227,7 +227,7 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Warning:</font> The computer is not plugged in to a power source.';
   }
 
   @override
@@ -703,10 +703,10 @@ class AppLocalizationsCa extends AppLocalizations {
   String get shutdown => 'Atura';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Restart now';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Continue testing';
 
   @override
   String get turnOffBitlockerTitle => 'Desactiva el BitLocker';
@@ -720,7 +720,7 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Restart into Windows';
 
   @override
   String get whereAreYouPageTitle => 'On sou?';

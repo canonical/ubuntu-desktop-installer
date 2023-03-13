@@ -34,7 +34,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get yesButtonText => 'Yes';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Quit installation';
 
   @override
   String get welcome => 'Welcome';
@@ -97,7 +97,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get typeToTest => 'Type here to test your keyboard';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Detect keyboard layout';
 
   @override
   String get pressOneKey => 'Please press one of the following keys:';
@@ -227,7 +227,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Warning:</font> The computer is not plugged in to a power source.';
   }
 
   @override
@@ -377,7 +377,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Install now';
 
   @override
   String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
@@ -703,10 +703,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shutdown => 'Shut Down';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Restart now';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Continue testing';
 
   @override
   String get turnOffBitlockerTitle => 'Turn off BitLocker';
@@ -720,7 +720,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Restart into Windows';
 
   @override
   String get whereAreYouPageTitle => 'Where are you?';

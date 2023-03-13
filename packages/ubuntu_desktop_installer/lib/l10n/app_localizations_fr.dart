@@ -227,7 +227,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\"> Avertissement </font> : L’ordinateur n’est pas branché à une source d’alimentation.';
+    return '<font color=\"$color\"> Avertissement:</font> L’ordinateur n’est pas branché à une source d’alimentation.';
   }
 
   @override
@@ -255,7 +255,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Attention</font> : Si vous oubliez la clé de sécurité, toutes les données seront perdues. Il est recommandé de noter cette clé puis de la stocker dans en lieu sûr.';
+    return '<font color=\"$color\">Attention :</font> Si vous oubliez la clé de sécurité, toutes les données seront perdues. Il est recommandé de noter cette clé puis de la stocker dans en lieu sûr.';
   }
 
   @override
@@ -686,7 +686,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** est installé et prêt à être utilisé.';
+    return '**$system** est installé et prêt à être utilisé';
   }
 
   @override
