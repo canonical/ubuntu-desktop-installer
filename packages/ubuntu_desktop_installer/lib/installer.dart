@@ -22,6 +22,7 @@ import 'pages.dart';
 import 'routes.dart';
 import 'services.dart';
 import 'slides.dart';
+import 'theme.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 export 'slides.dart';
@@ -212,6 +213,8 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
               ],
             ),
             builder: (context, yaru, child) {
+              final theme = widget.flavor.theme ?? yaru.theme;
+              final darkTheme = widget.flavor.darkTheme ?? yaru.darkTheme;
               return MaterialApp(
                 locale: InheritedLocale.of(context),
                 onGenerateTitle: (context) {
@@ -220,8 +223,8 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
                   window.setTitle(lang.windowTitle(widget.flavor.name));
                   return lang.appTitle;
                 },
-                theme: widget.flavor.theme ?? yaru.theme,
-                darkTheme: widget.flavor.darkTheme ?? yaru.darkTheme,
+                theme: theme?.customize(),
+                darkTheme: darkTheme?.customize(),
                 debugShowCheckedModeBanner: false,
                 localizationsDelegates: <LocalizationsDelegate>[
                   ...localizationsDelegates,
