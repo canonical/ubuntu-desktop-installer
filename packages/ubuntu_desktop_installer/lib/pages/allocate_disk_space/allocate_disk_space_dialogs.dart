@@ -10,6 +10,8 @@ import '../../widgets.dart';
 import 'allocate_disk_space_model.dart';
 import 'storage_types.dart';
 
+const _kInputFieldWidth = 400.0;
+
 /// Shows a confirmation dialog with the given title and message.
 Future<bool> showConfirmationDialog(
   BuildContext context, {
@@ -294,28 +296,31 @@ class _PartitionMountField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<PartitionFormat?>(
-      valueListenable: partitionFormat,
-      builder: (context, format, child) {
-        return YaruAutocomplete<String>(
-          initialValue: initialMount != null
-              ? TextEditingValue(text: initialMount!)
-              : null,
-          optionsBuilder: (value) => kDefaultMountPoints
-              .where((option) => option.startsWith(value.text)),
-          onSelected: (option) => partitionMount.value = option,
-          fieldViewBuilder:
-              (context, textEditingController, focusNode, onFieldSubmitted) {
-            return TextFormField(
-              enabled: format != PartitionFormat.swap,
-              controller: textEditingController,
-              focusNode: focusNode,
-              onChanged: (value) => partitionMount.value = value,
-              onFieldSubmitted: (_) => onFieldSubmitted(),
-            );
-          },
-        );
-      },
+    return SizedBox(
+      width: _kInputFieldWidth,
+      child: ValueListenableBuilder<PartitionFormat?>(
+        valueListenable: partitionFormat,
+        builder: (context, format, child) {
+          return YaruAutocomplete<String>(
+            initialValue: initialMount != null
+                ? TextEditingValue(text: initialMount!)
+                : null,
+            optionsBuilder: (value) => kDefaultMountPoints
+                .where((option) => option.startsWith(value.text)),
+            onSelected: (option) => partitionMount.value = option,
+            fieldViewBuilder:
+                (context, textEditingController, focusNode, onFieldSubmitted) {
+              return TextFormField(
+                enabled: format != PartitionFormat.swap,
+                controller: textEditingController,
+                focusNode: focusNode,
+                onChanged: (value) => partitionMount.value = value,
+                onFieldSubmitted: (_) => onFieldSubmitted(),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }
@@ -357,21 +362,24 @@ class _PartitionFormatSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    return ValueListenableBuilder<PartitionFormat?>(
-      valueListenable: partitionFormat,
-      builder: (context, type, child) {
-        return MenuButtonBuilder<PartitionFormat?>(
-          selected: type,
-          values: partitionFormats,
-          itemBuilder: (context, format, _) {
-            return Text(
-              format?.localize(lang) ?? lang.partitionFormatNone,
-              key: ValueKey(format?.type),
-            );
-          },
-          onSelected: (value) => partitionFormat.value = value,
-        );
-      },
+    return SizedBox(
+      width: _kInputFieldWidth,
+      child: ValueListenableBuilder<PartitionFormat?>(
+        valueListenable: partitionFormat,
+        builder: (context, type, child) {
+          return MenuButtonBuilder<PartitionFormat?>(
+            selected: type,
+            values: partitionFormats,
+            itemBuilder: (context, format, _) {
+              return Text(
+                format?.localize(lang) ?? lang.partitionFormatNone,
+                key: ValueKey(format?.type),
+              );
+            },
+            onSelected: (value) => partitionFormat.value = value,
+          );
+        },
+      ),
     );
   }
 }
