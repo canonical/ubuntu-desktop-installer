@@ -896,7 +896,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get activeDirectoryTitle => 'Configure Active Directory';
 
   @override
-  String get activeDirectoryTestConnection => 'Test Connection';
+  String get activeDirectoryTestConnection => 'Test domain connectivity';
 
   @override
   String get activeDirectoryDomainLabel => 'Domain';
@@ -929,7 +929,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'Domain not found';
 
   @override
-  String get activeDirectoryAdminLabel => 'Domain Administrator';
+  String get activeDirectoryAdminLabel => 'Domain join user';
 
   @override
   String get activeDirectoryAdminEmpty => 'Required';

@@ -1841,7 +1841,7 @@ abstract class AppLocalizations {
   /// No description provided for @activeDirectoryTestConnection.
   ///
   /// In en, this message translates to:
-  /// **'Test Connection'**
+  /// **'Test domain connectivity'**
   String get activeDirectoryTestConnection;
 
   /// No description provided for @activeDirectoryDomainLabel.
@@ -1907,7 +1907,7 @@ abstract class AppLocalizations {
   /// No description provided for @activeDirectoryAdminLabel.
   ///
   /// In en, this message translates to:
-  /// **'Domain Administrator'**
+  /// **'Domain join user'**
   String get activeDirectoryAdminLabel;
 
   /// No description provided for @activeDirectoryAdminEmpty.
