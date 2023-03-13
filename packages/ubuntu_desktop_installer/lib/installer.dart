@@ -254,6 +254,9 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
         _subiquityStatus!.isWaitingAutoinstall) {
       return const _UbuntuDesktopInstallerLoadingPage();
     }
+    if (_subiquityStatus?.state == ApplicationState.ERROR) {
+      return const _UbuntuDesktopErrorWizard();
+    }
     return _subiquityStatus?.interactive == false
         ? _UbuntuDesktopAutoinstallWizard(status: _subiquityStatus)
         : _UbuntuDesktopInstallerWizard(
@@ -519,6 +522,21 @@ class _UbuntuDesktopAutoinstallWizard extends StatelessWidget {
         ),
         Routes.installationComplete: const WizardRoute(
           builder: InstallationCompletePage.create,
+        ),
+      },
+    );
+  }
+}
+
+class _UbuntuDesktopErrorWizard extends StatelessWidget {
+  const _UbuntuDesktopErrorWizard();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Wizard(
+      routes: <String, WizardRoute>{
+        Routes.installationSlides: WizardRoute(
+          builder: InstallationSlidesPage.create,
         ),
       },
     );

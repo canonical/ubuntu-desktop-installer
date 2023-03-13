@@ -131,7 +131,7 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   /// Initializes and starts monitoring the status of the installation.
   Future<void> init() {
     return _client.status().then((status) {
-      _log = _journal.start(status.logSyslogId);
+      _log = _journal.start([status.logSyslogId, status.eventSyslogId]);
       _updateStatus(status);
       _monitorStatus(status.eventSyslogId);
     });
@@ -159,7 +159,7 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   }
 
   Future<void> _monitorStatus(String syslogId) async {
-    final events = _journal.start(syslogId, output: JournalOutput.cat);
+    final events = _journal.start([syslogId], output: JournalOutput.cat);
     final subscription = events.listen(_processEvent);
     while (!isDone && !hasError) {
       await _client.status(current: state).then(_updateStatus);
