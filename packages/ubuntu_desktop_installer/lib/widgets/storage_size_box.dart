@@ -52,12 +52,16 @@ class StorageSizeBox extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Expanded(
-          child: SpinBox(
-            value: fromBytes(size, unit),
-            min: fromBytes(minimum, unit),
-            max: fromBytes(maximum, unit),
-            onChanged: (value) => onSizeChanged(toBytes(value, unit)),
-            autofocus: autofocus,
+          flex: 3,
+          child: SizedBox(
+            width: 240,
+            child: SpinBox(
+              value: fromBytes(size, unit),
+              min: fromBytes(minimum, unit),
+              max: fromBytes(maximum, unit),
+              onChanged: (value) => onSizeChanged(toBytes(value, unit)),
+              autofocus: autofocus,
+            ),
           ),
         ),
         SizedBox(width: spacing),
@@ -69,8 +73,15 @@ class StorageSizeBox extends StatelessWidget {
             itemBuilder: (context, unit, _) {
               return Text(unit.l10n(context), key: ValueKey(unit));
             },
+            child: IndexedStack(
+              index: unit.index,
+              children: DataUnit.values
+                  .map((unit) => Text(unit.l10n(context)))
+                  .toList(),
+            ),
           ),
         ),
+        const Spacer(),
       ],
     );
   }
