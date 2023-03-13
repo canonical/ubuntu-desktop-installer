@@ -81,7 +81,7 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: Autocomplete<GeoLocation>(
+                  child: YaruAutocomplete<GeoLocation>(
                     initialValue: TextEditingValue(
                       text: formatLocation(controller.selectedLocation),
                     ),
@@ -109,7 +109,7 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
                 ),
                 const SizedBox(width: kContentSpacing),
                 Expanded(
-                  child: Autocomplete<GeoLocation>(
+                  child: YaruAutocomplete<GeoLocation>(
                     initialValue: TextEditingValue(
                       text: formatTimezone(controller.selectedLocation),
                     ),
