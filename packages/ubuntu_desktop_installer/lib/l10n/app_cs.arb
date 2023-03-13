@@ -130,7 +130,7 @@
   "@installationTypeTitle": {},
   "chooseSecurityKeyMismatch": "Do každé z kolonek pro šifrovací klíč jste napsali něco jiného",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">VAROVÁNÍ</font>: Pokud tento šifrovací klíč zapomenete, ke svým datům už se nedostanete. Pokud vám to pomůže, šifrovací klíč si zapište na papír a ten si bezpečně uložte někam mimo počítač.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">VAROVÁNÍ:</font> Pokud tento šifrovací klíč zapomenete, ke svým datům už se nedostanete. Pokud vám to pomůže, šifrovací klíč si zapište na papír a ten si bezpečně uložte někam mimo počítač.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -481,7 +481,7 @@
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na něm, budou všechny stávající oddíly na něm odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.",
   "@newPartitionTableConfirmationMessage": {},
-  "onBatteryWarning": "<font color=\"{color}\">Upozornění</font>: Počítač není připojen k napájení ze zásuvky.",
+  "onBatteryWarning": "<font color=\"{color}\">Upozornění:</font> Počítač není připojen k napájení ze zásuvky.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
