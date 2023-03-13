@@ -7,7 +7,7 @@ import 'dart:async' as _i3;
 import 'dart:ui' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_desktop_installer/services/desktop_service.dart' as _i2;
+import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -29,27 +29,9 @@ class MockDesktopService extends _i1.Mock implements _i2.DesktopService {
   }
 
   @override
-  _i3.Future<void> disableAutoMounting() => (super.noSuchMethod(
+  _i3.Future<void> inhibit() => (super.noSuchMethod(
         Invocation.method(
-          #disableAutoMounting,
-          [],
-        ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
-  @override
-  _i3.Future<void> disableScreensaver() => (super.noSuchMethod(
-        Invocation.method(
-          #disableScreensaver,
-          [],
-        ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
-  @override
-  _i3.Future<void> disableScreenBlanking() => (super.noSuchMethod(
-        Invocation.method(
-          #disableScreenBlanking,
+          #inhibit,
           [],
         ),
         returnValue: _i3.Future<void>.value(),

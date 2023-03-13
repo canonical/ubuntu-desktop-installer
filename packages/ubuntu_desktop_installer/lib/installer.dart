@@ -9,6 +9,7 @@ import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:timezone_map/timezone_map.dart';
+import 'package:ubuntu_session/ubuntu_session.dart';
 import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -92,6 +93,7 @@ Future<void> runInstallerApp(
   tryRegisterService(TelemetryService.new);
   tryRegisterService(UdevService.new);
   tryRegisterService(UrlLauncher.new);
+  tryRegisterService(GnomeSessionManager.new);
 
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -144,9 +146,7 @@ Future<void> runInstallerApp(
   await storage.init();
 
   final desktop = getService<DesktopService>();
-  await desktop.disableAutoMounting();
-  await desktop.disableScreenBlanking();
-  await desktop.disableScreensaver();
+  await desktop.inhibit();
 }
 
 class UbuntuDesktopInstallerApp extends StatefulWidget {
