@@ -211,7 +211,7 @@
   "@chooseSecurityKeyHint": {},
   "chooseSecurityKeyRequired": "Wymagany jest klucz bezpieczeństwa",
   "@chooseSecurityKeyRequired": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Ostrzeżenie</font>: jeśli zgubisz ten klucz bezpieczeństwa, wszystkie dane zostaną utracone. Jeżeli potrzebujesz, zapisz swój klucz i przechowuj go w bezpiecznym miejscu gdzie indziej.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Ostrzeżenie:</font> jeśli zgubisz ten klucz bezpieczeństwa, wszystkie dane zostaną utracone. Jeżeli potrzebujesz, zapisz swój klucz i przechowuj go w bezpiecznym miejscu gdzie indziej.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -365,14 +365,14 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "Instalacja zakończona",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** został zainstalowany i jest gotowy do użycia.",
+  "readyToUse": "**{system}** został zainstalowany i jest gotowy do użycia",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
       "system": {}
     }
   },
-  "restartInto": "Uruchom ponownie {system}",
+  "restartInto": "Uruchom ponownie do {system}",
   "@restartInto": {
     "type": "text",
     "placeholders": {
@@ -392,7 +392,7 @@
       "url": {}
     }
   },
-  "restartIntoWindows": "Uruchom ponownie Windows",
+  "restartIntoWindows": "Uruchom ponownie do Windows",
   "@restartIntoWindows": {},
   "connectToInternetPageTitle": "Połącz się z Internetem",
   "@connectToInternetPageTitle": {},
@@ -426,7 +426,7 @@
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia na nim nowej tabeli partycji, wszystkie jego bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.",
   "@newPartitionTableConfirmationMessage": {},
-  "onBatteryWarning": "<font color=\"{color}\">Ostrzeżenie</font>: komputer nie jest podłączony do źródła zasilania.",
+  "onBatteryWarning": "<font color=\"{color}\">Ostrzeżenie:</font> komputer nie jest podłączony do źródła zasilania.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -717,7 +717,7 @@
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "Osiągnięto limit",
   "@partitionLimitReached": {},
-  "restartNow": "Uruchom ponownie komputer",
+  "restartNow": "Uruchom ponownie teraz",
   "@restartNow": {},
   "restartWarning": "Możesz teraz kontynuować testowanie wersji {RELEASE}, ale dopóki nie uruchomisz ponownie komputera, wszelkie wprowadzone zmiany lub zapisane dokumenty nie zostaną zachowane.",
   "@restartWarning": {

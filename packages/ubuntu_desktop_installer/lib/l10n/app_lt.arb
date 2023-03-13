@@ -628,7 +628,7 @@
   "@partitionFormatFat": {},
   "whoAreYouPageUsernameLabel": "Pasirinkite naudotojo vardą",
   "@whoAreYouPageUsernameLabel": {},
-  "readyToUse": "**{system}** įdiegta ir paruošta naudoti.",
+  "readyToUse": "**{system}** įdiegta ir paruošta naudoti",
   "@readyToUse": {
     "type": "text",
     "placeholders": {

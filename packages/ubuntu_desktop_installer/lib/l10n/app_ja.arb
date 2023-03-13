@@ -58,7 +58,7 @@
       "color": {}
     }
   },
-  "onBatteryWarning": "<font color=\"{color}\">警告</font>: このコンピューターは電源に接続されていません。",
+  "onBatteryWarning": "<font color=\"{color}\">警告</font> このコンピューターは電源に接続されていません。",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -347,7 +347,7 @@
   "@chooseYourLookPageHeader": {},
   "installationCompleteTitle": "インストールが完了しました",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** のインストールは完了し、使い始める準備が整いました。",
+  "readyToUse": "**{system}** のインストールは完了し、使い始める準備が整いました",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -834,5 +834,7 @@
   "activeDirectoryDomainStartHyphen": "ハイフン「-」で始まります。",
   "@activeDirectoryDomainStartHyphen": {},
   "activeDirectoryErrorTitle": "アクティブディレクトリへの接続設定エラー",
-  "@activeDirectoryErrorTitle": {}
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "申し訳ありませんが、Active Directoryは現在セットアップできません。システムが稼働したら、<a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> にアクセスしてサポートを受けてください。",
+  "@activeDirectoryErrorMessage": {}
 }
