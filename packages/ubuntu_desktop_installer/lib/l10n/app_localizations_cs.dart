@@ -227,7 +227,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Upozornění</font>: Počítač není připojen k napájení ze zásuvky.';
+    return '<font color=\"$color\">Upozornění:</font> Počítač není připojen k napájení ze zásuvky.';
   }
 
   @override
@@ -255,7 +255,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">VAROVÁNÍ</font>: Pokud tento šifrovací klíč zapomenete, ke svým datům už se nedostanete. Pokud vám to pomůže, šifrovací klíč si zapište na papír a ten si bezpečně uložte někam mimo počítač.';
+    return '<font color=\"$color\">VAROVÁNÍ:</font> Pokud tento šifrovací klíč zapomenete, ke svým datům už se nedostanete. Pokud vám to pomůže, šifrovací klíč si zapište na papír a ten si bezpečně uložte někam mimo počítač.';
   }
 
   @override
