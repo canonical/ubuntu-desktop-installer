@@ -125,11 +125,13 @@ class _WizardPageState extends State<WizardPage> {
             child: NavigationToolbar(
               leading: _buildAction(context, leading),
               middle: currentStep != null && totalSteps != null
-                  ? YaruPageIndicator(
+                  ? YaruPageIndicator.builder(
                       page: currentStep,
                       length: totalSteps,
-                      dotSize: 12,
-                      dotSpacing: 8,
+                      itemSizeBuilder: (index, selectedIndex, length) =>
+                          Size.square(index == selectedIndex ? 12.0 : 8.0),
+                      layoutDelegate:
+                          YaruPageIndicatorSteppedDelegate(baseItemSpacing: 8),
                     )
                   : null,
               trailing: Row(
