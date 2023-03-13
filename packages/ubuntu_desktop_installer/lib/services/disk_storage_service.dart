@@ -15,8 +15,10 @@ class DiskStorageService {
   final SubiquityClient _client;
 
   /// Initializes the service.
-  Future<void> init() {
-    return Future.wait([
+  Future<void> init() async {
+    final status = await _client.status();
+    if (status.state == ApplicationState.ERROR) return;
+    await Future.wait([
       _client.getStorageV2().then(_updateStorage),
       _client.hasRst().then((value) => _hasRst = value),
       _client.hasBitLocker().then((value) => _hasBitLocker = value),

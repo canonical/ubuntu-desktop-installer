@@ -24,6 +24,16 @@ void main() {
         .thenAnswer((_) async => testStorageResponse(disks: testDisks));
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
+    when(client.status()).thenAnswer((_) async => ApplicationStatus(
+          cloudInitOk: null,
+          confirmingTty: '',
+          echoSyslogId: '',
+          error: null,
+          eventSyslogId: '',
+          interactive: null,
+          logSyslogId: '',
+          state: ApplicationState.RUNNING,
+        ));
   });
 
   test('get guided storage', () async {
