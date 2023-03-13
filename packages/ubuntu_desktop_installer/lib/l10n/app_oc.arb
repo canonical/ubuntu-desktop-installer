@@ -380,7 +380,7 @@
   "@chooseSecurityKeyHeader": {},
   "chooseSecurityKeyMismatch": "Las doas claus correspondon pas",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Atencion </font>: se perdètz aquesta clau de seguretat, totas las donadas seràn perdudas. Se cal, escrivètz vòstra clau e gardatz-la dins un endrech dins un lòc segur.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Avertiment :</font> se perdètz aquesta clau de seguretat, totas las donadas seràn perdudas. Se cal, escrivètz vòstra clau e gardatz-la dins un endrech dins un lòc segur.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -462,7 +462,7 @@
   "@noWifiDevicesDetected": {},
   "wifiMustBeEnabled": "Per utilizar lo Wifi sus aqueste ordenador, lo ret sens fial deu èsser activat",
   "@wifiMustBeEnabled": {},
-  "onBatteryWarning": "<font color=\"{color}\">Avertiment </font>: l’ordenador es pas brancat a una font d’alimentacion.",
+  "onBatteryWarning": "<font color=\"{color}\">Avertiment :</font> l’ordenador es pas brancat a una font d’alimentacion.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -770,7 +770,7 @@
   "@whoAreYouPagePasswordShow": {},
   "whoAreYouPagePasswordHide": "Rescondre",
   "@whoAreYouPagePasswordHide": {},
-  "activeDirectoryTestConnection": "Ensajar la connexion",
+  "activeDirectoryTestConnection": "Ensajar la connexion al domeni",
   "@activeDirectoryTestConnection": {},
   "whoAreYouPageRealNameTooLong": "Aqueste nom es tròp long.",
   "@whoAreYouPageRealNameTooLong": {},
@@ -802,7 +802,7 @@
   "@activeDirectoryDomainMultipleDots": {},
   "activeDirectoryDomainNotFound": "Domeni introbable",
   "@activeDirectoryDomainNotFound": {},
-  "activeDirectoryAdminLabel": "Administrator de domeni",
+  "activeDirectoryAdminLabel": "Nom d’utilizaire per rejónher lo domeni",
   "@activeDirectoryAdminLabel": {},
   "activeDirectoryAdminEmpty": "Obligatòri",
   "@activeDirectoryAdminEmpty": {},
