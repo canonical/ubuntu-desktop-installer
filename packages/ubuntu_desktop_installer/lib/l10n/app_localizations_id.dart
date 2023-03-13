@@ -34,7 +34,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get yesButtonText => 'Ya';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Quit installation';
 
   @override
   String get welcome => 'Selamat Datang';
@@ -703,10 +703,10 @@ class AppLocalizationsId extends AppLocalizations {
   String get shutdown => 'Matikan';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Restart now';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Continue testing';
 
   @override
   String get turnOffBitlockerTitle => 'Matikan BitLocker';

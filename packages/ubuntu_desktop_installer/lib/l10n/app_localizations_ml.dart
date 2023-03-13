@@ -34,7 +34,7 @@ class AppLocalizationsMl extends AppLocalizations {
   String get yesButtonText => 'അതെ';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Quit installation';
 
   @override
   String get welcome => 'സ്വാഗതം';
@@ -703,10 +703,10 @@ class AppLocalizationsMl extends AppLocalizations {
   String get shutdown => 'ഷട്ട് ഡൗൺ';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Restart now';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Continue testing';
 
   @override
   String get turnOffBitlockerTitle => 'BitLocker ഓഫാക്കുക';

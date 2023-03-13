@@ -34,7 +34,7 @@ class AppLocalizationsCy extends AppLocalizations {
   String get yesButtonText => 'Ie';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String get quitButtonText => 'Quit installation';
 
   @override
   String get welcome => 'Croeso';
@@ -227,7 +227,7 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Warning:</font> The computer is not plugged in to a power source.';
   }
 
   @override
@@ -703,10 +703,10 @@ class AppLocalizationsCy extends AppLocalizations {
   String get shutdown => 'Shut Down';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Restart now';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Continue testing';
 
   @override
   String get turnOffBitlockerTitle => 'Diffoddwch BitLocker';
@@ -720,7 +720,7 @@ class AppLocalizationsCy extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Restart into Windows';
 
   @override
   String get whereAreYouPageTitle => 'Where are you?';

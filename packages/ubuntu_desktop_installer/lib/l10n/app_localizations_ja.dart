@@ -227,7 +227,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">警告</font>: このコンピューターは電源に接続されていません。';
+    return '<font color=\"$color\">警告</font> このコンピューターは電源に接続されていません。';
   }
 
   @override
@@ -686,7 +686,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** のインストールは完了し、使い始める準備が整いました。';
+    return '**$system** のインストールは完了し、使い始める準備が整いました';
   }
 
   @override
@@ -947,5 +947,5 @@ class AppLocalizationsJa extends AppLocalizations {
   String get activeDirectoryErrorTitle => 'アクティブディレクトリへの接続設定エラー';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage => '申し訳ありませんが、Active Directoryは現在セットアップできません。システムが稼働したら、<a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> にアクセスしてサポートを受けてください。';
 }

@@ -703,10 +703,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get shutdown => 'Leállítás';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Restart now';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Continue testing';
 
   @override
   String get turnOffBitlockerTitle => 'Kapcsolja ki a BitLockert';

@@ -227,7 +227,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Ostrzeżenie</font>: komputer nie jest podłączony do źródła zasilania.';
+    return '<font color=\"$color\">Ostrzeżenie:</font> komputer nie jest podłączony do źródła zasilania.';
   }
 
   @override
@@ -255,7 +255,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Ostrzeżenie</font>: jeśli zgubisz ten klucz bezpieczeństwa, wszystkie dane zostaną utracone. Jeżeli potrzebujesz, zapisz swój klucz i przechowuj go w bezpiecznym miejscu gdzie indziej.';
+    return '<font color=\"$color\">Ostrzeżenie:</font> jeśli zgubisz ten klucz bezpieczeństwa, wszystkie dane zostaną utracone. Jeżeli potrzebujesz, zapisz swój klucz i przechowuj go w bezpiecznym miejscu gdzie indziej.';
   }
 
   @override
@@ -686,12 +686,12 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** został zainstalowany i jest gotowy do użycia.';
+    return '**$system** został zainstalowany i jest gotowy do użycia';
   }
 
   @override
   String restartInto(Object system) {
-    return 'Uruchom ponownie $system';
+    return 'Uruchom ponownie do $system';
   }
 
   @override
@@ -703,7 +703,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get shutdown => 'Zamknij system';
 
   @override
-  String get restartNow => 'Uruchom ponownie komputer';
+  String get restartNow => 'Uruchom ponownie teraz';
 
   @override
   String get continueTesting => 'Kontynuuj testowanie';
@@ -720,7 +720,7 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => 'Uruchom ponownie Windows';
+  String get restartIntoWindows => 'Uruchom ponownie do Windows';
 
   @override
   String get whereAreYouPageTitle => 'Gdzie jesteś?';

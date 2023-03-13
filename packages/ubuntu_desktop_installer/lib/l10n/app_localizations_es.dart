@@ -227,7 +227,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Advertencia</font>: El equipo no está conectado a una fuente de alimentación.';
+    return '<font color=\"$color\">Advertencia:</font> El equipo no está conectado a una fuente de alimentación.';
   }
 
   @override
@@ -255,7 +255,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Advertencia</font>: Si pierde esta clave de seguridad, se perderán todos los datos. Si lo necesita, anote su clave y guárdela en un lugar seguro en algún otro sitio.';
+    return '<font color=\"$color\">Advertencia:</font> Si pierde esta clave de seguridad, se perderán todos los datos. Si lo necesita, anote su clave y guárdela en un lugar seguro en algún otro sitio.';
   }
 
   @override
@@ -686,7 +686,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** está instalado y listo para usarse.';
+    return '**$system** está instalado y listo para usarse';
   }
 
   @override
@@ -947,5 +947,5 @@ class AppLocalizationsEs extends AppLocalizations {
   String get activeDirectoryErrorTitle => 'Error al configurar la conexión con Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage => 'Lo sentimos, Active Directory no se puede configurar en este momento. Una vez que el sistema esté en funcionamiento, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para obtener ayuda.';
 }

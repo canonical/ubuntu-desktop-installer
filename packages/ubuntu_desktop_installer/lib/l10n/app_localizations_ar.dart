@@ -227,7 +227,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Warning:</font> The computer is not plugged in to a power source.';
   }
 
   @override
@@ -377,7 +377,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get selectGuidedStorageInfoLabel => 'سيُستخدم القرص بأكمله:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Install now';
 
   @override
   String get installAlongsideSpaceDivider => 'خصّص مساحة القرص بسحب الفاصل أدناه:';
@@ -720,7 +720,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Restart into Windows';
 
   @override
   String get whereAreYouPageTitle => 'أين أنت؟';

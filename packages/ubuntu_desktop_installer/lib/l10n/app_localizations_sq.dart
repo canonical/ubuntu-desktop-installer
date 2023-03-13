@@ -97,7 +97,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get typeToTest => 'Type here to test your keyboard';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Detect keyboard layout';
 
   @override
   String get pressOneKey => 'Please press one of the following keys:';
@@ -227,7 +227,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Warning:</font> The computer is not plugged in to a power source.';
   }
 
   @override
@@ -720,7 +720,7 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Restart into Windows';
 
   @override
   String get whereAreYouPageTitle => 'Ku ndodheni?';

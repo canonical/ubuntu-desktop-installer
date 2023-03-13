@@ -686,7 +686,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** es installat e prèst a utilizar.';
+    return '**$system** es installat e prèst a utilizar';
   }
 
   @override
