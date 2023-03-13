@@ -1,3 +1,218 @@
 {
-  "@@locale": "da"
+  "@@locale": "da",
+  "hiddenWifiNetworkNameLabel": "Netværksnavn",
+  "@hiddenWifiNetworkNameLabel": {},
+  "connectButtonText": "Forbinde",
+  "@connectButtonText": {},
+  "installThirdPartyTitle": "Installer tredjepartssoftware til grafik og trådløs hardware og yderligere medieformater",
+  "@installThirdPartyTitle": {},
+  "chooseSecurityKeyRequired": "Der kræves en sikkerhedsnøgle",
+  "@chooseSecurityKeyRequired": {},
+  "installDriversTitle": "Installer tredjepartssoftware til grafik og trådløs hardware",
+  "@installDriversTitle": {},
+  "installDriversSubtitle": "Disse chauffører er underlagt de licensvilkår, der er inkluderet i deres dokumentation. De er proprietære.",
+  "@installDriversSubtitle": {},
+  "installCodecsTitle": "Download og installer understøttelse af yderligere medieformater",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Denne software er underlagt licensbetingelserne i dens dokumentation. Nogle er proprietære.",
+  "@installCodecsSubtitle": {},
+  "onBatteryWarning": "<font color=\"{color}\">Advarsel:</font> Computeren er ikke tilsluttet en strømkilde.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "chooseSecurityKeyHint": "Vælg en sikkerhedsnøgle",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyConfirmHint": "Bekræft sikkerhedsnøglen",
+  "@chooseSecurityKeyConfirmHint": {},
+  "welcomeHeader": "Vælg dit sprog:",
+  "@welcomeHeader": {},
+  "selectWifiNetwork": "Opret forbindelse til et WiFi-netværk",
+  "@selectWifiNetwork": {},
+  "wiredDisabled": "Kablet forbindelse er slået fra",
+  "@wiredDisabled": {},
+  "showSecurityKey": "Vis sikkerhedsnøgle",
+  "@showSecurityKey": {},
+  "connectToInternetPageTitle": "Forbind til internettet",
+  "@connectToInternetPageTitle": {},
+  "useWiredConnection": "Brug kablet forbindelse",
+  "@useWiredConnection": {},
+  "wiredMustBeEnabled": "En kablet forbindelse skal være aktiveret for at bruge Ethernet på denne computer",
+  "@wiredMustBeEnabled": {},
+  "hiddenWifiNetwork": "Opret forbindelse til et skjult WiFi-netværk",
+  "@hiddenWifiNetwork": {},
+  "normalInstallationSubtitle": "Webbrowsere, hjælpeprogrammer, kontorapplikationer, spil og medieafspillere.",
+  "@normalInstallationSubtitle": {},
+  "minimalInstallationTitle": "Minimal installation",
+  "@minimalInstallationTitle": {},
+  "minimalInstallationSubtitle": "Webbrowser og grundlæggende hjælpeprogrammer.",
+  "@minimalInstallationSubtitle": {},
+  "otherOptions": "Flere muligheder",
+  "@otherOptions": {},
+  "chooseSecurityKeyTitle": "Vælg sikkerhedsnøgle",
+  "@chooseSecurityKeyTitle": {},
+  "appTitle": "Ubuntu-Desktop-Installationsprogram",
+  "@appTitle": {},
+  "installUbuntu": "{RELEASE} installerer",
+  "@installUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installUbuntuDescription": "Installer {RELEASE} ved siden af (eller i stedet for) dit nuværende operativsystem. Dette bør ikke tage for lang tid.",
+  "@installUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "releaseNotesLabel": "Du vil måske læse <a href=\"{url}\">udgivelsesbemærkningerne</a>.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "quitButtonText": "Afslut installationen",
+  "@quitButtonText": {},
+  "welcome": "Velkommen",
+  "@welcome": {},
+  "tryOrInstallPageTitle": "Prøv eller installer",
+  "@tryOrInstallPageTitle": {},
+  "repairInstallation": "reparer installation",
+  "@repairInstallation": {},
+  "configureSecureBootSecurityKeyRequired": "Der kræves en sikkerhedsnøgle",
+  "@configureSecureBootSecurityKeyRequired": {},
+  "confirmSecurityKey": "Bekræft sikkerhedsnøgle",
+  "@confirmSecurityKey": {},
+  "dontInstallDriverSoftwareNow": "Installer ikke driversoftwaren lige nu",
+  "@dontInstallDriverSoftwareNow": {},
+  "dontInstallDriverSoftwareNowDescription": "Du kan installere dem senere fra Software og opdateringer.",
+  "@dontInstallDriverSoftwareNowDescription": {},
+  "secureBootSecurityKeysDontMatch": "Sikkerhedsnøglerne stemmer ikke overens",
+  "@secureBootSecurityKeysDontMatch": {},
+  "noWiredConnection": "Ingen kablet forbindelse fundet",
+  "@noWiredConnection": {},
+  "offlineWarning": "Du er i øjeblikket offline",
+  "@offlineWarning": {},
+  "chooseSecurityKeyMismatch": "Sikkerhedsnøglerne stemmer ikke overens",
+  "@chooseSecurityKeyMismatch": {},
+  "installationTypeTitle": "installationstype",
+  "@installationTypeTitle": {},
+  "installationTypeOSDetected": "{os} er i øjeblikket på denne maskine. Hvordan vil du gerne komme videre?",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "windowTitle": "{RELEASE} installer",
+  "@windowTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "cancelButtonText": "Afbryde",
+  "@cancelButtonText": {},
+  "changeButtonText": "Ændre",
+  "@changeButtonText": {},
+  "okButtonText": "OK",
+  "@okButtonText": {},
+  "noButtonText": "Nej",
+  "@noButtonText": {},
+  "restartButtonText": "Genstart",
+  "@restartButtonText": {},
+  "typeToTest": "Skriv noget her for at teste dit tastatur layout",
+  "@typeToTest": {},
+  "revertButtonText": "Nulstil til standard",
+  "@revertButtonText": {},
+  "yesButtonText": "Ja",
+  "@yesButtonText": {},
+  "repairInstallationDescription": "Reparation geninstallerer al installeret software uden at røre ved dokumenter eller indstillinger.",
+  "@repairInstallationDescription": {},
+  "tryUbuntu": "{RELEASE}  prøv",
+  "@tryUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "tryUbuntuDescription": "Du kan prøve {RELEASE} uden at foretage ændringer på din computer.",
+  "@tryUbuntuDescription": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "turnOffRST": "Sluk for RST",
+  "@turnOffRST": {},
+  "turnOffRSTDescription": "Denne lommeregner bruger Intel RST (Rapid Storage Technology). Før du installerer Ubuntu, skal RST være slået fra i Windows.",
+  "@turnOffRSTDescription": {},
+  "instructionsForRST": "For instruktioner skal du åbne denne side på en smartphone eller anden enhed: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "keyboardLayoutPageTitle": "tastatur layout",
+  "@keyboardLayoutPageTitle": {},
+  "chooseYourKeyboardLayout": "Vælg dit tastatur layout.",
+  "@chooseYourKeyboardLayout": {},
+  "detectLayout": "Genkend tastaturlayout",
+  "@detectLayout": {},
+  "pressOneKey": "Tryk venligst på en af følgende taster:",
+  "@pressOneKey": {},
+  "isKeyPresent": "Findes følgende tast på dit tastatur?",
+  "@isKeyPresent": {},
+  "configureSecureBootTitle": "Konfigurer sikker opstart",
+  "@configureSecureBootTitle": {},
+  "configureSecureBootOption": "Konfigurer sikker opstart",
+  "@configureSecureBootOption": {},
+  "chooseSecurityKey": "Vælg sikkerhedsnøgle",
+  "@chooseSecurityKey": {},
+  "enableWired": "Aktiver kablet Ethernet",
+  "@enableWired": {},
+  "noInternet": "Jeg vil ikke oprette forbindelse til internettet lige nu",
+  "@noInternet": {},
+  "wirelessNetworkingDisabled": "Trådløst netværk deaktiveret",
+  "@wirelessNetworkingDisabled": {},
+  "noWifiDevicesDetected": "Ingen WiFi-enheder fundet",
+  "@noWifiDevicesDetected": {},
+  "wifiMustBeEnabled": "For at bruge WiFi på denne computer skal det trådløse netværk være aktiveret",
+  "@wifiMustBeEnabled": {},
+  "enableWifi": "Skriver WiFi",
+  "@enableWifi": {},
+  "updatesOtherSoftwarePageTitle": "Opdateringer og anden software",
+  "@updatesOtherSoftwarePageTitle": {},
+  "updatesOtherSoftwarePageDescription": "Hvilke applikationer vil du først installere?",
+  "@updatesOtherSoftwarePageDescription": {},
+  "installThirdPartySubtitle": "Denne software er underlagt de licensvilkår, der er inkluderet i dokumentationen. Noget af det er proprietært.",
+  "@installThirdPartySubtitle": {},
+  "configureSecureBootDescription": "Du har valgt at installere tredjeparts driversoftware. For at gøre dette skal Secure Boot være slået fra.\nFor at gøre dette skal du nu vælge en sikkerhedsnøgle og indtaste den, når du genstarter systemet.",
+  "@configureSecureBootDescription": {},
+  "connectToInternetDescription": "Tilslutning af computeren til internettet hjælper Ubuntu med at installere yderligere software og vælge tidszonen.\n\nTilslut via Ethernet-kabel eller vælg et WiFi-netværk",
+  "@connectToInternetDescription": {},
+  "hiddenWifiNetworkNameRequired": "Netværksnavnet er påkrævet",
+  "@hiddenWifiNetworkNameRequired": {},
+  "normalInstallationTitle": "Normal installation",
+  "@normalInstallationTitle": {},
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Advarsel:</font> Hvis du mister denne sikkerhedsnøgle, vil alle data gå tabt. Hvis det er nødvendigt, kan du skrive nøglen ned og opbevare den et sikkert sted.",
+  "@chooseSecurityKeyWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "chooseSecurityKeyHeader": "Fuld diskkryptering beskytter dine filer, hvis du mister din computer. Hver gang du starter computeren, skal du indtaste en sikkerhedsnøgle.\n\nAlle filer uden for {RELEASE} bliver ikke krypteret.",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  }
 }
