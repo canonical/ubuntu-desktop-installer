@@ -297,7 +297,7 @@ class _PartitionMountField extends StatelessWidget {
     return ValueListenableBuilder<PartitionFormat?>(
       valueListenable: partitionFormat,
       builder: (context, format, child) {
-        return Autocomplete<String>(
+        return YaruAutocomplete<String>(
           initialValue: initialMount != null
               ? TextEditingValue(text: initialMount!)
               : null,

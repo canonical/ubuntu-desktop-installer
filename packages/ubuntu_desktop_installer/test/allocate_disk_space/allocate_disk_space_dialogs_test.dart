@@ -55,7 +55,7 @@ void main() {
         find.widgetWithText(MenuItemButton, tester.lang.partitionFormatBtrfs));
     await tester.pumpAndSettle();
 
-    await tester.enterText(find.byType(Autocomplete<String>), '/tst');
+    await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
     await tester
@@ -124,7 +124,7 @@ void main() {
     await tester.tap(find.byType(YaruCheckbox));
     await tester.pump();
 
-    await tester.enterText(find.byType(Autocomplete<String>), '/tst');
+    await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
     await tester
