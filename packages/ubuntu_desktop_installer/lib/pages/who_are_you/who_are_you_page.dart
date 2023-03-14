@@ -30,6 +30,7 @@ class WhoAreYouPage extends StatefulWidget {
         client: getService<SubiquityClient>(),
         config: getService<ConfigService>(),
         network: getService<NetworkService>(),
+        telemetry: getService<TelemetryService>(),
       ),
       child: const WhoAreYouPage(),
     );
