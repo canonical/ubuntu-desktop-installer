@@ -155,7 +155,7 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "安装完成",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** 安装完毕并且可以使用。",
+  "readyToUse": "**{system}** 安装完毕并且可以使用",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -832,5 +832,9 @@
   "partitionLimitReached": "已达上限",
   "@partitionLimitReached": {},
   "tooManyPrimaryPartitions": "主分区过多",
-  "@tooManyPrimaryPartitions": {}
+  "@tooManyPrimaryPartitions": {},
+  "activeDirectoryErrorTitle": "配置活动目录时出错",
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "抱歉，活动目录目前无法设置。系统启动并运行后，请访问 <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> 寻求帮助。",
+  "@activeDirectoryErrorMessage": {}
 }
