@@ -10,6 +10,8 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:nm/nm.dart' as _i2;
 import 'package:ubuntu_desktop_installer/services/config_service.dart' as _i3;
 import 'package:ubuntu_desktop_installer/services/network_service.dart' as _i5;
+import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
+    as _i7;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -397,6 +399,61 @@ class MockNetworkService extends _i1.Mock implements _i5.NetworkService {
         Invocation.method(
           #close,
           [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+}
+
+/// A class which mocks [TelemetryService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockTelemetryService extends _i1.Mock implements _i7.TelemetryService {
+  MockTelemetryService() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<void> init([Map<String, dynamic>? metrics = const {}]) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [metrics],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+  @override
+  _i4.Future<void> addStage(String? name) => (super.noSuchMethod(
+        Invocation.method(
+          #addStage,
+          [name],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+  @override
+  _i4.Future<void> addMetric(
+    String? key,
+    dynamic value,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #addMetric,
+          [
+            key,
+            value,
+          ],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+  @override
+  _i4.Future<void> addMetrics(Map<String, dynamic>? entries) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #addMetrics,
+          [entries],
         ),
         returnValue: _i4.Future<void>.value(),
         returnValueForMissingStub: _i4.Future<void>.value(),

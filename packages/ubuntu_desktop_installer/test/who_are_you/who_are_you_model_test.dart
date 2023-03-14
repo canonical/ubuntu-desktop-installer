@@ -22,7 +22,7 @@ class MockProductNameFile extends Mock implements File {
   Future<String> readAsString({Encoding encoding = utf8}) async => _product;
 }
 
-@GenerateMocks([ConfigService, NetworkService])
+@GenerateMocks([ConfigService, NetworkService, TelemetryService])
 void main() {
   test('init', () async {
     const identity = IdentityData(
@@ -43,10 +43,13 @@ void main() {
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
+    final telemetry = MockTelemetryService();
+
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
 
     await IOOverrides.runZoned(() async {
@@ -75,10 +78,13 @@ void main() {
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
+    final telemetry = MockTelemetryService();
+
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
 
     await IOOverrides.runZoned(() async {
@@ -102,10 +108,13 @@ void main() {
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
+    final telemetry = MockTelemetryService();
+
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
     await IOOverrides.runZoned(() async {
       await model.init();
@@ -129,10 +138,13 @@ void main() {
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
+    final telemetry = MockTelemetryService();
+
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
     await IOOverrides.runZoned(() async {
       await model.init();
@@ -158,10 +170,13 @@ void main() {
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
+    final telemetry = MockTelemetryService();
+
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
     model.realName = identity.realname;
     model.username = identity.username;
@@ -169,11 +184,13 @@ void main() {
     model.password = 'passwd';
 
     model.autoLogin = false;
+    model.useActiveDirectory = false;
 
     await model.save(salt: 'test');
 
     verify(client.setIdentity(identity)).called(1);
     verify(client.markConfigured(['active_directory'])).called(1);
+    verify(telemetry.addMetric('UseActiveDirectory', false)).called(1);
   });
 
   test('save auto-login', () async {
@@ -186,10 +203,13 @@ void main() {
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
+    final telemetry = MockTelemetryService();
+
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
     model.username = 'someone';
     model.password = 'not-empty';
@@ -209,10 +229,13 @@ void main() {
     final config = MockConfigService();
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final telemetry = MockTelemetryService();
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
 
     void testPasswordStrength(String password, Matcher matcher) {
@@ -231,10 +254,13 @@ void main() {
     final config = MockConfigService();
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final telemetry = MockTelemetryService();
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
 
     var wasNotified = false;
@@ -276,10 +302,13 @@ void main() {
     final config = MockConfigService();
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+
+    final telemetry = MockTelemetryService();
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
 
     expect(model.isValid, isFalse);
@@ -356,10 +385,13 @@ void main() {
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
+    final telemetry = MockTelemetryService();
+
     final model = WhoAreYouModel(
       client: client,
       config: MockConfigService(),
       network: network,
+      telemetry: telemetry,
     );
     expect(model.isValid, isFalse);
 
@@ -401,10 +433,13 @@ void main() {
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
+    final telemetry = MockTelemetryService();
+
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
     model.realName = 'User';
     model.username = 'user';
@@ -426,6 +461,7 @@ void main() {
     final client = MockSubiquityClient();
     final config = MockConfigService();
     final network = MockNetworkService();
+    final telemetry = MockTelemetryService();
     when(network.isConnected).thenReturn(false);
     when(network.isConnectedSite).thenReturn(false);
     when(network.propertiesChanged).thenAnswer((_) => networkChanged.stream);
@@ -434,6 +470,7 @@ void main() {
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
     expect(model.isConnected, isFalse);
 
@@ -459,10 +496,13 @@ void main() {
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
+    final telemetry = MockTelemetryService();
+
     final model = WhoAreYouModel(
       client: client,
       config: config,
       network: network,
+      telemetry: telemetry,
     );
     expect(model.hasActiveDirectorySupport, isNull);
 

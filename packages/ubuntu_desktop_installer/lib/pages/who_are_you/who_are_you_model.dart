@@ -38,9 +38,11 @@ class WhoAreYouModel extends PropertyStreamNotifier {
     required SubiquityClient client,
     required ConfigService config,
     required NetworkService network,
+    required TelemetryService telemetry,
   })  : _client = client,
         _config = config,
-        _network = network {
+        _network = network,
+        _telemetry = telemetry {
     Listenable.merge([
       _realName,
       _hostname,
@@ -62,6 +64,7 @@ class WhoAreYouModel extends PropertyStreamNotifier {
   final SubiquityClient _client;
   final ConfigService _config;
   final NetworkService _network;
+  final TelemetryService _telemetry;
 
   final _realName = ValueNotifier<String?>(null);
   final _username = ValueNotifier<String?>(null);
@@ -184,6 +187,7 @@ class WhoAreYouModel extends PropertyStreamNotifier {
       await _config.set(kAutoLoginUser, null);
     }
 
+    _telemetry.addMetric('UseActiveDirectory', useActiveDirectory);
     if (!useActiveDirectory) {
       // the active directory endpoint is not optional so we need to explicitly
       // mark it as configured even if not used to avoid subiquity getting stuck
