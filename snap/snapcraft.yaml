@@ -7,6 +7,7 @@ description: |
 grade: stable
 confinement: classic
 base: core20
+compression: lzo
 issues: https://bugs.launchpad.net/ubuntu-desktop-installer/+filebug
 contact: https://bugs.launchpad.net/ubuntu-desktop-installer/+filebug
 
