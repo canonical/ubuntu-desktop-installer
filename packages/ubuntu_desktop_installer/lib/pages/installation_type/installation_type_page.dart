@@ -134,7 +134,9 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 OutlinedButton(
-                  onPressed: () => showAdvancedFeaturesDialog(context, model),
+                  onPressed: model.installationType == InstallationType.erase
+                      ? () => showAdvancedFeaturesDialog(context, model)
+                      : null,
                   child: Text(lang.installationTypeAdvancedLabel),
                 ),
                 const SizedBox(width: kContentSpacing),

@@ -291,7 +291,7 @@ void main() {
   });
 
   testWidgets('manual', (tester) async {
-    final model = buildModel();
+    final model = buildModel(installationType: InstallationType.manual);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.widgetWithText(
@@ -299,6 +299,10 @@ void main() {
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.manual).called(1);
+
+    final button = find.widgetWithText(
+        OutlinedButton, tester.lang.installationTypeAdvancedLabel);
+    expect(tester.widget<ButtonStyleButton>(button).enabled, false);
   });
 
   group('advanced features', () {
