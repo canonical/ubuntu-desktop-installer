@@ -6,6 +6,7 @@ import 'package:meta/meta.dart';
 import 'package:platform/platform.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
@@ -15,10 +16,12 @@ final log = Logger('keyboard_layout');
 /// Implements the business logic of the Keyboard Layout page.
 class KeyboardLayoutModel extends SafeChangeNotifier {
   /// Creates a model with the specified client.
-  KeyboardLayoutModel(this._client, {@visibleForTesting Platform? platform})
+  KeyboardLayoutModel(this._client, this._telemetry,
+      {@visibleForTesting Platform? platform})
       : _platform = platform ?? const LocalPlatform();
 
   final SubiquityClient _client;
+  final TelemetryService _telemetry;
   final Platform _platform;
   List<KeyboardLayout> _layouts = [];
 
@@ -156,6 +159,10 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     final variant = _selectedVariant?.code;
     final keyboard = KeyboardSetting(layout: layout, variant: variant ?? '');
     log.info('Saved $layout ($variant) keyboard layout');
+    _telemetry.addMetrics({
+      'KeyboardLayout': layout,
+      'KeyboardVariant': variant ?? '',
+    });
     return _client.setKeyboard(keyboard);
   }
 
