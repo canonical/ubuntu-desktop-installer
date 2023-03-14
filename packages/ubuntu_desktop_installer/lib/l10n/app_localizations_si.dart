@@ -100,6 +100,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get detectLayout => 'යතුරුපුවරුවේ පිරිසැලසුම අනාවරණය';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'පහත යතුරු වලින් එකක් ඔබන්න:';
 
   @override

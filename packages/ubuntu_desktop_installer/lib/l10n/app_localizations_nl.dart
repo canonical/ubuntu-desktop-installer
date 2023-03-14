@@ -100,6 +100,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get detectLayout => 'Toetsenbordindeling bepalen';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Please press one of the following keys:';
 
   @override

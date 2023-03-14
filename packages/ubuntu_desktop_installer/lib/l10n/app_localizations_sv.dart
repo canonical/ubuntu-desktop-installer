@@ -100,6 +100,12 @@ class AppLocalizationsSv extends AppLocalizations {
   String get detectLayout => 'Upptäck tangentbordslayout';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Vänligen tryck på en av följande tangenter:';
 
   @override

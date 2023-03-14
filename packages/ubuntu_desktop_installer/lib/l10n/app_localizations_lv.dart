@@ -100,6 +100,12 @@ class AppLocalizationsLv extends AppLocalizations {
   String get detectLayout => 'Detect keyboard layout';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Please press one of the following keys:';
 
   @override

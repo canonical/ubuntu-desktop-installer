@@ -100,6 +100,12 @@ class AppLocalizationsFi extends AppLocalizations {
   String get detectLayout => 'Tunnista näppäimistön asettelu';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Paina yhtä seuraavista näppäimistä:';
 
   @override

@@ -100,6 +100,12 @@ class AppLocalizationsSr extends AppLocalizations {
   String get detectLayout => 'Откриј распоред тастатуре';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Молимо притисните један од следећих тастера:';
 
   @override

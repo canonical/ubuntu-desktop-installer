@@ -100,6 +100,12 @@ class AppLocalizationsMr extends AppLocalizations {
   String get detectLayout => 'कळफलक मांडणीचा शोध';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'कृपया पुढे दिलेल्या कळापैकी कोणतीही एक कळ दाबून पहा.';
 
   @override

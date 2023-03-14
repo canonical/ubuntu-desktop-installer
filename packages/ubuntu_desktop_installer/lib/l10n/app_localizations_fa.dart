@@ -100,6 +100,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get detectLayout => 'تشخیص چیدمان صفحه‌کلید';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'لطفاً یکی از کلیدهای زیر را فشار دهید:';
 
   @override

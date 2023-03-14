@@ -100,6 +100,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get detectLayout => 'Zjistit rozvržení klávesnice';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Stiskněte některou z následujících kláves:';
 
   @override

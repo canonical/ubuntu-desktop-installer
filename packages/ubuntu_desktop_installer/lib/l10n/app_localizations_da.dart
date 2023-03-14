@@ -100,6 +100,12 @@ class AppLocalizationsDa extends AppLocalizations {
   String get detectLayout => 'Genkend tastaturlayout';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Tryk venligst på en af følgende taster:';
 
   @override

@@ -100,6 +100,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get detectLayout => 'Deteksi Tata Letak Papan Ketik';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Silakan tekan salah satu tombol berikut:';
 
   @override

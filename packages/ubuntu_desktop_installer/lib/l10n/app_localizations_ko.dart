@@ -100,6 +100,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get detectLayout => '키보드 레이아웃 감지';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => '다음 키 중 하나를 누르십시오:';
 
   @override

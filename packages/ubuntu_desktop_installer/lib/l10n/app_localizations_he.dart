@@ -100,6 +100,12 @@ class AppLocalizationsHe extends AppLocalizations {
   String get detectLayout => 'איתור פריסת המקלדת';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'נא ללחוץ על אחד מהתווים הבאים:';
 
   @override
