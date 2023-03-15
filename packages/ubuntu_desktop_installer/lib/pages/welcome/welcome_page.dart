@@ -71,15 +71,22 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     final model = Provider.of<WelcomeModel>(context);
     final lang = AppLocalizations.of(context);
-    final height = MediaQuery.of(context).size.height;
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.welcome),
       ),
-      header: Text(lang.welcomeHeader),
       content: FractionallySizedBox(
-        child: Row(
+        widthFactor: 0.5,
+        child: Column(
           children: [
+            const SizedBox(height: kContentSpacing / 2),
+            Image.asset(
+              'assets/welcome/logo.png',
+              height: 150,
+            ),
+            const SizedBox(height: kContentSpacing),
+            Text(lang.welcomeHeader),
+            const SizedBox(height: kContentSpacing / 2),
             Expanded(
               child: KeySearch(
                 autofocus: true,
@@ -108,13 +115,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
             ),
-            const SizedBox(width: kContentSpacing),
-            Expanded(
-              child: SvgPicture.asset(
-                'assets/welcome/logo.svg',
-                height: height / 2,
-              ),
-            )
+            const SizedBox(height: kContentSpacing),
           ],
         ),
       ),
