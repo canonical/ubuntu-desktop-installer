@@ -40,6 +40,11 @@ class AppLocalizationsMl extends AppLocalizations {
   String get welcome => 'സ്വാഗതം';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Choose your language:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get detectLayout => 'കീബോർഡിന്റെ ക്രമീകരണം കണ്ടുപിടിക്കുക';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'ഈ കീകളിൽ ഒന്ന് അമർത്തുക:';

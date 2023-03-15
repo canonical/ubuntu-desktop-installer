@@ -40,6 +40,11 @@ class AppLocalizationsEu extends AppLocalizations {
   String get welcome => 'Ongi etorri';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Aukeratu zure hizkuntza:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get detectLayout => 'Detektatu teklatuaren diseinua';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Mesedez, sakatu hurrengo tekletariko bat:';
@@ -288,7 +299,7 @@ class AppLocalizationsEu extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Advanced features...';
 
   @override
   String get installationTypeAdvancedTitle => 'Advanced features';

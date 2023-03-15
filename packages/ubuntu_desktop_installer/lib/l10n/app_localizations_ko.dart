@@ -40,6 +40,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get welcome => '환영합니다';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => '언어를 선택하십시오:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get detectLayout => '키보드 레이아웃 감지';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => '다음 키 중 하나를 누르십시오:';

@@ -35,10 +35,8 @@ class KeyboardLayoutPage extends StatefulWidget {
 class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
   final _layoutListFocusNode = FocusNode();
   final _layoutListScrollController = AutoScrollController();
-  final _keyboardVariantListScrollController = AutoScrollController();
 
   StreamSubscription<int>? _layoutChanged;
-  StreamSubscription<int>? _variantChanged;
 
   @override
   void initState() {
@@ -47,12 +45,10 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
     final model = Provider.of<KeyboardLayoutModel>(context, listen: false);
     model.init().then((_) {
       _scrollToLayout(model.selectedLayoutIndex, AutoScrollPosition.middle);
-      _scrollToVariant(model.selectedVariantIndex, AutoScrollPosition.middle);
       model.updateInputSource();
     });
 
     _layoutChanged = model.onLayoutSelected.listen(_scrollToLayout);
-    _variantChanged = model.onVariantSelected.listen(_scrollToVariant);
   }
 
   void _scrollToLayout(int index, [AutoScrollPosition? position]) {
@@ -64,22 +60,11 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
     );
   }
 
-  void _scrollToVariant(int index, [AutoScrollPosition? position]) {
-    if (index == -1) return;
-    _keyboardVariantListScrollController.scrollToIndex(
-      index,
-      preferPosition: position,
-      duration: _kScrollDuration,
-    );
-  }
-
   @override
   void dispose() {
     _layoutListFocusNode.dispose();
     _layoutListScrollController.dispose();
-    _keyboardVariantListScrollController.dispose();
     _layoutChanged?.cancel();
-    _variantChanged?.cancel();
     super.dispose();
   }
 
@@ -91,97 +76,102 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
       title: YaruWindowTitleBar(
         title: Text(lang.keyboardLayoutPageTitle),
       ),
-      header: Text(lang.chooseYourKeyboardLayout),
-      content: Column(
-        children: <Widget>[
-          Expanded(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: KeySearch(
-                    autofocus: true,
-                    focusNode: _layoutListFocusNode,
-                    onSearch: (value) {
-                      final index = model.searchLayout(value);
-                      if (index != -1) {
-                        model.selectLayout(index);
-                      }
-                    },
-                    child: FocusTraversalGroup(
-                      policy: WidgetOrderTraversalPolicy(),
-                      child: YaruBorderContainer(
-                        clipBehavior: Clip.antiAlias,
-                        child: ListView.builder(
-                          controller: _layoutListScrollController,
-                          itemCount: model.layoutCount,
-                          itemBuilder: (context, index) {
-                            return AutoScrollTag(
-                              index: index,
-                              key: ValueKey(index),
-                              controller: _layoutListScrollController,
-                              child: ListTile(
-                                title: Text(model.layoutName(index)),
-                                selected: index == model.selectedLayoutIndex,
-                                onTap: () {
-                                  model.selectLayout(index);
-                                  _layoutListFocusNode.requestFocus();
-                                },
-                              ),
-                            );
-                          },
+      content: FractionallySizedBox(
+        widthFactor: 0.5,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Row(
+              children: [
+                Expanded(child: Text(lang.chooseYourKeyboardLayout)),
+                const SizedBox(width: kContentSpacing),
+                OutlinedButton(
+                  child: Text(lang.detectButtonText),
+                  onPressed: () async {
+                    final result =
+                        await showDetectKeyboardLayoutDialog(context);
+                    if (result != null) {
+                      model.trySelectLayoutVariant(
+                          result.layout, result.variant);
+                    }
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(height: kContentSpacing),
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: KeySearch(
+                      autofocus: true,
+                      focusNode: _layoutListFocusNode,
+                      onSearch: (value) {
+                        final index = model.searchLayout(value);
+                        if (index != -1) {
+                          model.selectLayout(index);
+                        }
+                      },
+                      child: FocusTraversalGroup(
+                        policy: WidgetOrderTraversalPolicy(),
+                        child: YaruBorderContainer(
+                          clipBehavior: Clip.antiAlias,
+                          child: ListView.builder(
+                            controller: _layoutListScrollController,
+                            itemCount: model.layoutCount,
+                            itemBuilder: (context, index) {
+                              return AutoScrollTag(
+                                index: index,
+                                key: ValueKey(index),
+                                controller: _layoutListScrollController,
+                                child: ListTile(
+                                  title: Text(model.layoutName(index)),
+                                  selected: index == model.selectedLayoutIndex,
+                                  onTap: () {
+                                    model.selectLayout(index);
+                                    _layoutListFocusNode.requestFocus();
+                                  },
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
+                ],
+              ),
+            ),
+            const SizedBox(height: kContentSpacing),
+            Row(
+              children: [
+                Text(lang.keyboardVariant),
                 const SizedBox(width: kContentSpacing),
                 Expanded(
-                  child: YaruBorderContainer(
-                    clipBehavior: Clip.antiAlias,
-                    child: ListView.builder(
-                      controller: _keyboardVariantListScrollController,
-                      itemCount: model.variantCount,
-                      itemBuilder: (context, index) {
-                        return AutoScrollTag(
-                          index: index,
-                          key: ValueKey(index),
-                          controller: _keyboardVariantListScrollController,
-                          child: ListTile(
-                            title: Text(model.variantName(index)),
-                            selected: index == model.selectedVariantIndex,
-                            onTap: () => model.selectVariant(index),
-                          ),
-                        );
-                      },
-                    ),
+                  child: MenuButtonBuilder<int>(
+                    selected: model.selectedVariantIndex,
+                    values: List.generate(model.variantCount, (index) => index),
+                    itemBuilder: (context, index, child) {
+                      return index < 0 || index >= model.variantCount
+                          ? const SizedBox.shrink()
+                          : Text(model.variantName(index));
+                    },
+                    onSelected: model.selectVariant,
                   ),
                 ),
               ],
             ),
-          ),
-          const SizedBox(height: kContentSpacing),
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: lang.typeToTest,
-                  ),
-                ),
+            const SizedBox(height: kContentSpacing),
+            const Divider(height: 1),
+            const SizedBox(height: kContentSpacing),
+            TextField(
+              decoration: InputDecoration(
+                hintText: lang.typeToTest,
               ),
-              const SizedBox(width: kContentSpacing),
-              OutlinedButton(
-                child: Text(lang.detectLayout),
-                onPressed: () async {
-                  final result = await showDetectKeyboardLayoutDialog(context);
-                  if (result != null) {
-                    model.trySelectLayoutVariant(result.layout, result.variant);
-                  }
-                },
-              ),
-            ],
-          ),
-        ],
+            ),
+            const SizedBox(height: kContentSpacing * 2),
+          ],
+        ),
       ),
       actions: <WizardAction>[
         WizardAction.back(context),

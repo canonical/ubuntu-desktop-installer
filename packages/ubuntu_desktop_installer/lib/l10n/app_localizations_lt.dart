@@ -40,6 +40,11 @@ class AppLocalizationsLt extends AppLocalizations {
   String get welcome => 'Sveiki,';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Pasirinkite kalbą:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get detectLayout => 'Aptikti klaviatūros išdėstymą';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Paspauskite vieną iš šių klavišų:';

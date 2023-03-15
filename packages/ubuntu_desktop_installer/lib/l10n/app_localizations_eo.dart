@@ -40,6 +40,11 @@ class AppLocalizationsEo extends AppLocalizations {
   String get welcome => 'Bonvenon';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Elektu vian lingvon:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get detectLayout => 'Rekoni klavaranĝon';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Bonvolu premi unu el la jenaj klavoj:';
@@ -885,7 +896,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get activeDirectoryTitle => 'Agordi Aktivan Dosierujon';
 
   @override
-  String get activeDirectoryTestConnection => 'Provi konekton';
+  String get activeDirectoryTestConnection => 'Provi konekton al la domanio';
 
   @override
   String get activeDirectoryDomainLabel => 'Domanio';
@@ -918,7 +929,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'Domanio ne troviĝis';
 
   @override
-  String get activeDirectoryAdminLabel => 'Administranto de domanio';
+  String get activeDirectoryAdminLabel => 'Uzanto por aliĝi al la domanio';
 
   @override
   String get activeDirectoryAdminEmpty => 'Deviga';

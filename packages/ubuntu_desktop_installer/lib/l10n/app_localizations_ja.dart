@@ -40,6 +40,11 @@ class AppLocalizationsJa extends AppLocalizations {
   String get welcome => 'ようこそ';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => '使用する言語を選択してください:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get detectLayout => 'キーボードレイアウトを検出する';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => '以下のキーのうち 1 つを押してください:';
@@ -885,7 +896,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get activeDirectoryTitle => 'アクティブディレクトリの設定';
 
   @override
-  String get activeDirectoryTestConnection => '接続テスト';
+  String get activeDirectoryTestConnection => 'ドメイン接続テスト';
 
   @override
   String get activeDirectoryDomainLabel => 'ドメイン';
@@ -918,7 +929,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'ドメインが見つかりません';
 
   @override
-  String get activeDirectoryAdminLabel => 'ドメイン管理者';
+  String get activeDirectoryAdminLabel => 'ドメイン接続用のユーザー名';
 
   @override
   String get activeDirectoryAdminEmpty => '必須';

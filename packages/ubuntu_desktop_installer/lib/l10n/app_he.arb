@@ -40,7 +40,7 @@
   "@installUbuntu": {},
   "turnOffRST": "כיבוי RST",
   "@turnOffRST": {},
-  "restartIntoWindows": "הפעלה מחדש אל Windows",
+  "restartIntoWindows": "להפעיל מחדש אל Windows",
   "@restartIntoWindows": {},
   "confirmSecurityKey": "אישור מפתח האבטחה",
   "@confirmSecurityKey": {},
@@ -50,7 +50,7 @@
   "@updatesOtherSoftwarePageDescription": {},
   "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.",
   "@turnOffBitlockerDescription": {},
-  "readyToUse": "המערכת **{system}** מותקנת ומוכנה לשימוש.",
+  "readyToUse": "המערכת **{system}** מותקנת ומוכנה לשימוש",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -208,7 +208,7 @@
   "@chooseSecurityKeyHint": {},
   "chooseSecurityKeyConfirmHint": "אישור מפתח האבטחה",
   "@chooseSecurityKeyConfirmHint": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">אזהרה</font>: אובדן מפתח האבטחה עשוי להוביל לאובדן כל הנתונים. במקרה הצורך, מומלץ לכתוב את המפתח על פתק ולאחסן אותו במקום בטוח.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">אזהרה:</font> אובדן מפתח האבטחה עשוי להוביל לאובדן כל הנתונים. במקרה הצורך, מומלץ לכתוב את המפתח על פתק ולאחסן אותו במקום בטוח.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -426,7 +426,7 @@
   "@newPartitionTableConfirmationMessage": {},
   "newPartitionTableConfirmationTitle": "ליצור טבלת מחיצות ריקה בהתקן הזה?",
   "@newPartitionTableConfirmationTitle": {},
-  "onBatteryWarning": "<font color=\"{color}\">אזהרה</font>: המחשב לא מחובר למקור חשמל.",
+  "onBatteryWarning": "<font color=\"{color}\">אזהרה:</font> המחשב לא מחובר למקור חשמל.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -752,7 +752,7 @@
   "@activeDirectoryDomainMultipleDots": {},
   "activeDirectoryDomainNotFound": "שם התחום לא נמצא",
   "@activeDirectoryDomainNotFound": {},
-  "activeDirectoryAdminLabel": "הנהלת שם תחום",
+  "activeDirectoryAdminLabel": "צירוף משתמש לתחום",
   "@activeDirectoryAdminLabel": {},
   "activeDirectoryPasswordLabel": "סיסמה",
   "@activeDirectoryPasswordLabel": {},
@@ -760,7 +760,7 @@
   "@activeDirectoryPasswordEmpty": {},
   "activeDirectoryDomainLabel": "שם תחום (דומיין)",
   "@activeDirectoryDomainLabel": {},
-  "activeDirectoryTestConnection": "בדיקת חיבור",
+  "activeDirectoryTestConnection": "בדיקת חיבור לתחום",
   "@activeDirectoryTestConnection": {},
   "activeDirectoryTitle": "הגדרת Active Directory",
   "@activeDirectoryTitle": {},

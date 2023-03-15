@@ -40,6 +40,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get welcome => 'Le damos la bienvenida';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Elija su idioma:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get detectLayout => 'Detectar la distribución del teclado';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Pulse una de estas teclas:';
@@ -885,7 +896,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get activeDirectoryTitle => 'Configurar el directorio activo';
 
   @override
-  String get activeDirectoryTestConnection => 'Prueba de la conexión';
+  String get activeDirectoryTestConnection => 'Probar la conexión del dominio';
 
   @override
   String get activeDirectoryDomainLabel => 'Dominio';
@@ -918,7 +929,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'Dominio no encontrado';
 
   @override
-  String get activeDirectoryAdminLabel => 'Administrador del dominio';
+  String get activeDirectoryAdminLabel => 'Usuario uniendose al dominio';
 
   @override
   String get activeDirectoryAdminEmpty => 'Obligatorio';

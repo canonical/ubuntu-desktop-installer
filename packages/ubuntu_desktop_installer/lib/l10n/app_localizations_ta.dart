@@ -40,6 +40,11 @@ class AppLocalizationsTa extends AppLocalizations {
   String get welcome => 'நல்வரவு';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Choose your language:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get detectLayout => 'விசைப்பலகையின் அமைப்பைக் கண்டறியவும்';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'பின்வரும் விசைகளில் ஒன்றை அழுத்துங்கள்:';

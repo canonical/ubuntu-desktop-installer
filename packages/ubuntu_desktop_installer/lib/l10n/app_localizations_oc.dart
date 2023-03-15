@@ -40,6 +40,11 @@ class AppLocalizationsOc extends AppLocalizations {
   String get welcome => 'La benvenguda';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Causissètz vòstra lenga :';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String get detectLayout => 'Detectar l’agençament del clavièr';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Mercés de quichar una de las tòcas seguentas :';
@@ -227,7 +238,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Avertiment </font>: l’ordenador es pas brancat a una font d’alimentacion.';
+    return '<font color=\"$color\">Avertiment :</font> l’ordenador es pas brancat a una font d’alimentacion.';
   }
 
   @override
@@ -255,7 +266,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Atencion </font>: se perdètz aquesta clau de seguretat, totas las donadas seràn perdudas. Se cal, escrivètz vòstra clau e gardatz-la dins un endrech dins un lòc segur.';
+    return '<font color=\"$color\">Avertiment :</font> se perdètz aquesta clau de seguretat, totas las donadas seràn perdudas. Se cal, escrivètz vòstra clau e gardatz-la dins un endrech dins un lòc segur.';
   }
 
   @override
@@ -885,7 +896,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get activeDirectoryTitle => 'Configurar Active Directory';
 
   @override
-  String get activeDirectoryTestConnection => 'Ensajar la connexion';
+  String get activeDirectoryTestConnection => 'Ensajar la connexion al domeni';
 
   @override
   String get activeDirectoryDomainLabel => 'Domeni';
@@ -918,7 +929,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'Domeni introbable';
 
   @override
-  String get activeDirectoryAdminLabel => 'Administrator de domeni';
+  String get activeDirectoryAdminLabel => 'Nom d’utilizaire per rejónher lo domeni';
 
   @override
   String get activeDirectoryAdminEmpty => 'Obligatòri';

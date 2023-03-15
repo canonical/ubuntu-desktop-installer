@@ -40,6 +40,11 @@ class AppLocalizationsTh extends AppLocalizations {
   String get welcome => 'ยินดีต้อนรับ';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Choose your language:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get detectLayout => 'ตรวจหาผังแป้นพิมพ์';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'โปรดกดปุ่มใดปุ่มหนึ่งในรายการนี้:';
@@ -288,7 +299,7 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Advanced features...';
 
   @override
   String get installationTypeAdvancedTitle => 'Advanced features';

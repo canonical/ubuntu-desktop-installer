@@ -40,6 +40,11 @@ class AppLocalizationsFa extends AppLocalizations {
   String get welcome => 'خوش آمدید';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'زبانتان را برگزینید:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get detectLayout => 'تشخیص چیدمان صفحه‌کلید';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'لطفاً یکی از کلیدهای زیر را فشار دهید:';
@@ -288,7 +299,7 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Advanced features...';
 
   @override
   String get installationTypeAdvancedTitle => 'Advanced features';

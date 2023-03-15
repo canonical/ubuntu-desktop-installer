@@ -40,6 +40,11 @@ class AppLocalizationsAm extends AppLocalizations {
   String get welcome => 'እንኳን ደህና መጡ';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Choose your language:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get detectLayout => 'የፊደል ገበታ አዘገጃጀቱን በመፈለግ ላይ';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'እባክዎን ከእነዚህ ቁልፎች አንዱን ይጫኑ :';
@@ -288,7 +299,7 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Advanced features...';
 
   @override
   String get installationTypeAdvancedTitle => 'Advanced features';

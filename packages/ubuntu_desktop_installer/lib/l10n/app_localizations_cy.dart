@@ -40,6 +40,11 @@ class AppLocalizationsCy extends AppLocalizations {
   String get welcome => 'Croeso';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Dewiswch eich iaith:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String get detectLayout => 'Canfod Cynllun Bysellfwrdd';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Pwyswch un o\'r bysellau canlynol:';

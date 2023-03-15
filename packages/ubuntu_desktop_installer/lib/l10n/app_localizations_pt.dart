@@ -40,6 +40,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get welcome => 'Bem-vindo';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Escolha o seu idioma:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get detectLayout => 'Detetar a disposição do teclado';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Prima uma das seguintes teclas:';
@@ -1166,7 +1177,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Atenção</font>: O computador não está conectado a uma fonte de energia.';
+    return '<font color=\"$color\">Atenção:</font> O computador não está conectado a uma fonte de energia.';
   }
 
   @override
@@ -1194,7 +1205,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Atenção</font>: Se você perder esta chave de segurança, todos os dados estarão perdidos. Se precisar, anote sua chave no papel e coloque-a em um local seguro.';
+    return '<font color=\"$color\">Atenção:</font> Se você perder esta chave de segurança, todos os dados estarão perdidos. Se precisar, anote sua chave em um papel e coloque-a em um local seguro.';
   }
 
   @override
@@ -1507,6 +1518,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get whoAreYouPageRealNameRequired => 'O nome é obrigatório';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'O nome é longo demais.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Nome do seu computador';
 
   @override
@@ -1514,6 +1528,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'O nome do computador é obrigatório';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'O nome do computador é longo demais.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'O nome do computador não é válido';
@@ -1693,4 +1710,67 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
     return 'O maior disco neste computador é de apenas $SIZE.';
   }
+
+  @override
+  String get activeDirectoryOption => 'Usar o Active Directory';
+
+  @override
+  String get activeDirectoryInfo => 'Você inserirá o domínio e outros detalhes na próxima etapa.';
+
+  @override
+  String get activeDirectoryTitle => 'Configurar o Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Testar conectividade ao domínio';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domínio';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Necessário';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Longo demais';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Caracteres inválidos';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Começa com um ponto (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Termina com um ponto (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Começa com um hífen (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Termina com um hífen (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Contém vários pontos sequenciados (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domínio não encontrado';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Usuário de ingresso no domínio';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Necessário';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Caracteres inválidos';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Senha';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Necessário';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Erro ao configurar a conexão com o Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Desculpe, o Active Directory não pôde ser configurado no momento. Assim que seu sistema esteja instalado e funcionando, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para ajuda.';
 }

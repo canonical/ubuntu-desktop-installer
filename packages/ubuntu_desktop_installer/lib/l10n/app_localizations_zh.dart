@@ -40,6 +40,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get welcome => '欢迎';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => '选择您的语言：';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get detectLayout => '检测键盘布局';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => '请按下以下按键中的任意一个：';
@@ -686,7 +697,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** 安装完毕并且可以使用。';
+    return '**$system** 安装完毕并且可以使用';
   }
 
   @override
@@ -933,8 +944,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => '必填';
 
   @override
-  String get activeDirectoryErrorTitle => 'Error configuring connection to Active Directory';
+  String get activeDirectoryErrorTitle => '配置活动目录时出错';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage => '抱歉，活动目录目前无法设置。系统启动并运行后，请访问 <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> 寻求帮助。';
 }

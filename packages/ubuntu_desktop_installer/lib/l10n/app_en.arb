@@ -27,6 +27,13 @@
   "@quitButtonText": {},
   "welcome": "Welcome",
   "@welcome": {},
+  "preparingUbuntu": "Preparing {DISTRO}...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
   "welcomeHeader": "Choose your language:",
   "@welcomeHeader": {},
   "tryOrInstallPageTitle": "Try or install",
@@ -89,6 +96,10 @@
   "@typeToTest": {},
   "detectLayout": "Detect keyboard layout",
   "@detectLayout": {},
+  "detectButtonText": "Detect",
+  "@detectButtonText": {},
+  "keyboardVariant": "Keyboard variant:",
+  "@keyboardVariant": {},
   "pressOneKey": "Please press one of the following keys:",
   "@pressOneKey": {},
   "isKeyPresent": "Is the following key present on your keyboard?",
@@ -241,7 +252,7 @@
       "color": {}
     }
   },
-  "installationTypeAdvancedLabel": "Advanced Features...",
+  "installationTypeAdvancedLabel": "Advanced features...",
   "@installationTypeAdvancedLabel": {},
   "installationTypeAdvancedTitle": "Advanced features",
   "@installationTypeAdvancedTitle": {},

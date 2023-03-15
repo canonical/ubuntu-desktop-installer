@@ -40,6 +40,11 @@ class AppLocalizationsCa extends AppLocalizations {
   String get welcome => 'Us donem la benvinguda';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Trieu la vostra llengua:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get detectLayout => 'Detecta la disposició del teclat';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Premeu una de les tecles següents:';

@@ -40,6 +40,11 @@ class AppLocalizationsFi extends AppLocalizations {
   String get welcome => 'Tervetuloa';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Valitse kieli:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get detectLayout => 'Tunnista näppäimistön asettelu';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Paina yhtä seuraavista näppäimistä:';

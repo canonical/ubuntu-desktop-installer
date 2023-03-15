@@ -40,6 +40,11 @@ class AppLocalizationsHu extends AppLocalizations {
   String get welcome => 'Üdvözöljük';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Válassza ki a nyelvet:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get detectLayout => 'Billentyűzetkiosztás észlelése';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Kérjük, nyomja meg az alábbi billentyűk egyikét:';

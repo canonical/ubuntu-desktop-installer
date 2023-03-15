@@ -40,6 +40,11 @@ class AppLocalizationsId extends AppLocalizations {
   String get welcome => 'Selamat Datang';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Pilih bahasa Anda:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get detectLayout => 'Deteksi Tata Letak Papan Ketik';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Silakan tekan salah satu tombol berikut:';

@@ -40,6 +40,11 @@ class AppLocalizationsGa extends AppLocalizations {
   String get welcome => 'Fáilte';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Choose your language:';
 
   @override
@@ -98,6 +103,12 @@ class AppLocalizationsGa extends AppLocalizations {
 
   @override
   String get detectLayout => 'Aimsigh leagan amach an méarchláir';
+
+  @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
 
   @override
   String get pressOneKey => 'Brúigh cheann de na heochracha se:';
@@ -288,7 +299,7 @@ class AppLocalizationsGa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Advanced features...';
 
   @override
   String get installationTypeAdvancedTitle => 'Advanced features';

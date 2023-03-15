@@ -302,6 +302,12 @@ abstract class AppLocalizations {
   /// **'Welcome'**
   String get welcome;
 
+  /// No description provided for @preparingUbuntu.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing {DISTRO}...'**
+  String preparingUbuntu(Object DISTRO);
+
   /// No description provided for @welcomeHeader.
   ///
   /// In en, this message translates to:
@@ -397,6 +403,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Detect keyboard layout'**
   String get detectLayout;
+
+  /// No description provided for @detectButtonText.
+  ///
+  /// In en, this message translates to:
+  /// **'Detect'**
+  String get detectButtonText;
+
+  /// No description provided for @keyboardVariant.
+  ///
+  /// In en, this message translates to:
+  /// **'Keyboard variant:'**
+  String get keyboardVariant;
 
   /// No description provided for @pressOneKey.
   ///
@@ -749,7 +767,7 @@ abstract class AppLocalizations {
   /// No description provided for @installationTypeAdvancedLabel.
   ///
   /// In en, this message translates to:
-  /// **'Advanced Features...'**
+  /// **'Advanced features...'**
   String get installationTypeAdvancedLabel;
 
   /// No description provided for @installationTypeAdvancedTitle.
