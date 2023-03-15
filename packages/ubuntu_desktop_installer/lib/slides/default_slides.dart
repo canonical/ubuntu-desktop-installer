@@ -5,6 +5,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../l10n.dart';
+import '../widgets.dart';
 import 'slide_layouts.dart';
 
 String _slideAsset(String name) => 'assets/installation_slides/$name';
@@ -36,7 +37,7 @@ Widget _buildWelcomeSlide(BuildContext context) {
             ProductInfoExtractor().getProductInfo())),
       ],
     ),
-    image: SvgPicture.asset(_slideAsset('logo.svg')),
+    image: const MascotAvatar(radius: 150),
   );
 }
 

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MascotAvatar extends StatelessWidget {
-  const MascotAvatar({super.key});
+  const MascotAvatar({super.key, this.radius = 80});
+
+  final double radius;
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +15,9 @@ class MascotAvatar extends StatelessWidget {
           width: 8,
         ),
       ),
-      child: const CircleAvatar(
-        radius: 80,
-        backgroundImage: AssetImage('assets/mascot.png'),
+      child: CircleAvatar(
+        radius: radius,
+        backgroundImage: const AssetImage('assets/mascot.png'),
       ),
     );
   }
