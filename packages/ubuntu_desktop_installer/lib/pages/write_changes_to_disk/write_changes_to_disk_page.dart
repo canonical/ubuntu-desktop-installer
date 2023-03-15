@@ -59,69 +59,79 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
         title: Text(lang.writeChangesToDisk),
       ),
       header: Text(lang.writeChangesDescription),
-      content: ListView(children: <Widget>[
-        SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              lang.writeChangesDevicesTitle,
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            const SizedBox(height: kContentSpacing / 2),
-            Text(lang.writeChangesPartitionTablesHeader)
-          ],
-        ),
-        const SizedBox(height: kContentSpacing / 2),
-        YaruBorderContainer(
-          color: Theme.of(context).colorScheme.surface,
-          padding: EdgeInsets.symmetric(
-              horizontal: kContentPadding.left, vertical: 10),
-          child: Column(
+      content: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              for (final disk in model.disks)
-                Html(
-                  data: prettyFormatDisk(disk),
-                  style: {'body': Style(margin: Margins.zero)},
-                  key: ValueKey(disk),
+              Text(
+                lang.writeChangesDevicesTitle,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              const SizedBox(height: kContentSpacing / 2),
+              Text(lang.writeChangesPartitionTablesHeader)
+            ],
+          ),
+          const SizedBox(height: kContentSpacing / 2),
+          Flexible(
+            child: YaruBorderContainer(
+              color: Theme.of(context).colorScheme.surface,
+              padding: EdgeInsets.symmetric(
+                  horizontal: kContentPadding.left, vertical: 10),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (final disk in model.disks)
+                      Html(
+                        data: prettyFormatDisk(disk),
+                        style: {'body': Style(margin: Margins.zero)},
+                        key: ValueKey(disk),
+                      ),
+                  ],
                 ),
-            ],
-          ),
-        ),
-        SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              lang.writeChangesPartitionsTitle,
-              style: Theme.of(context).textTheme.titleLarge,
+              ),
             ),
-            const SizedBox(height: kContentSpacing / 2),
-            Text(lang.writeChangesPartitionsHeader),
-          ],
-        ),
-        const SizedBox(height: 10),
-        YaruBorderContainer(
-          color: Theme.of(context).colorScheme.surface,
-          padding: EdgeInsets.symmetric(
-              horizontal: kContentPadding.left, vertical: 10),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+          ),
+          const SizedBox(height: kContentSpacing),
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              for (final entry in model.partitions.entries)
-                for (final partition in entry.value)
-                  _PartitionLabel(
-                    entry.key,
-                    partition,
-                    model.getOriginalPartition(
-                        entry.key, partition.number ?? -1),
-                  ),
+              Text(
+                lang.writeChangesPartitionsTitle,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              const SizedBox(height: kContentSpacing / 2),
+              Text(lang.writeChangesPartitionsHeader),
             ],
           ),
-        ),
-      ]),
+          const SizedBox(height: 10),
+          Flexible(
+            child: YaruBorderContainer(
+              color: Theme.of(context).colorScheme.surface,
+              padding: EdgeInsets.symmetric(
+                  horizontal: kContentPadding.left, vertical: 10),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (final entry in model.partitions.entries)
+                      for (final partition in entry.value)
+                        _PartitionLabel(
+                          entry.key,
+                          partition,
+                          model.getOriginalPartition(
+                              entry.key, partition.number ?? -1),
+                        ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       actions: <WizardAction>[
         WizardAction.back(context),
         WizardAction.next(
