@@ -70,24 +70,22 @@ void main() {
         of: languageList, matching: find.byType(ListTile), skipOffstage: false);
     expect(listItems, findsWidgets);
     expect(listItems.evaluate().length, lessThan(app.supportedLocales.length));
-    for (final language in ['English', 'Français', 'Italiano']) {
+    for (final language in ['English', 'Français', 'Galego', 'Italiano']) {
       final listItem = find.descendant(
           of: languageList, matching: find.text(language), skipOffstage: false);
       await tester.dragUntilVisible(listItem, languageList, Offset(0, -10));
+      await tester.pumpAndSettle();
       expect(listItem, findsOneWidget);
     }
 
-    final itemEnglish =
-        find.widgetWithText(ListTile, 'English', skipOffstage: false);
-    expect(itemEnglish, findsOneWidget);
-
     final itemItalian =
         find.widgetWithText(ListTile, 'Italiano', skipOffstage: false);
-    expect(itemItalian, findsOneWidget);
 
     final itemFrench =
         find.widgetWithText(ListTile, 'Français', skipOffstage: false);
-    expect(itemFrench, findsOneWidget);
+
+    final itemGalego =
+        find.widgetWithText(ListTile, 'Galego', skipOffstage: false);
 
     // scroll forward to Italian
     await tester.scrollUntilVisible(itemItalian, -kMinInteractiveDimension / 2);
@@ -97,24 +95,24 @@ void main() {
     expect((itemItalian.evaluate().single.widget as ListTile).selected, true);
     expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'it');
 
-    // scroll backward to English
-    await tester.scrollUntilVisible(itemEnglish, kMinInteractiveDimension / 2);
-    await tester.pump();
-    await tester.tap(itemEnglish);
-    await tester.pump();
-    expect((itemEnglish.evaluate().single.widget as ListTile).selected, true);
-    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'en');
-
-    // scroll forward to French
-    await tester.scrollUntilVisible(itemFrench, -kMinInteractiveDimension / 2);
+    // scroll backward to French
+    await tester.scrollUntilVisible(itemFrench, kMinInteractiveDimension / 2);
     await tester.pump();
     await tester.tap(itemFrench);
     await tester.pump();
-
-    expect((itemItalian.evaluate().single.widget as ListTile).selected, false);
-    expect((itemEnglish.evaluate().single.widget as ListTile).selected, false);
     expect((itemFrench.evaluate().single.widget as ListTile).selected, true);
     expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'fr');
+
+    // scroll forward to Galego
+    await tester.scrollUntilVisible(itemGalego, -kMinInteractiveDimension / 2);
+    await tester.pump();
+    await tester.tap(itemGalego);
+    await tester.pump();
+
+    expect((itemItalian.evaluate().single.widget as ListTile).selected, false);
+    expect((itemFrench.evaluate().single.widget as ListTile).selected, false);
+    expect((itemGalego.evaluate().single.widget as ListTile).selected, true);
+    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'gl');
   });
 
   testWidgets('key search', (tester) async {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/widgets/mascot_avatar.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -71,15 +71,19 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     final model = Provider.of<WelcomeModel>(context);
     final lang = AppLocalizations.of(context);
-    final height = MediaQuery.of(context).size.height;
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.welcome),
       ),
-      header: Text(lang.welcomeHeader),
       content: FractionallySizedBox(
-        child: Row(
+        widthFactor: 0.5,
+        child: Column(
           children: [
+            const SizedBox(height: kContentSpacing / 2),
+            const MascotAvatar(),
+            const SizedBox(height: kContentSpacing),
+            Text(lang.welcomeHeader),
+            const SizedBox(height: kContentSpacing / 2),
             Expanded(
               child: KeySearch(
                 autofocus: true,
@@ -108,13 +112,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
             ),
-            const SizedBox(width: kContentSpacing),
-            Expanded(
-              child: SvgPicture.asset(
-                'assets/welcome/logo.svg',
-                height: height / 2,
-              ),
-            )
+            const SizedBox(height: kContentSpacing),
           ],
         ),
       ),
