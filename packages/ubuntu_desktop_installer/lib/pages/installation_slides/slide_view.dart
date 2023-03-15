@@ -55,6 +55,7 @@ class _SlideViewState extends State<SlideView> {
   @override
   void initState() {
     super.initState();
+    widget.controller.addListener(restartTimer);
     restartTimer();
   }
 
@@ -68,6 +69,7 @@ class _SlideViewState extends State<SlideView> {
 
   @override
   void dispose() {
+    widget.controller.removeListener(restartTimer);
     _timer?.cancel();
     super.dispose();
   }
@@ -83,7 +85,6 @@ class _SlideViewState extends State<SlideView> {
   int get currentSlide => widget.controller.value;
 
   void setSlide(int slide) {
-    restartTimer();
     widget.controller.value = slide;
     widget.onSlide?.call(slide);
   }
