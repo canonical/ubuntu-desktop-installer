@@ -376,7 +376,7 @@
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "Available:",
   "@installAlongsideAvailable": {},
-  "allocateDiskSpace": "Allocate disk space",
+  "allocateDiskSpace": "Manual partitioning",
   "@allocateDiskSpace": {},
   "startInstallingButtonText": "Install",
   "@startInstallingButtonText": {},

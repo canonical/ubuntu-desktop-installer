@@ -417,7 +417,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get installAlongsideAvailable => 'Disponible:';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => 'Manual partitioning';
 
   @override
   String get startInstallingButtonText => 'Comença a instal·lar';
