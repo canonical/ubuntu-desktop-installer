@@ -105,6 +105,12 @@ class AppLocalizationsAm extends AppLocalizations {
   String get detectLayout => 'የፊደል ገበታ አዘገጃጀቱን በመፈለግ ላይ';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'እባክዎን ከእነዚህ ቁልፎች አንዱን ይጫኑ :';
 
   @override

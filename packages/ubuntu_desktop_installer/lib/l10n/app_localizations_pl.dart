@@ -105,6 +105,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get detectLayout => 'Wykryj układ klawiatury';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Proszę wcisnąć jeden z następujących klawiszy:';
 
   @override

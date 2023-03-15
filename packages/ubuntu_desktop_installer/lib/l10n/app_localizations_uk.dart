@@ -105,6 +105,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get detectLayout => 'Визначити розкладку клавіатури';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Будь ласка, натисніть одну з цих клавiш:';
 
   @override

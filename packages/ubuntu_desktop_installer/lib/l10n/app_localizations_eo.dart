@@ -105,6 +105,12 @@ class AppLocalizationsEo extends AppLocalizations {
   String get detectLayout => 'Rekoni klavaranĝon';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Bonvolu premi unu el la jenaj klavoj:';
 
   @override

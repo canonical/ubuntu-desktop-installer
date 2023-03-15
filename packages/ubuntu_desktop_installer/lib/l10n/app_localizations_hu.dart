@@ -105,6 +105,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String get detectLayout => 'Billentyűzetkiosztás észlelése';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Kérjük, nyomja meg az alábbi billentyűk egyikét:';
 
   @override

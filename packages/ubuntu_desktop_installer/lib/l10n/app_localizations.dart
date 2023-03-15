@@ -404,6 +404,18 @@ abstract class AppLocalizations {
   /// **'Detect keyboard layout'**
   String get detectLayout;
 
+  /// No description provided for @detectButtonText.
+  ///
+  /// In en, this message translates to:
+  /// **'Detect'**
+  String get detectButtonText;
+
+  /// No description provided for @keyboardVariant.
+  ///
+  /// In en, this message translates to:
+  /// **'Keyboard variant:'**
+  String get keyboardVariant;
+
   /// No description provided for @pressOneKey.
   ///
   /// In en, this message translates to:

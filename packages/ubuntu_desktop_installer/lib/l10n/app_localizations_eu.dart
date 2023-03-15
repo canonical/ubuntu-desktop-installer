@@ -105,6 +105,12 @@ class AppLocalizationsEu extends AppLocalizations {
   String get detectLayout => 'Detektatu teklatuaren diseinua';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Mesedez, sakatu hurrengo tekletariko bat:';
 
   @override

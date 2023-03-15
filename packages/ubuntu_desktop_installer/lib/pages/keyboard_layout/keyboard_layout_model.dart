@@ -58,8 +58,8 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     _onVariantSelected.add(_selectedVariantIndex);
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    await updateInputSource();
     notifyListeners();
+    await updateInputSource();
   }
 
   /// Tries to find and select a keyboard layout and variant.
@@ -108,8 +108,8 @@ class KeyboardLayoutModel extends SafeChangeNotifier {
     _selectedVariantIndex = index;
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    await updateInputSource();
     notifyListeners();
+    await updateInputSource();
   }
 
   /// Whether the layout and variant selections are valid.

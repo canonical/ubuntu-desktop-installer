@@ -105,6 +105,12 @@ class AppLocalizationsIt extends AppLocalizations {
   String get detectLayout => 'Rileva disposizione tastiera';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Prego premere uno dei seguenti tasti:';
 
   @override

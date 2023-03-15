@@ -105,6 +105,12 @@ class AppLocalizationsTh extends AppLocalizations {
   String get detectLayout => 'ตรวจหาผังแป้นพิมพ์';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'โปรดกดปุ่มใดปุ่มหนึ่งในรายการนี้:';
 
   @override

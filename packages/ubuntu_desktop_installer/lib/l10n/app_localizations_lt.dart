@@ -105,6 +105,12 @@ class AppLocalizationsLt extends AppLocalizations {
   String get detectLayout => 'Aptikti klaviatūros išdėstymą';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Paspauskite vieną iš šių klavišų:';
 
   @override

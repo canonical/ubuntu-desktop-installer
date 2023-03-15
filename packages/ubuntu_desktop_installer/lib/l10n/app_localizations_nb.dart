@@ -105,6 +105,12 @@ class AppLocalizationsNb extends AppLocalizations {
   String get detectLayout => 'Finn tastaturoppsett';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Trykk på en av følgende taster:';
 
   @override

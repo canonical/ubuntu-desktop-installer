@@ -105,6 +105,12 @@ class AppLocalizationsCy extends AppLocalizations {
   String get detectLayout => 'Canfod Cynllun Bysellfwrdd';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Pwyswch un o\'r bysellau canlynol:';
 
   @override

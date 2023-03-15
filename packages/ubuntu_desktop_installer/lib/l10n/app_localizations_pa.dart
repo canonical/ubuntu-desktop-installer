@@ -105,6 +105,12 @@ class AppLocalizationsPa extends AppLocalizations {
   String get detectLayout => 'ਕੀਬੋਰਡ ਲੇਆਉਟ ਖੋਜੋ';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'ਅੱਗੇ ਦਿੱਤੀਆਂ ਸਵਿੱਚਾਂ ਦੱਬੋ:';
 
   @override

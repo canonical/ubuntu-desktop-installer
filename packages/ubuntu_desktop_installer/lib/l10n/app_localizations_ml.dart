@@ -105,6 +105,12 @@ class AppLocalizationsMl extends AppLocalizations {
   String get detectLayout => 'കീബോർഡിന്റെ ക്രമീകരണം കണ്ടുപിടിക്കുക';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'ഈ കീകളിൽ ഒന്ന് അമർത്തുക:';
 
   @override

@@ -105,6 +105,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get detectLayout => 'Klavye Düzenini Tespit Et';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Lütfen aşağıdaki tuşlardan birine basın:';
 
   @override

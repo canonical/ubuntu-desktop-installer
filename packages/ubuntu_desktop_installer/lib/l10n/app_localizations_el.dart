@@ -105,6 +105,12 @@ class AppLocalizationsEl extends AppLocalizations {
   String get detectLayout => 'Εντοπισμός διάταξης πληκτρολογίου';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Παρακαλώ πιέστε ένα από τα ακόλουθα πλήκτρα:';
 
   @override

@@ -105,6 +105,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get detectLayout => 'اكتشف تخطيط لوحة المفاتيح';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'رجاء اضغط على أحد المفاتيح التالية:';
 
   @override

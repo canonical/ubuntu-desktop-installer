@@ -105,6 +105,12 @@ class AppLocalizationsOc extends AppLocalizations {
   String get detectLayout => 'Detectar l’agençament del clavièr';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Mercés de quichar una de las tòcas seguentas :';
 
   @override

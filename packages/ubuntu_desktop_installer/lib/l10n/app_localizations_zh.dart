@@ -105,6 +105,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get detectLayout => '检测键盘布局';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => '请按下以下按键中的任意一个：';
 
   @override

@@ -105,6 +105,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get detectLayout => 'キーボードレイアウトを検出する';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => '以下のキーのうち 1 つを押してください:';
 
   @override

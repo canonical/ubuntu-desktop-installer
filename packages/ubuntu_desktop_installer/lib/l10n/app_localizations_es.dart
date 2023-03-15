@@ -105,6 +105,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get detectLayout => 'Detectar la distribución del teclado';
 
   @override
+  String get detectButtonText => 'Detect';
+
+  @override
+  String get keyboardVariant => 'Keyboard variant:';
+
+  @override
   String get pressOneKey => 'Pulse una de estas teclas:';
 
   @override
