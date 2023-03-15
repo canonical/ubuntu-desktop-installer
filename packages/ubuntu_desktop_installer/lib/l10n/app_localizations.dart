@@ -1421,25 +1421,25 @@ abstract class AppLocalizations {
   /// A resized partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} resized from {oldsize} to {newsize}'**
+  /// **'partition <b>{disk}{partition}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>'**
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize);
 
   /// A formatted and mounted partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} formatted as {format} used for {mount}'**
+  /// **'partition <b>{disk}{partition}</b> formatted as <b>{format}</b> used for <b>{mount}</b>'**
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount);
 
   /// A formatted partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} formatted as {format}'**
+  /// **'partition <b>{disk}{partition}</b> formatted as <b>{format}</b>'**
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format);
 
   /// A mounted partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} used for {mount}'**
+  /// **'partition <b>{disk}{partition}</b> used for <b>{mount}</b>'**
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount);
 
   /// A created partition entry

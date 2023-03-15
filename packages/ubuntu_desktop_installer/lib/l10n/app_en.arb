@@ -538,7 +538,7 @@
   },
   "writeChangesPartitionsHeader": "The following partition changes are going to be applied:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionResized": "partition #{disk}{partition} resized from {oldsize} to {newsize}",
+  "writeChangesPartitionResized": "partition <b>{disk}{partition}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -548,7 +548,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partition #{disk}{partition} formatted as {format} used for {mount}",
+  "writeChangesPartitionFormattedMounted": "partition <b>{disk}{partition}</b> formatted as <b>{format}</b> used for <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -558,7 +558,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partition #{disk}{partition} formatted as {format}",
+  "writeChangesPartitionFormatted": "partition <b>{disk}{partition}</b> formatted as <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -567,7 +567,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partition #{disk}{partition} used for {mount}",
+  "writeChangesPartitionMounted": "partition <b>{disk}{partition}</b> used for <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
