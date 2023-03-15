@@ -22,7 +22,7 @@ class _SlideRoute<T> extends PageRoute<T> with MaterialRouteTransitionMixin<T> {
   bool get fullscreenDialog => false;
 
   @override
-  Duration get transitionDuration => const Duration(seconds: 2);
+  Duration get transitionDuration => const Duration(seconds: 1);
 
   @override
   Widget buildContent(BuildContext context) => (settings as SlidePage).child;
