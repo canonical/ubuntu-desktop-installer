@@ -375,9 +375,8 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
             }
           },
         ),
-        Routes.turnOffRST: WizardRoute(
+        Routes.turnOffRST: const WizardRoute(
           builder: TurnOffRSTPage.create,
-          userData: InstallationStep.welcome.index,
         ),
         Routes.keyboardLayout: WizardRoute(
           builder: KeyboardLayoutPage.create,
@@ -407,9 +406,8 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
           userData: InstallationStep.type.index,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
-        Routes.turnOffBitlocker: WizardRoute(
+        Routes.turnOffBitlocker: const WizardRoute(
           builder: TurnOffBitLockerPage.create,
-          userData: InstallationStep.storage.index,
         ),
         Routes.installAlongside: WizardRoute(
           builder: InstallAlongsidePage.create,
