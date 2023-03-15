@@ -241,11 +241,6 @@ Widget _buildProductivitySlide(BuildContext context) {
         ],
         [
           Text(lang.installationSlidesAvailable),
-          // TODO: missing zoom icon
-          // const SlideLabel(
-          //   icon: _SlideIcon('zoom.png'),
-          //   label: Text('Zoom'),
-          // ),
           const SlideLabel(
             icon: _SlideIcon('teams.png'),
             label: Text('Microsoft Teams'),
