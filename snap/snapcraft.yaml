@@ -6,7 +6,7 @@ description: |
   using subiquity as a backend and Flutter for the UI.
 grade: stable
 confinement: classic
-base: core20
+base: core22
 issues: https://bugs.launchpad.net/ubuntu-desktop-installer/+filebug
 contact: https://bugs.launchpad.net/ubuntu-desktop-installer/+filebug
 
@@ -25,8 +25,8 @@ apps:
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
-      LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
-      GIO_MODULE_DIR: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gio/modules
+      LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/dri
+      GIO_MODULE_DIR: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gio/modules
       LIVE_RUN: 1
       LOG_LEVEL: debug
       SNAP_PYTHON: python3
@@ -40,7 +40,7 @@ apps:
 parts:
   curtin:
     override-pull: |
-      snapcraftctl pull
+      craftctl default
       PACKAGED_VERSION="$(git describe --long --abbrev=9 --match=[0-9][0-9]*)"
       sed -e "s,@@PACKAGED_VERSION@@,$PACKAGED_VERSION,g" -i curtin/version.py
     plugin: python
@@ -75,10 +75,10 @@ parts:
       - -lib/python*/site-packages/probert
       - -bin/activate*
       - -bin/python3*
-      - -lib/python3.8/site-packages/__pycache__/six.cpython*
-      - -lib/python3.8/site-packages/pip-*.dist-info/RECORD
-      - -lib/python3.8/site-packages/wheel-*.dist-info/RECORD
-      - -lib/python3.8/site-packages/_distutils_hack
+      - -lib/python3.10/site-packages/__pycache__/six.cpython*
+      - -lib/python3.10/site-packages/pip-*.dist-info/RECORD
+      - -lib/python3.10/site-packages/wheel-*.dist-info/RECORD
+      - -lib/python3.10/site-packages/_distutils_hack
 
   probert:
     plugin: python
@@ -91,7 +91,7 @@ parts:
     source: https://github.com/canonical/probert.git
     source-type: git
     source-commit: 40479d08fce0370a0c41a140e6d322d2846c2a8f
-    requirements: [requirements.txt]
+    python-requirements: [requirements.txt]
     stage:
       - '*'
       - -bin/python3*
@@ -109,10 +109,10 @@ parts:
       - python3-aiohttp
       - python3-bson
       - python3-minimal
-      - python3.8-minimal
+      - python3.10-minimal
       - libpython3-stdlib
-      - libpython3.8-stdlib
-      - libpython3.8-minimal
+      - libpython3.10-stdlib
+      - libpython3.10-minimal
       - python3-apport
       - python3-requests-unixsocket
       - python3-pyroute2
@@ -132,13 +132,13 @@ parts:
     source-depth: 1
     plugin: nil
     override-build: |
-      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
-      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
-      cp -r $SNAPCRAFT_PART_SRC $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter
-      ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $SNAPCRAFT_PART_INSTALL/usr/bin/flutter
-      $SNAPCRAFT_PART_INSTALL/usr/bin/flutter doctor
-      if [[ "$SNAPCRAFT_TARGET_ARCH" == "arm64" ]]; then
-        cp -R $SNAPCRAFT_PROJECT_DIR/snap/local/flutter/shader_lib $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/cache/artifacts/engine/linux-arm64
+      mkdir -p $CRAFT_PART_INSTALL/usr/bin
+      mkdir -p $CRAFT_PART_INSTALL/usr/libexec
+      cp -r $CRAFT_PART_SRC $CRAFT_PART_INSTALL/usr/libexec/flutter
+      ln -s $CRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $CRAFT_PART_INSTALL/usr/bin/flutter
+      $CRAFT_PART_INSTALL/usr/bin/flutter doctor
+      if [[ "$CRAFT_TARGET_ARCH" == "arm64" ]]; then
+        cp -R $CRAFT_PROJECT_DIR/snap/local/flutter/shader_lib $CRAFT_PART_INSTALL/usr/libexec/flutter/bin/cache/artifacts/engine/linux-arm64
       fi
     build-packages:
       - clang
@@ -156,20 +156,21 @@ parts:
     source: .
     source-type: git
     plugin: nil
+    build-attributes: [enable-patchelf]
     override-build: |
       set -eux
-      mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
-      cp snap/local/launcher $SNAPCRAFT_PART_INSTALL/bin/
-      cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
-      cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
-      mkdir -p $SNAPCRAFT_PART_INSTALL/etc/subiquity
-      cp -r snap/local/postinst.d $SNAPCRAFT_PART_INSTALL/etc/subiquity
+      mkdir -p $CRAFT_PART_INSTALL/bin/lib
+      cp snap/local/launcher $CRAFT_PART_INSTALL/bin/
+      cp snap/local/subiquity-server $CRAFT_PART_INSTALL/bin/
+      cp -r packages/subiquity_client/subiquity $CRAFT_PART_INSTALL/bin/
+      mkdir -p $CRAFT_PART_INSTALL/etc/subiquity
+      cp -r snap/local/postinst.d $CRAFT_PART_INSTALL/etc/subiquity
       # https://github.com/canonical/ubuntu-desktop-installer/issues/1146
       (cd packages/ubuntu_wizard && flutter pub get)
       cd packages/ubuntu_desktop_installer
       flutter pub get
       flutter build linux --release -v
-      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
+      cp -r build/linux/*/release/bundle/* $CRAFT_PART_INSTALL/bin/
 
   ubuntu-wsl-setup:
     after: [flutter-git]
@@ -179,15 +180,15 @@ parts:
     override-build: |
       set -eux
       # ubuntu-desktop-install will install subiquity in bin/subiquity. It’s not a real build-dep ordering though.
-      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
-      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
+      mkdir -p $CRAFT_PART_INSTALL/bin
+      mkdir -p $CRAFT_PART_INSTALL/usr/libexec
       cd packages/ubuntu_wsl_setup
       flutter pub get
       flutter build linux --release -v
-      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
-      cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
+      cp -r build/linux/*/release/bundle/* $CRAFT_PART_INSTALL/usr/libexec
+      cp -p ubuntu-wsl-setup $CRAFT_PART_INSTALL/bin/
       # Create the theme empty directories for bindmounting the common-themes snap
-      mkdir -p $SNAPCRAFT_PART_INSTALL/data-dir/icons $SNAPCRAFT_PART_INSTALL/data-dir/sounds $SNAPCRAFT_PART_INSTALL/data-dir/themes
+      mkdir -p $CRAFT_PART_INSTALL/data-dir/icons $CRAFT_PART_INSTALL/data-dir/sounds $CRAFT_PART_INSTALL/data-dir/themes
 
   libraries:
     plugin: nil
@@ -258,14 +259,14 @@ parts:
     build-attributes:
       - no-patchelf # Otherwise snapcraft may strip the build ID and cause the driver to crash
     stage:
-      - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
+      - usr/lib/${CRAFT_ARCH_TRIPLET}/dri
       - usr/share/drirc.d
 
   os-prober:
     plugin: nil
     stage-packages: [os-prober]
     override-stage: |
-      snapcraftctl stage
+      craftctl default
       for file in $(grep -lr /usr | grep 'usr/[^/]*/[^/]*-probe[sr]'); do
         sed -i 's, \(/usr\), $SNAP\1,' $file
       done
