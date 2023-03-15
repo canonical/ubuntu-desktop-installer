@@ -152,10 +152,10 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   }
 
   /// Prefetches slide images into the image cache to avoid flicker while
-  /// loading slide images
+  /// loading larger screenshot images
   Future<void> precacheSlideImages(BuildContext context) {
     final assets = _resolveAssetsDirectory();
-    return Directory('$assets/assets/installation_slides')
+    return Directory('$assets/assets/installation_slides/screenshots')
         .list(recursive: true)
         .where((f) => p.extension(f.path) == '.png')
         .forEach((slide) {
