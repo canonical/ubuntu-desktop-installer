@@ -645,6 +645,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get writeChangesDescription => 'Если вы продолжите, перечисленные ниже изменения будут записаны на диски. Дальнейшие изменения вы сможете внести вручную.';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => 'Изменены таблицы разделов на следующих устройствах:';
 
   @override

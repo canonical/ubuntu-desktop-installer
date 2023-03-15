@@ -788,5 +788,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "keyboardVariant": "Wariant klawiatury:",
+  "@keyboardVariant": {},
+  "detectButtonText": "Wykryj",
+  "@detectButtonText": {}
 }

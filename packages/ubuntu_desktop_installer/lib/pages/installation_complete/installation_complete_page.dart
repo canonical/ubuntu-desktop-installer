@@ -9,9 +9,8 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+import '../../widgets.dart';
 import 'installation_complete_model.dart';
-
-const _kAvatarBorder = Color(0xFFe5e5e5);
 
 class InstallationCompletePage extends StatelessWidget {
   const InstallationCompletePage({super.key});
@@ -34,21 +33,7 @@ class InstallationCompletePage extends StatelessWidget {
       content: Row(
         children: [
           const Spacer(flex: 2),
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: _kAvatarBorder,
-                width: 8,
-              ),
-            ),
-            child: const CircleAvatar(
-              radius: 80,
-              backgroundImage: AssetImage(
-                'assets/installation_complete/logo.png',
-              ),
-            ),
-          ),
+          const MascotAvatar(),
           const Spacer(),
           Expanded(
             flex: 8,

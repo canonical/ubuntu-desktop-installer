@@ -136,23 +136,20 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-        find.textContaining(tester.lang
+        find.html(tester.lang
             .writeChangesPartitionFormattedMounted('sdb', 3, 'ext3', '/mnt/3')),
         findsOneWidget);
     expect(
-        find.textContaining(
-            tester.lang.writeChangesPartitionFormatted('sdb', 4, 'ext4')),
+        find.html(tester.lang.writeChangesPartitionFormatted('sdb', 4, 'ext4')),
         findsOneWidget);
     expect(
-        find.textContaining(
-            tester.lang.writeChangesPartitionMounted('sdb', 5, '/mnt/5')),
+        find.html(tester.lang.writeChangesPartitionMounted('sdb', 5, '/mnt/5')),
         findsOneWidget);
     expect(
-        find.textContaining(tester.lang.writeChangesPartitionResized(
+        find.html(tester.lang.writeChangesPartitionResized(
             'sdb', 6, filesize(123), filesize(66))),
         findsOneWidget);
-    expect(
-        find.textContaining(tester.lang.writeChangesPartitionCreated('sdb', 7)),
+    expect(find.html(tester.lang.writeChangesPartitionCreated('sdb', 7)),
         findsOneWidget);
   });
 

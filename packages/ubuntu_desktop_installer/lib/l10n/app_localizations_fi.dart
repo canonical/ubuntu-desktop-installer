@@ -645,6 +645,12 @@ class AppLocalizationsFi extends AppLocalizations {
   String get writeChangesDescription => 'Jos jatkat, alla luetellut muutokset kirjoitetaan levyille. Muussa tapauksessa voit tehdä itse lisää muutoksia.';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => 'Seuraavien laitteiden osiotauluja on muutettu:';
 
   @override

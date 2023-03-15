@@ -645,6 +645,12 @@ class AppLocalizationsNb extends AppLocalizations {
   String get writeChangesDescription => 'Hvis du fortsetter vil endringene nedenfor bli skrevet til diskene. Du vil kunne gjøre videre endringer manuelt.';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => 'Partisjonstabellen for følgende enheter har blitt endret:';
 
   @override
