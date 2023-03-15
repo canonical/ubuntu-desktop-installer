@@ -896,7 +896,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get activeDirectoryTitle => 'Configurer Active Directory';
 
   @override
-  String get activeDirectoryTestConnection => 'Tester la connexion';
+  String get activeDirectoryTestConnection => 'Tester la connectivité au domaine';
 
   @override
   String get activeDirectoryDomainLabel => 'Domaine';
@@ -929,7 +929,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'Domaine introuvable';
 
   @override
-  String get activeDirectoryAdminLabel => 'Administrateur de domaine';
+  String get activeDirectoryAdminLabel => 'Nom d’utilisateur pour rejoindre le domaine';
 
   @override
   String get activeDirectoryAdminEmpty => 'Obligatoire';

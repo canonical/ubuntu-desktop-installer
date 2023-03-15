@@ -288,7 +288,7 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Advanced features...';
 
   @override
   String get installationTypeAdvancedTitle => 'Advanced features';

@@ -896,7 +896,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get activeDirectoryTitle => 'Konfigurera Active Directory';
 
   @override
-  String get activeDirectoryTestConnection => 'Testa anslutning';
+  String get activeDirectoryTestConnection => 'Testa domänanslutning';
 
   @override
   String get activeDirectoryDomainLabel => 'Domän';
@@ -929,7 +929,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'Domän hittades inte';
 
   @override
-  String get activeDirectoryAdminLabel => 'Domänadministratör';
+  String get activeDirectoryAdminLabel => 'Domän gå med användare';
 
   @override
   String get activeDirectoryAdminEmpty => 'Krävs';

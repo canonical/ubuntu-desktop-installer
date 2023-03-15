@@ -896,7 +896,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get activeDirectoryTitle => 'Agordi Aktivan Dosierujon';
 
   @override
-  String get activeDirectoryTestConnection => 'Provi konekton';
+  String get activeDirectoryTestConnection => 'Provi konekton al la domanio';
 
   @override
   String get activeDirectoryDomainLabel => 'Domanio';
@@ -929,7 +929,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'Domanio ne troviĝis';
 
   @override
-  String get activeDirectoryAdminLabel => 'Administranto de domanio';
+  String get activeDirectoryAdminLabel => 'Uzanto por aliĝi al la domanio';
 
   @override
   String get activeDirectoryAdminEmpty => 'Deviga';
