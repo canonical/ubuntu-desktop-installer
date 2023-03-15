@@ -293,7 +293,7 @@ void main() {
 
     final continueButton = find.descendant(
       of: find.byType(AlertDialog),
-      matching: find.text(tester.ulang.continueAction),
+      matching: find.text(tester.ulang.nextLabel),
     );
     expect(continueButton, findsOneWidget);
 

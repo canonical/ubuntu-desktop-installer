@@ -89,7 +89,7 @@ void main() {
     verify(model.selectLocale(Locale('fr_FR'))).called(1);
 
     final continueButton =
-        find.widgetWithText(FilledButton, tester.ulang.continueAction);
+        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);
