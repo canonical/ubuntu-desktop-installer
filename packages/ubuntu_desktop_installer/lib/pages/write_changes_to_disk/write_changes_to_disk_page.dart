@@ -1,5 +1,6 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -46,7 +47,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
       disk.model,
       disk.vendor,
     ].where((p) => p?.isNotEmpty == true).join(' ');
-    return '$fullName (${disk.sysname})';
+    return '$fullName <b>${disk.sysname}</b>';
   }
 
   @override
@@ -59,45 +60,64 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
       ),
       header: Text(lang.writeChangesDescription),
       content: ListView(children: <Widget>[
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text(lang.writeChangesPartitionTablesHeader),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              lang.writeChangesDevicesTitle,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(height: kContentSpacing / 2),
+            Text(lang.writeChangesPartitionTablesHeader)
+          ],
         ),
         const SizedBox(height: kContentSpacing / 2),
-        for (final disk in model.disks)
-          Column(
+        YaruBorderContainer(
+          padding: EdgeInsets.symmetric(
+              horizontal: kContentPadding.left, vertical: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  '\u2022 ${prettyFormatDisk(disk)}',
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+              for (final disk in model.disks)
+                Html(
+                  data: prettyFormatDisk(disk),
+                  style: {'body': Style(margin: Margins.zero)},
                   key: ValueKey(disk),
                 ),
-              ),
-              const SizedBox(height: kContentSpacing / 2),
             ],
           ),
+        ),
         const SizedBox(height: kContentSpacing),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text(lang.writeChangesPartitionsHeader),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              lang.writeChangesPartitionsTitle,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(height: kContentSpacing / 2),
+            Text(lang.writeChangesPartitionsHeader),
+          ],
         ),
         const SizedBox(height: 10),
-        for (final entry in model.partitions.entries)
-          for (final partition in entry.value)
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _PartitionLabel(
-                  entry.key,
-                  partition,
-                  model.getOriginalPartition(entry.key, partition.number ?? -1),
-                ),
-                const SizedBox(height: kContentSpacing / 2),
-              ],
-            ),
+        YaruBorderContainer(
+          padding: EdgeInsets.symmetric(
+              horizontal: kContentPadding.left, vertical: 10),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              for (final entry in model.partitions.entries)
+                for (final partition in entry.value)
+                  _PartitionLabel(
+                    entry.key,
+                    partition,
+                    model.getOriginalPartition(
+                        entry.key, partition.number ?? -1),
+                  ),
+            ],
+          ),
+        ),
       ]),
       actions: <WizardAction>[
         WizardAction.back(context),
@@ -159,6 +179,9 @@ class _PartitionLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    return Text('\u2022 ${formatPartition(lang)}');
+    return Html(
+      data: formatPartition(lang),
+      style: {'body': Style(margin: Margins.zero)},
+    );
   }
 }
