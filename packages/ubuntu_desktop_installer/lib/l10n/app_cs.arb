@@ -673,7 +673,7 @@
       "url": {}
     }
   },
-  "writeChangesPartitionResized": "velikost oddílu #{disk}{partition} změněna z {oldsize} na {newsize}",
+  "writeChangesPartitionResized": "velikost oddílu <b>{disk}{partition}</b> změněna z <b>{oldsize}</b> na <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -693,7 +693,7 @@
       "partition": {}
     }
   },
-  "writeChangesPartitionMounted": "oddíl #{disk}{partition} použit pro {mount}",
+  "writeChangesPartitionMounted": "oddíl <b>{disk}{partition}</b> použit pro <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -741,7 +741,7 @@
   "@installAlongsidePartition": {},
   "installAlongsideSize": "Velikost:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionFormattedMounted": "oddíl #{disk}{partition} naformátován jako {format} použit pro {mount}",
+  "writeChangesPartitionFormattedMounted": "oddíl <b>{disk}{partition}</b> naformátovaný jako <b>{format}</b> použit pro <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -751,7 +751,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "oddíl #{disk}{partition} naformátován jako {format}",
+  "writeChangesPartitionFormatted": "oddíl <b>{disk}{partition}</b> naformátován jako <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -847,5 +847,9 @@
   "detectButtonText": "Zjistit",
   "@detectButtonText": {},
   "keyboardVariant": "Varianta klávesnice:",
-  "@keyboardVariant": {}
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "Zařízení",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Oddíly",
+  "@writeChangesPartitionsTitle": {}
 }
