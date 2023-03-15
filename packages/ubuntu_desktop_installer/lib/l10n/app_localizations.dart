@@ -749,7 +749,7 @@ abstract class AppLocalizations {
   /// No description provided for @installationTypeAdvancedLabel.
   ///
   /// In en, this message translates to:
-  /// **'Advanced Features...'**
+  /// **'Advanced features...'**
   String get installationTypeAdvancedLabel;
 
   /// No description provided for @installationTypeAdvancedTitle.

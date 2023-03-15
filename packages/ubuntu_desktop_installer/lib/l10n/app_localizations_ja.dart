@@ -896,7 +896,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get activeDirectoryTitle => 'アクティブディレクトリの設定';
 
   @override
-  String get activeDirectoryTestConnection => '接続テスト';
+  String get activeDirectoryTestConnection => 'ドメイン接続テスト';
 
   @override
   String get activeDirectoryDomainLabel => 'ドメイン';
@@ -929,7 +929,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'ドメインが見つかりません';
 
   @override
-  String get activeDirectoryAdminLabel => 'ドメイン管理者';
+  String get activeDirectoryAdminLabel => 'ドメイン接続用のユーザー名';
 
   @override
   String get activeDirectoryAdminEmpty => '必須';
