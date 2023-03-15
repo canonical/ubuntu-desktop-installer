@@ -169,6 +169,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                 hintText: lang.typeToTest,
               ),
             ),
+            const SizedBox(height: kContentSpacing * 2),
           ],
         ),
       ),
