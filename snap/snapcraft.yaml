@@ -192,6 +192,7 @@ parts:
 
   libraries:
     plugin: nil
+    build-attributes: [enable-patchelf]
     stage-packages:
       - libatk1.0-0
       - libcairo-gobject2
@@ -216,10 +217,8 @@ parts:
       - libllvm12
       - libpciaccess0
       - libvulkan1
-      - libpcre3
       - shared-mime-info
     prime:
-      - lib/*/libpcre.so.*
       - usr/lib/*/libEGL*.so.*
       - usr/lib/*/libGL*.so.*
       - usr/lib/*/libX*.so.*
