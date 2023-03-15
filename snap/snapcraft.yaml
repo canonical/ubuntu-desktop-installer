@@ -216,8 +216,10 @@ parts:
       - libllvm12
       - libpciaccess0
       - libvulkan1
+      - libpcre3
       - shared-mime-info
     prime:
+      - lib/*/libpcre.so.*
       - usr/lib/*/libEGL*.so.*
       - usr/lib/*/libGL*.so.*
       - usr/lib/*/libX*.so.*
@@ -250,6 +252,9 @@ parts:
       - usr/bin/update-mime-database
       - usr/bin/gdk*
       - usr/share/mime
+      - -usr/lib/*/pkgconfig
+      - -usr/lib/pkgconfig
+      - -usr/share/pkgconfig
 
   dri-no-patchelf:
     after: [libraries]
