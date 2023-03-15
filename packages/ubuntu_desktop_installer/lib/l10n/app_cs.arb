@@ -836,5 +836,16 @@
   "activeDirectoryErrorMessage": "Je nám líto, v tuto chvíli se nedaří nastavit pro Active Directory. Po nastartování nového systému pak navštivte <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kde získáte další informace.",
   "@activeDirectoryErrorMessage": {},
   "activeDirectoryErrorTitle": "Chyba při nastavování pro Active Directory",
-  "@activeDirectoryErrorTitle": {}
+  "@activeDirectoryErrorTitle": {},
+  "preparingUbuntu": "Připravuje se {DISTRO}…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "Zjistit",
+  "@detectButtonText": {},
+  "keyboardVariant": "Varianta klávesnice:",
+  "@keyboardVariant": {}
 }
