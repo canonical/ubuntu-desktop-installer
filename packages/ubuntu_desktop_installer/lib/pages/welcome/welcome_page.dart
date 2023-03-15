@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/widgets/mascot_avatar.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -79,10 +80,7 @@ class _WelcomePageState extends State<WelcomePage> {
         child: Column(
           children: [
             const SizedBox(height: kContentSpacing / 2),
-            Image.asset(
-              'assets/welcome/logo.png',
-              height: 150,
-            ),
+            const MascotAvatar(),
             const SizedBox(height: kContentSpacing),
             Text(lang.welcomeHeader),
             const SizedBox(height: kContentSpacing / 2),
