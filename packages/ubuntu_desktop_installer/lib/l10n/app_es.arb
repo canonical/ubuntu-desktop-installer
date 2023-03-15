@@ -664,7 +664,7 @@
   "@installingSystem": {},
   "configuringSystem": "Configurando el sistema…",
   "@configuringSystem": {},
-  "writeChangesPartitionResized": "partición #{disk}{partition} redimensionada de {oldsize} a {newsize}",
+  "writeChangesPartitionResized": "partición <b>{disk}{partition}</b> redimensionada de <b>{oldsize}</b> a <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -674,7 +674,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "partición #{disk}{partition} formateada como {format}",
+  "writeChangesPartitionFormatted": "partición <b>{disk}{partition}</b> formateada como <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -683,7 +683,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partición #{disk}{partition} formateada como {format} utilizada para {mount}",
+  "writeChangesPartitionFormattedMounted": "partición <b>{disk}{partition}</b> formateada como <b>{format}</b> utilizada para <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -693,7 +693,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "partición #{disk}{partition} utilizada para {mount}",
+  "writeChangesPartitionMounted": "partición <b>{disk}{partition}</b> utilizada para <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -801,5 +801,9 @@
   "keyboardVariant": "Variante del teclado:",
   "@keyboardVariant": {},
   "detectButtonText": "Detectar",
-  "@detectButtonText": {}
+  "@detectButtonText": {},
+  "writeChangesDevicesTitle": "Dispositivos",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Particiones",
+  "@writeChangesPartitionsTitle": {}
 }
