@@ -294,7 +294,7 @@ Widget _buildSupportSlide(BuildContext context) {
         Text(lang.installationSlidesSupportEnterprise),
       ],
     ),
-    image: SvgPicture.asset(_slideIcon('${context.theme}/ask-ubuntu.svg')),
+    image: SvgPicture.asset(_slideAsset('ask-ubuntu-${context.theme}.svg')),
     list: SlideList(
       children: [
         _SlideLink(
