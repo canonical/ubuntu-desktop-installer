@@ -37,7 +37,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get quitButtonText => 'Sair da instalação';
 
   @override
-  String get welcome => 'Bem-vindo';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {
@@ -987,9 +989,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get quitButtonText => 'Sair da instalação';
-
-  @override
-  String get welcome => 'Bem-vindo';
 
   @override
   String get welcomeHeader => 'Escolha seu idioma:';

@@ -315,7 +315,8 @@ Future<void> testWelcomePage(
   WidgetTester tester, {
   String? language,
 }) async {
-  await expectPage(tester, WelcomePage, (lang) => lang.welcome);
+  await expectPage(
+      tester, WelcomePage, (lang) => lang.welcomePageTitle('Ubuntu'));
 
   await tester.pumpAndSettle(); // auto-scroll
 

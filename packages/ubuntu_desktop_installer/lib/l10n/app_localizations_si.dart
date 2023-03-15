@@ -37,7 +37,9 @@ class AppLocalizationsSi extends AppLocalizations {
   String get quitButtonText => 'ස්ථාපනයෙන් ඉවතට';
 
   @override
-  String get welcome => 'ආයුබෝවන්';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {

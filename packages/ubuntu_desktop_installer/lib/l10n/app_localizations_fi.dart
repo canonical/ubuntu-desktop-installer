@@ -37,7 +37,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get quitButtonText => 'Lopeta asennus';
 
   @override
-  String get welcome => 'Tervetuloa';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {

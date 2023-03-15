@@ -37,7 +37,9 @@ class AppLocalizationsEu extends AppLocalizations {
   String get quitButtonText => 'Irten instalaziotik';
 
   @override
-  String get welcome => 'Ongi etorri';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {

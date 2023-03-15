@@ -69,11 +69,12 @@ class _WelcomePageState extends State<WelcomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final flavor = Flavor.of(context);
     final model = Provider.of<WelcomeModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(lang.welcome),
+        title: Text(lang.welcomePageTitle(flavor.name)),
       ),
       content: FractionallySizedBox(
         widthFactor: 0.5,

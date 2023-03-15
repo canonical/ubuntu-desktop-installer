@@ -37,7 +37,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get quitButtonText => 'الغي المثبت';
 
   @override
-  String get welcome => 'مرحبا';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {

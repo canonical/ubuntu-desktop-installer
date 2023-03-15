@@ -37,7 +37,9 @@ class AppLocalizationsSr extends AppLocalizations {
   String get quitButtonText => 'Напусти инсталацију';
 
   @override
-  String get welcome => 'Добродошли';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {

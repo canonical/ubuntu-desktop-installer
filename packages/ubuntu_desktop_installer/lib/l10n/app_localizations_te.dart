@@ -37,7 +37,9 @@ class AppLocalizationsTe extends AppLocalizations {
   String get quitButtonText => 'Quit installation';
 
   @override
-  String get welcome => 'స్వాగతం';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {

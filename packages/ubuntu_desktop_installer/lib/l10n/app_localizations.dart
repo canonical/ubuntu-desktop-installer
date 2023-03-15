@@ -296,11 +296,11 @@ abstract class AppLocalizations {
   /// **'Quit installation'**
   String get quitButtonText;
 
-  /// No description provided for @welcome.
+  /// No description provided for @welcomePageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Welcome'**
-  String get welcome;
+  /// **'Welcome to {DISTRO}'**
+  String welcomePageTitle(Object DISTRO);
 
   /// No description provided for @preparingUbuntu.
   ///

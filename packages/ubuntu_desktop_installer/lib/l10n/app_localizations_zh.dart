@@ -37,7 +37,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quitButtonText => '退出安装';
 
   @override
-  String get welcome => '欢迎';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {

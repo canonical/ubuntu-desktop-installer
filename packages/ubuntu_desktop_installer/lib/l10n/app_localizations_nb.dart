@@ -37,7 +37,9 @@ class AppLocalizationsNb extends AppLocalizations {
   String get quitButtonText => 'Avslutt installasjon';
 
   @override
-  String get welcome => 'Velkommen';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {
