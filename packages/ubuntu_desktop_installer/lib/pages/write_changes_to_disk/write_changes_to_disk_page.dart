@@ -60,6 +60,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
       ),
       header: Text(lang.writeChangesDescription),
       content: ListView(children: <Widget>[
+        SizedBox(height: MediaQuery.of(context).size.height * 0.05),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -87,7 +88,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
             ],
           ),
         ),
-        const SizedBox(height: kContentSpacing),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.1),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
