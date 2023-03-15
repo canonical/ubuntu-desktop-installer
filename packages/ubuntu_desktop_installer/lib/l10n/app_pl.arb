@@ -625,7 +625,7 @@
   },
   "installAlongsideSize": "Rozmiar:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionFormattedMounted": "partycja #{disk}{partition} sformatowana jako {format} używana do {mount}",
+  "writeChangesPartitionFormattedMounted": "partycja <b>{disk}{partition}</b> sformatowana jako <b>{format}</b> używana do <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -639,7 +639,7 @@
   "@notEnoughDiskSpaceTitle": {},
   "quitButtonText": "Zakończ instalację",
   "@quitButtonText": {},
-  "writeChangesPartitionMounted": "partycja #{disk}{partition} używana do {mount}",
+  "writeChangesPartitionMounted": "partycja <b>{disk}{partition}</b> używana do <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -648,7 +648,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "partycja #{disk}{partition} zmieniła rozmiar z {oldsize} na {newsize}",
+  "writeChangesPartitionResized": "partycja <b>{disk}{partition}</b> zmieniła rozmiar z <b>{oldsize}</b> na <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -658,7 +658,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "partycja #{disk}{partition} sformatowana jako {format}",
+  "writeChangesPartitionFormatted": "partycja <b>{disk}{partition}</b> sformatowana jako <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -792,5 +792,9 @@
   "keyboardVariant": "Wariant klawiatury:",
   "@keyboardVariant": {},
   "detectButtonText": "Wykryj",
-  "@detectButtonText": {}
+  "@detectButtonText": {},
+  "writeChangesDevicesTitle": "Urządzenia",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Partycje",
+  "@writeChangesPartitionsTitle": {}
 }
