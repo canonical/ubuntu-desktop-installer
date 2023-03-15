@@ -48,7 +48,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get welcomeHeader => 'Zvolte svůj jazyk:';
 
   @override
-  String get tryOrInstallPageTitle => 'Vyzkoušet nebo nainstalovat';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Vyzkoušet nebo nainstalovat';
+  }
 
   @override
   String get repairInstallation => 'Opravit instalaci';

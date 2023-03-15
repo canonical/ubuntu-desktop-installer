@@ -48,7 +48,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get welcomeHeader => 'Elektu vian lingvon:';
 
   @override
-  String get tryOrInstallPageTitle => 'Provi aŭ instali';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Provi aŭ instali';
+  }
 
   @override
   String get repairInstallation => 'Ripari instalaĵon';

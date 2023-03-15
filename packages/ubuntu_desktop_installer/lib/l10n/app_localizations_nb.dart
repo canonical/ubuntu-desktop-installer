@@ -48,7 +48,9 @@ class AppLocalizationsNb extends AppLocalizations {
   String get welcomeHeader => 'Velg ditt språk:';
 
   @override
-  String get tryOrInstallPageTitle => 'Prøv eller Installere';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Prøv eller Installere';
+  }
 
   @override
   String get repairInstallation => 'Reparere installasjonen';

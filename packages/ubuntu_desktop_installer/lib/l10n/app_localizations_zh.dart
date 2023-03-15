@@ -48,7 +48,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get welcomeHeader => '选择您的语言：';
 
   @override
-  String get tryOrInstallPageTitle => '试用或安装';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return '试用或安装';
+  }
 
   @override
   String get repairInstallation => '修复安装';

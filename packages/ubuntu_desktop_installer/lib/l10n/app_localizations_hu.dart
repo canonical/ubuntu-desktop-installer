@@ -48,7 +48,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get welcomeHeader => 'Válassza ki a nyelvet:';
 
   @override
-  String get tryOrInstallPageTitle => 'Próbálja ki vagy telepítse';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Próbálja ki vagy telepítse';
+  }
 
   @override
   String get repairInstallation => 'Javító telepítés';

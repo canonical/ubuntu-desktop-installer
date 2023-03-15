@@ -48,7 +48,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get welcomeHeader => 'Elija su idioma:';
 
   @override
-  String get tryOrInstallPageTitle => 'Probar o instalar';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Probar o instalar';
+  }
 
   @override
   String get repairInstallation => 'Reparar instalación';

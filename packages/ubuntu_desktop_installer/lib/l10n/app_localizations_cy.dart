@@ -48,7 +48,9 @@ class AppLocalizationsCy extends AppLocalizations {
   String get welcomeHeader => 'Dewiswch eich iaith:';
 
   @override
-  String get tryOrInstallPageTitle => 'Try or install';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Try or install $DISTRO';
+  }
 
   @override
   String get repairInstallation => 'Repair installation';

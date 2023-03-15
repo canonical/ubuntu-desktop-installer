@@ -36,8 +36,13 @@
   },
   "welcomeHeader": "Choose your language:",
   "@welcomeHeader": {},
-  "tryOrInstallPageTitle": "Try or install",
-  "@tryOrInstallPageTitle": {},
+  "tryOrInstallPageTitle": "Try or install {DISTRO}",
+  "@tryOrInstallPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
   "repairInstallation": "Repair installation",
   "@repairInstallation": {},
   "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",

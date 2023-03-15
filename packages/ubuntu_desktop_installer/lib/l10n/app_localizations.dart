@@ -317,8 +317,8 @@ abstract class AppLocalizations {
   /// No description provided for @tryOrInstallPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Try or install'**
-  String get tryOrInstallPageTitle;
+  /// **'Try or install {DISTRO}'**
+  String tryOrInstallPageTitle(Object DISTRO);
 
   /// No description provided for @repairInstallation.
   ///

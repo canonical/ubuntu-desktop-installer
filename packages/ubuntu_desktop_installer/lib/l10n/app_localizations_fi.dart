@@ -48,7 +48,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get welcomeHeader => 'Valitse kieli:';
 
   @override
-  String get tryOrInstallPageTitle => 'Kokeile tai asenna';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Kokeile tai asenna';
+  }
 
   @override
   String get repairInstallation => 'Korjaa asennus';

@@ -48,7 +48,9 @@ class AppLocalizationsOc extends AppLocalizations {
   String get welcomeHeader => 'Causissètz vòstra lenga :';
 
   @override
-  String get tryOrInstallPageTitle => 'Ensajar o installar';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Ensajar o installar';
+  }
 
   @override
   String get repairInstallation => 'Reparar l’installacion';

@@ -48,7 +48,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get welcomeHeader => 'اختر لغتك language:';
 
   @override
-  String get tryOrInstallPageTitle => 'جرب او ثبت';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'جرب او ثبت';
+  }
 
   @override
   String get repairInstallation => 'تصليح المثبت';

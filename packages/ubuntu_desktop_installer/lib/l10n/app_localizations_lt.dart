@@ -48,7 +48,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get welcomeHeader => 'Pasirinkite kalbą:';
 
   @override
-  String get tryOrInstallPageTitle => 'Išbandykite arba įsidiekite';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Išbandykite arba įsidiekite';
+  }
 
   @override
   String get repairInstallation => 'Taisyti diegimą';

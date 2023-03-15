@@ -48,7 +48,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get welcomeHeader => 'Оберіть мову:';
 
   @override
-  String get tryOrInstallPageTitle => 'Спробувати або встановити';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Спробувати або встановити';
+  }
 
   @override
   String get repairInstallation => 'Виправити встановлення';

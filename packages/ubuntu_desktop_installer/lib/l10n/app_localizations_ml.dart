@@ -48,7 +48,9 @@ class AppLocalizationsMl extends AppLocalizations {
   String get welcomeHeader => 'Choose your language:';
 
   @override
-  String get tryOrInstallPageTitle => 'ഉപയോഗിച്ച് നോക്കുക അല്ലെങ്കിൽ ഇൻസ്റ്റാൾ ചെയ്യുക';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'ഉപയോഗിച്ച് നോക്കുക അല്ലെങ്കിൽ ഇൻസ്റ്റാൾ ചെയ്യുക';
+  }
 
   @override
   String get repairInstallation => 'ഇൻസ്റ്റാളേഷൻ നന്നാക്കുക';
