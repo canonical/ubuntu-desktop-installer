@@ -365,7 +365,7 @@ abstract class AppLocalizations {
   /// No description provided for @turnOffRST.
   ///
   /// In en, this message translates to:
-  /// **'Turn off RST'**
+  /// **'RST is enabled'**
   String get turnOffRST;
 
   /// No description provided for @turnOffRSTDescription.
@@ -1541,7 +1541,7 @@ abstract class AppLocalizations {
   /// No description provided for @turnOffBitlockerTitle.
   ///
   /// In en, this message translates to:
-  /// **'Turn off BitLocker'**
+  /// **'BitLocker is enabled'**
   String get turnOffBitlockerTitle;
 
   /// No description provided for @turnOffBitlockerDescription.

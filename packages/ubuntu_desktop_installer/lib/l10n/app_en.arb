@@ -77,7 +77,7 @@
       "url": {}
     }
   },
-  "turnOffRST": "Turn off RST",
+  "turnOffRST": "RST is enabled",
   "@turnOffRST": {},
   "turnOffRSTDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
   "@turnOffRSTDescription": {},
@@ -627,7 +627,7 @@
   "@restartNow": {},
   "continueTesting": "Continue testing",
   "@continueTesting": {},
-  "turnOffBitlockerTitle": "Turn off BitLocker",
+  "turnOffBitlockerTitle": "BitLocker is enabled",
   "@turnOffBitlockerTitle": {},
   "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.",
   "@turnOffBitlockerDescription": {},
