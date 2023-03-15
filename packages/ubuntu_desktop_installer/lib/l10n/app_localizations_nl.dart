@@ -40,6 +40,11 @@ class AppLocalizationsNl extends AppLocalizations {
   String get welcome => 'Welkom';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Choose your language:';
 
   @override

@@ -40,6 +40,11 @@ class AppLocalizationsCy extends AppLocalizations {
   String get welcome => 'Croeso';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Dewiswch eich iaith:';
 
   @override

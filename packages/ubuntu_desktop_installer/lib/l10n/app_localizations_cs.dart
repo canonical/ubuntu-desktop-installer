@@ -40,6 +40,11 @@ class AppLocalizationsCs extends AppLocalizations {
   String get welcome => 'Vítejte';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Zvolte svůj jazyk:';
 
   @override

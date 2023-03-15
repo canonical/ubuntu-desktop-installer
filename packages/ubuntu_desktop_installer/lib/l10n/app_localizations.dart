@@ -302,6 +302,12 @@ abstract class AppLocalizations {
   /// **'Welcome'**
   String get welcome;
 
+  /// No description provided for @preparingUbuntu.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing {DISTRO}...'**
+  String preparingUbuntu(Object DISTRO);
+
   /// No description provided for @welcomeHeader.
   ///
   /// In en, this message translates to:

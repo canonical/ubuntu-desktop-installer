@@ -40,6 +40,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get welcome => 'Le damos la bienvenida';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Elija su idioma:';
 
   @override

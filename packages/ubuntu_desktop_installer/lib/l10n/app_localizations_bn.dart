@@ -40,6 +40,11 @@ class AppLocalizationsBn extends AppLocalizations {
   String get welcome => 'স্বাগতম';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'Choose your language:';
 
   @override

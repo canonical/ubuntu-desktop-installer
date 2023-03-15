@@ -40,6 +40,11 @@ class AppLocalizationsNe extends AppLocalizations {
   String get welcome => 'स्वागत छ';
 
   @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparing $DISTRO...';
+  }
+
+  @override
   String get welcomeHeader => 'आफ्नो भाषा छान्नुहोस्:';
 
   @override
