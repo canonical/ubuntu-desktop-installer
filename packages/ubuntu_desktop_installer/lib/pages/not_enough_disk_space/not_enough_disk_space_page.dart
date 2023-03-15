@@ -38,8 +38,11 @@ class NotEnoughDiskSpacePage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(YaruIcons.drive_harddisk_warning,
-                  size: min(196.0, MediaQuery.of(context).size.height * 0.3)),
+              Icon(
+                YaruIcons.drive_harddisk_warning,
+                size: min(128.00, MediaQuery.of(context).size.height * 0.2),
+                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+              ),
               const SizedBox(height: kContentSpacing),
               Text(lang.notEnoughDiskSpaceUbuntu(flavor.name),
                   style: Theme.of(context).textTheme.headlineSmall),
