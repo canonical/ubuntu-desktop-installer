@@ -446,8 +446,9 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
               ? Routes.activeDirectory
               : Routes.chooseYourLook,
         ),
-        Routes.activeDirectory: const WizardRoute(
+        Routes.activeDirectory: WizardRoute(
           builder: ActiveDirectoryPage.create,
+          userData: InstallationStep.user.index,
         ),
         Routes.chooseYourLook: WizardRoute(
           builder: ChooseYourLookPage.create,
