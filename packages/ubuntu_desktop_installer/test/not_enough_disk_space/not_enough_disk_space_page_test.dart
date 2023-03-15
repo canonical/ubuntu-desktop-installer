@@ -38,27 +38,35 @@ void main() {
     final model = buildModel(installMinimumSize: 123456);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(
-        find.text(
-            tester.lang.notEnoughDiskSpaceHeader(filesize(123456), 'Ubuntu')),
+    expect(find.text(tester.lang.notEnoughDiskSpaceUbuntu('Ubuntu')),
         findsOneWidget);
+    expect(find.text(filesize(123456)), findsOneWidget);
   });
 
   testWidgets('one disk', (tester) async {
-    final model = buildModel(hasMultipleDisks: false, largestDiskSize: 123456);
+    final model = buildModel(
+        hasMultipleDisks: false,
+        largestDiskSize: 123456,
+        installMinimumSize: 654321);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.text(tester.lang.notEnoughDiskSpaceHasOnly(filesize(123456))),
+    expect(find.text(tester.lang.notEnoughDiskSpaceUbuntu('Ubuntu')),
         findsOneWidget);
+    expect(find.text(filesize(123456)), findsOneWidget);
+    expect(find.text(filesize(654321)), findsOneWidget);
   });
 
   testWidgets('multiple disks', (tester) async {
-    final model = buildModel(hasMultipleDisks: true, largestDiskSize: 123456);
+    final model = buildModel(
+        hasMultipleDisks: true,
+        largestDiskSize: 123456,
+        installMinimumSize: 654321);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(
-        find.text(tester.lang.notEnoughDiskSpaceBiggestDisk(filesize(123456))),
+    expect(find.text(tester.lang.notEnoughDiskSpaceUbuntu('Ubuntu')),
         findsOneWidget);
+    expect(find.text(filesize(123456)), findsOneWidget);
+    expect(find.text(filesize(654321)), findsOneWidget);
   });
 
   testWidgets('quit', (tester) async {
