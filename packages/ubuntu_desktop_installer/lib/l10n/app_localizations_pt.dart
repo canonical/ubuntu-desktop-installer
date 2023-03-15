@@ -889,19 +889,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get notEnoughDiskSpaceTitle => 'Lamentamos';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'É necessário pelo menos $SIZE de espaço em disco para instalar o $RELEASE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Not enough disk space to install $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Este computador tem apenas $SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Available:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'O maior disco deste computador é de apenas $SIZE.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Required:';
 
   @override
   String get activeDirectoryOption => 'Usar o Active Directory';
@@ -1837,21 +1833,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get notEnoughDiskSpaceTitle => 'Desculpa';
-
-  @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'Você precisa de $SIZE de espaço no disco para instalar o $RELEASE.';
-  }
-
-  @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Esse computador tem apenas $SIZE.';
-  }
-
-  @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'O maior disco neste computador é de apenas $SIZE.';
-  }
 
   @override
   String get activeDirectoryOption => 'Usar o Active Directory';

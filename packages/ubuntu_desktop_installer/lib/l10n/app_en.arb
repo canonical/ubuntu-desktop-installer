@@ -763,30 +763,17 @@
   "@configuringSystem": {},
   "installationFailed": "Installation failed",
   "@installationFailed": {},
-  "notEnoughDiskSpaceTitle": "Sorry",
+  "notEnoughDiskSpaceTitle": "Not enough space",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "You need at least {SIZE} disk space to install {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
+  "notEnoughDiskSpaceUbuntu": "Not enough disk space to install {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
     "type": "text",
     "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "notEnoughDiskSpaceHasOnly": "This computer has only {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "The biggest disk on this computer is only {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
+  "notEnoughDiskSpaceAvailable": "Available:",
+  "notEnoughDiskSpaceRequired": "Required:",
   "activeDirectoryOption": "Use Active Directory",
   "@activeDirectoryOption": {},
   "activeDirectoryInfo": "You'll enter domain and other details in the next step.",

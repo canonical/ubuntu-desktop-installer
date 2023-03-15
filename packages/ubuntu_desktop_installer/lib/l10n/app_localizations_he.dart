@@ -889,19 +889,15 @@ class AppLocalizationsHe extends AppLocalizations {
   String get notEnoughDiskSpaceTitle => 'מחילה';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'נדרשים $SIZE לפחות של מקום פנוי כדי להתקין את $RELEASE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Not enough disk space to install $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'במחשב זה יש רק $SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Available:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'גודל הכונן הגדול ביותר במחשב הזה הוא $SIZE בלבד.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Required:';
 
   @override
   String get activeDirectoryOption => 'להשתמש ב־Active Directory';

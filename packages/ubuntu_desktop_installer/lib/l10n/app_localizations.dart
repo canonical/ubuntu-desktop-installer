@@ -1829,26 +1829,26 @@ abstract class AppLocalizations {
   /// No description provided for @notEnoughDiskSpaceTitle.
   ///
   /// In en, this message translates to:
-  /// **'Sorry'**
+  /// **'Not enough space'**
   String get notEnoughDiskSpaceTitle;
 
-  /// No description provided for @notEnoughDiskSpaceHeader.
+  /// No description provided for @notEnoughDiskSpaceUbuntu.
   ///
   /// In en, this message translates to:
-  /// **'You need at least {SIZE} disk space to install {RELEASE}.'**
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE);
+  /// **'Not enough disk space to install {DISTRO}'**
+  String notEnoughDiskSpaceUbuntu(Object DISTRO);
 
-  /// No description provided for @notEnoughDiskSpaceHasOnly.
+  /// No description provided for @notEnoughDiskSpaceAvailable.
   ///
   /// In en, this message translates to:
-  /// **'This computer has only {SIZE}.'**
-  String notEnoughDiskSpaceHasOnly(Object SIZE);
+  /// **'Available:'**
+  String get notEnoughDiskSpaceAvailable;
 
-  /// No description provided for @notEnoughDiskSpaceBiggestDisk.
+  /// No description provided for @notEnoughDiskSpaceRequired.
   ///
   /// In en, this message translates to:
-  /// **'The biggest disk on this computer is only {SIZE}.'**
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE);
+  /// **'Required:'**
+  String get notEnoughDiskSpaceRequired;
 
   /// No description provided for @activeDirectoryOption.
   ///
