@@ -15,6 +15,7 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../test_utils.dart';
 import 'welcome_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
@@ -152,7 +153,8 @@ void main() {
   testWidgets('should continue to next page', (tester) async {
     await setUpApp(tester);
 
-    final continueButton = find.widgetWithText(FilledButton, 'Continue');
+    final continueButton =
+        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);

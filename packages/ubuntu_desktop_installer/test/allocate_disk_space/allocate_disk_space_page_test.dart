@@ -342,7 +342,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       FilledButton,
-      tester.ulang.continueAction,
+      tester.ulang.nextLabel,
     );
     expect(continueButton, findsOneWidget);
 
@@ -356,7 +356,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       FilledButton,
-      tester.ulang.continueAction,
+      tester.ulang.nextLabel,
     );
     expect(continueButton, findsOneWidget);
     expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isFalse);

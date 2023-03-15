@@ -186,7 +186,7 @@ void main() {
     verifyNever(model.cleanup());
 
     final continueButton =
-        find.widgetWithText(FilledButton, tester.ulang.continueAction);
+        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
     expect(continueButton, findsOneWidget);
     await tester.tap(continueButton);
     await tester.pumpAndSettle();
@@ -278,7 +278,7 @@ void main() {
     verifyNever(model.cleanup());
 
     final continueButton =
-        find.widgetWithText(FilledButton, tester.ulang.continueAction);
+        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
     expect(continueButton, findsOneWidget);
     await tester.tap(continueButton);
     await tester.pumpAndSettle();

@@ -88,7 +88,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
         WizardAction.back(context),
         WizardAction.done(
           context,
-          label: UbuntuLocalizations.of(context).continueAction,
+          label: UbuntuLocalizations.of(context).nextLabel,
           visible: model.option == Option.tryUbuntu,
           onDone: YaruWindow.of(context).close,
         ),

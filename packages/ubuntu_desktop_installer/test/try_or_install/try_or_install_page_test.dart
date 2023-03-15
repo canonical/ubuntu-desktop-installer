@@ -91,7 +91,8 @@ void main() {
   testWidgets('selecting an option should enable continuing', (tester) async {
     await setUpApp(tester);
 
-    final continueButton = find.widgetWithText(FilledButton, 'Continue');
+    final continueButton =
+        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
     expect(continueButton, findsOneWidget);
     expect(
         (continueButton.evaluate().single.widget as ButtonStyleButton).enabled,
@@ -118,7 +119,8 @@ void main() {
     await tester.tap(option);
     await tester.pump();
 
-    final continueButton = find.widgetWithText(FilledButton, 'Continue');
+    final continueButton =
+        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);
@@ -131,7 +133,8 @@ void main() {
   testWidgets('try ubuntu', (tester) async {
     await setUpApp(tester);
 
-    final continueButton = find.widgetWithText(FilledButton, 'Continue');
+    final continueButton =
+        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
     expect(continueButton, findsOneWidget);
     expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isFalse);
 
