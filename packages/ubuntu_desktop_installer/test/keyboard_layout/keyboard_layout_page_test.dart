@@ -90,9 +90,10 @@ void main() {
       final variantItem = find.widgetWithText(MenuItemButton, 'Variant $i');
       expect(variantItem, findsOneWidget);
       await tester.tap(variantItem);
+      await tester.pumpAndSettle();
       verify(model.selectVariant(i)).called(1);
     }
-  }, skip: true); // TODO: fix the test
+  });
 
   testWidgets('type to test keyboard', (tester) async {
     final model = buildModel();
