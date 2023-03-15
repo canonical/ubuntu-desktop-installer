@@ -1400,6 +1400,18 @@ abstract class AppLocalizations {
   /// **'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.'**
   String get writeChangesDescription;
 
+  /// No description provided for @writeChangesDevicesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Devices'**
+  String get writeChangesDevicesTitle;
+
+  /// No description provided for @writeChangesPartitionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Partitions'**
+  String get writeChangesPartitionsTitle;
+
   /// No description provided for @writeChangesPartitionTablesHeader.
   ///
   /// In en, this message translates to:

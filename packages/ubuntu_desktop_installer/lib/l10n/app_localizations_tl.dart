@@ -639,6 +639,12 @@ class AppLocalizationsTl extends AppLocalizations {
   String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
 
   @override

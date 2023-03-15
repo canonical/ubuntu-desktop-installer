@@ -639,6 +639,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get writeChangesDescription => 'Si vous continuez, les changements ci-dessous seront écrits sur les disques. Vous pourrez faire des changements ultérieurs manuellement.';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => 'Les tables de partitions des périphériques suivants seront modifiées :';
 
   @override
