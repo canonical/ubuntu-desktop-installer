@@ -3,10 +3,11 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i3;
+import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_desktop_installer/services/journal_service.dart' as _i2;
+import 'package:ubuntu_desktop_installer/services/journal_service.dart' as _i3;
+import 'package:ubuntu_desktop_installer/services/product_service.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -19,18 +20,28 @@ import 'package:ubuntu_desktop_installer/services/journal_service.dart' as _i2;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
+class _FakeProductInfo_0 extends _i1.SmartFake implements _i2.ProductInfo {
+  _FakeProductInfo_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [JournalService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockJournalService extends _i1.Mock implements _i2.JournalService {
+class MockJournalService extends _i1.Mock implements _i3.JournalService {
   MockJournalService() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i3.Stream<String> start(
+  _i4.Stream<String> start(
     List<String>? ids, {
-    _i2.JournalOutput? output = _i2.JournalOutput.short,
+    _i3.JournalOutput? output = _i3.JournalOutput.short,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -38,6 +49,30 @@ class MockJournalService extends _i1.Mock implements _i2.JournalService {
           [ids],
           {#output: output},
         ),
-        returnValue: _i3.Stream<String>.empty(),
-      ) as _i3.Stream<String>);
+        returnValue: _i4.Stream<String>.empty(),
+      ) as _i4.Stream<String>);
+}
+
+/// A class which mocks [ProductService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockProductService extends _i1.Mock implements _i2.ProductService {
+  MockProductService() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i2.ProductInfo getProductInfo() => (super.noSuchMethod(
+        Invocation.method(
+          #getProductInfo,
+          [],
+        ),
+        returnValue: _FakeProductInfo_0(
+          this,
+          Invocation.method(
+            #getProductInfo,
+            [],
+          ),
+        ),
+      ) as _i2.ProductInfo);
 }

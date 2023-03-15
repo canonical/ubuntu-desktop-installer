@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -41,8 +42,9 @@ class InstallationSlidesPage extends StatefulWidget {
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
     final journal = getService<JournalService>();
+    final product = getService<ProductService>();
     return ChangeNotifierProvider(
-      create: (_) => InstallationSlidesModel(client, journal),
+      create: (_) => InstallationSlidesModel(client, journal, product),
       child: const InstallationSlidesPage(),
     );
   }
@@ -80,13 +82,12 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
 
   @override
   Widget build(BuildContext context) {
-    final flavor = Flavor.of(context);
     final lang = AppLocalizations.of(context);
     final model = Provider.of<InstallationSlidesModel>(context);
     final slides = SlidesContext.of(context);
     return Scaffold(
       appBar: YaruWindowTitleBar(
-        title: Text(lang.installationSlidesTitle(flavor.name)),
+        title: Text(model.productInfo.toString()),
       ),
       body: Stack(
         children: [

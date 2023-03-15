@@ -49,14 +49,18 @@ class InstallationEvent {
 /// View model for [InstallationSlidesPage].
 class InstallationSlidesModel extends SafeChangeNotifier {
   /// Creates an instance with the given client.
-  InstallationSlidesModel(this._client, this._journal);
+  InstallationSlidesModel(this._client, this._journal, this._service);
 
   final SubiquityClient _client;
   final JournalService _journal;
+  final ProductService _service;
 
   Stream<String>? _log;
   ApplicationStatus? _status;
   InstallationEvent _event = const InstallationEvent(InstallationAction.none);
+
+  /// Detailed info of the product being installed.
+  ProductInfo get productInfo => _service.getProductInfo();
 
   /// The current installation state.
   ApplicationState? get state => _status?.state;

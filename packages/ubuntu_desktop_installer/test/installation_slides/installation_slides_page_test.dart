@@ -15,11 +15,12 @@ import 'package:ubuntu_test/mocks.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 
 import '../test_utils.dart';
+import 'installation_slides_model_test.mocks.dart';
 import 'installation_slides_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([InstallationSlidesModel, JournalService])
+@GenerateMocks([InstallationSlidesModel])
 void main() {
   UbuntuTester.context = InstallationSlidesPage;
 
@@ -32,6 +33,7 @@ void main() {
     InstallationEvent? event,
     bool? isLogVisible,
     bool? isPlaying,
+    ProductInfo? productInfo,
   }) {
     final model = MockInstallationSlidesModel();
     when(model.state).thenReturn(state);
@@ -42,6 +44,8 @@ void main() {
     when(model.event).thenReturn(event ?? InstallationEvent.fromString(''));
     when(model.isLogVisible).thenReturn(isLogVisible ?? false);
     when(model.isPlaying).thenReturn(isPlaying ?? false);
+    when(model.productInfo)
+        .thenReturn(productInfo ?? ProductInfo(name: 'Ubuntu'));
     return model;
   }
 
@@ -197,8 +201,11 @@ void main() {
         .thenAnswer((_) => never.future);
     registerMockService<SubiquityClient>(client);
 
-    final service = MockJournalService();
-    registerMockService<JournalService>(service);
+    registerMockService<JournalService>(MockJournalService());
+
+    final product = MockProductService();
+    when(product.getProductInfo()).thenReturn(ProductInfo(name: 'Ubuntu'));
+    registerMockService<ProductService>(product);
 
     await tester.pumpWidget(
       SlidesContext(
