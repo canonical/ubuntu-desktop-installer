@@ -625,7 +625,7 @@
   },
   "installAlongsideAvailable": "זמין:",
   "@installAlongsideAvailable": {},
-  "writeChangesPartitionFormattedMounted": "מחיצה מס׳ {disk}{partition} תפורמט כ־{format} ותשמש עבור {mount}",
+  "writeChangesPartitionFormattedMounted": "מחיצה <b>{disk}{partition}</b> פורמטה כ־<b>{format}</b> ומשמשת עבור <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -635,7 +635,7 @@
       "mount": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "מחילה",
+  "notEnoughDiskSpaceTitle": "אין מספיק מקום",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceHeader": "נדרשים {SIZE} לפחות של מקום פנוי כדי להתקין את {RELEASE}.",
   "@notEnoughDiskSpaceHeader": {
@@ -645,7 +645,7 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "הגודל של מחיצה מס׳ {disk}{partition} ישתנה מ־{oldsize} ל־{newsize}",
+  "writeChangesPartitionResized": "הגודל של מחיצה <b>{disk}{partition}</b> ישתנה מ־<b>{oldsize}</b> ל־<b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -672,7 +672,7 @@
       "SIZE": {}
     }
   },
-  "writeChangesPartitionFormatted": "מחיצה מס׳ {disk}{partition} תפורמט בתור {format}",
+  "writeChangesPartitionFormatted": "מחיצה <b>{disk}{partition}</b> פורמטה בתור <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -681,7 +681,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "מחיצה מס׳ {disk}{partition} תשמש עבור {mount}",
+  "writeChangesPartitionMounted": "מחיצה <b>{disk}{partition}</b> תשמש עבור <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -781,5 +781,31 @@
   "activeDirectoryErrorTitle": "שגיאה בהגדרת החיבור ל־Active Directory",
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "אי אפשר להגדיר חיבור ל־Active Directory כרגע, עמך הסליחה. לאחר סיום התקנת המערכת, יש לבקר בכתובת <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> לקבלת עזרה.",
-  "@activeDirectoryErrorMessage": {}
+  "@activeDirectoryErrorMessage": {},
+  "preparingUbuntu": "{DISTRO} בהכנות…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "זיהוי",
+  "@detectButtonText": {},
+  "keyboardVariant": "הגוון מקלדת:",
+  "@keyboardVariant": {},
+  "writeChangesPartitionsTitle": "מחיצות",
+  "@writeChangesPartitionsTitle": {},
+  "notEnoughDiskSpaceUbuntu": "אין מספיק מקום להתקין את {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "פנוי:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "נחוץ:",
+  "@notEnoughDiskSpaceRequired": {},
+  "writeChangesDevicesTitle": "התקנים",
+  "@writeChangesDevicesTitle": {}
 }
