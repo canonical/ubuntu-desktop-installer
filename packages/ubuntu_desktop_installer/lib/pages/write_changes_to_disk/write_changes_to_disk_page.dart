@@ -74,6 +74,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
         ),
         const SizedBox(height: kContentSpacing / 2),
         YaruBorderContainer(
+          color: Theme.of(context).colorScheme.surface,
           padding: EdgeInsets.symmetric(
               horizontal: kContentPadding.left, vertical: 10),
           child: Column(
@@ -102,6 +103,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
         ),
         const SizedBox(height: 10),
         YaruBorderContainer(
+          color: Theme.of(context).colorScheme.surface,
           padding: EdgeInsets.symmetric(
               horizontal: kContentPadding.left, vertical: 10),
           child: Column(
