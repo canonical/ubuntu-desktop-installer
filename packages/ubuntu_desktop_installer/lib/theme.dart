@@ -3,13 +3,20 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 extension ThemeDataX on ThemeData {
   ThemeData customize() {
+    final buttonSize = MaterialStateProperty.all(const Size(136, 36));
     final mouseCursor = MaterialStateProperty.all(SystemMouseCursors.basic);
     return copyWith(
       elevatedButtonTheme: ElevatedButtonThemeData(
-        style: elevatedButtonTheme.style!.copyWith(mouseCursor: mouseCursor),
+        style: elevatedButtonTheme.style!.copyWith(
+          minimumSize: buttonSize,
+          mouseCursor: mouseCursor,
+        ),
       ),
       filledButtonTheme: FilledButtonThemeData(
-        style: filledButtonTheme.style!.copyWith(mouseCursor: mouseCursor),
+        style: filledButtonTheme.style!.copyWith(
+          minimumSize: buttonSize,
+          mouseCursor: mouseCursor,
+        ),
       ),
       floatingActionButtonTheme:
           floatingActionButtonTheme.copyWith(mouseCursor: mouseCursor),
@@ -24,7 +31,10 @@ extension ThemeDataX on ThemeData {
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
-        style: outlinedButtonTheme.style!.copyWith(mouseCursor: mouseCursor),
+        style: outlinedButtonTheme.style!.copyWith(
+          minimumSize: buttonSize,
+          mouseCursor: mouseCursor,
+        ),
       ),
       popupMenuTheme: popupMenuTheme.copyWith(mouseCursor: mouseCursor),
       sliderTheme: sliderTheme.copyWith(mouseCursor: mouseCursor),
