@@ -41,7 +41,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return 'Připravuje se $DISTRO…';
   }
 
   @override
@@ -105,10 +105,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get detectLayout => 'Zjistit rozvržení klávesnice';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => 'Zjistit';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => 'Varianta klávesnice:';
 
   @override
   String get pressOneKey => 'Stiskněte některou z následujících kláves:';
@@ -643,6 +643,12 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get writeChangesDescription => 'Pokud budete pokračovat, níže uvedené změny budou zapsány na disky. Další změny pak můžete udělat ručně.';
+
+  @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Budou změněny tabulky rozdělení na oddíly následujících zařízení:';

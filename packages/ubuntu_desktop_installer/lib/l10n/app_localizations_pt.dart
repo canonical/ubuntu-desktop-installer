@@ -645,6 +645,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get writeChangesDescription => 'Se prosseguir, as mudanças listadas abaixo serão escritas nos discos. Será capaz de realizar alterações posteriores manualmente.';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => 'As tabelas de partições dos seguintes aparelhos foram alteradas:';
 
   @override

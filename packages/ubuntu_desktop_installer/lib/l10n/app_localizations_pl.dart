@@ -41,7 +41,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return 'Przygotowywanie $DISTRO…';
   }
 
   @override
@@ -105,10 +105,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get detectLayout => 'Wykryj układ klawiatury';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => 'Wykryj';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => 'Wariant klawiatury:';
 
   @override
   String get pressOneKey => 'Proszę wcisnąć jeden z następujących klawiszy:';
@@ -643,6 +643,12 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get writeChangesDescription => 'Jeśli będziesz kontynuować, zmiany wymienione poniżej zostaną zapisane na dyskach. Będzie można wprowadzać dalsze zmiany ręcznie.';
+
+  @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Zmieniane są tablice partycji następujących urządzeń:';

@@ -645,6 +645,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String get writeChangesDescription => 'Ha folytatja, az alább felsorolt módosítások íródnak a lemezekre. A további módosításokat kézzel végezheti el.';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => 'A következő eszközök partíciós táblái módosulnak:';
 
   @override

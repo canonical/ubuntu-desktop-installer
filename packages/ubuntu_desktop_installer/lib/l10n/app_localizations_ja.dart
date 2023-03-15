@@ -645,6 +645,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get writeChangesDescription => '続行すると、以下の変更がディスクに書き込まれます。さらに手動で変更を加えることもできます。';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => '以下のデバイスのパーティションテーブルが変更されます:';
 
   @override

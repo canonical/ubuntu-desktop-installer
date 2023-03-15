@@ -645,6 +645,12 @@ class AppLocalizationsEo extends AppLocalizations {
   String get writeChangesDescription => 'Se vi daŭrigos, la ĉi-subaj ŝanĝoj estos skribitaj sur la diskojn. Vi povos permane fari pliajn ŝanĝojn.';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => 'La subdiskotabeloj de la jenaj aparatoj estas ŝanĝotaj:';
 
   @override

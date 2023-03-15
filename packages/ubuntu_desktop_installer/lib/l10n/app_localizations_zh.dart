@@ -645,6 +645,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get writeChangesDescription => '如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => '已更改以下设备的分区表：';
 
   @override

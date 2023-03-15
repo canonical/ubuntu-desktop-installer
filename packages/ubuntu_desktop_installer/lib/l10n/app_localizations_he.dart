@@ -238,7 +238,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">אזהרה</font>: המחשב לא מחובר למקור חשמל.';
+    return '<font color=\"$color\">אזהרה:</font> המחשב לא מחובר למקור חשמל.';
   }
 
   @override
@@ -266,7 +266,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">אזהרה</font>: אובדן מפתח האבטחה עשוי להוביל לאובדן כל הנתונים. במקרה הצורך, מומלץ לכתוב את המפתח על פתק ולאחסן אותו במקום בטוח.';
+    return '<font color=\"$color\">אזהרה:</font> אובדן מפתח האבטחה עשוי להוביל לאובדן כל הנתונים. במקרה הצורך, מומלץ לכתוב את המפתח על פתק ולאחסן אותו במקום בטוח.';
   }
 
   @override
@@ -645,6 +645,12 @@ class AppLocalizationsHe extends AppLocalizations {
   String get writeChangesDescription => 'בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => 'טבלאות המחיצות של ההתקנים הבאים נערכו:';
 
   @override
@@ -697,7 +703,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return 'המערכת **$system** מותקנת ומוכנה לשימוש.';
+    return 'המערכת **$system** מותקנת ומוכנה לשימוש';
   }
 
   @override
@@ -731,7 +737,7 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get restartIntoWindows => 'הפעלה מחדש אל Windows';
+  String get restartIntoWindows => 'להפעיל מחדש אל Windows';
 
   @override
   String get whereAreYouPageTitle => 'מה מיקומך?';
@@ -907,7 +913,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get activeDirectoryTitle => 'הגדרת Active Directory';
 
   @override
-  String get activeDirectoryTestConnection => 'בדיקת חיבור';
+  String get activeDirectoryTestConnection => 'בדיקת חיבור לתחום';
 
   @override
   String get activeDirectoryDomainLabel => 'שם תחום (דומיין)';
@@ -940,7 +946,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'שם התחום לא נמצא';
 
   @override
-  String get activeDirectoryAdminLabel => 'הנהלת שם תחום';
+  String get activeDirectoryAdminLabel => 'צירוף משתמש לתחום';
 
   @override
   String get activeDirectoryAdminEmpty => 'חובה';

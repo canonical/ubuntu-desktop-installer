@@ -645,6 +645,12 @@ class AppLocalizationsSv extends AppLocalizations {
   String get writeChangesDescription => 'Om du fortsätter kommer ändringarna nedan att skrivas till diskarna. Du kommer att kunna göra ytterligare ändringar manuellt.';
 
   @override
+  String get writeChangesDevicesTitle => 'Devices';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitions';
+
+  @override
   String get writeChangesPartitionTablesHeader => 'Följande enheters partitionstabeller är ändrade:';
 
   @override
