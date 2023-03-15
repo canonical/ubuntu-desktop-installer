@@ -192,6 +192,7 @@ parts:
 
   libraries:
     plugin: nil
+    build-attributes: [enable-patchelf]
     stage-packages:
       - libatk1.0-0
       - libcairo-gobject2
@@ -250,6 +251,9 @@ parts:
       - usr/bin/update-mime-database
       - usr/bin/gdk*
       - usr/share/mime
+      - -usr/lib/*/pkgconfig
+      - -usr/lib/pkgconfig
+      - -usr/share/pkgconfig
 
   dri-no-patchelf:
     after: [libraries]
