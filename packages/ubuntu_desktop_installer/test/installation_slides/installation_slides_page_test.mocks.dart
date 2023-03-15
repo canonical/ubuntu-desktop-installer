@@ -77,6 +77,11 @@ class MockInstallationSlidesModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
+  bool get isPlaying => (super.noSuchMethod(
+        Invocation.getter(#isPlaying),
+        returnValue: false,
+      ) as bool);
+  @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,
@@ -90,6 +95,14 @@ class MockInstallationSlidesModel extends _i1.Mock
   void toggleLogVisibility() => super.noSuchMethod(
         Invocation.method(
           #toggleLogVisibility,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void togglePlaying() => super.noSuchMethod(
+        Invocation.method(
+          #togglePlaying,
           [],
         ),
         returnValueForMissingStub: null,

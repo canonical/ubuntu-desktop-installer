@@ -41,7 +41,7 @@ extension on ApplicationStatus {
 Future<void> runInstallerApp(
   List<String> args, {
   FlavorData? flavor,
-  List<Slide>? slides,
+  List<WidgetBuilder>? slides,
 }) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addOption('machine-config',
@@ -155,14 +155,14 @@ class UbuntuDesktopInstallerApp extends StatefulWidget {
     this.initialRoute,
     this.tryOrInstall,
     FlavorData? flavor,
-    List<Slide>? slides,
+    List<WidgetBuilder>? slides,
   })  : flavor = flavor ?? defaultFlavor,
         slides = slides ?? defaultSlides;
 
   final String? initialRoute;
   final bool? tryOrInstall;
   final FlavorData flavor;
-  final List<Slide> slides;
+  final List<WidgetBuilder> slides;
 
   static FlavorData get defaultFlavor {
     return const FlavorData(name: 'Ubuntu');

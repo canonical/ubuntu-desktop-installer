@@ -128,6 +128,13 @@ class InstallationSlidesModel extends SafeChangeNotifier {
     notifyListeners();
   }
 
+  bool get isPlaying => _playing;
+  bool _playing = true;
+  void togglePlaying() {
+    _playing = !_playing;
+    notifyListeners();
+  }
+
   /// Initializes and starts monitoring the status of the installation.
   Future<void> init() {
     return _client.status().then((status) {
@@ -145,11 +152,12 @@ class InstallationSlidesModel extends SafeChangeNotifier {
   }
 
   /// Prefetches slide images into the image cache to avoid flicker while
-  /// loading slide images
+  /// loading larger screenshot images
   Future<void> precacheSlideImages(BuildContext context) {
     final assets = _resolveAssetsDirectory();
-    return Directory('$assets/assets/installation_slides')
+    return Directory('$assets/assets/installation_slides/screenshots')
         .list(recursive: true)
+        .where((f) => p.extension(f.path) == '.png')
         .forEach((slide) {
       if (slide is File) {
         final path = p.relative(slide.path, from: assets);

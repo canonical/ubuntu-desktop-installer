@@ -1580,227 +1580,185 @@ abstract class AppLocalizations {
   /// **'Timezone'**
   String get whereAreYouTimezoneLabel;
 
-  /// No description provided for @welcomeSlideTitle.
+  /// No description provided for @installationSlidesTitle.
   ///
   /// In en, this message translates to:
   /// **'Welcome to {RELEASE}'**
-  String welcomeSlideTitle(Object RELEASE);
+  String installationSlidesTitle(Object RELEASE);
 
-  /// No description provided for @welcomeSlideDescription.
+  /// No description provided for @installationSlidesAvailable.
   ///
   /// In en, this message translates to:
-  /// **'Fast and full of new features, the latest version of {RELEASE} makes computing easier than ever. Here are just a few cool new things to look out for...'**
-  String welcomeSlideDescription(Object RELEASE);
+  /// **'Available:'**
+  String get installationSlidesAvailable;
 
-  /// No description provided for @softwareSlideTitle.
+  /// No description provided for @installationSlidesIncluded.
   ///
   /// In en, this message translates to:
-  /// **'Find even more software'**
-  String get softwareSlideTitle;
+  /// **'Included:'**
+  String get installationSlidesIncluded;
 
-  /// No description provided for @softwareSlideDescription.
+  /// No description provided for @installationSlidesWelcomeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Say goodbye to searching the web for new software. With access to the Snap Store and the {RELEASE} software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.'**
-  String softwareSlideDescription(Object RELEASE);
+  /// **'Fast, free and full of new features'**
+  String get installationSlidesWelcomeTitle;
 
-  /// No description provided for @musicSlideTitle.
+  /// No description provided for @installationSlidesWelcomeHeader.
   ///
   /// In en, this message translates to:
-  /// **'Take your music with you'**
-  String get musicSlideTitle;
+  /// **'The latest version of {DISTRO} makes computing easier than ever.'**
+  String installationSlidesWelcomeHeader(Object DISTRO);
 
-  /// No description provided for @musicSlideDescription.
+  /// No description provided for @installationSlidesWelcomeBody.
   ///
   /// In en, this message translates to:
-  /// **'{RELEASE} comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.'**
-  String musicSlideDescription(Object RELEASE);
+  /// **'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in {RELEASE}.'**
+  String installationSlidesWelcomeBody(Object RELEASE);
 
-  /// No description provided for @musicSlideRhythmbox.
+  /// No description provided for @installationSlidesSoftwareTitle.
   ///
   /// In en, this message translates to:
-  /// **'Rhythmbox Music Player'**
-  String get musicSlideRhythmbox;
+  /// **'All the applications you need'**
+  String get installationSlidesSoftwareTitle;
 
-  /// No description provided for @musicSlideSpotify.
+  /// No description provided for @installationSlidesSoftwareBody.
   ///
   /// In en, this message translates to:
-  /// **'Spotify'**
-  String get musicSlideSpotify;
+  /// **'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and {DISTRO} archive.'**
+  String installationSlidesSoftwareBody(Object DISTRO);
 
-  /// No description provided for @musicSlideVLC.
+  /// No description provided for @installationSlidesDevelopmentTitle.
   ///
   /// In en, this message translates to:
-  /// **'VLC'**
-  String get musicSlideVLC;
+  /// **'Develop with the best of open source'**
+  String get installationSlidesDevelopmentTitle;
 
-  /// No description provided for @photoSlideTitle.
+  /// No description provided for @installationSlidesDevelopmentBody.
   ///
   /// In en, this message translates to:
-  /// **'Have fun with your photos'**
-  String get photoSlideTitle;
+  /// **'{DISTRO} is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every {DISTRO} release includes the latest toolchains and supports all major IDEs.'**
+  String installationSlidesDevelopmentBody(Object DISTRO);
 
-  /// No description provided for @photoSlideDescription.
+  /// No description provided for @installationSlidesCreativityTitle.
   ///
   /// In en, this message translates to:
-  /// **'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.'**
-  String get photoSlideDescription;
+  /// **'Enhance your creativity'**
+  String get installationSlidesCreativityTitle;
 
-  /// No description provided for @photoSlideShotwell.
+  /// No description provided for @installationSlidesCreativityBody.
   ///
   /// In en, this message translates to:
-  /// **'Shotwell Photo Manager'**
-  String get photoSlideShotwell;
+  /// **'If you\'re an animator, designer, video creator or game developer it\'s easy to bring your workflows to {DISTRO} with support for open source and industry standard software and applications.'**
+  String installationSlidesCreativityBody(Object DISTRO);
 
-  /// No description provided for @photoSlideGimp.
+  /// No description provided for @installationSlidesGamingTitle.
   ///
   /// In en, this message translates to:
-  /// **'GIMP Image Editor'**
-  String get photoSlideGimp;
+  /// **'Great for gaming'**
+  String get installationSlidesGamingTitle;
 
-  /// No description provided for @photoSlideShotcut.
+  /// No description provided for @installationSlidesGamingBody.
   ///
   /// In en, this message translates to:
-  /// **'Shotcut Video Editor'**
-  String get photoSlideShotcut;
+  /// **'{DISTRO} supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on {DISTRO} via applications like Steam with no additional configuration.'**
+  String installationSlidesGamingBody(Object DISTRO);
 
-  /// No description provided for @webSlideTitle.
+  /// No description provided for @installationSlidesSecurityTitle.
   ///
   /// In en, this message translates to:
-  /// **'Make the most of the web'**
-  String get webSlideTitle;
+  /// **'Private and secure'**
+  String get installationSlidesSecurityTitle;
 
-  /// No description provided for @webSlideDescription.
+  /// No description provided for @installationSlidesSecurityBody.
   ///
   /// In en, this message translates to:
-  /// **'{RELEASE} includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.'**
-  String webSlideDescription(Object RELEASE);
+  /// **'{DISTRO} provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.'**
+  String installationSlidesSecurityBody(Object DISTRO);
 
-  /// No description provided for @webSlideFirefox.
+  /// No description provided for @installationSlidesSecurityLts.
   ///
   /// In en, this message translates to:
-  /// **'Firefox web browser'**
-  String get webSlideFirefox;
+  /// **'All {DISTRO} LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.'**
+  String installationSlidesSecurityLts(Object DISTRO);
 
-  /// No description provided for @webSlideThunderbird.
+  /// No description provided for @installationSlidesProductivityTitle.
   ///
   /// In en, this message translates to:
-  /// **'Thunderbird'**
-  String get webSlideThunderbird;
+  /// **'Power up your productivity'**
+  String get installationSlidesProductivityTitle;
 
-  /// No description provided for @webSlideChromium.
+  /// No description provided for @installationSlidesProductivityBody.
   ///
   /// In en, this message translates to:
-  /// **'Chromium'**
-  String get webSlideChromium;
+  /// **'{DISTRO} Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.'**
+  String installationSlidesProductivityBody(Object DISTRO);
 
-  /// No description provided for @officeSlideTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Everything you need for the office'**
-  String get officeSlideTitle;
-
-  /// No description provided for @officeSlideDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.'**
-  String get officeSlideDescription;
-
-  /// No description provided for @officeSlideWriter.
-  ///
-  /// In en, this message translates to:
-  /// **'LibreOffice Writer'**
-  String get officeSlideWriter;
-
-  /// No description provided for @officeSlideCalc.
-  ///
-  /// In en, this message translates to:
-  /// **'LibreOffice Calc'**
-  String get officeSlideCalc;
-
-  /// No description provided for @officeSlideImpress.
-  ///
-  /// In en, this message translates to:
-  /// **'LibreOffice Impress'**
-  String get officeSlideImpress;
-
-  /// No description provided for @accessSlideTitle.
+  /// No description provided for @installationSlidesAccessibilityTitle.
   ///
   /// In en, this message translates to:
   /// **'Access for everyone'**
-  String get accessSlideTitle;
+  String get installationSlidesAccessibilityTitle;
 
-  /// No description provided for @accessSlideDescription.
+  /// No description provided for @installationSlidesAccessibilityBody.
   ///
   /// In en, this message translates to:
-  /// **'At the heart of the {RELEASE} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colors and text size, {RELEASE} makes computing easy — whoever and wherever you are.'**
-  String accessSlideDescription(Object RELEASE);
+  /// **'At the heart of the {DISTRO} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, {DISTRO} makes computing easy - whoever and wherever you are.'**
+  String installationSlidesAccessibilityBody(Object DISTRO);
 
-  /// No description provided for @accessSlideCustomizationOptions.
+  /// No description provided for @installationSlidesAccessibilityOrca.
   ///
   /// In en, this message translates to:
-  /// **'Customization options'**
-  String get accessSlideCustomizationOptions;
+  /// **'Orca Screen Reader'**
+  String get installationSlidesAccessibilityOrca;
 
-  /// No description provided for @accessSlideAppearance.
-  ///
-  /// In en, this message translates to:
-  /// **'Appearance'**
-  String get accessSlideAppearance;
-
-  /// No description provided for @accessSlideAssistiveTechnologies.
-  ///
-  /// In en, this message translates to:
-  /// **'Assistive technologies'**
-  String get accessSlideAssistiveTechnologies;
-
-  /// No description provided for @accessSlideLanguageSupport.
+  /// No description provided for @installationSlidesAccessibilityLanguages.
   ///
   /// In en, this message translates to:
   /// **'Language support'**
-  String get accessSlideLanguageSupport;
+  String get installationSlidesAccessibilityLanguages;
 
-  /// No description provided for @supportSlideTitle.
+  /// No description provided for @installationSlidesSupportTitle.
   ///
   /// In en, this message translates to:
-  /// **'Help and support'**
-  String get supportSlideTitle;
+  /// **'Help & Support'**
+  String get installationSlidesSupportTitle;
 
-  /// No description provided for @supportSlideDocumentation.
+  /// No description provided for @installationSlidesSupportHeader.
   ///
   /// In en, this message translates to:
-  /// **'The official documentation covers many of the most common aspects of {RELEASE}. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.'**
-  String supportSlideDocumentation(Object RELEASE);
+  /// **'The official {DISTRO} documentation is available both online and via the Help icon in the dock.'**
+  String installationSlidesSupportHeader(Object DISTRO);
 
-  /// No description provided for @supportSlideQuestions.
+  /// No description provided for @installationSlidesSupportCommunity.
   ///
   /// In en, this message translates to:
-  /// **'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.'**
-  String get supportSlideQuestions;
+  /// **'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.'**
+  String get installationSlidesSupportCommunity;
 
-  /// No description provided for @supportSlideResources.
+  /// No description provided for @installationSlidesSupportEnterprise.
   ///
   /// In en, this message translates to:
-  /// **'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.'**
-  String get supportSlideResources;
+  /// **'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.'**
+  String get installationSlidesSupportEnterprise;
 
-  /// No description provided for @includedSoftware.
+  /// No description provided for @installationSlidesSupportResources.
   ///
   /// In en, this message translates to:
-  /// **'Included software'**
-  String get includedSoftware;
+  /// **'Helpful resources:'**
+  String get installationSlidesSupportResources;
 
-  /// No description provided for @availableSoftware.
+  /// No description provided for @installationSlidesSupportDocumentation.
   ///
   /// In en, this message translates to:
-  /// **'Available software'**
-  String get availableSoftware;
+  /// **'Official documentation'**
+  String get installationSlidesSupportDocumentation;
 
-  /// No description provided for @supportedSoftware.
+  /// No description provided for @installationSlidesSupportUbuntuPro.
   ///
   /// In en, this message translates to:
-  /// **'Supported software'**
-  String get supportedSoftware;
+  /// **'Enterprise-grade 24/7 support with Ubuntu Pro'**
+  String get installationSlidesSupportUbuntuPro;
 
   /// No description provided for @copyingFiles.
   ///
