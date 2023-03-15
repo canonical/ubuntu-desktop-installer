@@ -889,19 +889,15 @@ class AppLocalizationsOc extends AppLocalizations {
   String get notEnoughDiskSpaceTitle => 'Desolat';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'Vos cal almens $SIZE d’espaci disc per installar $RELEASE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Not enough disk space to install $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Aqueste ordenador a sonque $SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Available:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'Lo disc mai grand d’aqueste ordenador a sonque $SIZE.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Required:';
 
   @override
   String get activeDirectoryOption => 'Utilizar Active Directory';

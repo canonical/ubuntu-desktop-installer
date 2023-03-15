@@ -889,19 +889,15 @@ class AppLocalizationsEo extends AppLocalizations {
   String get notEnoughDiskSpaceTitle => 'Pardonu';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'Oni bezonas almenaŭ \$$SIZE da diskspaco por instali \$$RELEASE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Not enough disk space to install $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Ĉi tiu komputilo disponas nur \$$SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Available:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'La plej granda disko en ĉi tiu komputilo havas nur $SIZE.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Required:';
 
   @override
   String get activeDirectoryOption => 'Uzi Aktivan Dosierujon';

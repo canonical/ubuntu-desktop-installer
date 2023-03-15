@@ -889,19 +889,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get notEnoughDiskSpaceTitle => '抱歉';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return '你至少需要 $SIZE 的磁盘空间来安装 $RELEASE。';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Not enough disk space to install $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return '本机只有 $SIZE 空间。';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Available:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return '本机上最大的硬盘只有 $SIZE 空间。';
-  }
+  String get notEnoughDiskSpaceRequired => 'Required:';
 
   @override
   String get activeDirectoryOption => '使用活动目录';

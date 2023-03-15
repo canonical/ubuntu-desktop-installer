@@ -889,19 +889,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get notEnoughDiskSpaceTitle => '죄송합니다';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return '$RELEASE 을(를) 설치하려면 적어도 $SIZE의 디스크 공간이 필요합니다.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Not enough disk space to install $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return '이 컴퓨터는 $SIZE밖에 없습니다.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Available:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return '이 컴퓨터의 가장 큰 디스크는 $SIZE밖에 되지 않습니다.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Required:';
 
   @override
   String get activeDirectoryOption => '액티브 디렉토리 사용';

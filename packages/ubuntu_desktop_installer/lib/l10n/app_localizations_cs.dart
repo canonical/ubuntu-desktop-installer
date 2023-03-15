@@ -889,19 +889,15 @@ class AppLocalizationsCs extends AppLocalizations {
   String get notEnoughDiskSpaceTitle => 'Omlouváme se';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'Aby bylo možné nainstalovat $RELEASE, je zapotřebí alespoň $SIZE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Not enough disk space to install $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Tento počítač disponuje pouze $SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Available:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'Největší disk v tomto počítači má velikost pouze $SIZE.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Required:';
 
   @override
   String get activeDirectoryOption => 'Použít Active Directory';
