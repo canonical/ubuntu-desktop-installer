@@ -205,13 +205,6 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
         child: SlidesContext(
           slides: widget.slides,
           child: YaruTheme(
-            data: const YaruThemeData(
-              extensions: [
-                YaruTitleBarThemeData(
-                  backgroundColor: MaterialStatePropertyAll(Colors.transparent),
-                )
-              ],
-            ),
             builder: (context, yaru, child) {
               final theme = widget.flavor.theme ?? yaru.theme;
               final darkTheme = widget.flavor.darkTheme ?? yaru.darkTheme;
