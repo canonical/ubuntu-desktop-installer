@@ -28,11 +28,11 @@ Future<bool> showConfirmationDialog(
         content: Text(message),
         actions: <Widget>[
           FilledButton(
-            child: Text(lang.backAction),
+            child: Text(lang.cancelLabel),
             onPressed: () => Navigator.of(context).pop(false),
           ),
           FilledButton(
-            child: Text(lang.continueAction),
+            child: Text(lang.okLabel),
             onPressed: () => Navigator.of(context).pop(true),
           ),
         ],
