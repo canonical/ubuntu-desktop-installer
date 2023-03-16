@@ -6,6 +6,7 @@ import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
+import '../../widgets.dart';
 
 Future<void> showActiveDirectoryErrorDialog(BuildContext context) {
   return showDialog(
@@ -46,7 +47,7 @@ class ActiveDirectoryErrorDialog extends StatelessWidget {
         ),
       ),
       actions: [
-        FilledButton(
+        PushButton.filled(
           onPressed: Navigator.of(context).pop,
           child: Text(lang.okButtonText),
         ),

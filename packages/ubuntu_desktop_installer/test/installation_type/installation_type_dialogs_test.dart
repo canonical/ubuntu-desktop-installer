@@ -73,8 +73,7 @@ void main() {
         tester.lang.installationTypeLVM('Ubuntu')));
     await tester.pump();
 
-    await tester
-        .tap(find.widgetWithText(FilledButton, tester.lang.okButtonText));
+    await tester.tap(find.pushButton(tester.lang.okButtonText));
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.lvm).called(1);
@@ -109,8 +108,7 @@ void main() {
         YaruCheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
-    await tester
-        .tap(find.widgetWithText(FilledButton, tester.lang.okButtonText));
+    await tester.tap(find.pushButton(tester.lang.okButtonText));
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.lvm).called(1);

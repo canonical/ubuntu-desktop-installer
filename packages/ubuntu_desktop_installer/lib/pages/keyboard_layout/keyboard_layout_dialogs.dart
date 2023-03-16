@@ -4,6 +4,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+import '../../widgets.dart';
 import 'keyboard_layout_detector.dart';
 import 'keyboard_layout_widgets.dart';
 
@@ -53,7 +54,7 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
                 maintainState: true,
                 maintainAnimation: true,
                 visible: step is StepKeyPresent,
-                child: FilledButton(
+                child: PushButton.filled(
                   onPressed: step is StepKeyPresent ? detector.no : null,
                   child: Text(lang.noButtonText),
                 ),
@@ -64,7 +65,7 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
                 maintainState: true,
                 maintainAnimation: true,
                 visible: step is StepKeyPresent,
-                child: FilledButton(
+                child: PushButton.filled(
                   onPressed: step is StepKeyPresent ? detector.yes : null,
                   child: Text(lang.yesButtonText),
                 ),

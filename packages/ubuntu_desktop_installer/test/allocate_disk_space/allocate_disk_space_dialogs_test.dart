@@ -58,8 +58,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
-    await tester
-        .tap(find.widgetWithText(FilledButton, tester.lang.okButtonText));
+    await tester.tap(find.pushButton(tester.lang.okButtonText));
     await result;
 
     verify(model.addPartition(
@@ -127,8 +126,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
-    await tester
-        .tap(find.widgetWithText(FilledButton, tester.lang.okButtonText));
+    await tester.tap(find.pushButton(tester.lang.okButtonText));
     await result;
 
     verify(model.editPartition(
