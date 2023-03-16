@@ -8,14 +8,14 @@ class StorageButton extends StatelessWidget {
   const StorageButton({
     super.key,
     required this.name,
-    this.path,
+    this.sysname,
     this.format,
     required this.size,
     this.onPressed,
   });
 
   final String name;
-  final String? path;
+  final String? sysname;
   final String? format;
   final int size;
   final VoidCallback? onPressed;
@@ -40,9 +40,9 @@ class StorageButton extends StatelessWidget {
           ),
           const SizedBox(height: kContentSpacing / 2),
           Text(
-            path != null && format != null
-                ? '$path ($format)'
-                : path ?? format ?? '',
+            sysname != null && format != null
+                ? '$sysname ($format)'
+                : sysname ?? format ?? '',
             softWrap: false,
             overflow: TextOverflow.ellipsis,
           ),

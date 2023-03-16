@@ -81,8 +81,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text(
-          '/dev/sda1 - Ubuntu 22.04 LTS - 123 ${tester.lang.partitionUnitB}'),
+      find.text('sda1 - Ubuntu 22.04 LTS - 123 ${tester.lang.partitionUnitB}'),
       findsOneWidget,
     );
   });

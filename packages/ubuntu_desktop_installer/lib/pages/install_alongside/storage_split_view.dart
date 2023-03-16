@@ -100,7 +100,7 @@ class _StorageSplitViewState extends State<StorageSplitView> {
         StorageButton(
           name: widget.existingOS?.long ?? lang.installAlongsideFiles,
           size: widget.currentSize,
-          path: widget.partition.path,
+          sysname: widget.partition.sysname,
           format: widget.partition.format,
           onPressed: () async {
             final size = await showStorageSizeDialog(

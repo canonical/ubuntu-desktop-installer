@@ -13,13 +13,12 @@ class _StorageSelector extends StatelessWidget {
 
   static String formatStorage(BuildContext context, int index) {
     final model = context.read<InstallAlongsideModel>();
-    final disk = model.getDisk(index);
     final partition = model.getPartition(index);
     final os = model.getOS(index);
 
-    // "/dev/sda1 - Ubuntu 22.04 LTS - 123 GB"
+    // "sda1 - Ubuntu 22.04 LTS - 123 GB"
     final parts = [
-      partition?.path ?? '${disk?.id}${partition?.number ?? ''}',
+      partition?.sysname,
       if (os != null) os.long,
       if (partition?.size != null) filesize(partition!.size),
     ];

@@ -244,7 +244,7 @@ void main() {
     await testInstallationTypePage(tester, type: InstallationType.alongside);
     await tester.pumpAndSettle();
 
-    await testInstallAlongsidePage(tester, sizes: {'/dev/sda3 (ntfs)': 40000});
+    await testInstallAlongsidePage(tester, sizes: {'sda3 (ntfs)': 40000});
     await tester.pumpAndSettle();
 
     await testWriteChangesToDiskPage(tester);
