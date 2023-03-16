@@ -5,6 +5,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../l10n.dart';
+import '../services.dart';
 import '../widgets.dart';
 import 'slide_layouts.dart';
 
@@ -28,13 +29,13 @@ final defaultSlides = <WidgetBuilder>[
 
 Widget _buildWelcomeSlide(BuildContext context) {
   final lang = AppLocalizations.of(context);
+  final product = getService<ProductService>();
   return IntroSlideLayout(
     title: Text(lang.installationSlidesWelcomeTitle),
     body: SlideColumn(
       children: [
         Text(lang.installationSlidesWelcomeHeader(context.flavor)),
-        Text(lang.installationSlidesWelcomeBody(
-            ProductInfoExtractor().getProductInfo())),
+        Text(lang.installationSlidesWelcomeBody(product.getProductInfo())),
       ],
     ),
     image: const MascotAvatar(radius: 150),

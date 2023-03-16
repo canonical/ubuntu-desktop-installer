@@ -2,7 +2,6 @@ import 'package:collection/collection.dart' hide ListExtensions;
 import 'package:dartx/dartx.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 
@@ -11,16 +10,17 @@ export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 /// View model for [InstallAlongsidePage].
 class InstallAlongsideModel extends SafeChangeNotifier {
   /// Creates a new model with the given service.
-  InstallAlongsideModel(this._service);
+  InstallAlongsideModel(this._service, this._product);
 
   final DiskStorageService _service;
+  final ProductService _product;
   var _storages = <GuidedStorageTargetResize>[];
   var _disks = <String, Disk>{};
   int? _selectedIndex;
   int? _currentSize;
 
   /// Detailed info of the product being installed.
-  final productInfo = ProductInfoExtractor().getProductInfo();
+  ProductInfo get productInfo => _product.getProductInfo();
 
   /// A list of existing OS installations or empty if not detected.
   List<OsProber> get existingOS => _service.existingOS ?? [];

@@ -1,38 +1,29 @@
-import 'package:file/file.dart';
 import 'package:file/memory.dart';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
 void main() {
-  group('ProductInfoExtractor', () {
-    late FileSystem fileSystem;
-    ProductInfoExtractor? productInfoExtractor;
-    setUp(() {
-      fileSystem = MemoryFileSystem();
+  const isoPath = '/cdrom/.disk/info';
+  const localPath = '/etc/os-release';
 
-      productInfoExtractor = ProductInfoExtractor(fileSystem: fileSystem);
-    });
-
+  group('ProductService', () {
     test('should return product info when iso file exists', () async {
-      const isoPath = '/cdrom/.disk/info';
-
+      final fileSystem = MemoryFileSystem();
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
-      final info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
+      final info = ProductService(fileSystem).getProductInfo();
 
-      expect(info, isNotNull);
-      expect(info!.name, 'Ubuntu');
+      expect(info.name, 'Ubuntu');
       expect(info.version, '21.04');
       expect(info.toString(), 'Ubuntu 21.04');
     });
 
     test('should return product info from disk when iso file doesnt exists',
         () async {
-      const localPath = '/etc/os-release';
-
+      final fileSystem = MemoryFileSystem();
       await fileSystem.file(localPath).create(recursive: true).then((f) {
         f.writeAsString('''
 NAME="Ubuntu"
@@ -50,42 +41,37 @@ UBUNTU_CODENAME=hirsute
 
           ''');
       });
-      final info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
+      final info = ProductService(fileSystem).getProductInfo();
 
-      expect(info, isNotNull);
-      expect(info!.name, 'Ubuntu');
       expect(info.version, '21.04');
       expect(info.toString(), 'Ubuntu 21.04');
     });
 
     test('should return Ubuntu as fallback value', () {
-      final info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
+      final fileSystem = MemoryFileSystem();
+      final info = ProductService(fileSystem).getProductInfo();
 
-      expect(info, isNotNull);
-      expect(info!.name, 'Ubuntu');
+      expect(info.name, 'Ubuntu');
       expect(info.version, isNull);
       expect(info.toString(), 'Ubuntu');
     });
 
     test('should return product info with LTS when iso file exists', () async {
-      const isoPath = '/cdrom/.disk/info';
-
+      final fileSystem = MemoryFileSystem();
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu 20.04.2.0 LTS "Focal Fossa" - Release amd64 (20210209.1)');
       });
-      final info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
+      final info = ProductService(fileSystem).getProductInfo();
 
-      expect(info, isNotNull);
-      expect(info!.name, 'Ubuntu');
+      expect(info.name, 'Ubuntu');
       expect(info.version, '20.04.2.0 LTS');
       expect(info.toString(), 'Ubuntu 20.04.2.0 LTS');
     });
 
     test('should return product info LTS from disk when iso file doesnt exists',
         () async {
-      const localPath = '/etc/os-release';
-
+      final fileSystem = MemoryFileSystem();
       await fileSystem.file(localPath).create(recursive: true).then((f) {
         f.writeAsString('''
 NAME="Ubuntu"
@@ -103,99 +89,76 @@ UBUNTU_CODENAME=focal
 
           ''');
       });
-      final info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
+      final info = ProductService(fileSystem).getProductInfo();
 
-      expect(info, isNotNull);
-      expect(info!.name, 'Ubuntu');
+      expect(info.name, 'Ubuntu');
       expect(info.version, '20.04.2 LTS');
       expect(info.toString(), 'Ubuntu 20.04.2 LTS');
     });
 
     test('should return product info for kubuntu', () async {
-      const isoPath = '/cdrom/.disk/info';
-
+      final fileSystem = MemoryFileSystem();
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Kubuntu 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
-      final info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
+      final info = ProductService(fileSystem).getProductInfo();
 
-      expect(info, isNotNull);
-      expect(info!.name, 'Kubuntu');
-      expect(info.version, '21.04');
-      expect(info.toString(), 'Kubuntu 21.04');
-    });
-
-    test('should return product info for kubuntu', () async {
-      const isoPath = '/cdrom/.disk/info';
-
-      await fileSystem.file(isoPath).create(recursive: true).then((f) {
-        f.writeAsString(
-            'Kubuntu 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
-      });
-      final info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
-
-      expect(info, isNotNull);
-      expect(info!.name, 'Kubuntu');
+      expect(info.name, 'Kubuntu');
       expect(info.version, '21.04');
       expect(info.toString(), 'Kubuntu 21.04');
     });
 
     test('should return product info for ubuntu mate', () async {
-      const isoPath = '/cdrom/.disk/info';
-
+      final fileSystem = MemoryFileSystem();
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu-MATE 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
-      final info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
+      final info = ProductService(fileSystem).getProductInfo();
 
-      expect(info, isNotNull);
-      expect(info!.name, 'Ubuntu-MATE');
+      expect(info.name, 'Ubuntu-MATE');
       expect(info.version, '21.04');
       expect(info.toString(), 'Ubuntu-MATE 21.04');
     });
 
     test('should cache product info', () async {
-      const isoPath = '/cdrom/.disk/info';
-
+      final fileSystem = MemoryFileSystem();
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
-      var info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
+      final service = ProductService(fileSystem);
+      var info = service.getProductInfo();
 
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu-MATE 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
 
-      info = productInfoExtractor?.getProductInfo();
+      info = service.getProductInfo();
 
-      expect(info, isNotNull);
-      expect(info!.name, 'Ubuntu');
+      expect(info.name, 'Ubuntu');
       expect(info.version, '21.04');
       expect(info.toString(), 'Ubuntu 21.04');
     });
 
-    test('should reset cache when paramter is passed', () async {
-      const isoPath = '/cdrom/.disk/info';
-
+    test('should reset cache when new instance is created', () async {
+      final fileSystem = MemoryFileSystem();
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
-      var info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
+      var info = ProductService(fileSystem).getProductInfo();
 
       await fileSystem.file(isoPath).create(recursive: true).then((f) {
         f.writeAsString(
             'Ubuntu-MATE 21.04 "Hirsute Hippo" - Release amd64 (20210420)');
       });
 
-      info = productInfoExtractor?.getProductInfo(shouldResetCache: true);
+      info = ProductService(fileSystem).getProductInfo();
 
-      expect(info, isNotNull);
-      expect(info!.name, 'Ubuntu-MATE');
+      expect(info.name, 'Ubuntu-MATE');
       expect(info.version, '21.04');
       expect(info.toString(), 'Ubuntu-MATE 21.04');
     });

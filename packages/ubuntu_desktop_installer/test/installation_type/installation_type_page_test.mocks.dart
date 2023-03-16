@@ -10,7 +10,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/subiquity_client.dart' as _i5;
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart'
     as _i3;
-import 'package:ubuntu_wizard/utils.dart' as _i2;
+import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -42,14 +42,6 @@ class MockInstallationTypeModel extends _i1.Mock
     _i1.throwOnMissingStub(this);
   }
 
-  @override
-  _i2.ProductInfo get productInfo => (super.noSuchMethod(
-        Invocation.getter(#productInfo),
-        returnValue: _FakeProductInfo_0(
-          this,
-          Invocation.getter(#productInfo),
-        ),
-      ) as _i2.ProductInfo);
   @override
   _i3.InstallationType get installationType => (super.noSuchMethod(
         Invocation.getter(#installationType),
@@ -89,6 +81,14 @@ class MockInstallationTypeModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+  @override
+  _i2.ProductInfo get productInfo => (super.noSuchMethod(
+        Invocation.getter(#productInfo),
+        returnValue: _FakeProductInfo_0(
+          this,
+          Invocation.getter(#productInfo),
+        ),
+      ) as _i2.ProductInfo);
   @override
   bool get hasStorage => (super.noSuchMethod(
         Invocation.getter(#hasStorage),

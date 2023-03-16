@@ -90,6 +90,7 @@ Future<void> runInstallerApp(
   tryRegisterService(JournalService.new);
   tryRegisterService(() => NetworkService(subiquityClient));
   tryRegisterService(PowerService.new);
+  tryRegisterService(ProductService.new);
   tryRegisterService(TelemetryService.new);
   tryRegisterService(UdevService.new);
   tryRegisterService(UrlLauncher.new);
@@ -139,7 +140,7 @@ Future<void> runInstallerApp(
   await telemetry.init({
     'Type': 'Flutter',
     'OEM': false,
-    'Media': ProductInfoExtractor().getProductInfo().toString(),
+    'Media': getService<ProductService>().getProductInfo().toString(),
   });
 
   final storage = getService<DiskStorageService>();

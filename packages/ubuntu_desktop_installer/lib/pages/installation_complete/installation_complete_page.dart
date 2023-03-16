@@ -3,7 +3,6 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -16,9 +15,11 @@ class InstallationCompletePage extends StatelessWidget {
   const InstallationCompletePage({super.key});
 
   static Widget create(BuildContext context) {
-    final client = getService<SubiquityClient>();
     return Provider(
-      create: (_) => InstallationCompleteModel(client),
+      create: (_) => InstallationCompleteModel(
+        getService<SubiquityClient>(),
+        getService<ProductService>(),
+      ),
       child: const InstallationCompletePage(),
     );
   }
@@ -26,6 +27,7 @@ class InstallationCompletePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
+    final model = context.watch<InstallationCompleteModel>();
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.installationCompleteTitle),
@@ -42,8 +44,7 @@ class InstallationCompletePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 MarkdownBody(
-                  data:
-                      lang.readyToUse(ProductInfoExtractor().getProductInfo()),
+                  data: lang.readyToUse(model.productInfo),
                   styleSheet: MarkdownStyleSheet(
                     p: Theme.of(context).textTheme.titleLarge,
                   ),
@@ -56,8 +57,6 @@ class InstallationCompletePage extends StatelessWidget {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () async {
-                          final model =
-                              context.read<InstallationCompleteModel>();
                           final window = YaruWindow.of(context);
                           await Wizard.of(context).done();
                           model.reboot().then((_) => window.close());

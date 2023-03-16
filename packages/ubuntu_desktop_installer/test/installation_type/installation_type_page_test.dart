@@ -8,7 +8,6 @@ import 'package:ubuntu_desktop_installer/pages/installation_type/installation_ty
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -383,6 +382,7 @@ void main() {
     when(client.hasBitLocker()).thenAnswer((_) async => false);
     registerMockService<SubiquityClient>(client);
     registerMockService<DiskStorageService>(DiskStorageService(client));
+    registerMockService<ProductService>(ProductService());
     registerMockService<TelemetryService>(TelemetryService());
 
     await tester.pumpWidget(tester.buildApp(InstallationTypePage.create));

@@ -96,6 +96,7 @@ extension on WidgetTester {
     registerMockService<DesktopService>(MockDesktopService());
     registerMockService<DiskStorageService>(DiskStorageService(client));
     registerMockService<JournalService>(journal);
+    registerMockService<ProductService>(ProductService());
     registerMockService<TelemetryService>(TelemetryService());
 
     return InheritedLocale(child: UbuntuDesktopInstallerApp());

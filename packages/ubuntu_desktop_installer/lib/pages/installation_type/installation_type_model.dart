@@ -1,7 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 
@@ -35,10 +34,16 @@ enum AdvancedFeature {
 /// View model for [InstallationTypePage].
 class InstallationTypeModel extends SafeChangeNotifier {
   /// Creates a new model with the given client and service.
-  InstallationTypeModel(this._diskService, this._telemetryService);
+  InstallationTypeModel(
+    this._diskService,
+    this._telemetryService,
+    this._productService,
+  );
 
   final DiskStorageService _diskService;
   final TelemetryService _telemetryService;
+  final ProductService _productService;
+
   var _installationType = InstallationType.erase;
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
@@ -77,7 +82,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   }
 
   /// The version of the OS.
-  final productInfo = ProductInfoExtractor().getProductInfo();
+  ProductInfo get productInfo => _productService.getProductInfo();
 
   /// A list of existing OS installations or null if not detected.
   List<OsProber>? get existingOS => _diskService.existingOS;
