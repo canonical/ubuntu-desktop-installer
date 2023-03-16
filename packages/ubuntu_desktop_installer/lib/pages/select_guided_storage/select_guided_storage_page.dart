@@ -44,7 +44,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
     return '${disk.sysname}${partition.number}';
   }
 
-  /// Formats a disk in a pretty way e.g. "/dev/sda ATA Maxtor (123 GB)"
+  /// Formats a disk in a pretty way e.g. "sda ATA Maxtor (123 GB)"
   String prettyFormatDisk(Disk disk) {
     final fullName = <String?>[
       disk.model,
@@ -52,7 +52,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
     ].where((p) => p?.isNotEmpty == true).join(' ');
 
     final size = filesize(disk.size);
-    return '${disk.path} - $size $fullName';
+    return '${disk.sysname} - $size $fullName';
   }
 
   @override
@@ -106,7 +106,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                   const SizedBox(height: kContentSpacing / 2),
-                  Text(model.selectedDisk?.path ?? ''),
+                  Text(model.selectedDisk?.sysname ?? ''),
                   const SizedBox(height: kContentSpacing / 2),
                   Text(
                     filesize(model.selectedDisk?.size ?? 0),
