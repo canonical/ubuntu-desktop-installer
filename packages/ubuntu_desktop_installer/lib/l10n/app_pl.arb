@@ -6,7 +6,7 @@
   "@okButtonText": {},
   "repairInstallation": "Napraw instalację",
   "@repairInstallation": {},
-  "tryOrInstallPageTitle": "Wypróbuj lub zainstaluj",
+  "tryOrInstallPageTitle": "Wypróbuj lub zainstaluj {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallationDescription": "Naprawa spowoduje ponowną instalację całego zainstalowanego oprogramowania bez naruszania dokumentów lub ustawień.",
   "@repairInstallationDescription": {},
@@ -327,7 +327,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "Hasła nie są zgodne",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesToDisk": "Zapisz zmiany na dysku",
+  "writeChangesToDisk": "Gotów do instalacji",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "dysk",
   "@writeChangesFallbackSerial": {
@@ -422,9 +422,9 @@
   "@connectToInternetDescription": {},
   "enableWired": "Włącz przewodowe",
   "@enableWired": {},
-  "newPartitionTableConfirmationTitle": "Utworzyć nową pustą tablicę partycji na tym urządzeniu?",
+  "newPartitionTableConfirmationTitle": "Nowa pusta partycja",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia na nim nowej tabeli partycji, wszystkie jego bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.",
+  "newPartitionTableConfirmationMessage": "Utworzenie nowej tabeli partycji na całym urządzeniu spowoduje usunięcie wszystkich jego bieżących partycji. Operację tę można cofnąć w razie potrzeby.",
   "@newPartitionTableConfirmationMessage": {},
   "onBatteryWarning": "<font color=\"{color}\">Ostrzeżenie:</font> komputer nie jest podłączony do źródła zasilania.",
   "@onBatteryWarning": {
@@ -927,5 +927,12 @@
   "notEnoughDiskSpaceAvailable": "Dostępna:",
   "@notEnoughDiskSpaceAvailable": {},
   "notEnoughDiskSpaceRequired": "Wymagana:",
-  "@notEnoughDiskSpaceRequired": {}
+  "@notEnoughDiskSpaceRequired": {},
+  "welcomePageTitle": "Witaj w {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
