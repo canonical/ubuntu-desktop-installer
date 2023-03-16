@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'slide_transitions.dart';
 
 /// The default interval for automatic slide changes.
-const kSlideInterval = Duration(seconds: 15);
+const kDefaultSlideInterval = Duration(seconds: 25);
 
 /// Displays a set of slides, or any widgets, that animate in and out at a
 /// specified interval. The slides can be manually navigated by pressing arrow
@@ -17,7 +17,7 @@ class SlideView extends StatefulWidget {
     super.key,
     required this.controller,
     required this.slides,
-    this.interval = kSlideInterval,
+    this.interval = kDefaultSlideInterval,
     this.wrap = false,
     this.autofocus = false,
     this.focusNode,
@@ -30,7 +30,7 @@ class SlideView extends StatefulWidget {
   /// The list of slides to show.
   final List<WidgetBuilder> slides;
 
-  /// The interval for automatic slide changes. Defaults to [kSlideInterval].
+  /// The interval for automatic slide changes. Defaults to [kDefaultSlideInterval].
   final Duration interval;
 
   /// Whether to wrap around. The default value is false.
