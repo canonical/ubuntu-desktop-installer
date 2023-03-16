@@ -18,6 +18,7 @@ import 'installation_complete_page_test.mocks.dart';
 @GenerateMocks([InstallationCompleteModel])
 void main() {
   Widget buildPage(InstallationCompleteModel model) {
+    when(model.productInfo).thenReturn(ProductInfo(name: 'Ubuntu'));
     return Provider<InstallationCompleteModel>.value(
       value: model,
       child: InstallationCompletePage(),
@@ -69,6 +70,7 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     registerMockService<SubiquityClient>(MockSubiquityClient());
+    registerMockService<ProductService>(ProductService());
 
     await tester.pumpWidget(tester.buildApp(InstallationCompletePage.create));
 

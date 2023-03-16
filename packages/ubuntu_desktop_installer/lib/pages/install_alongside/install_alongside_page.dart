@@ -24,9 +24,11 @@ class InstallAlongsidePage extends StatefulWidget {
 
   /// Creates a [InstallAlongsidePage] with [InstallAlongsideModel].
   static Widget create(BuildContext context) {
-    final service = getService<DiskStorageService>();
     return ChangeNotifierProvider(
-      create: (context) => InstallAlongsideModel(service),
+      create: (context) => InstallAlongsideModel(
+        getService<DiskStorageService>(),
+        getService<ProductService>(),
+      ),
       child: const InstallAlongsidePage(),
     );
   }

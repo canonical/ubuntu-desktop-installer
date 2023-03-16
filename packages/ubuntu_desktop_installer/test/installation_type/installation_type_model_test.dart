@@ -10,7 +10,7 @@ import 'installation_type_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([DiskStorageService, TelemetryService])
+@GenerateMocks([DiskStorageService, ProductService, TelemetryService])
 void main() {
   test('init', () async {
     final service = MockDiskStorageService();
@@ -19,7 +19,11 @@ void main() {
     when(service.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse());
 
-    final model = InstallationTypeModel(service, MockTelemetryService());
+    final model = InstallationTypeModel(
+      service,
+      MockTelemetryService(),
+      MockProductService(),
+    );
     await model.init();
 
     expect(model.advancedFeature, AdvancedFeature.lvm);
@@ -43,7 +47,11 @@ void main() {
     final service = MockDiskStorageService();
     when(service.existingOS).thenReturn([ubuntu2110, ubuntu2204]);
 
-    final model = InstallationTypeModel(service, MockTelemetryService());
+    final model = InstallationTypeModel(
+      service,
+      MockTelemetryService(),
+      MockProductService(),
+    );
     expect(model.existingOS, equals([ubuntu2110, ubuntu2204]));
   });
 
@@ -51,6 +59,7 @@ void main() {
     final model = InstallationTypeModel(
       MockDiskStorageService(),
       MockTelemetryService(),
+      MockProductService(),
     );
 
     var wasNotified = false;
@@ -73,11 +82,17 @@ void main() {
   });
 
   test('product info', () {
+    final product = MockProductService();
+    when(product.getProductInfo())
+        .thenReturn(ProductInfo(name: 'Ubuntu', version: '24.04 LTS'));
+
     final model = InstallationTypeModel(
       MockDiskStorageService(),
       MockTelemetryService(),
+      product,
     );
-    expect(model.productInfo.name, isNotEmpty);
+    expect(model.productInfo.name, 'Ubuntu');
+    expect(model.productInfo.version, '24.04 LTS');
   });
 
   test('save talks to telemetry service', () async {
@@ -86,7 +101,11 @@ void main() {
     when(disks.useEncryption).thenReturn(false);
 
     final telemetry = MockTelemetryService();
-    final model = InstallationTypeModel(disks, telemetry);
+    final model = InstallationTypeModel(
+      disks,
+      telemetry,
+      MockProductService(),
+    );
     verifyNever(telemetry.addMetric('PartitionMethod', any));
 
     model.installationType = InstallationType.erase;
@@ -135,6 +154,7 @@ void main() {
     final model = InstallationTypeModel(
       storage,
       MockTelemetryService(),
+      MockProductService(),
     );
 
     model.advancedFeature = AdvancedFeature.lvm;
@@ -153,7 +173,11 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [reformat]));
 
-    final model = InstallationTypeModel(service, MockTelemetryService());
+    final model = InstallationTypeModel(
+      service,
+      MockTelemetryService(),
+      MockProductService(),
+    );
 
     await model.init();
 
@@ -169,7 +193,11 @@ void main() {
     when(service.useLvm).thenReturn(false);
     when(service.useEncryption).thenReturn(false);
 
-    final model = InstallationTypeModel(service, MockTelemetryService());
+    final model = InstallationTypeModel(
+      service,
+      MockTelemetryService(),
+      MockProductService(),
+    );
 
     // none
     when(service.getGuidedStorage())
@@ -216,7 +244,11 @@ void main() {
     final service = MockDiskStorageService();
     when(service.useLvm).thenReturn(false);
     when(service.useEncryption).thenReturn(false);
-    final model = InstallationTypeModel(service, MockTelemetryService());
+    final model = InstallationTypeModel(
+      service,
+      MockTelemetryService(),
+      MockProductService(),
+    );
 
     // none
     when(service.getGuidedStorage())
@@ -300,7 +332,11 @@ void main() {
     final service = MockDiskStorageService();
     when(service.resetStorage()).thenAnswer((_) async => []);
 
-    final model = InstallationTypeModel(service, MockTelemetryService());
+    final model = InstallationTypeModel(
+      service,
+      MockTelemetryService(),
+      MockProductService(),
+    );
     await model.resetStorage();
     verify(service.resetStorage()).called(1);
   });

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:split_view/split_view.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/utils.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'storage_size_dialog.dart';
 import 'storage_button.dart';
 

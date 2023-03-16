@@ -29,7 +29,7 @@ const windows10 = OsProber(
   type: 'chain',
 );
 
-@GenerateMocks([DiskStorageService])
+@GenerateMocks([DiskStorageService, ProductService])
 void main() {
   test('init guided storage', () async {
     final service = MockDiskStorageService();
@@ -37,7 +37,7 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer((_) async =>
         testGuidedStorageResponse(possible: [testResizeStorage()]));
 
-    final model = InstallAlongsideModel(service);
+    final model = InstallAlongsideModel(service, MockProductService());
     expect(model.selectedIndex, isNull);
 
     await model.init();
@@ -60,7 +60,7 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [resize1, resize2]));
 
-    final model = InstallAlongsideModel(service);
+    final model = InstallAlongsideModel(service, MockProductService());
     await model.init();
 
     model.selectStorage(1);
@@ -78,7 +78,7 @@ void main() {
     when(service.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse());
 
-    final model = InstallAlongsideModel(service);
+    final model = InstallAlongsideModel(service, MockProductService());
     await model.reset();
     verifyInOrder([service.resetStorage(), service.getGuidedStorage()]);
   });
@@ -87,13 +87,16 @@ void main() {
     final service = MockDiskStorageService();
     when(service.existingOS).thenReturn([ubuntu2110, ubuntu2204]);
 
-    final model = InstallAlongsideModel(service);
+    final model = InstallAlongsideModel(service, MockProductService());
     expect(model.existingOS, equals([ubuntu2110, ubuntu2204]));
   });
 
   test('product info', () {
-    final model = InstallAlongsideModel(MockDiskStorageService());
-    expect(model.productInfo.name, isNotEmpty);
+    final service = MockProductService();
+    when(service.getProductInfo()).thenReturn(ProductInfo(name: 'Foo'));
+
+    final model = InstallAlongsideModel(MockDiskStorageService(), service);
+    expect(model.productInfo.name, 'Foo');
   });
 
   test('get storage', () async {
@@ -112,7 +115,7 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [storage1, storage2]));
 
-    final model = InstallAlongsideModel(service);
+    final model = InstallAlongsideModel(service, MockProductService());
     expect(model.storageCount, isZero);
     expect(model.getDisk(0), isNull);
     expect(model.getDisk(1), isNull);
@@ -151,7 +154,7 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [storage1, storage2]));
 
-    final model = InstallAlongsideModel(service);
+    final model = InstallAlongsideModel(service, MockProductService());
     expect(model.storageCount, isZero);
     expect(model.selectedIndex, isNull);
     expect(model.selectedStorage, isNull);
@@ -217,7 +220,7 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [storage1, storage2]));
 
-    final model = InstallAlongsideModel(service);
+    final model = InstallAlongsideModel(service, MockProductService());
     await model.init();
     expect(model.selectedIndex, equals(0));
 

@@ -1,5 +1,6 @@
 import 'package:file/file.dart';
 import 'package:file/local.dart';
+import 'package:meta/meta.dart';
 
 const String isoPath = '/cdrom/.disk/info';
 const String localPath = '/etc/os-release';
@@ -16,25 +17,17 @@ class ProductInfo {
 }
 
 /// A class which reads current system info
-class ProductInfoExtractor {
-  static ProductInfo? _cachedProductInfo;
+class ProductService {
+  ProductInfo? _cachedProductInfo;
 
   final FileSystem _fileSystem;
 
-  ProductInfoExtractor({
-    FileSystem fileSystem = const LocalFileSystem(),
-  }) : _fileSystem = fileSystem;
+  ProductService([@visibleForTesting FileSystem? fileSystem])
+      : _fileSystem = fileSystem ?? const LocalFileSystem();
 
   /// Returns system version from CD ISO or hard disk falls back to simple
   /// "Ubuntu" text when cannot find file.
-  ///
-  /// Returned value is cached.
-  /// Optionally cache can be cleared by specifing `shouldResetCache` to `true`
-  ProductInfo getProductInfo({bool shouldResetCache = false}) {
-    if (shouldResetCache) {
-      _cachedProductInfo = null;
-    }
-
+  ProductInfo getProductInfo() {
     try {
       _cachedProductInfo ??= _extractIsoInfo(_fileSystem.file(isoPath));
       // ignore: empty_catches

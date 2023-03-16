@@ -22,10 +22,12 @@ class InstallationTypePage extends StatefulWidget {
 
   /// Creates a [InstallationTypePage] with [InstallationTypeModel].
   static Widget create(BuildContext context) {
-    final diskService = getService<DiskStorageService>();
-    final telemetryService = getService<TelemetryService>();
     return ChangeNotifierProvider(
-      create: (context) => InstallationTypeModel(diskService, telemetryService),
+      create: (context) => InstallationTypeModel(
+        getService<DiskStorageService>(),
+        getService<TelemetryService>(),
+        getService<ProductService>(),
+      ),
       child: const InstallationTypePage(),
     );
   }

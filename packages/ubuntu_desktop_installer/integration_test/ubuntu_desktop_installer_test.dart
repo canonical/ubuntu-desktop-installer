@@ -517,7 +517,7 @@ Future<void> testInstallAlongsidePage(
   WidgetTester tester, {
   Map<String, int> sizes = const {},
 }) async {
-  final productInfo = ProductInfoExtractor().getProductInfo();
+  final productInfo = getService<ProductService>().getProductInfo();
   await expectPage(tester, InstallAlongsidePage,
       (lang) => lang.installationTypeAlongsideUnknown(productInfo));
 

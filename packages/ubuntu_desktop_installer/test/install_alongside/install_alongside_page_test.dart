@@ -9,9 +9,9 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/install_alongside/install_alongside_model.dart';
 import 'package:ubuntu_desktop_installer/pages/install_alongside/install_alongside_page.dart';
 import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart';
+import 'package:ubuntu_desktop_installer/services/product_service.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/utils.dart';
 
 import '../test_utils.dart';
 import 'install_alongside_model_test.dart';
@@ -208,6 +208,7 @@ void main() {
     when(storage.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse());
     registerMockService<DiskStorageService>(storage);
+    registerMockService<ProductService>(ProductService());
 
     await tester.pumpWidget(tester.buildApp(InstallAlongsidePage.create));
 
