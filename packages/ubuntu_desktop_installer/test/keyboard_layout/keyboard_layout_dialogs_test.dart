@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -58,15 +57,13 @@ void main() {
 
     // b is present
     expect(find.text('b'), findsOneWidget);
-    await tester
-        .tap(find.widgetWithText(FilledButton, tester.lang.yesButtonText));
+    await tester.tap(find.pushButton(tester.lang.yesButtonText));
     await tester.pump();
     verify(client.getKeyboardStep('50')).called(1);
 
     // c is not present
     expect(find.text('c'), findsOneWidget);
-    await tester
-        .tap(find.widgetWithText(FilledButton, tester.lang.noButtonText));
+    await tester.tap(find.pushButton(tester.lang.noButtonText));
     await tester.pump();
     verify(client.getKeyboardStep('60')).called(1);
 
