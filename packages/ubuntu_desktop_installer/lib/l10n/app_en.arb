@@ -532,7 +532,7 @@
   "@whoAreYouPagePasswordShow": {},
   "whoAreYouPagePasswordHide": "Hide",
   "@whoAreYouPagePasswordHide": {},
-  "writeChangesToDisk": "Write changes to disk",
+  "writeChangesToDisk": "Ready to install",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "disk",
   "@writeChangesFallbackSerial": {

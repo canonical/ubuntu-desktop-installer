@@ -1397,7 +1397,7 @@ abstract class AppLocalizations {
   /// No description provided for @writeChangesToDisk.
   ///
   /// In en, this message translates to:
-  /// **'Write changes to disk'**
+  /// **'Ready to install'**
   String get writeChangesToDisk;
 
   /// Default display name for a disk without a serial (unlikely)

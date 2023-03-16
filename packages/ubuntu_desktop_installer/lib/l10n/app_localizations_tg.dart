@@ -640,7 +640,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get whoAreYouPagePasswordHide => 'Hide';
 
   @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get writeChangesToDisk => 'Ready to install';
 
   @override
   String get writeChangesFallbackSerial => 'disk';
