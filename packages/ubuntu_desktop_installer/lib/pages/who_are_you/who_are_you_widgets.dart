@@ -225,8 +225,8 @@ class _ShowPasswordButton extends StatelessWidget {
           right: rtl ? borderSide : BorderSide.none,
         ),
       ),
-      child: OutlinedButton.icon(
-        style: OutlinedButton.styleFrom(
+      child: FilledButton.icon(
+        style: FilledButton.styleFrom(
           side: BorderSide.none,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.horizontal(
