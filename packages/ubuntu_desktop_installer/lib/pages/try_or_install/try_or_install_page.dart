@@ -39,7 +39,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
 
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(lang.tryOrInstallPageTitle),
+        title: Text(lang.tryOrInstallPageTitle(flavor.name)),
       ),
       content: Column(
         children: [

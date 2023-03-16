@@ -50,7 +50,9 @@ class AppLocalizationsEu extends AppLocalizations {
   String get welcomeHeader => 'Aukeratu zure hizkuntza:';
 
   @override
-  String get tryOrInstallPageTitle => 'Probatu edo instalatu';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Probatu edo instalatu';
+  }
 
   @override
   String get repairInstallation => 'Konpondu instalazioa';

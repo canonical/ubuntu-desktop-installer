@@ -337,7 +337,7 @@ Future<void> testTryOrInstallPage(
   Option? option,
 }) async {
   await expectPage(
-      tester, TryOrInstallPage, (lang) => lang.tryOrInstallPageTitle);
+      tester, TryOrInstallPage, (lang) => lang.tryOrInstallPageTitle('Ubuntu'));
 
   if (option != null) {
     final labels = {

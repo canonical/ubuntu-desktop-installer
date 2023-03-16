@@ -50,7 +50,9 @@ class AppLocalizationsSq extends AppLocalizations {
   String get welcomeHeader => 'Choose your language:';
 
   @override
-  String get tryOrInstallPageTitle => 'Provo ose instalo';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Provo ose instalo';
+  }
 
   @override
   String get repairInstallation => 'Riparo instalimin';

@@ -50,7 +50,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get welcomeHeader => 'Выберите язык:';
 
   @override
-  String get tryOrInstallPageTitle => 'Попробовать или установить';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Попробовать или установить';
+  }
 
   @override
   String get repairInstallation => 'Исправить установку';

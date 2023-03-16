@@ -50,7 +50,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get welcomeHeader => 'Escolha o seu idioma:';
 
   @override
-  String get tryOrInstallPageTitle => 'Experimentar ou instalar';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Experimentar ou instalar';
+  }
 
   @override
   String get repairInstallation => 'Reparar instalação';
@@ -994,7 +996,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get welcomeHeader => 'Escolha seu idioma:';
 
   @override
-  String get tryOrInstallPageTitle => 'Experimentar ou instalar';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Experimentar ou instalar';
+  }
 
   @override
   String get repairInstallation => 'Reparar instalação';

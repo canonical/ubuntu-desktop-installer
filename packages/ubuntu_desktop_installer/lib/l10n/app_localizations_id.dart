@@ -50,7 +50,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get welcomeHeader => 'Pilih bahasa Anda:';
 
   @override
-  String get tryOrInstallPageTitle => 'Coba atau pasang';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Coba atau pasang';
+  }
 
   @override
   String get repairInstallation => 'Perbaiki instalasi';

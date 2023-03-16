@@ -50,7 +50,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get welcomeHeader => 'Dil seçin:';
 
   @override
-  String get tryOrInstallPageTitle => 'Dene veya kur';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Dene veya kur';
+  }
 
   @override
   String get repairInstallation => 'Kurulumu tamir et';

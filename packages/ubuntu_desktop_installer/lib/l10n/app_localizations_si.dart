@@ -50,7 +50,9 @@ class AppLocalizationsSi extends AppLocalizations {
   String get welcomeHeader => 'ඔබගේ භාෂාව තෝරන්න:';
 
   @override
-  String get tryOrInstallPageTitle => 'බලන්න හෝ ස්ථාපනය කරන්න';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'බලන්න හෝ ස්ථාපනය කරන්න';
+  }
 
   @override
   String get repairInstallation => 'ස්ථාපනය අලුත්වැඩියාව';

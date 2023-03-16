@@ -50,7 +50,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get welcomeHeader => '언어를 선택하십시오:';
 
   @override
-  String get tryOrInstallPageTitle => '체험 또는 설치';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return '체험 또는 설치';
+  }
 
   @override
   String get repairInstallation => '설치 복구';
