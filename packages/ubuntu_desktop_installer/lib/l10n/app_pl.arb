@@ -625,7 +625,7 @@
   },
   "installAlongsideSize": "Rozmiar:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionFormattedMounted": "partycja #{disk}{partition} sformatowana jako {format} używana do {mount}",
+  "writeChangesPartitionFormattedMounted": "partycja <b>{disk}{partition}</b> sformatowana jako <b>{format}</b> używana do <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -635,11 +635,11 @@
       "mount": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "Przepraszamy",
+  "notEnoughDiskSpaceTitle": "Za mało przestrzeni",
   "@notEnoughDiskSpaceTitle": {},
   "quitButtonText": "Zakończ instalację",
   "@quitButtonText": {},
-  "writeChangesPartitionMounted": "partycja #{disk}{partition} używana do {mount}",
+  "writeChangesPartitionMounted": "partycja <b>{disk}{partition}</b> używana do <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -648,7 +648,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "partycja #{disk}{partition} zmieniła rozmiar z {oldsize} na {newsize}",
+  "writeChangesPartitionResized": "partycja <b>{disk}{partition}</b> zmieniła rozmiar z <b>{oldsize}</b> na <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -658,7 +658,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "partycja #{disk}{partition} sformatowana jako {format}",
+  "writeChangesPartitionFormatted": "partycja <b>{disk}{partition}</b> sformatowana jako <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -792,5 +792,140 @@
   "keyboardVariant": "Wariant klawiatury:",
   "@keyboardVariant": {},
   "detectButtonText": "Wykryj",
-  "@detectButtonText": {}
+  "@detectButtonText": {},
+  "writeChangesDevicesTitle": "Urządzenia",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Partycje",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesTitle": "Witaj w {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesIncluded": "Dołączone:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "Szybki, darmowy i pełen nowych funkcji",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeBody": "Niezależnie od tego, czy jesteś programistą, twórcą, graczem czy administratorem, w {RELEASE} znajdziesz nowe narzędzia, które poprawią produktywność i wrażenia.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "Wszystkie potrzebne aplikacje",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesDevelopmentTitle": "Twórz z wykorzystaniem najlepszych rozwiązań open source",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesCreativityTitle": "Zwiększ swoją kreatywność",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesGamingTitle": "Świetny do gier",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesGamingBody": "{DISTRO} obsługuje najnowsze sterowniki NVIDIA i Mesa, aby poprawić wydajność i kompatybilność. Tysiące tytułów dla systemu Windows działa świetnie na {DISTRO} za pośrednictwem aplikacji takich jak Steam bez dodatkowej konfiguracji.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "Prywatny i bezpieczny",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesProductivityTitle": "Zwiększ swoją produktywność",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesProductivityBody": "{DISTRO} Desktop zawiera LibreOffice, pakiet kompatybilnych z Microsoft Office aplikacji open source do dokumentów, arkuszy kalkulacyjnych i prezentacji. Dostępne są również popularne narzędzia do współpracy.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "Dostęp dla wszystkich",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesAccessibilityOrca": "Czytnik ekranu Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesSupportTitle": "Pomoc i wsparcie",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSupportHeader": "Oficjalna dokumentacja {DISTRO} jest dostępna zarówno online, jak i za pośrednictwem ikony Pomoc umieszczonej w doku.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Serwis Ask Ubuntu obejmuje szereg pytań i odpowiedzi, a Ubuntu Discourse zawiera przewodniki i dyskusje dla nowych i doświadczonych użytkowników.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "Dla użytkowników korporacyjnych Canonical zapewnia komercyjne wsparcie, aby ułatwić wdrożenie i bezpieczne zarządzanie systemem Ubuntu w miejscu pracy.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesCreativityBody": "Jeśli zajmujesz się animacją, projektowaniem, tworzeniem wideo lub gier, możesz łatwo przenieść swoje przepływy pracy do {DISTRO} dzięki obsłudze oprogramowania i aplikacji będących standardem branżowym oraz open source.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceUbuntu": "Za mało przestrzeni na dysku do zainstalowania {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportUbuntuPro": "Całodobowe wsparcie klasy korporacyjnej za pomocą Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesAvailable": "Dostępne:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesWelcomeHeader": "Najnowsza wersja {DISTRO} sprawia, że korzystanie z komputera jest łatwiejsze niż kiedykolwiek.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentBody": "{DISTRO} to idealna stacja robocza do tworzenia aplikacji lub stron internetowych, nauki o danych i sztucznej inteligencji/uczenia maszynowego, a także DevOps i administracji. Każda wersja {DISTRO} zawiera najnowsze zestawy narzędzi i obsługuje wszystkie główne IDE.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityLts": "Wszystkie wersje {DISTRO} LTS są dostarczane z pięcioletnim łataniem zabezpieczeń, które można wydłużyć do dziesięciu lat za pomocą subskrypcji Ubuntu Pro.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSoftwareBody": "Instaluj, zarządzaj i aktualizuj wszystkie aplikacje w Ubuntu Software, w tym tysiące aplikacji zarówno z Snap Store, jak i archiwum {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityBody": "{DISTRO} zapewnia wszystkie narzędzia potrzebne do zachowania prywatności i bezpieczeństwa w Internecie. Dzięki wbudowanej zaporze sieciowej, obsłudze VPN oraz wielu aplikacjom zorientowanym na prywatność, aby zapewnić pełną kontrolę nad danymi.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityBody": "U podstaw filozofii {DISTRO} leży przekonanie, że informatyka jest dla każdego. Dzięki zaawansowanym narzędziom ułatwień dostępu i opcjom zmiany języka, kolorów oraz rozmiaru tekstu {DISTRO} sprawia, że korzystanie z komputera jest łatwe — kimkolwiek i gdziekolwiek jesteś.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportResources": "Pomocne zasoby:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesAccessibilityLanguages": "Obsługa języków",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportDocumentation": "Oficjalna dokumentacja",
+  "@installationSlidesSupportDocumentation": {},
+  "notEnoughDiskSpaceAvailable": "Dostępna:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "Wymagana:",
+  "@notEnoughDiskSpaceRequired": {}
 }
