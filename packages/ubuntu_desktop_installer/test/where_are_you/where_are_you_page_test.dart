@@ -70,7 +70,7 @@ void main() {
 
     final continueButton = find.widgetWithText(
       FilledButton,
-      tester.ulang.continueAction,
+      tester.ulang.nextLabel,
     );
     await tester.tap(continueButton);
     verify(model.save(null)).called(1);
@@ -297,7 +297,7 @@ void main() {
 
     final backButton = find.widgetWithText(
       OutlinedButton,
-      tester.ulang.backLabel,
+      tester.ulang.previousLabel,
     );
     expect(backButton, findsOneWidget);
     expect(tester.widget<ButtonStyleButton>(backButton).enabled, isFalse);

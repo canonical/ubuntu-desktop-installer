@@ -158,7 +158,7 @@ void main() {
     expect(
       find.descendant(
         of: find.byType(OutlinedButton),
-        matching: find.text(lang.backLabel),
+        matching: find.text(lang.previousLabel),
       ),
       findsOneWidget,
     );
@@ -166,7 +166,7 @@ void main() {
     expect(
       find.descendant(
         of: find.byType(FilledButton),
-        matching: find.text(lang.continueAction),
+        matching: find.text(lang.nextLabel),
       ),
       findsOneWidget,
     );

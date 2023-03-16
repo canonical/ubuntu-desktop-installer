@@ -32,7 +32,7 @@ class WizardAction {
     WizardCallback? onBack,
   }) {
     return WizardAction(
-      label: UbuntuLocalizations.of(context).backLabel,
+      label: UbuntuLocalizations.of(context).previousLabel,
       visible: visible,
       flat: true,
       enabled: enabled ?? Wizard.maybeOf(context)?.hasPrevious ?? false,
@@ -54,7 +54,7 @@ class WizardAction {
     WizardCallback? onBack,
   }) {
     return WizardAction(
-      label: label ?? UbuntuLocalizations.of(context).continueAction,
+      label: label ?? UbuntuLocalizations.of(context).nextLabel,
       visible: visible,
       enabled: enabled,
       flat: flat,
