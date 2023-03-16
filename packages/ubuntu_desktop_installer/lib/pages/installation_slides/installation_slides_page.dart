@@ -41,8 +41,9 @@ class InstallationSlidesPage extends StatefulWidget {
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
     final journal = getService<JournalService>();
+    final product = getService<ProductService>();
     return ChangeNotifierProvider(
-      create: (_) => InstallationSlidesModel(client, journal),
+      create: (_) => InstallationSlidesModel(client, journal, product),
       child: const InstallationSlidesPage(),
     );
   }
@@ -80,13 +81,12 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
 
   @override
   Widget build(BuildContext context) {
-    final flavor = Flavor.of(context);
     final lang = AppLocalizations.of(context);
     final model = Provider.of<InstallationSlidesModel>(context);
     final slides = SlidesContext.of(context);
     return Scaffold(
       appBar: YaruWindowTitleBar(
-        title: Text(lang.installationSlidesTitle(flavor.name)),
+        title: Text(model.productInfo.toString()),
       ),
       body: Stack(
         children: [

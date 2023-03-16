@@ -3,14 +3,14 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i3;
-import 'dart:ui' as _i5;
+import 'dart:async' as _i4;
+import 'dart:ui' as _i6;
 
-import 'package:flutter/widgets.dart' as _i4;
+import 'package:flutter/widgets.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_model.dart'
-    as _i2;
-import 'package:ubuntu_desktop_installer/services.dart' as _i6;
+    as _i3;
+import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -23,9 +23,19 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i6;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeInstallationEvent_0 extends _i1.SmartFake
-    implements _i2.InstallationEvent {
-  _FakeInstallationEvent_0(
+class _FakeProductInfo_0 extends _i1.SmartFake implements _i2.ProductInfo {
+  _FakeProductInfo_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeInstallationEvent_1 extends _i1.SmartFake
+    implements _i3.InstallationEvent {
+  _FakeInstallationEvent_1(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -38,19 +48,27 @@ class _FakeInstallationEvent_0 extends _i1.SmartFake
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockInstallationSlidesModel extends _i1.Mock
-    implements _i2.InstallationSlidesModel {
+    implements _i3.InstallationSlidesModel {
   MockInstallationSlidesModel() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i2.InstallationEvent get event => (super.noSuchMethod(
+  _i2.ProductInfo get productInfo => (super.noSuchMethod(
+        Invocation.getter(#productInfo),
+        returnValue: _FakeProductInfo_0(
+          this,
+          Invocation.getter(#productInfo),
+        ),
+      ) as _i2.ProductInfo);
+  @override
+  _i3.InstallationEvent get event => (super.noSuchMethod(
         Invocation.getter(#event),
-        returnValue: _FakeInstallationEvent_0(
+        returnValue: _FakeInstallationEvent_1(
           this,
           Invocation.getter(#event),
         ),
-      ) as _i2.InstallationEvent);
+      ) as _i3.InstallationEvent);
   @override
   bool get isDone => (super.noSuchMethod(
         Invocation.getter(#isDone),
@@ -67,10 +85,10 @@ class MockInstallationSlidesModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  _i3.Stream<String> get log => (super.noSuchMethod(
+  _i4.Stream<String> get log => (super.noSuchMethod(
         Invocation.getter(#log),
-        returnValue: _i3.Stream<String>.empty(),
-      ) as _i3.Stream<String>);
+        returnValue: _i4.Stream<String>.empty(),
+      ) as _i4.Stream<String>);
   @override
   bool get isLogVisible => (super.noSuchMethod(
         Invocation.getter(#isLogVisible),
@@ -108,26 +126,26 @@ class MockInstallationSlidesModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  _i3.Future<void> init() => (super.noSuchMethod(
+  _i4.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  _i3.Future<void> precacheSlideImages(_i4.BuildContext? context) =>
+  _i4.Future<void> precacheSlideImages(_i5.BuildContext? context) =>
       (super.noSuchMethod(
         Invocation.method(
           #precacheSlideImages,
           [context],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -135,7 +153,7 @@ class MockInstallationSlidesModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -158,27 +176,4 @@ class MockInstallationSlidesModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
-}
-
-/// A class which mocks [JournalService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockJournalService extends _i1.Mock implements _i6.JournalService {
-  MockJournalService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i3.Stream<String> start(
-    List<String>? ids, {
-    _i6.JournalOutput? output = _i6.JournalOutput.short,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #start,
-          [ids],
-          {#output: output},
-        ),
-        returnValue: _i3.Stream<String>.empty(),
-      ) as _i3.Stream<String>);
 }
