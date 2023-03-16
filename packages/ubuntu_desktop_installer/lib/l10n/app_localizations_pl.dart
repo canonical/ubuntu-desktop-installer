@@ -38,7 +38,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return 'Witaj w $DISTRO';
   }
 
   @override
@@ -51,7 +51,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return 'Wypróbuj lub zainstaluj';
+    return 'Wypróbuj lub zainstaluj $DISTRO';
   }
 
   @override
@@ -454,10 +454,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get newPartitionTable => 'Nowa tablica partycji';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Utworzyć nową pustą tablicę partycji na tym urządzeniu?';
+  String get newPartitionTableConfirmationTitle => 'Nowa pusta partycja';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia na nim nowej tabeli partycji, wszystkie jego bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.';
+  String get newPartitionTableConfirmationMessage => 'Utworzenie nowej tabeli partycji na całym urządzeniu spowoduje usunięcie wszystkich jego bieżących partycji. Operację tę można cofnąć w razie potrzeby.';
 
   @override
   String get tooManyPrimaryPartitions => 'Zbyt wiele partycji podstawowych';
@@ -640,7 +640,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get whoAreYouPagePasswordHide => 'Ukryj';
 
   @override
-  String get writeChangesToDisk => 'Zapisz zmiany na dysku';
+  String get writeChangesToDisk => 'Gotów do instalacji';
 
   @override
   String get writeChangesFallbackSerial => 'dysk';
