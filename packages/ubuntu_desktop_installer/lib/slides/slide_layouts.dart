@@ -386,9 +386,9 @@ class OutroSlideLayout extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Spacer(flex: 1),
+              const Spacer(flex: 4),
               Expanded(
-                flex: 11,
+                flex: 10,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -404,7 +404,7 @@ class OutroSlideLayout extends StatelessWidget {
                   ],
                 ),
               ),
-              const Spacer(flex: 1),
+              const Spacer(flex: 2),
               Expanded(
                 flex: 11,
                 child: Column(
