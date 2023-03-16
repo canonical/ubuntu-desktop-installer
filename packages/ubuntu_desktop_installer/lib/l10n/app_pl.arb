@@ -6,7 +6,7 @@
   "@okButtonText": {},
   "repairInstallation": "Napraw instalację",
   "@repairInstallation": {},
-  "tryOrInstallPageTitle": "Wypróbuj lub zainstaluj",
+  "tryOrInstallPageTitle": "Wypróbuj lub zainstaluj {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallationDescription": "Naprawa spowoduje ponowną instalację całego zainstalowanego oprogramowania bez naruszania dokumentów lub ustawień.",
   "@repairInstallationDescription": {},
@@ -927,5 +927,12 @@
   "notEnoughDiskSpaceAvailable": "Dostępna:",
   "@notEnoughDiskSpaceAvailable": {},
   "notEnoughDiskSpaceRequired": "Wymagana:",
-  "@notEnoughDiskSpaceRequired": {}
+  "@notEnoughDiskSpaceRequired": {},
+  "welcomePageTitle": "Witaj w {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
