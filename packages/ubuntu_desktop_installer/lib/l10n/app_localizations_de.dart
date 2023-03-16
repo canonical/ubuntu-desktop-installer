@@ -38,12 +38,12 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return 'Willkommen bei $DISTRO';
   }
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return '$DISTRO wird vorbereitet ...';
   }
 
   @override
@@ -51,7 +51,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return 'Ausprobieren oder installieren';
+    return '$DISTRO ausprobieren oder installieren';
   }
 
   @override
@@ -109,10 +109,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get detectLayout => 'Tastaturbelegung erkennen';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => 'Erkennen';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => 'Tastaturvariante:';
 
   @override
   String get pressOneKey => 'Bitte drücken Sie eine der folgenden Tasten:';
@@ -303,7 +303,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Erweiterte Funktionen …';
+  String get installationTypeAdvancedLabel => 'Erweiterte Funktionen ...';
 
   @override
   String get installationTypeAdvancedTitle => 'Erweiterte Funktionen';
@@ -454,10 +454,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get newPartitionTable => 'Neue Partitionstabelle';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Eine neue leere Partitionstabelle auf diesem Gerät erstellen?';
+  String get newPartitionTableConfirmationTitle => 'Neue leere Partition';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Sie haben ein ganzes Gerät zur Partitionierung ausgewählt. Wenn Sie mit der Erstellung einer neuen Partitionstabelle fortfahren, werden alle aktuellen Partitionen entfernt.\n\nBeachten Sie, dass Sie diesen Vorgang später rückgängig machen können, wenn Sie dies wünschen.';
+  String get newPartitionTableConfirmationMessage => 'Die Erstellung einer neuen Partitionstabelle auf einem gesamten Gerät entfernt alle aktuellen Partitionen. Dieser Vorgang kann bei Bedarf rückgängig gemacht werden.';
 
   @override
   String get tooManyPrimaryPartitions => 'Zu viele primäre Partitionen';
@@ -640,7 +640,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get whoAreYouPagePasswordHide => 'Ausblenden';
 
   @override
-  String get writeChangesToDisk => 'Änderungen auf die Festplatte schreiben';
+  String get writeChangesToDisk => 'Bereit zur Installation';
 
   @override
   String get writeChangesFallbackSerial => 'Festplatte';
@@ -649,10 +649,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get writeChangesDescription => 'Wenn Sie fortfahren, werden die unten aufgeführten Änderungen auf die Festplatten geschrieben. Sie haben die Möglichkeit, weitere Änderungen manuell vorzunehmen.';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get writeChangesDevicesTitle => 'Geräte';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get writeChangesPartitionsTitle => 'Partitionen';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Die Partitionstabellen der folgenden Laufwerke werden geändert:';
@@ -667,22 +667,22 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'Größe der Partition #$disk$partition von $oldsize auf $newsize geändert';
+    return 'Größe der Partition <b>$disk$partition</b> von <b>$oldsize</b> auf <b>$newsize</b> geändert';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'Partition #$disk$partition formatiert als $format verwendet für $mount';
+    return 'Partition <b>$disk$partition</b> formatiert als <b>$format</b> verwendet für <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'Partition #$disk$partition formatiert als $format';
+    return 'Partition <b>$disk$partition</b> formatiert als <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'Partition #$disk$partition verwendet für $mount';
+    return 'Partition <b>$disk$partition</b> verwendet für <b>$mount</b>';
   }
 
   @override
@@ -754,21 +754,21 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String installationSlidesTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Willkommen bei $RELEASE';
   }
 
   @override
-  String get installationSlidesAvailable => 'Available:';
+  String get installationSlidesAvailable => 'Verfügbar:';
 
   @override
-  String get installationSlidesIncluded => 'Included:';
+  String get installationSlidesIncluded => 'Einschließlich:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+  String get installationSlidesWelcomeTitle => 'Schnell, kostenlos und mit vielen neuen Funktionen';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return 'The latest version of $DISTRO makes computing easier than ever.';
+    return 'Die neueste Version von $DISTRO macht Computerarbeiten so einfach wie nie zuvor.';
   }
 
   @override
@@ -777,7 +777,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'All the applications you need';
+  String get installationSlidesSoftwareTitle => 'Alle Anwendungen, die Sie brauchen';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -793,7 +793,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesCreativityTitle => 'Enhance your creativity';
+  String get installationSlidesCreativityTitle => 'Steigern Sie Ihre Kreativität';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
@@ -801,7 +801,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesGamingTitle => 'Great for gaming';
+  String get installationSlidesGamingTitle => 'Ideal für Spiele';
 
   @override
   String installationSlidesGamingBody(Object DISTRO) {
@@ -809,7 +809,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSecurityTitle => 'Private and secure';
+  String get installationSlidesSecurityTitle => 'Privat und sicher';
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
@@ -822,7 +822,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Power up your productivity';
+  String get installationSlidesProductivityTitle => 'Erhöhen Sie Ihre Produktivität';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
@@ -841,10 +841,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Language support';
+  String get installationSlidesAccessibilityLanguages => 'Sprachunterstützung';
 
   @override
-  String get installationSlidesSupportTitle => 'Help & Support';
+  String get installationSlidesSupportTitle => 'Hilfe & Unterstützung';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
@@ -858,10 +858,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
 
   @override
-  String get installationSlidesSupportResources => 'Helpful resources:';
+  String get installationSlidesSupportResources => 'Hilfreiche Ressourcen:';
 
   @override
-  String get installationSlidesSupportDocumentation => 'Official documentation';
+  String get installationSlidesSupportDocumentation => 'Offizielle Dokumentation';
 
   @override
   String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
@@ -879,18 +879,18 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationFailed => 'Installation fehlgeschlagen';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Entschuldigung';
+  String get notEnoughDiskSpaceTitle => 'Nicht genug Platz';
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
-    return 'Not enough disk space to install $DISTRO';
+    return 'Nicht genügend Festplattenplatz für die Installation von $DISTRO';
   }
 
   @override
-  String get notEnoughDiskSpaceAvailable => 'Available:';
+  String get notEnoughDiskSpaceAvailable => 'Verfügbar:';
 
   @override
-  String get notEnoughDiskSpaceRequired => 'Required:';
+  String get notEnoughDiskSpaceRequired => 'Erforderlich:';
 
   @override
   String get activeDirectoryOption => 'Active Directory verwenden';
@@ -902,7 +902,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get activeDirectoryTitle => 'Active Directory konfigurieren';
 
   @override
-  String get activeDirectoryTestConnection => 'Verbindung testen';
+  String get activeDirectoryTestConnection => 'Domänenverbindung testen';
 
   @override
   String get activeDirectoryDomainLabel => 'Domäne';
@@ -935,7 +935,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'Domäne nicht gefunden';
 
   @override
-  String get activeDirectoryAdminLabel => 'Domänenadministrator';
+  String get activeDirectoryAdminLabel => '';
 
   @override
   String get activeDirectoryAdminEmpty => 'Erforderlich';
