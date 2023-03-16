@@ -22,7 +22,7 @@
   "@welcome": {},
   "welcomeHeader": "Wählen Sie Ihre Sprache aus:",
   "@welcomeHeader": {},
-  "tryOrInstallPageTitle": "Ausprobieren oder installieren",
+  "tryOrInstallPageTitle": "{DISTRO} ausprobieren oder installieren",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Installation reparieren",
   "@repairInstallation": {},
@@ -141,7 +141,7 @@
       "color": {}
     }
   },
-  "installationTypeAdvancedLabel": "Erweiterte Funktionen …",
+  "installationTypeAdvancedLabel": "Erweiterte Funktionen ...",
   "@installationTypeAdvancedLabel": {},
   "installationTypeAdvancedTitle": "Erweiterte Funktionen",
   "@installationTypeAdvancedTitle": {},
@@ -318,7 +318,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "Die Passwörter stimmen nicht überein",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesToDisk": "Änderungen auf die Festplatte schreiben",
+  "writeChangesToDisk": "Bereit zur Installation",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "Festplatte",
   "@writeChangesFallbackSerial": {
@@ -406,9 +406,9 @@
   "@selectWifiNetwork": {},
   "noInternet": "Ich will gerade keine Verbindung zum Internet herstellen",
   "@noInternet": {},
-  "newPartitionTableConfirmationMessage": "Sie haben ein ganzes Gerät zur Partitionierung ausgewählt. Wenn Sie mit der Erstellung einer neuen Partitionstabelle fortfahren, werden alle aktuellen Partitionen entfernt.\n\nBeachten Sie, dass Sie diesen Vorgang später rückgängig machen können, wenn Sie dies wünschen.",
+  "newPartitionTableConfirmationMessage": "Die Erstellung einer neuen Partitionstabelle auf einem gesamten Gerät entfernt alle aktuellen Partitionen. Dieser Vorgang kann bei Bedarf rückgängig gemacht werden.",
   "@newPartitionTableConfirmationMessage": {},
-  "newPartitionTableConfirmationTitle": "Eine neue leere Partitionstabelle auf diesem Gerät erstellen?",
+  "newPartitionTableConfirmationTitle": "Neue leere Partition",
   "@newPartitionTableConfirmationTitle": {},
   "useWiredConnection": "Kabelgebundene Verbindung verwenden",
   "@useWiredConnection": {},
@@ -629,7 +629,7 @@
   "@installAlongsideAvailable": {},
   "quitButtonText": "Installation beenden",
   "@quitButtonText": {},
-  "writeChangesPartitionFormattedMounted": "Partition #{disk}{partition} formatiert als {format} verwendet für {mount}",
+  "writeChangesPartitionFormattedMounted": "Partition <b>{disk}{partition}</b> formatiert als <b>{format}</b> verwendet für <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -661,7 +661,7 @@
       "SIZE": {}
     }
   },
-  "writeChangesPartitionFormatted": "Partition #{disk}{partition} formatiert als {format}",
+  "writeChangesPartitionFormatted": "Partition <b>{disk}{partition}</b> formatiert als <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -670,7 +670,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionResized": "Größe der Partition #{disk}{partition} von {oldsize} auf {newsize} geändert",
+  "writeChangesPartitionResized": "Größe der Partition <b>{disk}{partition}</b> von <b>{oldsize}</b> auf <b>{newsize}</b> geändert",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -680,7 +680,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionMounted": "Partition #{disk}{partition} verwendet für {mount}",
+  "writeChangesPartitionMounted": "Partition <b>{disk}{partition}</b> verwendet für <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -689,7 +689,7 @@
       "mount": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "Entschuldigung",
+  "notEnoughDiskSpaceTitle": "Nicht genug Platz",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceHeader": "Sie benötigen mindestens {SIZE} Festplattenspeicher für die Installation von {RELEASE}.",
   "@notEnoughDiskSpaceHeader": {
@@ -740,7 +740,7 @@
   "@whoAreYouPagePasswordShow": {},
   "activeDirectoryTitle": "Active Directory konfigurieren",
   "@activeDirectoryTitle": {},
-  "activeDirectoryTestConnection": "Verbindung testen",
+  "activeDirectoryTestConnection": "Domänenverbindung testen",
   "@activeDirectoryTestConnection": {},
   "activeDirectoryDomainLabel": "Domäne",
   "@activeDirectoryDomainLabel": {},
@@ -754,7 +754,7 @@
   "@activeDirectoryDomainEndDot": {},
   "activeDirectoryDomainEndHyphen": "Endet mit einem Bindestrich (-)",
   "@activeDirectoryDomainEndHyphen": {},
-  "activeDirectoryAdminLabel": "Domänenadministrator",
+  "activeDirectoryAdminLabel": "",
   "@activeDirectoryAdminLabel": {},
   "activeDirectoryAdminEmpty": "Erforderlich",
   "@activeDirectoryAdminEmpty": {},
@@ -783,5 +783,76 @@
   "activeDirectoryErrorTitle": "Fehler beim Einrichten der Verbindung zum Active Directory",
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Entschuldigung, Active Directory kann im Moment nicht eingerichtet werden. Besuchen Sie für Hilfe <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, sobald Ihr System hochgefahren und in Betrieb ist.",
-  "@activeDirectoryErrorMessage": {}
+  "@activeDirectoryErrorMessage": {},
+  "preparingUbuntu": "{DISTRO} wird vorbereitet ...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "Erkennen",
+  "@detectButtonText": {},
+  "keyboardVariant": "Tastaturvariante:",
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "Geräte",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Partitionen",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesIncluded": "Einschließlich:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "Schnell, kostenlos und mit vielen neuen Funktionen",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "Die neueste Version von {DISTRO} macht Computerarbeiten so einfach wie nie zuvor.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Steigern Sie Ihre Kreativität",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesGamingTitle": "Ideal für Spiele",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesAccessibilityLanguages": "Sprachunterstützung",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "Hilfe & Unterstützung",
+  "@installationSlidesSupportTitle": {},
+  "notEnoughDiskSpaceAvailable": "Verfügbar:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "Erforderlich:",
+  "@notEnoughDiskSpaceRequired": {},
+  "welcomePageTitle": "Willkommen bei {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesTitle": "Willkommen bei {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "Privat und sicher",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSoftwareTitle": "Alle Anwendungen, die Sie brauchen",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesAvailable": "Verfügbar:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesProductivityTitle": "Erhöhen Sie Ihre Produktivität",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesSupportResources": "Hilfreiche Ressourcen:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "Offizielle Dokumentation",
+  "@installationSlidesSupportDocumentation": {},
+  "notEnoughDiskSpaceUbuntu": "Nicht genügend Festplattenplatz für die Installation von {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
