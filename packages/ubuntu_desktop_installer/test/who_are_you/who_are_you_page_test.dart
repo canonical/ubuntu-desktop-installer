@@ -248,7 +248,7 @@ void main() {
 
     final showPasswordButton = find.ancestor(
       of: find.text(tester.lang.whoAreYouPagePasswordShow),
-      matching: find.bySubtype<OutlinedButton>(),
+      matching: find.bySubtype<ButtonStyleButton>(),
     );
     expect(showPasswordButton, findsOneWidget);
 
@@ -262,7 +262,7 @@ void main() {
 
     final hidePasswordButton = find.ancestor(
       of: find.text(tester.lang.whoAreYouPagePasswordHide),
-      matching: find.bySubtype<OutlinedButton>(),
+      matching: find.bySubtype<ButtonStyleButton>(),
     );
     expect(hidePasswordButton, findsOneWidget);
 
