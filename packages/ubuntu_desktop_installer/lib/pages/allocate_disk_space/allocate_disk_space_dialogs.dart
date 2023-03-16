@@ -25,14 +25,19 @@ Future<bool> showConfirmationDialog(
       return AlertDialog(
         title: YaruDialogTitleBar(title: Text(title)),
         titlePadding: EdgeInsets.zero,
-        content: Text(message),
+        contentPadding: kContentPadding.copyWith(
+            top: kContentSpacing, bottom: kContentSpacing),
+        actionsPadding: kFooterPadding,
+        content: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 420),
+            child: Text(message)),
         actions: <Widget>[
           FilledButton(
-            child: Text(lang.backAction),
+            child: Text(lang.cancelLabel),
             onPressed: () => Navigator.of(context).pop(false),
           ),
           FilledButton(
-            child: Text(lang.continueAction),
+            child: Text(lang.okLabel),
             onPressed: () => Navigator.of(context).pop(true),
           ),
         ],

@@ -454,10 +454,10 @@ class AppLocalizationsBe extends AppLocalizations {
   String get newPartitionTable => 'New partition table';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'New empty partition';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on it, all its current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Creating a new partition table on an entire device will remove all of its current partitions. This operation can be undone if needed.';
 
   @override
   String get tooManyPrimaryPartitions => 'Too many primary partitions';
