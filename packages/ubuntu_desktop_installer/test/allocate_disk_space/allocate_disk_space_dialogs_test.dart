@@ -51,8 +51,8 @@ void main() {
     await tester.tap(find.byType(MenuButtonBuilder<PartitionFormat?>));
     await tester.pumpAndSettle();
 
-    await tester.tap(
-        find.widgetWithText(MenuItemButton, tester.lang.partitionFormatBtrfs));
+    await tester
+        .tap(find.widgetWithText(MenuItemButton, PartitionFormat.btrfs.name!));
     await tester.pumpAndSettle();
 
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
@@ -117,8 +117,8 @@ void main() {
     await tester.tap(find.byType(MenuButtonBuilder<PartitionFormat?>));
     await tester.pumpAndSettle();
 
-    await tester.tap(
-        find.widgetWithText(MenuItemButton, tester.lang.partitionFormatBtrfs));
+    await tester
+        .tap(find.widgetWithText(MenuItemButton, PartitionFormat.btrfs.name!));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byType(YaruCheckbox));
