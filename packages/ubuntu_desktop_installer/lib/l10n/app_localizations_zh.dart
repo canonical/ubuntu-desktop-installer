@@ -41,7 +41,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return '正在准备 $DISTRO...';
   }
 
   @override
@@ -105,10 +105,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get detectLayout => '检测键盘布局';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => '检测';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => '键盘变体：';
 
   @override
   String get pressOneKey => '请按下以下按键中的任意一个：';
@@ -645,10 +645,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get writeChangesDescription => '如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get writeChangesDevicesTitle => '设备';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get writeChangesPartitionsTitle => '分区';
 
   @override
   String get writeChangesPartitionTablesHeader => '已更改以下设备的分区表：';
@@ -663,22 +663,22 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return '分区 #$disk$partition 从 $oldsize 调整大小到 $newsize';
+    return '分区<b>$disk$partition</b> 从<b>$oldsize</b> 调整为<b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return '分区 #$disk$partition 格式化为 $format 并挂载到 $mount';
+    return '分区<b>$disk$partition</b> 格式化为<b>$format</b> 并挂载到<b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '分区 #$disk$partition 格式化为 $format';
+    return '分区<b>$disk$partition</b> 格式化为<b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return '分区 #$disk$partition 挂载到 $mount';
+    return '分区 <b>$disk$partition</b> 挂载到 <b>$mount</b>';
   }
 
   @override
@@ -750,117 +750,117 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return '欢迎使用 $RELEASE';
   }
 
   @override
-  String get installationSlidesAvailable => 'Available:';
+  String get installationSlidesAvailable => '可用：';
 
   @override
-  String get installationSlidesIncluded => 'Included:';
+  String get installationSlidesIncluded => '包含：';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+  String get installationSlidesWelcomeTitle => '快速，免费且充满新功能';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return 'The latest version of $DISTRO makes computing easier than ever.';
+    return '最新版本的$DISTRO ，使计算比以往更容易。';
   }
 
   @override
   String installationSlidesWelcomeBody(Object RELEASE) {
-    return 'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in $RELEASE.';
+    return '无论您是开发人员、创作者、游戏玩家还是管理员，您都可以找到新的工具来提高工作效率并增强您在 $RELEASE 中的体验。';
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'All the applications you need';
+  String get installationSlidesSoftwareTitle => '您需要的所有应用程序';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
-    return 'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and $DISTRO archive.';
+    return '在Ubuntu软件中安装、管理和更新您的所有应用程序，包括来自Snap商店和$DISTRO 档案的数千个应用程序。';
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
+  String get installationSlidesDevelopmentTitle => '利用最好的开源进行开发';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
-    return '$DISTRO is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every $DISTRO release includes the latest toolchains and supports all major IDEs.';
+    return '$DISTRO 是应用程序或 Web 开发、数据科学和 AI/ML 以及 DevOps 和管理的理想工作站。每个 $DISTRO 版本都包含最新的工具链，并支持所有主要的 IDE。';
   }
 
   @override
-  String get installationSlidesCreativityTitle => 'Enhance your creativity';
+  String get installationSlidesCreativityTitle => '提高你的创造力';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
-    return 'If you\'re an animator, designer, video creator or game developer it\'s easy to bring your workflows to $DISTRO with support for open source and industry standard software and applications.';
+    return '如果您是动画师、设计师、视频创作者或游戏开发人员，则很容易将您的工作流程引入 $DISTRO，并支持开源和行业标准软件和应用程序。';
   }
 
   @override
-  String get installationSlidesGamingTitle => 'Great for gaming';
+  String get installationSlidesGamingTitle => '非常适合游戏';
 
   @override
   String installationSlidesGamingBody(Object DISTRO) {
-    return '$DISTRO supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on $DISTRO via applications like Steam with no additional configuration.';
+    return '$DISTRO 支持最新的 NVIDIA 和 Mesa 驱动程序以提高性能和兼容性。数以千计的 Windows 游戏可通过 Steam 等应用程序在 $DISTRO 上畅玩，无需额外配置。';
   }
 
   @override
-  String get installationSlidesSecurityTitle => 'Private and secure';
+  String get installationSlidesSecurityTitle => '私密且安全';
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
-    return '$DISTRO provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.';
+    return '$DISTRO 提供了保持在线隐私和安全所需的所有工具。内置防火墙和 VPN 支持以及大量以隐私为中心的应用程序，可确保您完全控制自己的数据。';
   }
 
   @override
   String installationSlidesSecurityLts(Object DISTRO) {
-    return 'All $DISTRO LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.';
+    return '所有 $DISTRO LTS 版本都包含五年的安全补丁，订阅 Ubuntu Pro 可延长至十年。';
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Power up your productivity';
+  String get installationSlidesProductivityTitle => '提高您的生产力';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
-    return '$DISTRO Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.';
+    return '$DISTRO桌面包括LibreOffice，这是一套与Microsoft Office兼容的开源应用程序，用于文档，电子表格和演示文稿。还提供流行的协作工具。';
   }
 
   @override
-  String get installationSlidesAccessibilityTitle => 'Access for everyone';
+  String get installationSlidesAccessibilityTitle => '每个人都可轻松使用';
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
-    return 'At the heart of the $DISTRO philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, $DISTRO makes computing easy - whoever and wherever you are.';
+    return '$DISTRO 理念的核心是相信计算是为所有人服务的。通过先进的无障碍工具和改变语言、颜色和文字大小的选项，$DISTRO ，使计算变得简单 - 无论你是谁，无论你在哪里。';
   }
 
   @override
-  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+  String get installationSlidesAccessibilityOrca => 'Orca屏幕阅读器';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Language support';
+  String get installationSlidesAccessibilityLanguages => '语言支持';
 
   @override
-  String get installationSlidesSupportTitle => 'Help & Support';
+  String get installationSlidesSupportTitle => '帮助与支持';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+    return '官方 $DISTRO 文档可在线获取，也可通过扩展坞中的“帮助”图标获取。';
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu 涵盖了一系列问题和回答，Ubuntu Discourse 为新老用户提供了指南和讨论。';
 
   @override
-  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+  String get installationSlidesSupportEnterprise => '对于企业用户，Canonical 提供商业支持，以便在工作场所轻松安全地使用和管理 Ubuntu。';
 
   @override
-  String get installationSlidesSupportResources => 'Helpful resources:';
+  String get installationSlidesSupportResources => '有用的资源：';
 
   @override
-  String get installationSlidesSupportDocumentation => 'Official documentation';
+  String get installationSlidesSupportDocumentation => '官方文档';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro => '通过Ubuntu Pro提供企业级24/7支持';
 
   @override
   String get copyingFiles => '正在复制文件……';
@@ -875,18 +875,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationFailed => '安装失败';
 
   @override
-  String get notEnoughDiskSpaceTitle => '抱歉';
+  String get notEnoughDiskSpaceTitle => '空间不足';
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
-    return 'Not enough disk space to install $DISTRO';
+    return '磁盘空间不足，无法安装 $DISTRO';
   }
 
   @override
-  String get notEnoughDiskSpaceAvailable => 'Available:';
+  String get notEnoughDiskSpaceAvailable => '可用：';
 
   @override
-  String get notEnoughDiskSpaceRequired => 'Required:';
+  String get notEnoughDiskSpaceRequired => '必填：';
 
   @override
   String get activeDirectoryOption => '使用活动目录';
@@ -898,7 +898,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get activeDirectoryTitle => '配置活动目录';
 
   @override
-  String get activeDirectoryTestConnection => '测试连接';
+  String get activeDirectoryTestConnection => '测试域连接';
 
   @override
   String get activeDirectoryDomainLabel => '域';

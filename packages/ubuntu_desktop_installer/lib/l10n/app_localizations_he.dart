@@ -41,7 +41,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return '$DISTRO בהכנות…';
   }
 
   @override
@@ -105,10 +105,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get detectLayout => 'איתור פריסת המקלדת';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => 'זיהוי';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => 'הגוון מקלדת:';
 
   @override
   String get pressOneKey => 'נא ללחוץ על אחד מהתווים הבאים:';
@@ -645,10 +645,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get writeChangesDescription => 'בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get writeChangesDevicesTitle => 'התקנים';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get writeChangesPartitionsTitle => 'מחיצות';
 
   @override
   String get writeChangesPartitionTablesHeader => 'טבלאות המחיצות של ההתקנים הבאים נערכו:';
@@ -663,22 +663,22 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'הגודל של מחיצה מס׳ $disk$partition ישתנה מ־$oldsize ל־$newsize';
+    return 'הגודל של מחיצה <b>$disk$partition</b> ישתנה מ־<b>$oldsize</b> ל־<b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'מחיצה מס׳ $disk$partition תפורמט כ־$format ותשמש עבור $mount';
+    return 'מחיצה <b>$disk$partition</b> פורמטה כ־<b>$format</b> ומשמשת עבור <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'מחיצה מס׳ $disk$partition תפורמט בתור $format';
+    return 'מחיצה <b>$disk$partition</b> פורמטה בתור <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'מחיצה מס׳ $disk$partition תשמש עבור $mount';
+    return 'מחיצה <b>$disk$partition</b> תשמש עבור <b>$mount</b>';
   }
 
   @override
@@ -875,18 +875,18 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installationFailed => 'ההתקנה נכשלה';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'מחילה';
+  String get notEnoughDiskSpaceTitle => 'אין מספיק מקום';
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
-    return 'Not enough disk space to install $DISTRO';
+    return 'אין מספיק מקום להתקין את $DISTRO';
   }
 
   @override
-  String get notEnoughDiskSpaceAvailable => 'Available:';
+  String get notEnoughDiskSpaceAvailable => 'פנוי:';
 
   @override
-  String get notEnoughDiskSpaceRequired => 'Required:';
+  String get notEnoughDiskSpaceRequired => 'נחוץ:';
 
   @override
   String get activeDirectoryOption => 'להשתמש ב־Active Directory';

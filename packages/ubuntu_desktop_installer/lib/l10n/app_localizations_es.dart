@@ -645,10 +645,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get writeChangesDescription => 'Si continúa, los cambios enumerados más abajo se escribirán en los discos. Podrá efectuar más cambios manualmente.';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get writeChangesDevicesTitle => 'Dispositivos';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get writeChangesPartitionsTitle => 'Particiones';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Las tablas de partición de los siguientes dispositivos se modifican:';
@@ -663,22 +663,22 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partición #$disk$partition redimensionada de $oldsize a $newsize';
+    return 'partición <b>$disk$partition</b> redimensionada de <b>$oldsize</b> a <b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partición #$disk$partition formateada como $format utilizada para $mount';
+    return 'partición <b>$disk$partition</b> formateada como <b>$format</b> utilizada para <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partición #$disk$partition formateada como $format';
+    return 'partición <b>$disk$partition</b> formateada como <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partición #$disk$partition utilizada para $mount';
+    return 'partición <b>$disk$partition</b> utilizada para <b>$mount</b>';
   }
 
   @override
