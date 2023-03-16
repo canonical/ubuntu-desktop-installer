@@ -195,3 +195,9 @@ extension DiskExtension on Disk {
   /// Returns the sysname of the disk (e.g. "sda" for "/dev/sda").
   String get sysname => p.basename(path ?? '');
 }
+
+/// Partition data class extensions for the UI.
+extension PartitionExtension on Partition {
+  /// Returns the sysname of the partition (e.g. "sda1" for "/dev/sda1").
+  String get sysname => p.basename(path ?? '');
+}

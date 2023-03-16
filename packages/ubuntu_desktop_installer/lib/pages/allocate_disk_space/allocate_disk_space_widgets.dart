@@ -6,6 +6,7 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
 import 'storage_columns.dart';
@@ -95,10 +96,7 @@ class PartitionLegend extends StatelessWidget {
                       EdgeInsetsDirectional.only(start: index > 0 ? 40 : 0),
                   child: object.map(
                     partition: (partition) => _PartitionLabel(
-                      // TODO:
-                      // - localize?
-                      // - partition type?
-                      title: '${model.selectedDisk!.id}${partition.number}',
+                      title: partition.sysname,
                       size: partition.size ?? 0,
                       color: _partitionColor(index, objects.length),
                     ),
