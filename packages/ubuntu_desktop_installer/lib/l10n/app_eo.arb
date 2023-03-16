@@ -150,7 +150,7 @@
   "@okButtonText": {},
   "welcome": "Bonvenon",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Provi aŭ instali",
+  "tryOrInstallPageTitle": "Provi aŭ instali {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Ripari instalaĵon",
   "@repairInstallation": {},
@@ -348,7 +348,7 @@
   "@partitionFormatZfsroot": {},
   "partitionMountPointLabel": "Surmetingo:",
   "@partitionMountPointLabel": {},
-  "writeChangesToDisk": "Skribi ŝanĝojn sur diskon",
+  "writeChangesToDisk": "Preta por instalado",
   "@writeChangesToDisk": {},
   "writeChangesPartitionsHeader": "La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:",
   "@writeChangesPartitionsHeader": {},
@@ -422,9 +422,9 @@
   "@wiredDisabled": {},
   "wiredMustBeEnabled": "Por uzi Eterreton kun ĉi tiu komputilo, vi devas ebligi dratajn retojn",
   "@wiredMustBeEnabled": {},
-  "newPartitionTableConfirmationMessage": "Vi elektis dividi la tutan aparaton en subdiskojn. Se vi daŭrigas la kreadon de nova subdiskotabelo sur ĝin, ĉiuj ĝiaj ekzistantaj subdiskoj estos forviŝitaj.\n\nNotu, ke vi povos laŭvole malfari ĉi tiun operacion poste.",
+  "newPartitionTableConfirmationMessage": "Kreado de nova subdiskotabelo sur la tuta aparato forviŝos ĉiujn ekzistantajn subdiskojn. Vi povos laŭvole malfari ĉi tiun operacion poste.",
   "@newPartitionTableConfirmationMessage": {},
-  "newPartitionTableConfirmationTitle": "Ĉu krei novan subdiskotabelon sur ĉi tiun aparaton?",
+  "newPartitionTableConfirmationTitle": "Nova malplena subdisko",
   "@newPartitionTableConfirmationTitle": {},
   "onBatteryWarning": "<font color=\"{color}\">Averto:</font> La komputilo ne estas konektita al energifonto.",
   "@onBatteryWarning": {
@@ -653,7 +653,7 @@
       "partition": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la subdisko #{disk}{partition} strukturota laŭ {format} kaj uzota por {mount}",
+  "writeChangesPartitionFormattedMounted": "la subdisko <b>{disk}{partition}</b> strukturota laŭ <b>{format}</b> kaj uzota por <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -663,9 +663,9 @@
       "mount": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "Pardonu",
+  "notEnoughDiskSpaceTitle": "Ne sufiĉas spaco",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "ŝanĝi la grandon de la subdisko #{disk}{partition} de {oldsize} al {newsize}",
+  "writeChangesPartitionResized": "ŝanĝi la grandon de la subdisko <b>{disk}{partition}</b> de <b>{oldsize}</b> al <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -675,7 +675,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionMounted": "la subdisko #{disk}{partition} uzota por {mount}",
+  "writeChangesPartitionMounted": "la subdisko <b>{disk}{partition}</b> uzota por <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -692,7 +692,7 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionFormatted": "la subdisko #{disk}{partition} strukturota laŭ {format}",
+  "writeChangesPartitionFormatted": "la subdisko <b>{disk}{partition}</b> strukturota laŭ <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -781,5 +781,158 @@
   "activeDirectoryErrorTitle": "Eraro agordante konekton al Aktiva Dosierujo",
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Pardonu, Aktiva Dosierujo ne estas agordebla nuntempe. Post kiam via sistemo funkcias, vizitu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> por helpo.",
-  "@activeDirectoryErrorMessage": {}
+  "@activeDirectoryErrorMessage": {},
+  "preparingUbuntu": "Preparante {DISTRO}…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "keyboardVariant": "Klavara varianto:",
+  "@keyboardVariant": {},
+  "detectButtonText": "Identigi",
+  "@detectButtonText": {},
+  "writeChangesDevicesTitle": "Aparatoj",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Subdiskoj",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesDevelopmentTitle": "Programu helpate de malfermitaj kodoj",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesWelcomeHeader": "La nova versio de {DISTRO} igas komputadon pli facila ol iam ajn.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "Ĉu vi programas, kreas, ludas aŭ administras? Vi trovos novajn rimedojn por plibonigi viajn produktivecon kaj sperton en {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Pliigu vian povon krei",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesSecurityLts": "Ĉiu Longdaŭre Subtenata (LTS) versio de {DISTRO} provizas kvin jarojn da sekurigaj flikoj; abono de Ubuntu Pro plilongigas tion al dek jaroj.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityBody": "Ĉe la koro de la filozofio de {DISTRO} estas la kredo, ke komputado estu por ĉiuj. Per altnivelaj alirebligiloj kaj la kapablo ŝanĝi lingvon, kolorojn kaj tekstograndon, {DISTRO} faciligas komputadon – por ĉiuj ajn, ĉie ajn.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "Produktiviĝu",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesSoftwareBody": "Instalu, administru kaj ĝisdatigu ĉiujn viajn programojn per Ubuntu-Programvendejo, inkluzive de miloj da programoj en la Snap-Vendejo kaj en la arkivoj de {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityBody": "{DISTRO} provizas ĉiujn ilojn, kiujn vi bezonas por resti privata kaj sekura Interrete. Per subtenataj fajroŝirmilo kaj virtuala privata reto kaj amaso da privatigaj programoj, vi povas certigi, ke vi plene regas viajn datenojn.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityBody": "{DISTRO} inkluzivas LibreOffice, malfermitkodan oficejan programaron kongruan kun Microsoft Office por verki dokumentojn, kalkultabelojn kaj prezentaĵojn. Popularaj kunlaboriloj ankaŭ estas haveblaj.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportHeader": "La oficiala dokumentaro de {DISTRO} estas havebla Interrete kaj per la Helpo-piktogramo en la doko.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportResources": "Utilaj rimedoj:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportEnterprise": "Al entreprenoj, Canonical ofertas komercan subtenon por facile enkonduki kaj sekure administri Ubuntu.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesSupportCommunity": "Ĉe Ask Ubuntu troviĝas gamo da demandoj kaj respondoj, kaj ĉe Ubuntu Discourse estas gvidiloj kaj diskutejoj por kaj novaj kaj spertaj uzantoj.",
+  "@installationSlidesSupportCommunity": {},
+  "welcomePageTitle": "Bonvenon al {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesTitle": "Bonvenon al {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesWelcomeTitle": "Rapida, senpaga, plena de novaj funkcioj",
+  "@installationSlidesWelcomeTitle": {},
+  "notEnoughDiskSpaceRequired": "Bezonata:",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesAccessibilityTitle": "Uzebla por ĉiuj",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesSecurityTitle": "Privata kaj sekura",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSupportDocumentation": "Oficiala dokumentaro",
+  "@installationSlidesSupportDocumentation": {},
+  "notEnoughDiskSpaceUbuntu": "Ne sufiĉas diska spaco por instali {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Ekranlegilo Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "notEnoughDiskSpaceAvailable": "Disponebla:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "installationSlidesAccessibilityLanguages": "Lingvosubteno",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "Helpo kaj subteno",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesIncluded": "Inkluzivitaj:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesAvailable": "Instaleblaj:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesSupportUbuntuPro": "Entreprene taŭga subteno ĉiutage ĉiuhore per Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesSoftwareTitle": "Ĉiom da programoj, kiom vi bezonas",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesGamingTitle": "Bonega por videoludoj",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} estas la ideala laborstacio por verkado de poŝaparataj kaj Interretaj programoj, datenscienco, artefarita intelekto, maŝina lernado, evoluoperacioj kaj servila administrado. Ĉiu versio de {DISTRO} inkluzivas la plej novajn ilĉenojn kaj subtenas ĉiujn precipajn programadmediojn.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingBody": "{DISTRO} subtenas la plej novajn zorgilojn de NVIDIA kaj Mesa por plibonigi rendimenton kaj kongruecon. Miloj da videoludoj por Windows ludiĝas bonege sur {DISTRO} per Steam kaj aliaj programoj sen kroma agordado.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityBody": "Se vi estas movbildisto, dezajnisto, videoverkisto aŭ ludprogramisto, estas facile alporti viajn laborfluojn al {DISTRO} uzante malfermitkodajn kaj industrie normajn programojn.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
