@@ -35,7 +35,7 @@ void main() {
         home: Scaffold(
           body: StorageButton(
             name: 'Windows 10',
-            path: '/dev/sda1',
+            sysname: 'sda1',
             format: 'ntfs',
             size: toBytes(34, DataUnit.gigabytes),
           ),
@@ -44,7 +44,7 @@ void main() {
     );
 
     expect(find.text('Windows 10'), findsOneWidget);
-    expect(find.text('/dev/sda1 (ntfs)'), findsOneWidget);
+    expect(find.text('sda1 (ntfs)'), findsOneWidget);
     expect(find.text('34 GB'), findsOneWidget);
 
     final icon = find.byType(StorageIcon);
