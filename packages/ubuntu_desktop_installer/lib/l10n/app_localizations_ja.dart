@@ -37,7 +37,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get quitButtonText => 'インストールを終了';
 
   @override
-  String get welcome => 'ようこそ';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {

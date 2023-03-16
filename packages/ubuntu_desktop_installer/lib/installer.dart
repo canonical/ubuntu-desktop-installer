@@ -298,7 +298,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
     final style = Theme.of(context).textTheme.headlineSmall!;
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(AppLocalizations.of(context).welcome),
+        title: Text(lang.welcomePageTitle(flavor.name)),
       ),
       content: Column(
         mainAxisAlignment: MainAxisAlignment.center,

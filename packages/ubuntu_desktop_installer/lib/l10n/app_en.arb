@@ -25,8 +25,13 @@
   "@yesButtonText": {},
   "quitButtonText": "Quit installation",
   "@quitButtonText": {},
-  "welcome": "Welcome",
-  "@welcome": {},
+  "welcomePageTitle": "Welcome to {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
   "preparingUbuntu": "Preparing {DISTRO}...",
   "@preparingUbuntu": {
     "type": "text",

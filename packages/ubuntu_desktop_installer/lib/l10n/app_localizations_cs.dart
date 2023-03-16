@@ -37,7 +37,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get quitButtonText => 'Opustit instalaci';
 
   @override
-  String get welcome => 'Vítejte';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {

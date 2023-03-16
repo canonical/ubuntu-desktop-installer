@@ -37,7 +37,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get quitButtonText => 'Kilépés a telepítésből';
 
   @override
-  String get welcome => 'Üdvözöljük';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
   String preparingUbuntu(Object DISTRO) {
