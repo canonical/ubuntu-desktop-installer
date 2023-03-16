@@ -65,7 +65,7 @@ void main() {
       expect(
         find.descendant(
           of: find.byType(MenuItemButton),
-          matching: find.textContaining(disk.path!),
+          matching: find.textContaining(disk.sysname),
         ),
         findsOneWidget,
       );
@@ -99,7 +99,7 @@ void main() {
       selectedStorage: selectedStorage,
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-    expect(find.text(selectedDisk.path!), findsOneWidget);
+    expect(find.text(selectedDisk.sysname), findsOneWidget);
     expect(find.text(filesize(selectedDisk.size)), findsOneWidget);
   });
 
