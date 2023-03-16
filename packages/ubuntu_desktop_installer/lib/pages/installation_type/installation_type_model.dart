@@ -1,7 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 
