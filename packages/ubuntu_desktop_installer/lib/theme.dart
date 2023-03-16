@@ -37,6 +37,9 @@ extension ThemeDataX on ThemeData {
         YaruPageIndicatorThemeData(mouseCursor: mouseCursor),
         YaruRadioThemeData(mouseCursor: mouseCursor),
         YaruSwitchThemeData(mouseCursor: mouseCursor),
+        YaruTitleBarThemeData(
+          backgroundColor: MaterialStatePropertyAll(colorScheme.background),
+        ),
         YaruToggleButtonThemeData(mouseCursor: mouseCursor),
       ],
     );
