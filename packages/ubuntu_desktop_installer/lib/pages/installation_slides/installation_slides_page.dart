@@ -92,8 +92,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
         children: [
           SlideView(
             controller: _slideController,
-            interval:
-                model.isPlaying ? const Duration(seconds: 50) : Duration.zero,
+            interval: model.isPlaying ? kDefaultSlideInterval : Duration.zero,
             slides: slides,
           ),
           Positioned.fill(
