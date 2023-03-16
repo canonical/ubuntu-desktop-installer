@@ -120,7 +120,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     for (final disk in testDisks) {
-      expect(find.text(disk.path!), findsOneWidget);
+      expect(find.text(disk.sysname), findsOneWidget);
       expect(find.text(filesize(disk.size)), findsOneWidget);
 
       for (final partition in disk.partitions.whereType<Partition>()) {
@@ -135,12 +135,12 @@ void main() {
     final model = buildModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    await tester.tap(find.text(testDisks.first.path!));
+    await tester.tap(find.text(testDisks.first.sysname));
     await tester.pumpAndSettle();
 
     verify(model.selectStorage(0)).called(1);
 
-    await tester.tap(find.text(testDisks.last.path!));
+    await tester.tap(find.text(testDisks.last.sysname));
     await tester.pumpAndSettle();
 
     verify(model.selectStorage(1)).called(1);

@@ -4,6 +4,7 @@ import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
+import '../../services.dart';
 import 'storage_types.dart';
 
 typedef DiskBuilder = Widget Function(BuildContext context, Disk disk);
@@ -37,7 +38,7 @@ class StorageDeviceColumn extends StorageColumn {
               children: [
                 const Icon(YaruIcons.drive_harddisk_filled),
                 const SizedBox(width: 16),
-                Text(disk.path ?? disk.id),
+                Text(disk.sysname),
               ],
             );
           },
@@ -74,7 +75,7 @@ class StorageDeviceColumn extends StorageColumn {
               children: [
                 const Icon(YaruIcons.drive_harddisk),
                 const SizedBox(width: 16),
-                Text('${disk.path}${partition.number}'),
+                Text(partition.sysname),
               ],
             );
           },
