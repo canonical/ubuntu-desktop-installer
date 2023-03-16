@@ -374,7 +374,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "הסיסמאות סותרות זו את זו",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesToDisk": "כתיבת השינויים לכונן",
+  "writeChangesToDisk": "סיימנו להתכונן להתקנה",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "כונן",
   "@writeChangesFallbackSerial": {
@@ -916,5 +916,23 @@
     }
   },
   "installationSlidesSupportCommunity": "האתר Ask Ubuntu חולש על פני מגוון רחב של שאלות ותשובות ו־Ubuntu Discourse מספק מדריכים ודיונים למשתמשים חדשים ומנוסים.",
-  "@installationSlidesSupportCommunity": {}
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesProductivityTitle": "פשוט להפיק יותר",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesProductivityBody": "שולחן העבודה של {DISTRO} כולל את LibreOffice, חבילת יישומי קוד פתוח תואמי Microsoft Office עבור מסמכים, גיליונות נתונים ומצגות. לרבות כלי שיתוף פעולה נוספים.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "גישה לכל אחד ואחת",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesSecurityLts": "כל מהדורות {DISTRO} LTS (תמיכה לזמן ארוך) זוכות לחמש שנים של תיקוני אבטחת מידע אותן ניתן להרחיב לעשר עם מינוי של אובונטו פרו.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
