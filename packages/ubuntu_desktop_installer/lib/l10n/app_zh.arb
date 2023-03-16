@@ -682,7 +682,7 @@
   },
   "quitButtonText": "退出安装",
   "@quitButtonText": {},
-  "writeChangesPartitionFormatted": "分区 #{disk}{partition} 格式化为 {format}",
+  "writeChangesPartitionFormatted": "分区<b>{disk}{partition}</b> 格式化为<b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -691,7 +691,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "分区 #{disk}{partition} 挂载到 {mount}",
+  "writeChangesPartitionMounted": "分区 <b>{disk}{partition}</b> 挂载到 <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -708,7 +708,7 @@
       "partition": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "抱歉",
+  "notEnoughDiskSpaceTitle": "空间不足",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceHeader": "你至少需要 {SIZE} 的磁盘空间来安装 {RELEASE}。",
   "@notEnoughDiskSpaceHeader": {
@@ -718,7 +718,7 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "分区 #{disk}{partition} 从 {oldsize} 调整大小到 {newsize}",
+  "writeChangesPartitionResized": "分区<b>{disk}{partition}</b> 从<b>{oldsize}</b> 调整为<b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -728,7 +728,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "分区 #{disk}{partition} 格式化为 {format} 并挂载到 {mount}",
+  "writeChangesPartitionFormattedMounted": "分区<b>{disk}{partition}</b> 格式化为<b>{format}</b> 并挂载到<b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -811,7 +811,7 @@
   "@activeDirectoryAdminLabel": {},
   "activeDirectoryTitle": "配置活动目录",
   "@activeDirectoryTitle": {},
-  "activeDirectoryTestConnection": "测试连接",
+  "activeDirectoryTestConnection": "测试域连接",
   "@activeDirectoryTestConnection": {},
   "activeDirectoryDomainEndDot": "以点（.）结尾",
   "@activeDirectoryDomainEndDot": {},
@@ -836,5 +836,151 @@
   "activeDirectoryErrorTitle": "配置活动目录时出错",
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "抱歉，活动目录目前无法设置。系统启动并运行后，请访问 <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> 寻求帮助。",
-  "@activeDirectoryErrorMessage": {}
+  "@activeDirectoryErrorMessage": {},
+  "preparingUbuntu": "正在准备 {DISTRO}...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "keyboardVariant": "键盘变体：",
+  "@keyboardVariant": {},
+  "detectButtonText": "检测",
+  "@detectButtonText": {},
+  "writeChangesDevicesTitle": "设备",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "分区",
+  "@writeChangesPartitionsTitle": {},
+  "notEnoughDiskSpaceUbuntu": "磁盘空间不足，无法安装 {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "可用：",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "必填：",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesAvailable": "可用：",
+  "@installationSlidesAvailable": {},
+  "installationSlidesIncluded": "包含：",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "快速，免费且充满新功能",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "最新版本的{DISTRO} ，使计算比以往更容易。",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "您需要的所有应用程序",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "在Ubuntu软件中安装、管理和更新您的所有应用程序，包括来自Snap商店和{DISTRO} 档案的数千个应用程序。",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentTitle": "利用最好的开源进行开发",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesCreativityTitle": "提高你的创造力",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesCreativityBody": "如果您是动画师、设计师、视频创作者或游戏开发人员，则很容易将您的工作流程引入 {DISTRO}，并支持开源和行业标准软件和应用程序。",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "私密且安全",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityLts": "所有 {DISTRO} LTS 版本都包含五年的安全补丁，订阅 Ubuntu Pro 可延长至十年。",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "提高您的生产力",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesProductivityBody": "{DISTRO}桌面包括LibreOffice，这是一套与Microsoft Office兼容的开源应用程序，用于文档，电子表格和演示文稿。还提供流行的协作工具。",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Orca屏幕阅读器",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesAccessibilityLanguages": "语言支持",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "帮助与支持",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSupportHeader": "官方 {DISTRO} 文档可在线获取，也可通过扩展坞中的“帮助”图标获取。",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Ask Ubuntu 涵盖了一系列问题和回答，Ubuntu Discourse 为新老用户提供了指南和讨论。",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "对于企业用户，Canonical 提供商业支持，以便在工作场所轻松安全地使用和管理 Ubuntu。",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesSupportResources": "有用的资源：",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "官方文档",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "通过Ubuntu Pro提供企业级24/7支持",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesTitle": "欢迎使用 {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesAccessibilityBody": "{DISTRO} 理念的核心是相信计算是为所有人服务的。通过先进的无障碍工具和改变语言、颜色和文字大小的选项，{DISTRO} ，使计算变得简单 - 无论你是谁，无论你在哪里。",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "无论您是开发人员、创作者、游戏玩家还是管理员，您都可以找到新的工具来提高工作效率并增强您在 {RELEASE} 中的体验。",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesGamingBody": "{DISTRO} 支持最新的 NVIDIA 和 Mesa 驱动程序以提高性能和兼容性。数以千计的 Windows 游戏可通过 Steam 等应用程序在 {DISTRO} 上畅玩，无需额外配置。",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "每个人都可轻松使用",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} 是应用程序或 Web 开发、数据科学和 AI/ML 以及 DevOps 和管理的理想工作站。每个 {DISTRO} 版本都包含最新的工具链，并支持所有主要的 IDE。",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingTitle": "非常适合游戏",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesSecurityBody": "{DISTRO} 提供了保持在线隐私和安全所需的所有工具。内置防火墙和 VPN 支持以及大量以隐私为中心的应用程序，可确保您完全控制自己的数据。",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
