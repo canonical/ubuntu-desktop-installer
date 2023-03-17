@@ -98,6 +98,7 @@ parts:
 
   subiquitydeps:
     plugin: nil
+    build-attributes: [enable-patchelf]
     stage-packages:
       - cloud-init
       - libsystemd0
@@ -269,6 +270,7 @@ parts:
   os-prober:
     plugin: nil
     stage-packages: [os-prober]
+    build-attributes: [enable-patchelf]
     override-stage: |
       craftctl default
       for file in $(grep -lr /usr | grep 'usr/[^/]*/[^/]*-probe[sr]'); do
