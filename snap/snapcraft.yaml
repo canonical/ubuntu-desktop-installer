@@ -114,6 +114,7 @@ parts:
       - libpython3-stdlib
       - libpython3.10-stdlib
       - libpython3.10-minimal
+      - libnetplan0
       - python3-apport
       - python3-requests-unixsocket
       - python3-pyroute2
