@@ -8,7 +8,7 @@
   "@restartButtonText": {},
   "welcome": "Добро пожаловать",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Попробовать или установить",
+  "tryOrInstallPageTitle": "Попробовать или установить {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Исправить установку",
   "@repairInstallation": {},
@@ -135,7 +135,7 @@
   "@partitionEditTitle": {},
   "partitionSizeLabel": "Размер:",
   "@partitionSizeLabel": {},
-  "startInstallingButtonText": "Начать установку",
+  "startInstallingButtonText": "Установить",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Устройство",
   "@diskHeadersDevice": {},
@@ -227,7 +227,7 @@
   "@whoAreYouPagePasswordRequired": {},
   "installationCompleteTitle": "Установка завершена",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** установлена и готова к использованию.",
+  "readyToUse": "**{system}** установлена и готова к использованию",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -276,9 +276,9 @@
   "@chooseYourLookPageHeader": {},
   "chooseYourLookPageDarkSetting": "Тёмный",
   "@chooseYourLookPageDarkSetting": {},
-  "newPartitionTableConfirmationTitle": "Создать новую пустую таблицу разделов на этом устройстве?",
+  "newPartitionTableConfirmationTitle": "Новый пустой раздел",
   "@newPartitionTableConfirmationTitle": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Предупреждение</font>. Если вы потеряете этот ключ безопасности, все данные будут потеряны. При необходимости вы можете записать ключ и хранить его в безопасном месте.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Предупреждение:</font> Если вы потеряете этот ключ безопасности, все данные будут потеряны. При необходимости вы можете записать ключ и хранить его в безопасном месте.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -370,7 +370,7 @@
   "@officeSlideDescription": {},
   "supportSlideQuestions": "На странице <a href=\"https://askubuntu.com\">Ask Ubuntu</a> вы можете задавать вопросы и выполнять поиск по внушительной коллекции уже отвеченных вопросов. Поддержка на вашем родном языке может быть предоставлена вашей <a href=\"https://loco.ubuntu.com/teams\">местной командой сообщества</a>.",
   "@supportSlideQuestions": {},
-  "onBatteryWarning": "<font color=\"{color}\">Внимание</font>. Компьютер не подключен к источнику питания.",
+  "onBatteryWarning": "<font color=\"{color}\">Внимание:</font> Компьютер не подключен к источнику питания.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -414,7 +414,7 @@
       "os2": {}
     }
   },
-  "newPartitionTableConfirmationMessage": "Вы выбрали целое устройство для разбиения его на разделы. Если вы продолжите создание новой таблицы разделов на устройстве, все текущие разделы будут удалены.\n\nОбратите внимание, что, если захотите, то сможете отменить эту операцию позже.",
+  "newPartitionTableConfirmationMessage": "Создание новой таблицы разделов на этом устройстве удалит все его текущие разделы. При необходимости эту операцию можно отменить.",
   "@newPartitionTableConfirmationMessage": {},
   "whoAreYouPageShowPassword": "Показать пароль",
   "@whoAreYouPageShowPassword": {},
@@ -623,7 +623,7 @@
   },
   "installAlongsideAvailable": "Доступно:",
   "@installAlongsideAvailable": {},
-  "writeChangesPartitionMounted": "раздел #{disk}{partition} использован для {mount}",
+  "writeChangesPartitionMounted": "раздел <b>{disk}{partition}</b> использован для <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -634,7 +634,7 @@
   },
   "quitButtonText": "Отменить установку",
   "@quitButtonText": {},
-  "writeChangesPartitionResized": "размер раздела #{disk}{partition} изменен с {oldsize} на {newsize}",
+  "writeChangesPartitionResized": "размер раздела <b>{disk}{partition}</b> изменён с <b>{oldsize}</b> на <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -663,7 +663,7 @@
       "RELEASE": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "Извините",
+  "notEnoughDiskSpaceTitle": "Недостаточно места",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceHasOnly": "На этом компьютере имеется только {SIZE}.",
   "@notEnoughDiskSpaceHasOnly": {
@@ -679,7 +679,7 @@
       "SIZE": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "раздел #{disk}{partition} отформатирован как {format} и использован для {mount}",
+  "writeChangesPartitionFormattedMounted": "раздел <b>{disk}{partition}</b> отформатирован как <b>{format}</b> и использован для <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -689,7 +689,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "раздел #{disk}{partition} отформатирован как {format}",
+  "writeChangesPartitionFormatted": "раздел <b>{disk}{partition}</b> отформатирован как <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -710,7 +710,7 @@
   "@installationTypeLVMEncryptionSelected": {},
   "showSecurityKey": "Показать ключ безопасности",
   "@showSecurityKey": {},
-  "installCodecsTitle": "Установить поддержку дополнительных медиаформатов",
+  "installCodecsTitle": "Загрузить и установить поддержку дополнительных медиаформатов",
   "@installCodecsTitle": {},
   "installDriversTitle": "Установка программного обеспечения сторонних производителей для графики и Wi-Fi оборудования",
   "@installDriversTitle": {},
@@ -732,5 +732,93 @@
   "tooManyPrimaryPartitions": "Слишком много первичных разделов",
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "Достигнут предел",
-  "@partitionLimitReached": {}
+  "@partitionLimitReached": {},
+  "whoAreYouPageRealNameTooLong": "Слишком длинное имя.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Слишком длинное имя компьютера.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryDomainInvalidChars": "Недопустимые символы",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryPasswordLabel": "Пароль",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryAdminInvalidChars": "Недопустимые символы",
+  "@activeDirectoryAdminInvalidChars": {},
+  "partitionFormatNone": "Оставить неформатированным",
+  "@partitionFormatNone": {},
+  "preparingUbuntu": "Подготовка {DISTRO}...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryTitle": "Настроить Active Directory",
+  "@activeDirectoryTitle": {},
+  "whoAreYouPagePasswordShow": "Показать",
+  "@whoAreYouPagePasswordShow": {},
+  "writeChangesPartitionsTitle": "Разделы",
+  "@writeChangesPartitionsTitle": {},
+  "writeChangesDevicesTitle": "Устройства",
+  "@writeChangesDevicesTitle": {},
+  "activeDirectoryDomainLabel": "Домен",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryTestConnection": "Проверка подключения к домену",
+  "@activeDirectoryTestConnection": {},
+  "installationSlidesTitle": "Добро пожаловать в {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "activeDirectoryDomainNotFound": "Домен не найден",
+  "@activeDirectoryDomainNotFound": {},
+  "installationSlidesSupportResources": "Полезные ресурсы:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesAccessibilityOrca": "Программа чтения с экрана Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesAccessibilityLanguages": "Языковая поддержка",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportHeader": "Официальная поддержка {DISTRO} доступна как в Интернете, так и через значок справки в док-панели.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "Доступно для каждого",
+  "@installationSlidesAccessibilityTitle": {},
+  "welcomePageTitle": "Добро пожаловать в {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryErrorTitle": "Ошибка настройки подключения к Active Directory",
+  "@activeDirectoryErrorTitle": {},
+  "notEnoughDiskSpaceUbuntu": "Недостаточно места на диске для установки {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportDocumentation": "Официальная документация",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "Поддержка корпоративных пользователей в режиме 24/7 в Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesSupportTitle": "Помощь и поддержка",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSoftwareBody": "Устанавливайте, управляйте и обновляйте все свои приложения в Ubuntu Software, включая тысячи приложений из Snap Store и архива {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "Все необходимые приложения",
+  "@installationSlidesSoftwareTitle": {},
+  "whoAreYouPagePasswordHide": "Скрыть",
+  "@whoAreYouPagePasswordHide": {}
 }
