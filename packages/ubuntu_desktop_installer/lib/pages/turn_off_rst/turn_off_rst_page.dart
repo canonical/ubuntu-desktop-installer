@@ -47,7 +47,10 @@ class TurnOffRSTPage extends StatelessWidget {
             const SizedBox(height: 60),
             SvgPicture.asset(
               'assets/turn_off_rst/qr-code.svg',
-              color: Theme.of(context).textTheme.bodyLarge!.color,
+              colorFilter: ColorFilter.mode(
+                Theme.of(context).colorScheme.onSurface,
+                BlendMode.srcIn,
+              ),
             ),
           ],
         ),
