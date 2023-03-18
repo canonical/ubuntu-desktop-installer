@@ -164,6 +164,9 @@ void main() {
     expect(continueButton, findsOneWidget);
 
     await tester.tap(continueButton);
+    verifyNever(model.startInstallation());
+
+    await tester.pumpAndSettle(kThemeAnimationDuration);
     verify(model.startInstallation()).called(1);
   });
 

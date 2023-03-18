@@ -77,16 +77,12 @@ Future<void> runInstallerApp(
 
   final subiquityMonitor = SubiquityStatusMonitor();
 
-  final geodata = Geodata.asset();
-  final geoname = Geoname.ubuntu(geodata: geodata);
-
   final baseName = p.basename(Platform.resolvedExecutable);
 
   // conditional registration if not already registered by flavors or tests
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService(() => DiskStorageService(subiquityClient));
-  tryRegisterService(() => GeoService(sources: [geodata, geoname]));
   tryRegisterService(JournalService.new);
   tryRegisterService(() => NetworkService(subiquityClient));
   tryRegisterService(PowerService.new);
@@ -135,6 +131,15 @@ Future<void> runInstallerApp(
     'snaplist',
     'ubuntu_pro',
   ]);
+
+  var geo = tryGetService<GeoService>();
+  if (geo == null) {
+    final geodata = Geodata.asset();
+    final geoname = Geoname.ubuntu(geodata: geodata);
+    geo = GeoService(sources: [geodata, geoname]);
+    registerServiceInstance(geo);
+  }
+  await geo.init();
 
   final telemetry = getService<TelemetryService>();
   await telemetry.init({
@@ -187,6 +192,11 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
     _subiquityStatusChange = monitor.onStatusChanged.listen((status) {
       YaruWindow.of(context).setClosable(status?.isInstalling != true);
       setState(() => _subiquityStatus = status);
+    });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      TimezoneMap.precacheAssets(context);
     });
   }
 
