@@ -141,8 +141,8 @@ extension UbuntuFinders on CommonFinders {
 
       bool hasAssetPicture(Widget widget) {
         return widget is SvgPicture &&
-            widget.pictureProvider is ExactAssetPicture &&
-            (widget.pictureProvider as ExactAssetPicture)
+            widget.bytesLoader is SvgAssetLoader &&
+            (widget.bytesLoader as SvgAssetLoader)
                 .assetName
                 .endsWith(assetName);
       }
