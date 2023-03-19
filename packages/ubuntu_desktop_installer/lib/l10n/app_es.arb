@@ -8,7 +8,7 @@
   "@restartButtonText": {},
   "welcome": "Le damos la bienvenida",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Probar o instalar",
+  "tryOrInstallPageTitle": "Probar o instalar {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Reparar instalación",
   "@repairInstallation": {},
@@ -84,7 +84,7 @@
   "@diskHeadersSystem": {},
   "diskHeadersFormat": "Formato",
   "@diskHeadersFormat": {},
-  "writeChangesToDisk": "Escribir cambios en el disco",
+  "writeChangesToDisk": "Listo para instalar",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "disco",
   "@writeChangesFallbackSerial": {
@@ -516,7 +516,7 @@
   },
   "installationTypeMultiOSDetected": "Actualmente este equipo tiene varios sistemas operativos instalados. ¿Qué le gustaría hacer?",
   "@installationTypeMultiOSDetected": {},
-  "newPartitionTableConfirmationTitle": "¿Quiere crear una tabla de particiones nueva en este dispositivo?",
+  "newPartitionTableConfirmationTitle": "Nueva partición vacía",
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "Ha optado por particionar un dispositivo entero. Si continúa con la creación de la tabla de particiones nueva en el dispositivo, las particiones que haya desaparecerán.\n\nObserve que puede deshacer esta operación más adelante, si lo desea.",
   "@newPartitionTableConfirmationMessage": {},
@@ -658,7 +658,7 @@
   },
   "quitButtonText": "Salir de la instalación",
   "@quitButtonText": {},
-  "notEnoughDiskSpaceTitle": "Disculpe",
+  "notEnoughDiskSpaceTitle": "Espacio insuficiente",
   "@notEnoughDiskSpaceTitle": {},
   "installingSystem": "Instalando el sistema…",
   "@installingSystem": {},
@@ -805,5 +805,68 @@
   "writeChangesDevicesTitle": "Dispositivos",
   "@writeChangesDevicesTitle": {},
   "writeChangesPartitionsTitle": "Particiones",
-  "@writeChangesPartitionsTitle": {}
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesSecurityTitle": "Privado y seguro",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSupportHeader": "La documentación oficial de {DISTRO} está disponible tanto en línea como a través del icono Ayuda del dock.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceUbuntu": "No hay suficiente espacio en disco para instalar {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityBody": "En el corazón de la filosofía de {DISTRO} reside la creencia de que la informática es para todas las personas. Las herramientas avanzadas de accesibilidad y las opciones de idioma, colores y tamaño del texto hacen que la computación con {DISTRO} sea sencilla, sea quien sea y esté donde esté.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "Disponible:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "installationSlidesTitle": "Le damos la bienvenida a {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesAvailable": "Disponible:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesIncluded": "Incluido:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "Rápido, gratuito y lleno de nuevas funciones",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesAccessibilityOrca": "Lector de pantalla Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesAccessibilityLanguages": "Compatibilidad lingüística",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "Ayuda y asistencia",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSupportCommunity": "Ask Ubuntu cubre una gama de preguntas y respuestas. Ubuntu Discourse proporciona guías y discusiones para usuarios nuevos y experimentados.",
+  "@installationSlidesSupportCommunity": {},
+  "notEnoughDiskSpaceRequired": "Requerido:",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesSupportDocumentation": "Documentación oficial",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "Soporte 24/7 de nivel empresarial con Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesAccessibilityTitle": "Acceso para todos",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesSupportResources": "Recursos útiles:",
+  "@installationSlidesSupportResources": {},
+  "welcomePageTitle": "Bienvenido a {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
