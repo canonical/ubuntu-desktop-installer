@@ -38,12 +38,12 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return 'Добро пожаловать в $DISTRO';
   }
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return 'Подготовка $DISTRO...';
   }
 
   @override
@@ -51,7 +51,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return 'Попробовать или установить';
+    return 'Попробовать или установить $DISTRO';
   }
 
   @override
@@ -235,14 +235,14 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installDriversSubtitle => 'На эти драйверы распространяются лицензионные условия, прилагаемые к их документации. Они являются проприетарными.';
 
   @override
-  String get installCodecsTitle => 'Установить поддержку дополнительных медиаформатов';
+  String get installCodecsTitle => 'Загрузить и установить поддержку дополнительных медиаформатов';
 
   @override
   String get installCodecsSubtitle => 'На это программное обеспечение распространяются лицензионные условия, прилагаемые к его документации. Некоторые из них являются проприетарными.';
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Внимание</font>. Компьютер не подключен к источнику питания.';
+    return '<font color=\"$color\">Внимание:</font> Компьютер не подключен к источнику питания.';
   }
 
   @override
@@ -270,7 +270,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Предупреждение</font>. Если вы потеряете этот ключ безопасности, все данные будут потеряны. При необходимости вы можете записать ключ и хранить его в безопасном месте.';
+    return '<font color=\"$color\">Предупреждение:</font> Если вы потеряете этот ключ безопасности, все данные будут потеряны. При необходимости вы можете записать ключ и хранить его в безопасном месте.';
   }
 
   @override
@@ -424,7 +424,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get allocateDiskSpace => 'Выделить место на диске';
 
   @override
-  String get startInstallingButtonText => 'Начать установку';
+  String get startInstallingButtonText => 'Установить';
 
   @override
   String get diskHeadersDevice => 'Устройство';
@@ -454,10 +454,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get newPartitionTable => 'Новая таблица разделов';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Создать новую пустую таблицу разделов на этом устройстве?';
+  String get newPartitionTableConfirmationTitle => 'Новый пустой раздел';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Вы выбрали целое устройство для разбиения его на разделы. Если вы продолжите создание новой таблицы разделов на устройстве, все текущие разделы будут удалены.\n\nОбратите внимание, что, если захотите, то сможете отменить эту операцию позже.';
+  String get newPartitionTableConfirmationMessage => 'Создание новой таблицы разделов на этом устройстве удалит все его текущие разделы. При необходимости эту операцию можно отменить.';
 
   @override
   String get tooManyPrimaryPartitions => 'Слишком много первичных разделов';
@@ -559,7 +559,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get partitionFormatZfsroot => 'Корневая файловая система ZFS';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get partitionFormatNone => 'Оставить неформатированным';
 
   @override
   String get partitionErase => 'Форматировать раздел';
@@ -583,7 +583,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Укажите имя';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get whoAreYouPageRealNameTooLong => 'Слишком длинное имя.';
 
   @override
   String get whoAreYouPageComputerNameLabel => 'Имя компьютера';
@@ -595,7 +595,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whoAreYouPageComputerNameRequired => 'Требуется имя компьютера';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get whoAreYouPageComputerNameTooLong => 'Слишком длинное имя компьютера.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Недопустимое имя компьютера';
@@ -634,10 +634,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Пароли не совпадают';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get whoAreYouPagePasswordShow => 'Показать';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get whoAreYouPagePasswordHide => 'Скрыть';
 
   @override
   String get writeChangesToDisk => 'Записать изменения на диск';
@@ -649,10 +649,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get writeChangesDescription => 'Если вы продолжите, перечисленные ниже изменения будут записаны на диски. Дальнейшие изменения вы сможете внести вручную.';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get writeChangesDevicesTitle => 'Устройства';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get writeChangesPartitionsTitle => 'Разделы';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Изменены таблицы разделов на следующих устройствах:';
@@ -667,22 +667,22 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'размер раздела #$disk$partition изменен с $oldsize на $newsize';
+    return 'размер раздела <b>$disk$partition</b> изменён с <b>$oldsize</b> на <b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'раздел #$disk$partition отформатирован как $format и использован для $mount';
+    return 'раздел <b>$disk$partition</b> отформатирован как <b>$format</b> и использован для <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'раздел #$disk$partition отформатирован как $format';
+    return 'раздел <b>$disk$partition</b> отформатирован как <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'раздел #$disk$partition использован для $mount';
+    return 'раздел <b>$disk$partition</b> использован для <b>$mount</b>';
   }
 
   @override
@@ -707,7 +707,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** установлена и готова к использованию.';
+    return '**$system** установлена и готова к использованию';
   }
 
   @override
@@ -754,7 +754,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String installationSlidesTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Добро пожаловать в $RELEASE';
   }
 
   @override
@@ -777,11 +777,11 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'All the applications you need';
+  String get installationSlidesSoftwareTitle => 'Все необходимые приложения';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
-    return 'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and $DISTRO archive.';
+    return 'Устанавливайте, управляйте и обновляйте все свои приложения в Ubuntu Software, включая тысячи приложений из Snap Store и архива $DISTRO.';
   }
 
   @override
@@ -830,7 +830,7 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAccessibilityTitle => 'Access for everyone';
+  String get installationSlidesAccessibilityTitle => 'Доступно для каждого';
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
@@ -838,17 +838,17 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+  String get installationSlidesAccessibilityOrca => 'Программа чтения с экрана Orca';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Language support';
+  String get installationSlidesAccessibilityLanguages => 'Языковая поддержка';
 
   @override
-  String get installationSlidesSupportTitle => 'Help & Support';
+  String get installationSlidesSupportTitle => 'Помощь и поддержка';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+    return 'Официальная поддержка $DISTRO доступна как в Интернете, так и через значок справки в док-панели.';
   }
 
   @override
@@ -858,13 +858,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
 
   @override
-  String get installationSlidesSupportResources => 'Helpful resources:';
+  String get installationSlidesSupportResources => 'Полезные ресурсы:';
 
   @override
-  String get installationSlidesSupportDocumentation => 'Official documentation';
+  String get installationSlidesSupportDocumentation => 'Официальная документация';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro => 'Поддержка корпоративных пользователей в режиме 24/7 в Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Копирование файлов…';
@@ -879,11 +879,11 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationFailed => 'Ошибка установки';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Извините';
+  String get notEnoughDiskSpaceTitle => 'Недостаточно места';
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
-    return 'Not enough disk space to install $DISTRO';
+    return 'Недостаточно места на диске для установки $DISTRO';
   }
 
   @override
@@ -899,13 +899,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
 
   @override
-  String get activeDirectoryTitle => 'Configure Active Directory';
+  String get activeDirectoryTitle => 'Настроить Active Directory';
 
   @override
-  String get activeDirectoryTestConnection => 'Test domain connectivity';
+  String get activeDirectoryTestConnection => 'Проверка подключения к домену';
 
   @override
-  String get activeDirectoryDomainLabel => 'Domain';
+  String get activeDirectoryDomainLabel => 'Домен';
 
   @override
   String get activeDirectoryDomainEmpty => 'Required';
@@ -914,7 +914,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get activeDirectoryDomainTooLong => 'Too long';
 
   @override
-  String get activeDirectoryDomainInvalidChars => 'Invalid characters';
+  String get activeDirectoryDomainInvalidChars => 'Недопустимые символы';
 
   @override
   String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
@@ -932,7 +932,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
 
   @override
-  String get activeDirectoryDomainNotFound => 'Domain not found';
+  String get activeDirectoryDomainNotFound => 'Домен не найден';
 
   @override
   String get activeDirectoryAdminLabel => 'Domain join user';
@@ -941,16 +941,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get activeDirectoryAdminEmpty => 'Required';
 
   @override
-  String get activeDirectoryAdminInvalidChars => 'Invalid characters';
+  String get activeDirectoryAdminInvalidChars => 'Недопустимые символы';
 
   @override
-  String get activeDirectoryPasswordLabel => 'Password';
+  String get activeDirectoryPasswordLabel => 'Пароль';
 
   @override
   String get activeDirectoryPasswordEmpty => 'Required';
 
   @override
-  String get activeDirectoryErrorTitle => 'Error configuring connection to Active Directory';
+  String get activeDirectoryErrorTitle => 'Ошибка настройки подключения к Active Directory';
 
   @override
   String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';

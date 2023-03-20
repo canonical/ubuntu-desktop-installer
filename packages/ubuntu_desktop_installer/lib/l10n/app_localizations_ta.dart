@@ -214,7 +214,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
 
   @override
-  String get minimalInstallationTitle => 'குறைந்தபட்ச  நிறுவல்';
+  String get minimalInstallationTitle => 'குறைந்தபட்ச நிறுவல்';
 
   @override
   String get minimalInstallationSubtitle => 'Web browser and basic utilities.';

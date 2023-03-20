@@ -38,12 +38,12 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return 'La benvenguda a $DISTRO';
   }
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return 'Preparacion de $DISTRO...';
   }
 
   @override
@@ -51,7 +51,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return 'Ensajar o installar';
+    return 'Ensajar o installar $DISTRO';
   }
 
   @override
@@ -109,10 +109,10 @@ class AppLocalizationsOc extends AppLocalizations {
   String get detectLayout => 'Detectar l’agençament del clavièr';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => 'Detectar';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => 'Varianta del clavièr :';
 
   @override
   String get pressOneKey => 'Mercés de quichar una de las tòcas seguentas :';
@@ -454,10 +454,10 @@ class AppLocalizationsOc extends AppLocalizations {
   String get newPartitionTable => 'Taula de particion novèla';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Crear una taula novèla de particions sus aqueste periferic ?';
+  String get newPartitionTableConfirmationTitle => 'Particion novèla voida';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Avètz seleccionat un periferic complèt de particionar. Se volètz contunhar en creant una taula de particions novèla dessús, totas sas particions actualas seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s\'o volètz.';
+  String get newPartitionTableConfirmationMessage => 'La creacion d’una taula de particions novèla sus un periferic entièr suprimirà totas sas particions actualas. Poiretz anullar aquesta operacion mai tard s\'o volètz.';
 
   @override
   String get tooManyPrimaryPartitions => 'Tròp de particions primàrias';
@@ -640,7 +640,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get whoAreYouPagePasswordHide => 'Rescondre';
 
   @override
-  String get writeChangesToDisk => 'Aplicar las modificacions suls disques';
+  String get writeChangesToDisk => 'Lèst per installacion';
 
   @override
   String get writeChangesFallbackSerial => 'disc';
@@ -649,10 +649,10 @@ class AppLocalizationsOc extends AppLocalizations {
   String get writeChangesDescription => 'Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get writeChangesDevicesTitle => 'Periferics';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get writeChangesPartitionsTitle => 'Particions';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Las taulas de particions dels periferics seguents seràn modificadas :';
@@ -667,22 +667,22 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'la particion #$disk$partition redimensionada de $oldsize a $newsize';
+    return 'la particion <b>$disk$partition</b> redimensionada de <b>$oldsize</b> a <b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'la particion #$disk$partition formatada en $format utilizada per $mount';
+    return 'la particion <b>$disk$partition</b> formatada en <b>$format</b> utilizada per <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'la particion #$disk$partition formatada en $format';
+    return 'la particion <b>$disk$partition</b> formatada en <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'la particion #$disk$partition utilizada per $mount';
+    return 'la particion <b>$disk$partition</b> utilizada per <b>$mount</b>';
   }
 
   @override
@@ -754,38 +754,38 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String installationSlidesTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'La benvenguda a $RELEASE';
   }
 
   @override
-  String get installationSlidesAvailable => 'Available:';
+  String get installationSlidesAvailable => 'Disponible :';
 
   @override
-  String get installationSlidesIncluded => 'Included:';
+  String get installationSlidesIncluded => 'Inclús :';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+  String get installationSlidesWelcomeTitle => 'Rapid, gratuit e plen de foncionalitats novèlas';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return 'The latest version of $DISTRO makes computing easier than ever.';
+    return 'La darrièra version de $DISTRO fa venir l’informatica mai simpla que jamai.';
   }
 
   @override
   String installationSlidesWelcomeBody(Object RELEASE) {
-    return 'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in $RELEASE.';
+    return 'Que siatz un desvolopaire, creator, jogaire o administrator, traparetz d’aisinas novèlas per melhorar vòstra productivitat e experiéncia sus $RELEASE.';
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'All the applications you need';
+  String get installationSlidesSoftwareTitle => 'Totas las aplicacions que vos fan mestièr';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
-    return 'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and $DISTRO archive.';
+    return 'Installatz, gerissètz e metatz a jorn vòstras aplicacions dins Ubuntu Software, incluses milierats d’aplicacions venent de Snap Store e dels archius $DISTRO.';
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
+  String get installationSlidesDevelopmentTitle => 'Desvolopatz amb çò melhor del monde liure';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -793,7 +793,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesCreativityTitle => 'Enhance your creativity';
+  String get installationSlidesCreativityTitle => 'Melhoratz vòstra creativitat';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
@@ -801,7 +801,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesGamingTitle => 'Great for gaming';
+  String get installationSlidesGamingTitle => 'Extra pels jòcs';
 
   @override
   String installationSlidesGamingBody(Object DISTRO) {
@@ -809,7 +809,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSecurityTitle => 'Private and secure';
+  String get installationSlidesSecurityTitle => 'Privat e securizat';
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
@@ -822,7 +822,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Power up your productivity';
+  String get installationSlidesProductivityTitle => 'Aumentatz vòstra productivitat';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
@@ -830,25 +830,25 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAccessibilityTitle => 'Access for everyone';
+  String get installationSlidesAccessibilityTitle => 'Accès per totes';
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
-    return 'At the heart of the $DISTRO philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, $DISTRO makes computing easy - whoever and wherever you are.';
+    return 'Al còs de la filosofia de $DISTRO se tròba la conviccion que l’informatica deu èsser accessibla a totes. En prepausant d’aisinas d’accessibilitat avançadas e d’opcions per cambiar de lenga, de tèma de colors, de talha de polissas, $DISTRO vos fa venir l’informatica facila, qual que siatz e ont que siatz.';
   }
 
   @override
-  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+  String get installationSlidesAccessibilityOrca => 'Lector d’ecran Orca';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Language support';
+  String get installationSlidesAccessibilityLanguages => 'Presa en carga lingüistica';
 
   @override
-  String get installationSlidesSupportTitle => 'Help & Support';
+  String get installationSlidesSupportTitle => 'Ajuda e assisténcia';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+    return 'La documentacion oficiala de $DISTRO es disponibla tant en linha coma via l’icòna Ajuda al dock.';
   }
 
   @override
@@ -858,13 +858,13 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
 
   @override
-  String get installationSlidesSupportResources => 'Helpful resources:';
+  String get installationSlidesSupportResources => 'Ressorsas utilas :';
 
   @override
-  String get installationSlidesSupportDocumentation => 'Official documentation';
+  String get installationSlidesSupportDocumentation => 'Documentacion oficiala';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro => 'Assisténcia professionala disponibla 24h de 24h e 7 jorns de 7 amb Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Còpia dels fichièrs…';
@@ -879,18 +879,18 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationFailed => 'Fracàs de l’installacion';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Desolat';
+  String get notEnoughDiskSpaceTitle => 'Pas pro d’espaci';
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
-    return 'Not enough disk space to install $DISTRO';
+    return 'Pas pro d’espaci per installar $DISTRO';
   }
 
   @override
-  String get notEnoughDiskSpaceAvailable => 'Available:';
+  String get notEnoughDiskSpaceAvailable => 'Disponible :';
 
   @override
-  String get notEnoughDiskSpaceRequired => 'Required:';
+  String get notEnoughDiskSpaceRequired => 'Requesit :';
 
   @override
   String get activeDirectoryOption => 'Utilizar Active Directory';

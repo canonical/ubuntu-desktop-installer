@@ -62,7 +62,7 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return '$RELEASE  prøv';
+    return '$RELEASE prøv';
   }
 
   @override
@@ -100,7 +100,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get keyboardLayoutPageTitle => 'tastatur layout';
 
   @override
-  String get chooseYourKeyboardLayout => 'Vælg dit tastatur layout.';
+  String get chooseYourKeyboardLayout => 'Vælg dit tastatur layout:';
 
   @override
   String get typeToTest => 'Skriv noget her for at teste dit tastatur layout';
