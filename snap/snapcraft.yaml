@@ -220,6 +220,8 @@ parts:
       - libpciaccess0
       - libvulkan1
       - shared-mime-info
+      - libglib2.0-bin
+      - libibus-1.0-5
     prime:
       - usr/lib/*/libEGL*.so.*
       - usr/lib/*/libGL*.so.*
@@ -230,6 +232,7 @@ parts:
       - usr/lib/*/libf*.so.*
       - usr/lib/*/libg*.so.*
       - usr/lib/*/libharfbuzz*.so.*
+      - usr/lib/*/libibus*.so.*
       - usr/lib/*/libpango*.so.*
       - usr/lib/*/libpixman*.so.*
       - usr/lib/*/libpng*.so.*
@@ -251,7 +254,7 @@ parts:
       - usr/lib/*/gdk-pixbuf-2.0
       - usr/lib/*/
       - usr/bin/update-mime-database
-      - usr/bin/gdk*
+      - usr/bin/g*
       - usr/share/mime
       - -usr/lib/*/pkgconfig
       - -usr/lib/pkgconfig
