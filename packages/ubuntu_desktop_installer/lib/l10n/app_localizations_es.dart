@@ -38,7 +38,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return 'Bienvenido a $DISTRO';
   }
 
   @override
@@ -51,7 +51,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return 'Probar o instalar';
+    return 'Probar o instalar $DISTRO';
   }
 
   @override
@@ -454,7 +454,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get newPartitionTable => 'Nueva tabla de particiones';
 
   @override
-  String get newPartitionTableConfirmationTitle => '¿Quiere crear una tabla de particiones nueva en este dispositivo?';
+  String get newPartitionTableConfirmationTitle => 'Nueva partición vacía';
 
   @override
   String get newPartitionTableConfirmationMessage => 'Ha optado por particionar un dispositivo entero. Si continúa con la creación de la tabla de particiones nueva en el dispositivo, las particiones que haya desaparecerán.\n\nObserve que puede deshacer esta operación más adelante, si lo desea.';
@@ -640,7 +640,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get whoAreYouPagePasswordHide => 'Ocultar';
 
   @override
-  String get writeChangesToDisk => 'Escribir cambios en el disco';
+  String get writeChangesToDisk => 'Listo para instalar';
 
   @override
   String get writeChangesFallbackSerial => 'disco';
@@ -754,17 +754,17 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String installationSlidesTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Le damos la bienvenida a $RELEASE';
   }
 
   @override
-  String get installationSlidesAvailable => 'Available:';
+  String get installationSlidesAvailable => 'Disponible:';
 
   @override
-  String get installationSlidesIncluded => 'Included:';
+  String get installationSlidesIncluded => 'Incluido:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+  String get installationSlidesWelcomeTitle => 'Rápido, gratuito y lleno de nuevas funciones';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -809,7 +809,7 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSecurityTitle => 'Private and secure';
+  String get installationSlidesSecurityTitle => 'Privado y seguro';
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
@@ -830,41 +830,41 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAccessibilityTitle => 'Access for everyone';
+  String get installationSlidesAccessibilityTitle => 'Acceso para todos';
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
-    return 'At the heart of the $DISTRO philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, $DISTRO makes computing easy - whoever and wherever you are.';
+    return 'En el corazón de la filosofía de $DISTRO reside la creencia de que la informática es para todas las personas. Las herramientas avanzadas de accesibilidad y las opciones de idioma, colores y tamaño del texto hacen que la computación con $DISTRO sea sencilla, sea quien sea y esté donde esté.';
   }
 
   @override
-  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+  String get installationSlidesAccessibilityOrca => 'Lector de pantalla Orca';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Language support';
+  String get installationSlidesAccessibilityLanguages => 'Compatibilidad lingüística';
 
   @override
-  String get installationSlidesSupportTitle => 'Help & Support';
+  String get installationSlidesSupportTitle => 'Ayuda y asistencia';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+    return 'La documentación oficial de $DISTRO está disponible tanto en línea como a través del icono Ayuda del dock.';
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu cubre una gama de preguntas y respuestas. Ubuntu Discourse proporciona guías y discusiones para usuarios nuevos y experimentados.';
 
   @override
   String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
 
   @override
-  String get installationSlidesSupportResources => 'Helpful resources:';
+  String get installationSlidesSupportResources => 'Recursos útiles:';
 
   @override
-  String get installationSlidesSupportDocumentation => 'Official documentation';
+  String get installationSlidesSupportDocumentation => 'Documentación oficial';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro => 'Soporte 24/7 de nivel empresarial con Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Copiando archivos…';
@@ -879,18 +879,18 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationFailed => 'Falló la instalación';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Disculpe';
+  String get notEnoughDiskSpaceTitle => 'Espacio insuficiente';
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
-    return 'Not enough disk space to install $DISTRO';
+    return 'No hay suficiente espacio en disco para instalar $DISTRO';
   }
 
   @override
-  String get notEnoughDiskSpaceAvailable => 'Available:';
+  String get notEnoughDiskSpaceAvailable => 'Disponible:';
 
   @override
-  String get notEnoughDiskSpaceRequired => 'Required:';
+  String get notEnoughDiskSpaceRequired => 'Requerido:';
 
   @override
   String get activeDirectoryOption => 'Utilizar el directorio activo';

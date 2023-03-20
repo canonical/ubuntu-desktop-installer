@@ -51,7 +51,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return 'Kokeile tai asenna';
+    return 'Kokeile tai asenna ${DISTRO}a';
   }
 
   @override

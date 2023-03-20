@@ -38,20 +38,20 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return '$DISTROへ、ようこそ。';
   }
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return '$DISTROを準備しています…';
   }
 
   @override
-  String get welcomeHeader => '使用する言語を選択してください:';
+  String get welcomeHeader => '使用する言語を選択してください。';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return '試してみるか、インストールします';
+    return '$DISTROを試してみるか、インストールします';
   }
 
   @override
@@ -100,7 +100,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get keyboardLayoutPageTitle => 'キーボードレイアウト';
 
   @override
-  String get chooseYourKeyboardLayout => 'キーボードレイアウトを選択してください:';
+  String get chooseYourKeyboardLayout => 'キーボードレイアウトを選択してください。';
 
   @override
   String get typeToTest => 'ここに入力して、キーボードをテストできます';
@@ -115,7 +115,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get keyboardVariant => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => '以下のキーのうち 1 つを押してください:';
+  String get pressOneKey => '以下のキーのうち 1 つを押してください。';
 
   @override
   String get isKeyPresent => '以下のキーはこのキーボードにありますか？';
@@ -205,7 +205,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'アップデートとその他のソフトウェア';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'あらかじめいくつかのアプリケーションをインストールします。選択してください:';
+  String get updatesOtherSoftwarePageDescription => 'あらかじめいくつかのアプリケーションをインストールします。選択してください。';
 
   @override
   String get normalInstallationTitle => 'おすすめのアプリもインストールする';
@@ -303,7 +303,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => '高度な機能...';
+  String get installationTypeAdvancedLabel => '高度な機能…';
 
   @override
   String get installationTypeAdvancedTitle => '高度な機能';
@@ -334,7 +334,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationTypeEncryptInfo => 'セキュリティキーは次のステップで選択します。';
 
   @override
-  String get installationTypeZFS => '試験的: ディスクを消去して ZFS を使用する';
+  String get installationTypeZFS => '試験的： ディスクを消去して ZFS を使用する';
 
   @override
   String get installationTypeZFSSelected => 'ZFS を選択しました';
@@ -386,16 +386,16 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'ドライブを選択してください:';
+  String get selectGuidedStorageDropdownLabel => 'ドライブを選択してください。';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'ディスク全体が使用されます:';
+  String get selectGuidedStorageInfoLabel => 'ディスク全体が使用されます。';
 
   @override
   String get selectGuidedStorageInstallNow => 'インストール';
 
   @override
-  String get installAlongsideSpaceDivider => '境界をドラッグしてディスク領域を割り当てます:';
+  String get installAlongsideSpaceDivider => '境界をドラッグしてディスク領域を割り当てます。';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -412,13 +412,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installAlongsideFiles => 'ファイル';
 
   @override
-  String get installAlongsidePartition => 'パーティション:';
+  String get installAlongsidePartition => 'パーティション：';
 
   @override
-  String get installAlongsideSize => 'サイズ:';
+  String get installAlongsideSize => 'サイズ：';
 
   @override
-  String get installAlongsideAvailable => '利用可能:';
+  String get installAlongsideAvailable => '利用可能：';
 
   @override
   String get allocateDiskSpace => 'ディスク領域の割り当て';
@@ -454,7 +454,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get newPartitionTable => '新しいパーティションテーブルを作成する';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'このデバイスに新しい空のパーティションテーブルを作成しますか？';
+  String get newPartitionTableConfirmationTitle => '新しい空のパーティション';
 
   @override
   String get newPartitionTableConfirmationMessage => 'デバイス全体を新しいパーティションに使用するよう選択しました。デバイスで新しいパーティションテーブルの作成を続行すると、現在のすべてのパーティションが削除されます。\n\nなお、この操作は後で取り消すことができます。';
@@ -475,7 +475,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get partitionEditTitle => 'パーティションを編集する';
 
   @override
-  String get partitionSizeLabel => 'サイズ:';
+  String get partitionSizeLabel => 'サイズ：';
 
   @override
   String get partitionUnitB => 'B';
@@ -490,7 +490,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => '新しいパーティションの種類を選択してください:';
+  String get partitionTypeLabel => '新しいパーティションの種類を選択してください。';
 
   @override
   String get partitionTypePrimary => '基本パーティション';
@@ -499,7 +499,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get partitionTypeLogical => '論理パーティション';
 
   @override
-  String get partitionLocationLabel => '新しいパーティションの場所を選択してください:';
+  String get partitionLocationLabel => '新しいパーティションの場所を選択してください。';
 
   @override
   String get partitionLocationBeginning => 'この領域の始点';
@@ -508,7 +508,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get partitionLocationEnd => 'この領域の終点';
 
   @override
-  String get partitionFormatLabel => '使用方法:';
+  String get partitionFormatLabel => '使用方法：';
 
   @override
   String get partitionFormatExt4 => 'Ext4 ジャーナリングファイルシステム';
@@ -565,7 +565,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get partitionErase => 'パーティションをフォーマット';
 
   @override
-  String get partitionMountPointLabel => 'マウントポイント:';
+  String get partitionMountPointLabel => 'マウントポイント：';
 
   @override
   String get whoAreYouPageTitle => 'あなたの情報を入力してください';
@@ -640,7 +640,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get whoAreYouPagePasswordHide => '非表示';
 
   @override
-  String get writeChangesToDisk => 'ディスクに変更を書き込む';
+  String get writeChangesToDisk => 'インストールの準備完了';
 
   @override
   String get writeChangesFallbackSerial => 'ディスク';
@@ -649,13 +649,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get writeChangesDescription => '続行すると、以下の変更がディスクに書き込まれます。さらに手動で変更を加えることもできます。';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get writeChangesDevicesTitle => 'デバイス';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get writeChangesPartitionsTitle => 'パーティション';
 
   @override
-  String get writeChangesPartitionTablesHeader => '以下のデバイスのパーティションテーブルが変更されます:';
+  String get writeChangesPartitionTablesHeader => '以下のデバイスのパーティションテーブルが変更されます。';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -663,26 +663,26 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => '以下のパーティション変更が適用されます:';
+  String get writeChangesPartitionsHeader => '以下のパーティション変更が適用されます：';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'パーティション #$disk$partition のサイズが$oldsizeから$newsizeに変更されます。';
+    return 'パーティション<b>$disk$partition</b>のサイズが<b>$oldsize</b>から<b>$newsize</b>に変更されます。';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'パーティション #$disk$partition は $format としてフォーマットされ、$mount として使用されます。';
+    return 'パーティション<b>$disk$partition</b>は<b>$format</b>としてフォーマットされ、<b>$mount</b>として使用されます。';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'パーティション #$disk$partition は $format としてフォーマットされます。';
+    return 'パーティション<b>$disk$partition</b>は<b>$format</b>としてフォーマットされます。';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'パーティション #$disk$partition は $mount として使用されます。';
+    return 'パーティション<b>$disk$partition</b>は<b>$mount</b>として使用されます。';
   }
 
   @override
@@ -754,14 +754,14 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String installationSlidesTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return '$RELEASEへ、ようこそ。';
   }
 
   @override
-  String get installationSlidesAvailable => 'Available:';
+  String get installationSlidesAvailable => 'インストール可能：';
 
   @override
-  String get installationSlidesIncluded => 'Included:';
+  String get installationSlidesIncluded => '含まれるソフト：';
 
   @override
   String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
@@ -830,21 +830,21 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAccessibilityTitle => 'Access for everyone';
+  String get installationSlidesAccessibilityTitle => 'すべての人へ';
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
-    return 'At the heart of the $DISTRO philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, $DISTRO makes computing easy - whoever and wherever you are.';
+    return '$DISTROの哲学の中心となっているのは、「あらゆる人のためのコンピューター」という信念です。高度なアクセシビリティツールや、言語・カラー・テキストサイズの変更といったオプションにより、$DISTROはあらゆる人に寄り添います。あなたが誰であっても、どこにいようとも。';
   }
 
   @override
-  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+  String get installationSlidesAccessibilityOrca => 'Orcaスクリーンリーダー';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Language support';
+  String get installationSlidesAccessibilityLanguages => '言語サポート';
 
   @override
-  String get installationSlidesSupportTitle => 'Help & Support';
+  String get installationSlidesSupportTitle => 'ヘルプとサポート';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
@@ -879,18 +879,18 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationFailed => 'インストールに失敗しました';
 
   @override
-  String get notEnoughDiskSpaceTitle => '申し訳ありません';
+  String get notEnoughDiskSpaceTitle => '空き容量が足りません';
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
-    return 'Not enough disk space to install $DISTRO';
+    return '$DISTROをインストールするのに十分なディスク容量がありません';
   }
 
   @override
-  String get notEnoughDiskSpaceAvailable => 'Available:';
+  String get notEnoughDiskSpaceAvailable => '利用可能：';
 
   @override
-  String get notEnoughDiskSpaceRequired => 'Required:';
+  String get notEnoughDiskSpaceRequired => '必要：';
 
   @override
   String get activeDirectoryOption => 'アクティブディレクトリを使用する';
