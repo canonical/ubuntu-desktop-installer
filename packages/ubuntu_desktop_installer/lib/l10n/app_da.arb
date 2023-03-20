@@ -134,7 +134,7 @@
   "@yesButtonText": {},
   "repairInstallationDescription": "Reparation geninstallerer al installeret software uden at røre ved dokumenter eller indstillinger.",
   "@repairInstallationDescription": {},
-  "tryUbuntu": "{RELEASE}  prøv",
+  "tryUbuntu": "{RELEASE} prøv",
   "@tryUbuntu": {
     "type": "text",
     "placeholders": {
@@ -161,7 +161,7 @@
   },
   "keyboardLayoutPageTitle": "tastatur layout",
   "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "Vælg dit tastatur layout.",
+  "chooseYourKeyboardLayout": "Vælg dit tastatur layout:",
   "@chooseYourKeyboardLayout": {},
   "detectLayout": "Genkend tastaturlayout",
   "@detectLayout": {},

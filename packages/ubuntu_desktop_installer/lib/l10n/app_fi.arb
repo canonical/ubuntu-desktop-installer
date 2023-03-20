@@ -27,7 +27,7 @@
   "@repairInstallationDescription": {},
   "configureSecureBootTitle": "Määritä Secure Boot",
   "@configureSecureBootTitle": {},
-  "tryOrInstallPageTitle": "Kokeile tai asenna",
+  "tryOrInstallPageTitle": "Kokeile tai asenna {DISTRO}a",
   "@tryOrInstallPageTitle": {},
   "tryUbuntu": "Kokeile {RELEASE}a",
   "@tryUbuntu": {},

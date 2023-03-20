@@ -20,7 +20,7 @@
   "@yesButtonText": {},
   "welcome": "La benvenguda",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Ensajar o installar",
+  "tryOrInstallPageTitle": "Ensajar o installar {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Reparar l’installacion",
   "@repairInstallation": {},
@@ -196,7 +196,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "Los senhals correspondon pas",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesToDisk": "Aplicar las modificacions suls disques",
+  "writeChangesToDisk": "Lèst per installacion",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "disc",
   "@writeChangesFallbackSerial": {
@@ -430,7 +430,7 @@
       "format": {}
     }
   },
-  "newPartitionTableConfirmationTitle": "Crear una taula novèla de particions sus aqueste periferic ?",
+  "newPartitionTableConfirmationTitle": "Particion novèla voida",
   "@newPartitionTableConfirmationTitle": {},
   "wiredDisabled": "La connexion filara es desactivada",
   "@wiredDisabled": {},
@@ -448,7 +448,7 @@
   "@enableWifi": {},
   "connectButtonText": "Se connectar",
   "@connectButtonText": {},
-  "newPartitionTableConfirmationMessage": "Avètz seleccionat un periferic complèt de particionar. Se volètz contunhar en creant una taula de particions novèla dessús, totas sas particions actualas seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s'o volètz.",
+  "newPartitionTableConfirmationMessage": "La creacion d’una taula de particions novèla sus un periferic entièr suprimirà totas sas particions actualas. Poiretz anullar aquesta operacion mai tard s'o volètz.",
   "@newPartitionTableConfirmationMessage": {},
   "useWiredConnection": "Utilizar una connexion filara",
   "@useWiredConnection": {},
@@ -620,7 +620,7 @@
       "RELEASE": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "Desolat",
+  "notEnoughDiskSpaceTitle": "Pas pro d’espaci",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceHasOnly": "Aqueste ordenador a sonque {SIZE}.",
   "@notEnoughDiskSpaceHasOnly": {
@@ -640,7 +640,7 @@
   "@installingSystem": {},
   "configuringSystem": "Configuracion del sistèma…",
   "@configuringSystem": {},
-  "writeChangesPartitionResized": "la particion #{disk}{partition} redimensionada de {oldsize} a {newsize}",
+  "writeChangesPartitionResized": "la particion <b>{disk}{partition}</b> redimensionada de <b>{oldsize}</b> a <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -668,7 +668,7 @@
       "partition": {}
     }
   },
-  "writeChangesPartitionMounted": "la particion #{disk}{partition} utilizada per {mount}",
+  "writeChangesPartitionMounted": "la particion <b>{disk}{partition}</b> utilizada per <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -677,7 +677,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la particion #{disk}{partition} formatada en {format} utilizada per {mount}",
+  "writeChangesPartitionFormattedMounted": "la particion <b>{disk}{partition}</b> formatada en <b>{format}</b> utilizada per <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -687,7 +687,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "la particion #{disk}{partition} formatada en {format}",
+  "writeChangesPartitionFormatted": "la particion <b>{disk}{partition}</b> formatada en <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -815,5 +815,112 @@
   "activeDirectoryErrorMessage": "O planhèm, se pòt pas configurar Active Directory pel moment. Un còp lo sistèma operacional, consultatz <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> per d’ajuda.",
   "@activeDirectoryErrorMessage": {},
   "activeDirectoryErrorTitle": "Error en configurant la connexion a l’Active Directory",
-  "@activeDirectoryErrorTitle": {}
+  "@activeDirectoryErrorTitle": {},
+  "installationSlidesWelcomeBody": "Que siatz un desvolopaire, creator, jogaire o administrator, traparetz d’aisinas novèlas per melhorar vòstra productivitat e experiéncia sus {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "preparingUbuntu": "Preparacion de {DISTRO}...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "Detectar",
+  "@detectButtonText": {},
+  "keyboardVariant": "Varianta del clavièr :",
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "Periferics",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Particions",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesAvailable": "Disponible :",
+  "@installationSlidesAvailable": {},
+  "installationSlidesIncluded": "Inclús :",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeHeader": "La darrièra version de {DISTRO} fa venir l’informatica mai simpla que jamai.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "Totas las aplicacions que vos fan mestièr",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "Installatz, gerissètz e metatz a jorn vòstras aplicacions dins Ubuntu Software, incluses milierats d’aplicacions venent de Snap Store e dels archius {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentTitle": "Desvolopatz amb çò melhor del monde liure",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesAccessibilityBody": "Al còs de la filosofia de {DISTRO} se tròba la conviccion que l’informatica deu èsser accessibla a totes. En prepausant d’aisinas d’accessibilitat avançadas e d’opcions per cambiar de lenga, de tèma de colors, de talha de polissas, {DISTRO} vos fa venir l’informatica facila, qual que siatz e ont que siatz.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportHeader": "La documentacion oficiala de {DISTRO} es disponibla tant en linha coma via l’icòna Ajuda al dock.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportUbuntuPro": "Assisténcia professionala disponibla 24h de 24h e 7 jorns de 7 amb Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesGamingTitle": "Extra pels jòcs",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesProductivityTitle": "Aumentatz vòstra productivitat",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesAccessibilityTitle": "Accès per totes",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesAccessibilityOrca": "Lector d’ecran Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesSupportResources": "Ressorsas utilas :",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "Documentacion oficiala",
+  "@installationSlidesSupportDocumentation": {},
+  "welcomePageTitle": "La benvenguda a {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceRequired": "Requesit :",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesTitle": "La benvenguda a {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesWelcomeTitle": "Rapid, gratuit e plen de foncionalitats novèlas",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesCreativityTitle": "Melhoratz vòstra creativitat",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesSecurityTitle": "Privat e securizat",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSupportTitle": "Ajuda e assisténcia",
+  "@installationSlidesSupportTitle": {},
+  "notEnoughDiskSpaceUbuntu": "Pas pro d’espaci per installar {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityLanguages": "Presa en carga lingüistica",
+  "@installationSlidesAccessibilityLanguages": {},
+  "notEnoughDiskSpaceAvailable": "Disponible :",
+  "@notEnoughDiskSpaceAvailable": {}
 }

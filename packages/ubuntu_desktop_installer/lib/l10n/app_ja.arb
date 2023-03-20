@@ -10,7 +10,7 @@
   "@wirelessNetworkingDisabled": {},
   "updatesOtherSoftwarePageTitle": "アップデートとその他のソフトウェア",
   "@updatesOtherSoftwarePageTitle": {},
-  "updatesOtherSoftwarePageDescription": "あらかじめいくつかのアプリケーションをインストールします。選択してください:",
+  "updatesOtherSoftwarePageDescription": "あらかじめいくつかのアプリケーションをインストールします。選択してください。",
   "@updatesOtherSoftwarePageDescription": {},
   "normalInstallationTitle": "おすすめのアプリもインストールする",
   "@normalInstallationTitle": {},
@@ -24,7 +24,7 @@
   "@installThirdPartySubtitle": {},
   "chooseSecurityKeyTitle": "セキュリティキーを決めて下さい",
   "@chooseSecurityKeyTitle": {},
-  "welcomeHeader": "使用する言語を選択してください:",
+  "welcomeHeader": "使用する言語を選択してください。",
   "@welcomeHeader": {},
   "cancelButtonText": "キャンセル",
   "@cancelButtonText": {},
@@ -120,7 +120,7 @@
   "@yesButtonText": {},
   "welcome": "ようこそ",
   "@welcome": {},
-  "tryOrInstallPageTitle": "試してみるか、インストールします",
+  "tryOrInstallPageTitle": "{DISTRO}を試してみるか、インストールします",
   "@tryOrInstallPageTitle": {},
   "instructionsForRST": "手順は、スマートフォンなどで <a href=\"https://{url}\">{url}</a> をご確認ください。",
   "@instructionsForRST": {
@@ -131,13 +131,13 @@
   },
   "keyboardLayoutPageTitle": "キーボードレイアウト",
   "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "キーボードレイアウトを選択してください:",
+  "chooseYourKeyboardLayout": "キーボードレイアウトを選択してください。",
   "@chooseYourKeyboardLayout": {},
   "typeToTest": "ここに入力して、キーボードをテストできます",
   "@typeToTest": {},
   "detectLayout": "キーボードレイアウトを検出する",
   "@detectLayout": {},
-  "pressOneKey": "以下のキーのうち 1 つを押してください:",
+  "pressOneKey": "以下のキーのうち 1 つを押してください。",
   "@pressOneKey": {},
   "configureSecureBootTitle": "セキュアブートの設定",
   "@configureSecureBootTitle": {},
@@ -196,7 +196,7 @@
   },
   "installationTypeLVMSelected": "LVM を選択しました",
   "@installationTypeLVMSelected": {},
-  "newPartitionTableConfirmationTitle": "このデバイスに新しい空のパーティションテーブルを作成しますか？",
+  "newPartitionTableConfirmationTitle": "新しい空のパーティション",
   "@newPartitionTableConfirmationTitle": {},
   "musicSlideTitle": "音楽を持ち歩こう",
   "@musicSlideTitle": {},
@@ -214,7 +214,7 @@
   "@diskHeadersType": {},
   "installationTypeZFSSelected": "ZFS を選択しました",
   "@installationTypeZFSSelected": {},
-  "selectGuidedStorageDropdownLabel": "ドライブを選択してください:",
+  "selectGuidedStorageDropdownLabel": "ドライブを選択してください。",
   "@selectGuidedStorageDropdownLabel": {},
   "startInstallingButtonText": "インストール",
   "@startInstallingButtonText": {},
@@ -230,7 +230,7 @@
   "@partitionFormatFat32": {},
   "bootLoaderDevice": "ブートローダーをインストールするデバイスを選択してください",
   "@bootLoaderDevice": {},
-  "partitionSizeLabel": "サイズ:",
+  "partitionSizeLabel": "サイズ：",
   "@partitionSizeLabel": {},
   "partitionUnitMB": "MB",
   "@partitionUnitMB": {},
@@ -238,7 +238,7 @@
   "@partitionUnitB": {},
   "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
-  "partitionTypeLabel": "新しいパーティションの種類を選択してください:",
+  "partitionTypeLabel": "新しいパーティションの種類を選択してください。",
   "@partitionTypeLabel": {},
   "partitionFormatJfs": "JFS ジャーナリングファイルシステム",
   "@partitionFormatJfs": {},
@@ -248,7 +248,7 @@
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "ReiserFS ファイルシステム",
   "@partitionFormatReiserFS": {},
-  "partitionMountPointLabel": "マウントポイント:",
+  "partitionMountPointLabel": "マウントポイント：",
   "@partitionMountPointLabel": {},
   "partitionEditTitle": "パーティションを編集する",
   "@partitionEditTitle": {},
@@ -294,7 +294,7 @@
   "@whoAreYouPageUsernameLabel": {},
   "partitionLocationEnd": "この領域の終点",
   "@partitionLocationEnd": {},
-  "partitionFormatLabel": "使用方法:",
+  "partitionFormatLabel": "使用方法：",
   "@partitionFormatLabel": {},
   "whoAreYouPagePasswordRequired": "パスワードを入力してください",
   "@whoAreYouPagePasswordRequired": {},
@@ -306,9 +306,9 @@
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
   },
-  "writeChangesToDisk": "ディスクに変更を書き込む",
+  "writeChangesToDisk": "インストールの準備完了",
   "@writeChangesToDisk": {},
-  "writeChangesPartitionTablesHeader": "以下のデバイスのパーティションテーブルが変更されます:",
+  "writeChangesPartitionTablesHeader": "以下のデバイスのパーティションテーブルが変更されます。",
   "@writeChangesPartitionTablesHeader": {},
   "chooseYourLookPageLightSetting": "明るい",
   "@chooseYourLookPageLightSetting": {},
@@ -320,7 +320,7 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "以下のパーティション変更が適用されます:",
+  "writeChangesPartitionsHeader": "以下のパーティション変更が適用されます：",
   "@writeChangesPartitionsHeader": {},
   "chooseYourLookPageTitle": "外観の選択",
   "@chooseYourLookPageTitle": {},
@@ -420,7 +420,7 @@
   "@installationTypeMultiOSDetected": {},
   "installationTypeEncryptInfo": "セキュリティキーは次のステップで選択します。",
   "@installationTypeEncryptInfo": {},
-  "installationTypeZFS": "試験的: ディスクを消去して ZFS を使用する",
+  "installationTypeZFS": "試験的： ディスクを消去して ZFS を使用する",
   "@installationTypeZFS": {},
   "installationTypeReinstall": "{os} を削除して再インストール",
   "@installationTypeReinstall": {
@@ -447,7 +447,7 @@
   },
   "newPartitionTableConfirmationMessage": "デバイス全体を新しいパーティションに使用するよう選択しました。デバイスで新しいパーティションテーブルの作成を続行すると、現在のすべてのパーティションが削除されます。\n\nなお、この操作は後で取り消すことができます。",
   "@newPartitionTableConfirmationMessage": {},
-  "partitionLocationLabel": "新しいパーティションの場所を選択してください:",
+  "partitionLocationLabel": "新しいパーティションの場所を選択してください。",
   "@partitionLocationLabel": {},
   "partitionFormatExt4": "Ext4 ジャーナリングファイルシステム",
   "@partitionFormatExt4": {},
@@ -589,11 +589,11 @@
   },
   "installationTypeNoOSDetected": "コンピューターにインストールされた OS は見つかりませんでした。インストール方法を選択してください。",
   "@installationTypeNoOSDetected": {},
-  "installationTypeAdvancedLabel": "高度な機能...",
+  "installationTypeAdvancedLabel": "高度な機能…",
   "@installationTypeAdvancedLabel": {},
   "installationTypeManual": "それ以外",
   "@installationTypeManual": {},
-  "selectGuidedStorageInfoLabel": "ディスク全体が使用されます:",
+  "selectGuidedStorageInfoLabel": "ディスク全体が使用されます。",
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "インストール",
   "@selectGuidedStorageInstallNow": {},
@@ -635,15 +635,15 @@
   "@whoAreYouPageUsernameTooLong": {},
   "whoAreYouPageUsernameInvalidChars": "その名前には無効な文字が含まれています。",
   "@whoAreYouPageUsernameInvalidChars": {},
-  "installAlongsidePartition": "パーティション:",
+  "installAlongsidePartition": "パーティション：",
   "@installAlongsidePartition": {},
-  "installAlongsideSize": "サイズ:",
+  "installAlongsideSize": "サイズ：",
   "@installAlongsideSize": {},
   "installAlongsideFiles": "ファイル",
   "@installAlongsideFiles": {},
   "installAlongsideAllocateSpace": "ディスク領域の割り当て",
   "@installAlongsideAllocateSpace": {},
-  "installAlongsideAvailable": "利用可能:",
+  "installAlongsideAvailable": "利用可能：",
   "@installAlongsideAvailable": {},
   "installationTypeAlongsideMulti": "それと並んで{product}をインストールする",
   "@installationTypeAlongsideMulti": {
@@ -652,7 +652,7 @@
       "product": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "申し訳ありません",
+  "notEnoughDiskSpaceTitle": "空き容量が足りません",
   "@notEnoughDiskSpaceTitle": {},
   "installationTypeAlongsideDual": "{os1}と{os2}と並んで{product}をインストールする",
   "@installationTypeAlongsideDual": {
@@ -663,7 +663,7 @@
       "os2": {}
     }
   },
-  "installAlongsideSpaceDivider": "境界をドラッグしてディスク領域を割り当てます:",
+  "installAlongsideSpaceDivider": "境界をドラッグしてディスク領域を割り当てます。",
   "@installAlongsideSpaceDivider": {},
   "installingSystem": "システムをインストールしています…",
   "@installingSystem": {},
@@ -726,7 +726,7 @@
   "@continueTesting": {},
   "restartNow": "今すぐ再起動する",
   "@restartNow": {},
-  "writeChangesPartitionFormatted": "パーティション #{disk}{partition} は {format} としてフォーマットされます。",
+  "writeChangesPartitionFormatted": "パーティション<b>{disk}{partition}</b>は<b>{format}</b>としてフォーマットされます。",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -735,7 +735,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "パーティション #{disk}{partition} は {mount} として使用されます。",
+  "writeChangesPartitionMounted": "パーティション<b>{disk}{partition}</b>は<b>{mount}</b>として使用されます。",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -744,7 +744,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "パーティション #{disk}{partition} は {format} としてフォーマットされ、{mount} として使用されます。",
+  "writeChangesPartitionFormattedMounted": "パーティション<b>{disk}{partition}</b>は<b>{format}</b>としてフォーマットされ、<b>{mount}</b>として使用されます。",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -761,7 +761,7 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "パーティション #{disk}{partition} のサイズが{oldsize}から{newsize}に変更されます。",
+  "writeChangesPartitionResized": "パーティション<b>{disk}{partition}</b>のサイズが<b>{oldsize}</b>から<b>{newsize}</b>に変更されます。",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -836,5 +836,60 @@
   "activeDirectoryErrorTitle": "アクティブディレクトリへの接続設定エラー",
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "申し訳ありませんが、Active Directoryは現在セットアップできません。システムが稼働したら、<a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> にアクセスしてサポートを受けてください。",
-  "@activeDirectoryErrorMessage": {}
+  "@activeDirectoryErrorMessage": {},
+  "installationSlidesSupportTitle": "ヘルプとサポート",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesAccessibilityBody": "{DISTRO}の哲学の中心となっているのは、「あらゆる人のためのコンピューター」という信念です。高度なアクセシビリティツールや、言語・カラー・テキストサイズの変更といったオプションにより、{DISTRO}はあらゆる人に寄り添います。あなたが誰であっても、どこにいようとも。",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityLanguages": "言語サポート",
+  "@installationSlidesAccessibilityLanguages": {},
+  "preparingUbuntu": "{DISTRO}を準備しています…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "writeChangesDevicesTitle": "デバイス",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "パーティション",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesAccessibilityTitle": "すべての人へ",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesAccessibilityOrca": "Orcaスクリーンリーダー",
+  "@installationSlidesAccessibilityOrca": {},
+  "notEnoughDiskSpaceRequired": "必要：",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesTitle": "{RELEASE}へ、ようこそ。",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "welcomePageTitle": "{DISTRO}へ、ようこそ。",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAvailable": "インストール可能：",
+  "@installationSlidesAvailable": {},
+  "installationSlidesIncluded": "含まれるソフト：",
+  "@installationSlidesIncluded": {},
+  "notEnoughDiskSpaceUbuntu": "{DISTRO}をインストールするのに十分なディスク容量がありません",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "利用可能：",
+  "@notEnoughDiskSpaceAvailable": {}
 }

@@ -32,7 +32,7 @@
   "@turnOffBitlockerDescription": {},
   "noWiredConnection": "Ingen trådbunden anslutning upptäcktes",
   "@noWiredConnection": {},
-  "newPartitionTableConfirmationTitle": "Skapa en ny tom partitionstabell på den här enheten?",
+  "newPartitionTableConfirmationTitle": "Skapa en ny tom partition",
   "@newPartitionTableConfirmationTitle": {},
   "partitionEditTitle": "Redigera partition",
   "@partitionEditTitle": {},
@@ -333,7 +333,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "Lösenorden stämmer inte överens",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesToDisk": "Skriv ändringar till disk",
+  "writeChangesToDisk": "Redo att installera",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "disk",
   "@writeChangesFallbackSerial": {
@@ -404,7 +404,7 @@
       "color": {}
     }
   },
-  "newPartitionTableConfirmationMessage": "Du har valt en hel enhet att partitionera. Om du fortsätter med att skapa en ny partitionstabell så kommer alla nuvarande partitioner att tas bort.\n\nObservera att du kommer att kunna ångra denna operation senare om du vill.",
+  "newPartitionTableConfirmationMessage": "Att skapa en ny partitionstabell på en hel enhet tar bort alla dess nuvarande partitioner. Denna operation kan ångras om det behövs.",
   "@newPartitionTableConfirmationMessage": {},
   "restartInto": "Starta om till {system}",
   "@restartInto": {
@@ -434,11 +434,11 @@
       "RELEASE": {}
     }
   },
-  "appTitle": "Skrivbordsinstallatören för Ubuntu",
+  "appTitle": "Ubuntu skrivbordsinstallatören",
   "@appTitle": {},
   "revertButtonText": "Återställ",
   "@revertButtonText": {},
-  "tryOrInstallPageTitle": "Prova eller installera",
+  "tryOrInstallPageTitle": "Prova eller installera {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Reparera installation",
   "@repairInstallation": {},
@@ -678,7 +678,7 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionFormatted": "partition #{disk}{partition} formaterad som {format}",
+  "writeChangesPartitionFormatted": "partition <b>{disk}{partition}</b> formaterad som <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -687,7 +687,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partition #{disk}{partition} används för {mount}",
+  "writeChangesPartitionMounted": "partition <b>{disk}{partition}</b> används för <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -704,7 +704,7 @@
       "partition": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "Förlåt",
+  "notEnoughDiskSpaceTitle": "Inte tillräckligt med utrymme",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceHeader": "Du behöver minst {SIZE} diskutrymme för att installera {RELEASE}.",
   "@notEnoughDiskSpaceHeader": {
@@ -730,7 +730,7 @@
   },
   "quitButtonText": "Avbryt installation",
   "@quitButtonText": {},
-  "writeChangesPartitionFormattedMounted": "partition #{disk}{partition} formaterad som {format} används för {mount}",
+  "writeChangesPartitionFormattedMounted": "partition <b>{disk}{partition}</b> formaterad som <b>{format}</b> används för <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -740,7 +740,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "partition #{disk}{partition} storleksändrad från {oldsize} till {newsize}",
+  "writeChangesPartitionResized": "partition <b>{disk}{partition}</b> storleksändrad från <b>{oldsize}</b> till <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -836,5 +836,158 @@
   "activeDirectoryErrorTitle": "Fel vid konfiguration av anslutning till Active Directory",
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Tyvärr, Active Directory kan inte ställas in just nu. när ditt system är igång, besök <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> för hjälp.",
-  "@activeDirectoryErrorMessage": {}
+  "@activeDirectoryErrorMessage": {},
+  "preparingUbuntu": "Förbereder {DISTRO}...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "Upptäck",
+  "@detectButtonText": {},
+  "keyboardVariant": "Tangentbordsvariant:",
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "Enheter",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Partitioner",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesTitle": "Välkommen till {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "Alla program du behöver",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "Installera, hantera och uppdatera alla dina program med Ubuntu Software, inklusive tusentals program från både Snap Store och {DISTRO}-arkivet.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentTitle": "Utveckla med det bästa av öppen källkod",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} är den idealiska arbetsstationen för app eller webbutveckling, datavetenskap och AI/ML samt devops och administration. Varje {DISTRO}-version innehåller de senaste verktygskedjorna och stöder alla större IDE:er.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Förbättra din kreativitet",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesGamingTitle": "Perfekt för spel",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesGamingBody": "{DISTRO} stödjer dom senaste NVIDIA och Mesa drivrutiner för att förbättra prestanda och kompatibilitet. Tusen av Windows titlar fungerar bra att spela på {DISTRO} via program som Steam utan ytterligare konfiguration.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "Privat och säker",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityLts": "Alla {DISTRO} LTS-släpp kommer med fem års av säkerhetskorrigering ingår, samt sträcker sig till tio år med ett Ubuntu Pro-abonnemang.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "Öka din produktivitet",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesProductivityBody": "{DISTRO} Skrivbord inkluderar Libreoffice, en svit av Microsoft Office kompatibla öppen källkods program för dokument, kalkylblad och presentationer. Populära samarbetsverktyg finns också tillgängliga.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "Tillgång för alla",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesAccessibilityBody": "I hjärtat av {DISTRO} filosofin är tron att datoranvändning är för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färger och textstorlek gör {DISTRO} datoranvändning enkel - vem och var du än är.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityLanguages": "Språk stöd",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "Hjälp & Support",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSupportCommunity": "Ask Ubuntu täcker en rad frågor och svar och Ubuntu Discourse ger guider och diskussioner för nya och erfarna användare.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "För företagsanvändare tillhandahåller Canonical kommersiell support för att göra det enkelt att installera och hantera Ubuntu säkert på arbetsplatsen.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesSupportResources": "Hjälpsamma resurser:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "Officiell dokumentation",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "Support i företagsklass 24/7 med Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "notEnoughDiskSpaceUbuntu": "Inte tillräckligt med diskutrymme för att installera {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "Tillgängligt:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "welcomePageTitle": "Välkommen till {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityBody": "Om du är en animatör, designer, videoskapare eller spelutvecklare är det enkelt att ta med dina arbetsflöden till {DISTRO} med stöd för industristandard programvara och applikationer med öppen källkod.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesIncluded": "Inkluderat:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesAvailable": "Tillgängligt:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesWelcomeTitle": "Snabb, gratis och full av nya funktioner",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "Den senaste versionen av {DISTRO} gör datoranvändning enklare än någonsin.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "Oavsett om du är en utvecklare, skapare, spelare eller administratör hittar du nya verktyg för att förbättra din produktivitet och förbättra din upplevelse i {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSecurityBody": "{DISTRO} ger dig alla verktyg du behöver för att hålla dig privat och säker online. Med inbyggd brandvägg och VPN-stöd och en mängd sekretesscentrerade program för att säkerställa att du har full kontroll över din data.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportHeader": "Den officiella {DISTRO} dokumentation är tillgänglig både online och via Hjälp ikonen i dockan.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Orca skärmläsare",
+  "@installationSlidesAccessibilityOrca": {},
+  "notEnoughDiskSpaceRequired": "Krävs:",
+  "@notEnoughDiskSpaceRequired": {}
 }

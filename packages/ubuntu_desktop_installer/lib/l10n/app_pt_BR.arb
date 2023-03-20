@@ -20,7 +20,7 @@
   "@yesButtonText": {},
   "welcome": "Bem-vindo",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Experimentar ou instalar",
+  "tryOrInstallPageTitle": "Experimentar ou instalar o {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Reparar instalação",
   "@repairInstallation": {},
@@ -297,7 +297,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "As senhas não correspondem",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesToDisk": "Gravar alterações no disco",
+  "writeChangesToDisk": "Pronto para instalar",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "disco",
   "@writeChangesFallbackSerial": {
@@ -346,7 +346,7 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "Instalação concluída",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** está instalado e pronto pra uso.",
+  "readyToUse": "**{system}** está instalado e pronto pra uso",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -517,9 +517,9 @@
   },
   "installationTypeMultiOSDetected": "Este computador possui atualmente múltiplos sistemas operacionais. O que você gostaria de fazer?",
   "@installationTypeMultiOSDetected": {},
-  "newPartitionTableConfirmationTitle": "Criar uma nova tabela de partições vazia neste dispositivo?",
+  "newPartitionTableConfirmationTitle": "Nova partição vazia",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "Você selecionou dispositivo inteiro para particionar. Se prosseguir com a criação de uma nova tabela de partições no dispositivo, como resultado serão removidas todas as partições atuais.\n\nObserve que você poderá desfazer esta operação mais tarde, se desejar.",
+  "newPartitionTableConfirmationMessage": "Criar uma nova tabela de partição em um dispositivo inteiro removerá todas as suas partições atuais. Esta operação pode ser desfeita se necessário.",
   "@newPartitionTableConfirmationMessage": {},
   "whoAreYouPageShowPassword": "Mostrar senha",
   "@whoAreYouPageShowPassword": {},
@@ -640,7 +640,7 @@
       "partition": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partição #{disk}{partition} formatada usando {format} para {mount}",
+  "writeChangesPartitionFormattedMounted": "partição <b>{disk}{partition}</b> formatada como <b>{format}</b> usada para <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -650,7 +650,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partição #{disk}{partition} formatada usando: {format}",
+  "writeChangesPartitionFormatted": "partição <b>{disk}{partition}</b> formatada como <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -659,7 +659,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partição #{disk}{partition} usado para {mount}",
+  "writeChangesPartitionMounted": "partição <b>{disk}{partition}</b> usada para <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -668,7 +668,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "Partição #{disk}{partition} alterado de {oldsize} para {newsize}",
+  "writeChangesPartitionResized": "partição <b>{disk}{partition}</b> alterada de <b>{oldsize}</b> para <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -699,7 +699,7 @@
   },
   "installDriversSubtitle": "Esses drivers estão sujeitos aos termos de licença incluídos em sua documentação. Eles são proprietários.",
   "@installDriversSubtitle": {},
-  "notEnoughDiskSpaceTitle": "Desculpa",
+  "notEnoughDiskSpaceTitle": "Espaço insuficiente",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceHasOnly": "Esse computador tem apenas {SIZE}.",
   "@notEnoughDiskSpaceHasOnly": {
@@ -786,5 +786,158 @@
   "activeDirectoryErrorTitle": "Erro ao configurar a conexão com o Active Directory",
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Desculpe, o Active Directory não pôde ser configurado no momento. Assim que seu sistema esteja instalado e funcionando, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para ajuda.",
-  "@activeDirectoryErrorMessage": {}
+  "@activeDirectoryErrorMessage": {},
+  "installationSlidesWelcomeBody": "Seja você um desenvolvedor, criador, jogador ou administrador, você encontrará novas ferramentas para ampliar sua produtividade e aprimorar sua experiência no {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesDevelopmentBody": "{DISTRO} é a estação de trabalho ideal para o desenvolvimento de aplicativos ou web, ciência de dados e IA/AM, bem como DevOps e administração. Cada versão do {DISTRO} inclui as mais recentes cadeias de ferramentas e suporta todos os principais IDEs.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "Privativo e seguro",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityBody": "O {DISTRO} fornece todas as ferramentas que você precisa para se manter seguro e anônimo online. Com um firewall integrado e suporte VPN, além de inúmeros aplicativos voltados à privacidade, você tem a garantia de controle total de seus dados.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityBody": "No coração da filosofia {DISTRO} está a crença de que a computação é para todos. Com ferramentas avançadas de acessibilidade e opções para alterar o idioma, cores e o tamanho do texto, o {DISTRO} facilita o uso do computador - quem e onde quer que você esteja.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "preparingUbuntu": "Preparando o {DISTRO}...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "Detectar",
+  "@detectButtonText": {},
+  "keyboardVariant": "Disposição de teclado:",
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "Dispositivos",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Partições",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesTitle": "Boas-vindas ao {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesAvailable": "Disponível:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesIncluded": "Incluído:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "Rápido, gratuito e cheio de novos recursos",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "A mais recente versão do {DISTRO} torna o uso do computador mais fácil do que nunca.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "Todos os aplicativos que você precisa",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "Instale, gerencie e atualize todos os seus aplicativos na Ubuntu Software, incluindo milhares de aplicativos tanto da Snap Store quanto dos repositórios do {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentTitle": "Desenvolva com o melhor do código aberto",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesCreativityTitle": "Aprimore sua criatividade",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesCreativityBody": "Se você é um animador, designer, criador de vídeos ou desenvolvedor de jogos, é fácil trazer seu fluxo de trabalho ao {DISTRO} com suporte para código aberto e também aplicativos e software padrões do setor.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingTitle": "Excelente para jogos",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesGamingBody": "O {DISTRO} suporta os mais recentes drivers NVIDIA e Mesa para melhorar a performance e compatibilidade. Milhares de jogos Windows rodam muito bem no {DISTRO} através de aplicativos como a Steam sem nenhuma configuração adicional.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityLts": "Todos os lançamentos LTS do {DISTRO} vêm com cinco anos de patches de segurança incluídos, estendendo-se a dez anos com uma assinatura do Ubuntu Pro.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "Aumente a sua produtividade",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesProductivityBody": "O {DISTRO} Desktop inclui o LibreOffice, um suíte de aplicativos de código aberto compatíveis com o Microsoft Office para documentos, planilhas e apresentações. Ferramentas de colaboração populares também estão disponíveis.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "Acessível para todos",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesAccessibilityOrca": "Leitor de Tela Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesAccessibilityLanguages": "Suporte a idioma",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "Ajuda e Suporte",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSupportHeader": "A documentação oficial do {DISTRO} está disponível on-line e por meio do ícone de Ajuda na doca de aplicativos.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "O Ask Ubuntu cobre uma variedade de perguntas e respostas e o Ubuntu Discourse fornece guias e discussões para usuários novos e experientes.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "Para usuários corporativos, a Canonical fornece suporte comercial para facilitar a integração e o gerenciamento seguro do Ubuntu no local de trabalho.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesSupportResources": "Recursos úteis:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "Documentação oficial",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "Suporte 24/7 de nível empresarial com Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "notEnoughDiskSpaceUbuntu": "Não há espaço suficiente no disco para instalar o {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "Disponível:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "Necessário:",
+  "@notEnoughDiskSpaceRequired": {},
+  "welcomePageTitle": "Boas-vindas ao {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

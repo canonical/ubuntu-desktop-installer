@@ -8,7 +8,7 @@
   "@restartButtonText": {},
   "welcome": "Bienvenue",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Essayer ou installer",
+  "tryOrInstallPageTitle": "Essayer ou installer {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Réparer l’installation",
   "@repairInstallation": {},
@@ -28,7 +28,7 @@
   "@turnOffRST": {},
   "turnOffRSTDescription": "Cet ordinateur utilise la technologie RST (Rapid Storage Technology) d’Intel. Il est nécessaire de désactiver RST sous Windows avant d’installer Ubuntu.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Pour des instructions détaillées, veuillez ouvrir ce lien sur un téléphone ou un autre appareil : <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Pour des instructions détaillées, veuillez ouvrir ce lien sur un téléphone ou un autre appareil : <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {},
   "keyboardLayoutPageTitle": "Disposition du clavier",
   "@keyboardLayoutPageTitle": {},
@@ -74,17 +74,17 @@
   "@diskHeadersSystem": {},
   "diskHeadersFormat": "Formatter",
   "@diskHeadersFormat": {},
-  "writeChangesToDisk": "Appliquer les changements sur les disques",
+  "writeChangesToDisk": "Prêt à installer",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "disque",
   "@writeChangesFallbackSerial": {},
   "writeChangesDescription": "Si vous continuez, les changements ci-dessous seront écrits sur les disques. Vous pourrez faire des changements ultérieurs manuellement.",
   "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "Les tables de partitions des périphériques suivants seront modifiées :",
+  "writeChangesPartitionTablesHeader": "Les tables de partitions des périphériques suivants seront modifiées :",
   "@writeChangesPartitionTablesHeader": {},
   "writeChangesPartitionTablesEntry": "{serial} ({path})",
   "@writeChangesPartitionTablesEntry": {},
-  "writeChangesPartitionsHeader": "Les modification suivantes sur les partitions seront appliquées :",
+  "writeChangesPartitionsHeader": "Les modification suivantes sur les partitions seront appliquées :",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionEntryPrimaryFull": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) de type {fstype} en tant que {mountPath}",
   "@writeChangesPartitionEntryPrimaryFull": {},
@@ -120,7 +120,7 @@
   "@chooseSecurityKeyHeader": {},
   "installationTypeEncryptInfo": "Vous allez choisir une clé de sécurité à l’étape suivante.",
   "@installationTypeEncryptInfo": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Attention :</font> Si vous oubliez la clé de sécurité, toutes les données seront perdues. Il est recommandé de noter cette clé puis de la stocker dans en lieu sûr.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Attention :</font> Si vous oubliez la clé de sécurité, toutes les données seront perdues. Il est recommandé de noter cette clé puis de la stocker dans en lieu sûr.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -205,7 +205,7 @@
   "@confirmSecurityKey": {},
   "chooseSecurityKeyRequired": "Un code de sécurité est requis",
   "@chooseSecurityKeyRequired": {},
-  "installationTypeZFS": "EXPERIMENTAL : Effacer le disque et utiliser ZFS",
+  "installationTypeZFS": "EXPERIMENTAL : Effacer le disque et utiliser ZFS",
   "@installationTypeZFS": {},
   "dontInstallDriverSoftwareNow": "Ne pas installer le pilote maintenant",
   "@dontInstallDriverSoftwareNow": {},
@@ -215,7 +215,7 @@
   "@secureBootSecurityKeysDontMatch": {},
   "dontInstallDriverSoftwareNowDescription": "Vous pouvez l’installer ultérieurement depuis Logiciel & Mises à jour.",
   "@dontInstallDriverSoftwareNowDescription": {},
-  "installationTypeOSDetected": "Cet ordinateur est installé avec {os}. Que voulez-vous faire ?",
+  "installationTypeOSDetected": "Cet ordinateur est installé avec {os}. Que voulez-vous faire ?",
   "@installationTypeOSDetected": {
     "type": "text",
     "placeholders": {
@@ -228,7 +228,7 @@
   "@installationTypeAdvancedLabel": {},
   "installationTypeAdvancedTitle": "Fonctions avancées",
   "@installationTypeAdvancedTitle": {},
-  "installationTypeReinstallWarning": "<font color=\"{color}\">Attention :</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les fichiers de {os}.",
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Attention :</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les fichiers de {os}.",
   "@installationTypeReinstallWarning": {
     "type": "text",
     "placeholders": {
@@ -260,7 +260,7 @@
   "@installationTypeEncrypt": {},
   "configureSecureBootDescription": "Vous avez choisi d’installer des pilotes logiciels tiers. Cela nécessite de désactiver Secure Boot.\nPour cela, vous devez choisir une clé de sécurité maintenant, et l’entrer quand le système démarrera.",
   "@configureSecureBootDescription": {},
-  "turnOffBitlockerLinkInstructions": "Pour obtenir des instructions, ouvrez cette page sur un téléphone ou un autre appareil : <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Pour obtenir des instructions, ouvrez cette page sur un téléphone ou un autre appareil : <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -279,11 +279,11 @@
   "@partitionUnitKB": {},
   "partitionUnitGB": "Go",
   "@partitionUnitGB": {},
-  "partitionTypeLabel": "Type pour la nouvelle partition :",
+  "partitionTypeLabel": "Type pour la nouvelle partition :",
   "@partitionTypeLabel": {},
-  "partitionLocationLabel": "Emplacement pour la nouvelle partition :",
+  "partitionLocationLabel": "Emplacement pour la nouvelle partition :",
   "@partitionLocationLabel": {},
-  "partitionFormatLabel": "Utilisée comme :",
+  "partitionFormatLabel": "Utilisée comme :",
   "@partitionFormatLabel": {},
   "partitionFormatExt4": "Système de fichiers Ext4 journalisé",
   "@partitionFormatExt4": {},
@@ -319,7 +319,7 @@
   "@partitionFormatZfsroot": {},
   "partitionErase": "Formatter la partition",
   "@partitionErase": {},
-  "partitionMountPointLabel": "Point de montage :",
+  "partitionMountPointLabel": "Point de montage :",
   "@partitionMountPointLabel": {},
   "whoAreYouPageRealNameLabel": "Votre nom",
   "@whoAreYouPageRealNameLabel": {},
@@ -410,9 +410,9 @@
   "@enableWifi": {},
   "wifiMustBeEnabled": "Pour utiliser le Wi-Fi sur cet ordinateur, cette fonctionnalité doit être activée",
   "@wifiMustBeEnabled": {},
-  "newPartitionTableConfirmationTitle": "Créer une nouvelle table de partitions sur ce périphérique ?",
+  "newPartitionTableConfirmationTitle": "Nouvelle partition vide",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "Vous avez sélectionné un périphérique entier à partitionner. Si vous continuez en créant une nouvelle table de partitions, toutes les partitions actuellement sur ce périphérique seront supprimées.\n\nVous pourrez annuler cette opération plus tard si vous le souhaitez.",
+  "newPartitionTableConfirmationMessage": "La création d’une nouvelle table de partitions sur un périphérique entier supprimera toutes ses partitions actuelles. Vous pourrez annuler cette opération plus tard si vous le souhaitez.",
   "@newPartitionTableConfirmationMessage": {},
   "onBatteryWarning": "<font color=\"{color}\"> Avertissement:</font> L’ordinateur n’est pas branché à une source d’alimentation.",
   "@onBatteryWarning": {
@@ -570,9 +570,9 @@
   "@copyingFiles": {},
   "installAlongsideAllocateSpace": "Allouer de l’espace",
   "@installAlongsideAllocateSpace": {},
-  "installAlongsideSize": "Taille :",
+  "installAlongsideSize": "Taille :",
   "@installAlongsideSize": {},
-  "installAlongsideAvailable": "Disponible :",
+  "installAlongsideAvailable": "Disponible :",
   "@installAlongsideAvailable": {},
   "installationTypeAlongsideMulti": "Installer {product} à côté d’eux",
   "@installationTypeAlongsideMulti": {
@@ -588,9 +588,9 @@
       "product": {}
     }
   },
-  "installAlongsideSpaceDivider": "Allouez de l’espace disque en déplaçant le séparateur ci-dessous :",
+  "installAlongsideSpaceDivider": "Allouez de l’espace disque en déplaçant le séparateur ci-dessous :",
   "@installAlongsideSpaceDivider": {},
-  "installAlongsidePartition": "Partition :",
+  "installAlongsidePartition": "Partition :",
   "@installAlongsidePartition": {},
   "installAlongsideResizePartition": "Redimensionner la partition",
   "@installAlongsideResizePartition": {},
@@ -613,7 +613,7 @@
       "url": {}
     }
   },
-  "writeChangesPartitionFormatted": "la partition #{disk}{partition} formatée en {format}",
+  "writeChangesPartitionFormatted": "la partition <b>{disk}{partition}</b> formatée en <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -654,9 +654,9 @@
   },
   "quitButtonText": "Quitter l’installation",
   "@quitButtonText": {},
-  "notEnoughDiskSpaceTitle": "Désolé",
+  "notEnoughDiskSpaceTitle": "Pas assez d’espace",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "la partition #{disk}{partition} redimensionnée de {oldsize} à {newsize}",
+  "writeChangesPartitionResized": "la partition <b>{disk}{partition}</b> redimensionnée de <b>{oldsize}</b> à <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -666,7 +666,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la partition #{disk}{partition} formatée en {format} utilisée pour {mount}",
+  "writeChangesPartitionFormattedMounted": "la partition <b>{disk}{partition}</b> formatée en <b>{format}</b> utilisée pour <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -676,7 +676,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "la partition #{disk}{partition} utilisée pour {mount}",
+  "writeChangesPartitionMounted": "la partition <b>{disk}{partition}</b> utilisée pour <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -748,7 +748,7 @@
   "@activeDirectoryAdminLabel": {},
   "activeDirectoryDomainNotFound": "Domaine introuvable",
   "@activeDirectoryDomainNotFound": {},
-  "activeDirectoryDomainStartHyphen": "Commence par un trait d'union (-)",
+  "activeDirectoryDomainStartHyphen": "Commence par un trait d’union (-)",
   "@activeDirectoryDomainStartHyphen": {},
   "activeDirectoryDomainMultipleDots": "Contient deux points adjacents (..)",
   "@activeDirectoryDomainMultipleDots": {},
@@ -769,5 +769,158 @@
   "activeDirectoryErrorTitle": "Erreur lors de la configuration de la connexion à Active Directory",
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Désolé, Active Directory ne peut pas être configuré pour le moment. Une fois que votre système est opérationnel, consultez <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> pour obtenir de l’aide.",
-  "@activeDirectoryErrorMessage": {}
+  "@activeDirectoryErrorMessage": {},
+  "installationSlidesAccessibilityBody": "Au cœur de la philosophie d’{DISTRO} se trouve la conviction que l’informatique doit être accessible à tous. Proposant des outils d’accessibilité avancés et des options telles que le choix de la langue, du thème de couleurs, de la taille des polices, {DISTRO} vous rend l’informatique facile – qui que vous soyez, où que vous soyez.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "Que vous soyez développeur, créateur, joueur ou administrateur, vous trouverez de nouveaux outils pour améliorer votre productivité et votre expérience sur {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesDevelopmentBody": "{DISTRO} est le poste de travail idéal pour le développement d’applications ou de sites Web, la science des données, l’intelligence artificielle et l’apprentissage automatique, ainsi que pour le devops et l’administration. Chaque version {DISTRO} inclut les dernières chaînes d’outils et prend en charge tous les principaux environnements de développement intégrés.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityLts": "Toutes les versions LTS d’{DISTRO} sont accompagnées de cinq ans de correctifs de sécurité, qui s’étendent à dix ans dans le cas d’un abonnement Ubuntu Pro.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityBody": "{DISTRO} fournit tous les outils dont vous avez besoin pour rester privé et sécurisé en ligne. Il intègre un pare-feu et un réseau privé virtuel (VPN), ainsi qu’une série d’applications axées sur la protection de la vie privée, afin que vous puissiez contrôler pleinement vos données.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "preparingUbuntu": "Préparation d’{DISTRO}…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "Détecter",
+  "@detectButtonText": {},
+  "keyboardVariant": "Variante du clavier :",
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "Disques",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Partitions",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesWelcomeTitle": "Rapide, gratuit et plein de nouvelles fonctionnalités",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "La dernière version de {DISTRO} rend l’informatique plus facile que jamais.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Améliorez votre créativité",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesSoftwareTitle": "Toutes les applications dont vous avez besoin",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesDevelopmentTitle": "Développez avec le meilleur de l’open source",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesGamingTitle": "Idéal pour les jeux",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesSoftwareBody": "Installez, gérez et mettez à jour toutes vos applications dans Ubuntu Software, y compris des milliers d’applications provenant du Snap Store et de l’archive {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingBody": "{DISTRO} prend en charge les derniers pilotes NVIDIA et Mesa pour améliorer les performances et la compatibilité. Des milliers de jeux pour Windows fonctionnent parfaitement sur {DISTRO} via des applications telles que Steam, sans aucune configuration supplémentaire.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityBody": "Si vous êtes animateur, concepteur, créateur vidéo ou développeur de jeux, il est facile d'amener vos flux de travail sur {DISTRO} grâce à la prise en charge de logiciels et d'applications open source et standard de l'industrie.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceUbuntu": "Espace disque insuffisant pour installer {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportHeader": "La documentation officielle de {DISTRO} est disponible en ligne et via l’icône Aide dans le dock.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityLanguages": "Prise en charge des langues",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "Aide et assistance",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesProductivityTitle": "Augmentez votre productivité",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesSupportUbuntuPro": "Assistance professionnelle 24h/24 et 7j/7 avec Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesAccessibilityOrca": "Lecteur d’écran Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesProductivityBody": "{DISTRO} Desktop comprend LibreOffice, une suite d’applications open source compatibles avec Microsoft Office pour les documents, les feuilles de calcul et les présentations. Des outils de collaboration populaires sont également disponibles.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportEnterprise": "Pour les entreprises, Canonical propose un support commercial qui facilite l'intégration et la gestion d'Ubuntu en toute sécurité sur le lieu de travail.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesSupportCommunity": "Ask Ubuntu couvre une gamme de questions et de réponses. Discours Ubuntu fournit des guides et des discussions pour les nouveaux utilisateurs et les utilisateurs expérimentés.",
+  "@installationSlidesSupportCommunity": {},
+  "welcomePageTitle": "Bienvenue à {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceRequired": "Requis :",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesAvailable": "Disponible :",
+  "@installationSlidesAvailable": {},
+  "installationSlidesTitle": "Bienvenue à {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "Privé et sécurisé",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSupportDocumentation": "Documentation officielle",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesIncluded": "Inclus :",
+  "@installationSlidesIncluded": {},
+  "installationSlidesAccessibilityTitle": "Accès pour tous",
+  "@installationSlidesAccessibilityTitle": {},
+  "notEnoughDiskSpaceAvailable": "Disponible :",
+  "@notEnoughDiskSpaceAvailable": {},
+  "installationSlidesSupportResources": "Ressources utiles :",
+  "@installationSlidesSupportResources": {}
 }
