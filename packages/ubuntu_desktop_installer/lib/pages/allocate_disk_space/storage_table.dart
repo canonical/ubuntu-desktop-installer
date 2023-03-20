@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'storage_columns.dart';
@@ -141,31 +142,34 @@ class StorageTable extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: LayoutBuilder(builder: (context, constraints) {
         final theme = Theme.of(context);
-        return OverflowBox(
-          maxWidth: double.infinity,
-          alignment: Alignment.topLeft,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minWidth: constraints.minWidth),
-            child: SingleChildScrollView(
-              controller: controller,
-              child: DataTable(
-                dataRowHeight: kMinInteractiveDimension +
-                    theme.visualDensity.baseSizeAdjustment.dy,
-                headingRowHeight: kMinInteractiveDimension +
-                    theme.visualDensity.baseSizeAdjustment.dy,
-                showCheckboxColumn: false,
-                headingTextStyle: theme.textTheme.titleSmall,
-                dataTextStyle: theme.textTheme.bodyMedium,
-                columns: columns
-                    .map((column) =>
-                        DataColumn(label: column.titleBuilder(context)))
-                    .toList(),
-                rows: List.generate(storages.length, (index) {
-                  return _buildDataRows(context, diskIndex: index);
-                }).fold<List<DataRow>>([], (allRows, diskRows) {
-                  allRows.addAll(diskRows);
-                  return allRows;
-                }).toList(),
+        return OverrideMouseCursor(
+          cursor: SystemMouseCursors.basic,
+          child: OverflowBox(
+            maxWidth: double.infinity,
+            alignment: Alignment.topLeft,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minWidth: constraints.minWidth),
+              child: SingleChildScrollView(
+                controller: controller,
+                child: DataTable(
+                  dataRowHeight: kMinInteractiveDimension +
+                      theme.visualDensity.baseSizeAdjustment.dy,
+                  headingRowHeight: kMinInteractiveDimension +
+                      theme.visualDensity.baseSizeAdjustment.dy,
+                  showCheckboxColumn: false,
+                  headingTextStyle: theme.textTheme.titleSmall,
+                  dataTextStyle: theme.textTheme.bodyMedium,
+                  columns: columns
+                      .map((column) =>
+                          DataColumn(label: column.titleBuilder(context)))
+                      .toList(),
+                  rows: List.generate(storages.length, (index) {
+                    return _buildDataRows(context, diskIndex: index);
+                  }).fold<List<DataRow>>([], (allRows, diskRows) {
+                    allRows.addAll(diskRows);
+                    return allRows;
+                  }).toList(),
+                ),
               ),
             ),
           ),

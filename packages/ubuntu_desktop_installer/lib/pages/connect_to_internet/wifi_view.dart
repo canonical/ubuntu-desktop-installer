@@ -123,22 +123,25 @@ class WifiListView extends StatelessWidget {
     final model = Provider.of<WifiModel>(context);
     return YaruBorderContainer(
       clipBehavior: Clip.antiAlias,
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: model.devices.length,
-        itemBuilder: (context, index) {
-          return ChangeNotifierProvider.value(
-            value: model.devices[index],
-            child: WifiListTile(
-              key: ValueKey(index),
-              selected: model.isSelectedDevice(model.devices[index]),
-              onSelected: (device, accessPoint) {
-                model.selectDevice(device);
-                onSelected(device, accessPoint);
-              },
-            ),
-          );
-        },
+      child: OverrideMouseCursor(
+        cursor: SystemMouseCursors.basic,
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: model.devices.length,
+          itemBuilder: (context, index) {
+            return ChangeNotifierProvider.value(
+              value: model.devices[index],
+              child: WifiListTile(
+                key: ValueKey(index),
+                selected: model.isSelectedDevice(model.devices[index]),
+                onSelected: (device, accessPoint) {
+                  model.selectDevice(device);
+                  onSelected(device, accessPoint);
+                },
+              ),
+            );
+          },
+        ),
       ),
     );
   }
