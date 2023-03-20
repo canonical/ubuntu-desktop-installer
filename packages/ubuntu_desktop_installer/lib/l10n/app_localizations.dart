@@ -1469,7 +1469,7 @@ abstract class AppLocalizations {
   /// A created partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} created'**
+  /// **'partition <b>{disk}{partition}</b> created'**
   String writeChangesPartitionCreated(Object disk, Object partition);
 
   /// No description provided for @chooseYourLookPageTitle.
