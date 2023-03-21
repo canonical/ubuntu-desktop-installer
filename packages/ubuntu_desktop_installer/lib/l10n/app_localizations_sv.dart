@@ -687,7 +687,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk$partition skapad';
+    return 'partition <b>$disk$partition</b> skapad';
   }
 
   @override
@@ -805,7 +805,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String installationSlidesGamingBody(Object DISTRO) {
-    return '$DISTRO stödjer dom senaste NVIDIA och Mesa drivrutiner för att förbättra prestanda och kompatibilitet. Tusen av Windows titlar fungerar bra att spela på $DISTRO via program som Steam utan ytterligare konfiguration.';
+    return '$DISTRO stödjer dom senaste NVIDIA och Mesa drivrutinerna för att förbättra prestanda och kompatibilitet. Tusen av Windows titlar fungerar bra att spela på $DISTRO via program som Steam utan ytterligare konfiguration.';
   }
 
   @override
