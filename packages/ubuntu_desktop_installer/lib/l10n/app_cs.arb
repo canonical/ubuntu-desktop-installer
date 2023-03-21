@@ -685,7 +685,7 @@
   },
   "installAlongsideResizePartition": "Změnit velikost oddílu",
   "@installAlongsideResizePartition": {},
-  "writeChangesPartitionCreated": "oddíl #{disk}{partition} vytvořen",
+  "writeChangesPartitionCreated": "oddíl <b>{disk}{partition}</b> vytvořen",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
