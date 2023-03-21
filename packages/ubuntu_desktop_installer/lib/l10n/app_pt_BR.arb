@@ -632,7 +632,7 @@
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.",
   "@installCodecsSubtitle": {},
-  "writeChangesPartitionCreated": "partição #{disk}{partition} criada",
+  "writeChangesPartitionCreated": "partição <b>{disk}{partition}</b> criada",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
