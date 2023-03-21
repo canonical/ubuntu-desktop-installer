@@ -639,7 +639,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "Partition #{disk}{partition} erstellt",
+  "writeChangesPartitionCreated": "Partition <b>{disk}{partition}</b> erstellt",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
