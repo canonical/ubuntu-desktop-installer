@@ -660,7 +660,7 @@
   },
   "supportSlideResources": "Per mai d’entresenhas, visitatz las paginas <a href=\"https://www.ubuntu.com/support/community-support\">assisténcia de la comunautat</a> o <a href=\"https://www.ubuntu.com/support\">l’assiténcia comerciala</a>.",
   "@supportSlideResources": {},
-  "writeChangesPartitionCreated": "particion #{disk}{partition} creada",
+  "writeChangesPartitionCreated": "particion <b>{disk}{partition}</b> creada",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -964,5 +964,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "installationSlidesSupportCommunity": "Ask Ubuntu cobrís una larga plaja de questions e responsas e lo Discourse d’Ubuntu provesís de guidas e de discussions pels nòuvenguts e los utilizaires experimentats.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "Per las entrepresas Canonical fornís una assisténcia comerciala per facilitar l’integracion e la gestion d’Ubuntu en tota seguretat al lòc de trabalh.",
+  "@installationSlidesSupportEnterprise": {}
 }
