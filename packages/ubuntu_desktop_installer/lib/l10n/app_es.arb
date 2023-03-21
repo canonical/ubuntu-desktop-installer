@@ -518,7 +518,7 @@
   "@installationTypeMultiOSDetected": {},
   "newPartitionTableConfirmationTitle": "Nueva partición vacía",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "Ha optado por particionar un dispositivo entero. Si continúa con la creación de la tabla de particiones nueva en el dispositivo, las particiones que haya desaparecerán.\n\nObserve que puede deshacer esta operación más adelante, si lo desea.",
+  "newPartitionTableConfirmationMessage": "La creación de una nueva tabla de particiones en un dispositivo completo eliminará todas sus particiones actuales. Esta operación puede deshacerse si es necesario.",
   "@newPartitionTableConfirmationMessage": {},
   "turnOffBitlockerDescription": "El equipo utiliza el cifrado BitLocker de Windows.\nDebe desactivar BitLocker en Windows antes de instalar Ubuntu.",
   "@turnOffBitlockerDescription": {},
@@ -702,7 +702,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partición #{disk}{partition} creada",
+  "writeChangesPartitionCreated": "partición <b>{disk}{partition}</b> creada",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -868,5 +868,80 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "installationSlidesSecurityBody": "{DISTRO} proporciona todas las herramientas que necesitas para mantenerte privado y seguro en Internet. Con firewall y VPN incorporados y una serie de aplicaciones centradas en la privacidad para garantizar el control total de sus datos.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityLts": "Todas las versiones {DISTRO} LTS vienen con cinco años de parches de seguridad incluidos, que se extienden a diez años con una suscripción a Ubuntu Pro.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityBody": "{DISTRO} Escritorio incluye LibreOffice, un conjunto de aplicaciones de código abierto compatibles con Microsoft Office para documentos, hojas de cálculo y presentaciones. También dispone de conocidas herramientas de colaboración.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeHeader": "La última versión de {DISTRO} hace que la informática sea más fácil que nunca.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "Tanto si eres desarrollador, creador, jugador o administrador, en {RELEASE} encontrarás nuevas herramientas para mejorar tu productividad y mejorar tu experiencia.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "Todas las aplicaciones que necesitas",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "Instala, gestiona y actualiza todas tus aplicaciones en Ubuntu Software, incluyendo miles de aplicaciones tanto de Snap Store como del archivo {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentTitle": "Desarrolla con lo mejor del código abierto",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} es la estación de trabajo ideal para el desarrollo web o de aplicaciones, ciencia de datos e IA/ML, así como para operaciones de desarrollo y administración. Todas las versiones de {DISTRO} incluyen las cadenas de herramientas más recientes y son compatibles con los principales IDE.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Potencia tu creatividad",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesCreativityBody": "Si eres un animador, diseñador, creador de vídeo o desarrollador de juegos, es fácil trasladar tus flujos de trabajo a {DISTRO} gracias a la compatibilidad con software y aplicaciones de código abierto y estándar del sector.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingTitle": "Ideal para jugar",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesGamingBody": "{DISTRO} es compatible con los últimos controladores de NVIDIA y Mesa para mejorar el rendimiento y la compatibilidad. Miles de títulos de Windows se reproducen perfectamente en {DISTRO} a través de aplicaciones como Steam sin necesidad de configuración adicional.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "Aumenta tu productividad",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesSupportEnterprise": "Para los usuarios de empresa, Canonical ofrece soporte comercial para facilitar la incorporación y gestión segura de Ubuntu en el lugar de trabajo.",
+  "@installationSlidesSupportEnterprise": {}
 }

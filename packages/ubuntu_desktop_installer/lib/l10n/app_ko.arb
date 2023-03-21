@@ -8,7 +8,7 @@
   "@okButtonText": {},
   "yesButtonText": "예",
   "@yesButtonText": {},
-  "tryOrInstallPageTitle": "체험 또는 설치",
+  "tryOrInstallPageTitle": "{DISTRO} 체험 또는 설치",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "설치 복구",
   "@repairInstallation": {},
@@ -205,7 +205,7 @@
   "@whoAreYouPageInvalidUsername": {},
   "whoAreYouPagePasswordMismatch": "암호가 일치하지 않습니다",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesToDisk": "디스크에 변경사항 쓰기",
+  "writeChangesToDisk": "설치 준비 완료",
   "@writeChangesToDisk": {},
   "writeChangesPartitionTablesHeader": "다음과 같은 장치의 파티션 테이블이 변경되었습니다:",
   "@writeChangesPartitionTablesHeader": {},
@@ -251,7 +251,7 @@
   "@chooseSecurityKeyConfirmHint": {},
   "chooseSecurityKeyMismatch": "보안 키가 일치하지 않습니다",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">경고</font>: 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">경고:</font> 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -405,7 +405,7 @@
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "모양 설정에서 언제든 변경하실 수 있습니다.",
   "@chooseYourLookPageHeader": {},
-  "readyToUse": "**{system}** 설치가 완료 되었으며 사용할 준비가 되었습니다.",
+  "readyToUse": "**{system}** 설치가 완료 되었으며 사용할 준비가 되었습니다",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -433,9 +433,9 @@
       "mount": {}
     }
   },
-  "newPartitionTableConfirmationTitle": "이 장치에 빈 파티션을 새로 생성하시겠습니까?",
+  "newPartitionTableConfirmationTitle": "새로운 빈 파티션",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "장치 전체를 파티션으로 지정하셨습니다. 계속해서 장치에 새 파티션을 생성하시면, 기존 파티션은 모두 삭제됩니다.\n\n원하시는 경우 추후 이 작업을 되돌리실 수 있습니다.",
+  "newPartitionTableConfirmationMessage": "장치 전체에 새 파티션을 생성하면, 기존 파티션은 모두 삭제됩니다. 필요하신 경우 작업을 되돌리실 수 있습니다.",
   "@newPartitionTableConfirmationMessage": {},
   "installationTypeNoneSelected": "선택 안 함",
   "@installationTypeNoneSelected": {},
@@ -456,7 +456,7 @@
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
   },
-  "onBatteryWarning": "<font color=\"{color}\">경고</font>: 컴퓨터에 전원이 연결되어 있지 않습니다.",
+  "onBatteryWarning": "<font color=\"{color}\">경고:</font> 컴퓨터에 전원이 연결되어 있지 않습니다.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -673,7 +673,7 @@
   "@configuringSystem": {},
   "installingSystem": "시스템 설치 중…",
   "@installingSystem": {},
-  "writeChangesPartitionCreated": "파티션 #{disk}{partition} 생성됨",
+  "writeChangesPartitionCreated": "파티션 <b>{disk}{partition}</b> 생성됨",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -696,7 +696,7 @@
       "SIZE": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "죄송합니다",
+  "notEnoughDiskSpaceTitle": "공간이 부족합니다",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceBiggestDisk": "이 컴퓨터의 가장 큰 디스크는 {SIZE}밖에 되지 않습니다.",
   "@notEnoughDiskSpaceBiggestDisk": {
@@ -705,7 +705,7 @@
       "SIZE": {}
     }
   },
-  "writeChangesPartitionFormatted": "파티션 #{disk}{partition} 을(를) {format} (으)로 포맷함",
+  "writeChangesPartitionFormatted": "파티션 <b>{disk}{partition}</b>을(를) <b>{format}</b> (으)로 포맷함",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -718,7 +718,7 @@
   "@restartNow": {},
   "continueTesting": "체험 계속하기",
   "@continueTesting": {},
-  "writeChangesPartitionFormattedMounted": "파티션 #{disk}{partition}을(를) {format}(으)로 포맷하고 {mount}에 마운트",
+  "writeChangesPartitionFormattedMounted": "파티션 <b>{disk}{partition}</b> 을(를) <b>{format}</b>(으)로 포맷하고 <b>{mount}</b>에 마운트",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -728,7 +728,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "파티션 #{disk}{partition}을(를) {mount}에 마운트",
+  "writeChangesPartitionMounted": "파티션 <b>{disk}{partition}</b>을(를) <b>{mount}</b>에 사용",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -752,7 +752,7 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "파티션 #{disk}{partition}의 크기를 {oldsize}에서 {newsize}로 조정",
+  "writeChangesPartitionResized": "파티션 <b>{disk}{partition}</b>의 크기를 <b>{oldsize}</b>에서 <b>{newsize}</b>로 조정",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -774,9 +774,9 @@
   "@activeDirectoryDomainEmpty": {},
   "activeDirectoryDomainTooLong": "너무 깁니다.",
   "@activeDirectoryDomainTooLong": {},
-  "activeDirectoryTestConnection": "연결 테스트",
+  "activeDirectoryTestConnection": "도메인 연결 테스트",
   "@activeDirectoryTestConnection": {},
-  "activeDirectoryAdminLabel": "도메인 관리자",
+  "activeDirectoryAdminLabel": "도메인 사용자 연결",
   "@activeDirectoryAdminLabel": {},
   "activeDirectoryDomainNotFound": "도메인을 찾을 수 없습니다.",
   "@activeDirectoryDomainNotFound": {},
@@ -789,5 +789,76 @@
   "activeDirectoryPasswordLabel": "비밀 번호",
   "@activeDirectoryPasswordLabel": {},
   "activeDirectoryPasswordEmpty": "필수",
-  "@activeDirectoryPasswordEmpty": {}
+  "@activeDirectoryPasswordEmpty": {},
+  "installationSlidesIncluded": "포함됨:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "빠르고, 무료이며 새로운 기능으로 가득합니다",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "최신 버전의 {DISTRO}는 컴퓨팅을 그 어느 때보다 쉽게 합니다.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "개발자, 크리에이터, 게이머, 관리자 등 누구에게나 생산성을 향상하고 {RELEASE}에서의 경험을 개선할 수 있는 새로운 도구를 찾으실 수 있습니다.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "필요한 모든 애플리케이션",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesDevelopmentTitle": "최고의 오픈소스로 개발하십시오",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesSoftwareBody": "스냅 스토어와 {DISTRO} 아카이브에 있는 수천개의 애플리케이션과, 여러분의 모든 애플리케이션을 우분투 소프트웨어에서 설치하고 관리하고, 업데이트 하십시오.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentBody": "{DISTRO} 는 앱 또는 웹 개발, 데이터 과학과 AI/ML 및 DevOps와 시스템 관리에 최적의 워크스테이션 입니다. 모든 {DISTRO} 릴리스에는 최신 툴체인과 모든 주요 IDE 지원이 포함되어 있습니다.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesTitle": "{RELEASE}사용을 환영합니다",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "whoAreYouPageComputerNameTooLong": "너무 긴 컴퓨터 이름입니다.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "preparingUbuntu": "{DISTRO} 준비 중...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "whoAreYouPageRealNameTooLong": "너무 긴 이름입니다.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "detectButtonText": "감지",
+  "@detectButtonText": {},
+  "keyboardVariant": "키보드 유형:",
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "장치",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "파티션",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesAvailable": "이용가능:",
+  "@installationSlidesAvailable": {},
+  "welcomePageTitle": "{DISTRO}사용을 환영합니다",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

@@ -667,7 +667,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionCreated": "utworzona partycja #{disk}{partition}",
+  "writeChangesPartitionCreated": "utworzona partycja <b>{disk}{partition}</b>",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {

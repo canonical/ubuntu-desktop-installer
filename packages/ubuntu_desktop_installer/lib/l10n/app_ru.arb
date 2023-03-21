@@ -215,7 +215,7 @@
   },
   "writeChangesPartitionsHeader": "Будут применены следующие изменения разделов:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesToDisk": "Записать изменения на диск",
+  "writeChangesToDisk": "Готово к установке",
   "@writeChangesToDisk": {},
   "whoAreYouPagePasswordMismatch": "Пароли не совпадают",
   "@whoAreYouPagePasswordMismatch": {},
@@ -698,7 +698,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionCreated": "раздел #{disk}{partition} создан",
+  "writeChangesPartitionCreated": "раздел <b>{disk}{partition}</b> создан",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -820,5 +820,29 @@
   "installationSlidesSoftwareTitle": "Все необходимые приложения",
   "@installationSlidesSoftwareTitle": {},
   "whoAreYouPagePasswordHide": "Скрыть",
-  "@whoAreYouPagePasswordHide": {}
+  "@whoAreYouPagePasswordHide": {},
+  "installationSlidesWelcomeBody": "Независимо от того, являетесь ли вы разработчиком, создателем, игроком или администратором, {RELEASE} предлагает новые инструменты для повышения вашей производительности и опыта.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "offlineWarning": "Вы сейчас не в сети",
+  "@offlineWarning": {},
+  "keyboardVariant": "Вариант клавиатуры:",
+  "@keyboardVariant": {},
+  "detectButtonText": "Определить",
+  "@detectButtonText": {},
+  "installationSlidesAvailable": "Доступно:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesIncluded": "Включено:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeHeader": "Последняя версия {DISTRO} делает использование вашего компьютера проще, чем когда-либо.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

@@ -696,7 +696,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partition #{disk}{partition} skapad",
+  "writeChangesPartitionCreated": "partition <b>{disk}{partition}</b> skapad",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -881,7 +881,7 @@
   "@installationSlidesCreativityTitle": {},
   "installationSlidesGamingTitle": "Perfekt för spel",
   "@installationSlidesGamingTitle": {},
-  "installationSlidesGamingBody": "{DISTRO} stödjer dom senaste NVIDIA och Mesa drivrutiner för att förbättra prestanda och kompatibilitet. Tusen av Windows titlar fungerar bra att spela på {DISTRO} via program som Steam utan ytterligare konfiguration.",
+  "installationSlidesGamingBody": "{DISTRO} stödjer dom senaste NVIDIA och Mesa drivrutinerna för att förbättra prestanda och kompatibilitet. Tusen av Windows titlar fungerar bra att spela på {DISTRO} via program som Steam utan ytterligare konfiguration.",
   "@installationSlidesGamingBody": {
     "type": "text",
     "placeholders": {
