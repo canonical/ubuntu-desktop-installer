@@ -687,7 +687,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'utworzona partycja #$disk$partition';
+    return 'utworzona partycja <b>$disk$partition</b>';
   }
 
   @override

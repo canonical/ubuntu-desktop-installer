@@ -109,10 +109,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get detectLayout => 'Определить раскладку клавиатуры';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => 'Определить';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => 'Вариант клавиатуры:';
 
   @override
   String get pressOneKey => 'Нажмите одну из следующих клавиш:';
@@ -246,7 +246,7 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Вы сейчас не в сети';
 
   @override
   String get chooseSecurityKeyTitle => 'Выберите ключ безопасности';
@@ -640,7 +640,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whoAreYouPagePasswordHide => 'Скрыть';
 
   @override
-  String get writeChangesToDisk => 'Записать изменения на диск';
+  String get writeChangesToDisk => 'Готово к установке';
 
   @override
   String get writeChangesFallbackSerial => 'диск';
@@ -687,7 +687,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'раздел #$disk$partition создан';
+    return 'раздел <b>$disk$partition</b> создан';
   }
 
   @override
@@ -758,22 +758,22 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAvailable => 'Available:';
+  String get installationSlidesAvailable => 'Доступно:';
 
   @override
-  String get installationSlidesIncluded => 'Included:';
+  String get installationSlidesIncluded => 'Включено:';
 
   @override
   String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return 'The latest version of $DISTRO makes computing easier than ever.';
+    return 'Последняя версия $DISTRO делает использование вашего компьютера проще, чем когда-либо.';
   }
 
   @override
   String installationSlidesWelcomeBody(Object RELEASE) {
-    return 'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in $RELEASE.';
+    return 'Независимо от того, являетесь ли вы разработчиком, создателем, игроком или администратором, $RELEASE предлагает новые инструменты для повышения вашей производительности и опыта.';
   }
 
   @override

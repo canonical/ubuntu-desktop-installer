@@ -38,12 +38,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return '$DISTRO사용을 환영합니다';
   }
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return '$DISTRO 준비 중...';
   }
 
   @override
@@ -51,7 +51,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return '체험 또는 설치';
+    return '$DISTRO 체험 또는 설치';
   }
 
   @override
@@ -109,10 +109,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get detectLayout => '키보드 레이아웃 감지';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => '감지';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => '키보드 유형:';
 
   @override
   String get pressOneKey => '다음 키 중 하나를 누르십시오:';
@@ -242,7 +242,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">경고</font>: 컴퓨터에 전원이 연결되어 있지 않습니다.';
+    return '<font color=\"$color\">경고:</font> 컴퓨터에 전원이 연결되어 있지 않습니다.';
   }
 
   @override
@@ -270,7 +270,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">경고</font>: 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.';
+    return '<font color=\"$color\">경고:</font> 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.';
   }
 
   @override
@@ -454,10 +454,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get newPartitionTable => '새 파티션 테이블';
 
   @override
-  String get newPartitionTableConfirmationTitle => '이 장치에 빈 파티션을 새로 생성하시겠습니까?';
+  String get newPartitionTableConfirmationTitle => '새로운 빈 파티션';
 
   @override
-  String get newPartitionTableConfirmationMessage => '장치 전체를 파티션으로 지정하셨습니다. 계속해서 장치에 새 파티션을 생성하시면, 기존 파티션은 모두 삭제됩니다.\n\n원하시는 경우 추후 이 작업을 되돌리실 수 있습니다.';
+  String get newPartitionTableConfirmationMessage => '장치 전체에 새 파티션을 생성하면, 기존 파티션은 모두 삭제됩니다. 필요하신 경우 작업을 되돌리실 수 있습니다.';
 
   @override
   String get tooManyPrimaryPartitions => '주 파티션이 너무 많음';
@@ -583,7 +583,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => '이름이 필요합니다';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get whoAreYouPageRealNameTooLong => '너무 긴 이름입니다.';
 
   @override
   String get whoAreYouPageComputerNameLabel => '컴퓨터 이름';
@@ -595,7 +595,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageComputerNameRequired => '컴퓨터 이름이 필요합니다';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get whoAreYouPageComputerNameTooLong => '너무 긴 컴퓨터 이름입니다.';
 
   @override
   String get whoAreYouPageInvalidComputerName => '올바르지 않은 컴퓨터 이름 입니다';
@@ -640,7 +640,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPagePasswordHide => '숨기기';
 
   @override
-  String get writeChangesToDisk => '디스크에 변경사항 쓰기';
+  String get writeChangesToDisk => '설치 준비 완료';
 
   @override
   String get writeChangesFallbackSerial => '디스크';
@@ -649,10 +649,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get writeChangesDescription => '계속 하시면 아래 나열된 변경사항을 디스크에 기록됩니다. 수동으로 추가적인 변경사항을 만드실 수 있습니다.';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get writeChangesDevicesTitle => '장치';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get writeChangesPartitionsTitle => '파티션';
 
   @override
   String get writeChangesPartitionTablesHeader => '다음과 같은 장치의 파티션 테이블이 변경되었습니다:';
@@ -667,27 +667,27 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return '파티션 #$disk$partition의 크기를 $oldsize에서 $newsize로 조정';
+    return '파티션 <b>$disk$partition</b>의 크기를 <b>$oldsize</b>에서 <b>$newsize</b>로 조정';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return '파티션 #$disk$partition을(를) $format(으)로 포맷하고 $mount에 마운트';
+    return '파티션 <b>$disk$partition</b> 을(를) <b>$format</b>(으)로 포맷하고 <b>$mount</b>에 마운트';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '파티션 #$disk$partition 을(를) $format (으)로 포맷함';
+    return '파티션 <b>$disk$partition</b>을(를) <b>$format</b> (으)로 포맷함';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return '파티션 #$disk$partition을(를) $mount에 마운트';
+    return '파티션 <b>$disk$partition</b>을(를) <b>$mount</b>에 사용';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '파티션 #$disk$partition 생성됨';
+    return '파티션 <b>$disk$partition</b> 생성됨';
   }
 
   @override
@@ -707,7 +707,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** 설치가 완료 되었으며 사용할 준비가 되었습니다.';
+    return '**$system** 설치가 완료 되었으며 사용할 준비가 되었습니다';
   }
 
   @override
@@ -754,42 +754,42 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationSlidesTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return '$RELEASE사용을 환영합니다';
   }
 
   @override
-  String get installationSlidesAvailable => 'Available:';
+  String get installationSlidesAvailable => '이용가능:';
 
   @override
-  String get installationSlidesIncluded => 'Included:';
+  String get installationSlidesIncluded => '포함됨:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+  String get installationSlidesWelcomeTitle => '빠르고, 무료이며 새로운 기능으로 가득합니다';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return 'The latest version of $DISTRO makes computing easier than ever.';
+    return '최신 버전의 $DISTRO는 컴퓨팅을 그 어느 때보다 쉽게 합니다.';
   }
 
   @override
   String installationSlidesWelcomeBody(Object RELEASE) {
-    return 'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in $RELEASE.';
+    return '개발자, 크리에이터, 게이머, 관리자 등 누구에게나 생산성을 향상하고 $RELEASE에서의 경험을 개선할 수 있는 새로운 도구를 찾으실 수 있습니다.';
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'All the applications you need';
+  String get installationSlidesSoftwareTitle => '필요한 모든 애플리케이션';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
-    return 'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and $DISTRO archive.';
+    return '스냅 스토어와 $DISTRO 아카이브에 있는 수천개의 애플리케이션과, 여러분의 모든 애플리케이션을 우분투 소프트웨어에서 설치하고 관리하고, 업데이트 하십시오.';
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
+  String get installationSlidesDevelopmentTitle => '최고의 오픈소스로 개발하십시오';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
-    return '$DISTRO is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every $DISTRO release includes the latest toolchains and supports all major IDEs.';
+    return '$DISTRO 는 앱 또는 웹 개발, 데이터 과학과 AI/ML 및 DevOps와 시스템 관리에 최적의 워크스테이션 입니다. 모든 $DISTRO 릴리스에는 최신 툴체인과 모든 주요 IDE 지원이 포함되어 있습니다.';
   }
 
   @override
@@ -879,7 +879,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationFailed => '설치 실패';
 
   @override
-  String get notEnoughDiskSpaceTitle => '죄송합니다';
+  String get notEnoughDiskSpaceTitle => '공간이 부족합니다';
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
@@ -902,7 +902,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get activeDirectoryTitle => '액티브 디렉토리 구성';
 
   @override
-  String get activeDirectoryTestConnection => '연결 테스트';
+  String get activeDirectoryTestConnection => '도메인 연결 테스트';
 
   @override
   String get activeDirectoryDomainLabel => '도메인';
@@ -935,7 +935,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get activeDirectoryDomainNotFound => '도메인을 찾을 수 없습니다.';
 
   @override
-  String get activeDirectoryAdminLabel => '도메인 관리자';
+  String get activeDirectoryAdminLabel => '도메인 사용자 연결';
 
   @override
   String get activeDirectoryAdminEmpty => '필수';
