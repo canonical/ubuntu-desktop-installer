@@ -138,7 +138,12 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
           context,
           highlighted: true,
           label: lang.startInstallingButtonText,
-          onNext: model.startInstallation,
+          onNext: () {
+            // start installation after the page transition (#1393)
+            Future.delayed(kThemeAnimationDuration).then((_) {
+              model.startInstallation();
+            });
+          },
         ),
       ],
     );
