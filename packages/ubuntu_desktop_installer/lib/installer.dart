@@ -473,9 +473,7 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
       if (arguments == InstallationType.erase) {
         return Routes.selectGuidedStorage;
       } else if (arguments == InstallationType.alongside) {
-        return service.hasBitLocker
-            ? Routes.turnOffBitlocker
-            : Routes.installAlongside;
+        return Routes.installAlongside;
       }
     } else if (service.useEncryption && service.securityKey == null) {
       return Routes.chooseSecurityKey;
