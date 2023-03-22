@@ -637,7 +637,7 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionCreated": "la partition #{disk}{partition} créée",
+  "writeChangesPartitionCreated": "la partition <b>{disk}{partition}</b> créée",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
