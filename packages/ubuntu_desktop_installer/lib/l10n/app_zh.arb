@@ -1,6 +1,6 @@
 {
   "@@locale": "zh",
-  "appTitle": "Ubuntu 桌面安装程序",
+  "appTitle": "Ubuntu 桌面版安装器",
   "@appTitle": {},
   "windowTitle": "安装 {RELEASE}",
   "@windowTitle": {
@@ -33,7 +33,7 @@
   "@yesButtonText": {},
   "welcome": "欢迎",
   "@welcome": {},
-  "tryOrInstallPageTitle": "试用或安装",
+  "tryOrInstallPageTitle": "试用或安装{DISTRO}",
   "@tryOrInstallPageTitle": {},
   "installUbuntu": "安装 {RELEASE}",
   "@installUbuntu": {
@@ -329,9 +329,9 @@
   "@freeDiskSpace": {},
   "newPartitionTable": "新建分区表",
   "@newPartitionTable": {},
-  "newPartitionTableConfirmationTitle": "是否在此设备上创建新的空白分区表？",
+  "newPartitionTableConfirmationTitle": "新建空分区",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "您已选择要分区的整个设备。如果继续在该设备上创建新的分区表，那么其上的所有当前分区都将被删除。\n\n请注意，如果您愿意，稍后可以撤消此操作。",
+  "newPartitionTableConfirmationMessage": "在整个设备上创建一个新的分区表，将删除其当前所有的分区。如果需要的话，这个操作可以被撤销。",
   "@newPartitionTableConfirmationMessage": {},
   "bootLoaderDevice": "用于安装引导程序的设备",
   "@bootLoaderDevice": {},
@@ -377,7 +377,7 @@
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
   },
-  "writeChangesToDisk": "将更改写入磁盘",
+  "writeChangesToDisk": "准备安装",
   "@writeChangesToDisk": {},
   "writeChangesDescription": "如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。",
   "@writeChangesDescription": {},
@@ -700,7 +700,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "分区 #{disk}{partition} 已创建",
+  "writeChangesPartitionCreated": "分区 <b>{disk}{partition}</b> 已创建",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -978,6 +978,13 @@
   "@installationSlidesGamingTitle": {},
   "installationSlidesSecurityBody": "{DISTRO} 提供了保持在线隐私和安全所需的所有工具。内置防火墙和 VPN 支持以及大量以隐私为中心的应用程序，可确保您完全控制自己的数据。",
   "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "welcomePageTitle": "欢迎来到 {DISTRO}",
+  "@welcomePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
