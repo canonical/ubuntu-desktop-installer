@@ -844,5 +844,41 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "installationSlidesSecurityLts": "Все выпуски {DISTRO} LTS предоставляют исправления безопасности в течение пяти лет, которые могут быть продлены до десяти лет при подписке на Ubuntu Pro.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryDomainStartDot": "Начинается с точки (.)",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainEmpty": "Требуется",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryAdminEmpty": "Требуется",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryPasswordEmpty": "Требуется",
+  "@activeDirectoryPasswordEmpty": {},
+  "notEnoughDiskSpaceAvailable": "Доступно:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "installationSlidesSecurityBody": "{DISTRO} предоставляет все инструменты, необходимые для обеспечения конфиденциальности и безопасности в Интернете. Благодаря встроенному брандмауэру и поддержке VPN, а также множеству приложений, ориентированных на конфиденциальность, вы полностью контролируете свои данные.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "Конфиденциальность и безопасность",
+  "@installationSlidesSecurityTitle": {},
+  "activeDirectoryDomainEndHyphen": "Заканчивается знаком дефиса (-)",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryDomainStartHyphen": "Начинается со знака дефиса (-)",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryDomainEndDot": "Заканчивается точкой (.)",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainMultipleDots": "Содержит несколько последовательных точек (..)",
+  "@activeDirectoryDomainMultipleDots": {},
+  "notEnoughDiskSpaceRequired": "Требуется:",
+  "@notEnoughDiskSpaceRequired": {}
 }
