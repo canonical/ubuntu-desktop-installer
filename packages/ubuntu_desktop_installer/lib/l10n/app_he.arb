@@ -657,7 +657,7 @@
   },
   "quitButtonText": "יציאה מההתקנה",
   "@quitButtonText": {},
-  "writeChangesPartitionCreated": "מחיצה מס׳ {disk}{partition} נוצרה",
+  "writeChangesPartitionCreated": "מחיצה מס׳ <b>{disk}{partition}</b> נוצרה",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
