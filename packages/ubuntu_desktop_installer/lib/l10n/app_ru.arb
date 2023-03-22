@@ -880,5 +880,64 @@
   "activeDirectoryDomainMultipleDots": "Содержит несколько последовательных точек (..)",
   "@activeDirectoryDomainMultipleDots": {},
   "notEnoughDiskSpaceRequired": "Требуется:",
-  "@notEnoughDiskSpaceRequired": {}
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} - это идеальная рабочая станция для разработки приложений и веб-приложений, data science и AI/ML, а также devops и администрирования. Каждый выпуск {DISTRO} включает новейшие инструментальные цепочки и поддерживает все основные IDE.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityBody": "Если вы аниматор, дизайнер, создатель видео или разработчик игр, вам будет легко перенести свои рабочие процессы в {DISTRO} благодаря поддержке программного обеспечения и приложений с открытым исходным кодом и промышленных стандартов.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingTitle": "Отлично подходит для игр",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesGamingBody": "{DISTRO} поддерживает последние версии драйверов NVIDIA и Mesa для повышения производительности и совместимости. Тысячи игр для Windows отлично воспроизводятся на {DISTRO} через такие приложения, как Steam, без дополнительной настройки.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryErrorMessage": "Извините, Active Directory не может быть настроен в данный момент. Как только ваша система будет запущена, посетите <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> для получения помощи.",
+  "@activeDirectoryErrorMessage": {},
+  "installationSlidesProductivityBody": "{DISTRO} Рабочий стол включает LibreOffice, набор совместимых с Microsoft Office приложений с открытым исходным кодом для работы с документами, электронными таблицами и презентациями. Также доступны популярные инструменты для совместной работы.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Ask Ubuntu охватывает ряд вопросов и ответов, а Ubuntu Discourse содержит руководства и обсуждения для новых и опытных пользователей.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesProductivityTitle": "Повысьте свою производительность",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesSupportEnterprise": "Для корпоративных пользователей Canonical предоставляет коммерческую поддержку, чтобы упростить внедрение и безопасное управление Ubuntu на рабочем месте.",
+  "@installationSlidesSupportEnterprise": {},
+  "activeDirectoryOption": "Использовать Active Directory",
+  "@activeDirectoryOption": {},
+  "activeDirectoryDomainTooLong": "Слишком длинный",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryInfo": "Вы введёте домен и другие данные на следующем шаге.",
+  "@activeDirectoryInfo": {},
+  "installationSlidesWelcomeTitle": "Быстрый, бесплатный и полный новых возможностей",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesDevelopmentTitle": "Разрабатывайте с использованием лучшего из открытого исходного кода",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesCreativityTitle": "Повышайте свою креативность",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesAccessibilityBody": "В основе философии {DISTRO} лежит убеждение в том, что компьютер - для всех. Благодаря расширенным инструментам доступности и возможности изменения языка, цветов и размера текста, {DISTRO} делает работу с компьютером простой - где бы и кем бы вы ни были.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryAdminLabel": "Пользователь, присоединившийся к домену",
+  "@activeDirectoryAdminLabel": {}
 }
