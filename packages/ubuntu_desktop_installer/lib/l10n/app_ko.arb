@@ -772,13 +772,13 @@
   "@activeDirectoryDomainLabel": {},
   "activeDirectoryDomainEmpty": "필수",
   "@activeDirectoryDomainEmpty": {},
-  "activeDirectoryDomainTooLong": "너무 깁니다.",
+  "activeDirectoryDomainTooLong": "너무 깁니다",
   "@activeDirectoryDomainTooLong": {},
   "activeDirectoryTestConnection": "도메인 연결 테스트",
   "@activeDirectoryTestConnection": {},
   "activeDirectoryAdminLabel": "도메인 사용자 연결",
   "@activeDirectoryAdminLabel": {},
-  "activeDirectoryDomainNotFound": "도메인을 찾을 수 없습니다.",
+  "activeDirectoryDomainNotFound": "도메인을 찾을 수 없습니다",
   "@activeDirectoryDomainNotFound": {},
   "activeDirectoryAdminEmpty": "필수",
   "@activeDirectoryAdminEmpty": {},
@@ -856,6 +856,65 @@
   "@installationSlidesAvailable": {},
   "welcomePageTitle": "{DISTRO}사용을 환영합니다",
   "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "생산성 향상",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesAccessibilityLanguages": "언어 지원",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesAccessibilityTitle": "모두에게 열린 접근",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesSupportUbuntuPro": "Ubuntu Pro 의 엔터프라이즈 급 24/7 지원",
+  "@installationSlidesSupportUbuntuPro": {},
+  "notEnoughDiskSpaceUbuntu": "{DISTRO} 설치하기 위한 디스크 공간 부족",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Orca 스크린 리더",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesSupportResources": "유용한 지원:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "공식 문서",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportTitle": "도움 & 지원",
+  "@installationSlidesSupportTitle": {},
+  "notEnoughDiskSpaceRequired": "필수:",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesSupportHeader": "공식 {DISTRO} 문서는 온라인과 독의 도움말로 사용할 수 있습니다.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "사용 가능:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "activeDirectoryDomainInvalidChars": "유효하지 않은 문자",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryDomainEndHyphen": "하이픈 (-)으로 끝",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryDomainStartDot": "점 (.)으로 시작",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainMultipleDots": "연속된 여러 점(..) 포함",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryDomainEndDot": "점 (.)으로 끝",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainStartHyphen": "하이픈 (-)으로 시작",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryAdminInvalidChars": "유효하지 않은 문자",
+  "@activeDirectoryAdminInvalidChars": {},
+  "installationSlidesCreativityTitle": "창의력 향상",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesSecurityTitle": "개인 및 보안",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityLts": "모든 {DISTRO} LTS 릴리스에는 5년의 보안 패치가 포함되어 있으며, Ubuntu Pro 구독으로 10년 연장됩니다.",
+  "@installationSlidesSecurityLts": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
