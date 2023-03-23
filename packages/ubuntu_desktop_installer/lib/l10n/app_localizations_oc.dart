@@ -687,7 +687,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'particion #$disk$partition creada';
+    return 'particion <b>$disk$partition</b> creada';
   }
 
   @override
@@ -852,10 +852,10 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu cobrís una larga plaja de questions e responsas e lo Discourse d’Ubuntu provesís de guidas e de discussions pels nòuvenguts e los utilizaires experimentats.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+  String get installationSlidesSupportEnterprise => 'Per las entrepresas Canonical fornís una assisténcia comerciala per facilitar l’integracion e la gestion d’Ubuntu en tota seguretat al lòc de trabalh.';
 
   @override
   String get installationSlidesSupportResources => 'Ressorsas utilas :';

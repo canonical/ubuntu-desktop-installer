@@ -687,7 +687,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'パーティション #$disk$partition が作成されました。';
+    return 'パーティション<b>$disk$partition</b>が作成されました。';
   }
 
   @override
@@ -764,7 +764,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationSlidesIncluded => '含まれるソフト：';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+  String get installationSlidesWelcomeTitle => '高速、無料、新機能満載';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {

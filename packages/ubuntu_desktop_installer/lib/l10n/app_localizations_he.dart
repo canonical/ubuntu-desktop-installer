@@ -687,7 +687,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'מחיצה מס׳ $disk$partition נוצרה';
+    return 'המחיצה <b>$disk$partition</b> נוצרה';
   }
 
   @override

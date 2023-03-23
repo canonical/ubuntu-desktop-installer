@@ -687,7 +687,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'krei la subdiskon #$disk$partition';
+    return 'krei la subdiskon <b>$disk$partition</b>';
   }
 
   @override
