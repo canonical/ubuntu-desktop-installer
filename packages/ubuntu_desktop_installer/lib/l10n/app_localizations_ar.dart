@@ -86,7 +86,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RST is enabled';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -151,7 +151,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get showSecurityKey => 'Show security key';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Connect to a network';
 
   @override
   String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
@@ -249,7 +249,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get offlineWarning => 'You are currently offline';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'Security key';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -691,7 +691,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'Choose your theme';
 
   @override
   String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
