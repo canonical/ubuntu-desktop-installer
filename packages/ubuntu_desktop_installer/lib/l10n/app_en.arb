@@ -87,7 +87,7 @@
       "url": {}
     }
   },
-  "turnOffRST": "Turn off RST",
+  "turnOffRST": "RST is enabled",
   "@turnOffRST": {},
   "turnOffRSTDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
   "@turnOffRSTDescription": {},
@@ -134,7 +134,7 @@
   "@secureBootSecurityKeysDontMatch": {},
   "showSecurityKey": "Show security key",
   "@showSecurityKey": {},
-  "connectToInternetPageTitle": "Connect to internet",
+  "connectToInternetPageTitle": "Connect to a network",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network",
   "@connectToInternetDescription": {},
@@ -168,7 +168,7 @@
   "@enableWifi": {},
   "connectButtonText": "Connect",
   "@connectButtonText": {},
-  "updatesOtherSoftwarePageTitle": "Updates and other software",
+  "updatesOtherSoftwarePageTitle": "Applications and updates",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "What apps would you like to install to start with?",
   "@updatesOtherSoftwarePageDescription": {},
@@ -203,7 +203,7 @@
   },
   "offlineWarning": "You are currently offline",
   "@offlineWarning": {},
-  "chooseSecurityKeyTitle": "Choose a security key",
+  "chooseSecurityKeyTitle": "Security key",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHeader": "Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of {RELEASE} will not be encrypted.",
   "@chooseSecurityKeyHeader": {
@@ -227,7 +227,7 @@
       "color": {}
     }
   },
-  "installationTypeTitle": "Installation type",
+  "installationTypeTitle": "Type of installation",
   "@installationTypeTitle": {},
   "installationTypeOSDetected": "This computer currently has {os} on it. What would you like to do?",
   "@installationTypeOSDetected": {
@@ -342,7 +342,7 @@
   },
   "installationTypeAlongsideInfo": "Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.",
   "@installationTypeAlongsideInfo": {},
-  "installationTypeManual": "Something else",
+  "installationTypeManual": "Manual partitioning",
   "@installationTypeManual": {},
   "installationTypeManualInfo": "You can create or resize partitions yourself, or choose multiple partitions for {DISTRO}",
   "@installationTypeManualInfo": {
@@ -484,7 +484,7 @@
   "@partitionErase": {},
   "partitionMountPointLabel": "Mount point:",
   "@partitionMountPointLabel": {},
-  "whoAreYouPageTitle": "Who are you?",
+  "whoAreYouPageTitle": "Set up your account",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "Log in automatically",
   "@whoAreYouPageAutoLogin": {},
@@ -600,7 +600,7 @@
       "partition": {}
     }
   },
-  "chooseYourLookPageTitle": "Choose your look",
+  "chooseYourLookPageTitle": "Choose your theme",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "You can always change this later in the appearance settings.",
   "@chooseYourLookPageHeader": {},
@@ -637,7 +637,7 @@
   "@restartNow": {},
   "continueTesting": "Continue testing",
   "@continueTesting": {},
-  "turnOffBitlockerTitle": "Turn off BitLocker",
+  "turnOffBitlockerTitle": "BitLocker is enabled",
   "@turnOffBitlockerTitle": {},
   "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.",
   "@turnOffBitlockerDescription": {},
@@ -650,7 +650,7 @@
   },
   "restartIntoWindows": "Restart into Windows",
   "@restartIntoWindows": {},
-  "whereAreYouPageTitle": "Where are you?",
+  "whereAreYouPageTitle": "Select your timezone",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "Location",
   "@whereAreYouLocationLabel": {},
