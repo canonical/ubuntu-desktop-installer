@@ -639,7 +639,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "Partition #{disk}{partition} erstellt",
+  "writeChangesPartitionCreated": "Partition <b>{disk}{partition}</b> erstellt",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -754,7 +754,7 @@
   "@activeDirectoryDomainEndDot": {},
   "activeDirectoryDomainEndHyphen": "Endet mit einem Bindestrich (-)",
   "@activeDirectoryDomainEndHyphen": {},
-  "activeDirectoryAdminLabel": "",
+  "activeDirectoryAdminLabel": "Benutzername für den Domänenbeitritt",
   "@activeDirectoryAdminLabel": {},
   "activeDirectoryAdminEmpty": "Erforderlich",
   "@activeDirectoryAdminEmpty": {},
@@ -932,5 +932,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "installationSlidesDevelopmentTitle": "Entwickeln Sie mit dem Besten aus Open Source",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesAccessibilityOrca": "Orca-Screenreader",
+  "@installationSlidesAccessibilityOrca": {}
 }

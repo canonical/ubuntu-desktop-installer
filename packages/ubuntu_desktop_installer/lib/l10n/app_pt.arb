@@ -513,7 +513,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionCreated": "partição #{disk}{partition} criada",
+  "writeChangesPartitionCreated": "partição <b>{disk}{partition}</b> criada",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {

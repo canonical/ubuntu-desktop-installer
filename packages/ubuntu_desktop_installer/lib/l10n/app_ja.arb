@@ -771,7 +771,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionCreated": "パーティション #{disk}{partition} が作成されました。",
+  "writeChangesPartitionCreated": "パーティション<b>{disk}{partition}</b>が作成されました。",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -891,5 +891,7 @@
     }
   },
   "notEnoughDiskSpaceAvailable": "利用可能：",
-  "@notEnoughDiskSpaceAvailable": {}
+  "@notEnoughDiskSpaceAvailable": {},
+  "installationSlidesWelcomeTitle": "高速、無料、新機能満載",
+  "@installationSlidesWelcomeTitle": {}
 }

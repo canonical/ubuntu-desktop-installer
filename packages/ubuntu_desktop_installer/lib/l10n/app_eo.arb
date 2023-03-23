@@ -645,7 +645,7 @@
   },
   "quitButtonText": "Ĉesi instaladon",
   "@quitButtonText": {},
-  "writeChangesPartitionCreated": "krei la subdiskon #{disk}{partition}",
+  "writeChangesPartitionCreated": "krei la subdiskon <b>{disk}{partition}</b>",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
