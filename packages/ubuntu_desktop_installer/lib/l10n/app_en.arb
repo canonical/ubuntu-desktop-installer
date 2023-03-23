@@ -168,7 +168,7 @@
   "@enableWifi": {},
   "connectButtonText": "Connect",
   "@connectButtonText": {},
-  "updatesOtherSoftwarePageTitle": "Install additional packages",
+  "updatesOtherSoftwarePageTitle": "Applications and updates",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "What apps would you like to install to start with?",
   "@updatesOtherSoftwarePageDescription": {},
