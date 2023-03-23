@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -14,6 +13,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';
 import 'try_or_install_page_test.mocks.dart';
@@ -22,6 +22,8 @@ import 'try_or_install_page_test.mocks.dart';
 
 @GenerateMocks([UrlLauncher])
 void main() {
+  setUpAll(YaruTestWindow.ensureInitialized);
+
   late MaterialApp app;
   late TryOrInstallModel model;
 
@@ -147,16 +149,11 @@ void main() {
 
     expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isTrue);
 
-    var windowClosed = false;
-    final methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('close'));
-      windowClosed = true;
-    });
+    final windowClosed = YaruTestWindow.waitForClosed();
 
     await tester.tap(continueButton);
     await tester.pump();
 
-    expect(windowClosed, isTrue);
+    await expectLater(windowClosed, completes);
   });
 }

@@ -5,11 +5,14 @@ import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wsl_setup/main.dart' as app;
 import 'package:ubuntu_wsl_setup/routes.dart';
+import 'package:yaru_window_test/yaru_window_test.dart';
 
 import 'test_pages.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
+  setUpAll(YaruTestWindow.ensureInitialized);
 
   setUp(() async => await cleanUpSubiquity());
   tearDown(() async => await resetAllServices());

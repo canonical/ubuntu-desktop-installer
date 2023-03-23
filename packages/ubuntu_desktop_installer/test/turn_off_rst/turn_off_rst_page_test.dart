@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -9,6 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_page.da
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';
 import 'turn_off_rst_page_test.mocks.dart';
@@ -17,6 +17,8 @@ import 'turn_off_rst_page_test.mocks.dart';
 
 @GenerateMocks([TurnOffRSTModel, UrlLauncher])
 void main() {
+  setUpAll(YaruTestWindow.ensureInitialized);
+
   testWidgets('restart', (tester) async {
     final model = MockTurnOffRSTModel();
 
@@ -33,18 +35,13 @@ void main() {
     );
     expect(restartButton, findsOneWidget);
 
-    var windowClosed = false;
-    final methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('close'));
-      windowClosed = true;
-    });
+    final windowClosed = YaruTestWindow.waitForClosed();
 
     await tester.tap(restartButton);
     await tester.pump();
     verify(model.reboot()).called(1);
 
-    expect(windowClosed, isTrue);
+    await expectLater(windowClosed, completes);
   });
 
   testWidgets('tap link', (tester) async {

@@ -22,6 +22,7 @@ import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaml/yaml.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
+import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test/test_utils.dart';
 
@@ -29,6 +30,8 @@ import '../test/test_utils.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
+  setUpAll(YaruTestWindow.ensureInitialized);
 
   setUp(() async {
     await cleanUpSubiquity();
@@ -550,9 +553,9 @@ Future<void> testTurnOffBitLockerPage(WidgetTester tester) async {
   await expectPage(
       tester, TurnOffBitLockerPage, (lang) => lang.turnOffBitlockerTitle);
 
-  final windowClosed = waitForWindowClosed();
+  final windowClosed = YaruTestWindow.waitForClosed();
   await tester.tapButton(tester.lang.restartIntoWindows);
-  await expectLater(windowClosed, completion(isTrue));
+  await expectLater(windowClosed, completes);
 }
 
 Future<void> testWhereAreYouPage(
@@ -656,9 +659,9 @@ Future<void> testInstallationCompletePage(WidgetTester tester) async {
   await expectPage(tester, InstallationCompletePage,
       (lang) => lang.installationCompleteTitle);
 
-  final windowClosed = waitForWindowClosed();
+  final windowClosed = YaruTestWindow.waitForClosed();
   await tester.tapButton(tester.lang.continueTesting);
-  await expectLater(windowClosed, completion(isTrue));
+  await expectLater(windowClosed, completes);
 }
 
 Future<void> expectPage(

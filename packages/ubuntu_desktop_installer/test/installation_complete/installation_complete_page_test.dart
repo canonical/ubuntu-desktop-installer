@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -9,6 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/installation_complete/installatio
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
+import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';
 import 'installation_complete_page_test.mocks.dart';
@@ -17,6 +17,8 @@ import 'installation_complete_page_test.mocks.dart';
 
 @GenerateMocks([InstallationCompleteModel])
 void main() {
+  setUpAll(YaruTestWindow.ensureInitialized);
+
   Widget buildPage(InstallationCompleteModel model) {
     when(model.productInfo).thenReturn(ProductInfo(name: 'Ubuntu'));
     return Provider<InstallationCompleteModel>.value(
@@ -32,18 +34,13 @@ void main() {
     final restartButton = find.textContaining(tester.lang.restartButtonText);
     expect(restartButton, findsOneWidget);
 
-    var windowClosed = false;
-    final methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('close'));
-      windowClosed = true;
-    });
+    final windowClosed = YaruTestWindow.waitForClosed();
 
     await tester.tap(restartButton);
     await tester.pump();
     verify(model.reboot()).called(1);
 
-    expect(windowClosed, isTrue);
+    await expectLater(windowClosed, completes);
   });
 
   testWidgets('continue testing', (tester) async {
@@ -54,18 +51,13 @@ void main() {
         find.widgetWithText(OutlinedButton, tester.lang.continueTesting);
     expect(continueButton, findsOneWidget);
 
-    var windowClosed = false;
-    final methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('close'));
-      windowClosed = true;
-    });
+    final windowClosed = YaruTestWindow.waitForClosed();
 
     await tester.tap(continueButton);
     await tester.pump();
     verifyNever(model.reboot());
 
-    expect(windowClosed, isTrue);
+    await expectLater(windowClosed, completes);
   });
 
   testWidgets('creates a model', (tester) async {
