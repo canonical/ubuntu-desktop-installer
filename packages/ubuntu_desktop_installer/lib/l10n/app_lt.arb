@@ -4,7 +4,7 @@
   "@noWiredConnection": {},
   "wiredDisabled": "Laidinis ryšys yra išjungtas",
   "@wiredDisabled": {},
-  "onBatteryWarning": "<font color=\"{color}\">Įspėjimas</font>: Šis kompiuteris daugiau nebėra prijungtas prie elektros maitinimo šaltinio.",
+  "onBatteryWarning": "<font color=\"{color}\">Įspėjimas:</font> Šis kompiuteris daugiau nebėra prijungtas prie elektros maitinimo šaltinio.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -158,7 +158,7 @@
       "os": {}
     }
   },
-  "tryOrInstallPageTitle": "Išbandykite arba įsidiekite",
+  "tryOrInstallPageTitle": "Išbandykite arba įsidiekite {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Taisyti diegimą",
   "@repairInstallation": {},
@@ -190,7 +190,7 @@
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "Saugumo raktai nesutampa",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Įspėjimas</font>: Jei prarasite šį saugumo raktą, visi duomenys bus prarasti. Jei reikia, užsirašykite raktą ir laikykite jį atokiai saugioje vietoje.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Įspėjimas:</font> Jei prarasite šį saugumo raktą, visi duomenys bus prarasti. Jei reikia, užsirašykite raktą ir laikykite jį atokiai saugioje vietoje.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -310,7 +310,7 @@
   },
   "writeChangesPartitionsHeader": "Bus pritaikyti šie skaidinių pakeitimai:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionResized": "skaidinio #{disk}{partition} dydis pakeistas iš {oldsize} į {newsize}",
+  "writeChangesPartitionResized": "skaidinio <b>{disk}{partition}</b> dydis pakeistas iš <b>{oldsize}</b> į <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -343,7 +343,7 @@
       "RELEASE": {}
     }
   },
-  "newPartitionTableConfirmationMessage": "Jūs pasirinkote skaidyti visą įrenginį. Jeigu jame pratęsite naujos skaidinių lentelės kūrimą, visi esami jo skaidiniai bus pašalinti.\n\nTurėkite omenyje, kad vėliau, jei norėsite, galėsite šią operaciją atšaukti.",
+  "newPartitionTableConfirmationMessage": "Sukūrus naują skaidinių lentelę visame įrenginyje, bus pašalinti visi jo dabartiniai skaidiniai. Jei reikia, šią operaciją galima atšaukti.",
   "@newPartitionTableConfirmationMessage": {},
   "installationTypeAlongsideInfo": "Dokumentai, muzika ir kiti asmeniniai failai bus išsaugoti. Kas kartą įjungę kompiuterį, galėsite pasirinkti, kurią operacinę sistemą paleisti.",
   "@installationTypeAlongsideInfo": {},
@@ -381,7 +381,7 @@
   "@whoAreYouPagePasswordMismatch": {},
   "writeChangesPartitionTablesHeader": "Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:",
   "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionCreated": "skaidinys #{disk}{partition} sukurtas",
+  "writeChangesPartitionCreated": "sukurtas skaidinys <b>{disk}{partition}</b>",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -451,15 +451,15 @@
   },
   "diskHeadersFormat": "Formatuoti",
   "@diskHeadersFormat": {},
-  "newPartitionTableConfirmationTitle": "Sukurti šiame įrenginyje naują tuščią skaidinių lentelę?",
+  "newPartitionTableConfirmationTitle": "Naujas tuščias skaidinys",
   "@newPartitionTableConfirmationTitle": {},
   "partitionUnitB": "B",
   "@partitionUnitB": {},
   "partitionUnitGB": "GB",
   "@partitionUnitGB": {},
-  "writeChangesToDisk": "Rašyti pakeitimus į diską",
+  "writeChangesToDisk": "Pasiruošę įdiegti",
   "@writeChangesToDisk": {},
-  "writeChangesPartitionFormattedMounted": "skaidinys #{disk}{partition} formatuotas kaip {format} ir panaudotas {mount}",
+  "writeChangesPartitionFormattedMounted": "skaidinys <b>{disk}{partition}</b> formatuotas kaip <b>{format}</b> ir panaudotas kaip <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -575,7 +575,7 @@
   "@whoAreYouPageUsernameInUse": {},
   "installationCompleteTitle": "Įdiegimas baigtas",
   "@installationCompleteTitle": {},
-  "writeChangesPartitionMounted": "skaidinys #{disk}{partition} panaudotas {mount}",
+  "writeChangesPartitionMounted": "skaidinys <b>{disk}{partition}</b> panaudotas kaip <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -584,7 +584,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "skaidinys #{disk}{partition} formatuotas kaip {format}",
+  "writeChangesPartitionFormatted": "skaidinys <b>{disk}{partition}</b> formatuotas kaip <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -636,5 +636,76 @@
     }
   },
   "shutdown": "Išjungti",
-  "@shutdown": {}
+  "@shutdown": {},
+  "installationSlidesAvailable": "Prieinama:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesWelcomeBody": "Nepaisant to, ar esate plėtotojas, kūrėjas, žaidimų megėjas ar administratorius, atrasite naujus įrankius, kurie pagerins produktyvumą ir jūsų patyrimą su {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "quitButtonText": "Baigti diegimą",
+  "@quitButtonText": {},
+  "preparingUbuntu": "Ruošiama {DISTRO}...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "Aptikti",
+  "@detectButtonText": {},
+  "keyboardVariant": "Klaviatūros variantas:",
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "Įrenginiai",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Skaidiniai",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesTitle": "Jus sveikina {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesIncluded": "Įtraukta:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "Greita, nemokama ir pilna naujų ypatybių",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "Naujausia {DISTRO} versija paverčia naudojimąsi kompiuteriu neįtikėtinai lengvu.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "Visos reikiamos programos",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "Diekite, tvarkykite ir atnaujinkite visas savo programas naudodamiesi „Ubuntu Software“, įskaitant tūkstančius programų iš tiek „Snap Store“, tiek {DISTRO} archyvo.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentTitle": "Plėtokite naudodami geriausią, ką siūlo atvirasis kodas",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} yra tobula kompiuterizuota darbo vieta, skirta programų ar saityno plėtojimui, duomenų mokslui bei dirbtinio intelekto/kompiuterio mokymosi vystymui, o taip pat plėtojimo operacijoms ir administravimui. Kiekvienoje {DISTRO} laidoje yra naujausios įrankių grandinės ir yra palaikomos visos pagrindinės integruotosios plėtojimo aplinkos.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Vystykite savo kūrybingumą",
+  "@installationSlidesCreativityTitle": {},
+  "welcomePageTitle": "Jus sveikina {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
