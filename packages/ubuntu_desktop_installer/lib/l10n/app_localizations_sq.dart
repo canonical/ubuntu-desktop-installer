@@ -421,7 +421,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get installAlongsideAvailable => 'Në dispozicion:';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => 'Manual partitioning';
 
   @override
   String get startInstallingButtonText => 'Install';

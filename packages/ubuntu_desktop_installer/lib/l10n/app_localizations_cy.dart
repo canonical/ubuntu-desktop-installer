@@ -421,7 +421,7 @@ class AppLocalizationsCy extends AppLocalizations {
   String get installAlongsideAvailable => 'Ar gael:';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => 'Manual partitioning';
 
   @override
   String get startInstallingButtonText => 'Dechrau Gosod';

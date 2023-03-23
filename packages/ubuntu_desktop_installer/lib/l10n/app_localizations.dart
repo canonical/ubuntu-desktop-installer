@@ -959,7 +959,7 @@ abstract class AppLocalizations {
   /// No description provided for @allocateDiskSpace.
   ///
   /// In en, this message translates to:
-  /// **'Allocate disk space'**
+  /// **'Manual partitioning'**
   String get allocateDiskSpace;
 
   /// No description provided for @startInstallingButtonText.
