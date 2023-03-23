@@ -5,7 +5,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu 桌面安装程序';
+  String get appTitle => 'Ubuntu 桌面版安装器';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -38,7 +38,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return '欢迎来到 $DISTRO';
   }
 
   @override
@@ -51,7 +51,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return '试用或安装';
+    return '试用或安装$DISTRO';
   }
 
   @override
@@ -454,10 +454,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get newPartitionTable => '新建分区表';
 
   @override
-  String get newPartitionTableConfirmationTitle => '是否在此设备上创建新的空白分区表？';
+  String get newPartitionTableConfirmationTitle => '新建空分区';
 
   @override
-  String get newPartitionTableConfirmationMessage => '您已选择要分区的整个设备。如果继续在该设备上创建新的分区表，那么其上的所有当前分区都将被删除。\n\n请注意，如果您愿意，稍后可以撤消此操作。';
+  String get newPartitionTableConfirmationMessage => '在整个设备上创建一个新的分区表，将删除其当前所有的分区。如果需要的话，这个操作可以被撤销。';
 
   @override
   String get tooManyPrimaryPartitions => '主分区过多';
@@ -640,7 +640,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPagePasswordHide => '隐藏';
 
   @override
-  String get writeChangesToDisk => '将更改写入磁盘';
+  String get writeChangesToDisk => '准备安装';
 
   @override
   String get writeChangesFallbackSerial => '磁盘';
@@ -687,7 +687,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '分区 #$disk$partition 已创建';
+    return '分区 <b>$disk$partition</b> 已创建';
   }
 
   @override

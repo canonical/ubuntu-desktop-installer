@@ -86,7 +86,7 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Wyłącz RST';
+  String get turnOffRST => 'Funkcja RST jest włączona';
 
   @override
   String get turnOffRSTDescription => 'Ten komputer wykorzystuje technologię Intel RST (Rapid Storage Technology). Musisz wyłączyć RST w systemie Windows przed instalacją Ubuntu.';
@@ -151,7 +151,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get showSecurityKey => 'Pokaż klucz bezpieczeństwa';
 
   @override
-  String get connectToInternetPageTitle => 'Połącz się z Internetem';
+  String get connectToInternetPageTitle => 'Połącz się z siecią';
 
   @override
   String get connectToInternetDescription => 'Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla ethernetowego lub wybierz sieć Wi-Fi';
@@ -202,7 +202,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get connectButtonText => 'Połącz';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Aktualizacje i inne oprogramowanie';
+  String get updatesOtherSoftwarePageTitle => 'Aplikacje i aktualizacje';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Jakie programy chcesz zainstalować na początek?';
@@ -249,7 +249,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get offlineWarning => 'Jesteś obecnie offline';
 
   @override
-  String get chooseSecurityKeyTitle => 'Wybierz klucz bezpieczeństwa';
+  String get chooseSecurityKeyTitle => 'Klucz bezpieczeństwa';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -373,7 +373,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Dokumenty, muzyka i inne pliki osobiste zostaną zachowane. Przy każdym uruchomieniu komputera można wybrać system operacyjny, który ma być używany.';
 
   @override
-  String get installationTypeManual => 'Coś innego';
+  String get installationTypeManual => 'Ręczne partycjonowanie';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -421,7 +421,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get installAlongsideAvailable => 'Dostępne:';
 
   @override
-  String get allocateDiskSpace => 'Przydziel przestrzeń dyskową';
+  String get allocateDiskSpace => 'Ręczne partycjonowanie';
 
   @override
   String get startInstallingButtonText => 'Instaluj';
@@ -568,7 +568,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get partitionMountPointLabel => 'Punkt montowania:';
 
   @override
-  String get whoAreYouPageTitle => 'Kim jesteś?';
+  String get whoAreYouPageTitle => 'Skonfiguruj swoje konto';
 
   @override
   String get whoAreYouPageAutoLogin => 'Automatyczne logowanie';
@@ -691,7 +691,7 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Wybierz swój wygląd';
+  String get chooseYourLookPageTitle => 'Wybierz swój motyw';
 
   @override
   String get chooseYourLookPageHeader => 'Zawsze możesz zmienić to później w ustawieniach wyglądu.';
@@ -730,7 +730,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get continueTesting => 'Kontynuuj testowanie';
 
   @override
-  String get turnOffBitlockerTitle => 'Wyłącz funkcję BitLocker';
+  String get turnOffBitlockerTitle => 'Funkcja BitLocker jest włączona';
 
   @override
   String get turnOffBitlockerDescription => 'Ten komputer używa szyfrowania Windows BitLocker.\nMusisz wyłączyć funkcję BitLocker w systemie Windows przed instalacją Ubuntu.';
@@ -744,7 +744,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get restartIntoWindows => 'Uruchom ponownie do Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Gdzie jesteś?';
+  String get whereAreYouPageTitle => 'Wybierz swoją strefę czasową';
 
   @override
   String get whereAreYouLocationLabel => 'Lokalizacja';

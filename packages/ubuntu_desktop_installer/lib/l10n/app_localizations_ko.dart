@@ -793,7 +793,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesCreativityTitle => 'Enhance your creativity';
+  String get installationSlidesCreativityTitle => '창의력 향상';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
@@ -809,7 +809,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSecurityTitle => 'Private and secure';
+  String get installationSlidesSecurityTitle => '개인 및 보안';
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
@@ -818,11 +818,11 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationSlidesSecurityLts(Object DISTRO) {
-    return 'All $DISTRO LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.';
+    return '모든 $DISTRO LTS 릴리스에는 5년의 보안 패치가 포함되어 있으며, Ubuntu Pro 구독으로 10년 연장됩니다.';
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Power up your productivity';
+  String get installationSlidesProductivityTitle => '생산성 향상';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
@@ -830,7 +830,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAccessibilityTitle => 'Access for everyone';
+  String get installationSlidesAccessibilityTitle => '모두에게 열린 접근';
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
@@ -838,17 +838,17 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+  String get installationSlidesAccessibilityOrca => 'Orca 스크린 리더';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Language support';
+  String get installationSlidesAccessibilityLanguages => '언어 지원';
 
   @override
-  String get installationSlidesSupportTitle => 'Help & Support';
+  String get installationSlidesSupportTitle => '도움 & 지원';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+    return '공식 $DISTRO 문서는 온라인과 독의 도움말로 사용할 수 있습니다.';
   }
 
   @override
@@ -858,13 +858,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
 
   @override
-  String get installationSlidesSupportResources => 'Helpful resources:';
+  String get installationSlidesSupportResources => '유용한 지원:';
 
   @override
-  String get installationSlidesSupportDocumentation => 'Official documentation';
+  String get installationSlidesSupportDocumentation => '공식 문서';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro => 'Ubuntu Pro 의 엔터프라이즈 급 24/7 지원';
 
   @override
   String get copyingFiles => '파일 복사 중…';
@@ -883,14 +883,14 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
-    return 'Not enough disk space to install $DISTRO';
+    return '$DISTRO 설치하기 위한 디스크 공간 부족';
   }
 
   @override
-  String get notEnoughDiskSpaceAvailable => 'Available:';
+  String get notEnoughDiskSpaceAvailable => '사용 가능:';
 
   @override
-  String get notEnoughDiskSpaceRequired => 'Required:';
+  String get notEnoughDiskSpaceRequired => '필수:';
 
   @override
   String get activeDirectoryOption => '액티브 디렉토리 사용';
@@ -911,28 +911,28 @@ class AppLocalizationsKo extends AppLocalizations {
   String get activeDirectoryDomainEmpty => '필수';
 
   @override
-  String get activeDirectoryDomainTooLong => '너무 깁니다.';
+  String get activeDirectoryDomainTooLong => '너무 깁니다';
 
   @override
-  String get activeDirectoryDomainInvalidChars => 'Invalid characters';
+  String get activeDirectoryDomainInvalidChars => '유효하지 않은 문자';
 
   @override
-  String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
+  String get activeDirectoryDomainStartDot => '점 (.)으로 시작';
 
   @override
-  String get activeDirectoryDomainEndDot => 'Ends with a dot (.)';
+  String get activeDirectoryDomainEndDot => '점 (.)으로 끝';
 
   @override
-  String get activeDirectoryDomainStartHyphen => 'Starts with a hyphen (-)';
+  String get activeDirectoryDomainStartHyphen => '하이픈 (-)으로 시작';
 
   @override
-  String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
+  String get activeDirectoryDomainEndHyphen => '하이픈 (-)으로 끝';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+  String get activeDirectoryDomainMultipleDots => '연속된 여러 점(..) 포함';
 
   @override
-  String get activeDirectoryDomainNotFound => '도메인을 찾을 수 없습니다.';
+  String get activeDirectoryDomainNotFound => '도메인을 찾을 수 없습니다';
 
   @override
   String get activeDirectoryAdminLabel => '도메인 사용자 연결';
@@ -941,7 +941,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get activeDirectoryAdminEmpty => '필수';
 
   @override
-  String get activeDirectoryAdminInvalidChars => 'Invalid characters';
+  String get activeDirectoryAdminInvalidChars => '유효하지 않은 문자';
 
   @override
   String get activeDirectoryPasswordLabel => '비밀 번호';

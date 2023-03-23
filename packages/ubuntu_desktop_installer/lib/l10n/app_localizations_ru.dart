@@ -86,7 +86,7 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Выключить RST';
+  String get turnOffRST => 'RST включён';
 
   @override
   String get turnOffRSTDescription => 'Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.';
@@ -151,7 +151,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get showSecurityKey => 'Показать ключ безопасности';
 
   @override
-  String get connectToInternetPageTitle => 'Интернет соединение';
+  String get connectToInternetPageTitle => 'Подключение к сети';
 
   @override
   String get connectToInternetDescription => 'Соединение данного компьютера с интернетом позволит Ubuntu установить дополнительное программное обеспечение и поможет выбрать ваш часовой пояс.\n\nПрисоедините кабель сети интернет или выберите сеть Wi-Fi';
@@ -202,7 +202,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get connectButtonText => 'Соединение';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Обновления и другое программное обеспечение';
+  String get updatesOtherSoftwarePageTitle => 'Приложения и обновления';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Какие приложения вы хотели бы установить для начала?';
@@ -249,7 +249,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get offlineWarning => 'Вы сейчас не в сети';
 
   @override
-  String get chooseSecurityKeyTitle => 'Выберите ключ безопасности';
+  String get chooseSecurityKeyTitle => 'Ключ безопасности';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -568,7 +568,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get partitionMountPointLabel => 'Точка монтирования:';
 
   @override
-  String get whoAreYouPageTitle => 'Кто вы?';
+  String get whoAreYouPageTitle => 'Создание своей учётной записи';
 
   @override
   String get whoAreYouPageAutoLogin => 'Входить в систему автоматически';
@@ -691,7 +691,7 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Выберите свой внешний вид';
+  String get chooseYourLookPageTitle => 'Выберите свою тему';
 
   @override
   String get chooseYourLookPageHeader => 'Вы всегда можете изменить это позже в настройках внешнего вида.';
@@ -730,7 +730,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get continueTesting => 'Продолжить тестирование';
 
   @override
-  String get turnOffBitlockerTitle => 'Отключить BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker включён';
 
   @override
   String get turnOffBitlockerDescription => 'Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо отключить BitLocker в Windows перед установкой Ubuntu.';
@@ -744,7 +744,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get restartIntoWindows => 'Перезагрузить в Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Где вы находитесь?';
+  String get whereAreYouPageTitle => 'Выберите свой часовой пояс';
 
   @override
   String get whereAreYouLocationLabel => 'Место нахождения';
@@ -764,7 +764,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationSlidesIncluded => 'Включено:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+  String get installationSlidesWelcomeTitle => 'Быстрый, бесплатный и полный новых возможностей';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -785,48 +785,48 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
+  String get installationSlidesDevelopmentTitle => 'Разрабатывайте с использованием лучшего из открытого исходного кода';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
-    return '$DISTRO is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every $DISTRO release includes the latest toolchains and supports all major IDEs.';
+    return '$DISTRO - это идеальная рабочая станция для разработки приложений и веб-приложений, data science и AI/ML, а также devops и администрирования. Каждый выпуск $DISTRO включает новейшие инструментальные цепочки и поддерживает все основные IDE.';
   }
 
   @override
-  String get installationSlidesCreativityTitle => 'Enhance your creativity';
+  String get installationSlidesCreativityTitle => 'Повышайте свою креативность';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
-    return 'If you\'re an animator, designer, video creator or game developer it\'s easy to bring your workflows to $DISTRO with support for open source and industry standard software and applications.';
+    return 'Если вы аниматор, дизайнер, создатель видео или разработчик игр, вам будет легко перенести свои рабочие процессы в $DISTRO благодаря поддержке программного обеспечения и приложений с открытым исходным кодом и промышленных стандартов.';
   }
 
   @override
-  String get installationSlidesGamingTitle => 'Great for gaming';
+  String get installationSlidesGamingTitle => 'Отлично подходит для игр';
 
   @override
   String installationSlidesGamingBody(Object DISTRO) {
-    return '$DISTRO supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on $DISTRO via applications like Steam with no additional configuration.';
+    return '$DISTRO поддерживает последние версии драйверов NVIDIA и Mesa для повышения производительности и совместимости. Тысячи игр для Windows отлично воспроизводятся на $DISTRO через такие приложения, как Steam, без дополнительной настройки.';
   }
 
   @override
-  String get installationSlidesSecurityTitle => 'Private and secure';
+  String get installationSlidesSecurityTitle => 'Конфиденциальность и безопасность';
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
-    return '$DISTRO provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.';
+    return '$DISTRO предоставляет все инструменты, необходимые для обеспечения конфиденциальности и безопасности в Интернете. Благодаря встроенному брандмауэру и поддержке VPN, а также множеству приложений, ориентированных на конфиденциальность, вы полностью контролируете свои данные.';
   }
 
   @override
   String installationSlidesSecurityLts(Object DISTRO) {
-    return 'All $DISTRO LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.';
+    return 'Все выпуски $DISTRO LTS предоставляют исправления безопасности в течение пяти лет, которые могут быть продлены до десяти лет при подписке на Ubuntu Pro.';
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Power up your productivity';
+  String get installationSlidesProductivityTitle => 'Повысьте свою производительность';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
-    return '$DISTRO Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.';
+    return '$DISTRO Рабочий стол включает LibreOffice, набор совместимых с Microsoft Office приложений с открытым исходным кодом для работы с документами, электронными таблицами и презентациями. Также доступны популярные инструменты для совместной работы.';
   }
 
   @override
@@ -834,7 +834,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
-    return 'At the heart of the $DISTRO philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, $DISTRO makes computing easy - whoever and wherever you are.';
+    return 'В основе философии $DISTRO лежит убеждение в том, что компьютер - для всех. Благодаря расширенным инструментам доступности и возможности изменения языка, цветов и размера текста, $DISTRO делает работу с компьютером простой - где бы и кем бы вы ни были.';
   }
 
   @override
@@ -852,10 +852,10 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu охватывает ряд вопросов и ответов, а Ubuntu Discourse содержит руководства и обсуждения для новых и опытных пользователей.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+  String get installationSlidesSupportEnterprise => 'Для корпоративных пользователей Canonical предоставляет коммерческую поддержку, чтобы упростить внедрение и безопасное управление Ubuntu на рабочем месте.';
 
   @override
   String get installationSlidesSupportResources => 'Полезные ресурсы:';
@@ -887,16 +887,16 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get notEnoughDiskSpaceAvailable => 'Available:';
+  String get notEnoughDiskSpaceAvailable => 'Доступно:';
 
   @override
-  String get notEnoughDiskSpaceRequired => 'Required:';
+  String get notEnoughDiskSpaceRequired => 'Требуется:';
 
   @override
-  String get activeDirectoryOption => 'Use Active Directory';
+  String get activeDirectoryOption => 'Использовать Active Directory';
 
   @override
-  String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
+  String get activeDirectoryInfo => 'Вы введёте домен и другие данные на следующем шаге.';
 
   @override
   String get activeDirectoryTitle => 'Настроить Active Directory';
@@ -908,37 +908,37 @@ class AppLocalizationsRu extends AppLocalizations {
   String get activeDirectoryDomainLabel => 'Домен';
 
   @override
-  String get activeDirectoryDomainEmpty => 'Required';
+  String get activeDirectoryDomainEmpty => 'Требуется';
 
   @override
-  String get activeDirectoryDomainTooLong => 'Too long';
+  String get activeDirectoryDomainTooLong => 'Слишком длинный';
 
   @override
   String get activeDirectoryDomainInvalidChars => 'Недопустимые символы';
 
   @override
-  String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
+  String get activeDirectoryDomainStartDot => 'Начинается с точки (.)';
 
   @override
-  String get activeDirectoryDomainEndDot => 'Ends with a dot (.)';
+  String get activeDirectoryDomainEndDot => 'Заканчивается точкой (.)';
 
   @override
-  String get activeDirectoryDomainStartHyphen => 'Starts with a hyphen (-)';
+  String get activeDirectoryDomainStartHyphen => 'Начинается со знака дефиса (-)';
 
   @override
-  String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
+  String get activeDirectoryDomainEndHyphen => 'Заканчивается знаком дефиса (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+  String get activeDirectoryDomainMultipleDots => 'Содержит несколько последовательных точек (..)';
 
   @override
   String get activeDirectoryDomainNotFound => 'Домен не найден';
 
   @override
-  String get activeDirectoryAdminLabel => 'Domain join user';
+  String get activeDirectoryAdminLabel => 'Пользователь, присоединившийся к домену';
 
   @override
-  String get activeDirectoryAdminEmpty => 'Required';
+  String get activeDirectoryAdminEmpty => 'Требуется';
 
   @override
   String get activeDirectoryAdminInvalidChars => 'Недопустимые символы';
@@ -947,11 +947,11 @@ class AppLocalizationsRu extends AppLocalizations {
   String get activeDirectoryPasswordLabel => 'Пароль';
 
   @override
-  String get activeDirectoryPasswordEmpty => 'Required';
+  String get activeDirectoryPasswordEmpty => 'Требуется';
 
   @override
   String get activeDirectoryErrorTitle => 'Ошибка настройки подключения к Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage => 'Извините, Active Directory не может быть настроен в данный момент. Как только ваша система будет запущена, посетите <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> для получения помощи.';
 }

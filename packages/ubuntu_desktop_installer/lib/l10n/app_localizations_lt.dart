@@ -34,16 +34,16 @@ class AppLocalizationsLt extends AppLocalizations {
   String get yesButtonText => 'Taip';
 
   @override
-  String get quitButtonText => 'Quit installation';
+  String get quitButtonText => 'Baigti diegimą';
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return 'Jus sveikina $DISTRO';
   }
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return 'Ruošiama $DISTRO...';
   }
 
   @override
@@ -51,7 +51,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return 'Išbandykite arba įsidiekite';
+    return 'Išbandykite arba įsidiekite $DISTRO';
   }
 
   @override
@@ -109,10 +109,10 @@ class AppLocalizationsLt extends AppLocalizations {
   String get detectLayout => 'Aptikti klaviatūros išdėstymą';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => 'Aptikti';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => 'Klaviatūros variantas:';
 
   @override
   String get pressOneKey => 'Paspauskite vieną iš šių klavišų:';
@@ -242,7 +242,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Įspėjimas</font>: Šis kompiuteris daugiau nebėra prijungtas prie elektros maitinimo šaltinio.';
+    return '<font color=\"$color\">Įspėjimas:</font> Šis kompiuteris daugiau nebėra prijungtas prie elektros maitinimo šaltinio.';
   }
 
   @override
@@ -270,7 +270,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Įspėjimas</font>: Jei prarasite šį saugumo raktą, visi duomenys bus prarasti. Jei reikia, užsirašykite raktą ir laikykite jį atokiai saugioje vietoje.';
+    return '<font color=\"$color\">Įspėjimas:</font> Jei prarasite šį saugumo raktą, visi duomenys bus prarasti. Jei reikia, užsirašykite raktą ir laikykite jį atokiai saugioje vietoje.';
   }
 
   @override
@@ -454,10 +454,10 @@ class AppLocalizationsLt extends AppLocalizations {
   String get newPartitionTable => 'Nauja skaidinių lentelė';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Sukurti šiame įrenginyje naują tuščią skaidinių lentelę?';
+  String get newPartitionTableConfirmationTitle => 'Naujas tuščias skaidinys';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Jūs pasirinkote skaidyti visą įrenginį. Jeigu jame pratęsite naujos skaidinių lentelės kūrimą, visi esami jo skaidiniai bus pašalinti.\n\nTurėkite omenyje, kad vėliau, jei norėsite, galėsite šią operaciją atšaukti.';
+  String get newPartitionTableConfirmationMessage => 'Sukūrus naują skaidinių lentelę visame įrenginyje, bus pašalinti visi jo dabartiniai skaidiniai. Jei reikia, šią operaciją galima atšaukti.';
 
   @override
   String get tooManyPrimaryPartitions => 'Per daug pirminių skaidinių';
@@ -640,7 +640,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get whoAreYouPagePasswordHide => 'Slėpti';
 
   @override
-  String get writeChangesToDisk => 'Rašyti pakeitimus į diską';
+  String get writeChangesToDisk => 'Pasiruošę įdiegti';
 
   @override
   String get writeChangesFallbackSerial => 'diskas';
@@ -649,10 +649,10 @@ class AppLocalizationsLt extends AppLocalizations {
   String get writeChangesDescription => 'Jei tęsite, žemiau išvardyti pakeitimai bus įrašyti į diskus. Tolimesnius pakeitimus galėsite atlikti rankiniu būdu.';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get writeChangesDevicesTitle => 'Įrenginiai';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get writeChangesPartitionsTitle => 'Skaidiniai';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:';
@@ -667,27 +667,27 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'skaidinio #$disk$partition dydis pakeistas iš $oldsize į $newsize';
+    return 'skaidinio <b>$disk$partition</b> dydis pakeistas iš <b>$oldsize</b> į <b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'skaidinys #$disk$partition formatuotas kaip $format ir panaudotas $mount';
+    return 'skaidinys <b>$disk$partition</b> formatuotas kaip <b>$format</b> ir panaudotas kaip <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'skaidinys #$disk$partition formatuotas kaip $format';
+    return 'skaidinys <b>$disk$partition</b> formatuotas kaip <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'skaidinys #$disk$partition panaudotas $mount';
+    return 'skaidinys <b>$disk$partition</b> panaudotas kaip <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'skaidinys #$disk$partition sukurtas';
+    return 'sukurtas skaidinys <b>$disk$partition</b>';
   }
 
   @override
@@ -754,46 +754,46 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String installationSlidesTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+    return 'Jus sveikina $RELEASE';
   }
 
   @override
-  String get installationSlidesAvailable => 'Available:';
+  String get installationSlidesAvailable => 'Prieinama:';
 
   @override
-  String get installationSlidesIncluded => 'Included:';
+  String get installationSlidesIncluded => 'Įtraukta:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+  String get installationSlidesWelcomeTitle => 'Greita, nemokama ir pilna naujų ypatybių';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return 'The latest version of $DISTRO makes computing easier than ever.';
+    return 'Naujausia $DISTRO versija paverčia naudojimąsi kompiuteriu neįtikėtinai lengvu.';
   }
 
   @override
   String installationSlidesWelcomeBody(Object RELEASE) {
-    return 'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in $RELEASE.';
+    return 'Nepaisant to, ar esate plėtotojas, kūrėjas, žaidimų megėjas ar administratorius, atrasite naujus įrankius, kurie pagerins produktyvumą ir jūsų patyrimą su $RELEASE.';
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'All the applications you need';
+  String get installationSlidesSoftwareTitle => 'Visos reikiamos programos';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
-    return 'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and $DISTRO archive.';
+    return 'Diekite, tvarkykite ir atnaujinkite visas savo programas naudodamiesi „Ubuntu Software“, įskaitant tūkstančius programų iš tiek „Snap Store“, tiek $DISTRO archyvo.';
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
+  String get installationSlidesDevelopmentTitle => 'Plėtokite naudodami geriausią, ką siūlo atvirasis kodas';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
-    return '$DISTRO is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every $DISTRO release includes the latest toolchains and supports all major IDEs.';
+    return '$DISTRO yra tobula kompiuterizuota darbo vieta, skirta programų ar saityno plėtojimui, duomenų mokslui bei dirbtinio intelekto/kompiuterio mokymosi vystymui, o taip pat plėtojimo operacijoms ir administravimui. Kiekvienoje $DISTRO laidoje yra naujausios įrankių grandinės ir yra palaikomos visos pagrindinės integruotosios plėtojimo aplinkos.';
   }
 
   @override
-  String get installationSlidesCreativityTitle => 'Enhance your creativity';
+  String get installationSlidesCreativityTitle => 'Vystykite savo kūrybingumą';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {

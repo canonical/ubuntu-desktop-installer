@@ -687,7 +687,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'Partition #$disk$partition erstellt';
+    return 'Partition <b>$disk$partition</b> erstellt';
   }
 
   @override
@@ -785,7 +785,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
+  String get installationSlidesDevelopmentTitle => 'Entwickeln Sie mit dem Besten aus Open Source';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -838,7 +838,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+  String get installationSlidesAccessibilityOrca => 'Orca-Screenreader';
 
   @override
   String get installationSlidesAccessibilityLanguages => 'Sprachunterstützung';
@@ -935,7 +935,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'Domäne nicht gefunden';
 
   @override
-  String get activeDirectoryAdminLabel => '';
+  String get activeDirectoryAdminLabel => 'Benutzername für den Domänenbeitritt';
 
   @override
   String get activeDirectoryAdminEmpty => 'Erforderlich';
