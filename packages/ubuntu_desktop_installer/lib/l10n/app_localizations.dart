@@ -365,7 +365,7 @@ abstract class AppLocalizations {
   /// No description provided for @turnOffRST.
   ///
   /// In en, this message translates to:
-  /// **'Turn off RST'**
+  /// **'RST is enabled'**
   String get turnOffRST;
 
   /// No description provided for @turnOffRSTDescription.
@@ -491,7 +491,7 @@ abstract class AppLocalizations {
   /// No description provided for @connectToInternetPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Connect to internet'**
+  /// **'Connect to a network'**
   String get connectToInternetPageTitle;
 
   /// No description provided for @connectToInternetDescription.
@@ -593,7 +593,7 @@ abstract class AppLocalizations {
   /// No description provided for @updatesOtherSoftwarePageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Updates and other software'**
+  /// **'Applications and updates'**
   String get updatesOtherSoftwarePageTitle;
 
   /// No description provided for @updatesOtherSoftwarePageDescription.
@@ -683,7 +683,7 @@ abstract class AppLocalizations {
   /// No description provided for @chooseSecurityKeyTitle.
   ///
   /// In en, this message translates to:
-  /// **'Choose a security key'**
+  /// **'Security key'**
   String get chooseSecurityKeyTitle;
 
   /// No description provided for @chooseSecurityKeyHeader.
@@ -725,7 +725,7 @@ abstract class AppLocalizations {
   /// No description provided for @installationTypeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Installation type'**
+  /// **'Type of installation'**
   String get installationTypeTitle;
 
   /// No description provided for @installationTypeOSDetected.
@@ -875,7 +875,7 @@ abstract class AppLocalizations {
   /// No description provided for @installationTypeManual.
   ///
   /// In en, this message translates to:
-  /// **'Something else'**
+  /// **'Manual partitioning'**
   String get installationTypeManual;
 
   /// No description provided for @installationTypeManualInfo.
@@ -1253,7 +1253,7 @@ abstract class AppLocalizations {
   /// No description provided for @whoAreYouPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Who are you?'**
+  /// **'Set up your account'**
   String get whoAreYouPageTitle;
 
   /// No description provided for @whoAreYouPageAutoLogin.
@@ -1475,7 +1475,7 @@ abstract class AppLocalizations {
   /// No description provided for @chooseYourLookPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Choose your look'**
+  /// **'Choose your theme'**
   String get chooseYourLookPageTitle;
 
   /// No description provided for @chooseYourLookPageHeader.
@@ -1541,7 +1541,7 @@ abstract class AppLocalizations {
   /// No description provided for @turnOffBitlockerTitle.
   ///
   /// In en, this message translates to:
-  /// **'Turn off BitLocker'**
+  /// **'BitLocker is enabled'**
   String get turnOffBitlockerTitle;
 
   /// No description provided for @turnOffBitlockerDescription.
@@ -1565,7 +1565,7 @@ abstract class AppLocalizations {
   /// No description provided for @whereAreYouPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Where are you?'**
+  /// **'Select your timezone'**
   String get whereAreYouPageTitle;
 
   /// No description provided for @whereAreYouLocationLabel.

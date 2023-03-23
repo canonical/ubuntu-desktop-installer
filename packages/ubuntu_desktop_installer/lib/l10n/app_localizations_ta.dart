@@ -151,7 +151,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get showSecurityKey => 'Show security key';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Connect to a network';
 
   @override
   String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
@@ -202,7 +202,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get connectButtonText => 'Connect';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'Applications and updates';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
@@ -249,7 +249,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get offlineWarning => 'You are currently offline';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'Security key';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -373,7 +373,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'Manual partitioning';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -730,7 +730,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get continueTesting => 'Continue testing';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker is enabled';
 
   @override
   String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
@@ -744,7 +744,7 @@ class AppLocalizationsTa extends AppLocalizations {
   String get restartIntoWindows => 'Restart into Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Select your timezone';
 
   @override
   String get whereAreYouLocationLabel => 'Location';

@@ -730,7 +730,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get continueTesting => 'Continue testing';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker is enabled';
 
   @override
   String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
@@ -744,7 +744,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get restartIntoWindows => 'Restart into Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Select your timezone';
 
   @override
   String get whereAreYouLocationLabel => 'Location';

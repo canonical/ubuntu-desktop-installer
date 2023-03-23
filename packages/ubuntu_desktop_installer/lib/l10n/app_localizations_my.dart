@@ -86,7 +86,7 @@ class AppLocalizationsMy extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RST is enabled';
 
   @override
   String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
@@ -151,7 +151,7 @@ class AppLocalizationsMy extends AppLocalizations {
   String get showSecurityKey => 'Show security key';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get connectToInternetPageTitle => 'Connect to a network';
 
   @override
   String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
@@ -202,7 +202,7 @@ class AppLocalizationsMy extends AppLocalizations {
   String get connectButtonText => 'Connect';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get updatesOtherSoftwarePageTitle => 'Applications and updates';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
@@ -249,7 +249,7 @@ class AppLocalizationsMy extends AppLocalizations {
   String get offlineWarning => 'You are currently offline';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'Security key';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -274,7 +274,7 @@ class AppLocalizationsMy extends AppLocalizations {
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'Type of installation';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -373,7 +373,7 @@ class AppLocalizationsMy extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'Manual partitioning';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -568,7 +568,7 @@ class AppLocalizationsMy extends AppLocalizations {
   String get partitionMountPointLabel => 'Mount point:';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageTitle => 'Set up your account';
 
   @override
   String get whoAreYouPageAutoLogin => 'Log in automatically';
@@ -691,7 +691,7 @@ class AppLocalizationsMy extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'Choose your theme';
 
   @override
   String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
@@ -730,7 +730,7 @@ class AppLocalizationsMy extends AppLocalizations {
   String get continueTesting => 'Continue testing';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker is enabled';
 
   @override
   String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
@@ -744,7 +744,7 @@ class AppLocalizationsMy extends AppLocalizations {
   String get restartIntoWindows => 'Restart into Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get whereAreYouPageTitle => 'Select your timezone';
 
   @override
   String get whereAreYouLocationLabel => 'Location';
