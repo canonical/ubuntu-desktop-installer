@@ -1,7 +1,6 @@
 import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
 import 'package:gsettings/gsettings.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_session/ubuntu_session.dart';
 
@@ -42,8 +41,7 @@ class GnomeService implements DesktopService {
             screensaverSettings ?? GSettings('org.gnome.desktop.screensaver'),
         _sessionSettings =
             sessionSettings ?? GSettings('org.gnome.desktop.session'),
-        _gnomeSessionManager =
-            gnomeSessionManager ?? getService<GnomeSessionManager>();
+        _gnomeSessionManager = gnomeSessionManager ?? GnomeSessionManager();
 
   final GSettings _dingSettings;
   final GSettings _interfaceSettings;

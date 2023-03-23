@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
@@ -16,8 +15,6 @@ import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_session/ubuntu_session.dart';
-import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaml/yaml.dart';
@@ -35,14 +32,7 @@ void main() {
 
   setUp(() async {
     await cleanUpSubiquity();
-    final mockGnomeSessionManager = MockGnomeSessionManager();
-    when(mockGnomeSessionManager.inhibit(
-            appId: anyNamed('appId'),
-            topLevelXId: anyNamed('topLevelXId'),
-            reason: anyNamed('reason'),
-            flags: anyNamed('flags')))
-        .thenAnswer((_) async => 42);
-    registerMockService<GnomeSessionManager>(mockGnomeSessionManager);
+    registerMockService<DesktopService>(FakeDesktopService());
   });
   tearDown(() async => await resetAllServices());
 
@@ -759,4 +749,15 @@ Future<void> verifyConfig({
             .isNotEmpty,
         useEncryption);
   }
+}
+
+class FakeDesktopService implements DesktopService {
+  @override
+  Future<void> inhibit() async {}
+
+  @override
+  Future<void> setTheme(Brightness brightness) async {}
+
+  @override
+  Future<void> close() async {}
 }
