@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -11,6 +10,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages.dart';
 import 'package:ubuntu_wsl_setup/pages/applying_changes/applying_changes_model.dart';
+import 'package:yaru_window_test/yaru_window_test.dart';
 
 import 'applying_changes_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -19,6 +19,8 @@ import 'test_utils.dart';
 
 @GenerateMocks([ApplyingChangesModel])
 void main() {
+  setUpAll(YaruTestWindow.ensureInitialized);
+
   const theEnd = 'The end';
   LangTester.type = ApplyingChangesModel;
 
@@ -58,23 +60,15 @@ void main() {
     when(model.init())
         .thenAnswer((_) async => Future.delayed(const Duration(seconds: 2)));
 
-    var windowClosed = false;
-    final methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('close'));
-      windowClosed = true;
-    });
+    final windowClosed = YaruTestWindow.waitForClosed();
 
     await tester.pumpWidget(buildApp(
       builder: (_) => buildPage(model),
       hasNext: false,
     ));
 
-    expect(windowClosed, isFalse);
-    await tester.pump(const Duration(seconds: 1));
-    expect(windowClosed, isFalse);
-    await tester.pump(const Duration(seconds: 1));
-    expect(windowClosed, isTrue);
+    await tester.pump(const Duration(seconds: 2));
+    await expectLater(windowClosed, completes);
   });
 
   testWidgets('won\'t go next while still installing', (tester) async {

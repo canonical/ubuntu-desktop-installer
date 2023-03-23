@@ -1,8 +1,6 @@
-import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_server.dart';
@@ -106,33 +104,6 @@ Future<void> cleanUpSubiquity() async {
   try {
     Directory(await subiquityPath).deleteSync(recursive: true);
   } on FileSystemException catch (_) {}
-}
-
-/// Waits for the application window to be closed, to allow an integration test
-/// to proceed to the next test case.
-Future<bool> waitForWindowClosed() {
-  final completer = Completer<bool>();
-  final methodChannel = MethodChannel('yaru_window');
-  methodChannel.setMockMethodCallHandler((call) async {
-    switch (call.method) {
-      case 'close':
-        await _testCloseWindow();
-        completer.complete(true);
-        break;
-    }
-  });
-  return completer.future;
-}
-
-// Sends a platform message to simulate the window being closed, to trigger the
-// application exit routine.
-Future<void> _testCloseWindow() async {
-  final call = MethodCall('onClose');
-  await ServicesBinding.instance.defaultBinaryMessenger.handlePlatformMessage(
-    'yaru_window',
-    StandardMethodCodec().encodeMethodCall(call),
-    (_) {},
-  );
 }
 
 /// Helpers for interacting with widgets.

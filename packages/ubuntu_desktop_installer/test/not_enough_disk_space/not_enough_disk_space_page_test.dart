@@ -1,6 +1,5 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -8,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/not_enough_disk_space/not_enough_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/not_enough_disk_space/not_enough_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';
 import 'not_enough_disk_space_model_test.mocks.dart';
@@ -15,6 +15,8 @@ import 'not_enough_disk_space_page_test.mocks.dart';
 
 @GenerateMocks([NotEnoughDiskSpaceModel])
 void main() {
+  setUpAll(YaruTestWindow.ensureInitialized);
+
   NotEnoughDiskSpaceModel buildModel({
     bool hasMultipleDisks = false,
     int largestDiskSize = 0,
@@ -77,16 +79,11 @@ void main() {
         find.widgetWithText(FilledButton, tester.lang.quitButtonText);
     expect(button, findsOneWidget);
 
-    var windowClosed = false;
-    const methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('close'));
-      windowClosed = true;
-    });
+    final windowClosed = YaruTestWindow.waitForClosed();
 
     await tester.tap(button);
 
-    expect(windowClosed, isTrue);
+    await expectLater(windowClosed, completes);
   });
 
   testWidgets('creates a model', (tester) async {

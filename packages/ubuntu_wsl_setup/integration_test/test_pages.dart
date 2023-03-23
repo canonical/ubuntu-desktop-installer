@@ -6,6 +6,7 @@ import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages.dart';
 import 'package:ubuntu_wsl_setup/splash_screen.dart';
 import 'package:ubuntu_wsl_setup/wizard.dart';
+import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test/test_utils.dart';
 
@@ -123,13 +124,13 @@ Future<void> testApplyingChangesPage(
   WidgetTester tester, {
   bool expectClose = false,
 }) async {
-  final windowClosed = expectClose ? waitForWindowClosed() : null;
+  final windowClosed = expectClose ? YaruTestWindow.waitForClosed() : null;
 
   await tester.pumpUntil(find.byType(ApplyingChangesPage));
   expectPage(tester, ApplyingChangesPage, (lang) => lang.setupCompleteTitle);
 
   if (windowClosed != null) {
-    expect(await windowClosed, isTrue);
+    await expectLater(windowClosed, completes);
   }
 }
 
