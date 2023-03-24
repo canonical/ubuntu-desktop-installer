@@ -12,7 +12,7 @@ import 'allocate_disk_space_model.dart';
 import 'storage_types.dart';
 
 const _kInputFieldWidth = 400.0;
-const _kValidMountPointPattern = r'^/\S*$';
+const _kValidMountPointPattern = r'^(/\S*|)$';
 
 /// Shows a confirmation dialog with the given title and message.
 Future<bool> showConfirmationDialog(
