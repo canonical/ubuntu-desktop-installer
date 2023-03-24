@@ -25,6 +25,7 @@ void main() {
     List<OsProber>? existingOS,
     bool? canInstallAlongside,
     bool? hasStorage,
+    bool? hasBitLocker,
   }) {
     final model = MockInstallationTypeModel();
     when(model.installationType)
@@ -36,6 +37,7 @@ void main() {
     when(model.existingOS).thenReturn(existingOS);
     when(model.canInstallAlongside).thenReturn(canInstallAlongside ?? false);
     when(model.hasStorage).thenReturn(hasStorage ?? true);
+    when(model.hasBitLocker).thenReturn(hasBitLocker ?? false);
     return model;
   }
 
@@ -146,6 +148,30 @@ void main() {
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.alongside).called(1);
+  });
+
+  testWidgets('alongside bitlocker', (tester) async {
+    final model = buildModel(
+      productInfo: ProductInfo(name: 'Ubuntu 22.10'),
+      existingOS: [
+        OsProber(
+          long: 'Windows 11',
+          label: 'WIN11',
+          version: '11',
+          type: 'BitLocker',
+        ),
+      ],
+      canInstallAlongside: false,
+      hasBitLocker: true,
+    );
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
+        tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 11'));
+    expect(radio, findsOneWidget);
+
+    await tester.tap(radio);
+    verify(model.installationType = InstallationType.bitlocker).called(1);
   });
 
   testWidgets('alongside ubuntu', (tester) async {
