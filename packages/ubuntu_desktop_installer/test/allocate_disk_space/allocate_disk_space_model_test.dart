@@ -188,6 +188,8 @@ void main() {
     final normalDisk = emptyDisk.copyWith(partitions: [Partition()]);
     final formattedPartition =
         emptyDisk.copyWith(partitions: [Partition(format: 'ext4')]);
+    final bitLockerPartition =
+        emptyDisk.copyWith(partitions: [Partition(format: 'BitLocker')]);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer(
@@ -196,6 +198,7 @@ void main() {
         fullDisk,
         normalDisk,
         formattedPartition,
+        bitLockerPartition,
       ],
     );
 
@@ -262,6 +265,16 @@ void main() {
     expect(model.canAddPartition, isFalse);
     expect(model.canRemovePartition, isTrue);
     expect(model.canEditPartition, isTrue);
+    expect(model.canReformatDisk, isFalse);
+
+    model.selectStorage(4, 0);
+    expect(model.selectedDisk, equals(bitLockerPartition));
+    expect(model.selectedPartition, isNotNull);
+    expect(model.selectedPartition!.canWipe, isFalse);
+    expect(model.selectedGap, isNull);
+    expect(model.canAddPartition, isFalse);
+    expect(model.canRemovePartition, isTrue);
+    expect(model.canEditPartition, isFalse);
     expect(model.canReformatDisk, isFalse);
   });
 
