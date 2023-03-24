@@ -57,6 +57,7 @@ void main() {
     when(model.encryption).thenReturn(false);
     when(model.canInstallAlongside).thenReturn(false);
     when(model.hasStorage).thenReturn(true);
+    when(model.hasBitLocker).thenReturn(false);
 
     await tester.pumpWidget(
       ChangeNotifierProvider<InstallationTypeModel>.value(
@@ -88,6 +89,7 @@ void main() {
     when(model.encryption).thenReturn(false);
     when(model.canInstallAlongside).thenReturn(false);
     when(model.hasStorage).thenReturn(true);
+    when(model.hasBitLocker).thenReturn(false);
 
     await tester.pumpWidget(
       ChangeNotifierProvider<InstallationTypeModel>.value(

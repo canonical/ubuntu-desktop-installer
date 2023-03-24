@@ -16,6 +16,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.useLvm).thenReturn(true);
     when(service.useEncryption).thenReturn(true);
+    when(service.hasBitLocker).thenReturn(true);
     when(service.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse());
 
@@ -28,6 +29,7 @@ void main() {
 
     expect(model.advancedFeature, AdvancedFeature.lvm);
     expect(model.encryption, isTrue);
+    expect(model.hasBitLocker, isTrue);
   });
 
   test('existing OS', () async {

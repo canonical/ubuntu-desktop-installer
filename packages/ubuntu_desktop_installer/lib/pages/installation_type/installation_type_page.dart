@@ -106,14 +106,16 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
           //     onChanged: (v) => model.installationType = v!,
           //   ),
           // if (model.existingOS != null) const SizedBox(height: kContentSpacing),
-          if (model.canInstallAlongside)
+          if (model.canInstallAlongside || model.hasBitLocker)
             Padding(
               padding: const EdgeInsets.only(bottom: kContentSpacing),
               child: YaruRadioButton<InstallationType>(
                 title: Text(_formatAlongside(
                     lang, model.productInfo, model.existingOS ?? [])),
                 subtitle: Text(lang.installationTypeAlongsideInfo),
-                value: InstallationType.alongside,
+                value: model.canInstallAlongside
+                    ? InstallationType.alongside
+                    : InstallationType.bitlocker, // for instructions
                 groupValue: model.installationType,
                 onChanged: (v) => model.installationType = v!,
               ),

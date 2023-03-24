@@ -468,7 +468,9 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
           ? Routes.turnOffBitlocker
           : Routes.allocateDiskSpace;
     } else if (service.guidedTarget == null) {
-      if (arguments == InstallationType.erase) {
+      if (arguments == InstallationType.bitlocker) {
+        return Routes.turnOffBitlocker;
+      } else if (arguments == InstallationType.erase) {
         return Routes.selectGuidedStorage;
       } else if (arguments == InstallationType.alongside) {
         return Routes.installAlongside;
