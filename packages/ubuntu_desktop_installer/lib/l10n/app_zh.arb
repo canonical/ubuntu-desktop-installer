@@ -42,7 +42,7 @@
       "RELEASE": {}
     }
   },
-  "turnOffRST": "关闭 RST",
+  "turnOffRST": "RST 已启用",
   "@turnOffRST": {},
   "keyboardLayoutPageTitle": "键盘布局",
   "@keyboardLayoutPageTitle": {},
@@ -50,7 +50,7 @@
   "@typeToTest": {},
   "chooseYourKeyboardLayout": "选择您的键盘布局：",
   "@chooseYourKeyboardLayout": {},
-  "updatesOtherSoftwarePageTitle": "更新和其他软件",
+  "updatesOtherSoftwarePageTitle": "应用程序和更新",
   "@updatesOtherSoftwarePageTitle": {},
   "hiddenWifiNetwork": "连接到隐藏的 Wi-Fi 网络",
   "@hiddenWifiNetwork": {},
@@ -171,7 +171,7 @@
   },
   "shutdown": "关机",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "关闭 BitLocker",
+  "turnOffBitlockerTitle": "已启用 BitLocker",
   "@turnOffBitlockerTitle": {},
   "turnOffBitlockerLinkInstructions": "有关说明，请在手机或其他设备上打开此页面：<a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
@@ -182,7 +182,7 @@
   },
   "restartIntoWindows": "重启进入 Windows",
   "@restartIntoWindows": {},
-  "whereAreYouPageTitle": "您在什么地方？",
+  "whereAreYouPageTitle": "选择您的时区",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "位置",
   "@whereAreYouLocationLabel": {},
@@ -270,7 +270,7 @@
       "RELEASE": {}
     }
   },
-  "chooseSecurityKeyTitle": "选择一个安全密钥",
+  "chooseSecurityKeyTitle": "安全密钥",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHint": "选择一个安全密钥",
   "@chooseSecurityKeyHint": {},
@@ -304,7 +304,7 @@
   "@installationTypeZFS": {},
   "installationTypeZFSSelected": "已选择 ZFS",
   "@installationTypeZFSSelected": {},
-  "installationTypeManual": "其他选项",
+  "installationTypeManual": "手动分区",
   "@installationTypeManual": {},
   "installationTypeManualInfo": "您可以创建分区或调整分区大小，或者为{DISTRO}选择多个分区",
   "@installationTypeManualInfo": {
@@ -349,7 +349,7 @@
   "@partitionFormatFat32": {},
   "partitionMountPointLabel": "挂载点：",
   "@partitionMountPointLabel": {},
-  "whoAreYouPageTitle": "您是谁？",
+  "whoAreYouPageTitle": "设置您的帐户",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "自动登录",
   "@whoAreYouPageAutoLogin": {},
@@ -438,7 +438,7 @@
   "@selectGuidedStorageDropdownLabel": {},
   "diskHeadersDevice": "设备",
   "@diskHeadersDevice": {},
-  "allocateDiskSpace": "分配磁盘空间",
+  "allocateDiskSpace": "手动分区",
   "@allocateDiskSpace": {},
   "diskHeadersType": "类型",
   "@diskHeadersType": {},
@@ -504,7 +504,7 @@
   "@partitionTypeLabel": {},
   "partitionFormatExt3": "Ext3 日志文件系统",
   "@partitionFormatExt3": {},
-  "chooseYourLookPageTitle": "选择您的外观",
+  "chooseYourLookPageTitle": "选择您的主题",
   "@chooseYourLookPageTitle": {},
   "installationTypeLVM": "在新的 {RELEASE} 安装中使用 LVM",
   "@installationTypeLVM": {
