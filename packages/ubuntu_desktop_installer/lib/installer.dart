@@ -464,9 +464,7 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
 
   String? _nextStorageRoute(DiskStorageService service, dynamic arguments) {
     if (arguments == InstallationType.manual) {
-      return service.hasBitLocker
-          ? Routes.turnOffBitlocker
-          : Routes.allocateDiskSpace;
+      return Routes.allocateDiskSpace;
     } else if (service.guidedTarget == null) {
       if (arguments == InstallationType.bitlocker) {
         return Routes.turnOffBitlocker;
