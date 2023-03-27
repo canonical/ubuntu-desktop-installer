@@ -34,7 +34,7 @@
   "@keyboardLayoutPageTitle": {},
   "chooseYourKeyboardLayout": "Выберите раскладку клавиатуры:",
   "@chooseYourKeyboardLayout": {},
-  "typeToTest": "Введите здесь, чтобы проверить свою клавиатуру",
+  "typeToTest": "Напечатайте здесь, чтобы проверить свою клавиатуру",
   "@typeToTest": {},
   "detectLayout": "Определить раскладку клавиатуры",
   "@detectLayout": {},
@@ -546,7 +546,7 @@
   "@installationTypeEncryptInfo": {},
   "installationTypeZFSSelected": "Выбрана ZFS",
   "@installationTypeZFSSelected": {},
-  "installationTypeManual": "Другой вариант",
+  "installationTypeManual": "Создание разделов вручную",
   "@installationTypeManual": {},
   "installationTypeNone": "Ничего",
   "@installationTypeNone": {},
@@ -557,7 +557,7 @@
       "RELEASE": {}
     }
   },
-  "allocateDiskSpace": "Выделить место на диске",
+  "allocateDiskSpace": "Создание разделов вручную",
   "@allocateDiskSpace": {},
   "diskHeadersFormat": "Формат",
   "@diskHeadersFormat": {},
