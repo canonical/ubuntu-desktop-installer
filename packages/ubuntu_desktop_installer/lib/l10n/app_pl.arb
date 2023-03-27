@@ -218,7 +218,7 @@
       "color": {}
     }
   },
-  "installationTypeOSDetected": "Na tym komputerze jest obecnie zainstalowany {os}. Co chcesz zrobić?",
+  "installationTypeOSDetected": "Na tym komputerze jest obecnie zainstalowany system {os}. Co chcesz zrobić?",
   "@installationTypeOSDetected": {
     "type": "text",
     "placeholders": {
@@ -379,7 +379,7 @@
       "system": {}
     }
   },
-  "shutdown": "Zamknij system",
+  "shutdown": "Zamknij",
   "@shutdown": {},
   "turnOffBitlockerTitle": "Funkcja BitLocker jest włączona",
   "@turnOffBitlockerTitle": {},
