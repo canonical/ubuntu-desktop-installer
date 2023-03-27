@@ -7,6 +7,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+import '../../widgets.dart';
 import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
 import 'storage_columns.dart';

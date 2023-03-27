@@ -14,41 +14,6 @@ import 'storage_types.dart';
 const _kInputFieldWidth = 400.0;
 const _kValidMountPointPattern = r'^(/\S*|)$';
 
-/// Shows a confirmation dialog with the given title and message.
-Future<bool> showConfirmationDialog(
-  BuildContext context, {
-  required String title,
-  required String message,
-}) async {
-  final lang = UbuntuLocalizations.of(context);
-  final result = await showDialog<bool>(
-    context: context,
-    builder: (context) {
-      return AlertDialog(
-        title: YaruDialogTitleBar(title: Text(title)),
-        titlePadding: EdgeInsets.zero,
-        contentPadding: kContentPadding.copyWith(
-            top: kContentSpacing, bottom: kContentSpacing),
-        actionsPadding: kFooterPadding,
-        content: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 420),
-            child: Text(message)),
-        actions: <Widget>[
-          PushButton.outlined(
-            child: Text(lang.cancelLabel),
-            onPressed: () => Navigator.of(context).pop(false),
-          ),
-          PushButton.filled(
-            child: Text(lang.okLabel),
-            onPressed: () => Navigator.of(context).pop(true),
-          ),
-        ],
-      );
-    },
-  );
-  return result == true;
-}
-
 /// Shows a dialog for creating a new partition for the given [disk].
 Future<void> showCreatePartitionDialog(
   BuildContext context,
