@@ -989,5 +989,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "turnOffRSTTitle": "Aby bylo možné pokračovat, vypněte RST",
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsTitle": "Restartovat do Windows?",
+  "@restartIntoWindowsTitle": {}
 }
