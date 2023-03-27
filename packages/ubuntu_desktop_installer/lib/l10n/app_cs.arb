@@ -1000,5 +1000,7 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "turnOffBitlockerHeadline": "Aby bylo možné pokračovat, vypněte BitLocker",
+  "@turnOffBitlockerHeadline": {}
 }
