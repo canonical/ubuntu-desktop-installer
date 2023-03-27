@@ -73,7 +73,9 @@ class StorageDeviceColumn extends StorageColumn {
           partitionBuilder: (context, disk, partition) {
             return Row(
               children: [
-                const Icon(YaruIcons.drive_harddisk),
+                Icon(partition.isEncrypted
+                    ? YaruIcons.lock
+                    : YaruIcons.drive_harddisk),
                 const SizedBox(width: 16),
                 Text(partition.sysname),
               ],
