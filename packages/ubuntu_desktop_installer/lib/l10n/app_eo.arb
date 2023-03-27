@@ -934,5 +934,7 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "turnOffRSTTitle": "Malŝaltu RST por daŭrigi",
+  "@turnOffRSTTitle": {}
 }
