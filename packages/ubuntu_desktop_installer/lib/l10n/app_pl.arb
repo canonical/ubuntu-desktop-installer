@@ -945,5 +945,7 @@
     }
   },
   "restartIntoWindowsTitle": "Uruchomić ponownie do Windows?",
-  "@restartIntoWindowsTitle": {}
+  "@restartIntoWindowsTitle": {},
+  "turnOffBitlockerHeadline": "Wyłącz funkcję BitLocker, aby kontynuować",
+  "@turnOffBitlockerHeadline": {}
 }
