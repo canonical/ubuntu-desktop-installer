@@ -86,10 +86,10 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Désactiver RST';
+  String get turnOffRST => 'RST est activé';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Désactivez RST pour continuer';
 
   @override
   String get turnOffRSTDescription => 'Cet ordinateur utilise la technologie RST (Rapid Storage Technology) d’Intel. Il est nécessaire de désactiver RST sous Windows avant d’installer Ubuntu.';
@@ -154,7 +154,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get showSecurityKey => 'Montrer la clé de sécurité';
 
   @override
-  String get connectToInternetPageTitle => 'Se connecter à internet';
+  String get connectToInternetPageTitle => 'Se connecter à un réseau';
 
   @override
   String get connectToInternetDescription => 'Connecter cet ordinateur à internet aidera Ubuntu à installer des logiciels supplémentaires et à déterminer votre fuseau horaire.\n\nConnectez un câble Ethernet, ou choisissez un réseau Wi-Fi';
@@ -205,7 +205,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get connectButtonText => 'Se connecter';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Mises à jour et autres logiciels';
+  String get updatesOtherSoftwarePageTitle => 'Applications et mises à jour';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Quelles applications souhaitez-vous installer pour commencer ?';
@@ -252,7 +252,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get offlineWarning => 'Vous êtes actuellement hors ligne';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choisir un code de sécurité';
+  String get chooseSecurityKeyTitle => 'Code de sécurité';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -376,7 +376,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Les documents, musiques et autres fichiers personnels seront conservés. Vous pouvez choisir le système d’exploitation à lancer au moment du démarrage de l’ordinateur.';
 
   @override
-  String get installationTypeManual => 'Autre chose';
+  String get installationTypeManual => 'Partitionnement manuel';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get installAlongsideAvailable => 'Disponible :';
 
   @override
-  String get allocateDiskSpace => 'Allouer de l’espace disque';
+  String get allocateDiskSpace => 'Partitionnement manuel';
 
   @override
   String get startInstallingButtonText => 'Installer';
@@ -571,7 +571,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get partitionMountPointLabel => 'Point de montage :';
 
   @override
-  String get whoAreYouPageTitle => 'Qui êtes-vous ?';
+  String get whoAreYouPageTitle => 'Configurez votre compte';
 
   @override
   String get whoAreYouPageAutoLogin => 'Ouvrir la session automatiquement';
@@ -733,10 +733,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get continueTesting => 'Continuer à tester';
 
   @override
-  String get turnOffBitlockerTitle => 'Désactiver BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker est activé';
 
   @override
-  String get turnOffBitlockerDescription => 'Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez désactiver BitLocker dans Windows avant d’installer Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez désactiver BitLocker dans Windows avant d’installer Ubuntu.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -755,7 +757,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Où êtes-vous ?';
+  String get whereAreYouPageTitle => 'Sélectionnez votre fuseau horaire';
 
   @override
   String get whereAreYouLocationLabel => 'Localisation';

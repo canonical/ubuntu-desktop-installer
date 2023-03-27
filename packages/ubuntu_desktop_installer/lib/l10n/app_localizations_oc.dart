@@ -86,7 +86,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Desactivar RST';
+  String get turnOffRST => 'RST es activat';
 
   @override
   String get turnOffRSTTitle => 'Turn off RST to continue';
@@ -154,7 +154,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get showSecurityKey => 'Mostrar la clau de seguretat';
 
   @override
-  String get connectToInternetPageTitle => 'Se connectar a internet';
+  String get connectToInternetPageTitle => 'Se connectar a un ret';
 
   @override
   String get connectToInternetDescription => 'Connectar aqueste ordenador a internet permetrà a Ubuntu d’installar de logicials suplementaris e de definir vòstre fus orari.\n\nConnectatz un cable Ethernet, o causissètz un ret Wifi';
@@ -205,7 +205,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get connectButtonText => 'Se connectar';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Mesas a jorn e logicials suplementaris';
+  String get updatesOtherSoftwarePageTitle => 'Aplicacions e mesas a jorn';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Quinas aplicacions volètz installar per començar ?';
@@ -252,7 +252,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get offlineWarning => 'Sètz fòra linha';
 
   @override
-  String get chooseSecurityKeyTitle => 'Causida de clau de seguretat';
+  String get chooseSecurityKeyTitle => 'Clau de seguretat';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -376,7 +376,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Los documents, la musica e los autres fichièrs personals seràn gardats. Podètz causir quin sistèma operatiu volètz cada que l’ordenador s’aluca.';
 
   @override
-  String get installationTypeManual => 'Quicòm mai';
+  String get installationTypeManual => 'Particionament manual';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installAlongsideAvailable => 'Disponible :';
 
   @override
-  String get allocateDiskSpace => 'Atribuir l’espaci disc';
+  String get allocateDiskSpace => 'Particionament manual';
 
   @override
   String get startInstallingButtonText => 'Installar';
@@ -571,7 +571,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionMountPointLabel => 'Punt de montatge :';
 
   @override
-  String get whoAreYouPageTitle => 'Qual sètz ?';
+  String get whoAreYouPageTitle => 'Configuratz vòstre compte';
 
   @override
   String get whoAreYouPageAutoLogin => 'Se connectar automaticament';
@@ -694,7 +694,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Causissètz l’aparéncia';
+  String get chooseYourLookPageTitle => 'Causissètz vòstre tèma';
 
   @override
   String get chooseYourLookPageHeader => 'La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.';
@@ -733,10 +733,12 @@ class AppLocalizationsOc extends AppLocalizations {
   String get continueTesting => 'Contunhar d’ensajar';
 
   @override
-  String get turnOffBitlockerTitle => 'Desactivar BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker es activat';
 
   @override
-  String get turnOffBitlockerDescription => 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\n Vos cal desactivar BitLocker dins Windows abans d’installacion d’Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\n Vos cal desactivar BitLocker dins Windows abans d’installacion d’Ubuntu.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -755,7 +757,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Ont sètz ?';
+  String get whereAreYouPageTitle => 'Seleccionatz vòstre fus orari';
 
   @override
   String get whereAreYouLocationLabel => 'Localizacion';

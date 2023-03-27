@@ -736,7 +736,9 @@ class AppLocalizationsSi extends AppLocalizations {
   String get turnOffBitlockerTitle => 'බිට්ලොකර් අක්‍රිය කරන්න';
 
   @override
-  String get turnOffBitlockerDescription => 'මෙම පරිගණකය වින්ඩෝස් බිට්ලොකර් සංකේතනය භාවිතා කරයි.\nඋබුන්ටු ස්ථාපනයට පෙර ඔබ වින්ඩෝස් හි බිට්ලොකර් අක්‍රිය කළ යුතුය.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'මෙම පරිගණකය වින්ඩෝස් බිට්ලොකර් සංකේතනය භාවිතා කරයි.\nඋබුන්ටු ස්ථාපනයට පෙර ඔබ වින්ඩෝස් හි බිට්ලොකර් අක්‍රිය කළ යුතුය.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {

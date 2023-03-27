@@ -115,7 +115,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get detectButtonText => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => 'キーボードバリアント：';
 
   @override
   String get pressOneKey => '以下のキーのうち 1 つを押してください。';
@@ -133,7 +133,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get configureSecureBootOption => 'セキュアブートを設定';
 
   @override
-  String get chooseSecurityKey => 'セキュリティキーを決めて下さい';
+  String get chooseSecurityKey => 'セキュリティキーを決めてください。';
 
   @override
   String get confirmSecurityKey => 'セキュリティキーをもう一度入力';
@@ -154,7 +154,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get showSecurityKey => 'セキュリティキーを表示します';
 
   @override
-  String get connectToInternetPageTitle => 'インターネットに接続';
+  String get connectToInternetPageTitle => 'ネットワークに接続';
 
   @override
   String get connectToInternetDescription => 'このコンピューターをインターネットに接続すると、必要な追加ソフトウェアのインストールし、タイムゾーンを選択するのを手助けします。\n\nイーサネットケーブルを接続するか、Wi-Fi ネットワークを選択してください';
@@ -205,7 +205,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get connectButtonText => '接続';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'アップデートとその他のソフトウェア';
+  String get updatesOtherSoftwarePageTitle => 'アプリケーションとアップデート';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'あらかじめいくつかのアプリケーションをインストールします。選択してください。';
@@ -252,7 +252,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get offlineWarning => '現在オフラインです';
 
   @override
-  String get chooseSecurityKeyTitle => 'セキュリティキーを決めて下さい';
+  String get chooseSecurityKeyTitle => 'セキュリティキー';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -260,7 +260,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get chooseSecurityKeyHint => 'セキュリティキーを決めて下さい';
+  String get chooseSecurityKeyHint => 'セキュリティキーを決めてください。';
 
   @override
   String get chooseSecurityKeyConfirmHint => 'セキュリティキーをもう一度入力';
@@ -376,7 +376,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'ファイルは削除されません。コンピュータを起動する際に、どのOSで起動するか選択できます。';
 
   @override
-  String get installationTypeManual => 'それ以外';
+  String get installationTypeManual => '手動パーティショニング';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installAlongsideAvailable => '利用可能：';
 
   @override
-  String get allocateDiskSpace => 'ディスク領域の割り当て';
+  String get allocateDiskSpace => '手動パーティショニング';
 
   @override
   String get startInstallingButtonText => 'インストール';
@@ -571,7 +571,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get partitionMountPointLabel => 'マウントポイント：';
 
   @override
-  String get whoAreYouPageTitle => 'あなたの情報を入力してください';
+  String get whoAreYouPageTitle => 'アカウントの設定';
 
   @override
   String get whoAreYouPageAutoLogin => '自動的にログインする';
@@ -625,7 +625,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get whoAreYouPageUsernameInvalidChars => 'その名前には無効な文字が含まれています。';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'パスワードを決めて下さい';
+  String get whoAreYouPagePasswordLabel => 'パスワードを決めてください。';
 
   @override
   String get whoAreYouPagePasswordRequired => 'パスワードを入力してください';
@@ -694,7 +694,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => '外観の選択';
+  String get chooseYourLookPageTitle => 'テーマを選択してください。';
 
   @override
   String get chooseYourLookPageHeader => 'これは、外観設定でいつでも変更できます。';
@@ -736,7 +736,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker をオフにしてください';
 
   @override
-  String get turnOffBitlockerDescription => 'このコンピューターは Windows BitLocker で暗号化されています。\nUbuntu をインストールする前に Windows で BitLocker をオフにしてください。';
+  String turnOffBitlockerDescription(Object option) {
+    return 'このコンピューターは Windows BitLocker で暗号化されています。\nUbuntu をインストールする前に Windows で BitLocker をオフにしてください。';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -755,7 +757,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'あなたの大まかな現在地を選択してください';
+  String get whereAreYouPageTitle => 'タイムゾーンを選択してください。';
 
   @override
   String get whereAreYouLocationLabel => '現在地';
@@ -788,7 +790,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'All the applications you need';
+  String get installationSlidesSoftwareTitle => '必要なアプリケーションをすべて網羅';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -796,7 +798,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
+  String get installationSlidesDevelopmentTitle => '最高のオープンソースで開発する';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -804,7 +806,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesCreativityTitle => 'Enhance your creativity';
+  String get installationSlidesCreativityTitle => '創造性を高める';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
@@ -812,7 +814,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesGamingTitle => 'Great for gaming';
+  String get installationSlidesGamingTitle => 'ゲームに最適';
 
   @override
   String installationSlidesGamingBody(Object DISTRO) {
@@ -820,7 +822,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSecurityTitle => 'Private and secure';
+  String get installationSlidesSecurityTitle => 'プライベートで安全';
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
@@ -833,7 +835,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Power up your productivity';
+  String get installationSlidesProductivityTitle => '生産性のパワーアップ';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
@@ -872,7 +874,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationSlidesSupportResources => 'Helpful resources:';
 
   @override
-  String get installationSlidesSupportDocumentation => 'Official documentation';
+  String get installationSlidesSupportDocumentation => '公式ドキュメント';
 
   @override
   String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';

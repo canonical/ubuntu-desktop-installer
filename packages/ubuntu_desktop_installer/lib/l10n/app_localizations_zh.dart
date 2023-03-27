@@ -86,7 +86,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => '关闭 RST';
+  String get turnOffRST => 'RST 已启用';
 
   @override
   String get turnOffRSTTitle => 'Turn off RST to continue';
@@ -205,7 +205,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get connectButtonText => '连接';
 
   @override
-  String get updatesOtherSoftwarePageTitle => '更新和其他软件';
+  String get updatesOtherSoftwarePageTitle => '应用程序和更新';
 
   @override
   String get updatesOtherSoftwarePageDescription => '您想先安装哪些应用？';
@@ -252,7 +252,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get offlineWarning => '您当前处于离线状态';
 
   @override
-  String get chooseSecurityKeyTitle => '选择一个安全密钥';
+  String get chooseSecurityKeyTitle => '安全密钥';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -376,7 +376,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationTypeAlongsideInfo => '将保存文件、音乐和其他个人文件。每次启动时，您可以选择所需的操作系统。';
 
   @override
-  String get installationTypeManual => '其他选项';
+  String get installationTypeManual => '手动分区';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installAlongsideAvailable => '可用：';
 
   @override
-  String get allocateDiskSpace => '分配磁盘空间';
+  String get allocateDiskSpace => '手动分区';
 
   @override
   String get startInstallingButtonText => '安装';
@@ -571,7 +571,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionMountPointLabel => '挂载点：';
 
   @override
-  String get whoAreYouPageTitle => '您是谁？';
+  String get whoAreYouPageTitle => '设置您的帐户';
 
   @override
   String get whoAreYouPageAutoLogin => '自动登录';
@@ -694,7 +694,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => '选择您的外观';
+  String get chooseYourLookPageTitle => '选择您的主题';
 
   @override
   String get chooseYourLookPageHeader => '稍后您可以在“外观设置”中进行更改。';
@@ -733,10 +733,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get continueTesting => '继续试用';
 
   @override
-  String get turnOffBitlockerTitle => '关闭 BitLocker';
+  String get turnOffBitlockerTitle => '已启用 BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => '这台电脑使用了 Windows BitLocker 进行加密。\n在安装 Ubuntu 之前，您需要关闭 Windows 的 BitLocker 功能。';
+  String turnOffBitlockerDescription(Object option) {
+    return '这台电脑使用了 Windows BitLocker 进行加密。\n在安装 Ubuntu 之前，您需要关闭 Windows 的 BitLocker 功能。';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -755,7 +757,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => '您在什么地方？';
+  String get whereAreYouPageTitle => '选择您的时区';
 
   @override
   String get whereAreYouLocationLabel => '位置';

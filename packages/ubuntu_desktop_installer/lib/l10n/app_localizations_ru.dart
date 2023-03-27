@@ -106,7 +106,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get chooseYourKeyboardLayout => 'Выберите раскладку клавиатуры:';
 
   @override
-  String get typeToTest => 'Введите здесь, чтобы проверить свою клавиатуру';
+  String get typeToTest => 'Напечатайте здесь, чтобы проверить свою клавиатуру';
 
   @override
   String get detectLayout => 'Определить раскладку клавиатуры';
@@ -376,7 +376,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Документы, музыка и другие личные файлы будут сохранены. Вы сможете выбрать нужную операционную систему для загрузки при каждом запуске компьютера.';
 
   @override
-  String get installationTypeManual => 'Другой вариант';
+  String get installationTypeManual => 'Создание разделов вручную';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installAlongsideAvailable => 'Доступно:';
 
   @override
-  String get allocateDiskSpace => 'Выделить место на диске';
+  String get allocateDiskSpace => 'Создание разделов вручную';
 
   @override
   String get startInstallingButtonText => 'Установить';
@@ -736,7 +736,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker включён';
 
   @override
-  String get turnOffBitlockerDescription => 'Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо отключить BitLocker в Windows перед установкой Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо отключить BitLocker в Windows перед установкой Ubuntu.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {

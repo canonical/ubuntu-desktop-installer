@@ -86,7 +86,7 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Vypněte RST';
+  String get turnOffRST => 'RST je zapnuté';
 
   @override
   String get turnOffRSTTitle => 'Turn off RST to continue';
@@ -154,7 +154,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get showSecurityKey => 'Zobrazit klíč zabezpečení';
 
   @override
-  String get connectToInternetPageTitle => 'Připojit k Internetu';
+  String get connectToInternetPageTitle => 'Připojit k síti';
 
   @override
   String get connectToInternetDescription => 'Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se ethernetovým kabelem, nebo zvolte Wi-Fi síť';
@@ -205,7 +205,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get connectButtonText => 'Připojit';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Aktualizace a ostatní software';
+  String get updatesOtherSoftwarePageTitle => 'Aplikace a aktualizace';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Které aplikace chcete mít hned od začátku nainstalované?';
@@ -252,7 +252,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get offlineWarning => 'V tu chvíli nejste připojení k Internetu';
 
   @override
-  String get chooseSecurityKeyTitle => 'Zvolte si šifrovací klíč';
+  String get chooseSecurityKeyTitle => 'Klíč zabezpečení';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -376,7 +376,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Dokumenty, hudba a ostatní osobní soubory zůstanou zachovány. Pokaždé, když počítač spustíte z vypnutého stavu (tedy nikoli uspání), budete si moci zvolit který operační systém spustit.';
 
   @override
-  String get installationTypeManual => 'Něco jiného';
+  String get installationTypeManual => 'Ruční rozdělení na oddíly';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installAlongsideAvailable => 'K dispozici:';
 
   @override
-  String get allocateDiskSpace => 'Přidělit prostor na disku';
+  String get allocateDiskSpace => 'Ruční rozdělení';
 
   @override
   String get startInstallingButtonText => 'Instalace';
@@ -571,7 +571,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get partitionMountPointLabel => 'Přípojný bod:';
 
   @override
-  String get whoAreYouPageTitle => 'Kdo jste?';
+  String get whoAreYouPageTitle => 'Nastavení vašeho účtu';
 
   @override
   String get whoAreYouPageAutoLogin => 'Přihlásit se automaticky';
@@ -694,7 +694,7 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Zvolte si vzhled pro své prostředí';
+  String get chooseYourLookPageTitle => 'Zvolte si motiv vzhledu';
 
   @override
   String get chooseYourLookPageHeader => 'Toto je možné později kdykoli změnit v nastavení vzhledu.';
@@ -733,10 +733,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get continueTesting => 'Pokračovat ve zkoušení';
 
   @override
-  String get turnOffBitlockerTitle => 'Vypněte BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker je zapnutý';
 
   @override
-  String get turnOffBitlockerDescription => 'Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné Ubuntu nainstalovat, je třeba Bitlocker vypnout.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné Ubuntu nainstalovat, je třeba Bitlocker vypnout.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -755,7 +757,7 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Kde se nacházíte?';
+  String get whereAreYouPageTitle => 'Vyberte své časové pásmo';
 
   @override
   String get whereAreYouLocationLabel => 'Umístění';

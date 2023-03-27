@@ -736,7 +736,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get turnOffBitlockerTitle => 'Desligar BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'Este computador usa criptografia do Windows BitLocker.\nPrecisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Este computador usa criptografia do Windows BitLocker.\nPrecisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -1700,7 +1702,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get turnOffBitlockerTitle => 'Desligar BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'Este computador usa criptografia do Windows BitLocker.\nVocê precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Este computador usa criptografia do Windows BitLocker.\nVocê precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
