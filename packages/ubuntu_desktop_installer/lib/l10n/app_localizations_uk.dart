@@ -89,6 +89,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get turnOffRST => 'Вимкнути RST';
 
   @override
+  String get turnOffRSTTitle => 'Turn off RST to continue';
+
+  @override
   String get turnOffRSTDescription => 'Цей комп’ютер використовує технологію Intel RST (Rapid Storage Technology). Перед встановленням Ubuntu вам потрібно вимкнути RST у Windows.';
 
   @override
