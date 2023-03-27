@@ -747,6 +747,14 @@ class AppLocalizationsNb extends AppLocalizations {
   String get restartIntoWindows => 'Omstart til Windows';
 
   @override
+  String get restartIntoWindowsTitle => 'Restart into Windows?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+  }
+
+  @override
   String get whereAreYouPageTitle => 'Hvem er du?';
 
   @override

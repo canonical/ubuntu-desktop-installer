@@ -747,6 +747,14 @@ class AppLocalizationsJa extends AppLocalizations {
   String get restartIntoWindows => '再起動して Windows を使用';
 
   @override
+  String get restartIntoWindowsTitle => 'Restart into Windows?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+  }
+
+  @override
   String get whereAreYouPageTitle => 'あなたの大まかな現在地を選択してください';
 
   @override

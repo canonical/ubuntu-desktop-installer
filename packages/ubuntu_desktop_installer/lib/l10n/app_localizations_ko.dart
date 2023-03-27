@@ -747,6 +747,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String get restartIntoWindows => 'Windows로 다시 시작';
 
   @override
+  String get restartIntoWindowsTitle => 'Restart into Windows?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+  }
+
+  @override
   String get whereAreYouPageTitle => '어디에 계시나요?';
 
   @override

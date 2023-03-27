@@ -652,6 +652,15 @@
   },
   "restartIntoWindows": "Restart into Windows",
   "@restartIntoWindows": {},
+  "restartIntoWindowsTitle": "Restart into Windows?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Are you sure you want to restart your computer? You will need to restart the {DISTRO} installation later to finish installing {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
   "whereAreYouPageTitle": "Select your timezone",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "Location",
