@@ -1,5 +1,23 @@
 {
   "@@locale": "vi",
   "welcome": "Chào mừng",
-  "@welcome": {}
+  "@welcome": {},
+  "okButtonText": "Đống ý",
+  "@okButtonText": {},
+  "noButtonText": "Không",
+  "@noButtonText": {},
+  "restartButtonText": "Khởi động lại",
+  "@restartButtonText": {},
+  "yesButtonText": "Có",
+  "@yesButtonText": {},
+  "cancelButtonText": "Hủy bỏ",
+  "@cancelButtonText": {},
+  "changeButtonText": "Thay đổi",
+  "@changeButtonText": {},
+  "welcomeHeader": "Đã chọn ngôn ngữ:",
+  "@welcomeHeader": {},
+  "keyboardLayoutPageTitle": "Kiểu bàn phím",
+  "@keyboardLayoutPageTitle": {},
+  "chooseYourKeyboardLayout": "Chọn kiểu bàn phím của bạn",
+  "@chooseYourKeyboardLayout": {}
 }

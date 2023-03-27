@@ -29,7 +29,7 @@
       "url": {}
     }
   },
-  "turnOffRST": "Desactivar RST",
+  "turnOffRST": "RST está activado",
   "@turnOffRST": {},
   "turnOffRSTDescription": "Este equipo utiliza Intel RST (Rapid Storage Technology). Es necesario desactivar RST en Windows antes de instalar Ubuntu.",
   "@turnOffRSTDescription": {},
@@ -48,7 +48,7 @@
   "@typeToTest": {},
   "detectLayout": "Detectar la distribución del teclado",
   "@detectLayout": {},
-  "updatesOtherSoftwarePageTitle": "Actualizaciones y otro software",
+  "updatesOtherSoftwarePageTitle": "Aplicaciones y actualizaciones",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "¿Qué aplicaciones le gustaría instalar para comenzar?",
   "@updatesOtherSoftwarePageDescription": {},
@@ -66,7 +66,7 @@
   "@installThirdPartyTitle": {},
   "installThirdPartySubtitle": "Este software está sujeto a los términos de licencia incluidos en su documentación. Algunos son privativos.",
   "@installThirdPartySubtitle": {},
-  "allocateDiskSpace": "Asignar espacio de disco",
+  "allocateDiskSpace": "Particionamiento manual",
   "@allocateDiskSpace": {},
   "startInstallingButtonText": "Instalar",
   "@startInstallingButtonText": {},
@@ -132,7 +132,7 @@
       "mountPath": {}
     }
   },
-  "chooseYourLookPageTitle": "Seleccione el aspecto",
+  "chooseYourLookPageTitle": "Elige tu tema",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "Puede cambiarlo después en la configuración de apariencia.",
   "@chooseYourLookPageHeader": {},
@@ -161,7 +161,7 @@
   "@partitionFormatFat16": {},
   "shutdown": "Apagar",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "Desactivar BitLocker",
+  "turnOffBitlockerTitle": "BitLocker está activado",
   "@turnOffBitlockerTitle": {},
   "restartIntoWindows": "Reiniciar en Windows",
   "@restartIntoWindows": {},
@@ -173,7 +173,7 @@
   "@confirmSecurityKey": {},
   "configureSecureBootSecurityKeyRequired": "Se necesita una clave de seguridad",
   "@configureSecureBootSecurityKeyRequired": {},
-  "chooseSecurityKeyTitle": "Elegir una clave de seguridad",
+  "chooseSecurityKeyTitle": "Clave de seguridad",
   "@chooseSecurityKeyTitle": {},
   "partitionCreateTitle": "Crear partición",
   "@partitionCreateTitle": {},
@@ -283,7 +283,7 @@
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "Instalar ahora",
   "@selectGuidedStorageInstallNow": {},
-  "installationTypeManual": "Otra cosa",
+  "installationTypeManual": "Partición manual",
   "@installationTypeManual": {},
   "installationTypeManualInfo": "Puede crear o cambiar el tamaño de las particiones manualmente, o elegir varias particiones para {DISTRO}",
   "@installationTypeManualInfo": {},
@@ -349,7 +349,7 @@
   "@partitionErase": {},
   "partitionMountPointLabel": "Punto de montaje:",
   "@partitionMountPointLabel": {},
-  "whoAreYouPageTitle": "¿Quién es usted?",
+  "whoAreYouPageTitle": "Crea tú cuenta",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "Acceder automáticamente",
   "@whoAreYouPageAutoLogin": {},
@@ -417,7 +417,7 @@
   "@webSlideTitle": {},
   "accessSlideLanguageSupport": "Soporte de idiomas",
   "@accessSlideLanguageSupport": {},
-  "connectToInternetPageTitle": "Conectarse a Internet",
+  "connectToInternetPageTitle": "Conectarse a una red",
   "@connectToInternetPageTitle": {},
   "hiddenWifiNetwork": "Conectarse a una red Wi-Fi oculta",
   "@hiddenWifiNetwork": {},
@@ -444,7 +444,7 @@
       "RELEASE": {}
     }
   },
-  "whereAreYouPageTitle": "¿Dónde se encuentra?",
+  "whereAreYouPageTitle": "Selecciona tu zona horaria",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "Ubicación",
   "@whereAreYouLocationLabel": {},
@@ -943,5 +943,7 @@
   "installationSlidesProductivityTitle": "Aumenta tu productividad",
   "@installationSlidesProductivityTitle": {},
   "installationSlidesSupportEnterprise": "Para los usuarios de empresa, Canonical ofrece soporte comercial para facilitar la incorporación y gestión segura de Ubuntu en el lugar de trabajo.",
-  "@installationSlidesSupportEnterprise": {}
+  "@installationSlidesSupportEnterprise": {},
+  "turnOffRSTTitle": "Desactive RST para continuar",
+  "@turnOffRSTTitle": {}
 }

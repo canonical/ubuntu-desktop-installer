@@ -99,7 +99,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "chooseYourKeyboardLayout": "Elektu vian klavaranĝon:",
   "@chooseYourKeyboardLayout": {},
-  "turnOffBitlockerTitle": "Malŝalti BitLocker",
+  "turnOffBitlockerTitle": "BitLocker estas ŝaltita",
   "@turnOffBitlockerTitle": {},
   "installationTypeReinstall": "Forviŝi {os} kaj reinstali",
   "@installationTypeReinstall": {
@@ -118,9 +118,9 @@
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "La sekurigaj ŝlosiloj ne kongruas",
   "@secureBootSecurityKeysDontMatch": {},
-  "updatesOtherSoftwarePageTitle": "Ĝisdatigoj kaj aliaj programoj",
+  "updatesOtherSoftwarePageTitle": "Programoj kaj ĝisdatigoj",
   "@updatesOtherSoftwarePageTitle": {},
-  "turnOffRST": "Malŝalti RST",
+  "turnOffRST": "Rapid-Konserveja Tekniko (RST) estas ŝaltita",
   "@turnOffRST": {},
   "writeChangesPartitionEntryUnmounted": "subdisko #{disk}{partition} kiel {format}",
   "@writeChangesPartitionEntryUnmounted": {
@@ -188,7 +188,7 @@
   "@dontInstallDriverSoftwareNow": {},
   "dontInstallDriverSoftwareNowDescription": "Vi povas instali ilin poste per Programaroj kaj Ĝisdatigoj.",
   "@dontInstallDriverSoftwareNowDescription": {},
-  "turnOffRSTDescription": "Ĉi tiu komputilo uzas Intel RST (Rapid Storage Technology). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.",
+  "turnOffRSTDescription": "Ĉi tiu komputilo uzas Intel RST (Rapid-Konservejan Teknikon). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.",
   "@turnOffRSTDescription": {},
   "instructionsForRST": "Por instrukcioj, malfermu ĉi tiun paĝon per via telefono aŭ alia aparato: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
@@ -205,7 +205,7 @@
   "@configureSecureBootOption": {},
   "installThirdPartySubtitle": "Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.",
   "@installThirdPartySubtitle": {},
-  "chooseSecurityKeyTitle": "Elektu sekurigan ŝlosilon",
+  "chooseSecurityKeyTitle": "Sekuriga ŝlosilo",
   "@chooseSecurityKeyTitle": {},
   "installationTypeNone": "Nenio",
   "@installationTypeNone": {},
@@ -278,7 +278,7 @@
   "@diskHeadersSystem": {},
   "selectGuidedStorageDropdownLabel": "Elektu diskon:",
   "@selectGuidedStorageDropdownLabel": {},
-  "installationTypeManual": "Io alia",
+  "installationTypeManual": "Neaŭtomata dispartigo",
   "@installationTypeManual": {},
   "selectGuidedStoragePageTitle": "Forviŝi la diskon kaj instali {DISTRO}",
   "@selectGuidedStoragePageTitle": {},
@@ -306,7 +306,7 @@
   "@diskHeadersFormat": {},
   "bootLoaderDevice": "Aparato, sur kiun instaliĝos la praŝargilo",
   "@bootLoaderDevice": {},
-  "allocateDiskSpace": "Asigni diskospacon",
+  "allocateDiskSpace": "Neaŭtomata dispartigo",
   "@allocateDiskSpace": {},
   "installationTypeManualInfo": "Vi povas mem krei subdiskojn aŭ ŝanĝi iliajn grandojn, aŭ elekti plurajn subdiskojn por {DISTRO}",
   "@installationTypeManualInfo": {},
@@ -320,7 +320,7 @@
   "@partitionFormatIso9660": {},
   "partitionFormatXfs": "Protokoliga dosiersistemo XFS",
   "@partitionFormatXfs": {},
-  "whoAreYouPageTitle": "Kiu vi estas?",
+  "whoAreYouPageTitle": "Agordu vian konton",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "Aŭtomate saluti",
   "@whoAreYouPageAutoLogin": {},
@@ -398,7 +398,7 @@
   "@enableWifi": {},
   "wifiMustBeEnabled": "Por uzi sendratajn retojn kun ĉi tiu komputilo, vi devas ebligi sendratajn retojn",
   "@wifiMustBeEnabled": {},
-  "connectToInternetPageTitle": "Konekti al Interreto",
+  "connectToInternetPageTitle": "Konekti al reto",
   "@connectToInternetPageTitle": {},
   "noWifiDevicesDetected": "Neniu sendratreta aparato troviĝis",
   "@noWifiDevicesDetected": {},
@@ -439,7 +439,7 @@
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Nomo de reto estas postulata",
   "@hiddenWifiNetworkNameRequired": {},
-  "whereAreYouPageTitle": "Kie vi estas?",
+  "whereAreYouPageTitle": "Elektu vian horzonon",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "Loko",
   "@whereAreYouLocationLabel": {},
@@ -934,5 +934,7 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "turnOffRSTTitle": "Malŝaltu RST por daŭrigi",
+  "@turnOffRSTTitle": {}
 }

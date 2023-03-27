@@ -6,7 +6,7 @@
   "@changeButtonText": {},
   "restartButtonText": "Yeniden başlat",
   "@restartButtonText": {},
-  "tryOrInstallPageTitle": "Dene veya kur",
+  "tryOrInstallPageTitle": "{DISTRO}'yu dene veya kur",
   "@tryOrInstallPageTitle": {},
   "welcome": "Hoş Geldiniz",
   "@welcome": {},
@@ -32,7 +32,7 @@
   "@repairInstallation": {},
   "connectToInternetDescription": "Bu bilgisayarı internete bağlamak, Ubuntu'nun ihtiyacı olan ek yazılımları kurmasına ve zaman diliminizi seçmenize yardımcı olur.\n\nEthernet kablosuyla bağlan veya bir Wi-Fi ağı seç",
   "@connectToInternetDescription": {},
-  "connectToInternetPageTitle": "İnternete bağlan",
+  "connectToInternetPageTitle": "Bir ağa bağlan",
   "@connectToInternetPageTitle": {},
   "useWiredConnection": "Kablolu bağlantı kullan",
   "@useWiredConnection": {},
@@ -58,7 +58,7 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST'yi kapat",
+  "turnOffRST": "RST etkin",
   "@turnOffRST": {},
   "turnOffRSTDescription": "Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu'yu kurmadan önce Windows'tan RST'yi kapatmalısınız.",
   "@turnOffRSTDescription": {},
@@ -77,7 +77,7 @@
   "@typeToTest": {},
   "chooseSecurityKey": "Güvenlik anahtarı seçin",
   "@chooseSecurityKey": {},
-  "detectLayout": "Klavye Düzenini Tespit Et",
+  "detectLayout": "Klavye düzenini algıla",
   "@detectLayout": {},
   "pressOneKey": "Lütfen aşağıdaki tuşlardan birine basın:",
   "@pressOneKey": {},
@@ -125,18 +125,18 @@
   "@otherOptions": {},
   "installThirdPartyTitle": "Grafikler ve Wi-Fi donanımı için üçüncü taraf yazılımların yanı sıra ek medya biçimlerini de kur",
   "@installThirdPartyTitle": {},
-  "onBatteryWarning": "<font color=\"{color}\">Uyarı</font>: Bilgisayar güç kaynağına takılı değil.",
+  "onBatteryWarning": "<font color=\"{color}\">Uyarı:</font> Bilgisayar güç kaynağına takılı değil.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
       "color": {}
     }
   },
-  "chooseSecurityKeyTitle": "Güvenlik anahtarı seç",
+  "chooseSecurityKeyTitle": "Güvenlik anahtarı",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyMismatch": "Güvenlik anahtarları eşleşmiyor",
   "@chooseSecurityKeyMismatch": {},
-  "selectGuidedStorageInstallNow": "Şimdi Kur",
+  "selectGuidedStorageInstallNow": "Şimdi kur",
   "@selectGuidedStorageInstallNow": {},
   "diskHeadersSize": "Boyut",
   "@diskHeadersSize": {},
@@ -180,7 +180,7 @@
   "@chooseSecurityKeyRequired": {},
   "diskHeadersDevice": "Cihaz",
   "@diskHeadersDevice": {},
-  "allocateDiskSpace": "Disk alanı ayır",
+  "allocateDiskSpace": "Elle biçimlendirme",
   "@allocateDiskSpace": {},
   "newPartitionTable": "Yeni bölüm tablosu",
   "@newPartitionTable": {},
@@ -196,7 +196,7 @@
   "@diskHeadersFormat": {},
   "freeDiskSpace": "Boş alan",
   "@freeDiskSpace": {},
-  "newPartitionTableConfirmationTitle": "Bu cihazda yeni bir boş bölüm tablosu oluşturulsun mu?",
+  "newPartitionTableConfirmationTitle": "Yeni boş bölüm",
   "@newPartitionTableConfirmationTitle": {},
   "partitionCreateTitle": "Bölüm oluştur",
   "@partitionCreateTitle": {},
@@ -214,7 +214,7 @@
   "@partitionErase": {},
   "partitionMountPointLabel": "Bağlama noktası:",
   "@partitionMountPointLabel": {},
-  "whoAreYouPageTitle": "Kimsiniz?",
+  "whoAreYouPageTitle": "Hesap oluşturun",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageRealNameLabel": "Adınız",
   "@whoAreYouPageRealNameLabel": {},
@@ -236,7 +236,7 @@
   "@whoAreYouPagePasswordLabel": {},
   "whoAreYouPageShowPassword": "Parolayı göster",
   "@whoAreYouPageShowPassword": {},
-  "whereAreYouPageTitle": "Neredesiniz?",
+  "whereAreYouPageTitle": "Saat diliminizi seçin",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "Konum",
   "@whereAreYouLocationLabel": {},
@@ -267,7 +267,7 @@
   "@officeSlideImpress": {},
   "accessSlideCustomizationOptions": "Özelleştirme seçenekleri",
   "@accessSlideCustomizationOptions": {},
-  "startInstallingButtonText": "Kurulumu Başlat",
+  "startInstallingButtonText": "Kur",
   "@startInstallingButtonText": {},
   "welcomeHeader": "Dil seçin:",
   "@welcomeHeader": {},
@@ -297,7 +297,7 @@
       "os": {}
     }
   },
-  "installationTypeManual": "Başka bir şey",
+  "installationTypeManual": "Elle bölümlendirme",
   "@installationTypeManual": {},
   "selectGuidedStorageDropdownLabel": "Sürücü seçin:",
   "@selectGuidedStorageDropdownLabel": {},
@@ -315,11 +315,11 @@
   "@webSlideChromium": {},
   "officeSlideTitle": "Ofis için ihtiyacınız olan her şey",
   "@officeSlideTitle": {},
-  "updatesOtherSoftwarePageTitle": "Güncellemeler ve diğer yazılımlar",
+  "updatesOtherSoftwarePageTitle": "Uygulama ve güncelleştirmeler",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "Başlangıç olarak hangi uygulamaları kurmak istersiniz?",
   "@updatesOtherSoftwarePageDescription": {},
-  "installationTypeAdvancedLabel": "İleri Seviye Özellikler...",
+  "installationTypeAdvancedLabel": "Gelişmiş özellikler...",
   "@installationTypeAdvancedLabel": {},
   "installationTypeAdvancedTitle": "İleri seviye özellikler",
   "@installationTypeAdvancedTitle": {},
@@ -368,7 +368,7 @@
   "@partitionFormatExt2": {},
   "partitionFormatFat": "FAT dosya sistemi",
   "@partitionFormatFat": {},
-  "writeChangesToDisk": "Değişiklikleri diske yaz",
+  "writeChangesToDisk": "Kuruluma hazır",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "disk",
   "@writeChangesFallbackSerial": {
@@ -384,7 +384,7 @@
   },
   "writeChangesPartitionsHeader": "Aşağıdaki bölüm değişiklikleri uygulanacak:",
   "@writeChangesPartitionsHeader": {},
-  "chooseYourLookPageTitle": "Görünüm seçin",
+  "chooseYourLookPageTitle": "Temanızı seçin",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.",
   "@chooseYourLookPageHeader": {},
@@ -403,9 +403,9 @@
   },
   "shutdown": "Kapat",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "BitLocker'ı kapat",
+  "turnOffBitlockerTitle": "BitLocker aktif",
   "@turnOffBitlockerTitle": {},
-  "restartIntoWindows": "Windows'a Yeniden Başlat",
+  "restartIntoWindows": "Windows'a yeniden başlat",
   "@restartIntoWindows": {},
   "chooseSecurityKeyHeader": "Disk şifreleme bilgisayarınızı kaybetme ihtimaline karşı dosyalarınızı korumaktadır. Bilgisayar her başladığında bir güvenlik anahtarı girmenizi gerektirmektedir.\n\n{RELEASE} haricindeki dosyalar şifrelenmeyecektir.",
   "@chooseSecurityKeyHeader": {
@@ -463,7 +463,7 @@
   "@configuringSystem": {},
   "installationFailed": "Kurulum başarısız oldu",
   "@installationFailed": {},
-  "newPartitionTableConfirmationMessage": "Bölümlemek için tüm cihazı seçtiniz. Yeni bölüm tablosu oluşturmaya devam ederseniz, cihazdaki mevcut tüm bölümler kaldırılacak.\n\nDilerseniz bu işlemi daha sonra geri alabileceğinizi unutmayın.",
+  "newPartitionTableConfirmationMessage": "Cihazın tamamında yeni bir bölüm tablosu oluşturmak var olan bölümleri siler. Bu işlem gerekirse geri alınabilir.",
   "@newPartitionTableConfirmationMessage": {},
   "webSlideDescription": "{RELEASE} dünya çapında milyonlarca kişi tarafından kullanılan web tarayıcısı Firefox ile geliyor. Ayrıca sık kullandığınız internet uygulamaları (örneğin Facebook veya Gmail gibi), tıpkı bilgisayarınızdaki uygulamalar gibi daha hızlı erişim için masaüstünüze sabitleyebilirsiniz.",
   "@webSlideDescription": {
@@ -558,7 +558,7 @@
   },
   "partitionFormatLabel": "Kullanılan:",
   "@partitionFormatLabel": {},
-  "writeChangesPartitionMounted": "#{disk}{partition} bölümü {mount} için kullanıldı",
+  "writeChangesPartitionMounted": "<b>{disk}{partition}</b> bölümü <b>{mount}</b> için kullanıldı",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -569,7 +569,7 @@
   },
   "writeChangesPartitionTablesHeader": "Aşağıdaki cihazların bölüm tabloları değiştirildi:",
   "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionResized": "#{disk}{partition} bölümü {oldsize} boyutundan {newsize} boyutuna yeniden boyutlandırıldı",
+  "writeChangesPartitionResized": "<b>{disk}{partition}</b> bölümü <b>{oldsize}</b> boyutundan <b>{newsize}</b> boyutuna yeniden boyutlandırıldı",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -593,7 +593,7 @@
   "@installAlongsideAvailable": {},
   "whoAreYouPageUsernameTooLong": "Bu ad çok uzun.",
   "@whoAreYouPageUsernameTooLong": {},
-  "writeChangesPartitionFormatted": "#{disk}{partition} bölümü {format} olarak biçimlendirildi",
+  "writeChangesPartitionFormatted": "<b>{disk}{partition}</b> bölümü <b>{format}</b> olarak biçimlendirildi",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -620,7 +620,7 @@
       "product": {}
     }
   },
-  "writeChangesPartitionCreated": "#{disk}{partition} bölümü oluşturuldu",
+  "writeChangesPartitionCreated": "<b>{disk}{partition}</b> bölümü oluşturuldu",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -651,7 +651,7 @@
       "os2": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "#{disk}{partition} bölümü ({format} olarak biçimlendirilmiş) {mount} için kullanıldı",
+  "writeChangesPartitionFormattedMounted": "<b>{format} </b> biçimindeki <b>{disk}{partition}</b> bölümü <b>{mount}</b> için kullanıldı",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -663,7 +663,7 @@
   },
   "turnOffBitlockerDescription": "Bu bilgisayar Windows BitLocker şifreleme kullanıyor.\nUbuntu'yu kurmadan önce Windows'ta BitLocker'ı kapatmanız gerekli.",
   "@turnOffBitlockerDescription": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Uyarı</font>: Bu güvenlik anahtarını kaybederseniz tüm veriler kaybolur. Gerekirse, anahtarınızı bir yere yazın ve güvenli başka bir yerde saklayın.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Uyarı:</font> Bu güvenlik anahtarını kaybederseniz tüm veriler kaybolur. Gerekirse, anahtarınızı bir yere yazın ve güvenli başka bir yerde saklayın.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -729,9 +729,9 @@
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.",
   "@installCodecsSubtitle": {},
-  "restartNow": "Şimdi Yeniden Başlat",
+  "restartNow": "Şimdi yeniden başlat",
   "@restartNow": {},
-  "continueTesting": "Test Etmeye Devam Et",
+  "continueTesting": "Test etmeye devam et",
   "@continueTesting": {},
   "restartWarning": "Şimdi {RELEASE} test etmeye devam edebilirsiniz, ancak bilgisayarı yeniden başlatana kadar yaptığınız değişiklikler ya da kaydettiğiniz belgeler korunmayacaktır.",
   "@restartWarning": {
@@ -751,5 +751,78 @@
   "whoAreYouPagePasswordHide": "Gizle",
   "@whoAreYouPagePasswordHide": {},
   "partitionFormatNone": "Biçimlendirilmemiş bırak",
-  "@partitionFormatNone": {}
+  "@partitionFormatNone": {},
+  "whoAreYouPageRealNameTooLong": "Bu isim çok uzun.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "installationSlidesTitle": "{RELEASE} sürümüne hoş geldiniz",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesIncluded": "Dahil:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "Hızlı, ücretsiz ve yeni özelliklerle dolu",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "{DISTRO}'nun son sürümü işleri hiç olmadığı kadar kolaylaştırır.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "preparingUbuntu": "{DISTRO} hazırlanıyor...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "Algıla",
+  "@detectButtonText": {},
+  "keyboardVariant": "Klavye yerleşimi:",
+  "@keyboardVariant": {},
+  "whoAreYouPageComputerNameTooLong": "Bu bilgisayar ismi çok uzun.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "writeChangesDevicesTitle": "Aygıtlar",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Disk bölümleri",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesAvailable": "Mevcut:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesWelcomeBody": "Geliştirici, içerik üreticisi, sanatçı, oyuncu ya da sistem yöneticisi olun fark etmez, {RELEASE} sürümünde verimliliğinizi arttıracak ve deneyiminizi iyileştirecek yeni araçlar bulacaksınız.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "İhtiyacınız olan tüm uygulamalar",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "Snap Store ve {DISTRO} arşivindeki binlercesi de dahil olmak üzere tüm uygulamaları Ubuntu Software ile kurun, yönetin ve güncelleyin.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentTitle": "Açık kaynağın en iyisi ile geliştir",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} uygulama veya web geliştirme, veri bilimi, yapay zeka ve makine öğrenmesi yanı sıra sistem yönetimi ve DevOps için ideal iş istasyonudur. Her {DISTRO} sürümü en güncel toolchainleri içerir ve tüm popüler IDE'leri destekler.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Yaratıcılığınızı zenginleştirin",
+  "@installationSlidesCreativityTitle": {},
+  "welcomePageTitle": "{DISTRO} dağıtımına hoş geldiniz",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
