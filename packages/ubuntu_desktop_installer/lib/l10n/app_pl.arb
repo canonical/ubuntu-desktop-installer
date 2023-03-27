@@ -169,7 +169,7 @@
   },
   "turnOffRST": "Funkcja RST jest włączona",
   "@turnOffRST": {},
-  "turnOffRSTDescription": "Ten komputer wykorzystuje technologię Intel RST (Rapid Storage Technology). Musisz wyłączyć RST w systemie Windows przed instalacją Ubuntu.",
+  "turnOffRSTDescription": "Ten komputer wykorzystuje funkcję Intel RST (Rapid Storage Technology). Musisz wyłączyć RST w systemie Windows przed instalacją Ubuntu.",
   "@turnOffRSTDescription": {},
   "keyboardLayoutPageTitle": "Układ klawiatury",
   "@keyboardLayoutPageTitle": {},
@@ -934,5 +934,7 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "turnOffRSTTitle": "Wyłącz funkcję RST, aby kontynuować",
+  "@turnOffRSTTitle": {}
 }
