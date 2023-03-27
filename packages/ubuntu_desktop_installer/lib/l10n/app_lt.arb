@@ -173,7 +173,7 @@
   },
   "turnOffRSTDescription": "Šis kompiuteris naudoja Intel RST (Rapid Storage Technology). Prieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti RST.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Norėdami skaityti instrukcijas, atverkite telefone ar kitame įrenginyje šį puslapį: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -334,7 +334,7 @@
       "RELEASE": {}
     }
   },
-  "turnOffBitlockerDescription": "Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nPrieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti „BitLocker“.",
+  "turnOffBitlockerDescription": "Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nNorėdami tęsti, turite pasinaudoti „Windows“ ir sukurti laisvą vietą arba pasirinkti variantą '{option}'.",
   "@turnOffBitlockerDescription": {},
   "welcomeSlideDescription": "Greita ir pilna naujų ypatybių, naujausia {RELEASE} versija leidžia naudotis kompiuteriu dar lengviau nei bet kada anksčiau. Štai keli naudingi dalykai, į kuriuos verta atkreipti dėmesį...",
   "@welcomeSlideDescription": {
@@ -595,7 +595,7 @@
   },
   "chooseYourLookPageTitle": "Pasirinkite apipavidalinimą",
   "@chooseYourLookPageTitle": {},
-  "turnOffBitlockerLinkInstructions": "Norėdami gauti instrukcijas, atverkite savo telefone ar kitame įrenginyje šią internetinę svetainę: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -853,5 +853,18 @@
   "partitionFormatBtrfs": "btrfs žurnalinė failų sistema",
   "@partitionFormatBtrfs": {},
   "partitionFormatXfs": "XFS žurnalinė failų sistema",
-  "@partitionFormatXfs": {}
+  "@partitionFormatXfs": {},
+  "turnOffRSTTitle": "Norėdami tęsti, išjunkite RST",
+  "@turnOffRSTTitle": {},
+  "turnOffBitlockerHeadline": "Norėdami tęsti, išjunkite „BitLocker“",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsDescription": "Ar tikrai norite paleisti kompiuterį iš naujo? Vėliau jums teks pradėti {DISTRO} diegimą iš naujo, kad užbaigtumėte diegti {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "restartIntoWindowsTitle": "Paleisti iš naujo į „Windows“ sistemą?",
+  "@restartIntoWindowsTitle": {}
 }
