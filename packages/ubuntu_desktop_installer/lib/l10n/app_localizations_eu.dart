@@ -89,6 +89,9 @@ class AppLocalizationsEu extends AppLocalizations {
   String get turnOffRST => 'Itzali RST';
 
   @override
+  String get turnOffRSTTitle => 'Turn off RST to continue';
+
+  @override
   String get turnOffRSTDescription => 'Ordenagailu honek Intel RST (Rapid Storage Technology) erabiltzen du. RST itzali behar duzu Windowsen Ubuntu instalatu baino lehenago.';
 
   @override

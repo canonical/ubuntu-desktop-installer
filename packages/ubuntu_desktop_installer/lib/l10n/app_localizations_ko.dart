@@ -89,6 +89,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get turnOffRST => 'RST 끄기';
 
   @override
+  String get turnOffRSTTitle => 'Turn off RST to continue';
+
+  @override
   String get turnOffRSTDescription => '이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.';
 
   @override

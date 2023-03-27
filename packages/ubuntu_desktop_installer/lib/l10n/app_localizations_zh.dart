@@ -89,6 +89,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get turnOffRST => '关闭 RST';
 
   @override
+  String get turnOffRSTTitle => 'Turn off RST to continue';
+
+  @override
   String get turnOffRSTDescription => '这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，您需要在Windows中关闭RST。';
 
   @override

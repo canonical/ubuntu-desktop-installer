@@ -89,6 +89,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get turnOffRST => 'RST kikapcsolása';
 
   @override
+  String get turnOffRSTTitle => 'Turn off RST to continue';
+
+  @override
   String get turnOffRSTDescription => 'Ez a számítógép Intel RST (Rapid Storage Technology) technológiát használ. Az RST-t ki kell kapcsolnia a Windowsban az Ubuntu telepítése előtt.';
 
   @override

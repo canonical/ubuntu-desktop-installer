@@ -368,6 +368,12 @@ abstract class AppLocalizations {
   /// **'RST is enabled'**
   String get turnOffRST;
 
+  /// No description provided for @turnOffRSTTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn off RST to continue'**
+  String get turnOffRSTTitle;
+
   /// No description provided for @turnOffRSTDescription.
   ///
   /// In en, this message translates to:
