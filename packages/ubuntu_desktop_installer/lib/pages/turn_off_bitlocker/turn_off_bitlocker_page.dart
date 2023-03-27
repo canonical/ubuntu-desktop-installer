@@ -59,7 +59,7 @@ class TurnOffBitLockerPage extends StatelessWidget {
                       style: Theme.of(context).textTheme.headlineSmall),
                   const SizedBox(height: kContentSpacing),
                   Text(lang.turnOffBitlockerDescription(
-                      lang.installationTypeErase(Flavor.of(context).name))),
+                      lang.installationTypeErase(flavor.name))),
                   const SizedBox(height: kContentSpacing),
                   Html(
                     data: lang.turnOffBitlockerLinkInstructions(
