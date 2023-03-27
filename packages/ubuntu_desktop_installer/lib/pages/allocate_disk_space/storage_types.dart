@@ -15,6 +15,7 @@ extension DiskExtension on Disk {
 
 extension PartitionExtension on Partition {
   bool get canWipe => PartitionFormat.fromPartition(this)?.canWipe == true;
+  bool get canEdit => format != 'BitLocker';
   bool get isEncrypted => format == 'BitLocker';
   bool get isWiped => wipe == 'superblock';
   String get prettySize => filesize(size ?? 0);

@@ -92,7 +92,7 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
   bool get canRemovePartition => selectedPartition != null;
 
   /// Whether the currently selected partition can be edited.
-  bool get canEditPartition => selectedPartition != null;
+  bool get canEditPartition => selectedPartition?.canEdit == true;
 
   /// Whether the currently selected disk can be reformatted.
   bool get canReformatDisk => selectedDisk != null && selectedObject == null;
