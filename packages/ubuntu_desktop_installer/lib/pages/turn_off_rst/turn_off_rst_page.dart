@@ -43,7 +43,9 @@ class TurnOffRSTPage extends StatelessWidget {
                 child: SvgPicture.asset(
                   'assets/turn_off_rst/qr-code.svg',
                   colorFilter: ColorFilter.mode(
-                    Theme.of(context).colorScheme.onSurface,
+                    Theme.of(context).brightness == Brightness.light
+                        ? Colors.black
+                        : Colors.white,
                     BlendMode.srcIn,
                   ),
                 ),
