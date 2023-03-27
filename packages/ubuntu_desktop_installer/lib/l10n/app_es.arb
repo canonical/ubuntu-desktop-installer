@@ -943,5 +943,7 @@
   "installationSlidesProductivityTitle": "Aumenta tu productividad",
   "@installationSlidesProductivityTitle": {},
   "installationSlidesSupportEnterprise": "Para los usuarios de empresa, Canonical ofrece soporte comercial para facilitar la incorporación y gestión segura de Ubuntu en el lugar de trabajo.",
-  "@installationSlidesSupportEnterprise": {}
+  "@installationSlidesSupportEnterprise": {},
+  "turnOffRSTTitle": "Desactive RST para continuar",
+  "@turnOffRSTTitle": {}
 }
