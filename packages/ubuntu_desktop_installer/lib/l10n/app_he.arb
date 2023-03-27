@@ -81,7 +81,7 @@
   "@repairInstallationDescription": {},
   "turnOffRSTDescription": "המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -934,5 +934,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "turnOffRSTTitle": "יש לכבות את ה־RST כדי להמשיך",
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsTitle": "לעלות מחדש ל־Windows?",
+  "@restartIntoWindowsTitle": {}
 }
