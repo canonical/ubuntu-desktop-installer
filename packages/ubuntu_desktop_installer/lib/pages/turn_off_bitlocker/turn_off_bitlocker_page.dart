@@ -10,6 +10,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+import '../../widgets.dart';
 import 'turn_off_bitlocker_model.dart';
 
 class TurnOffBitLockerPage extends StatelessWidget {
@@ -72,9 +73,19 @@ class TurnOffBitLockerPage extends StatelessWidget {
                   ),
                   const SizedBox(height: kContentSpacing),
                   FilledButton(
-                    onPressed: () {
+                    onPressed: () async {
                       final window = YaruWindow.of(context);
-                      model.reboot().then((_) => window.close());
+                      final confirmed = await showConfirmationDialog(
+                        context,
+                        title: lang.turnOffBitlockerTitle,
+                        message: lang.restartIntoWindowsDescription(
+                            Flavor.of(context).name),
+                        okLabel: lang.restartButtonText,
+                        okElevated: true,
+                      );
+                      if (confirmed) {
+                        model.reboot().then((_) => window.close());
+                      }
                     },
                     child: Text(lang.restartIntoWindows),
                   ),

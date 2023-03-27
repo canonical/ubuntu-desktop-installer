@@ -39,7 +39,17 @@ void main() {
     final windowClosed = YaruTestWindow.waitForClosed();
 
     await tester.tap(restartButton);
-    await tester.pump();
+    await tester.pumpAndSettle();
+    verifyNever(model.reboot());
+
+    final continueButton = find.descendant(
+        of: find.byType(AlertDialog),
+        matching: find.text(tester.lang.restartButtonText));
+
+    await tester.tap(continueButton);
+    await tester.pumpAndSettle();
+
+    expect(find.byType(AlertDialog), findsNothing);
     verify(model.reboot()).called(1);
 
     await expectLater(windowClosed, completes);
