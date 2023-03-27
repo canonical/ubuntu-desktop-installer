@@ -28,7 +28,7 @@
   "@turnOffRST": {},
   "turnOffRSTDescription": "Cet ordinateur utilise la technologie RST (Rapid Storage Technology) d’Intel. Il est nécessaire de désactiver RST sous Windows avant d’installer Ubuntu.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Pour des instructions détaillées, veuillez ouvrir ce lien sur un téléphone ou un autre appareil : <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Pour obtenir des instructions, scannez le code QR sur un autre appareil ou visitez le site : <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {},
   "keyboardLayoutPageTitle": "Disposition du clavier",
   "@keyboardLayoutPageTitle": {},
@@ -133,7 +133,7 @@
   "@installationTypeTitle": {},
   "installationTypeNoOSDetected": "Aucun système d’exploitation n’a été détecté sur cet ordinateur. Que voulez-vous faire ?",
   "@installationTypeNoOSDetected": {},
-  "installationTypeEraseWarning": "<font color=\"{color}\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d’exploitation.",
+  "installationTypeEraseWarning": "<font color=\"{color}\">Attention :</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d’exploitation.",
   "@installationTypeEraseWarning": {
     "type": "text",
     "placeholders": {
@@ -260,14 +260,14 @@
   "@installationTypeEncrypt": {},
   "configureSecureBootDescription": "Vous avez choisi d’installer des pilotes logiciels tiers. Cela nécessite de désactiver Secure Boot.\nPour cela, vous devez choisir une clé de sécurité maintenant, et l’entrer quand le système démarrera.",
   "@configureSecureBootDescription": {},
-  "turnOffBitlockerLinkInstructions": "Pour obtenir des instructions, ouvrez cette page sur un téléphone ou un autre appareil : <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Pour obtenir des instructions, scannez le code QR sur un autre appareil ou visitez le site : <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "turnOffBitlockerDescription": "Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez désactiver BitLocker dans Windows avant d’installer Ubuntu.",
+  "turnOffBitlockerDescription": "Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez utiliser Windows pour créer de l’espace libre ou choisir « {option} » pour continuer.",
   "@turnOffBitlockerDescription": {},
   "restartIntoWindows": "Redémarrer sous Windows",
   "@restartIntoWindows": {},
@@ -414,7 +414,7 @@
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "La création d’une nouvelle table de partitions sur un périphérique entier supprimera toutes ses partitions actuelles. Vous pourrez annuler cette opération plus tard si vous le souhaitez.",
   "@newPartitionTableConfirmationMessage": {},
-  "onBatteryWarning": "<font color=\"{color}\"> Avertissement:</font> L’ordinateur n’est pas branché à une source d’alimentation.",
+  "onBatteryWarning": "<font color=\"{color}\"> Avertissement :</font> L’ordinateur n’est pas branché à une source d’alimentation.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -822,7 +822,7 @@
   "@writeChangesPartitionsTitle": {},
   "installationSlidesWelcomeTitle": "Rapide, gratuit et plein de nouvelles fonctionnalités",
   "@installationSlidesWelcomeTitle": {},
-  "installationSlidesWelcomeHeader": "La dernière version de {DISTRO} rend l’informatique plus facile que jamais.",
+  "installationSlidesWelcomeHeader": "La dernière version d’{DISTRO} rend l’informatique plus facile que jamais.",
   "@installationSlidesWelcomeHeader": {
     "type": "text",
     "placeholders": {
@@ -865,7 +865,7 @@
       "DISTRO": {}
     }
   },
-  "installationSlidesSupportHeader": "La documentation officielle de {DISTRO} est disponible en ligne et via l’icône Aide dans le dock.",
+  "installationSlidesSupportHeader": "La documentation officielle d’{DISTRO} est disponible en ligne et via l’icône Aide dans le dock.",
   "@installationSlidesSupportHeader": {
     "type": "text",
     "placeholders": {
@@ -889,7 +889,7 @@
       "DISTRO": {}
     }
   },
-  "installationSlidesSupportEnterprise": "Pour les entreprises, Canonical propose un support commercial qui facilite l'intégration et la gestion d'Ubuntu en toute sécurité sur le lieu de travail.",
+  "installationSlidesSupportEnterprise": "Pour les entreprises, Canonical propose un support commercial qui facilite l’intégration et la gestion d’Ubuntu en toute sécurité sur le lieu de travail.",
   "@installationSlidesSupportEnterprise": {},
   "installationSlidesSupportCommunity": "Ask Ubuntu couvre une gamme de questions et de réponses. Discours Ubuntu fournit des guides et des discussions pour les nouveaux utilisateurs et les utilisateurs expérimentés.",
   "@installationSlidesSupportCommunity": {},
@@ -924,5 +924,16 @@
   "installationSlidesSupportResources": "Ressources utiles :",
   "@installationSlidesSupportResources": {},
   "turnOffRSTTitle": "Désactivez RST pour continuer",
-  "@turnOffRSTTitle": {}
+  "@turnOffRSTTitle": {},
+  "turnOffBitlockerHeadline": "Désactivez BitLocker pour continuer",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "Redémarrer sous Windows ?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Voulez-vous vraiment redémarrer votre ordinateur ? Vous devrez redémarrer l’installation d’{DISTRO} ultérieurement pour compléter l’installation d’{DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
