@@ -10,6 +10,7 @@ Future<bool> showConfirmationDialog(
   required String title,
   required String message,
   String? okLabel,
+  bool okElevated = false,
 }) async {
   final lang = UbuntuLocalizations.of(context);
   final result = await showDialog<bool>(
@@ -29,10 +30,15 @@ Future<bool> showConfirmationDialog(
             child: Text(lang.cancelLabel),
             onPressed: () => Navigator.of(context).pop(false),
           ),
-          PushButton.filled(
-            child: Text(okLabel ?? lang.okLabel),
-            onPressed: () => Navigator.of(context).pop(true),
-          ),
+          okElevated
+              ? PushButton.elevated(
+                  child: Text(okLabel ?? lang.okLabel),
+                  onPressed: () => Navigator.of(context).pop(true),
+                )
+              : PushButton.filled(
+                  child: Text(okLabel ?? lang.okLabel),
+                  onPressed: () => Navigator.of(context).pop(true),
+                ),
         ],
       );
     },

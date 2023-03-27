@@ -78,6 +78,7 @@ class TurnOffRSTPage extends StatelessWidget {
                           message: lang.restartIntoWindowsDescription(
                               Flavor.of(context).name),
                           okLabel: lang.restartButtonText,
+                          okElevated: true,
                         );
                         if (confirmed) {
                           model.reboot().then((_) => window.close());
