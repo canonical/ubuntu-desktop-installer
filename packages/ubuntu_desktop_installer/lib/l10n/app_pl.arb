@@ -936,5 +936,14 @@
     }
   },
   "turnOffRSTTitle": "Wyłącz funkcję RST, aby kontynuować",
-  "@turnOffRSTTitle": {}
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsDescription": "Czy na pewno chcesz ponownie uruchomić komputer? Później będziesz musieć ponownie uruchomić instalację {DISTRO}, aby zakończyć instalowanie {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "restartIntoWindowsTitle": "Uruchomić ponownie do Windows?",
+  "@restartIntoWindowsTitle": {}
 }
