@@ -44,7 +44,15 @@ class TurnOffBitLockerPage extends StatelessWidget {
             onLinkTap: (url, _, __, ___) => launchUrl(url!),
           ),
           const SizedBox(height: 60),
-          SvgPicture.asset('assets/turn_off_bitlocker/qr-code.svg')
+          SvgPicture.asset(
+            'assets/turn_off_bitlocker/qr-code.svg',
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).brightness == Brightness.light
+                  ? Colors.black
+                  : Colors.white,
+              BlendMode.srcIn,
+            ),
+          )
         ],
       ),
       actions: [
