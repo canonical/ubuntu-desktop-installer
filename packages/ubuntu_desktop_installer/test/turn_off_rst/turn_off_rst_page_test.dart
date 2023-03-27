@@ -30,7 +30,7 @@ void main() {
     );
 
     final restartButton = find.widgetWithText(
-      ElevatedButton,
+      FilledButton,
       tester.lang.restartIntoWindows,
     );
     expect(restartButton, findsOneWidget);
