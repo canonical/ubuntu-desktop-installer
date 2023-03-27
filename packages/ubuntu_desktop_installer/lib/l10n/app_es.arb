@@ -954,5 +954,7 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "turnOffBitlockerHeadline": "Desactive BitLocker para continuar",
+  "@turnOffBitlockerHeadline": {}
 }
