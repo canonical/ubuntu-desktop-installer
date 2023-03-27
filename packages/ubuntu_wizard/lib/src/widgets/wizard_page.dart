@@ -24,6 +24,7 @@ class WizardPage extends StatefulWidget {
     this.contentPadding = kContentPadding,
     this.contentSpacing = kContentSpacing,
     this.footerPadding = kFooterPadding,
+    this.singleLeading = false,
     this.actions = const <WizardAction>[],
     this.snackBar,
   });
@@ -63,6 +64,9 @@ class WizardPage extends StatefulWidget {
   /// A list of actions in the button bar.
   final List<WizardAction> actions;
 
+  /// If true, a single action will be shown as a leading button.
+  final bool singleLeading;
+
   @override
   State<WizardPage> createState() => _WizardPageState();
 }
@@ -88,9 +92,12 @@ class _WizardPageState extends State<WizardPage> {
     final currentStep = (wizardScope?.routeData as int?);
 
     // a leading (back) action only on pages that have more than one action
-    final leading = widget.actions.length > 1 ? widget.actions.first : null;
+    final leading = widget.actions.length > 1 || widget.singleLeading
+        ? widget.actions.first
+        : null;
     // the rest are shown on the right side
-    final trailing = widget.actions.skip(widget.actions.length > 1 ? 1 : 0);
+    final trailing = widget.actions
+        .skip(widget.actions.length > 1 || widget.singleLeading ? 1 : 0);
 
     return ScaffoldMessenger(
       child: Scaffold(
