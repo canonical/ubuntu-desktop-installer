@@ -71,7 +71,7 @@ class TurnOffBitLockerPage extends StatelessWidget {
                     onLinkTap: (url, _, __, ___) => launchUrl(url!),
                   ),
                   const SizedBox(height: kContentSpacing),
-                  ElevatedButton(
+                  FilledButton(
                     onPressed: () {
                       final window = YaruWindow.of(context);
                       model.reboot().then((_) => window.close());

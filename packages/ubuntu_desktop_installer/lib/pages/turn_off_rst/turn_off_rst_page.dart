@@ -71,7 +71,7 @@ class TurnOffRSTPage extends StatelessWidget {
                       onLinkTap: (url, _, __, ___) => launchUrl(url!),
                     ),
                     const SizedBox(height: kContentSpacing),
-                    ElevatedButton(
+                    FilledButton(
                       onPressed: () async {
                         final window = YaruWindow.of(context);
                         final confirmed = await showConfirmationDialog(
