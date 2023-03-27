@@ -747,6 +747,14 @@ class AppLocalizationsMl extends AppLocalizations {
   String get restartIntoWindows => 'വിന്ഡോസിലേക്ക് പുനരാരംഭിക്കുക';
 
   @override
+  String get restartIntoWindowsTitle => 'Restart into Windows?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+  }
+
+  @override
   String get whereAreYouPageTitle => 'Select your timezone';
 
   @override

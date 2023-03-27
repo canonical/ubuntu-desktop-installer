@@ -1568,6 +1568,18 @@ abstract class AppLocalizations {
   /// **'Restart into Windows'**
   String get restartIntoWindows;
 
+  /// No description provided for @restartIntoWindowsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Restart into Windows?'**
+  String get restartIntoWindowsTitle;
+
+  /// No description provided for @restartIntoWindowsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to restart your computer? You will need to restart the {DISTRO} installation later to finish installing {DISTRO}.'**
+  String restartIntoWindowsDescription(Object DISTRO);
+
   /// No description provided for @whereAreYouPageTitle.
   ///
   /// In en, this message translates to:

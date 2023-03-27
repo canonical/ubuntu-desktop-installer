@@ -747,6 +747,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String get restartIntoWindows => '重启进入 Windows';
 
   @override
+  String get restartIntoWindowsTitle => 'Restart into Windows?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+  }
+
+  @override
   String get whereAreYouPageTitle => '您在什么地方？';
 
   @override
