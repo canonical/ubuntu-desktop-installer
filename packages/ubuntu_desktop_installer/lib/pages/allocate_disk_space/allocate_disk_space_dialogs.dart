@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -11,6 +12,7 @@ import 'allocate_disk_space_model.dart';
 import 'storage_types.dart';
 
 const _kInputFieldWidth = 400.0;
+const _kValidMountPointPattern = r'^(/\S*|)$';
 
 /// Shows a confirmation dialog with the given title and message.
 Future<bool> showConfirmationDialog(
@@ -122,19 +124,26 @@ Future<void> showCreatePartitionDialog(
             child: Text(lang.cancelButtonText),
           ),
           const SizedBox(width: kButtonBarSpacing),
-          PushButton.filled(
-            onPressed: () {
-              model.addPartition(
-                disk,
-                gap,
-                size: partitionSize.value,
-                format: partitionFormat.value,
-                mount: partitionMount.value,
-              );
-              Navigator.of(context).pop();
-            },
-            child: Text(lang.okButtonText),
-          ),
+          ValueListenableBuilder(
+              valueListenable: partitionMount,
+              builder: (context, value, child) {
+                return PushButton.filled(
+                  onPressed: RegExp(_kValidMountPointPattern)
+                          .hasMatch(partitionMount.value ?? '')
+                      ? () {
+                          model.addPartition(
+                            disk,
+                            gap,
+                            size: partitionSize.value,
+                            format: partitionFormat.value,
+                            mount: partitionMount.value,
+                          );
+                          Navigator.of(context).pop();
+                        }
+                      : null,
+                  child: Text(lang.okButtonText),
+                );
+              }),
         ],
       );
     },
@@ -225,20 +234,27 @@ Future<void> showEditPartitionDialog(
             child: Text(lang.cancelButtonText),
           ),
           const SizedBox(width: kButtonBarSpacing),
-          PushButton.filled(
-            onPressed: () {
-              model.editPartition(
-                disk,
-                partition,
-                size: partitionSize.value,
-                format: partitionFormat.value,
-                mount: partitionMount.value,
-                wipe: partitionWipe.value,
-              );
-              Navigator.of(context).pop();
-            },
-            child: Text(lang.okButtonText),
-          ),
+          ValueListenableBuilder(
+              valueListenable: partitionMount,
+              builder: (context, value, child) {
+                return PushButton.filled(
+                  onPressed: RegExp(_kValidMountPointPattern)
+                          .hasMatch(partitionMount.value ?? '')
+                      ? () {
+                          model.editPartition(
+                            disk,
+                            partition,
+                            size: partitionSize.value,
+                            format: partitionFormat.value,
+                            mount: partitionMount.value,
+                            wipe: partitionWipe.value,
+                          );
+                          Navigator.of(context).pop();
+                        }
+                      : null,
+                  child: Text(lang.okButtonText),
+                );
+              }),
         ],
       );
     },
@@ -278,6 +294,11 @@ class _PartitionMountField extends StatelessWidget {
                 focusNode: focusNode,
                 onChanged: (value) => partitionMount.value = value,
                 onFieldSubmitted: (_) => onFieldSubmitted(),
+                autovalidateMode: AutovalidateMode.always,
+                decoration:
+                    const InputDecoration(errorStyle: TextStyle(height: 0)),
+                validator:
+                    PatternValidator(_kValidMountPointPattern, errorText: ''),
               );
             },
           );

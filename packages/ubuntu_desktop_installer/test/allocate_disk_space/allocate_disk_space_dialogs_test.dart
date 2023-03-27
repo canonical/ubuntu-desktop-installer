@@ -70,6 +70,31 @@ void main() {
     )).called(1);
   });
 
+  testWidgets('create partition with invalid mount point', (tester) async {
+    final disk = testDisk();
+    final gap = Gap(offset: 0, size: 1000000, usable: GapUsable.YES);
+    final model = buildModel(selectedDisk: disk);
+
+    registerMockService<UdevService>(MockUdevService());
+
+    await tester.pumpWidget(
+      ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
+        value: model,
+        child: tester.buildApp((_) => AllocateDiskSpacePage()),
+      ),
+    );
+
+    showCreatePartitionDialog(
+        tester.element(find.byType(AllocateDiskSpacePage)), disk, gap);
+    await tester.pumpAndSettle();
+
+    await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst foo');
+    await tester.pump();
+
+    final button = find.pushButton(tester.lang.okButtonText);
+    expect(tester.widget<ButtonStyleButton>(button.first).enabled, isFalse);
+  });
+
   testWidgets('edit partition', (tester) async {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
@@ -137,5 +162,46 @@ void main() {
       wipe: false,
       mount: '/tst',
     )).called(1);
+  });
+
+  testWidgets('edit partition with invalid mount point', (tester) async {
+    tester.binding.window.devicePixelRatioTestValue = 1;
+    tester.binding.window.physicalSizeTestValue = Size(960, 680);
+
+    final disk = testDisk(partitions: [
+      Partition(
+        number: 1,
+        size: 1234567,
+        format: 'ext4',
+        wipe: 'superblock',
+        mount: '/tst',
+        preserve: true,
+      ),
+      Gap(offset: 123, size: 1000000, usable: GapUsable.YES),
+    ]);
+    final model = buildModel(selectedDisk: disk);
+
+    registerMockService<UdevService>(MockUdevService());
+
+    await tester.pumpWidget(
+      ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
+        value: model,
+        child: tester.buildApp((_) => AllocateDiskSpacePage()),
+      ),
+    );
+
+    showEditPartitionDialog(
+      tester.element(find.byType(AllocateDiskSpacePage)),
+      disk,
+      disk.partitions.whereType<Partition>().first,
+      disk.partitions.whereType<Gap>().first,
+    );
+    await tester.pumpAndSettle();
+
+    await tester.enterText(find.byType(YaruAutocomplete<String>), 'tst');
+    await tester.pump();
+
+    final button = find.pushButton(tester.lang.okButtonText);
+    expect(tester.widget<ButtonStyleButton>(button.first).enabled, isFalse);
   });
 }

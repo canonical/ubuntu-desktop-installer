@@ -95,6 +95,11 @@ class MockInstallationTypeModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
+  bool get hasBitLocker => (super.noSuchMethod(
+        Invocation.getter(#hasBitLocker),
+        returnValue: false,
+      ) as bool);
+  @override
   bool get canInstallAlongside => (super.noSuchMethod(
         Invocation.getter(#canInstallAlongside),
         returnValue: false,

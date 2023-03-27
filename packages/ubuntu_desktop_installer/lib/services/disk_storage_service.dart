@@ -18,8 +18,8 @@ class DiskStorageService {
   Future<void> init() async {
     final status = await _client.status();
     if (status.state == ApplicationState.ERROR) return;
+    await _client.getStorageV2().then(_updateStorage);
     await Future.wait([
-      _client.getStorageV2().then(_updateStorage),
       _client.hasRst().then((value) => _hasRst = value),
       _client.hasBitLocker().then((value) => _hasBitLocker = value),
     ]);

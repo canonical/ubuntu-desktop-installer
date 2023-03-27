@@ -17,6 +17,9 @@ enum InstallationType {
 
   /// Manual partitioning.
   manual,
+
+  /// BitLocker must be manually resized or disabled.
+  bitlocker,
 }
 
 /// Available advanced features.
@@ -89,6 +92,9 @@ class InstallationTypeModel extends SafeChangeNotifier {
 
   /// Whether storage information has been queried and installation can proceed.
   bool get hasStorage => _storages != null;
+
+  /// Whether BitLocker is detected.
+  bool get hasBitLocker => _diskService.hasBitLocker;
 
   /// Whether installation alongside an existing OS is possible.
   ///
