@@ -254,8 +254,12 @@ Future<void> testTurnOffBitLockerPage(WidgetTester tester) async {
   await expectPage(
       tester, TurnOffBitLockerPage, (lang) => lang.turnOffBitlockerTitle);
 
-  final windowClosed = YaruTestWindow.waitForClosed();
   await tester.tapButton(tester.lang.restartIntoWindows);
+  expect(find.byType(AlertDialog), findsOneWidget);
+  await tester.pumpAndSettle();
+
+  final windowClosed = YaruTestWindow.waitForClosed();
+  await tester.tapButton(tester.lang.restartButtonText);
   await expectLater(windowClosed, completes);
 }
 
