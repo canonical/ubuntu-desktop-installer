@@ -736,6 +736,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker je zapnutý';
 
   @override
+  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+
+  @override
   String turnOffBitlockerDescription(Object option) {
     return 'Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné Ubuntu nainstalovat, je třeba Bitlocker vypnout.';
   }

@@ -641,6 +641,8 @@
   "@continueTesting": {},
   "turnOffBitlockerTitle": "BitLocker is enabled",
   "@turnOffBitlockerTitle": {},
+  "turnOffBitlockerHeadline": "Turn off BitLocker to continue",
+  "@turnOffBitlockerHeadline": {},
   "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose '{option}' to continue.",
   "@turnOffBitlockerDescription": {
     "type": "text",

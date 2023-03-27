@@ -1550,6 +1550,12 @@ abstract class AppLocalizations {
   /// **'BitLocker is enabled'**
   String get turnOffBitlockerTitle;
 
+  /// No description provided for @turnOffBitlockerHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn off BitLocker to continue'**
+  String get turnOffBitlockerHeadline;
+
   /// No description provided for @turnOffBitlockerDescription.
   ///
   /// In en, this message translates to:

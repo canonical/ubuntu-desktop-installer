@@ -736,6 +736,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get turnOffBitlockerTitle => 'اوقف تشغيل BitLocker';
 
   @override
+  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+
+  @override
   String turnOffBitlockerDescription(Object option) {
     return 'This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose \'$option\' to continue.';
   }

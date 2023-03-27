@@ -736,6 +736,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get turnOffBitlockerTitle => 'Desligar BitLocker';
 
   @override
+  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+
+  @override
   String turnOffBitlockerDescription(Object option) {
     return 'Este computador usa criptografia do Windows BitLocker.\nPrecisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
   }
