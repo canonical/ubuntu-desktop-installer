@@ -736,7 +736,9 @@ class AppLocalizationsNb extends AppLocalizations {
   String get turnOffBitlockerTitle => 'Skru av BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'Maskinen bruker Windows BitLocker-kryptering.\nDu må skru dette av før du installerer Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Maskinen bruker Windows BitLocker-kryptering.\nDu må skru dette av før du installerer Ubuntu.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {

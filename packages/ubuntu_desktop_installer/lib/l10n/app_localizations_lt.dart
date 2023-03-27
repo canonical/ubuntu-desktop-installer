@@ -86,7 +86,7 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Išjunkite RST';
+  String get turnOffRST => 'RST yra įjungta';
 
   @override
   String get turnOffRSTTitle => 'Turn off RST to continue';
@@ -205,7 +205,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get connectButtonText => 'Prisijungti';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Atnaujinimai ir kita programinė įranga';
+  String get updatesOtherSoftwarePageTitle => 'Programos ir atnaujinimai';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Kokias programas pradžiai norėtumėte įdiegti?';
@@ -252,7 +252,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get offlineWarning => 'Šiuo metu nesate prisijungę prie interneto';
 
   @override
-  String get chooseSecurityKeyTitle => 'Pasirinkite saugumo raktą';
+  String get chooseSecurityKeyTitle => 'Saugumo raktas';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -376,7 +376,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Dokumentai, muzika ir kiti asmeniniai failai bus išsaugoti. Kas kartą įjungę kompiuterį, galėsite pasirinkti, kurią operacinę sistemą paleisti.';
 
   @override
-  String get installationTypeManual => 'Kažkas kito';
+  String get installationTypeManual => 'Rankinis skaidymas';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get installAlongsideAvailable => 'Prieinama:';
 
   @override
-  String get allocateDiskSpace => 'Paskirstyti vietą diske';
+  String get allocateDiskSpace => 'Rankinis skaidymas';
 
   @override
   String get startInstallingButtonText => 'Įdiegti';
@@ -514,22 +514,22 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionFormatLabel => 'Naudojamas kaip:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatExt4 => 'Ext4 žurnalinė failų sistema';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String get partitionFormatExt3 => 'Ext3 žurnalinė failų sistema';
 
   @override
   String get partitionFormatExt2 => 'Ext2 failų sistema';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionFormatBtrfs => 'btrfs žurnalinė failų sistema';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get partitionFormatJfs => 'JFS žurnalinė failų sistema';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get partitionFormatXfs => 'XFS žurnalinė failų sistema';
 
   @override
   String get partitionFormatFat => 'FAT failų sistema';
@@ -571,7 +571,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionMountPointLabel => 'Prijungimo taškas:';
 
   @override
-  String get whoAreYouPageTitle => 'Kas jūs esate?';
+  String get whoAreYouPageTitle => 'Nusistatykite paskyrą';
 
   @override
   String get whoAreYouPageAutoLogin => 'Automatiškai prisijungti prie paskyros';
@@ -694,16 +694,16 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Pasirinkite išvaizdą';
+  String get chooseYourLookPageTitle => 'Pasirinkite apipavidalinimą';
 
   @override
-  String get chooseYourLookPageHeader => 'Vėliau bet kada galėsite tai pakeisti išvaizdos nustatymuose.';
+  String get chooseYourLookPageHeader => 'Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Tamsi';
+  String get chooseYourLookPageDarkSetting => 'Tamsus';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Šviesi';
+  String get chooseYourLookPageLightSetting => 'Šviesus';
 
   @override
   String get installationCompleteTitle => 'Įdiegimas baigtas';
@@ -733,10 +733,12 @@ class AppLocalizationsLt extends AppLocalizations {
   String get continueTesting => 'Tęsti sistemos bandymą';
 
   @override
-  String get turnOffBitlockerTitle => 'Išjungti „BitLocker“';
+  String get turnOffBitlockerTitle => '„BitLocker“ yra įjungta';
 
   @override
-  String get turnOffBitlockerDescription => 'Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nPrieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti „BitLocker“.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nPrieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti „BitLocker“.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -755,7 +757,7 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Kur esate?';
+  String get whereAreYouPageTitle => 'Pasirinkite laiko juostą';
 
   @override
   String get whereAreYouLocationLabel => 'Vieta';
@@ -808,161 +810,161 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
-    return 'If you\'re an animator, designer, video creator or game developer it\'s easy to bring your workflows to $DISTRO with support for open source and industry standard software and applications.';
+    return 'Jei esate animatorius, dizaineris, vaizdo įrašų kūrėjas ar žaidimų plėtotojas, be vargo perkelsite savo darbo eigą į $DISTRO, kuri palaiko atvirojo kodo ir pramoninių standartų programinę įrangą bei programas.';
   }
 
   @override
-  String get installationSlidesGamingTitle => 'Great for gaming';
+  String get installationSlidesGamingTitle => 'Puikiai tinka žaidimams';
 
   @override
   String installationSlidesGamingBody(Object DISTRO) {
-    return '$DISTRO supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on $DISTRO via applications like Steam with no additional configuration.';
+    return '$DISTRO palaiko naujausias „NVIDIA“ ir „Mesa“ tvarkykles, kad pagerintų našumą ir suderinamumą. Tūkstančiai „Windows“ žaidimų pavadinimų, tokių programų kaip „Steam“ dėka, be jokios papildomos konfigūracijos gali būti paleisti $DISTRO.';
   }
 
   @override
-  String get installationSlidesSecurityTitle => 'Private and secure';
+  String get installationSlidesSecurityTitle => 'Privati ir saugi';
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
-    return '$DISTRO provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.';
+    return '$DISTRO teikia visus reikiamus įrankius, kad privačiai naudotumėtės internetu ir išliktumėte saugūs. Dėka užkardos ir VPN palaikymo bei daugelio į privatumą orientuotų programų, yra užtikrinama, kad niekas kitas, o tik jūs galėtumėte pilnai valdyti savo duomenis.';
   }
 
   @override
   String installationSlidesSecurityLts(Object DISTRO) {
-    return 'All $DISTRO LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.';
+    return 'Visoms $DISTRO LTS laidoms 5 metų laikotarpyje yra teikiamos saugumo spragų pataisos. Šį laikotarpį „Ubuntu Pro“ prenumeratos dėka galima pratęsti iki 10 metų.';
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Power up your productivity';
+  String get installationSlidesProductivityTitle => 'Padidinkite savo produktyvumą';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
-    return '$DISTRO Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.';
+    return 'Į $DISTRO darbalaukį įeina LibreOffice, raštinės programų rinkinys, suderinamas su „Microsoft Office“. Jį sudaro programos, skirtos kurti dokumentus, skaičiuokles bei pateiktis. Taip pat yra prieinami populiarūs bendradarbiavimo įrankiai.';
   }
 
   @override
-  String get installationSlidesAccessibilityTitle => 'Access for everyone';
+  String get installationSlidesAccessibilityTitle => 'Prieinama visiems';
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
-    return 'At the heart of the $DISTRO philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, $DISTRO makes computing easy - whoever and wherever you are.';
+    return '$DISTRO filosofijos gelmėje yra įsitikinimas, jog naudojimasis kompiuteriu yra prieinamas kiekvienam. Dėka išplėstinių prieinamumo įrankių ir parametrų, skirtų keisti kalbą, spalvas bei teksto dydį, $DISTRO paverčia naudojimąsi kompiuteriu lengvu – nepaisant to, kur esate ar kas bebūtumėte.';
   }
 
   @override
-  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+  String get installationSlidesAccessibilityOrca => 'Orca ekrano skaityklė';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Language support';
+  String get installationSlidesAccessibilityLanguages => 'Kalbos palaikymas';
 
   @override
-  String get installationSlidesSupportTitle => 'Help & Support';
+  String get installationSlidesSupportTitle => 'Pagalba ir palaikymas';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+    return 'Oficiali $DISTRO dokumentacija yra prieinama tiek internete, tiek spustelėjus ant žinyno piktogramos doke.';
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+  String get installationSlidesSupportCommunity => '„Ask Ubuntu“ apima didelį klausimų ir atsakymų spektrą, o „Ubuntu Discourse“ teikia žinyną bei patarimus tiek naujiems, tiek pažengusiems naudotojams.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+  String get installationSlidesSupportEnterprise => 'Naudotojams iš įmonių Canonical teikia komercinį palaikymą, padėdama darbo vietoje lengvai pritaikyti ir saugiai valdyti Ubuntu.';
 
   @override
-  String get installationSlidesSupportResources => 'Helpful resources:';
+  String get installationSlidesSupportResources => 'Naudingi ištekliai:';
 
   @override
-  String get installationSlidesSupportDocumentation => 'Official documentation';
+  String get installationSlidesSupportDocumentation => 'Oficiali dokumentacija';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro => 'Naudotojų iš įmonių palaikymas 24/7 naudojant „Ubuntu Pro“';
 
   @override
-  String get copyingFiles => 'Copying files…';
+  String get copyingFiles => 'Kopijuojami failai…';
 
   @override
-  String get installingSystem => 'Installing the system…';
+  String get installingSystem => 'Įdiegiama sistema…';
 
   @override
-  String get configuringSystem => 'Setting up the system…';
+  String get configuringSystem => 'Nustatoma sistema…';
 
   @override
-  String get installationFailed => 'Installation failed';
+  String get installationFailed => 'Nepavyko įdiegti';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Not enough space';
+  String get notEnoughDiskSpaceTitle => 'Trūksta vietos';
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
-    return 'Not enough disk space to install $DISTRO';
+    return 'Nepakanka vietos diske, kad būtų įdiegta $DISTRO';
   }
 
   @override
-  String get notEnoughDiskSpaceAvailable => 'Available:';
+  String get notEnoughDiskSpaceAvailable => 'Prieinama:';
 
   @override
-  String get notEnoughDiskSpaceRequired => 'Required:';
+  String get notEnoughDiskSpaceRequired => 'Reikia:';
 
   @override
-  String get activeDirectoryOption => 'Use Active Directory';
+  String get activeDirectoryOption => 'Naudoti „Active Directory“';
 
   @override
-  String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
+  String get activeDirectoryInfo => 'Kitame žingsnyje įvesite domeną bei kitą išsamesnę informaciją.';
 
   @override
-  String get activeDirectoryTitle => 'Configure Active Directory';
+  String get activeDirectoryTitle => 'Konfigūruoti „Active Directory“';
 
   @override
-  String get activeDirectoryTestConnection => 'Test domain connectivity';
+  String get activeDirectoryTestConnection => 'Išbandyti jungiamumą su domenu';
 
   @override
-  String get activeDirectoryDomainLabel => 'Domain';
+  String get activeDirectoryDomainLabel => 'Domenas';
 
   @override
-  String get activeDirectoryDomainEmpty => 'Required';
+  String get activeDirectoryDomainEmpty => 'Būtina';
 
   @override
-  String get activeDirectoryDomainTooLong => 'Too long';
+  String get activeDirectoryDomainTooLong => 'Per ilgas';
 
   @override
-  String get activeDirectoryDomainInvalidChars => 'Invalid characters';
+  String get activeDirectoryDomainInvalidChars => 'Netinkami simboliai';
 
   @override
-  String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
+  String get activeDirectoryDomainStartDot => 'Prasideda tašku (.)';
 
   @override
-  String get activeDirectoryDomainEndDot => 'Ends with a dot (.)';
+  String get activeDirectoryDomainEndDot => 'Pasibaigia tašku (.)';
 
   @override
-  String get activeDirectoryDomainStartHyphen => 'Starts with a hyphen (-)';
+  String get activeDirectoryDomainStartHyphen => 'Prasideda brūkšneliu (-)';
 
   @override
-  String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
+  String get activeDirectoryDomainEndHyphen => 'Pasibaigia brūkšneliu (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+  String get activeDirectoryDomainMultipleDots => 'Turi kelis taškus iš eilės (..)';
 
   @override
-  String get activeDirectoryDomainNotFound => 'Domain not found';
+  String get activeDirectoryDomainNotFound => 'Domenas nerastas';
 
   @override
-  String get activeDirectoryAdminLabel => 'Domain join user';
+  String get activeDirectoryAdminLabel => 'Prisijungimo prie domeno naudotojas';
 
   @override
-  String get activeDirectoryAdminEmpty => 'Required';
+  String get activeDirectoryAdminEmpty => 'Būtina';
 
   @override
-  String get activeDirectoryAdminInvalidChars => 'Invalid characters';
+  String get activeDirectoryAdminInvalidChars => 'Netinkami simboliai';
 
   @override
-  String get activeDirectoryPasswordLabel => 'Password';
+  String get activeDirectoryPasswordLabel => 'Slaptažodis';
 
   @override
-  String get activeDirectoryPasswordEmpty => 'Required';
+  String get activeDirectoryPasswordEmpty => 'Būtina';
 
   @override
-  String get activeDirectoryErrorTitle => 'Error configuring connection to Active Directory';
+  String get activeDirectoryErrorTitle => 'Klaida konfigūruojant ryšį su „Active Directory“';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage => 'Atleiskite, šiuo metu „Active Directory“ negali būti nustatyta. Kai tik jūsų sistema bus paleista, apsilankykite adresu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kad gautumėte išsamesnės informacijos.';
 }

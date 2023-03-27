@@ -89,10 +89,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get turnOffRST => 'Funkcja RST jest włączona';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Wyłącz funkcję RST, aby kontynuować';
 
   @override
-  String get turnOffRSTDescription => 'Ten komputer wykorzystuje technologię Intel RST (Rapid Storage Technology). Musisz wyłączyć RST w systemie Windows przed instalacją Ubuntu.';
+  String get turnOffRSTDescription => 'Ten komputer wykorzystuje funkcję Intel RST (Rapid Storage Technology). Musisz wyłączyć RST w systemie Windows przed instalacją Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
@@ -736,7 +736,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get turnOffBitlockerTitle => 'Funkcja BitLocker jest włączona';
 
   @override
-  String get turnOffBitlockerDescription => 'Ten komputer używa szyfrowania Windows BitLocker.\nMusisz wyłączyć funkcję BitLocker w systemie Windows przed instalacją Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Ten komputer używa szyfrowania Windows BitLocker.\nMusisz wyłączyć funkcję BitLocker w systemie Windows przed instalacją Ubuntu.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {

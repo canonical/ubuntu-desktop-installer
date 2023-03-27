@@ -736,7 +736,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get turnOffBitlockerTitle => 'Matikan BitLocker';
 
   @override
-  String get turnOffBitlockerDescription => 'Komputer ini menggunakan enkripsi Windows BitLocker.\nAnda perlu mematikan BitLocker di Windows sebelum memasang Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Komputer ini menggunakan enkripsi Windows BitLocker.\nAnda perlu mematikan BitLocker di Windows sebelum memasang Ubuntu.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {

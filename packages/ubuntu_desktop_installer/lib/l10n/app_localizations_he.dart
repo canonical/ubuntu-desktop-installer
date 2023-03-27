@@ -86,7 +86,7 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'כיבוי RST';
+  String get turnOffRST => 'RST פעיל';
 
   @override
   String get turnOffRSTTitle => 'Turn off RST to continue';
@@ -154,7 +154,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get showSecurityKey => 'הצגת מפתח אבטחה';
 
   @override
-  String get connectToInternetPageTitle => 'התחברות לאינטרנט';
+  String get connectToInternetPageTitle => 'התחברות לרשת';
 
   @override
   String get connectToInternetDescription => 'חיבור המחשב הזה לאינטרנט יסייע לאובונטו להתקין תכניות נוספות חיוניות ויסייע בבחירת אזור הזמן שלך.\n\nאפשר להתחבר בכבל רשת או לבחור רשת אלחוטית';
@@ -205,7 +205,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get connectButtonText => 'התחברות';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'עדכונים ותכניות נוספות';
+  String get updatesOtherSoftwarePageTitle => 'יישומים ועדכונים';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'אילו יישומים להתקין בתור התחלה?';
@@ -252,7 +252,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get offlineWarning => 'החיבור שלך מנותק';
 
   @override
-  String get chooseSecurityKeyTitle => 'נא לבחור מפתח אבטחה';
+  String get chooseSecurityKeyTitle => 'מפתח אבטחה';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -376,7 +376,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'המסמכים, המוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.';
 
   @override
-  String get installationTypeManual => 'משהו אחר';
+  String get installationTypeManual => 'חלוקה ידנית למחיצות';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installAlongsideAvailable => 'זמין:';
 
   @override
-  String get allocateDiskSpace => 'הקצאת מקום בכונן';
+  String get allocateDiskSpace => 'חלוקת מחיצות ידנית';
 
   @override
   String get startInstallingButtonText => 'התקנה';
@@ -571,7 +571,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get partitionMountPointLabel => 'נקודת עגינה:';
 
   @override
-  String get whoAreYouPageTitle => 'עם מי הכבוד?';
+  String get whoAreYouPageTitle => 'הקמת החשבון שלך';
 
   @override
   String get whoAreYouPageAutoLogin => 'כניסה אוטומטית';
@@ -694,7 +694,7 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'נא לבחור את הסגנון שלך';
+  String get chooseYourLookPageTitle => 'נא לבחור את ערכת העיצוב שלך';
 
   @override
   String get chooseYourLookPageHeader => 'תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.';
@@ -733,10 +733,12 @@ class AppLocalizationsHe extends AppLocalizations {
   String get continueTesting => 'להמשיך לבחון';
 
   @override
-  String get turnOffBitlockerTitle => 'כיבוי BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker פעיל';
 
   @override
-  String get turnOffBitlockerDescription => 'המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -755,7 +757,7 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'מה מיקומך?';
+  String get whereAreYouPageTitle => 'נא לבחור את אזור הזמן שלך';
 
   @override
   String get whereAreYouLocationLabel => 'מיקום';

@@ -86,7 +86,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST ausschalten';
+  String get turnOffRST => 'RST ist aktiviert';
 
   @override
   String get turnOffRSTTitle => 'Turn off RST to continue';
@@ -154,7 +154,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get showSecurityKey => 'Sicherheitsschlüssel anzeigen';
 
   @override
-  String get connectToInternetPageTitle => 'Mit dem Internet verbinden';
+  String get connectToInternetPageTitle => 'Mit einem Netzwerk verbinden';
 
   @override
   String get connectToInternetDescription => 'Die Verbindung des Computers mit dem Internet hilft Ubuntu bei der Installation zusätzlicher Software und bei der Auswahl der Zeitzone.\n\nPer Ethernet-Kabel verbinden oder ein WLAN-Netzwerk auswählen';
@@ -205,7 +205,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get connectButtonText => 'Verbinden';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Aktualisierungen und andere Software';
+  String get updatesOtherSoftwarePageTitle => 'Anwendungen und Aktualisierungen';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Welche Anwendungen möchten Sie am Anfang installieren?';
@@ -252,7 +252,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get offlineWarning => 'Sie sind derzeit offline';
 
   @override
-  String get chooseSecurityKeyTitle => 'Sicherheitsschlüssel auswählen';
+  String get chooseSecurityKeyTitle => 'Sicherheitsschlüssel';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -277,7 +277,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationTypeTitle => 'Installationsart';
+  String get installationTypeTitle => 'Art der Installation';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -376,7 +376,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Dokumente, Musik und andere persönliche Dateien bleiben erhalten. Sie können bei jedem Start des Rechners auswählen, welches Betriebssystem Sie verwenden möchten.';
 
   @override
-  String get installationTypeManual => 'Etwas Anderes';
+  String get installationTypeManual => 'Manuelle Partitionierung';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installAlongsideAvailable => 'Verfügbar:';
 
   @override
-  String get allocateDiskSpace => 'Festplattenspeicher zuweisen';
+  String get allocateDiskSpace => 'Manuelle Partitionierung';
 
   @override
   String get startInstallingButtonText => 'Installieren';
@@ -571,7 +571,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get partitionMountPointLabel => 'Einhängepunkt:';
 
   @override
-  String get whoAreYouPageTitle => 'Wer sind Sie?';
+  String get whoAreYouPageTitle => 'Ihr Konto einrichten';
 
   @override
   String get whoAreYouPageAutoLogin => 'Automatisch anmelden';
@@ -694,7 +694,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Wählen Sie Ihr Aussehen aus';
+  String get chooseYourLookPageTitle => 'Wählen Sie Ihr Thema aus';
 
   @override
   String get chooseYourLookPageHeader => 'Sie können dies später in den Einstellungen für das Erscheinungsbild jederzeit ändern.';
@@ -733,10 +733,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get continueTesting => 'Testen fortsetzen';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker ausschalten';
+  String get turnOffBitlockerTitle => 'BitLocker ist aktiviert';
 
   @override
-  String get turnOffBitlockerDescription => 'Dieser Rechner verwendet die Windows-BitLocker-Verschlüsselung.\nSie müssen BitLocker in Windows deaktivieren, bevor Sie Ubuntu installieren.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Dieser Rechner verwendet die Windows-BitLocker-Verschlüsselung.\nSie müssen BitLocker in Windows deaktivieren, bevor Sie Ubuntu installieren.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -755,7 +757,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Wo bist du?';
+  String get whereAreYouPageTitle => 'Wählen Sie Ihre Zeitzone aus';
 
   @override
   String get whereAreYouLocationLabel => 'Standort';

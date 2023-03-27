@@ -96,7 +96,7 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'For instructions, scan the QR code on another device or visit: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -736,11 +736,13 @@ class AppLocalizationsKa extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker is enabled';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose \'$option\' to continue.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'For instructions, scan the QR code on another device or visit: <a href=\"https://$url\">$url</a>';
   }
 
   @override

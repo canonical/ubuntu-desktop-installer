@@ -736,7 +736,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get turnOffBitlockerTitle => 'Kapcsolja ki a BitLockert';
 
   @override
-  String get turnOffBitlockerDescription => 'Ez a számítógép Windows BitLocker titkosítást használ.\nAz Ubuntu telepítése előtt ki kell kapcsolnia a BitLockert a Windowsban.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Ez a számítógép Windows BitLocker titkosítást használ.\nAz Ubuntu telepítése előtt ki kell kapcsolnia a BitLockert a Windowsban.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {

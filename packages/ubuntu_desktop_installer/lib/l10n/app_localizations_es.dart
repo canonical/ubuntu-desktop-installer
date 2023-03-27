@@ -86,10 +86,10 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Desactivar RST';
+  String get turnOffRST => 'RST está activado';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Desactive RST para continuar';
 
   @override
   String get turnOffRSTDescription => 'Este equipo utiliza Intel RST (Rapid Storage Technology). Es necesario desactivar RST en Windows antes de instalar Ubuntu.';
@@ -154,7 +154,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get showSecurityKey => 'Mostrar la clave de seguridad';
 
   @override
-  String get connectToInternetPageTitle => 'Conectarse a Internet';
+  String get connectToInternetPageTitle => 'Conectarse a una red';
 
   @override
   String get connectToInternetDescription => 'Conectar este equipo a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y ayudará a elegir su zona horaria.\n\nConectar por cable ethernet, o elegir una red Wi-Fi';
@@ -205,7 +205,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get connectButtonText => 'Conectar';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Actualizaciones y otro software';
+  String get updatesOtherSoftwarePageTitle => 'Aplicaciones y actualizaciones';
 
   @override
   String get updatesOtherSoftwarePageDescription => '¿Qué aplicaciones le gustaría instalar para comenzar?';
@@ -252,7 +252,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get offlineWarning => 'Actualmente no está conectado';
 
   @override
-  String get chooseSecurityKeyTitle => 'Elegir una clave de seguridad';
+  String get chooseSecurityKeyTitle => 'Clave de seguridad';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -376,7 +376,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Se conservarán los documentos, la música y otros archivos personales. Puede elegir qué sistema operativo quiere iniciar cada vez que arranque el equipo.';
 
   @override
-  String get installationTypeManual => 'Otra cosa';
+  String get installationTypeManual => 'Partición manual';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installAlongsideAvailable => 'Disponible:';
 
   @override
-  String get allocateDiskSpace => 'Asignar espacio de disco';
+  String get allocateDiskSpace => 'Particionamiento manual';
 
   @override
   String get startInstallingButtonText => 'Instalar';
@@ -571,7 +571,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get partitionMountPointLabel => 'Punto de montaje:';
 
   @override
-  String get whoAreYouPageTitle => '¿Quién es usted?';
+  String get whoAreYouPageTitle => 'Crea tú cuenta';
 
   @override
   String get whoAreYouPageAutoLogin => 'Acceder automáticamente';
@@ -694,7 +694,7 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Seleccione el aspecto';
+  String get chooseYourLookPageTitle => 'Elige tu tema';
 
   @override
   String get chooseYourLookPageHeader => 'Puede cambiarlo después en la configuración de apariencia.';
@@ -733,10 +733,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get continueTesting => 'Continuar probando';
 
   @override
-  String get turnOffBitlockerTitle => 'Desactivar BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker está activado';
 
   @override
-  String get turnOffBitlockerDescription => 'El equipo utiliza el cifrado BitLocker de Windows.\nDebe desactivar BitLocker en Windows antes de instalar Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'El equipo utiliza el cifrado BitLocker de Windows.\nDebe desactivar BitLocker en Windows antes de instalar Ubuntu.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -755,7 +757,7 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => '¿Dónde se encuentra?';
+  String get whereAreYouPageTitle => 'Selecciona tu zona horaria';
 
   @override
   String get whereAreYouLocationLabel => 'Ubicación';

@@ -13,25 +13,25 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get cancelButtonText => 'Hủy bỏ';
 
   @override
-  String get changeButtonText => 'Change';
+  String get changeButtonText => 'Thay đổi';
 
   @override
-  String get okButtonText => 'OK';
+  String get okButtonText => 'Đống ý';
 
   @override
-  String get noButtonText => 'No';
+  String get noButtonText => 'Không';
 
   @override
-  String get restartButtonText => 'Restart';
+  String get restartButtonText => 'Khởi động lại';
 
   @override
   String get revertButtonText => 'Revert';
 
   @override
-  String get yesButtonText => 'Yes';
+  String get yesButtonText => 'Có';
 
   @override
   String get quitButtonText => 'Quit installation';
@@ -47,7 +47,7 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get welcomeHeader => 'Choose your language:';
+  String get welcomeHeader => 'Đã chọn ngôn ngữ:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
@@ -96,14 +96,14 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'For instructions, scan the QR code on another device or visit: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Kiểu bàn phím';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Chọn kiểu bàn phím của bạn';
 
   @override
   String get typeToTest => 'Type here to test your keyboard';
@@ -736,11 +736,13 @@ class AppLocalizationsVi extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker is enabled';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose \'$option\' to continue.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'For instructions, scan the QR code on another device or visit: <a href=\"https://$url\">$url</a>';
   }
 
   @override

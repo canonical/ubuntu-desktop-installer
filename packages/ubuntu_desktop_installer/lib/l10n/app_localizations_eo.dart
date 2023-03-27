@@ -86,13 +86,13 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Malŝalti RST';
+  String get turnOffRST => 'Rapid-Konserveja Tekniko (RST) estas ŝaltita';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Malŝaltu RST por daŭrigi';
 
   @override
-  String get turnOffRSTDescription => 'Ĉi tiu komputilo uzas Intel RST (Rapid Storage Technology). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.';
+  String get turnOffRSTDescription => 'Ĉi tiu komputilo uzas Intel RST (Rapid-Konservejan Teknikon). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
@@ -154,7 +154,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get showSecurityKey => 'Montri sekurecŝlosilon';
 
   @override
-  String get connectToInternetPageTitle => 'Konekti al Interreto';
+  String get connectToInternetPageTitle => 'Konekti al reto';
 
   @override
   String get connectToInternetDescription => 'Konektado de ĉi tiu komputilo al Interreto helpos Ubuntu instali ajnajn kromajn programojn bezonatajn kaj helpos vin elekti vian horzonon.\n\nKonektu per Eterreta kablo, aŭ elektu sendratan reton.';
@@ -205,7 +205,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get connectButtonText => 'Konekti';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Ĝisdatigoj kaj aliaj programoj';
+  String get updatesOtherSoftwarePageTitle => 'Programoj kaj ĝisdatigoj';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Kiajn programojn vi volas instali por komenci?';
@@ -252,7 +252,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get offlineWarning => 'Vi estas aktuale ne konektita al Interreto';
 
   @override
-  String get chooseSecurityKeyTitle => 'Elektu sekurigan ŝlosilon';
+  String get chooseSecurityKeyTitle => 'Sekuriga ŝlosilo';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -376,7 +376,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Dokumentoj, muziko kaj aliaj personaj dosieroj estas konservotaj. Vi povos elekti tiun mastruman sistemon, kiun vi volas, kiam la komputilo startas.';
 
   @override
-  String get installationTypeManual => 'Io alia';
+  String get installationTypeManual => 'Neaŭtomata dispartigo';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get installAlongsideAvailable => 'Disponebla:';
 
   @override
-  String get allocateDiskSpace => 'Asigni diskospacon';
+  String get allocateDiskSpace => 'Neaŭtomata dispartigo';
 
   @override
   String get startInstallingButtonText => 'Instali';
@@ -571,7 +571,7 @@ class AppLocalizationsEo extends AppLocalizations {
   String get partitionMountPointLabel => 'Surmetingo:';
 
   @override
-  String get whoAreYouPageTitle => 'Kiu vi estas?';
+  String get whoAreYouPageTitle => 'Agordu vian konton';
 
   @override
   String get whoAreYouPageAutoLogin => 'Aŭtomate saluti';
@@ -733,10 +733,12 @@ class AppLocalizationsEo extends AppLocalizations {
   String get continueTesting => 'Daŭre elprovi';
 
   @override
-  String get turnOffBitlockerTitle => 'Malŝalti BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker estas ŝaltita';
 
   @override
-  String get turnOffBitlockerDescription => 'Ĉi tiu komputilo uzas ĉifradon de Windows BitLocker.\nVi devas malŝalti BitLocker en Windows antaŭ ol instali Ubuntu.';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Ĉi tiu komputilo uzas ĉifradon de Windows BitLocker.\nVi devas malŝalti BitLocker en Windows antaŭ ol instali Ubuntu.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
@@ -755,7 +757,7 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Kie vi estas?';
+  String get whereAreYouPageTitle => 'Elektu vian horzonon';
 
   @override
   String get whereAreYouLocationLabel => 'Loko';

@@ -383,7 +383,7 @@ abstract class AppLocalizations {
   /// No description provided for @instructionsForRST.
   ///
   /// In en, this message translates to:
-  /// **'For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>'**
+  /// **'For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>'**
   String instructionsForRST(Object url);
 
   /// No description provided for @keyboardLayoutPageTitle.
@@ -1553,13 +1553,13 @@ abstract class AppLocalizations {
   /// No description provided for @turnOffBitlockerDescription.
   ///
   /// In en, this message translates to:
-  /// **'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.'**
-  String get turnOffBitlockerDescription;
+  /// **'This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose \'{option}\' to continue.'**
+  String turnOffBitlockerDescription(Object option);
 
   /// No description provided for @turnOffBitlockerLinkInstructions.
   ///
   /// In en, this message translates to:
-  /// **'For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>'**
+  /// **'For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>'**
   String turnOffBitlockerLinkInstructions(Object url);
 
   /// No description provided for @restartIntoWindows.
