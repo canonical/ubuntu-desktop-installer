@@ -736,6 +736,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker 끄기';
 
   @override
+  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+
+  @override
   String turnOffBitlockerDescription(Object option) {
     return '이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n우분투를 설치하기 전 Windows 에서 BitLocker를 꺼야 합니다.';
   }

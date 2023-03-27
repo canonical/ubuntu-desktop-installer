@@ -736,6 +736,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker включён';
 
   @override
+  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+
+  @override
   String turnOffBitlockerDescription(Object option) {
     return 'Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо отключить BitLocker в Windows перед установкой Ubuntu.';
   }

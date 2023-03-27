@@ -736,6 +736,9 @@ class AppLocalizationsOc extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker es activat';
 
   @override
+  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+
+  @override
   String turnOffBitlockerDescription(Object option) {
     return 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\n Vos cal desactivar BitLocker dins Windows abans d’installacion d’Ubuntu.';
   }
