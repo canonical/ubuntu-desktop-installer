@@ -89,6 +89,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get turnOffRST => 'خاموش کردن RST';
 
   @override
+  String get turnOffRSTTitle => 'Turn off RST to continue';
+
+  @override
   String get turnOffRSTDescription => 'این کامپیوتر از Intel RST (فناوری ذخیره‌سازی سریع) استفاده می‌کند. قبل از نصب اوبونتو باید RST را در ویندوز خاموش کنید.';
 
   @override

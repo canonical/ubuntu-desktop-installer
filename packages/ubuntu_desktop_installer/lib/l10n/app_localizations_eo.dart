@@ -89,6 +89,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get turnOffRST => 'Malŝalti RST';
 
   @override
+  String get turnOffRSTTitle => 'Turn off RST to continue';
+
+  @override
   String get turnOffRSTDescription => 'Ĉi tiu komputilo uzas Intel RST (Rapid Storage Technology). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.';
 
   @override

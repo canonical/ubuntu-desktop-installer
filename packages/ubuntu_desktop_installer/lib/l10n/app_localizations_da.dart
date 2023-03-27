@@ -89,6 +89,9 @@ class AppLocalizationsDa extends AppLocalizations {
   String get turnOffRST => 'Sluk for RST';
 
   @override
+  String get turnOffRSTTitle => 'Turn off RST to continue';
+
+  @override
   String get turnOffRSTDescription => 'Denne lommeregner bruger Intel RST (Rapid Storage Technology). Før du installerer Ubuntu, skal RST være slået fra i Windows.';
 
   @override
