@@ -33,7 +33,7 @@
   "@turnOffRST": {},
   "turnOffRSTDescription": "Este equipo utiliza Intel RST (Rapid Storage Technology). Es necesario desactivar RST en Windows antes de instalar Ubuntu.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Para seguir las instrucciones, abra esta página en un teléfono u otro dispositivo: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Para obtener instrucciones, escanee el código QR en otro dispositivo o visite: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -185,7 +185,7 @@
   "@partitionSizeLabel": {},
   "partitionTypePrimary": "Primaria",
   "@partitionTypePrimary": {},
-  "turnOffBitlockerLinkInstructions": "Para seguir las instrucciones, abra esta página en un teléfono u otro dispositivo: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Para obtener instrucciones, escanee el código QR en otro dispositivo o visite: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -520,7 +520,7 @@
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "La creación de una nueva tabla de particiones en un dispositivo completo eliminará todas sus particiones actuales. Esta operación puede deshacerse si es necesario.",
   "@newPartitionTableConfirmationMessage": {},
-  "turnOffBitlockerDescription": "El equipo utiliza el cifrado BitLocker de Windows.\nDebe desactivar BitLocker en Windows antes de instalar Ubuntu.",
+  "turnOffBitlockerDescription": "Este ordenador utiliza el cifrado BitLocker de Windows.\nDebe utilizar Windows para crear espacio libre o elegir '{option}' para continuar.",
   "@turnOffBitlockerDescription": {},
   "softwareSlideTitle": "Encuentre aun más aplicaciones",
   "@softwareSlideTitle": {},
@@ -945,5 +945,14 @@
   "installationSlidesSupportEnterprise": "Para los usuarios de empresa, Canonical ofrece soporte comercial para facilitar la incorporación y gestión segura de Ubuntu en el lugar de trabajo.",
   "@installationSlidesSupportEnterprise": {},
   "turnOffRSTTitle": "Desactive RST para continuar",
-  "@turnOffRSTTitle": {}
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsTitle": "¿Reiniciar en Windows?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "¿Está seguro de que quieres reiniciar tú ordenador? Necesitas reiniciar la instalación de {DISTRO} más tarde para finalizar la instalación de {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
