@@ -922,5 +922,7 @@
   "notEnoughDiskSpaceAvailable": "Disponible :",
   "@notEnoughDiskSpaceAvailable": {},
   "installationSlidesSupportResources": "Ressources utiles :",
-  "@installationSlidesSupportResources": {}
+  "@installationSlidesSupportResources": {},
+  "turnOffRSTTitle": "Désactivez RST pour continuer",
+  "@turnOffRSTTitle": {}
 }
