@@ -641,8 +641,13 @@
   "@continueTesting": {},
   "turnOffBitlockerTitle": "BitLocker is enabled",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.",
-  "@turnOffBitlockerDescription": {},
+  "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose '{option}' to continue.",
+  "@turnOffBitlockerDescription": {
+    "type": "text",
+    "placeholders": {
+      "option": {}
+    }
+  },
   "turnOffBitlockerLinkInstructions": "For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",

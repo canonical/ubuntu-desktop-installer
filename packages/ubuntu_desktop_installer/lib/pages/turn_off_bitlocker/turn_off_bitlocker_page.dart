@@ -27,11 +27,13 @@ class TurnOffBitLockerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final model = Provider.of<TurnOffBitLockerModel>(context);
     final lang = AppLocalizations.of(context);
+    final flavor = Flavor.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.turnOffBitlockerTitle),
       ),
-      header: Text(lang.turnOffBitlockerDescription),
+      header: Text(lang.turnOffBitlockerDescription(
+          lang.installationTypeErase(flavor.name))),
       content: Column(
         children: [
           Html(
