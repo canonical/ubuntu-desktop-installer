@@ -35,7 +35,7 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST をオフにして下さい",
+  "turnOffRST": "RSTが有効になっています。",
   "@turnOffRST": {},
   "turnOffRSTDescription": "このコンピューターは Intel RST (Rapid Storage Technology) を使用しています。Ubuntu をインストールする前に Windows で RST を無効にする必要があります。",
   "@turnOffRSTDescription": {},
@@ -363,7 +363,7 @@
   },
   "shutdown": "シャットダウン",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "BitLocker をオフにしてください",
+  "turnOffBitlockerTitle": "BitLockerが有効になっています。",
   "@turnOffBitlockerTitle": {},
   "welcomeSlideTitle": "{RELEASE}へ、ようこそ。",
   "@welcomeSlideTitle": {
@@ -892,7 +892,7 @@
   },
   "notEnoughDiskSpaceAvailable": "利用可能：",
   "@notEnoughDiskSpaceAvailable": {},
-  "installationSlidesWelcomeTitle": "高速、無料、新機能満載",
+  "installationSlidesWelcomeTitle": "迅速で無料で、新機能が満載です。",
   "@installationSlidesWelcomeTitle": {},
   "installationSlidesCreativityTitle": "創造性を高める",
   "@installationSlidesCreativityTitle": {},
@@ -902,12 +902,27 @@
   "@installationSlidesDevelopmentTitle": {},
   "keyboardVariant": "キーボードバリアント：",
   "@keyboardVariant": {},
-  "installationSlidesSecurityTitle": "プライベートで安全",
+  "installationSlidesSecurityTitle": "プライバシーと安全性",
   "@installationSlidesSecurityTitle": {},
   "installationSlidesSoftwareTitle": "必要なアプリケーションをすべて網羅",
   "@installationSlidesSoftwareTitle": {},
   "installationSlidesGamingTitle": "ゲームに最適",
   "@installationSlidesGamingTitle": {},
   "installationSlidesSupportDocumentation": "公式ドキュメント",
-  "@installationSlidesSupportDocumentation": {}
+  "@installationSlidesSupportDocumentation": {},
+  "turnOffRSTTitle": "続行するにはRSTをオフにしてください。",
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsTitle": "Windowsに再起動しますか？",
+  "@restartIntoWindowsTitle": {},
+  "turnOffBitlockerHeadline": "続行するにはBitLockerをオフにしてください。",
+  "@turnOffBitlockerHeadline": {},
+  "detectButtonText": "見付ける",
+  "@detectButtonText": {},
+  "installationSlidesWelcomeHeader": "最新版の{DISTRO} 、これまで以上にコンピューティングが容易になります。",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

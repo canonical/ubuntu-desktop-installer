@@ -96,7 +96,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return 'Pour des instructions détaillées, veuillez ouvrir ce lien sur un téléphone ou un autre appareil : <a href=\"https://$url\">$url</a>';
+    return 'Pour obtenir des instructions, scannez le code QR sur un autre appareil ou visitez le site : <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -245,7 +245,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\"> Avertissement:</font> L’ordinateur n’est pas branché à une source d’alimentation.';
+    return '<font color=\"$color\"> Avertissement :</font> L’ordinateur n’est pas branché à une source d’alimentation.';
   }
 
   @override
@@ -302,7 +302,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Attention:</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d’exploitation.';
+    return '<font color=\"$color\">Attention :</font> Cela va supprimer tous vos programmes, documents, photos, musiques, et tous les autres fichiers sur tous les systèmes d’exploitation.';
   }
 
   @override
@@ -736,27 +736,27 @@ class AppLocalizationsFr extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker est activé';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => 'Désactivez BitLocker pour continuer';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez désactiver BitLocker dans Windows avant d’installer Ubuntu.';
+    return 'Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez utiliser Windows pour créer de l’espace libre ou choisir « $option » pour continuer.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Pour obtenir des instructions, ouvrez cette page sur un téléphone ou un autre appareil : <a href=\"https://$url\">$url</a>';
+    return 'Pour obtenir des instructions, scannez le code QR sur un autre appareil ou visitez le site : <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Redémarrer sous Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Redémarrer sous Windows ?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return 'Voulez-vous vraiment redémarrer votre ordinateur ? Vous devrez redémarrer l’installation d’$DISTRO ultérieurement pour compléter l’installation d’$DISTRO.';
   }
 
   @override
@@ -784,7 +784,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return 'La dernière version de $DISTRO rend l’informatique plus facile que jamais.';
+    return 'La dernière version d’$DISTRO rend l’informatique plus facile que jamais.';
   }
 
   @override
@@ -864,14 +864,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return 'La documentation officielle de $DISTRO est disponible en ligne et via l’icône Aide dans le dock.';
+    return 'La documentation officielle d’$DISTRO est disponible en ligne et via l’icône Aide dans le dock.';
   }
 
   @override
   String get installationSlidesSupportCommunity => 'Ask Ubuntu couvre une gamme de questions et de réponses. Discours Ubuntu fournit des guides et des discussions pour les nouveaux utilisateurs et les utilisateurs expérimentés.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'Pour les entreprises, Canonical propose un support commercial qui facilite l\'intégration et la gestion d\'Ubuntu en toute sécurité sur le lieu de travail.';
+  String get installationSlidesSupportEnterprise => 'Pour les entreprises, Canonical propose un support commercial qui facilite l’intégration et la gestion d’Ubuntu en toute sécurité sur le lieu de travail.';
 
   @override
   String get installationSlidesSupportResources => 'Ressources utiles :';
