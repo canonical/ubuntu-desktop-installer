@@ -190,7 +190,7 @@
   "@dontInstallDriverSoftwareNowDescription": {},
   "turnOffRSTDescription": "Ĉi tiu komputilo uzas Intel RST (Rapid-Konservejan Teknikon). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Por instrukcioj, malfermu ĉi tiun paĝon per via telefono aŭ alia aparato: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -385,9 +385,9 @@
   "@shutdown": {},
   "restartIntoWindows": "Restartigi al Windows",
   "@restartIntoWindows": {},
-  "turnOffBitlockerDescription": "Ĉi tiu komputilo uzas ĉifradon de Windows BitLocker.\nVi devas malŝalti BitLocker en Windows antaŭ ol instali Ubuntu.",
+  "turnOffBitlockerDescription": "Ĉi tiun komputilon ĉifras Windows BitLocker.\nLiberigu diskospacon per Windows, aŭ elektu «{option}» por daŭrigi.",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Por instrukcioj, malfermu ĉi tiun paĝon per via telefono aŭ alia aparato: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -936,5 +936,16 @@
     }
   },
   "turnOffRSTTitle": "Malŝaltu RST por daŭrigi",
-  "@turnOffRSTTitle": {}
+  "@turnOffRSTTitle": {},
+  "turnOffBitlockerHeadline": "Malŝaltu BitLocker por daŭrigi",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "Ĉu restartigi al Windows?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Ĉu vi certas, ke vi volas restartigi vian komputilon? Vi devos rekomenci la instaladon de {DISTRO} poste por fini instali {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

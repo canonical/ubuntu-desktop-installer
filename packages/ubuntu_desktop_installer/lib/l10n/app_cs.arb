@@ -61,7 +61,7 @@
   "@turnOffRST": {},
   "turnOffRSTDescription": "Na tomto počítači je zapnutá technologie Intel RST (Rapit Storage Technology). Aby bylo možné Ubuntu nainstalovat, je třeba ve Windows funkci RST vypnout.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Návod jak to udělat si otevřete na jiném zařízení (třeba telefonu): <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -387,13 +387,13 @@
       "path": {}
     }
   },
-  "turnOffBitlockerDescription": "Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné Ubuntu nainstalovat, je třeba Bitlocker vypnout.",
+  "turnOffBitlockerDescription": "Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné pokračovat, je třeba pomocí Windows udělat volné místo nebo zvolit '{option}'.",
   "@turnOffBitlockerDescription": {},
   "turnOffBitlockerTitle": "BitLocker je zapnutý",
   "@turnOffBitlockerTitle": {},
   "restartIntoWindows": "Restartovat do Windows",
   "@restartIntoWindows": {},
-  "turnOffBitlockerLinkInstructions": "Návod jak to udělat si otevřete na jiném zařízení (třeba telefonu): <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -989,5 +989,18 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "turnOffRSTTitle": "Aby bylo možné pokračovat, vypněte RST",
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsTitle": "Restartovat do Windows?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Opravdu chcete váš počítač restartovat? Pokud poté budete chtít dokončit instalaci {DISTRO}, bude třeba znovu spustit instalaci {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffBitlockerHeadline": "Aby bylo možné pokračovat, vypněte BitLocker",
+  "@turnOffBitlockerHeadline": {}
 }
