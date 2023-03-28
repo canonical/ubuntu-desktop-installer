@@ -96,7 +96,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return 'Aby uzyskać instrukcje, otwórz tę stronę w telefonie lub innym urządzeniu: <a href=\"https://$url\">$url</a>';
+    return 'Aby uzyskać instrukcje, zeskanuj kod QR na innym urządzeniu lub odwiedź: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -281,7 +281,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'Na tym komputerze jest obecnie zainstalowany $os. Co chcesz zrobić?';
+    return 'Na tym komputerze jest obecnie zainstalowany system $os. Co chcesz zrobić?';
   }
 
   @override
@@ -724,7 +724,7 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get shutdown => 'Zamknij system';
+  String get shutdown => 'Zamknij';
 
   @override
   String get restartNow => 'Uruchom ponownie teraz';
@@ -736,27 +736,27 @@ class AppLocalizationsPl extends AppLocalizations {
   String get turnOffBitlockerTitle => 'Funkcja BitLocker jest włączona';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => 'Wyłącz funkcję BitLocker, aby kontynuować';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Ten komputer używa szyfrowania Windows BitLocker.\nMusisz wyłączyć funkcję BitLocker w systemie Windows przed instalacją Ubuntu.';
+    return 'Ten komputer używa szyfrowania Windows BitLocker.\nNależy użyć systemu Windows do utworzenia wolnej przestrzeni lub wybrać \'$option\', aby kontynuować.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Aby uzyskać instrukcje, otwórz tę stronę w telefonie lub innym urządzeniu: <a href=\"https://$url\">$url</a>';
+    return 'Aby uzyskać instrukcje, zeskanuj kod QR na innym urządzeniu lub odwiedź: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Uruchom ponownie do Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Uruchomić ponownie do Windows?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return 'Czy na pewno chcesz ponownie uruchomić komputer? Później będziesz musieć ponownie uruchomić instalację $DISTRO, aby zakończyć instalowanie $DISTRO.';
   }
 
   @override

@@ -18,7 +18,7 @@
   "@changeButtonText": {},
   "tryUbuntu": "Wypróbuj {RELEASE}",
   "@tryUbuntu": {},
-  "instructionsForRST": "Aby uzyskać instrukcje, otwórz tę stronę w telefonie lub innym urządzeniu: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Aby uzyskać instrukcje, zeskanuj kod QR na innym urządzeniu lub odwiedź: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -218,7 +218,7 @@
       "color": {}
     }
   },
-  "installationTypeOSDetected": "Na tym komputerze jest obecnie zainstalowany {os}. Co chcesz zrobić?",
+  "installationTypeOSDetected": "Na tym komputerze jest obecnie zainstalowany system {os}. Co chcesz zrobić?",
   "@installationTypeOSDetected": {
     "type": "text",
     "placeholders": {
@@ -379,13 +379,13 @@
       "system": {}
     }
   },
-  "shutdown": "Zamknij system",
+  "shutdown": "Zamknij",
   "@shutdown": {},
   "turnOffBitlockerTitle": "Funkcja BitLocker jest włączona",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Ten komputer używa szyfrowania Windows BitLocker.\nMusisz wyłączyć funkcję BitLocker w systemie Windows przed instalacją Ubuntu.",
+  "turnOffBitlockerDescription": "Ten komputer używa szyfrowania Windows BitLocker.\nNależy użyć systemu Windows do utworzenia wolnej przestrzeni lub wybrać '{option}', aby kontynuować.",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Aby uzyskać instrukcje, otwórz tę stronę w telefonie lub innym urządzeniu: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Aby uzyskać instrukcje, zeskanuj kod QR na innym urządzeniu lub odwiedź: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -936,5 +936,16 @@
     }
   },
   "turnOffRSTTitle": "Wyłącz funkcję RST, aby kontynuować",
-  "@turnOffRSTTitle": {}
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsDescription": "Czy na pewno chcesz ponownie uruchomić komputer? Później będziesz musieć ponownie uruchomić instalację {DISTRO}, aby zakończyć instalowanie {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "restartIntoWindowsTitle": "Uruchomić ponownie do Windows?",
+  "@restartIntoWindowsTitle": {},
+  "turnOffBitlockerHeadline": "Wyłącz funkcję BitLocker, aby kontynuować",
+  "@turnOffBitlockerHeadline": {}
 }
