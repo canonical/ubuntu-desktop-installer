@@ -369,7 +369,7 @@
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "Les claus de seguretat no coincideixen",
   "@secureBootSecurityKeysDontMatch": {},
-  "wiredMustBeEnabled": "Per poder fer servir ethernet a aquest ordinador, la connexió cablejada ha d'estar habilitada",
+  "wiredMustBeEnabled": "Per poder fer servir Ethernet a aquest ordinador, la connexió cablejada ha d'estar habilitada",
   "@wiredMustBeEnabled": {},
   "wirelessNetworkingDisabled": "Xarxa sense fils deshabilitada",
   "@wirelessNetworkingDisabled": {},

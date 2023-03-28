@@ -157,7 +157,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get connectToInternetPageTitle => 'Connetti alla rete';
 
   @override
-  String get connectToInternetDescription => 'Connettere questo computer alla rete permetterà a Ubuntu l\'installazione di software aggiuntivo necessario e a scegliere il tuo fuso orario.\n\nConnetti il computer via cavo ethernet, o scegli una Rete Wi-Fi';
+  String get connectToInternetDescription => 'Connettere questo computer alla rete permetterà a Ubuntu l\'installazione di software aggiuntivo necessario e a scegliere il tuo fuso orario.\n\nConnetti il computer via cavo Ethernet, o scegli una Rete Wi-Fi';
 
   @override
   String get useWiredConnection => 'Usa connessione cablata';
@@ -169,7 +169,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get wiredDisabled => 'La connessione cablata è disattivata';
 
   @override
-  String get wiredMustBeEnabled => 'Per usufruire della connessione ethernet in questo computer, una connessione cablata deve essere attiva';
+  String get wiredMustBeEnabled => 'Per usufruire della connessione Ethernet in questo computer, una connessione cablata deve essere attiva';
 
   @override
   String get enableWired => 'Enable wired';

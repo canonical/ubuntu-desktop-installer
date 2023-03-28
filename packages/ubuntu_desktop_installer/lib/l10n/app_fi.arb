@@ -416,7 +416,7 @@
   "@noWiredConnection": {},
   "wiredDisabled": "Langallinen yhteys on kytketty pois päältä",
   "@wiredDisabled": {},
-  "wiredMustBeEnabled": "Jos haluat käyttää ethernet-yhteyttä tässä tietokoneessa, langallinen yhteys on otettava käyttöön",
+  "wiredMustBeEnabled": "Jos haluat käyttää Ethernet-yhteyttä tässä tietokoneessa, langallinen yhteys on otettava käyttöön",
   "@wiredMustBeEnabled": {},
   "enableWired": "Ota langallinen yhteys käyttöön",
   "@enableWired": {},

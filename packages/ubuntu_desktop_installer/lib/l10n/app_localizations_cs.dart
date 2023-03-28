@@ -157,7 +157,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get connectToInternetPageTitle => 'Připojit k síti';
 
   @override
-  String get connectToInternetDescription => 'Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se ethernetovým kabelem, nebo zvolte Wi-Fi síť';
+  String get connectToInternetDescription => 'Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se Ethernetovým kabelem, nebo zvolte Wi-Fi síť';
 
   @override
   String get useWiredConnection => 'Použít drátové připojení';
@@ -169,7 +169,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get wiredDisabled => 'Drátové připojení je vypnuto';
 
   @override
-  String get wiredMustBeEnabled => 'Aby na tomto počítači bylo možné použít rozhraní ethernet, je třeba zapnout drátové připojení';
+  String get wiredMustBeEnabled => 'Aby na tomto počítači bylo možné použít rozhraní Ethernet, je třeba zapnout drátové připojení';
 
   @override
   String get enableWired => 'Zapnout drátové';

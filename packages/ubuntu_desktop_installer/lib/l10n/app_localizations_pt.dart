@@ -169,7 +169,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get wiredDisabled => 'Ligação por cabo está desligada';
 
   @override
-  String get wiredMustBeEnabled => 'Para usar ethernet neste computador, uma ligação por cabo deve ser ativada';
+  String get wiredMustBeEnabled => 'Para usar Ethernet neste computador, uma ligação por cabo deve ser ativada';
 
   @override
   String get enableWired => 'Ligação por cabo ativada';
@@ -1126,7 +1126,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get connectToInternetPageTitle => 'Conecte-se à internet';
 
   @override
-  String get connectToInternetDescription => 'Ao conectar este computador à internet você facilitará ao Ubuntu instalação de qualquer software extra necessário e ajudará a determinar seu fuso horário.\n\nConecte-se via cabo ethernet ou escolha uma rede Wi-Fi';
+  String get connectToInternetDescription => 'Ao conectar este computador à internet você facilitará ao Ubuntu instalação de qualquer software extra necessário e ajudará a determinar seu fuso horário.\n\nConecte-se via cabo Ethernet ou escolha uma rede Wi-Fi';
 
   @override
   String get useWiredConnection => 'Usar conexão via cabo';
@@ -1138,7 +1138,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get wiredDisabled => 'Conexão a cabo está desligada';
 
   @override
-  String get wiredMustBeEnabled => 'Para utilizar a ethernet neste computador, uma conexão a cabo deve ser habilitada';
+  String get wiredMustBeEnabled => 'Para utilizar a Ethernet neste computador, uma conexão a cabo deve ser habilitada';
 
   @override
   String get enableWired => 'Habilitar conexão a cabo';

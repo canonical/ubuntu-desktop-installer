@@ -169,7 +169,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get wiredDisabled => 'Langallinen yhteys on kytketty pois päältä';
 
   @override
-  String get wiredMustBeEnabled => 'Jos haluat käyttää ethernet-yhteyttä tässä tietokoneessa, langallinen yhteys on otettava käyttöön';
+  String get wiredMustBeEnabled => 'Jos haluat käyttää Ethernet-yhteyttä tässä tietokoneessa, langallinen yhteys on otettava käyttöön';
 
   @override
   String get enableWired => 'Ota langallinen yhteys käyttöön';

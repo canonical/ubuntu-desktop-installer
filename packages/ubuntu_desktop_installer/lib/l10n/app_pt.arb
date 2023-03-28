@@ -463,7 +463,7 @@
   "@noWiredConnection": {},
   "wiredDisabled": "Ligação por cabo está desligada",
   "@wiredDisabled": {},
-  "wiredMustBeEnabled": "Para usar ethernet neste computador, uma ligação por cabo deve ser ativada",
+  "wiredMustBeEnabled": "Para usar Ethernet neste computador, uma ligação por cabo deve ser ativada",
   "@wiredMustBeEnabled": {},
   "enableWired": "Ligação por cabo ativada",
   "@enableWired": {},

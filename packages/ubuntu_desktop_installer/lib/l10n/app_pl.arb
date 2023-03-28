@@ -418,7 +418,7 @@
   "@wiredMustBeEnabled": {},
   "wiredDisabled": "Połączenie przewodowe jest wyłączone",
   "@wiredDisabled": {},
-  "connectToInternetDescription": "Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla ethernetowego lub wybierz sieć Wi-Fi",
+  "connectToInternetDescription": "Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla Ethernetowego lub wybierz sieć Wi-Fi",
   "@connectToInternetDescription": {},
   "enableWired": "Włącz przewodowe",
   "@enableWired": {},
