@@ -96,7 +96,7 @@ void main() {
   testWidgets('should not find link to open release notes', (tester) async {
     await setUpApp(tester);
 
-    final label = find.byType(Html);
+    final label = find.byType(Html).hitTestable();
     expect(label, findsNothing);
   });
 

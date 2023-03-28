@@ -80,8 +80,12 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           //   onChanged: (value) => model.selectOption(value!),
           // ),
           const Spacer(flex: 3),
-          if (model.isConnected)
-            Html(
+          Visibility(
+            visible: model.isConnected,
+            maintainSize: true,
+            maintainAnimation: true,
+            maintainState: true,
+            child: Html(
               shrinkWrap: true,
               data: lang.releaseNotesLabel(
                   model.releaseNotesURL(InheritedLocale.of(context))),
@@ -91,6 +95,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
               },
               onLinkTap: (url, _, __, ___) => launchUrl(url!),
             ),
+          ),
         ],
       ),
       actions: <WizardAction>[
