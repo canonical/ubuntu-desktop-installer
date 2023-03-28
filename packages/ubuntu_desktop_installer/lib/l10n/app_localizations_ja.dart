@@ -86,10 +86,10 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST をオフにして下さい';
+  String get turnOffRST => 'RSTが有効になっています。';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => '続行するにはRSTをオフにしてください。';
 
   @override
   String get turnOffRSTDescription => 'このコンピューターは Intel RST (Rapid Storage Technology) を使用しています。Ubuntu をインストールする前に Windows で RST を無効にする必要があります。';
@@ -112,7 +112,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get detectLayout => 'キーボードレイアウトを検出する';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => '見付ける';
 
   @override
   String get keyboardVariant => 'キーボードバリアント：';
@@ -733,10 +733,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get continueTesting => '試用を続ける';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker をオフにしてください';
+  String get turnOffBitlockerTitle => 'BitLockerが有効になっています。';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => '続行するにはBitLockerをオフにしてください。';
 
   @override
   String turnOffBitlockerDescription(Object option) {
@@ -752,7 +752,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get restartIntoWindows => '再起動して Windows を使用';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Windowsに再起動しますか？';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
@@ -780,11 +780,11 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationSlidesIncluded => '含まれるソフト：';
 
   @override
-  String get installationSlidesWelcomeTitle => '高速、無料、新機能満載';
+  String get installationSlidesWelcomeTitle => '迅速で無料で、新機能が満載です。';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return 'The latest version of $DISTRO makes computing easier than ever.';
+    return '最新版の$DISTRO 、これまで以上にコンピューティングが容易になります。';
   }
 
   @override
@@ -825,7 +825,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSecurityTitle => 'プライベートで安全';
+  String get installationSlidesSecurityTitle => 'プライバシーと安全性';
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
