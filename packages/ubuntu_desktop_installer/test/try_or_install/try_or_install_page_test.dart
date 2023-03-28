@@ -20,15 +20,18 @@ import 'try_or_install_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([UrlLauncher])
+@GenerateMocks([UrlLauncher, NetworkService])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
 
   late MaterialApp app;
   late TryOrInstallModel model;
 
-  Future<void> setUpApp(WidgetTester tester) async {
-    model = TryOrInstallModel();
+  Future<void> setUpApp(WidgetTester tester, {bool isConnected = false}) async {
+    final network = MockNetworkService();
+    when(network.isConnected).thenReturn(isConnected);
+    when(network.isConnectedSite).thenReturn(isConnected);
+    model = TryOrInstallModel(network: network);
 
     app = MaterialApp(
       supportedLocales: supportedLocales,
@@ -75,7 +78,7 @@ void main() {
   }
 
   testWidgets('should open release notes', (tester) async {
-    await setUpApp(tester);
+    await setUpApp(tester, isConnected: true);
 
     final label = find.byType(Html);
     expect(label, findsOneWidget);
@@ -88,6 +91,13 @@ void main() {
 
     const urlPattern = 'https://wiki.ubuntu.com/[A-Za-z]+/ReleaseNotes';
     verify(urlLauncher.launchUrl(argThat(matches(urlPattern)))).called(1);
+  });
+
+  testWidgets('should not find link to open release notes', (tester) async {
+    await setUpApp(tester);
+
+    final label = find.byType(Html);
+    expect(label, findsNothing);
   });
 
   testWidgets('selecting an option should enable continuing', (tester) async {

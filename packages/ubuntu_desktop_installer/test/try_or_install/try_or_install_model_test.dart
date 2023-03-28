@@ -2,13 +2,19 @@ import 'dart:ui';
 
 import 'package:file/memory.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_model.dart';
+import 'package:ubuntu_desktop_installer/services/network_service.dart';
+
+import 'try_or_install_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
+@GenerateMocks([NetworkService])
 void main() {
   test('selected option', () {
-    final model = TryOrInstallModel();
+    final network = MockNetworkService();
+    final model = TryOrInstallModel(network: network);
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -24,7 +30,8 @@ void main() {
   });
 
   test('release notes URL from cdrom', () {
-    final model = TryOrInstallModel();
+    final network = MockNetworkService();
+    final model = TryOrInstallModel(network: network);
 
     final fs = MemoryFileSystem.test();
     final file = fs.file('/cdrom/.disk/release_notes_url');
@@ -38,7 +45,8 @@ https://wiki.ubuntu.com/IntrepidReleaseNotes/\${LANG}
   });
 
   test('release notes URL from distro-info', () {
-    final model = TryOrInstallModel();
+    final network = MockNetworkService();
+    final model = TryOrInstallModel(network: network);
 
     final fs = MemoryFileSystem.test();
     final file = fs.file('/usr/share/distro-info/ubuntu.csv');
@@ -54,7 +62,8 @@ version,codename,series,created,release,eol,eol-server,eol-esm
   });
 
   test('release notes URL fallback', () {
-    final model = TryOrInstallModel();
+    final network = MockNetworkService();
+    final model = TryOrInstallModel(network: network);
 
     final fs = MemoryFileSystem.test();
     final url = model.releaseNotesURL(Locale('en'), fs: fs);
