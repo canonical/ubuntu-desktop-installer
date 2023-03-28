@@ -32,6 +32,13 @@ class TryOrInstallPage extends StatefulWidget {
 
 class TryOrInstallPageState extends State<TryOrInstallPage> {
   @override
+  void initState() {
+    super.initState();
+    final model = Provider.of<TryOrInstallModel>(context, listen: false);
+    model.init();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final model = Provider.of<TryOrInstallModel>(context);
     final lang = AppLocalizations.of(context);
