@@ -52,8 +52,8 @@ class TryOrInstallModel extends PropertyStreamNotifier {
     notifyListeners();
   }
 
-  /// Returns true if there is at least site-wide connectivity.
-  bool get isConnected => _network.isConnected || _network.isConnectedSite;
+  /// Returns true if there is a network connection.
+  bool get isConnected => _network.isConnected;
 
   /// Returns the URL of the release notes for the given [locale].
   String releaseNotesURL(
