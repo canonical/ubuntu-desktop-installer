@@ -11,9 +11,6 @@ import '../../l10n.dart';
 import '../../services.dart';
 import 'updates_other_software_model.dart';
 
-export 'updates_other_software_model.dart'
-    show InstallationMode, InstallationSource;
-
 class UpdatesOtherSoftwarePage extends StatefulWidget {
   @visibleForTesting
   const UpdatesOtherSoftwarePage({super.key});
@@ -25,10 +22,10 @@ class UpdatesOtherSoftwarePage extends StatefulWidget {
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => UpdateOtherSoftwareModel(
-          client: getService<SubiquityClient>(),
-          power: getService<PowerService>(),
-          network: getService<NetworkService>(),
-          installationMode: InstallationMode.normal),
+        client: getService<SubiquityClient>(),
+        power: getService<PowerService>(),
+        network: getService<NetworkService>(),
+      ),
       child: const UpdatesOtherSoftwarePage(),
     );
   }
@@ -52,50 +49,52 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
       ),
       headerPadding: EdgeInsets.zero,
       contentPadding: EdgeInsets.zero,
-      content: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      content: ListView(
         children: [
           Padding(
             padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
             child: Text(lang.updatesOtherSoftwarePageDescription),
           ),
-          YaruRadioButton<InstallationMode>(
-            title: Text(lang.normalInstallationTitle),
-            subtitle: Text(lang.normalInstallationSubtitle),
-            contentPadding: kContentPadding,
-            value: InstallationMode.normal,
-            groupValue: model.installationMode,
-            onChanged: model.setInstallationMode,
-          ),
-          const SizedBox(height: kContentSpacing),
-          YaruRadioButton<InstallationMode>(
-            title: Text(lang.minimalInstallationTitle),
-            subtitle: Text(lang.minimalInstallationSubtitle),
-            value: InstallationMode.minimal,
-            contentPadding: kContentPadding,
-            groupValue: model.installationMode,
-            onChanged: model.setInstallationMode,
-          ),
+          ...model.sources
+              .map((source) => Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: YaruRadioButton<String>(
+                      title: Text(source.localizeTitle(context)),
+                      subtitle: Text(source.localizeSubtitle(context)),
+                      contentPadding: kContentPadding,
+                      value: source.id,
+                      groupValue: model.sourceId,
+                      onChanged: model.setSourceId,
+                    ),
+                  ))
+              .withSpacing(kContentSpacing)
+              .toList(),
           Padding(
             padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
             child: Text(lang.otherOptions),
           ),
-          YaruCheckButton(
-            title: Text(lang.installDriversTitle),
-            subtitle: Text(lang.installDriversSubtitle),
-            contentPadding: kContentPadding,
-            value: model.installDrivers,
-            onChanged: model.setInstallDrivers,
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: YaruCheckButton(
+              title: Text(lang.installDriversTitle),
+              subtitle: Text(lang.installDriversSubtitle),
+              contentPadding: kContentPadding,
+              value: model.installDrivers,
+              onChanged: model.setInstallDrivers,
+            ),
           ),
           const SizedBox(height: kContentSpacing),
-          Tooltip(
-            message: !model.isOnline ? lang.offlineWarning : '',
-            child: YaruCheckButton(
-              title: Text(lang.installCodecsTitle),
-              subtitle: Text(lang.installCodecsSubtitle),
-              contentPadding: kContentPadding,
-              value: model.installCodecs && model.isOnline,
-              onChanged: model.isOnline ? model.setInstallCodecs : null,
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: Tooltip(
+              message: !model.isOnline ? lang.offlineWarning : '',
+              child: YaruCheckButton(
+                title: Text(lang.installCodecsTitle),
+                subtitle: Text(lang.installCodecsSubtitle),
+                contentPadding: kContentPadding,
+                value: model.installCodecs && model.isOnline,
+                onChanged: model.isOnline ? model.setInstallCodecs : null,
+              ),
             ),
           ),
         ],
@@ -123,10 +122,11 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
         WizardAction.back(context),
         WizardAction.next(
           context,
+          enabled: model.sourceId != null,
           onNext: () async {
             final telemetry = getService<TelemetryService>();
             await telemetry.addMetrics({
-              'Minimal': model.installationMode == InstallationMode.minimal,
+              'Minimal': model.sourceId?.contains('minimal') == true,
               'RestrictedAddons': model.installCodecs,
             });
             await model.save();
@@ -134,5 +134,38 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
         ),
       ],
     );
+  }
+}
+
+extension on Iterable<Widget> {
+  List<Widget> withSpacing(double spacing) {
+    return expand((item) sync* {
+      yield SizedBox(width: spacing, height: spacing);
+      yield item;
+    }).skip(1).toList();
+  }
+}
+
+extension on SourceSelection {
+  String localizeTitle(BuildContext context) {
+    switch (id) {
+      case 'ubuntu-desktop':
+        return AppLocalizations.of(context).normalInstallationTitle;
+      case 'ubuntu-desktop-minimal':
+        return AppLocalizations.of(context).minimalInstallationTitle;
+      default:
+        return name;
+    }
+  }
+
+  String localizeSubtitle(BuildContext context) {
+    switch (id) {
+      case 'ubuntu-desktop':
+        return AppLocalizations.of(context).normalInstallationSubtitle;
+      case 'ubuntu-desktop-minimal':
+        return AppLocalizations.of(context).minimalInstallationSubtitle;
+      default:
+        return description;
+    }
   }
 }

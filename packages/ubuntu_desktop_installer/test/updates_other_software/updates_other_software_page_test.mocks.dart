@@ -3,13 +3,14 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i3;
-import 'dart:ui' as _i4;
+import 'dart:async' as _i4;
+import 'dart:ui' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:subiquity_client/subiquity_client.dart' as _i3;
 import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart'
     as _i2;
-import 'package:ubuntu_desktop_installer/services.dart' as _i5;
+import 'package:ubuntu_desktop_installer/services.dart' as _i6;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -32,10 +33,10 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
   }
 
   @override
-  _i2.InstallationMode get installationMode => (super.noSuchMethod(
-        Invocation.getter(#installationMode),
-        returnValue: _i2.InstallationMode.normal,
-      ) as _i2.InstallationMode);
+  List<_i3.SourceSelection> get sources => (super.noSuchMethod(
+        Invocation.getter(#sources),
+        returnValue: <_i3.SourceSelection>[],
+      ) as List<_i3.SourceSelection>);
   @override
   bool get installDrivers => (super.noSuchMethod(
         Invocation.getter(#installDrivers),
@@ -67,10 +68,10 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  void setInstallationMode(_i2.InstallationMode? mode) => super.noSuchMethod(
+  void setSourceId(String? sourceId) => super.noSuchMethod(
         Invocation.method(
-          #setInstallationMode,
-          [mode],
+          #setSourceId,
+          [sourceId],
         ),
         returnValueForMissingStub: null,
       );
@@ -91,25 +92,25 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  _i3.Future<void> save() => (super.noSuchMethod(
+  _i4.Future<void> save() => (super.noSuchMethod(
         Invocation.method(
           #save,
           [],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  _i3.Future<void> init() => (super.noSuchMethod(
+  _i4.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  void setProperties(_i3.Stream<List<String>>? properties) =>
+  void setProperties(_i4.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
           #setProperties,
@@ -120,7 +121,7 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
   @override
   void addPropertyListener(
     String? property,
-    _i4.VoidCallback? onChanged,
+    _i5.VoidCallback? onChanged,
   ) =>
       super.noSuchMethod(
         Invocation.method(
@@ -157,7 +158,7 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -165,7 +166,7 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -185,32 +186,32 @@ class MockUpdateOtherSoftwareModel extends _i1.Mock
 /// A class which mocks [TelemetryService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTelemetryService extends _i1.Mock implements _i5.TelemetryService {
+class MockTelemetryService extends _i1.Mock implements _i6.TelemetryService {
   MockTelemetryService() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i3.Future<void> init([Map<String, dynamic>? metrics = const {}]) =>
+  _i4.Future<void> init([Map<String, dynamic>? metrics = const {}]) =>
       (super.noSuchMethod(
         Invocation.method(
           #init,
           [metrics],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  _i3.Future<void> addStage(String? name) => (super.noSuchMethod(
+  _i4.Future<void> addStage(String? name) => (super.noSuchMethod(
         Invocation.method(
           #addStage,
           [name],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  _i3.Future<void> addMetric(
+  _i4.Future<void> addMetric(
     String? key,
     dynamic value,
   ) =>
@@ -222,17 +223,17 @@ class MockTelemetryService extends _i1.Mock implements _i5.TelemetryService {
             value,
           ],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
-  _i3.Future<void> addMetrics(Map<String, dynamic>? entries) =>
+  _i4.Future<void> addMetrics(Map<String, dynamic>? entries) =>
       (super.noSuchMethod(
         Invocation.method(
           #addMetrics,
           [entries],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 }

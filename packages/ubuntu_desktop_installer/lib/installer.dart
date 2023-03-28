@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:collection/collection.dart';
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -51,7 +52,7 @@ Future<void> runInstallerApp(
         help: 'Path of the machine config (dry-run only)');
     parser.addOption('source-catalog',
         valueHelp: 'path',
-        defaultsTo: 'examples/mixed-sources.yaml',
+        defaultsTo: 'examples/desktop-sources.yaml',
         help: 'Path of the source catalog (dry-run only)');
     parser.addOption('bootloader', hide: true);
     parser.addFlag('try-or-install', hide: true);
@@ -122,7 +123,12 @@ Future<void> runInstallerApp(
   );
 
   await subiquityClient.setVariant(Variant.DESKTOP);
-  await subiquityClient.setSource(InstallationMode.normal.source);
+  await subiquityClient.source().then((value) async {
+    final source = value.sources.firstWhereOrNull((source) => source.isDefault);
+    if (source != null) {
+      await subiquityClient.setSource(source.id);
+    }
+  });
 
   // Use the default values for a number of endpoints
   // for which a UI page isn't implemented yet.
