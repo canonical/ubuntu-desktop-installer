@@ -1,8 +1,10 @@
 import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
-import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_wizard/utils.dart';
+
+import '../../services.dart';
 
 /// @internal
 final log = Logger('try_or_install');
@@ -23,10 +25,24 @@ enum Option {
 }
 
 /// Implements the business logic of the Try Or Install page.
-class TryOrInstallModel extends SafeChangeNotifier {
+class TryOrInstallModel extends PropertyStreamNotifier {
+  /// Creates the model with the given client.
+  TryOrInstallModel({required NetworkService network}) : _network = network {
+    addPropertyListener('Connectivity', notifyListeners);
+  }
+
+  Future<void> init() {
+    return _network.connect().then((_) {
+      setProperties(_network.propertiesChanged);
+      notifyListeners();
+    });
+  }
+
   /// The currently selected option.
   Option get option => _option;
   Option _option = Option.none;
+
+  final NetworkService _network;
 
   /// Selects the given [option].
   void selectOption(Option option) {
@@ -35,6 +51,9 @@ class TryOrInstallModel extends SafeChangeNotifier {
     log.info('Selected ${option.name} option');
     notifyListeners();
   }
+
+  /// Returns true if there is a network connection.
+  bool get isConnected => _network.isConnected;
 
   /// Returns the URL of the release notes for the given [locale].
   String releaseNotesURL(
