@@ -122,7 +122,7 @@
   "@welcome": {},
   "tryOrInstallPageTitle": "{DISTRO}を試してみるか、インストールします",
   "@tryOrInstallPageTitle": {},
-  "instructionsForRST": "手順は、スマートフォンなどで <a href=\"https://{url}\">{url}</a> をご確認ください。",
+  "instructionsForRST": "手順は、別のデバイスでQRコードをスキャンするか、<a href=\"https://{url}\">{url}</a>をご確認ください。",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -467,7 +467,7 @@
   "@writeChangesDescription": {},
   "turnOffBitlockerDescription": "このコンピューターは Windows BitLocker で暗号化されています。\nUbuntu をインストールする前に Windows で BitLocker をオフにしてください。",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "手順は、スマートフォンなどで <a href=\"https://{url}\">{url}</a> をご確認ください",
+  "turnOffBitlockerLinkInstructions": "手順は、別のデバイスでQRコードをスキャンするか、<a href=\"https://{url}\">{url}</a>をご確認ください。",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -906,7 +906,7 @@
   "@installationSlidesSecurityTitle": {},
   "installationSlidesSoftwareTitle": "必要なアプリケーションをすべて網羅",
   "@installationSlidesSoftwareTitle": {},
-  "installationSlidesGamingTitle": "ゲームに最適",
+  "installationSlidesGamingTitle": "ゲームに最適化",
   "@installationSlidesGamingTitle": {},
   "installationSlidesSupportDocumentation": "公式ドキュメント",
   "@installationSlidesSupportDocumentation": {},
@@ -920,6 +920,17 @@
   "@detectButtonText": {},
   "installationSlidesWelcomeHeader": "最新版の{DISTRO} 、これまで以上にコンピューティングが容易になります。",
   "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportResources": "お役立ち情報",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportUbuntuPro": "Ubuntu Proで24時間365日サポート",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesSupportHeader": "{DISTRO} の公式ドキュメントは、オンラインおよびドックのヘルプ アイコンから入手できます。",
+  "@installationSlidesSupportHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
