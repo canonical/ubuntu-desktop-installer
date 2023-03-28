@@ -43,6 +43,8 @@ Future<void> runInstallerApp(
   List<WidgetBuilder>? slides,
 }) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
+    parser.addOption('dry-run-config',
+        valueHelp: 'path', help: 'Path of the dry-run config');
     parser.addOption('machine-config',
         valueHelp: 'path',
         defaultsTo: 'examples/simple.json',
@@ -106,6 +108,8 @@ Future<void> runInstallerApp(
     subiquityServer: subiquityServer,
     subiquityMonitor: subiquityMonitor,
     serverArgs: [
+      if (options['dry-run-config'] != null)
+        '--dry-run-config=${options['dry-run-config']}',
       if (options['machine-config'] != null)
         '--machine-config=${options['machine-config']}',
       if (options['source-catalog'] != null)
