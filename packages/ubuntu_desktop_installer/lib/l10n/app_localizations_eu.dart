@@ -157,7 +157,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get connectToInternetPageTitle => 'Konektatu internetera';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network';
 
   @override
   String get useWiredConnection => 'Erabili kable bidezko konexioa';
@@ -169,7 +169,7 @@ class AppLocalizationsEu extends AppLocalizations {
   String get wiredDisabled => 'Kable bidezko konexioa desaktibatuta dago';
 
   @override
-  String get wiredMustBeEnabled => 'Ordenagailu honetan ethernet erabiltzeko, kable bidezko konexioa gaitu behar da';
+  String get wiredMustBeEnabled => 'Ordenagailu honetan Ethernet erabiltzeko, kable bidezko konexioa gaitu behar da';
 
   @override
   String get enableWired => 'Gaitu kable bidezko konexioa';

@@ -503,7 +503,7 @@ abstract class AppLocalizations {
   /// No description provided for @connectToInternetDescription.
   ///
   /// In en, this message translates to:
-  /// **'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network'**
+  /// **'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network'**
   String get connectToInternetDescription;
 
   /// No description provided for @useWiredConnection.
@@ -527,7 +527,7 @@ abstract class AppLocalizations {
   /// No description provided for @wiredMustBeEnabled.
   ///
   /// In en, this message translates to:
-  /// **'To use ethernet on this computer, a wired connection must be enabled'**
+  /// **'To use Ethernet on this computer, a wired connection must be enabled'**
   String get wiredMustBeEnabled;
 
   /// No description provided for @enableWired.

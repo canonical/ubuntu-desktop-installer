@@ -157,7 +157,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get connectToInternetPageTitle => 'Połącz się z siecią';
 
   @override
-  String get connectToInternetDescription => 'Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla ethernetowego lub wybierz sieć Wi-Fi';
+  String get connectToInternetDescription => 'Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla Ethernetowego lub wybierz sieć Wi-Fi';
 
   @override
   String get useWiredConnection => 'Użyj połączenia przewodowego';

@@ -157,7 +157,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get connectToInternetPageTitle => 'Csatlakozás az internethez';
 
   @override
-  String get connectToInternetDescription => 'Ha csatlakoztatja a számítógépet az internethez, az Ubuntu telepít minden szükséges extra szoftvert, és segít kiválasztani az időzónát.\n\nCsatlakozás ethernet-kábellel, vagy válasszon Wi-Fi hálózatot';
+  String get connectToInternetDescription => 'Ha csatlakoztatja a számítógépet az internethez, az Ubuntu telepít minden szükséges extra szoftvert, és segít kiválasztani az időzónát.\n\nCsatlakozás Ethernet-kábellel, vagy válasszon Wi-Fi hálózatot';
 
   @override
   String get useWiredConnection => 'Vezetékes kapcsolat használata';
@@ -169,7 +169,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get wiredDisabled => 'A vezetékes kapcsolat ki van kapcsolva';
 
   @override
-  String get wiredMustBeEnabled => 'Az ethernet használatához ezen a számítógépen engedélyezni kell a vezetékes kapcsolatot';
+  String get wiredMustBeEnabled => 'Az Ethernet használatához ezen a számítógépen engedélyezni kell a vezetékes kapcsolatot';
 
   @override
   String get enableWired => 'Vezetékes engedélyezése';

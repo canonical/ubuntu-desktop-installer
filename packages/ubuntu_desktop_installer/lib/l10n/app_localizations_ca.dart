@@ -157,7 +157,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get connectToInternetPageTitle => 'Connecta a internet';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network';
 
   @override
   String get useWiredConnection => 'Use wired connection';
@@ -169,7 +169,7 @@ class AppLocalizationsCa extends AppLocalizations {
   String get wiredDisabled => 'Wired connection is turned off';
 
   @override
-  String get wiredMustBeEnabled => 'Per poder fer servir ethernet a aquest ordinador, la connexió cablejada ha d\'estar habilitada';
+  String get wiredMustBeEnabled => 'Per poder fer servir Ethernet a aquest ordinador, la connexió cablejada ha d\'estar habilitada';
 
   @override
   String get enableWired => 'Enable wired';

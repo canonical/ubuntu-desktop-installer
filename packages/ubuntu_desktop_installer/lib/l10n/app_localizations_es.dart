@@ -157,7 +157,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get connectToInternetPageTitle => 'Conectarse a una red';
 
   @override
-  String get connectToInternetDescription => 'Conectar este equipo a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y ayudará a elegir su zona horaria.\n\nConectar por cable ethernet, o elegir una red Wi-Fi';
+  String get connectToInternetDescription => 'Conectar este equipo a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y ayudará a elegir su zona horaria.\n\nConectar por cable Ethernet, o elegir una red Wi-Fi';
 
   @override
   String get useWiredConnection => 'Utilizar conexión por cable';
@@ -169,7 +169,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get wiredDisabled => 'La conexión por cable está desactivada';
 
   @override
-  String get wiredMustBeEnabled => 'Para utilizar ethernet en este ordenador, debe activarse una conexión por cable';
+  String get wiredMustBeEnabled => 'Para utilizar Ethernet en este ordenador, debe activarse una conexión por cable';
 
   @override
   String get enableWired => 'Activar por cable';

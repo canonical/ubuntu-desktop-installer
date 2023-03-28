@@ -169,7 +169,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get wiredDisabled => 'Kablolu bağlantı kapalı';
 
   @override
-  String get wiredMustBeEnabled => 'Bilgisayarda etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir';
+  String get wiredMustBeEnabled => 'Bilgisayarda Etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir';
 
   @override
   String get enableWired => 'Kablolu bağlantıyı etkinleştir';

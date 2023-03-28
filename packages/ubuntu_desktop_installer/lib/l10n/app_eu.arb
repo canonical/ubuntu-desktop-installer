@@ -147,7 +147,7 @@
   "@wiredDisabled": {},
   "restartButtonText": "Berrabiarazi",
   "@restartButtonText": {},
-  "wiredMustBeEnabled": "Ordenagailu honetan ethernet erabiltzeko, kable bidezko konexioa gaitu behar da",
+  "wiredMustBeEnabled": "Ordenagailu honetan Ethernet erabiltzeko, kable bidezko konexioa gaitu behar da",
   "@wiredMustBeEnabled": {},
   "hiddenWifiNetwork": "Konektatu ezkutuko Wi-Fi sare batera",
   "@hiddenWifiNetwork": {},

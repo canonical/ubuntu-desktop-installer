@@ -40,7 +40,7 @@
   "@noWiredConnection": {},
   "wiredDisabled": "Kablolu bağlantı kapalı",
   "@wiredDisabled": {},
-  "wiredMustBeEnabled": "Bilgisayarda etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir",
+  "wiredMustBeEnabled": "Bilgisayarda Etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir",
   "@wiredMustBeEnabled": {},
   "repairInstallationDescription": "Tamir etme seçeneği, tüm yazılımlarınızı tekrardan kuracak ve belgeleriniz ile ayarlarınıza dokunmayacaktır.",
   "@repairInstallationDescription": {},
