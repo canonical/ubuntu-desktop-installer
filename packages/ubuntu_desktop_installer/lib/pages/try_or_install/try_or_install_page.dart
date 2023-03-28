@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -20,7 +21,7 @@ class TryOrInstallPage extends StatefulWidget {
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => TryOrInstallModel(),
+      create: (_) => TryOrInstallModel(network: getService<NetworkService>()),
       child: const TryOrInstallPage(),
     );
   }
@@ -72,16 +73,17 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           //   onChanged: (value) => model.selectOption(value!),
           // ),
           const Spacer(flex: 3),
-          Html(
-            shrinkWrap: true,
-            data: lang.releaseNotesLabel(
-                model.releaseNotesURL(InheritedLocale.of(context))),
-            style: {
-              'body': Style(margin: Margins.zero),
-              'a': Style(color: context.linkColor),
-            },
-            onLinkTap: (url, _, __, ___) => launchUrl(url!),
-          ),
+          if (model.isConnected)
+            Html(
+              shrinkWrap: true,
+              data: lang.releaseNotesLabel(
+                  model.releaseNotesURL(InheritedLocale.of(context))),
+              style: {
+                'body': Style(margin: Margins.zero),
+                'a': Style(color: context.linkColor),
+              },
+              onLinkTap: (url, _, __, ___) => launchUrl(url!),
+            ),
         ],
       ),
       actions: <WizardAction>[
