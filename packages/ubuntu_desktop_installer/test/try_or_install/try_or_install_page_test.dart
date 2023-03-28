@@ -30,6 +30,7 @@ void main() {
   Future<void> setUpApp(WidgetTester tester, {bool isConnected = false}) async {
     final network = MockNetworkService();
     when(network.isConnected).thenReturn(isConnected);
+    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
     model = TryOrInstallModel(network: network);
 
     app = MaterialApp(
