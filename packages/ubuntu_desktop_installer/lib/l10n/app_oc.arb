@@ -45,7 +45,7 @@
   "@turnOffRST": {},
   "turnOffRSTDescription": "Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Per las consignas detalhadas, mercés de dobrir aqueste ligam sus un mobil o un autre aparelh : <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Per las consignas, numerizatz aqueste còdi QR sus un autre aparelh o consultatz : <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -968,5 +968,11 @@
   "installationSlidesSupportCommunity": "Ask Ubuntu cobrís una larga plaja de questions e responsas e lo Discourse d’Ubuntu provesís de guidas e de discussions pels nòuvenguts e los utilizaires experimentats.",
   "@installationSlidesSupportCommunity": {},
   "installationSlidesSupportEnterprise": "Per las entrepresas Canonical fornís una assisténcia comerciala per facilitar l’integracion e la gestion d’Ubuntu en tota seguretat al lòc de trabalh.",
-  "@installationSlidesSupportEnterprise": {}
+  "@installationSlidesSupportEnterprise": {},
+  "turnOffRSTTitle": "Desactivatz lo RST per contunhar",
+  "@turnOffRSTTitle": {},
+  "turnOffBitlockerHeadline": "Desactivatz BitLocker per contunhar",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "Reaviar jos Windows ?",
+  "@restartIntoWindowsTitle": {}
 }
