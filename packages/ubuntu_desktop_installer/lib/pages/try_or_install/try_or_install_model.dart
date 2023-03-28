@@ -1,8 +1,8 @@
 import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
-import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 
@@ -25,10 +25,17 @@ enum Option {
 }
 
 /// Implements the business logic of the Try Or Install page.
-class TryOrInstallModel extends SafeChangeNotifier {
+class TryOrInstallModel extends PropertyStreamNotifier {
   /// Creates the model with the given client.
   TryOrInstallModel({required NetworkService network}) : _network = network {
-    _network.connect().then((_) => notifyListeners());
+    addPropertyListener('Connectivity', notifyListeners);
+  }
+
+  void init() {
+    _network.connect().then((_) {
+      setProperties(_network.propertiesChanged);
+      notifyListeners();
+    });
   }
 
   /// The currently selected option.
