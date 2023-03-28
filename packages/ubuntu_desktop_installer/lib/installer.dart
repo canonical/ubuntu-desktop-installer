@@ -426,6 +426,11 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
           userData: InstallationStep.storage.index,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
+        Routes.recoveryKey: WizardRoute(
+          builder: RecoveryKeyPage.create,
+          userData: InstallationStep.storage.index,
+          onNext: (_) => Routes.writeChangesToDisk,
+        ),
         Routes.allocateDiskSpace: WizardRoute(
           builder: AllocateDiskSpacePage.create,
           userData: InstallationStep.storage.index,

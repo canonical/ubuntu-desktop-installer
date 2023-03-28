@@ -10,6 +10,7 @@ export 'pages/installation_slides/installation_slides_page.dart';
 export 'pages/installation_type/installation_type_page.dart';
 export 'pages/keyboard_layout/keyboard_layout_page.dart';
 export 'pages/not_enough_disk_space/not_enough_disk_space_page.dart';
+export 'pages/recovery_key/recovery_key_page.dart';
 export 'pages/select_guided_storage/select_guided_storage_page.dart';
 export 'pages/try_or_install/try_or_install_page.dart';
 export 'pages/turn_off_bitlocker/turn_off_bitlocker_page.dart';

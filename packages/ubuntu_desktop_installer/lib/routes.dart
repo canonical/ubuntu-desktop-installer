@@ -22,4 +22,5 @@ abstract class Routes {
   static const whereAreYou = '/where-are-you';
   static const notEnoughDiskSpace = '/not-enough-disk-space';
   static const activeDirectory = '/active-directory';
+  static const recoveryKey = '/recovery-key';
 }
