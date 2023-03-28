@@ -1,6 +1,6 @@
 {
   "@@locale": "he",
-  "turnOffBitlockerLinkInstructions": "לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -48,7 +48,7 @@
   "@secureBootSecurityKeysDontMatch": {},
   "updatesOtherSoftwarePageDescription": "אילו יישומים להתקין בתור התחלה?",
   "@updatesOtherSoftwarePageDescription": {},
-  "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.",
+  "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש להשתמש ב־Windows כדי לפנות מקום או לבחור ב‚{option}’ כדי להמשיך.",
   "@turnOffBitlockerDescription": {},
   "readyToUse": "המערכת **{system}** מותקנת ומוכנה לשימוש",
   "@readyToUse": {
@@ -938,5 +938,14 @@
   "turnOffRSTTitle": "יש לכבות את ה־RST כדי להמשיך",
   "@turnOffRSTTitle": {},
   "restartIntoWindowsTitle": "לעלות מחדש ל־Windows?",
-  "@restartIntoWindowsTitle": {}
+  "@restartIntoWindowsTitle": {},
+  "turnOffBitlockerHeadline": "יש לכבות את BitLocker",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsDescription": "להפעיל את המחשב מחדש? יש להפעיל את ההתקנה של {DISTRO} מחדש בהמשך כדי לסיים את התקנת {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
