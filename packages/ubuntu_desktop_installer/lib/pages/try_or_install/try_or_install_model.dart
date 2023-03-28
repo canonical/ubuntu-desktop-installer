@@ -31,8 +31,8 @@ class TryOrInstallModel extends PropertyStreamNotifier {
     addPropertyListener('Connectivity', notifyListeners);
   }
 
-  void init() {
-    _network.connect().then((_) {
+  Future<void> init() {
+    return _network.connect().then((_) {
       setProperties(_network.propertiesChanged);
       notifyListeners();
     });
