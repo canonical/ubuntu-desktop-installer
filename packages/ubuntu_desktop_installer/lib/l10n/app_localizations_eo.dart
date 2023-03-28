@@ -96,7 +96,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return 'Por instrukcioj, malfermu ĉi tiun paĝon per via telefono aŭ alia aparato: <a href=\"https://$url\">$url</a>';
+    return 'Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -736,27 +736,27 @@ class AppLocalizationsEo extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker estas ŝaltita';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => 'Malŝaltu BitLocker por daŭrigi';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Ĉi tiu komputilo uzas ĉifradon de Windows BitLocker.\nVi devas malŝalti BitLocker en Windows antaŭ ol instali Ubuntu.';
+    return 'Ĉi tiun komputilon ĉifras Windows BitLocker.\nLiberigu diskospacon per Windows, aŭ elektu «$option» por daŭrigi.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Por instrukcioj, malfermu ĉi tiun paĝon per via telefono aŭ alia aparato: <a href=\"https://$url\">$url</a>';
+    return 'Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Restartigi al Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Ĉu restartigi al Windows?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return 'Ĉu vi certas, ke vi volas restartigi vian komputilon? Vi devos rekomenci la instaladon de $DISTRO poste por fini instali $DISTRO.';
   }
 
   @override

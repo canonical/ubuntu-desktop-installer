@@ -89,14 +89,14 @@ class AppLocalizationsLt extends AppLocalizations {
   String get turnOffRST => 'RST yra įjungta';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Norėdami tęsti, išjunkite RST';
 
   @override
   String get turnOffRSTDescription => 'Šis kompiuteris naudoja Intel RST (Rapid Storage Technology). Prieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti RST.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Norėdami skaityti instrukcijas, atverkite telefone ar kitame įrenginyje šį puslapį: <a href=\"https://$url\">$url</a>';
+    return 'Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -736,27 +736,27 @@ class AppLocalizationsLt extends AppLocalizations {
   String get turnOffBitlockerTitle => '„BitLocker“ yra įjungta';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => 'Norėdami tęsti, išjunkite „BitLocker“';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nPrieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti „BitLocker“.';
+    return 'Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nNorėdami tęsti, turite pasinaudoti „Windows“ ir sukurti laisvą vietą arba pasirinkti variantą \'$option\'.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Norėdami gauti instrukcijas, atverkite savo telefone ar kitame įrenginyje šią internetinę svetainę: <a href=\"https://$url\">$url</a>';
+    return 'Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Paleisti iš naujo į „Windows“';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Paleisti iš naujo į „Windows“ sistemą?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return 'Ar tikrai norite paleisti kompiuterį iš naujo? Vėliau jums teks pradėti $DISTRO diegimą iš naujo, kad užbaigtumėte diegti $DISTRO.';
   }
 
   @override

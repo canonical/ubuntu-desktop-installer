@@ -89,14 +89,14 @@ class AppLocalizationsCs extends AppLocalizations {
   String get turnOffRST => 'RST je zapnuté';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Aby bylo možné pokračovat, vypněte RST';
 
   @override
   String get turnOffRSTDescription => 'Na tomto počítači je zapnutá technologie Intel RST (Rapit Storage Technology). Aby bylo možné Ubuntu nainstalovat, je třeba ve Windows funkci RST vypnout.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Návod jak to udělat si otevřete na jiném zařízení (třeba telefonu): <a href=\"https://$url\">$url</a>';
+    return 'Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -736,27 +736,27 @@ class AppLocalizationsCs extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker je zapnutý';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => 'Aby bylo možné pokračovat, vypněte BitLocker';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné Ubuntu nainstalovat, je třeba Bitlocker vypnout.';
+    return 'Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné pokračovat, je třeba pomocí Windows udělat volné místo nebo zvolit \'$option\'.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Návod jak to udělat si otevřete na jiném zařízení (třeba telefonu): <a href=\"https://$url\">$url</a>';
+    return 'Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Restartovat do Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Restartovat do Windows?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return 'Opravdu chcete váš počítač restartovat? Pokud poté budete chtít dokončit instalaci $DISTRO, bude třeba znovu spustit instalaci $DISTRO.';
   }
 
   @override
