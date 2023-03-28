@@ -24,7 +24,8 @@ void main() {
     testDisk(path: '/dev/sdb', size: 23, model: 'SDB', vendor: 'ATA'),
   ];
   final testStorages = testDisks
-      .map((disk) => GuidedStorageTargetReformat(diskId: disk.id))
+      .map((disk) =>
+          GuidedStorageTargetReformat(diskId: disk.id, capabilities: []))
       .toList();
 
   SelectGuidedStorageModel buildModel({
