@@ -204,6 +204,7 @@ void main() {
       minimum: 111,
       recommended: 122,
       maximum: 133,
+      capabilities: [GuidedCapability.DIRECT],
     );
 
     const storage2 = GuidedStorageTargetResize(
@@ -213,6 +214,7 @@ void main() {
       minimum: 211,
       recommended: 222,
       maximum: 233,
+      capabilities: [GuidedCapability.DIRECT],
     );
 
     final service = MockDiskStorageService();
@@ -263,5 +265,6 @@ GuidedStorageTargetResize testResizeStorage({
     minimum: minimum,
     recommended: recommended,
     maximum: maximum,
+    capabilities: [GuidedCapability.DIRECT],
   );
 }

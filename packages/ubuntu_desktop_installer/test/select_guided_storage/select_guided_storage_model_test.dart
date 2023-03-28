@@ -12,7 +12,8 @@ import 'select_guided_storage_model_test.mocks.dart';
 void main() {
   final testDisks = <Disk>[testDisk(id: 'a'), testDisk(id: 'b')];
   final testTargets = testDisks
-      .map((disk) => GuidedStorageTargetReformat(diskId: disk.id))
+      .map((disk) =>
+          GuidedStorageTargetReformat(diskId: disk.id, capabilities: []))
       .toList();
 
   test('load guided storage', () async {
@@ -56,8 +57,10 @@ void main() {
     const sdb1 = Partition(number: 1, size: 3);
     final sdb = testDisk(id: 'sdb', partitions: [sdb1]);
 
-    const storage0 = GuidedStorageTargetReformat(diskId: 'sda');
-    const storage1 = GuidedStorageTargetReformat(diskId: 'sdb');
+    const storage0 =
+        GuidedStorageTargetReformat(diskId: 'sda', capabilities: []);
+    const storage1 =
+        GuidedStorageTargetReformat(diskId: 'sdb', capabilities: []);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
