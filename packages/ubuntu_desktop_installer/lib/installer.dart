@@ -21,7 +21,6 @@ import 'routes.dart';
 import 'services.dart';
 import 'slides.dart';
 import 'theme.dart';
-import 'widgets.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 export 'slides.dart';
@@ -195,7 +194,6 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      MascotAvatar.precacheAsset(context);
       TimezoneMap.precacheAssets(context);
     });
   }
