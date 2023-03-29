@@ -514,6 +514,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get partitionFormatLabel => 'Tiedostojärjestelmä:';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Ext4-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
 
   @override

@@ -514,6 +514,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionFormatLabel => '용도:';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Ext4 저널링 파일 시스템';
 
   @override

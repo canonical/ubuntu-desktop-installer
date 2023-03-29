@@ -514,6 +514,9 @@ class AppLocalizationsMl extends AppLocalizations {
   String get partitionFormatLabel => 'ഇതായി ഉപയോഗിക്കുന്നു:';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Ext4 ജേണലിംഗ് ഫയൽ സിസ്റ്റം';
 
   @override

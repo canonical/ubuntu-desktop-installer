@@ -514,6 +514,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get partitionFormatLabel => 'Uzata kiel:';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Protokoliga dosiersistemo ext4';
 
   @override

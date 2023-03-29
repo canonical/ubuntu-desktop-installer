@@ -514,6 +514,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionFormatLabel => 'Naudojamas kaip:';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Ext4 žurnalinė failų sistema';
 
   @override

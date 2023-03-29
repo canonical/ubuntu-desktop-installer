@@ -514,6 +514,9 @@ class AppLocalizationsTa extends AppLocalizations {
   String get partitionFormatLabel => 'பயன்படுத்தப்பட்ட அளவு:';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Ext4 journaling file system';
 
   @override
