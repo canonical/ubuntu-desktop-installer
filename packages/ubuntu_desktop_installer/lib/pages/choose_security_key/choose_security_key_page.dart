@@ -83,16 +83,18 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
           ],
         );
       }),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled: context
-              .select<ChooseSecurityKeyModel, bool>((model) => model.isValid),
-          onNext: context.read<ChooseSecurityKeyModel>().saveSecurityKey,
-          onBack: context.read<ChooseSecurityKeyModel>().loadSecurityKey,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            enabled: context
+                .select<ChooseSecurityKeyModel, bool>((model) => model.isValid),
+            onNext: context.read<ChooseSecurityKeyModel>().saveSecurityKey,
+            onBack: context.read<ChooseSecurityKeyModel>().loadSecurityKey,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -94,27 +94,30 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
           ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction(
-          label: lang.connectButtonText,
-          enabled: !model.isConnecting,
-          visible: model.isEnabled && model.canConnect,
-          onActivated: model.connect,
-        ),
-        WizardAction.next(
-          context,
-          enabled: model.isEnabled && !model.isConnecting && model.isConnected,
-          visible: !model.isEnabled || !model.canConnect,
-          onNext: () => Future.wait([
-            // suspend network activity when proceeding on the next page
-            model.cleanup(),
-            model.markConfigured(),
-          ]),
-          // resume network activity if/when returning back to this page
-          onBack: model.init,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction(
+            label: lang.connectButtonText,
+            enabled: !model.isConnecting,
+            visible: model.isEnabled && model.canConnect,
+            onActivated: model.connect,
+          ),
+          WizardAction.next(
+            context,
+            enabled:
+                model.isEnabled && !model.isConnecting && model.isConnected,
+            visible: !model.isEnabled || !model.canConnect,
+            onNext: () => Future.wait([
+              // suspend network activity when proceeding on the next page
+              model.cleanup(),
+              model.markConfigured(),
+            ]),
+            // resume network activity if/when returning back to this page
+            onBack: model.init,
+          ),
+        ],
+      ),
     );
   }
 }

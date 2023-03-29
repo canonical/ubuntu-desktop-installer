@@ -65,24 +65,26 @@ class _ActiveDirectoryPageState extends State<ActiveDirectoryPage> {
           ],
         );
       }),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled: context.select((ActiveDirectoryModel m) => m.isValid),
-          onNext: () async {
-            final model = context.read<ActiveDirectoryModel>();
-            await model.save();
-            model.getJoinResult().then((result) {
-              if (mounted &&
-                  (result == AdJoinResult.JOIN_ERROR ||
-                      result == AdJoinResult.PAM_ERROR)) {
-                showActiveDirectoryErrorDialog(context);
-              }
-            });
-          },
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            enabled: context.select((ActiveDirectoryModel m) => m.isValid),
+            onNext: () async {
+              final model = context.read<ActiveDirectoryModel>();
+              await model.save();
+              model.getJoinResult().then((result) {
+                if (mounted &&
+                    (result == AdJoinResult.JOIN_ERROR ||
+                        result == AdJoinResult.PAM_ERROR)) {
+                  showActiveDirectoryErrorDialog(context);
+                }
+              });
+            },
+          ),
+        ],
+      ),
     );
   }
 }

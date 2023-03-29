@@ -173,14 +173,16 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
           ],
         ),
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled: model.isValid,
-          onNext: model.save,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            enabled: model.isValid,
+            onNext: model.save,
+          ),
+        ],
+      ),
     );
   }
 }

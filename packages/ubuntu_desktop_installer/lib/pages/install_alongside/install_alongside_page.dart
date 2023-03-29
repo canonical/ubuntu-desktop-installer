@@ -110,15 +110,17 @@ class _InstallAlongsidePageState extends State<InstallAlongsidePage> {
           ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          label: lang.selectGuidedStorageInstallNow,
-          onNext: model.selectedStorage != null ? model.save : null,
-          onBack: model.reset,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            label: lang.selectGuidedStorageInstallNow,
+            onNext: model.selectedStorage != null ? model.save : null,
+            onBack: model.reset,
+          ),
+        ],
+      ),
     );
   }
 }

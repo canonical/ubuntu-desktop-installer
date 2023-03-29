@@ -98,15 +98,17 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
           ],
         );
       }),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled: model.isValid,
-          arguments: model.showAdvancedOptions,
-          onNext: model.saveProfileSetup,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            enabled: model.isValid,
+            arguments: model.showAdvancedOptions,
+            onNext: model.saveProfileSetup,
+          ),
+        ],
+      ),
     );
   }
 }

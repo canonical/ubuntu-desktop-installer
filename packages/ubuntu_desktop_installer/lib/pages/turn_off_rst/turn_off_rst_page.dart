@@ -96,10 +96,9 @@ class TurnOffRSTPage extends StatelessWidget {
             ],
           ),
         ),
-        singleLeading: true,
-        actions: <WizardAction>[
-          WizardAction.back(context),
-        ],
+        bottomBar: WizardBar(
+          leading: WizardAction.back(context),
+        ),
       ),
     );
   }

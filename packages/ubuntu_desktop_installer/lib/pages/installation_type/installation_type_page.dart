@@ -158,19 +158,21 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
           ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled: model.hasStorage,
-          arguments: model.installationType,
-          onNext: model.save,
-          // If the user returns back to select another installation type, the
-          // previously configured storage must be reset to make all guided
-          // partitioning targets available.
-          onBack: model.resetStorage,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            enabled: model.hasStorage,
+            arguments: model.installationType,
+            onNext: model.save,
+            // If the user returns back to select another installation type, the
+            // previously configured storage must be reset to make all guided
+            // partitioning targets available.
+            onBack: model.resetStorage,
+          ),
+        ],
+      ),
     );
   }
 }

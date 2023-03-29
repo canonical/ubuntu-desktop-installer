@@ -314,10 +314,12 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
           Text(lang.preparingUbuntu(flavor.name), style: style),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context, enabled: false),
-        WizardAction.next(context, enabled: false),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context, enabled: false),
+        trailing: [
+          WizardAction.next(context, enabled: false),
+        ],
+      ),
     );
   }
 }
