@@ -5,7 +5,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu 桌面版安装器';
+  String get appTitle => 'Ubuntu 桌面安装程序';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -89,14 +89,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String get turnOffRST => 'RST 已启用';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => '关闭 RST 以继续';
 
   @override
   String get turnOffRSTDescription => '这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，您需要在Windows中关闭RST。';
 
   @override
   String instructionsForRST(Object url) {
-    return '有关说明，请在手机或其他设备上打开此页面：<a href=\"https://$url\">$url</a>';
+    return '有关说明，请在另一台设备上扫描QR码或访问：<a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -720,7 +720,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String restartWarning(Object RELEASE) {
-    return '你现在可以继续试用$RELEASE ，但在你重新启动计算机之前，你所做的任何修改或保存的文件都不会被保留。';
+    return '您现在可以继续测试 $RELEASE，但在重新启动计算机之前，您所做的任何更改或保存的文档都不会被保留。';
   }
 
   @override
@@ -736,7 +736,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get turnOffBitlockerTitle => '已启用 BitLocker';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => '关闭 BitLocker 以继续';
 
   @override
   String turnOffBitlockerDescription(Object option) {
@@ -745,18 +745,18 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return '有关说明，请在手机或其他设备上打开此页面：<a href=\"https://$url\">$url</a>';
+    return '有关说明，请在另一台设备上扫描QR码或访问该网址：<a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => '重启进入 Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => '重启到 Windows？';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return '您确定要重新启动计算机吗？您需要稍后重新启动 $DISTRO 安装程序才能完成安装 $DISTRO。';
   }
 
   @override
@@ -784,7 +784,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return '最新版本的$DISTRO ，使计算比以往更容易。';
+    return '$DISTRO 的最新版本让计算机使用变得比以往任何时候都更加容易。';
   }
 
   @override
@@ -797,7 +797,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
-    return '在Ubuntu软件中安装、管理和更新您的所有应用程序，包括来自Snap商店和$DISTRO 档案的数千个应用程序。';
+    return '在 Ubuntu 软件中心安装、管理和更新所有应用程序，包括来自 Snap Store 和 $DISTRO 存档的数千个应用程序。';
   }
 
   @override
@@ -805,7 +805,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
-    return '$DISTRO 是应用程序或 Web 开发、数据科学和 AI/ML 以及 DevOps 和管理的理想工作站。每个 $DISTRO 版本都包含最新的工具链，并支持所有主要的 IDE。';
+    return '$DISTRO  是应用程序或 Web 开发、数据科学和 AI/ML 以及 DevOps 和管理的理想工作站。每个 $DISTRO 版本都包含最新的工具链，并支持所有主要的 IDE。';
   }
 
   @override
@@ -842,7 +842,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
-    return '$DISTRO桌面包括LibreOffice，这是一套与Microsoft Office兼容的开源应用程序，用于文档，电子表格和演示文稿。还提供流行的协作工具。';
+    return '$DISTRO 桌面包括LibreOffice，这是一套与Microsoft Office兼容的开源应用程序，用于文档，电子表格和演示文稿。还提供流行的协作工具。';
   }
 
   @override
@@ -850,7 +850,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
-    return '$DISTRO 理念的核心是相信计算是为所有人服务的。通过先进的无障碍工具和改变语言、颜色和文字大小的选项，$DISTRO ，使计算变得简单 - 无论你是谁，无论你在哪里。';
+    return '$DISTRO 哲学核心是相信计算机是为所有人而设计的。通过先进的辅助工具和更改语言、颜色和文本大小的选项，$DISTRO 让计算机使用变得容易 - 无论你是谁，身在何处。';
   }
 
   @override
@@ -864,11 +864,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return '官方 $DISTRO 文档可在线获取，也可通过扩展坞中的“帮助”图标获取。';
+    return '$DISTRO 的官方文档可以通过在线方式或者在dock中的帮助图标进行访问。';
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu 涵盖了一系列问题和回答，Ubuntu Discourse 为新老用户提供了指南和讨论。';
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu 覆盖了各种问题和回答，而 Ubuntu Discourse 为新手和有经验的用户提供指南和讨论。';
 
   @override
   String get installationSlidesSupportEnterprise => '对于企业用户，Canonical 提供商业支持，以便在工作场所轻松安全地使用和管理 Ubuntu。';

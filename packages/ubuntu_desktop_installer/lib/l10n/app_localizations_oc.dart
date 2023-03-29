@@ -89,14 +89,14 @@ class AppLocalizationsOc extends AppLocalizations {
   String get turnOffRST => 'RST es activat';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Desactivatz lo RST per contunhar';
 
   @override
   String get turnOffRSTDescription => 'Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Per las consignas detalhadas, mercés de dobrir aqueste ligam sus un mobil o un autre aparelh : <a href=\"https://$url\">$url</a>';
+    return 'Per las consignas, numerizatz aqueste còdi QR sus un autre aparelh o consultatz : <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -736,7 +736,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker es activat';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => 'Desactivatz BitLocker per contunhar';
 
   @override
   String turnOffBitlockerDescription(Object option) {
@@ -752,7 +752,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get restartIntoWindows => 'Reaviar jos Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Reaviar jos Windows ?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {

@@ -89,14 +89,14 @@ class AppLocalizationsRu extends AppLocalizations {
   String get turnOffRST => 'RST включён';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Для продолжения отключите RST';
 
   @override
   String get turnOffRSTDescription => 'Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Для получения справки, откройте эту страницу на телефоне или другом устройстве: <a href=\"https://$url\">$url</a>';
+    return 'Для получения справки отсканируйте QR-код на другом устройстве или посетите: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -736,27 +736,27 @@ class AppLocalizationsRu extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker включён';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => 'Для продолжения отключите BitLocker';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо отключить BitLocker в Windows перед установкой Ubuntu.';
+    return 'Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо использовать Windows для создания свободного места или выбрать \'$option\' для продолжения.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Чтобы получить инструкции, откройте страницу <a href=\"https://$url\">$url</a> на телефоне или другом устройстве';
+    return 'Чтобы получить инструкции, отсканируйте QR-код на другом устройстве или посетите: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Перезагрузить в Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Перезагрузить в Windows?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return 'Вы уверены, что хотите перезагрузить компьютер? Вам потребуется позже перезапустить установку $DISTRO, чтобы завершить установку $DISTRO.';
   }
 
   @override
