@@ -46,7 +46,9 @@ Future<void> runInstallerApp(
 }) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addOption('dry-run-config',
-        valueHelp: 'path', help: 'Path of the dry-run config');
+        defaultsTo: 'examples/tpm-dr-config.yaml',
+        valueHelp: 'path',
+        help: 'Path of the dry-run config');
     parser.addOption('machine-config',
         valueHelp: 'path',
         defaultsTo: 'examples/simple.json',
@@ -487,8 +489,12 @@ class _UbuntuDesktopInstallerWizard extends StatelessWidget {
       } else if (arguments == InstallationType.alongside) {
         return Routes.installAlongside;
       }
-    } else if (service.useEncryption && service.securityKey == null) {
+    } else if (service.guidedCapability == GuidedCapability.LVM_LUKS &&
+        service.securityKey == null) {
       return Routes.chooseSecurityKey;
+    } else if (service.guidedCapability ==
+        GuidedCapability.CORE_BOOT_ENCRYPTED) {
+      return Routes.recoveryKey;
     }
     return Routes.writeChangesToDisk;
   }

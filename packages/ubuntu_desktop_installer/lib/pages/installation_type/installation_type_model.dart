@@ -22,18 +22,6 @@ enum InstallationType {
   bitlocker,
 }
 
-/// Available advanced features.
-enum AdvancedFeature {
-  /// No advanced features.
-  none,
-
-  /// Use LVM.
-  lvm,
-
-  /// Use ZFS (experimental).
-  zfs,
-}
-
 /// View model for [InstallationTypePage].
 class InstallationTypeModel extends SafeChangeNotifier {
   /// Creates a new model with the given client and service.
@@ -48,40 +36,27 @@ class InstallationTypeModel extends SafeChangeNotifier {
   final ProductService _productService;
 
   InstallationType? _installationType;
-  var _advancedFeature = AdvancedFeature.none;
-  var _encryption = false;
   List<GuidedStorageTarget>? _storages;
 
   /// The selected installation type.
   InstallationType? get installationType => _installationType;
   set installationType(InstallationType? type) {
-    if (_installationType == type) return;
+    if (type == null || _installationType == type) return;
     _installationType = type;
+    // automatically pre-select a guided storage target if possible
+    _diskService.guidedTarget = preselectTarget(type);
     notifyListeners();
   }
 
-  /// The selected advanced feature.
-  AdvancedFeature get advancedFeature => _advancedFeature;
-  set advancedFeature(AdvancedFeature feature) {
-    if (_advancedFeature == feature) return;
-    _advancedFeature = feature;
-    _syncService();
-    notifyListeners();
-  }
+  /// The selected guided target.
+  GuidedStorageTarget? get guidedTarget => _diskService.guidedTarget;
 
-  /// Whether to encrypt the disk.
-  bool get encryption => _encryption;
-  set encryption(bool encryption) {
-    if (_encryption == encryption) return;
-    _encryption = encryption;
-    _syncService();
+  /// The selected guided capability.
+  GuidedCapability? get guidedCapability => _diskService.guidedCapability;
+  set guidedCapability(GuidedCapability? capability) {
+    if (_diskService.guidedCapability == capability) return;
+    _diskService.guidedCapability = capability;
     notifyListeners();
-  }
-
-  void _syncService() {
-    _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
-    _diskService.useEncryption =
-        encryption && advancedFeature == AdvancedFeature.lvm;
   }
 
   /// The version of the OS.
@@ -113,9 +88,8 @@ class InstallationTypeModel extends SafeChangeNotifier {
     _installationType ??= canInstallAlongside
         ? InstallationType.alongside
         : InstallationType.erase;
-    _advancedFeature =
-        _diskService.useLvm ? AdvancedFeature.lvm : AdvancedFeature.none;
-    _encryption = _diskService.useEncryption;
+    // automatically pre-select a guided storage target if possible
+    _diskService.guidedTarget = preselectTarget(_installationType!);
     notifyListeners();
   }
 
@@ -146,9 +120,6 @@ class InstallationTypeModel extends SafeChangeNotifier {
   /// Saves the installation type selection and applies the guide storage
   /// if appropriate (single guided storage).
   Future<void> save() async {
-    // automatically pre-select a guided storage target if possible
-    _diskService.guidedTarget = preselectTarget(installationType!);
-
     final partitionMethod = _resolvePartitionMethod();
     if (partitionMethod != null) {
       await _telemetryService.addMetric('PartitionMethod', partitionMethod);
@@ -159,12 +130,9 @@ class InstallationTypeModel extends SafeChangeNotifier {
     // All possible values for the partition method
     // were extracted from Ubiquity's ubi-partman.py
     // (see PageGtk.get_autopartition_choice()).
-    if (advancedFeature == AdvancedFeature.lvm) {
+    if (guidedCapability == GuidedCapability.LVM) {
       return 'use_lvm';
-    } else if (advancedFeature == AdvancedFeature.zfs) {
-      return 'use_zfs';
-    } else if (_diskService.useEncryption &&
-        advancedFeature != AdvancedFeature.zfs) {
+    } else if (guidedCapability == GuidedCapability.LVM_LUKS) {
       return 'use_crypto';
     } else if (installationType == InstallationType.erase) {
       return 'use_device';

@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:collection/collection.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -27,8 +28,6 @@ class DiskStorageService {
 
   bool? _needRoot;
   bool? _needBoot;
-  bool? _useLvm;
-  bool? _useEncryption;
   bool? _hasRst;
   bool? _hasBitLocker;
   bool? _hasMultipleDisks;
@@ -36,6 +35,7 @@ class DiskStorageService {
   int? _largestDiskSize;
   List<OsProber>? _existingOS;
   GuidedStorageTarget? _guidedTarget;
+  GuidedCapability? _guidedCapability;
   String? _securityKey;
 
   /// Whether the system has multiple disks available for guided partitioning.
@@ -51,22 +51,8 @@ class DiskStorageService {
 
   bool get hasBitLocker => _hasBitLocker ?? false;
 
-  /// Whether FDE (Full Disk Encryption) should be used.
-  bool get useEncryption => _useEncryption ?? false;
-  set useEncryption(bool useEncryption) {
-    log.debug('use encryption: $useEncryption');
-    _useEncryption = useEncryption;
-  }
-
   /// Whether Secure Boot is enabled.
   bool get hasSecureBoot => false; // TODO: add support for it
-
-  /// Whether the storage configuration should use LVM.
-  bool get useLvm => _useLvm ?? false;
-  set useLvm(bool useLvm) {
-    log.debug('use LVM: $useLvm');
-    _useLvm = useLvm;
-  }
 
   /// A security key for full disk encryption.
   String? get securityKey => _securityKey;
@@ -83,6 +69,14 @@ class DiskStorageService {
   set guidedTarget(GuidedStorageTarget? target) {
     log.debug('select guided target: $target');
     _guidedTarget = target;
+    _guidedCapability = target?.capabilities.firstOrNull;
+  }
+
+  /// The selected guided capability.
+  GuidedCapability? get guidedCapability => _guidedCapability;
+  set guidedCapability(GuidedCapability? capability) {
+    log.debug('select guided capability: $capability');
+    _guidedCapability = capability;
   }
 
   /// A list of existing OS installations or null if not detected.
@@ -108,11 +102,7 @@ class DiskStorageService {
       GuidedChoiceV2(
         target: guidedTarget!,
         password: securityKey,
-        capability: useEncryption
-            ? GuidedCapability.LVM_LUKS
-            : useLvm
-                ? GuidedCapability.LVM
-                : GuidedCapability.DIRECT,
+        capability: guidedCapability!.apply(),
         sizingPolicy: SizingPolicy.ALL,
       ),
     );
@@ -182,6 +172,7 @@ class DiskStorageService {
   /// original configuration.
   Future<List<Disk>> resetStorage() {
     _guidedTarget = null;
+    _guidedCapability = null;
     return _client.resetStorageV2().then(_updateStorage);
   }
 
@@ -206,4 +197,18 @@ extension DiskExtension on Disk {
 extension PartitionExtension on Partition {
   /// Returns the sysname of the partition (e.g. "sda1" for "/dev/sda1").
   String get sysname => p.basename(path ?? '');
+}
+
+extension GuidedCapabilityExtension on GuidedCapability {
+  // apply preferences (CORE_BOOT_PREFER_* are not valid GuidedChoiceV2 values)
+  GuidedCapability apply() {
+    switch (this) {
+      case GuidedCapability.CORE_BOOT_PREFER_ENCRYPTED:
+        return GuidedCapability.CORE_BOOT_ENCRYPTED;
+      case GuidedCapability.CORE_BOOT_PREFER_UNENCRYPTED:
+        return GuidedCapability.CORE_BOOT_UNENCRYPTED;
+      default:
+        return this;
+    }
+  }
 }

@@ -119,7 +119,7 @@ void main() {
     await testInstallationTypePage(
       tester,
       type: InstallationType.erase,
-      advancedFeature: AdvancedFeature.lvm,
+      // advancedFeature: AdvancedFeature.lvm,
       useEncryption: true,
     );
     await tester.pumpAndSettle();

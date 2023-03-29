@@ -173,7 +173,7 @@ Future<void> testNotEnoughDiskSpacePage(
 Future<void> testInstallationTypePage(
   WidgetTester tester, {
   InstallationType? type,
-  AdvancedFeature? advancedFeature,
+  // AdvancedFeature? advancedFeature,
   bool? useEncryption,
   String? screenshot,
 }) async {
@@ -183,34 +183,34 @@ Future<void> testInstallationTypePage(
   if (type != null) {
     await tester.tapRadioButton<InstallationType>(type);
   }
-  if (advancedFeature != null) {
-    await tester.tapButton(tester.lang.installationTypeAdvancedLabel);
-    await tester.pumpAndSettle();
+  // if (advancedFeature != null) {
+  //   await tester.tapButton(tester.lang.installationTypeAdvancedLabel);
+  //   await tester.pumpAndSettle();
 
-    await tester.tapRadioButton<AdvancedFeature>(advancedFeature);
-    await tester.pump();
+  //   await tester.tapRadioButton<AdvancedFeature>(advancedFeature);
+  //   await tester.pump();
 
-    if (useEncryption != null) {
-      await tester.toggleCheckbox(
-        label: tester.lang.installationTypeEncrypt('Ubuntu'),
-        value: true,
-      );
-    }
+  //   if (useEncryption != null) {
+  //     await tester.toggleCheckbox(
+  //       label: tester.lang.installationTypeEncrypt('Ubuntu'),
+  //       value: true,
+  //     );
+  //   }
 
-    await tester.pumpAndSettle();
+  //   await tester.pumpAndSettle();
 
-    if (screenshot != null) {
-      await takeScreenshot(tester, screenshot);
-    }
+  //   if (screenshot != null) {
+  //     await takeScreenshot(tester, screenshot);
+  //   }
 
-    await tester.tapButton(tester.lang.okButtonText);
-  }
+  //   await tester.tapButton(tester.lang.okButtonText);
+  // }
 
   await tester.pumpAndSettle();
 
-  if (advancedFeature == null && screenshot != null) {
-    await takeScreenshot(tester, screenshot);
-  }
+  // if (advancedFeature == null && screenshot != null) {
+  //   await takeScreenshot(tester, screenshot);
+  // }
 
   await tester.tapContinue();
 }

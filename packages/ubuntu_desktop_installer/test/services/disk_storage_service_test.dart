@@ -76,7 +76,6 @@ void main() {
     when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
 
     final service = DiskStorageService(client);
-    service.useLvm = true;
 
     service.guidedTarget = target;
     await service.setGuidedStorage();
@@ -292,10 +291,12 @@ void main() {
 
     service.guidedTarget = target;
     expect(service.guidedTarget, target);
+    expect(service.guidedCapability, GuidedCapability.DIRECT);
     await service.setGuidedStorage();
 
     await service.resetStorage();
     expect(service.guidedTarget, isNull);
+    expect(service.guidedCapability, isNull);
   });
 
   test('set security key', () async {
@@ -316,7 +317,6 @@ void main() {
     service.securityKey = 'foo123';
     expect(service.securityKey, equals('foo123'));
 
-    service.useEncryption = true;
     service.guidedTarget = target;
     await service.setGuidedStorage();
     verify(client.setGuidedStorageV2(choice)).called(1);

@@ -3,11 +3,11 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
 import 'dart:ui' as _i6;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i5;
+import 'package:subiquity_client/subiquity_client.dart' as _i4;
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart'
     as _i3;
 import 'package:ubuntu_desktop_installer/services.dart' as _i2;
@@ -51,28 +51,10 @@ class MockInstallationTypeModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  _i3.AdvancedFeature get advancedFeature => (super.noSuchMethod(
-        Invocation.getter(#advancedFeature),
-        returnValue: _i3.AdvancedFeature.none,
-      ) as _i3.AdvancedFeature);
-  @override
-  set advancedFeature(_i3.AdvancedFeature? feature) => super.noSuchMethod(
+  set guidedCapability(_i4.GuidedCapability? capability) => super.noSuchMethod(
         Invocation.setter(
-          #advancedFeature,
-          feature,
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  bool get encryption => (super.noSuchMethod(
-        Invocation.getter(#encryption),
-        returnValue: false,
-      ) as bool);
-  @override
-  set encryption(bool? encryption) => super.noSuchMethod(
-        Invocation.setter(
-          #encryption,
-          encryption,
+          #guidedCapability,
+          capability,
         ),
         returnValueForMissingStub: null,
       );
@@ -110,38 +92,38 @@ class MockInstallationTypeModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  _i4.Future<void> init() => (super.noSuchMethod(
+  _i5.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  _i5.GuidedStorageTarget? preselectTarget(_i3.InstallationType? type) =>
+  _i4.GuidedStorageTarget? preselectTarget(_i3.InstallationType? type) =>
       (super.noSuchMethod(Invocation.method(
         #preselectTarget,
         [type],
-      )) as _i5.GuidedStorageTarget?);
+      )) as _i4.GuidedStorageTarget?);
   @override
-  _i4.Future<void> save() => (super.noSuchMethod(
+  _i5.Future<void> save() => (super.noSuchMethod(
         Invocation.method(
           #save,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  _i4.Future<void> resetStorage() => (super.noSuchMethod(
+  _i5.Future<void> resetStorage() => (super.noSuchMethod(
         Invocation.method(
           #resetStorage,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(

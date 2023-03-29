@@ -138,13 +138,26 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 OutlinedButton(
-                  onPressed: model.installationType == InstallationType.erase
+                  onPressed: model.hasStorage &&
+                          model.installationType == InstallationType.erase
                       ? () => showAdvancedFeaturesDialog(context, model)
                       : null,
                   child: Text(lang.installationTypeAdvancedLabel),
                 ),
                 const SizedBox(width: kContentSpacing),
-                Text(model.advancedFeature.localize(lang, model.encryption)),
+                if (model.hasStorage)
+                  Text(model.guidedCapability?.localize(lang) ?? '')
+                else
+                  Row(
+                    children: const [
+                      SizedBox.square(
+                        dimension: 16,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      ),
+                      SizedBox(width: kContentSpacing / 2),
+                      Text('Please wait...'),
+                    ],
+                  ),
               ],
             ),
           ),
@@ -177,17 +190,21 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
   }
 }
 
-extension _AdvancedFeatureL10n on AdvancedFeature {
-  String localize(AppLocalizations lang, bool encryption) {
+extension _GuidedCapabilityL10n on GuidedCapability {
+  String localize(AppLocalizations lang) {
     switch (this) {
-      case AdvancedFeature.none:
+      case GuidedCapability.DIRECT:
         return lang.installationTypeNoneSelected;
-      case AdvancedFeature.lvm:
-        return encryption
-            ? lang.installationTypeLVMEncryptionSelected
-            : lang.installationTypeLVMSelected;
-      case AdvancedFeature.zfs:
-        return lang.installationTypeZFSSelected;
+      case GuidedCapability.LVM:
+        return lang.installationTypeLVMSelected;
+      case GuidedCapability.LVM_LUKS:
+        return lang.installationTypeLVMEncryptionSelected;
+      case GuidedCapability.CORE_BOOT_UNENCRYPTED:
+      case GuidedCapability.CORE_BOOT_PREFER_UNENCRYPTED:
+        return 'Enhanced secure-boot selected';
+      case GuidedCapability.CORE_BOOT_ENCRYPTED:
+      case GuidedCapability.CORE_BOOT_PREFER_ENCRYPTED:
+        return 'Enhanced secure-boot and encryption selected';
     }
   }
 }

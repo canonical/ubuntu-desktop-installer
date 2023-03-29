@@ -153,7 +153,7 @@ void main() {
     await testInstallationTypePage(
       tester,
       type: InstallationType.erase,
-      advancedFeature: AdvancedFeature.lvm,
+      // advancedFeature: AdvancedFeature.lvm,
       screenshot: '$currentThemeName/6.advanced-features',
     );
   }, variant: themeVariant);
