@@ -16,7 +16,7 @@
   "@installUbuntu": {},
   "keyboardLayoutPageTitle": "키보드 레이아웃",
   "@keyboardLayoutPageTitle": {},
-  "instructionsForRST": "절차를 알아보려면, 휴대전화나 다른 기기에서 이 페이지를 방문하십시오: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "절차를 알아보려면, 다른 장치로 QR코드를 스캔 하거나 이 페이지를 방문하십시오: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -98,7 +98,7 @@
   },
   "installationTypeNoOSDetected": "현재 이 컴퓨터에서 발견된 운영체제가 없습니다. 어떻게 하시겠습니까?",
   "@installationTypeNoOSDetected": {},
-  "allocateDiskSpace": "디스크 공간 할당",
+  "allocateDiskSpace": "수동 파티셔닝",
   "@allocateDiskSpace": {},
   "partitionEditTitle": "파티션 편집",
   "@partitionEditTitle": {},
@@ -116,7 +116,7 @@
   "@partitionFormatSwap": {},
   "partitionFormatIso9660": "ISO 9660 파일 시스템",
   "@partitionFormatIso9660": {},
-  "whoAreYouPageTitle": "당신은 누구십니까?",
+  "whoAreYouPageTitle": "계정을 설정하십시오",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "자동으로 로그인",
   "@whoAreYouPageAutoLogin": {},
@@ -142,7 +142,7 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST 끄기",
+  "turnOffRST": "RST가 활성화됨",
   "@turnOffRST": {},
   "turnOffRSTDescription": "이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.",
   "@turnOffRSTDescription": {},
@@ -150,7 +150,7 @@
   "@dontInstallDriverSoftwareNow": {},
   "dontInstallDriverSoftwareNowDescription": "소프트웨어 & 업데이트에서 나중에 설치하실 수 있습니다.",
   "@dontInstallDriverSoftwareNowDescription": {},
-  "updatesOtherSoftwarePageTitle": "업데이트 및 다른 소프트웨어",
+  "updatesOtherSoftwarePageTitle": "애플리케이션 및 업데이트",
   "@updatesOtherSoftwarePageTitle": {},
   "minimalInstallationSubtitle": "웹 브라우저와 기본 유틸리티.",
   "@minimalInstallationSubtitle": {},
@@ -209,11 +209,11 @@
   "@writeChangesToDisk": {},
   "writeChangesPartitionTablesHeader": "다음과 같은 장치의 파티션 테이블이 변경되었습니다:",
   "@writeChangesPartitionTablesHeader": {},
-  "turnOffBitlockerTitle": "BitLocker 끄기",
+  "turnOffBitlockerTitle": "BitLocker 활성화됨",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n우분투를 설치하기 전 Windows 에서 BitLocker를 꺼야 합니다.",
+  "turnOffBitlockerDescription": "이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n계속하려면 Windows를 사용하여 여유 공간을 만들거나 '{option}'을 선택해야 합니다.",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "절차를 확인하려면, 이 페이지를 휴대전화나 다른 기기에서 열으십시오: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "절차를 확인하려면, 다른 장치에서 QR코드를 스캔하거나 링크를 방문 하십시오: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -236,7 +236,7 @@
   "@chooseSecurityKey": {},
   "installThirdPartySubtitle": "이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.",
   "@installThirdPartySubtitle": {},
-  "chooseSecurityKeyTitle": "보안 키 선택",
+  "chooseSecurityKeyTitle": "보안 키",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHeader": "디스크 암호화는 컴퓨터를 잃어버렸을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n{RELEASE} 밖의 파일은 암호화 되지 않습니다.",
   "@chooseSecurityKeyHeader": {
@@ -295,7 +295,7 @@
   },
   "wirelessNetworkingDisabled": "무선 네트워킹 비활성화됨",
   "@wirelessNetworkingDisabled": {},
-  "connectToInternetDescription": "이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블을 연결하거나, Wi-Fi 네트워크를 선택하십시오",
+  "connectToInternetDescription": "이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블이나, Wi-Fi 네트워크를 선택하여 연결하십시오",
   "@connectToInternetDescription": {},
   "installationTypeManualInfo": "파티션을 직접 만들고 크기를 조절 하거나, {DISTRO}에 대해 여러 파티션을 선택할 수 있습니다",
   "@installationTypeManualInfo": {
@@ -311,7 +311,7 @@
       "DISTRO": {}
     }
   },
-  "connectToInternetPageTitle": "인터넷에 연결하기",
+  "connectToInternetPageTitle": "네트워크에 연결하기",
   "@connectToInternetPageTitle": {},
   "useWiredConnection": "유선 연결 사용",
   "@useWiredConnection": {},
@@ -347,7 +347,7 @@
   "@installationTypeAlongsideInfo": {},
   "installationTypeNone": "선택 안 함",
   "@installationTypeNone": {},
-  "installationTypeManual": "다른 방법",
+  "installationTypeManual": "수동 파티셔닝",
   "@installationTypeManual": {},
   "selectGuidedStorageDropdownLabel": "드라이브 선택:",
   "@selectGuidedStorageDropdownLabel": {},
@@ -401,7 +401,7 @@
   "@shutdown": {},
   "installationCompleteTitle": "설치 완료",
   "@installationCompleteTitle": {},
-  "chooseYourLookPageTitle": "모양을 선택하십시오",
+  "chooseYourLookPageTitle": "테마를 선택하십시오",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "모양 설정에서 언제든 변경하실 수 있습니다.",
   "@chooseYourLookPageHeader": {},
@@ -539,7 +539,7 @@
   "@officeSlideCalc": {},
   "welcomeHeader": "언어를 선택하십시오:",
   "@welcomeHeader": {},
-  "whereAreYouPageTitle": "어디에 계시나요?",
+  "whereAreYouPageTitle": "시간대를 선택하십시오",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "위치",
   "@whereAreYouLocationLabel": {},
@@ -919,5 +919,63 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "turnOffRSTTitle": "계속하려면 RST를 끄십시오",
+  "@turnOffRSTTitle": {},
+  "installationSlidesAccessibilityBody": "{DISTRO} 철학의 핵심은 컴퓨팅은 모두를 위한 것이라는 믿음입니다. 고급 접근성 도구와 언어, 색상 및 텍스트 크기를 변경할 수 있는 옵션을 통해 {DISTRO}는 언제 어디서나 쉽게 컴퓨팅을 할 수 있도록 지원합니다.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffBitlockerHeadline": "계속하려면 BitLocker를 끄십시오",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "Windows로 다시 시작하시겠습니까?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "컴퓨터를 정말로 다시 시작하시겠습니까? {DISTRO} 설치를 완료 하려면 나중에 {DISTRO} 설치를 다시 시작 해야 합니다.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityBody": "{DISTRO} 데스크톱에는 문서, 스프레드시트 및 프레젠테이션을 위한 Microsoft Office 호환 오픈 소스 애플리케이션 제품군인 LibreOffice가 포함되어 있습니다. 인기 있는 협업 도구도 이용하실 수 있습니다.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Ask Ubuntu에는 넒은 범위의 질문과 답변이 있으며 Ubuntu Discourse 에서는 신규 사용자와 숙련된 사용자를 위한 가이드와 토론이 제공됩니다.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "엔터프라이즈 사용자를 위해 Canonical에서는 직장에서 우분투를 쉽게 온보딩하고 안전하게 관리할 수 있도록 상용 지원을 제공합니다.",
+  "@installationSlidesSupportEnterprise": {},
+  "activeDirectoryErrorTitle": "Active Directory 연결 구성 오류",
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "죄송합니다, 현재 Active Directory를 설정할 수 없습니다. 시스템이 준비되면, <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>에 방문하셔서 도움을 받으시기 바랍니다.",
+  "@activeDirectoryErrorMessage": {},
+  "installationSlidesGamingBody": "{DISTRO} 는 성능과 호환성을 개선하기 위해 최신 NVIDIA 및 Mesa 드라이버를 지원합니다. 수천 개의 Windows 타이틀을 추가 구성 없이도 Steam과 같은 애플리케이션을 통해 {DISTRO}에서 훌륭하게 즐기실 수 있습니다.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityBody": "{DISTRO} 는 온라인에서 개인 정보를 보호하고 보안을 유지하는 데 필요한 모든 도구를 제공합니다. 내장된 방화벽 및 VPN 지원과 다양한 개인 정보 보호 중심 애플리케이션을 통해 데이터를 완벽하게 제어할 수 있습니다.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityBody": "애니메이터, 디자이너, 비디오 크리에이터 또는 게임 개발자라면 오픈 소스 및 업계 표준 소프트웨어와 애플리케이션을 지원하는 {DISTRO}로 워크플로우를 쉽게 가져올 수 있습니다.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingTitle": "게이밍에 적합합니다",
+  "@installationSlidesGamingTitle": {}
 }
