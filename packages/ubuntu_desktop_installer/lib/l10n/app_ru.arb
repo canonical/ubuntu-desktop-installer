@@ -28,7 +28,7 @@
   "@turnOffRST": {},
   "turnOffRSTDescription": "Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Для получения справки, откройте эту страницу на телефоне или другом устройстве: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Для получения справки отсканируйте QR-код на другом устройстве или посетите: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {},
   "keyboardLayoutPageTitle": "Раскладка клавиатуры",
   "@keyboardLayoutPageTitle": {},
@@ -312,9 +312,9 @@
   },
   "turnOffBitlockerTitle": "BitLocker включён",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо отключить BitLocker в Windows перед установкой Ubuntu.",
+  "turnOffBitlockerDescription": "Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо использовать Windows для создания свободного места или выбрать '{option}' для продолжения.",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Чтобы получить инструкции, откройте страницу <a href=\"https://{url}\">{url}</a> на телефоне или другом устройстве",
+  "turnOffBitlockerLinkInstructions": "Чтобы получить инструкции, отсканируйте QR-код на другом устройстве или посетите: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -939,5 +939,18 @@
     }
   },
   "activeDirectoryAdminLabel": "Пользователь, присоединившийся к домену",
-  "@activeDirectoryAdminLabel": {}
+  "@activeDirectoryAdminLabel": {},
+  "turnOffRSTTitle": "Для продолжения отключите RST",
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsTitle": "Перезагрузить в Windows?",
+  "@restartIntoWindowsTitle": {},
+  "turnOffBitlockerHeadline": "Для продолжения отключите BitLocker",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsDescription": "Вы уверены, что хотите перезагрузить компьютер? Вам потребуется позже перезапустить установку {DISTRO}, чтобы завершить установку {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

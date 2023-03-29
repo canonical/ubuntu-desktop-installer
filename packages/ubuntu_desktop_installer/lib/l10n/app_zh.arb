@@ -1,6 +1,6 @@
 {
   "@@locale": "zh",
-  "appTitle": "Ubuntu 桌面版安装器",
+  "appTitle": "Ubuntu 桌面安装程序",
   "@appTitle": {},
   "windowTitle": "安装 {RELEASE}",
   "@windowTitle": {
@@ -173,7 +173,7 @@
   "@shutdown": {},
   "turnOffBitlockerTitle": "已启用 BitLocker",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerLinkInstructions": "有关说明，请在手机或其他设备上打开此页面：<a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "有关说明，请在另一台设备上扫描QR码或访问该网址：<a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -469,7 +469,7 @@
       "url": {}
     }
   },
-  "instructionsForRST": "有关说明，请在手机或其他设备上打开此页面：<a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "有关说明，请在另一台设备上扫描QR码或访问：<a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -768,7 +768,7 @@
   "@installCodecsSubtitle": {},
   "installationTypeLVMEncryptionSelected": "已选择配置加密的 LVM",
   "@installationTypeLVMEncryptionSelected": {},
-  "restartWarning": "你现在可以继续试用{RELEASE} ，但在你重新启动计算机之前，你所做的任何修改或保存的文件都不会被保留。",
+  "restartWarning": "您现在可以继续测试 {RELEASE}，但在重新启动计算机之前，您所做的任何更改或保存的文档都不会被保留。",
   "@restartWarning": {
     "type": "text",
     "placeholders": {
@@ -869,7 +869,7 @@
   "@installationSlidesIncluded": {},
   "installationSlidesWelcomeTitle": "快速，免费且充满新功能",
   "@installationSlidesWelcomeTitle": {},
-  "installationSlidesWelcomeHeader": "最新版本的{DISTRO} ，使计算比以往更容易。",
+  "installationSlidesWelcomeHeader": "{DISTRO} 的最新版本让计算机使用变得比以往任何时候都更加容易。",
   "@installationSlidesWelcomeHeader": {
     "type": "text",
     "placeholders": {
@@ -878,7 +878,7 @@
   },
   "installationSlidesSoftwareTitle": "您需要的所有应用程序",
   "@installationSlidesSoftwareTitle": {},
-  "installationSlidesSoftwareBody": "在Ubuntu软件中安装、管理和更新您的所有应用程序，包括来自Snap商店和{DISTRO} 档案的数千个应用程序。",
+  "installationSlidesSoftwareBody": "在 Ubuntu 软件中心安装、管理和更新所有应用程序，包括来自 Snap Store 和 {DISTRO} 存档的数千个应用程序。",
   "@installationSlidesSoftwareBody": {
     "type": "text",
     "placeholders": {
@@ -907,7 +907,7 @@
   },
   "installationSlidesProductivityTitle": "提高您的生产力",
   "@installationSlidesProductivityTitle": {},
-  "installationSlidesProductivityBody": "{DISTRO}桌面包括LibreOffice，这是一套与Microsoft Office兼容的开源应用程序，用于文档，电子表格和演示文稿。还提供流行的协作工具。",
+  "installationSlidesProductivityBody": "{DISTRO} 桌面包括LibreOffice，这是一套与Microsoft Office兼容的开源应用程序，用于文档，电子表格和演示文稿。还提供流行的协作工具。",
   "@installationSlidesProductivityBody": {
     "type": "text",
     "placeholders": {
@@ -920,14 +920,14 @@
   "@installationSlidesAccessibilityLanguages": {},
   "installationSlidesSupportTitle": "帮助与支持",
   "@installationSlidesSupportTitle": {},
-  "installationSlidesSupportHeader": "官方 {DISTRO} 文档可在线获取，也可通过扩展坞中的“帮助”图标获取。",
+  "installationSlidesSupportHeader": "{DISTRO} 的官方文档可以通过在线方式或者在dock中的帮助图标进行访问。",
   "@installationSlidesSupportHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "installationSlidesSupportCommunity": "Ask Ubuntu 涵盖了一系列问题和回答，Ubuntu Discourse 为新老用户提供了指南和讨论。",
+  "installationSlidesSupportCommunity": "Ask Ubuntu 覆盖了各种问题和回答，而 Ubuntu Discourse 为新手和有经验的用户提供指南和讨论。",
   "@installationSlidesSupportCommunity": {},
   "installationSlidesSupportEnterprise": "对于企业用户，Canonical 提供商业支持，以便在工作场所轻松安全地使用和管理 Ubuntu。",
   "@installationSlidesSupportEnterprise": {},
@@ -944,7 +944,7 @@
       "RELEASE": {}
     }
   },
-  "installationSlidesAccessibilityBody": "{DISTRO} 理念的核心是相信计算是为所有人服务的。通过先进的无障碍工具和改变语言、颜色和文字大小的选项，{DISTRO} ，使计算变得简单 - 无论你是谁，无论你在哪里。",
+  "installationSlidesAccessibilityBody": "{DISTRO} 哲学核心是相信计算机是为所有人而设计的。通过先进的辅助工具和更改语言、颜色和文本大小的选项，{DISTRO} 让计算机使用变得容易 - 无论你是谁，身在何处。",
   "@installationSlidesAccessibilityBody": {
     "type": "text",
     "placeholders": {
@@ -967,7 +967,7 @@
   },
   "installationSlidesAccessibilityTitle": "每个人都可轻松使用",
   "@installationSlidesAccessibilityTitle": {},
-  "installationSlidesDevelopmentBody": "{DISTRO} 是应用程序或 Web 开发、数据科学和 AI/ML 以及 DevOps 和管理的理想工作站。每个 {DISTRO} 版本都包含最新的工具链，并支持所有主要的 IDE。",
+  "installationSlidesDevelopmentBody": "{DISTRO}  是应用程序或 Web 开发、数据科学和 AI/ML 以及 DevOps 和管理的理想工作站。每个 {DISTRO} 版本都包含最新的工具链，并支持所有主要的 IDE。",
   "@installationSlidesDevelopmentBody": {
     "type": "text",
     "placeholders": {
@@ -985,6 +985,19 @@
   },
   "welcomePageTitle": "欢迎来到 {DISTRO}",
   "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffRSTTitle": "关闭 RST 以继续",
+  "@turnOffRSTTitle": {},
+  "turnOffBitlockerHeadline": "关闭 BitLocker 以继续",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "重启到 Windows？",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "您确定要重新启动计算机吗？您需要稍后重新启动 {DISTRO} 安装程序才能完成安装 {DISTRO}。",
+  "@restartIntoWindowsDescription": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
