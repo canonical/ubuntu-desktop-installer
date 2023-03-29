@@ -86,17 +86,17 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST 끄기';
+  String get turnOffRST => 'RST가 활성화됨';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => '계속하려면 RST를 끄십시오';
 
   @override
   String get turnOffRSTDescription => '이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.';
 
   @override
   String instructionsForRST(Object url) {
-    return '절차를 알아보려면, 휴대전화나 다른 기기에서 이 페이지를 방문하십시오: <a href=\"https://$url\">$url</a>';
+    return '절차를 알아보려면, 다른 장치로 QR코드를 스캔 하거나 이 페이지를 방문하십시오: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -154,10 +154,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get showSecurityKey => '보안 키 보이기';
 
   @override
-  String get connectToInternetPageTitle => '인터넷에 연결하기';
+  String get connectToInternetPageTitle => '네트워크에 연결하기';
 
   @override
-  String get connectToInternetDescription => '이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블을 연결하거나, Wi-Fi 네트워크를 선택하십시오';
+  String get connectToInternetDescription => '이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블이나, Wi-Fi 네트워크를 선택하여 연결하십시오';
 
   @override
   String get useWiredConnection => '유선 연결 사용';
@@ -205,7 +205,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get connectButtonText => '연결하기';
 
   @override
-  String get updatesOtherSoftwarePageTitle => '업데이트 및 다른 소프트웨어';
+  String get updatesOtherSoftwarePageTitle => '애플리케이션 및 업데이트';
 
   @override
   String get updatesOtherSoftwarePageDescription => '어떤 앱을 설치하고 시작하시겠습니까?';
@@ -252,7 +252,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get offlineWarning => '현재 오프라인';
 
   @override
-  String get chooseSecurityKeyTitle => '보안 키 선택';
+  String get chooseSecurityKeyTitle => '보안 키';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -376,7 +376,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeAlongsideInfo => '문서, 음악, 및 다른 개인 파일이 그대로 유지됩니다. 컴퓨터를 시작할 때 마다 원하는 운영체제를 선택하실 수 있습니다.';
 
   @override
-  String get installationTypeManual => '다른 방법';
+  String get installationTypeManual => '수동 파티셔닝';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installAlongsideAvailable => '이용 가능:';
 
   @override
-  String get allocateDiskSpace => '디스크 공간 할당';
+  String get allocateDiskSpace => '수동 파티셔닝';
 
   @override
   String get startInstallingButtonText => '설치';
@@ -571,7 +571,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionMountPointLabel => '마운트 위치:';
 
   @override
-  String get whoAreYouPageTitle => '당신은 누구십니까?';
+  String get whoAreYouPageTitle => '계정을 설정하십시오';
 
   @override
   String get whoAreYouPageAutoLogin => '자동으로 로그인';
@@ -694,7 +694,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => '모양을 선택하십시오';
+  String get chooseYourLookPageTitle => '테마를 선택하십시오';
 
   @override
   String get chooseYourLookPageHeader => '모양 설정에서 언제든 변경하실 수 있습니다.';
@@ -733,34 +733,34 @@ class AppLocalizationsKo extends AppLocalizations {
   String get continueTesting => '체험 계속하기';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker 끄기';
+  String get turnOffBitlockerTitle => 'BitLocker 활성화됨';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => '계속하려면 BitLocker를 끄십시오';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return '이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n우분투를 설치하기 전 Windows 에서 BitLocker를 꺼야 합니다.';
+    return '이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n계속하려면 Windows를 사용하여 여유 공간을 만들거나 \'$option\'을 선택해야 합니다.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return '절차를 확인하려면, 이 페이지를 휴대전화나 다른 기기에서 열으십시오: <a href=\"https://$url\">$url</a>';
+    return '절차를 확인하려면, 다른 장치에서 QR코드를 스캔하거나 링크를 방문 하십시오: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Windows로 다시 시작';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Windows로 다시 시작하시겠습니까?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return '컴퓨터를 정말로 다시 시작하시겠습니까? $DISTRO 설치를 완료 하려면 나중에 $DISTRO 설치를 다시 시작 해야 합니다.';
   }
 
   @override
-  String get whereAreYouPageTitle => '어디에 계시나요?';
+  String get whereAreYouPageTitle => '시간대를 선택하십시오';
 
   @override
   String get whereAreYouLocationLabel => '위치';
@@ -813,15 +813,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
-    return 'If you\'re an animator, designer, video creator or game developer it\'s easy to bring your workflows to $DISTRO with support for open source and industry standard software and applications.';
+    return '애니메이터, 디자이너, 비디오 크리에이터 또는 게임 개발자라면 오픈 소스 및 업계 표준 소프트웨어와 애플리케이션을 지원하는 $DISTRO로 워크플로우를 쉽게 가져올 수 있습니다.';
   }
 
   @override
-  String get installationSlidesGamingTitle => 'Great for gaming';
+  String get installationSlidesGamingTitle => '게이밍에 적합합니다';
 
   @override
   String installationSlidesGamingBody(Object DISTRO) {
-    return '$DISTRO supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on $DISTRO via applications like Steam with no additional configuration.';
+    return '$DISTRO 는 성능과 호환성을 개선하기 위해 최신 NVIDIA 및 Mesa 드라이버를 지원합니다. 수천 개의 Windows 타이틀을 추가 구성 없이도 Steam과 같은 애플리케이션을 통해 $DISTRO에서 훌륭하게 즐기실 수 있습니다.';
   }
 
   @override
@@ -829,7 +829,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
-    return '$DISTRO provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.';
+    return '$DISTRO 는 온라인에서 개인 정보를 보호하고 보안을 유지하는 데 필요한 모든 도구를 제공합니다. 내장된 방화벽 및 VPN 지원과 다양한 개인 정보 보호 중심 애플리케이션을 통해 데이터를 완벽하게 제어할 수 있습니다.';
   }
 
   @override
@@ -842,7 +842,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
-    return '$DISTRO Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.';
+    return '$DISTRO 데스크톱에는 문서, 스프레드시트 및 프레젠테이션을 위한 Microsoft Office 호환 오픈 소스 애플리케이션 제품군인 LibreOffice가 포함되어 있습니다. 인기 있는 협업 도구도 이용하실 수 있습니다.';
   }
 
   @override
@@ -850,7 +850,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
-    return 'At the heart of the $DISTRO philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, $DISTRO makes computing easy - whoever and wherever you are.';
+    return '$DISTRO 철학의 핵심은 컴퓨팅은 모두를 위한 것이라는 믿음입니다. 고급 접근성 도구와 언어, 색상 및 텍스트 크기를 변경할 수 있는 옵션을 통해 $DISTRO는 언제 어디서나 쉽게 컴퓨팅을 할 수 있도록 지원합니다.';
   }
 
   @override
@@ -868,10 +868,10 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu에는 넒은 범위의 질문과 답변이 있으며 Ubuntu Discourse 에서는 신규 사용자와 숙련된 사용자를 위한 가이드와 토론이 제공됩니다.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+  String get installationSlidesSupportEnterprise => '엔터프라이즈 사용자를 위해 Canonical에서는 직장에서 우분투를 쉽게 온보딩하고 안전하게 관리할 수 있도록 상용 지원을 제공합니다.';
 
   @override
   String get installationSlidesSupportResources => '유용한 지원:';
@@ -966,8 +966,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => '필수';
 
   @override
-  String get activeDirectoryErrorTitle => 'Error configuring connection to Active Directory';
+  String get activeDirectoryErrorTitle => 'Active Directory 연결 구성 오류';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage => '죄송합니다, 현재 Active Directory를 설정할 수 없습니다. 시스템이 준비되면, <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>에 방문하셔서 도움을 받으시기 바랍니다.';
 }

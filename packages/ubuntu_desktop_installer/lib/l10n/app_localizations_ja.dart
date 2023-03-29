@@ -96,7 +96,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return '手順は、スマートフォンなどで <a href=\"https://$url\">$url</a> をご確認ください。';
+    return '手順は、別のデバイスでQRコードをスキャンするか、<a href=\"https://$url\">$url</a>をご確認ください。';
   }
 
   @override
@@ -745,7 +745,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return '手順は、スマートフォンなどで <a href=\"https://$url\">$url</a> をご確認ください';
+    return '手順は、別のデバイスでQRコードをスキャンするか、<a href=\"https://$url\">$url</a>をご確認ください。';
   }
 
   @override
@@ -817,7 +817,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesGamingTitle => 'ゲームに最適';
+  String get installationSlidesGamingTitle => 'ゲームに最適化';
 
   @override
   String installationSlidesGamingBody(Object DISTRO) {
@@ -864,7 +864,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+    return '$DISTRO の公式ドキュメントは、オンラインおよびドックのヘルプ アイコンから入手できます。';
   }
 
   @override
@@ -874,13 +874,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
 
   @override
-  String get installationSlidesSupportResources => 'Helpful resources:';
+  String get installationSlidesSupportResources => 'お役立ち情報';
 
   @override
   String get installationSlidesSupportDocumentation => '公式ドキュメント';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro => 'Ubuntu Proで24時間365日サポート';
 
   @override
   String get copyingFiles => 'ファイルをコピーしています…';
