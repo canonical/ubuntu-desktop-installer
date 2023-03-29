@@ -38,7 +38,7 @@ Widget _buildWelcomeSlide(BuildContext context) {
         Text(lang.installationSlidesWelcomeBody(product.getProductInfo())),
       ],
     ),
-    image: MascotAvatar(image: AssetImage(_slideAsset('mascot.png'))),
+    image: const MascotAvatar(radius: 150),
   );
 }
 
