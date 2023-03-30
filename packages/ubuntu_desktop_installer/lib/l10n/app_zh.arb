@@ -967,7 +967,7 @@
   },
   "installationSlidesAccessibilityTitle": "每个人都可轻松使用",
   "@installationSlidesAccessibilityTitle": {},
-  "installationSlidesDevelopmentBody": "{DISTRO}  是应用程序或 Web 开发、数据科学和 AI/ML 以及 DevOps 和管理的理想工作站。每个 {DISTRO} 版本都包含最新的工具链，并支持所有主要的 IDE。",
+  "installationSlidesDevelopmentBody": "{DISTRO} 是应用程序或 Web 开发、数据科学和 AI/ML 以及 DevOps 和管理的理想工作站。每个 {DISTRO} 版本都包含最新的工具链，并支持所有主要的 IDE。",
   "@installationSlidesDevelopmentBody": {
     "type": "text",
     "placeholders": {
