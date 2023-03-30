@@ -15,6 +15,10 @@ apps:
     command: bin/subiquity-server
     daemon: simple
     restart-condition: always
+    environment:
+      PATH_ORIG: $PATH
+      PYTHONPATH_ORIG: $PYTHONPATH
+      LD_LIBRARY_PATH_ORIG: $LD_LIBRARY_PATH
 
   subiquity-loadkeys:
     command: bin/subiquity/bin/subiquity-loadkeys
