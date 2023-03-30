@@ -1,23 +1,35 @@
 import 'package:flutter/material.dart';
 
-class MascotAvatar extends StatelessWidget {
-  const MascotAvatar({super.key, this.radius = 80});
+const _kMascotAsset = AssetImage('assets/mascot.png');
 
-  final double radius;
+class MascotAvatar extends StatelessWidget {
+  const MascotAvatar({
+    super.key,
+    this.image = _kMascotAsset,
+    this.size = const Size.square(160),
+  });
+
+  final ImageProvider<Object> image;
+  final Size size;
+
+  /// Requests the mascot asset to be pre-cached.
+  static Future precacheAsset(BuildContext context) async {
+    return precacheImage(_kMascotAsset, context);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(
-          color: Theme.of(context).colorScheme.outline,
-          width: 8,
-        ),
+        color: Theme.of(context).colorScheme.outline,
       ),
-      child: CircleAvatar(
-        radius: radius,
-        backgroundImage: const AssetImage('assets/mascot.png'),
+      child: Image(
+        image: image,
+        gaplessPlayback: true,
+        height: size.height,
+        width: size.width,
       ),
     );
   }
