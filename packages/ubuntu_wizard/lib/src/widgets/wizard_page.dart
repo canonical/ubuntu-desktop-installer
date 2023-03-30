@@ -1,10 +1,6 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:wizard_router/wizard_router.dart';
-import 'package:yaru_widgets/widgets.dart';
 
 import '../../constants.dart';
-import 'wizard_action.dart';
 
 export 'package:wizard_router/wizard_router.dart';
 export 'wizard_action.dart';
@@ -23,10 +19,8 @@ class WizardPage extends StatefulWidget {
     this.content,
     this.contentPadding = kContentPadding,
     this.contentSpacing = kContentSpacing,
-    this.footerPadding = kFooterPadding,
-    this.singleLeading = false,
-    this.actions = const <WizardAction>[],
     this.snackBar,
+    this.bottomBar,
   });
 
   /// The title widget.
@@ -56,16 +50,8 @@ class WizardPage extends StatefulWidget {
   /// A snack bar to display above the buttons.
   final SnackBar? snackBar;
 
-  /// Padding around the footer widget.
-  ///
-  /// The default value is `kFooterPadding`.
-  final EdgeInsetsGeometry footerPadding;
-
-  /// A list of actions in the button bar.
-  final List<WizardAction> actions;
-
-  /// If true, a single action will be shown as a leading button.
-  final bool singleLeading;
+  /// The bottom bar
+  final Widget? bottomBar;
 
   @override
   State<WizardPage> createState() => _WizardPageState();
@@ -87,18 +73,6 @@ class _WizardPageState extends State<WizardPage> {
 
   @override
   Widget build(BuildContext context) {
-    final wizardScope = Wizard.maybeOf(context);
-    final totalSteps = (wizardScope?.wizardData as int?);
-    final currentStep = (wizardScope?.routeData as int?);
-
-    // a leading (back) action only on pages that have more than one action
-    final leading = widget.actions.length > 1 || widget.singleLeading
-        ? widget.actions.first
-        : null;
-    // the rest are shown on the right side
-    final trailing = widget.actions
-        .skip(widget.actions.length > 1 || widget.singleLeading ? 1 : 0);
-
     return ScaffoldMessenger(
       child: Scaffold(
         key: _scaffoldKey,
@@ -123,68 +97,8 @@ class _WizardPageState extends State<WizardPage> {
             SizedBox(height: widget.contentSpacing),
           ],
         ),
-        bottomNavigationBar: Hero(
-          tag: 'wizard-bottom-bar', // keep in place during page transitions
-          child: Container(
-            margin: widget.footerPadding,
-            constraints:
-                const BoxConstraints(maxHeight: 36), // TODO: kYaruButtonHeight
-            child: NavigationToolbar(
-              leading: _buildAction(context, leading),
-              middle: currentStep != null && totalSteps != null
-                  ? YaruPageIndicator.builder(
-                      page: currentStep,
-                      length: totalSteps,
-                      itemSizeBuilder: (index, selectedIndex, length) =>
-                          Size.square(index == selectedIndex ? 12.0 : 8.0),
-                      layoutDelegate:
-                          YaruPageIndicatorSteppedDelegate(baseItemSpacing: 8),
-                    )
-                  : null,
-              trailing: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: trailing
-                    .map((action) => _buildAction(context, action))
-                    .whereNotNull()
-                    .withSpacing(kButtonBarSpacing),
-              ),
-            ),
-          ),
-        ),
+        bottomNavigationBar: widget.bottomBar,
       ),
     );
-  }
-
-  Widget? _buildAction(BuildContext context, WizardAction? action) {
-    if (action == null || action.visible == false) {
-      return null;
-    }
-
-    final maybeActivate = action.enabled ?? true
-        ? () async {
-            await action.onActivated?.call();
-            if (mounted) action.execute?.call();
-          }
-        : null;
-
-    final child = Text(action.label!);
-
-    return ConstrainedBox(
-      constraints: const BoxConstraints(minWidth: 136),
-      child: action.highlighted == true
-          ? ElevatedButton(onPressed: maybeActivate, child: child)
-          : action.flat == true
-              ? OutlinedButton(onPressed: maybeActivate, child: child)
-              : FilledButton(onPressed: maybeActivate, child: child),
-    );
-  }
-}
-
-extension on Iterable<Widget> {
-  List<Widget> withSpacing(double spacing) {
-    return expand((item) sync* {
-      yield SizedBox(width: spacing);
-      yield item;
-    }).skip(1).toList();
   }
 }

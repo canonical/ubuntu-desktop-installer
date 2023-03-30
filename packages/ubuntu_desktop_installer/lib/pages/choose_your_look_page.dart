@@ -17,10 +17,12 @@ class ChooseYourLookPage extends StatelessWidget {
     final desktop = getService<DesktopService>();
     return WizardPage(
       header: Text(lang.chooseYourLookPageHeader),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(context),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(context),
+        ],
+      ),
       title: YaruWindowTitleBar(
         title: Text(lang.chooseYourLookPageTitle),
       ),

@@ -13,9 +13,10 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
-          actions: <WizardAction>[
-            WizardAction(label: 'action', onActivated: () => activated = true),
-          ],
+          bottomBar: WizardBar(
+            leading: WizardAction(
+                label: 'action', onActivated: () => activated = true),
+          ),
         ),
       ),
     );
@@ -35,10 +36,12 @@ void main() {
           header: const Text('header'),
           content: const Text('content'),
           snackBar: const SnackBar(content: Text('snackbar')),
-          actions: const <WizardAction>[
-            WizardAction(label: 'back'),
-            WizardAction(label: 'next'),
-          ],
+          bottomBar: WizardBar(
+            leading: WizardAction(label: 'back'),
+            trailing: [
+              WizardAction(label: 'next'),
+            ],
+          ),
         ),
       ),
     );
@@ -76,11 +79,13 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
-          actions: const <WizardAction>[
-            WizardAction(label: 'normal'),
-            WizardAction(label: 'flat', flat: true),
-            WizardAction(label: 'highlighted', highlighted: true),
-          ],
+          bottomBar: WizardBar(
+            trailing: [
+              WizardAction(label: 'normal'),
+              WizardAction(label: 'flat', flat: true),
+              WizardAction(label: 'highlighted', highlighted: true),
+            ],
+          ),
         ),
       ),
     );
@@ -95,13 +100,15 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
-          actions: <WizardAction>[
-            WizardAction(
-              label: 'action',
-              enabled: false,
-              onActivated: () => activated = true,
-            ),
-          ],
+          bottomBar: WizardBar(
+            trailing: [
+              WizardAction(
+                label: 'action',
+                enabled: false,
+                onActivated: () => activated = true,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -117,9 +124,11 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
-          actions: const <WizardAction>[
-            WizardAction(label: 'action', visible: false),
-          ],
+          bottomBar: WizardBar(
+            trailing: [
+              WizardAction(label: 'action', visible: false),
+            ],
+          ),
         ),
       ),
     );
@@ -141,10 +150,12 @@ void main() {
           '/': WizardRoute(builder: (_) {
             return Builder(builder: (context) {
               return WizardPage(
-                actions: <WizardAction>[
-                  WizardAction.back(context),
-                  WizardAction.next(context),
-                ],
+                bottomBar: WizardBar(
+                  leading: WizardAction.back(context),
+                  trailing: [
+                    WizardAction.next(context),
+                  ],
+                ),
               );
             });
           }),
@@ -177,6 +188,7 @@ void main() {
       '/foo': WizardRoute(
         builder: (context) => WizardPage(
           content: const Text('Page 4 of 7'),
+          bottomBar: WizardBar(),
         ),
         userData: 3,
       ),

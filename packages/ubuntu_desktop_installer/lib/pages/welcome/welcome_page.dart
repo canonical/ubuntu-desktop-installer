@@ -117,18 +117,20 @@ class _WelcomePageState extends State<WelcomePage> {
           ],
         ),
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          onNext: () {
-            final locale = model.locale(model.selectedLanguageIndex);
-            model.applyLocale(locale);
-            getService<TelemetryService>()
-                .addMetric('Language', locale.languageCode);
-          },
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            onNext: () {
+              final locale = model.locale(model.selectedLanguageIndex);
+              model.applyLocale(locale);
+              getService<TelemetryService>()
+                  .addMetric('Language', locale.languageCode);
+            },
+          ),
+        ],
+      ),
     );
   }
 }

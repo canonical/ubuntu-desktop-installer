@@ -132,20 +132,22 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
           ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          highlighted: true,
-          label: lang.startInstallingButtonText,
-          onNext: () {
-            // start installation after the page transition (#1393)
-            Future.delayed(kThemeAnimationDuration).then((_) {
-              model.startInstallation();
-            });
-          },
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            highlighted: true,
+            label: lang.startInstallingButtonText,
+            onNext: () {
+              // start installation after the page transition (#1393)
+              Future.delayed(kThemeAnimationDuration).then((_) {
+                model.startInstallation();
+              });
+            },
+          ),
+        ],
+      ),
     );
   }
 }

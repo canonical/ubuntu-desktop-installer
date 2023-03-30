@@ -98,21 +98,23 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
           ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.done(
-          context,
-          label: UbuntuLocalizations.of(context).nextLabel,
-          visible: model.option == Option.tryUbuntu,
-          onDone: YaruWindow.of(context).close,
-        ),
-        WizardAction.next(
-          context,
-          visible: model.option != Option.tryUbuntu,
-          enabled: model.option != Option.none,
-          arguments: model.option,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.done(
+            context,
+            label: UbuntuLocalizations.of(context).nextLabel,
+            visible: model.option == Option.tryUbuntu,
+            onDone: YaruWindow.of(context).close,
+          ),
+          WizardAction.next(
+            context,
+            visible: model.option != Option.tryUbuntu,
+            enabled: model.option != Option.none,
+            arguments: model.option,
+          ),
+        ],
+      ),
     );
   }
 }

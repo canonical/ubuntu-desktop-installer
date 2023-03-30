@@ -117,18 +117,20 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
             ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          label: lang.selectGuidedStorageInstallNow,
-          onNext: model.saveGuidedStorage,
-          // If the user returns back to select another disk, the previously
-          // configured guided storage must be reset to avoid multiple disks
-          // being configured for guided partitioning.
-          onBack: model.resetGuidedStorage,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            label: lang.selectGuidedStorageInstallNow,
+            onNext: model.saveGuidedStorage,
+            // If the user returns back to select another disk, the previously
+            // configured guided storage must be reset to avoid multiple disks
+            // being configured for guided partitioning.
+            onBack: model.resetGuidedStorage,
+          ),
+        ],
+      ),
     );
   }
 }

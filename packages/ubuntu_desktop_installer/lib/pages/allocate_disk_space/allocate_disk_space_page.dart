@@ -96,14 +96,16 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
           ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled: model.isValid,
-          onNext: model.setStorage,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            enabled: model.isValid,
+            onNext: model.setStorage,
+          ),
+        ],
+      ),
     );
   }
 }

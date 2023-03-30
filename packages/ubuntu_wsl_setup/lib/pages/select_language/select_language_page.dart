@@ -103,16 +103,18 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
           ),
         ],
       ),
-      actions: [
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          onNext: () {
-            model.applyInstallLanguagePacks();
-            model.applyLocale(model.locale(model.selectedLanguageIndex));
-          },
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            onNext: () {
+              model.applyInstallLanguagePacks();
+              model.applyLocale(model.locale(model.selectedLanguageIndex));
+            },
+          ),
+        ],
+      ),
     );
   }
 }
