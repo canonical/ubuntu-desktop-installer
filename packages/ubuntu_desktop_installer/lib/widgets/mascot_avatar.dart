@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 const _kMascotAsset = AssetImage('assets/mascot.png');
 
 class MascotAvatar extends StatelessWidget {
-  const MascotAvatar(
-      {super.key, this.image = _kMascotAsset, this.height = 160});
+  const MascotAvatar({
+    super.key,
+    this.image = _kMascotAsset,
+    this.size = const Size.square(160),
+  });
 
   final ImageProvider<Object> image;
-  final double height;
+  final Size size;
 
   /// Requests the mascot asset to be pre-cached.
   static Future precacheAsset(BuildContext context) async {
@@ -22,7 +25,12 @@ class MascotAvatar extends StatelessWidget {
         shape: BoxShape.circle,
         color: Theme.of(context).colorScheme.outline,
       ),
-      child: Image(image: image, gaplessPlayback: true, height: height),
+      child: Image(
+        image: image,
+        gaplessPlayback: true,
+        height: size.height,
+        width: size.width,
+      ),
     );
   }
 }
