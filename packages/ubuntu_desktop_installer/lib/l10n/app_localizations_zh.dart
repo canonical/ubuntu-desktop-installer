@@ -28,7 +28,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get restartButtonText => '重启';
 
   @override
-  String get revertButtonText => '回滚';
+  String get revertButtonText => '撤销';
 
   @override
   String get yesButtonText => '是';
@@ -77,7 +77,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return '让$RELEASE与当前操作系统共存（或代替当前操作系统）。这花不了多长时间。';
+    return '安装 $RELEASE，并可选择保留或替换您当前的操作系统。这个过程应该不会花费太长时间。';
   }
 
   @override
@@ -187,7 +187,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get hiddenWifiNetworkNameRequired => '需要网络名称';
 
   @override
-  String get noInternet => '暂不连接到互联网';
+  String get noInternet => '我现在不想连接到互联网';
 
   @override
   String get wirelessNetworkingDisabled => '无线网络已禁用';
@@ -330,7 +330,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return '为安全起见，对新的$RELEASE安装进行加密';
+    return '为安全起见，对新的 $RELEASE 安装进行加密';
   }
 
   @override
@@ -523,7 +523,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionFormatExt2 => 'Ext2 文件系统';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs 日志文件系统';
+  String get partitionFormatBtrfs => 'Btrfs 日志文件系统';
 
   @override
   String get partitionFormatJfs => 'JFS 日志文件系统';
@@ -601,7 +601,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whoAreYouPageComputerNameTooLong => '电脑名称太长了。';
 
   @override
-  String get whoAreYouPageInvalidComputerName => '电脑主机名无效';
+  String get whoAreYouPageInvalidComputerName => '计算机主机名无效';
 
   @override
   String get whoAreYouPageUsernameLabel => '键入一个用户名';
@@ -710,7 +710,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** 安装完毕并且可以使用';
+    return '**$system** 已经安装并准备好使用了';
   }
 
   @override
@@ -780,16 +780,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationSlidesIncluded => '包含：';
 
   @override
-  String get installationSlidesWelcomeTitle => '快速，免费且充满新功能';
+  String get installationSlidesWelcomeTitle => '快捷、自由、功能新颖，让人爱不释手';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return '$DISTRO 的最新版本让计算机使用变得比以往任何时候都更加容易。';
+    return '$DISTRO 最新版本的推出，让计算机的使用变得前所未有的容易。';
   }
 
   @override
   String installationSlidesWelcomeBody(Object RELEASE) {
-    return '无论您是开发人员、创作者、游戏玩家还是管理员，您都可以找到新的工具来提高工作效率并增强您在 $RELEASE 中的体验。';
+    return '不论你是开发者、创作者、游戏玩家还是管理员，你都能在 $RELEASE 中找到新的工具，以提高生产力并增强使用体验。';
   }
 
   @override
@@ -797,7 +797,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
-    return '在 Ubuntu 软件中心安装、管理和更新所有应用程序，包括来自 Snap Store 和 $DISTRO 存档的数千个应用程序。';
+    return '在 Ubuntu 软件中心安装、管理和更新所有应用程序，包括来自 Snap Store 和 $DISTRO 存档的成千上万应用程序。';
   }
 
   @override
@@ -805,15 +805,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
-    return '$DISTRO  是应用程序或 Web 开发、数据科学和 AI/ML 以及 DevOps 和管理的理想工作站。每个 $DISTRO 版本都包含最新的工具链，并支持所有主要的 IDE。';
+    return '$DISTRO 是应用程序或 Web 开发、数据科学和 AI/ML 以及 DevOps 和管理的理想工作站。每个 $DISTRO 版本都包含最新的工具链，并支持所有主要的 IDE。';
   }
 
   @override
-  String get installationSlidesCreativityTitle => '提高你的创造力';
+  String get installationSlidesCreativityTitle => '激发你的创造力';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
-    return '如果您是动画师、设计师、视频创作者或游戏开发人员，则很容易将您的工作流程引入 $DISTRO，并支持开源和行业标准软件和应用程序。';
+    return '如果您是动画师、设计师、视频创作者或游戏开发人员，$DISTRO 的开源和行业标准软件和应用程序的支持，让你能够轻松地将你的工作流程引入其中。';
   }
 
   @override
@@ -834,15 +834,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesSecurityLts(Object DISTRO) {
-    return '所有 $DISTRO LTS 版本都包含五年的安全补丁，订阅 Ubuntu Pro 可延长至十年。';
+    return '所有 $DISTRO LTS 版本都包含五年的安全补丁，如果有 Ubuntu Pro 订阅，则可以延长至十年。';
   }
 
   @override
-  String get installationSlidesProductivityTitle => '提高您的生产力';
+  String get installationSlidesProductivityTitle => '激发您的生产力，让你事半功倍';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
-    return '$DISTRO 桌面包括LibreOffice，这是一套与Microsoft Office兼容的开源应用程序，用于文档，电子表格和演示文稿。还提供流行的协作工具。';
+    return '$DISTRO 桌面包含 LibreOffice，这是一套与 Microsoft Office 兼容的开源应用程序，用于文档，电子表格和演示文稿。流行的协作工具也可以使用。';
   }
 
   @override
@@ -850,7 +850,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
-    return '$DISTRO 哲学核心是相信计算机是为所有人而设计的。通过先进的辅助工具和更改语言、颜色和文本大小的选项，$DISTRO 让计算机使用变得容易 - 无论你是谁，身在何处。';
+    return '$DISTRO 哲学核心是计算机是为每个人而存在的信仰。通过先进的辅助工具和更改语言、颜色和文本大小的选项，$DISTRO 让计算机使用变得简单 - 无论你是谁，身在何处。';
   }
 
   @override
@@ -864,7 +864,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return '$DISTRO 的官方文档可以通过在线方式或者在dock中的帮助图标进行访问。';
+    return '$DISTRO 的官方文档可以通过在线方式或者在Dock中的帮助图标获取。';
   }
 
   @override
@@ -880,7 +880,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationSlidesSupportDocumentation => '官方文档';
 
   @override
-  String get installationSlidesSupportUbuntuPro => '通过Ubuntu Pro提供企业级24/7支持';
+  String get installationSlidesSupportUbuntuPro => '使用 Ubuntu Pro 可享受企业级 7*24 支持服务';
 
   @override
   String get copyingFiles => '正在复制文件……';
