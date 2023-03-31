@@ -23,7 +23,7 @@
   "@whoAreYouPageAutoLogin": {},
   "whoAreYouPageRequirePassword": "Vaadi salasana sisäänkirjautumiseen",
   "@whoAreYouPageRequirePassword": {},
-  "repairInstallationDescription": "Korjaus asentaa kaikki ohjelmat uudelleen mutta asiakirjat ja asennukset säilytetään.",
+  "repairInstallationDescription": "Korjaus asentaa kaikki ohjelmat uudelleen, asiakirjat ja asetukset säilytetään.",
   "@repairInstallationDescription": {},
   "configureSecureBootTitle": "Määritä Secure Boot",
   "@configureSecureBootTitle": {},
