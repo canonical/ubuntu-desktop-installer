@@ -21,7 +21,7 @@ class DiskStorageService {
     await _client.getStorageV2().then(_updateStorage);
     await Future.wait([
       _client.hasRst().then((value) => _hasRst = value),
-      _client.hasBitLocker().then((value) => _hasBitLocker = value),
+      //_client.hasBitLocker().then((value) => _hasBitLocker = value),
     ]);
   }
 
@@ -49,7 +49,7 @@ class DiskStorageService {
 
   bool get hasRst => _hasRst ?? false;
 
-  bool get hasBitLocker => _hasBitLocker ?? false;
+  bool get hasBitLocker => _hasBitLocker ?? true;
 
   /// Whether FDE (Full Disk Encryption) should be used.
   bool get useEncryption => _useEncryption ?? false;
