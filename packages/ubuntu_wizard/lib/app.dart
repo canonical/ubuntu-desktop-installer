@@ -138,12 +138,6 @@ Can also be specified in a LOG_LEVEL environment variable.
   if (options?['help'] == true) {
     _printUsage(parser.usage, out: out, exit: exit);
   }
-  if (options?.rest.isNotEmpty == true) {
-    _printUsage(parser.usage,
-        error: 'Unknown positional arguments "${options!.rest.join(' ')}"',
-        out: out,
-        exit: exit);
-  }
   return options;
 }
 
