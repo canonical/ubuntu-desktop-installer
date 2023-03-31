@@ -1,6 +1,7 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/widgets/mascot_avatar.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
@@ -31,8 +32,10 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  final _languageListFocusNode = FocusNode();
-  final _languageListScrollController = AutoScrollController();
+  final _focusNode = FocusNode();
+  final _scrollableKey = GlobalKey();
+  final _itemScrollController = ItemScrollController();
+  final _itemPositionsListener = ItemPositionsListener.create();
 
   @override
   void initState() {
@@ -41,20 +44,16 @@ class _WelcomePageState extends State<WelcomePage> {
     final model = Provider.of<WelcomeModel>(context, listen: false);
     model.loadLanguages().then((_) {
       model.selectLocale(InheritedLocale.of(context));
-
-      _selectAndScrollToLanguage(
-          model.selectedLanguageIndex, AutoScrollPosition.middle);
     });
   }
 
   @override
   void dispose() {
-    _languageListFocusNode.dispose();
-    _languageListScrollController.dispose();
+    _focusNode.dispose();
     super.dispose();
   }
 
-  void _selectAndScrollToLanguage(int index, [AutoScrollPosition? position]) {
+  void _selectAndScrollToLanguage(int index) {
     if (index == -1) return;
 
     final model = context.read<WelcomeModel>();
@@ -62,9 +61,28 @@ class _WelcomePageState extends State<WelcomePage> {
 
     InheritedLocale.apply(context, model.locale(index));
 
-    _languageListFocusNode.requestFocus();
-    _languageListScrollController.scrollToIndex(index,
-        preferPosition: position, duration: const Duration(milliseconds: 1));
+    _focusNode.requestFocus();
+
+    final pos = _itemPositionsListener.itemPositions.value
+        .firstWhereOrNull((item) => item.index == index);
+    if (pos == null) {
+      // the item does not exist in the viewport. jump and align the center.
+      final box =
+          _scrollableKey.currentContext?.findRenderObject() as RenderBox?;
+      if (box != null) {
+        _itemScrollController.jumpTo(
+            index: index,
+            alignment: 0.5 - kMinInteractiveDimension / box.size.height / 2);
+      }
+    } else if (pos.itemLeadingEdge < 0) {
+      // partly above the viewport, align the top edge
+      _itemScrollController.jumpTo(index: index, alignment: 0);
+    } else if (pos.itemTrailingEdge > 1) {
+      // partly below the viewport, align the bottom edge
+      _itemScrollController.jumpTo(
+          index: index,
+          alignment: 1 - pos.itemTrailingEdge + pos.itemLeadingEdge);
+    }
   }
 
   @override
@@ -88,28 +106,35 @@ class _WelcomePageState extends State<WelcomePage> {
             Expanded(
               child: KeySearch(
                 autofocus: true,
-                focusNode: _languageListFocusNode,
+                focusNode: _focusNode,
                 onSearch: (value) {
                   _selectAndScrollToLanguage(model.searchLanguage(value));
                 },
                 child: YaruBorderContainer(
                   clipBehavior: Clip.antiAlias,
-                  child: ListView.builder(
-                    controller: _languageListScrollController,
-                    itemCount: model.languageCount,
-                    itemBuilder: (context, index) {
-                      return AutoScrollTag(
-                        index: index,
-                        key: ValueKey(index),
-                        controller: _languageListScrollController,
-                        child: ListTile(
-                          title: Text(model.language(index)),
-                          selected: index == model.selectedLanguageIndex,
-                          onTap: () => _selectAndScrollToLanguage(index),
-                        ),
-                      );
-                    },
-                  ),
+                  child: model.languageCount > 0
+                      ? LayoutBuilder(
+                          builder: (context, constraints) {
+                            return ScrollablePositionedList.builder(
+                              key: _scrollableKey,
+                              initialAlignment: 0.5 -
+                                  kMinInteractiveDimension /
+                                      constraints.maxHeight /
+                                      2,
+                              initialScrollIndex: model.selectedLanguageIndex,
+                              itemScrollController: _itemScrollController,
+                              itemPositionsListener: _itemPositionsListener,
+                              itemCount: model.languageCount,
+                              itemBuilder: (context, index) => ListTile(
+                                key: ValueKey(index),
+                                title: Text(model.language(index)),
+                                selected: index == model.selectedLanguageIndex,
+                                onTap: () => _selectAndScrollToLanguage(index),
+                              ),
+                            );
+                          },
+                        )
+                      : const SizedBox.expand(),
                 ),
               ),
             ),

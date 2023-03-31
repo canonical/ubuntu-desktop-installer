@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
@@ -62,7 +63,7 @@ void main() {
   testWidgets('should display a list of languages', (tester) async {
     await setUpApp(tester);
 
-    final languageList = find.byType(ListView);
+    final languageList = find.byType(ScrollablePositionedList);
     expect(languageList, findsOneWidget);
 
     expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'en');
@@ -72,8 +73,8 @@ void main() {
     expect(listItems, findsWidgets);
     expect(listItems.evaluate().length, lessThan(app.supportedLocales.length));
     for (final language in ['English', 'Français', 'Galego', 'Italiano']) {
-      final listItem = find.descendant(
-          of: languageList, matching: find.text(language), skipOffstage: false);
+      final listItem =
+          find.widgetWithText(ListTile, language, skipOffstage: false);
       await tester.dragUntilVisible(listItem, languageList, Offset(0, -10));
       await tester.pumpAndSettle();
       expect(listItem, findsOneWidget);
@@ -119,7 +120,7 @@ void main() {
   testWidgets('key search', (tester) async {
     await setUpApp(tester);
 
-    final languageList = find.byType(ListView);
+    final languageList = find.byType(ScrollablePositionedList);
     expect(languageList, findsOneWidget);
 
     final keySearch = find.byType(KeySearch);
