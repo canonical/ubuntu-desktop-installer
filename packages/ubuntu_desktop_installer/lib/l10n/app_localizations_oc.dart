@@ -740,12 +740,12 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\n Vos cal desactivar BitLocker dins Windows abans d’installacion d’Ubuntu.';
+    return 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\nVos cal utilizar Windows per crear un espaci liure o causir \'$option\' per contunhar.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Per las consignas, dobrissètz aquesta pagina sus un mobil o un autre aparelh : <a href=\"https://$url\">$url</a>';
+    return 'Per las consignas, numerizatz aqueste còdi QR d’un autre aparelh estant o consultatz : <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -756,7 +756,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return 'Volètz vertadièrament reaviar l’ordenador ? Deuretz relançar lo processús d’installacion de $DISTRO mai tard per terminar l’installacion de $DISTRO.';
   }
 
   @override
