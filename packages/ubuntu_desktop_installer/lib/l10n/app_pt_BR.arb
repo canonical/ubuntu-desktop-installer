@@ -41,11 +41,11 @@
       "url": {}
     }
   },
-  "turnOffRST": "Desligue a RST",
+  "turnOffRST": "O RST está habilitado",
   "@turnOffRST": {},
   "turnOffRSTDescription": "Este computador usa Intel RST (Rapid Storage Technology). Você precisa desligar a RST no Windows antes de instalar o Ubuntu.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Abra esta página em um celular ou outro dispositivo para encontrar instruções: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -82,7 +82,7 @@
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "Chaves de segurança não correspondem",
   "@secureBootSecurityKeysDontMatch": {},
-  "updatesOtherSoftwarePageTitle": "Atualizações e outros softwares",
+  "updatesOtherSoftwarePageTitle": "Aplicativos e atualizações",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "Quais apps você gostaria de instalar para começar?",
   "@updatesOtherSoftwarePageDescription": {},
@@ -165,7 +165,7 @@
   },
   "installationTypeAlongsideInfo": "Documentos, músicas, e outros arquivos pessoais serão mantidos. Você poderá selecionar qual sistema operacional usar cada vez que o computador iniciar.",
   "@installationTypeAlongsideInfo": {},
-  "installationTypeManual": "Opção avançada",
+  "installationTypeManual": "Particionamento manual",
   "@installationTypeManual": {},
   "installationTypeManualInfo": "Você pode criar ou redimensionar partições manualmente ou escolher múltiplas partições para o {DISTRO}",
   "@installationTypeManualInfo": {},
@@ -177,7 +177,7 @@
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "Instalar agora",
   "@selectGuidedStorageInstallNow": {},
-  "allocateDiskSpace": "Alocar espaço em disco",
+  "allocateDiskSpace": "Particionamento manual",
   "@allocateDiskSpace": {},
   "startInstallingButtonText": "Instalar",
   "@startInstallingButtonText": {},
@@ -265,7 +265,7 @@
   "@partitionErase": {},
   "partitionMountPointLabel": "Ponto de montagem:",
   "@partitionMountPointLabel": {},
-  "whoAreYouPageTitle": "Quem é você?",
+  "whoAreYouPageTitle": "Configurar sua conta",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "Iniciar sessão automaticamente",
   "@whoAreYouPageAutoLogin": {},
@@ -336,7 +336,7 @@
       "format": {}
     }
   },
-  "chooseYourLookPageTitle": "Escolha seu estilo",
+  "chooseYourLookPageTitle": "Escolha seu tema",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "Você pode sempre alterar isso depois nas configurações de aparência.",
   "@chooseYourLookPageHeader": {},
@@ -362,11 +362,11 @@
   },
   "shutdown": "Desligar",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "Desligar BitLocker",
+  "turnOffBitlockerTitle": "BitLocker está habilitado",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Este computador usa criptografia do Windows BitLocker.\nVocê precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.",
+  "turnOffBitlockerDescription": "Este computador usa criptografia BitLocker do Windows.\nVocê precisa usar o Windows para liberar espaço ou escolher '{option}' para continuar .",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Para obter instruções, abra esta página em um telefone ou outro dispositivo: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -375,7 +375,7 @@
   },
   "restartIntoWindows": "Reiniciar no Windows",
   "@restartIntoWindows": {},
-  "chooseSecurityKeyTitle": "Escolha uma chave de segurança",
+  "chooseSecurityKeyTitle": "Chave de segurança",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHint": "Escolha uma chave de segurança",
   "@chooseSecurityKeyHint": {},
@@ -523,7 +523,7 @@
   "@newPartitionTableConfirmationMessage": {},
   "whoAreYouPageShowPassword": "Mostrar senha",
   "@whoAreYouPageShowPassword": {},
-  "whereAreYouPageTitle": "Onde você está?",
+  "whereAreYouPageTitle": "Selecione seu fuso horário",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "Localização",
   "@whereAreYouLocationLabel": {},
@@ -565,7 +565,7 @@
   "@webSlideTitle": {},
   "webSlideChromium": "Chromium",
   "@webSlideChromium": {},
-  "connectToInternetPageTitle": "Conecte-se à internet",
+  "connectToInternetPageTitle": "Conecte-se a uma rede",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "Ao conectar este computador à internet você facilitará ao Ubuntu instalação de qualquer software extra necessário e ajudará a determinar seu fuso horário.\n\nConecte-se via cabo Ethernet ou escolha uma rede Wi-Fi",
   "@connectToInternetDescription": {},
@@ -935,6 +935,19 @@
   "@notEnoughDiskSpaceRequired": {},
   "welcomePageTitle": "Boas-vindas ao {DISTRO}",
   "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffRSTTitle": "Desligue o RST para continuar",
+  "@turnOffRSTTitle": {},
+  "turnOffBitlockerHeadline": "Desligue o BitLocker para continuar",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "Reiniciar para o Windows?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Tem certeza de que deseja reiniciar o computador? Você precisará reiniciar a instalação do {DISTRO} mais tarde para concluí-la.",
+  "@restartIntoWindowsDescription": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
