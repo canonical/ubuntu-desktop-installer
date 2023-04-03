@@ -1142,6 +1142,12 @@ abstract class AppLocalizations {
   /// **'Used as:'**
   String get partitionFormatLabel;
 
+  /// No description provided for @partitionFormatF2fs.
+  ///
+  /// In en, this message translates to:
+  /// **'Flash-Friendly File System'**
+  String get partitionFormatF2fs;
+
   /// No description provided for @partitionFormatExt4.
   ///
   /// In en, this message translates to:

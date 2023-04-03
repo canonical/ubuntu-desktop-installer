@@ -42,6 +42,7 @@ class PartitionFormat {
   static const ext2 = PartitionFormat._('ext2', 'Ext2');
   static const ext3 = PartitionFormat._('ext3', 'Ext3');
   static const ext4 = PartitionFormat._('ext4', 'Ext4');
+  static const f2fs = PartitionFormat._('f2fs', 'F2FS');
   static const fat = PartitionFormat._('fat', 'FAT');
   static const fat12 = PartitionFormat._('fat12', 'FAT12');
   static const fat16 = PartitionFormat._('fat16', 'FAT16');
@@ -66,13 +67,14 @@ class PartitionFormat {
   static List<PartitionFormat> get values => _formats.values.toList();
 
   /// Partition formats supported for new partitions.
-  static List<PartitionFormat> get supported => [ext4, xfs, btrfs, swap];
+  static List<PartitionFormat> get supported => [ext4, f2fs, xfs, btrfs, swap];
 
   static const _formats = <String, PartitionFormat>{
     'btrfs': btrfs,
     'ext2': ext2,
     'ext3': ext3,
     'ext4': ext4,
+    'f2fs': f2fs,
     'fat': fat,
     'fat12': fat12,
     'fat16': fat16,

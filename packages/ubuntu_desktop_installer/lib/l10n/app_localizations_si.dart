@@ -514,6 +514,9 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionFormatLabel => 'භාවිතය:';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Ext4 සගනු ගොනු පද්ධතිය';
 
   @override

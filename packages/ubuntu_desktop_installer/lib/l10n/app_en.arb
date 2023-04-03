@@ -448,6 +448,8 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Used as:",
   "@partitionFormatLabel": {},
+  "partitionFormatF2fs": "Flash-Friendly File System",
+  "@partitionFormatF2fs": {},
   "partitionFormatExt4": "Ext4 journaling file system",
   "@partitionFormatExt4": {},
   "partitionFormatExt3": "Ext3 journaling file system",

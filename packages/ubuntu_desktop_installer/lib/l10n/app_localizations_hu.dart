@@ -514,6 +514,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get partitionFormatLabel => 'Használt mint:';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Ext4 naplózó fájlrendszer';
 
   @override

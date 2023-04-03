@@ -514,6 +514,9 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionFormatLabel => 'Utilizada coma :';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'sistèma de fichièr de jornalizacion Ext4';
 
   @override

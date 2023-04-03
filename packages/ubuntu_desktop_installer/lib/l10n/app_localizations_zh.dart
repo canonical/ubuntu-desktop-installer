@@ -514,6 +514,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionFormatLabel => '用于：';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Ext4 日志文件系统';
 
   @override

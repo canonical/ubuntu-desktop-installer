@@ -514,6 +514,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partitionFormatLabel => 'Utilizado como:';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Sistema de ficheiros Ext4 com journaling';
 
   @override

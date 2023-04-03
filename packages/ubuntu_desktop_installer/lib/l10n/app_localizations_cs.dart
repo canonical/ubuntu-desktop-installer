@@ -514,6 +514,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get partitionFormatLabel => 'Použito jako:';
 
   @override
+  String get partitionFormatF2fs => 'Flash-Friendly File System';
+
+  @override
   String get partitionFormatExt4 => 'Žurnálovací souborový systém Ext4';
 
   @override
