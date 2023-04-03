@@ -26,9 +26,9 @@
   "@installationCompleteTitle": {},
   "shutdown": "Stäng av",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "Slå av BitLocker",
+  "turnOffBitlockerTitle": "Bitlocker är aktiverat",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Den här datorn använder Windows BitLocker-kryptering.\nDu måste stänga av BitLocker i Windows innan du installerar Ubuntu.",
+  "turnOffBitlockerDescription": "Den här datorn använder Windows BitLocker-kryptering.\nDu behöver använda Windows för att skapa fritt utrymme eller välja '{option}' för att fortsätta.",
   "@turnOffBitlockerDescription": {},
   "noWiredConnection": "Ingen trådbunden anslutning upptäcktes",
   "@noWiredConnection": {},
@@ -64,7 +64,7 @@
   "@whoAreYouPageComputerNameRequired": {},
   "partitionTypePrimary": "Primär",
   "@partitionTypePrimary": {},
-  "whoAreYouPageTitle": "Vem är du?",
+  "whoAreYouPageTitle": "Ställ in ditt konto",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageRealNameRequired": "Ett namn krävs",
   "@whoAreYouPageRealNameRequired": {},
@@ -75,7 +75,7 @@
       "system": {}
     }
   },
-  "connectToInternetPageTitle": "Anslut till internet",
+  "connectToInternetPageTitle": "Anslut till ett nätverk",
   "@connectToInternetPageTitle": {},
   "useWiredConnection": "Använd trådbunden anslutning",
   "@useWiredConnection": {},
@@ -146,11 +146,11 @@
   "@yesButtonText": {},
   "welcome": "Välkommen",
   "@welcome": {},
-  "turnOffRST": "Stäng av RST",
+  "turnOffRST": "RST är aktiverat",
   "@turnOffRST": {},
   "turnOffRSTDescription": "Den här datorn använder Intel RST (Rapid Storage Technology). Du måste stänga av RST i Windows innan du installerar Ubuntu.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "För instruktioner, öppna den här sidan på en telefon eller annan enhet: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "För instruktioner, scanna QR-koden på en annan enhet eller besök:<a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -179,7 +179,7 @@
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "Säkerhetsnycklarna matchar inte",
   "@secureBootSecurityKeysDontMatch": {},
-  "updatesOtherSoftwarePageTitle": "Uppdateringar och annan programvara",
+  "updatesOtherSoftwarePageTitle": "Program och uppdateringar",
   "@updatesOtherSoftwarePageTitle": {},
   "installationTypeNoOSDetected": "Den här datorn har för närvarande inga upptäckta operativsystem. Vad skulle du vilja göra?",
   "@installationTypeNoOSDetected": {},
@@ -206,7 +206,7 @@
   "@installThirdPartyTitle": {},
   "installThirdPartySubtitle": "Denna programvara är föremål för licensvillkor som ingår i dess dokumentation. Vissa är proprietära.",
   "@installThirdPartySubtitle": {},
-  "chooseSecurityKeyTitle": "Välj en säkerhetsnyckel",
+  "chooseSecurityKeyTitle": "Säkerhetsnyckel",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHint": "Välj en säkerhetsnyckel",
   "@chooseSecurityKeyHint": {},
@@ -223,7 +223,7 @@
       "color": {}
     }
   },
-  "installationTypeTitle": "Installationstyp",
+  "installationTypeTitle": "Typ av installation",
   "@installationTypeTitle": {},
   "installationTypeOSDetected": "Den här datorn har för närvarande {os} på sig. Vad skulle du vilja göra?",
   "@installationTypeOSDetected": {
@@ -261,7 +261,7 @@
   },
   "installationTypeAlongsideInfo": "Dokument, musik och andra personliga filer kommer att sparas. Du kan välja vilket operativsystem du vill ha varje gång datorn startar.",
   "@installationTypeAlongsideInfo": {},
-  "installationTypeManual": "Något annat",
+  "installationTypeManual": "Manuell partitionering",
   "@installationTypeManual": {},
   "selectGuidedStorageDropdownLabel": "Välj disk:",
   "@selectGuidedStorageDropdownLabel": {},
@@ -269,7 +269,7 @@
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "Installera nu",
   "@selectGuidedStorageInstallNow": {},
-  "allocateDiskSpace": "Tilldela diskutrymme",
+  "allocateDiskSpace": "Manuell partitionering",
   "@allocateDiskSpace": {},
   "startInstallingButtonText": "Installera",
   "@startInstallingButtonText": {},
@@ -370,13 +370,13 @@
       "format": {}
     }
   },
-  "chooseYourLookPageTitle": "Välj ditt utseende",
+  "chooseYourLookPageTitle": "Välj ditt tema",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "Du kan alltid ändra detta senare i utseendeinställningarna.",
   "@chooseYourLookPageHeader": {},
   "chooseYourLookPageDarkSetting": "Mörk",
   "@chooseYourLookPageDarkSetting": {},
-  "turnOffBitlockerLinkInstructions": "För instruktioner, öppna den här sidan på en telefon eller annan enhet: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "För instruktioner, scanna QR-koden på en annan enhet eller besök: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -479,7 +479,7 @@
       "RELEASE": {}
     }
   },
-  "whereAreYouPageTitle": "Var är du?",
+  "whereAreYouPageTitle": "Välj din tidszon",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "Plats",
   "@whereAreYouLocationLabel": {},
@@ -989,5 +989,18 @@
   "installationSlidesAccessibilityOrca": "Orca skärmläsare",
   "@installationSlidesAccessibilityOrca": {},
   "notEnoughDiskSpaceRequired": "Krävs:",
-  "@notEnoughDiskSpaceRequired": {}
+  "@notEnoughDiskSpaceRequired": {},
+  "turnOffRSTTitle": "Slå av RST för att fortsätta",
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsTitle": "Starta om till Windows?",
+  "@restartIntoWindowsTitle": {},
+  "turnOffBitlockerHeadline": "Slå av Bitlocker för att fortsätta",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsDescription": "Är du säker på att du vill starta om din dator? Du kommer att behöva starta om {DISTRO} senare för att slutföra installationen av {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

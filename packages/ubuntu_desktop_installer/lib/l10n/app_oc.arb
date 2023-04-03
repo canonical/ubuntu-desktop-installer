@@ -272,7 +272,7 @@
   "@shutdown": {},
   "turnOffBitlockerTitle": "BitLocker es activat",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\nVos cal utilizar Windows per crear un espaci liure o causir '{option}' per contunhar.",
+  "turnOffBitlockerDescription": "Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\nVos cal utilizar Windows per crear un espaci liure o causir « {option} » per contunhar.",
   "@turnOffBitlockerDescription": {},
   "turnOffBitlockerLinkInstructions": "Per las consignas, numerizatz aqueste còdi QR d’un autre aparelh estant o consultatz : <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
