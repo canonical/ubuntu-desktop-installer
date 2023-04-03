@@ -58,7 +58,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get repairInstallation => 'Korjaa asennus';
 
   @override
-  String get repairInstallationDescription => 'Korjaus asentaa kaikki ohjelmat uudelleen mutta asiakirjat ja asennukset säilytetään.';
+  String get repairInstallationDescription => 'Korjaus asentaa kaikki ohjelmat uudelleen, asiakirjat ja asetukset säilytetään.';
 
   @override
   String tryUbuntu(Object RELEASE) {
