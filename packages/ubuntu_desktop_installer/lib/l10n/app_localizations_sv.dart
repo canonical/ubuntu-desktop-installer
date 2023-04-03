@@ -86,17 +86,17 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Stäng av RST';
+  String get turnOffRST => 'RST är aktiverat';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Slå av RST för att fortsätta';
 
   @override
   String get turnOffRSTDescription => 'Den här datorn använder Intel RST (Rapid Storage Technology). Du måste stänga av RST i Windows innan du installerar Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'För instruktioner, öppna den här sidan på en telefon eller annan enhet: <a href=\"https://$url\">$url</a>';
+    return 'För instruktioner, scanna QR-koden på en annan enhet eller besök:<a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -154,7 +154,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get showSecurityKey => 'Visa säkerhetsnyckel';
 
   @override
-  String get connectToInternetPageTitle => 'Anslut till internet';
+  String get connectToInternetPageTitle => 'Anslut till ett nätverk';
 
   @override
   String get connectToInternetDescription => 'Att ansluta den här datorn till internet hjälper Ubuntu att installera all extra programvara som behövs och hjälpa dig att välja din tidszon.\n\nAnslut med Ethernet-kabel eller välj ett Wi-Fi-nätverk';
@@ -205,7 +205,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get connectButtonText => 'Anslut';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Uppdateringar och annan programvara';
+  String get updatesOtherSoftwarePageTitle => 'Program och uppdateringar';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Vilka program skulle du vilja installera till att börja med?';
@@ -252,7 +252,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get offlineWarning => 'Du är för närvarande offline';
 
   @override
-  String get chooseSecurityKeyTitle => 'Välj en säkerhetsnyckel';
+  String get chooseSecurityKeyTitle => 'Säkerhetsnyckel';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -277,7 +277,7 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get installationTypeTitle => 'Installationstyp';
+  String get installationTypeTitle => 'Typ av installation';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -376,7 +376,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Dokument, musik och andra personliga filer kommer att sparas. Du kan välja vilket operativsystem du vill ha varje gång datorn startar.';
 
   @override
-  String get installationTypeManual => 'Något annat';
+  String get installationTypeManual => 'Manuell partitionering';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,7 +424,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installAlongsideAvailable => 'Tillgängligt:';
 
   @override
-  String get allocateDiskSpace => 'Tilldela diskutrymme';
+  String get allocateDiskSpace => 'Manuell partitionering';
 
   @override
   String get startInstallingButtonText => 'Installera';
@@ -571,7 +571,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get partitionMountPointLabel => 'Monteringspunkt:';
 
   @override
-  String get whoAreYouPageTitle => 'Vem är du?';
+  String get whoAreYouPageTitle => 'Ställ in ditt konto';
 
   @override
   String get whoAreYouPageAutoLogin => 'Logga in automatiskt';
@@ -694,7 +694,7 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Välj ditt utseende';
+  String get chooseYourLookPageTitle => 'Välj ditt tema';
 
   @override
   String get chooseYourLookPageHeader => 'Du kan alltid ändra detta senare i utseendeinställningarna.';
@@ -733,34 +733,34 @@ class AppLocalizationsSv extends AppLocalizations {
   String get continueTesting => 'Fortsätt att testa';
 
   @override
-  String get turnOffBitlockerTitle => 'Slå av BitLocker';
+  String get turnOffBitlockerTitle => 'Bitlocker är aktiverat';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => 'Slå av Bitlocker för att fortsätta';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Den här datorn använder Windows BitLocker-kryptering.\nDu måste stänga av BitLocker i Windows innan du installerar Ubuntu.';
+    return 'Den här datorn använder Windows BitLocker-kryptering.\nDu behöver använda Windows för att skapa fritt utrymme eller välja \'$option\' för att fortsätta.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'För instruktioner, öppna den här sidan på en telefon eller annan enhet: <a href=\"https://$url\">$url</a>';
+    return 'För instruktioner, scanna QR-koden på en annan enhet eller besök: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Starta om till Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Starta om till Windows?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return 'Är du säker på att du vill starta om din dator? Du kommer att behöva starta om $DISTRO senare för att slutföra installationen av $DISTRO.';
   }
 
   @override
-  String get whereAreYouPageTitle => 'Var är du?';
+  String get whereAreYouPageTitle => 'Välj din tidszon';
 
   @override
   String get whereAreYouLocationLabel => 'Plats';

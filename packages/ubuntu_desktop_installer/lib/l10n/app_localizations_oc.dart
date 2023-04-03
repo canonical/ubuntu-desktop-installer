@@ -740,7 +740,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\nVos cal utilizar Windows per crear un espaci liure o causir \'$option\' per contunhar.';
+    return 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\nVos cal utilizar Windows per crear un espaci liure o causir « $option » per contunhar.';
   }
 
   @override
