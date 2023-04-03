@@ -133,7 +133,7 @@ class MockFileCreator {
   final Set<String> paths;
   File call(String path) {
     final file = MockFile(path);
-    when(file.exists()).thenAnswer((_) async => paths.contains(path));
+    when(file.existsSync()).thenReturn(paths.contains(path));
     return file;
   }
 }
@@ -145,18 +145,10 @@ class MockFile extends Mock implements File {
   final String path;
 
   @override
-  Future<bool> exists() {
+  bool existsSync() {
     return super.noSuchMethod(
-      Invocation.method(#exists, []),
-      returnValue: Future.value(false),
-    );
-  }
-
-  @override
-  Future<String> resolveSymbolicLinks() {
-    return super.noSuchMethod(
-      Invocation.method(#resolveSymbolicLinks, []),
-      returnValue: Future.value(''),
+      Invocation.method(#existsSync, []),
+      returnValue: false,
     );
   }
 }
