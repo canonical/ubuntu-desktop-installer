@@ -108,12 +108,13 @@ void main() {
     expect(didExit, equals(1));
 
     didExit = null;
-    parseCommandLine(
-      ['unknown rest arguments'],
+    final rest = parseCommandLine(
+      ['--', 'subiquity', 'arguments'],
       out: out,
       exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, equals(1));
+    )?.rest;
+    expect(didExit, isNull);
+    expect(rest, ['subiquity', 'arguments']);
   });
 
   testWidgets('starts and registers the monitor', (tester) async {

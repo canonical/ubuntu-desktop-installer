@@ -52,7 +52,6 @@ Future<void> runInstallerApp(
         valueHelp: 'path',
         defaultsTo: 'examples/mixed-sources.yaml',
         help: 'Path of the source catalog (dry-run only)');
-    parser.addOption('bootloader', hide: true);
     parser.addFlag('try-or-install', hide: true);
   })!;
 
@@ -111,9 +110,8 @@ Future<void> runInstallerApp(
         '--machine-config=${options['machine-config']}',
       if (options['source-catalog'] != null)
         '--source-catalog=${options['source-catalog']}',
-      if (options['bootloader'] != null)
-        '--bootloader=${options['bootloader']}',
       '--storage-version=2',
+      ...options.rest,
     ],
     dispose: () => getService<DesktopService>().close(),
   );
