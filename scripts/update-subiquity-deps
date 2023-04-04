@@ -1,15 +1,6 @@
 #!/usr/bin/env python3
 
-import subprocess
 from ruamel.yaml import YAML
-
-# update subiquity_client to remote HEAD
-submodule = 'packages/subiquity_client'
-cmd = 'git submodule update --init --remote ' + submodule
-subprocess.check_call(cmd.split(' '))
-# update subiquity_client's submodules
-cmd = 'git submodule update --init --recursive ' + submodule
-subprocess.check_call(cmd.split(' '))
 
 yaml = YAML()
 yaml.default_flow_style = False
