@@ -9,7 +9,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
-import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 /// @internal
@@ -49,11 +48,6 @@ Future<bool?> runWizardApp(
     subiquityClient.open(endpoint);
     return subiquityMonitor?.start(endpoint);
   });
-
-  registerServiceInstance(subiquityClient);
-  if (subiquityMonitor != null) {
-    registerServiceInstance(subiquityMonitor);
-  }
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();

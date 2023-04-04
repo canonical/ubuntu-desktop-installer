@@ -56,13 +56,11 @@ Future<void> runInstallerApp(
     parser.addFlag('try-or-install', hide: true);
   })!;
 
-  final subiquityClient = SubiquityClient();
   final bool liveRun = isLiveRun(options);
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final subiquityPath = await getSubiquityPath()
       .then((dir) => Directory(dir).existsSync() ? dir : null);
   final endpoint = await defaultEndpoint(serverMode);
-
   final process = liveRun
       ? null
       : SubiquityProcess.python(
@@ -70,23 +68,21 @@ Future<void> runInstallerApp(
           serverMode: ServerMode.DRY_RUN,
           subiquityPath: subiquityPath,
         );
-  final subiquityServer = SubiquityServer(
-    process: process,
-    endpoint: endpoint,
-  );
-
-  final subiquityMonitor = SubiquityStatusMonitor();
 
   final baseName = p.basename(Platform.resolvedExecutable);
 
   // conditional registration if not already registered by flavors or tests
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
-  tryRegisterService(() => DiskStorageService(subiquityClient));
+  tryRegisterService(() => DiskStorageService(getService<SubiquityClient>()));
   tryRegisterService(JournalService.new);
-  tryRegisterService(() => NetworkService(subiquityClient));
+  tryRegisterService(() => NetworkService(getService<SubiquityClient>()));
   tryRegisterService(PowerService.new);
   tryRegisterService(ProductService.new);
+  tryRegisterService(SubiquityClient.new);
+  tryRegisterService(
+      () => SubiquityServer(process: process, endpoint: endpoint));
+  tryRegisterService(SubiquityStatusMonitor.new);
   tryRegisterService(TelemetryService.new);
   tryRegisterService(UdevService.new);
   tryRegisterService(UrlLauncher.new);
@@ -103,9 +99,9 @@ Future<void> runInstallerApp(
       ),
     ),
     options: options,
-    subiquityClient: subiquityClient,
-    subiquityServer: subiquityServer,
-    subiquityMonitor: subiquityMonitor,
+    subiquityClient: getService<SubiquityClient>(),
+    subiquityServer: getService<SubiquityServer>(),
+    subiquityMonitor: getService<SubiquityStatusMonitor>(),
     serverArgs: [
       if (options['machine-config'] != null)
         '--machine-config=${options['machine-config']}',
@@ -118,6 +114,7 @@ Future<void> runInstallerApp(
     dispose: () => getService<DesktopService>().close(),
   );
 
+  final subiquityClient = getService<SubiquityClient>();
   await subiquityClient.setVariant(Variant.DESKTOP);
   await subiquityClient.setSource(InstallationMode.normal.source);
 
