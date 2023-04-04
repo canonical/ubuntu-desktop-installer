@@ -62,7 +62,7 @@ void main() {
   testWidgets('should display a list of languages', (tester) async {
     await setUpApp(tester);
 
-    final languageList = find.byType(ListView);
+    final languageList = find.byType(ListWidget);
     expect(languageList, findsOneWidget);
 
     expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'en');
@@ -72,8 +72,8 @@ void main() {
     expect(listItems, findsWidgets);
     expect(listItems.evaluate().length, lessThan(app.supportedLocales.length));
     for (final language in ['English', 'Français', 'Galego', 'Italiano']) {
-      final listItem = find.descendant(
-          of: languageList, matching: find.text(language), skipOffstage: false);
+      final listItem =
+          find.widgetWithText(ListTile, language, skipOffstage: false);
       await tester.dragUntilVisible(listItem, languageList, Offset(0, -10));
       await tester.pumpAndSettle();
       expect(listItem, findsOneWidget);
@@ -119,7 +119,7 @@ void main() {
   testWidgets('key search', (tester) async {
     await setUpApp(tester);
 
-    final languageList = find.byType(ListView);
+    final languageList = find.byType(ListWidget);
     expect(languageList, findsOneWidget);
 
     final keySearch = find.byType(KeySearch);
