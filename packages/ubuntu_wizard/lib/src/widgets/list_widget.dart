@@ -85,22 +85,24 @@ class _ListWidgetState extends State<ListWidget> {
         autofocus: true,
         focusNode: _focusNode,
         onSearch: widget.onKeySearch ?? (_) => -1,
-        child: widget.itemCount > 0
-            ? LayoutBuilder(
-                builder: (context, constraints) {
-                  return ScrollablePositionedList.builder(
-                    key: _scrollableKey,
-                    initialAlignment:
-                        _centerAlign(context, constraints.maxHeight),
-                    initialScrollIndex: widget.selectedIndex,
-                    itemScrollController: _scrollController,
-                    itemPositionsListener: _scrollListener,
-                    itemCount: widget.itemCount,
-                    itemBuilder: widget.itemBuilder,
-                  );
-                },
-              )
-            : const SizedBox.expand(),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            if (widget.itemCount <= 0 ||
+                constraints.maxWidth <= 0 ||
+                constraints.maxHeight <= 0) {
+              return const SizedBox.expand();
+            }
+            return ScrollablePositionedList.builder(
+              key: _scrollableKey,
+              initialAlignment: _centerAlign(context, constraints.maxHeight),
+              initialScrollIndex: widget.selectedIndex,
+              itemScrollController: _scrollController,
+              itemPositionsListener: _scrollListener,
+              itemCount: widget.itemCount,
+              itemBuilder: widget.itemBuilder,
+            );
+          },
+        ),
       ),
     );
   }
