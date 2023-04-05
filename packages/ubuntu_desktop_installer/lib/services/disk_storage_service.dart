@@ -103,8 +103,8 @@ class DiskStorageService {
   }
 
   /// Sets the selected target for guided partitioning.
-  Future<GuidedStorageResponseV2> setGuidedStorage() async {
-    return _client.setGuidedStorageV2(
+  Future<void> setGuidedStorage() async {
+    await _client.setGuidedStorageV2(
       GuidedChoiceV2(
         target: guidedTarget!,
         useLvm: useLvm,
