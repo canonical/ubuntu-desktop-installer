@@ -24,6 +24,7 @@ final selection = StreamController.broadcast();
 final testDisks = <Disk>[
   testDisk(
     path: '/dev/sda',
+    canBeBootDevice: false,
     size: 12,
     partitions: [
       Partition(
@@ -43,6 +44,7 @@ final testDisks = <Disk>[
   ),
   testDisk(
     path: '/dev/sdb',
+    canBeBootDevice: true,
     size: 23,
     partitions: [
       Partition(
@@ -327,12 +329,20 @@ void main() {
     await tester.pumpAndSettle();
     await tester.pump();
 
-    final menuItem = find.descendant(
-      of: find.byType(MenuItemButton),
-      matching: find.byKey(ValueKey(1)),
+    final menuItem0 = find.ancestor(
+      of: find.byKey(ValueKey(0)),
+      matching: find.byType(MenuItemButton),
     );
-    await tester.ensureVisible(menuItem.last);
-    await tester.tap(menuItem.last);
+    expect(tester.widget<MenuItemButton>(menuItem0).enabled, isFalse);
+
+    final menuItem1 = find.ancestor(
+      of: find.byKey(ValueKey(1)),
+      matching: find.byType(MenuItemButton),
+    );
+    expect(tester.widget<MenuItemButton>(menuItem1).enabled, isTrue);
+
+    await tester.ensureVisible(menuItem1);
+    await tester.tap(menuItem1);
     verify(model.selectBootDisk(1)).called(1);
   });
 
