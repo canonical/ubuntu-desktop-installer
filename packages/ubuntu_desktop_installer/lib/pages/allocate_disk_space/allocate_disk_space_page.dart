@@ -91,6 +91,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
               title: lang.bootLoaderDevice,
               storages: model.disks,
               selected: model.bootDiskIndex,
+              enabled: (disk) => disk.canBeBootDevice,
               onSelected: (storage) => model.selectBootDisk(storage!),
             ),
           ),
