@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/widgets/mascot_avatar.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -29,6 +31,9 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  final _languageListFocusNode = FocusNode();
+  final _languageListScrollController = AutoScrollController();
+
   @override
   void initState() {
     super.initState();
@@ -36,16 +41,30 @@ class _WelcomePageState extends State<WelcomePage> {
     final model = Provider.of<WelcomeModel>(context, listen: false);
     model.loadLanguages().then((_) {
       model.selectLocale(InheritedLocale.of(context));
+
+      _selectAndScrollToLanguage(
+          model.selectedLanguageIndex, AutoScrollPosition.middle);
     });
   }
 
-  void _selectLanguage(int index) {
+  @override
+  void dispose() {
+    _languageListFocusNode.dispose();
+    _languageListScrollController.dispose();
+    super.dispose();
+  }
+
+  void _selectAndScrollToLanguage(int index, [AutoScrollPosition? position]) {
     if (index == -1) return;
 
     final model = context.read<WelcomeModel>();
     model.selectedLanguageIndex = index;
 
     InheritedLocale.apply(context, model.locale(index));
+
+    _languageListFocusNode.requestFocus();
+    _languageListScrollController.scrollToIndex(index,
+        preferPosition: position, duration: const Duration(milliseconds: 1));
   }
 
   @override
@@ -67,21 +86,31 @@ class _WelcomePageState extends State<WelcomePage> {
             Text(lang.welcomeHeader),
             const SizedBox(height: kContentSpacing / 2),
             Expanded(
-              child: ListWidget.builder(
-                selectedIndex: model.selectedLanguageIndex,
-                itemCount: model.languageCount,
-                itemBuilder: (context, index) => ListTile(
-                  key: ValueKey(index),
-                  title: Text(model.language(index)),
-                  selected: index == model.selectedLanguageIndex,
-                  onTap: () => _selectLanguage(index),
-                ),
-                onKeySearch: (value) {
-                  final index = model.searchLanguage(value);
-                  if (index != -1) {
-                    _selectLanguage(index);
-                  }
+              child: KeySearch(
+                autofocus: true,
+                focusNode: _languageListFocusNode,
+                onSearch: (value) {
+                  _selectAndScrollToLanguage(model.searchLanguage(value));
                 },
+                child: YaruBorderContainer(
+                  clipBehavior: Clip.antiAlias,
+                  child: ListView.builder(
+                    controller: _languageListScrollController,
+                    itemCount: model.languageCount,
+                    itemBuilder: (context, index) {
+                      return AutoScrollTag(
+                        index: index,
+                        key: ValueKey(index),
+                        controller: _languageListScrollController,
+                        child: ListTile(
+                          title: Text(model.language(index)),
+                          selected: index == model.selectedLanguageIndex,
+                          onTap: () => _selectAndScrollToLanguage(index),
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ),
             ),
             const SizedBox(height: kContentSpacing),

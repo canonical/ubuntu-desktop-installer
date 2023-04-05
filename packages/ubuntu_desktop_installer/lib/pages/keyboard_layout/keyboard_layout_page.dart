@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -10,6 +13,8 @@ import '../../l10n.dart';
 import '../../services.dart';
 import 'keyboard_layout_dialogs.dart';
 import 'keyboard_layout_model.dart';
+
+const _kScrollDuration = Duration(milliseconds: 1);
 
 class KeyboardLayoutPage extends StatefulWidget {
   const KeyboardLayoutPage({
@@ -28,16 +33,38 @@ class KeyboardLayoutPage extends StatefulWidget {
 }
 
 class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
+  final _layoutListFocusNode = FocusNode();
+  final _layoutListScrollController = AutoScrollController();
+
+  StreamSubscription<int>? _layoutChanged;
+
   @override
   void initState() {
     super.initState();
 
     final model = Provider.of<KeyboardLayoutModel>(context, listen: false);
-    model.init().then((_) => model.updateInputSource());
+    model.init().then((_) {
+      _scrollToLayout(model.selectedLayoutIndex, AutoScrollPosition.middle);
+      model.updateInputSource();
+    });
+
+    _layoutChanged = model.onLayoutSelected.listen(_scrollToLayout);
+  }
+
+  void _scrollToLayout(int index, [AutoScrollPosition? position]) {
+    if (index == -1) return;
+    _layoutListScrollController.scrollToIndex(
+      index,
+      preferPosition: position,
+      duration: _kScrollDuration,
+    );
   }
 
   @override
   void dispose() {
+    _layoutListFocusNode.dispose();
+    _layoutListScrollController.dispose();
+    _layoutChanged?.cancel();
     super.dispose();
   }
 
@@ -76,21 +103,40 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ListWidget.builder(
-                      selectedIndex: model.selectedLayoutIndex,
-                      itemCount: model.layoutCount,
-                      itemBuilder: (context, index) => ListTile(
-                        key: ValueKey(index),
-                        title: Text(model.layoutName(index)),
-                        selected: index == model.selectedLayoutIndex,
-                        onTap: () => model.selectLayout(index),
-                      ),
-                      onKeySearch: (value) {
+                    child: KeySearch(
+                      autofocus: true,
+                      focusNode: _layoutListFocusNode,
+                      onSearch: (value) {
                         final index = model.searchLayout(value);
                         if (index != -1) {
                           model.selectLayout(index);
                         }
                       },
+                      child: FocusTraversalGroup(
+                        policy: WidgetOrderTraversalPolicy(),
+                        child: YaruBorderContainer(
+                          clipBehavior: Clip.antiAlias,
+                          child: ListView.builder(
+                            controller: _layoutListScrollController,
+                            itemCount: model.layoutCount,
+                            itemBuilder: (context, index) {
+                              return AutoScrollTag(
+                                index: index,
+                                key: ValueKey(index),
+                                controller: _layoutListScrollController,
+                                child: ListTile(
+                                  title: Text(model.layoutName(index)),
+                                  selected: index == model.selectedLayoutIndex,
+                                  onTap: () {
+                                    model.selectLayout(index);
+                                    _layoutListFocusNode.requestFocus();
+                                  },
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ],
