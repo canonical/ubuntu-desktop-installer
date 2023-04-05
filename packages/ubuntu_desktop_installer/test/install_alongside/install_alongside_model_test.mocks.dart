@@ -165,21 +165,14 @@ class MockDiskStorageService extends _i1.Mock
         )),
       ) as _i5.Future<_i2.GuidedStorageResponseV2>);
   @override
-  _i5.Future<_i2.GuidedStorageResponseV2> setGuidedStorage() =>
-      (super.noSuchMethod(
+  _i5.Future<void> setGuidedStorage() => (super.noSuchMethod(
         Invocation.method(
           #setGuidedStorage,
           [],
         ),
-        returnValue: _i5.Future<_i2.GuidedStorageResponseV2>.value(
-            _FakeGuidedStorageResponseV2_0(
-          this,
-          Invocation.method(
-            #setGuidedStorage,
-            [],
-          ),
-        )),
-      ) as _i5.Future<_i2.GuidedStorageResponseV2>);
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
   _i5.Future<List<_i2.Disk>> getStorage() => (super.noSuchMethod(
         Invocation.method(
