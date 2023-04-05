@@ -45,7 +45,11 @@ void main() {
 
   test('set guided storage', () async {
     final target = GuidedStorageTargetReformat(diskId: testDisks.last.id);
-    final choice = GuidedChoiceV2(target: target, useLvm: false);
+    final choice = GuidedChoiceV2(
+      target: target,
+      useLvm: false,
+      sizingPolicy: SizingPolicy.ALL,
+    );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
 
@@ -57,7 +61,11 @@ void main() {
 
   test('use LVM', () async {
     final target = GuidedStorageTargetReformat(diskId: testDisks.last.id);
-    final choice = GuidedChoiceV2(target: target, useLvm: true);
+    final choice = GuidedChoiceV2(
+      target: target,
+      useLvm: true,
+      sizingPolicy: SizingPolicy.ALL,
+    );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
 
@@ -260,7 +268,11 @@ void main() {
 
   test('guided target', () async {
     final target = GuidedStorageTargetReformat(diskId: testDisks.last.id);
-    final choice = GuidedChoiceV2(target: target, useLvm: false);
+    final choice = GuidedChoiceV2(
+      target: target,
+      useLvm: false,
+      sizingPolicy: SizingPolicy.ALL,
+    );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
     when(client.resetStorageV2())
@@ -279,7 +291,11 @@ void main() {
 
   test('set security key', () async {
     final target = GuidedStorageTargetReformat(diskId: testDisks.first.id);
-    final choice = GuidedChoiceV2(target: target, password: 'foo123');
+    final choice = GuidedChoiceV2(
+      target: target,
+      password: 'foo123',
+      sizingPolicy: SizingPolicy.ALL,
+    );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
 

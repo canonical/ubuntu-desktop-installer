@@ -109,6 +109,7 @@ class DiskStorageService {
         target: guidedTarget!,
         useLvm: useLvm,
         password: securityKey,
+        sizingPolicy: SizingPolicy.ALL,
       ),
     );
   }
