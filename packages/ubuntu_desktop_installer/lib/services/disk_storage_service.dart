@@ -112,6 +112,7 @@ class DiskStorageService {
         sizingPolicy: SizingPolicy.ALL,
       ),
     );
+    await _client.setStorageV2();
   }
 
   List<Disk> _updateStorage(StorageResponseV2 response) {
