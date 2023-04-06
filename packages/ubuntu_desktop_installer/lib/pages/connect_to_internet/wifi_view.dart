@@ -6,6 +6,7 @@ import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
+import '../../widgets/scoped_list_focus.dart';
 import 'connect_model.dart';
 import 'network_tile.dart';
 import 'wifi_model.dart';
@@ -125,22 +126,24 @@ class WifiListView extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: OverrideMouseCursor(
         cursor: SystemMouseCursors.basic,
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: model.devices.length,
-          itemBuilder: (context, index) {
-            return ChangeNotifierProvider.value(
-              value: model.devices[index],
-              child: WifiListTile(
-                key: ValueKey(index),
-                selected: model.isSelectedDevice(model.devices[index]),
-                onSelected: (device, accessPoint) {
-                  model.selectDevice(device);
-                  onSelected(device, accessPoint);
-                },
-              ),
-            );
-          },
+        child: ScopedListFocus(
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: model.devices.length,
+            itemBuilder: (context, index) {
+              return ChangeNotifierProvider.value(
+                value: model.devices[index],
+                child: WifiListTile(
+                  key: ValueKey(index),
+                  selected: model.isSelectedDevice(model.devices[index]),
+                  onSelected: (device, accessPoint) {
+                    model.selectDevice(device);
+                    onSelected(device, accessPoint);
+                  },
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
