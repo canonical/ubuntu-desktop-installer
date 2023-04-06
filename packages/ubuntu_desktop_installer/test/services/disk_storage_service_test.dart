@@ -52,11 +52,13 @@ void main() {
     );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
 
     final service = DiskStorageService(client);
     service.guidedTarget = target;
     await service.setGuidedStorage();
     verify(client.setGuidedStorageV2(choice)).called(1);
+    verify(client.setStorageV2()).called(1);
   });
 
   test('use LVM', () async {
@@ -68,6 +70,7 @@ void main() {
     );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
 
     final service = DiskStorageService(client);
     service.useLvm = true;
@@ -75,6 +78,7 @@ void main() {
     service.guidedTarget = target;
     await service.setGuidedStorage();
     verify(client.setGuidedStorageV2(choice)).called(1);
+    verify(client.setStorageV2()).called(1);
   });
 
   test('reset guided storage', () async {
@@ -275,6 +279,7 @@ void main() {
     );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
     when(client.resetStorageV2())
         .thenAnswer((_) async => testStorageResponse());
 
@@ -298,6 +303,7 @@ void main() {
     );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
 
     final service = DiskStorageService(client);
     await service.init();
@@ -308,6 +314,7 @@ void main() {
     service.guidedTarget = target;
     await service.setGuidedStorage();
     verify(client.setGuidedStorageV2(choice)).called(1);
+    verify(client.setStorageV2()).called(1);
   });
 
   test('has enough disk space', () async {

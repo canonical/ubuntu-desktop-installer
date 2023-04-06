@@ -112,7 +112,7 @@ void main() {
     await model.init();
     await model.startInstallation();
 
-    verify(service.setStorage()).called(1);
+    verifyNever(service.setStorage());
     verify(service.securityKey = null).called(1);
     verify(client.confirm('/dev/tty1')).called(1);
   });
