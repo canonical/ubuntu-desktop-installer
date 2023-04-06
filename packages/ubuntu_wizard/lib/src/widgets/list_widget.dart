@@ -24,7 +24,7 @@ class ListWidget extends StatefulWidget {
 }
 
 class _ListWidgetState extends State<ListWidget> {
-  final _focusNode = FocusNode();
+  final _focusNode = FocusNode(canRequestFocus: false);
   final _scrollableKey = GlobalKey();
   ScrollController? _scrollController;
 
@@ -68,7 +68,6 @@ class _ListWidgetState extends State<ListWidget> {
     return YaruBorderContainer(
       clipBehavior: Clip.antiAlias,
       child: KeySearch(
-        autofocus: true,
         focusNode: _focusNode,
         onSearch: widget.onKeySearch ?? (_) => -1,
         child: LayoutBuilder(
