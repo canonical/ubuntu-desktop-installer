@@ -53,6 +53,7 @@ class _ListWidgetState extends State<ListWidget> {
     final tileOffset = index * _kTileHeight;
     final viewHeight = box!.size.height;
 
+    // jump and center align the selected item is fully outside the viewport
     if (tileOffset < scrollOffset - _kTileHeight ||
         tileOffset > scrollOffset + viewHeight) {
       final center = tileOffset - viewHeight / 2 + _kTileHeight / 2;
@@ -77,6 +78,7 @@ class _ListWidgetState extends State<ListWidget> {
                 constraints.maxHeight <= 0) {
               return const SizedBox.expand();
             }
+            // calculate initial center-alignment
             _scrollController ??= ScrollController(
                 initialScrollOffset: widget.selectedIndex * _kTileHeight -
                     constraints.maxHeight / 2 +
@@ -88,6 +90,7 @@ class _ListWidgetState extends State<ListWidget> {
               itemBuilder: (context, index) => Builder(
                 builder: (context) {
                   if (index == widget.selectedIndex) {
+                    // bring a half-visible selected item into the viewport
                     context.findRenderObject()?.showOnScreen();
                   }
                   return widget.itemBuilder(context, index);
