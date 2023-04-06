@@ -76,6 +76,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     key: ValueKey(index),
                     title: Text(model.language(index)),
                     selected: index == model.selectedLanguageIndex,
+                    autofocus: index == model.selectedLanguageIndex,
                     onTap: () => _selectLanguage(index),
                   ),
                   onKeySearch: (value) {
