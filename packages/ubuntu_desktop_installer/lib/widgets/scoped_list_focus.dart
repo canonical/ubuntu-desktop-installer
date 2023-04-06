@@ -24,7 +24,8 @@ class ScopedListFocus extends StatelessWidget {
               .toList();
           for (var i = 0; i < siblings.length; i++) {
             if (siblings[i] == node) {
-              siblings[i + (event.isShiftPressed ? -1 : 1)].requestFocus();
+              siblings[(i + (event.isShiftPressed ? -1 : 1)) % siblings.length]
+                  .requestFocus();
               break;
             }
           }
