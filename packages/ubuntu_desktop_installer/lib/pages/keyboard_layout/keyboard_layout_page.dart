@@ -85,6 +85,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                           key: ValueKey(index),
                           title: Text(model.layoutName(index)),
                           selected: index == model.selectedLayoutIndex,
+                          autofocus: index == model.selectedLayoutIndex,
                           onTap: () => model.selectLayout(index),
                         ),
                         onKeySearch: (value) {
