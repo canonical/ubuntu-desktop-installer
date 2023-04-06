@@ -88,6 +88,8 @@ Future<void> runInstallerApp(
 
   WidgetsFlutterBinding.ensureInitialized();
 
+  debugFocusChanges = true;
+
   await runWizardApp(
     InheritedLocale(
       child: UbuntuDesktopInstallerApp(
