@@ -168,8 +168,8 @@ class DiskStorageService {
     return _client.deletePartitionV2(disk, partition).then(_updateStorage);
   }
 
-  /// Applies the given storage configuration on the system.
-  Future<List<Disk>> setStorage(List<Disk> disks) {
+  /// Applies the current storage configuration on the system.
+  Future<List<Disk>> setStorage() {
     return _client.setStorageV2().then(_updateStorage);
   }
 

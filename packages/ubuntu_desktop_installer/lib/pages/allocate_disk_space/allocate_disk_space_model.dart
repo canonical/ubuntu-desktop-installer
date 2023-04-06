@@ -176,7 +176,7 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
 
   /// Applies storage via the service.
   Future<void> setStorage() {
-    return _service.setStorage(_disks).then(_updateDisks);
+    return _service.setStorage().then(_updateDisks);
   }
 
   /// Resets the storage via the service.

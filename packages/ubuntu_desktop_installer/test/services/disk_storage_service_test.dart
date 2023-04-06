@@ -114,7 +114,7 @@ void main() {
         .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
-    expect(await service.setStorage(testDisks), equals(testDisks));
+    expect(await service.setStorage(), equals(testDisks));
     verify(client.setStorageV2()).called(1);
   });
 

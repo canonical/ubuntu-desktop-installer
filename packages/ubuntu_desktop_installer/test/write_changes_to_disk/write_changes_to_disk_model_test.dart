@@ -106,13 +106,13 @@ void main() {
     when(service.guidedTarget).thenReturn(null);
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
-    when(service.setStorage(any)).thenAnswer((_) async => nonPreservedDisks);
+    when(service.setStorage()).thenAnswer((_) async => nonPreservedDisks);
 
     final model = WriteChangesToDiskModel(client, service);
     await model.init();
     await model.startInstallation();
 
-    verify(service.setStorage(nonPreservedDisks)).called(1);
+    verify(service.setStorage()).called(1);
     verify(service.securityKey = null).called(1);
     verify(client.confirm('/dev/tty1')).called(1);
   });
