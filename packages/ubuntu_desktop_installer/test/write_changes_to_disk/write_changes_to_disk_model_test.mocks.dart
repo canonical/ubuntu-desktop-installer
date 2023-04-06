@@ -226,11 +226,10 @@ class MockDiskStorageService extends _i1.Mock
         returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
       ) as _i4.Future<List<_i2.Disk>>);
   @override
-  _i4.Future<List<_i2.Disk>> setStorage(List<_i2.Disk>? disks) =>
-      (super.noSuchMethod(
+  _i4.Future<List<_i2.Disk>> setStorage() => (super.noSuchMethod(
         Invocation.method(
           #setStorage,
-          [disks],
+          [],
         ),
         returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
       ) as _i4.Future<List<_i2.Disk>>);
