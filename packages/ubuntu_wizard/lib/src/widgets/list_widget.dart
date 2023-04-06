@@ -1,8 +1,9 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
+
+// assumes dense list tiles
+const _kTileHeight = kMinInteractiveDimension;
 
 class ListWidget extends StatefulWidget {
   const ListWidget.builder({
@@ -25,8 +26,7 @@ class ListWidget extends StatefulWidget {
 class _ListWidgetState extends State<ListWidget> {
   final _focusNode = FocusNode();
   final _scrollableKey = GlobalKey();
-  final _scrollController = ItemScrollController();
-  final _scrollListener = ItemPositionsListener.create();
+  ScrollController? _scrollController;
 
   @override
   void didUpdateWidget(ListWidget oldWidget) {
@@ -39,42 +39,27 @@ class _ListWidgetState extends State<ListWidget> {
   @override
   void dispose() {
     _focusNode.dispose();
+    _scrollController?.dispose();
     super.dispose();
   }
 
   void _scrollTo(int index) {
-    if (index == -1) return;
+    if (index == -1 || _scrollController?.hasClients != true) return;
 
-    final pos = _scrollListener.itemPositions.value
-        .firstWhereOrNull((item) => item.index == index);
-    if (pos == null) {
-      // the item does not exist in the viewport. jump and align the center.
-      final box =
-          _scrollableKey.currentContext?.findRenderObject() as RenderBox?;
-      if (box != null) {
-        _scrollController.jumpTo(
-          index: index,
-          alignment: _centerAlign(context, box.size.height),
-        );
-      }
-    } else if (pos.itemLeadingEdge < 0) {
-      // partly above the viewport, align the top edge
-      _scrollController.jumpTo(index: index, alignment: 0);
-    } else if (pos.itemTrailingEdge > 1) {
-      // partly below the viewport, align the bottom edge
-      _scrollController.jumpTo(
-        index: index,
-        alignment: 1 - pos.itemTrailingEdge + pos.itemLeadingEdge,
-      );
+    final box = _scrollableKey.currentContext?.findRenderObject() as RenderBox?;
+    if (box?.hasSize != true) return;
+
+    final scrollOffset = _scrollController!.offset;
+    final tileOffset = index * _kTileHeight;
+    final viewHeight = box!.size.height;
+
+    if (tileOffset < scrollOffset - _kTileHeight ||
+        tileOffset > scrollOffset + viewHeight) {
+      final center = tileOffset - viewHeight / 2 + _kTileHeight / 2;
+      _scrollController?.jumpTo(center);
     }
 
     _focusNode.requestFocus();
-  }
-
-  static double _centerAlign(BuildContext context, double totalHeight) {
-    final theme = ListTileTheme.of(context);
-    final tileHeight = theme.dense == true ? kMinInteractiveDimension : 56;
-    return 0.5 - tileHeight / totalHeight / 2;
   }
 
   @override
@@ -92,14 +77,22 @@ class _ListWidgetState extends State<ListWidget> {
                 constraints.maxHeight <= 0) {
               return const SizedBox.expand();
             }
-            return ScrollablePositionedList.builder(
+            _scrollController ??= ScrollController(
+                initialScrollOffset: widget.selectedIndex * _kTileHeight -
+                    constraints.maxHeight / 2 +
+                    _kTileHeight / 2);
+            return ListView.builder(
               key: _scrollableKey,
-              initialAlignment: _centerAlign(context, constraints.maxHeight),
-              initialScrollIndex: widget.selectedIndex,
-              itemScrollController: _scrollController,
-              itemPositionsListener: _scrollListener,
+              controller: _scrollController,
               itemCount: widget.itemCount,
-              itemBuilder: widget.itemBuilder,
+              itemBuilder: (context, index) => Builder(
+                builder: (context) {
+                  if (index == widget.selectedIndex) {
+                    context.findRenderObject()?.showOnScreen();
+                  }
+                  return widget.itemBuilder(context, index);
+                },
+              ),
             );
           },
         ),
