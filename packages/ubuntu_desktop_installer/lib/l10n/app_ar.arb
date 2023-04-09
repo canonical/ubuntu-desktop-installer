@@ -29,7 +29,7 @@
   "@quitButtonText": {},
   "welcome": "مرحبا",
   "@welcome": {},
-  "tryOrInstallPageTitle": "جرب او ثبت",
+  "tryOrInstallPageTitle": "جرب او ثبت {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallationDescription": "تصليح سوف يقوم بإعادة تثبيت جميع software المثبتة بدون تغيير الاعدادات او المستندات",
   "@repairInstallationDescription": {},
