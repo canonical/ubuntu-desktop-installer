@@ -1,3 +1,11 @@
 {
-  "@@locale": "ka"
+  "@@locale": "ka",
+  "appTitle": "Ubuntu WSL",
+  "@appTitle": {},
+  "windowTitle": "Ubuntu WSL",
+  "@windowTitle": {},
+  "exitButton": "გასვლა",
+  "@exitButton": {},
+  "saveButton": "შენახვა",
+  "@saveButton": {}
 }
