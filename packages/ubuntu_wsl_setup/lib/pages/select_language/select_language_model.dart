@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:collection/collection.dart';
 import 'package:diacritic/diacritic.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -55,8 +56,7 @@ class SelectLanguageModel extends SafeChangeNotifier {
   /// Loads available languages.
   Future<void> loadLanguages() async {
     return loadLocalizedLanguages(supportedLocales).then((languages) {
-      _languages = languages;
-      _languages.sort((a, b) =>
+      _languages = languages.sorted((a, b) =>
           removeDiacritics(_languageFallback.displayNameFor(a)).compareTo(
               removeDiacritics(_languageFallback.displayNameFor(b))));
     }).then((_) => notifyListeners());
