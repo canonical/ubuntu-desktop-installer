@@ -664,6 +664,14 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
             _i6.Future<_i3.MirrorPostResponse>.value(_i3.MirrorPostResponse.OK),
       ) as _i6.Future<_i3.MirrorPostResponse>);
   @override
+  _i6.Future<bool> hasNetwork() => (super.noSuchMethod(
+        Invocation.method(
+          #hasNetwork,
+          [],
+        ),
+        returnValue: _i6.Future<bool>.value(false),
+      ) as _i6.Future<bool>);
+  @override
   _i6.Future<bool> freeOnly() => (super.noSuchMethod(
         Invocation.method(
           #freeOnly,
