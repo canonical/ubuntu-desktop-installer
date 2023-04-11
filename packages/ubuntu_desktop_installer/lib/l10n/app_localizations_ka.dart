@@ -51,7 +51,7 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return 'ცდა ან დაყენება';
+    return 'სცადეთ ან დააყენეთ $DISTRO';
   }
 
   @override
@@ -86,7 +86,7 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST-ის გამორთვა';
+  String get turnOffRST => 'RST ჩართულია';
 
   @override
   String get turnOffRSTTitle => 'Turn off RST to continue';

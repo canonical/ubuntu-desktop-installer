@@ -51,7 +51,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
-    return 'جرب او ثبت';
+    return 'جرب او ثبت $DISTRO';
   }
 
   @override

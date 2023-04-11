@@ -89,7 +89,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get turnOffRST => 'RST etkin';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Devam etmek için RST\'yi kapatın';
 
   @override
   String get turnOffRSTDescription => 'Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu\'yu kurmadan önce Windows\'tan RST\'yi kapatmalısınız.';
