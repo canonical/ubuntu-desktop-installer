@@ -132,6 +132,7 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
               });
               await model.save();
             },
+            onBack: model.init,
           ),
         ],
       ),

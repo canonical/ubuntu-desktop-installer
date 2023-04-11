@@ -80,6 +80,7 @@ void main() {
         install: true, drivers: [], localOnly: false, searchDrivers: false));
     when(client.getCodecs())
         .thenAnswer((_) async => const CodecsData(install: true));
+    when(client.hasNetwork()).thenAnswer((_) async => true);
 
     final power = MockPowerService();
     final powerChanged = StreamController<List<String>>(sync: true);
@@ -94,6 +95,7 @@ void main() {
       installationMode: InstallationMode.normal,
       installDrivers: false,
       installCodecs: false,
+      isOnline: false,
       power: power,
       network: network,
     );
@@ -103,6 +105,8 @@ void main() {
     verify(client.getDrivers()).called(1);
     expect(model.installCodecs, isTrue);
     verify(client.getCodecs()).called(1);
+    expect(model.isOnline, isTrue);
+    verify(client.hasNetwork()).called(1);
   });
 
   test('save the installation options', () async {
@@ -115,6 +119,7 @@ void main() {
       installationMode: InstallationMode.normal,
       installDrivers: false,
       installCodecs: false,
+      isOnline: true,
       power: MockPowerService(),
       network: network,
     );
@@ -147,6 +152,7 @@ void main() {
         install: true, drivers: [], localOnly: false, searchDrivers: false));
     when(client.getCodecs())
         .thenAnswer((_) async => const CodecsData(install: true));
+    when(client.hasNetwork()).thenAnswer((_) async => true);
 
     final model = UpdateOtherSoftwareModel(
       client: client,
@@ -189,6 +195,7 @@ void main() {
         install: true, drivers: [], localOnly: false, searchDrivers: false));
     when(client.getCodecs())
         .thenAnswer((_) async => const CodecsData(install: true));
+    when(client.hasNetwork()).thenAnswer((_) async => true);
 
     final model = UpdateOtherSoftwareModel(
       client: client,
@@ -200,21 +207,19 @@ void main() {
 
     await model.init();
     verify(network.propertiesChanged).called(1);
+    verify(client.hasNetwork()).called(1);
 
-    when(network.isConnected).thenReturn(false);
-    expect(model.isOnline, isFalse);
-    verify(network.isConnected).called(1);
-
-    when(network.isConnected).thenReturn(true);
     expect(model.isOnline, isTrue);
-    verify(network.isConnected).called(1);
 
-    bool? wasNotified;
-    model.addListener(() => wasNotified = true);
-    networkChanged.add(['Connectivity']);
-    expect(wasNotified, isTrue);
     when(network.isConnected).thenReturn(false);
+    when(client.hasNetwork()).thenAnswer((_) async => false);
+
+    final wasNotified = Completer();
+    model.addListener(wasNotified.complete);
+    networkChanged.add(['Connectivity']);
+    await expectLater(wasNotified.future, completes);
     expect(model.isOnline, isFalse);
     verify(network.isConnected).called(1);
+    verify(client.hasNetwork()).called(1);
   });
 }

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:async/async.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -9,6 +11,8 @@ import '../../services.dart';
 final log = Logger('updates_other_software');
 
 enum InstallationMode { normal, minimal }
+
+const _kConnectivityInterval = Duration(seconds: 1);
 
 extension InstallationSource on InstallationMode {
   String get source {
@@ -29,20 +33,25 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
       required NetworkService network,
       required InstallationMode installationMode,
       bool installDrivers = false,
-      bool installCodecs = false})
+      bool installCodecs = false,
+      bool isOnline = false})
       : _client = client,
         _power = power,
         _network = network,
         _mode = installationMode,
         _installDrivers = installDrivers,
-        _installCodecs = installCodecs {
+        _installCodecs = installCodecs,
+        _isOnline = isOnline {
     addPropertyListener('OnBattery', notifyListeners);
-    addPropertyListener('Connectivity', notifyListeners);
+    addPropertyListener('Connectivity', _updateConnectivity);
   }
 
   final SubiquityClient _client;
   final PowerService _power;
   final NetworkService _network;
+
+  bool _isOnline = false;
+  Timer? _connectivityTimer;
 
   InstallationMode _mode;
   InstallationMode get installationMode => _mode;
@@ -88,6 +97,9 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   /// Select the source corresponding to the selected installation mode, and
   /// save the selected installation options.
   Future<void> save() {
+    disablePropertyListeners();
+    _connectivityTimer?.cancel();
+    _connectivityTimer = null;
     return Future.wait([
       _client.setSource(installationMode.source),
       _client.setDrivers(install: installDrivers),
@@ -99,16 +111,20 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   bool get onBattery => _power.onBattery;
 
   /// Returns true if there is a network connection.
-  bool get isOnline => _network.isConnected;
+  bool get isOnline => _isOnline;
 
   /// Initializes the model and connects to the power service.
   Future<void> init() {
+    enablePropertyListeners();
     return Future.wait([
       _client.getDrivers().then((response) {
         _installDrivers = response.install;
       }),
       _client.getCodecs().then((data) {
         _installCodecs = data.install;
+      }),
+      _client.hasNetwork().then((hasNetwork) {
+        _isOnline = hasNetwork;
       }),
       _power.connect(),
       _network.connect(),
@@ -118,5 +134,24 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
       ));
       notifyListeners();
     });
+  }
+
+  Future<void> _updateConnectivity() async {
+    _connectivityTimer?.cancel();
+    _connectivityTimer = null;
+
+    // force subiquity to refresh its network status
+    await _client.markConfigured(['network']);
+    final isOnline = await _client.hasNetwork();
+
+    if (isOnline != _network.isConnected) {
+      // subiquity and NM disagree on the network status. try refreshing...
+      _connectivityTimer = Timer(_kConnectivityInterval, _updateConnectivity);
+    }
+
+    if (_isOnline != isOnline) {
+      _isOnline = isOnline;
+      notifyListeners();
+    }
   }
 }
