@@ -5,7 +5,7 @@ class AppLocalizationsJa extends AppLocalizations {
   AppLocalizationsJa([String locale = 'ja']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu デスクトップインストーラー';
+  String get appTitle => 'Ubuntuデスクトップインストーラー';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -96,7 +96,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return '手順は、スマートフォンなどで <a href=\"https://$url\">$url</a> をご確認ください。';
+    return '手順は、別のデバイスでQRコードをスキャンするか、<a href=\"https://$url\">$url</a>をご確認ください。';
   }
 
   @override
@@ -112,7 +112,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get detectLayout => 'キーボードレイアウトを検出する';
 
   @override
-  String get detectButtonText => '見付ける';
+  String get detectButtonText => '検出';
 
   @override
   String get keyboardVariant => 'キーボードバリアント：';
@@ -460,7 +460,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => '新しい空のパーティション';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'デバイス全体を新しいパーティションに使用するよう選択しました。デバイスで新しいパーティションテーブルの作成を続行すると、現在のすべてのパーティションが削除されます。\n\nなお、この操作は後で取り消すことができます。';
+  String get newPartitionTableConfirmationMessage => 'デバイスに対して新しいパーティションを作成すると、現在のパーティションがすべて削除されます。この操作は必要に応じて戻すことができます。';
 
   @override
   String get tooManyPrimaryPartitions => '基本パーティションが多すぎます';
@@ -740,12 +740,12 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'このコンピューターは Windows BitLocker で暗号化されています。\nUbuntu をインストールする前に Windows で BitLocker をオフにしてください。';
+    return 'このコンピューターはWindows BitLockerで暗号化されています。\nWindowsを使って空き領域を作るか、\'$option\'を選択してください。';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return '手順は、スマートフォンなどで <a href=\"https://$url\">$url</a> をご確認ください';
+    return '手順については、別のデバイスでこのQRコードを読み取るか、次のURLへアクセスしてください：<a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -756,7 +756,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return '本当にコンピュータを再起動しますか？ $DISTROのインストールを完了するためには、後で再起動する必要があります。';
   }
 
   @override
@@ -770,7 +770,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String installationSlidesTitle(Object RELEASE) {
-    return '$RELEASEへ、ようこそ。';
+    return '$RELEASEへようこそ';
   }
 
   @override
@@ -780,40 +780,40 @@ class AppLocalizationsJa extends AppLocalizations {
   String get installationSlidesIncluded => '含まれるソフト：';
 
   @override
-  String get installationSlidesWelcomeTitle => '迅速で無料で、新機能が満載です。';
+  String get installationSlidesWelcomeTitle => '高速で無料で、新機能が満載';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
-    return '最新版の$DISTRO 、これまで以上にコンピューティングが容易になります。';
+    return '最新版の$DISTROでは、これまで以上にコンピューティングが容易になります。';
   }
 
   @override
   String installationSlidesWelcomeBody(Object RELEASE) {
-    return 'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in $RELEASE.';
+    return '開発者・クリエーター・ゲーマー・管理者のいずれであっても、$RELEASEでは生産性を向上し、より良い体験を得られる新しいツールを見つけることができます。';
   }
 
   @override
-  String get installationSlidesSoftwareTitle => '必要なアプリケーションをすべて網羅';
+  String get installationSlidesSoftwareTitle => '必要なアプリケーションを網羅';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
-    return 'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and $DISTRO archive.';
+    return 'Ubuntu Softwareを使えば、Snap Storeと$DISTROリポジトリの両方から、数多のアプリケーションをインストール・管理・更新できます。';
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => '最高のオープンソースで開発する';
+  String get installationSlidesDevelopmentTitle => '最高のオープンソースを活用して開発';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
-    return '$DISTRO is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every $DISTRO release includes the latest toolchains and supports all major IDEs.';
+    return '$DISTROはDevOpsや運用だけでなく、アプリケーションやウェブの開発、データサイエンス、AI/MLにも最適なワークステーションです。$DISTROのリリースごとに、最新のツールチェインやすべての主要なIDEが含まれています。';
   }
 
   @override
-  String get installationSlidesCreativityTitle => '創造性を高める';
+  String get installationSlidesCreativityTitle => '創造性の向上';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
-    return 'If you\'re an animator, designer, video creator or game developer it\'s easy to bring your workflows to $DISTRO with support for open source and industry standard software and applications.';
+    return 'アニメーター、デザイナー、動画クリエーターやゲーム開発者であれば、必要なワークフローを、オープンソースであり業界標準のソフトウェアやアプリケーションをサポートしている$DISTROに簡単に導入できます。';
   }
 
   @override
@@ -821,7 +821,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String installationSlidesGamingBody(Object DISTRO) {
-    return '$DISTRO supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on $DISTRO via applications like Steam with no additional configuration.';
+    return '$DISTROは最新のNVIDIAはMesaのドライバーをサポートし、パフォーマンスや互換性が向上しています。Steamのようなアプリケーションを利用することで、数多くのWindowsゲームを$DISTRO上で特別な設定なくプレイできます。';
   }
 
   @override
@@ -829,20 +829,20 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String installationSlidesSecurityBody(Object DISTRO) {
-    return '$DISTRO provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.';
+    return '$DISTROはプライベートで安全なオンライン環境を維持するために必要なすべてのツールを提供します。ファイアウォールやVPNをサポートし、プライバシーを重視したアプリケーションによって、データを完全に管理できます。';
   }
 
   @override
   String installationSlidesSecurityLts(Object DISTRO) {
-    return 'All $DISTRO LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.';
+    return 'すべての$DISTRO LTSリリースは、5年間のセキュリティパッチが含まれており、Ubuntu Proサブスクリプションによって10年に延長できます。';
   }
 
   @override
-  String get installationSlidesProductivityTitle => '生産性のパワーアップ';
+  String get installationSlidesProductivityTitle => '生産性の向上';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
-    return '$DISTRO Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.';
+    return 'デスクトップ版の$DISTROには、Microsoft Office互換なオープンソースのドキュメント、表計算、プレゼンテーションのアプリケーションセットであるLibreOfficeが同梱されています。人気のコラボレーションツールも利用可能です。';
   }
 
   @override
@@ -864,23 +864,23 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return 'The official $DISTRO documentation is available both online and via the Help icon in the dock.';
+    return '$DISTROの公式ドキュメントは、オンラインおよびDock上のヘルプアイコンの両方から閲覧できます。';
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+  String get installationSlidesSupportCommunity => 'Ask Ubuntuでは様々な質問と回答をカバーし、Ubuntu Discourseは新規ユーザーと経験豊富なユーザーのためのガイドと議論の場を提供します。';
 
   @override
-  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+  String get installationSlidesSupportEnterprise => 'Canonicalは、企業ユーザー向けに職場でUbuntuを安全に導入・管理するための商用サポートを提供しています。';
 
   @override
-  String get installationSlidesSupportResources => 'Helpful resources:';
+  String get installationSlidesSupportResources => '役に立つ情報：';
 
   @override
   String get installationSlidesSupportDocumentation => '公式ドキュメント';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro => 'Ubuntu Proで24時間365日サポート';
 
   @override
   String get copyingFiles => 'ファイルをコピーしています…';
@@ -899,7 +899,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {
-    return '$DISTROをインストールするのに十分なディスク容量がありません';
+    return '$DISTROをインストールするのに十分なストレージ容量がありません';
   }
 
   @override

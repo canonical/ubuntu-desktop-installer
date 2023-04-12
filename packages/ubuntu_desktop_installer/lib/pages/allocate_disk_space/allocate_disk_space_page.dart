@@ -91,19 +91,22 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
               title: lang.bootLoaderDevice,
               storages: model.disks,
               selected: model.bootDiskIndex,
+              enabled: (disk) => disk.canBeBootDevice,
               onSelected: (storage) => model.selectBootDisk(storage!),
             ),
           ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled: model.isValid,
-          onNext: model.setStorage,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            enabled: model.isValid,
+            onNext: model.setStorage,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -146,19 +146,22 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
           ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(
+      bottomBar: WizardBar(
+        leading: WizardAction.back(
           context,
           enabled: false,
         ),
-        WizardAction.next(
-          context,
-          onNext: () {
-            final model = Provider.of<WhereAreYouModel>(context, listen: false);
-            return model.save(controller.selectedLocation?.timezone);
-          },
-        ),
-      ],
+        trailing: [
+          WizardAction.next(
+            context,
+            onNext: () {
+              final model =
+                  Provider.of<WhereAreYouModel>(context, listen: false);
+              return model.save(controller.selectedLocation?.timezone);
+            },
+          ),
+        ],
+      ),
     );
   }
 }

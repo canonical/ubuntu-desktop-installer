@@ -187,5 +187,13 @@
   "installationSlidesUbuntuWslDevOpsText": "Ubuntuの本番環境に公開する前に、Ubuntu WSLでローカルに開発することで、CI/CDパイプラインの互換性を確保できます。",
   "@installationSlidesUbuntuWslDevOpsText": {},
   "installationSlidesLeave": "去る",
-  "@installationSlidesLeave": {}
+  "@installationSlidesLeave": {},
+  "installationSlidesCustomExitContents": "あと数ステップでメインインストーラーのウィンドウが完了します。\nそれをやめて終了しますか？",
+  "@installationSlidesCustomExitContents": {},
+  "installationSlidesExitContents": "ウィンドウを閉じただけであれば、バックグラウンドでインストールが継続します。\n\nその上で、WSL上のUbuntuで何ができるかを試し続けることができます。",
+  "@installationSlidesExitContents": {},
+  "installationSlidesUbuntuWslEnterprisesText": "認定されたUbuntu LTSによって、\nWindowsエンタープライズのエコ\nシステムにおける開発者を補助します。",
+  "@installationSlidesUbuntuWslEnterprisesText": {},
+  "installationSlidesInstalling": "まもなく完了します。すぐにインストーラーの操作が必要になります。",
+  "@installationSlidesInstalling": {}
 }

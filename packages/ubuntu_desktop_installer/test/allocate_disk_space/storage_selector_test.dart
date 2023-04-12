@@ -58,4 +58,37 @@ void main() {
 
     expect(selected, equals(1));
   });
+
+  testWidgets('disabled item', (tester) async {
+    await tester.pumpWidget(MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: StorageSelector(
+            title: '',
+            storages: [
+              for (var i = 0; i < 3; i++)
+                testDisk(model: 'model$i', vendor: 'vendor$i'),
+            ],
+            enabled: (disk) => disk.model != 'model1',
+            onSelected: (_) {},
+          ),
+        ),
+      ),
+    ));
+
+    await tester.tap(find.byType(StorageSelector));
+    await tester.pumpAndSettle();
+
+    final menuItem1 = find.ancestor(
+      of: find.byKey(ValueKey(1)),
+      matching: find.byType(MenuItemButton),
+    );
+    expect(tester.widget<MenuItemButton>(menuItem1).enabled, isFalse);
+
+    final menuItem2 = find.ancestor(
+      of: find.byKey(ValueKey(2)),
+      matching: find.byType(MenuItemButton),
+    );
+    expect(tester.widget<MenuItemButton>(menuItem2).enabled, isTrue);
+  });
 }

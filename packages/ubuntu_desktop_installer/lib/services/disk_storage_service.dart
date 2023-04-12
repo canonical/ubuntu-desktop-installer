@@ -103,8 +103,8 @@ class DiskStorageService {
   }
 
   /// Sets the selected target for guided partitioning.
-  Future<GuidedStorageResponseV2> setGuidedStorage() async {
-    return _client.setGuidedStorageV2(
+  Future<void> setGuidedStorage() async {
+    await _client.setGuidedStorageV2(
       GuidedChoiceV2(
         target: guidedTarget!,
         password: securityKey,
@@ -113,8 +113,10 @@ class DiskStorageService {
             : useLvm
                 ? GuidedCapability.LVM
                 : GuidedCapability.DIRECT,
+        sizingPolicy: SizingPolicy.ALL,
       ),
     );
+    await _client.setStorageV2();
   }
 
   List<Disk> _updateStorage(StorageResponseV2 response) {
@@ -171,8 +173,8 @@ class DiskStorageService {
     return _client.deletePartitionV2(disk, partition).then(_updateStorage);
   }
 
-  /// Applies the given storage configuration on the system.
-  Future<List<Disk>> setStorage(List<Disk> disks) {
+  /// Applies the current storage configuration on the system.
+  Future<List<Disk>> setStorage() {
     return _client.setStorageV2().then(_updateStorage);
   }
 

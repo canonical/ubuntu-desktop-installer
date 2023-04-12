@@ -157,5 +157,13 @@
   "installationSlidesUbuntuOnWslText": "Pilna Ubuntu aplinka, giliai integruota į „Windows“, skirta Linux programų kūrimui ir vykdymui. Optimizuota debesijai, saitynui, duomenų mokslui, IOT ir linksmybėms!",
   "@installationSlidesUbuntuOnWslText": {},
   "applyingChanges": "Taikomi pakeitimai…",
-  "@applyingChanges": {}
+  "@applyingChanges": {},
+  "advancedSetupResolvConfGenerationSubtitle": "Pažymėjus, kiekvieno paleidimo metu bus iš naujo generuojamas /etc/resolv.conf.",
+  "@advancedSetupResolvConfGenerationSubtitle": {},
+  "advancedSetupGUIIntegrationSubtitle": "Pažymėjus, bus įjungta automatinė DISPLAY aplinkos sąranka. Reikalauja trečiosios šalies X serverio.",
+  "@advancedSetupGUIIntegrationSubtitle": {},
+  "advancedSetupResolvConfGenerationTitle": "Įjungti resolv.conf generavimą",
+  "@advancedSetupResolvConfGenerationTitle": {},
+  "advancedSetupHostGenerationSubtitle": "Pažymėjus, kiekvieno paleidimo metu bus iš naujo generuojamas /etc/hosts.",
+  "@advancedSetupHostGenerationSubtitle": {}
 }

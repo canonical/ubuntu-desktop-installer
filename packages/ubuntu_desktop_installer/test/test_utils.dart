@@ -82,6 +82,7 @@ Disk testDisk({
   String? ptable,
   bool? preserve,
   bool? bootDevice,
+  bool? canBeBootDevice,
   String? model,
   String? vendor,
 }) {
@@ -97,6 +98,7 @@ Disk testDisk({
     ptable: ptable,
     preserve: preserve ?? false,
     bootDevice: bootDevice ?? false,
+    canBeBootDevice: canBeBootDevice ?? false,
     model: model,
     vendor: vendor,
   );

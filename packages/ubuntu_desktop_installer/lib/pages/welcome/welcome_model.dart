@@ -29,14 +29,14 @@ class WelcomeModel extends SafeChangeNotifier {
     notifyListeners();
   }
 
-  final _languageList = <LocalizedLanguage>[];
+  var _languageList = <LocalizedLanguage>[];
 
   /// Loads available languages.
   Future<void> loadLanguages() async {
     assert(_languageList.isEmpty);
     final languages = await loadLocalizedLanguages(supportedLocales);
-    _languageList.addAll(languages);
-    log.info('Loaded ${languages.length} languages');
+    _languageList = List.of(languages);
+    log.info('Loaded ${_languageList.length} languages');
     notifyListeners();
   }
 

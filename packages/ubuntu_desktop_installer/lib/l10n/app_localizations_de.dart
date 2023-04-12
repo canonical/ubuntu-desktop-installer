@@ -89,14 +89,14 @@ class AppLocalizationsDe extends AppLocalizations {
   String get turnOffRST => 'RST ist aktiviert';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Schalten Sie RST aus, um fortzufahren';
 
   @override
-  String get turnOffRSTDescription => 'Dieser Rechner verwendet Intel RST (Rapid Storage Technology). Vor der Installation von Ubuntu muss RST in Windows ausgeschaltet werden.';
+  String get turnOffRSTDescription => 'Dieser Computer verwendet Intel RST (Rapid Storage Technology). Vor der Installation von Ubuntu muss RST in Windows ausgeschaltet werden.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Um Anweisungen zu erhalten, öffnen Sie diese Seite auf einem Smartphone oder einem anderen Gerät: <a href=\"https://$url\">$url</a>';
+    return 'Um Anweisungen zu erhalten, scannen Sie den QR-Code mit einem anderen Gerät oder besuchen Sie: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -245,7 +245,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warnung:</font> Der Rechner ist nicht an eine Stromquelle angeschlossen.';
+    return '<font color=\"$color\">Warnung:</font> Der Computer ist nicht an eine Stromquelle angeschlossen.';
   }
 
   @override
@@ -256,7 +256,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Die Festplattenverschlüsselung schützt Ihre Dateien, falls Sie Ihren Rechner verlieren. Bei jedem Start des Rechners müssen Sie einen Sicherheitsschlüssel eingeben.\n\nAlle Dateien außerhalb von $RELEASE werden nicht verschlüsselt.';
+    return 'Die Festplattenverschlüsselung schützt Ihre Dateien, falls Sie Ihren Computer verlieren. Bei jedem Start des Computers müssen Sie einen Sicherheitsschlüssel eingeben.\n\nAlle Dateien außerhalb von $RELEASE werden nicht verschlüsselt.';
   }
 
   @override
@@ -281,7 +281,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'Auf diesem Rechner befindet sich momentan $os. Wie möchten Sie vorgehen?';
+    return 'Auf diesem Computer befindet sich momentan $os. Wie möchten Sie vorgehen?';
   }
 
   @override
@@ -293,7 +293,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationTypeMultiOSDetected => 'Auf diesem Computer sind aktuell mehrere Betriebssysteme installiert. Was möchten Sie tun?';
 
   @override
-  String get installationTypeNoOSDetected => 'Auf diesem Rechner befinden sich momentan keine erkannten Betriebssysteme. Wie möchten Sie vorgehen?';
+  String get installationTypeNoOSDetected => 'Auf diesem Computer befinden sich momentan keine erkannten Betriebssysteme. Wie möchten Sie vorgehen?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -373,7 +373,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Dokumente, Musik und andere persönliche Dateien bleiben erhalten. Sie können bei jedem Start des Rechners auswählen, welches Betriebssystem Sie verwenden möchten.';
+  String get installationTypeAlongsideInfo => 'Dokumente, Musik und andere persönliche Dateien bleiben erhalten. Sie können bei jedem Start des Computers auswählen, welches Betriebssystem Sie verwenden möchten.';
 
   @override
   String get installationTypeManual => 'Manuelle Partitionierung';
@@ -589,19 +589,19 @@ class AppLocalizationsDe extends AppLocalizations {
   String get whoAreYouPageRealNameTooLong => 'Dieser Name ist zu lang.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Name Ihres Rechners';
+  String get whoAreYouPageComputerNameLabel => 'Name Ihres Computers';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Der Name, der bei der Kommunikation mit anderen Rechnern verwendet wird.';
+  String get whoAreYouPageComputerNameInfo => 'Der Name, der bei der Kommunikation mit anderen Computern verwendet wird.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Ein Rechnername ist erforderlich';
+  String get whoAreYouPageComputerNameRequired => 'Ein Computername ist erforderlich';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Dieser Rechnername ist zu lang.';
+  String get whoAreYouPageComputerNameTooLong => 'Dieser Computername ist zu lang.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'Der Rechnername ist ungültig';
+  String get whoAreYouPageInvalidComputerName => 'Der Computername ist ungültig';
 
   @override
   String get whoAreYouPageUsernameLabel => 'Einen Benutzernamen auswählen';
@@ -736,27 +736,27 @@ class AppLocalizationsDe extends AppLocalizations {
   String get turnOffBitlockerTitle => 'BitLocker ist aktiviert';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => 'Schalten Sie BitLocker aus, um fortzufahren';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Dieser Rechner verwendet die Windows-BitLocker-Verschlüsselung.\nSie müssen BitLocker in Windows deaktivieren, bevor Sie Ubuntu installieren.';
+    return 'Dieser Computer verwendet die Windows-BitLocker-Verschlüsselung.\nSie müssen Windows verwenden, um freien Speicherplatz zu schaffen, oder wählen Sie \'$option\', um fortzufahren.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Um Anweisungen zu erhalten, öffnen Sie diese Seite auf einem Smartphone oder einem anderen Gerät: <a href=\"https://$url\">$url</a>';
+    return 'Für Anweisungen scannen Sie den QR-Code mit einem anderen Gerät oder besuchen Sie: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Neustart in Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Neustart in Windows hinein?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return 'Sind Sie sicher, dass Sie Ihren Computer neu starten möchten? Sie müssen die Installation von $DISTRO später neu starten, um die Installation von $DISTRO abzuschließen.';
   }
 
   @override

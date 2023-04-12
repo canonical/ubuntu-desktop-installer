@@ -118,21 +118,23 @@ class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
               showCloseIcon: true,
             )
           : null,
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled: model.sourceId != null,
-          onNext: () async {
-            final telemetry = getService<TelemetryService>();
-            await telemetry.addMetrics({
-              'Minimal': model.sourceId?.contains('minimal') == true,
-              'RestrictedAddons': model.installCodecs,
-            });
-            await model.save();
-          },
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            enabled: model.sourceId != null,
+            onNext: () async {
+              final telemetry = getService<TelemetryService>();
+              await telemetry.addMetrics({
+                'Minimal': model.sourceId?.contains('minimal') == true,
+                'RestrictedAddons': model.installCodecs,
+              });
+              await model.save();
+            },
+          ),
+        ],
+      ),
     );
   }
 }

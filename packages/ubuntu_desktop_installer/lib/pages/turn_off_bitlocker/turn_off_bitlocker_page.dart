@@ -95,10 +95,9 @@ class TurnOffBitLockerPage extends StatelessWidget {
           ],
         ),
       ),
-      singleLeading: true,
-      actions: [
-        WizardAction.back(context),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+      ),
     );
   }
 }

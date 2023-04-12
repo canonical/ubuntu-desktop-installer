@@ -22,6 +22,7 @@ import 'routes.dart';
 import 'services.dart';
 import 'slides.dart';
 import 'theme.dart';
+import 'widgets.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 export 'slides.dart';
@@ -54,17 +55,14 @@ Future<void> runInstallerApp(
         valueHelp: 'path',
         defaultsTo: 'examples/desktop-sources.yaml',
         help: 'Path of the source catalog (dry-run only)');
-    parser.addOption('bootloader', hide: true);
     parser.addFlag('try-or-install', hide: true);
   })!;
 
-  final subiquityClient = SubiquityClient();
   final bool liveRun = isLiveRun(options);
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final subiquityPath = await getSubiquityPath()
       .then((dir) => Directory(dir).existsSync() ? dir : null);
   final endpoint = await defaultEndpoint(serverMode);
-
   final process = liveRun
       ? null
       : SubiquityProcess.python(
@@ -72,23 +70,21 @@ Future<void> runInstallerApp(
           serverMode: ServerMode.DRY_RUN,
           subiquityPath: subiquityPath,
         );
-  final subiquityServer = SubiquityServer(
-    process: process,
-    endpoint: endpoint,
-  );
-
-  final subiquityMonitor = SubiquityStatusMonitor();
 
   final baseName = p.basename(Platform.resolvedExecutable);
 
   // conditional registration if not already registered by flavors or tests
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
-  tryRegisterService(() => DiskStorageService(subiquityClient));
+  tryRegisterService(() => DiskStorageService(getService<SubiquityClient>()));
   tryRegisterService(JournalService.new);
-  tryRegisterService(() => NetworkService(subiquityClient));
+  tryRegisterService(() => NetworkService(getService<SubiquityClient>()));
   tryRegisterService(PowerService.new);
   tryRegisterService(ProductService.new);
+  tryRegisterService(SubiquityClient.new);
+  tryRegisterService(
+      () => SubiquityServer(process: process, endpoint: endpoint));
+  tryRegisterService(SubiquityStatusMonitor.new);
   tryRegisterService(TelemetryService.new);
   tryRegisterService(UdevService.new);
   tryRegisterService(UrlLauncher.new);
@@ -105,9 +101,9 @@ Future<void> runInstallerApp(
       ),
     ),
     options: options,
-    subiquityClient: subiquityClient,
-    subiquityServer: subiquityServer,
-    subiquityMonitor: subiquityMonitor,
+    subiquityClient: getService<SubiquityClient>(),
+    subiquityServer: getService<SubiquityServer>(),
+    subiquityMonitor: getService<SubiquityStatusMonitor>(),
     serverArgs: [
       if (options['dry-run-config'] != null)
         '--dry-run-config=${options['dry-run-config']}',
@@ -115,13 +111,13 @@ Future<void> runInstallerApp(
         '--machine-config=${options['machine-config']}',
       if (options['source-catalog'] != null)
         '--source-catalog=${options['source-catalog']}',
-      if (options['bootloader'] != null)
-        '--bootloader=${options['bootloader']}',
       '--storage-version=2',
+      ...options.rest,
     ],
     dispose: () => getService<DesktopService>().close(),
   );
 
+  final subiquityClient = getService<SubiquityClient>();
   await subiquityClient.setVariant(Variant.DESKTOP);
   await subiquityClient.source().then((value) async {
     final source = value.sources.firstWhereOrNull((source) => source.isDefault);
@@ -204,6 +200,7 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
+      MascotAvatar.precacheAsset(context);
       TimezoneMap.precacheAssets(context);
     });
   }
@@ -322,10 +319,12 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
           Text(lang.preparingUbuntu(flavor.name), style: style),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context, enabled: false),
-        WizardAction.next(context, enabled: false),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context, enabled: false),
+        trailing: [
+          WizardAction.next(context, enabled: false),
+        ],
+      ),
     );
   }
 }

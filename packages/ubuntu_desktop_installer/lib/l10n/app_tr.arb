@@ -824,5 +824,7 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "turnOffRSTTitle": "Devam etmek için RST'yi kapatın",
+  "@turnOffRSTTitle": {}
 }

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
@@ -18,6 +19,7 @@ import '../test/test_utils.dart';
 Future<void> testWelcomePage(
   WidgetTester tester, {
   String? language,
+  String? screenshot,
 }) async {
   await expectPage(
       tester, WelcomePage, (lang) => lang.welcomePageTitle('Ubuntu'));
@@ -33,12 +35,17 @@ Future<void> testWelcomePage(
   }
   await tester.pumpAndSettle();
 
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
   await tester.tapContinue();
 }
 
 Future<void> testTryOrInstallPage(
   WidgetTester tester, {
   Option? option,
+  String? screenshot,
 }) async {
   await expectPage(
       tester, TryOrInstallPage, (lang) => lang.tryOrInstallPageTitle('Ubuntu'));
@@ -55,12 +62,17 @@ Future<void> testTryOrInstallPage(
   }
   await tester.pumpAndSettle();
 
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
   await tester.tapContinue();
 }
 
 Future<void> testKeyboardLayoutPage(
   WidgetTester tester, {
   KeyboardSetting? keyboard,
+  String? screenshot,
 }) async {
   await expectPage(
       tester, KeyboardLayoutPage, (lang) => lang.keyboardLayoutPageTitle);
@@ -87,12 +99,25 @@ Future<void> testKeyboardLayoutPage(
   }
   await tester.pumpAndSettle();
 
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+
+    await tester.tapButton(tester.lang.detectButtonText);
+    await tester.pumpAndSettle();
+
+    await takeScreenshot(tester, '$screenshot-detect');
+
+    await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+    await tester.pumpAndSettle();
+  }
+
   await tester.tapContinue();
 }
 
 Future<void> testConnectToInternetPage(
   WidgetTester tester, {
   ConnectMode? mode,
+  String? screenshot,
 }) async {
   await expectPage(
       tester, ConnectToInternetPage, (lang) => lang.connectToInternetPageTitle);
@@ -102,12 +127,17 @@ Future<void> testConnectToInternetPage(
   }
   await tester.pumpAndSettle();
 
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
   await tester.tapContinue();
 }
 
 Future<void> testUpdatesOtherSoftwarePage(
   WidgetTester tester, {
   String? sourceId,
+  String? screenshot,
 }) async {
   await expectPage(tester, UpdatesOtherSoftwarePage,
       (lang) => lang.updatesOtherSoftwarePageTitle);
@@ -117,7 +147,27 @@ Future<void> testUpdatesOtherSoftwarePage(
   }
   await tester.pumpAndSettle();
 
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
   await tester.tapContinue();
+}
+
+Future<void> testNotEnoughDiskSpacePage(
+  WidgetTester tester, {
+  String? screenshot,
+}) async {
+  await expectPage(
+      tester, NotEnoughDiskSpacePage, (lang) => lang.notEnoughDiskSpaceTitle);
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
+  final windowClosed = YaruTestWindow.waitForClosed();
+  await tester.tapButton(tester.lang.quitButtonText);
+  await expectLater(windowClosed, completes);
 }
 
 Future<void> testInstallationTypePage(
@@ -125,6 +175,7 @@ Future<void> testInstallationTypePage(
   InstallationType? type,
   AdvancedFeature? advancedFeature,
   bool? useEncryption,
+  String? screenshot,
 }) async {
   await expectPage(
       tester, InstallationTypePage, (lang) => lang.installationTypeTitle);
@@ -146,10 +197,20 @@ Future<void> testInstallationTypePage(
       );
     }
 
+    await tester.pumpAndSettle();
+
+    if (screenshot != null) {
+      await takeScreenshot(tester, screenshot);
+    }
+
     await tester.tapButton(tester.lang.okButtonText);
   }
 
   await tester.pumpAndSettle();
+
+  if (advancedFeature == null && screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
 
   await tester.tapContinue();
 }
@@ -157,6 +218,7 @@ Future<void> testInstallationTypePage(
 Future<void> testChooseSecurityKeyPage(
   WidgetTester tester, {
   required String securityKey,
+  String? screenshot,
 }) async {
   await expectPage(
       tester, ChooseSecurityKeyPage, (lang) => lang.chooseSecurityKeyTitle);
@@ -172,12 +234,17 @@ Future<void> testChooseSecurityKeyPage(
 
   await tester.pumpAndSettle();
 
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
   await tester.tapContinue();
 }
 
 Future<void> testAllocateDiskSpacePage(
   WidgetTester tester, {
   List<Disk>? storage,
+  String? screenshot,
 }) async {
   await expectPage(
       tester, AllocateDiskSpacePage, (lang) => lang.allocateDiskSpace);
@@ -185,8 +252,8 @@ Future<void> testAllocateDiskSpacePage(
   await tester.tapButton(tester.lang.newPartitionTable);
   await tester.pumpAndSettle();
 
-  for (final disk in storage ?? []) {
-    for (final partition in disk.partitions ?? const <Partition>[]) {
+  for (final disk in storage ?? const <Disk>[]) {
+    for (final partition in disk.partitions.whereType<Partition>()) {
       // TODO: find the correct "free space" slot when there are multiple disks
       await tester.tap(find.text(tester.lang.freeDiskSpace).last);
       await tester.pump();
@@ -195,7 +262,7 @@ Future<void> testAllocateDiskSpacePage(
       await tester.pumpAndSettle();
 
       if (partition.size != null) {
-        final size = fromBytes(partition.size, DataUnit.megabytes);
+        final size = fromBytes(partition.size!, DataUnit.megabytes);
         await tester.tap(find.byType(SpinBox));
         await tester.enterText(find.byType(SpinBox), '${size.round()}');
         await tester.pump();
@@ -209,18 +276,43 @@ Future<void> testAllocateDiskSpacePage(
         await tester.pump();
       }
 
+      await tester.pumpAndSettle();
+
+      if (screenshot != null) {
+        await takeScreenshot(tester, '$screenshot-${partition.sysname}');
+      }
+
       await tester.tapButton(tester.lang.okButtonText);
       await tester.pumpAndSettle();
     }
     await tester.pumpAndSettle();
   }
 
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
   await tester.tapContinue();
+}
+
+Future<void> testSelectGuidedStoragePage(
+  WidgetTester tester, {
+  String? screenshot,
+}) async {
+  await expectPage(tester, SelectGuidedStoragePage,
+      (lang) => lang.selectGuidedStoragePageTitle('Ubuntu'));
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
+  await tester.tapButton(tester.lang.selectGuidedStorageInstallNow);
 }
 
 Future<void> testInstallAlongsidePage(
   WidgetTester tester, {
   Map<String, int> sizes = const {},
+  String? screenshot,
 }) async {
   final productInfo = getService<ProductService>().getProductInfo();
   await expectPage(tester, InstallAlongsidePage,
@@ -236,27 +328,76 @@ Future<void> testInstallAlongsidePage(
     await tester.enterText(find.byType(SpinBox), entry.value.toString());
     await tester.pump();
 
-    await tester.sendKeyEvent(LogicalKeyboardKey.enter);
+    if (screenshot != null) {
+      await takeScreenshot(tester, '$screenshot-${entry.key.split(' ').first}');
+    }
+
+    await tester.tapButton(tester.lang.okButtonText);
     await tester.pumpAndSettle();
+  }
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
   }
 
   await tester.tapButton(tester.lang.selectGuidedStorageInstallNow);
 }
 
-Future<void> testWriteChangesToDiskPage(WidgetTester tester) async {
+Future<void> testWriteChangesToDiskPage(
+  WidgetTester tester, {
+  String? screenshot,
+}) async {
   await expectPage(
       tester, WriteChangesToDiskPage, (lang) => lang.writeChangesToDisk);
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
 
   await tester.tapButton(tester.lang.startInstallingButtonText);
 }
 
-Future<void> testTurnOffBitLockerPage(WidgetTester tester) async {
+Future<void> testTurnOffBitLockerPage(
+  WidgetTester tester, {
+  String? screenshot,
+}) async {
   await expectPage(
       tester, TurnOffBitLockerPage, (lang) => lang.turnOffBitlockerTitle);
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
 
   await tester.tapButton(tester.lang.restartIntoWindows);
   expect(find.byType(AlertDialog), findsOneWidget);
   await tester.pumpAndSettle();
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, '$screenshot-confirm');
+  }
+
+  final windowClosed = YaruTestWindow.waitForClosed();
+  await tester.tapButton(tester.lang.restartButtonText);
+  await expectLater(windowClosed, completes);
+}
+
+Future<void> testTurnOffRSTPage(
+  WidgetTester tester, {
+  String? screenshot,
+}) async {
+  await expectPage(tester, TurnOffRSTPage, (lang) => lang.turnOffRST);
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
+  await tester.tapButton(tester.lang.restartIntoWindows);
+  expect(find.byType(AlertDialog), findsOneWidget);
+  await tester.pumpAndSettle();
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, '$screenshot-confirm');
+  }
 
   final windowClosed = YaruTestWindow.waitForClosed();
   await tester.tapButton(tester.lang.restartButtonText);
@@ -267,6 +408,7 @@ Future<void> testWhereAreYouPage(
   WidgetTester tester, {
   String? location,
   String? timezone,
+  String? screenshot,
 }) async {
   await expectPage(
       tester, WhereAreYouPage, (lang) => lang.whereAreYouPageTitle);
@@ -295,6 +437,10 @@ Future<void> testWhereAreYouPage(
 
   await tester.pumpAndSettle();
 
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
   await tester.tapContinue();
 }
 
@@ -302,6 +448,7 @@ Future<void> testWhoAreYouPage(
   WidgetTester tester, {
   IdentityData? identity,
   String? password,
+  String? screenshot,
 }) async {
   await expectPage(tester, WhoAreYouPage, (lang) => lang.whoAreYouPageTitle);
 
@@ -335,12 +482,54 @@ Future<void> testWhoAreYouPage(
   }
   await tester.pumpAndSettle();
 
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
+  await tester.tapContinue();
+}
+
+Future<void> testActiveDirectoryPage(
+  WidgetTester tester, {
+  String? domainName,
+  String? adminName,
+  String? password,
+  String? screenshot,
+}) async {
+  await expectPage(
+      tester, ActiveDirectoryPage, (lang) => lang.activeDirectoryTitle);
+
+  if (domainName != null) {
+    await tester.enterTextValue(
+      label: tester.lang.activeDirectoryDomainLabel,
+      value: domainName,
+    );
+  }
+  if (adminName != null) {
+    await tester.enterTextValue(
+      label: tester.lang.activeDirectoryAdminLabel,
+      value: adminName,
+    );
+  }
+  if (password != null) {
+    await tester.enterTextValue(
+      label: tester.lang.activeDirectoryPasswordLabel,
+      value: password,
+    );
+  }
+  await tester.pumpAndSettle();
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
   await tester.tapContinue();
 }
 
 Future<void> testChooseYourLookPage(
   WidgetTester tester, {
   Brightness? theme,
+  String? screenshot,
 }) async {
   await expectPage(
       tester, ChooseYourLookPage, (lang) => lang.chooseYourLookPageTitle);
@@ -352,6 +541,10 @@ Future<void> testChooseYourLookPage(
   }
   await tester.pumpAndSettle();
 
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
   await tester.tapContinue();
 }
 
@@ -360,9 +553,16 @@ Future<void> testInstallationSlidesPage(WidgetTester tester) async {
   expect(find.byType(InstallationSlidesPage), findsOneWidget);
 }
 
-Future<void> testInstallationCompletePage(WidgetTester tester) async {
+Future<void> testInstallationCompletePage(
+  WidgetTester tester, {
+  String? screenshot,
+}) async {
   await expectPage(tester, InstallationCompletePage,
       (lang) => lang.installationCompleteTitle);
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
 
   final windowClosed = YaruTestWindow.waitForClosed();
   await tester.tapButton(tester.lang.continueTesting);
@@ -377,4 +577,15 @@ Future<void> expectPage(
   await tester.pumpUntil(find.byType(page));
   expect(find.byType(page), findsOneWidget);
   expect(find.widgetWithText(AppBar, title(tester.lang)), findsOneWidget);
+}
+
+Future<void> takeScreenshot(WidgetTester tester, String screenshot) async {
+  // avoid blinking cursors to keep the screenshots deterministic
+  primaryFocus?.unfocus();
+  await tester.pumpAndSettle();
+
+  await expectLater(
+    find.byType(UbuntuDesktopInstallerApp),
+    matchesGoldenFile('screenshots/$screenshot.png'),
+  );
 }

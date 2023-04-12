@@ -154,21 +154,14 @@ class MockDiskStorageService extends _i1.Mock
         )),
       ) as _i4.Future<_i2.GuidedStorageResponseV2>);
   @override
-  _i4.Future<_i2.GuidedStorageResponseV2> setGuidedStorage() =>
-      (super.noSuchMethod(
+  _i4.Future<void> setGuidedStorage() => (super.noSuchMethod(
         Invocation.method(
           #setGuidedStorage,
           [],
         ),
-        returnValue: _i4.Future<_i2.GuidedStorageResponseV2>.value(
-            _FakeGuidedStorageResponseV2_0(
-          this,
-          Invocation.method(
-            #setGuidedStorage,
-            [],
-          ),
-        )),
-      ) as _i4.Future<_i2.GuidedStorageResponseV2>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   _i4.Future<List<_i2.Disk>> getStorage() => (super.noSuchMethod(
         Invocation.method(
@@ -233,11 +226,10 @@ class MockDiskStorageService extends _i1.Mock
         returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
       ) as _i4.Future<List<_i2.Disk>>);
   @override
-  _i4.Future<List<_i2.Disk>> setStorage(List<_i2.Disk>? disks) =>
-      (super.noSuchMethod(
+  _i4.Future<List<_i2.Disk>> setStorage() => (super.noSuchMethod(
         Invocation.method(
           #setStorage,
-          [disks],
+          [],
         ),
         returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
       ) as _i4.Future<List<_i2.Disk>>);

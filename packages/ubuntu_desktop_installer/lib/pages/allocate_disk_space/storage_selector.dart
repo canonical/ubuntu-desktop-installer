@@ -10,6 +10,7 @@ class StorageSelector extends StatelessWidget {
     super.key,
     this.title,
     this.selected,
+    this.enabled,
     required this.storages,
     required this.onSelected,
   });
@@ -18,6 +19,7 @@ class StorageSelector extends StatelessWidget {
   final int? selected;
   final List<Disk> storages;
   final ValueChanged<int?> onSelected;
+  final bool Function(Disk disk)? enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,13 @@ class StorageSelector extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         MenuButtonBuilder<int>(
-          values: List.generate(storages.length, (index) => index),
+          entries: List.generate(
+            storages.length,
+            (index) => MenuButtonEntry(
+              value: index,
+              enabled: enabled?.call(storages[index]) ?? true,
+            ),
+          ),
           selected: selected,
           onSelected: onSelected,
           itemBuilder: (context, index, _) {

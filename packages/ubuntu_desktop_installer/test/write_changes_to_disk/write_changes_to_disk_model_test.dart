@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_detector.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -107,13 +107,13 @@ void main() {
     when(service.guidedTarget).thenReturn(null);
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
-    when(service.setStorage(any)).thenAnswer((_) async => nonPreservedDisks);
+    when(service.setStorage()).thenAnswer((_) async => nonPreservedDisks);
 
     final model = WriteChangesToDiskModel(client, service);
     await model.init();
     await model.startInstallation();
 
-    verify(service.setStorage(nonPreservedDisks)).called(1);
+    verifyNever(service.setStorage());
     verify(service.securityKey = null).called(1);
     verify(client.confirm('/dev/tty1')).called(1);
   });

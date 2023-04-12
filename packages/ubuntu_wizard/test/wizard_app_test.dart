@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/app.dart';
@@ -17,7 +18,6 @@ import 'wizard_app_test.mocks.dart';
 @GenerateMocks([IOSink])
 void main() {
   final endpoint = Endpoint.unix('socket path');
-  tearDown(() => unregisterMockService<SubiquityClient>());
 
   setUpAll(() {
     final methodChannel = MethodChannel('yaru_window');
@@ -43,7 +43,7 @@ void main() {
     verify(client.open(endpoint)).called(1);
   });
 
-  testWidgets('registers the client', (tester) async {
+  testWidgets('does not register services', (tester) async {
     final client = MockSubiquityClient();
     final server = MockSubiquityServer();
     when(server.start(
@@ -51,14 +51,19 @@ void main() {
         .thenAnswer(
       (_) async => Endpoint.unix(''),
     );
+    final monitor = MockSubiquityStatusMonitor();
+    when(monitor.start(any)).thenAnswer((_) async => true);
 
     await runWizardApp(
       SizedBox(),
       subiquityClient: client,
       subiquityServer: server,
+      subiquityMonitor: monitor,
     );
 
-    expect(getService<SubiquityClient>(), equals(client));
+    expect(tryGetService<SubiquityClient>(), isNull);
+    expect(tryGetService<SubiquityServer>(), isNull);
+    expect(tryGetService<SubiquityStatusMonitor>(), isNull);
   });
 
   testWidgets('parse command-line arguments', (tester) async {
@@ -108,15 +113,16 @@ void main() {
     expect(didExit, equals(1));
 
     didExit = null;
-    parseCommandLine(
-      ['unknown rest arguments'],
+    final rest = parseCommandLine(
+      ['--', 'subiquity', 'arguments'],
       out: out,
       exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, equals(1));
+    )?.rest;
+    expect(didExit, isNull);
+    expect(rest, ['subiquity', 'arguments']);
   });
 
-  testWidgets('starts and registers the monitor', (tester) async {
+  testWidgets('starts the monitor', (tester) async {
     final endpoint = Endpoint.unix('/tmp/subiquity.sock');
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.start(endpoint)).thenAnswer((_) async => true);
@@ -133,7 +139,6 @@ void main() {
       subiquityClient: MockSubiquityClient(),
     );
 
-    expect(getService<SubiquityStatusMonitor>(), equals(monitor));
     verify(monitor.start(endpoint)).called(1);
   });
 

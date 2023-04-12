@@ -77,16 +77,18 @@ class _AdvancedSetupPageState extends State<AdvancedSetupPage> {
           ],
         );
       }),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          highlighted: true,
-          label: lang.setupButton,
-          enabled: model.isValid,
-          onNext: model.saveAdvancedSetup,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            highlighted: true,
+            label: lang.setupButton,
+            enabled: model.isValid,
+            onNext: model.saveAdvancedSetup,
+          ),
+        ],
+      ),
     );
   }
 }

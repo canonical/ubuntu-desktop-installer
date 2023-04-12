@@ -86,10 +86,10 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Desligue a RST';
+  String get turnOffRST => 'A RST está ativa';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'Desligue a RST para continuar';
 
   @override
   String get turnOffRSTDescription => 'Este computador usa Intel RST (Rapid Storage Technology). Precisa de desligar a RST no Windows antes de instalar o Ubuntu.';
@@ -1058,14 +1058,17 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get turnOffRST => 'Desligue a RST';
+  String get turnOffRST => 'O RST está habilitado';
+
+  @override
+  String get turnOffRSTTitle => 'Desligue o RST para continuar';
 
   @override
   String get turnOffRSTDescription => 'Este computador usa Intel RST (Rapid Storage Technology). Você precisa desligar a RST no Windows antes de instalar o Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Abra esta página em um celular ou outro dispositivo para encontrar instruções: <a href=\"https://$url\">$url</a>';
+    return 'Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -1123,7 +1126,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get showSecurityKey => 'Mostrar chave de segurança';
 
   @override
-  String get connectToInternetPageTitle => 'Conecte-se à internet';
+  String get connectToInternetPageTitle => 'Conecte-se a uma rede';
 
   @override
   String get connectToInternetDescription => 'Ao conectar este computador à internet você facilitará ao Ubuntu instalação de qualquer software extra necessário e ajudará a determinar seu fuso horário.\n\nConecte-se via cabo Ethernet ou escolha uma rede Wi-Fi';
@@ -1174,7 +1177,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get connectButtonText => 'Conectar';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Atualizações e outros softwares';
+  String get updatesOtherSoftwarePageTitle => 'Aplicativos e atualizações';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Quais apps você gostaria de instalar para começar?';
@@ -1221,7 +1224,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get offlineWarning => 'Você está off-line no momento';
 
   @override
-  String get chooseSecurityKeyTitle => 'Escolha uma chave de segurança';
+  String get chooseSecurityKeyTitle => 'Chave de segurança';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -1345,7 +1348,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installationTypeAlongsideInfo => 'Documentos, músicas, e outros arquivos pessoais serão mantidos. Você poderá selecionar qual sistema operacional usar cada vez que o computador iniciar.';
 
   @override
-  String get installationTypeManual => 'Opção avançada';
+  String get installationTypeManual => 'Particionamento manual';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -1393,7 +1396,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installAlongsideAvailable => 'Disponível:';
 
   @override
-  String get allocateDiskSpace => 'Alocar espaço em disco';
+  String get allocateDiskSpace => 'Particionamento manual';
 
   @override
   String get startInstallingButtonText => 'Instalar';
@@ -1540,7 +1543,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get partitionMountPointLabel => 'Ponto de montagem:';
 
   @override
-  String get whoAreYouPageTitle => 'Quem é você?';
+  String get whoAreYouPageTitle => 'Configurar sua conta';
 
   @override
   String get whoAreYouPageAutoLogin => 'Iniciar sessão automaticamente';
@@ -1663,7 +1666,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Escolha seu estilo';
+  String get chooseYourLookPageTitle => 'Escolha seu tema';
 
   @override
   String get chooseYourLookPageHeader => 'Você pode sempre alterar isso depois nas configurações de aparência.';
@@ -1702,23 +1705,34 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get continueTesting => 'Continuar testando';
 
   @override
-  String get turnOffBitlockerTitle => 'Desligar BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker está habilitado';
+
+  @override
+  String get turnOffBitlockerHeadline => 'Desligue o BitLocker para continuar';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Este computador usa criptografia do Windows BitLocker.\nVocê precisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
+    return 'Este computador usa criptografia BitLocker do Windows.\nVocê precisa usar o Windows para liberar espaço ou escolher \'$option\' para continuar .';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Para obter instruções, abra esta página em um telefone ou outro dispositivo: <a href=\"https://$url\">$url</a>';
+    return 'Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Reiniciar no Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Onde você está?';
+  String get restartIntoWindowsTitle => 'Reiniciar para o Windows?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Tem certeza de que deseja reiniciar o computador? Você precisará reiniciar a instalação do $DISTRO mais tarde para concluí-la.';
+  }
+
+  @override
+  String get whereAreYouPageTitle => 'Selecione seu fuso horário';
 
   @override
   String get whereAreYouLocationLabel => 'Localização';

@@ -10,8 +10,6 @@ on:
       - packages/ubuntu_wsl_setup/**
       - .github/workflows/**
   pull_request:
-    branches:
-      - main
     paths:
       - packages/subiquity_client/**
       - packages/ubuntu_wizard/**

@@ -47,24 +47,33 @@ void main() {
   test('set guided storage', () async {
     final target = GuidedStorageTargetReformat(
         diskId: testDisks.last.id, capabilities: [GuidedCapability.DIRECT]);
-    final choice =
-        GuidedChoiceV2(target: target, capability: GuidedCapability.DIRECT);
+    final choice = GuidedChoiceV2(
+      target: target,
+      capability: GuidedCapability.DIRECT,
+      sizingPolicy: SizingPolicy.ALL,
+    );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
 
     final service = DiskStorageService(client);
     service.guidedTarget = target;
     await service.setGuidedStorage();
     verify(client.setGuidedStorageV2(choice)).called(1);
+    verify(client.setStorageV2()).called(1);
   });
 
   test('use LVM', () async {
     final target = GuidedStorageTargetReformat(
         diskId: testDisks.last.id, capabilities: [GuidedCapability.LVM]);
-    final choice =
-        GuidedChoiceV2(target: target, capability: GuidedCapability.LVM);
+    final choice = GuidedChoiceV2(
+      target: target,
+      capability: GuidedCapability.LVM,
+      sizingPolicy: SizingPolicy.ALL,
+    );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
 
     final service = DiskStorageService(client);
     service.useLvm = true;
@@ -72,6 +81,7 @@ void main() {
     service.guidedTarget = target;
     await service.setGuidedStorage();
     verify(client.setGuidedStorageV2(choice)).called(1);
+    verify(client.setStorageV2()).called(1);
   });
 
   test('reset guided storage', () async {
@@ -111,7 +121,7 @@ void main() {
         .thenAnswer((_) async => testStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
-    expect(await service.setStorage(testDisks), equals(testDisks));
+    expect(await service.setStorage(), equals(testDisks));
     verify(client.setStorageV2()).called(1);
   });
 
@@ -266,10 +276,14 @@ void main() {
   test('guided target', () async {
     final target = GuidedStorageTargetReformat(
         diskId: testDisks.last.id, capabilities: [GuidedCapability.DIRECT]);
-    final choice =
-        GuidedChoiceV2(target: target, capability: GuidedCapability.DIRECT);
+    final choice = GuidedChoiceV2(
+      target: target,
+      capability: GuidedCapability.DIRECT,
+      sizingPolicy: SizingPolicy.ALL,
+    );
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
     when(client.resetStorageV2())
         .thenAnswer((_) async => testStorageResponse());
 
@@ -290,9 +304,11 @@ void main() {
     final choice = GuidedChoiceV2(
         target: target,
         password: 'foo123',
+        sizingPolicy: SizingPolicy.ALL,
         capability: GuidedCapability.LVM_LUKS);
     when(client.setGuidedStorageV2(choice))
         .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
 
     final service = DiskStorageService(client);
     await service.init();
@@ -304,6 +320,7 @@ void main() {
     service.guidedTarget = target;
     await service.setGuidedStorage();
     verify(client.setGuidedStorageV2(choice)).called(1);
+    verify(client.setStorageV2()).called(1);
   });
 
   test('has enough disk space', () async {

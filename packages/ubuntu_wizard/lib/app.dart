@@ -9,7 +9,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
-import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 /// @internal
@@ -49,11 +48,6 @@ Future<bool?> runWizardApp(
     subiquityClient.open(endpoint);
     return subiquityMonitor?.start(endpoint);
   });
-
-  registerServiceInstance(subiquityClient);
-  if (subiquityMonitor != null) {
-    registerServiceInstance(subiquityMonitor);
-  }
 
   WidgetsFlutterBinding.ensureInitialized();
   await setupAppLocalizations();
@@ -137,12 +131,6 @@ Can also be specified in a LOG_LEVEL environment variable.
   }
   if (options?['help'] == true) {
     _printUsage(parser.usage, out: out, exit: exit);
-  }
-  if (options?.rest.isNotEmpty == true) {
-    _printUsage(parser.usage,
-        error: 'Unknown positional arguments "${options!.rest.join(' ')}"',
-        out: out,
-        exit: exit);
   }
   return options;
 }

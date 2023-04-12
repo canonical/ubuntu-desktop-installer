@@ -42,14 +42,14 @@ void main() {
   test('set storage', () async {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
-    when(service.setStorage(testDisks)).thenAnswer((_) async => changedDisks);
+    when(service.setStorage()).thenAnswer((_) async => changedDisks);
 
     final model = AllocateDiskSpaceModel(service);
     await model.getStorage();
 
     await model.setStorage();
     expect(model.disks, equals(changedDisks));
-    verify(service.setStorage(testDisks)).called(1);
+    verify(service.setStorage()).called(1);
   });
 
   test('reset storage', () async {

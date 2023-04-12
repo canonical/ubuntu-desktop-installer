@@ -216,6 +216,7 @@ void main() {
   testWidgets('alongside windows', (tester) async {
     await app.main(<String>[
       '--machine-config=examples/win10-along-ubuntu.json',
+      '--',
       '--bootloader=uefi',
     ]);
     await tester.pumpAndSettle();

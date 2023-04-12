@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 

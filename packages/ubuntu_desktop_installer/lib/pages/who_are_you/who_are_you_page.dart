@@ -96,16 +96,19 @@ class _WhoAreYouPageState extends State<WhoAreYouPage> {
           ],
         );
       }),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled:
-              context.select<WhoAreYouModel, bool>((model) => model.isValid),
-          arguments: context.select((WhoAreYouModel m) => m.useActiveDirectory),
-          onNext: context.read<WhoAreYouModel>().save,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            enabled:
+                context.select<WhoAreYouModel, bool>((model) => model.isValid),
+            arguments:
+                context.select((WhoAreYouModel m) => m.useActiveDirectory),
+            onNext: context.read<WhoAreYouModel>().save,
+          ),
+        ],
+      ),
     );
   }
 }

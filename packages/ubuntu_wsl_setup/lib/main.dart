@@ -36,8 +36,9 @@ Future<void> main(List<String> args) async {
   );
   final serverArgs = serverArgsFromOptions(options);
 
-  final subiquityClient = SubiquityClient();
-  final subiquityMonitor = SubiquityStatusMonitor();
+  registerService(SubiquityClient.new);
+  registerService(() => SubiquityServer(process: process, endpoint: endpoint));
+  registerService(SubiquityStatusMonitor.new);
   registerService(UrlLauncher.new);
   registerService(LanguageFallbackService.linux);
   await runWizardApp(
@@ -46,20 +47,22 @@ Future<void> main(List<String> args) async {
       child: const UbuntuWslSetupApp(),
     ),
     options: options,
-    subiquityClient: subiquityClient,
-    subiquityServer: SubiquityServer(process: process, endpoint: endpoint),
-    subiquityMonitor: subiquityMonitor,
+    subiquityClient: getService<SubiquityClient>(),
+    subiquityServer: getService<SubiquityServer>(),
+    subiquityMonitor: getService<SubiquityStatusMonitor>(),
     serverArgs: serverArgs,
     serverEnvironment: {
       if (!liveRun && options['reconfigure'] == true) 'DRYRUN_RECONFIG': 'true',
     },
   );
+  final subiquityClient = getService<SubiquityClient>();
   await subiquityClient.variant().then((value) {
     if (value == Variant.WSL_SETUP) {
       isLocaleSet(subiquityClient).then(
         (isSet) => appModel.value =
             appModel.value.copyWith(variant: value, languageAlreadySet: isSet),
       );
+      final subiquityMonitor = getService<SubiquityStatusMonitor>();
       subiquityMonitor.onStatusChanged.listen((status) {
         window.setClosable(status?.state.isInstalling != true);
       });

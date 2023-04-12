@@ -66,13 +66,15 @@ class _ConfigureSecureBootPageState extends State<ConfigureSecureBootPage> {
           );
         },
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled: model.isFormValid,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            enabled: model.isFormValid,
+          ),
+        ],
+      ),
     );
   }
 }

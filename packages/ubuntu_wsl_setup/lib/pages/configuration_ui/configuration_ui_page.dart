@@ -94,16 +94,18 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
           ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          highlighted: true,
-          label: lang.saveButton,
-          enabled: model.isValid,
-          onNext: model.saveConfiguration,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardAction.back(context),
+        trailing: [
+          WizardAction.next(
+            context,
+            highlighted: true,
+            label: lang.saveButton,
+            enabled: model.isValid,
+            onNext: model.saveConfiguration,
+          ),
+        ],
+      ),
     );
   }
 }
