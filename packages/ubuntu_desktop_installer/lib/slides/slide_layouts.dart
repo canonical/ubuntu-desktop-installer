@@ -343,7 +343,6 @@ class CinematicSlideLayout extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 16),
                   DefaultTextStyle(
                     style: _bodyStyle(context),
                     child: body,
