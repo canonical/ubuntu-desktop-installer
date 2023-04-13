@@ -83,18 +83,24 @@ class _ListWidgetState extends State<ListWidget> {
                 initialScrollOffset: widget.selectedIndex * _kTileHeight -
                     constraints.maxHeight / 2 +
                     _kTileHeight / 2);
-            return ListView.builder(
-              key: _scrollableKey,
-              controller: _scrollController,
-              itemCount: widget.itemCount,
-              itemBuilder: (context, index) => Builder(
-                builder: (context) {
-                  if (index == widget.selectedIndex) {
-                    // bring a half-visible selected item into the viewport
-                    context.findRenderObject()?.showOnScreen();
-                  }
-                  return widget.itemBuilder(context, index);
-                },
+            return FocusTraversalGroup(
+              policy: OrderedTraversalPolicy(),
+              child: ListView.builder(
+                key: _scrollableKey,
+                controller: _scrollController,
+                itemCount: widget.itemCount,
+                itemBuilder: (context, index) => Builder(
+                  builder: (context) {
+                    if (index == widget.selectedIndex) {
+                      // bring a half-visible selected item into the viewport
+                      context.findRenderObject()?.showOnScreen();
+                    }
+                    return FocusTraversalOrder(
+                      order: NumericFocusOrder(index.toDouble()),
+                      child: widget.itemBuilder(context, index),
+                    );
+                  },
+                ),
               ),
             );
           },
