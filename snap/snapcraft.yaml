@@ -156,6 +156,9 @@ parts:
     source-type: git
     plugin: nil
     build-attributes: [enable-patchelf]
+    build-packages:
+      - libgstreamer1.0-dev
+      - libgstreamer-plugins-base1.0-dev
     override-build: |
       set -eux
       mkdir -p $CRAFT_PART_INSTALL/bin/lib
@@ -201,6 +204,8 @@ parts:
       - libgl1
       - libglib2.0-0
       - libglib2.0-dev
+      - libgstreamer1.0-0
+      - libgstreamer-plugins-base1.0-0
       - libgtk-3-0
       - libpango-1.0-0
       - libpangocairo-1.0-0
@@ -242,6 +247,7 @@ parts:
       - usr/lib/*/libgbm*.so.*
       - usr/lib/*/libglapi*.so.*
       - usr/lib/*/libgraphite2*.so.*
+      - usr/lib/*/libgstapp-1.0*.so.*
       - usr/lib/*/libxshmfence*.so.*
       - usr/lib/*/libLLVM-12.so.*
       - usr/lib/*/libpciaccess*.so.*
@@ -249,6 +255,7 @@ parts:
       - usr/lib/*/libvulkan*.so.*
       - usr/share/glvnd/egl_vendor.d
       - usr/lib/*/gdk-pixbuf-2.0
+      - usr/lib/*/gstreamer-1.0
       - usr/lib/*/
       - usr/bin/update-mime-database
       - usr/bin/g*
