@@ -114,17 +114,6 @@ Future<void> runInstallerApp(
 
   final subiquityClient = getService<SubiquityClient>();
   await subiquityClient.setVariant(Variant.DESKTOP);
-  await subiquityClient.setSource(InstallationMode.normal.source);
-
-  // Use the default values for a number of endpoints
-  // for which a UI page isn't implemented yet.
-  await subiquityClient.markConfigured([
-    'mirror',
-    'proxy',
-    'ssh',
-    'snaplist',
-    'ubuntu_pro',
-  ]);
 
   var geo = tryGetService<GeoService>();
   if (geo == null) {
@@ -141,9 +130,6 @@ Future<void> runInstallerApp(
     'OEM': false,
     'Media': getService<ProductService>().getProductInfo().toString(),
   });
-
-  final storage = getService<DiskStorageService>();
-  await storage.init();
 
   final desktop = getService<DesktopService>();
   await desktop.inhibit();
@@ -331,25 +317,53 @@ enum InstallationStep {
   look,
 }
 
-class _UbuntuDesktopInstallerWizard extends StatelessWidget {
+class _UbuntuDesktopInstallerWizard extends StatefulWidget {
   const _UbuntuDesktopInstallerWizard({this.initialRoute, this.tryOrInstall});
 
   final String? initialRoute;
   final bool? tryOrInstall;
 
   @override
+  State<_UbuntuDesktopInstallerWizard> createState() =>
+      _UbuntuDesktopInstallerWizardState();
+}
+
+class _UbuntuDesktopInstallerWizardState
+    extends State<_UbuntuDesktopInstallerWizard> {
+  @override
+  void initState() {
+    super.initState();
+
+    final client = getService<SubiquityClient>();
+    client.setSource(InstallationMode.normal.source).then((_) {
+      // Use the default values for a number of endpoints
+      // for which a UI page isn't implemented yet.
+      client.markConfigured([
+        'mirror',
+        'proxy',
+        'ssh',
+        'snaplist',
+        'ubuntu_pro',
+      ]);
+
+      final storage = getService<DiskStorageService>();
+      storage.init();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final service = getService<DiskStorageService>();
 
     return Wizard(
-      initialRoute: initialRoute ?? Routes.initial,
+      initialRoute: widget.initialRoute ?? Routes.initial,
       userData: InstallationStep.values.length,
       routes: <String, WizardRoute>{
         Routes.welcome: WizardRoute(
           builder: WelcomePage.create,
           userData: InstallationStep.welcome.index,
           onNext: (_) {
-            if (tryOrInstall == true) {
+            if (widget.tryOrInstall == true) {
               return Routes.tryOrInstall;
             } else if (service.hasRst) {
               return Routes.turnOffRST;
