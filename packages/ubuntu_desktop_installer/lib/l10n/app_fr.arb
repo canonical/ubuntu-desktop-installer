@@ -252,7 +252,7 @@
   "@selectGuidedStoragePageTitle": {},
   "selectGuidedStorageInstallNow": "Installer maintenant",
   "@selectGuidedStorageInstallNow": {},
-  "bootLoaderDevice": "Périphérique pour installer le chargeur d’amorçage",
+  "bootLoaderDevice": "Périphérique pour installer le chargeur d’amorçage (bootloader)",
   "@bootLoaderDevice": {},
   "configureSecureBootOption": "Configurer Secure Boot",
   "@configureSecureBootOption": {},
@@ -267,7 +267,7 @@
       "url": {}
     }
   },
-  "turnOffBitlockerDescription": "Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez utiliser Windows pour créer de l’espace libre ou choisir « {option} » pour continuer.",
+  "turnOffBitlockerDescription": "Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez utiliser Windows pour créer de l’espace libre ou choisir '{option}' pour continuer.",
   "@turnOffBitlockerDescription": {},
   "restartIntoWindows": "Redémarrer sous Windows",
   "@restartIntoWindows": {},
