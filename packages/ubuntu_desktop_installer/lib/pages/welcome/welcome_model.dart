@@ -6,6 +6,7 @@ import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart' show KeySearchX;
 
 import '../../l10n.dart';
+import '../../services/canberra_service.dart';
 
 /// @internal
 final log = Logger('welcome');
@@ -13,9 +14,14 @@ final log = Logger('welcome');
 /// Implements the business logic of the welcome page.
 class WelcomeModel extends SafeChangeNotifier {
   /// Creates a model with the specified [client].
-  WelcomeModel(this._client);
+  WelcomeModel({
+    required SubiquityClient client,
+    required CanberraService? canberra,
+  })  : _client = client,
+        _canberra = canberra;
 
   final SubiquityClient _client;
+  final CanberraService? _canberra;
 
   /// The index of the currently selected language.
   int get selectedLanguageIndex => _selectedLanguageIndex;
@@ -55,6 +61,8 @@ class WelcomeModel extends SafeChangeNotifier {
 
   /// Returns the name of the language at the given [index].
   String language(int index) => _languageList[index].name;
+
+  Future<void> playWelcomeSound() async => _canberra?.play('system-ready');
 
   /// Searches for a language matching the given [query].
   ///

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/services/canberra_service.dart';
 import 'package:ubuntu_desktop_installer/widgets/mascot_avatar.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -18,8 +19,9 @@ class WelcomePage extends StatefulWidget {
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
+    final canberra = tryGetService<CanberraService>();
     return ChangeNotifierProvider(
-      create: (_) => WelcomeModel(client),
+      create: (_) => WelcomeModel(client: client, canberra: canberra),
       child: const WelcomePage(),
     );
   }
@@ -36,6 +38,7 @@ class _WelcomePageState extends State<WelcomePage> {
     final model = Provider.of<WelcomeModel>(context, listen: false);
     model.loadLanguages().then((_) {
       model.selectLocale(InheritedLocale.of(context));
+      model.playWelcomeSound();
     });
   }
 
