@@ -28,6 +28,5 @@ void main() {
       confirmedPassword: 'password123',
     );
     await testApplyingChangesPage(tester, expectClose: true);
-    await tester.pumpAndSettle();
   });
 }
