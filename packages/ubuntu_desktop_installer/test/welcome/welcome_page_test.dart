@@ -10,6 +10,7 @@ import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_desktop_installer/services/canberra_service.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -20,7 +21,7 @@ import 'welcome_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([TelemetryService])
+@GenerateMocks([CanberraService, TelemetryService])
 void main() {
   late MaterialApp app;
 
@@ -51,7 +52,8 @@ void main() {
     await tester.pumpWidget(
       MultiProvider(providers: [
         ChangeNotifierProvider(
-          create: (_) => WelcomeModel(client),
+          create: (_) =>
+              WelcomeModel(client: client, canberra: MockCanberraService()),
         ),
       ], child: InheritedLocale(child: app)),
     );

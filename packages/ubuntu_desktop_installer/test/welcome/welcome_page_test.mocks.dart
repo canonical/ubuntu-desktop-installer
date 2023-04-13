@@ -6,8 +6,9 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:ubuntu_desktop_installer/services/canberra_service.dart' as _i2;
 import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
-    as _i2;
+    as _i4;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -20,10 +21,29 @@ import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
+/// A class which mocks [CanberraService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockCanberraService extends _i1.Mock implements _i2.CanberraService {
+  MockCanberraService() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i3.Future<void> play(String? id) => (super.noSuchMethod(
+        Invocation.method(
+          #play,
+          [id],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
+}
+
 /// A class which mocks [TelemetryService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTelemetryService extends _i1.Mock implements _i2.TelemetryService {
+class MockTelemetryService extends _i1.Mock implements _i4.TelemetryService {
   MockTelemetryService() {
     _i1.throwOnMissingStub(this);
   }
