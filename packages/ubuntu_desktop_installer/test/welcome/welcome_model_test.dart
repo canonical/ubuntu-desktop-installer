@@ -1,26 +1,31 @@
 import 'dart:ui';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_test/mocks.dart';
 
+import 'welcome_page_test.mocks.dart';
+
 // ignore_for_file: type=lint
 
 void main() {
   test('load languages', () async {
     final client = MockSubiquityClient();
+    final player = MockAudioPlayer();
 
-    final model = WelcomeModel(client);
+    final model = WelcomeModel(client: client, player: player);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
   });
 
   test('sort languages', () async {
     final client = MockSubiquityClient();
+    final player = MockAudioPlayer();
 
-    final model = WelcomeModel(client);
+    final model = WelcomeModel(client: client, player: player);
     await model.loadLanguages();
 
     final languages = List.generate(model.languageCount, model.language);
@@ -33,8 +38,9 @@ void main() {
 
   test('select locale', () async {
     final client = MockSubiquityClient();
+    final player = MockAudioPlayer();
 
-    final model = WelcomeModel(client);
+    final model = WelcomeModel(client: client, player: player);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
@@ -58,14 +64,18 @@ void main() {
   test('set locale', () {
     final client = MockSubiquityClient();
     when(client.setLocale('fr_CA.UTF-8')).thenAnswer((_) async {});
+    final player = MockAudioPlayer();
 
-    final model = WelcomeModel(client);
+    final model = WelcomeModel(client: client, player: player);
     model.applyLocale(Locale('fr', 'CA'));
     verify(client.setLocale('fr_CA.UTF-8')).called(1);
   });
 
   test('selected language', () {
-    final model = WelcomeModel(MockSubiquityClient());
+    final client = MockSubiquityClient();
+    final player = MockAudioPlayer();
+
+    final model = WelcomeModel(client: client, player: player);
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -81,7 +91,10 @@ void main() {
   });
 
   test('search language', () async {
-    final model = WelcomeModel(MockSubiquityClient());
+    final client = MockSubiquityClient();
+    final player = MockAudioPlayer();
+
+    final model = WelcomeModel(client: client, player: player);
     await model.loadLanguages();
 
     final english = model.searchLanguage('eng');
@@ -110,5 +123,17 @@ void main() {
     // no match
     expect(model.searchLanguage('foo'), isNegative);
     expect(model.searchLanguage('none'), isNegative);
+  });
+
+  test('play welcome sound', () async {
+    final client = MockSubiquityClient();
+    final player = MockAudioPlayer();
+
+    final model = WelcomeModel(client: client, player: player);
+    await model.playWelcomeSound();
+    verify(player.play(
+      argThat(predicate(
+          (Source s) => s is AssetSource && s.path == 'system-ready.oga')),
+    )).called(1);
   });
 }

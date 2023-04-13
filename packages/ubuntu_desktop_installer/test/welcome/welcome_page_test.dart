@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -20,7 +21,7 @@ import 'welcome_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([TelemetryService])
+@GenerateMocks([AudioPlayer, TelemetryService])
 void main() {
   late MaterialApp app;
 
@@ -51,7 +52,8 @@ void main() {
     await tester.pumpWidget(
       MultiProvider(providers: [
         ChangeNotifierProvider(
-          create: (_) => WelcomeModel(client),
+          create: (_) =>
+              WelcomeModel(client: client, player: MockAudioPlayer()),
         ),
       ], child: InheritedLocale(child: app)),
     );
