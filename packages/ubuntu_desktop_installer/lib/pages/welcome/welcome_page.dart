@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -18,8 +19,9 @@ class WelcomePage extends StatefulWidget {
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
+    final player = tryGetService<AudioPlayer>();
     return ChangeNotifierProvider(
-      create: (_) => WelcomeModel(client),
+      create: (_) => WelcomeModel(client: client, player: player),
       child: const WelcomePage(),
     );
   }
@@ -36,6 +38,7 @@ class _WelcomePageState extends State<WelcomePage> {
     final model = Provider.of<WelcomeModel>(context, listen: false);
     model.loadLanguages().then((_) {
       model.selectLocale(InheritedLocale.of(context));
+      model.playWelcomeSound();
     });
   }
 

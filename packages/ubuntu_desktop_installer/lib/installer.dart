@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -71,6 +72,7 @@ Future<void> runInstallerApp(
   final baseName = p.basename(Platform.resolvedExecutable);
 
   // conditional registration if not already registered by flavors or tests
+  if (liveRun) tryRegisterService(AudioPlayer.new);
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService(() => DiskStorageService(getService<SubiquityClient>()));

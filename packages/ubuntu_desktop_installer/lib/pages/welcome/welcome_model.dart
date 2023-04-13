@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -13,9 +14,14 @@ final log = Logger('welcome');
 /// Implements the business logic of the welcome page.
 class WelcomeModel extends SafeChangeNotifier {
   /// Creates a model with the specified [client].
-  WelcomeModel(this._client);
+  WelcomeModel({
+    required SubiquityClient client,
+    required AudioPlayer? player,
+  })  : _client = client,
+        _player = player;
 
   final SubiquityClient _client;
+  final AudioPlayer? _player;
 
   /// The index of the currently selected language.
   int get selectedLanguageIndex => _selectedLanguageIndex;
@@ -55,6 +61,9 @@ class WelcomeModel extends SafeChangeNotifier {
 
   /// Returns the name of the language at the given [index].
   String language(int index) => _languageList[index].name;
+
+  Future<void> playWelcomeSound() async =>
+      _player?.play(AssetSource('system-ready.oga'));
 
   /// Searches for a language matching the given [query].
   ///
