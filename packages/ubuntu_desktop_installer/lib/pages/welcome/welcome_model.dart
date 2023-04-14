@@ -6,7 +6,7 @@ import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart' show KeySearchX;
 
 import '../../l10n.dart';
-import '../../services/sound_service.dart';
+import '../../services.dart';
 
 /// @internal
 final log = Logger('welcome');
