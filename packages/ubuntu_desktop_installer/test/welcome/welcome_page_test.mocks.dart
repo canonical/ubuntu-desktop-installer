@@ -6,7 +6,7 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_desktop_installer/services/canberra_service.dart' as _i2;
+import 'package:ubuntu_desktop_installer/services/sound_service.dart' as _i2;
 import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
     as _i4;
 
@@ -21,11 +21,11 @@ import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [CanberraService].
+/// A class which mocks [SoundService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockCanberraService extends _i1.Mock implements _i2.CanberraService {
-  MockCanberraService() {
+class MockSoundService extends _i1.Mock implements _i2.SoundService {
+  MockSoundService() {
     _i1.throwOnMissingStub(this);
   }
 

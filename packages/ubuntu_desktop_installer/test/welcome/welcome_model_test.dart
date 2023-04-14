@@ -13,18 +13,18 @@ import 'welcome_page_test.mocks.dart';
 void main() {
   test('load languages', () async {
     final client = MockSubiquityClient();
-    final canberra = MockCanberraService();
+    final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, canberra: canberra);
+    final model = WelcomeModel(client: client, sound: sound);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
   });
 
   test('sort languages', () async {
     final client = MockSubiquityClient();
-    final canberra = MockCanberraService();
+    final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, canberra: canberra);
+    final model = WelcomeModel(client: client, sound: sound);
     await model.loadLanguages();
 
     final languages = List.generate(model.languageCount, model.language);
@@ -37,9 +37,9 @@ void main() {
 
   test('select locale', () async {
     final client = MockSubiquityClient();
-    final canberra = MockCanberraService();
+    final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, canberra: canberra);
+    final model = WelcomeModel(client: client, sound: sound);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
@@ -63,18 +63,18 @@ void main() {
   test('set locale', () {
     final client = MockSubiquityClient();
     when(client.setLocale('fr_CA.UTF-8')).thenAnswer((_) async {});
-    final canberra = MockCanberraService();
+    final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, canberra: canberra);
+    final model = WelcomeModel(client: client, sound: sound);
     model.applyLocale(Locale('fr', 'CA'));
     verify(client.setLocale('fr_CA.UTF-8')).called(1);
   });
 
   test('selected language', () {
     final client = MockSubiquityClient();
-    final canberra = MockCanberraService();
+    final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, canberra: canberra);
+    final model = WelcomeModel(client: client, sound: sound);
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -91,9 +91,9 @@ void main() {
 
   test('search language', () async {
     final client = MockSubiquityClient();
-    final canberra = MockCanberraService();
+    final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, canberra: canberra);
+    final model = WelcomeModel(client: client, sound: sound);
     await model.loadLanguages();
 
     final english = model.searchLanguage('eng');
@@ -126,10 +126,10 @@ void main() {
 
   test('play welcome sound', () async {
     final client = MockSubiquityClient();
-    final canberra = MockCanberraService();
+    final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, canberra: canberra);
+    final model = WelcomeModel(client: client, sound: sound);
     await model.playWelcomeSound();
-    verify(canberra.play('system-ready')).called(1);
+    verify(sound.play('system-ready')).called(1);
   });
 }
