@@ -58,10 +58,10 @@ dependencies:
       path: packages/ubuntu_wizard
   udev: ^0.0.2
   upower: ^0.7.0
-  yaru: ^0.6.2
+  yaru: ^0.7.0
   yaru_colors: ^0.1.6
   yaru_icons: ^1.0.0
-  yaru_widgets: ^2.2.0
+  yaru_widgets: ^2.4.0
 
 dev_dependencies:
   build_runner: ^2.2.0
