@@ -18,8 +18,9 @@ class WelcomePage extends StatefulWidget {
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
+    final sound = tryGetService<SoundService>();
     return ChangeNotifierProvider(
-      create: (_) => WelcomeModel(client),
+      create: (_) => WelcomeModel(client: client, sound: sound),
       child: const WelcomePage(),
     );
   }
@@ -36,6 +37,7 @@ class _WelcomePageState extends State<WelcomePage> {
     final model = Provider.of<WelcomeModel>(context, listen: false);
     model.loadLanguages().then((_) {
       model.selectLocale(InheritedLocale.of(context));
+      model.playWelcomeSound();
     });
   }
 

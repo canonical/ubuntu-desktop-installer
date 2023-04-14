@@ -71,6 +71,7 @@ Future<void> runInstallerApp(
   final baseName = p.basename(Platform.resolvedExecutable);
 
   // conditional registration if not already registered by flavors or tests
+  if (liveRun) tryRegisterService(SoundService.new);
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService(() => DiskStorageService(getService<SubiquityClient>()));

@@ -20,7 +20,7 @@ import 'welcome_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([TelemetryService])
+@GenerateMocks([SoundService, TelemetryService])
 void main() {
   late MaterialApp app;
 
@@ -51,7 +51,8 @@ void main() {
     await tester.pumpWidget(
       MultiProvider(providers: [
         ChangeNotifierProvider(
-          create: (_) => WelcomeModel(client),
+          create: (_) =>
+              WelcomeModel(client: client, sound: MockSoundService()),
         ),
       ], child: InheritedLocale(child: app)),
     );
