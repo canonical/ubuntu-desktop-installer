@@ -36,7 +36,7 @@ dependencies:
       path: packages/ubuntu_wizard
   yaru: ^0.7.0
   yaru_icons: ^1.0.0
-  yaru_widgets: ^2.2.0
+  yaru_widgets: ^2.4.0
 
 dev_dependencies:
   build_runner: ^2.2.0
