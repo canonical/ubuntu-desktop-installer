@@ -103,7 +103,7 @@
   },
   "notEnoughDiskSpaceRequired": "Vyžadované:",
   "@notEnoughDiskSpaceRequired": {},
-  "activeDirectoryTitle": "Nastaviť pre Active Directory",
+  "activeDirectoryTitle": "Konfigurácia služby Active Directory",
   "@activeDirectoryTitle": {},
   "installationSlidesCreativityBody": "Ak ste animátormi, dizajnérmi, tvorcami videí či vývojármi hier, je ľahké preniesť svoje pracovné postupy na {DISTRO} vďaka podpore softvéru a aplikácií, ktoré patria k open source a priemyselným štandardom.",
   "@installationSlidesCreativityBody": {
