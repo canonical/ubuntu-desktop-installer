@@ -24,6 +24,7 @@ final testDisks = <Disk>[
     preserve: false,
     partitions: [
       Partition(
+        path: '/dev/sda1',
         number: 1,
         size: 11,
         mount: '/mnt/1',
@@ -31,6 +32,7 @@ final testDisks = <Disk>[
         preserve: false,
       ),
       Partition(
+        path: '/dev/sda2',
         number: 2,
         size: 22,
         mount: '/mnt/2',
@@ -45,6 +47,7 @@ final testDisks = <Disk>[
     preserve: false,
     partitions: [
       Partition(
+        path: '/dev/sdb3',
         number: 3,
         size: 33,
         wipe: 'superblock',
@@ -52,22 +55,26 @@ final testDisks = <Disk>[
         format: 'ext3',
       ),
       Partition(
+        path: '/dev/sdb4',
         number: 4,
         size: 44,
         wipe: 'superblock',
         format: 'ext4',
       ),
       Partition(
+        path: '/dev/sdb5',
         number: 5,
         size: 55,
         mount: '/mnt/5',
       ),
       Partition(
+        path: '/dev/sdb6',
         number: 6,
         size: 66,
         resize: true,
       ),
       Partition(
+        path: '/dev/sdb7',
         number: 7,
         preserve: false,
         wipe: 'superblock',
@@ -136,8 +143,8 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-        find.html(tester.lang
-            .writeChangesPartitionFormattedMounted('sdb', 3, 'ext3', '/mnt/3')),
+        find.html(tester.lang.writeChangesPartitionFormattedMounted(
+            '', 'sdb3', 'ext3', '/mnt/3')),
         findsOneWidget);
     expect(
         find.html(tester.lang.writeChangesPartitionFormatted('sdb', 4, 'ext4')),
