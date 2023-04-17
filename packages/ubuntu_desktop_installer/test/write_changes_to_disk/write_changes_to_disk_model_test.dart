@@ -45,9 +45,21 @@ void main() {
         Partition(number: 4, resize: true),
       ],
     ),
+    testDisk(
+      path: '/dev/sde',
+      preserve: true,
+      partitions: [
+        Partition(number: 1, preserve: true),
+      ],
+    ),
   ];
 
-  final nonPreservedDisks = <Disk>[testDisks[0], testDisks[1], testDisks[2]];
+  final modifiedDisks = <Disk>[
+    testDisks[0],
+    testDisks[1],
+    testDisks[2],
+    testDisks[3],
+  ];
 
   test('get storage', () async {
     final client = MockSubiquityClient();
@@ -64,7 +76,7 @@ void main() {
     ]);
     verifyNever(service.setGuidedStorage());
 
-    expect(model.disks, equals(nonPreservedDisks));
+    expect(model.disks, equals(modifiedDisks));
     expect(
       model.partitions,
       equals({
@@ -106,7 +118,7 @@ void main() {
     when(service.guidedTarget).thenReturn(null);
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
-    when(service.setStorage()).thenAnswer((_) async => nonPreservedDisks);
+    when(service.setStorage()).thenAnswer((_) async => modifiedDisks);
 
     final model = WriteChangesToDiskModel(client, service);
     await model.init();
