@@ -244,6 +244,7 @@ class PartitionButtonRow extends StatelessWidget {
                           context,
                           model.selectedDisk!,
                           model.selectedPartition!,
+                          model.selectedConfig,
                           model.trailingGap)
                       : null,
                   child: Text(lang.changeButtonText),

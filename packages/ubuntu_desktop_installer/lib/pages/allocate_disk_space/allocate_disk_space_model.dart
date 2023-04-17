@@ -36,6 +36,7 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
   final DiskStorageService _service;
 
   var _disks = <Disk>[];
+  var _originalConfigs = <String, Partition>{};
   var _selectedDiskIndex = -1;
   var _selectedObjectIndex = -1;
   int _bootDiskIndex = -1;
@@ -65,6 +66,18 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
     final object =
         selectedDisk?.partitions.elementAtOrNull(_selectedObjectIndex + 1);
     return object is Gap && object.usable == GapUsable.YES ? object : null;
+  }
+
+  /// Returns the original config of the selected partition, or null if not a
+  /// preserved partition.
+  Partition? get selectedConfig => originalConfig(selectedPartition);
+
+  /// Returns the original config of the selected partition, or null if not a
+  /// preserved partition.
+  Partition? originalConfig(Partition? partition) {
+    return partition?.preserve == true
+        ? _originalConfigs[partition!.sysname]
+        : null;
   }
 
   /// Returns the selected object, or null if no partition or gap is selected.
@@ -197,6 +210,19 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
     }
     _bootDiskIndex = disks.indexWhere((disk) => disk.bootDevice == true);
     notifyListeners();
+  }
+
+  void _updateOriginalConfigs(List<Disk> disks) {
+    _originalConfigs = Map.fromEntries(disks
+        .expand((d) => d.partitions.whereType<Partition>())
+        .map((p) => MapEntry(p.sysname, p)));
+  }
+
+  Future<void> init() {
+    return Future.wait([
+      _service.getStorage().then(_updateDisks),
+      _service.getOriginalStorage().then(_updateOriginalConfigs),
+    ]);
   }
 
   @override

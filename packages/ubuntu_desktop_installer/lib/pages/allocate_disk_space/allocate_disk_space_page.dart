@@ -42,7 +42,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
     _scrollSubscription = model.onSelectionChanged.listen((_) {
       _scrollToSelection();
     });
-    model.getStorage().then((_) => _scrollToSelection());
+    model.init().then((_) => _scrollToSelection());
   }
 
   @override
