@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:collection/collection.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -80,6 +81,11 @@ AllocateDiskSpaceModel buildModel({
   final model = MockAllocateDiskSpaceModel();
   when(model.isValid).thenReturn(isValid ?? false);
   when(model.disks).thenReturn(disks ?? <Disk>[]);
+  when(model.originalConfig(any)).thenAnswer((i) {
+    return disks
+        ?.expand((d) => d.partitions.whereType<Partition>())
+        .firstWhereOrNull((p) => p.path == i.positionalArguments[0].path);
+  });
 
   when(model.selectedGap).thenReturn(selectedGap);
   when(model.selectedDisk).thenReturn(selectedDisk);
@@ -400,6 +406,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final storage = MockDiskStorageService();
     when(storage.getStorage()).thenAnswer((_) async => testDisks);
+    when(storage.getOriginalStorage()).thenAnswer((_) async => testDisks);
     when(storage.needRoot).thenReturn(false);
     when(storage.needBoot).thenReturn(false);
     registerMockService<DiskStorageService>(storage);

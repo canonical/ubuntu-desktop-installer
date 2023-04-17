@@ -117,7 +117,12 @@ Future<void> showCreatePartitionDialog(
 
 /// Shows a dialog for editing an existing partition on the given [disk].
 Future<void> showEditPartitionDialog(
-    BuildContext context, Disk disk, Partition partition, Gap? gap) {
+  BuildContext context,
+  Disk disk,
+  Partition partition,
+  Partition? originalConfig,
+  Gap? gap,
+) {
   final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
 
   return showDialog(
@@ -129,6 +134,10 @@ Future<void> showEditPartitionDialog(
           ValueNotifier(PartitionFormat.fromPartition(partition));
       final partitionWipe = ValueNotifier(partition.isWiped);
       final partitionMount = ValueNotifier(partition.mount);
+
+      bool forceWipe() {
+        return originalConfig?.mustWipe(partitionFormat.value?.type) != false;
+      }
 
       final lang = AppLocalizations.of(context);
       return AlertDialog(
@@ -173,12 +182,17 @@ Future<void> showEditPartitionDialog(
             ],
             <Widget>[
               const SizedBox.shrink(),
-              ValueListenableBuilder(
-                valueListenable: partitionFormat,
-                builder: (context, value, child) {
+              AnimatedBuilder(
+                animation: Listenable.merge([
+                  partitionFormat,
+                  partitionWipe,
+                ]),
+                builder: (context, child) {
                   return _PartitionWipeCheckbox(
-                    canWipe: partitionFormat.value?.canWipe == true,
-                    wipe: partitionWipe,
+                    canWipe:
+                        partitionFormat.value?.canWipe == true && !forceWipe(),
+                    wipe: partitionWipe.value || forceWipe(),
+                    onChanged: (v) => partitionWipe.value = v,
                   );
                 },
               ),
@@ -212,7 +226,7 @@ Future<void> showEditPartitionDialog(
                             size: partitionSize.value,
                             format: partitionFormat.value,
                             mount: partitionMount.value,
-                            wipe: partitionWipe.value,
+                            wipe: partitionWipe.value || forceWipe(),
                           );
                           Navigator.of(context).pop();
                         }
@@ -277,23 +291,20 @@ class _PartitionWipeCheckbox extends StatelessWidget {
   const _PartitionWipeCheckbox({
     required this.canWipe,
     required this.wipe,
+    required this.onChanged,
   });
 
   final bool canWipe;
-  final ValueNotifier<bool?> wipe;
+  final bool? wipe;
+  final ValueChanged<bool> onChanged;
 
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    return ValueListenableBuilder<bool?>(
-      valueListenable: wipe,
-      builder: (context, value, child) {
-        return YaruCheckButton(
-          title: Text(lang.partitionErase),
-          value: value ?? false,
-          onChanged: canWipe ? (v) => wipe.value = v! : null,
-        );
-      },
+    return YaruCheckButton(
+      title: Text(lang.partitionErase),
+      value: wipe ?? false,
+      onChanged: canWipe ? (v) => onChanged(v!) : null,
     );
   }
 }

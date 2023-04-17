@@ -1,10 +1,12 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+import 'allocate_disk_space_model.dart';
 import 'storage_types.dart';
 
 typedef DiskBuilder = Widget Function(BuildContext context, Disk disk);
@@ -186,9 +188,12 @@ class StorageWipeColumn extends StorageColumn {
             return const SizedBox.shrink();
           },
           partitionBuilder: (context, disk, partition) {
+            final model = context.read<AllocateDiskSpaceModel>();
+            final config = model.originalConfig(partition);
+            final forceWipe = config?.mustWipe(partition.format) != false;
             return YaruCheckbox(
-              value: partition.isWiped,
-              onChanged: partition.canWipe
+              value: partition.isWiped || forceWipe,
+              onChanged: partition.canWipe && !forceWipe
                   ? (wipe) => onWipe(disk, partition, wipe!)
                   : null,
             );

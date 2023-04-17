@@ -19,6 +19,10 @@ extension PartitionExtension on Partition {
   bool get isEncrypted => format == 'BitLocker';
   bool get isWiped => wipe == 'superblock';
   String get prettySize => filesize(size ?? 0);
+  bool mustWipe(String? format) {
+    // a preserved partition must be wiped if its format changed
+    return preserve == true && format != null && this.format != format;
+  }
 }
 
 /// Available partition formats.

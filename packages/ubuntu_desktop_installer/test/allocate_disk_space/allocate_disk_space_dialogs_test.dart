@@ -125,6 +125,7 @@ void main() {
       tester.element(find.byType(AllocateDiskSpacePage)),
       disk,
       disk.partitions.whereType<Partition>().first,
+      null,
       disk.partitions.whereType<Gap>().first,
     );
     await tester.pumpAndSettle();
@@ -159,7 +160,7 @@ void main() {
       disk.partitions.whereType<Partition>().first,
       size: 123,
       format: PartitionFormat.btrfs,
-      wipe: false,
+      wipe: true,
       mount: '/tst',
     )).called(1);
   });
@@ -194,6 +195,7 @@ void main() {
       tester.element(find.byType(AllocateDiskSpacePage)),
       disk,
       disk.partitions.whereType<Partition>().first,
+      null,
       disk.partitions.whereType<Gap>().first,
     );
     await tester.pumpAndSettle();
