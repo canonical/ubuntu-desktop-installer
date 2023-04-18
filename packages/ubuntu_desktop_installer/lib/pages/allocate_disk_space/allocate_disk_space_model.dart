@@ -218,11 +218,9 @@ class AllocateDiskSpaceModel extends SafeChangeNotifier {
         .map((p) => MapEntry(p.sysname, p)));
   }
 
-  Future<void> init() {
-    return Future.wait([
-      _service.getStorage().then(_updateDisks),
-      _service.getOriginalStorage().then(_updateOriginalConfigs),
-    ]);
+  Future<void> init() async {
+    await _service.getOriginalStorage().then(_updateOriginalConfigs);
+    return _service.getStorage().then(_updateDisks);
   }
 
   @override
