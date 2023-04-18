@@ -43,11 +43,6 @@ class MockInstallationTypeModel extends _i1.Mock
   }
 
   @override
-  _i3.InstallationType get installationType => (super.noSuchMethod(
-        Invocation.getter(#installationType),
-        returnValue: _i3.InstallationType.erase,
-      ) as _i3.InstallationType);
-  @override
   set installationType(_i3.InstallationType? type) => super.noSuchMethod(
         Invocation.setter(
           #installationType,
