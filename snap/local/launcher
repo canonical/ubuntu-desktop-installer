@@ -47,4 +47,4 @@ trap "sudo rm -f /run/udev/rules.d/90-udisks-inhibit.rules; sudo udevadm control
 sudo udevadm control --reload
 sudo udevadm trigger --subsystem-match=block
 
-exec "$@"
+"$@"
