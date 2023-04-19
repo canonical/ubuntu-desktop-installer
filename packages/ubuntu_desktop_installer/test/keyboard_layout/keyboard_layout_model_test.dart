@@ -1,9 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:platform/platform.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
+
+import 'keyboard_layout_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
@@ -28,14 +32,17 @@ KeyboardSetup testSetup(
   return KeyboardSetup(setting: setting, layouts: layouts);
 }
 
+@GenerateMocks([TelemetryService])
 void main() {
   group('detect layout and variant when', () {
     late MockSubiquityClient client;
+    late MockTelemetryService telemetry;
     late KeyboardLayoutModel model;
 
     setUp(() {
       client = MockSubiquityClient();
-      model = KeyboardLayoutModel(client);
+      telemetry = MockTelemetryService();
+      model = KeyboardLayoutModel(client, telemetry);
     });
 
     test('layouts=[]', () async {
@@ -95,6 +102,7 @@ void main() {
   group('layout and variant', () {
     late KeyboardLayoutModel model;
     late SubiquityClient client;
+    late TelemetryService telemetry;
 
     setUp(() async {
       client = MockSubiquityClient();
@@ -108,7 +116,9 @@ void main() {
         ], layout: '', variant: '');
       });
 
-      model = KeyboardLayoutModel(client,
+      telemetry = MockTelemetryService();
+
+      model = KeyboardLayoutModel(client, telemetry,
           platform: FakePlatform(environment: {'USERNAME': 'usr'}));
       await model.init();
     });
@@ -230,7 +240,9 @@ void main() {
       ], layout: '', variant: '');
     });
 
-    final model = KeyboardLayoutModel(client);
+    final telemetry = MockTelemetryService();
+
+    final model = KeyboardLayoutModel(client, telemetry);
 
     await model.init();
     await model.selectLayout(1);
@@ -252,7 +264,9 @@ void main() {
       ], layout: '', variant: '');
     });
 
-    final model = KeyboardLayoutModel(client);
+    final telemetry = MockTelemetryService();
+
+    final model = KeyboardLayoutModel(client, telemetry);
 
     await model.init();
     expect(model.layoutCount, equals(3));
@@ -273,7 +287,9 @@ void main() {
       ], layout: '', variant: '');
     });
 
-    final model = KeyboardLayoutModel(client);
+    final telemetry = MockTelemetryService();
+
+    final model = KeyboardLayoutModel(client, telemetry);
     await model.init();
 
     // case-insensitive

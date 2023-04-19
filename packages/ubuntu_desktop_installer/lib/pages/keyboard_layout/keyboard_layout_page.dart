@@ -18,7 +18,8 @@ class KeyboardLayoutPage extends StatefulWidget {
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => KeyboardLayoutModel(getService<SubiquityClient>()),
+      create: (_) => KeyboardLayoutModel(
+          getService<SubiquityClient>(), getService<TelemetryService>()),
       child: const KeyboardLayoutPage(),
     );
   }

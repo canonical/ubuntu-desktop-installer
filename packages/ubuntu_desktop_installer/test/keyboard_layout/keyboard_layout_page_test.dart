@@ -15,6 +15,7 @@ import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../test_utils.dart';
+import 'keyboard_layout_model_test.mocks.dart';
 import 'keyboard_layout_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
@@ -203,7 +204,9 @@ void main() {
         KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     when(client.setInputSource(KeyboardSetting(layout: '')))
         .thenAnswer((_) async {});
+    final telemetry = MockTelemetryService();
     registerMockService<SubiquityClient>(client);
+    registerMockService<TelemetryService>(telemetry);
 
     await tester.pumpWidget(tester.buildApp(KeyboardLayoutPage.create));
 
