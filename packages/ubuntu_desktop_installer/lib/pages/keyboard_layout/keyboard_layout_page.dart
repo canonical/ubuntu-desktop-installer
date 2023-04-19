@@ -8,6 +8,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+import '../../widgets/scoped_list_focus.dart';
 import 'keyboard_layout_dialogs.dart';
 import 'keyboard_layout_model.dart';
 
@@ -76,21 +77,24 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ListWidget.builder(
-                      selectedIndex: model.selectedLayoutIndex,
-                      itemCount: model.layoutCount,
-                      itemBuilder: (context, index) => ListTile(
-                        key: ValueKey(index),
-                        title: Text(model.layoutName(index)),
-                        selected: index == model.selectedLayoutIndex,
-                        onTap: () => model.selectLayout(index),
+                    child: ScopedListFocus(
+                      child: ListWidget.builder(
+                        selectedIndex: model.selectedLayoutIndex,
+                        itemCount: model.layoutCount,
+                        itemBuilder: (context, index) => ListTile(
+                          key: ValueKey(index),
+                          title: Text(model.layoutName(index)),
+                          selected: index == model.selectedLayoutIndex,
+                          autofocus: index == model.selectedLayoutIndex,
+                          onTap: () => model.selectLayout(index),
+                        ),
+                        onKeySearch: (value) {
+                          final index = model.searchLayout(value);
+                          if (index != -1) {
+                            model.selectLayout(index);
+                          }
+                        },
                       ),
-                      onKeySearch: (value) {
-                        final index = model.searchLayout(value);
-                        if (index != -1) {
-                          model.selectLayout(index);
-                        }
-                      },
                     ),
                   ),
                 ],

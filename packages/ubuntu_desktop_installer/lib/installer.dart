@@ -89,6 +89,8 @@ Future<void> runInstallerApp(
 
   WidgetsFlutterBinding.ensureInitialized();
 
+  debugFocusChanges = true;
+
   await runWizardApp(
     InheritedLocale(
       child: UbuntuDesktopInstallerApp(
@@ -201,6 +203,9 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
               final theme = widget.flavor.theme ?? yaru.theme;
               final darkTheme = widget.flavor.darkTheme ?? yaru.darkTheme;
               return MaterialApp(
+                shortcuts: Map.from(WidgetsApp.defaultShortcuts)
+                  ..removeWhere(
+                      (_, intent) => intent is DirectionalFocusIntent),
                 locale: InheritedLocale.of(context),
                 onGenerateTitle: (context) {
                   final lang = AppLocalizations.of(context);

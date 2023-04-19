@@ -9,6 +9,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
+import '../../widgets/scoped_list_focus.dart';
 import 'welcome_model.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -69,21 +70,24 @@ class _WelcomePageState extends State<WelcomePage> {
             Text(lang.welcomeHeader),
             const SizedBox(height: kContentSpacing / 2),
             Expanded(
-              child: ListWidget.builder(
-                selectedIndex: model.selectedLanguageIndex,
-                itemCount: model.languageCount,
-                itemBuilder: (context, index) => ListTile(
-                  key: ValueKey(index),
-                  title: Text(model.language(index)),
-                  selected: index == model.selectedLanguageIndex,
-                  onTap: () => _selectLanguage(index),
+              child: ScopedListFocus(
+                child: ListWidget.builder(
+                  selectedIndex: model.selectedLanguageIndex,
+                  itemCount: model.languageCount,
+                  itemBuilder: (context, index) => ListTile(
+                    key: ValueKey(index),
+                    title: Text(model.language(index)),
+                    selected: index == model.selectedLanguageIndex,
+                    autofocus: index == model.selectedLanguageIndex,
+                    onTap: () => _selectLanguage(index),
+                  ),
+                  onKeySearch: (value) {
+                    final index = model.searchLanguage(value);
+                    if (index != -1) {
+                      _selectLanguage(index);
+                    }
+                  },
                 ),
-                onKeySearch: (value) {
-                  final index = model.searchLanguage(value);
-                  if (index != -1) {
-                    _selectLanguage(index);
-                  }
-                },
               ),
             ),
             const SizedBox(height: kContentSpacing),

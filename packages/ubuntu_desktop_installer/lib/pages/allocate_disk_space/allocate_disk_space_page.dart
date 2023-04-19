@@ -73,29 +73,37 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
       title: YaruWindowTitleBar(
         title: Text(lang.allocateDiskSpace),
       ),
-      content: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          const PartitionBar(),
-          const SizedBox(height: kContentSpacing / 4),
-          const PartitionLegend(),
-          const SizedBox(height: kContentSpacing),
-          Expanded(child: PartitionTable(controller: _scrollController)),
-          const SizedBox(height: kContentSpacing / 2),
-          const PartitionButtonRow(),
-          const SizedBox(height: kContentSpacing / 2),
-          FractionallySizedBox(
-            widthFactor: 0.5,
-            alignment: Alignment.topLeft,
-            child: StorageSelector(
-              title: lang.bootLoaderDevice,
-              storages: model.disks,
-              selected: model.bootDiskIndex,
-              enabled: (disk) => disk.canBeBootDevice,
-              onSelected: (storage) => model.selectBootDisk(storage!),
+      content: FocusTraversalGroup(
+        policy: OrderedTraversalPolicy(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            const PartitionBar(),
+            const SizedBox(height: kContentSpacing / 4),
+            const PartitionLegend(),
+            const SizedBox(height: kContentSpacing),
+            Expanded(
+              child: FocusTraversalOrder(
+                order: const NumericFocusOrder(1),
+                child: PartitionTable(controller: _scrollController),
+              ),
             ),
-          ),
-        ],
+            const SizedBox(height: kContentSpacing / 2),
+            const PartitionButtonRow(),
+            const SizedBox(height: kContentSpacing / 2),
+            FractionallySizedBox(
+              widthFactor: 0.5,
+              alignment: Alignment.topLeft,
+              child: StorageSelector(
+                title: lang.bootLoaderDevice,
+                storages: model.disks,
+                selected: model.bootDiskIndex,
+                enabled: (disk) => disk.canBeBootDevice,
+                onSelected: (storage) => model.selectBootDisk(storage!),
+              ),
+            ),
+          ],
+        ),
       ),
       bottomBar: WizardBar(
         leading: WizardAction.back(context),

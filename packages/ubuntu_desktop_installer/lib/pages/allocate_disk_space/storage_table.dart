@@ -3,6 +3,7 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
+import '../../widgets/scoped_list_focus.dart';
 import 'storage_columns.dart';
 import 'storage_types.dart';
 
@@ -151,24 +152,26 @@ class StorageTable extends StatelessWidget {
               constraints: BoxConstraints(minWidth: constraints.minWidth),
               child: SingleChildScrollView(
                 controller: controller,
-                child: DataTable(
-                  dataRowHeight: kMinInteractiveDimension +
-                      theme.visualDensity.baseSizeAdjustment.dy,
-                  headingRowHeight: kMinInteractiveDimension +
-                      theme.visualDensity.baseSizeAdjustment.dy,
-                  showCheckboxColumn: false,
-                  headingTextStyle: theme.textTheme.titleSmall,
-                  dataTextStyle: theme.textTheme.bodyMedium,
-                  columns: columns
-                      .map((column) =>
-                          DataColumn(label: column.titleBuilder(context)))
-                      .toList(),
-                  rows: List.generate(storages.length, (index) {
-                    return _buildDataRows(context, diskIndex: index);
-                  }).fold<List<DataRow>>([], (allRows, diskRows) {
-                    allRows.addAll(diskRows);
-                    return allRows;
-                  }).toList(),
+                child: ScopedListFocus(
+                  child: DataTable(
+                    dataRowHeight: kMinInteractiveDimension +
+                        theme.visualDensity.baseSizeAdjustment.dy,
+                    headingRowHeight: kMinInteractiveDimension +
+                        theme.visualDensity.baseSizeAdjustment.dy,
+                    showCheckboxColumn: false,
+                    headingTextStyle: theme.textTheme.titleSmall,
+                    dataTextStyle: theme.textTheme.bodyMedium,
+                    columns: columns
+                        .map((column) =>
+                            DataColumn(label: column.titleBuilder(context)))
+                        .toList(),
+                    rows: List.generate(storages.length, (index) {
+                      return _buildDataRows(context, diskIndex: index);
+                    }).fold<List<DataRow>>([], (allRows, diskRows) {
+                      allRows.addAll(diskRows);
+                      return allRows;
+                    }).toList(),
+                  ),
                 ),
               ),
             ),
