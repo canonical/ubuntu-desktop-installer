@@ -188,6 +188,7 @@ void main() {
         install: true, drivers: [], localOnly: false, searchDrivers: false));
     when(client.getCodecs())
         .thenAnswer((_) async => const CodecsData(install: true));
+    when(client.hasNetwork()).thenAnswer((_) async => true);
     registerMockService<SubiquityClient>(client);
 
     final power = MockPowerService();
