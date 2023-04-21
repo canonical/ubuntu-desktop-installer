@@ -55,7 +55,7 @@ Future<void> runInstallerApp(
         help: 'Path of the machine config (dry-run only)');
     parser.addOption('source-catalog',
         valueHelp: 'path',
-        defaultsTo: 'examples/desktop-sources.yaml',
+        defaultsTo: 'examples/install-sources-canary.yaml',
         help: 'Path of the source catalog (dry-run only)');
     parser.addFlag('try-or-install', hide: true);
   })!;
