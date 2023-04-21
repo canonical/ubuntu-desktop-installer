@@ -320,7 +320,7 @@
       "format": {}
     }
   },
-  "readyToUse": "**{system}** je nainstalovaný a připravený k použití",
+  "readyToUse": "**{system}** je nainstalované a připravené k použití",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
