@@ -43,7 +43,7 @@
   "@turnOffRST": {},
   "turnOffRSTDescription": "Este computador usa Intel RST (Rapid Storage Technology). Precisa de desligar a RST no Windows antes de instalar o Ubuntu.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Abra esta página num telemóvel ou outro aparelho para encontrar instruções: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Para obter instruções, digitalize o código QR noutro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -80,7 +80,7 @@
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "As chaves de segurança não coincidem",
   "@secureBootSecurityKeysDontMatch": {},
-  "updatesOtherSoftwarePageTitle": "Atualizações e outros softwares",
+  "updatesOtherSoftwarePageTitle": "Aplicações e atualizações",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "Que aplicações gostaria de instalar para começar?",
   "@updatesOtherSoftwarePageDescription": {},
@@ -153,7 +153,7 @@
       "os": {}
     }
   },
-  "installationTypeAlongside": "Instalar o {product} junto com {os}",
+  "installationTypeAlongside": "Instalar o {product} junto com o {os}",
   "@installationTypeAlongside": {
     "type": "text",
     "placeholders": {
@@ -163,7 +163,7 @@
   },
   "installationTypeAlongsideInfo": "Documentos, músicas e outros ficheiros pessoais serão mantidos. Poderá selecionar qual o sistema operativo a usar cada vez que o computador iniciar.",
   "@installationTypeAlongsideInfo": {},
-  "installationTypeManual": "Opção avançada",
+  "installationTypeManual": "Particionamento manual",
   "@installationTypeManual": {},
   "selectGuidedStoragePageTitle": "Apagar o disco e instalar o {DISTRO}",
   "@selectGuidedStoragePageTitle": {},
@@ -173,11 +173,11 @@
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "Instalar agora",
   "@selectGuidedStorageInstallNow": {},
-  "allocateDiskSpace": "Alocar espaço em disco",
+  "allocateDiskSpace": "Particionamento manual",
   "@allocateDiskSpace": {},
   "startInstallingButtonText": "Instalar",
   "@startInstallingButtonText": {},
-  "diskHeadersDevice": "Aparelho",
+  "diskHeadersDevice": "Dispositivo",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Tipo",
   "@diskHeadersType": {},
@@ -189,7 +189,7 @@
   "@diskHeadersUsed": {},
   "diskHeadersSystem": "Sistema",
   "@diskHeadersSystem": {},
-  "diskHeadersFormat": "Formato",
+  "diskHeadersFormat": "Formatar",
   "@diskHeadersFormat": {},
   "freeDiskSpace": "Espaço livre",
   "@freeDiskSpace": {},
@@ -328,7 +328,7 @@
       "format": {}
     }
   },
-  "chooseYourLookPageTitle": "Escolha o seu visual",
+  "chooseYourLookPageTitle": "Escolha o seu tema",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "Pode sempre alterar isso depois nas configurações de aparência.",
   "@chooseYourLookPageHeader": {},
@@ -354,9 +354,9 @@
   },
   "shutdown": "Desligar",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "Desligar BitLocker",
+  "turnOffBitlockerTitle": "O BitLocker está ativo",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerLinkInstructions": "Para obter instruções, abra esta página num telefone ou outro aparelho: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Para obter instruções, digitalize o código QR noutro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -367,9 +367,9 @@
   "@restartIntoWindows": {},
   "windowTitle": "Instalar o {RELEASE}",
   "@windowTitle": {},
-  "whoAreYouPageTitle": "Quem é?",
+  "whoAreYouPageTitle": "Configure a sua conta",
   "@whoAreYouPageTitle": {},
-  "chooseSecurityKeyTitle": "Escolha uma chave de segurança",
+  "chooseSecurityKeyTitle": "Chave de segurança",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHeader": "A encriptação de disco protege os seus ficheiros em caso de perda do seu computador. Isso requer que digite uma chave de segurança a cada vez que o computador ligar.\n\nQuaisquer ficheiros fora do {RELEASE} não serão encriptados.",
   "@chooseSecurityKeyHeader": {
@@ -402,7 +402,7 @@
   },
   "whoAreYouPageInvalidComputerName": "O nome do computador não é válido",
   "@whoAreYouPageInvalidComputerName": {},
-  "turnOffBitlockerDescription": "Este computador usa criptografia do Windows BitLocker.\nPrecisa desativar o BitLocker no Windows antes de instalar o Ubuntu.",
+  "turnOffBitlockerDescription": "Este computador usa encriptação BitLocker do Windows.\nPrecisa de usar o Windows para libertar espaço ou escolha '{option}' para continuar.",
   "@turnOffBitlockerDescription": {},
   "welcomeHeader": "Escolha o seu idioma:",
   "@welcomeHeader": {},
@@ -440,7 +440,7 @@
   "@installationTypeMultiOSDetected": {},
   "newPartitionTableConfirmationMessage": "A criação de uma nova tabela de partições num dispositivo inteiro irá remover todas as suas atuais partições. Esta operação pode ser anulada, se necessário.",
   "@newPartitionTableConfirmationMessage": {},
-  "connectToInternetPageTitle": "Ligar à Internet",
+  "connectToInternetPageTitle": "Ligar a uma rede",
   "@connectToInternetPageTitle": {},
   "whoAreYouPageUsernameInvalidChars": "Esse nome contém caracteres inválidos.",
   "@whoAreYouPageUsernameInvalidChars": {},
@@ -457,15 +457,15 @@
   "@quitButtonText": {},
   "connectToInternetDescription": "Ao ligar este computador à Internet irá ajudar o Ubuntu a instalar qualquer software extra necessário e ajudá-lo com o seu fuso horário.\n\nLigar por cabo de rede, ou escolha uma rede Wi-Fi",
   "@connectToInternetDescription": {},
-  "useWiredConnection": "Usar uma ligação por cabo",
+  "useWiredConnection": "Usar uma ligação por cabo de rede",
   "@useWiredConnection": {},
-  "noWiredConnection": "Ligação por cabo detetada",
+  "noWiredConnection": "Ligação por cabo de rede detetada",
   "@noWiredConnection": {},
-  "wiredDisabled": "Ligação por cabo está desligada",
+  "wiredDisabled": "Ligação por cabo de rede está desligada",
   "@wiredDisabled": {},
-  "wiredMustBeEnabled": "Para usar Ethernet neste computador, uma ligação por cabo deve ser ativada",
+  "wiredMustBeEnabled": "Para usar Ethernet neste computador, uma ligação por cabo de rede deve ser ativada",
   "@wiredMustBeEnabled": {},
-  "enableWired": "Ligação por cabo ativada",
+  "enableWired": "Ligação por cabo de rede ativada",
   "@enableWired": {},
   "selectWifiNetwork": "Ligar a uma rede Wi-Fi",
   "@selectWifiNetwork": {},
@@ -482,7 +482,7 @@
       "os2": {}
     }
   },
-  "installationTypeAlongsideMulti": "Instalar o {product} ao lado deles",
+  "installationTypeAlongsideMulti": "Instalar o {product} a seu lado",
   "@installationTypeAlongsideMulti": {
     "type": "text",
     "placeholders": {
@@ -521,7 +521,7 @@
       "partition": {}
     }
   },
-  "whereAreYouPageTitle": "Onde está?",
+  "whereAreYouPageTitle": "Selecione o seu fuso-horário",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "Localização",
   "@whereAreYouLocationLabel": {},
@@ -627,7 +627,7 @@
   "@installDriversTitle": {},
   "installDriversSubtitle": "Estes controladores estão sujeitos aos termos de licença incluídos com sua documentação. São proprietários.",
   "@installDriversSubtitle": {},
-  "installCodecsTitle": "Baixar e instalar suporte para formatos de multimédia adicionais",
+  "installCodecsTitle": "Transferir e instalar suporte para formatos de multimédia adicionais",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Este software está sujeito aos termos de licença incluídos com a sua documentação. Alguns são proprietários.",
   "@installCodecsSubtitle": {},
@@ -742,7 +742,7 @@
   "@whoAreYouPagePasswordShow": {},
   "whoAreYouPagePasswordHide": "Ocultar",
   "@whoAreYouPagePasswordHide": {},
-  "offlineWarning": "Você está off-line no momento",
+  "offlineWarning": "De momento está off-line",
   "@offlineWarning": {},
   "partitionFormatNone": "Deixar sem formatação",
   "@partitionFormatNone": {},
@@ -946,5 +946,16 @@
   "activeDirectoryErrorMessage": "Lamentamos, o Active Directory não pode ser criado neste momento. Assim que o seu sistema estiver instalado e a funcionar, visite o <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para ajuda.",
   "@activeDirectoryErrorMessage": {},
   "turnOffRSTTitle": "Desligue a RST para continuar",
-  "@turnOffRSTTitle": {}
+  "@turnOffRSTTitle": {},
+  "turnOffBitlockerHeadline": "Desligue o BitLocker para continuar",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "Reiniciar no Windows?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Tem a certeza de que deseja reiniciar o computador? Precisará de reiniciar a instalação do {DISTRO} mais tarde para concluir a instalação do {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
