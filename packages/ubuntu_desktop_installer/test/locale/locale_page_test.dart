@@ -6,8 +6,8 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
+import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
+import 'package:ubuntu_desktop_installer/pages/locale/locale_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -16,7 +16,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../test_utils.dart';
-import 'welcome_page_test.mocks.dart';
+import 'locale_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
@@ -38,7 +38,7 @@ void main() {
         data: const FlavorData(name: 'Ubuntu'),
         child: Wizard(
           routes: <String, WizardRoute>{
-            Routes.welcome: WizardRoute(builder: (_) => WelcomePage()),
+            Routes.locale: WizardRoute(builder: (_) => LocalePage()),
             Routes.tryOrInstall:
                 WizardRoute(builder: (_) => Text(Routes.tryOrInstall)),
           },
@@ -51,13 +51,12 @@ void main() {
     await tester.pumpWidget(
       MultiProvider(providers: [
         ChangeNotifierProvider(
-          create: (_) =>
-              WelcomeModel(client: client, sound: MockSoundService()),
+          create: (_) => LocaleModel(client: client, sound: MockSoundService()),
         ),
       ], child: InheritedLocale(child: app)),
     );
     await tester.pumpAndSettle();
-    expect(find.byType(WelcomePage), findsOneWidget);
+    expect(find.byType(LocalePage), findsOneWidget);
   }
 
   testWidgets('should display a list of languages', (tester) async {
@@ -161,7 +160,7 @@ void main() {
     await tester.tap(continueButton);
     await tester.pumpAndSettle();
 
-    expect(find.byType(WelcomePage), findsNothing);
+    expect(find.byType(LocalePage), findsNothing);
     expect(find.text(Routes.tryOrInstall), findsOneWidget);
   });
 }

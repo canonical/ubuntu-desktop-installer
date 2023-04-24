@@ -31,7 +31,7 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    expect(find.byType(WelcomePage), findsOneWidget);
+    expect(find.byType(LocalePage), findsOneWidget);
   });
 
   testWidgets('automated installation with confirmation', (tester) async {

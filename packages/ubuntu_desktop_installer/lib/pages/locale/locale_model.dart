@@ -9,12 +9,12 @@ import '../../l10n.dart';
 import '../../services.dart';
 
 /// @internal
-final log = Logger('welcome');
+final log = Logger('locale');
 
-/// Implements the business logic of the welcome page.
-class WelcomeModel extends SafeChangeNotifier {
+/// Implements the business logic of the locale page.
+class LocaleModel extends SafeChangeNotifier {
   /// Creates a model with the specified [client].
-  WelcomeModel({
+  LocaleModel({
     required SubiquityClient client,
     required SoundService? sound,
   })  : _client = client,
