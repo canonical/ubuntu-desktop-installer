@@ -354,7 +354,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Asenna $product käyttöjärjestelmän \"$os\" tilalle';
+    return 'Asenna $product käyttöjärjestelmän \"$os\" rinnalle';
   }
 
   @override
@@ -427,7 +427,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get allocateDiskSpace => 'Manuaalinen osiointi';
 
   @override
-  String get startInstallingButtonText => 'Asennus';
+  String get startInstallingButtonText => 'Asenna';
 
   @override
   String get diskHeadersDevice => 'Laite';

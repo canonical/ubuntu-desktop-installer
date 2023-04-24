@@ -96,7 +96,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String instructionsForRST(Object url) {
-    return 'Abra esta página num telemóvel ou outro aparelho para encontrar instruções: <a href=\"https://$url\">$url</a>';
+    return 'Para obter instruções, digitalize o código QR noutro dispositivo ou visite: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -154,25 +154,25 @@ class AppLocalizationsPt extends AppLocalizations {
   String get showSecurityKey => 'Mostrar chave de segurança';
 
   @override
-  String get connectToInternetPageTitle => 'Ligar à Internet';
+  String get connectToInternetPageTitle => 'Ligar a uma rede';
 
   @override
   String get connectToInternetDescription => 'Ao ligar este computador à Internet irá ajudar o Ubuntu a instalar qualquer software extra necessário e ajudá-lo com o seu fuso horário.\n\nLigar por cabo de rede, ou escolha uma rede Wi-Fi';
 
   @override
-  String get useWiredConnection => 'Usar uma ligação por cabo';
+  String get useWiredConnection => 'Usar uma ligação por cabo de rede';
 
   @override
-  String get noWiredConnection => 'Ligação por cabo detetada';
+  String get noWiredConnection => 'Ligação por cabo de rede detetada';
 
   @override
-  String get wiredDisabled => 'Ligação por cabo está desligada';
+  String get wiredDisabled => 'Ligação por cabo de rede está desligada';
 
   @override
-  String get wiredMustBeEnabled => 'Para usar Ethernet neste computador, uma ligação por cabo deve ser ativada';
+  String get wiredMustBeEnabled => 'Para usar Ethernet neste computador, uma ligação por cabo de rede deve ser ativada';
 
   @override
-  String get enableWired => 'Ligação por cabo ativada';
+  String get enableWired => 'Ligação por cabo de rede ativada';
 
   @override
   String get selectWifiNetwork => 'Ligar a uma rede Wi-Fi';
@@ -205,7 +205,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get connectButtonText => 'Ligar';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Atualizações e outros softwares';
+  String get updatesOtherSoftwarePageTitle => 'Aplicações e atualizações';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Que aplicações gostaria de instalar para começar?';
@@ -238,7 +238,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installDriversSubtitle => 'Estes controladores estão sujeitos aos termos de licença incluídos com sua documentação. São proprietários.';
 
   @override
-  String get installCodecsTitle => 'Baixar e instalar suporte para formatos de multimédia adicionais';
+  String get installCodecsTitle => 'Transferir e instalar suporte para formatos de multimédia adicionais';
 
   @override
   String get installCodecsSubtitle => 'Este software está sujeito aos termos de licença incluídos com a sua documentação. Alguns são proprietários.';
@@ -249,10 +249,10 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'Você está off-line no momento';
+  String get offlineWarning => 'De momento está off-line';
 
   @override
-  String get chooseSecurityKeyTitle => 'Escolha uma chave de segurança';
+  String get chooseSecurityKeyTitle => 'Chave de segurança';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -354,7 +354,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Instalar o $product junto com $os';
+    return 'Instalar o $product junto com o $os';
   }
 
   @override
@@ -364,7 +364,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Instalar o $product ao lado deles';
+    return 'Instalar o $product a seu lado';
   }
 
   @override
@@ -376,7 +376,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Documentos, músicas e outros ficheiros pessoais serão mantidos. Poderá selecionar qual o sistema operativo a usar cada vez que o computador iniciar.';
 
   @override
-  String get installationTypeManual => 'Opção avançada';
+  String get installationTypeManual => 'Particionamento manual';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -424,13 +424,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installAlongsideAvailable => 'Disponível:';
 
   @override
-  String get allocateDiskSpace => 'Alocar espaço em disco';
+  String get allocateDiskSpace => 'Particionamento manual';
 
   @override
   String get startInstallingButtonText => 'Instalar';
 
   @override
-  String get diskHeadersDevice => 'Aparelho';
+  String get diskHeadersDevice => 'Dispositivo';
 
   @override
   String get diskHeadersType => 'Tipo';
@@ -448,7 +448,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get diskHeadersSystem => 'Sistema';
 
   @override
-  String get diskHeadersFormat => 'Formato';
+  String get diskHeadersFormat => 'Formatar';
 
   @override
   String get freeDiskSpace => 'Espaço livre';
@@ -571,7 +571,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partitionMountPointLabel => 'Ponto de montagem:';
 
   @override
-  String get whoAreYouPageTitle => 'Quem é?';
+  String get whoAreYouPageTitle => 'Configure a sua conta';
 
   @override
   String get whoAreYouPageAutoLogin => 'Iniciar sessão automaticamente';
@@ -694,7 +694,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Escolha o seu visual';
+  String get chooseYourLookPageTitle => 'Escolha o seu tema';
 
   @override
   String get chooseYourLookPageHeader => 'Pode sempre alterar isso depois nas configurações de aparência.';
@@ -733,34 +733,34 @@ class AppLocalizationsPt extends AppLocalizations {
   String get continueTesting => 'Continuar a testar';
 
   @override
-  String get turnOffBitlockerTitle => 'Desligar BitLocker';
+  String get turnOffBitlockerTitle => 'O BitLocker está ativo';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get turnOffBitlockerHeadline => 'Desligue o BitLocker para continuar';
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Este computador usa criptografia do Windows BitLocker.\nPrecisa desativar o BitLocker no Windows antes de instalar o Ubuntu.';
+    return 'Este computador usa encriptação BitLocker do Windows.\nPrecisa de usar o Windows para libertar espaço ou escolha \'$option\' para continuar.';
   }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Para obter instruções, abra esta página num telefone ou outro aparelho: <a href=\"https://$url\">$url</a>';
+    return 'Para obter instruções, digitalize o código QR noutro dispositivo ou visite: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Reiniciar no Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Reiniciar no Windows?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Are you sure you want to restart your computer? You will need to restart the $DISTRO installation later to finish installing $DISTRO.';
+    return 'Tem a certeza de que deseja reiniciar o computador? Precisará de reiniciar a instalação do $DISTRO mais tarde para concluir a instalação do $DISTRO.';
   }
 
   @override
-  String get whereAreYouPageTitle => 'Onde está?';
+  String get whereAreYouPageTitle => 'Selecione o seu fuso-horário';
 
   @override
   String get whereAreYouLocationLabel => 'Localização';
