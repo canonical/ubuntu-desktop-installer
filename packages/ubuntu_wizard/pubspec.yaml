@@ -25,7 +25,7 @@ dependencies:
   subiquity_client:
     git:
       url: https://github.com/canonical/subiquity_client.dart.git
-  ubuntu_localizations: ^0.1.0
+  ubuntu_localizations: ^0.1.5
   ubuntu_logger: ^0.0.1
   ubuntu_service: ^0.2.2
   ubuntu_widgets:
