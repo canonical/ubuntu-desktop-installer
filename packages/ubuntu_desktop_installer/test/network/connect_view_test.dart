@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_view.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_model.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_view.dart';
+import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';

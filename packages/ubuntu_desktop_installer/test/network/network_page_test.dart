@@ -6,30 +6,30 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_to_internet_model.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_to_internet_page.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_model.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_view.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/hidden_wifi_model.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/hidden_wifi_view.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_view.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/ethernet_view.dart';
+import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_view.dart';
+import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
+import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
-import 'connect_to_internet_page_test.mocks.dart';
+import 'network_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
 @GenerateMocks([
   AccessPoint,
-  ConnectToInternetModel,
   EthernetModel,
   EthernetDevice,
   HiddenWifiModel,
+  NetworkModel,
   NetworkService,
   UdevDeviceInfo,
   UdevService,
@@ -42,7 +42,7 @@ void main() {
   });
 
   Widget buildPage({
-    required ConnectToInternetModel model,
+    required NetworkModel model,
     bool? ethernet,
     bool? wifi,
   }) {
@@ -96,18 +96,18 @@ void main() {
 
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<ConnectToInternetModel>.value(value: model),
+        ChangeNotifierProvider<NetworkModel>.value(value: model),
         ChangeNotifierProvider<EthernetModel>.value(value: ethernetModel),
         ChangeNotifierProvider<WifiModel>.value(value: wifiModel),
         ChangeNotifierProvider<HiddenWifiModel>.value(value: hiddenWifiModel),
         ChangeNotifierProvider<NoConnectModel>(create: (_) => NoConnectModel()),
       ],
-      child: const ConnectToInternetPage(),
+      child: const NetworkPage(),
     );
   }
 
   testWidgets('selects the right connect mode on tap', (tester) async {
-    final model = ConnectToInternetModel(MockNetworkService());
+    final model = NetworkModel(MockNetworkService());
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model: model)));
     await tester.pumpAndSettle();
 
@@ -135,7 +135,7 @@ void main() {
   });
 
   testWidgets('enables ethernet', (tester) async {
-    final model = ConnectToInternetModel(MockNetworkService());
+    final model = NetworkModel(MockNetworkService());
     await tester.pumpWidget(
         tester.buildApp((_) => buildPage(model: model, ethernet: false)));
     await tester.pumpAndSettle();
@@ -147,7 +147,7 @@ void main() {
   });
 
   testWidgets('enables wifi', (tester) async {
-    final model = ConnectToInternetModel(MockNetworkService());
+    final model = NetworkModel(MockNetworkService());
     await tester.pumpWidget(
         tester.buildApp((_) => buildPage(model: model, wifi: false)));
     await tester.pumpAndSettle();
@@ -159,7 +159,7 @@ void main() {
   });
 
   testWidgets('selects wifi', (tester) async {
-    final model = ConnectToInternetModel(MockNetworkService());
+    final model = NetworkModel(MockNetworkService());
     await tester.pumpWidget(tester
         .buildApp((_) => buildPage(model: model, ethernet: false, wifi: true)));
     await tester.pumpAndSettle();
@@ -172,7 +172,7 @@ void main() {
   });
 
   testWidgets('initializes and cleans up the model', (tester) async {
-    final model = MockConnectToInternetModel();
+    final model = MockNetworkModel();
     when(model.connectMode).thenReturn(ConnectMode.none);
     when(model.isConnecting).thenReturn(false);
     when(model.canConnect).thenReturn(false);
@@ -203,7 +203,7 @@ void main() {
   });
 
   testWidgets('pre-selects ethernet', (tester) async {
-    final model = ConnectToInternetModel(MockNetworkService());
+    final model = NetworkModel(MockNetworkService());
     await tester.pumpWidget(
         tester.buildApp((_) => buildPage(model: model, ethernet: true)));
     await tester.pumpAndSettle();
@@ -216,7 +216,7 @@ void main() {
   });
 
   testWidgets('pre-selects wifi', (tester) async {
-    final model = ConnectToInternetModel(MockNetworkService());
+    final model = NetworkModel(MockNetworkService());
     await tester.pumpWidget(
         tester.buildApp((_) => buildPage(model: model, wifi: true)));
     await tester.pumpAndSettle();
@@ -228,7 +228,7 @@ void main() {
   });
 
   testWidgets('pre-selects no connect', (tester) async {
-    final model = ConnectToInternetModel(MockNetworkService());
+    final model = NetworkModel(MockNetworkService());
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model: model)));
     await tester.pumpAndSettle();
 
@@ -249,14 +249,13 @@ void main() {
     registerMockService<NetworkService>(service);
     registerMockService<UdevService>(MockUdevService());
 
-    await tester.pumpWidget(tester.buildApp(ConnectToInternetPage.create));
+    await tester.pumpWidget(tester.buildApp(NetworkPage.create));
 
-    final page = find.byType(ConnectToInternetPage);
+    final page = find.byType(NetworkPage);
     expect(page, findsOneWidget);
 
     final context = tester.element(page);
-    expect(
-        Provider.of<ConnectToInternetModel>(context, listen: false), isNotNull);
+    expect(Provider.of<NetworkModel>(context, listen: false), isNotNull);
     expect(Provider.of<NoConnectModel>(context, listen: false), isNotNull);
     expect(Provider.of<EthernetModel>(context, listen: false), isNotNull);
     expect(Provider.of<WifiModel>(context, listen: false), isNotNull);
@@ -264,7 +263,7 @@ void main() {
   });
 
   testWidgets('mark network configured', (tester) async {
-    final model = MockConnectToInternetModel();
+    final model = MockNetworkModel();
     when(model.connectMode).thenReturn(ConnectMode.none);
     when(model.isConnecting).thenReturn(false);
     when(model.canConnect).thenReturn(false);

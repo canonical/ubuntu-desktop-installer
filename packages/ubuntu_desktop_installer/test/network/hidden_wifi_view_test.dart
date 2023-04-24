@@ -4,9 +4,9 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/hidden_wifi_model.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/hidden_wifi_view.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/wifi_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_view.dart';
+import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import 'hidden_wifi_view_test.mocks.dart';

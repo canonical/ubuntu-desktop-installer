@@ -8,7 +8,7 @@ import 'package:ubuntu_wizard/utils.dart';
 
 import '../../services.dart';
 import 'connect_model.dart';
-import 'network_model.dart';
+import 'network_device.dart';
 
 @visibleForTesting
 const kWifiScanInterval = Duration(seconds: 15);
@@ -17,7 +17,7 @@ const kWifiScanInterval = Duration(seconds: 15);
 const kWifiScanTimeout = Duration(seconds: 3);
 
 /// "Connect to Wi-Fi network"
-class WifiModel extends NetworkModel<WifiDevice> {
+class WifiModel extends NetworkDeviceModel<WifiDevice> {
   WifiModel(super.service, [super.udev]);
 
   @override

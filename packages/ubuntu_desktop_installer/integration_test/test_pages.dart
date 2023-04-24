@@ -6,7 +6,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
@@ -114,13 +114,13 @@ Future<void> testKeyboardLayoutPage(
   await tester.tapContinue();
 }
 
-Future<void> testConnectToInternetPage(
+Future<void> testNetworkPage(
   WidgetTester tester, {
   ConnectMode? mode,
   String? screenshot,
 }) async {
   await expectPage(
-      tester, ConnectToInternetPage, (lang) => lang.connectToInternetPageTitle);
+      tester, NetworkPage, (lang) => lang.connectToInternetPageTitle);
 
   if (mode != null) {
     await tester.tapRadioButton<ConnectMode>(mode);

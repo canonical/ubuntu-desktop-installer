@@ -5,9 +5,8 @@ import '../../services.dart';
 import 'connect_model.dart';
 
 /// A proxy model for the currently selected [ConnectModel] (eth, wifi, none).
-class ConnectToInternetModel extends SafeChangeNotifier
-    implements ConnectModel {
-  ConnectToInternetModel(this._service);
+class NetworkModel extends SafeChangeNotifier implements ConnectModel {
+  NetworkModel(this._service);
 
   final NetworkService _service;
 

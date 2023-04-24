@@ -6,9 +6,9 @@ import 'package:ubuntu_wizard/utils.dart';
 import '../../services.dart';
 import 'connect_model.dart';
 
-abstract class NetworkModel<T extends NetworkDevice>
+abstract class NetworkDeviceModel<T extends NetworkDevice>
     extends PropertyStreamNotifier implements ConnectModel {
-  NetworkModel(this.service, [this.udev]) {
+  NetworkDeviceModel(this.service, [this.udev]) {
     addPropertyListener('Devices', updateDevices);
   }
 

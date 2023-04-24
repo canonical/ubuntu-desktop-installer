@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 
 void main() {
   test('no connect', () async {

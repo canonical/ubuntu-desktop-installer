@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_to_internet_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
 
-import 'connect_to_internet_model_test.mocks.dart';
-import 'connect_to_internet_page_test.mocks.dart';
+import 'network_model_test.mocks.dart';
+import 'network_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
@@ -15,13 +15,13 @@ import 'connect_to_internet_page_test.mocks.dart';
 void main() {
   test('connects the service', () async {
     final service = MockNetworkService();
-    final model = ConnectToInternetModel(service);
+    final model = NetworkModel(service);
     await model.init();
     verify(service.connect()).called(1);
   });
 
   test('initializes and cleans up connect models', () async {
-    final model = ConnectToInternetModel(MockNetworkService());
+    final model = NetworkModel(MockNetworkService());
 
     final ethernet = MockConnectModel();
     when(ethernet.connectMode).thenReturn(ConnectMode.ethernet);
@@ -59,7 +59,7 @@ void main() {
 
   test('no mode selected', () {
     final service = MockNetworkService();
-    final model = ConnectToInternetModel(service);
+    final model = NetworkModel(service);
     expect(model.connectMode, equals(ConnectMode.none));
     expect(model.isConnected, isFalse);
     expect(model.canConnect, isFalse);
@@ -68,7 +68,7 @@ void main() {
 
   test('selected mode', () {
     final service = MockNetworkService();
-    final model = ConnectToInternetModel(service);
+    final model = NetworkModel(service);
     expect(model.connectMode, equals(ConnectMode.none));
 
     final wifi = MockConnectModel();
@@ -136,7 +136,7 @@ void main() {
     when(none.connectMode).thenReturn(ConnectMode.none);
     when(none.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
 
-    final model = ConnectToInternetModel(service);
+    final model = NetworkModel(service);
     model.addConnectMode(ethernet);
     model.addConnectMode(wifi);
     model.addConnectMode(hiddenWifi);
@@ -200,7 +200,7 @@ void main() {
     when(none.hasActiveConnection).thenReturn(false);
     when(none.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
 
-    final model = ConnectToInternetModel(service);
+    final model = NetworkModel(service);
     model.addConnectMode(ethernet);
     model.addConnectMode(wifi);
     model.addConnectMode(hiddenWifi);
@@ -245,7 +245,7 @@ void main() {
 
   test('mark network configured', () async {
     final service = MockNetworkService();
-    final model = ConnectToInternetModel(service);
+    final model = NetworkModel(service);
     await model.markConfigured();
     verify(service.markConfigured()).called(1);
   });

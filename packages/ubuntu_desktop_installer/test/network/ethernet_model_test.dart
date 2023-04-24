@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/ethernet_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/services/network_service.dart';
 
 import 'ethernet_model_test.mocks.dart';
