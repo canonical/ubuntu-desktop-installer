@@ -469,7 +469,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get partitionLimitReached => 'Limite atteinte';
 
   @override
-  String get bootLoaderDevice => 'Périphérique pour installer le chargeur d’amorçage';
+  String get bootLoaderDevice => 'Périphérique pour installer le chargeur d’amorçage (bootloader)';
 
   @override
   String get partitionCreateTitle => 'Créer une partition';
@@ -740,7 +740,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String turnOffBitlockerDescription(Object option) {
-    return 'Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez utiliser Windows pour créer de l’espace libre ou choisir « $option » pour continuer.';
+    return 'Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez utiliser Windows pour créer de l’espace libre ou choisir \'$option\' pour continuer.';
   }
 
   @override

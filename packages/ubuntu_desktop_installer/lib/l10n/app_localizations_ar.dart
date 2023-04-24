@@ -5,11 +5,11 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appTitle => 'مثبت سطح مكتب اوبنتو';
+  String get appTitle => 'مثبت سطح مكتب أوبونتو';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'ثبت $RELEASE';
+    return 'تثبيت $RELEASE';
   }
 
   @override
@@ -34,7 +34,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get yesButtonText => 'نعم';
 
   @override
-  String get quitButtonText => 'الغي المثبت';
+  String get quitButtonText => 'قم بإنهاء التثبيت';
 
   @override
   String welcomePageTitle(Object DISTRO) {
@@ -58,7 +58,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get repairInstallation => 'تصليح المثبت';
 
   @override
-  String get repairInstallationDescription => 'تصليح سوف يقوم بإعادة تثبيت جميع software المثبتة بدون تغيير الاعدادات او المستندات';
+  String get repairInstallationDescription => 'سيؤدي الإصلاح إلى إعادة تثبيت جميع البرامج المثبتة دون لمس المستندات أو الإعدادات.';
 
   @override
   String tryUbuntu(Object RELEASE) {
@@ -109,7 +109,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get typeToTest => 'اكتب هنا لتجربة لوحة المفاتيح';
 
   @override
-  String get detectLayout => 'اكتشف تخطيط لوحة المفاتيح';
+  String get detectLayout => 'كشف تخطيط لوحة المفاتيح';
 
   @override
   String get detectButtonText => 'Detect';
@@ -205,7 +205,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get connectButtonText => 'اتّصل';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'التحديثات والبرامج الأخرى';
+  String get updatesOtherSoftwarePageTitle => 'التطبيقات والتحديثات';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'ما التطبيقات التي ترغب في تثبيتها ابتداءً؟';
@@ -306,7 +306,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'الخيارات المتقدمة...';
+  String get installationTypeAdvancedLabel => 'الميزات المتقدمة...';
 
   @override
   String get installationTypeAdvancedTitle => 'الخيارات المتقدمة';
@@ -376,7 +376,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
 
   @override
-  String get installationTypeManual => 'شيء آخر';
+  String get installationTypeManual => 'التقسيم اليدوي';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -571,7 +571,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get partitionMountPointLabel => 'Mount point:';
 
   @override
-  String get whoAreYouPageTitle => 'من أنت؟';
+  String get whoAreYouPageTitle => 'إعداد حسابك';
 
   @override
   String get whoAreYouPageAutoLogin => 'ولوج تلقائي';
@@ -730,10 +730,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get restartNow => 'أعد التشغيل الآن';
 
   @override
-  String get continueTesting => 'أكمل الفحص';
+  String get continueTesting => 'مواصلة الاختبار';
 
   @override
-  String get turnOffBitlockerTitle => 'اوقف تشغيل BitLocker';
+  String get turnOffBitlockerTitle => 'تم تمكين BitLocker';
 
   @override
   String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
@@ -760,7 +760,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'أين أنت؟';
+  String get whereAreYouPageTitle => 'حدد منطقتك الزمنية';
 
   @override
   String get whereAreYouLocationLabel => 'Location';
@@ -895,7 +895,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get installationFailed => 'فشل التثبيت';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'عذرًا';
+  String get notEnoughDiskSpaceTitle => 'مساحة غير كافية';
 
   @override
   String notEnoughDiskSpaceUbuntu(Object DISTRO) {

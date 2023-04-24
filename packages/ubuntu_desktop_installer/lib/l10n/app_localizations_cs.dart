@@ -710,7 +710,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** je nainstalovaný a připravený k použití';
+    return '**$system** je nainstalované a připravené k použití';
   }
 
   @override

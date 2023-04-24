@@ -915,7 +915,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get activeDirectoryInfo => 'V ďalšom kroku zadáte doménu a ďalšie podrobnosti.';
 
   @override
-  String get activeDirectoryTitle => 'Nastaviť pre Active Directory';
+  String get activeDirectoryTitle => 'Konfigurácia služby Active Directory';
 
   @override
   String get activeDirectoryTestConnection => 'Vyskúšať spojenie s doménou';
