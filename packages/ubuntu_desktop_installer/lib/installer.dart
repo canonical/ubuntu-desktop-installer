@@ -444,8 +444,8 @@ class _UbuntuDesktopInstallerWizardState
           builder: WriteChangesToDiskPage.create,
           userData: InstallationStep.storage.index,
         ),
-        Routes.whereAreYou: WizardRoute(
-          builder: WhereAreYouPage.create,
+        Routes.timezone: WizardRoute(
+          builder: TimezonePage.create,
           userData: InstallationStep.location.index,
         ),
         Routes.whoAreYou: WizardRoute(

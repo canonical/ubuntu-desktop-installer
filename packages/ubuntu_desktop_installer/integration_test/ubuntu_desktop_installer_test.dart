@@ -66,7 +66,7 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester, timezone: timezone);
+    await testTimezonePage(tester, timezone: timezone);
     await tester.pump();
 
     await testWhoAreYouPage(
@@ -129,7 +129,7 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester);
+    await testTimezonePage(tester);
     await tester.pump();
 
     await testWhoAreYouPage(
@@ -190,7 +190,7 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester);
+    await testTimezonePage(tester);
     await tester.pump();
 
     await testWhoAreYouPage(
@@ -241,7 +241,7 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester);
+    await testTimezonePage(tester);
     await tester.pump();
 
     await testWhoAreYouPage(

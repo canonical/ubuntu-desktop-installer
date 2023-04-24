@@ -5,17 +5,17 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:timezone_map/timezone_map.dart';
-import 'package:ubuntu_desktop_installer/pages/where_are_you/where_are_you_model.dart';
-import 'package:ubuntu_desktop_installer/pages/where_are_you/where_are_you_page.dart';
+import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
+import 'package:ubuntu_desktop_installer/pages/timezone/timezone_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 import '../test_utils.dart';
-import 'where_are_you_page_test.mocks.dart';
+import 'timezone_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([GeoService, TimezoneController, WhereAreYouModel])
+@GenerateMocks([GeoService, TimezoneController, TimezoneModel])
 void main() {
   MockTimezoneController buildController({
     GeoLocation? selectedLocation,
@@ -34,22 +34,22 @@ void main() {
     return controller;
   }
 
-  MockWhereAreYouModel buildModel({String? timezone}) {
-    final model = MockWhereAreYouModel();
+  MockTimezoneModel buildModel({String? timezone}) {
+    final model = MockTimezoneModel();
     when(model.init()).thenAnswer((_) async => timezone ?? '');
     return model;
   }
 
   Widget buildPage(
-    WhereAreYouModel model,
+    TimezoneModel model,
     TimezoneController controller,
   ) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<TimezoneController>.value(value: controller),
-        ChangeNotifierProvider<WhereAreYouModel>.value(value: model),
+        ChangeNotifierProvider<TimezoneModel>.value(value: model),
       ],
-      child: const WhereAreYouPage(),
+      child: const TimezonePage(),
     );
   }
 
@@ -227,10 +227,10 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
-    final page = find.byType(WhereAreYouPage);
+    final page = find.byType(TimezonePage);
     expect(page, findsOneWidget);
 
-    final state = tester.state<WhereAreYouPageState>(page);
+    final state = tester.state<TimezonePageState>(page);
 
     const city = GeoLocation(name: 'city');
     expect(state.formatLocation(city), contains(city.name));
@@ -255,10 +255,10 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
-    final page = find.byType(WhereAreYouPage);
+    final page = find.byType(TimezonePage);
     expect(page, findsOneWidget);
 
-    final state = tester.state<WhereAreYouPageState>(page);
+    final state = tester.state<TimezonePageState>(page);
 
     const timezone = GeoLocation(timezone: 'America/New_York');
     expect(
@@ -277,13 +277,13 @@ void main() {
     when(service.searchTimezone(any)).thenAnswer((_) async => []);
     registerMockService<GeoService>(service);
 
-    await tester.pumpWidget(tester.buildApp(WhereAreYouPage.create));
+    await tester.pumpWidget(tester.buildApp(TimezonePage.create));
 
-    final page = find.byType(WhereAreYouPage);
+    final page = find.byType(TimezonePage);
     expect(page, findsOneWidget);
 
     final context = tester.element(page);
-    final model = Provider.of<WhereAreYouModel>(context, listen: false);
+    final model = Provider.of<TimezoneModel>(context, listen: false);
     expect(model, isNotNull);
     final controller = Provider.of<TimezoneController>(context, listen: false);
     expect(controller, isNotNull);

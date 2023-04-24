@@ -404,14 +404,13 @@ Future<void> testTurnOffRSTPage(
   await expectLater(windowClosed, completes);
 }
 
-Future<void> testWhereAreYouPage(
+Future<void> testTimezonePage(
   WidgetTester tester, {
   String? location,
   String? timezone,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, WhereAreYouPage, (lang) => lang.whereAreYouPageTitle);
+  await expectPage(tester, TimezonePage, (lang) => lang.whereAreYouPageTitle);
 
   await tester.pumpAndSettle(); // progress indicator
 

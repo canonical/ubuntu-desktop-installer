@@ -19,7 +19,7 @@ abstract class Routes {
   static const installationType = '/installation-type';
   static const selectGuidedStorage = '/select-guided-storage';
   static const installAlongside = '/install-alongside';
-  static const whereAreYou = '/where-are-you';
+  static const timezone = '/timezone';
   static const notEnoughDiskSpace = '/not-enough-disk-space';
   static const activeDirectory = '/active-directory';
 }
