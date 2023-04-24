@@ -6,18 +6,18 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
-import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_page.dart';
+import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
+import 'package:ubuntu_desktop_installer/pages/identity/identity_page.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
-import 'who_are_you_page_test.mocks.dart';
+import 'identity_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([WhoAreYouModel])
+@GenerateMocks([IdentityModel])
 void main() {
-  WhoAreYouModel buildModel({
+  IdentityModel buildModel({
     bool? isValid,
     String? realName,
     String? hostname,
@@ -31,7 +31,7 @@ void main() {
     bool? hasActiveDirectorySupport,
     bool? useActiveDirectory,
   }) {
-    final model = MockWhoAreYouModel();
+    final model = MockIdentityModel();
     when(model.isValid).thenReturn(isValid ?? false);
     when(model.realName).thenReturn(realName ?? '');
     when(model.hostname).thenReturn(hostname ?? '');
@@ -51,10 +51,10 @@ void main() {
     return model;
   }
 
-  Widget buildPage(WhoAreYouModel model) {
-    return ChangeNotifierProvider<WhoAreYouModel>.value(
+  Widget buildPage(IdentityModel model) {
+    return ChangeNotifierProvider<IdentityModel>.value(
       value: model,
-      child: WhoAreYouPage(),
+      child: IdentityPage(),
     );
   }
 
@@ -143,7 +143,7 @@ void main() {
     final model = buildModel(password: '');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final context = tester.element(find.byType(WhoAreYouPage));
+    final context = tester.element(find.byType(IdentityPage));
     final lang = UbuntuLocalizations.of(context);
 
     expect(find.text(lang.weakPassword), findsNothing);
@@ -159,7 +159,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final context = tester.element(find.byType(WhoAreYouPage));
+    final context = tester.element(find.byType(IdentityPage));
     final lang = UbuntuLocalizations.of(context);
 
     expect(find.text(lang.weakPassword), findsOneWidget);
@@ -172,7 +172,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final context = tester.element(find.byType(WhoAreYouPage));
+    final context = tester.element(find.byType(IdentityPage));
     final lang = UbuntuLocalizations.of(context);
 
     expect(find.text(lang.fairPassword), findsOneWidget);
@@ -185,7 +185,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final context = tester.element(find.byType(WhoAreYouPage));
+    final context = tester.element(find.byType(IdentityPage));
     final lang = UbuntuLocalizations.of(context);
 
     expect(find.text(lang.goodPassword), findsOneWidget);
@@ -198,7 +198,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final context = tester.element(find.byType(WhoAreYouPage));
+    final context = tester.element(find.byType(IdentityPage));
     final lang = UbuntuLocalizations.of(context);
 
     expect(find.text(lang.strongPassword), findsOneWidget);

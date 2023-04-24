@@ -69,7 +69,7 @@ void main() {
     await testWhereAreYouPage(tester, timezone: timezone);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: identity,
       password: 'password',
@@ -132,7 +132,7 @@ void main() {
     await testWhereAreYouPage(tester);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: identity,
       password: 'password',
@@ -193,7 +193,7 @@ void main() {
     await testWhereAreYouPage(tester);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
@@ -244,7 +244,7 @@ void main() {
     await testWhereAreYouPage(tester);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',

@@ -1,4 +1,4 @@
-part of 'who_are_you_page.dart';
+part of 'identity_page.dart';
 
 class _RealNameFormField extends StatelessWidget {
   const _RealNameFormField({required this.fieldWidth});
@@ -9,7 +9,7 @@ class _RealNameFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final realName =
-        context.select<WhoAreYouModel, String>((model) => model.realName);
+        context.select<IdentityModel, String>((model) => model.realName);
 
     return ValidatedFormField(
       autofocus: true,
@@ -27,7 +27,7 @@ class _RealNameFormField extends StatelessWidget {
         ),
       ]),
       onChanged: (value) async {
-        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        final model = Provider.of<IdentityModel>(context, listen: false);
         model.realName = value;
         await model.validate();
       },
@@ -44,7 +44,7 @@ class _HostnameFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final hostname =
-        context.select<WhoAreYouModel, String>((model) => model.hostname);
+        context.select<IdentityModel, String>((model) => model.hostname);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -66,7 +66,7 @@ class _HostnameFormField extends StatelessWidget {
         )
       ]),
       onChanged: (value) {
-        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        final model = Provider.of<IdentityModel>(context, listen: false);
         model.hostname = value;
       },
     );
@@ -101,10 +101,10 @@ class _UsernameFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final username =
-        context.select<WhoAreYouModel, String>((model) => model.username);
-    final validation = context.select<WhoAreYouModel, UsernameValidation>(
+        context.select<IdentityModel, String>((model) => model.username);
+    final validation = context.select<IdentityModel, UsernameValidation>(
         (model) => model.usernameValidation);
-    final model = context.read<WhoAreYouModel>();
+    final model = context.read<IdentityModel>();
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -125,7 +125,7 @@ class _UsernameFormField extends StatelessWidget {
         ),
       ]),
       onChanged: (value) async {
-        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        final model = Provider.of<IdentityModel>(context, listen: false);
         model.username = value;
         await model.validate();
       },
@@ -142,11 +142,11 @@ class _PasswordFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final password =
-        context.select<WhoAreYouModel, String>((model) => model.password);
-    final passwordStrength = context.select<WhoAreYouModel, PasswordStrength>(
+        context.select<IdentityModel, String>((model) => model.password);
+    final passwordStrength = context.select<IdentityModel, PasswordStrength>(
         (model) => model.passwordStrength);
     final showPassword =
-        context.select<WhoAreYouModel, bool>((model) => model.showPassword);
+        context.select<IdentityModel, bool>((model) => model.showPassword);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -157,13 +157,13 @@ class _PasswordFormField extends StatelessWidget {
       suffixIcon: _ShowPasswordButton(
         value: showPassword,
         onChanged: (value) =>
-            context.read<WhoAreYouModel>().showPassword = value,
+            context.read<IdentityModel>().showPassword = value,
       ),
       validator: RequiredValidator(
         errorText: lang.whoAreYouPagePasswordRequired,
       ),
       onChanged: (value) {
-        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        final model = Provider.of<IdentityModel>(context, listen: false);
         model.password = value;
       },
     );
@@ -179,11 +179,11 @@ class _ConfirmPasswordFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final password =
-        context.select<WhoAreYouModel, String>((model) => model.password);
+        context.select<IdentityModel, String>((model) => model.password);
     final confirmedPassword = context
-        .select<WhoAreYouModel, String>((model) => model.confirmedPassword);
+        .select<IdentityModel, String>((model) => model.confirmedPassword);
     final showPassword =
-        context.select<WhoAreYouModel, bool>((model) => model.showPassword);
+        context.select<IdentityModel, bool>((model) => model.showPassword);
 
     return ValidatedFormField(
       obscureText: !showPassword,
@@ -197,7 +197,7 @@ class _ConfirmPasswordFormField extends StatelessWidget {
         errorText: lang.whoAreYouPagePasswordMismatch,
       ),
       onChanged: (value) {
-        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        final model = Provider.of<IdentityModel>(context, listen: false);
         model.confirmedPassword = value;
       },
     );
@@ -261,10 +261,10 @@ class _UseActiveDirectoryCheckButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final hasActiveDirectorySupport =
-        context.select((WhoAreYouModel m) => m.hasActiveDirectorySupport);
+        context.select((IdentityModel m) => m.hasActiveDirectorySupport);
     final useActiveDirectory =
-        context.select((WhoAreYouModel m) => m.useActiveDirectory);
-    final isConnected = context.select((WhoAreYouModel m) => m.isConnected);
+        context.select((IdentityModel m) => m.useActiveDirectory);
+    final isConnected = context.select((IdentityModel m) => m.isConnected);
 
     return Visibility(
       visible: hasActiveDirectorySupport != false,
@@ -272,7 +272,7 @@ class _UseActiveDirectoryCheckButton extends StatelessWidget {
         value: useActiveDirectory,
         title: Text(lang.activeDirectoryOption),
         onChanged: isConnected && hasActiveDirectorySupport == true
-            ? (v) => context.read<WhoAreYouModel>().useActiveDirectory = v!
+            ? (v) => context.read<IdentityModel>().useActiveDirectory = v!
             : null,
         subtitle: Text(
           lang.activeDirectoryInfo,
@@ -293,14 +293,14 @@ class _AutoLoginSwitch extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final autoLogin =
-        context.select<WhoAreYouModel, bool>((model) => model.autoLogin);
+        context.select<IdentityModel, bool>((model) => model.autoLogin);
 
     return YaruSwitchButton(
       title: Text(lang.whoAreYouPageRequirePassword),
       contentPadding: kContentPadding,
       value: !autoLogin,
       onChanged: (value) {
-        final model = Provider.of<WhoAreYouModel>(context, listen: false);
+        final model = Provider.of<IdentityModel>(context, listen: false);
         model.autoLogin = !value;
       },
     );

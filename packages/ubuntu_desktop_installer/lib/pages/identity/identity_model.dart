@@ -10,7 +10,7 @@ import '../../services.dart';
 export 'package:ubuntu_wizard/utils.dart' show PasswordStrength;
 
 /// @internal
-final log = Logger('who_are_you');
+final log = Logger('identity');
 
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter
@@ -31,10 +31,10 @@ const kMaxHostnameLength = 64;
 /// The maximum length for valid usernames
 const kMaxUsernameLength = 32;
 
-/// [WhoAreYouPage]'s view model.
-class WhoAreYouModel extends PropertyStreamNotifier {
+/// [IdentityPage]'s view model.
+class IdentityModel extends PropertyStreamNotifier {
   /// Creates the model with the given client.
-  WhoAreYouModel({
+  IdentityModel({
     required SubiquityClient client,
     required ConfigService config,
     required NetworkService network,

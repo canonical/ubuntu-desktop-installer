@@ -448,8 +448,8 @@ class _UbuntuDesktopInstallerWizardState
           builder: WhereAreYouPage.create,
           userData: InstallationStep.location.index,
         ),
-        Routes.whoAreYou: WizardRoute(
-          builder: WhoAreYouPage.create,
+        Routes.identity: WizardRoute(
+          builder: IdentityPage.create,
           userData: InstallationStep.user.index,
           onNext: (settings) => settings.arguments == true
               ? Routes.activeDirectory
