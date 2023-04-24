@@ -98,7 +98,7 @@
       "os": {}
     }
   },
-  "installationTypeAlongside": "Asenna {product} käyttöjärjestelmän \"{os}\" tilalle",
+  "installationTypeAlongside": "Asenna {product} käyttöjärjestelmän \"{os}\" rinnalle",
   "@installationTypeAlongside": {
     "type": "text",
     "placeholders": {
@@ -384,7 +384,7 @@
   "@partitionFormatLabel": {},
   "chooseSecurityKeyHeader": "Kiintolevyn salaus suojaa tiedostoja jos tietokone katoaa tai se varastetaan. Suojaus edellyttää salausavaimen syöttämistä jokaisella tietokoneen käynnistyskerralla.\n\n{RELEASE}-asennuksen ulkopuolisia tiedostoja ei salata.",
   "@chooseSecurityKeyHeader": {},
-  "startInstallingButtonText": "Asennus",
+  "startInstallingButtonText": "Asenna",
   "@startInstallingButtonText": {},
   "chooseYourLookPageTitle": "Valitse teema",
   "@chooseYourLookPageTitle": {},
