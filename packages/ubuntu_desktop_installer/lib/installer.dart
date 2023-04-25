@@ -460,14 +460,14 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.user.index,
           onNext: (settings) => settings.arguments == true
               ? Routes.activeDirectory
-              : Routes.chooseYourLook,
+              : Routes.theme,
         ),
         Routes.activeDirectory: WizardRoute(
           builder: ActiveDirectoryPage.create,
           userData: InstallationStep.user.index,
         ),
-        Routes.chooseYourLook: WizardRoute(
-          builder: ChooseYourLookPage.create,
+        Routes.theme: WizardRoute(
+          builder: ThemePage.create,
           userData: InstallationStep.look.index,
         ),
         Routes.installationSlides: const WizardRoute(

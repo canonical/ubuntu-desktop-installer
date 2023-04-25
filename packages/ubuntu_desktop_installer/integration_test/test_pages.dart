@@ -524,16 +524,15 @@ Future<void> testActiveDirectoryPage(
   await tester.tapContinue();
 }
 
-Future<void> testChooseYourLookPage(
+Future<void> testThemePage(
   WidgetTester tester, {
   Brightness? theme,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, ChooseYourLookPage, (lang) => lang.chooseYourLookPageTitle);
+  await expectPage(tester, ThemePage, (lang) => lang.chooseYourLookPageTitle);
 
   if (theme != null) {
-    final asset = find.asset('assets/choose_your_look/${theme.name}-theme.png');
+    final asset = find.asset('assets/theme/${theme.name}-theme.png');
     expect(asset, findsOneWidget);
     await tester.tap(asset);
   }

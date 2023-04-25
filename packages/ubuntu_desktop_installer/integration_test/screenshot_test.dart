@@ -332,10 +332,10 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.chooseYourLook);
+    await tester.jumpToWizardRoute(Routes.theme);
     await tester.pumpAndSettle();
 
-    await testChooseYourLookPage(
+    await testThemePage(
       tester,
       screenshot: '$currentThemeName/13.theme',
     );
