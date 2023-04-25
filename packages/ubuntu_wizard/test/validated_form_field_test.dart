@@ -4,8 +4,6 @@ import 'package:form_field_validator/form_field_validator.dart';
 
 import 'package:ubuntu_wizard/widgets.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   testWidgets('input validation', (tester) async {
     await tester.pumpWidget(
@@ -161,7 +159,7 @@ void main() {
         home: Material(
           child: Center(
             child: ValidatedFormField(
-              successWidget: SuccessIcon(),
+              successWidget: const SuccessIcon(),
               helperText: helperText,
             ),
           ),
@@ -343,7 +341,7 @@ void main() {
         ),
       ),
     );
-    await tester.pumpWidget(MaterialApp());
+    await tester.pumpWidget(const MaterialApp());
     await tester.pumpAndSettle();
 
     await expectLater(
