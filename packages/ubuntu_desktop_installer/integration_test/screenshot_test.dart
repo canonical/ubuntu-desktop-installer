@@ -298,10 +298,10 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.whoAreYou);
+    await tester.jumpToWizardRoute(Routes.identity);
     await tester.pumpAndSettle();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: const IdentityData(
         realname: 'Ubuntu User',
