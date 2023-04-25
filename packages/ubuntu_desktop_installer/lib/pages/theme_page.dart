@@ -5,10 +5,10 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../../l10n.dart';
 import '../../services.dart';
 
-class ChooseYourLookPage extends StatelessWidget {
-  const ChooseYourLookPage({super.key});
+class ThemePage extends StatelessWidget {
+  const ThemePage({super.key});
 
-  static Widget create(BuildContext context) => const ChooseYourLookPage();
+  static Widget create(BuildContext context) => const ThemePage();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ChooseYourLookPage extends StatelessWidget {
             children: [
               _ThemeOptionCard(
                 width: width / 3,
-                assetName: 'assets/choose_your_look/light-theme.png',
+                assetName: 'assets/theme/light-theme.png',
                 selected: Theme.of(context).brightness == Brightness.light,
                 onTap: () => desktop.setTheme(Brightness.light),
                 preferenceName: lang.chooseYourLookPageLightSetting,
@@ -43,7 +43,7 @@ class ChooseYourLookPage extends StatelessWidget {
               ),
               _ThemeOptionCard(
                 width: width / 3,
-                assetName: 'assets/choose_your_look/dark-theme.png',
+                assetName: 'assets/theme/dark-theme.png',
                 selected: Theme.of(context).brightness == Brightness.dark,
                 onTap: () => desktop.setTheme(Brightness.dark),
                 preferenceName: lang.chooseYourLookPageDarkSetting,

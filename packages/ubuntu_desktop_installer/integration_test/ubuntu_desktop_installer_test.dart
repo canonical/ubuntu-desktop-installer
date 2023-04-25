@@ -76,7 +76,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await testChooseYourLookPage(tester);
+    await testThemePage(tester);
     await tester.pump();
 
     await testInstallationSlidesPage(tester);
@@ -139,7 +139,7 @@ void main() {
     );
     await tester.pump();
 
-    await testChooseYourLookPage(tester);
+    await testThemePage(tester);
     await tester.pump();
 
     await testInstallationSlidesPage(tester);
@@ -200,7 +200,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await testChooseYourLookPage(tester);
+    await testThemePage(tester);
     await tester.pump();
 
     await testInstallationSlidesPage(tester);
@@ -251,7 +251,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await testChooseYourLookPage(tester);
+    await testThemePage(tester);
     await tester.pump();
 
     await testInstallationSlidesPage(tester);

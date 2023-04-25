@@ -11,7 +11,7 @@ abstract class Routes {
   static const updatesOtherSoftware = '/update-other-software';
   static const installationComplete = '/installation-complete';
   static const writeChangesToDisk = '/write-changes-to-disk';
-  static const chooseYourLook = '/choose-your-look';
+  static const theme = '/theme';
   static const identity = '/identity';
   static const installationSlides = '/installation-slides';
   static const bitlocker = '/turn-off-bitlocker';
