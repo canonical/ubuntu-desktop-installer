@@ -396,17 +396,18 @@ class _UbuntuDesktopInstallerWizardState
         Routes.connectToInternet: WizardRoute(
           builder: ConnectToInternetPage.create,
           userData: InstallationStep.network.index,
-          onNext: (_) =>
-              service.hasEnoughDiskSpace ? Routes.updatesOtherSoftware : null,
-        ),
-        Routes.notEnoughDiskSpace: const WizardRoute(
-          builder: NotEnoughDiskSpacePage.create,
         ),
         Routes.updatesOtherSoftware: WizardRoute(
           builder: UpdatesOtherSoftwarePage.create,
           userData: InstallationStep.software.index,
-          onNext: (_) =>
-              !service.hasSecureBoot ? Routes.installationType : null,
+          onNext: (_) => !service.hasEnoughDiskSpace
+              ? Routes.notEnoughDiskSpace
+              : !service.hasSecureBoot
+                  ? Routes.installationType
+                  : null,
+        ),
+        Routes.notEnoughDiskSpace: const WizardRoute(
+          builder: NotEnoughDiskSpacePage.create,
         ),
         Routes.configureSecureBoot: WizardRoute(
           builder: ConfigureSecureBootPage.create,
