@@ -9,7 +9,7 @@ export 'pages/install_alongside/install_alongside_page.dart';
 export 'pages/installation_complete/installation_complete_page.dart';
 export 'pages/installation_slides/installation_slides_page.dart';
 export 'pages/installation_type/installation_type_page.dart';
-export 'pages/keyboard_layout/keyboard_layout_page.dart';
+export 'pages/keyboard/keyboard_page.dart';
 export 'pages/locale/locale_page.dart';
 export 'pages/network/network_page.dart';
 export 'pages/not_enough_disk_space/not_enough_disk_space_page.dart';

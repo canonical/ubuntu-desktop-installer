@@ -3,13 +3,13 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 /// @internal
-final log = Logger('keyboard_layout');
+final log = Logger('keyboard');
 
 /// Detects keyboard layout with help of subiquity's keyboard API.
-class KeyboardLayoutDetector extends ValueNotifier<AnyStep?> {
+class KeyboardDetector extends ValueNotifier<AnyStep?> {
   /// Creates a keyboard layout detector with the given client. Optionally, the
   /// initial step and a result listener can be provided.
-  KeyboardLayoutDetector(
+  KeyboardDetector(
     this._client, {
     AnyStep? value,
     ValueChanged<StepResult>? onResult,

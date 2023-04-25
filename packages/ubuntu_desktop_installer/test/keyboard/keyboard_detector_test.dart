@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_detector.dart';
+import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_detector.dart';
 import 'package:ubuntu_test/mocks.dart';
 
 // ignore_for_file: type=lint
@@ -15,7 +15,7 @@ void main() {
       return AnyStep.stepPressKey(keycodes: {}, symbols: ['a', 'b', 'c']);
     });
 
-    final detector = KeyboardLayoutDetector(client);
+    final detector = KeyboardDetector(client);
     await detector.init();
     verify(client.getKeyboardStep('0')).called(1);
 
@@ -35,7 +35,7 @@ void main() {
       return AnyStep.stepKeyPresent(symbol: '56', yes: '', no: '');
     });
 
-    final detector = KeyboardLayoutDetector(client);
+    final detector = KeyboardDetector(client);
     await detector.init();
 
     final waitNotify = Completer();
@@ -58,7 +58,7 @@ void main() {
     });
 
     late AnyStep result;
-    final detector = KeyboardLayoutDetector(
+    final detector = KeyboardDetector(
       client,
       value: AnyStep.stepKeyPresent(symbol: 'y', yes: '78', no: ''),
       onResult: (value) => result = value,
@@ -84,7 +84,7 @@ void main() {
     });
 
     late AnyStep result;
-    final detector = KeyboardLayoutDetector(
+    final detector = KeyboardDetector(
       client,
       value: AnyStep.stepKeyPresent(symbol: 'n', yes: '', no: '90'),
       onResult: (value) => result = value,

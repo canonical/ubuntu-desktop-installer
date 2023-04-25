@@ -7,28 +7,28 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_model.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_page.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
+import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
+import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_page.dart';
+import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../test_utils.dart';
-import 'keyboard_layout_page_test.mocks.dart';
+import 'keyboard_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([KeyboardLayoutModel])
+@GenerateMocks([KeyboardModel])
 void main() {
-  MockKeyboardLayoutModel buildModel({
+  MockKeyboardModel buildModel({
     bool? isValid,
     List<String>? layouts,
     int? selectedLayoutIndex,
     List<String>? variants,
     int? selectedVariantIndex,
   }) {
-    final model = MockKeyboardLayoutModel();
+    final model = MockKeyboardModel();
     when(model.isValid).thenReturn(isValid ?? false);
     when(model.layoutCount).thenReturn(layouts?.length ?? 0);
     for (var i = 0; i < (layouts?.length ?? 0); ++i) {
@@ -45,15 +45,15 @@ void main() {
     return model;
   }
 
-  Widget buildPage(KeyboardLayoutModel model) {
+  Widget buildPage(KeyboardModel model) {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(any)).thenAnswer(
         (_) async => AnyStep.stepPressKey(keycodes: {}, symbols: []));
     registerMockService<SubiquityClient>(client);
 
-    return ChangeNotifierProvider<KeyboardLayoutModel>.value(
+    return ChangeNotifierProvider<KeyboardModel>.value(
       value: model,
-      child: KeyboardLayoutPage(),
+      child: KeyboardPage(),
     );
   }
 
@@ -117,9 +117,9 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsOneWidget);
-    expect(find.byType(DetectKeyboardLayoutView), findsOneWidget);
+    expect(find.byType(DetectKeyboardView), findsOneWidget);
 
-    final context = tester.element(find.byType(DetectKeyboardLayoutView));
+    final context = tester.element(find.byType(DetectKeyboardView));
     Navigator.of(context)
         .pop(AnyStep.stepResult(layout: 'layout', variant: 'variant'));
     await tester.pumpAndSettle();
@@ -205,13 +205,13 @@ void main() {
         .thenAnswer((_) async {});
     registerMockService<SubiquityClient>(client);
 
-    await tester.pumpWidget(tester.buildApp(KeyboardLayoutPage.create));
+    await tester.pumpWidget(tester.buildApp(KeyboardPage.create));
 
-    final page = find.byType(KeyboardLayoutPage);
+    final page = find.byType(KeyboardPage);
     expect(page, findsOneWidget);
 
     final context = tester.element(page);
-    final model = Provider.of<KeyboardLayoutModel>(context, listen: false);
+    final model = Provider.of<KeyboardModel>(context, listen: false);
     expect(model, isNotNull);
   });
 }

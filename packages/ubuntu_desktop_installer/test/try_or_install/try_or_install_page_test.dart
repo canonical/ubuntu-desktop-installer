@@ -49,7 +49,7 @@ void main() {
                     case Option.repairUbuntu:
                       return Routes.repairUbuntu;
                     case Option.installUbuntu:
-                      return Routes.keyboardLayout;
+                      return Routes.keyboard;
                     default:
                       return null;
                   }
@@ -58,8 +58,8 @@ void main() {
               Routes.repairUbuntu: WizardRoute(
                 builder: (context) => Text(Routes.repairUbuntu),
               ),
-              Routes.keyboardLayout: WizardRoute(
-                builder: (context) => Text(Routes.keyboardLayout),
+              Routes.keyboard: WizardRoute(
+                builder: (context) => Text(Routes.keyboard),
               ),
             },
           ),
@@ -139,7 +139,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(TryOrInstallPage), findsNothing);
-    expect(find.text(Routes.keyboardLayout), findsOneWidget);
+    expect(find.text(Routes.keyboard), findsOneWidget);
   });
 
   testWidgets('try ubuntu', (tester) async {

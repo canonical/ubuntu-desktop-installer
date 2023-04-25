@@ -69,13 +69,13 @@ Future<void> testTryOrInstallPage(
   await tester.tapContinue();
 }
 
-Future<void> testKeyboardLayoutPage(
+Future<void> testKeyboardPage(
   WidgetTester tester, {
   KeyboardSetting? keyboard,
   String? screenshot,
 }) async {
   await expectPage(
-      tester, KeyboardLayoutPage, (lang) => lang.keyboardLayoutPageTitle);
+      tester, KeyboardPage, (lang) => lang.keyboardLayoutPageTitle);
 
   await tester.pumpAndSettle(); // auto-scroll
 
