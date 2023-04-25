@@ -6,12 +6,12 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../../l10n.dart';
 import '../../services.dart';
 import 'connect_model.dart';
-import 'network_model.dart';
 import 'connect_view.dart';
 import 'ethernet_model.dart';
 import 'ethernet_view.dart';
 import 'hidden_wifi_model.dart';
 import 'hidden_wifi_view.dart';
+import 'network_model.dart';
 import 'wifi_model.dart';
 import 'wifi_view.dart';
 

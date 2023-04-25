@@ -7,8 +7,8 @@ import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'l10n.dart';
-import 'wizard.dart';
 import 'routes.dart';
+import 'wizard.dart';
 
 class UbuntuWslSetupApp extends StatelessWidget {
   const UbuntuWslSetupApp({
