@@ -357,12 +357,11 @@ Future<void> testWriteChangesToDiskPage(
   await tester.tapButton(tester.lang.startInstallingButtonText);
 }
 
-Future<void> testTurnOffBitLockerPage(
+Future<void> testBitLockerPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, TurnOffBitLockerPage, (lang) => lang.turnOffBitlockerTitle);
+  await expectPage(tester, BitLockerPage, (lang) => lang.turnOffBitlockerTitle);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);

@@ -11,23 +11,23 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../../l10n.dart';
 import '../../services.dart';
 import '../../widgets.dart';
-import 'turn_off_bitlocker_model.dart';
+import 'bitlocker_model.dart';
 
-class TurnOffBitLockerPage extends StatelessWidget {
+class BitLockerPage extends StatelessWidget {
   @visibleForTesting
-  const TurnOffBitLockerPage({super.key});
+  const BitLockerPage({super.key});
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
     return Provider(
-      create: (_) => TurnOffBitLockerModel(client),
-      child: const TurnOffBitLockerPage(),
+      create: (_) => BitLockerModel(client),
+      child: const BitLockerPage(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<TurnOffBitLockerModel>(context);
+    final model = Provider.of<BitLockerModel>(context);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(
@@ -41,7 +41,7 @@ class TurnOffBitLockerPage extends StatelessWidget {
           children: [
             Flexible(
               child: SvgPicture.asset(
-                'assets/turn_off_bitlocker/qr-code.svg',
+                'assets/bitlocker/qr-code.svg',
                 colorFilter: ColorFilter.mode(
                   Theme.of(context).brightness == Brightness.light
                       ? Colors.black

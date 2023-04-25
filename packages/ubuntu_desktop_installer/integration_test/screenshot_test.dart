@@ -239,10 +239,10 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.turnOffBitlocker);
+    await tester.jumpToWizardRoute(Routes.bitlocker);
     await tester.pumpAndSettle();
 
-    await testTurnOffBitLockerPage(
+    await testBitLockerPage(
       tester,
       screenshot: '$currentThemeName/7.bitlocker',
     );
