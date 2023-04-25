@@ -94,4 +94,4 @@ flutter:
     - assets/select_guided_storage/
     - assets/try_or_install/
     - assets/turn_off_bitlocker/
-    - assets/turn_off_rst/
+    - assets/rst/

@@ -6,8 +6,7 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.dart'
-    as _i2;
+import 'package:ubuntu_desktop_installer/pages/rst/rst_model.dart' as _i2;
 import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i4;
 
 // ignore_for_file: type=lint
@@ -21,11 +20,11 @@ import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i4;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [TurnOffRSTModel].
+/// A class which mocks [RstModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTurnOffRSTModel extends _i1.Mock implements _i2.TurnOffRSTModel {
-  MockTurnOffRSTModel() {
+class MockRstModel extends _i1.Mock implements _i2.RstModel {
+  MockRstModel() {
     _i1.throwOnMissingStub(this);
   }
 

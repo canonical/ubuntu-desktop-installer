@@ -381,11 +381,11 @@ Future<void> testTurnOffBitLockerPage(
   await expectLater(windowClosed, completes);
 }
 
-Future<void> testTurnOffRSTPage(
+Future<void> testRstPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, TurnOffRSTPage, (lang) => lang.turnOffRST);
+  await expectPage(tester, RstPage, (lang) => lang.turnOffRST);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);

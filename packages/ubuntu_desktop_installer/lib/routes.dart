@@ -2,7 +2,7 @@ abstract class Routes {
   static const initial = welcome;
   static const welcome = '/welcome';
   static const tryOrInstall = '/try-or-install';
-  static const turnOffRST = '/turn-off-rst';
+  static const rst = '/rst';
   static const keyboardLayout = '/keyboard-layout';
   static const repairUbuntu = '/repair-ubuntu';
   static const connectToInternet = '/connect-to-internet';

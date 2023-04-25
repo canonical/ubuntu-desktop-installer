@@ -3,29 +3,29 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.dart';
-import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_page.dart';
+import 'package:ubuntu_desktop_installer/pages/rst/rst_model.dart';
+import 'package:ubuntu_desktop_installer/pages/rst/rst_page.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';
-import 'turn_off_rst_page_test.mocks.dart';
+import 'rst_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([TurnOffRSTModel, UrlLauncher])
+@GenerateMocks([RstModel, UrlLauncher])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
 
   testWidgets('restart', (tester) async {
-    final model = MockTurnOffRSTModel();
+    final model = MockRstModel();
 
     await tester.pumpWidget(
-      Provider<TurnOffRSTModel>.value(
+      Provider<RstModel>.value(
         value: model,
-        child: tester.buildApp((_) => TurnOffRSTPage()),
+        child: tester.buildApp((_) => RstPage()),
       ),
     );
 
@@ -57,7 +57,7 @@ void main() {
   });
 
   testWidgets('tap link', (tester) async {
-    final model = MockTurnOffRSTModel();
+    final model = MockRstModel();
 
     final urlLauncher = MockUrlLauncher();
     when(urlLauncher.launchUrl('https://help.ubuntu.com/rst'))
@@ -65,9 +65,9 @@ void main() {
     registerMockService<UrlLauncher>(urlLauncher);
 
     await tester.pumpWidget(
-      Provider<TurnOffRSTModel>.value(
+      Provider<RstModel>.value(
         value: model,
-        child: tester.buildApp((_) => TurnOffRSTPage()),
+        child: tester.buildApp((_) => RstPage()),
       ),
     );
 
