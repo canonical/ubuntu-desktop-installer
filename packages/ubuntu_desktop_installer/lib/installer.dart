@@ -399,8 +399,8 @@ class _UbuntuDesktopInstallerWizardState
           builder: KeyboardLayoutPage.create,
           userData: InstallationStep.keyboard.index,
         ),
-        Routes.connectToInternet: WizardRoute(
-          builder: ConnectToInternetPage.create,
+        Routes.network: WizardRoute(
+          builder: NetworkPage.create,
           userData: InstallationStep.network.index,
         ),
         Routes.updatesOtherSoftware: WizardRoute(

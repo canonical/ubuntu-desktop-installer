@@ -2,10 +2,10 @@ import 'package:collection/collection.dart';
 
 import '../../services.dart';
 import 'connect_model.dart';
-import 'network_model.dart';
+import 'network_device.dart';
 
 /// "Use wired connection"
-class EthernetModel extends NetworkModel<EthernetDevice> {
+class EthernetModel extends NetworkDeviceModel<EthernetDevice> {
   EthernetModel(super.service, [super.udev]);
 
   @override

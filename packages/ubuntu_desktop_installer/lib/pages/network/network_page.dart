@@ -6,7 +6,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../../l10n.dart';
 import '../../services.dart';
 import 'connect_model.dart';
-import 'connect_to_internet_model.dart';
+import 'network_model.dart';
 import 'connect_view.dart';
 import 'ethernet_model.dart';
 import 'ethernet_view.dart';
@@ -16,35 +16,35 @@ import 'wifi_model.dart';
 import 'wifi_view.dart';
 
 /// https://github.com/canonical/ubuntu-desktop-installer/issues/30
-class ConnectToInternetPage extends StatefulWidget {
+class NetworkPage extends StatefulWidget {
   @visibleForTesting
-  const ConnectToInternetPage({super.key});
+  const NetworkPage({super.key});
 
   static Widget create(BuildContext context) {
     final udev = getService<UdevService>();
     final service = getService<NetworkService>();
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => ConnectToInternetModel(service)),
+        ChangeNotifierProvider(create: (_) => NetworkModel(service)),
         ChangeNotifierProvider(create: (_) => EthernetModel(service, udev)),
         ChangeNotifierProvider(create: (_) => WifiModel(service, udev)),
         ChangeNotifierProvider(create: (_) => HiddenWifiModel(service, udev)),
         ChangeNotifierProvider(create: (_) => NoConnectModel()),
       ],
-      child: const ConnectToInternetPage(),
+      child: const NetworkPage(),
     );
   }
 
   @override
-  State<ConnectToInternetPage> createState() => _ConnectToInternetPageState();
+  State<NetworkPage> createState() => _NetworkPageState();
 }
 
-class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
+class _NetworkPageState extends State<NetworkPage> {
   @override
   void initState() {
     super.initState();
 
-    final model = context.read<ConnectToInternetModel>();
+    final model = context.read<NetworkModel>();
     model.addConnectMode(context.read<EthernetModel>());
     model.addConnectMode(context.read<WifiModel>());
     model.addConnectMode(context.read<HiddenWifiModel>());
@@ -54,7 +54,7 @@ class _ConnectToInternetPageState extends State<ConnectToInternetPage> {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<ConnectToInternetModel>(context);
+    final model = Provider.of<NetworkModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

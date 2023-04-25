@@ -8,7 +8,7 @@ import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/main.dart' as app;
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -54,7 +54,7 @@ void main() {
     await testKeyboardLayoutPage(tester, keyboard: keyboardLayout);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester, sourceId: kMinimalSourceId);
@@ -109,7 +109,7 @@ void main() {
     await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester);
@@ -175,7 +175,7 @@ void main() {
     await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester, sourceId: kNormalSourceId);
@@ -226,7 +226,7 @@ void main() {
     await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester, sourceId: kNormalSourceId);

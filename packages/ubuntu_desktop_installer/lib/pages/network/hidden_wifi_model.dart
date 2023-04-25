@@ -2,10 +2,10 @@ import 'package:collection/collection.dart';
 
 import '../../services.dart';
 import 'connect_model.dart';
-import 'network_model.dart';
+import 'network_device.dart';
 import 'wifi_model.dart';
 
-class HiddenWifiModel extends NetworkModel<WifiDevice> {
+class HiddenWifiModel extends NetworkDeviceModel<WifiDevice> {
   HiddenWifiModel(super.service, [super.udev]);
 
   @override
