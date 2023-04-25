@@ -4,8 +4,6 @@ import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/widgets.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   testWidgets('activation', (tester) async {
     var activated = false;
@@ -36,7 +34,7 @@ void main() {
           header: const Text('header'),
           content: const Text('content'),
           snackBar: const SnackBar(content: Text('snackbar')),
-          bottomBar: WizardBar(
+          bottomBar: const WizardBar(
             leading: WizardAction(label: 'back'),
             trailing: [
               WizardAction(label: 'next'),
@@ -77,7 +75,7 @@ void main() {
 
   testWidgets('normal/flat/highlighted action', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: WizardPage(
           bottomBar: WizardBar(
             trailing: [
@@ -122,7 +120,7 @@ void main() {
 
   testWidgets('hidden action', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: WizardPage(
           bottomBar: WizardBar(
             trailing: [
@@ -186,8 +184,8 @@ void main() {
   testWidgets('page indicator', (tester) async {
     final routes = <String, WizardRoute>{
       '/foo': WizardRoute(
-        builder: (context) => WizardPage(
-          content: const Text('Page 4 of 7'),
+        builder: (context) => const WizardPage(
+          content: Text('Page 4 of 7'),
           bottomBar: WizardBar(),
         ),
         userData: 3,

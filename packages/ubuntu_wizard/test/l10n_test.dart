@@ -3,8 +3,6 @@ import 'dart:ui';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   test('load localized languages', () async {
     const testLocales = [
@@ -17,10 +15,10 @@ void main() {
     expect(
       await loadLocalizedLanguages(testLocales),
       equals([
-        LocalizedLanguage('English', Locale('en', 'US')),
-        LocalizedLanguage('Español', Locale('es', 'ES')),
-        LocalizedLanguage('Français', Locale('fr', 'FR')),
-        LocalizedLanguage('Русский', Locale('ru', 'RU')),
+        const LocalizedLanguage('English', Locale('en', 'US')),
+        const LocalizedLanguage('Español', Locale('es', 'ES')),
+        const LocalizedLanguage('Français', Locale('fr', 'FR')),
+        const LocalizedLanguage('Русский', Locale('ru', 'RU')),
       ]),
     );
   });
@@ -41,11 +39,11 @@ void main() {
     // full match
     expect(
       <LocalizedLanguage>[
-        LocalizedLanguage('', localeFr),
-        LocalizedLanguage('', localeEnUS),
-        LocalizedLanguage('', localeFrFReuro),
-        LocalizedLanguage('', localeFrCA),
-        LocalizedLanguage('', localeFrFR),
+        const LocalizedLanguage('', localeFr),
+        const LocalizedLanguage('', localeEnUS),
+        const LocalizedLanguage('', localeFrFReuro),
+        const LocalizedLanguage('', localeFrCA),
+        const LocalizedLanguage('', localeFrFR),
       ].findBestMatch(localeFrFReuro),
       equals(2),
     );
@@ -53,10 +51,10 @@ void main() {
     // matching language and country
     expect(
       <LocalizedLanguage>[
-        LocalizedLanguage('', localeFr),
-        LocalizedLanguage('', localeEnUS),
-        LocalizedLanguage('', localeFrCA),
-        LocalizedLanguage('', localeFrFR),
+        const LocalizedLanguage('', localeFr),
+        const LocalizedLanguage('', localeEnUS),
+        const LocalizedLanguage('', localeFrCA),
+        const LocalizedLanguage('', localeFrFR),
       ].findBestMatch(localeFrFReuro),
       equals(3),
     );
@@ -64,9 +62,9 @@ void main() {
     // matching language
     expect(
       <LocalizedLanguage>[
-        LocalizedLanguage('', localeFr),
-        LocalizedLanguage('', localeEnUS),
-        LocalizedLanguage('', localeFrCA),
+        const LocalizedLanguage('', localeFr),
+        const LocalizedLanguage('', localeEnUS),
+        const LocalizedLanguage('', localeFrCA),
       ].findBestMatch(localeFrFReuro),
       equals(0),
     );
@@ -74,9 +72,9 @@ void main() {
     // no match -> en
     expect(
       <LocalizedLanguage>[
-        LocalizedLanguage('', localeFr),
-        LocalizedLanguage('', localeEnUS),
-        LocalizedLanguage('', localeFrCA),
+        const LocalizedLanguage('', localeFr),
+        const LocalizedLanguage('', localeEnUS),
+        const LocalizedLanguage('', localeFrCA),
       ].findBestMatch(localeEs),
       equals(1),
     );
@@ -84,9 +82,9 @@ void main() {
     // country mismatch -> en
     expect(
       <LocalizedLanguage>[
-        LocalizedLanguage('', localeFrFR),
-        LocalizedLanguage('', localeEnUS),
-        LocalizedLanguage('', localeFrCA),
+        const LocalizedLanguage('', localeFrFR),
+        const LocalizedLanguage('', localeEnUS),
+        const LocalizedLanguage('', localeFrCA),
       ].findBestMatch(localeFrBE),
       equals(1),
     );

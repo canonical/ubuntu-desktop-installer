@@ -3,8 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:ubuntu_wizard/widgets.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -30,7 +28,7 @@ void main() {
       MaterialApp(
         home: Material(
           child: OptionCard(
-            title: Text('title'),
+            title: const Text('title'),
             selected: false,
             onSelected: () {},
           ),
