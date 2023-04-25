@@ -83,6 +83,9 @@ extension on WidgetTester {
     when(client.getOriginalStorageV2())
         .thenAnswer((_) async => testStorageResponse());
     registerMockService<SubiquityClient>(client);
+    when(client.source()).thenAnswer((_) async =>
+        const SourceSelectionAndSetting(
+            sources: [], currentId: kNormalSourceId, searchDrivers: false));
 
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.status).thenReturn(status);

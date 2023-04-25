@@ -145,7 +145,7 @@
   "@activeDirectoryPasswordLabel": {},
   "activeDirectoryPasswordEmpty": "Vyžadované",
   "@activeDirectoryPasswordEmpty": {},
-  "welcomeHeader": "Vyberte si jazyk:",
+  "welcomeHeader": "Vyberte si svoj jazyk:",
   "@welcomeHeader": {},
   "wiredMustBeEnabled": "Aby na tomto počítači bolo možné použiť rozhranie Ethernet, je potrebné zapnúť káblové pripojenie",
   "@wiredMustBeEnabled": {},
@@ -187,7 +187,7 @@
   "@wifiMustBeEnabled": {},
   "enableWifi": "Zapnúť Wi-Fi",
   "@enableWifi": {},
-  "normalInstallationSubtitle": "Webový prehliadač, nástroje, kancelársky softvér a prehrávače multimédií.",
+  "normalInstallationSubtitle": "Webový prehliadač, nástroje, kancelársky softvér, hry a prehrávače multimédií.",
   "@normalInstallationSubtitle": {},
   "minimalInstallationTitle": "Minimálna inštalácia",
   "@minimalInstallationTitle": {},
@@ -356,7 +356,7 @@
       "DISTRO": {}
     }
   },
-  "appTitle": "Inštalátor systému Ubuntu",
+  "appTitle": "Inštalátor Ubuntu pre stolný počítač",
   "@appTitle": {},
   "cancelButtonText": "Zrušiť",
   "@cancelButtonText": {},
@@ -806,7 +806,7 @@
       "partition": {}
     }
   },
-  "readyToUse": "**{system}** je nainštalovaný a pripravený na použitie",
+  "readyToUse": "**{system}** je nainštalované a pripravené na použitie",
   "@readyToUse": {
     "type": "text",
     "placeholders": {

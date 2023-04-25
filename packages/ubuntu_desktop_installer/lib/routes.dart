@@ -12,7 +12,7 @@ abstract class Routes {
   static const installationComplete = '/installation-complete';
   static const writeChangesToDisk = '/write-changes-to-disk';
   static const chooseYourLook = '/choose-your-look';
-  static const whoAreYou = '/who-are-you';
+  static const identity = '/identity';
   static const installationSlides = '/installation-slides';
   static const turnOffBitlocker = '/turn-off-bitlocker';
   static const chooseSecurityKey = '/choose-security-key';

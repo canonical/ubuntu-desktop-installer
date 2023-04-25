@@ -8,18 +8,8 @@ import '../../services.dart';
 /// @internal
 final log = Logger('updates_other_software');
 
-enum InstallationMode { normal, minimal }
-
-extension InstallationSource on InstallationMode {
-  String get source {
-    switch (this) {
-      case InstallationMode.normal:
-        return 'ubuntu-desktop';
-      case InstallationMode.minimal:
-        return 'ubuntu-desktop-minimal';
-    }
-  }
-}
+const kNormalSourceId = 'ubuntu-desktop';
+const kMinimalSourceId = 'ubuntu-desktop-minimal';
 
 class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   // ignore: public_member_api_docs
@@ -27,13 +17,11 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
       {required SubiquityClient client,
       required PowerService power,
       required NetworkService network,
-      required InstallationMode installationMode,
       bool installDrivers = false,
       bool installCodecs = false})
       : _client = client,
         _power = power,
         _network = network,
-        _mode = installationMode,
         _installDrivers = installDrivers,
         _installCodecs = installCodecs {
     addPropertyListener('OnBattery', notifyListeners);
@@ -44,8 +32,15 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   final PowerService _power;
   final NetworkService _network;
 
-  InstallationMode _mode;
-  InstallationMode get installationMode => _mode;
+  String? _sourceId;
+  String? get sourceId => _sourceId;
+
+  List<SourceSelection>? _sources;
+  List<SourceSelection> get sources => _sources ?? [];
+
+  SourceSelectionAndSetting? _sourceSelectionAndSetting;
+  SourceSelectionAndSetting? get sourceSelectionAndSetting =>
+      _sourceSelectionAndSetting;
 
   bool _installDrivers;
   bool get installDrivers => _installDrivers;
@@ -53,13 +48,13 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   bool _installCodecs;
   bool get installCodecs => _installCodecs;
 
-  void setInstallationMode(InstallationMode? mode) {
-    if (mode == null || _mode == mode) {
+  void setSourceId(String? sourceId) {
+    if (sourceId == null || _sourceId == sourceId) {
       return;
     }
 
-    _mode = mode;
-    log.info('Selected ${mode.name} installation mode');
+    _sourceId = sourceId;
+    log.info('Selected $sourceId installation source');
     notifyListeners();
   }
 
@@ -89,7 +84,7 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   /// save the selected installation options.
   Future<void> save() {
     return Future.wait([
-      _client.setSource(installationMode.source),
+      _client.setSource(_sourceId!),
       _client.setDrivers(install: installDrivers),
       _client.setCodecs(install: installCodecs && isOnline),
     ]);
@@ -104,6 +99,16 @@ class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
   /// Initializes the model and connects to the power service.
   Future<void> init() {
     return Future.wait([
+      _client.source().then((value) {
+        // the desired order:
+        // 1. ubuntu-desktop (1)
+        // 2. ubuntu-desktop-minimal (0)
+        // 3. any other source (-1)
+        const order = [kMinimalSourceId, kNormalSourceId];
+        _sources = List.of(value.sources)
+          ..sort((a, b) => order.indexOf(b.id).compareTo(order.indexOf(a.id)));
+        _sourceId = value.currentId;
+      }),
       _client.getDrivers().then((response) {
         _installDrivers = response.install;
       }),

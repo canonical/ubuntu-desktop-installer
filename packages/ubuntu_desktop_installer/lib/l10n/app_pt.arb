@@ -22,7 +22,7 @@
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Reparar instalação",
   "@repairInstallation": {},
-  "repairInstallationDescription": "A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações.",
+  "repairInstallationDescription": "A reparação reinstalará todos os softwares instalados sem alterar documentos ou definições.",
   "@repairInstallationDescription": {},
   "tryUbuntu": "Experimentar o {RELEASE}",
   "@tryUbuntu": {},

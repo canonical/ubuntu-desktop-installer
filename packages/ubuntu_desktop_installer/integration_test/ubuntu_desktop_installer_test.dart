@@ -57,7 +57,7 @@ void main() {
     await testConnectToInternetPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
-    await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.minimal);
+    await testUpdatesOtherSoftwarePage(tester, sourceId: kMinimalSourceId);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(tester, type: InstallationType.erase);
@@ -69,7 +69,7 @@ void main() {
     await testTimezonePage(tester, timezone: timezone);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: identity,
       password: 'password',
@@ -132,7 +132,7 @@ void main() {
     await testTimezonePage(tester);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: identity,
       password: 'password',
@@ -178,7 +178,7 @@ void main() {
     await testConnectToInternetPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
-    await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.normal);
+    await testUpdatesOtherSoftwarePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(tester, type: InstallationType.manual);
@@ -193,7 +193,7 @@ void main() {
     await testTimezonePage(tester);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
@@ -229,7 +229,7 @@ void main() {
     await testConnectToInternetPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
-    await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.normal);
+    await testUpdatesOtherSoftwarePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(tester, type: InstallationType.alongside);
@@ -244,7 +244,7 @@ void main() {
     await testTimezonePage(tester);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
