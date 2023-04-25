@@ -3,10 +3,10 @@ import 'dart:ui';
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
+import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
 import 'package:ubuntu_test/mocks.dart';
 
-import 'welcome_page_test.mocks.dart';
+import 'locale_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
@@ -15,7 +15,7 @@ void main() {
     final client = MockSubiquityClient();
     final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, sound: sound);
+    final model = LocaleModel(client: client, sound: sound);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
   });
@@ -24,7 +24,7 @@ void main() {
     final client = MockSubiquityClient();
     final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, sound: sound);
+    final model = LocaleModel(client: client, sound: sound);
     await model.loadLanguages();
 
     final languages = List.generate(model.languageCount, model.language);
@@ -39,7 +39,7 @@ void main() {
     final client = MockSubiquityClient();
     final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, sound: sound);
+    final model = LocaleModel(client: client, sound: sound);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
@@ -65,7 +65,7 @@ void main() {
     when(client.setLocale('fr_CA.UTF-8')).thenAnswer((_) async {});
     final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, sound: sound);
+    final model = LocaleModel(client: client, sound: sound);
     model.applyLocale(Locale('fr', 'CA'));
     verify(client.setLocale('fr_CA.UTF-8')).called(1);
   });
@@ -74,7 +74,7 @@ void main() {
     final client = MockSubiquityClient();
     final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, sound: sound);
+    final model = LocaleModel(client: client, sound: sound);
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -93,7 +93,7 @@ void main() {
     final client = MockSubiquityClient();
     final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, sound: sound);
+    final model = LocaleModel(client: client, sound: sound);
     await model.loadLanguages();
 
     final english = model.searchLanguage('eng');
@@ -128,7 +128,7 @@ void main() {
     final client = MockSubiquityClient();
     final sound = MockSoundService();
 
-    final model = WelcomeModel(client: client, sound: sound);
+    final model = LocaleModel(client: client, sound: sound);
     await model.playWelcomeSound();
     verify(sound.play('system-ready')).called(1);
   });

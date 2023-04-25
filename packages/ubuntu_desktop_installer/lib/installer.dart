@@ -308,7 +308,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
 }
 
 enum InstallationStep {
-  welcome,
+  locale,
   keyboard,
   network,
   software,
@@ -366,9 +366,9 @@ class _UbuntuDesktopInstallerWizardState
       initialRoute: widget.initialRoute ?? Routes.initial,
       userData: InstallationStep.values.length,
       routes: <String, WizardRoute>{
-        Routes.welcome: WizardRoute(
-          builder: WelcomePage.create,
-          userData: InstallationStep.welcome.index,
+        Routes.locale: WizardRoute(
+          builder: LocalePage.create,
+          userData: InstallationStep.locale.index,
           onNext: (_) {
             if (widget.tryOrInstall == true) {
               return Routes.tryOrInstall;
@@ -381,7 +381,7 @@ class _UbuntuDesktopInstallerWizardState
         ),
         Routes.tryOrInstall: WizardRoute(
           builder: TryOrInstallPage.create,
-          userData: InstallationStep.welcome.index,
+          userData: InstallationStep.locale.index,
           onNext: (settings) {
             switch (settings.arguments as Option?) {
               case Option.repairUbuntu:

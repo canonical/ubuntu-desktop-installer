@@ -48,7 +48,7 @@ void main() {
     await app.main(<String>[]);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester, language: language);
+    await testLocalePage(tester, language: language);
     await tester.pumpAndSettle();
 
     await testKeyboardLayoutPage(tester, keyboard: keyboardLayout);
@@ -103,7 +103,7 @@ void main() {
     await app.main(<String>[]);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester);
+    await testLocalePage(tester);
     await tester.pumpAndSettle();
 
     await testKeyboardLayoutPage(tester);
@@ -169,7 +169,7 @@ void main() {
     await app.main(<String>[]);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester);
+    await testLocalePage(tester);
     await tester.pumpAndSettle();
 
     await testKeyboardLayoutPage(tester);
@@ -220,7 +220,7 @@ void main() {
     ]);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester);
+    await testLocalePage(tester);
     await tester.pumpAndSettle();
 
     await testKeyboardLayoutPage(tester);
@@ -291,7 +291,7 @@ void main() {
     await app.main(<String>['--try-or-install']);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester);
+    await testLocalePage(tester);
     await tester.pumpAndSettle();
 
     await testTryOrInstallPage(tester, option: Option.installUbuntu);

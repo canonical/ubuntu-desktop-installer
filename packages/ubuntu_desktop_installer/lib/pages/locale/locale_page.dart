@@ -9,10 +9,10 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
-import 'welcome_model.dart';
+import 'locale_model.dart';
 
-class WelcomePage extends StatefulWidget {
-  const WelcomePage({
+class LocalePage extends StatefulWidget {
+  const LocalePage({
     super.key,
   });
 
@@ -20,21 +20,21 @@ class WelcomePage extends StatefulWidget {
     final client = getService<SubiquityClient>();
     final sound = tryGetService<SoundService>();
     return ChangeNotifierProvider(
-      create: (_) => WelcomeModel(client: client, sound: sound),
-      child: const WelcomePage(),
+      create: (_) => LocaleModel(client: client, sound: sound),
+      child: const LocalePage(),
     );
   }
 
   @override
-  State<WelcomePage> createState() => _WelcomePageState();
+  State<LocalePage> createState() => _LocalePageState();
 }
 
-class _WelcomePageState extends State<WelcomePage> {
+class _LocalePageState extends State<LocalePage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<WelcomeModel>(context, listen: false);
+    final model = Provider.of<LocaleModel>(context, listen: false);
     model.loadLanguages().then((_) {
       model.selectLocale(InheritedLocale.of(context));
       model.playWelcomeSound();
@@ -44,7 +44,7 @@ class _WelcomePageState extends State<WelcomePage> {
   void _selectLanguage(int index) {
     if (index == -1) return;
 
-    final model = context.read<WelcomeModel>();
+    final model = context.read<LocaleModel>();
     model.selectedLanguageIndex = index;
 
     InheritedLocale.apply(context, model.locale(index));
@@ -53,7 +53,7 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     final flavor = Flavor.of(context);
-    final model = Provider.of<WelcomeModel>(context);
+    final model = Provider.of<LocaleModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

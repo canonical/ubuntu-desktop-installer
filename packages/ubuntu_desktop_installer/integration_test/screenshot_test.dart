@@ -42,7 +42,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(
+    await testLocalePage(
       tester,
       screenshot: '$currentThemeName/1.locale',
     );

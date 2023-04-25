@@ -16,13 +16,13 @@ import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test/test_utils.dart';
 
-Future<void> testWelcomePage(
+Future<void> testLocalePage(
   WidgetTester tester, {
   String? language,
   String? screenshot,
 }) async {
   await expectPage(
-      tester, WelcomePage, (lang) => lang.welcomePageTitle('Ubuntu'));
+      tester, LocalePage, (lang) => lang.welcomePageTitle('Ubuntu'));
 
   await tester.pumpAndSettle(); // auto-scroll
 

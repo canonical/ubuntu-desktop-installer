@@ -1,6 +1,6 @@
 abstract class Routes {
-  static const initial = welcome;
-  static const welcome = '/welcome';
+  static const initial = locale;
+  static const locale = '/locale';
   static const tryOrInstall = '/try-or-install';
   static const turnOffRST = '/turn-off-rst';
   static const keyboardLayout = '/keyboard-layout';
