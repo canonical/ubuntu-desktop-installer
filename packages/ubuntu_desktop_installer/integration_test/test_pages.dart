@@ -136,14 +136,14 @@ Future<void> testNetworkPage(
 
 Future<void> testUpdatesOtherSoftwarePage(
   WidgetTester tester, {
-  InstallationMode? mode,
+  String? sourceId,
   String? screenshot,
 }) async {
   await expectPage(tester, UpdatesOtherSoftwarePage,
       (lang) => lang.updatesOtherSoftwarePageTitle);
 
-  if (mode != null) {
-    await tester.tapRadioButton<InstallationMode>(mode);
+  if (sourceId != null) {
+    await tester.tapRadioButton<String>(sourceId);
   }
   await tester.pumpAndSettle();
 
@@ -444,13 +444,13 @@ Future<void> testWhereAreYouPage(
   await tester.tapContinue();
 }
 
-Future<void> testWhoAreYouPage(
+Future<void> testIdentityPage(
   WidgetTester tester, {
   IdentityData? identity,
   String? password,
   String? screenshot,
 }) async {
-  await expectPage(tester, WhoAreYouPage, (lang) => lang.whoAreYouPageTitle);
+  await expectPage(tester, IdentityPage, (lang) => lang.whoAreYouPageTitle);
 
   if (identity?.realname != null) {
     await tester.enterTextValue(

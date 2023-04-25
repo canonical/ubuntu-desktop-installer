@@ -233,7 +233,8 @@ abstract class AppLocalizations {
     Locale('ug'),
     Locale('uk'),
     Locale('vi'),
-    Locale('zh')
+    Locale('zh'),
+    Locale('zh', 'TW')
   ];
 
   /// No description provided for @appTitle.
@@ -1981,6 +1982,12 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
     case 'pt': {
   switch (locale.countryCode) {
     case 'BR': return AppLocalizationsPtBr();
+   }
+  break;
+   }
+    case 'zh': {
+  switch (locale.countryCode) {
+    case 'TW': return AppLocalizationsZhTw();
    }
   break;
    }

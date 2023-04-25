@@ -22,15 +22,32 @@ import 'updates_other_software_page_test.mocks.dart';
 @GenerateMocks([UpdateOtherSoftwareModel, TelemetryService])
 void main() {
   UpdateOtherSoftwareModel buildModel({
-    InstallationMode? installationMode,
+    String? sourceId,
     bool? installDrivers,
     bool? installCodecs,
     bool? onBattery,
     bool? isOnline,
   }) {
     final model = MockUpdateOtherSoftwareModel();
-    when(model.installationMode)
-        .thenReturn(installationMode ?? InstallationMode.normal);
+    when(model.sources).thenReturn([
+      SourceSelection(
+        id: kMinimalSourceId,
+        name: '',
+        description: '',
+        size: 0,
+        variant: 'desktop',
+        isDefault: false,
+      ),
+      SourceSelection(
+        id: kNormalSourceId,
+        name: '',
+        description: '',
+        size: 0,
+        variant: 'desktop',
+        isDefault: true,
+      ),
+    ]);
+    when(model.sourceId).thenReturn(sourceId ?? kNormalSourceId);
     when(model.installDrivers).thenReturn(installDrivers ?? false);
     when(model.installCodecs).thenReturn(installCodecs ?? false);
     when(model.onBattery).thenReturn(onBattery ?? false);
@@ -48,40 +65,38 @@ void main() {
     );
   }
 
-  testWidgets('installation mode', (tester) async {
-    final model = buildModel(installationMode: InstallationMode.normal);
+  testWidgets('source id', (tester) async {
+    final model = buildModel(sourceId: kNormalSourceId);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final normalInstallationTile = find.widgetWithText(
-      YaruRadioButton<InstallationMode>,
+      YaruRadioButton<String>,
       tester.lang.normalInstallationTitle,
     );
     expect(normalInstallationTile, findsOneWidget);
 
     final minimalInstallationTile = find.widgetWithText(
-      YaruRadioButton<InstallationMode>,
+      YaruRadioButton<String>,
       tester.lang.minimalInstallationTitle,
     );
     expect(minimalInstallationTile, findsOneWidget);
 
     expect(
-      tester
-          .widget<YaruRadioButton<InstallationMode>>(normalInstallationTile)
-          .groupValue,
-      InstallationMode.normal,
+      tester.widget<YaruRadioButton<String>>(normalInstallationTile).groupValue,
+      kNormalSourceId,
     );
     expect(
       tester
-          .widget<YaruRadioButton<InstallationMode>>(minimalInstallationTile)
+          .widget<YaruRadioButton<String>>(minimalInstallationTile)
           .groupValue,
-      InstallationMode.normal,
+      kNormalSourceId,
     );
 
-    when(model.installationMode).thenReturn(InstallationMode.minimal);
+    when(model.sourceId).thenReturn('ubuntu-desktop-minimal');
 
     await tester.tap(minimalInstallationTile);
 
-    verify(model.setInstallationMode(InstallationMode.minimal)).called(1);
+    verify(model.setSourceId('ubuntu-desktop-minimal')).called(1);
   });
 
   testWidgets('install drivers', (tester) async {
@@ -167,7 +182,7 @@ void main() {
   });
 
   testWidgets('continue on the next page', (tester) async {
-    final model = buildModel(installationMode: InstallationMode.normal);
+    final model = buildModel(sourceId: kNormalSourceId);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.widgetWithText(
@@ -184,6 +199,9 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
+    when(client.source()).thenAnswer((_) async =>
+        const SourceSelectionAndSetting(
+            sources: [], currentId: kNormalSourceId, searchDrivers: false));
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
         install: true, drivers: [], localOnly: false, searchDrivers: false));
     when(client.getCodecs())

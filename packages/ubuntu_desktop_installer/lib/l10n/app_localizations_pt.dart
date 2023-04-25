@@ -58,7 +58,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get repairInstallation => 'Reparar instalação';
 
   @override
-  String get repairInstallationDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações.';
+  String get repairInstallationDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou definições.';
 
   @override
   String tryUbuntu(Object RELEASE) {

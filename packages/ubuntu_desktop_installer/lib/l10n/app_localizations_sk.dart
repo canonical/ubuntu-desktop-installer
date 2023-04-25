@@ -5,7 +5,7 @@ class AppLocalizationsSk extends AppLocalizations {
   AppLocalizationsSk([String locale = 'sk']) : super(locale);
 
   @override
-  String get appTitle => 'Inštalátor systému Ubuntu';
+  String get appTitle => 'Inštalátor Ubuntu pre stolný počítač';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -47,7 +47,7 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get welcomeHeader => 'Vyberte si jazyk:';
+  String get welcomeHeader => 'Vyberte si svoj jazyk:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
@@ -214,7 +214,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get normalInstallationTitle => 'Normálna inštalácia';
 
   @override
-  String get normalInstallationSubtitle => 'Webový prehliadač, nástroje, kancelársky softvér a prehrávače multimédií.';
+  String get normalInstallationSubtitle => 'Webový prehliadač, nástroje, kancelársky softvér, hry a prehrávače multimédií.';
 
   @override
   String get minimalInstallationTitle => 'Minimálna inštalácia';
@@ -710,7 +710,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** je nainštalovaný a pripravený na použitie';
+    return '**$system** je nainštalované a pripravené na použitie';
   }
 
   @override

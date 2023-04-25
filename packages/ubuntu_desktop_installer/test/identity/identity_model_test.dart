@@ -6,12 +6,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/who_are_you/who_are_you_model.dart';
+import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import 'who_are_you_model_test.mocks.dart';
+import 'identity_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
@@ -37,7 +37,7 @@ void main() {
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
-    when(config.get(WhoAreYouModel.kAutoLoginUser))
+    when(config.get(IdentityModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
@@ -45,7 +45,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
 
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -72,7 +72,7 @@ void main() {
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
-    when(config.get(WhoAreYouModel.kAutoLoginUser))
+    when(config.get(IdentityModel.kAutoLoginUser))
         .thenAnswer((_) async => 'someone');
 
     final network = MockNetworkService();
@@ -80,7 +80,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
 
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -102,7 +102,7 @@ void main() {
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
-    when(config.get(WhoAreYouModel.kAutoLoginUser))
+    when(config.get(IdentityModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
@@ -110,7 +110,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
 
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -132,7 +132,7 @@ void main() {
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
-    when(config.get(WhoAreYouModel.kAutoLoginUser))
+    when(config.get(IdentityModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
@@ -140,7 +140,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
 
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -164,7 +164,7 @@ void main() {
     final client = MockSubiquityClient();
 
     final config = MockConfigService();
-    when(config.get(WhoAreYouModel.kAutoLoginUser))
+    when(config.get(IdentityModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
@@ -172,7 +172,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
 
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -197,7 +197,7 @@ void main() {
     final client = MockSubiquityClient();
 
     final config = MockConfigService();
-    when(config.get(WhoAreYouModel.kAutoLoginUser))
+    when(config.get(IdentityModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
@@ -205,7 +205,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
 
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -216,11 +216,11 @@ void main() {
 
     model.autoLogin = true;
     await model.save();
-    verify(config.set(WhoAreYouModel.kAutoLoginUser, model.username)).called(1);
+    verify(config.set(IdentityModel.kAutoLoginUser, model.username)).called(1);
 
     model.autoLogin = false;
     await model.save();
-    verify(config.set(WhoAreYouModel.kAutoLoginUser, null)).called(1);
+    verify(config.set(IdentityModel.kAutoLoginUser, null)).called(1);
   });
 
   test('password strength', () {
@@ -231,7 +231,7 @@ void main() {
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
     final telemetry = MockTelemetryService();
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -256,7 +256,7 @@ void main() {
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
     final telemetry = MockTelemetryService();
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -304,7 +304,7 @@ void main() {
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
 
     final telemetry = MockTelemetryService();
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -387,7 +387,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
 
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: MockConfigService(),
       network: network,
@@ -426,7 +426,7 @@ void main() {
     });
 
     final config = MockConfigService();
-    when(config.get(WhoAreYouModel.kAutoLoginUser))
+    when(config.get(IdentityModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
@@ -435,7 +435,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
 
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -466,7 +466,7 @@ void main() {
     when(network.isConnectedSite).thenReturn(false);
     when(network.propertiesChanged).thenAnswer((_) => networkChanged.stream);
 
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,
@@ -490,7 +490,7 @@ void main() {
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => true);
 
     final config = MockConfigService();
-    when(config.get(WhoAreYouModel.kAutoLoginUser))
+    when(config.get(IdentityModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
@@ -498,7 +498,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
 
-    final model = WhoAreYouModel(
+    final model = IdentityModel(
       client: client,
       config: config,
       network: network,

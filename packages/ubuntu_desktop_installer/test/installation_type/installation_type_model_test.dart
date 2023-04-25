@@ -68,7 +68,7 @@ void main() {
     model.addListener(() => wasNotified = true);
 
     wasNotified = false;
-    expect(model.installationType, equals(InstallationType.erase));
+    expect(model.installationType, isNull);
     model.installationType = InstallationType.manual;
     expect(wasNotified, isTrue);
 
@@ -167,7 +167,7 @@ void main() {
   });
 
   test('single reformat target', () async {
-    final reformat = GuidedStorageTargetReformat(diskId: '');
+    final reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
 
     final service = MockDiskStorageService();
     when(service.useLvm).thenReturn(false);
@@ -208,7 +208,7 @@ void main() {
     expect(model.canInstallAlongside, isFalse);
 
     // reformat
-    final reformat = GuidedStorageTargetReformat(diskId: '');
+    final reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [reformat]));
     await model.init();
@@ -221,7 +221,8 @@ void main() {
         newSize: 0,
         maximum: 0,
         minimum: 0,
-        recommended: 0);
+        recommended: 0,
+        capabilities: []);
     when(service.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse(possible: [resize]));
     await model.init();
@@ -229,7 +230,10 @@ void main() {
 
     // gap
     final gap = GuidedStorageTargetUseGap(
-        diskId: '', gap: Gap(offset: 0, size: 0, usable: GapUsable.YES));
+      diskId: '',
+      gap: Gap(offset: 0, size: 0, usable: GapUsable.YES),
+      capabilities: [],
+    );
     when(service.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse(possible: [gap]));
     await model.init();
@@ -262,7 +266,7 @@ void main() {
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // reformat
-    final reformat = GuidedStorageTargetReformat(diskId: '');
+    final reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [reformat]));
     await model.init();
@@ -287,7 +291,8 @@ void main() {
         newSize: 0,
         maximum: 0,
         minimum: 0,
-        recommended: 0);
+        recommended: 0,
+        capabilities: []);
     when(service.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse(possible: [resize]));
     await model.init();
@@ -298,7 +303,10 @@ void main() {
 
     // gap
     final gap = GuidedStorageTargetUseGap(
-        diskId: '', gap: Gap(offset: 0, size: 1, usable: GapUsable.YES));
+      diskId: '',
+      gap: Gap(offset: 0, size: 1, usable: GapUsable.YES),
+      capabilities: [],
+    );
     when(service.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse(possible: [gap]));
     await model.init();
@@ -309,9 +317,15 @@ void main() {
 
     // multiple gaps
     final gap2 = GuidedStorageTargetUseGap(
-        diskId: '', gap: Gap(offset: 0, size: 2, usable: GapUsable.YES));
+      diskId: '',
+      gap: Gap(offset: 0, size: 2, usable: GapUsable.YES),
+      capabilities: [],
+    );
     final gap3 = GuidedStorageTargetUseGap(
-        diskId: '', gap: Gap(offset: 0, size: 3, usable: GapUsable.YES));
+      diskId: '',
+      gap: Gap(offset: 0, size: 3, usable: GapUsable.YES),
+      capabilities: [],
+    );
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [gap, gap3, gap2]));
     await model.init();
