@@ -11,24 +11,24 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
-import 'turn_off_rst_model.dart';
+import 'rst_model.dart';
 
-class TurnOffRSTPage extends StatelessWidget {
-  const TurnOffRSTPage({
+class RstPage extends StatelessWidget {
+  const RstPage({
     super.key,
   });
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
     return Provider(
-      create: (_) => TurnOffRSTModel(client),
-      child: const TurnOffRSTPage(),
+      create: (_) => RstModel(client),
+      child: const RstPage(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<TurnOffRSTModel>(context);
+    final model = Provider.of<RstModel>(context);
     final lang = AppLocalizations.of(context);
     return Scaffold(
       body: WizardPage(
@@ -42,7 +42,7 @@ class TurnOffRSTPage extends StatelessWidget {
             children: <Widget>[
               Flexible(
                 child: SvgPicture.asset(
-                  'assets/turn_off_rst/qr-code.svg',
+                  'assets/rst/qr-code.svg',
                   colorFilter: ColorFilter.mode(
                     Theme.of(context).brightness == Brightness.light
                         ? Colors.black

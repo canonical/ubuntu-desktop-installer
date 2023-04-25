@@ -79,10 +79,10 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.turnOffRST);
+    await tester.jumpToWizardRoute(Routes.rst);
     await tester.pumpAndSettle();
 
-    await testTurnOffRSTPage(
+    await testRstPage(
       tester,
       screenshot: '$currentThemeName/3.rst',
     );

@@ -2,7 +2,7 @@ abstract class Routes {
   static const initial = locale;
   static const locale = '/locale';
   static const tryOrInstall = '/try-or-install';
-  static const turnOffRST = '/turn-off-rst';
+  static const rst = '/rst';
   static const keyboardLayout = '/keyboard-layout';
   static const repairUbuntu = '/repair-ubuntu';
   static const network = '/network';

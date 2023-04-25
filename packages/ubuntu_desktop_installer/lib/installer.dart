@@ -373,7 +373,7 @@ class _UbuntuDesktopInstallerWizardState
             if (widget.tryOrInstall == true) {
               return Routes.tryOrInstall;
             } else if (service.hasRst) {
-              return Routes.turnOffRST;
+              return Routes.rst;
             } else {
               return Routes.keyboardLayout;
             }
@@ -387,13 +387,13 @@ class _UbuntuDesktopInstallerWizardState
               case Option.repairUbuntu:
                 return Routes.repairUbuntu;
               default:
-                if (service.hasRst) return Routes.turnOffRST;
+                if (service.hasRst) return Routes.rst;
                 return Routes.keyboardLayout;
             }
           },
         ),
-        Routes.turnOffRST: const WizardRoute(
-          builder: TurnOffRSTPage.create,
+        Routes.rst: const WizardRoute(
+          builder: RstPage.create,
         ),
         Routes.keyboardLayout: WizardRoute(
           builder: KeyboardLayoutPage.create,

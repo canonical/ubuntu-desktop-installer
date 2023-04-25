@@ -2,12 +2,12 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 /// @internal
-final log = Logger('turn_off_RST');
+final log = Logger('RST');
 
-/// View model for [TurnOffRSTPage].
-class TurnOffRSTModel {
+/// View model for [RstPage].
+class RstModel {
   /// Creates an instance with the given client.
-  TurnOffRSTModel(this._client) {
+  RstModel(this._client) {
     log.info('RST must be turned off');
   }
 
