@@ -373,7 +373,7 @@ class _UbuntuDesktopInstallerWizardState
             if (widget.tryOrInstall == true) {
               return Routes.tryOrInstall;
             } else if (service.hasRst) {
-              return Routes.turnOffRST;
+              return Routes.rst;
             } else {
               return Routes.keyboard;
             }
@@ -387,13 +387,13 @@ class _UbuntuDesktopInstallerWizardState
               case Option.repairUbuntu:
                 return Routes.repairUbuntu;
               default:
-                if (service.hasRst) return Routes.turnOffRST;
+                if (service.hasRst) return Routes.rst;
                 return Routes.keyboard;
             }
           },
         ),
-        Routes.turnOffRST: const WizardRoute(
-          builder: TurnOffRSTPage.create,
+        Routes.rst: const WizardRoute(
+          builder: RstPage.create,
         ),
         Routes.keyboard: WizardRoute(
           builder: KeyboardPage.create,
@@ -424,8 +424,8 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.type.index,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
-        Routes.turnOffBitlocker: const WizardRoute(
-          builder: TurnOffBitLockerPage.create,
+        Routes.bitlocker: const WizardRoute(
+          builder: BitLockerPage.create,
         ),
         Routes.installAlongside: WizardRoute(
           builder: InstallAlongsidePage.create,
@@ -488,7 +488,7 @@ class _UbuntuDesktopInstallerWizardState
       return Routes.allocateDiskSpace;
     } else if (service.guidedTarget == null) {
       if (arguments == InstallationType.bitlocker) {
-        return Routes.turnOffBitlocker;
+        return Routes.bitlocker;
       } else if (arguments == InstallationType.erase) {
         return Routes.selectGuidedStorage;
       } else if (arguments == InstallationType.alongside) {

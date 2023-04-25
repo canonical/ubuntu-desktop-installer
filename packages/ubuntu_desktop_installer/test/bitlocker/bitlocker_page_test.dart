@@ -3,29 +3,30 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_model.dart';
-import 'package:ubuntu_desktop_installer/pages/turn_off_rst/turn_off_rst_page.dart';
+import 'package:ubuntu_desktop_installer/pages/bitlocker/bitlocker_model.dart';
+import 'package:ubuntu_desktop_installer/pages/bitlocker/bitlocker_page.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';
-import 'turn_off_rst_page_test.mocks.dart';
+import 'bitlocker_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([TurnOffRSTModel, UrlLauncher])
+@GenerateMocks([BitLockerModel, UrlLauncher])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
 
   testWidgets('restart', (tester) async {
-    final model = MockTurnOffRSTModel();
+    final model = MockBitLockerModel();
+    when(model.reboot()).thenAnswer((_) async {});
 
     await tester.pumpWidget(
-      Provider<TurnOffRSTModel>.value(
+      Provider<BitLockerModel>.value(
         value: model,
-        child: tester.buildApp((_) => TurnOffRSTPage()),
+        child: tester.buildApp((_) => BitLockerPage()),
       ),
     );
 
@@ -39,8 +40,6 @@ void main() {
 
     await tester.tap(restartButton);
     await tester.pumpAndSettle();
-
-    expect(find.byType(AlertDialog), findsOneWidget);
     verifyNever(model.reboot());
 
     final continueButton = find.descendant(
@@ -57,22 +56,23 @@ void main() {
   });
 
   testWidgets('tap link', (tester) async {
-    final model = MockTurnOffRSTModel();
+    final model = MockBitLockerModel();
 
     final urlLauncher = MockUrlLauncher();
-    when(urlLauncher.launchUrl('https://help.ubuntu.com/rst'))
+    when(urlLauncher.launchUrl('https://help.ubuntu.com/bitlocker'))
         .thenAnswer((_) async => true);
     registerMockService<UrlLauncher>(urlLauncher);
 
     await tester.pumpWidget(
-      Provider<TurnOffRSTModel>.value(
+      Provider<BitLockerModel>.value(
         value: model,
-        child: tester.buildApp((_) => TurnOffRSTPage()),
+        child: tester.buildApp((_) => BitLockerPage()),
       ),
     );
 
-    await tester.tapLink('help.ubuntu.com/rst');
+    await tester.tapLink('help.ubuntu.com/bitlocker');
 
-    verify(urlLauncher.launchUrl('https://help.ubuntu.com/rst')).called(1);
+    verify(urlLauncher.launchUrl('https://help.ubuntu.com/bitlocker'))
+        .called(1);
   });
 }

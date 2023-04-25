@@ -2,7 +2,7 @@ abstract class Routes {
   static const initial = locale;
   static const locale = '/locale';
   static const tryOrInstall = '/try-or-install';
-  static const turnOffRST = '/turn-off-rst';
+  static const rst = '/rst';
   static const keyboard = '/keyboard';
   static const repairUbuntu = '/repair-ubuntu';
   static const network = '/network';
@@ -14,7 +14,7 @@ abstract class Routes {
   static const chooseYourLook = '/choose-your-look';
   static const identity = '/identity';
   static const installationSlides = '/installation-slides';
-  static const turnOffBitlocker = '/turn-off-bitlocker';
+  static const bitlocker = '/turn-off-bitlocker';
   static const chooseSecurityKey = '/choose-security-key';
   static const installationType = '/installation-type';
   static const selectGuidedStorage = '/select-guided-storage';

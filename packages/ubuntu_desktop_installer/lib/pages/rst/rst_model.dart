@@ -2,13 +2,13 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 /// @internal
-final log = Logger('turn_off_bitlocker');
+final log = Logger('RST');
 
-/// View model for [TurnOffBitLockerPage].
-class TurnOffBitLockerModel {
+/// View model for [RstPage].
+class RstModel {
   /// Creates an instance with the given client.
-  TurnOffBitLockerModel(this._client) {
-    log.info('BitLocker must be turned off');
+  RstModel(this._client) {
+    log.info('RST must be turned off');
   }
 
   final SubiquityClient _client;
