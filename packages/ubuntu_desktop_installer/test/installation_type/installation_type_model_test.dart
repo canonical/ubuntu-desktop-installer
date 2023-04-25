@@ -68,7 +68,7 @@ void main() {
     model.addListener(() => wasNotified = true);
 
     wasNotified = false;
-    expect(model.installationType, equals(InstallationType.erase));
+    expect(model.installationType, isNull);
     model.installationType = InstallationType.manual;
     expect(wasNotified, isTrue);
 
