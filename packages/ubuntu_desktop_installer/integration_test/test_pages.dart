@@ -6,7 +6,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
@@ -16,13 +16,13 @@ import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test/test_utils.dart';
 
-Future<void> testWelcomePage(
+Future<void> testLocalePage(
   WidgetTester tester, {
   String? language,
   String? screenshot,
 }) async {
   await expectPage(
-      tester, WelcomePage, (lang) => lang.welcomePageTitle('Ubuntu'));
+      tester, LocalePage, (lang) => lang.welcomePageTitle('Ubuntu'));
 
   await tester.pumpAndSettle(); // auto-scroll
 
@@ -114,13 +114,13 @@ Future<void> testKeyboardLayoutPage(
   await tester.tapContinue();
 }
 
-Future<void> testConnectToInternetPage(
+Future<void> testNetworkPage(
   WidgetTester tester, {
   ConnectMode? mode,
   String? screenshot,
 }) async {
   await expectPage(
-      tester, ConnectToInternetPage, (lang) => lang.connectToInternetPageTitle);
+      tester, NetworkPage, (lang) => lang.connectToInternetPageTitle);
 
   if (mode != null) {
     await tester.tapRadioButton<ConnectMode>(mode);
@@ -357,12 +357,11 @@ Future<void> testWriteChangesToDiskPage(
   await tester.tapButton(tester.lang.startInstallingButtonText);
 }
 
-Future<void> testTurnOffBitLockerPage(
+Future<void> testBitLockerPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, TurnOffBitLockerPage, (lang) => lang.turnOffBitlockerTitle);
+  await expectPage(tester, BitLockerPage, (lang) => lang.turnOffBitlockerTitle);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
@@ -404,14 +403,13 @@ Future<void> testRstPage(
   await expectLater(windowClosed, completes);
 }
 
-Future<void> testWhereAreYouPage(
+Future<void> testTimezonePage(
   WidgetTester tester, {
   String? location,
   String? timezone,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, WhereAreYouPage, (lang) => lang.whereAreYouPageTitle);
+  await expectPage(tester, TimezonePage, (lang) => lang.whereAreYouPageTitle);
 
   await tester.pumpAndSettle(); // progress indicator
 

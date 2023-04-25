@@ -83,6 +83,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/bitlocker/
     - assets/choose_your_look/
     - assets/install_alongside/
     - assets/installation_slides/
@@ -91,7 +92,6 @@ flutter:
     - assets/installation_slides/screenshots/
     - assets/installation_slides/screenshots/dark/
     - assets/installation_slides/screenshots/light/
+    - assets/rst/
     - assets/select_guided_storage/
     - assets/try_or_install/
-    - assets/turn_off_bitlocker/
-    - assets/rst/

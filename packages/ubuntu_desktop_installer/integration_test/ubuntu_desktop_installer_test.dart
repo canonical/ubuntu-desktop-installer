@@ -8,7 +8,7 @@ import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/main.dart' as app;
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -48,13 +48,13 @@ void main() {
     await app.main(<String>[]);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester, language: language);
+    await testLocalePage(tester, language: language);
     await tester.pumpAndSettle();
 
     await testKeyboardLayoutPage(tester, keyboard: keyboardLayout);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester, sourceId: kMinimalSourceId);
@@ -66,7 +66,7 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester, timezone: timezone);
+    await testTimezonePage(tester, timezone: timezone);
     await tester.pump();
 
     await testIdentityPage(
@@ -103,13 +103,13 @@ void main() {
     await app.main(<String>[]);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester);
+    await testLocalePage(tester);
     await tester.pumpAndSettle();
 
     await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester);
@@ -129,7 +129,7 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester);
+    await testTimezonePage(tester);
     await tester.pump();
 
     await testIdentityPage(
@@ -169,13 +169,13 @@ void main() {
     await app.main(<String>[]);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester);
+    await testLocalePage(tester);
     await tester.pumpAndSettle();
 
     await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester, sourceId: kNormalSourceId);
@@ -190,7 +190,7 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester);
+    await testTimezonePage(tester);
     await tester.pump();
 
     await testIdentityPage(
@@ -220,13 +220,13 @@ void main() {
     ]);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester);
+    await testLocalePage(tester);
     await tester.pumpAndSettle();
 
     await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester, sourceId: kNormalSourceId);
@@ -241,7 +241,7 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester);
+    await testTimezonePage(tester);
     await tester.pump();
 
     await testIdentityPage(
@@ -283,7 +283,7 @@ void main() {
     await testInstallationTypePage(tester, type: InstallationType.bitlocker);
     await tester.pumpAndSettle();
 
-    await testTurnOffBitLockerPage(tester);
+    await testBitLockerPage(tester);
     await tester.pumpAndSettle();
   });
 
@@ -291,7 +291,7 @@ void main() {
     await app.main(<String>['--try-or-install']);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester);
+    await testLocalePage(tester);
     await tester.pumpAndSettle();
 
     await testTryOrInstallPage(tester, option: Option.installUbuntu);

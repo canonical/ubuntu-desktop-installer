@@ -308,7 +308,7 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
 }
 
 enum InstallationStep {
-  welcome,
+  locale,
   keyboard,
   network,
   software,
@@ -366,9 +366,9 @@ class _UbuntuDesktopInstallerWizardState
       initialRoute: widget.initialRoute ?? Routes.initial,
       userData: InstallationStep.values.length,
       routes: <String, WizardRoute>{
-        Routes.welcome: WizardRoute(
-          builder: WelcomePage.create,
-          userData: InstallationStep.welcome.index,
+        Routes.locale: WizardRoute(
+          builder: LocalePage.create,
+          userData: InstallationStep.locale.index,
           onNext: (_) {
             if (widget.tryOrInstall == true) {
               return Routes.tryOrInstall;
@@ -381,7 +381,7 @@ class _UbuntuDesktopInstallerWizardState
         ),
         Routes.tryOrInstall: WizardRoute(
           builder: TryOrInstallPage.create,
-          userData: InstallationStep.welcome.index,
+          userData: InstallationStep.locale.index,
           onNext: (settings) {
             switch (settings.arguments as Option?) {
               case Option.repairUbuntu:
@@ -399,8 +399,8 @@ class _UbuntuDesktopInstallerWizardState
           builder: KeyboardLayoutPage.create,
           userData: InstallationStep.keyboard.index,
         ),
-        Routes.connectToInternet: WizardRoute(
-          builder: ConnectToInternetPage.create,
+        Routes.network: WizardRoute(
+          builder: NetworkPage.create,
           userData: InstallationStep.network.index,
         ),
         Routes.updatesOtherSoftware: WizardRoute(
@@ -424,8 +424,8 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.type.index,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
-        Routes.turnOffBitlocker: const WizardRoute(
-          builder: TurnOffBitLockerPage.create,
+        Routes.bitlocker: const WizardRoute(
+          builder: BitLockerPage.create,
         ),
         Routes.installAlongside: WizardRoute(
           builder: InstallAlongsidePage.create,
@@ -451,8 +451,8 @@ class _UbuntuDesktopInstallerWizardState
           builder: WriteChangesToDiskPage.create,
           userData: InstallationStep.storage.index,
         ),
-        Routes.whereAreYou: WizardRoute(
-          builder: WhereAreYouPage.create,
+        Routes.timezone: WizardRoute(
+          builder: TimezonePage.create,
           userData: InstallationStep.location.index,
         ),
         Routes.identity: WizardRoute(
@@ -488,7 +488,7 @@ class _UbuntuDesktopInstallerWizardState
       return Routes.allocateDiskSpace;
     } else if (service.guidedTarget == null) {
       if (arguments == InstallationType.bitlocker) {
-        return Routes.turnOffBitlocker;
+        return Routes.bitlocker;
       } else if (arguments == InstallationType.erase) {
         return Routes.selectGuidedStorage;
       } else if (arguments == InstallationType.alongside) {
