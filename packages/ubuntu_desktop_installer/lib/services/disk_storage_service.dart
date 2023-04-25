@@ -107,8 +107,12 @@ class DiskStorageService {
     await _client.setGuidedStorageV2(
       GuidedChoiceV2(
         target: guidedTarget!,
-        useLvm: useLvm,
         password: securityKey,
+        capability: useEncryption
+            ? GuidedCapability.LVM_LUKS
+            : useLvm
+                ? GuidedCapability.LVM
+                : GuidedCapability.DIRECT,
         sizingPolicy: SizingPolicy.ALL,
       ),
     );

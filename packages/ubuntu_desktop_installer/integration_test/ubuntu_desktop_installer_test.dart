@@ -8,7 +8,7 @@ import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/main.dart' as app;
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -54,10 +54,10 @@ void main() {
     await testKeyboardLayoutPage(tester, keyboard: keyboardLayout);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
-    await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.minimal);
+    await testUpdatesOtherSoftwarePage(tester, sourceId: kMinimalSourceId);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(tester, type: InstallationType.erase);
@@ -66,10 +66,10 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester, timezone: timezone);
+    await testTimezonePage(tester, timezone: timezone);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: identity,
       password: 'password',
@@ -109,7 +109,7 @@ void main() {
     await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
     await testUpdatesOtherSoftwarePage(tester);
@@ -129,10 +129,10 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester);
+    await testTimezonePage(tester);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: identity,
       password: 'password',
@@ -175,10 +175,10 @@ void main() {
     await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
-    await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.normal);
+    await testUpdatesOtherSoftwarePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(tester, type: InstallationType.manual);
@@ -190,10 +190,10 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester);
+    await testTimezonePage(tester);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
@@ -226,10 +226,10 @@ void main() {
     await testKeyboardLayoutPage(tester);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(tester, mode: ConnectMode.none);
+    await testNetworkPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
-    await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.normal);
+    await testUpdatesOtherSoftwarePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(tester, type: InstallationType.alongside);
@@ -241,10 +241,10 @@ void main() {
     await testWriteChangesToDiskPage(tester);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(tester);
+    await testTimezonePage(tester);
     await tester.pump();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',

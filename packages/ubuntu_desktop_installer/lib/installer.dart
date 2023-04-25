@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:collection/collection.dart';
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -50,7 +51,7 @@ Future<void> runInstallerApp(
         help: 'Path of the machine config (dry-run only)');
     parser.addOption('source-catalog',
         valueHelp: 'path',
-        defaultsTo: 'examples/mixed-sources.yaml',
+        defaultsTo: 'examples/desktop-sources.yaml',
         help: 'Path of the source catalog (dry-run only)');
     parser.addFlag('try-or-install', hide: true);
   })!;
@@ -336,7 +337,12 @@ class _UbuntuDesktopInstallerWizardState
     super.initState();
 
     final client = getService<SubiquityClient>();
-    client.setSource(InstallationMode.normal.source).then((_) {
+    client.source().then((value) async {
+      final source = value.sources.firstWhereOrNull((s) => s.isDefault);
+      if (source != null) {
+        await client.setSource(source.id);
+      }
+
       // Use the default values for a number of endpoints
       // for which a UI page isn't implemented yet.
       client.markConfigured([
@@ -393,20 +399,21 @@ class _UbuntuDesktopInstallerWizardState
           builder: KeyboardLayoutPage.create,
           userData: InstallationStep.keyboard.index,
         ),
-        Routes.connectToInternet: WizardRoute(
-          builder: ConnectToInternetPage.create,
+        Routes.network: WizardRoute(
+          builder: NetworkPage.create,
           userData: InstallationStep.network.index,
-          onNext: (_) =>
-              service.hasEnoughDiskSpace ? Routes.updatesOtherSoftware : null,
-        ),
-        Routes.notEnoughDiskSpace: const WizardRoute(
-          builder: NotEnoughDiskSpacePage.create,
         ),
         Routes.updatesOtherSoftware: WizardRoute(
           builder: UpdatesOtherSoftwarePage.create,
           userData: InstallationStep.software.index,
-          onNext: (_) =>
-              !service.hasSecureBoot ? Routes.installationType : null,
+          onNext: (_) => !service.hasEnoughDiskSpace
+              ? Routes.notEnoughDiskSpace
+              : !service.hasSecureBoot
+                  ? Routes.installationType
+                  : null,
+        ),
+        Routes.notEnoughDiskSpace: const WizardRoute(
+          builder: NotEnoughDiskSpacePage.create,
         ),
         Routes.configureSecureBoot: WizardRoute(
           builder: ConfigureSecureBootPage.create,
@@ -444,12 +451,12 @@ class _UbuntuDesktopInstallerWizardState
           builder: WriteChangesToDiskPage.create,
           userData: InstallationStep.storage.index,
         ),
-        Routes.whereAreYou: WizardRoute(
-          builder: WhereAreYouPage.create,
+        Routes.timezone: WizardRoute(
+          builder: TimezonePage.create,
           userData: InstallationStep.location.index,
         ),
-        Routes.whoAreYou: WizardRoute(
-          builder: WhoAreYouPage.create,
+        Routes.identity: WizardRoute(
+          builder: IdentityPage.create,
           userData: InstallationStep.user.index,
           onNext: (settings) => settings.arguments == true
               ? Routes.activeDirectory

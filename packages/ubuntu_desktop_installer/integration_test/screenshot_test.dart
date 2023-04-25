@@ -6,7 +6,7 @@ import 'package:integration_test/integration_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -92,10 +92,10 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.connectToInternet);
+    await tester.jumpToWizardRoute(Routes.network);
     await tester.pumpAndSettle();
 
-    await testConnectToInternetPage(
+    await testNetworkPage(
       tester,
       mode: ConnectMode.none,
       screenshot: '$currentThemeName/4.network',
@@ -284,11 +284,11 @@ void main() {
 
   testWidgets('10.timezone', (tester) async {
     await runInstallerApp([
-      '--initial-route=${Routes.whereAreYou}',
+      '--initial-route=${Routes.timezone}',
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(
+    await testTimezonePage(
       tester,
       screenshot: '$currentThemeName/10.timezone',
     );
@@ -298,10 +298,10 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.whoAreYou);
+    await tester.jumpToWizardRoute(Routes.identity);
     await tester.pumpAndSettle();
 
-    await testWhoAreYouPage(
+    await testIdentityPage(
       tester,
       identity: const IdentityData(
         realname: 'Ubuntu User',

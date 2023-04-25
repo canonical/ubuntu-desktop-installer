@@ -47,14 +47,14 @@ class InstallationTypeModel extends SafeChangeNotifier {
   final TelemetryService _telemetryService;
   final ProductService _productService;
 
-  var _installationType = InstallationType.erase;
+  InstallationType? _installationType;
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
   List<GuidedStorageTarget>? _storages;
 
   /// The selected installation type.
-  InstallationType get installationType => _installationType;
-  set installationType(InstallationType type) {
+  InstallationType? get installationType => _installationType;
+  set installationType(InstallationType? type) {
     if (_installationType == type) return;
     _installationType = type;
     notifyListeners();
@@ -110,7 +110,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   /// Initializes the model.
   Future<void> init() async {
     await _diskService.getGuidedStorage().then((r) => _storages = r.possible);
-    _installationType = canInstallAlongside
+    _installationType ??= canInstallAlongside
         ? InstallationType.alongside
         : InstallationType.erase;
     _advancedFeature =
@@ -147,7 +147,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   /// if appropriate (single guided storage).
   Future<void> save() async {
     // automatically pre-select a guided storage target if possible
-    _diskService.guidedTarget = preselectTarget(installationType);
+    _diskService.guidedTarget = preselectTarget(installationType!);
 
     final partitionMethod = _resolvePartitionMethod();
     if (partitionMethod != null) {

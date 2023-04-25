@@ -13,14 +13,12 @@ import 'package:ubuntu_wizard/app.dart';
 
 import 'wizard_app_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([IOSink])
 void main() {
   final endpoint = Endpoint.unix('socket path');
 
   setUpAll(() {
-    final methodChannel = MethodChannel('yaru_window');
+    const methodChannel = MethodChannel('yaru_window');
     methodChannel.setMockMethodCallHandler((call) async {});
   });
 
@@ -55,7 +53,7 @@ void main() {
     when(monitor.start(any)).thenAnswer((_) async => true);
 
     await runWizardApp(
-      SizedBox(),
+      const SizedBox(),
       subiquityClient: client,
       subiquityServer: server,
       subiquityMonitor: monitor,
@@ -133,7 +131,7 @@ void main() {
         .thenAnswer((_) async => endpoint);
 
     await runWizardApp(
-      SizedBox(),
+      const SizedBox(),
       subiquityServer: server,
       subiquityMonitor: monitor,
       subiquityClient: MockSubiquityClient(),
@@ -152,7 +150,7 @@ void main() {
     );
 
     await runWizardApp(
-      SizedBox(),
+      const SizedBox(),
       subiquityClient: client,
       subiquityServer: server,
     );
@@ -162,7 +160,7 @@ void main() {
 
   testWidgets('ensure initialized', (tester) async {
     var windowInit = false;
-    final methodChannel = MethodChannel('yaru_window');
+    const methodChannel = MethodChannel('yaru_window');
     methodChannel.setMockMethodCallHandler((call) async {
       if (call.method == 'init') {
         windowInit = true;
@@ -178,7 +176,7 @@ void main() {
     );
 
     await runWizardApp(
-      SizedBox(),
+      const SizedBox(),
       subiquityClient: client,
       subiquityServer: server,
     );

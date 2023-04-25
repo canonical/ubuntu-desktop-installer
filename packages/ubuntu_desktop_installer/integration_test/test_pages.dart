@@ -6,7 +6,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/pages/connect_to_internet/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
@@ -114,13 +114,13 @@ Future<void> testKeyboardLayoutPage(
   await tester.tapContinue();
 }
 
-Future<void> testConnectToInternetPage(
+Future<void> testNetworkPage(
   WidgetTester tester, {
   ConnectMode? mode,
   String? screenshot,
 }) async {
   await expectPage(
-      tester, ConnectToInternetPage, (lang) => lang.connectToInternetPageTitle);
+      tester, NetworkPage, (lang) => lang.connectToInternetPageTitle);
 
   if (mode != null) {
     await tester.tapRadioButton<ConnectMode>(mode);
@@ -136,14 +136,14 @@ Future<void> testConnectToInternetPage(
 
 Future<void> testUpdatesOtherSoftwarePage(
   WidgetTester tester, {
-  InstallationMode? mode,
+  String? sourceId,
   String? screenshot,
 }) async {
   await expectPage(tester, UpdatesOtherSoftwarePage,
       (lang) => lang.updatesOtherSoftwarePageTitle);
 
-  if (mode != null) {
-    await tester.tapRadioButton<InstallationMode>(mode);
+  if (sourceId != null) {
+    await tester.tapRadioButton<String>(sourceId);
   }
   await tester.pumpAndSettle();
 
@@ -404,14 +404,13 @@ Future<void> testTurnOffRSTPage(
   await expectLater(windowClosed, completes);
 }
 
-Future<void> testWhereAreYouPage(
+Future<void> testTimezonePage(
   WidgetTester tester, {
   String? location,
   String? timezone,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, WhereAreYouPage, (lang) => lang.whereAreYouPageTitle);
+  await expectPage(tester, TimezonePage, (lang) => lang.whereAreYouPageTitle);
 
   await tester.pumpAndSettle(); // progress indicator
 
@@ -444,13 +443,13 @@ Future<void> testWhereAreYouPage(
   await tester.tapContinue();
 }
 
-Future<void> testWhoAreYouPage(
+Future<void> testIdentityPage(
   WidgetTester tester, {
   IdentityData? identity,
   String? password,
   String? screenshot,
 }) async {
-  await expectPage(tester, WhoAreYouPage, (lang) => lang.whoAreYouPageTitle);
+  await expectPage(tester, IdentityPage, (lang) => lang.whoAreYouPageTitle);
 
   if (identity?.realname != null) {
     await tester.enterTextValue(
