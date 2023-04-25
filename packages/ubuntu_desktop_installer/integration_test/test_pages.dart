@@ -215,13 +215,13 @@ Future<void> testInstallationTypePage(
   await tester.tapContinue();
 }
 
-Future<void> testChooseSecurityKeyPage(
+Future<void> testSecurityKeyPage(
   WidgetTester tester, {
   required String securityKey,
   String? screenshot,
 }) async {
   await expectPage(
-      tester, ChooseSecurityKeyPage, (lang) => lang.chooseSecurityKeyTitle);
+      tester, SecurityKeyPage, (lang) => lang.chooseSecurityKeyTitle);
 
   await tester.enterTextValue(
     label: tester.lang.chooseSecurityKey,

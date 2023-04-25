@@ -3,26 +3,26 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_model.dart';
-import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_page.dart';
+import 'package:ubuntu_desktop_installer/pages/security_key/security_key_model.dart';
+import 'package:ubuntu_desktop_installer/pages/security_key/security_key_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
-import 'choose_security_key_model_test.mocks.dart';
-import 'choose_security_key_page_test.mocks.dart';
+import 'security_key_model_test.mocks.dart';
+import 'security_key_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([ChooseSecurityKeyModel])
+@GenerateMocks([SecurityKeyModel])
 void main() {
-  ChooseSecurityKeyModel buildModel({
+  SecurityKeyModel buildModel({
     bool? isValid,
     String? securityKey,
     String? confirmedSecurityKey,
     bool? showSecurityKey,
   }) {
-    final model = MockChooseSecurityKeyModel();
+    final model = MockSecurityKeyModel();
     when(model.isValid).thenReturn(isValid ?? false);
     when(model.securityKey).thenReturn(securityKey ?? '');
     when(model.confirmedSecurityKey).thenReturn(confirmedSecurityKey ?? '');
@@ -30,10 +30,10 @@ void main() {
     return model;
   }
 
-  Widget buildPage(ChooseSecurityKeyModel model) {
-    return ChangeNotifierProvider<ChooseSecurityKeyModel>.value(
+  Widget buildPage(SecurityKeyModel model) {
+    return ChangeNotifierProvider<SecurityKeyModel>.value(
       value: model,
-      child: ChooseSecurityKeyPage(),
+      child: SecurityKeyPage(),
     );
   }
 
@@ -112,13 +112,13 @@ void main() {
     when(service.securityKey).thenReturn(null);
     registerMockService<DiskStorageService>(service);
 
-    await tester.pumpWidget(tester.buildApp(ChooseSecurityKeyPage.create));
+    await tester.pumpWidget(tester.buildApp(SecurityKeyPage.create));
 
-    final page = find.byType(ChooseSecurityKeyPage);
+    final page = find.byType(SecurityKeyPage);
     expect(page, findsOneWidget);
 
     final context = tester.element(page);
-    final model = Provider.of<ChooseSecurityKeyModel>(context, listen: false);
+    final model = Provider.of<SecurityKeyModel>(context, listen: false);
     expect(model, isNotNull);
   });
 }

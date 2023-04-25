@@ -4,9 +4,9 @@ import 'package:safe_change_notifier/safe_change_notifier.dart';
 import '../../services.dart';
 
 /// View model for [ChooseSecurityKeyPage].
-class ChooseSecurityKeyModel extends SafeChangeNotifier {
+class SecurityKeyModel extends SafeChangeNotifier {
   /// Creates the model with the given client.
-  ChooseSecurityKeyModel(this._service) {
+  SecurityKeyModel(this._service) {
     Listenable.merge([
       _securityKey,
       _confirmedSecurityKey,

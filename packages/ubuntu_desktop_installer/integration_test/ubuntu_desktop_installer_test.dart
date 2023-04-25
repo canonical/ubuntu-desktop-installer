@@ -123,7 +123,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await testChooseSecurityKeyPage(tester, securityKey: 'password');
+    await testSecurityKeyPage(tester, securityKey: 'password');
     await tester.pumpAndSettle();
 
     await testWriteChangesToDiskPage(tester);

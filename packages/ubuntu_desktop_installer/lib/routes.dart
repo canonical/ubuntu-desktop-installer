@@ -15,7 +15,7 @@ abstract class Routes {
   static const identity = '/identity';
   static const installationSlides = '/installation-slides';
   static const bitlocker = '/turn-off-bitlocker';
-  static const chooseSecurityKey = '/choose-security-key';
+  static const securityKey = '/security-key';
   static const installationType = '/installation-type';
   static const selectGuidedStorage = '/select-guided-storage';
   static const installAlongside = '/install-alongside';
