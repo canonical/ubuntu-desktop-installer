@@ -6,7 +6,7 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_desktop_installer/pages/turn_off_bitlocker/turn_off_bitlocker_model.dart'
+import 'package:ubuntu_desktop_installer/pages/bitlocker/bitlocker_model.dart'
     as _i2;
 import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i4;
 
@@ -21,12 +21,11 @@ import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i4;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [TurnOffBitLockerModel].
+/// A class which mocks [BitLockerModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTurnOffBitLockerModel extends _i1.Mock
-    implements _i2.TurnOffBitLockerModel {
-  MockTurnOffBitLockerModel() {
+class MockBitLockerModel extends _i1.Mock implements _i2.BitLockerModel {
+  MockBitLockerModel() {
     _i1.throwOnMissingStub(this);
   }
 

@@ -15,7 +15,7 @@ export 'pages/not_enough_disk_space/not_enough_disk_space_page.dart';
 export 'pages/select_guided_storage/select_guided_storage_page.dart';
 export 'pages/timezone/timezone_page.dart';
 export 'pages/try_or_install/try_or_install_page.dart';
-export 'pages/turn_off_bitlocker/turn_off_bitlocker_page.dart';
+export 'pages/bitlocker/bitlocker_page.dart';
 export 'pages/turn_off_rst/turn_off_rst_page.dart';
 export 'pages/updates_other_software/updates_other_software_page.dart';
 export 'pages/write_changes_to_disk/write_changes_to_disk_page.dart';

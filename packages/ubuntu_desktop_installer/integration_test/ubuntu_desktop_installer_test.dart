@@ -283,7 +283,7 @@ void main() {
     await testInstallationTypePage(tester, type: InstallationType.bitlocker);
     await tester.pumpAndSettle();
 
-    await testTurnOffBitLockerPage(tester);
+    await testBitLockerPage(tester);
     await tester.pumpAndSettle();
   });
 
