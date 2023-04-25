@@ -57,7 +57,7 @@ void main() {
     await testConnectToInternetPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
-    await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.minimal);
+    await testUpdatesOtherSoftwarePage(tester, sourceId: kMinimalSourceId);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(tester, type: InstallationType.erase);
@@ -178,7 +178,7 @@ void main() {
     await testConnectToInternetPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
-    await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.normal);
+    await testUpdatesOtherSoftwarePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(tester, type: InstallationType.manual);
@@ -229,7 +229,7 @@ void main() {
     await testConnectToInternetPage(tester, mode: ConnectMode.none);
     await tester.pumpAndSettle();
 
-    await testUpdatesOtherSoftwarePage(tester, mode: InstallationMode.normal);
+    await testUpdatesOtherSoftwarePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(tester, type: InstallationType.alongside);

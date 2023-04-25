@@ -19,19 +19,14 @@ void main() {
       client: MockSubiquityClient(),
       power: MockPowerService(),
       network: MockNetworkService(),
-      installationMode: InstallationMode.normal,
     );
   });
 
-  test('init state should be able to set installation mode', () {
-    expect(model.installationMode, InstallationMode.normal);
-  });
-
-  test('should notify listeners when set installation mode', () {
-    InstallationMode? mode;
-    model.addListener(() => mode = model.installationMode);
-    model.setInstallationMode(InstallationMode.minimal);
-    expect(mode, InstallationMode.minimal);
+  test('should notify listeners when set source id', () {
+    String? sourceId;
+    model.addListener(() => sourceId = model.sourceId);
+    model.setSourceId('ubuntu-desktop-minimal');
+    expect(sourceId, 'ubuntu-desktop-minimal');
   });
 
   test('should have drivers and codecs set to false by default', () {
@@ -53,11 +48,11 @@ void main() {
     expect(shouldInstallCodecs, isTrue);
   });
 
-  test('should not notify installation mode when passed null', () {
-    InstallationMode? mode;
-    model.addListener(() => mode = model.installationMode);
-    model.setInstallationMode(null);
-    expect(mode, isNull);
+  test('should not notify source id when passed null', () {
+    String? source;
+    model.addListener(() => source = model.sourceId);
+    model.setSourceId(null);
+    expect(source, isNull);
   });
 
   test('should not notify drivers when passed null', () {
@@ -76,6 +71,9 @@ void main() {
 
   test('init the installation options', () async {
     final client = MockSubiquityClient();
+    when(client.source()).thenAnswer((_) async =>
+        const SourceSelectionAndSetting(
+            sources: [], currentId: kNormalSourceId, searchDrivers: false));
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
         install: true, drivers: [], localOnly: false, searchDrivers: false));
     when(client.getCodecs())
@@ -91,7 +89,6 @@ void main() {
 
     final model = UpdateOtherSoftwareModel(
       client: client,
-      installationMode: InstallationMode.normal,
       installDrivers: false,
       installCodecs: false,
       power: power,
@@ -99,6 +96,8 @@ void main() {
     );
 
     await model.init();
+    expect(model.sourceId, kNormalSourceId);
+    verify(client.source()).called(1);
     expect(model.installDrivers, isTrue);
     verify(client.getDrivers()).called(1);
     expect(model.installCodecs, isTrue);
@@ -107,24 +106,30 @@ void main() {
 
   test('save the installation options', () async {
     final client = MockSubiquityClient();
+    when(client.source()).thenAnswer((_) async =>
+        const SourceSelectionAndSetting(
+            sources: [], currentId: kNormalSourceId, searchDrivers: false));
+
     final network = MockNetworkService();
     when(network.isConnected).thenReturn(true);
 
     final model = UpdateOtherSoftwareModel(
       client: client,
-      installationMode: InstallationMode.normal,
       installDrivers: false,
       installCodecs: false,
       power: MockPowerService(),
       network: network,
     );
 
+    model.setSourceId(kNormalSourceId);
+    model.setInstallDrivers(false);
+    model.setInstallCodecs(false);
     await model.save();
-    verify(client.setSource('ubuntu-desktop')).called(1);
+    verify(client.setSource(kNormalSourceId)).called(1);
     verify(client.setDrivers(install: false)).called(1);
     verify(client.setCodecs(install: false)).called(1);
 
-    model.setInstallationMode(InstallationMode.minimal);
+    model.setSourceId('ubuntu-desktop-minimal');
     model.setInstallDrivers(true);
     model.setInstallCodecs(true);
     await model.save();
@@ -143,6 +148,9 @@ void main() {
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final client = MockSubiquityClient();
+    when(client.source()).thenAnswer((_) async =>
+        const SourceSelectionAndSetting(
+            sources: [], currentId: kNormalSourceId, searchDrivers: false));
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
         install: true, drivers: [], localOnly: false, searchDrivers: false));
     when(client.getCodecs())
@@ -150,7 +158,6 @@ void main() {
 
     final model = UpdateOtherSoftwareModel(
       client: client,
-      installationMode: InstallationMode.normal,
       power: power,
       network: network,
     );
@@ -185,6 +192,9 @@ void main() {
     when(power.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final client = MockSubiquityClient();
+    when(client.source()).thenAnswer((_) async =>
+        const SourceSelectionAndSetting(
+            sources: [], currentId: kNormalSourceId, searchDrivers: false));
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
         install: true, drivers: [], localOnly: false, searchDrivers: false));
     when(client.getCodecs())
@@ -192,7 +202,6 @@ void main() {
 
     final model = UpdateOtherSoftwareModel(
       client: client,
-      installationMode: InstallationMode.normal,
       power: power,
       network: network,
     );

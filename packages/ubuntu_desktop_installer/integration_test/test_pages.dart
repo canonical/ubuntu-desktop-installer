@@ -136,14 +136,14 @@ Future<void> testConnectToInternetPage(
 
 Future<void> testUpdatesOtherSoftwarePage(
   WidgetTester tester, {
-  InstallationMode? mode,
+  String? sourceId,
   String? screenshot,
 }) async {
   await expectPage(tester, UpdatesOtherSoftwarePage,
       (lang) => lang.updatesOtherSoftwarePageTitle);
 
-  if (mode != null) {
-    await tester.tapRadioButton<InstallationMode>(mode);
+  if (sourceId != null) {
+    await tester.tapRadioButton<String>(sourceId);
   }
   await tester.pumpAndSettle();
 
