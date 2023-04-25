@@ -284,11 +284,11 @@ void main() {
 
   testWidgets('10.timezone', (tester) async {
     await runInstallerApp([
-      '--initial-route=${Routes.whereAreYou}',
+      '--initial-route=${Routes.timezone}',
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await testWhereAreYouPage(
+    await testTimezonePage(
       tester,
       screenshot: '$currentThemeName/10.timezone',
     );

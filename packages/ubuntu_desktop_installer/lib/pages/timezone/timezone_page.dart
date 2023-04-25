@@ -9,40 +9,40 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
-import 'where_are_you_model.dart';
+import 'timezone_model.dart';
 
 /// https://github.com/canonical/ubuntu-desktop-installer/issues/38
-class WhereAreYouPage extends StatefulWidget {
-  /// Use [WhereAreYouPage.create] instead.
+class TimezonePage extends StatefulWidget {
+  /// Use [TimezonePage.create] instead.
   @visibleForTesting
-  const WhereAreYouPage({super.key});
+  const TimezonePage({super.key});
 
-  /// Creates a [WhereAreYouPage] with [WhereAreYouModel].
+  /// Creates a [TimezonePage] with [TimezoneModel].
   static Widget create(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => WhereAreYouModel(getService<SubiquityClient>()),
+          create: (_) => TimezoneModel(getService<SubiquityClient>()),
         ),
         ChangeNotifierProvider(
           create: (_) => TimezoneController(service: getService<GeoService>()),
         ),
       ],
-      child: const WhereAreYouPage(),
+      child: const TimezonePage(),
     );
   }
 
   @override
-  WhereAreYouPageState createState() => WhereAreYouPageState();
+  TimezonePageState createState() => TimezonePageState();
 }
 
 @visibleForTesting
-class WhereAreYouPageState extends State<WhereAreYouPage> {
+class TimezonePageState extends State<TimezonePage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<WhereAreYouModel>(context, listen: false);
+    final model = Provider.of<TimezoneModel>(context, listen: false);
     final controller = Provider.of<TimezoneController>(context, listen: false);
     model.init().then((timezone) {
       controller.searchTimezone(timezone).then((timezones) {
@@ -155,8 +155,7 @@ class WhereAreYouPageState extends State<WhereAreYouPage> {
           WizardAction.next(
             context,
             onNext: () {
-              final model =
-                  Provider.of<WhereAreYouModel>(context, listen: false);
+              final model = Provider.of<TimezoneModel>(context, listen: false);
               return model.save(controller.selectedLocation?.timezone);
             },
           ),
