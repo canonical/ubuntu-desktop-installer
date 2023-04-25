@@ -2,8 +2,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_dialogs.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
+import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_dialogs.dart';
+import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
@@ -12,7 +12,7 @@ import '../test_utils.dart';
 // ignore_for_file: type=lint
 
 void main() {
-  setUpAll(() => UbuntuTester.context = DetectKeyboardLayoutView);
+  setUpAll(() => UbuntuTester.context = DetectKeyboardView);
 
   testWidgets('detect layout', (tester) async {
     final client = MockSubiquityClient();
@@ -32,7 +32,7 @@ void main() {
 
     await tester.pumpWidget(
       tester.buildApp(
-        (_) => DetectKeyboardLayoutView(
+        (_) => DetectKeyboardView(
           pressKey: null,
           keyPresent: null,
           onKeyPress: (_) {},
@@ -40,10 +40,10 @@ void main() {
       ),
     );
 
-    final context = tester.element(find.byType(DetectKeyboardLayoutView));
+    final context = tester.element(find.byType(DetectKeyboardView));
 
     // init
-    final result = showDetectKeyboardLayoutDialog(context);
+    final result = showDetectKeyboardDialog(context);
     await tester.pumpAndSettle();
     verify(client.getKeyboardStep('0')).called(1);
 

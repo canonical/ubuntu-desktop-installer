@@ -1,20 +1,20 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard_layout/keyboard_layout_widgets.dart';
+import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 
 import '../test_utils.dart';
 
 // ignore_for_file: type=lint
 
 void main() {
-  setUpAll(() => UbuntuTester.context = DetectKeyboardLayoutView);
+  setUpAll(() => UbuntuTester.context = DetectKeyboardView);
 
   testWidgets('press key', (tester) async {
     int? keyPress;
 
     await tester.pumpWidget(
       tester.buildApp(
-        (_) => DetectKeyboardLayoutView(
+        (_) => DetectKeyboardView(
           pressKey: const ['x', 'y', 'z'],
           onKeyPress: (code) => keyPress = code,
         ),
@@ -36,7 +36,7 @@ void main() {
 
   testWidgets('find key', (tester) async {
     await tester.pumpWidget(
-      tester.buildApp((_) => DetectKeyboardLayoutView(keyPresent: 'x')),
+      tester.buildApp((_) => DetectKeyboardView(keyPresent: 'x')),
     );
 
     expect(find.byType(KeyPresentView), findsOneWidget);

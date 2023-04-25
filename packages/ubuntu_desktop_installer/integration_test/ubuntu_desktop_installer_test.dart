@@ -51,7 +51,7 @@ void main() {
     await testLocalePage(tester, language: language);
     await tester.pumpAndSettle();
 
-    await testKeyboardLayoutPage(tester, keyboard: keyboardLayout);
+    await testKeyboardPage(tester, keyboard: keyboardLayout);
     await tester.pumpAndSettle();
 
     await testNetworkPage(tester, mode: ConnectMode.none);
@@ -106,7 +106,7 @@ void main() {
     await testLocalePage(tester);
     await tester.pumpAndSettle();
 
-    await testKeyboardLayoutPage(tester);
+    await testKeyboardPage(tester);
     await tester.pumpAndSettle();
 
     await testNetworkPage(tester, mode: ConnectMode.none);
@@ -172,7 +172,7 @@ void main() {
     await testLocalePage(tester);
     await tester.pumpAndSettle();
 
-    await testKeyboardLayoutPage(tester);
+    await testKeyboardPage(tester);
     await tester.pumpAndSettle();
 
     await testNetworkPage(tester, mode: ConnectMode.none);
@@ -223,7 +223,7 @@ void main() {
     await testLocalePage(tester);
     await tester.pumpAndSettle();
 
-    await testKeyboardLayoutPage(tester);
+    await testKeyboardPage(tester);
     await tester.pumpAndSettle();
 
     await testNetworkPage(tester, mode: ConnectMode.none);
@@ -297,7 +297,7 @@ void main() {
     await testTryOrInstallPage(tester, option: Option.installUbuntu);
     await tester.pumpAndSettle();
 
-    await testKeyboardLayoutPage(tester);
+    await testKeyboardPage(tester);
     await tester.pumpAndSettle();
   });
 }

@@ -62,9 +62,9 @@ class KeyPresentView extends StatelessWidget {
 }
 
 /// Detects the keyboard layout by asking the user to press and confirm keys.
-class DetectKeyboardLayoutView extends StatefulWidget {
+class DetectKeyboardView extends StatefulWidget {
   /// Creates a keyboard layout detection view.
-  const DetectKeyboardLayoutView({
+  const DetectKeyboardView({
     super.key,
     String? keyPresent,
     List<String>? pressKey,
@@ -78,11 +78,10 @@ class DetectKeyboardLayoutView extends StatefulWidget {
   final ValueChanged<int>? _onKeyPress;
 
   @override
-  State<DetectKeyboardLayoutView> createState() =>
-      _DetectKeyboardLayoutViewState();
+  State<DetectKeyboardView> createState() => _DetectKeyboardViewState();
 }
 
-class _DetectKeyboardLayoutViewState extends State<DetectKeyboardLayoutView> {
+class _DetectKeyboardViewState extends State<DetectKeyboardView> {
   @override
   void initState() {
     super.initState();

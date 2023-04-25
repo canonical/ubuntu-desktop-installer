@@ -10,12 +10,12 @@ import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 /// @internal
-final log = Logger('keyboard_layout');
+final log = Logger('keyboard');
 
-/// Implements the business logic of the Keyboard Layout page.
-class KeyboardLayoutModel extends SafeChangeNotifier {
+/// Implements the business logic of the Keyboard page.
+class KeyboardModel extends SafeChangeNotifier {
   /// Creates a model with the specified client.
-  KeyboardLayoutModel(this._client, {@visibleForTesting Platform? platform})
+  KeyboardModel(this._client, {@visibleForTesting Platform? platform})
       : _platform = platform ?? const LocalPlatform();
 
   final SubiquityClient _client;

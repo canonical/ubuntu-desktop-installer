@@ -6,8 +6,8 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../../l10n.dart';
 import '../../services.dart';
 import '../../widgets.dart';
-import 'keyboard_layout_detector.dart';
-import 'keyboard_layout_widgets.dart';
+import 'keyboard_detector.dart';
+import 'keyboard_widgets.dart';
 
 const _kDialogWidthFactor = 0.65;
 const _kDialogHeightFactor = 0.15;
@@ -15,13 +15,13 @@ const _kDialogHeightFactor = 0.15;
 /// Shows a dialog to detect the keyboard layout by asking the user to press
 /// and confirm keys. Returns the result with a keyboard layout and variant
 /// codes or null if canceled.
-Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
+Future<StepResult?> showDetectKeyboardDialog(BuildContext context) async {
   final client = getService<SubiquityClient>();
 
   return showDialog<StepResult?>(
     context: context,
     builder: (context) {
-      final detector = KeyboardLayoutDetector(client, onResult: (result) {
+      final detector = KeyboardDetector(client, onResult: (result) {
         Navigator.of(context).pop(result);
       });
       detector.init();
@@ -43,7 +43,7 @@ Future<StepResult?> showDetectKeyboardLayoutDialog(BuildContext context) async {
             content: SizedBox(
               width: size.width * _kDialogWidthFactor,
               height: size.height * _kDialogHeightFactor,
-              child: DetectKeyboardLayoutView(
+              child: DetectKeyboardView(
                 pressKey: detector.pressKey,
                 keyPresent: detector.keyPresent,
                 onKeyPress: detector.press,

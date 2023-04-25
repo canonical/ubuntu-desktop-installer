@@ -66,10 +66,10 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.keyboardLayout);
+    await tester.jumpToWizardRoute(Routes.keyboard);
     await tester.pumpAndSettle();
 
-    await testKeyboardLayoutPage(
+    await testKeyboardPage(
       tester,
       screenshot: '$currentThemeName/3.keyboard',
     );

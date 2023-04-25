@@ -8,31 +8,31 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
-import 'keyboard_layout_dialogs.dart';
-import 'keyboard_layout_model.dart';
+import 'keyboard_dialogs.dart';
+import 'keyboard_model.dart';
 
-class KeyboardLayoutPage extends StatefulWidget {
-  const KeyboardLayoutPage({
+class KeyboardPage extends StatefulWidget {
+  const KeyboardPage({
     super.key,
   });
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => KeyboardLayoutModel(getService<SubiquityClient>()),
-      child: const KeyboardLayoutPage(),
+      create: (_) => KeyboardModel(getService<SubiquityClient>()),
+      child: const KeyboardPage(),
     );
   }
 
   @override
-  State<KeyboardLayoutPage> createState() => _KeyboardLayoutPageState();
+  State<KeyboardPage> createState() => _KeyboardPageState();
 }
 
-class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
+class _KeyboardPageState extends State<KeyboardPage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<KeyboardLayoutModel>(context, listen: false);
+    final model = Provider.of<KeyboardModel>(context, listen: false);
     model.init().then((_) => model.updateInputSource());
   }
 
@@ -43,7 +43,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<KeyboardLayoutModel>(context);
+    final model = Provider.of<KeyboardModel>(context);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
@@ -61,8 +61,7 @@ class _KeyboardLayoutPageState extends State<KeyboardLayoutPage> {
                 OutlinedButton(
                   child: Text(lang.detectButtonText),
                   onPressed: () async {
-                    final result =
-                        await showDetectKeyboardLayoutDialog(context);
+                    final result = await showDetectKeyboardDialog(context);
                     if (result != null) {
                       model.trySelectLayoutVariant(
                           result.layout, result.variant);
