@@ -131,8 +131,11 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
                       ? Theme.of(context).colorScheme.error
                       : null),
             ),
-            subtitle:
-                LinearProgressIndicator(value: model.isInstalling ? null : 0),
+            subtitle: RepaintBoundary(
+              child: LinearProgressIndicator(
+                value: model.isInstalling ? null : 0,
+              ),
+            ),
             trailing: IconButton(
               icon: Icon(YaruIcons.terminal,
                   color: model.isLogVisible
