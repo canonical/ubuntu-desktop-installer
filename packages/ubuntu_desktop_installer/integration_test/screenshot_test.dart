@@ -252,10 +252,10 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.chooseSecurityKey);
+    await tester.jumpToWizardRoute(Routes.securityKey);
     await tester.pumpAndSettle();
 
-    await testChooseSecurityKeyPage(
+    await testSecurityKeyPage(
       tester,
       securityKey: 'password',
       screenshot: '$currentThemeName/8.security-key',

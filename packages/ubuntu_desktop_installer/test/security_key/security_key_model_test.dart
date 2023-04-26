@@ -1,15 +1,15 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/choose_security_key/choose_security_key_model.dart';
+import 'package:ubuntu_desktop_installer/pages/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart';
 
-import 'choose_security_key_model_test.mocks.dart';
+import 'security_key_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService])
 void main() {
   test('notify changes', () {
-    final model = ChooseSecurityKeyModel(MockDiskStorageService());
+    final model = SecurityKeyModel(MockDiskStorageService());
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -31,7 +31,7 @@ void main() {
   });
 
   test('validation', () {
-    final model = ChooseSecurityKeyModel(MockDiskStorageService());
+    final model = SecurityKeyModel(MockDiskStorageService());
     expect(model.isValid, isFalse);
 
     void testValid(
@@ -52,7 +52,7 @@ void main() {
   test('save, clear and load security key', () async {
     final service = MockDiskStorageService();
 
-    final model = ChooseSecurityKeyModel(service);
+    final model = SecurityKeyModel(service);
     model.securityKey = 'foo123';
     model.confirmedSecurityKey = 'foo123';
 
