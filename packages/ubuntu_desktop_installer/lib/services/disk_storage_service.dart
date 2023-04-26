@@ -19,10 +19,7 @@ class DiskStorageService {
     final status = await _client.status();
     if (status.state == ApplicationState.ERROR) return;
     await _client.getStorageV2().then(_updateStorage);
-    await Future.wait([
-      _client.hasRst().then((value) => _hasRst = value),
-      _client.hasBitLocker().then((value) => _hasBitLocker = value),
-    ]);
+    await _client.hasRst().then((value) => _hasRst = value);
   }
 
   bool? _needRoot;
@@ -30,7 +27,6 @@ class DiskStorageService {
   bool? _useLvm;
   bool? _useEncryption;
   bool? _hasRst;
-  bool? _hasBitLocker;
   bool? _hasMultipleDisks;
   int? _installMinimumSize;
   int? _largestDiskSize;
@@ -48,8 +44,6 @@ class DiskStorageService {
   bool get needBoot => _needBoot ?? true;
 
   bool get hasRst => _hasRst ?? false;
-
-  bool get hasBitLocker => _hasBitLocker ?? false;
 
   /// Whether FDE (Full Disk Encryption) should be used.
   bool get useEncryption => _useEncryption ?? false;
@@ -96,6 +90,9 @@ class DiskStorageService {
 
   /// Returns whether the system has enough disk space to install.
   bool get hasEnoughDiskSpace => installMinimumSize <= largestDiskSize;
+
+  /// Fetches whether the system has BitLocker enabled.
+  Future<bool> hasBitLocker() => _client.hasBitLocker();
 
   /// Fetches the current guided storage configuration.
   Future<GuidedStorageResponseV2> getGuidedStorage() async {
