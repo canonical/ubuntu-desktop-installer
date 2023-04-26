@@ -5,7 +5,7 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
-import 'configure_secure_boot_model.dart';
+import 'secure_boot_model.dart';
 
 class SecurityKeyFormField extends StatelessWidget {
   const SecurityKeyFormField({
@@ -17,7 +17,7 @@ class SecurityKeyFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<ConfigureSecureBootModel>();
+    final model = context.watch<SecureBootModel>();
     final lang = AppLocalizations.of(context);
     return Padding(
       padding: kContentIndentation,
@@ -47,7 +47,7 @@ class SecurityKeyConfirmFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<ConfigureSecureBootModel>();
+    final model = context.watch<SecureBootModel>();
     final lang = AppLocalizations.of(context);
     return Padding(
       padding: kContentIndentation,

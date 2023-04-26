@@ -7,7 +7,7 @@ abstract class Routes {
   static const repairUbuntu = '/repair-ubuntu';
   static const network = '/network';
   static const allocateDiskSpace = '/allocate-disk-space';
-  static const configureSecureBoot = '/configure-secure-boot';
+  static const secureBoot = '/secure-boot';
   static const updatesOtherSoftware = '/update-other-software';
   static const installationComplete = '/installation-complete';
   static const writeChangesToDisk = '/write-changes-to-disk';

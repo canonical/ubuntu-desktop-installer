@@ -2,8 +2,8 @@ import 'package:safe_change_notifier/safe_change_notifier.dart';
 
 enum SecureBootMode { turnOff, dontInstall }
 
-class ConfigureSecureBootModel extends SafeChangeNotifier {
-  ConfigureSecureBootModel({
+class SecureBootModel extends SafeChangeNotifier {
+  SecureBootModel({
     required SecureBootMode secureBootMode,
   }) : _mode = secureBootMode;
 

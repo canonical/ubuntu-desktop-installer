@@ -415,8 +415,8 @@ class _UbuntuDesktopInstallerWizardState
         Routes.notEnoughDiskSpace: const WizardRoute(
           builder: NotEnoughDiskSpacePage.create,
         ),
-        Routes.configureSecureBoot: WizardRoute(
-          builder: ConfigureSecureBootPage.create,
+        Routes.secureBoot: WizardRoute(
+          builder: SecureBootPage.create,
           userData: InstallationStep.type.index,
         ),
         Routes.installationType: WizardRoute(
