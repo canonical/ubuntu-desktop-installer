@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru/yaru.dart';
-
-import '../../utils.dart';
 
 /// A widget that visualizes the strength of a password.
 class PasswordStrengthLabel extends StatelessWidget {

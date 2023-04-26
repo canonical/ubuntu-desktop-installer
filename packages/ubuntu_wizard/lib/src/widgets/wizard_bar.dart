@@ -1,9 +1,9 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:ubuntu_wizard/constants.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/widgets.dart';
 
-import '../../constants.dart';
 import 'wizard_action.dart';
 
 export 'package:wizard_router/wizard_router.dart';
