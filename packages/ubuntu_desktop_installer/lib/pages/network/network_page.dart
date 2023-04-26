@@ -62,7 +62,7 @@ class _NetworkPageState extends State<NetworkPage> {
       ),
       header: Text(lang.connectToInternetDescription),
       content: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           EthernetRadioButton(
             value: model.connectMode,
