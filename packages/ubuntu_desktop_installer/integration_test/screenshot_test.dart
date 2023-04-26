@@ -133,7 +133,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.installationType);
+    await tester.jumpToWizardRoute(Routes.filesystem);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(
@@ -147,7 +147,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.installationType);
+    await tester.jumpToWizardRoute(Routes.filesystem);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(
@@ -164,7 +164,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.installationType);
+    await tester.jumpToWizardRoute(Routes.filesystem);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(
@@ -176,6 +176,7 @@ void main() {
 
   testWidgets('7.manual-partitioning', (tester) async {
     await runInstallerApp([
+      '--initial-route=${Routes.filesystem}',
       '--',
       '--bootloader=uefi',
     ], flavor: currentFlavor);
@@ -204,6 +205,7 @@ void main() {
 
   testWidgets('7.resize-windows', (tester) async {
     await runInstallerApp([
+      '--initial-route=${Routes.filesystem}',
       '--machine-config=examples/win10-along-ubuntu.json',
       '--',
       '--bootloader=uefi',
@@ -222,6 +224,7 @@ void main() {
 
   testWidgets('7.select-disk', (tester) async {
     await runInstallerApp([
+      '--initial-route=${Routes.filesystem}',
       '--machine-config=examples/win10.json',
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
@@ -236,7 +239,9 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('7.bitlocker', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await runInstallerApp([
+      '--initial-route=${Routes.filesystem}',
+    ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
     await tester.jumpToWizardRoute(Routes.bitlocker);
@@ -249,7 +254,9 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('8.security-key', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await runInstallerApp([
+      '--initial-route=${Routes.filesystem}',
+    ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
     await tester.jumpToWizardRoute(Routes.securityKey);
@@ -264,7 +271,7 @@ void main() {
 
   testWidgets('9.ready-to-install', (tester) async {
     await runInstallerApp([
-      '--initial-route=${Routes.installationType}',
+      '--initial-route=${Routes.filesystem}',
       '--',
       '--bootloader=uefi',
     ], flavor: currentFlavor);
