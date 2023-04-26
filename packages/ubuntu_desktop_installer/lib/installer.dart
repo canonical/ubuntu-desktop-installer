@@ -438,8 +438,8 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.storage.index,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
-        Routes.chooseSecurityKey: WizardRoute(
-          builder: ChooseSecurityKeyPage.create,
+        Routes.securityKey: WizardRoute(
+          builder: SecurityKeyPage.create,
           userData: InstallationStep.storage.index,
           onNext: (settings) => _nextStorageRoute(service, settings.arguments),
         ),
@@ -495,7 +495,7 @@ class _UbuntuDesktopInstallerWizardState
         return Routes.installAlongside;
       }
     } else if (service.useEncryption && service.securityKey == null) {
-      return Routes.chooseSecurityKey;
+      return Routes.securityKey;
     }
     return Routes.writeChangesToDisk;
   }

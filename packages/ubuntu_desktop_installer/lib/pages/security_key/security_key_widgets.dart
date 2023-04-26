@@ -1,4 +1,4 @@
-part of 'choose_security_key_page.dart';
+part of 'security_key_page.dart';
 
 class _SecurityKeyFormField extends StatelessWidget {
   const _SecurityKeyFormField({this.fieldWidth});
@@ -8,10 +8,10 @@ class _SecurityKeyFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final securityKey = context
-        .select<ChooseSecurityKeyModel, String>((model) => model.securityKey);
+    final securityKey =
+        context.select<SecurityKeyModel, String>((model) => model.securityKey);
     final showSecurityKey = context
-        .select<ChooseSecurityKeyModel, bool>((model) => model.showSecurityKey);
+        .select<SecurityKeyModel, bool>((model) => model.showSecurityKey);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -23,8 +23,7 @@ class _SecurityKeyFormField extends StatelessWidget {
         errorText: lang.chooseSecurityKeyRequired,
       ),
       onChanged: (value) {
-        final model =
-            Provider.of<ChooseSecurityKeyModel>(context, listen: false);
+        final model = Provider.of<SecurityKeyModel>(context, listen: false);
         model.securityKey = value;
       },
     );
@@ -39,12 +38,12 @@ class _ConfirmSecurityKeyFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final securityKey = context
-        .select<ChooseSecurityKeyModel, String>((model) => model.securityKey);
-    final confirmedSecurityKey = context.select<ChooseSecurityKeyModel, String>(
+    final securityKey =
+        context.select<SecurityKeyModel, String>((model) => model.securityKey);
+    final confirmedSecurityKey = context.select<SecurityKeyModel, String>(
         (model) => model.confirmedSecurityKey);
     final showSecurityKey = context
-        .select<ChooseSecurityKeyModel, bool>((model) => model.showSecurityKey);
+        .select<SecurityKeyModel, bool>((model) => model.showSecurityKey);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -59,8 +58,7 @@ class _ConfirmSecurityKeyFormField extends StatelessWidget {
         errorText: lang.chooseSecurityKeyMismatch,
       ),
       onChanged: (value) {
-        final model =
-            Provider.of<ChooseSecurityKeyModel>(context, listen: false);
+        final model = Provider.of<SecurityKeyModel>(context, listen: false);
         model.confirmedSecurityKey = value;
       },
     );
@@ -74,13 +72,13 @@ class _SecurityKeyShowButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final showSecurityKey = context
-        .select<ChooseSecurityKeyModel, bool>((model) => model.showSecurityKey);
+        .select<SecurityKeyModel, bool>((model) => model.showSecurityKey);
 
     return YaruCheckButton(
       value: showSecurityKey,
       title: Text(lang.showSecurityKey),
       onChanged: (value) {
-        context.read<ChooseSecurityKeyModel>().showSecurityKey = value!;
+        context.read<SecurityKeyModel>().showSecurityKey = value!;
       },
     );
   }

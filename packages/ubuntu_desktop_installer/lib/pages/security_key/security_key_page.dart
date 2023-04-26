@@ -9,39 +9,39 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
-import 'choose_security_key_model.dart';
+import 'security_key_model.dart';
 
-part 'choose_security_key_widgets.dart';
+part 'security_key_widgets.dart';
 
 /// Choose security key page.
 ///
 /// See also:
-/// * [ChooseSecurityKeyModel]
-class ChooseSecurityKeyPage extends StatefulWidget {
+/// * [SecurityKeyModel]
+class SecurityKeyPage extends StatefulWidget {
   /// Use [create] instead.
   @visibleForTesting
-  const ChooseSecurityKeyPage({
+  const SecurityKeyPage({
     super.key,
   });
 
-  /// Creates an instance with [ChooseSecurityKeyModel].
+  /// Creates an instance with [SecurityKeyModel].
   static Widget create(BuildContext context) {
     final service = getService<DiskStorageService>();
     return ChangeNotifierProvider(
-      create: (_) => ChooseSecurityKeyModel(service),
-      child: const ChooseSecurityKeyPage(),
+      create: (_) => SecurityKeyModel(service),
+      child: const SecurityKeyPage(),
     );
   }
 
   @override
-  State<ChooseSecurityKeyPage> createState() => _ChooseSecurityKeyPageState();
+  State<SecurityKeyPage> createState() => _SecurityKeyPageState();
 }
 
-class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
+class _SecurityKeyPageState extends State<SecurityKeyPage> {
   @override
   void initState() {
     super.initState();
-    final model = Provider.of<ChooseSecurityKeyModel>(context, listen: false);
+    final model = Provider.of<SecurityKeyModel>(context, listen: false);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       model.loadSecurityKey();
     });
@@ -89,9 +89,9 @@ class _ChooseSecurityKeyPageState extends State<ChooseSecurityKeyPage> {
           WizardAction.next(
             context,
             enabled: context
-                .select<ChooseSecurityKeyModel, bool>((model) => model.isValid),
-            onNext: context.read<ChooseSecurityKeyModel>().saveSecurityKey,
-            onBack: context.read<ChooseSecurityKeyModel>().loadSecurityKey,
+                .select<SecurityKeyModel, bool>((model) => model.isValid),
+            onNext: context.read<SecurityKeyModel>().saveSecurityKey,
+            onBack: context.read<SecurityKeyModel>().loadSecurityKey,
           ),
         ],
       ),
