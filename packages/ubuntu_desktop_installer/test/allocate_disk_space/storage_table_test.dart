@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_columns.dart';
-import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_table.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_columns.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_table.dart';
 
 import '../test_utils.dart';
 

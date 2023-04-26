@@ -8,7 +8,7 @@ import 'dart:ui' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/subiquity_client.dart' as _i3;
-import 'package:ubuntu_desktop_installer/pages/select_guided_storage/select_guided_storage_model.dart'
+import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/select_guided_storage_model.dart'
     as _i2;
 
 // ignore_for_file: type=lint

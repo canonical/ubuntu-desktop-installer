@@ -3,8 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/security_key/security_key_model.dart';
-import 'package:ubuntu_desktop_installer/pages/security_key/security_key_page.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_model.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 

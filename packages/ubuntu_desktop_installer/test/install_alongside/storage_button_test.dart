@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/pages/install_alongside/storage_button.dart';
-import 'package:ubuntu_desktop_installer/pages/install_alongside/storage_icon.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/storage_button.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/storage_icon.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 String assetPath(String assetName) => 'assets/install_alongside/$assetName';

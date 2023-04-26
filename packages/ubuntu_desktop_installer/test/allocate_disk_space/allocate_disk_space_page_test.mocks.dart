@@ -7,9 +7,9 @@ import 'dart:async' as _i5;
 import 'dart:ui' as _i6;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/allocate_disk_space_model.dart'
+import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_model.dart'
     as _i3;
-import 'package:ubuntu_desktop_installer/pages/allocate_disk_space/storage_types.dart'
+import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_types.dart'
     as _i4;
 import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 
