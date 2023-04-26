@@ -3,19 +3,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_model.dart';
-import 'package:ubuntu_desktop_installer/pages/configure_secure_boot/configure_secure_boot_page.dart';
+import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart';
+import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_page.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
-import 'configure_secure_boot_page_test.mocks.dart';
+import 'secure_boot_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([ConfigureSecureBootModel])
+@GenerateMocks([SecureBootModel])
 void main() {
-  ConfigureSecureBootModel buildModel({
+  SecureBootModel buildModel({
     bool? isFormValid,
     bool? isConfirmationKeyValid,
     bool? areTextFieldsEnabled,
@@ -23,7 +23,7 @@ void main() {
     String? confirmKey,
     SecureBootMode? secureBootMode,
   }) {
-    final model = MockConfigureSecureBootModel();
+    final model = MockSecureBootModel();
     when(model.isFormValid).thenReturn(isFormValid ?? false);
     when(model.isConfirmationKeyValid)
         .thenReturn(isConfirmationKeyValid ?? true);
@@ -35,10 +35,10 @@ void main() {
     return model;
   }
 
-  Widget buildPage(ConfigureSecureBootModel model) {
-    return ChangeNotifierProvider<ConfigureSecureBootModel>.value(
+  Widget buildPage(SecureBootModel model) {
+    return ChangeNotifierProvider<SecureBootModel>.value(
       value: model,
-      child: ConfigureSecureBootPage(),
+      child: SecureBootPage(),
     );
   }
 

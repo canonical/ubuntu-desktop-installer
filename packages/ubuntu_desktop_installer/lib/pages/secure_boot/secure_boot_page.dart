@@ -5,30 +5,29 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
-import 'configure_secure_boot_model.dart';
-import 'configure_secure_boot_widgets.dart';
+import 'secure_boot_model.dart';
+import 'secure_boot_widgets.dart';
 
-class ConfigureSecureBootPage extends StatefulWidget {
+class SecureBootPage extends StatefulWidget {
   @visibleForTesting
-  const ConfigureSecureBootPage({super.key});
+  const SecureBootPage({super.key});
 
   @override
-  State<ConfigureSecureBootPage> createState() =>
-      _ConfigureSecureBootPageState();
+  State<SecureBootPage> createState() => _SecureBootPageState();
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) =>
-          ConfigureSecureBootModel(secureBootMode: SecureBootMode.turnOff),
-      child: const ConfigureSecureBootPage(),
+          SecureBootModel(secureBootMode: SecureBootMode.turnOff),
+      child: const SecureBootPage(),
     );
   }
 }
 
-class _ConfigureSecureBootPageState extends State<ConfigureSecureBootPage> {
+class _SecureBootPageState extends State<SecureBootPage> {
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<ConfigureSecureBootModel>();
+    final model = context.watch<SecureBootModel>();
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
