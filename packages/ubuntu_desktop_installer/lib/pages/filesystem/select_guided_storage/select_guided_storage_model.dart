@@ -15,6 +15,9 @@ class SelectGuidedStorageModel extends SafeChangeNotifier {
   var _disks = <String, Disk>{};
   var _selectedIndex = 0;
 
+  /// Whether the filesystem wizard is at the end.
+  bool get isDone => !_service.useEncryption;
+
   /// Available storages for guided partitioning.
   List<GuidedStorageTarget> get storages => _storages;
 

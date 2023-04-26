@@ -122,6 +122,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
         trailing: [
           WizardAction.next(
             context,
+            root: model.isDone,
             label: lang.selectGuidedStorageInstallNow,
             onNext: model.saveGuidedStorage,
             // If the user returns back to select another disk, the previously

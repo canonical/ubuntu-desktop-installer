@@ -1,6 +1,7 @@
 export 'pages/active_directory/active_directory_page.dart';
 export 'pages/filesystem/allocate_disk_space/allocate_disk_space_page.dart';
 export 'pages/filesystem/bitlocker/bitlocker_page.dart';
+export 'pages/filesystem/filesystem_page.dart';
 export 'pages/filesystem/install_alongside/install_alongside_page.dart';
 export 'pages/filesystem/installation_type/installation_type_page.dart';
 export 'pages/filesystem/security_key/security_key_page.dart';

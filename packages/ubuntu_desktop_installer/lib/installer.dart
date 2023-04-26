@@ -313,7 +313,7 @@ enum InstallationStep {
   network,
   software,
   type,
-  storage,
+  filesystem,
   location,
   user,
   look,
@@ -408,9 +408,9 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.software.index,
           onNext: (_) => !service.hasEnoughDiskSpace
               ? Routes.notEnoughDiskSpace
-              : !service.hasSecureBoot
-                  ? Routes.installationType
-                  : null,
+              : service.hasSecureBoot
+                  ? Routes.secureBoot
+                  : Routes.filesystem,
         ),
         Routes.notEnoughDiskSpace: const WizardRoute(
           builder: NotEnoughDiskSpacePage.create,
@@ -419,37 +419,13 @@ class _UbuntuDesktopInstallerWizardState
           builder: SecureBootPage.create,
           userData: InstallationStep.type.index,
         ),
-        Routes.installationType: WizardRoute(
-          builder: InstallationTypePage.create,
-          userData: InstallationStep.type.index,
-          onNext: (settings) => _nextStorageRoute(service, settings.arguments),
-        ),
-        Routes.bitlocker: const WizardRoute(
-          builder: BitLockerPage.create,
-        ),
-        Routes.installAlongside: WizardRoute(
-          builder: InstallAlongsidePage.create,
-          userData: InstallationStep.storage.index,
-          onReplace: (_) => Routes.allocateDiskSpace,
-          onNext: (settings) => _nextStorageRoute(service, settings.arguments),
-        ),
-        Routes.selectGuidedStorage: WizardRoute(
-          builder: SelectGuidedStoragePage.create,
-          userData: InstallationStep.storage.index,
-          onNext: (settings) => _nextStorageRoute(service, settings.arguments),
-        ),
-        Routes.securityKey: WizardRoute(
-          builder: SecurityKeyPage.create,
-          userData: InstallationStep.storage.index,
-          onNext: (settings) => _nextStorageRoute(service, settings.arguments),
-        ),
-        Routes.allocateDiskSpace: WizardRoute(
-          builder: AllocateDiskSpacePage.create,
-          userData: InstallationStep.storage.index,
+        Routes.filesystem: WizardRoute(
+          builder: FilesystemPage.create,
+          userData: InstallationStep.filesystem.index,
         ),
         Routes.writeChangesToDisk: WizardRoute(
           builder: WriteChangesToDiskPage.create,
-          userData: InstallationStep.storage.index,
+          userData: InstallationStep.filesystem.index,
         ),
         Routes.timezone: WizardRoute(
           builder: TimezonePage.create,
@@ -481,23 +457,6 @@ class _UbuntuDesktopInstallerWizardState
         _UbuntuDesktopInstallerWizardObserver(getService<TelemetryService>())
       ],
     );
-  }
-
-  String? _nextStorageRoute(DiskStorageService service, dynamic arguments) {
-    if (arguments == InstallationType.manual) {
-      return Routes.allocateDiskSpace;
-    } else if (service.guidedTarget == null) {
-      if (arguments == InstallationType.bitlocker) {
-        return Routes.bitlocker;
-      } else if (arguments == InstallationType.erase) {
-        return Routes.selectGuidedStorage;
-      } else if (arguments == InstallationType.alongside) {
-        return Routes.installAlongside;
-      }
-    } else if (service.useEncryption && service.securityKey == null) {
-      return Routes.securityKey;
-    }
-    return Routes.writeChangesToDisk;
   }
 }
 

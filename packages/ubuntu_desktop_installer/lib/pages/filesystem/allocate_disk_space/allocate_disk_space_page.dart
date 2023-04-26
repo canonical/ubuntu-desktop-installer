@@ -102,6 +102,7 @@ class _AllocateDiskSpacePageState extends State<AllocateDiskSpacePage> {
         trailing: [
           WizardAction.next(
             context,
+            root: true,
             enabled: model.isValid,
             onNext: model.setStorage,
           ),

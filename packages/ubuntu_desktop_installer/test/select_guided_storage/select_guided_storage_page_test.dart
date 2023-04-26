@@ -34,6 +34,7 @@ void main() {
     int? selectedIndex,
     Disk? selectedDisk,
     GuidedStorageTargetReformat? selectedStorage,
+    bool? isDone,
   }) {
     final model = MockSelectGuidedStorageModel();
     when(model.storages)
@@ -45,6 +46,7 @@ void main() {
         .thenAnswer((i) => disks?.elementAtOrNull(i.positionalArguments.first));
     when(model.getStorage(any)).thenAnswer(
         (i) => storages?.elementAtOrNull(i.positionalArguments.first));
+    when(model.isDone).thenReturn(isDone ?? false);
     return model;
   }
 
@@ -125,6 +127,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => []);
+    when(service.useEncryption).thenReturn(false);
     when(service.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse());
     registerMockService<DiskStorageService>(service);

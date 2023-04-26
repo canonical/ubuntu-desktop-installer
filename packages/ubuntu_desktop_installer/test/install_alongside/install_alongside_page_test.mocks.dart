@@ -43,6 +43,11 @@ class MockInstallAlongsideModel extends _i1.Mock
   }
 
   @override
+  bool get isDone => (super.noSuchMethod(
+        Invocation.getter(#isDone),
+        returnValue: false,
+      ) as bool);
+  @override
   _i2.ProductInfo get productInfo => (super.noSuchMethod(
         Invocation.getter(#productInfo),
         returnValue: _FakeProductInfo_0(

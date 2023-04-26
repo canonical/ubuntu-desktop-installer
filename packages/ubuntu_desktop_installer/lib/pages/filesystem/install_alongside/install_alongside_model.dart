@@ -18,6 +18,9 @@ class InstallAlongsideModel extends SafeChangeNotifier {
   int? _selectedIndex;
   int? _currentSize;
 
+  /// Whether the filesystem wizard is at the end.
+  bool get isDone => !_service.useEncryption;
+
   /// Detailed info of the product being installed.
   ProductInfo get productInfo => _product.getProductInfo();
 
