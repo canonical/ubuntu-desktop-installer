@@ -45,7 +45,7 @@ git submodule update --init --recursive
 
 Install Subiquity dependencies:
 ```sh
-make -C packages/subiquity_client/subiquity install_deps
+make install_deps
 ```
 
 ### Run the installer
