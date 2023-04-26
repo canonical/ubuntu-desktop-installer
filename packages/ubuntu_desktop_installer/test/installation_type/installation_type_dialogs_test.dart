@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_dialogs.dart';
-import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart';
-import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_page.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_dialogs.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';

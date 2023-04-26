@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/pages/install_alongside/storage_icon.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/storage_icon.dart';
 
 import '../test_utils.dart';
 
