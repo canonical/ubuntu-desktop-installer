@@ -48,27 +48,14 @@ Install Subiquity dependencies:
 make install_deps
 ```
 
-### Run the installer
+### Dry-run the installer
 
-Run the installer either from within your IDE or by running the following command:
+Run the installer in dry-run mode either from within your IDE or by running the
+following command:
 
 ```sh
 cd packages/ubuntu_desktop_installer
 flutter run
-```
-
-### Run live installer
-
-In one terminal run:
-```sh
-cd /path/to/ubuntu-desktop-installer/packages/subiquity_client/subiquity
-sudo python3 -m subiquity.cmd.server
-```
-
-In another terminal run:
-```sh
-cd /path/to/ubuntu-desktop-installer/packages/ubuntu_desktop_installer
-LIVE_RUN=1 flutter run
 ```
 
 ## Contributing
