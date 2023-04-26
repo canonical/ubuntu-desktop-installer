@@ -5,14 +5,14 @@ import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 /// @internal
-final log = Logger('updates_other_software');
+final log = Logger('source');
 
 const kNormalSourceId = 'ubuntu-desktop';
 const kMinimalSourceId = 'ubuntu-desktop-minimal';
 
-class UpdateOtherSoftwareModel extends PropertyStreamNotifier {
+class SourceModel extends PropertyStreamNotifier {
   // ignore: public_member_api_docs
-  UpdateOtherSoftwareModel(
+  SourceModel(
       {required SubiquityClient client,
       required PowerService power,
       required NetworkService network,
