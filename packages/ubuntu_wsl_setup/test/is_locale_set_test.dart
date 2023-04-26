@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_wsl_setup/is_locale_set.dart';
 import 'package:ubuntu_test/mocks.dart';
+import 'package:ubuntu_wsl_setup/is_locale_set.dart';
 
 void main() {
   test('default is not set', () async {

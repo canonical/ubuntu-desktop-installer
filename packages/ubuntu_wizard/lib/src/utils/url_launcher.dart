@@ -1,6 +1,6 @@
 import 'package:ubuntu_logger/ubuntu_logger.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 final log = Logger('url_launcher');
 

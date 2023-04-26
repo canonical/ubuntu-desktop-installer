@@ -16,9 +16,9 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import 'theme/theme_page_test.mocks.dart';
 import 'installation_slides/installation_slides_model_test.mocks.dart';
 import 'test_utils.dart';
+import 'theme/theme_page_test.mocks.dart';
 
 void main() {
   setUpAll(setupAppLocalizations);

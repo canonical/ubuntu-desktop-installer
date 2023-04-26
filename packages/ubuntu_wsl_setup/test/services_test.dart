@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:ubuntu_wsl_setup/services/tcp_socket.dart';
-import 'package:ubuntu_wsl_setup/services/journal.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_wsl_setup/services/journal.dart';
+import 'package:ubuntu_wsl_setup/services/tcp_socket.dart';
 
 // Groups small tests that would otherwise lead to various small files spread
 // in the test directory.
