@@ -159,10 +159,11 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardAction.back(context, root: true),
         trailing: [
           WizardAction.next(
             context,
+            root: model.isDone,
             enabled: model.hasStorage,
             arguments: model.installationType,
             onNext: model.save,

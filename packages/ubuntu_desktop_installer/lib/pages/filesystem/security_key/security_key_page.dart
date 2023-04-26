@@ -88,6 +88,7 @@ class _SecurityKeyPageState extends State<SecurityKeyPage> {
         trailing: [
           WizardAction.next(
             context,
+            root: true,
             enabled: context
                 .select<SecurityKeyModel, bool>((model) => model.isValid),
             onNext: context.read<SecurityKeyModel>().saveSecurityKey,

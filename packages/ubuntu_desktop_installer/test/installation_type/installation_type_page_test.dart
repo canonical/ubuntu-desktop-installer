@@ -26,6 +26,7 @@ void main() {
     bool? canInstallAlongside,
     bool? hasStorage,
     bool? hasBitLocker,
+    bool? isDone,
   }) {
     final model = MockInstallationTypeModel();
     when(model.installationType)
@@ -38,6 +39,7 @@ void main() {
     when(model.canInstallAlongside).thenReturn(canInstallAlongside ?? false);
     when(model.hasStorage).thenReturn(hasStorage ?? true);
     when(model.hasBitLocker).thenReturn(hasBitLocker ?? false);
+    when(model.isDone).thenReturn(isDone ?? false);
     return model;
   }
 

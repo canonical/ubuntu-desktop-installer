@@ -276,7 +276,7 @@ void main() {
       '--machine-config',
       'examples/win10.json',
       '--initial-route',
-      Routes.installationType,
+      Routes.filesystem,
     ]);
     await tester.pumpAndSettle();
 

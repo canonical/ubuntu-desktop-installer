@@ -115,6 +115,7 @@ class _InstallAlongsidePageState extends State<InstallAlongsidePage> {
         trailing: [
           WizardAction.next(
             context,
+            root: model.isDone,
             label: lang.selectGuidedStorageInstallNow,
             onNext: model.selectedStorage != null ? model.save : null,
             onBack: model.reset,

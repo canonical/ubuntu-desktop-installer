@@ -30,14 +30,16 @@ class WizardAction {
     bool? visible,
     bool? enabled,
     WizardCallback? onBack,
+    bool root = false,
   }) {
     return WizardAction(
       label: UbuntuLocalizations.of(context).previousLabel,
       visible: visible,
       flat: true,
-      enabled: enabled ?? Wizard.maybeOf(context)?.hasPrevious ?? false,
+      enabled:
+          enabled ?? Wizard.maybeOf(context, root: root)?.hasPrevious ?? false,
       onActivated: onBack,
-      execute: () => Wizard.maybeOf(context)?.back(),
+      execute: () => Wizard.maybeOf(context, root: root)?.back(),
     );
   }
 
@@ -52,6 +54,7 @@ class WizardAction {
     Object? arguments,
     WizardCallback? onNext,
     WizardCallback? onBack,
+    bool root = false,
   }) {
     return WizardAction(
       label: label ?? UbuntuLocalizations.of(context).nextLabel,
@@ -61,7 +64,7 @@ class WizardAction {
       highlighted: highlighted,
       onActivated: onNext,
       execute: () async {
-        await Wizard.maybeOf(context)?.next(arguments: arguments);
+        await Wizard.maybeOf(context, root: root)?.next(arguments: arguments);
         onBack?.call();
       },
     );
@@ -77,6 +80,7 @@ class WizardAction {
     bool? highlighted,
     Object? result,
     WizardCallback? onDone,
+    bool root = false,
   }) {
     return WizardAction(
       label: label,
@@ -85,7 +89,7 @@ class WizardAction {
       flat: flat,
       highlighted: highlighted,
       onActivated: onDone,
-      execute: () => Wizard.maybeOf(context)?.done(result: result),
+      execute: () => Wizard.maybeOf(context, root: root)?.done(result: result),
     );
   }
 

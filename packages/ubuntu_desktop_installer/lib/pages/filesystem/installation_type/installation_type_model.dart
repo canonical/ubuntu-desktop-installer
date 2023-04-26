@@ -106,6 +106,24 @@ class InstallationTypeModel extends SafeChangeNotifier {
         false;
   }
 
+  /// Whether the filesystem wizard is at the end.
+  bool get isDone {
+    switch (_installationType) {
+      case InstallationType.erase:
+        return !_diskService.useEncryption &&
+            _storages?.whereType<GuidedStorageTargetReformat>().length == 1;
+      case InstallationType.alongside:
+        return !_diskService.useEncryption &&
+            _storages?.any((t) => t is GuidedStorageTargetUseGap) == true;
+      case InstallationType.reinstall:
+        throw UnimplementedError();
+      case InstallationType.manual:
+      case InstallationType.bitlocker:
+      case null:
+        return false;
+    }
+  }
+
   /// Initializes the model.
   Future<void> init() async {
     await _diskService.getGuidedStorage().then((r) => _storages = r.possible);

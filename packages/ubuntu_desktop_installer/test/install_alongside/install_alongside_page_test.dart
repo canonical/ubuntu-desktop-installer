@@ -35,6 +35,7 @@ void main() {
     int? minimumSize,
     int? maximumSize,
     int? totalSize,
+    bool? isDone,
   }) {
     final model = MockInstallAlongsideModel();
     when(model.storageCount).thenReturn(storageCount ?? 0);
@@ -57,6 +58,7 @@ void main() {
     when(model.minimumSize).thenReturn(minimumSize ?? 0);
     when(model.maximumSize).thenReturn(maximumSize ?? 1);
     when(model.totalSize).thenReturn(totalSize ?? 0);
+    when(model.isDone).thenReturn(isDone ?? false);
     return model;
   }
 
@@ -203,6 +205,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final storage = MockDiskStorageService();
     when(storage.existingOS).thenReturn([]);
+    when(storage.useEncryption).thenReturn(false);
     when(storage.getStorage()).thenAnswer((_) async => []);
     when(storage.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse());

@@ -100,6 +100,11 @@ class MockInstallationTypeModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
+  bool get isDone => (super.noSuchMethod(
+        Invocation.getter(#isDone),
+        returnValue: false,
+      ) as bool);
+  @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,

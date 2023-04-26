@@ -32,6 +32,11 @@ class MockSelectGuidedStorageModel extends _i1.Mock
   }
 
   @override
+  bool get isDone => (super.noSuchMethod(
+        Invocation.getter(#isDone),
+        returnValue: false,
+      ) as bool);
+  @override
   List<_i3.GuidedStorageTarget> get storages => (super.noSuchMethod(
         Invocation.getter(#storages),
         returnValue: <_i3.GuidedStorageTarget>[],
