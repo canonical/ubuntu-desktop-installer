@@ -1,11 +1,11 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../../l10n.dart';
-import '../../services.dart';
 import 'allocate_disk_space_model.dart';
 import 'storage_types.dart';
 

@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
-import '../../services.dart';
 import 'connect_model.dart';
 import 'network_device.dart';
 

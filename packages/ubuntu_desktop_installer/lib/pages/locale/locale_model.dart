@@ -2,11 +2,10 @@ import 'dart:ui';
 
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart' show KeySearchX;
-
-import '../../l10n.dart';
-import '../../services.dart';
 
 /// @internal
 final log = Logger('locale');

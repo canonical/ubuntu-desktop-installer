@@ -3,11 +3,11 @@ import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../../l10n.dart';
-import '../../services.dart';
-import '../../widgets.dart';
 import 'allocate_disk_space_dialogs.dart';
 import 'allocate_disk_space_model.dart';
 import 'storage_columns.dart';

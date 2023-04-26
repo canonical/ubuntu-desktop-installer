@@ -4,9 +4,9 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import '../../services.dart';
 import 'connect_model.dart';
 import 'network_device.dart';
 

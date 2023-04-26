@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../../l10n.dart';
-import '../../widgets.dart';
 import 'installation_type_model.dart';
 
 /// Shows a dialog to select advanced installation features.

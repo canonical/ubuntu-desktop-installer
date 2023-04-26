@@ -4,8 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:path/path.dart' as p;
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-
-import '../../services.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 

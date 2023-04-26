@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:dartx/dartx.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
-import '../../services.dart';
 import 'storage_types.dart';
 
 /// The default mount points for auto-completion.

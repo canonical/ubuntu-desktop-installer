@@ -1,9 +1,8 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-
-import '../../services.dart';
 
 class StorageSelector extends StatelessWidget {
   const StorageSelector({
