@@ -74,8 +74,7 @@ void main() {
       expect(find.textContaining(RegExp('$min-$max \\w+')), findsOneWidget);
     }
 
-    await tester
-        .tap(find.widgetWithText(OutlinedButton, tester.lang.okButtonText));
+    await tester.tap(find.pushButton(tester.lang.okButtonText));
     await tester.pumpAndSettle();
 
     expect(await result, toBytes(50, DataUnit.gigabytes));
@@ -94,8 +93,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await tester
-        .tap(find.widgetWithText(OutlinedButton, tester.lang.cancelButtonText));
+    await tester.tap(find.pushButton(tester.lang.cancelButtonText));
     await tester.pumpAndSettle();
 
     expect(await result, isNull);

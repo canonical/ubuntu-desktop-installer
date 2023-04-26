@@ -119,12 +119,12 @@ class StorageSizeDialog extends StatelessWidget {
         ),
       ),
       actions: [
-        OutlinedButton(
+        PushButton.outlined(
           onPressed: () => Navigator.of(context).pop(null),
           child: Text(lang.cancelButtonText),
         ),
         const SizedBox(width: kButtonBarSpacing),
-        OutlinedButton(
+        PushButton.filled(
           onPressed: canAccept ? () => Navigator.of(context).pop(size) : null,
           child: Text(lang.okButtonText),
         ),
