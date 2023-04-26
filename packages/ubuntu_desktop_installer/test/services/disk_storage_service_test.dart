@@ -219,14 +219,12 @@ void main() {
     final service = DiskStorageService(client);
 
     when(client.hasBitLocker()).thenAnswer((_) async => true);
-    await service.init();
-    expect(service.hasBitLocker, isTrue);
+    expect(await service.hasBitLocker(), isTrue);
     verify(client.hasBitLocker()).called(1);
 
     when(client.hasBitLocker()).thenAnswer((_) async => false);
-    await service.init();
+    expect(await service.hasBitLocker(), isFalse);
     verify(client.hasBitLocker()).called(1);
-    expect(service.hasBitLocker, isFalse);
   });
 
   test('existing OS', () async {

@@ -75,11 +75,6 @@ class MockDiskStorageService extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  bool get hasBitLocker => (super.noSuchMethod(
-        Invocation.getter(#hasBitLocker),
-        returnValue: false,
-      ) as bool);
-  @override
   bool get useEncryption => (super.noSuchMethod(
         Invocation.getter(#useEncryption),
         returnValue: false,
@@ -150,6 +145,14 @@ class MockDiskStorageService extends _i1.Mock
         returnValue: _i5.Future<void>.value(),
         returnValueForMissingStub: _i5.Future<void>.value(),
       ) as _i5.Future<void>);
+  @override
+  _i5.Future<bool> hasBitLocker() => (super.noSuchMethod(
+        Invocation.method(
+          #hasBitLocker,
+          [],
+        ),
+        returnValue: _i5.Future<bool>.value(false),
+      ) as _i5.Future<bool>);
   @override
   _i5.Future<_i2.GuidedStorageResponseV2> getGuidedStorage() =>
       (super.noSuchMethod(

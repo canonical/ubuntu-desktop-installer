@@ -49,6 +49,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   InstallationType? _installationType;
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
+  var _hasBitLocker = false;
   List<GuidedStorageTarget>? _storages;
 
   /// The selected installation type.
@@ -93,7 +94,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   bool get hasStorage => _storages != null;
 
   /// Whether BitLocker is detected.
-  bool get hasBitLocker => _diskService.hasBitLocker;
+  bool get hasBitLocker => _hasBitLocker;
 
   /// Whether installation alongside an existing OS is possible.
   ///
@@ -133,6 +134,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
     _advancedFeature =
         _diskService.useLvm ? AdvancedFeature.lvm : AdvancedFeature.none;
     _encryption = _diskService.useEncryption;
+    _hasBitLocker = await _diskService.hasBitLocker();
     notifyListeners();
   }
 

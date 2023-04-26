@@ -16,7 +16,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.useLvm).thenReturn(true);
     when(service.useEncryption).thenReturn(true);
-    when(service.hasBitLocker).thenReturn(true);
+    when(service.hasBitLocker()).thenAnswer((_) async => true);
     when(service.getGuidedStorage())
         .thenAnswer((_) async => testGuidedStorageResponse());
 
@@ -174,6 +174,7 @@ void main() {
     when(service.useEncryption).thenReturn(false);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => testGuidedStorageResponse(possible: [reformat]));
+    when(service.hasBitLocker()).thenAnswer((_) async => false);
 
     final model = InstallationTypeModel(
       service,
@@ -194,6 +195,7 @@ void main() {
     when(service.useEncryption).thenReturn(false);
     when(service.useLvm).thenReturn(false);
     when(service.useEncryption).thenReturn(false);
+    when(service.hasBitLocker()).thenAnswer((_) async => false);
 
     final model = InstallationTypeModel(
       service,
@@ -250,6 +252,8 @@ void main() {
     final service = MockDiskStorageService();
     when(service.useLvm).thenReturn(false);
     when(service.useEncryption).thenReturn(false);
+    when(service.hasBitLocker()).thenAnswer((_) async => false);
+
     final model = InstallationTypeModel(
       service,
       MockTelemetryService(),
