@@ -8,7 +8,7 @@ import 'dart:ui' as _i6;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/subiquity_client.dart' as _i5;
-import 'package:ubuntu_desktop_installer/pages/installation_type/installation_type_model.dart'
+import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart'
     as _i3;
 import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 

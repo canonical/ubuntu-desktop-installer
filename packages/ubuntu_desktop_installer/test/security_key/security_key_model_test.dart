@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/security_key/security_key_model.dart';
+import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart';
 
 import 'security_key_model_test.mocks.dart';
