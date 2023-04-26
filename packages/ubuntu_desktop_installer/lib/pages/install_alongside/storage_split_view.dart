@@ -6,8 +6,8 @@ import 'package:ubuntu_wizard/constants.dart';
 
 import '../../l10n.dart';
 import '../../services.dart';
-import 'storage_size_dialog.dart';
 import 'storage_button.dart';
+import 'storage_size_dialog.dart';
 
 class StorageSplitView extends StatefulWidget {
   const StorageSplitView({
