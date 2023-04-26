@@ -106,10 +106,10 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.updatesOtherSoftware);
+    await tester.jumpToWizardRoute(Routes.source);
     await tester.pumpAndSettle();
 
-    await testUpdatesOtherSoftwarePage(
+    await testSourcePage(
       tester,
       screenshot: '$currentThemeName/5.updates',
     );

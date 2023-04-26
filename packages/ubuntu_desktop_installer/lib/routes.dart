@@ -8,7 +8,7 @@ abstract class Routes {
   static const network = '/network';
   static const allocateDiskSpace = '/allocate-disk-space';
   static const secureBoot = '/secure-boot';
-  static const updatesOtherSoftware = '/update-other-software';
+  static const source = '/update-other-software';
   static const installationComplete = '/installation-complete';
   static const writeChangesToDisk = '/write-changes-to-disk';
   static const theme = '/theme';

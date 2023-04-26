@@ -4,18 +4,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
+import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 
-import 'updates_other_software_model_test.mocks.dart';
+import 'source_model_test.mocks.dart';
 
 @GenerateMocks([NetworkService, PowerService])
 void main() {
-  late UpdateOtherSoftwareModel model;
+  late SourceModel model;
 
   setUp(() {
-    model = UpdateOtherSoftwareModel(
+    model = SourceModel(
       client: MockSubiquityClient(),
       power: MockPowerService(),
       network: MockNetworkService(),
@@ -87,7 +87,7 @@ void main() {
     final networkChanged = StreamController<List<String>>(sync: true);
     when(network.propertiesChanged).thenAnswer((_) => networkChanged.stream);
 
-    final model = UpdateOtherSoftwareModel(
+    final model = SourceModel(
       client: client,
       installDrivers: false,
       installCodecs: false,
@@ -113,7 +113,7 @@ void main() {
     final network = MockNetworkService();
     when(network.isConnected).thenReturn(true);
 
-    final model = UpdateOtherSoftwareModel(
+    final model = SourceModel(
       client: client,
       installDrivers: false,
       installCodecs: false,
@@ -156,7 +156,7 @@ void main() {
     when(client.getCodecs())
         .thenAnswer((_) async => const CodecsData(install: true));
 
-    final model = UpdateOtherSoftwareModel(
+    final model = SourceModel(
       client: client,
       power: power,
       network: network,
@@ -200,7 +200,7 @@ void main() {
     when(client.getCodecs())
         .thenAnswer((_) async => const CodecsData(install: true));
 
-    final model = UpdateOtherSoftwareModel(
+    final model = SourceModel(
       client: client,
       power: power,
       network: network,

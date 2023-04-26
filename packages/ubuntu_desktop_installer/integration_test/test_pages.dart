@@ -134,13 +134,13 @@ Future<void> testNetworkPage(
   await tester.tapContinue();
 }
 
-Future<void> testUpdatesOtherSoftwarePage(
+Future<void> testSourcePage(
   WidgetTester tester, {
   String? sourceId,
   String? screenshot,
 }) async {
-  await expectPage(tester, UpdatesOtherSoftwarePage,
-      (lang) => lang.updatesOtherSoftwarePageTitle);
+  await expectPage(
+      tester, SourcePage, (lang) => lang.updatesOtherSoftwarePageTitle);
 
   if (sourceId != null) {
     await tester.tapRadioButton<String>(sourceId);

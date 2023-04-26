@@ -403,8 +403,8 @@ class _UbuntuDesktopInstallerWizardState
           builder: NetworkPage.create,
           userData: InstallationStep.network.index,
         ),
-        Routes.updatesOtherSoftware: WizardRoute(
-          builder: UpdatesOtherSoftwarePage.create,
+        Routes.source: WizardRoute(
+          builder: SourcePage.create,
           userData: InstallationStep.software.index,
           onNext: (_) => !service.hasEnoughDiskSpace
               ? Routes.notEnoughDiskSpace

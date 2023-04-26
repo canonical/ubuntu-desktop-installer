@@ -9,42 +9,40 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'updates_other_software_model.dart';
+import 'source_model.dart';
 
-export 'updates_other_software_model.dart'
-    show kNormalSourceId, kMinimalSourceId;
+export 'source_model.dart' show kNormalSourceId, kMinimalSourceId;
 
-class UpdatesOtherSoftwarePage extends StatefulWidget {
+class SourcePage extends StatefulWidget {
   @visibleForTesting
-  const UpdatesOtherSoftwarePage({super.key});
+  const SourcePage({super.key});
 
   @override
-  State<UpdatesOtherSoftwarePage> createState() =>
-      _UpdatesOtherSoftwarePageState();
+  State<SourcePage> createState() => _SourcePageState();
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => UpdateOtherSoftwareModel(
+      create: (_) => SourceModel(
         client: getService<SubiquityClient>(),
         power: getService<PowerService>(),
         network: getService<NetworkService>(),
       ),
-      child: const UpdatesOtherSoftwarePage(),
+      child: const SourcePage(),
     );
   }
 }
 
-class _UpdatesOtherSoftwarePageState extends State<UpdatesOtherSoftwarePage> {
+class _SourcePageState extends State<SourcePage> {
   @override
   void initState() {
     super.initState();
-    final model = Provider.of<UpdateOtherSoftwareModel>(context, listen: false);
+    final model = Provider.of<SourceModel>(context, listen: false);
     model.init();
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<UpdateOtherSoftwareModel>();
+    final model = context.watch<SourceModel>();
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

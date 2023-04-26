@@ -6,29 +6,29 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_model.dart';
-import 'package:ubuntu_desktop_installer/pages/updates_other_software/updates_other_software_page.dart';
+import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
+import 'package:ubuntu_desktop_installer/pages/source/source_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
-import 'updates_other_software_model_test.mocks.dart';
-import 'updates_other_software_page_test.mocks.dart';
+import 'source_model_test.mocks.dart';
+import 'source_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
-@GenerateMocks([UpdateOtherSoftwareModel, TelemetryService])
+@GenerateMocks([SourceModel, TelemetryService])
 void main() {
-  UpdateOtherSoftwareModel buildModel({
+  SourceModel buildModel({
     String? sourceId,
     bool? installDrivers,
     bool? installCodecs,
     bool? onBattery,
     bool? isOnline,
   }) {
-    final model = MockUpdateOtherSoftwareModel();
+    final model = MockSourceModel();
     when(model.sources).thenReturn([
       SourceSelection(
         id: kMinimalSourceId,
@@ -55,13 +55,13 @@ void main() {
     return model;
   }
 
-  Widget buildPage(UpdateOtherSoftwareModel model) {
+  Widget buildPage(SourceModel model) {
     registerMockService<SubiquityClient>(MockSubiquityClient());
     registerMockService<TelemetryService>(MockTelemetryService());
 
-    return ChangeNotifierProvider<UpdateOtherSoftwareModel>.value(
+    return ChangeNotifierProvider<SourceModel>.value(
       value: model,
-      child: UpdatesOtherSoftwarePage(),
+      child: SourcePage(),
     );
   }
 
@@ -218,13 +218,13 @@ void main() {
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
     registerMockService<NetworkService>(network);
 
-    await tester.pumpWidget(tester.buildApp(UpdatesOtherSoftwarePage.create));
+    await tester.pumpWidget(tester.buildApp(SourcePage.create));
 
-    final page = find.byType(UpdatesOtherSoftwarePage);
+    final page = find.byType(SourcePage);
     expect(page, findsOneWidget);
 
     final context = tester.element(page);
-    final model = Provider.of<UpdateOtherSoftwareModel>(context, listen: false);
+    final model = Provider.of<SourceModel>(context, listen: false);
     expect(model, isNotNull);
   });
 }
