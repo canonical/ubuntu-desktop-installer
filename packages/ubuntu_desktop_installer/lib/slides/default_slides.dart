@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import '../l10n.dart';
-import '../services.dart';
-import '../widgets.dart';
 import 'slide_layouts.dart';
 
 String _slideAsset(String name) => 'assets/installation_slides/$name';

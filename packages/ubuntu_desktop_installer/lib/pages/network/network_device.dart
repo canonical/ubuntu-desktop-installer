@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import '../../services.dart';
 import 'connect_model.dart';
 
 abstract class NetworkDeviceModel<T extends NetworkDevice>

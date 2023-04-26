@@ -1,6 +1,5 @@
 import 'package:subiquity_client/subiquity_client.dart';
-
-import '../../services.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
 /// View model for [InstallationCompletePage].
 class InstallationCompleteModel {

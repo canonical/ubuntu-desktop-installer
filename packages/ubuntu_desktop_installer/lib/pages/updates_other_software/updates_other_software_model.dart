@@ -1,9 +1,8 @@
 import 'package:async/async.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
-
-import '../../services.dart';
 
 /// @internal
 final log = Logger('updates_other_software');

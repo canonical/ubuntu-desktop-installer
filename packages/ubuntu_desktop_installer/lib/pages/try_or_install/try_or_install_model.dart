@@ -1,10 +1,9 @@
 import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
-
-import '../../services.dart';
 
 /// @internal
 final log = Logger('try_or_install');

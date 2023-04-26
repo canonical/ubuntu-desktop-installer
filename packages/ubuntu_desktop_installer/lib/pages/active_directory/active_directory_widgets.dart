@@ -2,9 +2,9 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import '../../l10n.dart';
 import 'active_directory_l10n.dart';
 import 'active_directory_model.dart';
 

@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
-
-import '../../services.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
 /// View model for [ChooseSecurityKeyPage].
 class SecurityKeyModel extends SafeChangeNotifier {

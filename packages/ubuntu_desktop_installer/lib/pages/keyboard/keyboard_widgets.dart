@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/constants.dart';
-
-import '../../l10n.dart';
 
 /// Asks the user to press one of keys.
 class PressKeyView extends StatelessWidget {

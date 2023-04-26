@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
-import '../../services.dart';
 import 'connect_model.dart';
 
 /// A proxy model for the currently selected [ConnectModel] (eth, wifi, none).
