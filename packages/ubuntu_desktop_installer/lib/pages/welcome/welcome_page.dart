@@ -101,7 +101,7 @@ class WelcomePageState extends State<WelcomePage> {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardAction.back(context, root: true),
         trailing: [
           WizardAction(
             label: UbuntuLocalizations.of(context).nextLabel,
