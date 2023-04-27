@@ -287,8 +287,8 @@ void main() {
     await tester.pumpAndSettle();
   });
 
-  testWidgets('try-or-install', (tester) async {
-    await app.main(<String>['--try-or-install']);
+  testWidgets('welcome', (tester) async {
+    await app.main(<String>['--welcome']);
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
