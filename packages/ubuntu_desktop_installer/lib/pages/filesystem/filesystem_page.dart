@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
+import 'package:ubuntu_desktop_installer/routes.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import '../../installer.dart';
-import '../../routes.dart';
-import '../../services.dart';
 import 'allocate_disk_space/allocate_disk_space_page.dart';
 import 'bitlocker/bitlocker_page.dart';
 import 'install_alongside/install_alongside_page.dart';

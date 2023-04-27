@@ -12,7 +12,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'installation_type_dialogs.dart';
 import 'installation_type_model.dart';
 
-export 'installation_type_model.dart' show InstallationType;
+export 'installation_type_model.dart' show AdvancedFeature, InstallationType;
 
 /// Select between guided and manual partitioning.
 class InstallationTypePage extends StatefulWidget {
