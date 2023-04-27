@@ -16,11 +16,13 @@ class SourceModel extends PropertyStreamNotifier {
       {required SubiquityClient client,
       required PowerService power,
       required NetworkService network,
+      required DiskStorageService storage,
       bool installDrivers = false,
       bool installCodecs = false})
       : _client = client,
         _power = power,
         _network = network,
+        _storage = storage,
         _installDrivers = installDrivers,
         _installCodecs = installCodecs {
     addPropertyListener('OnBattery', notifyListeners);
@@ -30,6 +32,7 @@ class SourceModel extends PropertyStreamNotifier {
   final SubiquityClient _client;
   final PowerService _power;
   final NetworkService _network;
+  final DiskStorageService _storage;
 
   String? _sourceId;
   String? get sourceId => _sourceId;
@@ -83,7 +86,7 @@ class SourceModel extends PropertyStreamNotifier {
   /// save the selected installation options.
   Future<void> save() {
     return Future.wait([
-      _client.setSource(_sourceId!),
+      _client.setSource(_sourceId!).then((_) => _storage.init()),
       _client.setDrivers(install: installDrivers),
       _client.setCodecs(install: installCodecs && isOnline),
     ]);
