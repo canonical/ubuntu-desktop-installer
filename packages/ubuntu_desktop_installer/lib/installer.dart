@@ -369,31 +369,12 @@ class _UbuntuDesktopInstallerWizardState
         Routes.locale: WizardRoute(
           builder: LocalePage.create,
           userData: InstallationStep.locale.index,
-          onNext: (_) {
-            if (widget.tryOrInstall == true) {
-              return Routes.tryOrInstall;
-            } else if (service.hasRst) {
-              return Routes.rst;
-            } else {
-              return Routes.keyboard;
-            }
-          },
+          onNext: (_) =>
+              widget.tryOrInstall == true ? Routes.welcome : Routes.keyboard,
         ),
-        Routes.tryOrInstall: WizardRoute(
-          builder: TryOrInstallPage.create,
+        Routes.welcome: WizardRoute(
+          builder: WelcomePage.create,
           userData: InstallationStep.locale.index,
-          onNext: (settings) {
-            switch (settings.arguments as Option?) {
-              case Option.repairUbuntu:
-                return Routes.repairUbuntu;
-              default:
-                if (service.hasRst) return Routes.rst;
-                return Routes.keyboard;
-            }
-          },
-        ),
-        Routes.rst: const WizardRoute(
-          builder: RstPage.create,
         ),
         Routes.keyboard: WizardRoute(
           builder: KeyboardPage.create,

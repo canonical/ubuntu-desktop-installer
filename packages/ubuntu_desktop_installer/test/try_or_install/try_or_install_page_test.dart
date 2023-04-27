@@ -5,11 +5,12 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_model.dart';
-import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_page.dart';
-import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_widgets.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/try_or_install/try_or_install_model.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/try_or_install/try_or_install_page.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/try_or_install/try_or_install_widgets.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -28,10 +29,12 @@ void main() {
   late TryOrInstallModel model;
 
   Future<void> setUpApp(WidgetTester tester, {bool isConnected = false}) async {
+    final client = MockSubiquityClient();
+    when(client.hasRst()).thenAnswer((_) async => false);
     final network = MockNetworkService();
     when(network.isConnected).thenReturn(isConnected);
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
-    model = TryOrInstallModel(network: network);
+    model = TryOrInstallModel(client: client, network: network);
 
     app = MaterialApp(
       supportedLocales: supportedLocales,

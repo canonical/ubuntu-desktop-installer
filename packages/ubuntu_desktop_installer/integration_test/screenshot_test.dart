@@ -48,17 +48,31 @@ void main() {
     );
   }, variant: themeVariant);
 
-  testWidgets('2.install-ubuntu', (tester) async {
+  testWidgets('2.welcome', (tester) async {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.tryOrInstall);
+    await tester.jumpToWizardRoute(Routes.welcome);
     await tester.pumpAndSettle();
 
     await testTryOrInstallPage(
       tester,
       option: Option.installUbuntu,
-      screenshot: '$currentThemeName/2.install-ubuntu',
+      screenshot: '$currentThemeName/2.welcome',
+    );
+  }, variant: themeVariant);
+
+  testWidgets('3.rst', (tester) async {
+    await runInstallerApp([], flavor: currentFlavor);
+    await tester.pumpAndSettle();
+
+    await tester.jumpToWizardRoute(Routes.welcome);
+    await tester.jumpToWizardRoute(Routes.rst);
+    await tester.pumpAndSettle();
+
+    await testRstPage(
+      tester,
+      screenshot: '$currentThemeName/3.rst',
     );
   }, variant: themeVariant);
 
@@ -72,19 +86,6 @@ void main() {
     await testKeyboardPage(
       tester,
       screenshot: '$currentThemeName/3.keyboard',
-    );
-  }, variant: themeVariant);
-
-  testWidgets('3.rst', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
-    await tester.pumpAndSettle();
-
-    await tester.jumpToWizardRoute(Routes.rst);
-    await tester.pumpAndSettle();
-
-    await testRstPage(
-      tester,
-      screenshot: '$currentThemeName/3.rst',
     );
   }, variant: themeVariant);
 

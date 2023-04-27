@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -21,7 +22,10 @@ class TryOrInstallPage extends StatefulWidget {
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => TryOrInstallModel(network: getService<NetworkService>()),
+      create: (_) => TryOrInstallModel(
+        client: getService<SubiquityClient>(),
+        network: getService<NetworkService>(),
+      ),
       child: const TryOrInstallPage(),
     );
   }
@@ -103,12 +107,14 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
         trailing: [
           WizardAction.done(
             context,
+            root: true,
             label: UbuntuLocalizations.of(context).nextLabel,
             visible: model.option == Option.tryUbuntu,
             onDone: YaruWindow.of(context).close,
           ),
           WizardAction.next(
             context,
+            root: !model.hasRst,
             visible: model.option != Option.tryUbuntu,
             enabled: model.option != Option.none,
             arguments: model.option,

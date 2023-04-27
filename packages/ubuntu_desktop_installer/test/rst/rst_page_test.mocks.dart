@@ -6,7 +6,8 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_desktop_installer/pages/rst/rst_model.dart' as _i2;
+import 'package:ubuntu_desktop_installer/pages/welcome/rst/rst_model.dart'
+    as _i2;
 import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i4;
 
 // ignore_for_file: type=lint
