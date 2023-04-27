@@ -167,6 +167,7 @@ void expectPage(
   String Function(AppLocalizations lang) title,
 ) {
   LangTester.type = page;
-  expect(find.byType(page), findsOneWidget);
-  expect(find.widgetWithText(AppBar, title(tester.lang)), findsWidgets);
+  // Prevent `Guarded function conflict` on tests.
+  expectSync(find.byType(page), findsOneWidget);
+  expectSync(find.widgetWithText(AppBar, title(tester.lang)), findsWidgets);
 }
