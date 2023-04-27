@@ -58,7 +58,6 @@ class InstallationCompletePage extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () async {
                           final window = YaruWindow.of(context);
-                          await Wizard.of(context).done();
                           model.reboot().then((_) => window.close());
                         },
                         child: Text(lang.restartNow),
@@ -67,11 +66,7 @@ class InstallationCompletePage extends StatelessWidget {
                     const SizedBox(width: kContentSpacing),
                     Expanded(
                       child: OutlinedButton(
-                        onPressed: () async {
-                          final window = YaruWindow.of(context);
-                          await Wizard.of(context).done();
-                          window.close();
-                        },
+                        onPressed: YaruWindow.of(context).close,
                         child: Text(lang.continueTesting),
                       ),
                     ),
