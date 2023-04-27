@@ -40,7 +40,7 @@ void main() async {
 
     ApplicationState? currentState;
     for (final nextState in ApplicationState.values) {
-      when(client.status(current: currentState)).thenAnswer(
+      when(client.getStatus(current: currentState)).thenAnswer(
         (_) async => testStatus(nextState),
       );
       currentState = nextState;
@@ -52,7 +52,7 @@ void main() async {
     // initializing the model queries the initial client status, and then runs
     // the client status query loop until it reaches DONE
     await model.init();
-    verify(client.status(current: null)).called(1);
+    verify(client.getStatus(current: null)).called(1);
 
     final expectedStateChanges = ApplicationState.values.where((state) {
       return state != ApplicationState.ERROR &&
@@ -65,7 +65,7 @@ void main() async {
     final client = MockSubiquityClient();
     ApplicationState? currentState;
     for (final nextState in ApplicationState.values) {
-      when(client.status(current: currentState)).thenAnswer(
+      when(client.getStatus(current: currentState)).thenAnswer(
         (_) async => testStatus(nextState),
       );
       currentState = nextState;
@@ -112,10 +112,10 @@ void main() async {
 
   test('error state', () async {
     final client = MockSubiquityClient();
-    when(client.status()).thenAnswer(
+    when(client.getStatus()).thenAnswer(
       (_) async => testStatus(ApplicationState.ERROR),
     );
-    when(client.status(current: ApplicationState.ERROR)).thenAnswer(
+    when(client.getStatus(current: ApplicationState.ERROR)).thenAnswer(
       (_) async => testStatus(ApplicationState.ERROR),
     );
 
@@ -166,10 +166,10 @@ void main() async {
         .thenAnswer((_) => events.stream);
 
     final client = MockSubiquityClient();
-    when(client.status()).thenAnswer(
+    when(client.getStatus()).thenAnswer(
       (_) async => testStatus(ApplicationState.RUNNING),
     );
-    when(client.status(current: ApplicationState.RUNNING)).thenAnswer(
+    when(client.getStatus(current: ApplicationState.RUNNING)).thenAnswer(
       (_) async => testStatus(ApplicationState.RUNNING),
     );
 

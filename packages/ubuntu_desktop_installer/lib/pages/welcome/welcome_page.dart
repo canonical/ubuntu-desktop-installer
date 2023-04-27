@@ -103,12 +103,10 @@ class WelcomePageState extends State<WelcomePage> {
       bottomBar: WizardBar(
         leading: WizardAction.back(context),
         trailing: [
-          WizardAction.done(
-            context,
-            root: true,
+          WizardAction(
             label: UbuntuLocalizations.of(context).nextLabel,
             visible: model.option == Option.tryUbuntu,
-            onDone: YaruWindow.of(context).close,
+            execute: YaruWindow.of(context).close,
           ),
           WizardAction.next(
             context,

@@ -90,10 +90,7 @@ class NotEnoughDiskSpacePage extends StatelessWidget {
               const SizedBox(height: kContentSpacing),
               FilledButton(
                   onPressed: () async {
-                    await Wizard.of(context).done();
-                    if (context.mounted) {
-                      YaruWindow.of(context).close();
-                    }
+                    YaruWindow.of(context).close();
                     // TODO: tell subiquity to quit?
                   },
                   child: Text(lang.quitButtonText)),

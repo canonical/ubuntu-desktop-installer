@@ -10,7 +10,7 @@ class TimezoneModel extends SafeChangeNotifier {
   final SubiquityClient _client;
 
   Future<String> init() async {
-    return _client.timezone().then((data) async {
+    return _client.getTimezone().then((data) async {
       log.debug('Initialized ${data.timezone}');
       return data.timezone;
     });

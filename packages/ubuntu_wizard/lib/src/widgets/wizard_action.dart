@@ -70,29 +70,6 @@ class WizardAction {
     );
   }
 
-  /// An action that finishes the wizard.
-  factory WizardAction.done(
-    BuildContext context, {
-    String? label,
-    bool? visible,
-    bool? enabled,
-    bool? flat,
-    bool? highlighted,
-    Object? result,
-    WizardCallback? onDone,
-    bool root = false,
-  }) {
-    return WizardAction(
-      label: label,
-      visible: visible,
-      enabled: enabled,
-      flat: flat,
-      highlighted: highlighted,
-      onActivated: onDone,
-      execute: () => Wizard.maybeOf(context, root: root)?.done(result: result),
-    );
-  }
-
   /// Text label of the back button.
   final String? label;
 

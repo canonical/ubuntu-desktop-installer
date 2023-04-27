@@ -229,7 +229,7 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => IdentityData());
+    when(client.getIdentity()).thenAnswer((_) async => IdentityData());
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(MaterialApp(

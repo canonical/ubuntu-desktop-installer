@@ -340,7 +340,7 @@ class _UbuntuDesktopInstallerWizardState
     super.initState();
 
     final client = getService<SubiquityClient>();
-    client.source().then((value) async {
+    client.getSource().then((value) async {
       final source = value.sources.firstWhereOrNull((s) => s.isDefault);
       if (source != null) {
         await client.setSource(source.id);

@@ -39,7 +39,7 @@ void main() {
     });
 
     test('layouts=[]', () async {
-      when(client.keyboard()).thenAnswer((_) async {
+      when(client.getKeyboard()).thenAnswer((_) async {
         return testSetup([], layout: 'with-variants', variant: 'variant1');
       });
 
@@ -49,7 +49,7 @@ void main() {
     });
 
     test('layout=unknown and variant=unknown', () async {
-      when(client.keyboard()).thenAnswer((_) async {
+      when(client.getKeyboard()).thenAnswer((_) async {
         return testSetup(testLayouts, layout: 'unknown', variant: 'unknown');
       });
 
@@ -59,7 +59,7 @@ void main() {
     });
 
     test('variants=[] and variant=unknown', () async {
-      when(client.keyboard()).thenAnswer((_) async {
+      when(client.getKeyboard()).thenAnswer((_) async {
         return testSetup(testLayouts,
             layout: 'empty-variants', variant: 'unknown');
       });
@@ -70,7 +70,7 @@ void main() {
     });
 
     test('variant=unknown', () async {
-      when(client.keyboard()).thenAnswer((_) async {
+      when(client.getKeyboard()).thenAnswer((_) async {
         return testSetup(testLayouts,
             layout: 'with-variants', variant: 'unknown');
       });
@@ -81,7 +81,7 @@ void main() {
     });
 
     test('all ok', () async {
-      when(client.keyboard()).thenAnswer((_) async {
+      when(client.getKeyboard()).thenAnswer((_) async {
         return testSetup(testLayouts,
             layout: 'with-variants', variant: 'variant2');
       });
@@ -98,7 +98,7 @@ void main() {
 
     setUp(() async {
       client = MockSubiquityClient();
-      when(client.keyboard()).thenAnswer((_) async {
+      when(client.getKeyboard()).thenAnswer((_) async {
         return testSetup([
           KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
           KeyboardLayout(code: 'foo', name: 'Foo', variants: [
@@ -220,7 +220,7 @@ void main() {
 
   test('apply the system settings', () async {
     final client = MockSubiquityClient();
-    when(client.keyboard()).thenAnswer((_) async {
+    when(client.getKeyboard()).thenAnswer((_) async {
       return testSetup([
         KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
         KeyboardLayout(code: 'foo', name: 'Foo', variants: [
@@ -244,7 +244,7 @@ void main() {
 
   test('sort layouts', () async {
     final client = MockSubiquityClient();
-    when(client.keyboard()).thenAnswer((_) async {
+    when(client.getKeyboard()).thenAnswer((_) async {
       return testSetup([
         KeyboardLayout(code: 'bbb', name: 'BBB', variants: []),
         KeyboardLayout(code: 'aaa', name: 'AAA', variants: []),
@@ -263,7 +263,7 @@ void main() {
 
   test('search layout', () async {
     final client = MockSubiquityClient();
-    when(client.keyboard()).thenAnswer((_) async {
+    when(client.getKeyboard()).thenAnswer((_) async {
       return testSetup([
         KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
         KeyboardLayout(code: 'foo', name: 'Foo', variants: [

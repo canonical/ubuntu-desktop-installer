@@ -33,7 +33,7 @@ void main() {
     );
 
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => identity);
+    when(client.getIdentity()).thenAnswer((_) async => identity);
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
@@ -55,7 +55,7 @@ void main() {
     await IOOverrides.runZoned(() async {
       await model.init();
     }, createFile: (path) => MockProductNameFile('impish'));
-    verify(client.identity()).called(1);
+    verify(client.getIdentity()).called(1);
 
     expect(model.realName, equals(identity.realname));
     expect(model.username, equals(identity.username));
@@ -68,7 +68,7 @@ void main() {
 
   test('load auto-login', () async {
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => IdentityData());
+    when(client.getIdentity()).thenAnswer((_) async => IdentityData());
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
@@ -98,7 +98,7 @@ void main() {
     const identity = IdentityData(realname: 'Ubuntu');
 
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => identity);
+    when(client.getIdentity()).thenAnswer((_) async => identity);
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
@@ -119,7 +119,7 @@ void main() {
     await IOOverrides.runZoned(() async {
       await model.init();
     }, createFile: (path) => MockProductNameFile('impish'));
-    verify(client.identity()).called(1);
+    verify(client.getIdentity()).called(1);
 
     expect(model.hostname, equals('ubuntu-impish'));
   });
@@ -128,7 +128,7 @@ void main() {
     const identity = IdentityData(username: 'user');
 
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => identity);
+    when(client.getIdentity()).thenAnswer((_) async => identity);
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
@@ -417,7 +417,7 @@ void main() {
 
   test('respect existing values', () async {
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async {
+    when(client.getIdentity()).thenAnswer((_) async {
       return IdentityData(
         realname: 'Default',
         username: 'default',
@@ -448,7 +448,7 @@ void main() {
     await IOOverrides.runZoned(() async {
       await model.init();
     }, createFile: (path) => MockProductNameFile(''));
-    verify(client.identity()).called(1);
+    verify(client.getIdentity()).called(1);
 
     expect(model.realName, equals('User'));
     expect(model.username, equals('user'));
@@ -486,7 +486,7 @@ void main() {
 
   test('active directory support', () async {
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => IdentityData());
+    when(client.getIdentity()).thenAnswer((_) async => IdentityData());
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => true);
 
     final config = MockConfigService();

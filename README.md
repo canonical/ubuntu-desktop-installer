@@ -9,9 +9,9 @@ This project is a modern implementation of the Ubuntu Desktop installer, using [
 
 ## Availability and release
 
-Ubuntu Desktop Installer will replace Ubiquity as the default installer starting from Ubuntu Desktop 23.04 (Lunar Lobster).
+Ubuntu Desktop Installer replaced [Ubiquity](https://launchpad.net/ubiquity) as the default installer starting from [Ubuntu Desktop 23.04 (Lunar Lobster)](https://ubuntu.com/blog/ubuntu-desktop-23-04-release-roundup).
 
-Ubuntu Desktop Installer was originally planned to ship with Ubuntu Desktop LTS 22.04 Jammy Jellyfish, however given that the new installer needs to exceed Ubiquity in terms of features and stability, the plan is now to mature the installer in 23.04 and 23.10 before it is ready for the 24.04 LTS.
+[![The New Ubuntu Installer | 23.04 Lunar Lobster](https://img.youtube.com/vi/oqohY6wKtcs/0.jpg)](https://www.youtube.com/watch?v=oqohY6wKtcs)
 
 ## Test a live image
 
