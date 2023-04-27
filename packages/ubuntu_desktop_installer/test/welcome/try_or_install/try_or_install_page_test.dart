@@ -16,7 +16,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
-import '../test_utils.dart';
+import '../../test_utils.dart';
 import 'try_or_install_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
