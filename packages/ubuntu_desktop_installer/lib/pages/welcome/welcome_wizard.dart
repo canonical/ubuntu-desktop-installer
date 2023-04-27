@@ -4,10 +4,10 @@ import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'rst/rst_page.dart';
-import 'try_or_install/try_or_install_page.dart';
+import 'welcome_page.dart';
 
 export 'rst/rst_page.dart';
-export 'try_or_install/try_or_install_page.dart';
+export 'welcome_page.dart';
 
 class WelcomeWizard extends StatelessWidget {
   const WelcomeWizard({super.key});
@@ -19,8 +19,8 @@ class WelcomeWizard extends StatelessWidget {
     return Wizard(
       userData: InstallationStep.values.length,
       routes: {
-        Routes.tryOrInstall: WizardRoute(
-          builder: TryOrInstallPage.create,
+        Navigator.defaultRouteName: WizardRoute(
+          builder: WelcomePage.create,
           userData: InstallationStep.locale.index,
         ),
         Routes.rst: const WizardRoute(

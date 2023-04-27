@@ -5,9 +5,9 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome/try_or_install/try_or_install_model.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome/try_or_install/try_or_install_page.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome/try_or_install/try_or_install_widgets.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/welcome_widgets.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -16,8 +16,8 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
-import '../../test_utils.dart';
-import 'try_or_install_page_test.mocks.dart';
+import '../test_utils.dart';
+import 'welcome_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
@@ -26,7 +26,7 @@ void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
 
   late MaterialApp app;
-  late TryOrInstallModel model;
+  late WelcomeModel model;
 
   Future<void> setUpApp(WidgetTester tester, {bool isConnected = false}) async {
     final client = MockSubiquityClient();
@@ -34,7 +34,7 @@ void main() {
     final network = MockNetworkService();
     when(network.isConnected).thenReturn(isConnected);
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
-    model = TryOrInstallModel(client: client, network: network);
+    model = WelcomeModel(client: client, network: network);
 
     app = MaterialApp(
       supportedLocales: supportedLocales,
@@ -45,8 +45,8 @@ void main() {
           data: const FlavorData(name: 'Ubuntu'),
           child: Wizard(
             routes: {
-              Routes.tryOrInstall: WizardRoute(
-                builder: (_) => TryOrInstallPage(),
+              Routes.welcome: WizardRoute(
+                builder: (_) => WelcomePage(),
                 onNext: (settings) {
                   switch (model.option) {
                     case Option.repairUbuntu:
@@ -77,7 +77,7 @@ void main() {
       child: InheritedLocale(child: app),
     ));
 
-    expect(find.byType(TryOrInstallPage), findsOneWidget);
+    expect(find.byType(WelcomePage), findsOneWidget);
   }
 
   testWidgets('should open release notes', (tester) async {
@@ -141,7 +141,7 @@ void main() {
     await tester.tap(continueButton);
     await tester.pumpAndSettle();
 
-    expect(find.byType(TryOrInstallPage), findsNothing);
+    expect(find.byType(WelcomePage), findsNothing);
     expect(find.text(Routes.keyboard), findsOneWidget);
   });
 

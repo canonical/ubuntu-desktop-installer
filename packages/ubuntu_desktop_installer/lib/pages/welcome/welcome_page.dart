@@ -10,41 +10,41 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'try_or_install_model.dart';
-import 'try_or_install_widgets.dart';
+import 'welcome_model.dart';
+import 'welcome_widgets.dart';
 
-export 'try_or_install_model.dart' show Option;
+export 'welcome_model.dart' show Option;
 
-class TryOrInstallPage extends StatefulWidget {
-  const TryOrInstallPage({
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({
     super.key,
   });
 
   static Widget create(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => TryOrInstallModel(
+      create: (_) => WelcomeModel(
         client: getService<SubiquityClient>(),
         network: getService<NetworkService>(),
       ),
-      child: const TryOrInstallPage(),
+      child: const WelcomePage(),
     );
   }
 
   @override
-  TryOrInstallPageState createState() => TryOrInstallPageState();
+  WelcomePageState createState() => WelcomePageState();
 }
 
-class TryOrInstallPageState extends State<TryOrInstallPage> {
+class WelcomePageState extends State<WelcomePage> {
   @override
   void initState() {
     super.initState();
-    final model = Provider.of<TryOrInstallModel>(context, listen: false);
+    final model = Provider.of<WelcomeModel>(context, listen: false);
     model.init();
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<TryOrInstallModel>(context);
+    final model = Provider.of<WelcomeModel>(context);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     final brightness = Theme.of(context).brightness;
@@ -56,9 +56,7 @@ class TryOrInstallPageState extends State<TryOrInstallPage> {
       content: Column(
         children: [
           const Spacer(),
-          SvgPicture.asset(
-            'assets/try_or_install/logo-${brightness.name}.svg',
-          ),
+          SvgPicture.asset('assets/welcome/logo-${brightness.name}.svg'),
           const Spacer(),
           OptionButton(
             value: Option.installUbuntu,

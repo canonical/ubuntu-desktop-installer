@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome/try_or_install/try_or_install_widgets.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/welcome_widgets.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_wizard.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -13,12 +13,12 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import '../test_utils.dart';
-import 'try_or_install/try_or_install_model_test.mocks.dart';
+import 'welcome_model_test.mocks.dart';
 
 void main() {
   testWidgets('no rst', (tester) async {
     await tester.buildWelcomeWizard(hasRst: false);
-    expect(find.byType(TryOrInstallPage), findsOneWidget);
+    expect(find.byType(WelcomePage), findsOneWidget);
 
     await tester.tapOption(tester.lang.installUbuntu('Ubuntu'));
     await tester.pump();
@@ -32,7 +32,7 @@ void main() {
 
   testWidgets('has rst', (tester) async {
     await tester.buildWelcomeWizard(hasRst: true);
-    expect(find.byType(TryOrInstallPage), findsOneWidget);
+    expect(find.byType(WelcomePage), findsOneWidget);
 
     await tester.tapOption(tester.lang.installUbuntu('Ubuntu'));
     await tester.pump();

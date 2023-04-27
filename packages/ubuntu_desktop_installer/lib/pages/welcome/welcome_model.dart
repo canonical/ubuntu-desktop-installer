@@ -7,9 +7,9 @@ import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 /// @internal
-final log = Logger('try_or_install');
+final log = Logger('welcome');
 
-/// The available options on the Try Or Install page.
+/// The available options on the welcome page.
 enum Option {
   /// No option is selected.
   none,
@@ -24,10 +24,10 @@ enum Option {
   installUbuntu,
 }
 
-/// Implements the business logic of the Try Or Install page.
-class TryOrInstallModel extends PropertyStreamNotifier {
+/// Implements the business logic of the welcome page.
+class WelcomeModel extends PropertyStreamNotifier {
   /// Creates the model with the given client.
-  TryOrInstallModel({
+  WelcomeModel({
     required SubiquityClient client,
     required NetworkService network,
   })  : _client = client,

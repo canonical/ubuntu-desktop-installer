@@ -55,7 +55,7 @@ void main() {
     await tester.jumpToWizardRoute(Routes.welcome);
     await tester.pumpAndSettle();
 
-    await testTryOrInstallPage(
+    await testWelcomePage(
       tester,
       option: Option.installUbuntu,
       screenshot: '$currentThemeName/2.welcome',

@@ -39,8 +39,7 @@ void main() {
         child: Wizard(
           routes: <String, WizardRoute>{
             Routes.locale: WizardRoute(builder: (_) => LocalePage()),
-            Routes.tryOrInstall:
-                WizardRoute(builder: (_) => Text(Routes.tryOrInstall)),
+            Routes.welcome: WizardRoute(builder: (_) => Text(Routes.welcome)),
           },
         ),
       ),
@@ -161,6 +160,6 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(LocalePage), findsNothing);
-    expect(find.text(Routes.tryOrInstall), findsOneWidget);
+    expect(find.text(Routes.welcome), findsOneWidget);
   });
 }

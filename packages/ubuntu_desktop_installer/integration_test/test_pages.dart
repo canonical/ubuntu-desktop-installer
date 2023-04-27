@@ -42,13 +42,13 @@ Future<void> testLocalePage(
   await tester.tapContinue();
 }
 
-Future<void> testTryOrInstallPage(
+Future<void> testWelcomePage(
   WidgetTester tester, {
   Option? option,
   String? screenshot,
 }) async {
   await expectPage(
-      tester, TryOrInstallPage, (lang) => lang.tryOrInstallPageTitle('Ubuntu'));
+      tester, WelcomePage, (lang) => lang.tryOrInstallPageTitle('Ubuntu'));
 
   if (option != null) {
     final labels = {
