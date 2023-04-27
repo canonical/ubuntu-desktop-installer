@@ -15,6 +15,8 @@ import 'network_model.dart';
 import 'wifi_model.dart';
 import 'wifi_view.dart';
 
+export 'connect_model.dart' show ConnectMode;
+
 /// https://github.com/canonical/ubuntu-desktop-installer/issues/30
 class NetworkPage extends StatefulWidget {
   @visibleForTesting
