@@ -9,10 +9,10 @@ import 'try_or_install/try_or_install_page.dart';
 export 'rst/rst_page.dart';
 export 'try_or_install/try_or_install_page.dart';
 
-class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+class WelcomeWizard extends StatelessWidget {
+  const WelcomeWizard({super.key});
 
-  static Widget create(BuildContext context) => const WelcomePage();
+  static Widget create(BuildContext context) => const WelcomeWizard();
 
   @override
   Widget build(BuildContext context) {

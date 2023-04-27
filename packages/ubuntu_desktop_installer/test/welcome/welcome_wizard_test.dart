@@ -4,7 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/try_or_install/try_or_install_widgets.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/welcome_wizard.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/mocks.dart';
@@ -64,7 +64,8 @@ extension on WidgetTester {
             localizationsDelegates: localizationsDelegates,
             home: Wizard(
               routes: {
-                Routes.welcome: const WizardRoute(builder: WelcomePage.create),
+                Routes.welcome:
+                    const WizardRoute(builder: WelcomeWizard.create),
                 '/no-rst': WizardRoute(builder: (_) => const Text('no rst')),
               },
             ),

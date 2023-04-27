@@ -17,5 +17,5 @@ export 'pages/secure_boot/secure_boot_page.dart';
 export 'pages/source/source_page.dart';
 export 'pages/theme_page.dart';
 export 'pages/timezone/timezone_page.dart';
-export 'pages/welcome/welcome_page.dart';
+export 'pages/welcome/welcome_wizard.dart';
 export 'pages/write_changes_to_disk/write_changes_to_disk_page.dart';

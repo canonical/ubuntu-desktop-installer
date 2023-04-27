@@ -373,7 +373,7 @@ class _UbuntuDesktopInstallerWizardState
               widget.tryOrInstall == true ? Routes.welcome : Routes.keyboard,
         ),
         Routes.welcome: WizardRoute(
-          builder: WelcomePage.create,
+          builder: WelcomeWizard.create,
           userData: InstallationStep.locale.index,
         ),
         Routes.keyboard: WizardRoute(
