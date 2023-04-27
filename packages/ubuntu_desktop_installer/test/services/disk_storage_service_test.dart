@@ -25,7 +25,7 @@ void main() {
         .thenAnswer((_) async => testStorageResponse(disks: testDisks));
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
-    when(client.status()).thenAnswer((_) async => ApplicationStatus(
+    when(client.getStatus()).thenAnswer((_) async => ApplicationStatus(
           cloudInitOk: null,
           confirmingTty: '',
           echoSyslogId: '',

@@ -197,7 +197,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final never = Completer<ApplicationStatus>();
     final client = MockSubiquityClient();
-    when(client.status(current: anyNamed('current')))
+    when(client.getStatus(current: anyNamed('current')))
         .thenAnswer((_) => never.future);
     registerMockService<SubiquityClient>(client);
 

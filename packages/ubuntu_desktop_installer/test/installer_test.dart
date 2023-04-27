@@ -65,18 +65,18 @@ extension on WidgetTester {
     final done = status.copyWith(state: ApplicationState.DONE);
 
     final client = MockSubiquityClient();
-    when(client.status()).thenAnswer((_) async => status);
-    when(client.status(current: ApplicationState.RUNNING))
+    when(client.getStatus()).thenAnswer((_) async => status);
+    when(client.getStatus(current: ApplicationState.RUNNING))
         .thenAnswer((_) async => done);
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
-    when(client.keyboard()).thenAnswer((_) async =>
+    when(client.getKeyboard()).thenAnswer((_) async =>
         const KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse());
     when(client.getOriginalStorageV2())
         .thenAnswer((_) async => testStorageResponse());
     registerMockService<SubiquityClient>(client);
-    when(client.source()).thenAnswer((_) async =>
+    when(client.getSource()).thenAnswer((_) async =>
         const SourceSelectionAndSetting(
             sources: [], currentId: kNormalSourceId, searchDrivers: false));
 

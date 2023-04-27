@@ -99,6 +99,6 @@ class SelectLanguageModel extends SafeChangeNotifier {
 
   /// Returns the [locale] defined in Subiquity server.
   Future<Locale> getServerLocale() {
-    return _client.locale().then(parseLocale);
+    return _client.getLocale().then(parseLocale);
   }
 }

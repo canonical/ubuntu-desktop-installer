@@ -85,7 +85,7 @@ class ProfileSetupModel extends SafeChangeNotifier {
 
   /// Loads the profile setup.
   Future<void> loadProfileSetup() async {
-    final identity = await _client.identity();
+    final identity = await _client.getIdentity();
     _realname.value = identity.realname.orIfEmpty(null);
     _username.value = identity.username.orIfEmpty(null);
   }

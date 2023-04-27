@@ -9,7 +9,7 @@ import 'package:ubuntu_test/mocks.dart';
 void main() {
   test('init', () async {
     final client = MockSubiquityClient();
-    when(client.timezone()).thenAnswer((_) async =>
+    when(client.getTimezone()).thenAnswer((_) async =>
         TimeZoneInfo(timezone: 'Europe/Stockholm', fromGeoip: false));
 
     final model = TimezoneModel(client);
@@ -17,7 +17,7 @@ void main() {
     final timezone = await model.init();
     expect(timezone, equals('Europe/Stockholm'));
 
-    verify(client.timezone()).called(1);
+    verify(client.getTimezone()).called(1);
   });
 
   test('save', () async {

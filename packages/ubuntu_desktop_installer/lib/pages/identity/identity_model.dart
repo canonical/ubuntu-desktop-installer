@@ -151,7 +151,7 @@ class IdentityModel extends PropertyStreamNotifier {
 
   /// Loads the identity data from the server, and resolves the system hostname.
   Future<void> init() async {
-    final identity = await _client.identity();
+    final identity = await _client.getIdentity();
     _realName.value ??= identity.realname.orIfEmpty(null);
     _hostname.value ??= identity.hostname.orIfEmpty(null);
     _username.value ??= identity.username.orIfEmpty(null);

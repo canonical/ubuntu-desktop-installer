@@ -12,7 +12,7 @@ import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 void main() {
   testWidgets('create an app instance', (tester) async {
     final client = MockSubiquityClient();
-    when(client.locale()).thenAnswer((_) async => 'en');
+    when(client.getLocale()).thenAnswer((_) async => 'en');
     when(client.wslSetupOptions()).thenAnswer(
       (_) async => const WSLSetupOptions(installLanguageSupportPackages: false),
     );

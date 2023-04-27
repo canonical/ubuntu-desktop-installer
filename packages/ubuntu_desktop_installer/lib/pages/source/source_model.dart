@@ -98,7 +98,7 @@ class SourceModel extends PropertyStreamNotifier {
   /// Initializes the model and connects to the power service.
   Future<void> init() {
     return Future.wait([
-      _client.source().then((value) {
+      _client.getSource().then((value) {
         // the desired order:
         // 1. ubuntu-desktop (1)
         // 2. ubuntu-desktop-minimal (0)

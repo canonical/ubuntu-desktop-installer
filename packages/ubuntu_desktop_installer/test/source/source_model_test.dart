@@ -71,7 +71,7 @@ void main() {
 
   test('init the installation options', () async {
     final client = MockSubiquityClient();
-    when(client.source()).thenAnswer((_) async =>
+    when(client.getSource()).thenAnswer((_) async =>
         const SourceSelectionAndSetting(
             sources: [], currentId: kNormalSourceId, searchDrivers: false));
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
@@ -97,7 +97,7 @@ void main() {
 
     await model.init();
     expect(model.sourceId, kNormalSourceId);
-    verify(client.source()).called(1);
+    verify(client.getSource()).called(1);
     expect(model.installDrivers, isTrue);
     verify(client.getDrivers()).called(1);
     expect(model.installCodecs, isTrue);
@@ -106,7 +106,7 @@ void main() {
 
   test('save the installation options', () async {
     final client = MockSubiquityClient();
-    when(client.source()).thenAnswer((_) async =>
+    when(client.getSource()).thenAnswer((_) async =>
         const SourceSelectionAndSetting(
             sources: [], currentId: kNormalSourceId, searchDrivers: false));
 
@@ -148,7 +148,7 @@ void main() {
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final client = MockSubiquityClient();
-    when(client.source()).thenAnswer((_) async =>
+    when(client.getSource()).thenAnswer((_) async =>
         const SourceSelectionAndSetting(
             sources: [], currentId: kNormalSourceId, searchDrivers: false));
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
@@ -192,7 +192,7 @@ void main() {
     when(power.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final client = MockSubiquityClient();
-    when(client.source()).thenAnswer((_) async =>
+    when(client.getSource()).thenAnswer((_) async =>
         const SourceSelectionAndSetting(
             sources: [], currentId: kNormalSourceId, searchDrivers: false));
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
