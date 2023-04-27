@@ -199,7 +199,7 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.source()).thenAnswer((_) async =>
+    when(client.getSource()).thenAnswer((_) async =>
         const SourceSelectionAndSetting(
             sources: [], currentId: kNormalSourceId, searchDrivers: false));
     when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(

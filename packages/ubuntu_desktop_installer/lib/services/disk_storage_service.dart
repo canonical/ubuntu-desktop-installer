@@ -16,7 +16,7 @@ class DiskStorageService {
 
   /// Initializes the service.
   Future<void> init() async {
-    final status = await _client.status();
+    final status = await _client.getStatus();
     if (status.state == ApplicationState.ERROR) return;
     await _client.getStorageV2().then(_updateStorage);
     await _client.hasRst().then((value) => _hasRst = value);

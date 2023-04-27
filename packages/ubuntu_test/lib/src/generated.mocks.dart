@@ -527,9 +527,9 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
-  _i6.Future<_i8.Variant> variant() => (super.noSuchMethod(
+  _i6.Future<_i8.Variant> getVariant() => (super.noSuchMethod(
         Invocation.method(
-          #variant,
+          #getVariant,
           [],
         ),
         returnValue: _i6.Future<_i8.Variant>.value(_i8.Variant.SERVER),
@@ -544,16 +544,16 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
-  _i6.Future<_i3.SourceSelectionAndSetting> source() => (super.noSuchMethod(
+  _i6.Future<_i3.SourceSelectionAndSetting> getSource() => (super.noSuchMethod(
         Invocation.method(
-          #source,
+          #getSource,
           [],
         ),
         returnValue: _i6.Future<_i3.SourceSelectionAndSetting>.value(
             _FakeSourceSelectionAndSetting_2(
           this,
           Invocation.method(
-            #source,
+            #getSource,
             [],
           ),
         )),
@@ -568,9 +568,9 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
-  _i6.Future<String> locale() => (super.noSuchMethod(
+  _i6.Future<String> getLocale() => (super.noSuchMethod(
         Invocation.method(
-          #locale,
+          #getLocale,
           [],
         ),
         returnValue: _i6.Future<String>.value(''),
@@ -585,15 +585,15 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
-  _i6.Future<_i3.KeyboardSetup> keyboard() => (super.noSuchMethod(
+  _i6.Future<_i3.KeyboardSetup> getKeyboard() => (super.noSuchMethod(
         Invocation.method(
-          #keyboard,
+          #getKeyboard,
           [],
         ),
         returnValue: _i6.Future<_i3.KeyboardSetup>.value(_FakeKeyboardSetup_3(
           this,
           Invocation.method(
-            #keyboard,
+            #getKeyboard,
             [],
           ),
         )),
@@ -623,9 +623,9 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
-  _i6.Future<String> proxy() => (super.noSuchMethod(
+  _i6.Future<String> getProxy() => (super.noSuchMethod(
         Invocation.method(
-          #proxy,
+          #getProxy,
           [],
         ),
         returnValue: _i6.Future<String>.value(''),
@@ -640,15 +640,15 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
-  _i6.Future<_i3.MirrorGet> mirror() => (super.noSuchMethod(
+  _i6.Future<_i3.MirrorGet> getMirror() => (super.noSuchMethod(
         Invocation.method(
-          #mirror,
+          #getMirror,
           [],
         ),
         returnValue: _i6.Future<_i3.MirrorGet>.value(_FakeMirrorGet_4(
           this,
           Invocation.method(
-            #mirror,
+            #getMirror,
             [],
           ),
         )),
@@ -689,15 +689,15 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
-  _i6.Future<_i3.IdentityData> identity() => (super.noSuchMethod(
+  _i6.Future<_i3.IdentityData> getIdentity() => (super.noSuchMethod(
         Invocation.method(
-          #identity,
+          #getIdentity,
           [],
         ),
         returnValue: _i6.Future<_i3.IdentityData>.value(_FakeIdentityData_5(
           this,
           Invocation.method(
-            #identity,
+            #getIdentity,
             [],
           ),
         )),
@@ -723,15 +723,15 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
             _i6.Future<_i3.UsernameValidation>.value(_i3.UsernameValidation.OK),
       ) as _i6.Future<_i3.UsernameValidation>);
   @override
-  _i6.Future<_i3.TimeZoneInfo> timezone() => (super.noSuchMethod(
+  _i6.Future<_i3.TimeZoneInfo> getTimezone() => (super.noSuchMethod(
         Invocation.method(
-          #timezone,
+          #getTimezone,
           [],
         ),
         returnValue: _i6.Future<_i3.TimeZoneInfo>.value(_FakeTimeZoneInfo_6(
           this,
           Invocation.method(
-            #timezone,
+            #getTimezone,
             [],
           ),
         )),
@@ -746,10 +746,11 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
-  _i6.Future<_i3.ApplicationStatus> status({_i3.ApplicationState? current}) =>
+  _i6.Future<_i3.ApplicationStatus> getStatus(
+          {_i3.ApplicationState? current}) =>
       (super.noSuchMethod(
         Invocation.method(
-          #status,
+          #getStatus,
           [],
           {#current: current},
         ),
@@ -757,7 +758,7 @@ class MockSubiquityClient extends _i1.Mock implements _i8.SubiquityClient {
             _i6.Future<_i3.ApplicationStatus>.value(_FakeApplicationStatus_7(
           this,
           Invocation.method(
-            #status,
+            #getStatus,
             [],
             {#current: current},
           ),

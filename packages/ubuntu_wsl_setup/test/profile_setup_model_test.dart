@@ -10,11 +10,11 @@ void main() {
     const identity = IdentityData(username: 'ubuntu');
 
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => identity);
+    when(client.getIdentity()).thenAnswer((_) async => identity);
 
     final model = ProfileSetupModel(client);
     await model.loadProfileSetup();
-    verify(client.identity()).called(1);
+    verify(client.getIdentity()).called(1);
 
     expect(model.username, equals(identity.username));
   });

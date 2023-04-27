@@ -59,11 +59,11 @@ void main() {
 
   test('load locale', () async {
     final client = MockSubiquityClient();
-    when(client.locale()).thenAnswer((_) async => 'fr_FR.UTF-8');
+    when(client.getLocale()).thenAnswer((_) async => 'fr_FR.UTF-8');
 
     final model = SelectLanguageModel(client, LanguageFallbackService({}));
     final locale = await model.getServerLocale();
-    verify(client.locale()).called(1);
+    verify(client.getLocale()).called(1);
     expect(locale, equals(Locale('fr', 'FR')));
   });
 

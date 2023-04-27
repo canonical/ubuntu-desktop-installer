@@ -56,7 +56,7 @@ Future<void> main(List<String> args) async {
     },
   );
   final subiquityClient = getService<SubiquityClient>();
-  await subiquityClient.variant().then((value) {
+  await subiquityClient.getVariant().then((value) {
     if (value == Variant.WSL_SETUP) {
       isLocaleSet(subiquityClient).then(
         (isSet) => appModel.value =

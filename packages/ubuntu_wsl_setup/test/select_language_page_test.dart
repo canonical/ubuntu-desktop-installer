@@ -98,7 +98,7 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.locale()).thenAnswer((_) async => 'en_US.UTF-8');
+    when(client.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
     when(client.wslSetupOptions()).thenAnswer(
       (_) async => WSLSetupOptions(installLanguageSupportPackages: true),
     );

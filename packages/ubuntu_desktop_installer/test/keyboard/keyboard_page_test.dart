@@ -199,7 +199,7 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.keyboard()).thenAnswer((_) async =>
+    when(client.getKeyboard()).thenAnswer((_) async =>
         KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     when(client.setInputSource(KeyboardSetting(layout: '')))
         .thenAnswer((_) async {});
