@@ -10,7 +10,7 @@ import 'package:ubuntu_test/mocks.dart';
 
 import 'source_model_test.mocks.dart';
 
-@GenerateMocks([NetworkService, PowerService])
+@GenerateMocks([DiskStorageService, NetworkService, PowerService])
 void main() {
   late SourceModel model;
 
@@ -19,6 +19,7 @@ void main() {
       client: MockSubiquityClient(),
       power: MockPowerService(),
       network: MockNetworkService(),
+      storage: MockDiskStorageService(),
     );
   });
 
@@ -93,6 +94,7 @@ void main() {
       installCodecs: false,
       power: power,
       network: network,
+      storage: MockDiskStorageService(),
     );
 
     await model.init();
@@ -113,12 +115,16 @@ void main() {
     final network = MockNetworkService();
     when(network.isConnected).thenReturn(true);
 
+    final storage = MockDiskStorageService();
+    when(storage.init()).thenAnswer((_) async {});
+
     final model = SourceModel(
       client: client,
       installDrivers: false,
       installCodecs: false,
       power: MockPowerService(),
       network: network,
+      storage: storage,
     );
 
     model.setSourceId(kNormalSourceId);
@@ -128,6 +134,7 @@ void main() {
     verify(client.setSource(kNormalSourceId)).called(1);
     verify(client.setDrivers(install: false)).called(1);
     verify(client.setCodecs(install: false)).called(1);
+    verify(storage.init()).called(1);
 
     model.setSourceId('ubuntu-desktop-minimal');
     model.setInstallDrivers(true);
@@ -136,6 +143,7 @@ void main() {
     verify(client.setSource('ubuntu-desktop-minimal')).called(1);
     verify(client.setDrivers(install: true)).called(1);
     verify(client.setCodecs(install: true)).called(1);
+    verify(storage.init()).called(1);
   });
 
   test('on battery', () async {
@@ -160,6 +168,7 @@ void main() {
       client: client,
       power: power,
       network: network,
+      storage: MockDiskStorageService(),
     );
     verifyNever(power.propertiesChanged);
 
@@ -204,6 +213,7 @@ void main() {
       client: client,
       power: power,
       network: network,
+      storage: MockDiskStorageService(),
     );
     verifyNever(network.propertiesChanged);
 

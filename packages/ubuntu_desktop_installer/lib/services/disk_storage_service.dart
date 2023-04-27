@@ -15,18 +15,12 @@ class DiskStorageService {
   final SubiquityClient _client;
 
   /// Initializes the service.
-  Future<void> init() async {
-    final status = await _client.getStatus();
-    if (status.state == ApplicationState.ERROR) return;
-    await _client.getStorageV2().then(_updateStorage);
-    await _client.hasRst().then((value) => _hasRst = value);
-  }
+  Future<void> init() => _client.getStorageV2().then(_updateStorage);
 
   bool? _needRoot;
   bool? _needBoot;
   bool? _useLvm;
   bool? _useEncryption;
-  bool? _hasRst;
   bool? _hasMultipleDisks;
   int? _installMinimumSize;
   int? _largestDiskSize;
@@ -42,8 +36,6 @@ class DiskStorageService {
 
   /// Whether the storage configuration is missing a boot partition.
   bool get needBoot => _needBoot ?? true;
-
-  bool get hasRst => _hasRst ?? false;
 
   /// Whether FDE (Full Disk Encryption) should be used.
   bool get useEncryption => _useEncryption ?? false;

@@ -26,6 +26,7 @@ class SourcePage extends StatefulWidget {
         client: getService<SubiquityClient>(),
         power: getService<PowerService>(),
         network: getService<NetworkService>(),
+        storage: getService<DiskStorageService>(),
       ),
       child: const SourcePage(),
     );

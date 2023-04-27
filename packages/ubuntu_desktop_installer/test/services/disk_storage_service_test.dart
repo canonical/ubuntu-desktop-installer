@@ -201,20 +201,6 @@ void main() {
     verify(client.reformatDiskV2(disk)).called(1);
   });
 
-  test('has RST', () async {
-    final service = DiskStorageService(client);
-
-    when(client.hasRst()).thenAnswer((_) async => true);
-    await service.init();
-    verify(client.hasRst()).called(1);
-    expect(service.hasRst, isTrue);
-
-    when(client.hasRst()).thenAnswer((_) async => false);
-    await service.init();
-    verify(client.hasRst()).called(1);
-    expect(service.hasRst, isFalse);
-  });
-
   test('has BitLocker', () async {
     final service = DiskStorageService(client);
 

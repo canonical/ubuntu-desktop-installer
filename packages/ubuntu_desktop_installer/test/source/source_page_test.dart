@@ -218,6 +218,9 @@ void main() {
     when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
     registerMockService<NetworkService>(network);
 
+    final storage = MockDiskStorageService();
+    registerMockService<DiskStorageService>(storage);
+
     await tester.pumpWidget(tester.buildApp(SourcePage.create));
 
     final page = find.byType(SourcePage);
