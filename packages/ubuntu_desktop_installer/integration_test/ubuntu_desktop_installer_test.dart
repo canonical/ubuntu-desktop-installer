@@ -287,14 +287,14 @@ void main() {
     await tester.pumpAndSettle();
   });
 
-  testWidgets('try-or-install', (tester) async {
-    await app.main(<String>['--try-or-install']);
+  testWidgets('welcome', (tester) async {
+    await app.main(<String>['--welcome']);
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
     await tester.pumpAndSettle();
 
-    await testTryOrInstallPage(tester, option: Option.installUbuntu);
+    await testWelcomePage(tester, option: Option.installUbuntu);
     await tester.pumpAndSettle();
 
     await testKeyboardPage(tester);

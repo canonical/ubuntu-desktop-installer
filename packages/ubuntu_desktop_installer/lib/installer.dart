@@ -53,7 +53,7 @@ Future<void> runInstallerApp(
         valueHelp: 'path',
         defaultsTo: 'examples/desktop-sources.yaml',
         help: 'Path of the source catalog (dry-run only)');
-    parser.addFlag('try-or-install', hide: true);
+    parser.addFlag('welcome', aliases: ['try-or-install'], hide: true);
   })!;
 
   final bool liveRun = isLiveRun(options);
@@ -96,7 +96,7 @@ Future<void> runInstallerApp(
         flavor: flavor,
         slides: slides,
         initialRoute: options['initial-route'],
-        tryOrInstall: options['try-or-install'],
+        welcome: options['welcome'],
       ),
     ),
     options: options,
@@ -141,14 +141,14 @@ class UbuntuDesktopInstallerApp extends StatefulWidget {
   UbuntuDesktopInstallerApp({
     super.key,
     this.initialRoute,
-    this.tryOrInstall,
+    this.welcome,
     FlavorData? flavor,
     List<WidgetBuilder>? slides,
   })  : flavor = flavor ?? defaultFlavor,
         slides = slides ?? defaultSlides;
 
   final String? initialRoute;
-  final bool? tryOrInstall;
+  final bool? welcome;
   final FlavorData flavor;
   final List<WidgetBuilder> slides;
 
@@ -254,7 +254,7 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
         ? _UbuntuDesktopAutoinstallWizard(status: _subiquityStatus)
         : _UbuntuDesktopInstallerWizard(
             initialRoute: widget.initialRoute,
-            tryOrInstall: widget.tryOrInstall,
+            welcome: widget.welcome,
           );
   }
 }
@@ -320,10 +320,13 @@ enum InstallationStep {
 }
 
 class _UbuntuDesktopInstallerWizard extends StatefulWidget {
-  const _UbuntuDesktopInstallerWizard({this.initialRoute, this.tryOrInstall});
+  const _UbuntuDesktopInstallerWizard({
+    this.initialRoute,
+    this.welcome,
+  });
 
   final String? initialRoute;
-  final bool? tryOrInstall;
+  final bool? welcome;
 
   @override
   State<_UbuntuDesktopInstallerWizard> createState() =>
@@ -369,31 +372,12 @@ class _UbuntuDesktopInstallerWizardState
         Routes.locale: WizardRoute(
           builder: LocalePage.create,
           userData: InstallationStep.locale.index,
-          onNext: (_) {
-            if (widget.tryOrInstall == true) {
-              return Routes.tryOrInstall;
-            } else if (service.hasRst) {
-              return Routes.rst;
-            } else {
-              return Routes.keyboard;
-            }
-          },
+          onNext: (_) =>
+              widget.welcome == true ? Routes.welcome : Routes.keyboard,
         ),
-        Routes.tryOrInstall: WizardRoute(
-          builder: TryOrInstallPage.create,
+        Routes.welcome: WizardRoute(
+          builder: WelcomeWizard.create,
           userData: InstallationStep.locale.index,
-          onNext: (settings) {
-            switch (settings.arguments as Option?) {
-              case Option.repairUbuntu:
-                return Routes.repairUbuntu;
-              default:
-                if (service.hasRst) return Routes.rst;
-                return Routes.keyboard;
-            }
-          },
-        ),
-        Routes.rst: const WizardRoute(
-          builder: RstPage.create,
         ),
         Routes.keyboard: WizardRoute(
           builder: KeyboardPage.create,

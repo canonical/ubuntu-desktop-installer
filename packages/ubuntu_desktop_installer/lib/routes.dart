@@ -1,7 +1,7 @@
 abstract class Routes {
   static const initial = locale;
   static const locale = '/locale';
-  static const tryOrInstall = '/try-or-install';
+  static const welcome = '/welcome';
   static const rst = '/rst';
   static const keyboard = '/keyboard';
   static const repairUbuntu = '/repair-ubuntu';

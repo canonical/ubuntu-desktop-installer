@@ -3,18 +3,20 @@ import 'dart:ui';
 import 'package:file/memory.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
-import 'package:ubuntu_desktop_installer/pages/try_or_install/try_or_install_model.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/services/network_service.dart';
+import 'package:ubuntu_test/mocks.dart';
 
-import 'try_or_install_model_test.mocks.dart';
+import 'welcome_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
 
 @GenerateMocks([NetworkService])
 void main() {
   test('selected option', () {
+    final client = MockSubiquityClient();
     final network = MockNetworkService();
-    final model = TryOrInstallModel(network: network);
+    final model = WelcomeModel(client: client, network: network);
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -30,8 +32,9 @@ void main() {
   });
 
   test('release notes URL from cdrom', () {
+    final client = MockSubiquityClient();
     final network = MockNetworkService();
-    final model = TryOrInstallModel(network: network);
+    final model = WelcomeModel(client: client, network: network);
 
     final fs = MemoryFileSystem.test();
     final file = fs.file('/cdrom/.disk/release_notes_url');
@@ -45,8 +48,9 @@ https://wiki.ubuntu.com/IntrepidReleaseNotes/\${LANG}
   });
 
   test('release notes URL from distro-info', () {
+    final client = MockSubiquityClient();
     final network = MockNetworkService();
-    final model = TryOrInstallModel(network: network);
+    final model = WelcomeModel(client: client, network: network);
 
     final fs = MemoryFileSystem.test();
     final file = fs.file('/usr/share/distro-info/ubuntu.csv');
@@ -62,8 +66,9 @@ version,codename,series,created,release,eol,eol-server,eol-esm
   });
 
   test('release notes URL fallback', () {
+    final client = MockSubiquityClient();
     final network = MockNetworkService();
-    final model = TryOrInstallModel(network: network);
+    final model = WelcomeModel(client: client, network: network);
 
     final fs = MemoryFileSystem.test();
     final url = model.releaseNotesURL(Locale('en'), fs: fs);

@@ -1,14 +1,15 @@
 import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 /// @internal
-final log = Logger('try_or_install');
+final log = Logger('welcome');
 
-/// The available options on the Try Or Install page.
+/// The available options on the welcome page.
 enum Option {
   /// No option is selected.
   none,
@@ -23,25 +24,30 @@ enum Option {
   installUbuntu,
 }
 
-/// Implements the business logic of the Try Or Install page.
-class TryOrInstallModel extends PropertyStreamNotifier {
+/// Implements the business logic of the welcome page.
+class WelcomeModel extends PropertyStreamNotifier {
   /// Creates the model with the given client.
-  TryOrInstallModel({required NetworkService network}) : _network = network {
+  WelcomeModel({
+    required SubiquityClient client,
+    required NetworkService network,
+  })  : _client = client,
+        _network = network {
     addPropertyListener('Connectivity', notifyListeners);
   }
 
+  final NetworkService _network;
+  final SubiquityClient _client;
+
   Future<void> init() {
-    return _network.connect().then((_) {
-      setProperties(_network.propertiesChanged);
-      notifyListeners();
-    });
+    return Future.wait([
+      _client.hasRst().then((value) => _hasRst = value),
+      _network.connect().then((_) => setProperties(_network.propertiesChanged)),
+    ]).then((_) => notifyListeners());
   }
 
   /// The currently selected option.
   Option get option => _option;
   Option _option = Option.none;
-
-  final NetworkService _network;
 
   /// Selects the given [option].
   void selectOption(Option option) {
@@ -53,6 +59,10 @@ class TryOrInstallModel extends PropertyStreamNotifier {
 
   /// Returns true if there is a network connection.
   bool get isConnected => _network.isConnected;
+
+  /// Returns true if RST was detected on the system.
+  bool get hasRst => _hasRst;
+  bool _hasRst = false;
 
   /// Returns the URL of the release notes for the given [locale].
   String releaseNotesURL(

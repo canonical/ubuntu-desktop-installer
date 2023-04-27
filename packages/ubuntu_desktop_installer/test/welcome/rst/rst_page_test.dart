@@ -3,14 +3,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/rst/rst_model.dart';
-import 'package:ubuntu_desktop_installer/pages/rst/rst_page.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/rst/rst_model.dart';
+import 'package:ubuntu_desktop_installer/pages/welcome/rst/rst_page.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
-import '../test_utils.dart';
+import '../../test_utils.dart';
 import 'rst_page_test.mocks.dart';
 
 // ignore_for_file: type=lint

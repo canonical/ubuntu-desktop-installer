@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'try_or_install_model.dart';
+import 'welcome_model.dart';
 
 class OptionButton extends StatelessWidget {
   const OptionButton({
