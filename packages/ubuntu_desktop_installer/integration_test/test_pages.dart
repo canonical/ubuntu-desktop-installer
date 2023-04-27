@@ -304,7 +304,7 @@ Future<void> testSelectGuidedStoragePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.selectGuidedStorageInstallNow);
+  await tester.tapContinue();
 }
 
 Future<void> testInstallAlongsidePage(
@@ -338,7 +338,7 @@ Future<void> testInstallAlongsidePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.selectGuidedStorageInstallNow);
+  await tester.tapContinue();
 }
 
 Future<void> testWriteChangesToDiskPage(

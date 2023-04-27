@@ -123,7 +123,6 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
           WizardAction.next(
             context,
             root: model.isDone,
-            label: lang.selectGuidedStorageInstallNow,
             onNext: model.saveGuidedStorage,
             // If the user returns back to select another disk, the previously
             // configured guided storage must be reset to avoid multiple disks
