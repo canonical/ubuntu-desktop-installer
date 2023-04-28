@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wsl_setup/main.dart' as app;
@@ -34,7 +35,10 @@ void main() {
 
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyStateFile('basic-setup/WSLLocale');
+    await verifyGoldenFile(
+      await getSubiquityStateFile('WSLLocale'),
+      'integration_test/goldens/basic-setup/WSLLocale',
+    );
   });
 
   // enter all WSLConfigurationBase values
@@ -57,7 +61,10 @@ void main() {
     await testConfigurationUIPage(tester);
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyConfigFile('advanced-setup/wsl.conf');
+    await verifyGoldenFile(
+      await getSubiquityConfigFile('wsl.conf'),
+      'integration_test/goldens/advanced-setup/wsl.conf',
+    );
   });
 
   // enter all WSLConfigurationAdvanced values
@@ -81,6 +88,9 @@ void main() {
 
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyConfigFile('reconfiguration/wsl.conf');
+    await verifyGoldenFile(
+      await getSubiquityConfigFile('wsl.conf'),
+      'integration_test/goldens/reconfiguration/wsl.conf',
+    );
   });
 }

@@ -2,15 +2,14 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import 'installation_slides/installation_slides_model_test.mocks.dart';
-import 'test_utils.dart';
 import 'theme/theme_page_test.mocks.dart';
 
 void main() {
@@ -72,9 +71,9 @@ extension on WidgetTester {
     when(client.hasBitLocker()).thenAnswer((_) async => false);
     when(client.getKeyboard()).thenAnswer((_) async =>
         const KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
-    when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse());
+    when(client.getStorageV2()).thenAnswer((_) async => fakeStorageResponse());
     when(client.getOriginalStorageV2())
-        .thenAnswer((_) async => testStorageResponse());
+        .thenAnswer((_) async => fakeStorageResponse());
     registerMockService<SubiquityClient>(client);
     when(client.getSource()).thenAnswer((_) async =>
         const SourceSelectionAndSetting(

@@ -2,15 +2,15 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/select_guided_storage_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import '../test_utils.dart';
 import 'select_guided_storage_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService])
 void main() {
-  final testDisks = <Disk>[testDisk(id: 'a'), testDisk(id: 'b')];
+  final testDisks = <Disk>[fakeDisk(id: 'a'), fakeDisk(id: 'b')];
   final testTargets = testDisks
       .map((disk) =>
           GuidedStorageTargetReformat(diskId: disk.id, capabilities: []))
@@ -20,7 +20,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: testTargets));
+        (_) async => fakeGuidedStorageResponse(possible: testTargets));
 
     final model = SelectGuidedStorageModel(service);
     await model.loadGuidedStorage();
@@ -33,7 +33,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: testTargets));
+        (_) async => fakeGuidedStorageResponse(possible: testTargets));
 
     final model = SelectGuidedStorageModel(service);
     await model.loadGuidedStorage();
@@ -52,10 +52,10 @@ void main() {
   test('get storage', () async {
     const sda1 = Partition(number: 1, size: 1);
     const sda2 = Partition(number: 2, size: 2);
-    final sda = testDisk(id: 'sda', partitions: [sda1, sda2]);
+    final sda = fakeDisk(id: 'sda', partitions: [sda1, sda2]);
 
     const sdb1 = Partition(number: 1, size: 3);
-    final sdb = testDisk(id: 'sdb', partitions: [sdb1]);
+    final sdb = fakeDisk(id: 'sdb', partitions: [sdb1]);
 
     const storage0 =
         GuidedStorageTargetReformat(diskId: 'sda', capabilities: []);
@@ -65,7 +65,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: [storage0, storage1]));
+        (_) async => fakeGuidedStorageResponse(possible: [storage0, storage1]));
 
     final model = SelectGuidedStorageModel(service);
     expect(model.getStorage(0), isNull);
@@ -87,7 +87,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: testTargets));
+        (_) async => fakeGuidedStorageResponse(possible: testTargets));
 
     final model = SelectGuidedStorageModel(service);
     expect(model.selectedIndex, isZero);

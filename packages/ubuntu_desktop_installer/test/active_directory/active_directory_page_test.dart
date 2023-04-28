@@ -4,12 +4,12 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 

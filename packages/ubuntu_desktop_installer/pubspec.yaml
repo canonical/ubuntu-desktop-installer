@@ -74,6 +74,10 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   mockito: 5.3.2
+  subiquity_test:
+    git:
+      url: https://github.com/canonical/subiquity_client.dart.git
+      path: packages/subiquity_test
   ubuntu_test:
     path: ../ubuntu_test
   yaml: ^3.1.0

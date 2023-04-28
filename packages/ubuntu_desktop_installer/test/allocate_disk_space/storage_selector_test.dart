@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_selector.dart';
-
-import '../test_utils.dart';
 
 // ignore_for_file: type=lint
 
@@ -15,7 +14,7 @@ void main() {
             title: '',
             storages: [
               for (var i = 0; i < 3; i++)
-                testDisk(model: 'model$i', vendor: 'vendor$i'),
+                fakeDisk(model: 'model$i', vendor: 'vendor$i'),
             ],
             selected: 1,
             onSelected: (_) {},
@@ -38,7 +37,7 @@ void main() {
             title: '',
             storages: [
               for (var i = 0; i < 3; i++)
-                testDisk(model: 'model$i', vendor: 'vendor$i'),
+                fakeDisk(model: 'model$i', vendor: 'vendor$i'),
             ],
             onSelected: (v) => selected = v,
           ),
@@ -67,7 +66,7 @@ void main() {
             title: '',
             storages: [
               for (var i = 0; i < 3; i++)
-                testDisk(model: 'model$i', vendor: 'vendor$i'),
+                fakeDisk(model: 'model$i', vendor: 'vendor$i'),
             ],
             enabled: (disk) => disk.model != 'model1',
             onSelected: (_) {},

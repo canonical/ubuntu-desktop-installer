@@ -1,15 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart';
-import 'package:ubuntu_test/mocks.dart';
-
-import '../test_utils.dart';
 
 // ignore_for_file: type=lint
 
 void main() {
-  final testDisks = <Disk>[testDisk(id: 'a'), testDisk(id: 'b')];
+  final testDisks = <Disk>[fakeDisk(id: 'a'), fakeDisk(id: 'b')];
   final testTargets = testDisks
       .map((disk) =>
           GuidedStorageTargetReformat(diskId: disk.id, capabilities: []))
@@ -20,9 +18,9 @@ void main() {
   setUp(() {
     client = MockSubiquityClient();
     when(client.getGuidedStorageV2()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: testTargets));
+        (_) async => fakeGuidedStorageResponse(possible: testTargets));
     when(client.getStorageV2())
-        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+        .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
     when(client.getStatus()).thenAnswer((_) async => ApplicationStatus(
@@ -40,7 +38,7 @@ void main() {
   test('get guided storage', () async {
     final service = DiskStorageService(client);
     expect(await service.getGuidedStorage(),
-        equals(testGuidedStorageResponse(possible: testTargets)));
+        equals(fakeGuidedStorageResponse(possible: testTargets)));
     verify(client.getGuidedStorageV2()).called(1);
   });
 
@@ -53,8 +51,8 @@ void main() {
       sizingPolicy: SizingPolicy.ALL,
     );
     when(client.setGuidedStorageV2(choice))
-        .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
-    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
+        .thenAnswer((_) async => fakeGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => fakeStorageResponse());
 
     final service = DiskStorageService(client);
     service.guidedTarget = target;
@@ -72,8 +70,8 @@ void main() {
       sizingPolicy: SizingPolicy.ALL,
     );
     when(client.setGuidedStorageV2(choice))
-        .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
-    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
+        .thenAnswer((_) async => fakeGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => fakeStorageResponse());
 
     final service = DiskStorageService(client);
     service.useLvm = true;
@@ -93,7 +91,7 @@ void main() {
     expect(service.hasMultipleDisks, isTrue);
 
     when(client.resetStorageV2())
-        .thenAnswer((_) async => testStorageResponse(disks: []));
+        .thenAnswer((_) async => fakeStorageResponse(disks: []));
 
     await service.resetStorage();
     expect(service.hasMultipleDisks, isFalse);
@@ -101,9 +99,9 @@ void main() {
 
   test('get storage', () async {
     when(client.getStorageV2())
-        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+        .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
     when(client.getOriginalStorageV2()).thenAnswer(
-        (_) async => testStorageResponse(disks: testDisks.reversed.toList()));
+        (_) async => fakeStorageResponse(disks: testDisks.reversed.toList()));
 
     final service = DiskStorageService(client);
     await service.init();
@@ -118,7 +116,7 @@ void main() {
 
   test('set storage', () async {
     when(client.setStorageV2())
-        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+        .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
     expect(await service.setStorage(), equals(testDisks));
@@ -127,7 +125,7 @@ void main() {
 
   test('reset storage', () async {
     when(client.resetStorageV2())
-        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+        .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
 
     final service = DiskStorageService(client);
     expect(await service.resetStorage(), equals(testDisks));
@@ -136,7 +134,7 @@ void main() {
 
   test('needs', () async {
     when(client.getStorageV2())
-        .thenAnswer((_) async => testStorageResponse(needRoot: true));
+        .thenAnswer((_) async => fakeStorageResponse(needRoot: true));
 
     final service = DiskStorageService(client);
     await service.getStorage();
@@ -144,7 +142,7 @@ void main() {
     expect(service.needRoot, isTrue);
     expect(service.needBoot, isFalse);
 
-    when(client.resetStorageV2()).thenAnswer((_) async => testStorageResponse(
+    when(client.resetStorageV2()).thenAnswer((_) async => fakeStorageResponse(
         needRoot: false, needBoot: true, disks: [], installMinimumSize: 0));
 
     await service.resetStorage();
@@ -154,48 +152,48 @@ void main() {
   });
 
   test('add/edit/remove partition', () async {
-    final disk = testDisk(id: 'tst');
+    final disk = fakeDisk(id: 'tst');
     final gap = Gap(offset: 2, size: 3, usable: GapUsable.YES);
     final partition = Partition(number: 1);
     final service = DiskStorageService(client);
 
     when(client.addPartitionV2(disk, gap, partition))
-        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+        .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
 
     expect(await service.addPartition(disk, gap, partition), equals(testDisks));
     verify(client.addPartitionV2(disk, gap, partition)).called(1);
 
     when(client.editPartitionV2(disk, partition)).thenAnswer(
-        (_) async => testStorageResponse(disks: testDisks.reversed.toList()));
+        (_) async => fakeStorageResponse(disks: testDisks.reversed.toList()));
 
     expect(await service.editPartition(disk, partition),
         equals(testDisks.reversed.toList()));
     verify(client.editPartitionV2(disk, partition)).called(1);
 
     when(client.deletePartitionV2(disk, partition))
-        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+        .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
 
     expect(await service.deletePartition(disk, partition), equals(testDisks));
     verify(client.deletePartitionV2(disk, partition)).called(1);
   });
 
   test('add boot partition', () async {
-    final disk = testDisk(id: 'tst');
+    final disk = fakeDisk(id: 'tst');
     final service = DiskStorageService(client);
 
     when(client.addBootPartitionV2(disk))
-        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+        .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
 
     expect(await service.addBootPartition(disk), equals(testDisks));
     verify(client.addBootPartitionV2(disk)).called(1);
   });
 
   test('reformat disk', () async {
-    final disk = testDisk(id: 'tst');
+    final disk = fakeDisk(id: 'tst');
     final service = DiskStorageService(client);
 
     when(client.reformatDiskV2(disk))
-        .thenAnswer((_) async => testStorageResponse(disks: testDisks));
+        .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
 
     expect(await service.reformatDisk(disk), equals(testDisks));
     verify(client.reformatDiskV2(disk)).called(1);
@@ -234,14 +232,14 @@ void main() {
     );
 
     when(client.getStorageV2()).thenAnswer(
-      (_) async => testStorageResponse(
+      (_) async => fakeStorageResponse(
         disks: [
-          testDisk(
+          fakeDisk(
             partitions: [
               Partition(os: win10),
             ],
           ),
-          testDisk(
+          fakeDisk(
             partitions: [
               Partition(os: ubuntu2110),
               Partition(os: ubuntu2204),
@@ -266,10 +264,10 @@ void main() {
       sizingPolicy: SizingPolicy.ALL,
     );
     when(client.setGuidedStorageV2(choice))
-        .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
-    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
+        .thenAnswer((_) async => fakeGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => fakeStorageResponse());
     when(client.resetStorageV2())
-        .thenAnswer((_) async => testStorageResponse());
+        .thenAnswer((_) async => fakeStorageResponse());
 
     final service = DiskStorageService(client);
     expect(service.guidedTarget, isNull);
@@ -292,8 +290,8 @@ void main() {
       capability: GuidedCapability.LVM_LUKS,
     );
     when(client.setGuidedStorageV2(choice))
-        .thenAnswer((_) async => testGuidedStorageResponse(configured: choice));
-    when(client.setStorageV2()).thenAnswer((_) async => testStorageResponse());
+        .thenAnswer((_) async => fakeGuidedStorageResponse(configured: choice));
+    when(client.setStorageV2()).thenAnswer((_) async => fakeStorageResponse());
 
     final service = DiskStorageService(client);
     await service.init();
@@ -310,12 +308,12 @@ void main() {
 
   test('has enough disk space', () async {
     final service = DiskStorageService(client);
-    when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse(
+    when(client.getStorageV2()).thenAnswer((_) async => fakeStorageResponse(
           installMinimumSize: 123,
           disks: [
-            testDisk(size: 123),
-            testDisk(size: 789),
-            testDisk(size: 456),
+            fakeDisk(size: 123),
+            fakeDisk(size: 789),
+            fakeDisk(size: 456),
           ],
         ));
 
@@ -327,11 +325,11 @@ void main() {
 
   test('does not have enough disk space', () async {
     final service = DiskStorageService(client);
-    when(client.getStorageV2()).thenAnswer((_) async => testStorageResponse(
+    when(client.getStorageV2()).thenAnswer((_) async => fakeStorageResponse(
           installMinimumSize: 789,
           disks: [
-            testDisk(size: 456),
-            testDisk(size: 123),
+            fakeDisk(size: 456),
+            fakeDisk(size: 123),
           ],
         ));
 

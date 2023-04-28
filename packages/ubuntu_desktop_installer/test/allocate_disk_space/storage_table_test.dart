@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_columns.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_table.dart';
 
-import '../test_utils.dart';
-
 // ignore_for_file: type=lint
 
 void main() {
-  final sda = testDisk(path: '/dev/sda', size: 11);
-  final sdb = testDisk(
+  final sda = fakeDisk(path: '/dev/sda', size: 11);
+  final sdb = fakeDisk(
     path: '/dev/sdb',
     size: 22,
     partitions: [
@@ -23,7 +22,7 @@ void main() {
       Gap(offset: 2211, size: 2222, usable: GapUsable.YES),
     ],
   );
-  final sdc = testDisk(
+  final sdc = fakeDisk(
     path: '/dev/sdc',
     size: 33,
     partitions: [
@@ -32,7 +31,7 @@ void main() {
       Gap(offset: 3322, size: 3333, usable: GapUsable.YES),
     ],
   );
-  final sdd = testDisk(
+  final sdd = fakeDisk(
     path: '/dev/sdd',
     size: 44,
     partitions: [

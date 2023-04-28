@@ -1,5 +1,5 @@
 name: ubuntu_test
-description: Shared test extensions and mocks.
+description: Shared test extensions.
 publish_to: 'none'
 
 environment:
@@ -7,21 +7,12 @@ environment:
   flutter: ">=3.0.0"
 
 dependencies:
-  build_runner: ^2.2.0
   flutter:
     sdk: flutter
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  gsettings: ^0.2.5
-  mockito: 5.3.2
-  path: ^1.8.0
-  subiquity_client:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/subiquity_client
   ubuntu_localizations: ^0.1.5
-  ubuntu_session: ^0.0.4
   ubuntu_widgets:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git

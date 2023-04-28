@@ -3,9 +3,9 @@ import 'dart:ui';
 import 'package:file/memory.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/services/network_service.dart';
-import 'package:ubuntu_test/mocks.dart';
 
 import 'welcome_model_test.mocks.dart';
 

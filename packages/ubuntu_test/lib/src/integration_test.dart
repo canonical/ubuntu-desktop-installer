@@ -2,62 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:path/path.dart' as p;
-import 'package:subiquity_client/subiquity_server.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'widget_testers.dart';
 
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 // ignore_for_file: type=lint
-
-/// The path to the `.subiquity` directory.
-Future<String> get subiquityPath async {
-  return p.join(
-    await getSubiquityPath(),
-    '.subiquity',
-  );
-}
-
-/// ".subiquity/run/subiquity/states/"
-Future<String> get statePath async {
-  return p.join(await subiquityPath, 'run', 'subiquity', 'states');
-}
-
-/// e.g. ".subiquity/run/subiquity/states/Locale"
-Future<String> stateFile(String fileName) async {
-  return p.join(await statePath, p.basename(fileName));
-}
-
-/// ".subiquity/etc/"
-Future<String> get configPath async {
-  return p.join(await subiquityPath, 'etc');
-}
-
-/// e.g. ".subiquity/etc/wsl.conf"
-Future<String> configFile(String fileName) async {
-  return p.join(await configPath, p.basename(fileName));
-}
-
-/// "integration_test/goldens/"
-final String goldenPath = p.join('integration_test', 'goldens');
-
-/// e.g. "integration_test/goldens/wsl.conf"
-String goldenFile(String fileName) => p.join(goldenPath, fileName);
-
-/// Verifies that a subiquity state file matches a golden file.
-///
-/// NOTE: Use `flutter test --update-goldens` to update golden files.
-Future<void> verifyStateFile(String fileName) async {
-  return _verifyGoldenFile(await stateFile(fileName), fileName);
-}
-
-/// Verifies that a subiquity config file matches a golden file.
-///
-/// NOTE: Use `flutter test --update-goldens` to update golden files.
-Future<void> verifyConfigFile(String fileName) async {
-  return _verifyGoldenFile(await configFile(fileName), fileName);
-}
 
 /// Waits until the specified file has been written on the disk, as in, it
 /// exists and is not empty.
@@ -82,28 +32,22 @@ Future<void> waitForFile(
   expect(File(fileName).existsSync(), isTrue);
 }
 
-Future<void> _verifyGoldenFile(String fileName, String goldenName) async {
+/// Verifies that the given file matches a golden file.
+///
+/// NOTE: Use `flutter test --update-goldens` to update golden files.
+Future<void> verifyGoldenFile(String fileName, String goldenName) async {
   await waitForFile(fileName);
 
   // https://api.flutter.dev/flutter/flutter_test/autoUpdateGoldenFiles.html
   if (autoUpdateGoldenFiles) {
-    File(fileName).copySync(goldenFile(goldenName));
+    File(fileName).copySync(goldenName);
   }
 
   expect(
     File(fileName).readAsStringSync().trim(),
-    equals(File(goldenFile(goldenName)).readAsStringSync().trim()),
-    reason: '$configPath/$fileName does not match $goldenName',
+    equals(File(goldenName).readAsStringSync().trim()),
+    reason: '$fileName does not match $goldenName',
   );
-}
-
-/// Cleans up the .subiquity directory to ensure a clean test environment for
-/// integration test cases.
-Future<void> cleanUpSubiquity() async {
-  // Ignore errors because the directory may not exist.
-  try {
-    Directory(await subiquityPath).deleteSync(recursive: true);
-  } on FileSystemException catch (_) {}
 }
 
 /// Helpers for interacting with widgets.

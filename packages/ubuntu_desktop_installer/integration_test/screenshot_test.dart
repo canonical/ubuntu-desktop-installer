@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
@@ -16,7 +16,6 @@ import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
-import '../test/test_utils.dart';
 import 'test_pages.dart';
 
 void main() {
@@ -187,7 +186,7 @@ void main() {
     await testAllocateDiskSpacePage(
       tester,
       storage: [
-        testDisk(
+        fakeDisk(
           path: '/dev/sda',
           partitions: [
             Partition(
