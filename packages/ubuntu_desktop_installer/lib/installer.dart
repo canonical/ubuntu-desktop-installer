@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:collection/collection.dart';
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -338,19 +339,26 @@ class _UbuntuDesktopInstallerWizardState
   void initState() {
     super.initState();
 
-    // Use the default values for a number of endpoints
-    // for which a UI page doesn't exist.
     final client = getService<SubiquityClient>();
-    client.markConfigured([
-      'mirror',
-      'proxy',
-      'ssh',
-      'snaplist',
-      'ubuntu_pro',
-      // required to kick things off on the server side and make it possible to
-      // run integration tests without always clicking through the source page
-      'source',
-    ]);
+    client.getSource().then((value) async {
+      final source = value.sources.firstWhereOrNull((s) => s.isDefault);
+      if (source != null) {
+        await client.setSource(source.id);
+      }
+
+      // Use the default values for a number of endpoints
+      // for which a UI page isn't implemented yet.
+      client.markConfigured([
+        'mirror',
+        'proxy',
+        'ssh',
+        'snaplist',
+        'ubuntu_pro',
+      ]);
+
+      final storage = getService<DiskStorageService>();
+      storage.init();
+    });
   }
 
   @override
