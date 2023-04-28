@@ -116,11 +116,11 @@ void main() {
     verify(model.loadGuidedStorage()).called(1);
     verifyNever(model.saveGuidedStorage());
 
-    final installButton = find.widgetWithText(
-        FilledButton, tester.lang.selectGuidedStorageInstallNow);
-    expect(installButton, findsOneWidget);
+    final continueButton =
+        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
+    expect(continueButton, findsOneWidget);
 
-    await tester.tap(installButton);
+    await tester.tap(continueButton);
     verify(model.saveGuidedStorage()).called(1);
   });
 
