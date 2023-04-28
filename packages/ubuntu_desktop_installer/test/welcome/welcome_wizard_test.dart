@@ -18,30 +18,70 @@ import 'welcome_model_test.mocks.dart';
 void main() {
   testWidgets('no rst', (tester) async {
     await tester.buildWelcomeWizard(hasRst: false);
+
+    expect(find.text('first route'), findsOneWidget);
+
+    // first -> welcome
+    await tester.tapContinue();
+    await tester.pumpAndSettle();
+
     expect(find.byType(WelcomePage), findsOneWidget);
 
     await tester.tapOption(tester.lang.installUbuntu('Ubuntu'));
     await tester.pump();
 
+    // welcome -> last
     await tester.tapContinue();
     await tester.pumpAndSettle();
 
     expect(find.byType(RstPage), findsNothing);
-    expect(find.text('no rst'), findsOneWidget);
+    expect(find.text('last route'), findsOneWidget);
+
+    // last -> welcome
+    await tester.tapBack();
+    await tester.pumpAndSettle();
+
+    expect(find.byType(WelcomePage), findsOneWidget);
+
+    // welcome -> first
+    await tester.tapBack();
+    await tester.pumpAndSettle();
+
+    expect(find.text('first route'), findsOneWidget);
   });
 
   testWidgets('has rst', (tester) async {
     await tester.buildWelcomeWizard(hasRst: true);
+
+    expect(find.text('first route'), findsOneWidget);
+
+    // first -> welcome
+    await tester.tapContinue();
+    await tester.pumpAndSettle();
+
     expect(find.byType(WelcomePage), findsOneWidget);
 
     await tester.tapOption(tester.lang.installUbuntu('Ubuntu'));
     await tester.pump();
 
+    // welcome -> rst
     await tester.tapContinue();
     await tester.pumpAndSettle();
 
     expect(find.byType(RstPage), findsOneWidget);
     expect(find.text('no rst'), findsNothing);
+
+    // last -> welcome
+    await tester.tapBack();
+    await tester.pumpAndSettle();
+
+    expect(find.byType(WelcomePage), findsOneWidget);
+
+    // welcome -> first
+    await tester.tapBack();
+    await tester.pumpAndSettle();
+
+    expect(find.text('first route'), findsOneWidget);
   });
 }
 
@@ -64,9 +104,22 @@ extension on WidgetTester {
             localizationsDelegates: localizationsDelegates,
             home: Wizard(
               routes: {
+                '/first': WizardRoute(
+                  builder: (context) => WizardPage(
+                    content: const Text('first route'),
+                    bottomBar: WizardBar(
+                      trailing: [WizardAction.next(context)],
+                    ),
+                  ),
+                ),
                 Routes.welcome:
                     const WizardRoute(builder: WelcomeWizard.create),
-                '/no-rst': WizardRoute(builder: (_) => const Text('no rst')),
+                '/last': WizardRoute(
+                  builder: (context) => WizardPage(
+                    content: const Text('last route'),
+                    bottomBar: WizardBar(leading: WizardAction.back(context)),
+                  ),
+                ),
               },
             ),
           ),
