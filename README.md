@@ -15,48 +15,32 @@ Ubuntu Desktop Installer replaced [Ubiquity](https://launchpad.net/ubiquity) as 
 
 ## Test a live image
 
-If you want to test the new installer before 23.04 goes live, you can download a daily preview image below and install it for example in a virtual machine:
+If you want to test new installer in a live session, you can download the latest
+[daily-live](https://cdimage.ubuntu.com/daily-live/current/) image and try it in
+a virtual machine.
 
-[Download](https://cdimage.ubuntu.com/daily-live/current/)
+## Build and dry-run the installer
 
+If you want to build and dry-run the installer in a local Ubuntu installation
+for development or testing purposes without performing an actual installation,
+follow these steps:
 
-## Building and running manually
-
-If you prefer to build and run the installer from source you need to install Flutter.
-
-### Either: Install Flutter with Snapd
-
-```
-sudo snap install flutter --classic
-```
-
-### Or: Install Flutter manually
-
-Please follow the [official Linux setup instructions from flutter.dev](https://flutter.dev/docs/get-started/install/linux) to install Flutter and its dependencies for the Linux desktop support manually.
-
-### Download and build the Ubuntu Desktop installer
-
-Grab the source:
-```sh
-git clone https://github.com/canonical/ubuntu-desktop-installer.git
-cd ubuntu-desktop-installer
-git submodule update --init --recursive
-```
-
-Install Subiquity dependencies:
-```sh
-make install_deps
-```
-
-### Dry-run the installer
-
-Run the installer in dry-run mode either from within your IDE or by running the
-following command:
-
-```sh
-cd packages/ubuntu_desktop_installer
-flutter run
-```
+- [Install Flutter](https://flutter.dev/docs/get-started/install/linux)
+- Fetch the source code
+    ```sh
+    git clone https://github.com/canonical/ubuntu-desktop-installer.git
+    cd ubuntu-desktop-installer
+    git submodule update --init --recursive
+    ```
+- Install dependencies:
+    ```sh
+    make install_deps
+    ```
+- Dry-run the installer either from within your IDE or by executing:
+    ```sh
+    cd packages/ubuntu_desktop_installer
+    flutter run
+    ```
 
 ## Contributing
 
