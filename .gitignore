@@ -2,5 +2,6 @@ coverage/
 .idea/
 *.iml
 .vscode/
+.dart_tool/
 
 /*.snap
