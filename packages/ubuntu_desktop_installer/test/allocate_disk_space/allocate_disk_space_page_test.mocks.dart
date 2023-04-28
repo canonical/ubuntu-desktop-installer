@@ -4,13 +4,14 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i5;
-import 'dart:ui' as _i6;
+import 'dart:ui' as _i7;
 
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:subiquity_client/subiquity_client.dart' as _i4;
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_model.dart'
     as _i3;
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_types.dart'
-    as _i4;
+    as _i6;
 import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 
 // ignore_for_file: type=lint
@@ -119,7 +120,7 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
     _i4.Disk? disk,
     _i4.Gap? gap, {
     required int? size,
-    required _i4.PartitionFormat? format,
+    required _i6.PartitionFormat? format,
     required String? mount,
   }) =>
       (super.noSuchMethod(
@@ -143,7 +144,7 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
     _i4.Disk? disk,
     _i4.Partition? partition, {
     int? size,
-    _i4.PartitionFormat? format,
+    _i6.PartitionFormat? format,
     bool? wipe,
     String? mount,
   }) =>
@@ -272,7 +273,7 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -280,7 +281,7 @@ class MockAllocateDiskSpaceModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
