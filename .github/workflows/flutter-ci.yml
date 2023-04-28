@@ -22,7 +22,7 @@ jobs:
         flutter-version: '3.7.x'
 
     - name: Install Melos
-      run: flutter pub global activate melos 2.9.0
+      run: flutter pub global activate melos
 
     - name: Install lcov
       run: sudo apt update && sudo apt install lcov
@@ -69,7 +69,7 @@ jobs:
         flutter-version: '3.7.x'
 
     - name: Install Melos
-      run: flutter pub global activate melos 2.9.0
+      run: flutter pub global activate melos
 
     - name: Bootstrap workspace
       run: melos pub get
@@ -94,7 +94,7 @@ jobs:
         flutter-version: '3.7.x'
 
     - name: Install Melos
-      run: flutter pub global activate melos 2.9.0
+      run: flutter pub global activate melos
 
     - name: Bootstrap workspace
       run: melos pub get
