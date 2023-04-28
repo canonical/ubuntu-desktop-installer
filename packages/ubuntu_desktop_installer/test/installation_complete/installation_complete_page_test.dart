@@ -4,10 +4,10 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/mocks.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';

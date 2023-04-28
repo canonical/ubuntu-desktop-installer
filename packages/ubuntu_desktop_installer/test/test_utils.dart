@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -68,68 +67,6 @@ extension UbuntuTester on WidgetTester {
       ),
     );
   }
-}
-
-Disk testDisk({
-  String? id,
-  String? label,
-  String? path,
-  String? type,
-  int? size,
-  List<String>? usageLabels,
-  List<DiskObject>? partitions,
-  bool? okForGuided,
-  String? ptable,
-  bool? preserve,
-  bool? bootDevice,
-  bool? canBeBootDevice,
-  String? model,
-  String? vendor,
-}) {
-  return Disk(
-    id: id ?? '',
-    label: label ?? '',
-    path: path,
-    type: type ?? '',
-    size: size ?? 0,
-    usageLabels: usageLabels ?? [],
-    partitions: partitions ?? [],
-    okForGuided: okForGuided ?? false,
-    ptable: ptable,
-    preserve: preserve ?? false,
-    bootDevice: bootDevice ?? false,
-    canBeBootDevice: canBeBootDevice ?? false,
-    model: model,
-    vendor: vendor,
-  );
-}
-
-GuidedStorageResponseV2 testGuidedStorageResponse({
-  ProbeStatus status = ProbeStatus.DONE,
-  GuidedChoiceV2? configured,
-  List<GuidedStorageTarget> possible = const [],
-}) {
-  return GuidedStorageResponseV2(
-    status: status,
-    configured: configured,
-    possible: possible,
-  );
-}
-
-StorageResponseV2 testStorageResponse({
-  ProbeStatus status = ProbeStatus.DONE,
-  List<Disk> disks = const [],
-  bool needBoot = false,
-  bool needRoot = false,
-  int installMinimumSize = 0,
-}) {
-  return StorageResponseV2(
-    status: status,
-    disks: disks,
-    needBoot: needBoot,
-    needRoot: needRoot,
-    installMinimumSize: installMinimumSize,
-  );
 }
 
 extension UbuntuFinders on CommonFinders {

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/mocks.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_model.dart';
 
 // ignore_for_file: type=lint

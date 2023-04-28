@@ -2,11 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/mocks.dart';
 
-import '../test_utils.dart';
 import 'write_changes_to_disk_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
@@ -14,12 +13,12 @@ import 'write_changes_to_disk_model_test.mocks.dart';
 @GenerateMocks([DiskStorageService])
 void main() {
   final testDisks = <Disk>[
-    testDisk(
+    fakeDisk(
       path: '/dev/sda',
       preserve: false,
       partitions: [Partition(number: 1, preserve: false)],
     ),
-    testDisk(
+    fakeDisk(
       path: '/dev/sdb',
       preserve: true,
       partitions: [
@@ -27,7 +26,7 @@ void main() {
         Partition(number: 2, preserve: false),
       ],
     ),
-    testDisk(
+    fakeDisk(
       path: '/dev/sdc',
       preserve: false,
       partitions: [
@@ -35,7 +34,7 @@ void main() {
         Partition(number: 4, grubDevice: false),
       ],
     ),
-    testDisk(
+    fakeDisk(
       path: '/dev/sdd',
       preserve: true,
       partitions: [
@@ -45,7 +44,7 @@ void main() {
         Partition(number: 4, resize: true),
       ],
     ),
-    testDisk(
+    fakeDisk(
       path: '/dev/sde',
       preserve: true,
       partitions: [
@@ -106,7 +105,7 @@ void main() {
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
     when(service.setGuidedStorage())
-        .thenAnswer((_) async => testGuidedStorageResponse());
+        .thenAnswer((_) async => fakeGuidedStorageResponse());
 
     final model = WriteChangesToDiskModel(client, service);
     await model.init();

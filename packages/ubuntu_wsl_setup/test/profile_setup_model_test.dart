@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/mocks.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_model.dart';
 

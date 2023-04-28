@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_test/mocks.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_wsl_setup/is_locale_set.dart';
 
 void main() {

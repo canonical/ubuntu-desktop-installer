@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import '../test_utils.dart';
 import 'allocate_disk_space_model_test.mocks.dart';
 
 // ignore_for_file: type=lint
@@ -13,10 +13,10 @@ import 'allocate_disk_space_model_test.mocks.dart';
 @GenerateMocks([DiskStorageService])
 void main() {
   final testDisks = <Disk>[
-    testDisk(id: 'a', partitions: [
+    fakeDisk(id: 'a', partitions: [
       Partition(number: 1),
     ]),
-    testDisk(
+    fakeDisk(
       id: 'b',
       bootDevice: true,
       preserve: true,
@@ -26,7 +26,7 @@ void main() {
       ],
     ),
   ];
-  final changedDisks = <Disk>[testDisk(path: '/foo')];
+  final changedDisks = <Disk>[fakeDisk(path: '/foo')];
 
   test('get storage', () async {
     final service = MockDiskStorageService();
@@ -183,8 +183,8 @@ void main() {
 
   test('can add/remove/edit/wipe/reformat', () async {
     final emptyDisk =
-        testDisk(partitions: [Gap(offset: 0, size: 1, usable: GapUsable.YES)]);
-    final fullDisk = testDisk();
+        fakeDisk(partitions: [Gap(offset: 0, size: 1, usable: GapUsable.YES)]);
+    final fullDisk = fakeDisk();
     final normalDisk = emptyDisk.copyWith(partitions: [Partition()]);
     final formattedPartition =
         emptyDisk.copyWith(partitions: [Partition(format: 'ext4')]);
@@ -283,14 +283,14 @@ void main() {
     const partition = Partition(size: 123, format: 'ext3', mount: '/tst');
 
     final service = MockDiskStorageService();
-    when(service.addPartition(testDisk(), gap, partition))
+    when(service.addPartition(fakeDisk(), gap, partition))
         .thenAnswer((_) async => changedDisks);
 
     final model = AllocateDiskSpaceModel(service);
-    await model.addPartition(testDisk(), gap,
+    await model.addPartition(fakeDisk(), gap,
         size: 123, format: PartitionFormat.ext3, mount: '/tst');
     expect(model.disks, equals(changedDisks));
-    verify(service.addPartition(testDisk(), gap, partition)).called(1);
+    verify(service.addPartition(fakeDisk(), gap, partition)).called(1);
   });
 
   test('edit partition', () async {
@@ -300,19 +300,19 @@ void main() {
         size: 456, wipe: 'superblock', format: 'ext2', mount: '/tmp');
 
     final service = MockDiskStorageService();
-    when(service.editPartition(testDisk(), edited))
+    when(service.editPartition(fakeDisk(), edited))
         .thenAnswer((_) async => changedDisks);
 
     final model = AllocateDiskSpaceModel(service);
-    await model.editPartition(testDisk(), partition,
+    await model.editPartition(fakeDisk(), partition,
         size: 456, wipe: true, format: PartitionFormat.ext2, mount: '/tmp');
     expect(model.disks, equals(changedDisks));
-    verify(service.editPartition(testDisk(), edited)).called(1);
+    verify(service.editPartition(fakeDisk(), edited)).called(1);
   });
 
   test('update selection', () async {
     Disk testPartitions(int partitions) {
-      return testDisk(
+      return fakeDisk(
         partitions: [
           for (var i = 0; i < partitions; ++i) Partition(number: i),
           Gap(offset: 123, size: 456, usable: GapUsable.YES),
@@ -373,7 +373,7 @@ void main() {
     const usableGap = Gap(offset: 0, size: 1, usable: GapUsable.YES);
     const unusableGap =
         Gap(offset: 1, size: 2, usable: GapUsable.TOO_MANY_PRIMARY_PARTS);
-    final disk = testDisk(partitions: [usableGap, unusableGap]);
+    final disk = fakeDisk(partitions: [usableGap, unusableGap]);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
@@ -391,7 +391,7 @@ void main() {
   });
 
   test('trailing gap', () async {
-    final disk = testDisk(id: 'a', partitions: [
+    final disk = fakeDisk(id: 'a', partitions: [
       Partition(number: 11, size: 1),
       Gap(offset: 1, size: 1, usable: GapUsable.YES),
       Partition(number: 2, size: 22),

@@ -6,6 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:split_view/split_view.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/install_alongside_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/install_alongside_page.dart';
 import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart';
@@ -208,7 +209,7 @@ void main() {
     when(storage.useEncryption).thenReturn(false);
     when(storage.getStorage()).thenAnswer((_) async => []);
     when(storage.getGuidedStorage())
-        .thenAnswer((_) async => testGuidedStorageResponse());
+        .thenAnswer((_) async => fakeGuidedStorageResponse());
     registerMockService<DiskStorageService>(storage);
     registerMockService<ProductService>(ProductService());
 

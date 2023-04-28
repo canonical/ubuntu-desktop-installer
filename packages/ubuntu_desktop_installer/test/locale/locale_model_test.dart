@@ -3,8 +3,8 @@ import 'dart:ui';
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
-import 'package:ubuntu_test/mocks.dart';
 
 import 'locale_page_test.mocks.dart';
 

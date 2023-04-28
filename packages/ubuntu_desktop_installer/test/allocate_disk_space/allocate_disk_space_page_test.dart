@@ -8,6 +8,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_selector.dart';
@@ -23,7 +24,7 @@ import 'allocate_disk_space_page_test.mocks.dart';
 final selection = StreamController.broadcast();
 
 final testDisks = <Disk>[
-  testDisk(
+  fakeDisk(
     path: '/dev/sda',
     canBeBootDevice: false,
     size: 12,
@@ -43,7 +44,7 @@ final testDisks = <Disk>[
       )
     ],
   ),
-  testDisk(
+  fakeDisk(
     path: '/dev/sdb',
     canBeBootDevice: true,
     size: 23,
@@ -278,7 +279,7 @@ void main() {
   });
 
   testWidgets('confirm new partition table', (tester) async {
-    final disk = testDisk(ptable: 'gpt', path: '/dev/sda');
+    final disk = fakeDisk(ptable: 'gpt', path: '/dev/sda');
     final model = buildModel(
       disks: [disk],
       selectedDisk: disk,

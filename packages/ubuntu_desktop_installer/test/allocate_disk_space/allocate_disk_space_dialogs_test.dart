@@ -3,6 +3,7 @@ import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_page.dart';
@@ -22,7 +23,7 @@ void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);
 
   testWidgets('create partition', (tester) async {
-    final disk = testDisk();
+    final disk = fakeDisk();
     final gap = Gap(offset: 0, size: 1000000, usable: GapUsable.YES);
     final model = buildModel(selectedDisk: disk);
 
@@ -71,7 +72,7 @@ void main() {
   });
 
   testWidgets('create partition with invalid mount point', (tester) async {
-    final disk = testDisk();
+    final disk = fakeDisk();
     final gap = Gap(offset: 0, size: 1000000, usable: GapUsable.YES);
     final model = buildModel(selectedDisk: disk);
 
@@ -99,7 +100,7 @@ void main() {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
 
-    final disk = testDisk(partitions: [
+    final disk = fakeDisk(partitions: [
       Partition(
         number: 1,
         size: 1234567,
@@ -169,7 +170,7 @@ void main() {
     tester.binding.window.devicePixelRatioTestValue = 1;
     tester.binding.window.physicalSizeTestValue = Size(960, 680);
 
-    final disk = testDisk(partitions: [
+    final disk = fakeDisk(partitions: [
       Partition(
         number: 1,
         size: 1234567,

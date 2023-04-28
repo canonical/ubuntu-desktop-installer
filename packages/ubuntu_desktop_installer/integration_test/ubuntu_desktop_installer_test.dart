@@ -4,8 +4,8 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/main.dart' as app;
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
@@ -15,7 +15,6 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaml/yaml.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
-import '../test/test_utils.dart';
 import 'test_pages.dart';
 
 // ignore_for_file: type=lint
@@ -155,7 +154,7 @@ void main() {
 
   testWidgets('manual partitioning', (tester) async {
     final storage = [
-      testDisk(
+      fakeDisk(
         path: '/dev/sda',
         partitions: [
           Partition(size: toBytes(6, DataUnit.gigabytes), mount: '/'),
@@ -259,7 +258,7 @@ void main() {
     await tester.pumpAndSettle();
 
     await verifyConfig(storage: [
-      testDisk(
+      fakeDisk(
         path: '/dev/sda',
         partitions: [
           Partition(number: 3, size: toBytes(40000, DataUnit.megabytes)),
@@ -309,14 +308,7 @@ Future<void> verifyConfig({
   bool? useLvm,
   bool? useEncryption,
 }) async {
-  final path = p.join(
-    await subiquityPath,
-    'var',
-    'log',
-    'installer',
-    'autoinstall-user-data',
-  );
-
+  final path = await getSubiquityLogFile('autoinstall-user-data');
   await waitForFile(path);
 
   final yaml = loadYaml(File(path).readAsStringSync());

@@ -2,10 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/install_alongside_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import '../test_utils.dart';
 import 'install_alongside_model_test.mocks.dart';
 
 const ubuntu2110 = OsProber(
@@ -33,9 +33,9 @@ const windows10 = OsProber(
 void main() {
   test('init guided storage', () async {
     final service = MockDiskStorageService();
-    when(service.getStorage()).thenAnswer((_) async => [testDisk()]);
+    when(service.getStorage()).thenAnswer((_) async => [fakeDisk()]);
     when(service.getGuidedStorage()).thenAnswer((_) async =>
-        testGuidedStorageResponse(possible: [testResizeStorage()]));
+        fakeGuidedStorageResponse(possible: [fakeGuidedStorageTargetResize()]));
 
     final model = InstallAlongsideModel(service, MockProductService());
     expect(model.selectedIndex, isNull);
@@ -50,15 +50,16 @@ void main() {
   test('save guided storage', () async {
     const partition1 = Partition(number: 1, size: 100);
     const partition2 = Partition(number: 2, size: 200);
-    final disk = testDisk(id: 'id', partitions: [partition1, partition2]);
-    final resize1 = testResizeStorage(diskId: disk.id, partitionNumber: 1);
-    final resize2 =
-        testResizeStorage(diskId: disk.id, partitionNumber: 2, maximum: 200);
+    final disk = fakeDisk(id: 'id', partitions: [partition1, partition2]);
+    final resize1 =
+        fakeGuidedStorageTargetResize(diskId: disk.id, partitionNumber: 1);
+    final resize2 = fakeGuidedStorageTargetResize(
+        diskId: disk.id, partitionNumber: 2, maximum: 200);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: [resize1, resize2]));
+        (_) async => fakeGuidedStorageResponse(possible: [resize1, resize2]));
 
     final model = InstallAlongsideModel(service, MockProductService());
     await model.init();
@@ -76,7 +77,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.resetStorage()).thenAnswer((_) async => []);
     when(service.getGuidedStorage())
-        .thenAnswer((_) async => testGuidedStorageResponse());
+        .thenAnswer((_) async => fakeGuidedStorageResponse());
 
     final model = InstallAlongsideModel(service, MockProductService());
     await model.reset();
@@ -102,18 +103,20 @@ void main() {
   test('get storage', () async {
     const sda1 = Partition(number: 1, size: 1, os: ubuntu2110);
     const sda2 = Partition(number: 2, size: 2);
-    final sda = testDisk(id: 'sda', partitions: [sda1, sda2]);
+    final sda = fakeDisk(id: 'sda', partitions: [sda1, sda2]);
 
     const sdb1 = Partition(number: 1, size: 3, os: ubuntu2204);
-    final sdb = testDisk(id: 'sdb', partitions: [sdb1]);
+    final sdb = fakeDisk(id: 'sdb', partitions: [sdb1]);
 
-    final storage1 = testResizeStorage(diskId: 'sda', partitionNumber: 2);
-    final storage2 = testResizeStorage(diskId: 'sdb', partitionNumber: 1);
+    final storage1 =
+        fakeGuidedStorageTargetResize(diskId: 'sda', partitionNumber: 2);
+    final storage2 =
+        fakeGuidedStorageTargetResize(diskId: 'sdb', partitionNumber: 1);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: [storage1, storage2]));
+        (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
 
     final model = InstallAlongsideModel(service, MockProductService());
     expect(model.storageCount, isZero);
@@ -141,18 +144,20 @@ void main() {
   test('select storage', () async {
     const sda1 = Partition(number: 1, size: 1, os: ubuntu2110);
     const sda2 = Partition(number: 2, size: 2);
-    final sda = testDisk(id: 'sda', partitions: [sda1, sda2]);
+    final sda = fakeDisk(id: 'sda', partitions: [sda1, sda2]);
 
     const sdb1 = Partition(number: 1, size: 3, os: ubuntu2204);
-    final sdb = testDisk(id: 'sdb', partitions: [sdb1]);
+    final sdb = fakeDisk(id: 'sdb', partitions: [sdb1]);
 
-    final storage1 = testResizeStorage(diskId: 'sda', partitionNumber: 2);
-    final storage2 = testResizeStorage(diskId: 'sdb', partitionNumber: 1);
+    final storage1 =
+        fakeGuidedStorageTargetResize(diskId: 'sda', partitionNumber: 2);
+    final storage2 =
+        fakeGuidedStorageTargetResize(diskId: 'sdb', partitionNumber: 1);
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: [storage1, storage2]));
+        (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
 
     final model = InstallAlongsideModel(service, MockProductService());
     expect(model.storageCount, isZero);
@@ -195,7 +200,7 @@ void main() {
   test('resize storage', () async {
     const partition1 = Partition(number: 1, size: 11111);
     const partition2 = Partition(number: 2, size: 22222);
-    final disk = testDisk(id: 'id', partitions: [partition1, partition2]);
+    final disk = fakeDisk(id: 'id', partitions: [partition1, partition2]);
 
     const storage1 = GuidedStorageTargetResize(
       diskId: 'id',
@@ -220,7 +225,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: [storage1, storage2]));
+        (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
 
     final model = InstallAlongsideModel(service, MockProductService());
     await model.init();
@@ -248,23 +253,4 @@ void main() {
     expect(model.selectedIndex, equals(0));
     expect(model.currentSize, equals(storage1.recommended));
   });
-}
-
-GuidedStorageTargetResize testResizeStorage({
-  String diskId = '',
-  int partitionNumber = 0,
-  int newSize = 0,
-  int? minimum,
-  int? recommended,
-  int? maximum,
-}) {
-  return GuidedStorageTargetResize(
-    diskId: diskId,
-    partitionNumber: partitionNumber,
-    newSize: newSize,
-    minimum: minimum,
-    recommended: recommended,
-    maximum: maximum,
-    capabilities: [GuidedCapability.DIRECT],
-  );
 }

@@ -6,6 +6,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/select_guided_storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/select_guided_storage_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -20,8 +21,8 @@ import 'select_guided_storage_page_test.mocks.dart';
 @GenerateMocks([SelectGuidedStorageModel])
 void main() {
   final testDisks = <Disk>[
-    testDisk(path: '/dev/sda', size: 12, model: 'SDA', vendor: 'ATA'),
-    testDisk(path: '/dev/sdb', size: 23, model: 'SDB', vendor: 'ATA'),
+    fakeDisk(path: '/dev/sda', size: 12, model: 'SDA', vendor: 'ATA'),
+    fakeDisk(path: '/dev/sdb', size: 23, model: 'SDB', vendor: 'ATA'),
   ];
   final testStorages = testDisks
       .map((disk) =>
@@ -129,7 +130,7 @@ void main() {
     when(service.getStorage()).thenAnswer((_) async => []);
     when(service.useEncryption).thenReturn(false);
     when(service.getGuidedStorage())
-        .thenAnswer((_) async => testGuidedStorageResponse());
+        .thenAnswer((_) async => fakeGuidedStorageResponse());
     registerMockService<DiskStorageService>(service);
 
     await tester.pumpWidget(tester.buildApp(SelectGuidedStoragePage.create));
