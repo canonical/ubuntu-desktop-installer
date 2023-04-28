@@ -1,6 +1,5 @@
 import 'dart:math' as math;
 
-import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
@@ -183,16 +182,4 @@ class DiskStorageService {
   Future<List<Disk>> reformatDisk(Disk disk) {
     return _client.reformatDiskV2(disk).then(_updateStorage);
   }
-}
-
-/// Disk data class extensions for the UI.
-extension DiskExtension on Disk {
-  /// Returns the sysname of the disk (e.g. "sda" for "/dev/sda").
-  String get sysname => p.basename(path ?? '');
-}
-
-/// Partition data class extensions for the UI.
-extension PartitionExtension on Partition {
-  /// Returns the sysname of the partition (e.g. "sda1" for "/dev/sda1").
-  String get sysname => p.basename(path ?? '');
 }

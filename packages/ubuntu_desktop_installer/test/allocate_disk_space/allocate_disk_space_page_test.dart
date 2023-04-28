@@ -7,10 +7,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_selector.dart';
-import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
