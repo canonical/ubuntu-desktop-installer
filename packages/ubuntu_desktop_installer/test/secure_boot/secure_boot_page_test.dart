@@ -110,21 +110,15 @@ void main() {
     final model = buildModel(isFormValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isTrue);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isTrue);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isFormValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isFalse);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
   });
 }

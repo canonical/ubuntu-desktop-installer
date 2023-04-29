@@ -42,11 +42,11 @@ void main() {
     await tester.pumpAndSettle();
     verifyNever(model.reboot());
 
-    final continueButton = find.descendant(
+    final dialogButton = find.descendant(
         of: find.byType(AlertDialog),
         matching: find.text(tester.lang.restartButtonText));
 
-    await tester.tap(continueButton);
+    await tester.tap(dialogButton);
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsNothing);

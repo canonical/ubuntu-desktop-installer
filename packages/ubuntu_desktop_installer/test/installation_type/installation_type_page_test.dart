@@ -8,6 +8,7 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -376,14 +377,11 @@ void main() {
     final model = buildModel(hasStorage: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(continueButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, false);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, false);
 
-    await tester.tap(continueButton);
+    await tester.tap(nextButton);
     verifyNever(model.save());
   });
 
@@ -391,13 +389,10 @@ void main() {
     final model = buildModel(hasStorage: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(continueButton, findsOneWidget);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
 
-    await tester.tap(continueButton);
+    await tester.tap(nextButton);
     verify(model.save()).called(1);
   });
 

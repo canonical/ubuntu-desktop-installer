@@ -13,6 +13,7 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/al
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_selector.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -300,13 +301,10 @@ void main() {
     expect(find.byType(AlertDialog), findsOneWidget);
     verifyNever(model.reformatDisk(disk));
 
-    final continueButton = find.descendant(
-      of: find.byType(AlertDialog),
-      matching: find.text(tester.ulang.okLabel),
-    );
-    expect(continueButton, findsOneWidget);
+    final okButton = find.button(tester.ulang.okLabel);
+    expect(okButton, findsOneWidget);
 
-    await tester.tap(continueButton);
+    await tester.tap(okButton);
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsNothing);
@@ -357,13 +355,10 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(continueButton, findsOneWidget);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
 
-    await tester.tap(continueButton);
+    await tester.tap(nextButton);
     verify(model.setStorage()).called(1);
   });
 
@@ -371,12 +366,9 @@ void main() {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(continueButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isFalse);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
   });
 
   testWidgets('too many primary partitions', (tester) async {

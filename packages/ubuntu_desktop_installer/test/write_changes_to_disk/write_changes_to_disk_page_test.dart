@@ -10,6 +10,7 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_model.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 
 import '../test_utils.dart';
 import 'write_changes_to_disk_model_test.mocks.dart';
@@ -164,13 +165,10 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      ElevatedButton,
-      tester.lang.startInstallingButtonText,
-    );
-    expect(continueButton, findsOneWidget);
+    final installButton = find.button(tester.lang.startInstallingButtonText);
+    expect(installButton, findsOneWidget);
 
-    await tester.tap(continueButton);
+    await tester.tap(installButton);
     verifyNever(model.startInstallation());
 
     await tester.pumpAndSettle(kThemeAnimationDuration);

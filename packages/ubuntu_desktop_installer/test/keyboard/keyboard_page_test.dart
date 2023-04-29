@@ -131,24 +131,18 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(continueButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isTrue);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isTrue);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(continueButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isFalse);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
   });
 
   testWidgets('key search', (tester) async {
@@ -183,12 +177,9 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(continueButton, findsOneWidget);
-    await tester.tap(continueButton);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
+    await tester.tap(nextButton);
     await tester.pumpAndSettle();
 
     verify(model.updateInputSource()).called(1);

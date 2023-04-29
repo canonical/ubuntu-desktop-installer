@@ -106,12 +106,9 @@ void main() {
   testWidgets('selecting an option should enable continuing', (tester) async {
     await setUpApp(tester);
 
-    final continueButton =
-        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
-    expect(continueButton, findsOneWidget);
-    expect(
-        (continueButton.evaluate().single.widget as ButtonStyleButton).enabled,
-        false);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, false);
 
     final options = find.byType(OptionButton);
     expect(options, findsWidgets);
@@ -119,8 +116,7 @@ void main() {
     await tester.tap(options.first);
     await tester.pump();
 
-    expect(
-        (continueButton.evaluate().single.widget as ButtonStyleButton).enabled,
+    expect((nextButton.evaluate().single.widget as ButtonStyleButton).enabled,
         true);
   });
 
@@ -134,11 +130,10 @@ void main() {
     await tester.tap(option);
     await tester.pump();
 
-    final continueButton =
-        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
-    expect(continueButton, findsOneWidget);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
 
-    await tester.tap(continueButton);
+    await tester.tap(nextButton);
     await tester.pumpAndSettle();
 
     expect(find.byType(WelcomePage), findsNothing);
@@ -148,10 +143,9 @@ void main() {
   testWidgets('try ubuntu', (tester) async {
     await setUpApp(tester);
 
-    final continueButton =
-        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
-    expect(continueButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isFalse);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
 
     final option =
         find.widgetWithText(OptionButton, tester.lang.tryUbuntu('Ubuntu'));
@@ -160,11 +154,11 @@ void main() {
     await tester.tap(option);
     await tester.pump();
 
-    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isTrue);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isTrue);
 
     final windowClosed = YaruTestWindow.waitForClosed();
 
-    await tester.tap(continueButton);
+    await tester.tap(nextButton);
     await tester.pump();
 
     await expectLater(windowClosed, completes);
