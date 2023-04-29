@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -41,7 +42,7 @@ void main() {
     final model = buildModel(securityKey: 'foo');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final textField = find.widgetWithText(TextField, 'foo');
+    final textField = find.textField('foo');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'bar');
     verify(model.securityKey = 'bar').called(1);
@@ -51,7 +52,7 @@ void main() {
     final model = buildModel(securityKey: 'foo', confirmedSecurityKey: 'foo');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final textFields = find.widgetWithText(TextField, 'foo');
+    final textFields = find.textField('foo');
     expect(textFields, findsNWidgets(2));
     await tester.enterText(textFields.first, 'bar');
     verify(model.securityKey = 'bar').called(1);

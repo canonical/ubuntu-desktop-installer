@@ -68,9 +68,9 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     verify(model.init()).called(1);
-    expect(find.widgetWithText(TextField, 'ubuntu.com'), findsOneWidget);
-    expect(find.widgetWithText(TextField, 'admin'), findsOneWidget);
-    expect(find.widgetWithText(TextField, 'password'), findsOneWidget);
+    expect(find.textField('ubuntu.com'), findsOneWidget);
+    expect(find.textField('admin'), findsOneWidget);
+    expect(find.textField('password'), findsOneWidget);
   });
 
   testWidgets('domain name input', (tester) async {
@@ -86,7 +86,7 @@ void main() {
       expect(find.text(error), findsNothing);
     }
 
-    final textField = find.widgetWithText(TextField, 'ubuntu.com');
+    final textField = find.textField('ubuntu.com');
     expect(textField, findsOneWidget);
 
     await tester.enterText(textField, '...');
@@ -109,7 +109,7 @@ void main() {
       expect(find.text(validation.localize(tester.lang)), findsNothing);
     }
 
-    final textField = find.widgetWithText(TextField, 'admin');
+    final textField = find.textField('admin');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.setAdminName('ubuntu')).called(1);
@@ -131,8 +131,7 @@ void main() {
       expect(find.text(error), findsNothing);
     }
 
-    await tester.enterText(
-        find.widgetWithText(TextField, 'password'), 'ubuntu');
+    await tester.enterText(find.textField('password'), 'ubuntu');
     verify(model.setPassword('ubuntu')).called(1);
 
     await tester.pump();

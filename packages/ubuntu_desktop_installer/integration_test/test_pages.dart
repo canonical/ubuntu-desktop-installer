@@ -221,13 +221,13 @@ Future<void> testSecurityKeyPage(
   await expectPage(
       tester, SecurityKeyPage, (lang) => lang.chooseSecurityKeyTitle);
 
-  await tester.enterTextValue(
-    label: tester.lang.chooseSecurityKey,
-    value: securityKey,
+  await tester.enterText(
+    find.textField(tester.lang.chooseSecurityKey),
+    securityKey,
   );
-  await tester.enterTextValue(
-    label: tester.lang.confirmSecurityKey,
-    value: securityKey,
+  await tester.enterText(
+    find.textField(tester.lang.confirmSecurityKey),
+    securityKey,
   );
 
   await tester.pumpAndSettle();
@@ -413,7 +413,7 @@ Future<void> testTimezonePage(
 
   if (location != null) {
     await tester.enterText(
-      find.widgetWithText(TextField, tester.lang.whereAreYouLocationLabel),
+      find.textField(tester.lang.whereAreYouLocationLabel),
       location,
     );
     await tester.pump();
@@ -423,7 +423,7 @@ Future<void> testTimezonePage(
 
   if (timezone != null) {
     await tester.enterText(
-      find.widgetWithText(TextField, tester.lang.whereAreYouTimezoneLabel),
+      find.textField(tester.lang.whereAreYouTimezoneLabel),
       timezone,
     );
     await tester.pump();
@@ -449,31 +449,31 @@ Future<void> testIdentityPage(
   await expectPage(tester, IdentityPage, (lang) => lang.whoAreYouPageTitle);
 
   if (identity?.realname != null) {
-    await tester.enterTextValue(
-      label: tester.lang.whoAreYouPageRealNameLabel,
-      value: identity!.realname,
+    await tester.enterText(
+      find.textField(tester.lang.whoAreYouPageRealNameLabel),
+      identity!.realname,
     );
   }
   if (identity?.hostname != null) {
-    await tester.enterTextValue(
-      label: tester.lang.whoAreYouPageComputerNameLabel,
-      value: identity!.hostname,
+    await tester.enterText(
+      find.textField(tester.lang.whoAreYouPageComputerNameLabel),
+      identity!.hostname,
     );
   }
   if (identity?.username != null) {
-    await tester.enterTextValue(
-      label: tester.lang.whoAreYouPageUsernameLabel,
-      value: identity!.username,
+    await tester.enterText(
+      find.textField(tester.lang.whoAreYouPageUsernameLabel),
+      identity!.username,
     );
   }
   if (password != null) {
-    await tester.enterTextValue(
-      label: tester.lang.whoAreYouPagePasswordLabel,
-      value: password,
+    await tester.enterText(
+      find.textField(tester.lang.whoAreYouPagePasswordLabel),
+      password,
     );
-    await tester.enterTextValue(
-      label: tester.lang.whoAreYouPageConfirmPasswordLabel,
-      value: password,
+    await tester.enterText(
+      find.textField(tester.lang.whoAreYouPageConfirmPasswordLabel),
+      password,
     );
   }
   await tester.pumpAndSettle();
@@ -496,21 +496,21 @@ Future<void> testActiveDirectoryPage(
       tester, ActiveDirectoryPage, (lang) => lang.activeDirectoryTitle);
 
   if (domainName != null) {
-    await tester.enterTextValue(
-      label: tester.lang.activeDirectoryDomainLabel,
-      value: domainName,
+    await tester.enterText(
+      find.textField(tester.lang.activeDirectoryDomainLabel),
+      domainName,
     );
   }
   if (adminName != null) {
-    await tester.enterTextValue(
-      label: tester.lang.activeDirectoryAdminLabel,
-      value: adminName,
+    await tester.enterText(
+      find.textField(tester.lang.activeDirectoryAdminLabel),
+      adminName,
     );
   }
   if (password != null) {
-    await tester.enterTextValue(
-      label: tester.lang.activeDirectoryPasswordLabel,
-      value: password,
+    await tester.enterText(
+      find.textField(tester.lang.activeDirectoryPasswordLabel),
+      password,
     );
   }
   await tester.pumpAndSettle();

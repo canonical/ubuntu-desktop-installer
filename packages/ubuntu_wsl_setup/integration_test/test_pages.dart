@@ -68,22 +68,30 @@ Future<void> testProfileSetupPage(
 }) async {
   expectPage(tester, ProfileSetupPage, (lang) => lang.profileSetupTitle);
 
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupRealnameLabel,
-    value: profile?.realname,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupUsernameHint,
-    value: profile?.username,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupPasswordHint,
-    value: password,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupConfirmPasswordHint,
-    value: confirmedPassword,
-  );
+  if (profile?.realname != null) {
+    await tester.enterText(
+      find.textField(tester.lang.profileSetupRealnameLabel),
+      profile!.realname,
+    );
+  }
+  if (profile?.username != null) {
+    await tester.enterText(
+      find.textField(tester.lang.profileSetupUsernameHint),
+      profile!.username,
+    );
+  }
+  if (password != null) {
+    await tester.enterText(
+      find.textField(tester.lang.profileSetupPasswordHint),
+      password,
+    );
+  }
+  if (confirmedPassword != null) {
+    await tester.enterText(
+      find.textField(tester.lang.profileSetupConfirmPasswordHint),
+      confirmedPassword,
+    );
+  }
   await tester.toggleCheckbox(
     label: tester.lang.profileSetupShowAdvancedOptions,
     value: showAdvancedOptions,
@@ -99,14 +107,18 @@ Future<void> testAdvancedSetupPage(
 }) async {
   expectPage(tester, AdvancedSetupPage, (lang) => lang.advancedSetupTitle);
 
-  await tester.enterTextValue(
-    label: tester.lang.advancedSetupMountLocationHint,
-    value: config?.automountRoot,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.advancedSetupMountOptionHint,
-    value: config?.automountOptions,
-  );
+  if (config?.automountRoot != null) {
+    await tester.enterText(
+      find.textField(tester.lang.advancedSetupMountLocationHint),
+      config!.automountRoot,
+    );
+  }
+  if (config?.automountOptions != null) {
+    await tester.enterText(
+      find.textField(tester.lang.advancedSetupMountOptionHint),
+      config!.automountOptions,
+    );
+  }
   await tester.toggleCheckbox(
     label: tester.lang.advancedSetupHostGenerationTitle,
     value: config?.networkGeneratehosts,

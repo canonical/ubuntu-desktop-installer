@@ -7,6 +7,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_view.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import 'hidden_wifi_view_test.mocks.dart';
@@ -44,11 +45,11 @@ void main() {
     await pumpHiddenWifiView(tester, model: model);
 
     expect(find.byType(TextField), findsOneWidget);
-    await tester.enterText(find.widgetWithText(TextField, 'test'), 'ssid');
+    await tester.enterText(find.textField('test'), 'ssid');
     verify(model.setSsid('ssid'));
 
     expect(find.byType(TextField), findsOneWidget);
-    await tester.enterText(find.widgetWithText(TextField, 'ssid'), '');
+    await tester.enterText(find.textField('ssid'), '');
     verify(model.setSsid(''));
   });
 
@@ -61,21 +62,17 @@ void main() {
     await pumpHiddenWifiView(tester, model: model, expanded: false);
     await tester.pumpAndSettle();
 
-    final textField = find.byType(TextField);
-    expect(tester.widget<TextField>(textField).focusNode, isNotNull);
-    expect(tester.widget<TextField>(textField).focusNode!.hasFocus, isFalse);
+    expect(find.byType(TextField), hasNoFocus);
 
     await pumpHiddenWifiView(tester, model: model, expanded: true);
     await tester.pumpAndSettle();
 
-    expect(tester.widget<TextField>(textField).focusNode, isNotNull);
-    expect(tester.widget<TextField>(textField).focusNode!.hasFocus, isTrue);
+    expect(find.byType(TextField), hasFocus);
 
     await pumpHiddenWifiView(tester, model: model, expanded: false);
     await tester.pumpAndSettle();
 
-    expect(tester.widget<TextField>(textField).focusNode, isNotNull);
-    expect(tester.widget<TextField>(textField).focusNode!.hasFocus, isFalse);
+    expect(find.byType(TextField), hasNoFocus);
   });
 
   testWidgets('wifi disabled', (tester) async {
