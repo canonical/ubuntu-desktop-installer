@@ -62,7 +62,7 @@
   "@turnOffRST": {},
   "turnOffRSTDescription": "Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu'yu kurmadan önce Windows'tan RST'yi kapatmalısınız.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Talimatlar için şu adresi bir telefondan veya başka bir cihazdan açın: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Talimatlar için QR kodunu başka bir cihazda tarayın veya ziyaret edin: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -394,7 +394,7 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "Kurulum tamamlandı",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** kuruldu ve kullanıma hazır.",
+  "readyToUse": "**{system}** kuruldu ve kullanıma hazır",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -441,7 +441,7 @@
   "@availableSoftware": {},
   "supportedSoftware": "Desteklenen yazılım",
   "@supportedSoftware": {},
-  "turnOffBitlockerLinkInstructions": "Talimatlar için bu sayfayı telefonda veya başka bir cihazda açın: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Talimatlar için QR kodunu başka bir cihazda tarayın ya da <a href=\"https://{url}\">{url}</a> sayfasını ziyaret edin",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -661,7 +661,7 @@
       "mount": {}
     }
   },
-  "turnOffBitlockerDescription": "Bu bilgisayar Windows BitLocker şifreleme kullanıyor.\nUbuntu'yu kurmadan önce Windows'ta BitLocker'ı kapatmanız gerekli.",
+  "turnOffBitlockerDescription": "Bu bilgisayar Windows BitLocker şifreleme kullanmaktadır.\nBoş alan oluşturmak için Windows'u kullanmanız ya da devam etmek için '{option}'i seçmeniz gerekir.",
   "@turnOffBitlockerDescription": {},
   "chooseSecurityKeyWarning": "<font color=\"{color}\">Uyarı:</font> Bu güvenlik anahtarını kaybederseniz tüm veriler kaybolur. Gerekirse, anahtarınızı bir yere yazın ve güvenli başka bir yerde saklayın.",
   "@chooseSecurityKeyWarning": {
@@ -686,7 +686,7 @@
       "RELEASE": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "Üzgünüm",
+  "notEnoughDiskSpaceTitle": "Yeterli alan yok",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceHeader": "{RELEASE} kurmak için en az {SIZE} disk alanına ihtiyacınız var.",
   "@notEnoughDiskSpaceHeader": {
@@ -826,5 +826,142 @@
     }
   },
   "turnOffRSTTitle": "Devam etmek için RST'yi kapatın",
-  "@turnOffRSTTitle": {}
+  "@turnOffRSTTitle": {},
+  "activeDirectoryOption": "Active Directory kullan",
+  "@activeDirectoryOption": {},
+  "activeDirectoryInfo": "Bir sonraki adımda alan adı ve diğer ayrıntıları gireceksiniz.",
+  "@activeDirectoryInfo": {},
+  "installationSlidesAccessibilityTitle": "Herkes için erişim",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesAccessibilityLanguages": "Dil desteği",
+  "@installationSlidesAccessibilityLanguages": {},
+  "activeDirectoryDomainInvalidChars": "Geçersiz karakterler",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryDomainStartDot": "Bir nokta (.) ile başlar",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainEndDot": "Bir nokta ile biter (.)",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainStartHyphen": "Kısa çizgi (-) ile başlar",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryDomainEndHyphen": "Kısa çizgi (-) ile biter",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryAdminLabel": "Etki alanına katılma kullanıcısı",
+  "@activeDirectoryAdminLabel": {},
+  "turnOffBitlockerHeadline": "Devam etmek için BitLocker'ı kapat",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "Windows'a yeniden başlatılsın mı?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Bilgisayarınızı yeniden başlatmak istediğinizden emin misiniz? {DISTRO} kurulumunu tamamlamak için {DISTRO} kurulumunu daha sonra yeniden başlatmanız gerekecektir.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityBody": "{DISTRO} felsefesinin temelinde bilgisayarın herkes için olduğu inancı yatmaktadır. Gelişmiş erişilebilirlik araçları ve dili, renkleri ve metin boyutunu değiştirme seçenekleriyle {DISTRO}, kim ve nerede olursanız olun bilgisayar kullanmayı kolaylaştırır.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportTitle": "Yardım ve Destek",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSupportHeader": "Resmi {DISTRO} belgelerine hem çevrimiçi olarak hem de rıhtımdaki Yardım simgesi aracılığıyla ulaşabilirsiniz.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryTitle": "Active Directory'yi Yapılandır",
+  "@activeDirectoryTitle": {},
+  "activeDirectoryTestConnection": "Etki alanı bağlantısını sına",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryDomainLabel": "Etki alanı",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryDomainEmpty": "Gerekli",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryDomainTooLong": "Çok uzun",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryAdminEmpty": "Gerekli",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryErrorMessage": "Üzgünüz, Active Directory şu anda kurulamıyor. Sisteminiz kurulup çalışmaya başladığında, yardım için <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> adresini ziyaret edin.",
+  "@activeDirectoryErrorMessage": {},
+  "activeDirectoryErrorTitle": "Active Directory bağlantısı yapılandırılamadı",
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryPasswordEmpty": "Gerekli",
+  "@activeDirectoryPasswordEmpty": {},
+  "activeDirectoryDomainMultipleDots": "Birden fazla sıralı nokta içerir (...)",
+  "@activeDirectoryDomainMultipleDots": {},
+  "notEnoughDiskSpaceUbuntu": "{DISTRO} kurmak için yeterli disk alanı yok",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "Kullanılabilir:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "Gerekli:",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesCreativityBody": "Bir animatör, tasarımcı, video üreticisi ya da oyun geliştiricisiyseniz, açık kaynak ve endüstri standardı yazılım ve uygulama desteği ile iş akışlarınızı {DISTRO} dağıtımına taşımak çok kolay.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingTitle": "Oyun için harika",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesSecurityLts": "Tüm {DISTRO} LTS sürümleri, Ubuntu Pro aboneliği ile on yıla kadar uzanan beş yıllık güvenlik yaması ile birlikte gelir.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityBody": "{DISTRO} Masaüstü, belgeler, elektronik tablolar ve sunumlar için Microsoft Office uyumlu açık kaynak uygulamaları paketi olan LibreOffice'i içerir. Popüler işbirliği araçları da mevcuttur.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Orca Ekran Okuyucu",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesProductivityTitle": "Verimliliğinizi artırın",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesGamingBody": "{DISTRO} performansı ve uyumluluğu artırmak için en yeni NVIDIA ve Mesa sürücülerini destekler. Binlerce Windows oyunu, Steam gibi uygulamalar aracılığıyla {DISTRO} üstünde, ek yapılandırma gerektirmeden harika bir şekilde oynatılır.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "Özel ve güvenli",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityBody": "{DISTRO} çevrimiçi ortamda gizli ve güvende kalmak için ihtiyacınız olan tüm araçları sağlar. Yerleşik güvenlik duvarı ve VPN desteğinin yanı sıra verilerinizin tam kontrolünü sağlamak için bir dizi gizlilik merkezli uygulama da sağlar.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Ubuntu'ya Sor çeşitli soru ve yanıtlarını kapsar. Ubuntu Discourse yeni ve deneyimli kullanıcılar için kılavuzlar ve tartışmalar sunar.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "Kurumsal kullanıcılar için Canonical, Ubuntu'nun işyerinde güvenli bir şekilde kurulmasını ve yönetilmesini kolaylaştırmak için ticari destek sağlar.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesSupportResources": "Yararlı kaynaklar:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "Resmi belgelendirme",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "Ubuntu Pro ile kurumsal sınıf 7/24 destek",
+  "@installationSlidesSupportUbuntuPro": {},
+  "activeDirectoryDomainNotFound": "Etki alanı bulunamadı",
+  "@activeDirectoryDomainNotFound": {},
+  "activeDirectoryAdminInvalidChars": "Geçersiz karakterler",
+  "@activeDirectoryAdminInvalidChars": {},
+  "activeDirectoryPasswordLabel": "Parola",
+  "@activeDirectoryPasswordLabel": {}
 }
