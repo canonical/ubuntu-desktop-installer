@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
@@ -72,7 +73,7 @@ void main() {
     final model = buildModel(realname: 'realname');
     await tester.pumpWidget(buildApp(tester, model));
 
-    final textField = find.widgetWithText(TextField, 'realname');
+    final textField = find.textField('realname');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.realname = 'ubuntu').called(1);
@@ -82,7 +83,7 @@ void main() {
     final model = buildModel(username: 'username');
     await tester.pumpWidget(buildApp(tester, model));
 
-    final textField = find.widgetWithText(TextField, 'username');
+    final textField = find.textField('username');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.username = 'ubuntu').called(1);
@@ -92,7 +93,7 @@ void main() {
     final model = buildModel(password: 'password');
     await tester.pumpWidget(buildApp(tester, model));
 
-    final textField = find.widgetWithText(TextField, 'password');
+    final textField = find.textField('password');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.password = 'ubuntu').called(1);
@@ -102,7 +103,7 @@ void main() {
     final model = buildModel(password: 'passwd', confirmedPassword: 'passwd');
     await tester.pumpWidget(buildApp(tester, model));
 
-    final textField = find.widgetWithText(TextField, 'passwd');
+    final textField = find.textField('passwd');
     expect(textField, findsNWidgets(2));
     await tester.enterText(textField.first, 'ubuntu');
     verify(model.password = 'ubuntu').called(1);

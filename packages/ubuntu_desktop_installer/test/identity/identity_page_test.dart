@@ -8,6 +8,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_page.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -62,7 +63,7 @@ void main() {
     final model = buildModel(realName: 'real name');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final textField = find.widgetWithText(TextField, 'real name');
+    final textField = find.textField('real name');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.realName = 'ubuntu').called(1);
@@ -72,7 +73,7 @@ void main() {
     final model = buildModel(hostname: 'host name');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final textField = find.widgetWithText(TextField, 'host name');
+    final textField = find.textField('host name');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.hostname = 'ubuntu').called(1);
@@ -82,7 +83,7 @@ void main() {
     final model = buildModel(username: 'username');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final textField = find.widgetWithText(TextField, 'username');
+    final textField = find.textField('username');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.username = 'ubuntu').called(1);
@@ -92,7 +93,7 @@ void main() {
     final model = buildModel(password: 'password');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final textField = find.widgetWithText(TextField, 'password');
+    final textField = find.textField('password');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.password = 'ubuntu').called(1);
@@ -102,7 +103,7 @@ void main() {
     final model = buildModel(password: 'passwd', confirmedPassword: 'passwd');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final textField = find.widgetWithText(TextField, 'passwd');
+    final textField = find.textField('passwd');
     expect(textField, findsNWidgets(2));
     await tester.enterText(textField.first, 'ubuntu');
     verify(model.password = 'ubuntu').called(1);
@@ -114,7 +115,7 @@ void main() {
     final model = buildModel(password: 'passwd', confirmedPassword: 'confirm');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final passwordField = find.widgetWithText(TextField, 'passwd');
+    final passwordField = find.textField('passwd');
     expect(passwordField, findsOneWidget);
 
     await tester.tap(passwordField);
@@ -122,7 +123,7 @@ void main() {
     final passwordFocus = tester.widget<TextField>(passwordField).focusNode;
     expect(passwordFocus?.hasFocus, isTrue);
 
-    final confirmPasswordField = find.widgetWithText(TextField, 'confirm');
+    final confirmPasswordField = find.textField('confirm');
     expect(confirmPasswordField, findsOneWidget);
 
     final confirmPasswordFocus =

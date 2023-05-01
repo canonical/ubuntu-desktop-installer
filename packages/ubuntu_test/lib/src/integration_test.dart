@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
+import 'common_finders.dart';
 import 'widget_testers.dart';
 
 // ignore_for_file: invalid_use_of_visible_for_testing_member
@@ -76,7 +77,7 @@ extension IntegrationTester on WidgetTester {
     required String? value,
   }) async {
     if (value == null) return;
-    await enterText(find.widgetWithText(TextField, label), value);
+    await enterText(find.textField(label), value);
     await pump();
   }
 

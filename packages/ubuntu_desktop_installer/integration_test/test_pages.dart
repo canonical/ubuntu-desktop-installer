@@ -413,7 +413,7 @@ Future<void> testTimezonePage(
 
   if (location != null) {
     await tester.enterText(
-      find.widgetWithText(TextField, tester.lang.whereAreYouLocationLabel),
+      find.textField(tester.lang.whereAreYouLocationLabel),
       location,
     );
     await tester.pump();
@@ -423,7 +423,7 @@ Future<void> testTimezonePage(
 
   if (timezone != null) {
     await tester.enterText(
-      find.widgetWithText(TextField, tester.lang.whereAreYouTimezoneLabel),
+      find.textField(tester.lang.whereAreYouTimezoneLabel),
       timezone,
     );
     await tester.pump();

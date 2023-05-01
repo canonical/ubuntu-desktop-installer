@@ -12,6 +12,7 @@ import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_page.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../test_utils.dart';
@@ -99,11 +100,11 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final textField = find.widgetWithText(TextField, tester.lang.typeToTest);
+    final textField = find.textField(tester.lang.typeToTest);
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'foo bar');
     await tester.pump();
-    expect(find.widgetWithText(TextField, 'foo bar'), findsOneWidget);
+    expect(find.textField('foo bar'), findsOneWidget);
   });
 
   testWidgets('detect keyboard layout', (tester) async {
