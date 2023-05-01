@@ -16,6 +16,7 @@ import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -185,10 +186,9 @@ void main() {
     verify(model.init()).called(1);
     verifyNever(model.cleanup());
 
-    final continueButton =
-        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
-    expect(continueButton, findsOneWidget);
-    await tester.tap(continueButton);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
+    await tester.tap(nextButton);
     await tester.pumpAndSettle();
 
     verifyNever(model.init());
@@ -276,10 +276,9 @@ void main() {
     verify(model.init()).called(1);
     verifyNever(model.cleanup());
 
-    final continueButton =
-        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
-    expect(continueButton, findsOneWidget);
-    await tester.tap(continueButton);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
+    await tester.tap(nextButton);
     await tester.pumpAndSettle();
 
     verify(model.markConfigured()).called(1);

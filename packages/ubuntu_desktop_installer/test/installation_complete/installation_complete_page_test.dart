@@ -8,6 +8,7 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';
@@ -47,8 +48,7 @@ void main() {
     final model = MockInstallationCompleteModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton =
-        find.widgetWithText(OutlinedButton, tester.lang.continueTesting);
+    final continueButton = find.button(tester.lang.continueTesting);
     expect(continueButton, findsOneWidget);
 
     final windowClosed = YaruTestWindow.waitForClosed();

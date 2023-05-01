@@ -9,6 +9,7 @@ import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 
 import '../test_utils.dart';
 import 'timezone_page_test.mocks.dart';
@@ -68,11 +69,8 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    await tester.tap(continueButton);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    await tester.tap(nextButton);
     verify(model.save(null)).called(1);
   });
 
@@ -289,17 +287,14 @@ void main() {
     expect(controller, isNotNull);
   });
 
-  testWidgets('back button is disabled', (tester) async {
+  testWidgets('previous button is disabled', (tester) async {
     final model = buildModel();
     final controller = buildController();
     await tester
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
-    final backButton = find.widgetWithText(
-      OutlinedButton,
-      tester.ulang.previousLabel,
-    );
-    expect(backButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(backButton).enabled, isFalse);
+    final previousButton = find.button(tester.ulang.previousLabel);
+    expect(previousButton, findsOneWidget);
+    expect(tester.widget<ButtonStyleButton>(previousButton).enabled, isFalse);
   });
 }

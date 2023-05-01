@@ -147,11 +147,10 @@ void main() {
   testWidgets('should continue to next page', (tester) async {
     await setUpApp(tester);
 
-    final continueButton =
-        find.widgetWithText(FilledButton, tester.ulang.nextLabel);
-    expect(continueButton, findsOneWidget);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
 
-    await tester.tap(continueButton);
+    await tester.tap(nextButton);
     await tester.pumpAndSettle();
 
     expect(find.byType(LocalePage), findsNothing);

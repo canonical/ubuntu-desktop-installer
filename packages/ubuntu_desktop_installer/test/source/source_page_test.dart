@@ -10,6 +10,7 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -185,12 +186,9 @@ void main() {
     final model = buildModel(sourceId: kNormalSourceId);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(continueButton, findsOneWidget);
-    await tester.tap(continueButton);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
+    await tester.tap(nextButton);
     await tester.pumpAndSettle();
 
     verify(model.save()).called(1);

@@ -64,22 +64,16 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isTrue);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isTrue);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(tester.widget<ButtonStyleButton>(continueButton).enabled, isFalse);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
   });
 
   testWidgets('show security key', (tester) async {
@@ -98,13 +92,10 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.widgetWithText(
-      FilledButton,
-      tester.ulang.nextLabel,
-    );
-    expect(continueButton, findsOneWidget);
+    final nextButton = find.button(tester.ulang.nextLabel);
+    expect(nextButton, findsOneWidget);
 
-    await tester.tap(continueButton);
+    await tester.tap(nextButton);
     verify(model.saveSecurityKey()).called(1);
   });
 
