@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_model.dart';
@@ -63,7 +64,7 @@ void main() {
     final model = buildModel(mountLocation: '/foo');
     await tester.pumpWidget(buildApp(model));
 
-    final textField = find.widgetWithText(TextField, '/foo');
+    final textField = find.textField('/foo');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, '/foo/bar');
     await tester.pump();
@@ -74,7 +75,7 @@ void main() {
     final model = buildModel(mountOption: '--foo');
     await tester.pumpWidget(buildApp(model));
 
-    final textField = find.widgetWithText(TextField, '--foo');
+    final textField = find.textField('--foo');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, '--bar');
     await tester.pump();

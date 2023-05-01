@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:ubuntu_test/utils.dart';
 
 import 'package:ubuntu_wizard/widgets.dart';
 
@@ -93,11 +94,11 @@ void main() {
     }
 
     await tester.pumpWidget(buildValidatedFormField(initialValue: null));
-    expect(find.widgetWithText(TextField, 'initial'), findsOneWidget);
+    expect(find.textField('initial'), findsOneWidget);
     expect(controller.text, equals('initial'));
 
     await tester.pumpWidget(buildValidatedFormField(initialValue: 'rebuild'));
-    expect(find.widgetWithText(TextField, 'rebuild'), findsOneWidget);
+    expect(find.textField('rebuild'), findsOneWidget);
     expect(controller.text, equals('rebuild'));
   });
 

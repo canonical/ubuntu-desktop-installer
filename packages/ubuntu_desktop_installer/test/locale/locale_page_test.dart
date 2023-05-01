@@ -11,11 +11,11 @@ import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_page.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import '../test_utils.dart';
 import 'locale_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
@@ -121,12 +121,7 @@ void main() {
     final languageList = find.byType(ListWidget);
     expect(languageList, findsOneWidget);
 
-    final keySearch = find.byType(KeySearch);
-    expect(keySearch, findsOneWidget);
-
-    final focusNode = tester.widget<KeySearch>(keySearch).focusNode;
-    expect(focusNode, isNotNull);
-    expect(focusNode!.hasFocus, isTrue);
+    expect(find.byType(KeySearch), hasFocus);
 
     // french
     await tester.sendKeyEvent(LogicalKeyboardKey.keyF);

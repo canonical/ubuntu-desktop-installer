@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/storage_size_dialog.dart';
 import 'package:ubuntu_desktop_installer/widgets/storage_size_box.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -31,12 +32,7 @@ void main() {
 
     expect(find.byType(StorageSizeBox), findsOneWidget);
     expect(find.byType(EditableText), findsOneWidget);
-    expect(
-        tester
-            .widget<EditableText>(find.byType(EditableText))
-            .focusNode
-            .hasFocus,
-        isTrue);
+    expect(find.byType(EditableText), hasFocus);
 
     await tester.enterText(find.byType(StorageSizeBox), '150');
     await tester.pump();

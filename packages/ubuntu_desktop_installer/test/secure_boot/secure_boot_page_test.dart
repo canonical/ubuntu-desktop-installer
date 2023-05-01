@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_page.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -53,8 +54,8 @@ void main() {
 
     final fields = find.widgetWithText(ValidatedFormField, 'key');
     expect(fields, findsNWidgets(2));
-    expect(tester.widget<ValidatedFormField>(fields.first).enabled, isTrue);
-    expect(tester.widget<ValidatedFormField>(fields.last).enabled, isTrue);
+    expect(fields.first, isEnabled);
+    expect(fields.last, isEnabled);
 
     final radios = find.byType(YaruRadioButton<SecureBootMode>);
     expect(radios, findsNWidgets(2));

@@ -69,17 +69,6 @@ extension IntegrationTester on WidgetTester {
     await pump();
   }
 
-  /// Enters a text [value] into a form field specified by its [label], or does
-  /// nothing if [value] is `null`.
-  Future<void> enterTextValue({
-    required String label,
-    required String? value,
-  }) async {
-    if (value == null) return;
-    await enterText(find.widgetWithText(TextField, label), value);
-    await pump();
-  }
-
   /// Toggles a checkbox specified by its [label] to ensure the given [value],
   /// or does nothing if [value] is `null`.
   Future<void> toggleCheckbox({
