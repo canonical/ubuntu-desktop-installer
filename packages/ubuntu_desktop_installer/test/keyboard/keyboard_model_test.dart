@@ -166,7 +166,8 @@ void main() {
 
     test('selection updates input source', () async {
       await model.selectLayout(0);
-      verify(client.setInputSource(const KeyboardSetting(layout: 'bar'), user: 'usr'))
+      verify(client.setInputSource(const KeyboardSetting(layout: 'bar'),
+              user: 'usr'))
           .called(1);
 
       await model.selectLayout(1);
@@ -236,7 +237,8 @@ void main() {
     reset(client);
 
     await model.save();
-    verify(client.setKeyboard(const KeyboardSetting(layout: 'foo', variant: 'qux')))
+    verify(client
+            .setKeyboard(const KeyboardSetting(layout: 'foo', variant: 'qux')))
         .called(1);
   });
 

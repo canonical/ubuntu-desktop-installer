@@ -37,7 +37,8 @@ void main() {
         child: Wizard(
           routes: <String, WizardRoute>{
             Routes.locale: WizardRoute(builder: (_) => const LocalePage()),
-            Routes.welcome: WizardRoute(builder: (_) => const Text(Routes.welcome)),
+            Routes.welcome:
+                WizardRoute(builder: (_) => const Text(Routes.welcome)),
           },
         ),
       ),
@@ -70,7 +71,8 @@ void main() {
     expect(listItems.evaluate().length, lessThan(app.supportedLocales.length));
     for (final language in ['English', 'Français', 'Galego', 'Italiano']) {
       final listItem = find.listTile(language, skipOffstage: false);
-      await tester.dragUntilVisible(listItem, languageList, const Offset(0, -10));
+      await tester.dragUntilVisible(
+          listItem, languageList, const Offset(0, -10));
       await tester.pumpAndSettle();
       expect(listItem, findsOneWidget);
     }

@@ -161,7 +161,8 @@ void main() {
     await tester.ensureVisible(item);
     await tester.tapAt(tester.getTopLeft(item));
     await tester.pump();
-    verify(controller.selectTimezone(const GeoLocation(timezone: 'b'))).called(1);
+    verify(controller.selectTimezone(const GeoLocation(timezone: 'b')))
+        .called(1);
   });
 
   testWidgets('select coordinates', (tester) async {
@@ -265,8 +266,8 @@ void main() {
 
   testWidgets('creates a model and controller', (tester) async {
     final client = MockSubiquityClient();
-    when(client.getTimezone())
-        .thenAnswer((_) async => const TimeZoneInfo(timezone: '', fromGeoip: false));
+    when(client.getTimezone()).thenAnswer(
+        (_) async => const TimeZoneInfo(timezone: '', fromGeoip: false));
     registerMockService<SubiquityClient>(client);
 
     final service = MockGeoService();

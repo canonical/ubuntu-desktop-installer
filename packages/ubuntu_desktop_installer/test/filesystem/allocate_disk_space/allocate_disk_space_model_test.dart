@@ -176,12 +176,13 @@ void main() {
     expect(PartitionFormat.values.contains(PartitionFormat.ext4), isTrue);
     expect(PartitionFormat.fromPartition(const Partition(format: 'ext4')),
         equals(PartitionFormat.ext4));
-    expect(PartitionFormat.fromPartition(const Partition(format: 'unknown')), isNull);
+    expect(PartitionFormat.fromPartition(const Partition(format: 'unknown')),
+        isNull);
   });
 
   test('can add/remove/edit/wipe/reformat', () async {
-    final emptyDisk =
-        fakeDisk(partitions: [const Gap(offset: 0, size: 1, usable: GapUsable.YES)]);
+    final emptyDisk = fakeDisk(
+        partitions: [const Gap(offset: 0, size: 1, usable: GapUsable.YES)]);
     final fullDisk = fakeDisk();
     final normalDisk = emptyDisk.copyWith(partitions: [const Partition()]);
     final formattedPartition =
@@ -333,8 +334,8 @@ void main() {
             const Gap(offset: 123, size: 456, usable: GapUsable.YES),
             const Partition(size: 123, format: 'ext4', mount: '/tst')))
         .thenAnswer((_) async => [testPartitions(2)]);
-    await model.addPartition(
-        model.selectedDisk!, const Gap(offset: 123, size: 456, usable: GapUsable.YES),
+    await model.addPartition(model.selectedDisk!,
+        const Gap(offset: 123, size: 456, usable: GapUsable.YES),
         size: 123, format: PartitionFormat.ext4, mount: '/tst');
     expect(model.selectedDiskIndex, equals(0));
     expect(model.selectedObjectIndex, equals(1));

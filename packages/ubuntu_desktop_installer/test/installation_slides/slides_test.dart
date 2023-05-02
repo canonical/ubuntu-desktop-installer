@@ -19,7 +19,8 @@ void main() {
     slide1(_) => const Text('slide1');
     slide2(_) => const Text('slide2');
 
-    final widget = SlidesContext(slides: [slide1, slide2], child: const Text('page'));
+    final widget =
+        SlidesContext(slides: [slide1, slide2], child: const Text('page'));
     await tester.pumpWidget(MaterialApp(home: widget));
 
     final context = tester.element(find.text('page'));

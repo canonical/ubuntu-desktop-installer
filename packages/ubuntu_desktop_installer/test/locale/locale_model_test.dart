@@ -44,8 +44,8 @@ void main() {
 
     // falls back to the base locale (en_US)
     model.selectLocale(const Locale('foo'));
-    expect(
-        model.locale(model.selectedLanguageIndex), equals(const Locale('en', 'US')));
+    expect(model.locale(model.selectedLanguageIndex),
+        equals(const Locale('en', 'US')));
 
     final firstLocale = model.locale(0);
     final lastLocale = model.locale(model.languageCount - 1);
