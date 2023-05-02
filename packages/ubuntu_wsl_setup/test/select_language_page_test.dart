@@ -17,8 +17,6 @@ import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 import 'select_language_page_test.mocks.dart';
 import 'test_utils.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([SelectLanguageModel])
 void main() {
   LangTester.type = SelectLanguagePage;
@@ -27,16 +25,16 @@ void main() {
     final model = MockSelectLanguageModel();
     when(model.languageCount).thenReturn(3);
     when(model.language(0)).thenReturn('English');
-    when(model.locale(0)).thenReturn(Locale('en_US'));
-    when(model.uiLocale(0)).thenReturn(Locale('en_US'));
+    when(model.locale(0)).thenReturn(const Locale('en_US'));
+    when(model.uiLocale(0)).thenReturn(const Locale('en_US'));
     when(model.language(1)).thenReturn('French');
-    when(model.locale(1)).thenReturn(Locale('fr_FR'));
-    when(model.uiLocale(1)).thenReturn(Locale('fr_FR'));
+    when(model.locale(1)).thenReturn(const Locale('fr_FR'));
+    when(model.uiLocale(1)).thenReturn(const Locale('fr_FR'));
     when(model.language(2)).thenReturn('German');
-    when(model.locale(2)).thenReturn(Locale('de_DE'));
-    when(model.uiLocale(2)).thenReturn(Locale('de_DE'));
+    when(model.locale(2)).thenReturn(const Locale('de_DE'));
+    when(model.uiLocale(2)).thenReturn(const Locale('de_DE'));
     when(model.selectedLanguageIndex).thenReturn(1);
-    when(model.getServerLocale()).thenAnswer((_) async => Locale('fr', 'FR'));
+    when(model.getServerLocale()).thenAnswer((_) async => const Locale('fr', 'FR'));
     when(model.installLanguagePacks).thenReturn(true);
     return model;
   }
@@ -46,7 +44,7 @@ void main() {
       providers: [
         ChangeNotifierProvider<SelectLanguageModel>.value(value: model),
       ],
-      child: InheritedLocale(value: locale, child: SelectLanguagePage()),
+      child: InheritedLocale(value: locale, child: const SelectLanguagePage()),
     );
   }
 
@@ -67,10 +65,10 @@ void main() {
 
   testWidgets('select and apply locale', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(buildApp(tester, model, Locale('fr_FR')));
+    await tester.pumpWidget(buildApp(tester, model, const Locale('fr_FR')));
 
     verify(model.loadLanguages()).called(1);
-    verify(model.selectLocale(Locale('fr_FR'))).called(1);
+    verify(model.selectLocale(const Locale('fr_FR'))).called(1);
 
     final listTile = find.listTile('German');
     expect(listTile, findsOneWidget);
@@ -78,29 +76,29 @@ void main() {
     verify(model.selectedLanguageIndex = 2).called(1);
 
     final context = tester.element(find.byType(SelectLanguagePage));
-    expect(InheritedLocale.of(context), Locale('de_DE'));
+    expect(InheritedLocale.of(context), const Locale('de_DE'));
   });
 
   testWidgets('load and apply locale', (tester) async {
     final model = buildModel();
-    await tester.pumpWidget(buildApp(tester, model, Locale('fr_FR')));
+    await tester.pumpWidget(buildApp(tester, model, const Locale('fr_FR')));
 
     verify(model.loadLanguages()).called(1);
     verifyNever(model.getServerLocale());
-    verify(model.selectLocale(Locale('fr_FR'))).called(1);
+    verify(model.selectLocale(const Locale('fr_FR'))).called(1);
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
 
     await tester.tap(nextButton);
-    verify(model.applyLocale(Locale('fr_FR'))).called(1);
+    verify(model.applyLocale(const Locale('fr_FR'))).called(1);
   });
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
     when(client.wslSetupOptions()).thenAnswer(
-      (_) async => WSLSetupOptions(installLanguageSupportPackages: true),
+      (_) async => const WSLSetupOptions(installLanguageSupportPackages: true),
     );
     registerMockService<SubiquityClient>(client);
     registerService(LanguageFallbackService.linux);

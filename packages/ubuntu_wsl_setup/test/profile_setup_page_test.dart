@@ -17,8 +17,6 @@ import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_page.dart';
 import 'profile_setup_page_test.mocks.dart';
 import 'test_utils.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([ProfileSetupModel, UrlLauncher])
 void main() {
   LangTester.type = ProfileSetupPage;
@@ -49,13 +47,13 @@ void main() {
   Widget buildPage(ProfileSetupModel model) {
     return ChangeNotifierProvider<ProfileSetupModel>.value(
       value: model,
-      child: ProfileSetupPage(),
+      child: const ProfileSetupPage(),
     );
   }
 
   Widget buildApp(WidgetTester tester, ProfileSetupModel model) {
     tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
+    tester.binding.window.physicalSizeTestValue = const Size(960, 680);
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
@@ -227,7 +225,7 @@ void main() {
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.getIdentity()).thenAnswer((_) async => IdentityData());
+    when(client.getIdentity()).thenAnswer((_) async => const IdentityData());
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(MaterialApp(

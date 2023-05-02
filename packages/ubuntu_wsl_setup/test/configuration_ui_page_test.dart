@@ -15,8 +15,6 @@ import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_page.da
 import 'configuration_ui_page_test.mocks.dart';
 import 'test_utils.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([ConfigurationUIModel])
 void main() {
   LangTester.type = ConfigurationUIPage;
@@ -42,13 +40,13 @@ void main() {
   Widget buildPage(ConfigurationUIModel model) {
     return ChangeNotifierProvider<ConfigurationUIModel>.value(
       value: model,
-      child: ConfigurationUIPage(),
+      child: const ConfigurationUIPage(),
     );
   }
 
   Widget buildApp(WidgetTester tester, ConfigurationUIModel model) {
     tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
+    tester.binding.window.physicalSizeTestValue = const Size(960, 680);
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       home: Wizard(
@@ -141,7 +139,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.wslConfigurationAdvanced())
-        .thenAnswer((_) async => WSLConfigurationAdvanced());
+        .thenAnswer((_) async => const WSLConfigurationAdvanced());
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(MaterialApp(

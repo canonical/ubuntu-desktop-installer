@@ -22,7 +22,6 @@ import 'package:ubuntu_wsl_setup/services/journal.dart';
 import 'installation_slides_page_test.mocks.dart';
 import 'test_utils.dart';
 
-// ignore_for_file: type=lint
 const theEnd = 'The end';
 const title = 'A title';
 const lorem = 'Lorem ipsum';
@@ -62,13 +61,14 @@ void main() {
     final provider = SlidesProvider(slides);
     return ChangeNotifierProvider<InstallationSlidesModel>.value(
       value: model,
-      child: Provider.value(value: provider, child: InstallationSlidesPage()),
+      child: Provider.value(
+          value: provider, child: const InstallationSlidesPage()),
     );
   }
 
   Widget buildApp(Widget Function(BuildContext) builder) {
     return Provider<AppModel>(
-      create: (_) => AppModel(),
+      create: (_) => const AppModel(),
       child: MaterialApp(
         localizationsDelegates: localizationsDelegates,
         home: Wizard(routes: {
@@ -77,8 +77,8 @@ void main() {
             onNext: (settings) => '/end',
           ),
           '/end': WizardRoute(
-            builder: (_) => Center(
-              child: const Text(theEnd),
+            builder: (_) => const Center(
+              child: Text(theEnd),
             ),
             onNext: (settings) => '/end',
           ),
@@ -148,11 +148,12 @@ void main() {
   testWidgets('creates a model', (tester) async {
     tester.binding.window.devicePixelRatioTestValue = 1.0;
     final journal = MockJournalService();
-    when(journal.stream).thenAnswer((realInvocation) => Stream<String>.empty());
+    when(journal.stream)
+        .thenAnswer((realInvocation) => const Stream<String>.empty());
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.status).thenAnswer((realInvocation) => null);
     when(monitor.onStatusChanged).thenAnswer(
-      (realInvocation) => Stream.empty(),
+      (realInvocation) => const Stream.empty(),
     );
     registerMockService<JournalService>(journal);
     registerMockService<SubiquityStatusMonitor>(monitor);
@@ -174,7 +175,7 @@ void main() {
       );
       final monitor = MockSubiquityStatusMonitor();
       when(monitor.status).thenAnswer((_) => null);
-      when(monitor.onStatusChanged).thenAnswer((_) => Stream.empty());
+      when(monitor.onStatusChanged).thenAnswer((_) => const Stream.empty());
       registerMockService<JournalService>(journal);
       registerMockService<SubiquityStatusMonitor>(monitor);
 
@@ -201,7 +202,7 @@ void main() {
       );
       final monitor = MockSubiquityStatusMonitor();
       when(monitor.status).thenAnswer((_) => null);
-      when(monitor.onStatusChanged).thenAnswer((_) => Stream.empty());
+      when(monitor.onStatusChanged).thenAnswer((_) => const Stream.empty());
       registerMockService<JournalService>(journal);
       registerMockService<SubiquityStatusMonitor>(monitor);
       await tester.pumpWidget(buildApp(InstallationSlidesPage.create));
