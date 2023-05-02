@@ -81,8 +81,8 @@ void main() {
 
     final fields = find.byType(ValidatedFormField);
     expect(fields, findsNWidgets(2));
-    expect(tester.widget<ValidatedFormField>(fields.first).enabled, isFalse);
-    expect(tester.widget<ValidatedFormField>(fields.last).enabled, isFalse);
+    expect(fields.first, isDisabled);
+    expect(fields.last, isDisabled);
   });
 
   testWidgets('empty security key', (tester) async {
@@ -110,15 +110,13 @@ void main() {
     final model = buildModel(isFormValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isTrue);
+    expect(find.button(tester.ulang.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isFormValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
+    expect(find.button(tester.ulang.nextLabel), isDisabled);
   });
 }

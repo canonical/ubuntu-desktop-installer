@@ -141,7 +141,7 @@ void main() {
         tester.buildApp((_) => buildPage(model: model, ethernet: false)));
     await tester.pumpAndSettle();
 
-    final button = find.widgetWithText(OutlinedButton, tester.lang.enableWired);
+    final button = find.button(tester.lang.enableWired);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(model.connectMode, ConnectMode.ethernet);
@@ -153,7 +153,7 @@ void main() {
         tester.buildApp((_) => buildPage(model: model, wifi: false)));
     await tester.pumpAndSettle();
 
-    final button = find.widgetWithText(OutlinedButton, tester.lang.enableWifi);
+    final button = find.button(tester.lang.enableWifi);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(model.connectMode, ConnectMode.wifi);

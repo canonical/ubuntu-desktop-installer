@@ -108,20 +108,18 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(buildApp(model));
 
-    final setupButton =
-        find.widgetWithText(ElevatedButton, tester.lang.setupButton);
+    final setupButton = find.button(tester.lang.setupButton);
     expect(setupButton, findsOneWidget);
-    expect(tester.widget<ElevatedButton>(setupButton).enabled, isTrue);
+    expect(setupButton, isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(buildApp(model));
 
-    final setupButton =
-        find.widgetWithText(ElevatedButton, tester.lang.setupButton);
+    final setupButton = find.button(tester.lang.setupButton);
     expect(setupButton, findsOneWidget);
-    expect(tester.widget<ElevatedButton>(setupButton).enabled, isFalse);
+    expect(setupButton, isDisabled);
   });
 
   testWidgets('loads and saves advanced setup', (tester) async {
@@ -131,8 +129,7 @@ void main() {
     verify(model.loadAdvancedSetup()).called(1);
     verifyNever(model.saveAdvancedSetup());
 
-    final setupButton =
-        find.widgetWithText(ElevatedButton, tester.lang.setupButton);
+    final setupButton = find.button(tester.lang.setupButton);
     expect(setupButton, findsOneWidget);
 
     await tester.tap(setupButton);

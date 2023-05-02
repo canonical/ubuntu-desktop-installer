@@ -29,10 +29,7 @@ void main() {
       ),
     );
 
-    final restartButton = find.widgetWithText(
-      FilledButton,
-      tester.lang.restartIntoWindows,
-    );
+    final restartButton = find.button(tester.lang.restartIntoWindows);
     expect(restartButton, findsOneWidget);
 
     final windowClosed = YaruTestWindow.waitForClosed();
