@@ -29,7 +29,6 @@ extension UbuntuCommonFinders on CommonFinders {
       matching: any([
         bySubtype<ButtonStyleButton>(),
         bySubtype<IconButton>(),
-        bySubtype<YaruIconButton>(),
       ]),
     );
   }
