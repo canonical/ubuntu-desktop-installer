@@ -44,8 +44,8 @@ void main() {
 
     // falls back to the base locale (en_US)
     model.selectLocale(const Locale('foo'));
-    expect(
-        model.locale(model.selectedLanguageIndex), equals(const Locale('en', 'US')));
+    expect(model.locale(model.selectedLanguageIndex),
+        equals(const Locale('en', 'US')));
 
     final firstLocale = model.locale(0);
     final lastLocale = model.locale(model.languageCount - 1);
@@ -59,7 +59,8 @@ void main() {
     final client = MockSubiquityClient();
     when(client.getLocale()).thenAnswer((_) async => 'fr_FR.UTF-8');
 
-    final model = SelectLanguageModel(client, const LanguageFallbackService({}));
+    final model =
+        SelectLanguageModel(client, const LanguageFallbackService({}));
     final locale = await model.getServerLocale();
     verify(client.getLocale()).called(1);
     expect(locale, equals(const Locale('fr', 'FR')));
@@ -67,7 +68,8 @@ void main() {
 
   test('set locale', () {
     final client = MockSubiquityClient();
-    final model = SelectLanguageModel(client, const LanguageFallbackService({}));
+    final model =
+        SelectLanguageModel(client, const LanguageFallbackService({}));
     model.applyLocale(const Locale('fr', 'CA'));
     verify(client.setLocale('fr_CA.UTF-8')).called(1);
   });
@@ -119,7 +121,8 @@ void main() {
       (_) async => const WSLSetupOptions(installLanguageSupportPackages: false),
     );
 
-    final model = SelectLanguageModel(client, const LanguageFallbackService({}));
+    final model =
+        SelectLanguageModel(client, const LanguageFallbackService({}));
     await model.getInstallLanguagePacks();
     verify(client.wslSetupOptions()).called(1);
     expect(model.installLanguagePacks, isFalse);
@@ -127,7 +130,8 @@ void main() {
 
   test('set install lang packs option', () {
     final client = MockSubiquityClient();
-    final model = SelectLanguageModel(client, const LanguageFallbackService({}));
+    final model =
+        SelectLanguageModel(client, const LanguageFallbackService({}));
     model.setInstallLanguagePacks(false);
     model.applyInstallLanguagePacks();
     verify(client.setWslSetupOptions(

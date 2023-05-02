@@ -34,7 +34,8 @@ void main() {
     when(model.locale(2)).thenReturn(const Locale('de_DE'));
     when(model.uiLocale(2)).thenReturn(const Locale('de_DE'));
     when(model.selectedLanguageIndex).thenReturn(1);
-    when(model.getServerLocale()).thenAnswer((_) async => const Locale('fr', 'FR'));
+    when(model.getServerLocale())
+        .thenAnswer((_) async => const Locale('fr', 'FR'));
     when(model.installLanguagePacks).thenReturn(true);
     return model;
   }
