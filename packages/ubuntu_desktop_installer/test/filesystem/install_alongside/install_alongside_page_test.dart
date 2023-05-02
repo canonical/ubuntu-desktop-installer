@@ -14,7 +14,7 @@ import 'package:ubuntu_desktop_installer/services/product_service.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
-import '../test_utils.dart';
+import '../../test_utils.dart';
 import 'install_alongside_model_test.dart';
 import 'install_alongside_model_test.mocks.dart';
 import 'install_alongside_page_test.mocks.dart';

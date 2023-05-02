@@ -10,7 +10,7 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/inst
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 
-import '../test_utils.dart';
+import '../../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
