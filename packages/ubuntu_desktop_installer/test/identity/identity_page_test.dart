@@ -204,16 +204,14 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isTrue);
+    expect(find.button(tester.ulang.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
+    expect(find.button(tester.ulang.nextLabel), isDisabled);
   });
 
   testWidgets('auto-login', (tester) async {

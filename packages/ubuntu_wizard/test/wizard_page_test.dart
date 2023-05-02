@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/widgets.dart';
 
@@ -87,9 +88,9 @@ void main() {
         ),
       ),
     );
-    expect(find.widgetWithText(FilledButton, 'normal'), findsOneWidget);
-    expect(find.widgetWithText(OutlinedButton, 'flat'), findsOneWidget);
-    expect(find.widgetWithText(ElevatedButton, 'highlighted'), findsOneWidget);
+    expect(find.button('normal'), findsOneWidget);
+    expect(find.button('flat'), findsOneWidget);
+    expect(find.button('highlighted'), findsOneWidget);
   });
 
   testWidgets('disabled action', (tester) async {

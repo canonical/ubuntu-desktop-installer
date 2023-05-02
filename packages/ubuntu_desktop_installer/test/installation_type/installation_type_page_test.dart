@@ -328,9 +328,7 @@ void main() {
     await tester.tap(radio);
     verify(model.installationType = InstallationType.manual).called(1);
 
-    final button = find.widgetWithText(
-        OutlinedButton, tester.lang.installationTypeAdvancedLabel);
-    expect(tester.widget<ButtonStyleButton>(button).enabled, false);
+    expect(find.button(tester.lang.installationTypeAdvancedLabel), isDisabled);
   });
 
   group('advanced features', () {
@@ -338,8 +336,7 @@ void main() {
       final model = buildModel();
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-      final button = find.widgetWithText(
-          OutlinedButton, tester.lang.installationTypeAdvancedLabel);
+      final button = find.button(tester.lang.installationTypeAdvancedLabel);
       expect(button, findsOneWidget);
       await tester.tap(button);
       await tester.pumpAndSettle();
@@ -379,7 +376,7 @@ void main() {
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, false);
+    expect(nextButton, isDisabled);
 
     await tester.tap(nextButton);
     verifyNever(model.save());

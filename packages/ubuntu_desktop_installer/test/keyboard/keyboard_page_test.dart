@@ -111,8 +111,7 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final detectButton =
-        find.widgetWithText(OutlinedButton, tester.lang.detectButtonText);
+    final detectButton = find.button(tester.lang.detectButtonText);
     expect(detectButton, findsOneWidget);
     await tester.tap(detectButton);
     await tester.pumpAndSettle();
@@ -133,7 +132,7 @@ void main() {
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isTrue);
+    expect(nextButton, isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
@@ -142,7 +141,7 @@ void main() {
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
+    expect(nextButton, isDisabled);
   });
 
   testWidgets('key search', (tester) async {

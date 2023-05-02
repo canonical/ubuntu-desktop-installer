@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_selector.dart';
+import 'package:ubuntu_test/utils.dart';
 
 // ignore_for_file: type=lint
 
@@ -82,12 +83,12 @@ void main() {
       of: find.byKey(ValueKey(1)),
       matching: find.byType(MenuItemButton),
     );
-    expect(tester.widget<MenuItemButton>(menuItem1).enabled, isFalse);
+    expect(menuItem1, isDisabled);
 
     final menuItem2 = find.ancestor(
       of: find.byKey(ValueKey(2)),
       matching: find.byType(MenuItemButton),
     );
-    expect(tester.widget<MenuItemButton>(menuItem2).enabled, isTrue);
+    expect(menuItem2, isEnabled);
   });
 }

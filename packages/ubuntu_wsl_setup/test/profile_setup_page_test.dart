@@ -167,7 +167,7 @@ void main() {
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isTrue);
+    expect(nextButton, isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
@@ -176,7 +176,7 @@ void main() {
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
+    expect(nextButton, isDisabled);
   });
 
   // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).

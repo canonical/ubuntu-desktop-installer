@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -41,8 +42,7 @@ void main() {
         YaruCheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
-    await tester
-        .tap(find.widgetWithText(OutlinedButton, tester.lang.okButtonText));
+    await tester.tap(find.button(tester.lang.okButtonText));
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.zfs).called(1);

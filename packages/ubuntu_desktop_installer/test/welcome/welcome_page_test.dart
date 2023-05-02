@@ -108,7 +108,7 @@ void main() {
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, false);
+    expect(nextButton, isDisabled);
 
     final options = find.byType(OptionButton);
     expect(options, findsWidgets);
@@ -116,8 +116,7 @@ void main() {
     await tester.tap(options.first);
     await tester.pump();
 
-    expect((nextButton.evaluate().single.widget as ButtonStyleButton).enabled,
-        true);
+    expect(nextButton, isEnabled);
   });
 
   testWidgets('install ubuntu', (tester) async {
@@ -145,7 +144,7 @@ void main() {
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
+    expect(nextButton, isDisabled);
 
     final option =
         find.widgetWithText(OptionButton, tester.lang.tryUbuntu('Ubuntu'));
@@ -154,7 +153,7 @@ void main() {
     await tester.tap(option);
     await tester.pump();
 
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isTrue);
+    expect(nextButton, isEnabled);
 
     final windowClosed = YaruTestWindow.waitForClosed();
 

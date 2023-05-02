@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_view.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -74,7 +75,7 @@ void main() {
     expect(find.text(tester.lang.wiredDisabled), findsOneWidget);
     expect(find.text(tester.lang.wiredMustBeEnabled), findsOneWidget);
 
-    final button = find.widgetWithText(OutlinedButton, tester.lang.enableWired);
+    final button = find.button(tester.lang.enableWired);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(wasEnabled, isTrue);

@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/al
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -92,8 +93,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst foo');
     await tester.pump();
 
-    final button = find.pushButton(tester.lang.okButtonText);
-    expect(tester.widget<ButtonStyleButton>(button.first).enabled, isFalse);
+    expect(find.pushButton(tester.lang.okButtonText), isDisabled);
   });
 
   testWidgets('edit partition', (tester) async {
@@ -204,7 +204,6 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), 'tst');
     await tester.pump();
 
-    final button = find.pushButton(tester.lang.okButtonText);
-    expect(tester.widget<ButtonStyleButton>(button.first).enabled, isFalse);
+    expect(find.pushButton(tester.lang.okButtonText), isDisabled);
   });
 }

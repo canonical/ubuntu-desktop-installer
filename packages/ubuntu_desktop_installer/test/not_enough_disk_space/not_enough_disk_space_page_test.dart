@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/not_enough_disk_space/not_enough_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/not_enough_disk_space/not_enough_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';
@@ -75,8 +76,7 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final button =
-        find.widgetWithText(FilledButton, tester.lang.quitButtonText);
+    final button = find.button(tester.lang.quitButtonText);
     expect(button, findsOneWidget);
 
     final windowClosed = YaruTestWindow.waitForClosed();

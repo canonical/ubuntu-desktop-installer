@@ -176,28 +176,22 @@ void main() {
       matching: find.byType(OutlinedButton),
     );
     expect(addButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(addButton).enabled, isFalse);
+    expect(addButton, isDisabled);
 
-    final editButton = find.ancestor(
-      of: find.text(tester.lang.changeButtonText),
-      matching: find.byType(OutlinedButton),
-    );
+    final editButton = find.button(tester.lang.changeButtonText);
     expect(editButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(editButton).enabled, isFalse);
+    expect(editButton, isDisabled);
 
     final removeButton = find.ancestor(
       of: find.byIcon(Icons.remove),
       matching: find.byType(OutlinedButton),
     );
     expect(removeButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(removeButton).enabled, isFalse);
+    expect(removeButton, isDisabled);
 
-    final reformatButton = find.ancestor(
-      of: find.text(tester.lang.newPartitionTable),
-      matching: find.byType(OutlinedButton),
-    );
+    final reformatButton = find.button(tester.lang.newPartitionTable);
     expect(reformatButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(reformatButton).enabled, isFalse);
+    expect(reformatButton, isDisabled);
   });
 
   testWidgets('can add', (tester) async {
@@ -209,19 +203,16 @@ void main() {
       matching: find.byType(OutlinedButton),
     );
     expect(addButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(addButton).enabled, isTrue);
+    expect(addButton, isEnabled);
   });
 
   testWidgets('can edit', (tester) async {
     final model = buildModel(disks: testDisks, canEditPartition: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final editButton = find.ancestor(
-      of: find.text(tester.lang.changeButtonText),
-      matching: find.byType(OutlinedButton),
-    );
+    final editButton = find.button(tester.lang.changeButtonText);
     expect(editButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(editButton).enabled, isTrue);
+    expect(editButton, isEnabled);
   });
 
   testWidgets('can format', (tester) async {
@@ -253,7 +244,7 @@ void main() {
       matching: find.byType(OutlinedButton),
     );
     expect(removeButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(removeButton).enabled, isTrue);
+    expect(removeButton, isEnabled);
 
     await tester.tap(removeButton);
     verify(model.deletePartition(disk, partition)).called(1);
@@ -268,12 +259,9 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final resetButton = find.ancestor(
-      of: find.text(tester.lang.newPartitionTable),
-      matching: find.byType(OutlinedButton),
-    );
+    final resetButton = find.button(tester.lang.newPartitionTable);
     expect(resetButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(resetButton).enabled, isTrue);
+    expect(resetButton, isEnabled);
 
     await tester.tap(resetButton);
     verify(model.reformatDisk(disk)).called(1);
@@ -288,12 +276,9 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final resetButton = find.ancestor(
-      of: find.text(tester.lang.newPartitionTable),
-      matching: find.byType(OutlinedButton),
-    );
+    final resetButton = find.button(tester.lang.newPartitionTable);
     expect(resetButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(resetButton).enabled, isTrue);
+    expect(resetButton, isEnabled);
 
     await tester.tap(resetButton);
     await tester.pumpAndSettle();
@@ -315,12 +300,9 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final revertButton = find.ancestor(
-      of: find.text(tester.lang.revertButtonText),
-      matching: find.byType(OutlinedButton),
-    );
+    final revertButton = find.button(tester.lang.revertButtonText);
     expect(revertButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(revertButton).enabled, isTrue);
+    expect(revertButton, isEnabled);
 
     await tester.tap(revertButton);
     verify(model.resetStorage()).called(1);
@@ -338,13 +320,13 @@ void main() {
       of: find.byKey(ValueKey(0)),
       matching: find.byType(MenuItemButton),
     );
-    expect(tester.widget<MenuItemButton>(menuItem0).enabled, isFalse);
+    expect(menuItem0, isDisabled);
 
     final menuItem1 = find.ancestor(
       of: find.byKey(ValueKey(1)),
       matching: find.byType(MenuItemButton),
     );
-    expect(tester.widget<MenuItemButton>(menuItem1).enabled, isTrue);
+    expect(menuItem1, isEnabled);
 
     await tester.ensureVisible(menuItem1);
     await tester.tap(menuItem1);
@@ -368,7 +350,7 @@ void main() {
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(nextButton).enabled, isFalse);
+    expect(nextButton, isDisabled);
   });
 
   testWidgets('too many primary partitions', (tester) async {
@@ -384,7 +366,7 @@ void main() {
       of: find.byIcon(Icons.add),
       matching: find.byType(OutlinedButton),
     );
-    expect(tester.widget<OutlinedButton>(addButton).enabled, isFalse);
+    expect(addButton, isDisabled);
     expect(
       find.ancestor(
         of: addButton,

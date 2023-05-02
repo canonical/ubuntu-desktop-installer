@@ -293,8 +293,6 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
 
-    final previousButton = find.button(tester.ulang.previousLabel);
-    expect(previousButton, findsOneWidget);
-    expect(tester.widget<ButtonStyleButton>(previousButton).enabled, isFalse);
+    expect(find.button(tester.ulang.previousLabel), isDisabled);
   });
 }

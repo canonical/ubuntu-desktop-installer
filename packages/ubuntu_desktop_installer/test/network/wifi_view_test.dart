@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -148,7 +149,7 @@ void main() {
     expect(find.text(tester.lang.wirelessNetworkingDisabled), findsOneWidget);
     expect(find.text(tester.lang.wifiMustBeEnabled), findsOneWidget);
 
-    final button = find.widgetWithText(OutlinedButton, tester.lang.enableWifi);
+    final button = find.button(tester.lang.enableWifi);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(wasEnabled, isTrue);

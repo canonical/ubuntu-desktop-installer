@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_model.dart';
@@ -110,20 +111,18 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final saveButton =
-        find.widgetWithText(ElevatedButton, tester.lang.saveButton);
+    final saveButton = find.button(tester.lang.saveButton);
     expect(saveButton, findsOneWidget);
-    expect(tester.widget<ElevatedButton>(saveButton).enabled, isTrue);
+    expect(saveButton, isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final saveButton =
-        find.widgetWithText(ElevatedButton, tester.lang.saveButton);
+    final saveButton = find.button(tester.lang.saveButton);
     expect(saveButton, findsOneWidget);
-    expect(tester.widget<ElevatedButton>(saveButton).enabled, isFalse);
+    expect(saveButton, isDisabled);
   });
 
   testWidgets('loads and saves configuration', (tester) async {
@@ -133,8 +132,7 @@ void main() {
     verify(model.loadConfiguration()).called(1);
     verifyNever(model.saveConfiguration());
 
-    final saveButton =
-        find.widgetWithText(ElevatedButton, tester.lang.saveButton);
+    final saveButton = find.button(tester.lang.saveButton);
     expect(saveButton, findsOneWidget);
     await tester.tap(saveButton);
 
