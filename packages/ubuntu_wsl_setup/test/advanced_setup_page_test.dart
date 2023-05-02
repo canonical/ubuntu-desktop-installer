@@ -15,8 +15,6 @@ import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_page.dart';
 import 'advanced_setup_page_test.mocks.dart';
 import 'test_utils.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([AdvancedSetupModel])
 void main() {
   LangTester.type = AdvancedSetupPage;
@@ -41,7 +39,7 @@ void main() {
   Widget buildPage(AdvancedSetupModel model) {
     return ChangeNotifierProvider<AdvancedSetupModel>.value(
       value: model,
-      child: AdvancedSetupPage(),
+      child: const AdvancedSetupPage(),
     );
   }
 
@@ -138,7 +136,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.wslConfigurationBase())
-        .thenAnswer((_) async => WSLConfigurationBase());
+        .thenAnswer((_) async => const WSLConfigurationBase());
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(MaterialApp(

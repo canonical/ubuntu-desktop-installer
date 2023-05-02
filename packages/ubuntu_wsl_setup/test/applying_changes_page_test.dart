@@ -15,8 +15,6 @@ import 'package:yaru_window_test/yaru_window_test.dart';
 import 'applying_changes_page_test.mocks.dart';
 import 'test_utils.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([ApplyingChangesModel])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
@@ -27,7 +25,7 @@ void main() {
   Widget buildPage(ApplyingChangesModel model) {
     return ChangeNotifierProvider<ApplyingChangesModel>.value(
       value: model,
-      child: ApplyingChangesPage(),
+      child: const ApplyingChangesPage(),
     );
   }
 
@@ -45,8 +43,8 @@ void main() {
           ),
           if (hasNext)
             '/end': WizardRoute(
-              builder: (_) => Center(
-                child: const Text(theEnd),
+              builder: (_) => const Center(
+                child: Text(theEnd),
               ),
               onNext: (settings) => '/end',
             ),
