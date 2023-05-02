@@ -6,6 +6,7 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 
 import '../test_utils.dart';
 
@@ -57,13 +58,13 @@ void main() {
 
     // b is present
     expect(find.text('b'), findsOneWidget);
-    await tester.tap(find.pushButton(tester.lang.yesButtonText));
+    await tester.tap(find.button(tester.lang.yesButtonText));
     await tester.pump();
     verify(client.getKeyboardStep('50')).called(1);
 
     // c is not present
     expect(find.text('c'), findsOneWidget);
-    await tester.tap(find.pushButton(tester.lang.noButtonText));
+    await tester.tap(find.button(tester.lang.noButtonText));
     await tester.pump();
     verify(client.getKeyboardStep('60')).called(1);
 

@@ -3,7 +3,6 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 export 'package:ubuntu_test/utils.dart' show UbuntuLangTester;
@@ -94,12 +93,5 @@ extension UbuntuFinders on CommonFinders {
     return find.byWidgetPredicate((widget) {
       return widget is Html && widget.data == html;
     });
-  }
-
-  Finder pushButton(String label) {
-    return ancestor(
-      of: find.text(label),
-      matching: find.bySubtype<PushButton>(),
-    );
   }
 }

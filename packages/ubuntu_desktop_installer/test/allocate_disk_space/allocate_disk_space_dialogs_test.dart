@@ -60,7 +60,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
-    await tester.tap(find.pushButton(tester.lang.okButtonText));
+    await tester.tap(find.button(tester.lang.okButtonText));
     await result;
 
     verify(model.addPartition(
@@ -93,7 +93,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst foo');
     await tester.pump();
 
-    expect(find.pushButton(tester.lang.okButtonText), isDisabled);
+    expect(find.button(tester.lang.okButtonText), isDisabled);
   });
 
   testWidgets('edit partition', (tester) async {
@@ -153,7 +153,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
-    await tester.tap(find.pushButton(tester.lang.okButtonText));
+    await tester.tap(find.button(tester.lang.okButtonText));
     await result;
 
     verify(model.editPartition(
@@ -204,6 +204,6 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), 'tst');
     await tester.pump();
 
-    expect(find.pushButton(tester.lang.okButtonText), isDisabled);
+    expect(find.button(tester.lang.okButtonText), isDisabled);
   });
 }
