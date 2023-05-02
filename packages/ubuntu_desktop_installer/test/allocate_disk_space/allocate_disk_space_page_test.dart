@@ -171,10 +171,7 @@ void main() {
         canReformatDisk: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final addButton = find.ancestor(
-      of: find.byIcon(Icons.add),
-      matching: find.byType(OutlinedButton),
-    );
+    final addButton = find.iconButton(Icons.add);
     expect(addButton, findsOneWidget);
     expect(addButton, isDisabled);
 
@@ -182,10 +179,7 @@ void main() {
     expect(editButton, findsOneWidget);
     expect(editButton, isDisabled);
 
-    final removeButton = find.ancestor(
-      of: find.byIcon(Icons.remove),
-      matching: find.byType(OutlinedButton),
-    );
+    final removeButton = find.iconButton(Icons.remove);
     expect(removeButton, findsOneWidget);
     expect(removeButton, isDisabled);
 
@@ -198,10 +192,7 @@ void main() {
     final model = buildModel(disks: testDisks, canAddPartition: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final addButton = find.ancestor(
-      of: find.byIcon(Icons.add),
-      matching: find.byType(OutlinedButton),
-    );
+    final addButton = find.iconButton(Icons.add);
     expect(addButton, findsOneWidget);
     expect(addButton, isEnabled);
   });
@@ -239,10 +230,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final removeButton = find.ancestor(
-      of: find.byIcon(Icons.remove),
-      matching: find.byType(OutlinedButton),
-    );
+    final removeButton = find.iconButton(Icons.remove);
     expect(removeButton, findsOneWidget);
     expect(removeButton, isEnabled);
 
@@ -362,10 +350,7 @@ void main() {
     final model = buildModel(selectedGap: unusableGap);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final addButton = find.ancestor(
-      of: find.byIcon(Icons.add),
-      matching: find.byType(OutlinedButton),
-    );
+    final addButton = find.iconButton(Icons.add);
     expect(addButton, isDisabled);
     expect(
       find.ancestor(

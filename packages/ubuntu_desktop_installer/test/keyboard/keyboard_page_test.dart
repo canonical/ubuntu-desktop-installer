@@ -72,7 +72,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     for (var i = 0; i < 3; ++i) {
-      final layoutTile = find.widgetWithText(ListTile, 'Layout $i');
+      final layoutTile = find.listTile('Layout $i');
       expect(layoutTile, findsOneWidget);
       await tester.tap(layoutTile);
       verify(model.selectLayout(i)).called(1);
@@ -88,7 +88,7 @@ void main() {
     for (var i = 0; i < 3; ++i) {
       await tester.tap(find.byType(MenuButtonBuilder<int>));
       await tester.pumpAndSettle();
-      final variantItem = find.widgetWithText(MenuItemButton, 'Variant $i');
+      final variantItem = find.menuItem('Variant $i');
       expect(variantItem, findsOneWidget);
       await tester.tap(variantItem);
       await tester.pumpAndSettle();

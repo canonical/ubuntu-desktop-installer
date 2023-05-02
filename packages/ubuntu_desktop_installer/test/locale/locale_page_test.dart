@@ -71,21 +71,15 @@ void main() {
     expect(listItems, findsWidgets);
     expect(listItems.evaluate().length, lessThan(app.supportedLocales.length));
     for (final language in ['English', 'Français', 'Galego', 'Italiano']) {
-      final listItem =
-          find.widgetWithText(ListTile, language, skipOffstage: false);
+      final listItem = find.listTile(language, skipOffstage: false);
       await tester.dragUntilVisible(listItem, languageList, Offset(0, -10));
       await tester.pumpAndSettle();
       expect(listItem, findsOneWidget);
     }
 
-    final itemItalian =
-        find.widgetWithText(ListTile, 'Italiano', skipOffstage: false);
-
-    final itemFrench =
-        find.widgetWithText(ListTile, 'Français', skipOffstage: false);
-
-    final itemGalego =
-        find.widgetWithText(ListTile, 'Galego', skipOffstage: false);
+    final itemItalian = find.listTile('Italiano', skipOffstage: false);
+    final itemFrench = find.listTile('Français', skipOffstage: false);
+    final itemGalego = find.listTile('Galego', skipOffstage: false);
 
     // scroll forward to Italian
     await tester.scrollUntilVisible(itemItalian, -kMinInteractiveDimension / 2);

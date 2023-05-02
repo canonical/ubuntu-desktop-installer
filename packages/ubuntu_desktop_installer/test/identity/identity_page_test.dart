@@ -218,8 +218,7 @@ void main() {
     final model = buildModel(autoLogin: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final requiredPasswordSwitch = find.widgetWithText(
-      YaruSwitchButton,
+    final requiredPasswordSwitch = find.switchButton(
       tester.lang.whoAreYouPageRequirePassword,
     );
     expect(requiredPasswordSwitch, findsOneWidget);
@@ -274,8 +273,7 @@ void main() {
         buildModel(isConnected: true, hasActiveDirectorySupport: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final checkbox =
-        find.widgetWithText(YaruCheckButton, tester.lang.activeDirectoryOption);
+    final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
     expect(checkbox, findsOneWidget);
     expect(tester.widget<YaruCheckButton>(checkbox).value, isFalse);
     expect(tester.widget<YaruCheckButton>(checkbox).onChanged, isNotNull);
@@ -289,8 +287,7 @@ void main() {
         buildModel(isConnected: true, hasActiveDirectorySupport: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final checkbox =
-        find.widgetWithText(YaruCheckButton, tester.lang.activeDirectoryOption);
+    final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
     expect(checkbox, findsNothing);
   });
 
@@ -299,8 +296,7 @@ void main() {
         buildModel(isConnected: false, hasActiveDirectorySupport: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final checkbox =
-        find.widgetWithText(YaruCheckButton, tester.lang.activeDirectoryOption);
+    final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
     expect(checkbox, findsOneWidget);
     expect(tester.widget<YaruCheckButton>(checkbox).value, isFalse);
     expect(tester.widget<YaruCheckButton>(checkbox).onChanged, isNull);

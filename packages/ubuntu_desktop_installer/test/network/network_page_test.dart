@@ -165,7 +165,7 @@ void main() {
         .buildApp((_) => buildPage(model: model, ethernet: false, wifi: true)));
     await tester.pumpAndSettle();
 
-    final tile = find.widgetWithText(ListTile, 'ap').first;
+    final tile = find.listTile('ap').first;
     expect(tile, findsOneWidget);
     await tester.pump();
     await tester.tap(tile);

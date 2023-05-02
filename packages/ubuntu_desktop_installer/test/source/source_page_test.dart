@@ -70,14 +70,12 @@ void main() {
     final model = buildModel(sourceId: kNormalSourceId);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final normalInstallationTile = find.widgetWithText(
-      YaruRadioButton<String>,
+    final normalInstallationTile = find.radioButton<String>(
       tester.lang.normalInstallationTitle,
     );
     expect(normalInstallationTile, findsOneWidget);
 
-    final minimalInstallationTile = find.widgetWithText(
-      YaruRadioButton<String>,
+    final minimalInstallationTile = find.radioButton<String>(
       tester.lang.minimalInstallationTitle,
     );
     expect(minimalInstallationTile, findsOneWidget);
@@ -104,8 +102,7 @@ void main() {
     final model = buildModel(installDrivers: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final installDriversTile = find.widgetWithText(
-      YaruCheckButton,
+    final installDriversTile = find.checkButton(
       tester.lang.installDriversTitle,
     );
     expect(installDriversTile, findsOneWidget);
@@ -123,8 +120,7 @@ void main() {
     final model = buildModel(installCodecs: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final installCodecsTile = find.widgetWithText(
-      YaruCheckButton,
+    final installCodecsTile = find.checkButton(
       tester.lang.installCodecsTitle,
     );
     expect(installCodecsTile, findsOneWidget);
@@ -165,10 +161,7 @@ void main() {
 
     expect(find.text(tester.lang.offlineWarning), findsNothing);
 
-    final installCodecsTile = find.widgetWithText(
-      YaruCheckButton,
-      tester.lang.installCodecsTitle,
-    );
+    final installCodecsTile = find.checkButton(tester.lang.installCodecsTitle);
     expect(installCodecsTile, findsOneWidget);
     expect(tester.widget<YaruCheckButton>(installCodecsTile).onChanged, isNull);
 

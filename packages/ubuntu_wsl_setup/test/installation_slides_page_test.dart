@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/app_model.dart';
@@ -130,7 +131,7 @@ void main() {
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byIcon(Icons.terminal));
+    await tester.tap(find.iconButton(Icons.terminal));
     verify(model.toggleLogVisibility()).called(1);
   });
 
@@ -140,7 +141,7 @@ void main() {
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byIcon(Icons.terminal));
+    await tester.tap(find.iconButton(Icons.terminal));
     verify(model.toggleLogVisibility()).called(1);
   });
 
@@ -182,11 +183,11 @@ void main() {
 
       // hidden
       expect(getLogOffsetByText(tester, lorem), equals(1.0));
-      await tester.tap(find.byIcon(Icons.terminal));
+      await tester.tap(find.iconButton(Icons.terminal));
       await tester.pump();
       // visible
       expect(getLogOffsetByText(tester, lorem), equals(0.0));
-      await tester.tap(find.byIcon(Icons.terminal));
+      await tester.tap(find.iconButton(Icons.terminal));
       await tester.pump();
       // hidden again
       expect(getLogOffsetByText(tester, lorem), equals(1.0));
@@ -208,7 +209,7 @@ void main() {
 
       final image1 = find.byType(SvgPicture);
       expect(image1, findsWidgets);
-      await tester.tap(find.byIcon(Icons.chevron_right));
+      await tester.tap(find.iconButton(Icons.chevron_right));
       await tester.pump();
       final image2 = find.byType(SvgPicture);
       expect(image1, findsWidgets);

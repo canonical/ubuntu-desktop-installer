@@ -79,7 +79,7 @@ void main() {
     );
 
     // inactive device
-    final tile1 = find.widgetWithText(ListTile, 'model1');
+    final tile1 = find.listTile('model1');
     expect(tile1, findsOneWidget);
     expect(
       find.descendant(
@@ -90,7 +90,7 @@ void main() {
     );
 
     // connecting device
-    final tile2 = find.widgetWithText(ListTile, 'model2');
+    final tile2 = find.listTile('model2');
     expect(tile2, findsOneWidget);
     expect(
       find.descendant(
@@ -101,14 +101,14 @@ void main() {
     );
 
     // select ap
-    final ap1 = find.widgetWithText(ListTile, 'ap1').first;
+    final ap1 = find.listTile('ap1').first;
     expect(ap1, findsOneWidget);
     await tester.tap(ap1);
     expect(selectedDevice, equals(device1));
     expect(selectedAccessPoint, equals(accessPoint1));
 
     // select another ap
-    final ap2 = find.widgetWithText(ListTile, 'ap2').first;
+    final ap2 = find.listTile('ap2').first;
     expect(ap2, findsOneWidget);
     await tester.tap(ap2);
     expect(selectedDevice, equals(device2));

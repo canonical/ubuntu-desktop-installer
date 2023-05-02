@@ -12,6 +12,7 @@ import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_
 import 'package:ubuntu_desktop_installer/pages/installation_slides/slide_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 
 import '../test_utils.dart';
@@ -101,7 +102,7 @@ void main() {
     expect(tester.widget<IconButton>(nextButton).onPressed, isNotNull);
 
     // go to second slide
-    await tester.tap(find.byIcon(YaruIcons.pan_end));
+    await tester.tap(find.iconButton(YaruIcons.pan_end));
     await tester.pumpAndSettle();
     expect(findsSlide('slide1'), findsNothing);
     expect(findsSlide('slide2'), findsOneWidget);
@@ -109,7 +110,7 @@ void main() {
     expect(tester.widget<IconButton>(nextButton).onPressed, isNull);
 
     // back to first slide
-    await tester.tap(find.byIcon(YaruIcons.pan_start));
+    await tester.tap(find.iconButton(YaruIcons.pan_start));
     await tester.pumpAndSettle();
     expect(findsSlide('slide1'), findsOneWidget);
     expect(findsSlide('slide2'), findsNothing);
@@ -130,7 +131,7 @@ void main() {
 
     expect(getLogOffset(tester), equals(1.0));
 
-    await tester.tap(find.byIcon(YaruIcons.terminal));
+    await tester.tap(find.iconButton(YaruIcons.terminal));
     verify(model.toggleLogVisibility()).called(1);
   });
 
@@ -141,7 +142,7 @@ void main() {
 
     expect(getLogOffset(tester), equals(0.0));
 
-    await tester.tap(find.byIcon(YaruIcons.terminal));
+    await tester.tap(find.iconButton(YaruIcons.terminal));
     verify(model.toggleLogVisibility()).called(1);
   });
 

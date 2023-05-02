@@ -9,7 +9,6 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/inst
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
@@ -124,7 +123,7 @@ void main() {
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
+    final radio = find.radioButton<InstallationType>(
         tester.lang.installationTypeReinstall('Ubuntu 18.04 LTS'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -146,7 +145,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
+    final radio = find.radioButton<InstallationType>(
         tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -169,7 +168,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
+    final radio = find.radioButton<InstallationType>(
         tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 11'));
     expect(radio, findsOneWidget);
 
@@ -192,10 +191,8 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(
-        YaruRadioButton<InstallationType>,
-        tester.lang
-            .installationTypeAlongside('Ubuntu 22.10', 'Ubuntu 18.04 LTS'));
+    final radio = find.radioButton<InstallationType>(tester.lang
+        .installationTypeAlongside('Ubuntu 22.10', 'Ubuntu 18.04 LTS'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.alongside).called(1);
@@ -208,7 +205,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
+    final radio = find.radioButton<InstallationType>(
         tester.lang.installationTypeAlongsideUnknown('Ubuntu 22.10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -236,9 +233,8 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(
-        YaruRadioButton<InstallationType>,
-        tester.lang.installationTypeAlongsideDual(
+    final radio = find.radioButton<InstallationType>(tester.lang
+        .installationTypeAlongsideDual(
             'Ubuntu 22.10', 'Windows 10', 'Ubuntu 20.04 LTS'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -266,7 +262,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
+    final radio = find.radioButton<InstallationType>(
         tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -300,7 +296,7 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
+    final radio = find.radioButton<InstallationType>(
         tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -311,7 +307,7 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(YaruRadioButton<InstallationType>,
+    final radio = find.radioButton<InstallationType>(
         tester.lang.installationTypeErase('Ubuntu'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -322,8 +318,8 @@ void main() {
     final model = buildModel(installationType: InstallationType.manual);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.widgetWithText(
-        YaruRadioButton<InstallationType>, tester.lang.installationTypeManual);
+    final radio =
+        find.radioButton<InstallationType>(tester.lang.installationTypeManual);
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.manual).called(1);
