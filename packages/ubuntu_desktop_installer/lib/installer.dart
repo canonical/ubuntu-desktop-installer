@@ -444,20 +444,13 @@ class _UbuntuDesktopInstallerWizardState
   }
 }
 
-class _UbuntuDesktopInstallerWizardObserver extends WizardObserver {
+class _UbuntuDesktopInstallerWizardObserver extends NavigatorObserver {
   _UbuntuDesktopInstallerWizardObserver(this._telemetryService);
 
   final TelemetryService _telemetryService;
 
   @override
-  void onInit(Route route) {
-    if (route.settings.name != null) {
-      _telemetryService.addStage(route.settings.name!.removePrefix('/'));
-    }
-  }
-
-  @override
-  void onNext(Route route, Route previousRoute) {
+  void didPush(Route route, Route? previousRoute) {
     if (route.settings.name != null) {
       _telemetryService.addStage(route.settings.name!.removePrefix('/'));
     }
