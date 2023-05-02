@@ -14,8 +14,6 @@ import 'package:yaru_window_test/yaru_window_test.dart';
 import '../test_utils.dart';
 import 'installation_complete_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([InstallationCompleteModel])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
@@ -24,7 +22,7 @@ void main() {
     when(model.productInfo).thenReturn(ProductInfo(name: 'Ubuntu'));
     return Provider<InstallationCompleteModel>.value(
       value: model,
-      child: InstallationCompletePage(),
+      child: const InstallationCompletePage(),
     );
   }
 

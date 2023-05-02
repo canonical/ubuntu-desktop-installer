@@ -20,8 +20,6 @@ import '../../test_utils.dart';
 import 'allocate_disk_space_model_test.mocks.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 final selection = StreamController.broadcast();
 
 final testDisks = <Disk>[
@@ -30,14 +28,14 @@ final testDisks = <Disk>[
     canBeBootDevice: false,
     size: 12,
     partitions: [
-      Partition(
+      const Partition(
         number: 1,
         size: 11,
         mount: '/mnt/1',
         format: 'btrfs',
         preserve: true,
       ),
-      Partition(
+      const Partition(
         number: 2,
         size: 22,
         mount: '/mnt/2',
@@ -50,13 +48,13 @@ final testDisks = <Disk>[
     canBeBootDevice: true,
     size: 23,
     partitions: [
-      Partition(
+      const Partition(
         number: 3,
         size: 33,
         mount: '/mnt/3',
         format: 'ext3',
       ),
-      Partition(
+      const Partition(
         number: 4,
         size: 44,
         mount: '/mnt/4',
@@ -305,13 +303,13 @@ void main() {
     await tester.pump();
 
     final menuItem0 = find.ancestor(
-      of: find.byKey(ValueKey(0)),
+      of: find.byKey(const ValueKey(0)),
       matching: find.byType(MenuItemButton),
     );
     expect(menuItem0, isDisabled);
 
     final menuItem1 = find.ancestor(
-      of: find.byKey(ValueKey(1)),
+      of: find.byKey(const ValueKey(1)),
       matching: find.byType(MenuItemButton),
     );
     expect(menuItem1, isEnabled);
@@ -342,7 +340,7 @@ void main() {
   });
 
   testWidgets('too many primary partitions', (tester) async {
-    final unusableGap = Gap(
+    const unusableGap = Gap(
       offset: 0,
       size: 1,
       usable: GapUsable.TOO_MANY_PRIMARY_PARTS,

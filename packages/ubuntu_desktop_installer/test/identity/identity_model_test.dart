@@ -13,8 +13,6 @@ import 'package:ubuntu_wizard/utils.dart';
 
 import 'identity_model_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 class MockProductNameFile extends Mock implements File {
   MockProductNameFile(this._product);
   final String _product;
@@ -41,7 +39,7 @@ void main() {
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
 
@@ -68,7 +66,7 @@ void main() {
 
   test('load auto-login', () async {
     final client = MockSubiquityClient();
-    when(client.getIdentity()).thenAnswer((_) async => IdentityData());
+    when(client.getIdentity()).thenAnswer((_) async => const IdentityData());
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
@@ -76,7 +74,7 @@ void main() {
         .thenAnswer((_) async => 'someone');
 
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
 
@@ -106,7 +104,7 @@ void main() {
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
 
@@ -136,7 +134,7 @@ void main() {
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
 
@@ -168,7 +166,7 @@ void main() {
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
 
@@ -201,7 +199,7 @@ void main() {
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
 
@@ -228,7 +226,7 @@ void main() {
     final client = MockSubiquityClient();
     final config = MockConfigService();
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
     final model = IdentityModel(
@@ -253,7 +251,7 @@ void main() {
     final client = MockSubiquityClient();
     final config = MockConfigService();
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
     final model = IdentityModel(
@@ -301,7 +299,7 @@ void main() {
     final client = MockSubiquityClient();
     final config = MockConfigService();
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
     final model = IdentityModel(
@@ -383,7 +381,7 @@ void main() {
         .thenAnswer((_) async => UsernameValidation.TOO_LONG);
 
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
 
@@ -418,7 +416,7 @@ void main() {
   test('respect existing values', () async {
     final client = MockSubiquityClient();
     when(client.getIdentity()).thenAnswer((_) async {
-      return IdentityData(
+      return const IdentityData(
         realname: 'Default',
         username: 'default',
         hostname: 'default',
@@ -431,7 +429,7 @@ void main() {
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
 
@@ -486,7 +484,7 @@ void main() {
 
   test('active directory support', () async {
     final client = MockSubiquityClient();
-    when(client.getIdentity()).thenAnswer((_) async => IdentityData());
+    when(client.getIdentity()).thenAnswer((_) async => const IdentityData());
     when(client.hasActiveDirectorySupport()).thenAnswer((_) async => true);
 
     final config = MockConfigService();
@@ -494,7 +492,7 @@ void main() {
         .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
     final telemetry = MockTelemetryService();
 

@@ -5,8 +5,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
 
-// ignore_for_file: type=lint
-
 const testLayouts = <KeyboardLayout>[
   KeyboardLayout(code: 'empty-variants', name: 'Empty variants', variants: []),
   KeyboardLayout(
@@ -100,8 +98,8 @@ void main() {
       client = MockSubiquityClient();
       when(client.getKeyboard()).thenAnswer((_) async {
         return testSetup([
-          KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
-          KeyboardLayout(code: 'foo', name: 'Foo', variants: [
+          const KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
+          const KeyboardLayout(code: 'foo', name: 'Foo', variants: [
             KeyboardVariant(code: 'baz', name: 'Baz'),
             KeyboardVariant(code: 'qux', name: 'Qux'),
           ]),
@@ -168,18 +166,18 @@ void main() {
 
     test('selection updates input source', () async {
       await model.selectLayout(0);
-      verify(client.setInputSource(KeyboardSetting(layout: 'bar'), user: 'usr'))
+      verify(client.setInputSource(const KeyboardSetting(layout: 'bar'), user: 'usr'))
           .called(1);
 
       await model.selectLayout(1);
       verify(client.setInputSource(
-              KeyboardSetting(layout: 'foo', variant: 'baz'),
+              const KeyboardSetting(layout: 'foo', variant: 'baz'),
               user: 'usr'))
           .called(1);
 
       await model.selectVariant(1);
       verify(client.setInputSource(
-              KeyboardSetting(layout: 'foo', variant: 'qux'),
+              const KeyboardSetting(layout: 'foo', variant: 'qux'),
               user: 'usr'))
           .called(1);
     });
@@ -222,8 +220,8 @@ void main() {
     final client = MockSubiquityClient();
     when(client.getKeyboard()).thenAnswer((_) async {
       return testSetup([
-        KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
-        KeyboardLayout(code: 'foo', name: 'Foo', variants: [
+        const KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
+        const KeyboardLayout(code: 'foo', name: 'Foo', variants: [
           KeyboardVariant(code: 'baz', name: 'Baz'),
           KeyboardVariant(code: 'qux', name: 'Qux'),
         ]),
@@ -238,7 +236,7 @@ void main() {
     reset(client);
 
     await model.save();
-    verify(client.setKeyboard(KeyboardSetting(layout: 'foo', variant: 'qux')))
+    verify(client.setKeyboard(const KeyboardSetting(layout: 'foo', variant: 'qux')))
         .called(1);
   });
 
@@ -246,9 +244,9 @@ void main() {
     final client = MockSubiquityClient();
     when(client.getKeyboard()).thenAnswer((_) async {
       return testSetup([
-        KeyboardLayout(code: 'bbb', name: 'BBB', variants: []),
-        KeyboardLayout(code: 'aaa', name: 'AAA', variants: []),
-        KeyboardLayout(code: 'äää', name: 'ÄÄÄ', variants: []),
+        const KeyboardLayout(code: 'bbb', name: 'BBB', variants: []),
+        const KeyboardLayout(code: 'aaa', name: 'AAA', variants: []),
+        const KeyboardLayout(code: 'äää', name: 'ÄÄÄ', variants: []),
       ], layout: '', variant: '');
     });
 
@@ -265,8 +263,8 @@ void main() {
     final client = MockSubiquityClient();
     when(client.getKeyboard()).thenAnswer((_) async {
       return testSetup([
-        KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
-        KeyboardLayout(code: 'foo', name: 'Foo', variants: [
+        const KeyboardLayout(code: 'bar', name: 'Bar', variants: []),
+        const KeyboardLayout(code: 'foo', name: 'Foo', variants: [
           KeyboardVariant(code: 'baz', name: 'Baz'),
           KeyboardVariant(code: 'qux', name: 'Qux'),
         ]),

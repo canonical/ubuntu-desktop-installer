@@ -10,8 +10,6 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'installation_slides_model_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([JournalService, ProductService])
 void main() async {
   test('product info', () {
@@ -32,9 +30,9 @@ void main() async {
     final client = MockSubiquityClient();
     final journal = MockJournalService();
     when(journal.start(['log', 'event'], output: JournalOutput.short))
-        .thenAnswer((_) => Stream.empty());
+        .thenAnswer((_) => const Stream.empty());
     when(journal.start(['event'], output: JournalOutput.cat))
-        .thenAnswer((_) => Stream.empty());
+        .thenAnswer((_) => const Stream.empty());
     final product = MockProductService();
     final model = InstallationSlidesModel(client, journal, product);
 
@@ -73,9 +71,9 @@ void main() async {
 
     final journal = MockJournalService();
     when(journal.start(['log', 'event'], output: JournalOutput.short))
-        .thenAnswer((_) => Stream.empty());
+        .thenAnswer((_) => const Stream.empty());
     when(journal.start(['event'], output: JournalOutput.cat))
-        .thenAnswer((_) => Stream.empty());
+        .thenAnswer((_) => const Stream.empty());
 
     final product = MockProductService();
 
@@ -121,9 +119,9 @@ void main() async {
 
     final journal = MockJournalService();
     when(journal.start(['log', 'event'], output: JournalOutput.short))
-        .thenAnswer((_) => Stream.empty());
+        .thenAnswer((_) => const Stream.empty());
     when(journal.start(['event'], output: JournalOutput.cat))
-        .thenAnswer((_) => Stream.empty());
+        .thenAnswer((_) => const Stream.empty());
 
     final product = MockProductService();
 
@@ -161,7 +159,7 @@ void main() async {
 
     final journal = MockJournalService();
     when(journal.start(['log', 'event'], output: JournalOutput.short))
-        .thenAnswer((_) => Stream.empty());
+        .thenAnswer((_) => const Stream.empty());
     when(journal.start(['event'], output: JournalOutput.cat))
         .thenAnswer((_) => events.stream);
 

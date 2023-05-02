@@ -13,8 +13,6 @@ import 'package:ubuntu_test/utils.dart';
 import '../../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([InstallationTypeModel])
 void main() {
   InstallationTypeModel buildModel({
@@ -46,7 +44,7 @@ void main() {
   Widget buildPage(InstallationTypeModel model) {
     return ChangeNotifierProvider<InstallationTypeModel>.value(
       value: model,
-      child: InstallationTypePage(),
+      child: const InstallationTypePage(),
     );
   }
 
@@ -61,7 +59,7 @@ void main() {
 
   testWidgets('one existing OS', (tester) async {
     final model = buildModel(existingOS: [
-      OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4')
+      const OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4')
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -73,8 +71,8 @@ void main() {
 
   testWidgets('two existing OSes', (tester) async {
     final model = buildModel(existingOS: [
-      OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4'),
-      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
+      const OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4'),
+      const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -87,9 +85,9 @@ void main() {
 
   testWidgets('multiple existing OSes', (tester) async {
     final model = buildModel(existingOS: [
-      OsProber(long: 'Windows 10', label: 'windows', type: 'ntfs'),
-      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
-      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
+      const OsProber(long: 'Windows 10', label: 'windows', type: 'ntfs'),
+      const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
+      const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -101,8 +99,8 @@ void main() {
 
   testWidgets('duplicate existing OSes', (tester) async {
     final model = buildModel(existingOS: [
-      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
-      OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
+      const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
+      const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -114,7 +112,7 @@ void main() {
 
   testWidgets('reinstall', (tester) async {
     final model = buildModel(existingOS: [
-      OsProber(
+      const OsProber(
         long: 'Ubuntu 18.04 LTS',
         label: 'Ubuntu',
         version: '18.04 LTS',
@@ -134,7 +132,7 @@ void main() {
     final model = buildModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
-        OsProber(
+        const OsProber(
           long: 'Windows 10',
           label: 'WIN10',
           version: '10',
@@ -156,7 +154,7 @@ void main() {
     final model = buildModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
-        OsProber(
+        const OsProber(
           long: 'Windows 11',
           label: 'WIN11',
           version: '11',
@@ -180,7 +178,7 @@ void main() {
     final model = buildModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
-        OsProber(
+        const OsProber(
           long: 'Ubuntu 18.04 LTS',
           label: 'Ubuntu',
           version: '18.04 LTS',
@@ -216,13 +214,13 @@ void main() {
     final model = buildModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
-        OsProber(
+        const OsProber(
           long: 'Windows 10',
           label: 'WIN10',
           version: '10',
           type: 'ntfs',
         ),
-        OsProber(
+        const OsProber(
           long: 'Ubuntu 20.04 LTS',
           label: 'Ubuntu',
           version: '20.04 LTS',
@@ -245,13 +243,13 @@ void main() {
     final model = buildModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
-        OsProber(
+        const OsProber(
           long: 'Ubuntu 20.04 LTS',
           label: 'Ubuntu1',
           version: '20.04 LTS',
           type: 'ext4',
         ),
-        OsProber(
+        const OsProber(
           long: 'Ubuntu 20.04 LTS',
           label: 'Ubuntu2',
           version: '20.04 LTS',
@@ -273,19 +271,19 @@ void main() {
     final model = buildModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
-        OsProber(
+        const OsProber(
           long: 'Windows 10',
           label: 'WIN10',
           version: '10',
           type: 'ntfs',
         ),
-        OsProber(
+        const OsProber(
           long: 'Ubuntu 18.04 LTS',
           label: 'Ubuntu',
           version: '18.04 LTS',
           type: 'ext4',
         ),
-        OsProber(
+        const OsProber(
           long: 'Ubuntu 20.04 LTS',
           label: 'Ubuntu',
           version: '20.04 LTS',

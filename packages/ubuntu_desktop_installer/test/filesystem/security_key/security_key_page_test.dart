@@ -12,8 +12,6 @@ import '../../test_utils.dart';
 import 'security_key_model_test.mocks.dart';
 import 'security_key_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([SecurityKeyModel])
 void main() {
   SecurityKeyModel buildModel({
@@ -33,7 +31,7 @@ void main() {
   Widget buildPage(SecurityKeyModel model) {
     return ChangeNotifierProvider<SecurityKeyModel>.value(
       value: model,
-      child: SecurityKeyPage(),
+      child: const SecurityKeyPage(),
     );
   }
 

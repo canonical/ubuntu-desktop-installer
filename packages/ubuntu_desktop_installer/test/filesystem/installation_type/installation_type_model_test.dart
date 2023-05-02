@@ -8,8 +8,6 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'installation_type_model_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([DiskStorageService, ProductService, TelemetryService])
 void main() {
   test('init', () async {
@@ -167,7 +165,7 @@ void main() {
   });
 
   test('single reformat target', () async {
-    final reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
+    const reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
 
     final service = MockDiskStorageService();
     when(service.useLvm).thenReturn(false);
@@ -210,14 +208,14 @@ void main() {
     expect(model.canInstallAlongside, isFalse);
 
     // reformat
-    final reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
+    const reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [reformat]));
     await model.init();
     expect(model.canInstallAlongside, isFalse);
 
     // resize
-    final resize = GuidedStorageTargetResize(
+    const resize = GuidedStorageTargetResize(
         diskId: '',
         partitionNumber: 0,
         newSize: 0,
@@ -231,7 +229,7 @@ void main() {
     expect(model.canInstallAlongside, isTrue);
 
     // gap
-    final gap = GuidedStorageTargetUseGap(
+    const gap = GuidedStorageTargetUseGap(
       diskId: '',
       gap: Gap(offset: 0, size: 0, usable: GapUsable.YES),
       capabilities: [],
@@ -270,7 +268,7 @@ void main() {
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // reformat
-    final reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
+    const reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [reformat]));
     await model.init();
@@ -289,7 +287,7 @@ void main() {
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // resize
-    final resize = GuidedStorageTargetResize(
+    const resize = GuidedStorageTargetResize(
         diskId: '',
         partitionNumber: 0,
         newSize: 0,
@@ -306,7 +304,7 @@ void main() {
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // gap
-    final gap = GuidedStorageTargetUseGap(
+    const gap = GuidedStorageTargetUseGap(
       diskId: '',
       gap: Gap(offset: 0, size: 1, usable: GapUsable.YES),
       capabilities: [],
@@ -320,12 +318,12 @@ void main() {
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // multiple gaps
-    final gap2 = GuidedStorageTargetUseGap(
+    const gap2 = GuidedStorageTargetUseGap(
       diskId: '',
       gap: Gap(offset: 0, size: 2, usable: GapUsable.YES),
       capabilities: [],
     );
-    final gap3 = GuidedStorageTargetUseGap(
+    const gap3 = GuidedStorageTargetUseGap(
       diskId: '',
       gap: Gap(offset: 0, size: 3, usable: GapUsable.YES),
       capabilities: [],

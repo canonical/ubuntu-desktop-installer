@@ -12,8 +12,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../test_utils.dart';
 import 'secure_boot_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([SecureBootModel])
 void main() {
   SecureBootModel buildModel({
@@ -39,7 +37,7 @@ void main() {
   Widget buildPage(SecureBootModel model) {
     return ChangeNotifierProvider<SecureBootModel>.value(
       value: model,
-      child: SecureBootPage(),
+      child: const SecureBootPage(),
     );
   }
 

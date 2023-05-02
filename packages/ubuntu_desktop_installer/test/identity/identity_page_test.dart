@@ -14,8 +14,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../test_utils.dart';
 import 'identity_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([IdentityModel])
 void main() {
   IdentityModel buildModel({
@@ -55,7 +53,7 @@ void main() {
   Widget buildPage(IdentityModel model) {
     return ChangeNotifierProvider<IdentityModel>.value(
       value: model,
-      child: IdentityPage(),
+      child: const IdentityPage(),
     );
   }
 

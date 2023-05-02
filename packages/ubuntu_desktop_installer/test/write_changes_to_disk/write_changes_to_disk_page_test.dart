@@ -16,15 +16,13 @@ import '../test_utils.dart';
 import 'write_changes_to_disk_model_test.mocks.dart';
 import 'write_changes_to_disk_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 final testDisks = <Disk>[
   fakeDisk(
     path: '/dev/sda',
     size: 12,
     preserve: false,
     partitions: [
-      Partition(
+      const Partition(
         path: '/dev/sda1',
         number: 1,
         size: 11,
@@ -32,7 +30,7 @@ final testDisks = <Disk>[
         format: 'ext',
         preserve: false,
       ),
-      Partition(
+      const Partition(
         path: '/dev/sda2',
         number: 2,
         size: 22,
@@ -47,7 +45,7 @@ final testDisks = <Disk>[
     size: 23,
     preserve: false,
     partitions: [
-      Partition(
+      const Partition(
         path: '/dev/sdb3',
         number: 3,
         size: 33,
@@ -55,26 +53,26 @@ final testDisks = <Disk>[
         mount: '/mnt/3',
         format: 'ext3',
       ),
-      Partition(
+      const Partition(
         path: '/dev/sdb4',
         number: 4,
         size: 44,
         wipe: 'superblock',
         format: 'ext4',
       ),
-      Partition(
+      const Partition(
         path: '/dev/sdb5',
         number: 5,
         size: 55,
         mount: '/mnt/5',
       ),
-      Partition(
+      const Partition(
         path: '/dev/sdb6',
         number: 6,
         size: 66,
         resize: true,
       ),
-      Partition(
+      const Partition(
         path: '/dev/sdb7',
         number: 7,
         preserve: false,
@@ -139,7 +137,7 @@ void main() {
       testDisks.first.sysname: testDisks.first.partitions.cast<Partition>(),
       testDisks.last.sysname: testDisks.last.partitions.cast<Partition>(),
     }, originals: {
-      'sdb': [Partition(number: 6, size: 123)],
+      'sdb': [const Partition(number: 6, size: 123)],
     });
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 

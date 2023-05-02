@@ -13,8 +13,6 @@ import 'package:yaru_window_test/yaru_window_test.dart';
 import '../../test_utils.dart';
 import 'bitlocker_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([BitLockerModel, UrlLauncher])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
@@ -26,7 +24,7 @@ void main() {
     await tester.pumpWidget(
       Provider<BitLockerModel>.value(
         value: model,
-        child: tester.buildApp((_) => BitLockerPage()),
+        child: tester.buildApp((_) => const BitLockerPage()),
       ),
     );
 
@@ -63,7 +61,7 @@ void main() {
     await tester.pumpWidget(
       Provider<BitLockerModel>.value(
         value: model,
-        child: tester.buildApp((_) => BitLockerPage()),
+        child: tester.buildApp((_) => const BitLockerPage()),
       ),
     );
 

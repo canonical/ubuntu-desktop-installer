@@ -4,8 +4,6 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_selector.dart';
 import 'package:ubuntu_test/utils.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   testWidgets('initial selection', (tester) async {
     await tester.pumpWidget(MaterialApp(
@@ -25,7 +23,7 @@ void main() {
     ));
     await tester.pumpAndSettle();
 
-    expect(find.byKey(ValueKey(1)), findsOneWidget);
+    expect(find.byKey(const ValueKey(1)), findsOneWidget);
   });
 
   testWidgets('selection', (tester) async {
@@ -51,7 +49,7 @@ void main() {
 
     final menuItem = find.descendant(
       of: find.byType(MenuItemButton),
-      matching: find.byKey(ValueKey(1)),
+      matching: find.byKey(const ValueKey(1)),
     );
     await tester.ensureVisible(menuItem);
     await tester.tap(menuItem);
@@ -80,13 +78,13 @@ void main() {
     await tester.pumpAndSettle();
 
     final menuItem1 = find.ancestor(
-      of: find.byKey(ValueKey(1)),
+      of: find.byKey(const ValueKey(1)),
       matching: find.byType(MenuItemButton),
     );
     expect(menuItem1, isDisabled);
 
     final menuItem2 = find.ancestor(
-      of: find.byKey(ValueKey(2)),
+      of: find.byKey(const ValueKey(2)),
       matching: find.byType(MenuItemButton),
     );
     expect(menuItem2, isEnabled);

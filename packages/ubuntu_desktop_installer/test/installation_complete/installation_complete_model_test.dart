@@ -5,8 +5,6 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_model.dart';
 import 'package:ubuntu_desktop_installer/services/product_service.dart';
 
-// ignore_for_file: type=lint
-
 import 'installation_complete_model_test.mocks.dart';
 
 @GenerateMocks([ProductService])

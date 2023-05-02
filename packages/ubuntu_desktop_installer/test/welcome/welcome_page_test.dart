@@ -18,8 +18,6 @@ import 'package:yaru_window_test/yaru_window_test.dart';
 
 import 'welcome_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([UrlLauncher, NetworkService])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
@@ -32,20 +30,20 @@ void main() {
     when(client.hasRst()).thenAnswer((_) async => false);
     final network = MockNetworkService();
     when(network.isConnected).thenReturn(isConnected);
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
     model = WelcomeModel(client: client, network: network);
 
     app = MaterialApp(
       supportedLocales: supportedLocales,
       localizationsDelegates: localizationsDelegates,
-      locale: Locale('en'),
+      locale: const Locale('en'),
       home: InheritedLocale(
         child: Flavor(
           data: const FlavorData(name: 'Ubuntu'),
           child: Wizard(
             routes: {
               Routes.welcome: WizardRoute(
-                builder: (_) => WelcomePage(),
+                builder: (_) => const WelcomePage(),
                 onNext: (settings) {
                   switch (model.option) {
                     case Option.repairUbuntu:
@@ -58,10 +56,10 @@ void main() {
                 },
               ),
               Routes.repairUbuntu: WizardRoute(
-                builder: (context) => Text(Routes.repairUbuntu),
+                builder: (context) => const Text(Routes.repairUbuntu),
               ),
               Routes.keyboard: WizardRoute(
-                builder: (context) => Text(Routes.keyboard),
+                builder: (context) => const Text(Routes.keyboard),
               ),
             },
           ),

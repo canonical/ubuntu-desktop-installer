@@ -14,8 +14,6 @@ import 'package:ubuntu_test/utils.dart';
 import '../test_utils.dart';
 import 'timezone_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([GeoService, TimezoneController, TimezoneModel])
 void main() {
   MockTimezoneController buildController({
@@ -111,7 +109,7 @@ void main() {
     final model = buildModel();
     final controller = buildController();
     when(controller.searchLocation('b')).thenAnswer((_) async => locations);
-    when(controller.selectLocation(GeoLocation())).thenAnswer((_) {});
+    when(controller.selectLocation(const GeoLocation())).thenAnswer((_) {});
 
     await tester
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
@@ -131,7 +129,7 @@ void main() {
     await tester.ensureVisible(item);
     await tester.tapAt(tester.getTopLeft(item));
     await tester.pump();
-    verify(controller.selectLocation(GeoLocation(name: 'b'))).called(1);
+    verify(controller.selectLocation(const GeoLocation(name: 'b'))).called(1);
   });
 
   testWidgets('select timezone', (tester) async {
@@ -143,7 +141,7 @@ void main() {
     final model = buildModel();
     final controller = buildController();
     when(controller.searchTimezone('b')).thenAnswer((_) async => timezones);
-    when(controller.selectTimezone(GeoLocation())).thenAnswer((_) {});
+    when(controller.selectTimezone(const GeoLocation())).thenAnswer((_) {});
 
     await tester
         .pumpWidget(tester.buildApp((_) => buildPage(model, controller)));
@@ -163,7 +161,7 @@ void main() {
     await tester.ensureVisible(item);
     await tester.tapAt(tester.getTopLeft(item));
     await tester.pump();
-    verify(controller.selectTimezone(GeoLocation(timezone: 'b'))).called(1);
+    verify(controller.selectTimezone(const GeoLocation(timezone: 'b'))).called(1);
   });
 
   testWidgets('select coordinates', (tester) async {
@@ -268,7 +266,7 @@ void main() {
   testWidgets('creates a model and controller', (tester) async {
     final client = MockSubiquityClient();
     when(client.getTimezone())
-        .thenAnswer((_) async => TimeZoneInfo(timezone: '', fromGeoip: false));
+        .thenAnswer((_) async => const TimeZoneInfo(timezone: '', fromGeoip: false));
     registerMockService<SubiquityClient>(client);
 
     final service = MockGeoService();

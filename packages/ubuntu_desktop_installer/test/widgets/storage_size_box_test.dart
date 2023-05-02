@@ -8,8 +8,6 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets/storage_size_box.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   testWidgets('enter size', (tester) async {
     int? size;
@@ -50,7 +48,7 @@ void main() {
     await tester.tap(find.byType(MenuAnchor));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byKey(ValueKey(DataUnit.megabytes)).last);
+    await tester.tap(find.byKey(const ValueKey(DataUnit.megabytes)).last);
     await tester.pump();
 
     expect(unit, equals(DataUnit.megabytes));
