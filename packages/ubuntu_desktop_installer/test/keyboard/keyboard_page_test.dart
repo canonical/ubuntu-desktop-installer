@@ -18,8 +18,6 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import '../test_utils.dart';
 import 'keyboard_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([KeyboardModel])
 void main() {
   MockKeyboardModel buildModel({
@@ -41,20 +39,20 @@ void main() {
       when(model.variantName(i)).thenReturn(variants![i]);
     }
     when(model.selectedVariantIndex).thenReturn(selectedVariantIndex ?? 0);
-    when(model.onLayoutSelected).thenAnswer((_) => Stream<int>.empty());
-    when(model.onVariantSelected).thenAnswer((_) => Stream<int>.empty());
+    when(model.onLayoutSelected).thenAnswer((_) => const Stream<int>.empty());
+    when(model.onVariantSelected).thenAnswer((_) => const Stream<int>.empty());
     return model;
   }
 
   Widget buildPage(KeyboardModel model) {
     final client = MockSubiquityClient();
     when(client.getKeyboardStep(any)).thenAnswer(
-        (_) async => AnyStep.stepPressKey(keycodes: {}, symbols: []));
+        (_) async => const AnyStep.stepPressKey(keycodes: {}, symbols: []));
     registerMockService<SubiquityClient>(client);
 
     return ChangeNotifierProvider<KeyboardModel>.value(
       value: model,
-      child: KeyboardPage(),
+      child: const KeyboardPage(),
     );
   }
 
@@ -121,7 +119,7 @@ void main() {
 
     final context = tester.element(find.byType(DetectKeyboardView));
     Navigator.of(context)
-        .pop(AnyStep.stepResult(layout: 'layout', variant: 'variant'));
+        .pop(const AnyStep.stepResult(layout: 'layout', variant: 'variant'));
     await tester.pumpAndSettle();
     verify(model.trySelectLayoutVariant('layout', 'variant'));
   });
@@ -188,8 +186,8 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.getKeyboard()).thenAnswer((_) async =>
-        KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
-    when(client.setInputSource(KeyboardSetting(layout: '')))
+        const KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
+    when(client.setInputSource(const KeyboardSetting(layout: '')))
         .thenAnswer((_) async {});
     registerMockService<SubiquityClient>(client);
 

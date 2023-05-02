@@ -8,8 +8,6 @@ import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
 
 import 'locale_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   test('load languages', () async {
     final client = MockSubiquityClient();
@@ -45,9 +43,9 @@ void main() {
     expect(model.selectedLanguageIndex, equals(0));
 
     // falls back to the base locale (en_US)
-    model.selectLocale(Locale('foo'));
-    expect(
-        model.locale(model.selectedLanguageIndex), equals(Locale('en', 'US')));
+    model.selectLocale(const Locale('foo'));
+    expect(model.locale(model.selectedLanguageIndex),
+        equals(const Locale('en', 'US')));
 
     final firstLocale = model.locale(0);
     final lastLocale = model.locale(model.languageCount - 1);
@@ -66,7 +64,7 @@ void main() {
     final sound = MockSoundService();
 
     final model = LocaleModel(client: client, sound: sound);
-    model.applyLocale(Locale('fr', 'CA'));
+    model.applyLocale(const Locale('fr', 'CA'));
     verify(client.setLocale('fr_CA.UTF-8')).called(1);
   });
 

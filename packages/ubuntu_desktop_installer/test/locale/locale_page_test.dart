@@ -18,8 +18,6 @@ import 'package:ubuntu_wizard/widgets.dart';
 
 import 'locale_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([SoundService, TelemetryService])
 void main() {
   late MaterialApp app;
@@ -33,20 +31,21 @@ void main() {
     app = MaterialApp(
       supportedLocales: supportedLocales,
       localizationsDelegates: localizationsDelegates,
-      locale: Locale('en'),
+      locale: const Locale('en'),
       home: Flavor(
         data: const FlavorData(name: 'Ubuntu'),
         child: Wizard(
           routes: <String, WizardRoute>{
-            Routes.locale: WizardRoute(builder: (_) => LocalePage()),
-            Routes.welcome: WizardRoute(builder: (_) => Text(Routes.welcome)),
+            Routes.locale: WizardRoute(builder: (_) => const LocalePage()),
+            Routes.welcome:
+                WizardRoute(builder: (_) => const Text(Routes.welcome)),
           },
         ),
       ),
     );
     final client = MockSubiquityClient();
     when(client.getKeyboard()).thenAnswer((_) async =>
-        KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
+        const KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     await tester.pumpWidget(
       MultiProvider(providers: [
         ChangeNotifierProvider(
@@ -72,7 +71,8 @@ void main() {
     expect(listItems.evaluate().length, lessThan(app.supportedLocales.length));
     for (final language in ['English', 'Français', 'Galego', 'Italiano']) {
       final listItem = find.listTile(language, skipOffstage: false);
-      await tester.dragUntilVisible(listItem, languageList, Offset(0, -10));
+      await tester.dragUntilVisible(
+          listItem, languageList, const Offset(0, -10));
       await tester.pumpAndSettle();
       expect(listItem, findsOneWidget);
     }

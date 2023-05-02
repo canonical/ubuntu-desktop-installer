@@ -18,8 +18,6 @@ import '../test_utils.dart';
 import 'source_model_test.mocks.dart';
 import 'source_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([SourceModel, TelemetryService])
 void main() {
   SourceModel buildModel({
@@ -31,7 +29,7 @@ void main() {
   }) {
     final model = MockSourceModel();
     when(model.sources).thenReturn([
-      SourceSelection(
+      const SourceSelection(
         id: kMinimalSourceId,
         name: '',
         description: '',
@@ -39,7 +37,7 @@ void main() {
         variant: 'desktop',
         isDefault: false,
       ),
-      SourceSelection(
+      const SourceSelection(
         id: kNormalSourceId,
         name: '',
         description: '',
@@ -62,7 +60,7 @@ void main() {
 
     return ChangeNotifierProvider<SourceModel>.value(
       value: model,
-      child: SourcePage(),
+      child: const SourcePage(),
     );
   }
 
@@ -201,12 +199,12 @@ void main() {
 
     final power = MockPowerService();
     when(power.onBattery).thenReturn(false);
-    when(power.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(power.propertiesChanged).thenAnswer((_) => const Stream.empty());
     registerMockService<PowerService>(power);
 
     final network = MockNetworkService();
     when(network.isConnected).thenReturn(true);
-    when(network.propertiesChanged).thenAnswer((_) => Stream.empty());
+    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
     registerMockService<NetworkService>(network);
 
     final storage = MockDiskStorageService();

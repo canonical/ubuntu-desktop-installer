@@ -10,8 +10,6 @@ import 'package:ubuntu_test/utils.dart';
 import '../../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);
 
@@ -25,7 +23,7 @@ void main() {
     await tester.pumpWidget(
       ChangeNotifierProvider<InstallationTypeModel>.value(
         value: model,
-        child: tester.buildApp((_) => InstallationTypePage()),
+        child: tester.buildApp((_) => const InstallationTypePage()),
       ),
     );
 
@@ -62,7 +60,7 @@ void main() {
     await tester.pumpWidget(
       ChangeNotifierProvider<InstallationTypeModel>.value(
         value: model,
-        child: tester.buildApp((_) => InstallationTypePage()),
+        child: tester.buildApp((_) => const InstallationTypePage()),
       ),
     );
 
@@ -95,7 +93,7 @@ void main() {
     await tester.pumpWidget(
       ChangeNotifierProvider<InstallationTypeModel>.value(
         value: model,
-        child: tester.buildApp((_) => InstallationTypePage()),
+        child: tester.buildApp((_) => const InstallationTypePage()),
       ),
     );
 

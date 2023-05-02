@@ -13,8 +13,6 @@ import 'package:yaru_window_test/yaru_window_test.dart';
 import '../../test_utils.dart';
 import 'rst_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([RstModel, UrlLauncher])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
@@ -25,7 +23,7 @@ void main() {
     await tester.pumpWidget(
       Provider<RstModel>.value(
         value: model,
-        child: tester.buildApp((_) => RstPage()),
+        child: tester.buildApp((_) => const RstPage()),
       ),
     );
 
@@ -64,7 +62,7 @@ void main() {
     await tester.pumpWidget(
       Provider<RstModel>.value(
         value: model,
-        child: tester.buildApp((_) => RstPage()),
+        child: tester.buildApp((_) => const RstPage()),
       ),
     );
 

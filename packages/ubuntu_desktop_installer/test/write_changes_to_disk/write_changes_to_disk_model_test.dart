@@ -8,47 +8,45 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'write_changes_to_disk_model_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([DiskStorageService])
 void main() {
   final testDisks = <Disk>[
     fakeDisk(
       path: '/dev/sda',
       preserve: false,
-      partitions: [Partition(number: 1, preserve: false)],
+      partitions: [const Partition(number: 1, preserve: false)],
     ),
     fakeDisk(
       path: '/dev/sdb',
       preserve: true,
       partitions: [
-        Partition(number: 1),
-        Partition(number: 2, preserve: false),
+        const Partition(number: 1),
+        const Partition(number: 2, preserve: false),
       ],
     ),
     fakeDisk(
       path: '/dev/sdc',
       preserve: false,
       partitions: [
-        Partition(number: 3, preserve: false),
-        Partition(number: 4, grubDevice: false),
+        const Partition(number: 3, preserve: false),
+        const Partition(number: 4, grubDevice: false),
       ],
     ),
     fakeDisk(
       path: '/dev/sdd',
       preserve: true,
       partitions: [
-        Partition(number: 1, preserve: true),
-        Partition(number: 2, mount: '/mnt'),
-        Partition(number: 3, wipe: 'superblock'),
-        Partition(number: 4, resize: true),
+        const Partition(number: 1, preserve: true),
+        const Partition(number: 2, mount: '/mnt'),
+        const Partition(number: 3, wipe: 'superblock'),
+        const Partition(number: 4, resize: true),
       ],
     ),
     fakeDisk(
       path: '/dev/sde',
       preserve: true,
       partitions: [
-        Partition(number: 1, preserve: true),
+        const Partition(number: 1, preserve: true),
       ],
     ),
   ];
@@ -79,24 +77,24 @@ void main() {
     expect(
       model.partitions,
       equals({
-        'sda': [Partition(number: 1, preserve: false)],
-        'sdb': [Partition(number: 2, preserve: false)],
-        'sdc': [Partition(number: 3, preserve: false)],
+        'sda': [const Partition(number: 1, preserve: false)],
+        'sdb': [const Partition(number: 2, preserve: false)],
+        'sdc': [const Partition(number: 3, preserve: false)],
         'sdd': [
-          Partition(number: 2, mount: '/mnt'),
-          Partition(number: 3, wipe: 'superblock'),
-          Partition(number: 4, resize: true),
+          const Partition(number: 2, mount: '/mnt'),
+          const Partition(number: 3, wipe: 'superblock'),
+          const Partition(number: 4, resize: true),
         ],
       }),
     );
     expect(
       model.getOriginalPartition('sdd', 3),
-      Partition(number: 3, wipe: 'superblock'),
+      const Partition(number: 3, wipe: 'superblock'),
     );
   });
 
   test('set guided storage', () async {
-    final target =
+    const target =
         GuidedStorageTarget.reformat(diskId: 'sda', capabilities: []);
 
     final client = MockSubiquityClient();

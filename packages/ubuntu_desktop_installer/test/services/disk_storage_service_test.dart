@@ -4,8 +4,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   final testDisks = <Disk>[fakeDisk(id: 'a'), fakeDisk(id: 'b')];
   final testTargets = testDisks
@@ -23,7 +21,7 @@ void main() {
         .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
     when(client.hasRst()).thenAnswer((_) async => false);
     when(client.hasBitLocker()).thenAnswer((_) async => false);
-    when(client.getStatus()).thenAnswer((_) async => ApplicationStatus(
+    when(client.getStatus()).thenAnswer((_) async => const ApplicationStatus(
           cloudInitOk: null,
           confirmingTty: '',
           echoSyslogId: '',
@@ -153,8 +151,8 @@ void main() {
 
   test('add/edit/remove partition', () async {
     final disk = fakeDisk(id: 'tst');
-    final gap = Gap(offset: 2, size: 3, usable: GapUsable.YES);
-    final partition = Partition(number: 1);
+    const gap = Gap(offset: 2, size: 3, usable: GapUsable.YES);
+    const partition = Partition(number: 1);
     final service = DiskStorageService(client);
 
     when(client.addPartitionV2(disk, gap, partition))
@@ -236,13 +234,13 @@ void main() {
         disks: [
           fakeDisk(
             partitions: [
-              Partition(os: win10),
+              const Partition(os: win10),
             ],
           ),
           fakeDisk(
             partitions: [
-              Partition(os: ubuntu2110),
-              Partition(os: ubuntu2204),
+              const Partition(os: ubuntu2110),
+              const Partition(os: ubuntu2204),
             ],
           ),
         ],

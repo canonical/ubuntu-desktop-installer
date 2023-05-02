@@ -19,8 +19,6 @@ import '../test_utils.dart';
 import 'installation_slides_model_test.mocks.dart';
 import 'installation_slides_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([InstallationSlidesModel])
 void main() {
   UbuntuTester.context = InstallationSlidesPage;
@@ -41,7 +39,7 @@ void main() {
     when(model.isDone).thenReturn(isDone ?? false);
     when(model.hasError).thenReturn(hasError ?? false);
     when(model.isInstalling).thenReturn(isInstalling ?? false);
-    when(model.log).thenAnswer((_) => log ?? Stream<String>.empty());
+    when(model.log).thenAnswer((_) => log ?? const Stream<String>.empty());
     when(model.event).thenReturn(event ?? InstallationEvent.fromString(''));
     when(model.isLogVisible).thenReturn(isLogVisible ?? false);
     when(model.isPlaying).thenReturn(isPlaying ?? false);
@@ -54,9 +52,9 @@ void main() {
     return ChangeNotifierProvider<InstallationSlidesModel>.value(
       value: model,
       child: SlidesContext(slides: [
-        (context) => SizedBox.expand(child: Text('slide1')),
-        (context) => SizedBox.expand(child: Text('slide2')),
-      ], child: InstallationSlidesPage()),
+        (context) => const SizedBox.expand(child: Text('slide1')),
+        (context) => const SizedBox.expand(child: Text('slide2')),
+      ], child: const InstallationSlidesPage()),
     );
   }
 
@@ -159,7 +157,7 @@ void main() {
     when(model.event)
         .thenReturn(InstallationEvent.fromString('installing system'));
     await tester.pumpWidget(Container(
-      key: ValueKey('force rebuild for installing system'),
+      key: const ValueKey('force rebuild for installing system'),
       child: tester.buildApp((_) => buildPage(model)),
     ));
     await tester.pump();
@@ -172,7 +170,7 @@ void main() {
     when(model.event)
         .thenReturn(InstallationEvent.fromString('final system configuration'));
     await tester.pumpWidget(Container(
-      key: ValueKey('force rebuild for configuring system'),
+      key: const ValueKey('force rebuild for configuring system'),
       child: tester.buildApp((_) => buildPage(model)),
     ));
     await tester.pump();
@@ -184,7 +182,7 @@ void main() {
 
     when(model.hasError).thenReturn(true);
     await tester.pumpWidget(Container(
-      key: ValueKey('force rebuild for hasError'),
+      key: const ValueKey('force rebuild for hasError'),
       child: tester.buildApp((_) => buildPage(model)),
     ));
     await tester.pump();
@@ -211,7 +209,7 @@ void main() {
     await tester.pumpWidget(
       SlidesContext(
         slides: [
-          (_) => SizedBox.shrink(),
+          (_) => const SizedBox.shrink(),
         ],
         child: tester.buildApp(InstallationSlidesPage.create),
       ),

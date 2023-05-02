@@ -9,8 +9,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../test_utils.dart';
 import 'theme_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([DesktopService])
 void main() {
   testWidgets('ThemePage applies theme', (tester) async {
@@ -21,7 +19,7 @@ void main() {
 
     final lightOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
-      AssetImage('assets/theme/light-theme.png'),
+      const AssetImage('assets/theme/light-theme.png'),
     );
     expect(lightOptionCard, findsOneWidget);
     await tester.tap(lightOptionCard);
@@ -29,7 +27,7 @@ void main() {
 
     final darkOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
-      AssetImage('assets/theme/dark-theme.png'),
+      const AssetImage('assets/theme/dark-theme.png'),
     );
     expect(darkOptionCard, findsOneWidget);
     await tester.tap(darkOptionCard);

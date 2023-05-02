@@ -11,16 +11,16 @@ import 'package:ubuntu_wizard/utils.dart';
 import '../test_utils.dart';
 import 'slides_test.mocks.dart';
 
-// ignore_for_file: type=lint
 @GenerateMocks([UrlLauncher])
 void main() {
   setUpAll(() => UbuntuTester.context = Scaffold);
 
   testWidgets('inherited slides', (tester) async {
-    final slide1 = (_) => Text('slide1');
-    final slide2 = (_) => Text('slide2');
+    slide1(_) => const Text('slide1');
+    slide2(_) => const Text('slide2');
 
-    final widget = SlidesContext(slides: [slide1, slide2], child: Text('page'));
+    final widget =
+        SlidesContext(slides: [slide1, slide2], child: const Text('page'));
     await tester.pumpWidget(MaterialApp(home: widget));
 
     final context = tester.element(find.text('page'));
@@ -32,13 +32,13 @@ void main() {
 
     expect(
       widget.updateShouldNotify(
-        SlidesContext(slides: [slide1, slide2], child: Text('page')),
+        SlidesContext(slides: [slide1, slide2], child: const Text('page')),
       ),
       isFalse,
     );
     expect(
       widget.updateShouldNotify(
-        SlidesContext(slides: [slide2, slide1], child: Text('page')),
+        SlidesContext(slides: [slide2, slide1], child: const Text('page')),
       ),
       isTrue,
     );

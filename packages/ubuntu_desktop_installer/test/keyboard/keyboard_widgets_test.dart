@@ -4,8 +4,6 @@ import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 
 import '../test_utils.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   setUpAll(() => UbuntuTester.context = DetectKeyboardView);
 
@@ -36,7 +34,7 @@ void main() {
 
   testWidgets('find key', (tester) async {
     await tester.pumpWidget(
-      tester.buildApp((_) => DetectKeyboardView(keyPresent: 'x')),
+      tester.buildApp((_) => const DetectKeyboardView(keyPresent: 'x')),
     );
 
     expect(find.byType(KeyPresentView), findsOneWidget);

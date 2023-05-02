@@ -23,8 +23,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../test_utils.dart';
 import 'network_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([
   AccessPoint,
   EthernetModel,
@@ -55,7 +53,8 @@ void main() {
     when(ethernetModel.isConnected).thenReturn(true);
     when(ethernetModel.isConnecting).thenReturn(false);
     when(ethernetModel.isEnabled).thenReturn(ethernet ?? true);
-    when(ethernetModel.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
+    when(ethernetModel.onAvailabilityChanged)
+        .thenAnswer((_) => const Stream.empty());
 
     final accessPoint = MockAccessPoint();
     when(accessPoint.name).thenReturn('ap');
@@ -80,7 +79,8 @@ void main() {
     when(wifiModel.canConnect).thenReturn(true);
     when(wifiModel.isConnected).thenReturn(true);
     when(wifiModel.isConnecting).thenReturn(false);
-    when(wifiModel.onAvailabilityChanged).thenAnswer((_) => Stream.empty());
+    when(wifiModel.onAvailabilityChanged)
+        .thenAnswer((_) => const Stream.empty());
 
     final hiddenWifiModel = MockHiddenWifiModel();
     when(hiddenWifiModel.connectMode).thenReturn(ConnectMode.hiddenWifi);
@@ -93,7 +93,7 @@ void main() {
     when(hiddenWifiModel.isConnected).thenReturn(true);
     when(hiddenWifiModel.isConnecting).thenReturn(false);
     when(hiddenWifiModel.onAvailabilityChanged)
-        .thenAnswer((_) => Stream.empty());
+        .thenAnswer((_) => const Stream.empty());
 
     return MultiProvider(
       providers: [

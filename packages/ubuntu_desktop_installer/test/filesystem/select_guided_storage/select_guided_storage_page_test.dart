@@ -17,8 +17,6 @@ import '../../test_utils.dart';
 import 'select_guided_storage_model_test.mocks.dart';
 import 'select_guided_storage_page_test.mocks.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([SelectGuidedStorageModel])
 void main() {
   final testDisks = <Disk>[
@@ -87,7 +85,7 @@ void main() {
 
     final dropdownItem = find.descendant(
       of: find.byType(MenuItemButton),
-      matching: find.byKey(ValueKey(1)),
+      matching: find.byKey(const ValueKey(1)),
     );
     await tester.ensureVisible(dropdownItem.last);
     await tester.tap(dropdownItem.last);

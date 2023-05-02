@@ -4,13 +4,11 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   test('init', () async {
     final client = MockSubiquityClient();
     when(client.getTimezone()).thenAnswer((_) async =>
-        TimeZoneInfo(timezone: 'Europe/Stockholm', fromGeoip: false));
+        const TimeZoneInfo(timezone: 'Europe/Stockholm', fromGeoip: false));
 
     final model = TimezoneModel(client);
 
