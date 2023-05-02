@@ -7,7 +7,7 @@ import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import '../test_utils.dart';
+import '../../test_utils.dart';
 
 void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);

@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 
-import '../test_utils.dart';
+import '../../test_utils.dart';
 import 'security_key_model_test.mocks.dart';
 import 'security_key_page_test.mocks.dart';
 

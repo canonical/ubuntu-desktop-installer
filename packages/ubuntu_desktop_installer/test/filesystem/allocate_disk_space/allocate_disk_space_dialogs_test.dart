@@ -14,7 +14,7 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../test_utils.dart';
+import '../../test_utils.dart';
 import 'allocate_disk_space_page_test.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
 

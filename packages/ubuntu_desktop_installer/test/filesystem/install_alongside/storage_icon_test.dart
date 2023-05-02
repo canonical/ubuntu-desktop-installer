@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/storage_icon.dart';
 
-import '../test_utils.dart';
+import '../../test_utils.dart';
 
 void main() {
   testWidgets('Windows 10', (tester) async {
