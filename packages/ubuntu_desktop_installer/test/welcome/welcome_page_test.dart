@@ -16,7 +16,6 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
-import '../test_utils.dart';
 import 'welcome_page_test.mocks.dart';
 
 // ignore_for_file: type=lint
@@ -122,8 +121,7 @@ void main() {
   testWidgets('install ubuntu', (tester) async {
     await setUpApp(tester);
 
-    final option =
-        find.widgetWithText(OptionButton, tester.lang.installUbuntu('Ubuntu'));
+    final option = find.radio(Option.installUbuntu);
     expect(option, findsOneWidget);
 
     await tester.tap(option);
@@ -146,8 +144,7 @@ void main() {
     expect(nextButton, findsOneWidget);
     expect(nextButton, isDisabled);
 
-    final option =
-        find.widgetWithText(OptionButton, tester.lang.tryUbuntu('Ubuntu'));
+    final option = find.radio(Option.tryUbuntu);
     expect(option, findsOneWidget);
 
     await tester.tap(option);

@@ -9,7 +9,6 @@ import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test/test_utils.dart';
@@ -25,7 +24,7 @@ Future<void> testLocalePage(
   await tester.pumpAndSettle(); // auto-scroll
 
   if (language != null) {
-    final tile = find.widgetWithText(ListTile, language, skipOffstage: false);
+    final tile = find.listTile(language, skipOffstage: false);
     await tester.ensureVisible(tile);
     await tester.pump();
     await tester.tap(tile);
@@ -49,13 +48,7 @@ Future<void> testWelcomePage(
       tester, WelcomePage, (lang) => lang.tryOrInstallPageTitle('Ubuntu'));
 
   if (option != null) {
-    final labels = {
-      Option.repairUbuntu: tester.lang.repairInstallation,
-      Option.tryUbuntu: tester.lang.tryUbuntu('Ubuntu'),
-      Option.installUbuntu: tester.lang.installUbuntu('Ubuntu'),
-    };
-    await tester
-        .tap(find.widgetWithText(YaruRadioButton<Option>, labels[option]!));
+    await tester.tap(find.radio<Option>(option));
     await tester.pump();
   }
   await tester.pumpAndSettle();
@@ -79,16 +72,14 @@ Future<void> testKeyboardPage(
 
   if (keyboard != null) {
     if (keyboard.layout.isNotEmpty) {
-      final tile =
-          find.widgetWithText(ListTile, keyboard.layout, skipOffstage: false);
+      final tile = find.listTile(keyboard.layout, skipOffstage: false);
       await tester.ensureVisible(tile.last);
       await tester.pump();
       await tester.tap(tile.last);
       await tester.pump();
     }
     if (keyboard.variant.isNotEmpty) {
-      final tile =
-          find.widgetWithText(ListTile, keyboard.variant, skipOffstage: false);
+      final tile = find.listTile(keyboard.variant, skipOffstage: false);
       await tester.ensureVisible(tile.first);
       await tester.pump();
       await tester.tap(tile.first);

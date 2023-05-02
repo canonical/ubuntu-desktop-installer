@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 void main() {
@@ -11,7 +12,7 @@ void main() {
     final listWidget = find.byType(ListWidget);
     expect(listWidget, findsOneWidget);
 
-    final listTile = find.widgetWithText(ListTile, '50');
+    final listTile = find.listTile('50');
     expect(listTile, findsOneWidget);
     expect(tester.getCenter(listTile), tester.getCenter(listWidget));
   });
@@ -25,13 +26,13 @@ void main() {
     expect(listWidget, findsOneWidget);
 
     var i = selectedIndex.value - 1;
-    while (tester.getRect(find.widgetWithText(ListTile, '$i')).top >=
+    while (tester.getRect(find.listTile('$i')).top >=
         tester.getRect(find.byType(ListWidget)).top) {
       --i;
     }
     expect(i, lessThan(selectedIndex.value));
 
-    final listTile = find.widgetWithText(ListTile, '$i');
+    final listTile = find.listTile('$i');
     expect(tester.getRect(listTile).top,
         lessThan(tester.getRect(find.byType(ListWidget)).top));
 
@@ -51,13 +52,13 @@ void main() {
     expect(listWidget, findsOneWidget);
 
     var i = selectedIndex.value + 1;
-    while (tester.getRect(find.widgetWithText(ListTile, '$i')).bottom <=
+    while (tester.getRect(find.listTile('$i')).bottom <=
         tester.getRect(find.byType(ListWidget)).bottom) {
       ++i;
     }
     expect(i, greaterThan(selectedIndex.value));
 
-    final listTile = find.widgetWithText(ListTile, '$i');
+    final listTile = find.listTile('$i');
     expect(tester.getRect(listTile).bottom,
         greaterThan(tester.getRect(find.byType(ListWidget)).bottom));
 
@@ -76,7 +77,7 @@ void main() {
     final listWidget = find.byType(ListWidget);
     expect(listWidget, findsOneWidget);
 
-    final listTile = find.widgetWithText(ListTile, '50');
+    final listTile = find.listTile('50');
     expect(listTile, findsNothing);
 
     selectedIndex.value = 50;

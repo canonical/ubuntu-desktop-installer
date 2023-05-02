@@ -6,7 +6,6 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/inst
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
 import 'package:ubuntu_test/utils.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
@@ -34,12 +33,12 @@ void main() {
         tester.element(find.byType(InstallationTypePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.widgetWithText(
-        YaruRadioButton<AdvancedFeature>, tester.lang.installationTypeZFS));
+    await tester.tap(
+        find.radioButton<AdvancedFeature>(tester.lang.installationTypeZFS));
     await tester.pump();
 
-    await tester.tap(find.widgetWithText(
-        YaruCheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
+    await tester
+        .tap(find.checkButton(tester.lang.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
     await tester.tap(find.button(tester.lang.okButtonText));
@@ -71,7 +70,7 @@ void main() {
         tester.element(find.byType(InstallationTypePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.widgetWithText(YaruRadioButton<AdvancedFeature>,
+    await tester.tap(find.radioButton<AdvancedFeature>(
         tester.lang.installationTypeLVM('Ubuntu')));
     await tester.pump();
 
@@ -104,12 +103,12 @@ void main() {
         tester.element(find.byType(InstallationTypePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.widgetWithText(YaruRadioButton<AdvancedFeature>,
+    await tester.tap(find.radioButton<AdvancedFeature>(
         tester.lang.installationTypeLVM('Ubuntu')));
     await tester.pump();
 
-    await tester.tap(find.widgetWithText(
-        YaruCheckButton, tester.lang.installationTypeEncrypt('Ubuntu')));
+    await tester
+        .tap(find.checkButton(tester.lang.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
     await tester.tap(find.button(tester.lang.okButtonText));

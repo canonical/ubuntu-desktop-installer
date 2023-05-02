@@ -4,7 +4,6 @@ import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome/welcome_widgets.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_wizard.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -12,7 +11,6 @@ import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import '../test_utils.dart';
 import 'welcome_model_test.mocks.dart';
 
 void main() {
@@ -27,7 +25,7 @@ void main() {
 
     expect(find.byType(WelcomePage), findsOneWidget);
 
-    await tester.tapOption(tester.lang.installUbuntu('Ubuntu'));
+    await tester.tap(find.radio(Option.installUbuntu));
     await tester.pump();
 
     // welcome -> last
@@ -61,7 +59,7 @@ void main() {
 
     expect(find.byType(WelcomePage), findsOneWidget);
 
-    await tester.tapOption(tester.lang.installUbuntu('Ubuntu'));
+    await tester.tap(find.radio(Option.installUbuntu));
     await tester.pump();
 
     // welcome -> rst
@@ -126,11 +124,5 @@ extension on WidgetTester {
         ),
       ),
     );
-  }
-
-  Future<void> tapOption(String label) {
-    final button = find.widgetWithText(OptionButton, label);
-    expect(button, findsOneWidget);
-    return tap(button);
   }
 }

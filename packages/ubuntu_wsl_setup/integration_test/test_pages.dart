@@ -40,7 +40,7 @@ Future<void> testSelectYourLanguagePage(
   expectPage(tester, SelectLanguagePage, (lang) => lang.selectLanguageTitle);
 
   if (language != null) {
-    final tile = find.widgetWithText(ListTile, language, skipOffstage: false);
+    final tile = find.listTile(language, skipOffstage: false);
     expect(tile, findsOneWidget);
     final viewRect = tester.getRect(find.byType(ListView));
     await tester.scrollUntilVisible(tile, viewRect.height / 2);

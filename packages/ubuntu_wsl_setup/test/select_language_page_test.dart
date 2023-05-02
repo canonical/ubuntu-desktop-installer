@@ -72,7 +72,7 @@ void main() {
     verify(model.loadLanguages()).called(1);
     verify(model.selectLocale(Locale('fr_FR'))).called(1);
 
-    final listTile = find.widgetWithText(ListTile, 'German');
+    final listTile = find.listTile('German');
     expect(listTile, findsOneWidget);
     await tester.tap(listTile);
     verify(model.selectedLanguageIndex = 2).called(1);

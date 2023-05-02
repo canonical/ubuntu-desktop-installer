@@ -135,10 +135,7 @@ void main() {
     await tester.tap(find.byType(MenuButtonBuilder<WifiDevice>));
     await tester.pumpAndSettle();
 
-    final item1 = find.descendant(
-      of: find.byType(MenuItemButton),
-      matching: find.text('device 1'),
-    );
+    final item1 = find.menuItem('device 1');
     expect(item1, findsOneWidget);
     await tester.ensureVisible(item1);
     await tester.tap(item1);
@@ -148,10 +145,7 @@ void main() {
     await tester.tap(find.byType(MenuButtonBuilder<WifiDevice>));
     await tester.pumpAndSettle();
 
-    final item2 = find.descendant(
-      of: find.byType(MenuItemButton),
-      matching: find.text('device 2'),
-    );
+    final item2 = find.menuItem('device 2');
     expect(item2, findsOneWidget);
     await tester.ensureVisible(item2);
     await tester.tap(item2);

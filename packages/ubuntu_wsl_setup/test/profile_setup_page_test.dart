@@ -186,8 +186,8 @@ void main() {
   //   final model = buildModel(showAdvancedOptions: true);
   //   await tester.pumpWidget(buildApp(tester, model));
 
-  //   final checkbox = find.widgetWithText(
-  //       YaruCheckButton, tester.lang.profileSetupShowAdvancedOptions);
+  //   final checkbox =
+  //       find.checkButton(tester.lang.profileSetupShowAdvancedOptions);
   //   expect(checkbox, findsOneWidget);
   //   expect(tester.widget<YaruCheckButton>(checkbox).value, isTrue);
 

@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
@@ -362,7 +363,7 @@ void main() {
         '$currentThemeName/14.installation-slide-$i',
       );
       if (i < defaultSlides.length - 1) {
-        await tester.tap(find.byIcon(YaruIcons.pan_end));
+        await tester.tap(find.iconButton(YaruIcons.pan_end));
         await tester.pump(kThemeAnimationDuration);
       }
     }
