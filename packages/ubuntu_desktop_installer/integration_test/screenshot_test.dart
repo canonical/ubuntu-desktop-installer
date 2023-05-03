@@ -440,21 +440,21 @@ class YaruThemeVariant extends ValueVariant<ThemeData> {
 
   static Set<ThemeData> _resolveThemes(String? name) {
     switch (name) {
-      case 'light':
-        return {yaruLight};
       case 'dark':
         return {yaruDark};
       case 'high-contrast-light':
         return {yaruHighContrastLight};
       case 'high-contrast-dark':
         return {yaruHighContrastDark};
-      default:
+      case 'all':
         return {
           yaruLight,
           yaruDark,
           yaruHighContrastLight,
           yaruHighContrastDark,
         };
+      default:
+        return {yaruLight};
     }
   }
 }
