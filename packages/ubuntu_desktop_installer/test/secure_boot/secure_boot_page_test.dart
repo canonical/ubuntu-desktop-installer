@@ -7,7 +7,6 @@ import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dar
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_page.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'secure_boot_page_test.mocks.dart';
@@ -55,14 +54,8 @@ void main() {
     expect(fields.first, isEnabled);
     expect(fields.last, isEnabled);
 
-    final radios = find.byType(YaruRadioButton<SecureBootMode>);
-    expect(radios, findsNWidgets(2));
-    expect(
-        tester.widget<YaruRadioButton<SecureBootMode>>(radios.first).groupValue,
-        equals(SecureBootMode.turnOff));
-    expect(
-        tester.widget<YaruRadioButton<SecureBootMode>>(radios.last).groupValue,
-        equals(SecureBootMode.turnOff));
+    expect(find.radio(SecureBootMode.turnOff), isChecked);
+    expect(find.radio(SecureBootMode.dontInstall), isNotChecked);
 
     expect(find.byType(SuccessIcon), findsNWidgets(2));
 
@@ -94,14 +87,8 @@ void main() {
     final model = buildModel(secureBootMode: SecureBootMode.dontInstall);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radios = find.byType(YaruRadioButton<SecureBootMode>);
-    expect(radios, findsNWidgets(2));
-    expect(
-        tester.widget<YaruRadioButton<SecureBootMode>>(radios.first).groupValue,
-        equals(SecureBootMode.dontInstall));
-    expect(
-        tester.widget<YaruRadioButton<SecureBootMode>>(radios.last).groupValue,
-        equals(SecureBootMode.dontInstall));
+    expect(find.radio(SecureBootMode.turnOff), isNotChecked);
+    expect(find.radio(SecureBootMode.dontInstall), isChecked);
   });
 
   testWidgets('valid input', (tester) async {

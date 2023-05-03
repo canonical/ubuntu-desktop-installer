@@ -5,6 +5,7 @@ import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_view.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -37,6 +38,6 @@ void main() {
 
     final radioButton = find.byType(YaruRadioButton<ConnectMode>);
     expect(radioButton, findsOneWidget);
-    expect(tester.widget<YaruRadioButton>(radioButton).onChanged, isNull);
+    expect(radioButton, isDisabled);
   });
 }

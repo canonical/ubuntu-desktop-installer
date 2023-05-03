@@ -189,13 +189,13 @@ void main() {
   //   final checkbox =
   //       find.checkButton(tester.lang.profileSetupShowAdvancedOptions);
   //   expect(checkbox, findsOneWidget);
-  //   expect(tester.widget<YaruCheckButton>(checkbox).value, isTrue);
+  //   expect(checkbox, isChecked);
 
   //   when(model.showAdvancedOptions).thenReturn(true);
 
   //   await tester.tap(checkbox);
   //   verify(model.showAdvancedOptions = false).called(1);
-  //   expect(tester.widget<YaruCheckButton>(checkbox).value, isTrue);
+  //   expect(checkbox, isChecked);
   // });
 
   testWidgets('load and save profile setup', (tester) async {
