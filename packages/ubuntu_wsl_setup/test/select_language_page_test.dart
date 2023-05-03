@@ -13,6 +13,7 @@ import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dart';
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_page.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
+import 'package:yaru/yaru.dart';
 
 import 'select_language_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -53,6 +54,7 @@ void main() {
       [Locale? locale]) {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
+      theme: yaruLight,
       home: Wizard(
         routes: {
           '/': WizardRoute(

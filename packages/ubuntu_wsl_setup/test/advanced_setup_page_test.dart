@@ -11,6 +11,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_model.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_page.dart';
+import 'package:yaru/yaru.dart';
 
 import 'advanced_setup_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -46,6 +47,7 @@ void main() {
   Widget buildApp(AdvancedSetupModel model) {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
+      theme: yaruLight,
       home: Wizard(
         routes: {
           '/': WizardRoute(
