@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru/yaru.dart';
 
 export 'package:ubuntu_test/utils.dart' show UbuntuLangTester;
 
@@ -52,6 +53,7 @@ extension UbuntuTester on WidgetTester {
       data: const FlavorData(name: 'Ubuntu'),
       child: MaterialApp(
         localizationsDelegates: localizationsDelegates,
+        theme: yaruLight,
         home: Wizard(
           routes: {
             '/': WizardRoute(

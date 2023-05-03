@@ -18,6 +18,7 @@ import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_m
 import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_page.dart';
 import 'package:ubuntu_wsl_setup/pages/installation_slides/slides.dart';
 import 'package:ubuntu_wsl_setup/services/journal.dart';
+import 'package:yaru/yaru.dart';
 
 import 'installation_slides_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -71,6 +72,7 @@ void main() {
       create: (_) => const AppModel(),
       child: MaterialApp(
         localizationsDelegates: localizationsDelegates,
+        theme: yaruLight,
         home: Wizard(routes: {
           '/': WizardRoute(
             builder: builder,

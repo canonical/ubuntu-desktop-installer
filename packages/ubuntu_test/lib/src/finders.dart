@@ -22,14 +22,11 @@ extension UbuntuCommonFinders on CommonFinders {
     return widgetWithText(YaruCheckButton, text);
   }
 
-  /// Finds any [IconButton] or [ButtonStyleButton] by [icon].
+  /// Finds any [ButtonStyleButton] by [icon].
   Finder iconButton(IconData icon) {
     return ancestor(
       of: byIcon(icon),
-      matching: any([
-        bySubtype<ButtonStyleButton>(),
-        bySubtype<IconButton>(),
-      ]),
+      matching: bySubtype<ButtonStyleButton>(),
     );
   }
 

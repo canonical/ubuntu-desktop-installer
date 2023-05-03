@@ -13,6 +13,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_model.dart';
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_page.dart';
+import 'package:yaru/yaru.dart';
 
 import 'profile_setup_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -56,6 +57,7 @@ void main() {
     tester.binding.window.physicalSizeTestValue = const Size(960, 680);
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
+      theme: yaruLight,
       home: Wizard(
         routes: {
           '/': WizardRoute(
