@@ -87,33 +87,33 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
-    final backButton = find.widgetWithIcon(IconButton, YaruIcons.pan_start);
+    final backButton = find.iconButton(YaruIcons.pan_start);
     expect(backButton, findsOneWidget);
 
-    final nextButton = find.widgetWithIcon(IconButton, YaruIcons.pan_end);
+    final nextButton = find.iconButton(YaruIcons.pan_end);
     expect(nextButton, findsOneWidget);
 
     // initially at first slide
     expect(findsSlide('slide1'), findsOneWidget);
     expect(findsSlide('slide2'), findsNothing);
-    expect(tester.widget<IconButton>(backButton).onPressed, isNull);
-    expect(tester.widget<IconButton>(nextButton).onPressed, isNotNull);
+    expect(backButton, isDisabled);
+    expect(nextButton, isEnabled);
 
     // go to second slide
-    await tester.tap(find.iconButton(YaruIcons.pan_end));
+    await tester.tap(nextButton);
     await tester.pumpAndSettle();
     expect(findsSlide('slide1'), findsNothing);
     expect(findsSlide('slide2'), findsOneWidget);
-    expect(tester.widget<IconButton>(backButton).onPressed, isNotNull);
-    expect(tester.widget<IconButton>(nextButton).onPressed, isNull);
+    expect(backButton, isEnabled);
+    expect(nextButton, isDisabled);
 
     // back to first slide
-    await tester.tap(find.iconButton(YaruIcons.pan_start));
+    await tester.tap(backButton);
     await tester.pumpAndSettle();
     expect(findsSlide('slide1'), findsOneWidget);
     expect(findsSlide('slide2'), findsNothing);
-    expect(tester.widget<IconButton>(backButton).onPressed, isNull);
-    expect(tester.widget<IconButton>(nextButton).onPressed, isNotNull);
+    expect(backButton, isDisabled);
+    expect(nextButton, isEnabled);
   });
 
   double getLogOffset(WidgetTester tester) {

@@ -12,7 +12,6 @@ import 'package:ubuntu_desktop_installer/pages/source/source_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'source_model_test.mocks.dart';
@@ -68,30 +67,12 @@ void main() {
     final model = buildModel(sourceId: kNormalSourceId);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final normalInstallationTile = find.radioButton<String>(
-      tester.lang.normalInstallationTitle,
-    );
-    expect(normalInstallationTile, findsOneWidget);
-
-    final minimalInstallationTile = find.radioButton<String>(
-      tester.lang.minimalInstallationTitle,
-    );
-    expect(minimalInstallationTile, findsOneWidget);
-
-    expect(
-      tester.widget<YaruRadioButton<String>>(normalInstallationTile).groupValue,
-      kNormalSourceId,
-    );
-    expect(
-      tester
-          .widget<YaruRadioButton<String>>(minimalInstallationTile)
-          .groupValue,
-      kNormalSourceId,
-    );
+    expect(find.radio(kNormalSourceId), isChecked);
+    expect(find.radio(kMinimalSourceId), isNotChecked);
 
     when(model.sourceId).thenReturn('ubuntu-desktop-minimal');
 
-    await tester.tap(minimalInstallationTile);
+    await tester.tap(find.radio(kMinimalSourceId));
 
     verify(model.setSourceId('ubuntu-desktop-minimal')).called(1);
   });
@@ -100,16 +81,13 @@ void main() {
     final model = buildModel(installDrivers: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final installDriversTile = find.checkButton(
-      tester.lang.installDriversTitle,
-    );
-    expect(installDriversTile, findsOneWidget);
-
-    expect(tester.widget<YaruCheckButton>(installDriversTile).value, isTrue);
+    final checkbox = find.checkButton(tester.lang.installDriversTitle);
+    expect(checkbox, findsOneWidget);
+    expect(checkbox, isChecked);
 
     when(model.installDrivers).thenReturn(false);
 
-    await tester.tap(installDriversTile);
+    await tester.tap(checkbox);
 
     verify(model.setInstallDrivers(false)).called(1);
   });
@@ -118,16 +96,13 @@ void main() {
     final model = buildModel(installCodecs: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final installCodecsTile = find.checkButton(
-      tester.lang.installCodecsTitle,
-    );
-    expect(installCodecsTile, findsOneWidget);
-
-    expect(tester.widget<YaruCheckButton>(installCodecsTile).value, isTrue);
+    final checkbox = find.checkButton(tester.lang.installCodecsTitle);
+    expect(checkbox, findsOneWidget);
+    expect(checkbox, isChecked);
 
     when(model.installCodecs).thenReturn(false);
 
-    await tester.tap(installCodecsTile);
+    await tester.tap(checkbox);
 
     verify(model.setInstallCodecs(false)).called(1);
   });
@@ -159,14 +134,14 @@ void main() {
 
     expect(find.text(tester.lang.offlineWarning), findsNothing);
 
-    final installCodecsTile = find.checkButton(tester.lang.installCodecsTitle);
-    expect(installCodecsTile, findsOneWidget);
-    expect(tester.widget<YaruCheckButton>(installCodecsTile).onChanged, isNull);
+    final checkbox = find.checkButton(tester.lang.installCodecsTitle);
+    expect(checkbox, findsOneWidget);
+    expect(checkbox, isDisabled);
 
     final gesture = await tester.createGesture(kind: PointerDeviceKind.mouse);
     await gesture.addPointer();
     addTearDown(gesture.removePointer);
-    await gesture.moveTo(tester.getCenter(installCodecsTile));
+    await gesture.moveTo(tester.getCenter(checkbox));
     await tester.pump();
 
     await tester.pumpAndSettle(const Duration(milliseconds: 500));

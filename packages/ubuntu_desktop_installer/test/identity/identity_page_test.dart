@@ -9,7 +9,6 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_page.dart';
 import 'package:ubuntu_test/utils.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
 import 'identity_page_test.mocks.dart';
@@ -220,8 +219,7 @@ void main() {
       tester.lang.whoAreYouPageRequirePassword,
     );
     expect(requiredPasswordSwitch, findsOneWidget);
-    expect(
-        tester.widget<YaruSwitchButton>(requiredPasswordSwitch).value, isFalse);
+    expect(requiredPasswordSwitch, isNotChecked);
 
     await tester.tap(requiredPasswordSwitch);
     verify(model.autoLogin = false).called(1);
@@ -231,10 +229,8 @@ void main() {
     final model = buildModel(showPassword: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final showPasswordButton = find.ancestor(
-      of: find.text(tester.lang.whoAreYouPagePasswordShow),
-      matching: find.bySubtype<ButtonStyleButton>(),
-    );
+    final showPasswordButton =
+        find.button(tester.lang.whoAreYouPagePasswordShow);
     expect(showPasswordButton, findsOneWidget);
 
     await tester.tap(showPasswordButton);
@@ -245,10 +241,8 @@ void main() {
     final model = buildModel(showPassword: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final hidePasswordButton = find.ancestor(
-      of: find.text(tester.lang.whoAreYouPagePasswordHide),
-      matching: find.bySubtype<ButtonStyleButton>(),
-    );
+    final hidePasswordButton =
+        find.button(tester.lang.whoAreYouPagePasswordHide);
     expect(hidePasswordButton, findsOneWidget);
 
     await tester.tap(hidePasswordButton);
@@ -273,8 +267,8 @@ void main() {
 
     final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
     expect(checkbox, findsOneWidget);
-    expect(tester.widget<YaruCheckButton>(checkbox).value, isFalse);
-    expect(tester.widget<YaruCheckButton>(checkbox).onChanged, isNotNull);
+    expect(checkbox, isNotChecked);
+    expect(checkbox, isEnabled);
 
     await tester.tap(checkbox);
     verify(model.useActiveDirectory = true).called(1);
@@ -296,8 +290,8 @@ void main() {
 
     final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
     expect(checkbox, findsOneWidget);
-    expect(tester.widget<YaruCheckButton>(checkbox).value, isFalse);
-    expect(tester.widget<YaruCheckButton>(checkbox).onChanged, isNull);
+    expect(checkbox, isNotChecked);
+    expect(checkbox, isDisabled);
 
     await tester.tap(checkbox);
     verifyNever(model.useActiveDirectory = true);

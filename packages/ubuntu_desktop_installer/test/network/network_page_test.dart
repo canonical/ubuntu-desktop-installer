@@ -208,10 +208,9 @@ void main() {
         tester.buildApp((_) => buildPage(model: model, ethernet: true)));
     await tester.pumpAndSettle();
 
-    final ethernetTile = find.byType(EthernetRadioButton);
-    expect(ethernetTile, findsOneWidget);
-    expect(tester.widget<EthernetRadioButton>(ethernetTile).value,
-        ConnectMode.ethernet);
+    final ethernetRadio = find.radio(ConnectMode.ethernet);
+    expect(ethernetRadio, findsOneWidget);
+    expect(ethernetRadio, isChecked);
     expect(model.connectMode, ConnectMode.ethernet);
   });
 
@@ -221,9 +220,9 @@ void main() {
         tester.buildApp((_) => buildPage(model: model, wifi: true)));
     await tester.pumpAndSettle();
 
-    final wifiTile = find.byType(WifiRadioButton);
-    expect(wifiTile, findsOneWidget);
-    expect(tester.widget<WifiRadioButton>(wifiTile).value, ConnectMode.wifi);
+    final wifiRadio = find.radio(ConnectMode.wifi);
+    expect(wifiRadio, findsOneWidget);
+    expect(wifiRadio, isChecked);
     expect(model.connectMode, ConnectMode.wifi);
   });
 
@@ -232,10 +231,9 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model: model)));
     await tester.pumpAndSettle();
 
-    final noConnectTile = find.byWidgetPredicate((widget) =>
-        widget is YaruRadioButton<ConnectMode> &&
-        widget.value == ConnectMode.none);
-    expect(noConnectTile, findsOneWidget);
+    final noConnectRadio = find.radio(ConnectMode.none);
+    expect(noConnectRadio, findsOneWidget);
+    expect(noConnectRadio, isChecked);
     expect(model.connectMode, ConnectMode.none);
   });
 
