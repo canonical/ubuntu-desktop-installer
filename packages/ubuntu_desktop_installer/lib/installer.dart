@@ -25,6 +25,7 @@ import 'theme.dart';
 import 'widgets.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
+export 'installer/view_model.dart';
 export 'slides.dart';
 
 final assetBundle =
