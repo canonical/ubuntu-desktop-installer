@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -18,45 +18,42 @@ import 'wifi_view.dart';
 export 'connect_model.dart' show ConnectMode;
 
 /// https://github.com/canonical/ubuntu-desktop-installer/issues/30
-class NetworkPage extends StatefulWidget {
-  @visibleForTesting
+class NetworkPage extends ConsumerStatefulWidget {
   const NetworkPage({super.key});
 
-  static Widget create(BuildContext context) {
-    final udev = getService<UdevService>();
-    final service = getService<NetworkService>();
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => NetworkModel(service)),
-        ChangeNotifierProvider(create: (_) => EthernetModel(service, udev)),
-        ChangeNotifierProvider(create: (_) => WifiModel(service, udev)),
-        ChangeNotifierProvider(create: (_) => HiddenWifiModel(service, udev)),
-        ChangeNotifierProvider(create: (_) => NoConnectModel()),
-      ],
-      child: const NetworkPage(),
-    );
-  }
+  static final networkModelProvider = ChangeNotifierProvider((_) {
+    return NetworkModel(getService<NetworkService>());
+  });
+  static final ethernetModelProvider = ChangeNotifierProvider((_) =>
+      EthernetModel(getService<NetworkService>(), getService<UdevService>()));
+  static final wifiModelProvider = ChangeNotifierProvider((_) =>
+      WifiModel(getService<NetworkService>(), getService<UdevService>()));
+  static final hiddenWifiModelProvider = ChangeNotifierProvider((_) =>
+      HiddenWifiModel(getService<NetworkService>(), getService<UdevService>()));
+  static final noConnectModelProvider =
+      ChangeNotifierProvider((_) => NoConnectModel());
 
   @override
-  State<NetworkPage> createState() => _NetworkPageState();
+  ConsumerState<NetworkPage> createState() => _NetworkPageState();
 }
 
-class _NetworkPageState extends State<NetworkPage> {
+class _NetworkPageState extends ConsumerState<NetworkPage> {
   @override
   void initState() {
     super.initState();
 
-    final model = context.read<NetworkModel>();
-    model.addConnectMode(context.read<EthernetModel>());
-    model.addConnectMode(context.read<WifiModel>());
-    model.addConnectMode(context.read<HiddenWifiModel>());
-    model.addConnectMode(context.read<NoConnectModel>());
+    final model = ref.read(NetworkPage.networkModelProvider);
+    model.addConnectMode(ref.read(NetworkPage.ethernetModelProvider));
+    model.addConnectMode(ref.read(NetworkPage.wifiModelProvider));
+    model.addConnectMode(ref.read(NetworkPage.hiddenWifiModelProvider));
+    model.addConnectMode(ref.read(NetworkPage.noConnectModelProvider));
+
     model.init().then((_) => model.selectConnectMode());
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<NetworkModel>(context);
+    final model = ref.watch(NetworkPage.networkModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

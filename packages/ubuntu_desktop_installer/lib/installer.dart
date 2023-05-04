@@ -387,7 +387,7 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.keyboard.index,
         ),
         Routes.network: WizardRoute(
-          builder: NetworkPage.create,
+          builder: (_) => const NetworkPage(),
           userData: InstallationStep.network.index,
         ),
         Routes.source: WizardRoute(

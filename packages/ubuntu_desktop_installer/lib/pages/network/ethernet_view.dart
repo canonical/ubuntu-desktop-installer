@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'connect_model.dart';
-import 'ethernet_model.dart';
 import 'network_tile.dart';
 
-class EthernetRadioButton extends StatelessWidget {
+class EthernetRadioButton extends ConsumerWidget {
   const EthernetRadioButton({
     super.key,
     required this.value,
@@ -19,8 +18,8 @@ class EthernetRadioButton extends StatelessWidget {
   final ValueChanged<ConnectMode?> onChanged;
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<EthernetModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(NetworkPage.ethernetModelProvider);
     final lang = AppLocalizations.of(context);
     if (!model.isEnabled || model.devices.isEmpty) {
       return NetworkTile(
@@ -41,7 +40,7 @@ class EthernetRadioButton extends StatelessWidget {
   }
 }
 
-class EthernetView extends StatelessWidget {
+class EthernetView extends ConsumerWidget {
   const EthernetView({
     super.key,
     required this.expanded,
@@ -52,9 +51,9 @@ class EthernetView extends StatelessWidget {
   final VoidCallback onEnabled;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final model = Provider.of<EthernetModel>(context);
+    final model = ref.watch(NetworkPage.ethernetModelProvider);
     if (model.devices.isNotEmpty && !model.isEnabled) {
       return NetworkTile(
         subtitle: Column(

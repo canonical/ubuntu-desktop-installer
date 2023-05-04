@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'connect_model.dart';
+import 'network_page.dart';
 import 'network_tile.dart';
 import 'wifi_model.dart';
 
@@ -15,7 +15,7 @@ typedef OnWifiSelected = void Function(
   AccessPoint accessPoint,
 );
 
-class WifiRadioButton extends StatelessWidget {
+class WifiRadioButton extends ConsumerWidget {
   const WifiRadioButton({
     super.key,
     required this.value,
@@ -26,8 +26,8 @@ class WifiRadioButton extends StatelessWidget {
   final ValueChanged<ConnectMode?>? onChanged;
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<WifiModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(NetworkPage.wifiModelProvider);
     final lang = AppLocalizations.of(context);
     return Padding(
       padding: const EdgeInsets.only(top: 8),
@@ -49,7 +49,7 @@ class WifiRadioButton extends StatelessWidget {
   }
 }
 
-class WifiView extends StatefulWidget {
+class WifiView extends ConsumerStatefulWidget {
   const WifiView({
     super.key,
     required this.expanded,
@@ -62,20 +62,20 @@ class WifiView extends StatefulWidget {
   final OnWifiSelected onSelected;
 
   @override
-  State<WifiView> createState() => _WifiViewState();
+  ConsumerState<WifiView> createState() => _WifiViewState();
 }
 
-class _WifiViewState extends State<WifiView> {
+class _WifiViewState extends ConsumerState<WifiView> {
   @override
   void initState() {
     super.initState();
-    Provider.of<WifiModel>(context, listen: false).startPeriodicScanning();
+    ref.read(NetworkPage.wifiModelProvider.notifier).startPeriodicScanning();
   }
 
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final model = Provider.of<WifiModel>(context);
+    final model = ref.watch(NetworkPage.wifiModelProvider);
     if (!model.isEnabled) {
       return NetworkTile(
         subtitle: Column(
@@ -110,17 +110,20 @@ class _WifiViewState extends State<WifiView> {
   }
 }
 
-class WifiListView extends StatelessWidget {
+class WifiListView extends ConsumerWidget {
   const WifiListView({
     super.key,
     required this.onSelected,
   });
 
   final OnWifiSelected onSelected;
+  static final wifiDeviceProvider =
+      ChangeNotifierProvider<WifiDevice>((_) => throw UnimplementedError());
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<WifiModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(NetworkPage.wifiModelProvider);
+
     return YaruBorderContainer(
       clipBehavior: Clip.antiAlias,
       child: OverrideMouseCursor(
@@ -129,8 +132,10 @@ class WifiListView extends StatelessWidget {
           shrinkWrap: true,
           itemCount: model.devices.length,
           itemBuilder: (context, index) {
-            return ChangeNotifierProvider.value(
-              value: model.devices[index],
+            return ProviderScope(
+              overrides: [
+                wifiDeviceProvider.overrideWith((_) => model.devices[index]),
+              ],
               child: WifiListTile(
                 key: ValueKey(index),
                 selected: model.isSelectedDevice(model.devices[index]),
@@ -147,7 +152,7 @@ class WifiListView extends StatelessWidget {
   }
 }
 
-class WifiListTile extends StatelessWidget {
+class WifiListTile extends ConsumerWidget {
   const WifiListTile({
     super.key,
     required this.selected,
@@ -157,9 +162,12 @@ class WifiListTile extends StatelessWidget {
   final bool selected;
   final OnWifiSelected onSelected;
 
+  static final accessPointProvider =
+      Provider<AccessPoint>((_) => throw UnimplementedError());
+
   @override
-  Widget build(BuildContext context) {
-    final device = Provider.of<WifiDevice>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final device = ref.watch(WifiListView.wifiDeviceProvider);
     final textColor = Theme.of(context).textTheme.titleMedium!.color;
     final iconSize = IconTheme.of(context).size;
     return ExpansionTile(
@@ -177,8 +185,8 @@ class WifiListTile extends StatelessWidget {
           : null,
       children: <Widget>[
         for (final accessPoint in device.accessPoints)
-          ChangeNotifierProvider.value(
-            value: accessPoint,
+          ProviderScope(
+            overrides: [accessPointProvider.overrideWith((_) => accessPoint)],
             child: ListTile(
               key: ValueKey(accessPoint.name),
               title: Text(accessPoint.name),
