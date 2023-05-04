@@ -23,8 +23,8 @@ class WelcomeWizard extends StatelessWidget {
           builder: (_) => const WelcomePage(),
           userData: InstallationStep.locale.index,
         ),
-        Routes.rst: const WizardRoute(
-          builder: RstPage.create,
+        Routes.rst: WizardRoute(
+          builder: (_) => const RstPage(),
         ),
       },
     );
