@@ -20,7 +20,7 @@ class WelcomeWizard extends StatelessWidget {
       userData: InstallationStep.values.length,
       routes: {
         Navigator.defaultRouteName: WizardRoute(
-          builder: WelcomePage.create,
+          builder: (_) => const WelcomePage(),
           userData: InstallationStep.locale.index,
         ),
         Routes.rst: const WizardRoute(
