@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -12,21 +12,15 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'not_enough_disk_space_model.dart';
 
-class NotEnoughDiskSpacePage extends StatelessWidget {
-  @visibleForTesting
+class NotEnoughDiskSpacePage extends ConsumerWidget {
   const NotEnoughDiskSpacePage({super.key});
 
-  static Widget create(BuildContext context) {
-    final service = getService<DiskStorageService>();
-    return ChangeNotifierProvider(
-      create: (_) => NotEnoughDiskSpaceModel(service),
-      child: const NotEnoughDiskSpacePage(),
-    );
-  }
+  static final modelProvider = ChangeNotifierProvider<NotEnoughDiskSpaceModel>(
+      (_) => NotEnoughDiskSpaceModel(getService<DiskStorageService>()));
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<NotEnoughDiskSpaceModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(modelProvider);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return Scaffold(
