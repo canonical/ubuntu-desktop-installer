@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'widget_testers.dart';
-
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 // ignore_for_file: type=lint
 
