@@ -51,12 +51,12 @@ Future<void> testSelectYourLanguagePage(
   await tester.pumpAndSettle();
 
   // For now toggling this check box won't cause any noticeable behavior change in dry-run.
-  await tester.toggleCheckbox(
-    label: tester.lang.installLangPacksTitle(language ?? ''),
-    value: false,
+  await tester.toggle(
+    find.checkButton(tester.lang.installLangPacksTitle(language ?? '')),
+    false,
   );
 
-  await tester.tapNext();
+  await tester.tap(find.button(tester.ulang.nextLabel));
 }
 
 Future<void> testProfileSetupPage(
@@ -92,13 +92,15 @@ Future<void> testProfileSetupPage(
       confirmedPassword,
     );
   }
-  await tester.toggleCheckbox(
-    label: tester.lang.profileSetupShowAdvancedOptions,
-    value: showAdvancedOptions,
-  );
+  if (showAdvancedOptions != null) {
+    await tester.toggle(
+      find.checkButton(tester.lang.profileSetupShowAdvancedOptions),
+      showAdvancedOptions,
+    );
+  }
   await tester.pumpAndSettle();
 
-  await tester.tapNext();
+  await tester.tap(find.button(tester.ulang.nextLabel));
 }
 
 Future<void> testAdvancedSetupPage(
@@ -119,17 +121,21 @@ Future<void> testAdvancedSetupPage(
       config!.automountOptions,
     );
   }
-  await tester.toggleCheckbox(
-    label: tester.lang.advancedSetupHostGenerationTitle,
-    value: config?.networkGeneratehosts,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.advancedSetupResolvConfGenerationTitle,
-    value: config?.networkGenerateresolvconf,
-  );
+  if (config?.networkGeneratehosts != null) {
+    await tester.toggle(
+      find.checkButton(tester.lang.advancedSetupHostGenerationTitle),
+      config!.networkGeneratehosts,
+    );
+  }
+  if (config?.networkGenerateresolvconf != null) {
+    await tester.toggle(
+      find.checkButton(tester.lang.advancedSetupResolvConfGenerationTitle),
+      config!.networkGenerateresolvconf,
+    );
+  }
   await tester.pumpAndSettle();
 
-  await tester.tapButton(tester.lang.setupButton);
+  await tester.tap(find.button(tester.lang.setupButton));
 }
 
 Future<void> testApplyingChangesPage(
@@ -152,25 +158,34 @@ Future<void> testConfigurationUIPage(
 }) async {
   expectPage(tester, ConfigurationUIPage, (lang) => lang.configurationUITitle);
 
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIAutoMountSubtitle,
-    value: config?.automountEnabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIMountFstabSubtitle,
-    value: config?.automountMountfstab,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIInteroperabilitySubtitle,
-    value: config?.interopEnabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIInteropAppendWindowsPathSubtitle,
-    value: config?.interopAppendwindowspath,
-  );
+  if (config?.automountEnabled != null) {
+    await tester.toggle(
+      find.checkButton(tester.lang.configurationUIAutoMountSubtitle),
+      config!.automountEnabled,
+    );
+  }
+  if (config?.automountMountfstab != null) {
+    await tester.toggle(
+      find.checkButton(tester.lang.configurationUIMountFstabSubtitle),
+      config!.automountMountfstab,
+    );
+  }
+  if (config?.interopEnabled != null) {
+    await tester.toggle(
+      find.checkButton(tester.lang.configurationUIInteroperabilitySubtitle),
+      config!.interopEnabled,
+    );
+  }
+  if (config?.interopAppendwindowspath != null) {
+    await tester.toggle(
+      find.checkButton(
+          tester.lang.configurationUIInteropAppendWindowsPathSubtitle),
+      config!.interopAppendwindowspath,
+    );
+  }
   await tester.pumpAndSettle();
 
-  await tester.tapButton(tester.lang.saveButton);
+  await tester.tap(find.button(tester.lang.saveButton));
 }
 
 void expectPage(
@@ -182,8 +197,4 @@ void expectPage(
   // Prevent `Guarded function conflict` on tests.
   expectSync(find.byType(page), findsOneWidget);
   expectSync(find.widgetWithText(AppBar, title(tester.lang)), findsWidgets);
-}
-
-extension on WidgetTester {
-  Future<void> tapNext() => tap(find.button(ulang.nextLabel));
 }

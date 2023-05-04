@@ -9,7 +9,8 @@ export 'package:yaru_test/yaru_test.dart'
         isDisabled,
         isEnabled,
         isNotChecked,
-        YaruCommonFinders;
+        YaruCommonFinders,
+        YaruWidgetTester;
 
 export 'src/integration_test.dart';
 export 'src/widget_testers.dart';

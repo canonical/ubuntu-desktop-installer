@@ -91,7 +91,7 @@ Future<void> testKeyboardPage(
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
 
-    await tester.tapButton(tester.lang.detectButtonText);
+    await tester.tap(find.button(tester.lang.detectButtonText));
     await tester.pumpAndSettle();
 
     await takeScreenshot(tester, '$screenshot-detect');
@@ -112,7 +112,7 @@ Future<void> testNetworkPage(
       tester, NetworkPage, (lang) => lang.connectToInternetPageTitle);
 
   if (mode != null) {
-    await tester.tapRadioButton<ConnectMode>(mode);
+    await tester.tap(find.radio<ConnectMode>(mode));
   }
   await tester.pumpAndSettle();
 
@@ -132,7 +132,7 @@ Future<void> testSourcePage(
       tester, SourcePage, (lang) => lang.updatesOtherSoftwarePageTitle);
 
   if (sourceId != null) {
-    await tester.tapRadioButton<String>(sourceId);
+    await tester.tap(find.radio<String>(sourceId));
   }
   await tester.pumpAndSettle();
 
@@ -155,7 +155,7 @@ Future<void> testNotEnoughDiskSpacePage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.quitButtonText);
+  await tester.tap(find.button(tester.lang.quitButtonText));
   await expectLater(windowClosed, completes);
 }
 
@@ -170,20 +170,20 @@ Future<void> testInstallationTypePage(
       tester, InstallationTypePage, (lang) => lang.installationTypeTitle);
 
   if (type != null) {
-    await tester.tapRadioButton<InstallationType>(type);
+    await tester.tap(find.radio<InstallationType>(type));
     await tester.pump();
   }
   if (advancedFeature != null) {
-    await tester.tapButton(tester.lang.installationTypeAdvancedLabel);
+    await tester.tap(find.button(tester.lang.installationTypeAdvancedLabel));
     await tester.pumpAndSettle();
 
-    await tester.tapRadioButton<AdvancedFeature>(advancedFeature);
+    await tester.tap(find.radio<AdvancedFeature>(advancedFeature));
     await tester.pump();
 
     if (useEncryption != null) {
-      await tester.toggleCheckbox(
-        label: tester.lang.installationTypeEncrypt('Ubuntu'),
-        value: true,
+      await tester.toggle(
+        find.checkButton(tester.lang.installationTypeEncrypt('Ubuntu')),
+        true,
       );
     }
 
@@ -193,7 +193,7 @@ Future<void> testInstallationTypePage(
       await takeScreenshot(tester, screenshot);
     }
 
-    await tester.tapButton(tester.lang.okButtonText);
+    await tester.tap(find.button(tester.lang.okButtonText));
   }
 
   await tester.pumpAndSettle();
@@ -239,7 +239,7 @@ Future<void> testAllocateDiskSpacePage(
   await expectPage(
       tester, AllocateDiskSpacePage, (lang) => lang.allocateDiskSpace);
 
-  await tester.tapButton(tester.lang.newPartitionTable);
+  await tester.tap(find.button(tester.lang.newPartitionTable));
   await tester.pumpAndSettle();
 
   for (final disk in storage ?? const <Disk>[]) {
@@ -272,7 +272,7 @@ Future<void> testAllocateDiskSpacePage(
         await takeScreenshot(tester, '$screenshot-${partition.sysname}');
       }
 
-      await tester.tapButton(tester.lang.okButtonText);
+      await tester.tap(find.button(tester.lang.okButtonText));
       await tester.pumpAndSettle();
     }
     await tester.pumpAndSettle();
@@ -322,7 +322,7 @@ Future<void> testInstallAlongsidePage(
       await takeScreenshot(tester, '$screenshot-${entry.key.split(' ').first}');
     }
 
-    await tester.tapButton(tester.lang.okButtonText);
+    await tester.tap(find.button(tester.lang.okButtonText));
     await tester.pumpAndSettle();
   }
 
@@ -344,7 +344,7 @@ Future<void> testWriteChangesToDiskPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.startInstallingButtonText);
+  await tester.tap(find.button(tester.lang.startInstallingButtonText));
 }
 
 Future<void> testBitLockerPage(
@@ -357,7 +357,7 @@ Future<void> testBitLockerPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.restartIntoWindows);
+  await tester.tap(find.button(tester.lang.restartIntoWindows));
   await tester.pumpAndSettle();
   expect(find.byType(AlertDialog), findsOneWidget);
 
@@ -366,7 +366,7 @@ Future<void> testBitLockerPage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.restartButtonText);
+  await tester.tap(find.button(tester.lang.restartButtonText));
   await expectLater(windowClosed, completes);
 }
 
@@ -380,7 +380,7 @@ Future<void> testRstPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.restartIntoWindows);
+  await tester.tap(find.button(tester.lang.restartIntoWindows));
   await tester.pumpAndSettle();
   expect(find.byType(AlertDialog), findsOneWidget);
 
@@ -389,7 +389,7 @@ Future<void> testRstPage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.restartButtonText);
+  await tester.tap(find.button(tester.lang.restartButtonText));
   await expectLater(windowClosed, completes);
 }
 
@@ -552,7 +552,7 @@ Future<void> testInstallationCompletePage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.continueTesting);
+  await tester.tap(find.button(tester.lang.continueTesting));
   await expectLater(windowClosed, completes);
 }
 

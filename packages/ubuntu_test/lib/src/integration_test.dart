@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 // ignore_for_file: type=lint
@@ -46,66 +45,4 @@ Future<void> verifyGoldenFile(String fileName, String goldenName) async {
     equals(File(goldenName).readAsStringSync().trim()),
     reason: '$fileName does not match $goldenName',
   );
-}
-
-/// Helpers for interacting with widgets.
-extension IntegrationTester on WidgetTester {
-  /// Taps a button specified by its [label]. The button can be any
-  /// [ButtonStyleButton] subclass, such as [OutlinedButton], [ElevatedButton],
-  /// or [FilledButton].
-  Future<void> tapButton(String label) async {
-    await tap(find.ancestor(
-      of: find.text(label),
-      matching: find.bySubtype<ButtonStyleButton>(),
-    ));
-  }
-
-  /// Toggles a checkbox specified by its [label] to ensure the given [value],
-  /// or does nothing if [value] is `null`.
-  Future<void> toggleCheckbox({
-    required String label,
-    required bool? value,
-  }) async {
-    if (value == null) return;
-    final checkbox = find.widgetWithText(YaruCheckButton, label);
-    if (widget<YaruCheckButton>(checkbox).value != value) {
-      await tap(checkbox);
-    }
-  }
-
-  /// Taps a radio button specified by its [value].
-  Future<void> tapRadioButton<T>(T value) async {
-    await tap(find.byWidgetPredicate((widget) {
-      return widget is YaruRadioButton<T> && widget.value == value;
-    }));
-  }
-
-  /// Pumps until the specified [finder] is satisfied. This can be used to wait
-  /// until a certain page or widget becomes visible.
-  Future<void> pumpUntil(
-    Finder finder, [
-    Duration timeout = const Duration(seconds: 10),
-  ]) async {
-    assert(timeout.inMilliseconds >= 250);
-    final delay = Duration(milliseconds: 250);
-
-    if (any(finder)) return;
-
-    Future? future;
-    return Future.doWhile(() async {
-      if (any(finder)) return false;
-      future = pump(delay);
-      await future;
-      return true;
-    }).timeout(
-      timeout,
-      onTimeout: () async {
-        // Ensures the `pump(delay)` future is awaited even on timeout to prevent
-        // `FlutterGuardedError`s.
-        await future;
-        debugPrint(
-            '\nWARNING: A call to pumpUntil() with finder "$finder" did not complete within the specified timeout $timeout.\n${StackTrace.current}');
-      },
-    );
-  }
 }
