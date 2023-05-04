@@ -36,7 +36,7 @@ Future<void> testLocalePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testWelcomePage(
@@ -57,7 +57,7 @@ Future<void> testWelcomePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testKeyboardPage(
@@ -100,7 +100,7 @@ Future<void> testKeyboardPage(
     await tester.pumpAndSettle();
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testNetworkPage(
@@ -120,7 +120,7 @@ Future<void> testNetworkPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testSourcePage(
@@ -140,7 +140,7 @@ Future<void> testSourcePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testNotEnoughDiskSpacePage(
@@ -202,7 +202,7 @@ Future<void> testInstallationTypePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testSecurityKeyPage(
@@ -228,7 +228,7 @@ Future<void> testSecurityKeyPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testAllocateDiskSpacePage(
@@ -282,7 +282,7 @@ Future<void> testAllocateDiskSpacePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testSelectGuidedStoragePage(
@@ -296,7 +296,7 @@ Future<void> testSelectGuidedStoragePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testInstallAlongsidePage(
@@ -330,7 +330,7 @@ Future<void> testInstallAlongsidePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testWriteChangesToDiskPage(
@@ -429,7 +429,7 @@ Future<void> testTimezonePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testIdentityPage(
@@ -474,7 +474,7 @@ Future<void> testIdentityPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testActiveDirectoryPage(
@@ -511,7 +511,7 @@ Future<void> testActiveDirectoryPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testThemePage(
@@ -532,7 +532,7 @@ Future<void> testThemePage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testInstallationSlidesPage(WidgetTester tester) async {

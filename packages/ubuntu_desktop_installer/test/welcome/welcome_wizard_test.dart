@@ -20,7 +20,7 @@ void main() {
     expect(find.text('first route'), findsOneWidget);
 
     // first -> welcome
-    await tester.tapContinue();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     expect(find.byType(WelcomePage), findsOneWidget);
@@ -29,20 +29,20 @@ void main() {
     await tester.pump();
 
     // welcome -> last
-    await tester.tapContinue();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     expect(find.byType(RstPage), findsNothing);
     expect(find.text('last route'), findsOneWidget);
 
     // last -> welcome
-    await tester.tapBack();
+    await tester.tapPrevious();
     await tester.pumpAndSettle();
 
     expect(find.byType(WelcomePage), findsOneWidget);
 
     // welcome -> first
-    await tester.tapBack();
+    await tester.tapPrevious();
     await tester.pumpAndSettle();
 
     expect(find.text('first route'), findsOneWidget);
@@ -54,7 +54,7 @@ void main() {
     expect(find.text('first route'), findsOneWidget);
 
     // first -> welcome
-    await tester.tapContinue();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     expect(find.byType(WelcomePage), findsOneWidget);
@@ -63,20 +63,20 @@ void main() {
     await tester.pump();
 
     // welcome -> rst
-    await tester.tapContinue();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     expect(find.byType(RstPage), findsOneWidget);
     expect(find.text('no rst'), findsNothing);
 
     // last -> welcome
-    await tester.tapBack();
+    await tester.tapPrevious();
     await tester.pumpAndSettle();
 
     expect(find.byType(WelcomePage), findsOneWidget);
 
     // welcome -> first
-    await tester.tapBack();
+    await tester.tapPrevious();
     await tester.pumpAndSettle();
 
     expect(find.text('first route'), findsOneWidget);
