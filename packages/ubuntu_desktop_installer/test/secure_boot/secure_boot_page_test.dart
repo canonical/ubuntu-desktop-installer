@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_page.dart';
 import 'package:ubuntu_test/utils.dart';
@@ -34,8 +34,8 @@ void main() {
   }
 
   Widget buildPage(SecureBootModel model) {
-    return ChangeNotifierProvider<SecureBootModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [SecureBootPage.modelProvider.overrideWith((_) => model)],
       child: const SecureBootPage(),
     );
   }

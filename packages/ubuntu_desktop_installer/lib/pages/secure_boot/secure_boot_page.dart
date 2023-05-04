@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -8,26 +8,20 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'secure_boot_model.dart';
 import 'secure_boot_widgets.dart';
 
-class SecureBootPage extends StatefulWidget {
-  @visibleForTesting
+class SecureBootPage extends ConsumerStatefulWidget {
   const SecureBootPage({super.key});
 
-  @override
-  State<SecureBootPage> createState() => _SecureBootPageState();
+  static final modelProvider = ChangeNotifierProvider(
+      (_) => SecureBootModel(secureBootMode: SecureBootMode.turnOff));
 
-  static Widget create(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) =>
-          SecureBootModel(secureBootMode: SecureBootMode.turnOff),
-      child: const SecureBootPage(),
-    );
-  }
+  @override
+  ConsumerState<SecureBootPage> createState() => _SecureBootPageState();
 }
 
-class _SecureBootPageState extends State<SecureBootPage> {
+class _SecureBootPageState extends ConsumerState<SecureBootPage> {
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<SecureBootModel>();
+    final model = ref.watch(SecureBootPage.modelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

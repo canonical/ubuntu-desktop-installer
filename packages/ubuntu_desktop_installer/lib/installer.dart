@@ -403,7 +403,7 @@ class _UbuntuDesktopInstallerWizardState
           builder: (_) => const NotEnoughDiskSpacePage(),
         ),
         Routes.secureBoot: WizardRoute(
-          builder: SecureBootPage.create,
+          builder: (_) => const SecureBootPage(),
           userData: InstallationStep.type.index,
         ),
         Routes.filesystem: WizardRoute(
