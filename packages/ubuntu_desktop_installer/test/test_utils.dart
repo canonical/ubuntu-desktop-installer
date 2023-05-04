@@ -73,31 +73,3 @@ extension UbuntuTester on WidgetTester {
     );
   }
 }
-
-extension UbuntuFinders on CommonFinders {
-  Finder asset(String assetName) {
-    return find.byWidgetPredicate((widget) {
-      bool hasAssetImage(Widget widget) {
-        return widget is Image &&
-            widget.image is AssetImage &&
-            (widget.image as AssetImage).assetName.endsWith(assetName);
-      }
-
-      bool hasAssetPicture(Widget widget) {
-        return widget is SvgPicture &&
-            widget.bytesLoader is SvgAssetLoader &&
-            (widget.bytesLoader as SvgAssetLoader)
-                .assetName
-                .endsWith(assetName);
-      }
-
-      return hasAssetImage(widget) || hasAssetPicture(widget);
-    });
-  }
-
-  Finder html(String html) {
-    return find.byWidgetPredicate((widget) {
-      return widget is Html && widget.data == html;
-    });
-  }
-}

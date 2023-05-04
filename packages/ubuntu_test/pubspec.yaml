@@ -22,4 +22,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git
       path: packages/ubuntu_wizard
+  yaru_test:
+    git:
+      url: https://github.com/ubuntu/yaru_test.dart.git
   yaru_widgets: ^2.4.0

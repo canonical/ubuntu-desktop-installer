@@ -53,6 +53,9 @@ dev_dependencies:
       path: packages/subiquity_test
   ubuntu_test:
     path: ../ubuntu_test
+  yaru_test:
+    git:
+      url: https://github.com/ubuntu/yaru_test.dart.git
   yaru_window_test: ^0.0.4
 
 flutter:

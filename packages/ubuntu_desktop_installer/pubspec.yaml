@@ -81,6 +81,9 @@ dev_dependencies:
   ubuntu_test:
     path: ../ubuntu_test
   yaml: ^3.1.0
+  yaru_test:
+    git:
+      url: https://github.com/ubuntu/yaru_test.dart.git
   yaru_window_test: ^0.0.4
 
 flutter:
