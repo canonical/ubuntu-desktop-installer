@@ -3,6 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 
@@ -45,6 +46,9 @@ extension UbuntuTester on WidgetTester {
     final widget = element(find.byType(context).first);
     return AppLocalizations.of(widget);
   }
+
+  Future<void> tapPrevious() => tap(find.button(ulang.previousLabel));
+  Future<void> tapNext() => tap(find.button(ulang.nextLabel));
 
   Widget buildApp(WidgetBuilder builder) {
     binding.window.devicePixelRatioTestValue = 1;

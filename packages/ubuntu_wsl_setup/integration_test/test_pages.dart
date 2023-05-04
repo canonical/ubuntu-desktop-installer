@@ -183,3 +183,7 @@ void expectPage(
   expectSync(find.byType(page), findsOneWidget);
   expectSync(find.widgetWithText(AppBar, title(tester.lang)), findsWidgets);
 }
+
+extension on WidgetTester {
+  Future<void> tapNext() => tap(find.button(ulang.nextLabel));
+}

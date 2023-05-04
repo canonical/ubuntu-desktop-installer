@@ -11,6 +11,7 @@ import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../test_utils.dart';
 import 'welcome_model_test.mocks.dart';
 
 void main() {
