@@ -391,7 +391,7 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.network.index,
         ),
         Routes.source: WizardRoute(
-          builder: SourcePage.create,
+          builder: (_) => const SourcePage(),
           userData: InstallationStep.software.index,
           onNext: (_) => !service.hasEnoughDiskSpace
               ? Routes.notEnoughDiskSpace

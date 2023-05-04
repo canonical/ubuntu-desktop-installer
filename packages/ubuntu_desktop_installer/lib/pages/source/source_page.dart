@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -13,37 +13,31 @@ import 'source_model.dart';
 
 export 'source_model.dart' show kNormalSourceId, kMinimalSourceId;
 
-class SourcePage extends StatefulWidget {
-  @visibleForTesting
+class SourcePage extends ConsumerStatefulWidget {
   const SourcePage({super.key});
 
-  @override
-  State<SourcePage> createState() => _SourcePageState();
-
-  static Widget create(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => SourceModel(
+  static final modelProvider = ChangeNotifierProvider((_) => SourceModel(
         client: getService<SubiquityClient>(),
         power: getService<PowerService>(),
         network: getService<NetworkService>(),
         storage: getService<DiskStorageService>(),
-      ),
-      child: const SourcePage(),
-    );
-  }
+      ));
+
+  @override
+  ConsumerState<SourcePage> createState() => _SourcePageState();
 }
 
-class _SourcePageState extends State<SourcePage> {
+class _SourcePageState extends ConsumerState<SourcePage> {
   @override
   void initState() {
     super.initState();
-    final model = Provider.of<SourceModel>(context, listen: false);
+    final model = ref.read(SourcePage.modelProvider);
     model.init();
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<SourceModel>();
+    final model = ref.watch(SourcePage.modelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

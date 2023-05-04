@@ -1,10 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
@@ -57,8 +57,8 @@ void main() {
     registerMockService<SubiquityClient>(MockSubiquityClient());
     registerMockService<TelemetryService>(MockTelemetryService());
 
-    return ChangeNotifierProvider<SourceModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [SourcePage.modelProvider.overrideWith((_) => model)],
       child: const SourcePage(),
     );
   }
@@ -159,39 +159,5 @@ void main() {
 
     verify(model.save()).called(1);
     expect(find.text('Next page'), findsOneWidget);
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final client = MockSubiquityClient();
-    when(client.getSource()).thenAnswer((_) async =>
-        const SourceSelectionAndSetting(
-            sources: [], currentId: kNormalSourceId, searchDrivers: false));
-    when(client.getDrivers()).thenAnswer((_) async => const DriversResponse(
-        install: true, drivers: [], localOnly: false, searchDrivers: false));
-    when(client.getCodecs())
-        .thenAnswer((_) async => const CodecsData(install: true));
-    registerMockService<SubiquityClient>(client);
-
-    final power = MockPowerService();
-    when(power.onBattery).thenReturn(false);
-    when(power.propertiesChanged).thenAnswer((_) => const Stream.empty());
-    registerMockService<PowerService>(power);
-
-    final network = MockNetworkService();
-    when(network.isConnected).thenReturn(true);
-    when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
-    registerMockService<NetworkService>(network);
-
-    final storage = MockDiskStorageService();
-    registerMockService<DiskStorageService>(storage);
-
-    await tester.pumpWidget(tester.buildApp(SourcePage.create));
-
-    final page = find.byType(SourcePage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<SourceModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }
