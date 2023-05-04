@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -94,6 +95,10 @@ extension on WidgetTester {
     registerMockService<ProductService>(ProductService());
     registerMockService<TelemetryService>(TelemetryService());
 
-    return InheritedLocale(child: UbuntuDesktopInstallerApp());
+    return ProviderScope(
+      child: InheritedLocale(
+        child: UbuntuDesktopInstallerApp(),
+      ),
+    );
   }
 }
