@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
@@ -50,8 +50,8 @@ void main() {
         (_) async => const AnyStep.stepPressKey(keycodes: {}, symbols: []));
     registerMockService<SubiquityClient>(client);
 
-    return ChangeNotifierProvider<KeyboardModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [KeyboardPage.modelProvider.overrideWith((_) => model)],
       child: const KeyboardPage(),
     );
   }
@@ -181,23 +181,5 @@ void main() {
 
     verify(model.updateInputSource()).called(1);
     expect(find.text('Next page'), findsOneWidget);
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final client = MockSubiquityClient();
-    when(client.getKeyboard()).thenAnswer((_) async =>
-        const KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
-    when(client.setInputSource(const KeyboardSetting(layout: '')))
-        .thenAnswer((_) async {});
-    registerMockService<SubiquityClient>(client);
-
-    await tester.pumpWidget(tester.buildApp(KeyboardPage.create));
-
-    final page = find.byType(KeyboardPage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<KeyboardModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }

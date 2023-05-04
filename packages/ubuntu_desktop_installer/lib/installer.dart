@@ -383,7 +383,7 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.locale.index,
         ),
         Routes.keyboard: WizardRoute(
-          builder: KeyboardPage.create,
+          builder: (_) => const KeyboardPage(),
           userData: InstallationStep.keyboard.index,
         ),
         Routes.network: WizardRoute(
