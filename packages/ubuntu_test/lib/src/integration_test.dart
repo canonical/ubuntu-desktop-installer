@@ -66,7 +66,6 @@ extension IntegrationTester on WidgetTester {
       of: find.text(label),
       matching: find.bySubtype<ButtonStyleButton>(),
     ));
-    await pump();
   }
 
   /// Toggles a checkbox specified by its [label] to ensure the given [value],
@@ -79,7 +78,6 @@ extension IntegrationTester on WidgetTester {
     final checkbox = find.widgetWithText(YaruCheckButton, label);
     if (widget<YaruCheckButton>(checkbox).value != value) {
       await tap(checkbox);
-      await pump();
     }
   }
 
@@ -88,7 +86,6 @@ extension IntegrationTester on WidgetTester {
     await tap(find.byWidgetPredicate((widget) {
       return widget is YaruRadioButton<T> && widget.value == value;
     }));
-    await pump();
   }
 
   /// Pumps until the specified [finder] is satisfied. This can be used to wait

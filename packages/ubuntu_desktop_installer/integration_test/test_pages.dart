@@ -171,6 +171,7 @@ Future<void> testInstallationTypePage(
 
   if (type != null) {
     await tester.tapRadioButton<InstallationType>(type);
+    await tester.pump();
   }
   if (advancedFeature != null) {
     await tester.tapButton(tester.lang.installationTypeAdvancedLabel);
@@ -357,8 +358,8 @@ Future<void> testBitLockerPage(
   }
 
   await tester.tapButton(tester.lang.restartIntoWindows);
-  expect(find.byType(AlertDialog), findsOneWidget);
   await tester.pumpAndSettle();
+  expect(find.byType(AlertDialog), findsOneWidget);
 
   if (screenshot != null) {
     await takeScreenshot(tester, '$screenshot-confirm');
@@ -380,8 +381,8 @@ Future<void> testRstPage(
   }
 
   await tester.tapButton(tester.lang.restartIntoWindows);
-  expect(find.byType(AlertDialog), findsOneWidget);
   await tester.pumpAndSettle();
+  expect(find.byType(AlertDialog), findsOneWidget);
 
   if (screenshot != null) {
     await takeScreenshot(tester, '$screenshot-confirm');
