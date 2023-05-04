@@ -14,7 +14,6 @@ import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../test_utils.dart';
-import 'source_model_test.mocks.dart';
 import 'source_page_test.mocks.dart';
 
 @GenerateMocks([SourceModel, TelemetryService])
