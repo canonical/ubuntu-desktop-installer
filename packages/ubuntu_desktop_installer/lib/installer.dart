@@ -5,6 +5,7 @@ import 'package:collection/collection.dart';
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -91,12 +92,14 @@ Future<void> runInstallerApp(
   WidgetsFlutterBinding.ensureInitialized();
 
   await runWizardApp(
-    InheritedLocale(
-      child: UbuntuDesktopInstallerApp(
-        flavor: flavor,
-        slides: slides,
-        initialRoute: options['initial-route'],
-        welcome: options['welcome'],
+    ProviderScope(
+      child: InheritedLocale(
+        child: UbuntuDesktopInstallerApp(
+          flavor: flavor,
+          slides: slides,
+          initialRoute: options['initial-route'],
+          welcome: options['welcome'],
+        ),
       ),
     ),
     options: options,
@@ -370,7 +373,7 @@ class _UbuntuDesktopInstallerWizardState
       userData: InstallationStep.values.length,
       routes: <String, WizardRoute>{
         Routes.locale: WizardRoute(
-          builder: LocalePage.create,
+          builder: (_) => const LocalePage(),
           userData: InstallationStep.locale.index,
           onNext: (_) =>
               widget.welcome == true ? Routes.welcome : Routes.keyboard,

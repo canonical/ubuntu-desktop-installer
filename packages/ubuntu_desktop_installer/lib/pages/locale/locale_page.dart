@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -11,30 +11,26 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'locale_model.dart';
 
-class LocalePage extends StatefulWidget {
-  const LocalePage({
-    super.key,
+class LocalePage extends ConsumerStatefulWidget {
+  const LocalePage({super.key});
+
+  static final modelProvider = ChangeNotifierProvider((ref) {
+    return LocaleModel(
+      client: getService<SubiquityClient>(),
+      sound: tryGetService<SoundService>(),
+    );
   });
 
-  static Widget create(BuildContext context) {
-    final client = getService<SubiquityClient>();
-    final sound = tryGetService<SoundService>();
-    return ChangeNotifierProvider(
-      create: (_) => LocaleModel(client: client, sound: sound),
-      child: const LocalePage(),
-    );
-  }
-
   @override
-  State<LocalePage> createState() => _LocalePageState();
+  ConsumerState<LocalePage> createState() => _LocalePageState();
 }
 
-class _LocalePageState extends State<LocalePage> {
+class _LocalePageState extends ConsumerState<LocalePage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<LocaleModel>(context, listen: false);
+    final model = ref.read(LocalePage.modelProvider);
     model.loadLanguages().then((_) {
       model.selectLocale(InheritedLocale.of(context));
       model.playWelcomeSound();
@@ -44,7 +40,7 @@ class _LocalePageState extends State<LocalePage> {
   void _selectLanguage(int index) {
     if (index == -1) return;
 
-    final model = context.read<LocaleModel>();
+    final model = ref.read(LocalePage.modelProvider);
     model.selectedLanguageIndex = index;
 
     InheritedLocale.apply(context, model.locale(index));
@@ -53,7 +49,7 @@ class _LocalePageState extends State<LocalePage> {
   @override
   Widget build(BuildContext context) {
     final flavor = Flavor.of(context);
-    final model = Provider.of<LocaleModel>(context);
+    final model = ref.watch(LocalePage.modelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

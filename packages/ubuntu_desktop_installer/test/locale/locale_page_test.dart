@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
@@ -47,9 +47,9 @@ void main() {
     when(client.getKeyboard()).thenAnswer((_) async =>
         const KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     await tester.pumpWidget(
-      MultiProvider(providers: [
-        ChangeNotifierProvider(
-          create: (_) => LocaleModel(client: client, sound: MockSoundService()),
+      ProviderScope(overrides: [
+        LocalePage.modelProvider.overrideWith(
+          (_) => LocaleModel(client: client, sound: MockSoundService()),
         ),
       ], child: InheritedLocale(child: app)),
     );
