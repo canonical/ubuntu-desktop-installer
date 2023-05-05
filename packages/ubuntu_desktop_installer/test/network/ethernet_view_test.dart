@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_view.dart';
+import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -25,8 +25,10 @@ void main() {
 
     await tester.pumpWidget(
       tester.buildApp(
-        (_) => ChangeNotifierProvider<EthernetModel>.value(
-          value: model,
+        (_) => ProviderScope(
+          overrides: [
+            NetworkPage.ethernetModelProvider.overrideWith((_) => model)
+          ],
           child: Material(
             child: EthernetRadioButton(
               value: ConnectMode.none,
@@ -52,8 +54,10 @@ void main() {
 
     await tester.pumpWidget(
       tester.buildApp(
-        (_) => ChangeNotifierProvider<EthernetModel>.value(
-          value: model,
+        (_) => ProviderScope(
+          overrides: [
+            NetworkPage.ethernetModelProvider.overrideWith((_) => model)
+          ],
           child: Column(
             children: [
               EthernetRadioButton(
@@ -88,8 +92,10 @@ void main() {
 
     await tester.pumpWidget(
       tester.buildApp(
-        (_) => ChangeNotifierProvider<EthernetModel>.value(
-          value: model,
+        (_) => ProviderScope(
+          overrides: [
+            NetworkPage.ethernetModelProvider.overrideWith((_) => model)
+          ],
           child: Column(
             children: [
               EthernetRadioButton(
