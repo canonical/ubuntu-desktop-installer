@@ -407,7 +407,7 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.type.index,
         ),
         Routes.filesystem: WizardRoute(
-          builder: FilesystemPage.create,
+          builder: (_) => const FilesystemPage(),
           userData: InstallationStep.filesystem.index,
         ),
         Routes.writeChangesToDisk: WizardRoute(

@@ -21,8 +21,6 @@ export 'select_guided_storage/select_guided_storage_page.dart';
 class FilesystemPage extends StatelessWidget {
   const FilesystemPage({super.key});
 
-  static Widget create(BuildContext context) => const FilesystemPage();
-
   @override
   Widget build(BuildContext context) {
     return Wizard(
