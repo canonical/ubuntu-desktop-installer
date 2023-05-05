@@ -1,0 +1,132 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'ubuntu/**'
+      - 'canary-*'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: '3.7.x'
+    - run: flutter pub global activate melos
+    - run: melos pub get
+    - run: melos analyze
+
+  format:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: '3.7.x'
+    - run: flutter pub global activate melos
+    - run: melos pub get
+    - run: melos format
+
+  mocks:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: '3.7.x'
+    - run: flutter pub global activate melos
+    - run: melos pub get
+    - run: melos generate
+    - name: Check for outdated mocks
+      if: github.event_name == 'pull_request'
+      run: ./.github/scripts/check-outdated-files.sh
+    - name: Create PR
+      if: github.event_name == 'push'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        title: 'Regenerate mocks'
+        commit-message: 'Regenerate mocks'
+
+  l10n:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: '3.7.x'
+    - run: flutter pub global activate melos
+    - run: melos pub get
+    - run: melos gen-l10n
+    - name: Check for outdated l10n
+      if: github.event_name == 'pull_request'
+      run: ./.github/scripts/check-outdated-files.sh
+    - name: Create PR
+      if: github.event_name == 'push'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        title: 'Regenerate l10n'
+        commit-message: 'Regenerate l10n'
+
+  snap:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: snapcore/action-build@v1
+      id: snapcraft
+    - uses: actions/upload-artifact@v3
+      if: github.event_name == 'workflow_dispatch'
+      with:
+        name: 'snap'
+        path: ${{steps.snapcraft.outputs.snap}}
+
+  subiquity:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - name: Check subiquity integration
+      run: ./scripts/subiquity_integration
+
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: '3.7.x'
+    - run: flutter pub global activate melos
+    - name: Install dependencies
+      run: |
+        sudo apt update && sudo apt install lcov
+        make install_deps
+    - name: Setup environment
+      run: |
+        sudo loginctl enable-linger $USER
+        sudo systemctl start user@$UID.service
+        echo "XDG_RUNTIME_DIR=/run/user/$UID" >> $GITHUB_ENV
+    - run: melos pub get
+    - run: melos coverage
+    - uses: codecov/codecov-action@v3
+      with:
+        token: ${{secrets.CODECOV_TOKEN}}
