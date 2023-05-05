@@ -113,7 +113,7 @@ extension on WidgetTester {
                     ),
                   ),
                   Routes.welcome:
-                      const WizardRoute(builder: WelcomeWizard.create),
+                      WizardRoute(builder: (_) => const WelcomeWizard()),
                   '/last': WizardRoute(
                     builder: (context) => WizardPage(
                       content: const Text('last route'),

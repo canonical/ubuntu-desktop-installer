@@ -379,7 +379,7 @@ class _UbuntuDesktopInstallerWizardState
               widget.welcome == true ? Routes.welcome : Routes.keyboard,
         ),
         Routes.welcome: WizardRoute(
-          builder: WelcomeWizard.create,
+          builder: (_) => const WelcomePage(),
           userData: InstallationStep.locale.index,
         ),
         Routes.keyboard: WizardRoute(

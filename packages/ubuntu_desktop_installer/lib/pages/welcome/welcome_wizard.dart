@@ -12,8 +12,6 @@ export 'welcome_page.dart';
 class WelcomeWizard extends StatelessWidget {
   const WelcomeWizard({super.key});
 
-  static Widget create(BuildContext context) => const WelcomeWizard();
-
   @override
   Widget build(BuildContext context) {
     return Wizard(
