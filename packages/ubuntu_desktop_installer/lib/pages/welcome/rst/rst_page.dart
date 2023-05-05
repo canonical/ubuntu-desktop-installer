@@ -21,7 +21,7 @@ class RstPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.read(modelProvider);
+    final model = ref.watch(modelProvider);
     final lang = AppLocalizations.of(context);
     return Scaffold(
       body: WizardPage(
