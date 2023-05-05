@@ -1,4 +1,5 @@
-name: cla-check
+name: PR
+
 on: [pull_request_target]
 
 jobs:
@@ -8,3 +9,11 @@ jobs:
     steps:
       - name: Check if CLA signed
         uses: canonical/has-signed-canonical-cla@v1
+
+  labeler:
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/labeler@v4
