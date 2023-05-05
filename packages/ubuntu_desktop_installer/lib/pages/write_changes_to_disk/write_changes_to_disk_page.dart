@@ -1,7 +1,7 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -15,30 +15,25 @@ import 'write_changes_to_disk_model.dart';
 /// @internal
 final log = Logger('write_changes_to_disk');
 
-class WriteChangesToDiskPage extends StatefulWidget {
-  const WriteChangesToDiskPage({
-    super.key,
-  });
+class WriteChangesToDiskPage extends ConsumerStatefulWidget {
+  const WriteChangesToDiskPage({super.key});
 
-  static Widget create(BuildContext context) {
-    final client = getService<SubiquityClient>();
-    final service = getService<DiskStorageService>();
-    return ChangeNotifierProvider(
-      create: (_) => WriteChangesToDiskModel(client, service),
-      child: const WriteChangesToDiskPage(),
-    );
-  }
+  static final modelProvider = ChangeNotifierProvider((_) =>
+      WriteChangesToDiskModel(
+          getService<SubiquityClient>(), getService<DiskStorageService>()));
 
   @override
-  State<WriteChangesToDiskPage> createState() => _WriteChangesToDiskPageState();
+  ConsumerState<WriteChangesToDiskPage> createState() =>
+      _WriteChangesToDiskPageState();
 }
 
-class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
+class _WriteChangesToDiskPageState
+    extends ConsumerState<WriteChangesToDiskPage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<WriteChangesToDiskModel>(context, listen: false);
+    final model = ref.read(WriteChangesToDiskPage.modelProvider);
     model.init();
   }
 
@@ -53,7 +48,7 @@ class _WriteChangesToDiskPageState extends State<WriteChangesToDiskPage> {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final model = Provider.of<WriteChangesToDiskModel>(context);
+    final model = ref.watch(WriteChangesToDiskPage.modelProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.writeChangesToDisk),

@@ -1,10 +1,10 @@
 import 'package:collection/collection.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_model.dart';
@@ -13,7 +13,6 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 
 import '../test_utils.dart';
-import 'write_changes_to_disk_model_test.mocks.dart';
 import 'write_changes_to_disk_page_test.mocks.dart';
 
 final testDisks = <Disk>[
@@ -110,8 +109,10 @@ void main() {
     when(udev.bySysname('sdb')).thenReturn(sdb);
     registerMockService<UdevService>(udev);
 
-    return ChangeNotifierProvider<WriteChangesToDiskModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [
+        WriteChangesToDiskPage.modelProvider.overrideWith((_) => model),
+      ],
       child: const WriteChangesToDiskPage(),
     );
   }
@@ -171,25 +172,5 @@ void main() {
 
     await tester.pumpAndSettle(kThemeAnimationDuration);
     verify(model.startInstallation()).called(1);
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final client = MockSubiquityClient();
-    registerMockService<SubiquityClient>(client);
-
-    final service = MockDiskStorageService();
-    when(service.guidedTarget).thenReturn(null);
-    when(service.getStorage()).thenAnswer((_) async => testDisks);
-    when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
-    registerMockService<DiskStorageService>(service);
-
-    await tester.pumpWidget(tester.buildApp(WriteChangesToDiskPage.create));
-
-    final page = find.byType(WriteChangesToDiskPage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<WriteChangesToDiskModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }
