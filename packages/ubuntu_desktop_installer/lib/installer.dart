@@ -419,7 +419,7 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.location.index,
         ),
         Routes.identity: WizardRoute(
-          builder: IdentityPage.create,
+          builder: (_) => const IdentityPage(),
           userData: InstallationStep.user.index,
           onNext: (settings) => settings.arguments == true
               ? Routes.activeDirectory
