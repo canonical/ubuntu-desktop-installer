@@ -1,8 +1,9 @@
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
 /// View model for [InstallationCompletePage].
-class InstallationCompleteModel {
+class InstallationCompleteModel extends SafeChangeNotifier {
   /// Creates an instance with the given client.
   InstallationCompleteModel(this._client, this._product);
 

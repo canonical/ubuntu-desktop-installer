@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -11,23 +11,20 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'installation_complete_model.dart';
 
-class InstallationCompletePage extends StatelessWidget {
+class InstallationCompletePage extends ConsumerWidget {
   const InstallationCompletePage({super.key});
 
-  static Widget create(BuildContext context) {
-    return Provider(
-      create: (_) => InstallationCompleteModel(
-        getService<SubiquityClient>(),
-        getService<ProductService>(),
-      ),
-      child: const InstallationCompletePage(),
-    );
-  }
+  static final modelProvider = ChangeNotifierProvider(
+    (_) => InstallationCompleteModel(
+      getService<SubiquityClient>(),
+      getService<ProductService>(),
+    ),
+  );
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final model = context.watch<InstallationCompleteModel>();
+    final model = ref.watch(modelProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.installationCompleteTitle),

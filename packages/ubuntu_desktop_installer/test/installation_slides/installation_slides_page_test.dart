@@ -1,12 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
-import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_page.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_slides/slide_view.dart';
@@ -16,7 +14,6 @@ import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 
 import '../test_utils.dart';
-import 'installation_slides_model_test.mocks.dart';
 import 'installation_slides_page_test.mocks.dart';
 
 @GenerateMocks([InstallationSlidesModel])
@@ -49,8 +46,10 @@ void main() {
   }
 
   Widget buildPage(InstallationSlidesModel model) {
-    return ChangeNotifierProvider<InstallationSlidesModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [
+        InstallationSlidesPage.modelProvider.overrideWith((_) => model)
+      ],
       child: SlidesContext(slides: [
         (context) => const SizedBox.expand(child: Text('slide1')),
         (context) => const SizedBox.expand(child: Text('slide2')),
@@ -191,35 +190,5 @@ void main() {
     expect(find.text(tester.lang.copyingFiles), findsNothing);
     expect(find.text(tester.lang.installingSystem), findsNothing);
     expect(find.text(tester.lang.configuringSystem), findsNothing);
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final never = Completer<ApplicationStatus>();
-    final client = MockSubiquityClient();
-    when(client.getStatus(current: anyNamed('current')))
-        .thenAnswer((_) => never.future);
-    registerMockService<SubiquityClient>(client);
-
-    registerMockService<JournalService>(MockJournalService());
-
-    final product = MockProductService();
-    when(product.getProductInfo()).thenReturn(ProductInfo(name: 'Ubuntu'));
-    registerMockService<ProductService>(product);
-
-    await tester.pumpWidget(
-      SlidesContext(
-        slides: [
-          (_) => const SizedBox.shrink(),
-        ],
-        child: tester.buildApp(InstallationSlidesPage.create),
-      ),
-    );
-
-    final page = find.byType(InstallationSlidesPage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<InstallationSlidesModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }
