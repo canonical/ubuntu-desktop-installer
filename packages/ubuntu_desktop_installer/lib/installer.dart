@@ -430,7 +430,7 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.user.index,
         ),
         Routes.theme: WizardRoute(
-          builder: ThemePage.create,
+          builder: (_) => const ThemePage(),
           userData: InstallationStep.look.index,
         ),
         Routes.installationSlides: const WizardRoute(
