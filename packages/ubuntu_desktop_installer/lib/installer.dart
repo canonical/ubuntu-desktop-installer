@@ -426,7 +426,7 @@ class _UbuntuDesktopInstallerWizardState
               : Routes.theme,
         ),
         Routes.activeDirectory: WizardRoute(
-          builder: ActiveDirectoryPage.create,
+          builder: (_) => const ActiveDirectoryPage(),
           userData: InstallationStep.user.index,
         ),
         Routes.theme: WizardRoute(

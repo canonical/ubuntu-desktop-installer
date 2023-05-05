@@ -1,24 +1,25 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'active_directory_l10n.dart';
-import 'active_directory_model.dart';
+import 'active_directory_page.dart';
 
-class DomainNameFormField extends StatelessWidget {
+class DomainNameFormField extends ConsumerWidget {
   const DomainNameFormField({super.key, this.fieldWidth});
 
   final double? fieldWidth;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final domainName = context.select((ActiveDirectoryModel m) => m.domainName);
-    final validation =
-        context.select((ActiveDirectoryModel m) => m.domainNameValidation);
+    final domainName = ref
+        .watch(ActiveDirectoryPage.modelProvider.select((m) => m.domainName));
+    final validation = ref.watch(ActiveDirectoryPage.modelProvider
+        .select((m) => m.domainNameValidation));
 
     return ValidatedFormField(
       autofocus: true,
@@ -32,24 +33,25 @@ class DomainNameFormField extends StatelessWidget {
             validation.singleOrNull == AdDomainNameValidation.OK,
         errorText: validation?.firstOrNull?.localize(lang) ?? '',
       ),
-      onChanged: context.read<ActiveDirectoryModel>().setDomainName,
+      onChanged: ref.read(ActiveDirectoryPage.modelProvider).setDomainName,
       onEditingComplete:
-          context.read<ActiveDirectoryModel>().pingDomainController,
+          ref.read(ActiveDirectoryPage.modelProvider).pingDomainController,
     );
   }
 }
 
-class AdminNameFormField extends StatelessWidget {
+class AdminNameFormField extends ConsumerWidget {
   const AdminNameFormField({super.key, this.fieldWidth});
 
   final double? fieldWidth;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final adminName = context.select((ActiveDirectoryModel m) => m.adminName);
-    final validation =
-        context.select((ActiveDirectoryModel m) => m.adminNameValidation);
+    final adminName =
+        ref.read(ActiveDirectoryPage.modelProvider.select((m) => m.adminName));
+    final validation = ref.watch(
+        ActiveDirectoryPage.modelProvider.select((m) => m.adminNameValidation));
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -60,22 +62,23 @@ class AdminNameFormField extends StatelessWidget {
         (_) => validation == AdAdminNameValidation.OK,
         errorText: validation?.localize(lang) ?? '',
       ),
-      onChanged: context.read<ActiveDirectoryModel>().setAdminName,
+      onChanged: ref.read(ActiveDirectoryPage.modelProvider).setAdminName,
     );
   }
 }
 
-class PasswordFormField extends StatelessWidget {
+class PasswordFormField extends ConsumerWidget {
   const PasswordFormField({super.key, this.fieldWidth});
 
   final double? fieldWidth;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final password = context.select((ActiveDirectoryModel m) => m.password);
-    final validation =
-        context.select((ActiveDirectoryModel m) => m.passwordValidation);
+    final password =
+        ref.watch(ActiveDirectoryPage.modelProvider.select((m) => m.password));
+    final validation = ref.watch(
+        ActiveDirectoryPage.modelProvider.select((m) => m.passwordValidation));
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -86,7 +89,7 @@ class PasswordFormField extends StatelessWidget {
         (_) => validation == AdPasswordValidation.OK,
         errorText: validation?.localize(lang) ?? '',
       ),
-      onChanged: context.read<ActiveDirectoryModel>().setPassword,
+      onChanged: ref.read(ActiveDirectoryPage.modelProvider).setPassword,
     );
   }
 }
