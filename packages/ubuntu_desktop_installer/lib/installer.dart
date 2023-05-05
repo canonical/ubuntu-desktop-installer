@@ -415,7 +415,7 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.filesystem.index,
         ),
         Routes.timezone: WizardRoute(
-          builder: TimezonePage.create,
+          builder: (_) => const TimezonePage(),
           userData: InstallationStep.location.index,
         ),
         Routes.identity: WizardRoute(
