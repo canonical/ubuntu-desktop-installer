@@ -1,6 +1,6 @@
 {
   "@@locale": "sk",
-  "hiddenWifiNetwork": "Pripojiť k skrytej Wi-Fi sieti",
+  "hiddenWifiNetwork": "Pripojiť sa k skrytej Wi-Fi sieti",
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameLabel": "Názov siete",
   "@hiddenWifiNetworkNameLabel": {},
@@ -25,7 +25,7 @@
   },
   "configureSecureBootDescription": "Vybrali ste nainštalovať ovládač hardvéru, pochádzajúci od tretej strany. Aby to bolo možné, je potrebné vypnúť Secure Boot.\nTo urobíte vytvorením kľúča zabezpečenia a jeho následným zadaním po reštarte systému.",
   "@configureSecureBootDescription": {},
-  "partitionTypeLogical": "Logické",
+  "partitionTypeLogical": "Logický",
   "@partitionTypeLogical": {},
   "partitionEditTitle": "Upraviť oddiel",
   "@partitionEditTitle": {},
@@ -112,7 +112,7 @@
       "DISTRO": {}
     }
   },
-  "connectToInternetDescription": "Pripojenie počítača na Internet pomôže Ubuntu nainštalovať akýkoľvek potrebný dodatočný softvér a pomôže vybrať vaše časové pásmo.\n\nPripojte sa Eternetovým káblom, alebo vyberte Wi-Fi sieť",
+  "connectToInternetDescription": "Pripojenie počítača na Internet pomôže Ubuntu nainštalovať akýkoľvek potrebný dodatočný softvér a pomôže vybrať vaše časové pásmo.\n\nPripojte sa Ethernetovým káblom, alebo si vyberte Wi-Fi sieť",
   "@connectToInternetDescription": {},
   "installationTypeMultiOSDetected": "Na tomto počítači sa v súčasnosti nachádza viacero operačných systémov. Čo si prajete urobiť?",
   "@installationTypeMultiOSDetected": {},
@@ -122,7 +122,7 @@
   "@whoAreYouPageInvalidComputerName": {},
   "chooseYourLookPageTitle": "Vyberte si motív vzhľadu",
   "@chooseYourLookPageTitle": {},
-  "whereAreYouPageTitle": "Vyberte svoje časové pásmo",
+  "whereAreYouPageTitle": "Vyberte si svoje časové pásmo",
   "@whereAreYouPageTitle": {},
   "turnOffBitlockerLinkInstructions": "Ohľadne pokynov naskenujte QR kód na inom zariadení alebo choďte na: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
@@ -151,7 +151,7 @@
   "@wiredMustBeEnabled": {},
   "enableWired": "Zapnúť káblové",
   "@enableWired": {},
-  "selectWifiNetwork": "Pripojiť k Wi-Fi sieti",
+  "selectWifiNetwork": "Pripojiť sa k Wi-Fi sieti",
   "@selectWifiNetwork": {},
   "connectButtonText": "Pripojiť",
   "@connectButtonText": {},
@@ -169,7 +169,7 @@
   "@turnOffRSTTitle": {},
   "showSecurityKey": "Zobraziť kľúč zabezpečenia",
   "@showSecurityKey": {},
-  "connectToInternetPageTitle": "Pripojiť k sieti",
+  "connectToInternetPageTitle": "Pripojiť sa k sieti",
   "@connectToInternetPageTitle": {},
   "useWiredConnection": "Použiť káblové pripojenie",
   "@useWiredConnection": {},
@@ -230,7 +230,7 @@
       "DISTRO": {}
     }
   },
-  "installationTypeEraseWarning": "<font color=\"{color}\">UPOZORNENIE:</font> Toto zmaže všetky prípadné aplikácie, dokumenty, fotky, hudbu a všetky ostatné súbory vo všetkých operačných systémoch.",
+  "installationTypeEraseWarning": "<font color=\"{color}\">UPOZORNENIE:</font> Týmto zmažete všetky prípadné aplikácie, dokumenty, fotky, hudbu a všetky ostatné súbory vo všetkých operačných systémoch.",
   "@installationTypeEraseWarning": {
     "type": "text",
     "placeholders": {
@@ -356,7 +356,7 @@
       "DISTRO": {}
     }
   },
-  "appTitle": "Inštalátor Ubuntu pre stolný počítač",
+  "appTitle": "Inštalátor Ubuntu Desktop",
   "@appTitle": {},
   "cancelButtonText": "Zrušiť",
   "@cancelButtonText": {},
@@ -524,21 +524,21 @@
   "@turnOffRST": {},
   "turnOffRSTDescription": "Na tomto počítači je zapnutá technológia Intel RST (Rapid Storage Technology). Aby bolo možné Ubuntu nainštalovať, je potrebné vo Windows funkciu RST vypnúť.",
   "@turnOffRSTDescription": {},
-  "installUbuntuDescription": "Nainštalovať {RELEASE} spoločne z (alebo namiesto) vášho operačného systému. Nemalo by to trvať dlho.",
+  "installUbuntuDescription": "Nainštalujte {RELEASE} spoločne z (alebo namiesto) vášho operačného systému. Nemalo by to trvať dlho.",
   "@installUbuntuDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "Mohli by ste mať záujem o prečítanie <a href=\"{url}\">poznámok k vydaniu</a>.",
+  "releaseNotesLabel": "Mohli by ste mať záujem o prečítanie si <a href=\"{url}\">poznámok k vydaniu</a>.",
   "@releaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "repairInstallationDescription": "Oprava preinštaluje všetok nainštalovaný softvér a nedotkne sa dokumentov alebo nastavení.",
+  "repairInstallationDescription": "Opravou preinštalujete všetok nainštalovaný softvér bez toho, aby sa to dotklo dokumentov alebo nastavení.",
   "@repairInstallationDescription": {},
   "dontInstallDriverSoftwareNow": "Zatiaľ neinštalujte softvér ovládača",
   "@dontInstallDriverSoftwareNow": {},
@@ -594,7 +594,7 @@
       "format": {}
     }
   },
-  "chooseYourLookPageHeader": "Toto je možné neskôr kedykoľvek zmeniť v nastaveniach vzhľadu.",
+  "chooseYourLookPageHeader": "Môžete ho neskôr kedykoľvek zmeniť v nastaveniach vzhľadu.",
   "@chooseYourLookPageHeader": {},
   "offlineWarning": "V tejto chvíli nie ste pripojení na Internet",
   "@offlineWarning": {},
@@ -616,7 +616,7 @@
       "os": {}
     }
   },
-  "installationTypeReinstallWarning": "<font color=\"{color}\">UPOZORNENIE:</font> Toto zmaže všetky aplikácie, dokumenty, fotky, hudbu a všetky ostatné súbory, nachádzajúce sa v rámci {os}.",
+  "installationTypeReinstallWarning": "<font color=\"{color}\">UPOZORNENIE:</font> Týmto zmažete všetky aplikácie, dokumenty, fotky, hudbu a všetky ostatné súbory, nachádzajúce sa v rámci {os}.",
   "@installationTypeReinstallWarning": {
     "type": "text",
     "placeholders": {
@@ -764,7 +764,7 @@
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Tento softvér je predmetom licenčných dojednaní obsiahnutých v dokumentácii k nemu. Niektoré sú proprietárne.",
   "@installCodecsSubtitle": {},
-  "chooseSecurityKeyHint": "Vyberte bezpečnostný kľúč",
+  "chooseSecurityKeyHint": "Vyberte si bezpečnostný kľúč",
   "@chooseSecurityKeyHint": {},
   "keyboardVariant": "Variant klávesnice:",
   "@keyboardVariant": {},
@@ -782,7 +782,7 @@
   "@activeDirectoryDomainStartHyphen": {},
   "activeDirectoryAdminInvalidChars": "Neplatné znaky",
   "@activeDirectoryAdminInvalidChars": {},
-  "activeDirectoryErrorTitle": "Chyba pri nastavovaní pre Active Directory",
+  "activeDirectoryErrorTitle": "Chyba pri konfigurácii pripojenia k Active Directory",
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Je nám ľúto, v tejto chvíli sa nedarí nastaviť službu Active Directory. Po spustení systému navštívte stránku <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kde získate ďalšie informácie.",
   "@activeDirectoryErrorMessage": {},
@@ -830,7 +830,7 @@
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "Dosiahnutý limit",
   "@partitionLimitReached": {},
-  "partitionTypePrimary": "Primárne",
+  "partitionTypePrimary": "Primárny",
   "@partitionTypePrimary": {},
   "partitionLocationEnd": "Koniec tohto priestoru",
   "@partitionLocationEnd": {},
