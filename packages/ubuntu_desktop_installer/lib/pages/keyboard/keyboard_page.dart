@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
@@ -15,7 +14,7 @@ class KeyboardPage extends ConsumerStatefulWidget {
   const KeyboardPage({super.key});
 
   static final modelProvider = ChangeNotifierProvider(
-      (_) => KeyboardModel(getService<SubiquityClient>()));
+      (_) => KeyboardModel(getService<KeyboardService>()));
 
   @override
   ConsumerState<KeyboardPage> createState() => _KeyboardPageState();
