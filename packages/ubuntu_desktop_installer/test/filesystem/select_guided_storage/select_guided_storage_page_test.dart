@@ -1,20 +1,18 @@
 import 'package:dartx/dartx.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/select_guided_storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/select_guided_storage_page.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../../test_utils.dart';
-import 'select_guided_storage_model_test.mocks.dart';
 import 'select_guided_storage_page_test.mocks.dart';
 
 @GenerateMocks([SelectGuidedStorageModel])
@@ -51,8 +49,8 @@ void main() {
   }
 
   Widget buildPage(SelectGuidedStorageModel model) {
-    return ChangeNotifierProvider<SelectGuidedStorageModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [selectGuidedStorageModelProvider.overrideWith((_) => model)],
       child: const SelectGuidedStoragePage(),
     );
   }
@@ -121,23 +119,5 @@ void main() {
 
     await tester.tap(nextButton);
     verify(model.saveGuidedStorage()).called(1);
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final service = MockDiskStorageService();
-    when(service.getStorage()).thenAnswer((_) async => []);
-    when(service.useEncryption).thenReturn(false);
-    when(service.getGuidedStorage())
-        .thenAnswer((_) async => fakeGuidedStorageResponse());
-    registerMockService<DiskStorageService>(service);
-
-    await tester.pumpWidget(tester.buildApp(SelectGuidedStoragePage.create));
-
-    final page = find.byType(SelectGuidedStoragePage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<SelectGuidedStorageModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }

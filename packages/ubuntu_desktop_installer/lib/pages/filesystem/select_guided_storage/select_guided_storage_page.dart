@@ -1,10 +1,9 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -13,31 +12,21 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'select_guided_storage_model.dart';
 
 /// Select a storage for guided partitioning.
-class SelectGuidedStoragePage extends StatefulWidget {
-  /// Use [SelectGuidedStoragePage.create] instead.
-  @visibleForTesting
+class SelectGuidedStoragePage extends ConsumerStatefulWidget {
   const SelectGuidedStoragePage({super.key});
 
-  /// Creates a [SelectGuidedStoragePage] with [SelectGuidedStorageModel].
-  static Widget create(BuildContext context) {
-    final service = getService<DiskStorageService>();
-    return ChangeNotifierProvider(
-      create: (context) => SelectGuidedStorageModel(service),
-      child: const SelectGuidedStoragePage(),
-    );
-  }
-
   @override
-  State<SelectGuidedStoragePage> createState() =>
+  ConsumerState<SelectGuidedStoragePage> createState() =>
       _SelectGuidedStoragePageState();
 }
 
-class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
+class _SelectGuidedStoragePageState
+    extends ConsumerState<SelectGuidedStoragePage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<SelectGuidedStorageModel>(context, listen: false);
+    final model = ref.read(selectGuidedStorageModelProvider);
     model.loadGuidedStorage();
   }
 
@@ -58,7 +47,7 @@ class _SelectGuidedStoragePageState extends State<SelectGuidedStoragePage> {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<SelectGuidedStorageModel>(context);
+    final model = ref.watch(selectGuidedStorageModelProvider);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(

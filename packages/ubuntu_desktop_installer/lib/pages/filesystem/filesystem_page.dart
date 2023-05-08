@@ -41,7 +41,7 @@ class FilesystemPage extends StatelessWidget {
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.selectGuidedStorage: WizardRoute(
-          builder: SelectGuidedStoragePage.create,
+          builder: (_) => const SelectGuidedStoragePage(),
           userData: InstallationStep.filesystem.index,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
