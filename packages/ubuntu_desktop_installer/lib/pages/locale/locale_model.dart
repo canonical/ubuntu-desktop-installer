@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:safe_change_notifier/safe_change_notifier.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -14,12 +13,12 @@ final log = Logger('locale');
 class LocaleModel extends SafeChangeNotifier {
   /// Creates a model with the specified [client].
   LocaleModel({
-    required SubiquityClient client,
+    required LocaleService locale,
     required SoundService? sound,
-  })  : _client = client,
+  })  : _locale = locale,
         _sound = sound;
 
-  final SubiquityClient _client;
+  final LocaleService _locale;
   final SoundService? _sound;
 
   /// The index of the currently selected language.
@@ -51,7 +50,7 @@ class LocaleModel extends SafeChangeNotifier {
   /// Applies the given [locale].
   Future<void> applyLocale(Locale locale) {
     log.info('Set $locale as system locale');
-    return _client
+    return _locale
         .setLocale('${locale.languageCode}_${locale.countryCode}.UTF-8');
   }
 

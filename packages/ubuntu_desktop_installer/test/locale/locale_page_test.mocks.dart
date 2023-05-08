@@ -6,9 +6,10 @@
 import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:ubuntu_desktop_installer/services/sound_service.dart' as _i2;
+import 'package:ubuntu_desktop_installer/services/locale_service.dart' as _i2;
+import 'package:ubuntu_desktop_installer/services/sound_service.dart' as _i4;
 import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
-    as _i4;
+    as _i5;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -21,10 +22,37 @@ import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
+/// A class which mocks [LocaleService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockLocaleService extends _i1.Mock implements _i2.LocaleService {
+  MockLocaleService() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i3.Future<String> getLocale() => (super.noSuchMethod(
+        Invocation.method(
+          #getLocale,
+          [],
+        ),
+        returnValue: _i3.Future<String>.value(''),
+      ) as _i3.Future<String>);
+  @override
+  _i3.Future<void> setLocale(String? locale) => (super.noSuchMethod(
+        Invocation.method(
+          #setLocale,
+          [locale],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
+}
+
 /// A class which mocks [SoundService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSoundService extends _i1.Mock implements _i2.SoundService {
+class MockSoundService extends _i1.Mock implements _i4.SoundService {
   MockSoundService() {
     _i1.throwOnMissingStub(this);
   }
@@ -43,7 +71,7 @@ class MockSoundService extends _i1.Mock implements _i2.SoundService {
 /// A class which mocks [TelemetryService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTelemetryService extends _i1.Mock implements _i4.TelemetryService {
+class MockTelemetryService extends _i1.Mock implements _i5.TelemetryService {
   MockTelemetryService() {
     _i1.throwOnMissingStub(this);
   }

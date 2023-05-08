@@ -3,26 +3,25 @@ import 'dart:ui';
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
 
 import 'locale_page_test.mocks.dart';
 
 void main() {
   test('load languages', () async {
-    final client = MockSubiquityClient();
+    final locale = MockLocaleService();
     final sound = MockSoundService();
 
-    final model = LocaleModel(client: client, sound: sound);
+    final model = LocaleModel(locale: locale, sound: sound);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
   });
 
   test('sort languages', () async {
-    final client = MockSubiquityClient();
+    final locale = MockLocaleService();
     final sound = MockSoundService();
 
-    final model = LocaleModel(client: client, sound: sound);
+    final model = LocaleModel(locale: locale, sound: sound);
     await model.loadLanguages();
 
     final languages = List.generate(model.languageCount, model.language);
@@ -34,10 +33,10 @@ void main() {
   });
 
   test('select locale', () async {
-    final client = MockSubiquityClient();
+    final locale = MockLocaleService();
     final sound = MockSoundService();
 
-    final model = LocaleModel(client: client, sound: sound);
+    final model = LocaleModel(locale: locale, sound: sound);
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
@@ -59,20 +58,20 @@ void main() {
   });
 
   test('set locale', () {
-    final client = MockSubiquityClient();
-    when(client.setLocale('fr_CA.UTF-8')).thenAnswer((_) async {});
+    final locale = MockLocaleService();
+    when(locale.setLocale('fr_CA.UTF-8')).thenAnswer((_) async {});
     final sound = MockSoundService();
 
-    final model = LocaleModel(client: client, sound: sound);
+    final model = LocaleModel(locale: locale, sound: sound);
     model.applyLocale(const Locale('fr', 'CA'));
-    verify(client.setLocale('fr_CA.UTF-8')).called(1);
+    verify(locale.setLocale('fr_CA.UTF-8')).called(1);
   });
 
   test('selected language', () {
-    final client = MockSubiquityClient();
+    final locale = MockLocaleService();
     final sound = MockSoundService();
 
-    final model = LocaleModel(client: client, sound: sound);
+    final model = LocaleModel(locale: locale, sound: sound);
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -88,10 +87,10 @@ void main() {
   });
 
   test('search language', () async {
-    final client = MockSubiquityClient();
+    final locale = MockLocaleService();
     final sound = MockSoundService();
 
-    final model = LocaleModel(client: client, sound: sound);
+    final model = LocaleModel(locale: locale, sound: sound);
     await model.loadLanguages();
 
     final english = model.searchLanguage('eng');
@@ -123,10 +122,10 @@ void main() {
   });
 
   test('play welcome sound', () async {
-    final client = MockSubiquityClient();
+    final locale = MockLocaleService();
     final sound = MockSoundService();
 
-    final model = LocaleModel(client: client, sound: sound);
+    final model = LocaleModel(locale: locale, sound: sound);
     await model.playWelcomeSound();
     verify(sound.play('system-ready')).called(1);
   });
