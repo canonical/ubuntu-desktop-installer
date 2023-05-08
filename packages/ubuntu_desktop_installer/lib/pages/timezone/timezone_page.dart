@@ -15,9 +15,9 @@ import 'timezone_model.dart';
 class TimezonePage extends ConsumerStatefulWidget {
   const TimezonePage({super.key});
 
-  static final timezoneModelProvider = ChangeNotifierProvider(
+  static final modelProvider = ChangeNotifierProvider(
       (_) => TimezoneModel(getService<SubiquityClient>()));
-  static final timezoneControllerProvider = ChangeNotifierProvider(
+  static final controllerProvider = ChangeNotifierProvider(
       (_) => TimezoneController(service: getService<GeoService>()));
 
   @override
@@ -30,8 +30,8 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
   void initState() {
     super.initState();
 
-    final model = ref.read(TimezonePage.timezoneModelProvider);
-    final controller = ref.read(TimezonePage.timezoneControllerProvider);
+    final model = ref.read(TimezonePage.modelProvider);
+    final controller = ref.read(TimezonePage.controllerProvider);
     model.init().then((timezone) {
       controller.searchTimezone(timezone).then((timezones) {
         controller.selectTimezone(timezones.firstOrNull);
@@ -49,7 +49,7 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = ref.watch(TimezonePage.timezoneControllerProvider);
+    final controller = ref.watch(TimezonePage.controllerProvider);
     final lang = AppLocalizations.of(context);
 
     return WizardPage(
@@ -143,7 +143,7 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
           WizardAction.next(
             context,
             onNext: () {
-              final model = ref.read(TimezonePage.timezoneModelProvider);
+              final model = ref.read(TimezonePage.modelProvider);
               return model.save(controller.selectedLocation?.timezone);
             },
           ),

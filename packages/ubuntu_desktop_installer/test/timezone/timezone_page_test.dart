@@ -42,8 +42,8 @@ void main() {
   ) {
     return ProviderScope(
       overrides: [
-        TimezonePage.timezoneControllerProvider.overrideWith((_) => controller),
-        TimezonePage.timezoneModelProvider.overrideWith((_) => model),
+        TimezonePage.controllerProvider.overrideWith((_) => controller),
+        TimezonePage.modelProvider.overrideWith((_) => model),
       ],
       child: const TimezonePage(),
     );
