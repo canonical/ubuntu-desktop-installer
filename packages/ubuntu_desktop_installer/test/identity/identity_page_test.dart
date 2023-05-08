@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
@@ -50,8 +50,8 @@ void main() {
   }
 
   Widget buildPage(IdentityModel model) {
-    return ChangeNotifierProvider<IdentityModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [IdentityPage.modelProvider.overrideWith((_) => model)],
       child: const IdentityPage(),
     );
   }

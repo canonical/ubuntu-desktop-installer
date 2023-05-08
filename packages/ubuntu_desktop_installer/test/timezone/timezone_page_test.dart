@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
-import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_page.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 
 import '../test_utils.dart';
@@ -43,10 +40,10 @@ void main() {
     TimezoneModel model,
     TimezoneController controller,
   ) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<TimezoneController>.value(value: controller),
-        ChangeNotifierProvider<TimezoneModel>.value(value: model),
+    return ProviderScope(
+      overrides: [
+        TimezonePage.controllerProvider.overrideWith((_) => controller),
+        TimezonePage.modelProvider.overrideWith((_) => model),
       ],
       child: const TimezonePage(),
     );
@@ -262,28 +259,6 @@ void main() {
       state.formatTimezone(timezone),
       'America/New York',
     );
-  });
-
-  testWidgets('creates a model and controller', (tester) async {
-    final client = MockSubiquityClient();
-    when(client.getTimezone()).thenAnswer(
-        (_) async => const TimeZoneInfo(timezone: '', fromGeoip: false));
-    registerMockService<SubiquityClient>(client);
-
-    final service = MockGeoService();
-    when(service.searchTimezone(any)).thenAnswer((_) async => []);
-    registerMockService<GeoService>(service);
-
-    await tester.pumpWidget(tester.buildApp(TimezonePage.create));
-
-    final page = find.byType(TimezonePage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<TimezoneModel>(context, listen: false);
-    expect(model, isNotNull);
-    final controller = Provider.of<TimezoneController>(context, listen: false);
-    expect(controller, isNotNull);
   });
 
   testWidgets('previous button is disabled', (tester) async {

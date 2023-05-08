@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -11,26 +11,24 @@ import 'active_directory_dialogs.dart';
 import 'active_directory_model.dart';
 import 'active_directory_widgets.dart';
 
-class ActiveDirectoryPage extends StatefulWidget {
+class ActiveDirectoryPage extends ConsumerStatefulWidget {
   const ActiveDirectoryPage({super.key});
 
-  static Widget create(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => ActiveDirectoryModel(getService<SubiquityClient>()),
-      child: const ActiveDirectoryPage(),
-    );
-  }
+  static final modelProvider = ChangeNotifierProvider(
+    (_) => ActiveDirectoryModel(getService<SubiquityClient>()),
+  );
 
   @override
-  State<ActiveDirectoryPage> createState() => _ActiveDirectoryPageState();
+  ConsumerState<ActiveDirectoryPage> createState() =>
+      _ActiveDirectoryPageState();
 }
 
-class _ActiveDirectoryPageState extends State<ActiveDirectoryPage> {
+class _ActiveDirectoryPageState extends ConsumerState<ActiveDirectoryPage> {
   @override
   void initState() {
     super.initState();
 
-    final model = context.read<ActiveDirectoryModel>();
+    final model = ref.read(ActiveDirectoryPage.modelProvider);
     model.init();
   }
 
@@ -53,8 +51,9 @@ class _ActiveDirectoryPageState extends State<ActiveDirectoryPage> {
             Align(
               alignment: AlignmentDirectional.centerStart,
               child: OutlinedButton(
-                onPressed:
-                    context.read<ActiveDirectoryModel>().pingDomainController,
+                onPressed: ref
+                    .read(ActiveDirectoryPage.modelProvider)
+                    .pingDomainController,
                 child: Text(lang.activeDirectoryTestConnection),
               ),
             ),
@@ -70,9 +69,10 @@ class _ActiveDirectoryPageState extends State<ActiveDirectoryPage> {
         trailing: [
           WizardAction.next(
             context,
-            enabled: context.select((ActiveDirectoryModel m) => m.isValid),
+            enabled: ref.watch(
+                ActiveDirectoryPage.modelProvider.select((m) => m.isValid)),
             onNext: () async {
-              final model = context.read<ActiveDirectoryModel>();
+              final model = ref.read(ActiveDirectoryPage.modelProvider);
               await model.save();
               model.getJoinResult().then((result) {
                 if (mounted &&

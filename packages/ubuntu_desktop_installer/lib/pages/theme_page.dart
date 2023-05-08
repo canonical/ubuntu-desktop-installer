@@ -7,8 +7,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 class ThemePage extends StatelessWidget {
   const ThemePage({super.key});
 
-  static Widget create(BuildContext context) => const ThemePage();
-
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);

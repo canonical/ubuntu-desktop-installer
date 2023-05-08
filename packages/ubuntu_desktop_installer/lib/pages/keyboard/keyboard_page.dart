@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -11,28 +11,22 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'keyboard_dialogs.dart';
 import 'keyboard_model.dart';
 
-class KeyboardPage extends StatefulWidget {
-  const KeyboardPage({
-    super.key,
-  });
+class KeyboardPage extends ConsumerStatefulWidget {
+  const KeyboardPage({super.key});
 
-  static Widget create(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => KeyboardModel(getService<SubiquityClient>()),
-      child: const KeyboardPage(),
-    );
-  }
+  static final modelProvider = ChangeNotifierProvider(
+      (_) => KeyboardModel(getService<SubiquityClient>()));
 
   @override
-  State<KeyboardPage> createState() => _KeyboardPageState();
+  ConsumerState<KeyboardPage> createState() => _KeyboardPageState();
 }
 
-class _KeyboardPageState extends State<KeyboardPage> {
+class _KeyboardPageState extends ConsumerState<KeyboardPage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<KeyboardModel>(context, listen: false);
+    final model = ref.read(KeyboardPage.modelProvider);
     model.init().then((_) => model.updateInputSource());
   }
 
@@ -43,7 +37,7 @@ class _KeyboardPageState extends State<KeyboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<KeyboardModel>(context);
+    final model = ref.watch(KeyboardPage.modelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

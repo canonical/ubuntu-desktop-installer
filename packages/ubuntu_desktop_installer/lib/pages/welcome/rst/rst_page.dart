@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -13,22 +13,15 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'rst_model.dart';
 
-class RstPage extends StatelessWidget {
-  const RstPage({
-    super.key,
-  });
+class RstPage extends ConsumerWidget {
+  const RstPage({super.key});
 
-  static Widget create(BuildContext context) {
-    final client = getService<SubiquityClient>();
-    return Provider(
-      create: (_) => RstModel(client),
-      child: const RstPage(),
-    );
-  }
+  static final modelProvider = ChangeNotifierProvider<RstModel>(
+      (_) => RstModel(getService<SubiquityClient>()));
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<RstModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(modelProvider);
     final lang = AppLocalizations.of(context);
     return Scaffold(
       body: WizardPage(

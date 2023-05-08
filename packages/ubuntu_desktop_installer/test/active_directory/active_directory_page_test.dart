@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';
@@ -53,8 +52,8 @@ void main() {
   }
 
   Widget buildPage(ActiveDirectoryModel model) {
-    return ChangeNotifierProvider<ActiveDirectoryModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [ActiveDirectoryPage.modelProvider.overrideWith((_) => model)],
       child: const ActiveDirectoryPage(),
     );
   }
@@ -193,26 +192,5 @@ void main() {
 
     verify(urlLauncher.launchUrl('https://help.ubuntu.com/activedirectory'))
         .called(1);
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final client = MockSubiquityClient();
-    when(client.getActiveDirectory())
-        .thenAnswer((_) async => const AdConnectionInfo());
-    when(client.checkActiveDirectoryDomainName(any))
-        .thenAnswer((_) async => [AdDomainNameValidation.OK]);
-    when(client.checkActiveDirectoryAdminName(any))
-        .thenAnswer((_) async => AdAdminNameValidation.OK);
-    when(client.checkActiveDirectoryPassword(any))
-        .thenAnswer((_) async => AdPasswordValidation.OK);
-    registerMockService<SubiquityClient>(client);
-
-    await tester.pumpWidget(tester.buildApp(ActiveDirectoryPage.create));
-
-    final page = find.byType(ActiveDirectoryPage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    expect(context.read<ActiveDirectoryModel>, returnsNormally);
   });
 }

@@ -1,15 +1,15 @@
 part of 'identity_page.dart';
 
-class _RealNameFormField extends StatelessWidget {
+class _RealNameFormField extends ConsumerWidget {
   const _RealNameFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final realName =
-        context.select<IdentityModel, String>((model) => model.realName);
+        ref.watch(IdentityPage.modelProvider.select((model) => model.realName));
 
     return ValidatedFormField(
       autofocus: true,
@@ -27,7 +27,7 @@ class _RealNameFormField extends StatelessWidget {
         ),
       ]),
       onChanged: (value) async {
-        final model = Provider.of<IdentityModel>(context, listen: false);
+        final model = ref.read(IdentityPage.modelProvider);
         model.realName = value;
         await model.validate();
       },
@@ -35,16 +35,16 @@ class _RealNameFormField extends StatelessWidget {
   }
 }
 
-class _HostnameFormField extends StatelessWidget {
+class _HostnameFormField extends ConsumerWidget {
   const _HostnameFormField({this.fieldWidth});
 
   final double? fieldWidth;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final hostname =
-        context.select<IdentityModel, String>((model) => model.hostname);
+        ref.watch(IdentityPage.modelProvider.select((model) => model.hostname));
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -66,7 +66,7 @@ class _HostnameFormField extends StatelessWidget {
         )
       ]),
       onChanged: (value) {
-        final model = Provider.of<IdentityModel>(context, listen: false);
+        final model = ref.read(IdentityPage.modelProvider);
         model.hostname = value;
       },
     );
@@ -92,19 +92,19 @@ extension UsernameValidationL10n on UsernameValidation {
   }
 }
 
-class _UsernameFormField extends StatelessWidget {
+class _UsernameFormField extends ConsumerWidget {
   const _UsernameFormField({this.fieldWidth});
 
   final double? fieldWidth;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final username =
-        context.select<IdentityModel, String>((model) => model.username);
-    final validation = context.select<IdentityModel, UsernameValidation>(
-        (model) => model.usernameValidation);
-    final model = context.read<IdentityModel>();
+        ref.watch(IdentityPage.modelProvider.select((model) => model.username));
+    final validation = ref.watch(
+        IdentityPage.modelProvider.select((model) => model.usernameValidation));
+    final model = ref.read(IdentityPage.modelProvider);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -125,7 +125,7 @@ class _UsernameFormField extends StatelessWidget {
         ),
       ]),
       onChanged: (value) async {
-        final model = Provider.of<IdentityModel>(context, listen: false);
+        final model = ref.read(IdentityPage.modelProvider);
         model.username = value;
         await model.validate();
       },
@@ -133,20 +133,20 @@ class _UsernameFormField extends StatelessWidget {
   }
 }
 
-class _PasswordFormField extends StatelessWidget {
+class _PasswordFormField extends ConsumerWidget {
   const _PasswordFormField({this.fieldWidth});
 
   final double? fieldWidth;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final password =
-        context.select<IdentityModel, String>((model) => model.password);
-    final passwordStrength = context.select<IdentityModel, PasswordStrength>(
-        (model) => model.passwordStrength);
-    final showPassword =
-        context.select<IdentityModel, bool>((model) => model.showPassword);
+        ref.watch(IdentityPage.modelProvider.select((model) => model.password));
+    final passwordStrength = ref.watch(
+        IdentityPage.modelProvider.select((model) => model.passwordStrength));
+    final showPassword = ref.watch(
+        IdentityPage.modelProvider.select((model) => model.showPassword));
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -157,33 +157,33 @@ class _PasswordFormField extends StatelessWidget {
       suffixIcon: _ShowPasswordButton(
         value: showPassword,
         onChanged: (value) =>
-            context.read<IdentityModel>().showPassword = value,
+            ref.read(IdentityPage.modelProvider).showPassword = value,
       ),
       validator: RequiredValidator(
         errorText: lang.whoAreYouPagePasswordRequired,
       ),
       onChanged: (value) {
-        final model = Provider.of<IdentityModel>(context, listen: false);
+        final model = ref.read(IdentityPage.modelProvider);
         model.password = value;
       },
     );
   }
 }
 
-class _ConfirmPasswordFormField extends StatelessWidget {
+class _ConfirmPasswordFormField extends ConsumerWidget {
   const _ConfirmPasswordFormField({required this.fieldWidth});
 
   final double? fieldWidth;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final password =
-        context.select<IdentityModel, String>((model) => model.password);
-    final confirmedPassword = context
-        .select<IdentityModel, String>((model) => model.confirmedPassword);
-    final showPassword =
-        context.select<IdentityModel, bool>((model) => model.showPassword);
+        ref.watch(IdentityPage.modelProvider.select((model) => model.password));
+    final confirmedPassword = ref.watch(
+        IdentityPage.modelProvider.select((model) => model.confirmedPassword));
+    final showPassword = ref.watch(
+        IdentityPage.modelProvider.select((model) => model.showPassword));
 
     return ValidatedFormField(
       obscureText: !showPassword,
@@ -197,7 +197,7 @@ class _ConfirmPasswordFormField extends StatelessWidget {
         errorText: lang.whoAreYouPagePasswordMismatch,
       ),
       onChanged: (value) {
-        final model = Provider.of<IdentityModel>(context, listen: false);
+        final model = ref.read(IdentityPage.modelProvider);
         model.confirmedPassword = value;
       },
     );
@@ -254,17 +254,18 @@ class _ShowPasswordButton extends StatelessWidget {
   }
 }
 
-class _UseActiveDirectoryCheckButton extends StatelessWidget {
+class _UseActiveDirectoryCheckButton extends ConsumerWidget {
   const _UseActiveDirectoryCheckButton();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final hasActiveDirectorySupport =
-        context.select((IdentityModel m) => m.hasActiveDirectorySupport);
-    final useActiveDirectory =
-        context.select((IdentityModel m) => m.useActiveDirectory);
-    final isConnected = context.select((IdentityModel m) => m.isConnected);
+    final hasActiveDirectorySupport = ref.watch(IdentityPage.modelProvider
+        .select((model) => model.hasActiveDirectorySupport));
+    final useActiveDirectory = ref.watch(
+        IdentityPage.modelProvider.select((model) => model.useActiveDirectory));
+    final isConnected = ref
+        .watch(IdentityPage.modelProvider.select((model) => model.isConnected));
 
     return Visibility(
       visible: hasActiveDirectorySupport != false,
@@ -272,7 +273,8 @@ class _UseActiveDirectoryCheckButton extends StatelessWidget {
         value: useActiveDirectory,
         title: Text(lang.activeDirectoryOption),
         onChanged: isConnected && hasActiveDirectorySupport == true
-            ? (v) => context.read<IdentityModel>().useActiveDirectory = v!
+            ? (v) =>
+                ref.read(IdentityPage.modelProvider).useActiveDirectory = v!
             : null,
         subtitle: Text(
           lang.activeDirectoryInfo,
@@ -286,21 +288,21 @@ class _UseActiveDirectoryCheckButton extends StatelessWidget {
   }
 }
 
-class _AutoLoginSwitch extends StatelessWidget {
+class _AutoLoginSwitch extends ConsumerWidget {
   const _AutoLoginSwitch();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final autoLogin =
-        context.select<IdentityModel, bool>((model) => model.autoLogin);
+    final autoLogin = ref
+        .watch(IdentityPage.modelProvider.select((model) => model.autoLogin));
 
     return YaruSwitchButton(
       title: Text(lang.whoAreYouPageRequirePassword),
       contentPadding: kContentPadding,
       value: !autoLogin,
       onChanged: (value) {
-        final model = Provider.of<IdentityModel>(context, listen: false);
+        final model = ref.read(IdentityPage.modelProvider);
         model.autoLogin = !value;
       },
     );

@@ -1,17 +1,15 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/not_enough_disk_space/not_enough_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/not_enough_disk_space/not_enough_disk_space_page.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';
-import 'not_enough_disk_space_model_test.mocks.dart';
 import 'not_enough_disk_space_page_test.mocks.dart';
 
 @GenerateMocks([NotEnoughDiskSpaceModel])
@@ -31,8 +29,10 @@ void main() {
   }
 
   Widget buildPage(NotEnoughDiskSpaceModel model) {
-    return ChangeNotifierProvider<NotEnoughDiskSpaceModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [
+        NotEnoughDiskSpacePage.modelProvider.overrideWith((_) => model),
+      ],
       child: const NotEnoughDiskSpacePage(),
     );
   }
@@ -84,22 +84,5 @@ void main() {
     await tester.tap(button);
 
     await expectLater(windowClosed, completes);
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final storage = MockDiskStorageService();
-    when(storage.largestDiskSize).thenReturn(0);
-    when(storage.installMinimumSize).thenReturn(0);
-    when(storage.hasMultipleDisks).thenReturn(false);
-    registerMockService<DiskStorageService>(storage);
-
-    await tester.pumpWidget(tester.buildApp(NotEnoughDiskSpacePage.create));
-
-    final page = find.byType(NotEnoughDiskSpacePage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<NotEnoughDiskSpaceModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }

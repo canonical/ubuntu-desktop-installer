@@ -1,10 +1,8 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_view.dart';
-import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -26,10 +24,10 @@ void main() {
 
     await tester.pumpWidget(
       tester.buildApp(
-        (_) => MultiProvider(
-          providers: [
-            ChangeNotifierProvider<EthernetModel>.value(value: ethernet),
-            ChangeNotifierProvider<WifiModel>.value(value: wifi),
+        (_) => ProviderScope(
+          overrides: [
+            NetworkPage.ethernetModelProvider.overrideWith((_) => ethernet),
+            NetworkPage.wifiModelProvider.overrideWith((_) => wifi),
           ],
           child: NoConnectView(value: ConnectMode.none, onChanged: (_) {}),
         ),

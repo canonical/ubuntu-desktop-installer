@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
@@ -12,38 +12,26 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'timezone_model.dart';
 
 /// https://github.com/canonical/ubuntu-desktop-installer/issues/38
-class TimezonePage extends StatefulWidget {
-  /// Use [TimezonePage.create] instead.
-  @visibleForTesting
+class TimezonePage extends ConsumerStatefulWidget {
   const TimezonePage({super.key});
 
-  /// Creates a [TimezonePage] with [TimezoneModel].
-  static Widget create(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => TimezoneModel(getService<SubiquityClient>()),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => TimezoneController(service: getService<GeoService>()),
-        ),
-      ],
-      child: const TimezonePage(),
-    );
-  }
+  static final modelProvider = ChangeNotifierProvider(
+      (_) => TimezoneModel(getService<SubiquityClient>()));
+  static final controllerProvider = ChangeNotifierProvider(
+      (_) => TimezoneController(service: getService<GeoService>()));
 
   @override
   TimezonePageState createState() => TimezonePageState();
 }
 
 @visibleForTesting
-class TimezonePageState extends State<TimezonePage> {
+class TimezonePageState extends ConsumerState<TimezonePage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<TimezoneModel>(context, listen: false);
-    final controller = Provider.of<TimezoneController>(context, listen: false);
+    final model = ref.read(TimezonePage.modelProvider);
+    final controller = ref.read(TimezonePage.controllerProvider);
     model.init().then((timezone) {
       controller.searchTimezone(timezone).then((timezones) {
         controller.selectTimezone(timezones.firstOrNull);
@@ -61,7 +49,7 @@ class TimezonePageState extends State<TimezonePage> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<TimezoneController>(context);
+    final controller = ref.watch(TimezonePage.controllerProvider);
     final lang = AppLocalizations.of(context);
 
     return WizardPage(
@@ -155,7 +143,7 @@ class TimezonePageState extends State<TimezonePage> {
           WizardAction.next(
             context,
             onNext: () {
-              final model = Provider.of<TimezoneModel>(context, listen: false);
+              final model = ref.read(TimezonePage.modelProvider);
               return model.save(controller.selectedLocation?.timezone);
             },
           ),

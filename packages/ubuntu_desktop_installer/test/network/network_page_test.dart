@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
@@ -95,13 +95,15 @@ void main() {
     when(hiddenWifiModel.onAvailabilityChanged)
         .thenAnswer((_) => const Stream.empty());
 
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<NetworkModel>.value(value: model),
-        ChangeNotifierProvider<EthernetModel>.value(value: ethernetModel),
-        ChangeNotifierProvider<WifiModel>.value(value: wifiModel),
-        ChangeNotifierProvider<HiddenWifiModel>.value(value: hiddenWifiModel),
-        ChangeNotifierProvider<NoConnectModel>(create: (_) => NoConnectModel()),
+    return ProviderScope(
+      overrides: [
+        NetworkPage.networkModelProvider.overrideWith((_) => model),
+        NetworkPage.ethernetModelProvider.overrideWith((_) => ethernetModel),
+        NetworkPage.wifiModelProvider.overrideWith((_) => wifiModel),
+        NetworkPage.hiddenWifiModelProvider
+            .overrideWith((_) => hiddenWifiModel),
+        NetworkPage.noConnectModelProvider
+            .overrideWith((_) => NoConnectModel()),
       ],
       child: const NetworkPage(),
     );
@@ -235,29 +237,6 @@ void main() {
     expect(noConnectRadio, findsOneWidget);
     expect(noConnectRadio, isChecked);
     expect(model.connectMode, ConnectMode.none);
-  });
-
-  testWidgets('creates all models', (tester) async {
-    final service = MockNetworkService();
-    when(service.propertiesChanged)
-        .thenAnswer((_) => const Stream<List<String>>.empty());
-    when(service.wiredDevices).thenReturn([]);
-    when(service.wirelessDevices).thenReturn([]);
-    when(service.wirelessEnabled).thenReturn(true);
-    registerMockService<NetworkService>(service);
-    registerMockService<UdevService>(MockUdevService());
-
-    await tester.pumpWidget(tester.buildApp(NetworkPage.create));
-
-    final page = find.byType(NetworkPage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    expect(Provider.of<NetworkModel>(context, listen: false), isNotNull);
-    expect(Provider.of<NoConnectModel>(context, listen: false), isNotNull);
-    expect(Provider.of<EthernetModel>(context, listen: false), isNotNull);
-    expect(Provider.of<WifiModel>(context, listen: false), isNotNull);
-    expect(Provider.of<HiddenWifiModel>(context, listen: false), isNotNull);
   });
 
   testWidgets('mark network configured', (tester) async {

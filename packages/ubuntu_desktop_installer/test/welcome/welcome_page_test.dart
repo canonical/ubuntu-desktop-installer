@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
@@ -67,9 +67,9 @@ void main() {
       ),
     );
 
-    await tester.pumpWidget(MultiProvider(
-      providers: [
-        ChangeNotifierProvider.value(value: model, child: app),
+    await tester.pumpWidget(ProviderScope(
+      overrides: [
+        WelcomePage.modelProvider.overrideWith((_) => model),
       ],
       child: InheritedLocale(child: app),
     ));

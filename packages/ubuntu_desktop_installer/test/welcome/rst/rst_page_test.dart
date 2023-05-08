@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/rst/rst_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/rst/rst_page.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
@@ -21,8 +21,10 @@ void main() {
     final model = MockRstModel();
 
     await tester.pumpWidget(
-      Provider<RstModel>.value(
-        value: model,
+      ProviderScope(
+        overrides: [
+          RstPage.modelProvider.overrideWith((_) => model),
+        ],
         child: tester.buildApp((_) => const RstPage()),
       ),
     );
@@ -60,8 +62,10 @@ void main() {
     registerMockService<UrlLauncher>(urlLauncher);
 
     await tester.pumpWidget(
-      Provider<RstModel>.value(
-        value: model,
+      ProviderScope(
+        overrides: [
+          RstPage.modelProvider.overrideWith((_) => model),
+        ],
         child: tester.buildApp((_) => const RstPage()),
       ),
     );

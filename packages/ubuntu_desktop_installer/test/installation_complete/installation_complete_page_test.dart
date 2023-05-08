@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
-import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_model.dart';
 import 'package:ubuntu_desktop_installer/pages/installation_complete/installation_complete_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -20,8 +18,10 @@ void main() {
 
   Widget buildPage(InstallationCompleteModel model) {
     when(model.productInfo).thenReturn(ProductInfo(name: 'Ubuntu'));
-    return Provider<InstallationCompleteModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [
+        InstallationCompletePage.modelProvider.overrideWith((_) => model)
+      ],
       child: const InstallationCompletePage(),
     );
   }
@@ -56,20 +56,5 @@ void main() {
     verifyNever(model.reboot());
 
     await expectLater(windowClosed, completes);
-  });
-
-  testWidgets('creates a model', (tester) async {
-    registerMockService<SubiquityClient>(MockSubiquityClient());
-    registerMockService<ProductService>(ProductService());
-
-    await tester.pumpWidget(tester.buildApp(InstallationCompletePage.create));
-
-    final page = find.byType(InstallationCompletePage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model =
-        Provider.of<InstallationCompleteModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }

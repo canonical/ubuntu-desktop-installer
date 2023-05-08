@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import 'secure_boot_model.dart';
+import 'secure_boot_page.dart';
 
-class SecurityKeyFormField extends StatelessWidget {
+class SecurityKeyFormField extends ConsumerWidget {
   const SecurityKeyFormField({
     super.key,
     required this.fieldWidth,
@@ -16,8 +16,8 @@ class SecurityKeyFormField extends StatelessWidget {
   final double? fieldWidth;
 
   @override
-  Widget build(BuildContext context) {
-    final model = context.watch<SecureBootModel>();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(SecureBootPage.modelProvider);
     final lang = AppLocalizations.of(context);
     return Padding(
       padding: kContentIndentation,
@@ -37,7 +37,7 @@ class SecurityKeyFormField extends StatelessWidget {
   }
 }
 
-class SecurityKeyConfirmFormField extends StatelessWidget {
+class SecurityKeyConfirmFormField extends ConsumerWidget {
   const SecurityKeyConfirmFormField({
     super.key,
     required this.fieldWidth,
@@ -46,8 +46,8 @@ class SecurityKeyConfirmFormField extends StatelessWidget {
   final double? fieldWidth;
 
   @override
-  Widget build(BuildContext context) {
-    final model = context.watch<SecureBootModel>();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(SecureBootPage.modelProvider);
     final lang = AppLocalizations.of(context);
     return Padding(
       padding: kContentIndentation,

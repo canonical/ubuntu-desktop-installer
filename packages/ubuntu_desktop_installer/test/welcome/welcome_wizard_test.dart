@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -95,30 +96,32 @@ extension on WidgetTester {
     registerMockService<NetworkService>(network);
 
     return pumpWidget(
-      InheritedLocale(
-        child: Flavor(
-          data: const FlavorData(name: 'Ubuntu'),
-          child: MaterialApp(
-            localizationsDelegates: localizationsDelegates,
-            home: Wizard(
-              routes: {
-                '/first': WizardRoute(
-                  builder: (context) => WizardPage(
-                    content: const Text('first route'),
-                    bottomBar: WizardBar(
-                      trailing: [WizardAction.next(context)],
+      ProviderScope(
+        child: InheritedLocale(
+          child: Flavor(
+            data: const FlavorData(name: 'Ubuntu'),
+            child: MaterialApp(
+              localizationsDelegates: localizationsDelegates,
+              home: Wizard(
+                routes: {
+                  '/first': WizardRoute(
+                    builder: (context) => WizardPage(
+                      content: const Text('first route'),
+                      bottomBar: WizardBar(
+                        trailing: [WizardAction.next(context)],
+                      ),
                     ),
                   ),
-                ),
-                Routes.welcome:
-                    const WizardRoute(builder: WelcomeWizard.create),
-                '/last': WizardRoute(
-                  builder: (context) => WizardPage(
-                    content: const Text('last route'),
-                    bottomBar: WizardBar(leading: WizardAction.back(context)),
+                  Routes.welcome:
+                      WizardRoute(builder: (_) => const WelcomeWizard()),
+                  '/last': WizardRoute(
+                    builder: (context) => WizardPage(
+                      content: const Text('last route'),
+                      bottomBar: WizardBar(leading: WizardAction.back(context)),
+                    ),
                   ),
-                ),
-              },
+                },
+              ),
             ),
           ),
         ),

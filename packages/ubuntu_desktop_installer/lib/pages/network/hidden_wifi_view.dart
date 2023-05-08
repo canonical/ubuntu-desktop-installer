@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'connect_model.dart';
-import 'hidden_wifi_model.dart';
+import 'network_page.dart';
 import 'wifi_model.dart';
 
-class HiddenWifiRadioButton extends StatelessWidget {
+class HiddenWifiRadioButton extends ConsumerWidget {
   const HiddenWifiRadioButton({
     super.key,
     required this.value,
@@ -22,8 +21,8 @@ class HiddenWifiRadioButton extends StatelessWidget {
   final ValueChanged<ConnectMode?> onChanged;
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<HiddenWifiModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(NetworkPage.hiddenWifiModelProvider);
     if (!model.isEnabled || model.devices.isEmpty) {
       return const SizedBox.shrink();
     }
@@ -39,7 +38,7 @@ class HiddenWifiRadioButton extends StatelessWidget {
   }
 }
 
-class HiddenWifiView extends StatefulWidget {
+class HiddenWifiView extends ConsumerStatefulWidget {
   const HiddenWifiView({
     super.key,
     required this.expanded,
@@ -48,10 +47,10 @@ class HiddenWifiView extends StatefulWidget {
   final bool expanded;
 
   @override
-  State<HiddenWifiView> createState() => _HiddenWifiViewState();
+  ConsumerState<HiddenWifiView> createState() => _HiddenWifiViewState();
 }
 
-class _HiddenWifiViewState extends State<HiddenWifiView> {
+class _HiddenWifiViewState extends ConsumerState<HiddenWifiView> {
   final _focusNode = FocusNode();
 
   @override
@@ -76,7 +75,7 @@ class _HiddenWifiViewState extends State<HiddenWifiView> {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final model = Provider.of<HiddenWifiModel>(context);
+    final model = ref.watch(NetworkPage.hiddenWifiModelProvider);
     if (!model.isEnabled || model.devices.isEmpty) {
       return const SizedBox.shrink();
     }

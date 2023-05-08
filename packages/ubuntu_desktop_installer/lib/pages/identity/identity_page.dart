@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -19,33 +19,29 @@ part 'identity_widgets.dart';
 /// The installer page for setting up the user data.
 ///
 /// It uses [WizardPage] and [WizardAction] to create an installer page.
-class IdentityPage extends StatefulWidget {
+class IdentityPage extends ConsumerStatefulWidget {
   /// Creates a the installer page for setting up the user data.
   const IdentityPage({super.key});
 
-  /// Creates an instance with [IdentityModel].
-  static Widget create(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => IdentityModel(
-        client: getService<SubiquityClient>(),
-        config: getService<ConfigService>(),
-        network: getService<NetworkService>(),
-        telemetry: getService<TelemetryService>(),
-      ),
-      child: const IdentityPage(),
-    );
-  }
+  static final modelProvider = ChangeNotifierProvider(
+    (_) => IdentityModel(
+      client: getService<SubiquityClient>(),
+      config: getService<ConfigService>(),
+      network: getService<NetworkService>(),
+      telemetry: getService<TelemetryService>(),
+    ),
+  );
 
   @override
-  State<IdentityPage> createState() => _IdentityPageState();
+  ConsumerState<IdentityPage> createState() => _IdentityPageState();
 }
 
-class _IdentityPageState extends State<IdentityPage> {
+class _IdentityPageState extends ConsumerState<IdentityPage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<IdentityModel>(context, listen: false);
+    final model = ref.read(IdentityPage.modelProvider);
     model.init();
   }
 
@@ -102,10 +98,10 @@ class _IdentityPageState extends State<IdentityPage> {
           WizardAction.next(
             context,
             enabled:
-                context.select<IdentityModel, bool>((model) => model.isValid),
-            arguments:
-                context.select((IdentityModel m) => m.useActiveDirectory),
-            onNext: context.read<IdentityModel>().save,
+                ref.watch(IdentityPage.modelProvider.select((m) => m.isValid)),
+            arguments: ref.watch(
+                IdentityPage.modelProvider.select((m) => m.useActiveDirectory)),
+            onNext: ref.read(IdentityPage.modelProvider).save,
           ),
         ],
       ),

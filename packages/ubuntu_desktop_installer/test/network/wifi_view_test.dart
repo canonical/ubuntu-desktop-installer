@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
-import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
+import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
 import 'package:ubuntu_test/utils.dart';
@@ -58,8 +58,8 @@ void main() {
 
     await tester.pumpWidget(
       tester.buildApp(
-        (_) => ChangeNotifierProvider<WifiModel>.value(
-          value: model,
+        (_) => ProviderScope(
+          overrides: [NetworkPage.wifiModelProvider.overrideWith((_) => model)],
           child: Material(
             child: Column(
               children: [
@@ -124,8 +124,8 @@ void main() {
 
     await tester.pumpWidget(
       tester.buildApp(
-        (_) => ChangeNotifierProvider<WifiModel>.value(
-          value: model,
+        (_) => ProviderScope(
+          overrides: [NetworkPage.wifiModelProvider.overrideWith((_) => model)],
           child: Column(
             children: [
               WifiRadioButton(
@@ -163,8 +163,8 @@ void main() {
 
     await tester.pumpWidget(
       tester.buildApp(
-        (_) => ChangeNotifierProvider<WifiModel>.value(
-          value: model,
+        (_) => ProviderScope(
+          overrides: [NetworkPage.wifiModelProvider.overrideWith((_) => model)],
           child: Column(
             children: [
               WifiRadioButton(
@@ -195,8 +195,8 @@ void main() {
 
     await tester.pumpWidget(
       tester.buildApp(
-        (_) => ChangeNotifierProvider<WifiModel>.value(
-          value: model,
+        (_) => ProviderScope(
+          overrides: [NetworkPage.wifiModelProvider.overrideWith((_) => model)],
           child: WifiView(
             expanded: true,
             onEnabled: () {},

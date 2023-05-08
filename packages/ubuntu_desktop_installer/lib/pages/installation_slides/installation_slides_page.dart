@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -30,36 +30,31 @@ extension InstallationActionL10n on InstallationAction {
 }
 
 /// Slideshow during installation.
-class InstallationSlidesPage extends StatefulWidget {
-  /// Use [InstallationPage.create] instead.
-  @visibleForTesting
-  const InstallationSlidesPage({
-    super.key,
-  });
+class InstallationSlidesPage extends ConsumerStatefulWidget {
+  const InstallationSlidesPage({super.key});
 
-  /// Creates a [InstallationSlidesPage] with [InstallationSlidesModel].
-  static Widget create(BuildContext context) {
-    final client = getService<SubiquityClient>();
-    final journal = getService<JournalService>();
-    final product = getService<ProductService>();
-    return ChangeNotifierProvider(
-      create: (_) => InstallationSlidesModel(client, journal, product),
-      child: const InstallationSlidesPage(),
-    );
-  }
+  static final modelProvider = ChangeNotifierProvider(
+    (_) => InstallationSlidesModel(
+      getService<SubiquityClient>(),
+      getService<JournalService>(),
+      getService<ProductService>(),
+    ),
+  );
 
   @override
-  State<InstallationSlidesPage> createState() => _InstallationSlidesPageState();
+  ConsumerState<InstallationSlidesPage> createState() =>
+      _InstallationSlidesPageState();
 }
 
-class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
+class _InstallationSlidesPageState
+    extends ConsumerState<InstallationSlidesPage> {
   final _slideController = ValueNotifier(0);
 
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<InstallationSlidesModel>(context, listen: false);
+    final model = ref.read(InstallationSlidesPage.modelProvider);
     model.addListener(() {
       if (model.isDone) {
         Wizard.of(context).next();
@@ -82,7 +77,7 @@ class _InstallationSlidesPageState extends State<InstallationSlidesPage> {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final model = Provider.of<InstallationSlidesModel>(context);
+    final model = ref.watch(InstallationSlidesPage.modelProvider);
     final slides = SlidesContext.of(context);
     return Scaffold(
       appBar: YaruWindowTitleBar(

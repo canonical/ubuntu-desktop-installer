@@ -5,6 +5,7 @@ import 'package:collection/collection.dart';
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -91,12 +92,14 @@ Future<void> runInstallerApp(
   WidgetsFlutterBinding.ensureInitialized();
 
   await runWizardApp(
-    InheritedLocale(
-      child: UbuntuDesktopInstallerApp(
-        flavor: flavor,
-        slides: slides,
-        initialRoute: options['initial-route'],
-        welcome: options['welcome'],
+    ProviderScope(
+      child: InheritedLocale(
+        child: UbuntuDesktopInstallerApp(
+          flavor: flavor,
+          slides: slides,
+          initialRoute: options['initial-route'],
+          welcome: options['welcome'],
+        ),
       ),
     ),
     options: options,
@@ -370,25 +373,25 @@ class _UbuntuDesktopInstallerWizardState
       userData: InstallationStep.values.length,
       routes: <String, WizardRoute>{
         Routes.locale: WizardRoute(
-          builder: LocalePage.create,
+          builder: (_) => const LocalePage(),
           userData: InstallationStep.locale.index,
           onNext: (_) =>
               widget.welcome == true ? Routes.welcome : Routes.keyboard,
         ),
         Routes.welcome: WizardRoute(
-          builder: WelcomeWizard.create,
+          builder: (_) => const WelcomePage(),
           userData: InstallationStep.locale.index,
         ),
         Routes.keyboard: WizardRoute(
-          builder: KeyboardPage.create,
+          builder: (_) => const KeyboardPage(),
           userData: InstallationStep.keyboard.index,
         ),
         Routes.network: WizardRoute(
-          builder: NetworkPage.create,
+          builder: (_) => const NetworkPage(),
           userData: InstallationStep.network.index,
         ),
         Routes.source: WizardRoute(
-          builder: SourcePage.create,
+          builder: (_) => const SourcePage(),
           userData: InstallationStep.software.index,
           onNext: (_) => !service.hasEnoughDiskSpace
               ? Routes.notEnoughDiskSpace
@@ -396,45 +399,45 @@ class _UbuntuDesktopInstallerWizardState
                   ? Routes.secureBoot
                   : Routes.filesystem,
         ),
-        Routes.notEnoughDiskSpace: const WizardRoute(
-          builder: NotEnoughDiskSpacePage.create,
+        Routes.notEnoughDiskSpace: WizardRoute(
+          builder: (_) => const NotEnoughDiskSpacePage(),
         ),
         Routes.secureBoot: WizardRoute(
-          builder: SecureBootPage.create,
+          builder: (_) => const SecureBootPage(),
           userData: InstallationStep.type.index,
         ),
         Routes.filesystem: WizardRoute(
-          builder: FilesystemPage.create,
+          builder: (_) => const FilesystemPage(),
           userData: InstallationStep.filesystem.index,
         ),
         Routes.writeChangesToDisk: WizardRoute(
-          builder: WriteChangesToDiskPage.create,
+          builder: (_) => const WriteChangesToDiskPage(),
           userData: InstallationStep.filesystem.index,
         ),
         Routes.timezone: WizardRoute(
-          builder: TimezonePage.create,
+          builder: (_) => const TimezonePage(),
           userData: InstallationStep.location.index,
         ),
         Routes.identity: WizardRoute(
-          builder: IdentityPage.create,
+          builder: (_) => const IdentityPage(),
           userData: InstallationStep.user.index,
           onNext: (settings) => settings.arguments == true
               ? Routes.activeDirectory
               : Routes.theme,
         ),
         Routes.activeDirectory: WizardRoute(
-          builder: ActiveDirectoryPage.create,
+          builder: (_) => const ActiveDirectoryPage(),
           userData: InstallationStep.user.index,
         ),
         Routes.theme: WizardRoute(
-          builder: ThemePage.create,
+          builder: (_) => const ThemePage(),
           userData: InstallationStep.look.index,
         ),
-        Routes.installationSlides: const WizardRoute(
-          builder: InstallationSlidesPage.create,
+        Routes.installationSlides: WizardRoute(
+          builder: (_) => const InstallationSlidesPage(),
         ),
-        Routes.installationComplete: const WizardRoute(
-          builder: InstallationCompletePage.create,
+        Routes.installationComplete: WizardRoute(
+          builder: (_) => const InstallationCompletePage(),
         ),
       },
       observers: [
@@ -467,14 +470,14 @@ class _UbuntuDesktopAutoinstallWizard extends StatelessWidget {
     return Wizard(
       routes: <String, WizardRoute>{
         if (status?.isInstalling != true)
-          Routes.writeChangesToDisk: const WizardRoute(
-            builder: WriteChangesToDiskPage.create,
+          Routes.writeChangesToDisk: WizardRoute(
+            builder: (_) => const WriteChangesToDiskPage(),
           ),
-        Routes.installationSlides: const WizardRoute(
-          builder: InstallationSlidesPage.create,
+        Routes.installationSlides: WizardRoute(
+          builder: (_) => const InstallationSlidesPage(),
         ),
-        Routes.installationComplete: const WizardRoute(
-          builder: InstallationCompletePage.create,
+        Routes.installationComplete: WizardRoute(
+          builder: (_) => const InstallationCompletePage(),
         ),
       },
     );
@@ -486,10 +489,10 @@ class _UbuntuDesktopErrorWizard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Wizard(
+    return Wizard(
       routes: <String, WizardRoute>{
         Routes.installationSlides: WizardRoute(
-          builder: InstallationSlidesPage.create,
+          builder: (_) => const InstallationSlidesPage(),
         ),
       },
     );

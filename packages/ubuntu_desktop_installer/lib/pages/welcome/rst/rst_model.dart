@@ -1,3 +1,4 @@
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
@@ -5,7 +6,7 @@ import 'package:ubuntu_logger/ubuntu_logger.dart';
 final log = Logger('RST');
 
 /// View model for [RstPage].
-class RstModel {
+class RstModel extends SafeChangeNotifier {
   /// Creates an instance with the given client.
   RstModel(this._client) {
     log.info('RST must be turned off');

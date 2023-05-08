@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -15,36 +15,28 @@ import 'welcome_widgets.dart';
 
 export 'welcome_model.dart' show Option;
 
-class WelcomePage extends StatefulWidget {
-  const WelcomePage({
-    super.key,
-  });
+class WelcomePage extends ConsumerStatefulWidget {
+  const WelcomePage({super.key});
 
-  static Widget create(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => WelcomeModel(
+  static final modelProvider = ChangeNotifierProvider((_) => WelcomeModel(
         client: getService<SubiquityClient>(),
         network: getService<NetworkService>(),
-      ),
-      child: const WelcomePage(),
-    );
-  }
-
+      ));
   @override
   WelcomePageState createState() => WelcomePageState();
 }
 
-class WelcomePageState extends State<WelcomePage> {
+class WelcomePageState extends ConsumerState<WelcomePage> {
   @override
   void initState() {
     super.initState();
-    final model = Provider.of<WelcomeModel>(context, listen: false);
+    final model = ref.read(WelcomePage.modelProvider);
     model.init();
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<WelcomeModel>(context);
+    final model = ref.watch(WelcomePage.modelProvider);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     final brightness = Theme.of(context).brightness;

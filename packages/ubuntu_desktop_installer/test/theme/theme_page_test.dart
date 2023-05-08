@@ -15,7 +15,7 @@ void main() {
     final DesktopService desktop = MockDesktopService();
     registerMockService(desktop);
 
-    await tester.pumpWidget(tester.buildApp(ThemePage.create));
+    await tester.pumpWidget(tester.buildApp((_) => const ThemePage()));
 
     final lightOptionCard = find.widgetWithImage(
       YaruSelectableContainer,

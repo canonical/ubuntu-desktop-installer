@@ -12,19 +12,17 @@ export 'welcome_page.dart';
 class WelcomeWizard extends StatelessWidget {
   const WelcomeWizard({super.key});
 
-  static Widget create(BuildContext context) => const WelcomeWizard();
-
   @override
   Widget build(BuildContext context) {
     return Wizard(
       userData: InstallationStep.values.length,
       routes: {
         Navigator.defaultRouteName: WizardRoute(
-          builder: WelcomePage.create,
+          builder: (_) => const WelcomePage(),
           userData: InstallationStep.locale.index,
         ),
-        Routes.rst: const WizardRoute(
-          builder: RstPage.create,
+        Routes.rst: WizardRoute(
+          builder: (_) => const RstPage(),
         ),
       },
     );
