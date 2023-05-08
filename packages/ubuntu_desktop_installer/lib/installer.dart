@@ -78,6 +78,8 @@ Future<void> runInstallerApp(
   tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService(() => DiskStorageService(getService<SubiquityClient>()));
   tryRegisterService(JournalService.new);
+  tryRegisterService<LocaleService>(
+      () => SubiquityLocaleService(getService<SubiquityClient>()));
   tryRegisterService(() => NetworkService(getService<SubiquityClient>()));
   tryRegisterService(PowerService.new);
   tryRegisterService(ProductService.new);

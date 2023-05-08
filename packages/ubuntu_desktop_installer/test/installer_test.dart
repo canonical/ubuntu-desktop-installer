@@ -11,6 +11,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import 'installation_slides/installation_slides_model_test.mocks.dart';
+import 'locale/locale_page_test.mocks.dart';
 import 'theme/theme_page_test.mocks.dart';
 
 void main() {
@@ -92,6 +93,7 @@ extension on WidgetTester {
     registerMockService<DesktopService>(MockDesktopService());
     registerMockService<DiskStorageService>(DiskStorageService(client));
     registerMockService<JournalService>(journal);
+    registerMockService<LocaleService>(MockLocaleService());
     registerMockService<ProductService>(ProductService());
     registerMockService<TelemetryService>(TelemetryService());
 

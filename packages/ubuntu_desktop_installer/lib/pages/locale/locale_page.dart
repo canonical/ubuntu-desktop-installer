@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
@@ -16,7 +15,7 @@ class LocalePage extends ConsumerStatefulWidget {
 
   static final modelProvider = ChangeNotifierProvider((ref) {
     return LocaleModel(
-      client: getService<SubiquityClient>(),
+      locale: getService<LocaleService>(),
       sound: tryGetService<SoundService>(),
     );
   });

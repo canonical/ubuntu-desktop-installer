@@ -3,9 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_page.dart';
@@ -18,7 +15,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 
 import 'locale_page_test.mocks.dart';
 
-@GenerateMocks([SoundService, TelemetryService])
+@GenerateMocks([LocaleService, SoundService, TelemetryService])
 void main() {
   late MaterialApp app;
 
@@ -43,13 +40,11 @@ void main() {
         ),
       ),
     );
-    final client = MockSubiquityClient();
-    when(client.getKeyboard()).thenAnswer((_) async =>
-        const KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
     await tester.pumpWidget(
       ProviderScope(overrides: [
         LocalePage.modelProvider.overrideWith(
-          (_) => LocaleModel(client: client, sound: MockSoundService()),
+          (_) => LocaleModel(
+              locale: MockLocaleService(), sound: MockSoundService()),
         ),
       ], child: InheritedLocale(child: app)),
     );
