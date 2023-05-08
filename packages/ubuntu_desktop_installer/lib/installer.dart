@@ -88,6 +88,8 @@ Future<void> runInstallerApp(
       () => SubiquityServer(process: process, endpoint: endpoint));
   tryRegisterService(SubiquityStatusMonitor.new);
   tryRegisterService(TelemetryService.new);
+  tryRegisterService<TimezoneService>(
+      () => SubiquityTimezoneService(getService<SubiquityClient>()));
   tryRegisterService(UdevService.new);
   tryRegisterService(UrlLauncher.new);
 

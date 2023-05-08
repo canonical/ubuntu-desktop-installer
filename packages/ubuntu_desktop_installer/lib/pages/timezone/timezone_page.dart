@@ -1,7 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -16,7 +15,7 @@ class TimezonePage extends ConsumerStatefulWidget {
   const TimezonePage({super.key});
 
   static final modelProvider = ChangeNotifierProvider(
-      (_) => TimezoneModel(getService<SubiquityClient>()));
+      (_) => TimezoneModel(getService<TimezoneService>()));
   static final controllerProvider = ChangeNotifierProvider(
       (_) => TimezoneController(service: getService<GeoService>()));
 
