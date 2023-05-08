@@ -397,16 +397,10 @@ class _UbuntuDesktopInstallerWizardState
           userData: InstallationStep.network.index,
         ),
         Routes.source: WizardRoute(
-          builder: (_) => const SourcePage(),
+          builder: (_) => const SourceWizard(),
           userData: InstallationStep.software.index,
-          onNext: (_) => !service.hasEnoughDiskSpace
-              ? Routes.notEnoughDiskSpace
-              : service.hasSecureBoot
-                  ? Routes.secureBoot
-                  : Routes.filesystem,
-        ),
-        Routes.notEnoughDiskSpace: WizardRoute(
-          builder: (_) => const NotEnoughDiskSpacePage(),
+          onNext: (_) =>
+              service.hasSecureBoot ? Routes.secureBoot : Routes.filesystem,
         ),
         Routes.secureBoot: WizardRoute(
           builder: (_) => const SecureBootPage(),

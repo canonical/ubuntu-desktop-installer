@@ -56,6 +56,11 @@ class MockSourceModel extends _i1.Mock implements _i2.SourceModel {
         returnValue: false,
       ) as bool);
   @override
+  bool get hasEnoughDiskSpace => (super.noSuchMethod(
+        Invocation.getter(#hasEnoughDiskSpace),
+        returnValue: false,
+      ) as bool);
+  @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,
@@ -66,13 +71,14 @@ class MockSourceModel extends _i1.Mock implements _i2.SourceModel {
         returnValue: false,
       ) as bool);
   @override
-  void setSourceId(String? sourceId) => super.noSuchMethod(
+  _i4.Future<void> setSourceId(String? sourceId) => (super.noSuchMethod(
         Invocation.method(
           #setSourceId,
           [sourceId],
         ),
-        returnValueForMissingStub: null,
-      );
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
   @override
   void setInstallDrivers(bool? installDrivers) => super.noSuchMethod(
         Invocation.method(

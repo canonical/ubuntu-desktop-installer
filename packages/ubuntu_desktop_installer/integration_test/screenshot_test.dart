@@ -118,6 +118,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
+    await tester.jumpToWizardRoute(Routes.source);
     await tester.jumpToWizardRoute(Routes.notEnoughDiskSpace);
     await tester.pumpAndSettle();
 
@@ -391,13 +392,6 @@ class FakeDesktopService implements DesktopService {
 
   @override
   Future<void> close() async {}
-}
-
-class FakeDiskStorageService extends DiskStorageService {
-  FakeDiskStorageService(super.client);
-
-  @override
-  bool get hasEnoughDiskSpace => false;
 }
 
 class FakeProductService implements ProductService {

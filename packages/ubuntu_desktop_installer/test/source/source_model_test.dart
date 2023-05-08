@@ -127,7 +127,10 @@ void main() {
       storage: storage,
     );
 
-    model.setSourceId(kNormalSourceId);
+    await model.setSourceId(kNormalSourceId);
+    verify(client.setSource(kNormalSourceId)).called(1);
+    verify(storage.init()).called(1);
+
     model.setInstallDrivers(false);
     model.setInstallCodecs(false);
     await model.save();
@@ -136,7 +139,10 @@ void main() {
     verify(client.setCodecs(install: false)).called(1);
     verify(storage.init()).called(1);
 
-    model.setSourceId('ubuntu-desktop-minimal');
+    await model.setSourceId('ubuntu-desktop-minimal');
+    verify(client.setSource('ubuntu-desktop-minimal')).called(1);
+    verify(storage.init()).called(1);
+
     model.setInstallDrivers(true);
     model.setInstallCodecs(true);
     await model.save();
@@ -235,5 +241,26 @@ void main() {
     when(network.isConnected).thenReturn(false);
     expect(model.isOnline, isFalse);
     verify(network.isConnected).called(1);
+  });
+
+  test('has enough disk space', () async {
+    final storage = MockDiskStorageService();
+
+    final model = SourceModel(
+      client: MockSubiquityClient(),
+      power: MockPowerService(),
+      network: MockNetworkService(),
+      storage: storage,
+    );
+
+    when(storage.largestDiskSize).thenReturn(456);
+    when(storage.installMinimumSize).thenReturn(123);
+
+    expect(model.hasEnoughDiskSpace, isTrue);
+
+    when(storage.largestDiskSize).thenReturn(456);
+    when(storage.installMinimumSize).thenReturn(789);
+
+    expect(model.hasEnoughDiskSpace, isFalse);
   });
 }

@@ -91,6 +91,9 @@ class NotEnoughDiskSpacePage extends ConsumerWidget {
             ],
           ),
         ),
+        bottomBar: WizardBar(
+          leading: WizardAction.back(context),
+        ),
       ),
     );
   }

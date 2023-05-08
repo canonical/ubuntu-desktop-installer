@@ -303,37 +303,4 @@ void main() {
     verify(client.setGuidedStorageV2(choice)).called(1);
     verify(client.setStorageV2()).called(1);
   });
-
-  test('has enough disk space', () async {
-    final service = DiskStorageService(client);
-    when(client.getStorageV2()).thenAnswer((_) async => fakeStorageResponse(
-          installMinimumSize: 123,
-          disks: [
-            fakeDisk(size: 123),
-            fakeDisk(size: 789),
-            fakeDisk(size: 456),
-          ],
-        ));
-
-    await service.init();
-    expect(service.installMinimumSize, 123);
-    expect(service.largestDiskSize, 789);
-    expect(service.hasEnoughDiskSpace, isTrue);
-  });
-
-  test('does not have enough disk space', () async {
-    final service = DiskStorageService(client);
-    when(client.getStorageV2()).thenAnswer((_) async => fakeStorageResponse(
-          installMinimumSize: 789,
-          disks: [
-            fakeDisk(size: 456),
-            fakeDisk(size: 123),
-          ],
-        ));
-
-    await service.init();
-    expect(service.installMinimumSize, 789);
-    expect(service.largestDiskSize, 456);
-    expect(service.hasEnoughDiskSpace, isFalse);
-  });
 }
