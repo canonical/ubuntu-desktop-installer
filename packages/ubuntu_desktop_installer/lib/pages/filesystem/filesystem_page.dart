@@ -46,7 +46,7 @@ class FilesystemPage extends StatelessWidget {
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.securityKey: WizardRoute(
-          builder: SecurityKeyPage.create,
+          builder: (_) => const SecurityKeyPage(),
           userData: InstallationStep.filesystem.index,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),

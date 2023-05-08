@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -17,31 +16,18 @@ part 'security_key_widgets.dart';
 ///
 /// See also:
 /// * [SecurityKeyModel]
-class SecurityKeyPage extends StatefulWidget {
-  /// Use [create] instead.
-  @visibleForTesting
-  const SecurityKeyPage({
-    super.key,
-  });
-
-  /// Creates an instance with [SecurityKeyModel].
-  static Widget create(BuildContext context) {
-    final service = getService<DiskStorageService>();
-    return ChangeNotifierProvider(
-      create: (_) => SecurityKeyModel(service),
-      child: const SecurityKeyPage(),
-    );
-  }
+class SecurityKeyPage extends ConsumerStatefulWidget {
+  const SecurityKeyPage({super.key});
 
   @override
-  State<SecurityKeyPage> createState() => _SecurityKeyPageState();
+  ConsumerState<SecurityKeyPage> createState() => _SecurityKeyPageState();
 }
 
-class _SecurityKeyPageState extends State<SecurityKeyPage> {
+class _SecurityKeyPageState extends ConsumerState<SecurityKeyPage> {
   @override
   void initState() {
     super.initState();
-    final model = Provider.of<SecurityKeyModel>(context, listen: false);
+    final model = ref.read(securityKeyModelProvider);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       model.loadSecurityKey();
     });
@@ -89,10 +75,10 @@ class _SecurityKeyPageState extends State<SecurityKeyPage> {
           WizardAction.next(
             context,
             root: true,
-            enabled: context
-                .select<SecurityKeyModel, bool>((model) => model.isValid),
-            onNext: context.read<SecurityKeyModel>().saveSecurityKey,
-            onBack: context.read<SecurityKeyModel>().loadSecurityKey,
+            enabled: ref.watch(
+                securityKeyModelProvider.select((model) => model.isValid)),
+            onNext: ref.read(securityKeyModelProvider).saveSecurityKey,
+            onBack: ref.read(securityKeyModelProvider).loadSecurityKey,
           ),
         ],
       ),

@@ -1,8 +1,13 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-/// View model for [ChooseSecurityKeyPage].
+/// Provider for [SecurityKeyModel].
+final securityKeyModelProvider = ChangeNotifierProvider(
+    (_) => SecurityKeyModel(getService<DiskStorageService>()));
+
+/// View model for [SecurityKeyPage].
 class SecurityKeyModel extends SafeChangeNotifier {
   /// Creates the model with the given client.
   SecurityKeyModel(this._service) {
