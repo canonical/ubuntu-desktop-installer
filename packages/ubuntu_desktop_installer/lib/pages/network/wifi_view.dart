@@ -118,7 +118,7 @@ class WifiListView extends ConsumerWidget {
 
   final OnWifiSelected onSelected;
   static final wifiDeviceProvider =
-      ChangeNotifierProvider<WifiDevice>((_) => throw UnimplementedError());
+      Provider<WifiDevice>((_) => throw UnimplementedError());
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -134,7 +134,7 @@ class WifiListView extends ConsumerWidget {
           itemBuilder: (context, index) {
             return ProviderScope(
               overrides: [
-                wifiDeviceProvider.overrideWith((_) => model.devices[index]),
+                wifiDeviceProvider.overrideWithValue(model.devices[index]),
               ],
               child: WifiListTile(
                 key: ValueKey(index),
@@ -186,7 +186,7 @@ class WifiListTile extends ConsumerWidget {
       children: <Widget>[
         for (final accessPoint in device.accessPoints)
           ProviderScope(
-            overrides: [accessPointProvider.overrideWith((_) => accessPoint)],
+            overrides: [accessPointProvider.overrideWithValue(accessPoint)],
             child: ListTile(
               key: ValueKey(accessPoint.name),
               title: Text(accessPoint.name),
