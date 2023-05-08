@@ -10,30 +10,27 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'write_changes_to_disk_model.dart';
+import 'confirm_model.dart';
 
 /// @internal
-final log = Logger('write_changes_to_disk');
+final log = Logger('confirm');
 
-class WriteChangesToDiskPage extends ConsumerStatefulWidget {
-  const WriteChangesToDiskPage({super.key});
+class ConfirmPage extends ConsumerStatefulWidget {
+  const ConfirmPage({super.key});
 
-  static final modelProvider = ChangeNotifierProvider((_) =>
-      WriteChangesToDiskModel(
-          getService<SubiquityClient>(), getService<DiskStorageService>()));
+  static final modelProvider = ChangeNotifierProvider((_) => ConfirmModel(
+      getService<SubiquityClient>(), getService<DiskStorageService>()));
 
   @override
-  ConsumerState<WriteChangesToDiskPage> createState() =>
-      _WriteChangesToDiskPageState();
+  ConsumerState<ConfirmPage> createState() => _ConfirmPageState();
 }
 
-class _WriteChangesToDiskPageState
-    extends ConsumerState<WriteChangesToDiskPage> {
+class _ConfirmPageState extends ConsumerState<ConfirmPage> {
   @override
   void initState() {
     super.initState();
 
-    final model = ref.read(WriteChangesToDiskPage.modelProvider);
+    final model = ref.read(ConfirmPage.modelProvider);
     model.init();
   }
 
@@ -48,7 +45,7 @@ class _WriteChangesToDiskPageState
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final model = ref.watch(WriteChangesToDiskPage.modelProvider);
+    final model = ref.watch(ConfirmPage.modelProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.writeChangesToDisk),

@@ -36,7 +36,7 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    expect(find.byType(WriteChangesToDiskPage), findsOneWidget);
+    expect(find.byType(ConfirmPage), findsOneWidget);
   });
 
   testWidgets('fully automated installation', (tester) async {

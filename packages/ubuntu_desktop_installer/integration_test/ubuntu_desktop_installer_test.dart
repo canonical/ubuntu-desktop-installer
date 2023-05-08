@@ -60,7 +60,7 @@ void main() {
     await testInstallationTypePage(tester, type: InstallationType.erase);
     await tester.pumpAndSettle();
 
-    await testWriteChangesToDiskPage(tester);
+    await testConfirmPage(tester);
     await tester.pumpAndSettle();
 
     await testTimezonePage(tester, timezone: timezone);
@@ -123,7 +123,7 @@ void main() {
     await testSecurityKeyPage(tester, securityKey: 'password');
     await tester.pumpAndSettle();
 
-    await testWriteChangesToDiskPage(tester);
+    await testConfirmPage(tester);
     await tester.pumpAndSettle();
 
     await testTimezonePage(tester);
@@ -184,7 +184,7 @@ void main() {
     await testAllocateDiskSpacePage(tester, storage: storage);
     await tester.pumpAndSettle();
 
-    await testWriteChangesToDiskPage(tester);
+    await testConfirmPage(tester);
     await tester.pumpAndSettle();
 
     await testTimezonePage(tester);
@@ -235,7 +235,7 @@ void main() {
     await testInstallAlongsidePage(tester, sizes: {'sda3 (ntfs)': 40000});
     await tester.pumpAndSettle();
 
-    await testWriteChangesToDiskPage(tester);
+    await testConfirmPage(tester);
     await tester.pumpAndSettle();
 
     await testTimezonePage(tester);

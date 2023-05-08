@@ -10,7 +10,7 @@ abstract class Routes {
   static const secureBoot = '/secure-boot';
   static const source = '/update-other-software';
   static const installationComplete = '/installation-complete';
-  static const writeChangesToDisk = '/write-changes-to-disk';
+  static const confirm = '/confirm';
   static const theme = '/theme';
   static const identity = '/identity';
   static const installationSlides = '/installation-slides';

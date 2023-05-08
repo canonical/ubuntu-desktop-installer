@@ -5,10 +5,10 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 
-/// View model for [WriteChangesToDiskPage].
-class WriteChangesToDiskModel extends SafeChangeNotifier {
+/// View model for [ConfirmPage].
+class ConfirmModel extends SafeChangeNotifier {
   /// Creates a model with the given client and service.
-  WriteChangesToDiskModel(this._client, this._service);
+  ConfirmModel(this._client, this._service);
 
   final SubiquityClient _client;
   final DiskStorageService _service;

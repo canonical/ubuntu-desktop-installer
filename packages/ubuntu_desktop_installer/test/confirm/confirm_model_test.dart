@@ -3,10 +3,10 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_model.dart';
+import 'package:ubuntu_desktop_installer/pages/confirm/confirm_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'write_changes_to_disk_model_test.mocks.dart';
+import 'confirm_model_test.mocks.dart';
 
 @GenerateMocks([DiskStorageService])
 void main() {
@@ -65,7 +65,7 @@ void main() {
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
 
-    final model = WriteChangesToDiskModel(client, service);
+    final model = ConfirmModel(client, service);
     await model.init();
     verifyInOrder([
       service.getStorage(),
@@ -105,7 +105,7 @@ void main() {
     when(service.setGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse());
 
-    final model = WriteChangesToDiskModel(client, service);
+    final model = ConfirmModel(client, service);
     await model.init();
     verify(service.setGuidedStorage()).called(1);
   });
@@ -118,7 +118,7 @@ void main() {
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
     when(service.setStorage()).thenAnswer((_) async => modifiedDisks);
 
-    final model = WriteChangesToDiskModel(client, service);
+    final model = ConfirmModel(client, service);
     await model.init();
     await model.startInstallation();
 
