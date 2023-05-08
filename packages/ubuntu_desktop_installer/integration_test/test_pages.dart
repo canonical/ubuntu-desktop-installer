@@ -333,12 +333,11 @@ Future<void> testInstallAlongsidePage(
   await tester.tapContinue();
 }
 
-Future<void> testWriteChangesToDiskPage(
+Future<void> testConfirmPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, WriteChangesToDiskPage, (lang) => lang.writeChangesToDisk);
+  await expectPage(tester, ConfirmPage, (lang) => lang.writeChangesToDisk);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);

@@ -410,8 +410,8 @@ class _UbuntuDesktopInstallerWizardState
           builder: (_) => const FilesystemPage(),
           userData: InstallationStep.filesystem.index,
         ),
-        Routes.writeChangesToDisk: WizardRoute(
-          builder: (_) => const WriteChangesToDiskPage(),
+        Routes.confirm: WizardRoute(
+          builder: (_) => const ConfirmPage(),
           userData: InstallationStep.filesystem.index,
         ),
         Routes.timezone: WizardRoute(
@@ -470,8 +470,8 @@ class _UbuntuDesktopAutoinstallWizard extends StatelessWidget {
     return Wizard(
       routes: <String, WizardRoute>{
         if (status?.isInstalling != true)
-          Routes.writeChangesToDisk: WizardRoute(
-            builder: (_) => const WriteChangesToDiskPage(),
+          Routes.confirm: WizardRoute(
+            builder: (_) => const ConfirmPage(),
           ),
         Routes.installationSlides: WizardRoute(
           builder: (_) => const InstallationSlidesPage(),

@@ -7,13 +7,13 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_model.dart';
-import 'package:ubuntu_desktop_installer/pages/write_changes_to_disk/write_changes_to_disk_page.dart';
+import 'package:ubuntu_desktop_installer/pages/confirm/confirm_model.dart';
+import 'package:ubuntu_desktop_installer/pages/confirm/confirm_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 
 import '../test_utils.dart';
-import 'write_changes_to_disk_page_test.mocks.dart';
+import 'confirm_page_test.mocks.dart';
 
 final testDisks = <Disk>[
   fakeDisk(
@@ -81,12 +81,12 @@ final testDisks = <Disk>[
   ),
 ];
 
-WriteChangesToDiskModel buildModel({
+ConfirmModel buildModel({
   List<Disk>? disks,
   Map<String, List<Partition>>? partitions,
   Map<String, List<Partition>>? originals,
 }) {
-  final model = MockWriteChangesToDiskModel();
+  final model = MockConfirmModel();
   when(model.disks).thenReturn(disks ?? <Disk>[]);
   when(model.partitions).thenReturn(partitions ?? <String, List<Partition>>{});
   when(model.getOriginalPartition(any, any)).thenAnswer((i) =>
@@ -95,9 +95,9 @@ WriteChangesToDiskModel buildModel({
   return model;
 }
 
-@GenerateMocks([UdevDeviceInfo, UdevService, WriteChangesToDiskModel])
+@GenerateMocks([UdevDeviceInfo, UdevService, ConfirmModel])
 void main() {
-  Widget buildPage(WriteChangesToDiskModel model) {
+  Widget buildPage(ConfirmModel model) {
     final udev = MockUdevService();
     final sda = MockUdevDeviceInfo();
     when(sda.modelName).thenReturn('SDA');
@@ -111,9 +111,9 @@ void main() {
 
     return ProviderScope(
       overrides: [
-        WriteChangesToDiskPage.modelProvider.overrideWith((_) => model),
+        ConfirmPage.modelProvider.overrideWith((_) => model),
       ],
-      child: const WriteChangesToDiskPage(),
+      child: const ConfirmPage(),
     );
   }
 

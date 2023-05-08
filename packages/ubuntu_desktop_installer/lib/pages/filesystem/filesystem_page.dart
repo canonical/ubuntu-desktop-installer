@@ -73,6 +73,6 @@ class FilesystemPage extends StatelessWidget {
     } else if (service.useEncryption && service.securityKey == null) {
       return Routes.securityKey;
     }
-    return Routes.writeChangesToDisk;
+    return Routes.confirm;
   }
 }

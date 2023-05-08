@@ -269,7 +269,7 @@ void main() {
     );
   }, variant: themeVariant);
 
-  testWidgets('9.ready-to-install', (tester) async {
+  testWidgets('9.confirm', (tester) async {
     await runInstallerApp([
       '--initial-route=${Routes.filesystem}',
       '--',
@@ -283,9 +283,9 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await testWriteChangesToDiskPage(
+    await testConfirmPage(
       tester,
-      screenshot: '$currentThemeName/9.ready-to-install',
+      screenshot: '$currentThemeName/9.confirm',
     );
   }, variant: themeVariant);
 

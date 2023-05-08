@@ -1,4 +1,5 @@
 export 'pages/active_directory/active_directory_page.dart';
+export 'pages/confirm/confirm_page.dart';
 export 'pages/filesystem/filesystem_page.dart';
 export 'pages/identity/identity_page.dart';
 export 'pages/installation_complete/installation_complete_page.dart';
@@ -11,4 +12,3 @@ export 'pages/source/source_wizard.dart';
 export 'pages/theme_page.dart';
 export 'pages/timezone/timezone_page.dart';
 export 'pages/welcome/welcome_wizard.dart';
-export 'pages/write_changes_to_disk/write_changes_to_disk_page.dart';
