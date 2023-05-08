@@ -1,6 +1,6 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:yaru_icons/yaru_icons.dart';
@@ -188,15 +188,17 @@ class StorageWipeColumn extends StorageColumn {
             return const SizedBox.shrink();
           },
           partitionBuilder: (context, disk, partition) {
-            final model = context.read<AllocateDiskSpaceModel>();
-            final config = model.originalConfig(partition);
-            final forceWipe = config?.mustWipe(partition.format) != false;
-            return YaruCheckbox(
-              value: partition.isWiped || forceWipe,
-              onChanged: partition.canWipe && !forceWipe
-                  ? (wipe) => onWipe(disk, partition, wipe!)
-                  : null,
-            );
+            return Consumer(builder: (context, ref, child) {
+              final model = ref.read(allocateDiskSpaceModelProvider);
+              final config = model.originalConfig(partition);
+              final forceWipe = config?.mustWipe(partition.format) != false;
+              return YaruCheckbox(
+                value: partition.isWiped || forceWipe,
+                onChanged: partition.canWipe && !forceWipe
+                    ? (wipe) => onWipe(disk, partition, wipe!)
+                    : null,
+              );
+            });
           },
         );
 

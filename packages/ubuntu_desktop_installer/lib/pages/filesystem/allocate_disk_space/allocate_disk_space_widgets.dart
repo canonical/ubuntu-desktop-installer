@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
@@ -14,12 +14,12 @@ import 'storage_columns.dart';
 import 'storage_table.dart';
 import 'storage_types.dart';
 
-class PartitionBar extends StatelessWidget {
+class PartitionBar extends ConsumerWidget {
   const PartitionBar({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<AllocateDiskSpaceModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(allocateDiskSpaceModelProvider);
     return YaruBorderContainer(
       borderRadius: BorderRadius.circular(kYaruButtonRadius),
       clipBehavior: Clip.antiAlias,
@@ -78,12 +78,12 @@ class _PartitionPainter extends CustomPainter {
   }
 }
 
-class PartitionLegend extends StatelessWidget {
+class PartitionLegend extends ConsumerWidget {
   const PartitionLegend({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<AllocateDiskSpaceModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(allocateDiskSpaceModelProvider);
     final lang = AppLocalizations.of(context);
 
     final objects = model.selectedDisk?.partitions ?? [];
@@ -158,14 +158,14 @@ class _PartitionLabel extends StatelessWidget {
   }
 }
 
-class PartitionTable extends StatelessWidget {
+class PartitionTable extends ConsumerWidget {
   const PartitionTable({super.key, required this.controller});
 
   final AutoScrollController controller;
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<AllocateDiskSpaceModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(allocateDiskSpaceModelProvider);
     return StorageTable(
       columns: [
         StorageDeviceColumn(),
@@ -188,12 +188,12 @@ class PartitionTable extends StatelessWidget {
   }
 }
 
-class PartitionButtonRow extends StatelessWidget {
+class PartitionButtonRow extends ConsumerWidget {
   const PartitionButtonRow({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<AllocateDiskSpaceModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(allocateDiskSpaceModelProvider);
     final lang = AppLocalizations.of(context);
 
     return Row(
@@ -258,7 +258,7 @@ class PartitionButtonRow extends StatelessWidget {
           children: [
             OutlinedButton(
               onPressed: model.canReformatDisk
-                  ? () => _maybeReformatDisk(context)
+                  ? () => _maybeReformatDisk(context, ref)
                   : null,
               child: Text(lang.newPartitionTable),
             ),
@@ -272,8 +272,8 @@ class PartitionButtonRow extends StatelessWidget {
     );
   }
 
-  Future<void> _maybeReformatDisk(BuildContext context) async {
-    final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
+  Future<void> _maybeReformatDisk(BuildContext context, WidgetRef ref) async {
+    final model = ref.read(allocateDiskSpaceModelProvider.notifier);
     final lang = AppLocalizations.of(context);
 
     final disk = model.selectedDisk!;

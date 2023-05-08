@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_model.dart';
@@ -29,8 +29,8 @@ void main() {
     registerMockService<UdevService>(MockUdevService());
 
     await tester.pumpWidget(
-      ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
-        value: model,
+      ProviderScope(
+        overrides: [allocateDiskSpaceModelProvider.overrideWith((_) => model)],
         child: tester.buildApp((_) => const AllocateDiskSpacePage()),
       ),
     );
@@ -77,8 +77,8 @@ void main() {
     registerMockService<UdevService>(MockUdevService());
 
     await tester.pumpWidget(
-      ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
-        value: model,
+      ProviderScope(
+        overrides: [allocateDiskSpaceModelProvider.overrideWith((_) => model)],
         child: tester.buildApp((_) => const AllocateDiskSpacePage()),
       ),
     );
@@ -113,8 +113,8 @@ void main() {
     registerMockService<UdevService>(MockUdevService());
 
     await tester.pumpWidget(
-      ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
-        value: model,
+      ProviderScope(
+        overrides: [allocateDiskSpaceModelProvider.overrideWith((_) => model)],
         child: tester.buildApp((_) => const AllocateDiskSpacePage()),
       ),
     );
@@ -182,8 +182,8 @@ void main() {
     registerMockService<UdevService>(MockUdevService());
 
     await tester.pumpWidget(
-      ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
-        value: model,
+      ProviderScope(
+        overrides: [allocateDiskSpaceModelProvider.overrideWith((_) => model)],
         child: tester.buildApp((_) => const AllocateDiskSpacePage()),
       ),
     );

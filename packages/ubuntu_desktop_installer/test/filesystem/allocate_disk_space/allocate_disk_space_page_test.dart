@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_model.dart';
@@ -17,7 +17,6 @@ import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../test_utils.dart';
-import 'allocate_disk_space_model_test.mocks.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
 
 final selection = StreamController.broadcast();
@@ -117,8 +116,8 @@ void main() {
     when(udev.bySysname('sdb')).thenReturn(sdb);
     registerMockService<UdevService>(udev);
 
-    return ChangeNotifierProvider<AllocateDiskSpaceModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [allocateDiskSpaceModelProvider.overrideWith((_) => model)],
       child: const AllocateDiskSpacePage(),
     );
   }
@@ -359,24 +358,5 @@ void main() {
       ),
       findsOneWidget,
     );
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final storage = MockDiskStorageService();
-    when(storage.getStorage()).thenAnswer((_) async => testDisks);
-    when(storage.getOriginalStorage()).thenAnswer((_) async => testDisks);
-    when(storage.needRoot).thenReturn(false);
-    when(storage.needBoot).thenReturn(false);
-    registerMockService<DiskStorageService>(storage);
-    registerMockService<UdevService>(MockUdevService());
-
-    await tester.pumpWidget(tester.buildApp(AllocateDiskSpacePage.create));
-
-    final page = find.byType(AllocateDiskSpacePage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }

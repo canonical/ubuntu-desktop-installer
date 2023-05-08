@@ -51,7 +51,7 @@ class FilesystemPage extends StatelessWidget {
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.allocateDiskSpace: WizardRoute(
-          builder: AllocateDiskSpacePage.create,
+          builder: (_) => const AllocateDiskSpacePage(),
           userData: InstallationStep.filesystem.index,
         ),
       },

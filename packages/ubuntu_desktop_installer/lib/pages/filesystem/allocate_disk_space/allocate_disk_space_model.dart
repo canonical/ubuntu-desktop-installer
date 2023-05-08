@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:dartx/dartx.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -28,6 +29,10 @@ enum PartitionLocation {
   /// At the end of the free space.
   end,
 }
+
+/// Provider for [AllocateDiskSpaceModel].
+final allocateDiskSpaceModelProvider = ChangeNotifierProvider(
+    (_) => AllocateDiskSpaceModel(getService<DiskStorageService>()));
 
 /// View model for [AllocateDiskSpacePage].
 class AllocateDiskSpaceModel extends SafeChangeNotifier {
