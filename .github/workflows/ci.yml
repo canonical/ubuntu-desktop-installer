@@ -55,11 +55,18 @@ jobs:
       if: github.event_name == 'pull_request'
       run: ./.github/scripts/check-outdated-files.sh
     - name: Create PR
+      id: create-pr
       if: github.event_name == 'push'
       uses: peter-evans/create-pull-request@v5
       with:
         title: 'Regenerate mocks'
         commit-message: 'Regenerate mocks'
+    - name: Auto-merge PR
+      if: ${{steps.create-pr.outputs.pull-request-number}}
+      run: gh pr merge --auto --merge "$PR_URL"
+      env:
+        PR_URL: ${{steps.create-pr.outputs.pull-request-url}}
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   l10n:
     runs-on: ubuntu-22.04
@@ -78,11 +85,18 @@ jobs:
       if: github.event_name == 'pull_request'
       run: ./.github/scripts/check-outdated-files.sh
     - name: Create PR
+      id: create-pr
       if: github.event_name == 'push'
       uses: peter-evans/create-pull-request@v5
       with:
         title: 'Regenerate l10n'
         commit-message: 'Regenerate l10n'
+    - name: Auto-merge PR
+      if: ${{steps.create-pr.outputs.pull-request-number}}
+      run: gh pr merge --auto --merge "$PR_URL"
+      env:
+        PR_URL: ${{steps.create-pr.outputs.pull-request-url}}
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   snap:
     runs-on: ubuntu-22.04
