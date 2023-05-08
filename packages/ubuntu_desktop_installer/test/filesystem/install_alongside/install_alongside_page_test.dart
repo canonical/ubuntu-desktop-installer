@@ -1,22 +1,18 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:split_view/split_view.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/install_alongside_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/install_alongside_page.dart';
-import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart';
 import 'package:ubuntu_desktop_installer/services/product_service.dart';
-import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../../test_utils.dart';
 import 'install_alongside_model_test.dart';
-import 'install_alongside_model_test.mocks.dart';
 import 'install_alongside_page_test.mocks.dart';
 
 @GenerateMocks([InstallAlongsideModel])
@@ -64,8 +60,8 @@ void main() {
   }
 
   Widget buildPage(InstallAlongsideModel model) {
-    return ChangeNotifierProvider<InstallAlongsideModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [installAlongsideModelProvider.overrideWith((_) => model)],
       child: const InstallAlongsidePage(),
     );
   }
@@ -201,25 +197,5 @@ void main() {
       find.text(tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10')),
       findsOneWidget,
     );
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final storage = MockDiskStorageService();
-    when(storage.existingOS).thenReturn([]);
-    when(storage.useEncryption).thenReturn(false);
-    when(storage.getStorage()).thenAnswer((_) async => []);
-    when(storage.getGuidedStorage())
-        .thenAnswer((_) async => fakeGuidedStorageResponse());
-    registerMockService<DiskStorageService>(storage);
-    registerMockService<ProductService>(ProductService());
-
-    await tester.pumpWidget(tester.buildApp(InstallAlongsidePage.create));
-
-    final page = find.byType(InstallAlongsidePage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<InstallAlongsideModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }

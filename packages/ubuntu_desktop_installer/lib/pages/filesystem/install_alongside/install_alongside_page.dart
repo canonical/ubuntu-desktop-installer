@@ -1,11 +1,10 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -18,38 +17,26 @@ import 'storage_split_view.dart';
 part 'install_alongside_widgets.dart';
 
 /// Install alongside other OSes.
-class InstallAlongsidePage extends StatefulWidget {
-  /// Use [InstallAlongsidePage.create] instead.
-  @visibleForTesting
+class InstallAlongsidePage extends ConsumerStatefulWidget {
   const InstallAlongsidePage({super.key});
 
-  /// Creates a [InstallAlongsidePage] with [InstallAlongsideModel].
-  static Widget create(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => InstallAlongsideModel(
-        getService<DiskStorageService>(),
-        getService<ProductService>(),
-      ),
-      child: const InstallAlongsidePage(),
-    );
-  }
-
   @override
-  State<InstallAlongsidePage> createState() => _InstallAlongsidePageState();
+  ConsumerState<InstallAlongsidePage> createState() =>
+      _InstallAlongsidePageState();
 }
 
-class _InstallAlongsidePageState extends State<InstallAlongsidePage> {
+class _InstallAlongsidePageState extends ConsumerState<InstallAlongsidePage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<InstallAlongsideModel>(context, listen: false);
+    final model = ref.read(installAlongsideModelProvider);
     model.init();
   }
 
-  static String _formatTitle(BuildContext context) {
+  static String _formatTitle(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final model = context.read<InstallAlongsideModel>();
+    final model = ref.read(installAlongsideModelProvider);
 
     switch (model.existingOS.length) {
       case 0:
@@ -72,11 +59,11 @@ class _InstallAlongsidePageState extends State<InstallAlongsidePage> {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<InstallAlongsideModel>(context);
+    final model = ref.watch(installAlongsideModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(_formatTitle(context)),
+        title: Text(_formatTitle(context, ref)),
       ),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

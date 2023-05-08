@@ -35,7 +35,7 @@ class FilesystemPage extends StatelessWidget {
           builder: (_) => const BitLockerPage(),
         ),
         Routes.installAlongside: WizardRoute(
-          builder: InstallAlongsidePage.create,
+          builder: (_) => const InstallAlongsidePage(),
           userData: InstallationStep.filesystem.index,
           onReplace: (_) => Routes.allocateDiskSpace,
           onNext: (settings) => _nextRoute(settings.arguments),
