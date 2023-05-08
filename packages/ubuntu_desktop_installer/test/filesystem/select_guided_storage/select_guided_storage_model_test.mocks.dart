@@ -114,11 +114,6 @@ class MockDiskStorageService extends _i1.Mock
         returnValue: 0,
       ) as int);
   @override
-  bool get hasEnoughDiskSpace => (super.noSuchMethod(
-        Invocation.getter(#hasEnoughDiskSpace),
-        returnValue: false,
-      ) as bool);
-  @override
   _i4.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,

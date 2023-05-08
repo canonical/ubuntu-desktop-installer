@@ -115,10 +115,11 @@ class _SourcePageState extends ConsumerState<SourcePage> {
             )
           : null,
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardAction.back(context, root: true),
         trailing: [
           WizardAction.next(
             context,
+            root: model.hasEnoughDiskSpace,
             enabled: model.sourceId != null,
             onNext: () async {
               final telemetry = getService<TelemetryService>();

@@ -50,7 +50,7 @@ class SourceModel extends PropertyStreamNotifier {
   bool _installCodecs;
   bool get installCodecs => _installCodecs;
 
-  void setSourceId(String? sourceId) {
+  Future<void> setSourceId(String? sourceId) async {
     if (sourceId == null || _sourceId == sourceId) {
       return;
     }
@@ -58,6 +58,11 @@ class SourceModel extends PropertyStreamNotifier {
     _sourceId = sourceId;
     log.info('Selected $sourceId installation source');
     notifyListeners();
+
+    return _client
+        .setSource(sourceId)
+        .then((_) => _storage.init())
+        .then((_) => notifyListeners());
   }
 
   // ignore: avoid_positional_boolean_parameters
@@ -97,6 +102,10 @@ class SourceModel extends PropertyStreamNotifier {
 
   /// Returns true if there is a network connection.
   bool get isOnline => _network.isConnected;
+
+  /// Returns whether the system has enough disk space to install.
+  bool get hasEnoughDiskSpace =>
+      _storage.installMinimumSize <= _storage.largestDiskSize;
 
   /// Initializes the model and connects to the power service.
   Future<void> init() {

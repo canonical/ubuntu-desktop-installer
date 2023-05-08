@@ -24,6 +24,7 @@ void main() {
     bool? installCodecs,
     bool? onBattery,
     bool? isOnline,
+    bool? hasEnoughDiskSpace,
   }) {
     final model = MockSourceModel();
     when(model.sources).thenReturn([
@@ -49,6 +50,7 @@ void main() {
     when(model.installCodecs).thenReturn(installCodecs ?? false);
     when(model.onBattery).thenReturn(onBattery ?? false);
     when(model.isOnline).thenReturn(isOnline ?? true);
+    when(model.hasEnoughDiskSpace).thenReturn(hasEnoughDiskSpace ?? true);
     return model;
   }
 

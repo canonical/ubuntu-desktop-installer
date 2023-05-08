@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/not_enough_disk_space/not_enough_disk_space_model.dart';
+import 'package:ubuntu_desktop_installer/pages/source/not_enough_disk_space/not_enough_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'not_enough_disk_space_model_test.mocks.dart';

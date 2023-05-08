@@ -79,9 +79,6 @@ class DiskStorageService {
   /// The size of the largest disk.
   int get largestDiskSize => _largestDiskSize ?? 0;
 
-  /// Returns whether the system has enough disk space to install.
-  bool get hasEnoughDiskSpace => installMinimumSize <= largestDiskSize;
-
   /// Fetches whether the system has BitLocker enabled.
   Future<bool> hasBitLocker() => _client.hasBitLocker();
 

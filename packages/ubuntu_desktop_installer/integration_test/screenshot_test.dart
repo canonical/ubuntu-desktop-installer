@@ -393,13 +393,6 @@ class FakeDesktopService implements DesktopService {
   Future<void> close() async {}
 }
 
-class FakeDiskStorageService extends DiskStorageService {
-  FakeDiskStorageService(super.client);
-
-  @override
-  bool get hasEnoughDiskSpace => false;
-}
-
 class FakeProductService implements ProductService {
   @override
   ProductInfo getProductInfo() => ProductInfo(name: 'Ubuntu', version: '23.04');
