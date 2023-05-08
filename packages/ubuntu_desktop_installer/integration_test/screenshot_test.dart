@@ -118,6 +118,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
+    await tester.jumpToWizardRoute(Routes.source);
     await tester.jumpToWizardRoute(Routes.notEnoughDiskSpace);
     await tester.pumpAndSettle();
 
