@@ -5,7 +5,7 @@ import 'package:diacritic/diacritic.dart';
 import 'package:meta/meta.dart';
 import 'package:platform/platform.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
-import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
@@ -18,7 +18,7 @@ class KeyboardModel extends SafeChangeNotifier {
   KeyboardModel(this._client, {@visibleForTesting Platform? platform})
       : _platform = platform ?? const LocalPlatform();
 
-  final SubiquityClient _client;
+  final KeyboardService _client;
   final Platform _platform;
   List<KeyboardLayout> _layouts = [];
 
