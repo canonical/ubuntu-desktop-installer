@@ -76,10 +76,7 @@ void main() {
     await testThemePage(tester);
     await tester.pump();
 
-    await testInstallationSlidesPage(tester);
-    await tester.pumpAndSettle();
-
-    await testInstallationCompletePage(tester);
+    await testInstallPage(tester);
     await tester.pumpAndSettle();
 
     await verifyConfig(
@@ -139,10 +136,7 @@ void main() {
     await testThemePage(tester);
     await tester.pump();
 
-    await testInstallationSlidesPage(tester);
-    await tester.pumpAndSettle();
-
-    await testInstallationCompletePage(tester);
+    await testInstallPage(tester);
     await tester.pumpAndSettle();
 
     await verifyConfig(
@@ -200,10 +194,7 @@ void main() {
     await testThemePage(tester);
     await tester.pump();
 
-    await testInstallationSlidesPage(tester);
-    await tester.pumpAndSettle();
-
-    await testInstallationCompletePage(tester);
+    await testInstallPage(tester);
     await tester.pumpAndSettle();
 
     await verifyConfig(storage: storage);
@@ -251,10 +242,7 @@ void main() {
     await testThemePage(tester);
     await tester.pump();
 
-    await testInstallationSlidesPage(tester);
-    await tester.pumpAndSettle();
-
-    await testInstallationCompletePage(tester);
+    await testInstallPage(tester);
     await tester.pumpAndSettle();
 
     await verifyConfig(storage: [

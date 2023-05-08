@@ -1,12 +1,21 @@
 import 'dart:io';
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
+
+final installModelProvider = ChangeNotifierProvider(
+  (_) => InstallModel(
+    getService<SubiquityClient>(),
+    getService<JournalService>(),
+    getService<ProductService>(),
+  ),
+);
 
 enum InstallationAction {
   none,
@@ -45,10 +54,10 @@ class InstallationEvent {
   }
 }
 
-/// View model for [InstallationSlidesPage].
-class InstallationSlidesModel extends SafeChangeNotifier {
+/// View model for [InstallPage].
+class InstallModel extends SafeChangeNotifier {
   /// Creates an instance with the given client.
-  InstallationSlidesModel(this._client, this._journal, this._product);
+  InstallModel(this._client, this._journal, this._product);
 
   final SubiquityClient _client;
   final JournalService _journal;
@@ -177,4 +186,6 @@ class InstallationSlidesModel extends SafeChangeNotifier {
     }
     subscription.cancel();
   }
+
+  Future<void> reboot() => _client.reboot(immediate: false);
 }

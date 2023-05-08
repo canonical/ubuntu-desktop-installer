@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides.dart';
+import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -11,7 +11,7 @@ import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'bottom_bar.dart';
-import 'installation_slides_model.dart';
+import 'install_model.dart';
 import 'slide_view.dart';
 
 extension InstallationActionL10n on InstallationAction {
@@ -29,39 +29,49 @@ extension InstallationActionL10n on InstallationAction {
   }
 }
 
-/// Slideshow during installation.
-class InstallationSlidesPage extends ConsumerStatefulWidget {
-  const InstallationSlidesPage({super.key});
-
-  static final modelProvider = ChangeNotifierProvider(
-    (_) => InstallationSlidesModel(
-      getService<SubiquityClient>(),
-      getService<JournalService>(),
-      getService<ProductService>(),
-    ),
-  );
+class InstallPage extends ConsumerStatefulWidget {
+  const InstallPage({super.key});
 
   @override
-  ConsumerState<InstallationSlidesPage> createState() =>
-      _InstallationSlidesPageState();
+  ConsumerState<InstallPage> createState() => _InstallPageState();
 }
 
-class _InstallationSlidesPageState
-    extends ConsumerState<InstallationSlidesPage> {
+class _InstallPageState extends ConsumerState<InstallPage> {
+  @override
+  void initState() {
+    super.initState();
+
+    final model = ref.read(installModelProvider);
+    model.init();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDone = ref.watch(installModelProvider.select((m) => m.isDone));
+    return AnimatedSwitcher(
+      duration: kThemeAnimationDuration,
+      switchInCurve: Curves.easeInExpo,
+      switchOutCurve: Curves.easeOutExpo,
+      child: isDone ? const _DonePage() : const _SlidePage(),
+    );
+  }
+}
+
+class _SlidePage extends ConsumerStatefulWidget {
+  const _SlidePage();
+
+  @override
+  ConsumerState<_SlidePage> createState() => _SlidePageState();
+}
+
+class _SlidePageState extends ConsumerState<_SlidePage> {
   final _slideController = ValueNotifier(0);
 
   @override
   void initState() {
     super.initState();
 
-    final model = ref.read(InstallationSlidesPage.modelProvider);
-    model.addListener(() {
-      if (model.isDone) {
-        Wizard.of(context).next();
-      }
-    });
-    model.init();
-
+    final model = ref.read(installModelProvider);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       model.precacheSlideImages(context);
@@ -77,13 +87,15 @@ class _InstallationSlidesPageState
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final model = ref.watch(InstallationSlidesPage.modelProvider);
+    final model = ref.watch(installModelProvider);
     final slides = SlidesContext.of(context);
-    return Scaffold(
-      appBar: YaruWindowTitleBar(
+    return WizardPage(
+      headerPadding: EdgeInsets.zero,
+      contentPadding: EdgeInsets.zero,
+      title: YaruWindowTitleBar(
         title: Text(model.productInfo.toString()),
       ),
-      body: Stack(
+      content: Stack(
         children: [
           SlideView(
             controller: _slideController,
@@ -113,7 +125,7 @@ class _InstallationSlidesPageState
           )
         ],
       ),
-      bottomNavigationBar: ValueListenableBuilder(
+      bottomBar: ValueListenableBuilder(
         valueListenable: _slideController,
         builder: (context, value, child) {
           return BottomBar(
@@ -193,6 +205,69 @@ class _JournalView extends StatelessWidget {
         contentPadding: EdgeInsets.symmetric(vertical: kContentSpacing / 2),
       ),
       background: BoxDecoration(color: Theme.of(context).shadowColor),
+    );
+  }
+}
+
+class _DonePage extends ConsumerWidget {
+  const _DonePage();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lang = AppLocalizations.of(context);
+    final model = ref.watch(installModelProvider);
+    return WizardPage(
+      headerPadding: EdgeInsets.zero,
+      contentPadding: EdgeInsets.zero,
+      title: YaruWindowTitleBar(
+        title: Text(lang.installationCompleteTitle),
+      ),
+      content: Row(
+        children: [
+          const Spacer(flex: 2),
+          const MascotAvatar(),
+          const Spacer(),
+          Expanded(
+            flex: 8,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                MarkdownBody(
+                  data: lang.readyToUse(model.productInfo),
+                  styleSheet: MarkdownStyleSheet(
+                    p: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ),
+                const SizedBox(height: kContentSpacing * 1.5),
+                Text(lang.restartWarning(Flavor.of(context).name)),
+                const SizedBox(height: kContentSpacing * 1.5),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          final window = YaruWindow.of(context);
+                          model.reboot().then((_) => window.close());
+                        },
+                        child: Text(lang.restartNow),
+                      ),
+                    ),
+                    const SizedBox(width: kContentSpacing),
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: YaruWindow.of(context).close,
+                        child: Text(lang.continueTesting),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const Spacer(flex: 2),
+        ],
+      ),
     );
   }
 }

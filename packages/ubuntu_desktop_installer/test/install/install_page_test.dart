@@ -5,22 +5,23 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_model.dart';
-import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_page.dart';
-import 'package:ubuntu_desktop_installer/pages/installation_slides/slide_view.dart';
+import 'package:ubuntu_desktop_installer/pages/install/install_model.dart';
+import 'package:ubuntu_desktop_installer/pages/install/install_page.dart';
+import 'package:ubuntu_desktop_installer/pages/install/slide_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_icons/yaru_icons.dart';
+import 'package:yaru_window_test/yaru_window_test.dart';
 
 import '../test_utils.dart';
-import 'installation_slides_page_test.mocks.dart';
+import 'install_page_test.mocks.dart';
 
-@GenerateMocks([InstallationSlidesModel])
+@GenerateMocks([InstallModel])
 void main() {
-  UbuntuTester.context = InstallationSlidesPage;
+  setUpAll(YaruTestWindow.ensureInitialized);
 
-  InstallationSlidesModel buildModel({
+  InstallModel buildModel({
     ApplicationState? state,
     bool? isDone,
     bool? hasError,
@@ -31,7 +32,7 @@ void main() {
     bool? isPlaying,
     ProductInfo? productInfo,
   }) {
-    final model = MockInstallationSlidesModel();
+    final model = MockInstallModel();
     when(model.state).thenReturn(state);
     when(model.isDone).thenReturn(isDone ?? false);
     when(model.hasError).thenReturn(hasError ?? false);
@@ -45,15 +46,13 @@ void main() {
     return model;
   }
 
-  Widget buildPage(InstallationSlidesModel model) {
+  Widget buildPage(InstallModel model) {
     return ProviderScope(
-      overrides: [
-        InstallationSlidesPage.modelProvider.overrideWith((_) => model)
-      ],
+      overrides: [installModelProvider.overrideWith((_) => model)],
       child: SlidesContext(slides: [
         (context) => const SizedBox.expand(child: Text('slide1')),
         (context) => const SizedBox.expand(child: Text('slide2')),
-      ], child: const InstallationSlidesPage()),
+      ], child: const InstallPage()),
     );
   }
 
@@ -190,5 +189,37 @@ void main() {
     expect(find.text(tester.lang.copyingFiles), findsNothing);
     expect(find.text(tester.lang.installingSystem), findsNothing);
     expect(find.text(tester.lang.configuringSystem), findsNothing);
+  });
+
+  testWidgets('restart', (tester) async {
+    final model = buildModel(isDone: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final restartButton = find.textContaining(tester.lang.restartButtonText);
+    expect(restartButton, findsOneWidget);
+
+    final windowClosed = YaruTestWindow.waitForClosed();
+
+    await tester.tap(restartButton);
+    await tester.pump();
+    verify(model.reboot()).called(1);
+
+    await expectLater(windowClosed, completes);
+  });
+
+  testWidgets('continue testing', (tester) async {
+    final model = buildModel(isDone: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final continueButton = find.button(tester.lang.continueTesting);
+    expect(continueButton, findsOneWidget);
+
+    final windowClosed = YaruTestWindow.waitForClosed();
+
+    await tester.tap(continueButton);
+    await tester.pump();
+    verifyNever(model.reboot());
+
+    await expectLater(windowClosed, completes);
   });
 }

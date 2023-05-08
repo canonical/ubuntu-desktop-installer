@@ -10,7 +10,7 @@ import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import 'installation_slides/installation_slides_model_test.mocks.dart';
+import 'install/install_model_test.mocks.dart';
 import 'locale/locale_page_test.mocks.dart';
 import 'theme/theme_page_test.mocks.dart';
 
@@ -47,7 +47,7 @@ void main() {
       ),
     );
     await tester.pump();
-    expect(find.byType(InstallationSlidesPage), findsOneWidget);
+    expect(find.byType(InstallPage), findsOneWidget);
   });
 }
 

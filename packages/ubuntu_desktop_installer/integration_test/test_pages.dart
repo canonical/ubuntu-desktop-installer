@@ -534,21 +534,18 @@ Future<void> testThemePage(
   await tester.tapContinue();
 }
 
-Future<void> testInstallationSlidesPage(WidgetTester tester) async {
-  await tester.pumpUntil(find.byType(InstallationSlidesPage));
-  expect(find.byType(InstallationSlidesPage), findsOneWidget);
-}
-
-Future<void> testInstallationCompletePage(
+Future<void> testInstallPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, InstallationCompletePage,
-      (lang) => lang.installationCompleteTitle);
+  await tester.pumpUntil(find.byType(InstallPage));
+  expect(find.byType(InstallPage), findsOneWidget);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
   }
+
+  await tester.pumpUntil(find.button(tester.lang.continueTesting));
 
   final windowClosed = YaruTestWindow.waitForClosed();
   await tester.tapButton(tester.lang.continueTesting);
