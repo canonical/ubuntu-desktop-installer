@@ -27,7 +27,7 @@ class FilesystemPage extends StatelessWidget {
       userData: InstallationStep.values.length,
       routes: {
         Routes.installationType: WizardRoute(
-          builder: InstallationTypePage.create,
+          builder: (_) => const InstallationTypePage(),
           userData: InstallationStep.type.index,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),

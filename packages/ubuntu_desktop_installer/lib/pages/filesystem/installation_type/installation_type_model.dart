@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -32,6 +33,14 @@ enum AdvancedFeature {
   /// Use ZFS (experimental).
   zfs,
 }
+
+/// Provider for [InstallationTypeModel].
+final installationTypeModelProvider =
+    ChangeNotifierProvider((_) => InstallationTypeModel(
+          getService<DiskStorageService>(),
+          getService<TelemetryService>(),
+          getService<ProductService>(),
+        ));
 
 /// View model for [InstallationTypePage].
 class InstallationTypeModel extends SafeChangeNotifier {
