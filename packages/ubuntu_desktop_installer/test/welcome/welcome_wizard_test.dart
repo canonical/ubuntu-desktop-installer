@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
@@ -13,7 +14,9 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'welcome_model_test.mocks.dart';
+import 'welcome_wizard_test.mocks.dart';
 
+@GenerateMocks([TelemetryService])
 void main() {
   testWidgets('no rst', (tester) async {
     await tester.buildWelcomeWizard(hasRst: false);
@@ -94,6 +97,9 @@ extension on WidgetTester {
     when(network.isConnected).thenReturn(false);
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
     registerMockService<NetworkService>(network);
+
+    final telemetry = MockTelemetryService();
+    registerMockService<TelemetryService>(telemetry);
 
     return pumpWidget(
       ProviderScope(

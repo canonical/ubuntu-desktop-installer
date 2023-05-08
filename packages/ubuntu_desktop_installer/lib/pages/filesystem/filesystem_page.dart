@@ -23,7 +23,7 @@ class FilesystemPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wizard(
+    return InstallerWizard(
       userData: InstallationStep.values.length,
       routes: {
         Routes.installationType: WizardRoute(

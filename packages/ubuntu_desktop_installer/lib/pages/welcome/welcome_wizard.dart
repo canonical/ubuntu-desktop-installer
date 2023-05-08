@@ -14,7 +14,7 @@ class WelcomeWizard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wizard(
+    return InstallerWizard(
       userData: InstallationStep.values.length,
       routes: {
         Navigator.defaultRouteName: WizardRoute(

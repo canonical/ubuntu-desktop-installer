@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:collection/collection.dart';
-import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,6 +16,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
+import 'installer/installer_wizard.dart';
 import 'l10n.dart';
 import 'pages.dart';
 import 'routes.dart';
@@ -26,6 +26,7 @@ import 'theme.dart';
 import 'widgets.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
+export 'installer/installer_wizard.dart';
 export 'slides.dart';
 
 final assetBundle =
@@ -376,7 +377,7 @@ class _UbuntuDesktopInstallerWizardState
   Widget build(BuildContext context) {
     final storage = getService<StorageService>();
 
-    return Wizard(
+    return InstallerWizard(
       initialRoute: widget.initialRoute ?? Routes.initial,
       userData: InstallationStep.values.length,
       routes: <String, WizardRoute>{
@@ -439,23 +440,7 @@ class _UbuntuDesktopInstallerWizardState
           builder: (_) => const InstallPage(),
         ),
       },
-      observers: [
-        _UbuntuDesktopInstallerWizardObserver(getService<TelemetryService>())
-      ],
     );
-  }
-}
-
-class _UbuntuDesktopInstallerWizardObserver extends NavigatorObserver {
-  _UbuntuDesktopInstallerWizardObserver(this._telemetryService);
-
-  final TelemetryService _telemetryService;
-
-  @override
-  void didPush(Route route, Route? previousRoute) {
-    if (route.settings.name != null) {
-      _telemetryService.addStage(route.settings.name!.removePrefix('/'));
-    }
   }
 }
 
@@ -466,7 +451,7 @@ class _UbuntuDesktopAutoinstallWizard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wizard(
+    return InstallerWizard(
       routes: <String, WizardRoute>{
         if (status?.isInstalling != true)
           Routes.confirm: WizardRoute(
@@ -485,7 +470,7 @@ class _UbuntuDesktopErrorWizard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wizard(
+    return InstallerWizard(
       routes: <String, WizardRoute>{
         Routes.install: WizardRoute(
           builder: (_) => const InstallPage(),
