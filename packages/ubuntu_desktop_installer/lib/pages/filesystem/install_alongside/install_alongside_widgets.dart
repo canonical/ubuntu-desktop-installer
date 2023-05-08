@@ -1,6 +1,6 @@
 part of 'install_alongside_page.dart';
 
-class _StorageSelector extends StatelessWidget {
+class _StorageSelector extends ConsumerWidget {
   const _StorageSelector({
     required this.count,
     this.selectedIndex,
@@ -11,8 +11,8 @@ class _StorageSelector extends StatelessWidget {
   final int? selectedIndex;
   final ValueChanged<int?>? onSelected;
 
-  static String formatStorage(BuildContext context, int index) {
-    final model = context.read<InstallAlongsideModel>();
+  static String formatStorage(BuildContext context, WidgetRef ref, int index) {
+    final model = ref.read(installAlongsideModelProvider);
     final partition = model.getPartition(index);
     final os = model.getOS(index);
 
@@ -26,7 +26,7 @@ class _StorageSelector extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     return Row(
       children: <Widget>[
@@ -42,7 +42,7 @@ class _StorageSelector extends StatelessWidget {
                 : null,
             onSelected: onSelected,
             itemBuilder: (context, index, child) => Text(
-              formatStorage(context, index),
+              formatStorage(context, ref, index),
               key: ValueKey(index),
             ),
           ),

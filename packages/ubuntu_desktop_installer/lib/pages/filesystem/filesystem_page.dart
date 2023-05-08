@@ -27,31 +27,31 @@ class FilesystemPage extends StatelessWidget {
       userData: InstallationStep.values.length,
       routes: {
         Routes.installationType: WizardRoute(
-          builder: InstallationTypePage.create,
+          builder: (_) => const InstallationTypePage(),
           userData: InstallationStep.type.index,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
-        Routes.bitlocker: const WizardRoute(
-          builder: BitLockerPage.create,
+        Routes.bitlocker: WizardRoute(
+          builder: (_) => const BitLockerPage(),
         ),
         Routes.installAlongside: WizardRoute(
-          builder: InstallAlongsidePage.create,
+          builder: (_) => const InstallAlongsidePage(),
           userData: InstallationStep.filesystem.index,
           onReplace: (_) => Routes.allocateDiskSpace,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.selectGuidedStorage: WizardRoute(
-          builder: SelectGuidedStoragePage.create,
+          builder: (_) => const SelectGuidedStoragePage(),
           userData: InstallationStep.filesystem.index,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.securityKey: WizardRoute(
-          builder: SecurityKeyPage.create,
+          builder: (_) => const SecurityKeyPage(),
           userData: InstallationStep.filesystem.index,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.allocateDiskSpace: WizardRoute(
-          builder: AllocateDiskSpacePage.create,
+          builder: (_) => const AllocateDiskSpacePage(),
           userData: InstallationStep.filesystem.index,
         ),
       },

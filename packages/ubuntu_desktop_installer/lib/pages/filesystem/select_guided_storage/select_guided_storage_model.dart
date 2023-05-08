@@ -1,9 +1,14 @@
 import 'package:dartx/dartx.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
+
+/// Provider for [SelectGuidedStorageModel].
+final selectGuidedStorageModelProvider = ChangeNotifierProvider(
+    (_) => SelectGuidedStorageModel(getService<DiskStorageService>()));
 
 /// View model for [SelectGuidedStoragePage].
 class SelectGuidedStorageModel extends SafeChangeNotifier {

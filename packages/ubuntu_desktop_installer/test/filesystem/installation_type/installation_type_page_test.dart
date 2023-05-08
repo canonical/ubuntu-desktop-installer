@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -42,8 +41,8 @@ void main() {
   }
 
   Widget buildPage(InstallationTypeModel model) {
-    return ChangeNotifierProvider<InstallationTypeModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [installationTypeModelProvider.overrideWith((_) => model)],
       child: const InstallationTypePage(),
     );
   }
@@ -385,27 +384,5 @@ void main() {
 
     await tester.tap(nextButton);
     verify(model.save()).called(1);
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final client = MockSubiquityClient();
-    when(client.getGuidedStorageV2())
-        .thenAnswer((_) async => fakeGuidedStorageResponse());
-    when(client.getStorageV2()).thenAnswer((_) async => fakeStorageResponse());
-    when(client.hasRst()).thenAnswer((_) async => false);
-    when(client.hasBitLocker()).thenAnswer((_) async => false);
-    registerMockService<SubiquityClient>(client);
-    registerMockService<DiskStorageService>(DiskStorageService(client));
-    registerMockService<ProductService>(ProductService());
-    registerMockService<TelemetryService>(TelemetryService());
-
-    await tester.pumpWidget(tester.buildApp(InstallationTypePage.create));
-
-    final page = find.byType(InstallationTypePage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<InstallationTypeModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }

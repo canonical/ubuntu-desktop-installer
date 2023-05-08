@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
@@ -20,8 +20,6 @@ Future<void> showCreatePartitionDialog(
   Disk disk,
   Gap gap,
 ) {
-  final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
-
   return showDialog(
     context: context,
     builder: (context) {
@@ -32,85 +30,88 @@ Future<void> showCreatePartitionDialog(
       final partitionMount = ValueNotifier<String?>(null);
 
       final lang = AppLocalizations.of(context);
-      return AlertDialog(
-        title: YaruDialogTitleBar(
-          title: Text(lang.partitionCreateTitle),
-        ),
-        titlePadding: EdgeInsets.zero,
-        contentPadding: kContentPadding.copyWith(
-            top: kContentSpacing, bottom: kContentSpacing),
-        actionsPadding: kFooterPadding,
-        buttonPadding: EdgeInsets.zero,
-        scrollable: true,
-        content: FormLayout(
-          rowSpacing: kContentSpacing,
-          columnSpacing: kContentSpacing,
-          rows: [
-            <Widget>[
-              Text(lang.partitionSizeLabel, textAlign: TextAlign.end),
-              AnimatedBuilder(
-                animation: Listenable.merge([
-                  partitionSize,
-                  partitionUnit,
-                ]),
-                builder: (context, child) {
-                  return StorageSizeBox(
-                    size: partitionSize.value,
-                    unit: partitionUnit.value,
-                    maximum: gap.size,
-                    onSizeChanged: (v) => partitionSize.value = v,
-                    onUnitSelected: (v) => partitionUnit.value = v,
-                  );
-                },
-              )
-            ],
-            <Widget>[
-              Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
-              _PartitionFormatSelector(
-                partitionFormat: partitionFormat,
-                partitionFormats: [
-                  ...PartitionFormat.supported,
-                  PartitionFormat.none,
-                ],
-              )
-            ],
-            <Widget>[
-              Text(lang.partitionMountPointLabel, textAlign: TextAlign.end),
-              _PartitionMountField(
-                partitionFormat: partitionFormat,
-                partitionMount: partitionMount,
-              ),
-            ],
-          ],
-        ),
-        actions: [
-          PushButton.outlined(
-            onPressed: Navigator.of(context).pop,
-            child: Text(lang.cancelButtonText),
+      return Consumer(builder: (context, ref, child) {
+        final model = ref.read(allocateDiskSpaceModelProvider);
+        return AlertDialog(
+          title: YaruDialogTitleBar(
+            title: Text(lang.partitionCreateTitle),
           ),
-          const SizedBox(width: kButtonBarSpacing),
-          ValueListenableBuilder(
-              valueListenable: partitionMount,
-              builder: (context, value, child) {
-                return PushButton.filled(
-                  onPressed: RegExp(_kValidMountPointPattern)
-                          .hasMatch(partitionMount.value ?? '')
-                      ? () {
-                          model.addPartition(
-                            disk,
-                            gap,
-                            size: partitionSize.value,
-                            format: partitionFormat.value,
-                            mount: partitionMount.value,
-                          );
-                          Navigator.of(context).pop();
-                        }
-                      : null,
-                  child: Text(lang.okButtonText),
-                );
-              }),
-        ],
-      );
+          titlePadding: EdgeInsets.zero,
+          contentPadding: kContentPadding.copyWith(
+              top: kContentSpacing, bottom: kContentSpacing),
+          actionsPadding: kFooterPadding,
+          buttonPadding: EdgeInsets.zero,
+          scrollable: true,
+          content: FormLayout(
+            rowSpacing: kContentSpacing,
+            columnSpacing: kContentSpacing,
+            rows: [
+              <Widget>[
+                Text(lang.partitionSizeLabel, textAlign: TextAlign.end),
+                AnimatedBuilder(
+                  animation: Listenable.merge([
+                    partitionSize,
+                    partitionUnit,
+                  ]),
+                  builder: (context, child) {
+                    return StorageSizeBox(
+                      size: partitionSize.value,
+                      unit: partitionUnit.value,
+                      maximum: gap.size,
+                      onSizeChanged: (v) => partitionSize.value = v,
+                      onUnitSelected: (v) => partitionUnit.value = v,
+                    );
+                  },
+                )
+              ],
+              <Widget>[
+                Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
+                _PartitionFormatSelector(
+                  partitionFormat: partitionFormat,
+                  partitionFormats: [
+                    ...PartitionFormat.supported,
+                    PartitionFormat.none,
+                  ],
+                )
+              ],
+              <Widget>[
+                Text(lang.partitionMountPointLabel, textAlign: TextAlign.end),
+                _PartitionMountField(
+                  partitionFormat: partitionFormat,
+                  partitionMount: partitionMount,
+                ),
+              ],
+            ],
+          ),
+          actions: [
+            PushButton.outlined(
+              onPressed: Navigator.of(context).pop,
+              child: Text(lang.cancelButtonText),
+            ),
+            const SizedBox(width: kButtonBarSpacing),
+            ValueListenableBuilder(
+                valueListenable: partitionMount,
+                builder: (context, value, child) {
+                  return PushButton.filled(
+                    onPressed: RegExp(_kValidMountPointPattern)
+                            .hasMatch(partitionMount.value ?? '')
+                        ? () {
+                            model.addPartition(
+                              disk,
+                              gap,
+                              size: partitionSize.value,
+                              format: partitionFormat.value,
+                              mount: partitionMount.value,
+                            );
+                            Navigator.of(context).pop();
+                          }
+                        : null,
+                    child: Text(lang.okButtonText),
+                  );
+                }),
+          ],
+        );
+      });
     },
   );
 }
@@ -123,8 +124,6 @@ Future<void> showEditPartitionDialog(
   Partition? originalConfig,
   Gap? gap,
 ) {
-  final model = Provider.of<AllocateDiskSpaceModel>(context, listen: false);
-
   return showDialog(
     context: context,
     builder: (context) {
@@ -140,102 +139,105 @@ Future<void> showEditPartitionDialog(
       }
 
       final lang = AppLocalizations.of(context);
-      return AlertDialog(
-        title: YaruDialogTitleBar(
-          title: Text(lang.partitionEditTitle),
-        ),
-        titlePadding: EdgeInsets.zero,
-        contentPadding: kContentPadding.copyWith(
-            top: kContentSpacing, bottom: kContentSpacing),
-        actionsPadding: kFooterPadding,
-        buttonPadding: EdgeInsets.zero,
-        scrollable: true,
-        content: FormLayout(
-          rowSpacing: kContentSpacing,
-          columnSpacing: kContentSpacing,
-          rows: [
-            <Widget>[
-              Text(lang.partitionSizeLabel, textAlign: TextAlign.end),
-              AnimatedBuilder(
-                animation: Listenable.merge([
-                  partitionSize,
-                  partitionUnit,
-                ]),
-                builder: (context, child) {
-                  return StorageSizeBox(
-                    size: partitionSize.value,
-                    unit: partitionUnit.value,
-                    minimum: partition.estimatedMinSize ?? 0,
-                    maximum: (partition.size ?? 0) + (gap?.size ?? 0),
-                    onSizeChanged: (v) => partitionSize.value = v,
-                    onUnitSelected: (v) => partitionUnit.value = v,
-                  );
-                },
-              )
-            ],
-            <Widget>[
-              Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
-              _PartitionFormatSelector(
-                partitionFormat: partitionFormat,
-                partitionFormats: PartitionFormat.values,
-              ),
-            ],
-            <Widget>[
-              const SizedBox.shrink(),
-              AnimatedBuilder(
-                animation: Listenable.merge([
-                  partitionFormat,
-                  partitionWipe,
-                ]),
-                builder: (context, child) {
-                  return _PartitionWipeCheckbox(
-                    canWipe:
-                        partitionFormat.value?.canWipe == true && !forceWipe(),
-                    wipe: partitionWipe.value || forceWipe(),
-                    onChanged: (v) => partitionWipe.value = v,
-                  );
-                },
-              ),
-            ],
-            <Widget>[
-              Text(lang.partitionMountPointLabel, textAlign: TextAlign.end),
-              _PartitionMountField(
-                initialMount: partition.mount,
-                partitionFormat: partitionFormat,
-                partitionMount: partitionMount,
-              ),
-            ],
-          ],
-        ),
-        actions: [
-          PushButton.outlined(
-            onPressed: Navigator.of(context).pop,
-            child: Text(lang.cancelButtonText),
+      return Consumer(builder: (context, ref, child) {
+        final model = ref.read(allocateDiskSpaceModelProvider);
+        return AlertDialog(
+          title: YaruDialogTitleBar(
+            title: Text(lang.partitionEditTitle),
           ),
-          const SizedBox(width: kButtonBarSpacing),
-          ValueListenableBuilder(
-              valueListenable: partitionMount,
-              builder: (context, value, child) {
-                return PushButton.filled(
-                  onPressed: RegExp(_kValidMountPointPattern)
-                          .hasMatch(partitionMount.value ?? '')
-                      ? () {
-                          model.editPartition(
-                            disk,
-                            partition,
-                            size: partitionSize.value,
-                            format: partitionFormat.value,
-                            mount: partitionMount.value,
-                            wipe: partitionWipe.value || forceWipe(),
-                          );
-                          Navigator.of(context).pop();
-                        }
-                      : null,
-                  child: Text(lang.okButtonText),
-                );
-              }),
-        ],
-      );
+          titlePadding: EdgeInsets.zero,
+          contentPadding: kContentPadding.copyWith(
+              top: kContentSpacing, bottom: kContentSpacing),
+          actionsPadding: kFooterPadding,
+          buttonPadding: EdgeInsets.zero,
+          scrollable: true,
+          content: FormLayout(
+            rowSpacing: kContentSpacing,
+            columnSpacing: kContentSpacing,
+            rows: [
+              <Widget>[
+                Text(lang.partitionSizeLabel, textAlign: TextAlign.end),
+                AnimatedBuilder(
+                  animation: Listenable.merge([
+                    partitionSize,
+                    partitionUnit,
+                  ]),
+                  builder: (context, child) {
+                    return StorageSizeBox(
+                      size: partitionSize.value,
+                      unit: partitionUnit.value,
+                      minimum: partition.estimatedMinSize ?? 0,
+                      maximum: (partition.size ?? 0) + (gap?.size ?? 0),
+                      onSizeChanged: (v) => partitionSize.value = v,
+                      onUnitSelected: (v) => partitionUnit.value = v,
+                    );
+                  },
+                )
+              ],
+              <Widget>[
+                Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
+                _PartitionFormatSelector(
+                  partitionFormat: partitionFormat,
+                  partitionFormats: PartitionFormat.values,
+                ),
+              ],
+              <Widget>[
+                const SizedBox.shrink(),
+                AnimatedBuilder(
+                  animation: Listenable.merge([
+                    partitionFormat,
+                    partitionWipe,
+                  ]),
+                  builder: (context, child) {
+                    return _PartitionWipeCheckbox(
+                      canWipe: partitionFormat.value?.canWipe == true &&
+                          !forceWipe(),
+                      wipe: partitionWipe.value || forceWipe(),
+                      onChanged: (v) => partitionWipe.value = v,
+                    );
+                  },
+                ),
+              ],
+              <Widget>[
+                Text(lang.partitionMountPointLabel, textAlign: TextAlign.end),
+                _PartitionMountField(
+                  initialMount: partition.mount,
+                  partitionFormat: partitionFormat,
+                  partitionMount: partitionMount,
+                ),
+              ],
+            ],
+          ),
+          actions: [
+            PushButton.outlined(
+              onPressed: Navigator.of(context).pop,
+              child: Text(lang.cancelButtonText),
+            ),
+            const SizedBox(width: kButtonBarSpacing),
+            ValueListenableBuilder(
+                valueListenable: partitionMount,
+                builder: (context, value, child) {
+                  return PushButton.filled(
+                    onPressed: RegExp(_kValidMountPointPattern)
+                            .hasMatch(partitionMount.value ?? '')
+                        ? () {
+                            model.editPartition(
+                              disk,
+                              partition,
+                              size: partitionSize.value,
+                              format: partitionFormat.value,
+                              mount: partitionMount.value,
+                              wipe: partitionWipe.value || forceWipe(),
+                            );
+                            Navigator.of(context).pop();
+                          }
+                        : null,
+                    child: Text(lang.okButtonText),
+                  );
+                }),
+          ],
+        );
+      });
     },
   );
 }

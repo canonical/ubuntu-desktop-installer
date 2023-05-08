@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/bitlocker/bitlocker_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/bitlocker/bitlocker_page.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
@@ -22,8 +22,8 @@ void main() {
     when(model.reboot()).thenAnswer((_) async {});
 
     await tester.pumpWidget(
-      Provider<BitLockerModel>.value(
-        value: model,
+      ProviderScope(
+        overrides: [bitLockerModelProvider.overrideWith((_) => model)],
         child: tester.buildApp((_) => const BitLockerPage()),
       ),
     );
@@ -59,8 +59,8 @@ void main() {
     registerMockService<UrlLauncher>(urlLauncher);
 
     await tester.pumpWidget(
-      Provider<BitLockerModel>.value(
-        value: model,
+      ProviderScope(
+        overrides: [bitLockerModelProvider.overrideWith((_) => model)],
         child: tester.buildApp((_) => const BitLockerPage()),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -15,33 +15,20 @@ import 'installation_type_model.dart';
 export 'installation_type_model.dart' show AdvancedFeature, InstallationType;
 
 /// Select between guided and manual partitioning.
-class InstallationTypePage extends StatefulWidget {
-  /// Use [InstallationTypePage.create] instead.
-  @visibleForTesting
+class InstallationTypePage extends ConsumerStatefulWidget {
   const InstallationTypePage({super.key});
 
-  /// Creates a [InstallationTypePage] with [InstallationTypeModel].
-  static Widget create(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => InstallationTypeModel(
-        getService<DiskStorageService>(),
-        getService<TelemetryService>(),
-        getService<ProductService>(),
-      ),
-      child: const InstallationTypePage(),
-    );
-  }
-
   @override
-  State<InstallationTypePage> createState() => _InstallationTypePageState();
+  ConsumerState<InstallationTypePage> createState() =>
+      _InstallationTypePageState();
 }
 
-class _InstallationTypePageState extends State<InstallationTypePage> {
+class _InstallationTypePageState extends ConsumerState<InstallationTypePage> {
   @override
   void initState() {
     super.initState();
 
-    final model = Provider.of<InstallationTypeModel>(context, listen: false);
+    final model = ref.read(installationTypeModelProvider);
     model.init();
   }
 
@@ -81,7 +68,7 @@ class _InstallationTypePageState extends State<InstallationTypePage> {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<InstallationTypeModel>(context);
+    final model = ref.watch(installationTypeModelProvider);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(

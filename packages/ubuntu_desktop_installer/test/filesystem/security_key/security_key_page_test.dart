@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_page.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 
 import '../../test_utils.dart';
-import 'security_key_model_test.mocks.dart';
 import 'security_key_page_test.mocks.dart';
 
 @GenerateMocks([SecurityKeyModel])
@@ -29,8 +27,8 @@ void main() {
   }
 
   Widget buildPage(SecurityKeyModel model) {
-    return ChangeNotifierProvider<SecurityKeyModel>.value(
-      value: model,
+    return ProviderScope(
+      overrides: [securityKeyModelProvider.overrideWith((_) => model)],
       child: const SecurityKeyPage(),
     );
   }
@@ -91,20 +89,5 @@ void main() {
 
     await tester.tap(nextButton);
     verify(model.saveSecurityKey()).called(1);
-  });
-
-  testWidgets('creates a model', (tester) async {
-    final service = MockDiskStorageService();
-    when(service.securityKey).thenReturn(null);
-    registerMockService<DiskStorageService>(service);
-
-    await tester.pumpWidget(tester.buildApp(SecurityKeyPage.create));
-
-    final page = find.byType(SecurityKeyPage);
-    expect(page, findsOneWidget);
-
-    final context = tester.element(page);
-    final model = Provider.of<SecurityKeyModel>(context, listen: false);
-    expect(model, isNotNull);
   });
 }
