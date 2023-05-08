@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:provider/provider.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -13,21 +11,12 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'bitlocker_model.dart';
 
-class BitLockerPage extends StatelessWidget {
-  @visibleForTesting
+class BitLockerPage extends ConsumerWidget {
   const BitLockerPage({super.key});
 
-  static Widget create(BuildContext context) {
-    final client = getService<SubiquityClient>();
-    return Provider(
-      create: (_) => BitLockerModel(client),
-      child: const BitLockerPage(),
-    );
-  }
-
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<BitLockerModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(bitLockerModelProvider);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(

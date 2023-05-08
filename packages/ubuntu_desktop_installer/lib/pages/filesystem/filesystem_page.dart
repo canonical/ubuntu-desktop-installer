@@ -31,8 +31,8 @@ class FilesystemPage extends StatelessWidget {
           userData: InstallationStep.type.index,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
-        Routes.bitlocker: const WizardRoute(
-          builder: BitLockerPage.create,
+        Routes.bitlocker: WizardRoute(
+          builder: (_) => const BitLockerPage(),
         ),
         Routes.installAlongside: WizardRoute(
           builder: InstallAlongsidePage.create,
