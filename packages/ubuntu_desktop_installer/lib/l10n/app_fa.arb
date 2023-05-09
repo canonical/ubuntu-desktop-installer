@@ -550,8 +550,6 @@
   "@allocateDiskSpace": {},
   "partitionLocationEnd": "پایان این فضا",
   "@partitionLocationEnd": {},
-  "partitionFormatBtrfs": "سامانه پروندهٔ ثبت شدهٔ btrfs",
-  "@partitionFormatBtrfs": {},
   "partitionFormatXfs": "سامانه پروندهٔ ثبت شدهٔ XFS",
   "@partitionFormatXfs": {},
   "partitionFormatIso9660": "سامانه پروندهٔ ایزو ۹۶۶۰",
