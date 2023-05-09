@@ -73,8 +73,6 @@
   "@partitionFormatBtrfs": {},
   "partitionTypeLogical": "Logika",
   "@partitionTypeLogical": {},
-  "partitionFormatExt4": "Protokoliga dosiersistemo ext4",
-  "@partitionFormatExt4": {},
   "partitionFormatExt3": "Protokoliga dosiersistemo ext3",
   "@partitionFormatExt3": {},
   "partitionFormatJfs": "Protokoliga dosiersistemo JFS",
