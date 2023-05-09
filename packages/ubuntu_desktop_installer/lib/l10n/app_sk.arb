@@ -836,8 +836,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Použité ako:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt4": "Žurnálovací súborový systém Ext4",
-  "@partitionFormatExt4": {},
   "partitionFormatExt3": "Žurnálovací súborový systém Ext3",
   "@partitionFormatExt3": {},
   "partitionFormatBtrfs": "Žurnálovací súborový systém btrfs",
