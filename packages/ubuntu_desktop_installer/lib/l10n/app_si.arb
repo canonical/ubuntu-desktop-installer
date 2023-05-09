@@ -217,8 +217,6 @@
   "@selectGuidedStorageDropdownLabel": {},
   "diskHeadersUsed": "භාවිතයි",
   "@diskHeadersUsed": {},
-  "partitionFormatZfsroot": "ZFS මූල ගොනු පද්ධතිය",
-  "@partitionFormatZfsroot": {},
   "whoAreYouPageRealNameRequired": "නමක් වුවමනාය",
   "@whoAreYouPageRealNameRequired": {},
   "whoAreYouPageComputerNameInfo": "වෙනත් පරිගණක වෙත අමතන විට නම භාවිතා වේ.",
