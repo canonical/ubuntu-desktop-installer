@@ -708,8 +708,6 @@
       "DISTRO": {}
     }
   },
-  "partitionFormatExt4": "Ext4 žurnalinė failų sistema",
-  "@partitionFormatExt4": {},
   "installingSystem": "Įdiegiama sistema…",
   "@installingSystem": {},
   "configuringSystem": "Nustatoma sistema…",
