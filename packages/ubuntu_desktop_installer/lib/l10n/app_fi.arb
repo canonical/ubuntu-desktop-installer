@@ -327,8 +327,6 @@
   "@selectGuidedStorageInstallNow": {},
   "partitionLocationEnd": "Tilan loppu",
   "@partitionLocationEnd": {},
-  "partitionFormatBtrfs": "btrfs-tiedostojärjestelmä sisältäen tapahtumakirjanpidon",
-  "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "JFS-tiedostojärjestelmä sisältäen tapahtumakirjanpidon",
   "@partitionFormatJfs": {},
   "partitionFormatXfs": "XFS-tiedostojärjestelmä sisältäen tapahtumakirjanpidon",
