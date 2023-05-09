@@ -229,8 +229,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizado como:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt4": "Sistema de arquivos Ext4 com journaling",
-  "@partitionFormatExt4": {},
   "partitionFormatExt3": "Sistema de arquivos Ext3 com journaling",
   "@partitionFormatExt3": {},
   "partitionFormatExt2": "Sistema de arquivos Ext2",
