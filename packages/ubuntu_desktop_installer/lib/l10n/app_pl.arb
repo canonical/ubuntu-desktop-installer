@@ -99,8 +99,6 @@
   "@newPartitionTable": {},
   "partitionTypeLogical": "Logiczna",
   "@partitionTypeLogical": {},
-  "partitionFormatNtfs": "System plików NTFS",
-  "@partitionFormatNtfs": {},
   "installationTypeAlongside": "Zainstaluj {product} obok {os}",
   "@installationTypeAlongside": {
     "type": "text",
