@@ -578,8 +578,6 @@
   "@partitionFormatJfs": {},
   "partitionFormatXfs": "XFS සගනු ගොනු පද්ධතිය",
   "@partitionFormatXfs": {},
-  "partitionFormatExt4": "Ext4 සගනු ගොනු පද්ධතිය",
-  "@partitionFormatExt4": {},
   "partitionFormatExt3": "Ext3 සගනු ගොනු පද්ධතිය",
   "@partitionFormatExt3": {},
   "partitionFormatBtrfs": "btrfs සගනු ගොනු පද්ධතිය",
