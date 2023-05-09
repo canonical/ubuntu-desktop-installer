@@ -20,7 +20,7 @@ class SourcePage extends ConsumerStatefulWidget {
         client: getService<SubiquityClient>(),
         power: getService<PowerService>(),
         network: getService<NetworkService>(),
-        storage: getService<DiskStorageService>(),
+        storage: getService<StorageService>(),
       ));
 
   @override

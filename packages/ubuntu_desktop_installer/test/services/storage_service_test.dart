@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart';
+import 'package:ubuntu_desktop_installer/services/storage_service.dart';
 
 void main() {
   final testDisks = <Disk>[fakeDisk(id: 'a'), fakeDisk(id: 'b')];
@@ -34,7 +34,7 @@ void main() {
   });
 
   test('get guided storage', () async {
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
     expect(await service.getGuidedStorage(),
         equals(fakeGuidedStorageResponse(possible: testTargets)));
     verify(client.getGuidedStorageV2()).called(1);
@@ -52,7 +52,7 @@ void main() {
         .thenAnswer((_) async => fakeGuidedStorageResponse(configured: choice));
     when(client.setStorageV2()).thenAnswer((_) async => fakeStorageResponse());
 
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
     service.guidedTarget = target;
     await service.setGuidedStorage();
     verify(client.setGuidedStorageV2(choice)).called(1);
@@ -71,7 +71,7 @@ void main() {
         .thenAnswer((_) async => fakeGuidedStorageResponse(configured: choice));
     when(client.setStorageV2()).thenAnswer((_) async => fakeStorageResponse());
 
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
     service.useLvm = true;
 
     service.guidedTarget = target;
@@ -81,7 +81,7 @@ void main() {
   });
 
   test('reset guided storage', () async {
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
     expect(service.hasMultipleDisks, isFalse);
     await service.init();
 
@@ -101,7 +101,7 @@ void main() {
     when(client.getOriginalStorageV2()).thenAnswer(
         (_) async => fakeStorageResponse(disks: testDisks.reversed.toList()));
 
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
     await service.init();
     verify(client.getStorageV2()).called(1);
 
@@ -116,7 +116,7 @@ void main() {
     when(client.setStorageV2())
         .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
 
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
     expect(await service.setStorage(), equals(testDisks));
     verify(client.setStorageV2()).called(1);
   });
@@ -125,7 +125,7 @@ void main() {
     when(client.resetStorageV2())
         .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
 
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
     expect(await service.resetStorage(), equals(testDisks));
     verify(client.resetStorageV2()).called(1);
   });
@@ -134,7 +134,7 @@ void main() {
     when(client.getStorageV2())
         .thenAnswer((_) async => fakeStorageResponse(needRoot: true));
 
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
     await service.getStorage();
 
     expect(service.needRoot, isTrue);
@@ -153,7 +153,7 @@ void main() {
     final disk = fakeDisk(id: 'tst');
     const gap = Gap(offset: 2, size: 3, usable: GapUsable.YES);
     const partition = Partition(number: 1);
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
 
     when(client.addPartitionV2(disk, gap, partition))
         .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
@@ -177,7 +177,7 @@ void main() {
 
   test('add boot partition', () async {
     final disk = fakeDisk(id: 'tst');
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
 
     when(client.addBootPartitionV2(disk))
         .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
@@ -188,7 +188,7 @@ void main() {
 
   test('reformat disk', () async {
     final disk = fakeDisk(id: 'tst');
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
 
     when(client.reformatDiskV2(disk))
         .thenAnswer((_) async => fakeStorageResponse(disks: testDisks));
@@ -198,7 +198,7 @@ void main() {
   });
 
   test('has BitLocker', () async {
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
 
     when(client.hasBitLocker()).thenAnswer((_) async => true);
     expect(await service.hasBitLocker(), isTrue);
@@ -247,7 +247,7 @@ void main() {
       ),
     );
 
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
 
     await service.init();
     expect(service.existingOS, equals([win10, ubuntu2110, ubuntu2204]));
@@ -267,7 +267,7 @@ void main() {
     when(client.resetStorageV2())
         .thenAnswer((_) async => fakeStorageResponse());
 
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
     expect(service.guidedTarget, isNull);
 
     service.guidedTarget = target;
@@ -291,7 +291,7 @@ void main() {
         .thenAnswer((_) async => fakeGuidedStorageResponse(configured: choice));
     when(client.setStorageV2()).thenAnswer((_) async => fakeStorageResponse());
 
-    final service = DiskStorageService(client);
+    final service = StorageService(client);
     await service.init();
 
     service.securityKey = 'foo123';

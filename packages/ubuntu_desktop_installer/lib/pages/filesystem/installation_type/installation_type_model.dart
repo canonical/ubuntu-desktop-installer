@@ -37,7 +37,7 @@ enum AdvancedFeature {
 /// Provider for [InstallationTypeModel].
 final installationTypeModelProvider =
     ChangeNotifierProvider((_) => InstallationTypeModel(
-          getService<DiskStorageService>(),
+          getService<StorageService>(),
           getService<TelemetryService>(),
           getService<ProductService>(),
         ));
@@ -51,7 +51,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
     this._productService,
   );
 
-  final DiskStorageService _diskService;
+  final StorageService _diskService;
   final TelemetryService _telemetryService;
   final ProductService _productService;
 

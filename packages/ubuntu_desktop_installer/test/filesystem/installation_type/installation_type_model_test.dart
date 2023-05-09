@@ -8,10 +8,10 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'installation_type_model_test.mocks.dart';
 
-@GenerateMocks([DiskStorageService, ProductService, TelemetryService])
+@GenerateMocks([StorageService, ProductService, TelemetryService])
 void main() {
   test('init', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.useLvm).thenReturn(true);
     when(service.useEncryption).thenReturn(true);
     when(service.hasBitLocker()).thenAnswer((_) async => true);
@@ -44,7 +44,7 @@ void main() {
       type: 'linux',
     );
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.existingOS).thenReturn([ubuntu2110, ubuntu2204]);
 
     final model = InstallationTypeModel(
@@ -57,7 +57,7 @@ void main() {
 
   test('notify changes', () {
     final model = InstallationTypeModel(
-      MockDiskStorageService(),
+      MockStorageService(),
       MockTelemetryService(),
       MockProductService(),
     );
@@ -87,7 +87,7 @@ void main() {
         .thenReturn(ProductInfo(name: 'Ubuntu', version: '24.04 LTS'));
 
     final model = InstallationTypeModel(
-      MockDiskStorageService(),
+      MockStorageService(),
       MockTelemetryService(),
       product,
     );
@@ -96,13 +96,13 @@ void main() {
   });
 
   test('save talks to telemetry service', () async {
-    final disks = MockDiskStorageService();
-    when(disks.hasMultipleDisks).thenReturn(false);
-    when(disks.useEncryption).thenReturn(false);
+    final storage = MockStorageService();
+    when(storage.hasMultipleDisks).thenReturn(false);
+    when(storage.useEncryption).thenReturn(false);
 
     final telemetry = MockTelemetryService();
     final model = InstallationTypeModel(
-      disks,
+      storage,
       telemetry,
       MockProductService(),
     );
@@ -139,7 +139,7 @@ void main() {
     verify(telemetry.addMetric('PartitionMethod', 'use_zfs')).called(1);
     reset(telemetry);
 
-    when(disks.useEncryption).thenReturn(true);
+    when(storage.useEncryption).thenReturn(true);
     model.advancedFeature = AdvancedFeature.none;
     await model.save();
     verify(telemetry.addMetric('PartitionMethod', 'use_crypto')).called(1);
@@ -147,7 +147,7 @@ void main() {
   });
 
   test('set lvm', () {
-    final storage = MockDiskStorageService();
+    final storage = MockStorageService();
     when(storage.hasMultipleDisks).thenReturn(false);
     when(storage.useEncryption).thenReturn(false);
 
@@ -167,7 +167,7 @@ void main() {
   test('single reformat target', () async {
     const reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.useLvm).thenReturn(false);
     when(service.useEncryption).thenReturn(false);
     when(service.getGuidedStorage()).thenAnswer(
@@ -188,7 +188,7 @@ void main() {
   });
 
   test('can install alongside', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.useLvm).thenReturn(false);
     when(service.useEncryption).thenReturn(false);
     when(service.useLvm).thenReturn(false);
@@ -247,7 +247,7 @@ void main() {
   });
 
   test('pre-select target', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.useLvm).thenReturn(false);
     when(service.useEncryption).thenReturn(false);
     when(service.hasBitLocker()).thenAnswer((_) async => false);
@@ -347,7 +347,7 @@ void main() {
   });
 
   test('reset storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.resetStorage()).thenAnswer((_) async => []);
 
     final model = InstallationTypeModel(

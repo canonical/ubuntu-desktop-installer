@@ -8,14 +8,14 @@ export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 
 /// Provider for [SelectGuidedStorageModel].
 final selectGuidedStorageModelProvider = ChangeNotifierProvider(
-    (_) => SelectGuidedStorageModel(getService<DiskStorageService>()));
+    (_) => SelectGuidedStorageModel(getService<StorageService>()));
 
 /// View model for [SelectGuidedStoragePage].
 class SelectGuidedStorageModel extends SafeChangeNotifier {
   /// Creates a new model with the given service.
   SelectGuidedStorageModel(this._service);
 
-  final DiskStorageService _service;
+  final StorageService _service;
   var _storages = <GuidedStorageTargetReformat>[];
   var _disks = <String, Disk>{};
   var _selectedIndex = 0;

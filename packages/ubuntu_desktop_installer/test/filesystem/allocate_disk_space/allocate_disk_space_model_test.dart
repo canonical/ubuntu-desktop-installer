@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'allocate_disk_space_model_test.mocks.dart';
 
-@GenerateMocks([DiskStorageService])
+@GenerateMocks([StorageService])
 void main() {
   final testDisks = <Disk>[
     fakeDisk(id: 'a', partitions: [
@@ -27,7 +27,7 @@ void main() {
   final changedDisks = <Disk>[fakeDisk(path: '/foo')];
 
   test('get storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
 
     final model = AllocateDiskSpaceModel(service);
@@ -38,7 +38,7 @@ void main() {
   });
 
   test('set storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.setStorage()).thenAnswer((_) async => changedDisks);
 
@@ -51,7 +51,7 @@ void main() {
   });
 
   test('reset storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.resetStorage()).thenAnswer((_) async => changedDisks);
 
     final model = AllocateDiskSpaceModel(service);
@@ -61,7 +61,7 @@ void main() {
   });
 
   test('reformat disk', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.reformatDisk(testDisks.first))
         .thenAnswer((_) async => changedDisks);
 
@@ -72,7 +72,7 @@ void main() {
   });
 
   test('select storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
 
     final model = AllocateDiskSpaceModel(service);
@@ -123,7 +123,7 @@ void main() {
   });
 
   test('notify selection changes', () {
-    final model = AllocateDiskSpaceModel(MockDiskStorageService());
+    final model = AllocateDiskSpaceModel(MockStorageService());
     expect(model.selectedDiskIndex, equals(-1));
 
     var wasNotified = false;
@@ -147,7 +147,7 @@ void main() {
   });
 
   test('select boot disk', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.addBootPartition(any)).thenAnswer((_) async {
       return [
@@ -190,7 +190,7 @@ void main() {
     final bitLockerPartition =
         emptyDisk.copyWith(partitions: [const Partition(format: 'BitLocker')]);
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer(
       (_) async => [
         emptyDisk,
@@ -281,7 +281,7 @@ void main() {
     const gap = Gap(offset: 123, size: 456, usable: GapUsable.YES);
     const partition = Partition(size: 123, format: 'ext3', mount: '/tst');
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.addPartition(fakeDisk(), gap, partition))
         .thenAnswer((_) async => changedDisks);
 
@@ -298,7 +298,7 @@ void main() {
     final edited = partition.copyWith(
         size: 456, wipe: 'superblock', format: 'ext2', mount: '/tmp');
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.editPartition(fakeDisk(), edited))
         .thenAnswer((_) async => changedDisks);
 
@@ -319,7 +319,7 @@ void main() {
       );
     }
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     final model = AllocateDiskSpaceModel(service);
 
     // get partitions -> select first disk
@@ -342,13 +342,13 @@ void main() {
   });
 
   test('dispose', () async {
-    final model = AllocateDiskSpaceModel(MockDiskStorageService());
+    final model = AllocateDiskSpaceModel(MockStorageService());
     model.dispose();
     expect(model.onSelectionChanged, emitsDone);
   });
 
   test('valid', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     final model = AllocateDiskSpaceModel(service);
 
     when(service.needRoot).thenReturn(true);
@@ -374,7 +374,7 @@ void main() {
         Gap(offset: 1, size: 2, usable: GapUsable.TOO_MANY_PRIMARY_PARTS);
     final disk = fakeDisk(partitions: [usableGap, unusableGap]);
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
 
     final model = AllocateDiskSpaceModel(service);
@@ -398,7 +398,7 @@ void main() {
       const Partition(number: 3, size: 33),
     ]);
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
 
     final model = AllocateDiskSpaceModel(service);

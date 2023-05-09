@@ -5,7 +5,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 /// Provider for [SecurityKeyModel].
 final securityKeyModelProvider = ChangeNotifierProvider(
-    (_) => SecurityKeyModel(getService<DiskStorageService>()));
+    (_) => SecurityKeyModel(getService<StorageService>()));
 
 /// View model for [SecurityKeyPage].
 class SecurityKeyModel extends SafeChangeNotifier {
@@ -18,7 +18,7 @@ class SecurityKeyModel extends SafeChangeNotifier {
     ]).addListener(notifyListeners);
   }
 
-  final DiskStorageService _service;
+  final StorageService _service;
 
   final _securityKey = ValueNotifier('');
   final _confirmedSecurityKey = ValueNotifier('');

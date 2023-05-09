@@ -4,12 +4,12 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 /// @internal
-final log = Logger('disk_storage');
+final log = Logger('storage');
 
 /// Provides means to read and modify the storage configuration.
-class DiskStorageService {
+class StorageService {
   /// Creates the service with the given [client].
-  DiskStorageService(this._client);
+  StorageService(this._client);
 
   final SubiquityClient _client;
 

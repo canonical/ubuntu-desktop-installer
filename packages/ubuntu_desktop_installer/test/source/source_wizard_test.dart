@@ -101,10 +101,10 @@ extension on WidgetTester {
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
     registerMockService<NetworkService>(network);
 
-    final storage = MockDiskStorageService();
+    final storage = MockStorageService();
     when(storage.largestDiskSize).thenReturn(1);
     when(storage.installMinimumSize).thenReturn(hasEnoughDiskSpace ? 1 : 2);
-    registerMockService<DiskStorageService>(storage);
+    registerMockService<StorageService>(storage);
 
     final telemetry = MockTelemetryService();
     registerMockService<TelemetryService>(telemetry);

@@ -91,7 +91,7 @@ extension on WidgetTester {
         .thenAnswer((_) => const Stream.empty());
 
     registerMockService<DesktopService>(MockDesktopService());
-    registerMockService<DiskStorageService>(DiskStorageService(client));
+    registerMockService<StorageService>(StorageService(client));
     registerMockService<JournalService>(journal);
     registerMockService<LocaleService>(MockLocaleService());
     registerMockService<ProductService>(ProductService());

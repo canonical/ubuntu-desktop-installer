@@ -10,14 +10,14 @@ export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 /// Provider for [InstallAlongsideModel].
 final installAlongsideModelProvider = ChangeNotifierProvider((_) =>
     InstallAlongsideModel(
-        getService<DiskStorageService>(), getService<ProductService>()));
+        getService<StorageService>(), getService<ProductService>()));
 
 /// View model for [InstallAlongsidePage].
 class InstallAlongsideModel extends SafeChangeNotifier {
   /// Creates a new model with the given service.
-  InstallAlongsideModel(this._service, this._product);
+  InstallAlongsideModel(this._storage, this._product);
 
-  final DiskStorageService _service;
+  final StorageService _storage;
   final ProductService _product;
   var _storages = <GuidedStorageTargetResize>[];
   var _disks = <String, Disk>{};
@@ -25,13 +25,13 @@ class InstallAlongsideModel extends SafeChangeNotifier {
   int? _currentSize;
 
   /// Whether the filesystem wizard is at the end.
-  bool get isDone => !_service.useEncryption;
+  bool get isDone => !_storage.useEncryption;
 
   /// Detailed info of the product being installed.
   ProductInfo get productInfo => _product.getProductInfo();
 
   /// A list of existing OS installations or empty if not detected.
-  List<OsProber> get existingOS => _service.existingOS ?? [];
+  List<OsProber> get existingOS => _storage.existingOS ?? [];
 
   /// Number of storages available for guided partitioning.
   int get storageCount => _storages.length;
@@ -125,22 +125,22 @@ class InstallAlongsideModel extends SafeChangeNotifier {
 
   /// Loads the storages available for guided partitioning.
   Future<void> init() {
-    return _service.getStorage().then((disks) {
+    return _storage.getStorage().then((disks) {
       _disks = Map.fromIterable(disks, key: (d) => d.id);
-      return _service.getGuidedStorage().then(_updateStorage);
+      return _storage.getGuidedStorage().then(_updateStorage);
     });
   }
 
   /// Saves the guided storage selection.
   Future<void> save() async {
     final storage = selectedStorage!.copyWith(newSize: currentSize);
-    _service.guidedTarget = storage;
+    _storage.guidedTarget = storage;
   }
 
   /// Resets the guided storage selection.
   Future<void> reset() {
-    return _service
+    return _storage
         .resetStorage()
-        .then((_) => _service.getGuidedStorage().then(_updateStorage));
+        .then((_) => _storage.getGuidedStorage().then(_updateStorage));
   }
 }

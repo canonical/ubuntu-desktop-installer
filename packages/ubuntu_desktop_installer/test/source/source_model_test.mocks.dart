@@ -9,10 +9,9 @@ import 'package:dbus/dbus.dart' as _i8;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:nm/nm.dart' as _i3;
 import 'package:subiquity_client/subiquity_client.dart' as _i2;
-import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart'
-    as _i5;
 import 'package:ubuntu_desktop_installer/services/network_service.dart' as _i7;
 import 'package:ubuntu_desktop_installer/services/power_service.dart' as _i9;
+import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i5;
 import 'package:upower/upower.dart' as _i4;
 
 // ignore_for_file: type=lint
@@ -91,12 +90,11 @@ class _FakeUPowerDevice_5 extends _i1.SmartFake implements _i4.UPowerDevice {
         );
 }
 
-/// A class which mocks [DiskStorageService].
+/// A class which mocks [StorageService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockDiskStorageService extends _i1.Mock
-    implements _i5.DiskStorageService {
-  MockDiskStorageService() {
+class MockStorageService extends _i1.Mock implements _i5.StorageService {
+  MockStorageService() {
     _i1.throwOnMissingStub(this);
   }
 
