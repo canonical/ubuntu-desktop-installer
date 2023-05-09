@@ -539,8 +539,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Использовано:",
   "@partitionFormatLabel": {},
-  "partitionFormatZfsroot": "Корневая файловая система ZFS",
-  "@partitionFormatZfsroot": {},
   "whoAreYouPageComputerNameRequired": "Требуется имя компьютера",
   "@whoAreYouPageComputerNameRequired": {},
   "whoAreYouPageInvalidComputerName": "Недопустимое имя компьютера",
