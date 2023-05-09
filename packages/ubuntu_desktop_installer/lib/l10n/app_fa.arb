@@ -550,8 +550,6 @@
   "@allocateDiskSpace": {},
   "partitionLocationEnd": "پایان این فضا",
   "@partitionLocationEnd": {},
-  "partitionFormatXfs": "سامانه پروندهٔ ثبت شدهٔ XFS",
-  "@partitionFormatXfs": {},
   "partitionFormatIso9660": "سامانه پروندهٔ ایزو ۹۶۶۰",
   "@partitionFormatIso9660": {},
   "bootLoaderDevice": "افزاره برای نصب بارکنندهٔ راه‌اندازی",
