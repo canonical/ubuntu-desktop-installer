@@ -16,13 +16,6 @@ export 'source_model.dart' show kNormalSourceId, kMinimalSourceId;
 class SourcePage extends ConsumerStatefulWidget {
   const SourcePage({super.key});
 
-  static final modelProvider = ChangeNotifierProvider((_) => SourceModel(
-        client: getService<SubiquityClient>(),
-        power: getService<PowerService>(),
-        network: getService<NetworkService>(),
-        storage: getService<StorageService>(),
-      ));
-
   @override
   ConsumerState<SourcePage> createState() => _SourcePageState();
 }
@@ -31,13 +24,13 @@ class _SourcePageState extends ConsumerState<SourcePage> {
   @override
   void initState() {
     super.initState();
-    final model = ref.read(SourcePage.modelProvider);
+    final model = ref.read(sourceModelProvider);
     model.init();
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = ref.watch(SourcePage.modelProvider);
+    final model = ref.watch(sourceModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

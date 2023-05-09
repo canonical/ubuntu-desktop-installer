@@ -1,7 +1,12 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+
+final activeDirectoryModelProvider = ChangeNotifierProvider(
+  (_) => ActiveDirectoryModel(getService<ActiveDirectoryService>()),
+);
 
 class ActiveDirectoryModel extends SafeChangeNotifier {
   ActiveDirectoryModel(this._service) {

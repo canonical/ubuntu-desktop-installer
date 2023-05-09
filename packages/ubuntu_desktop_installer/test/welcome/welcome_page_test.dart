@@ -69,7 +69,7 @@ void main() {
 
     await tester.pumpWidget(ProviderScope(
       overrides: [
-        WelcomePage.modelProvider.overrideWith((_) => model),
+        welcomeModelProvider.overrideWith((_) => model),
       ],
       child: InheritedLocale(child: app),
     ));

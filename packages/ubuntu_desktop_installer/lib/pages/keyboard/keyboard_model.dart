@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dartx/dartx.dart';
 import 'package:diacritic/diacritic.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meta/meta.dart';
 import 'package:platform/platform.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
@@ -11,6 +12,9 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 /// @internal
 final log = Logger('keyboard');
+
+final keyboardModelProvider =
+    ChangeNotifierProvider((_) => KeyboardModel(getService<KeyboardService>()));
 
 /// Implements the business logic of the Keyboard page.
 class KeyboardModel extends SafeChangeNotifier {

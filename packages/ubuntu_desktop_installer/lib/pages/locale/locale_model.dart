@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -8,6 +9,13 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart' show KeySearchX;
 
 /// @internal
 final log = Logger('locale');
+
+final localeModelProvider = ChangeNotifierProvider((ref) {
+  return LocaleModel(
+    locale: getService<LocaleService>(),
+    sound: tryGetService<SoundService>(),
+  );
+});
 
 /// Implements the business logic of the locale page.
 class LocaleModel extends SafeChangeNotifier {

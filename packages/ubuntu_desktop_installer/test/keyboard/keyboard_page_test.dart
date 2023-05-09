@@ -46,7 +46,7 @@ void main() {
     registerMockService<KeyboardService>(service);
 
     return ProviderScope(
-      overrides: [KeyboardPage.modelProvider.overrideWith((_) => model)],
+      overrides: [keyboardModelProvider.overrideWith((_) => model)],
       child: const KeyboardPage(),
     );
   }

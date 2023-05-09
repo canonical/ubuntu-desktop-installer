@@ -13,10 +13,6 @@ import 'active_directory_widgets.dart';
 class ActiveDirectoryPage extends ConsumerStatefulWidget {
   const ActiveDirectoryPage({super.key});
 
-  static final modelProvider = ChangeNotifierProvider(
-    (_) => ActiveDirectoryModel(getService<ActiveDirectoryService>()),
-  );
-
   @override
   ConsumerState<ActiveDirectoryPage> createState() =>
       _ActiveDirectoryPageState();
@@ -27,7 +23,7 @@ class _ActiveDirectoryPageState extends ConsumerState<ActiveDirectoryPage> {
   void initState() {
     super.initState();
 
-    final model = ref.read(ActiveDirectoryPage.modelProvider);
+    final model = ref.read(activeDirectoryModelProvider);
     model.init();
   }
 
@@ -50,9 +46,8 @@ class _ActiveDirectoryPageState extends ConsumerState<ActiveDirectoryPage> {
             Align(
               alignment: AlignmentDirectional.centerStart,
               child: OutlinedButton(
-                onPressed: ref
-                    .read(ActiveDirectoryPage.modelProvider)
-                    .pingDomainController,
+                onPressed:
+                    ref.read(activeDirectoryModelProvider).pingDomainController,
                 child: Text(lang.activeDirectoryTestConnection),
               ),
             ),
@@ -68,10 +63,10 @@ class _ActiveDirectoryPageState extends ConsumerState<ActiveDirectoryPage> {
         trailing: [
           WizardAction.next(
             context,
-            enabled: ref.watch(
-                ActiveDirectoryPage.modelProvider.select((m) => m.isValid)),
+            enabled: ref
+                .watch(activeDirectoryModelProvider.select((m) => m.isValid)),
             onNext: () async {
-              final model = ref.read(ActiveDirectoryPage.modelProvider);
+              final model = ref.read(activeDirectoryModelProvider);
               await model.save();
               model.getJoinResult().then((result) {
                 if (mounted &&

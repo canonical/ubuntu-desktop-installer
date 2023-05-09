@@ -59,7 +59,7 @@ void main() {
     registerMockService<TelemetryService>(MockTelemetryService());
 
     return ProviderScope(
-      overrides: [SourcePage.modelProvider.overrideWith((_) => model)],
+      overrides: [sourceModelProvider.overrideWith((_) => model)],
       child: const SourcePage(),
     );
   }

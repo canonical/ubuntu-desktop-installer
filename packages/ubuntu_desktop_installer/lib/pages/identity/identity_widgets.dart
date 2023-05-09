@@ -9,7 +9,7 @@ class _RealNameFormField extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final realName =
-        ref.watch(IdentityPage.modelProvider.select((model) => model.realName));
+        ref.watch(identityModelProvider.select((model) => model.realName));
 
     return ValidatedFormField(
       autofocus: true,
@@ -27,7 +27,7 @@ class _RealNameFormField extends ConsumerWidget {
         ),
       ]),
       onChanged: (value) async {
-        final model = ref.read(IdentityPage.modelProvider);
+        final model = ref.read(identityModelProvider);
         model.realName = value;
         await model.validate();
       },
@@ -44,7 +44,7 @@ class _HostnameFormField extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final hostname =
-        ref.watch(IdentityPage.modelProvider.select((model) => model.hostname));
+        ref.watch(identityModelProvider.select((model) => model.hostname));
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -66,7 +66,7 @@ class _HostnameFormField extends ConsumerWidget {
         )
       ]),
       onChanged: (value) {
-        final model = ref.read(IdentityPage.modelProvider);
+        final model = ref.read(identityModelProvider);
         model.hostname = value;
       },
     );
@@ -101,10 +101,10 @@ class _UsernameFormField extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final username =
-        ref.watch(IdentityPage.modelProvider.select((model) => model.username));
+        ref.watch(identityModelProvider.select((model) => model.username));
     final validation = ref.watch(
-        IdentityPage.modelProvider.select((model) => model.usernameValidation));
-    final model = ref.read(IdentityPage.modelProvider);
+        identityModelProvider.select((model) => model.usernameValidation));
+    final model = ref.read(identityModelProvider);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -125,7 +125,7 @@ class _UsernameFormField extends ConsumerWidget {
         ),
       ]),
       onChanged: (value) async {
-        final model = ref.read(IdentityPage.modelProvider);
+        final model = ref.read(identityModelProvider);
         model.username = value;
         await model.validate();
       },
@@ -142,11 +142,11 @@ class _PasswordFormField extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final password =
-        ref.watch(IdentityPage.modelProvider.select((model) => model.password));
-    final passwordStrength = ref.watch(
-        IdentityPage.modelProvider.select((model) => model.passwordStrength));
-    final showPassword = ref.watch(
-        IdentityPage.modelProvider.select((model) => model.showPassword));
+        ref.watch(identityModelProvider.select((model) => model.password));
+    final passwordStrength = ref
+        .watch(identityModelProvider.select((model) => model.passwordStrength));
+    final showPassword =
+        ref.watch(identityModelProvider.select((model) => model.showPassword));
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -157,13 +157,13 @@ class _PasswordFormField extends ConsumerWidget {
       suffixIcon: _ShowPasswordButton(
         value: showPassword,
         onChanged: (value) =>
-            ref.read(IdentityPage.modelProvider).showPassword = value,
+            ref.read(identityModelProvider).showPassword = value,
       ),
       validator: RequiredValidator(
         errorText: lang.whoAreYouPagePasswordRequired,
       ),
       onChanged: (value) {
-        final model = ref.read(IdentityPage.modelProvider);
+        final model = ref.read(identityModelProvider);
         model.password = value;
       },
     );
@@ -179,11 +179,11 @@ class _ConfirmPasswordFormField extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final password =
-        ref.watch(IdentityPage.modelProvider.select((model) => model.password));
+        ref.watch(identityModelProvider.select((model) => model.password));
     final confirmedPassword = ref.watch(
-        IdentityPage.modelProvider.select((model) => model.confirmedPassword));
-    final showPassword = ref.watch(
-        IdentityPage.modelProvider.select((model) => model.showPassword));
+        identityModelProvider.select((model) => model.confirmedPassword));
+    final showPassword =
+        ref.watch(identityModelProvider.select((model) => model.showPassword));
 
     return ValidatedFormField(
       obscureText: !showPassword,
@@ -197,7 +197,7 @@ class _ConfirmPasswordFormField extends ConsumerWidget {
         errorText: lang.whoAreYouPagePasswordMismatch,
       ),
       onChanged: (value) {
-        final model = ref.read(IdentityPage.modelProvider);
+        final model = ref.read(identityModelProvider);
         model.confirmedPassword = value;
       },
     );
@@ -260,12 +260,12 @@ class _UseActiveDirectoryCheckButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final hasActiveDirectorySupport = ref.watch(IdentityPage.modelProvider
+    final hasActiveDirectorySupport = ref.watch(identityModelProvider
         .select((model) => model.hasActiveDirectorySupport));
     final useActiveDirectory = ref.watch(
-        IdentityPage.modelProvider.select((model) => model.useActiveDirectory));
-    final isConnected = ref
-        .watch(IdentityPage.modelProvider.select((model) => model.isConnected));
+        identityModelProvider.select((model) => model.useActiveDirectory));
+    final isConnected =
+        ref.watch(identityModelProvider.select((model) => model.isConnected));
 
     return Visibility(
       visible: hasActiveDirectorySupport != false,
@@ -273,8 +273,7 @@ class _UseActiveDirectoryCheckButton extends ConsumerWidget {
         value: useActiveDirectory,
         title: Text(lang.activeDirectoryOption),
         onChanged: isConnected && hasActiveDirectorySupport == true
-            ? (v) =>
-                ref.read(IdentityPage.modelProvider).useActiveDirectory = v!
+            ? (v) => ref.read(identityModelProvider).useActiveDirectory = v!
             : null,
         subtitle: Text(
           lang.activeDirectoryInfo,
@@ -294,15 +293,15 @@ class _AutoLoginSwitch extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final autoLogin = ref
-        .watch(IdentityPage.modelProvider.select((model) => model.autoLogin));
+    final autoLogin =
+        ref.watch(identityModelProvider.select((model) => model.autoLogin));
 
     return YaruSwitchButton(
       title: Text(lang.whoAreYouPageRequirePassword),
       contentPadding: kContentPadding,
       value: !autoLogin,
       onChanged: (value) {
-        final model = ref.read(IdentityPage.modelProvider);
+        final model = ref.read(identityModelProvider);
         model.autoLogin = !value;
       },
     );

@@ -42,7 +42,7 @@ void main() {
     );
     await tester.pumpWidget(
       ProviderScope(overrides: [
-        LocalePage.modelProvider.overrideWith(
+        localeModelProvider.overrideWith(
           (_) => LocaleModel(
               locale: MockLocaleService(), sound: MockSoundService()),
         ),

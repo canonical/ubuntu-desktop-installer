@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -28,6 +29,16 @@ const kMaxHostnameLength = 64;
 
 /// The maximum length for valid usernames
 const kMaxUsernameLength = 32;
+
+final identityModelProvider = ChangeNotifierProvider(
+  (_) => IdentityModel(
+    service: getService<IdentityService>(),
+    activeDirectory: getService<ActiveDirectoryService>(),
+    config: getService<ConfigService>(),
+    network: getService<NetworkService>(),
+    telemetry: getService<TelemetryService>(),
+  ),
+);
 
 /// [IdentityPage]'s view model.
 class IdentityModel extends PropertyStreamNotifier {

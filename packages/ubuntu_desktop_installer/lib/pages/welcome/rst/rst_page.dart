@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -16,12 +14,9 @@ import 'rst_model.dart';
 class RstPage extends ConsumerWidget {
   const RstPage({super.key});
 
-  static final modelProvider = ChangeNotifierProvider<RstModel>(
-      (_) => RstModel(getService<SubiquityClient>()));
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(modelProvider);
+    final model = ref.watch(rstModelProvider);
     final lang = AppLocalizations.of(context);
     return Scaffold(
       body: WizardPage(

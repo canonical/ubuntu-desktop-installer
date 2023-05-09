@@ -22,16 +22,6 @@ class IdentityPage extends ConsumerStatefulWidget {
   /// Creates a the installer page for setting up the user data.
   const IdentityPage({super.key});
 
-  static final modelProvider = ChangeNotifierProvider(
-    (_) => IdentityModel(
-      service: getService<IdentityService>(),
-      activeDirectory: getService<ActiveDirectoryService>(),
-      config: getService<ConfigService>(),
-      network: getService<NetworkService>(),
-      telemetry: getService<TelemetryService>(),
-    ),
-  );
-
   @override
   ConsumerState<IdentityPage> createState() => _IdentityPageState();
 }
@@ -41,7 +31,7 @@ class _IdentityPageState extends ConsumerState<IdentityPage> {
   void initState() {
     super.initState();
 
-    final model = ref.read(IdentityPage.modelProvider);
+    final model = ref.read(identityModelProvider);
     model.init();
   }
 
@@ -97,11 +87,10 @@ class _IdentityPageState extends ConsumerState<IdentityPage> {
         trailing: [
           WizardAction.next(
             context,
-            enabled:
-                ref.watch(IdentityPage.modelProvider.select((m) => m.isValid)),
+            enabled: ref.watch(identityModelProvider.select((m) => m.isValid)),
             arguments: ref.watch(
-                IdentityPage.modelProvider.select((m) => m.useActiveDirectory)),
-            onNext: ref.read(IdentityPage.modelProvider).save,
+                identityModelProvider.select((m) => m.useActiveDirectory)),
+            onNext: ref.read(identityModelProvider).save,
           ),
         ],
       ),

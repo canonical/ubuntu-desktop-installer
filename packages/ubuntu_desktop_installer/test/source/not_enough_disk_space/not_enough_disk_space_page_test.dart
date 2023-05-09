@@ -31,7 +31,7 @@ void main() {
   Widget buildPage(NotEnoughDiskSpaceModel model) {
     return ProviderScope(
       overrides: [
-        NotEnoughDiskSpacePage.modelProvider.overrideWith((_) => model),
+        notEnoughDiskSpaceModelProvider.overrideWith((_) => model),
       ],
       child: const NotEnoughDiskSpacePage(),
     );

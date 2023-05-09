@@ -111,7 +111,7 @@ void main() {
 
     return ProviderScope(
       overrides: [
-        ConfirmPage.modelProvider.overrideWith((_) => model),
+        confirmModelProvider.overrideWith((_) => model),
       ],
       child: const ConfirmPage(),
     );

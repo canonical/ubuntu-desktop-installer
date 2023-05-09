@@ -12,12 +12,9 @@ import 'timezone_model.dart';
 
 /// https://github.com/canonical/ubuntu-desktop-installer/issues/38
 class TimezonePage extends ConsumerStatefulWidget {
-  const TimezonePage({super.key});
+  const TimezonePage({super.key, this.controller});
 
-  static final modelProvider = ChangeNotifierProvider(
-      (_) => TimezoneModel(getService<TimezoneService>()));
-  static final controllerProvider = ChangeNotifierProvider(
-      (_) => TimezoneController(service: getService<GeoService>()));
+  final TimezoneController? controller;
 
   @override
   TimezonePageState createState() => TimezonePageState();
@@ -25,17 +22,29 @@ class TimezonePage extends ConsumerStatefulWidget {
 
 @visibleForTesting
 class TimezonePageState extends ConsumerState<TimezonePage> {
+  late final TimezoneController _controller;
+
   @override
   void initState() {
     super.initState();
 
-    final model = ref.read(TimezonePage.modelProvider);
-    final controller = ref.read(TimezonePage.controllerProvider);
+    _controller = widget.controller ??
+        TimezoneController(service: getService<GeoService>());
+
+    final model = ref.read(timezoneModelProvider);
     model.init().then((timezone) {
-      controller.searchTimezone(timezone).then((timezones) {
-        controller.selectTimezone(timezones.firstOrNull);
+      _controller.searchTimezone(timezone).then((timezones) {
+        _controller.selectTimezone(timezones.firstOrNull);
       });
     });
+  }
+
+  @override
+  void dispose() {
+    if (widget.controller == null) {
+      _controller.dispose();
+    }
+    super.dispose();
   }
 
   String formatLocation(GeoLocation? location) {
@@ -48,7 +57,6 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = ref.watch(TimezonePage.controllerProvider);
     final lang = AppLocalizations.of(context);
 
     return WizardPage(
@@ -65,13 +73,13 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
                 Expanded(
                   child: YaruAutocomplete<GeoLocation>(
                     initialValue: TextEditingValue(
-                      text: formatLocation(controller.selectedLocation),
+                      text: formatLocation(_controller.selectedLocation),
                     ),
                     fieldViewBuilder:
                         (context, editor, focusNode, onSubmitted) {
                       if (!focusNode.hasFocus) {
                         editor.text =
-                            formatLocation(controller.selectedLocation);
+                            formatLocation(_controller.selectedLocation);
                       }
                       return TextFormField(
                         focusNode: focusNode,
@@ -84,22 +92,22 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
                     },
                     displayStringForOption: formatLocation,
                     optionsBuilder: (value) {
-                      return controller.searchLocation(value.text);
+                      return _controller.searchLocation(value.text);
                     },
-                    onSelected: controller.selectLocation,
+                    onSelected: _controller.selectLocation,
                   ),
                 ),
                 const SizedBox(width: kContentSpacing),
                 Expanded(
                   child: YaruAutocomplete<GeoLocation>(
                     initialValue: TextEditingValue(
-                      text: formatTimezone(controller.selectedLocation),
+                      text: formatTimezone(_controller.selectedLocation),
                     ),
                     fieldViewBuilder:
                         (context, editor, focusNode, onFieldSubmitted) {
                       if (!focusNode.hasFocus) {
                         editor.text =
-                            formatTimezone(controller.selectedLocation);
+                            formatTimezone(_controller.selectedLocation);
                       }
                       return TextFormField(
                         focusNode: focusNode,
@@ -112,9 +120,9 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
                     },
                     displayStringForOption: formatTimezone,
                     optionsBuilder: (value) {
-                      return controller.searchTimezone(value.text);
+                      return _controller.searchTimezone(value.text);
                     },
-                    onSelected: controller.selectTimezone,
+                    onSelected: _controller.selectTimezone,
                   ),
                 ),
               ],
@@ -124,11 +132,11 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
           Expanded(
             child: TimezoneMap(
               size: TimezoneMapSize.medium,
-              offset: controller.selectedLocation?.offset,
-              marker: controller.selectedLocation?.coordinates,
-              onPressed: (coordinates) => controller
+              offset: _controller.selectedLocation?.offset,
+              marker: _controller.selectedLocation?.coordinates,
+              onPressed: (coordinates) => _controller
                   .searchMap(coordinates)
-                  .then(controller.selectLocation),
+                  .then(_controller.selectLocation),
             ),
           ),
         ],
@@ -142,8 +150,8 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
           WizardAction.next(
             context,
             onNext: () {
-              final model = ref.read(TimezonePage.modelProvider);
-              return model.save(controller.selectedLocation?.timezone);
+              final model = ref.read(timezoneModelProvider);
+              return model.save(_controller.selectedLocation?.timezone);
             },
           ),
         ],

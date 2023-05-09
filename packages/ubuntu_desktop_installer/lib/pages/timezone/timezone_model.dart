@@ -1,8 +1,12 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 final log = Logger('timezone');
+
+final timezoneModelProvider =
+    ChangeNotifierProvider((_) => TimezoneModel(getService<TimezoneService>()));
 
 class TimezoneModel extends SafeChangeNotifier {
   TimezoneModel(this._service);

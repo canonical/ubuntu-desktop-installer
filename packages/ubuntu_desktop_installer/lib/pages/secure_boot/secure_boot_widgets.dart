@@ -5,7 +5,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import 'secure_boot_page.dart';
+import 'secure_boot_model.dart';
 
 class SecurityKeyFormField extends ConsumerWidget {
   const SecurityKeyFormField({
@@ -17,7 +17,7 @@ class SecurityKeyFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(SecureBootPage.modelProvider);
+    final model = ref.watch(secureBootModelProvider);
     final lang = AppLocalizations.of(context);
     return Padding(
       padding: kContentIndentation,
@@ -47,7 +47,7 @@ class SecurityKeyConfirmFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(SecureBootPage.modelProvider);
+    final model = ref.watch(secureBootModelProvider);
     final lang = AppLocalizations.of(context);
     return Padding(
       padding: kContentIndentation,
