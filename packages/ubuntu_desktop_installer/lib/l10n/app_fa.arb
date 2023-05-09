@@ -248,8 +248,6 @@
   "@startInstallingButtonText": {},
   "freeDiskSpace": "فضای آزاد",
   "@freeDiskSpace": {},
-  "partitionFormatReiserFS": "سامانه پروندهٔ ReiserFS",
-  "@partitionFormatReiserFS": {},
   "partitionMountPointLabel": "نقطهٔ سوار کردن:",
   "@partitionMountPointLabel": {},
   "whoAreYouPageRealNameLabel": "نامتان",
