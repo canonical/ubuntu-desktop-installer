@@ -155,8 +155,6 @@
       "color": {}
     }
   },
-  "partitionFormatFat16": "Sistema de archivos FAT16",
-  "@partitionFormatFat16": {},
   "shutdown": "Apagar",
   "@shutdown": {},
   "turnOffBitlockerTitle": "BitLocker está activado",
