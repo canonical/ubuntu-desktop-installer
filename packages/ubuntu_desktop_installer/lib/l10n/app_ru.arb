@@ -167,8 +167,6 @@
   "@whoAreYouPageRealNameLabel": {},
   "whoAreYouPageComputerNameLabel": "Имя компьютера",
   "@whoAreYouPageComputerNameLabel": {},
-  "partitionFormatReiserFS": "Файловая система ReiserFS",
-  "@partitionFormatReiserFS": {},
   "partitionErase": "Форматировать раздел",
   "@partitionErase": {},
   "partitionMountPointLabel": "Точка монтирования:",
