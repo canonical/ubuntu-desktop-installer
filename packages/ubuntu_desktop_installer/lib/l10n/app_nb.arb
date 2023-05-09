@@ -425,8 +425,6 @@
   "@whoAreYouPageComputerNameRequired": {},
   "whoAreYouPageComputerNameInfo": "Navn brukt ved kommunikasjon med andre datamaskiner.",
   "@whoAreYouPageComputerNameInfo": {},
-  "partitionFormatFat": "FAT-filsystem",
-  "@partitionFormatFat": {},
   "partitionFormatFat12": "FAT12-filsystem",
   "@partitionFormatFat12": {},
   "partitionFormatFat16": "FAT16-filsystem",
