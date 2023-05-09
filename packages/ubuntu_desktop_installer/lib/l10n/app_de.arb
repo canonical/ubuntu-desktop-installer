@@ -250,8 +250,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Verwendet als:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat12": "FAT12-Dateisystem",
-  "@partitionFormatFat12": {},
   "partitionFormatFat16": "FAT16-Dateisystem",
   "@partitionFormatFat16": {},
   "partitionFormatFat32": "FAT32-Dateisystem",
