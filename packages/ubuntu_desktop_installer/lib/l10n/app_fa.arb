@@ -754,8 +754,6 @@
   "@tooManyPrimaryPartitions": {},
   "partitionFormatLabel": "استفاده شده برای:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt2": "سامانه پروندهٔ Ext2",
-  "@partitionFormatExt2": {},
   "welcomePageTitle": "به {DISTRO} خوش آمدید",
   "@welcomePageTitle": {
     "type": "text",
