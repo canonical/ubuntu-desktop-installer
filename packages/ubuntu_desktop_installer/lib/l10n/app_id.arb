@@ -327,8 +327,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Dipakai sebagai:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat32": "Sistem berkas FAT32",
-  "@partitionFormatFat32": {},
   "whoAreYouPagePasswordMismatch": "Kata sandi tidak cocok",
   "@whoAreYouPagePasswordMismatch": {},
   "writeChangesPartitionsHeader": "Partisi berikut akan diformat:",
