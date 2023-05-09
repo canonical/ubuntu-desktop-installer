@@ -834,8 +834,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Použité ako:",
   "@partitionFormatLabel": {},
-  "partitionFormatBtrfs": "Žurnálovací súborový systém btrfs",
-  "@partitionFormatBtrfs": {},
   "partitionFormatFat": "Súborový systém FAT",
   "@partitionFormatFat": {},
   "partitionFormatFat32": "Súborový systém FAT32",
