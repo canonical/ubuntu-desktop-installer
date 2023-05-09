@@ -295,8 +295,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Används som:",
   "@partitionFormatLabel": {},
-  "partitionFormatIso9660": "ISO 9960 filsystem",
-  "@partitionFormatIso9660": {},
   "partitionFormatVfat": "VFAT filsystem",
   "@partitionFormatVfat": {},
   "partitionFormatNtfs": "NTFS filsystem",
