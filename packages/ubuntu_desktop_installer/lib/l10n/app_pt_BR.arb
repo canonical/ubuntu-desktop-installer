@@ -229,8 +229,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizado como:",
   "@partitionFormatLabel": {},
-  "partitionFormatXfs": "Sistema de arquivos XFS com journaling",
-  "@partitionFormatXfs": {},
   "partitionFormatFat": "Sistema de arquivos FAT",
   "@partitionFormatFat": {},
   "partitionFormatFat12": "Sistema de arquivos FAT12",
