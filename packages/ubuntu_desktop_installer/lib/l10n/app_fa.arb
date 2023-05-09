@@ -573,8 +573,6 @@
   "@whoAreYouPageRequirePassword": {},
   "whoAreYouPageComputerNameInfo": "نامی که هنگام صحبت با دیگر رایانه‌ها استفاده می‌کند.",
   "@whoAreYouPageComputerNameInfo": {},
-  "partitionFormatJfs": "سامانه پروندهٔ ثبت شدهٔ JFS",
-  "@partitionFormatJfs": {},
   "partitionLocationLabel": "مکان افراز جدید:",
   "@partitionLocationLabel": {},
   "whoAreYouPageComputerNameRequired": "نام رایانه‌ای لازم است",
