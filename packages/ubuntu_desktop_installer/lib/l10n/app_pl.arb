@@ -273,8 +273,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Używana jako:",
   "@partitionFormatLabel": {},
-  "partitionFormatVfat": "System plików VFAT",
-  "@partitionFormatVfat": {},
   "partitionFormatZfsroot": "System plików root ZFS",
   "@partitionFormatZfsroot": {},
   "partitionErase": "Sformatuj partycję",
