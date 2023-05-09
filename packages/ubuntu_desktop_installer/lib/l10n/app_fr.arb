@@ -285,8 +285,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Utilisée comme :",
   "@partitionFormatLabel": {},
-  "partitionFormatVfat": "Système de fichiers VFAT",
-  "@partitionFormatVfat": {},
   "partitionFormatNtfs": "Système de fichiers NTFS",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "Système de fichiers ReiserFS",
