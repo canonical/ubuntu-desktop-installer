@@ -314,8 +314,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "בשימוש בתור:",
   "@partitionFormatLabel": {},
-  "partitionFormatBtrfs": "מערכת קבצים מתועדת מסוג btrfs",
-  "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "מערכת קבצים מתועדת מסוג JFS",
   "@partitionFormatJfs": {},
   "partitionFormatXfs": "מערכת קבצים מתועדת מסוג XFS",
