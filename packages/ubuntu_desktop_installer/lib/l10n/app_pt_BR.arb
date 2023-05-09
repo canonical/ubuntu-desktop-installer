@@ -229,8 +229,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizado como:",
   "@partitionFormatLabel": {},
-  "partitionFormatSwap": "Espaço de Swap",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "Sistema de arquivos ISO 9660",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "Sistema de arquivos VFAT",
