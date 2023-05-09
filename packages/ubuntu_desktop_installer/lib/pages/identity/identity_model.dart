@@ -35,10 +35,12 @@ class IdentityModel extends PropertyStreamNotifier {
   /// Creates the model with the given client.
   IdentityModel({
     required SubiquityClient client,
+    required ActiveDirectoryService activeDirectory,
     required ConfigService config,
     required NetworkService network,
     required TelemetryService telemetry,
   })  : _client = client,
+        _activeDirectory = activeDirectory,
         _config = config,
         _network = network,
         _telemetry = telemetry {
@@ -61,6 +63,7 @@ class IdentityModel extends PropertyStreamNotifier {
   }
 
   final SubiquityClient _client;
+  final ActiveDirectoryService _activeDirectory;
   final ConfigService _config;
   final NetworkService _network;
   final TelemetryService _telemetry;
@@ -160,8 +163,7 @@ class IdentityModel extends PropertyStreamNotifier {
     log.info('Read product name: ${_productName.value}');
 
     _autoLogin.value = await _config.get(kAutoLoginUser) != null;
-    _hasActiveDirectorySupport.value =
-        await _client.hasActiveDirectorySupport();
+    _hasActiveDirectorySupport.value = await _activeDirectory.hasSupport();
   }
 
   /// The auto-login user config key for testing purposes.
@@ -191,7 +193,7 @@ class IdentityModel extends PropertyStreamNotifier {
       // the active directory endpoint is not optional so we need to explicitly
       // mark it as configured even if not used to avoid subiquity getting stuck
       // at waiting for it to be configured.
-      await _client.markConfigured(['active_directory']);
+      await _activeDirectory.markConfigured();
     }
 
     return _client.setIdentity(identity);

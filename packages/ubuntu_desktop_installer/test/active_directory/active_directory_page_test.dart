@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';

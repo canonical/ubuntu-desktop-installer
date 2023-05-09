@@ -7,9 +7,9 @@ import 'dart:async' as _i3;
 import 'dart:ui' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i4;
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart'
     as _i2;
+import 'package:ubuntu_desktop_installer/services.dart' as _i4;
 import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i6;
 
 // ignore_for_file: type=lint
