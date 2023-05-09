@@ -327,8 +327,6 @@
   "@selectGuidedStorageInstallNow": {},
   "partitionLocationEnd": "Tilan loppu",
   "@partitionLocationEnd": {},
-  "partitionFormatFat16": "FAT16-tiedostojärjestelmä",
-  "@partitionFormatFat16": {},
   "partitionFormatFat32": "FAT32-tiedostojärjestelmä",
   "@partitionFormatFat32": {},
   "partitionFormatSwap": "Sivutusosio (swap)",
