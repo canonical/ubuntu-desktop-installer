@@ -364,8 +364,6 @@
   "@partitionLocationBeginning": {},
   "partitionLocationEnd": "Bu alanın sonu",
   "@partitionLocationEnd": {},
-  "partitionFormatExt2": "Ext2 dosya sistemi",
-  "@partitionFormatExt2": {},
   "partitionFormatFat": "FAT dosya sistemi",
   "@partitionFormatFat": {},
   "writeChangesToDisk": "Kuruluma hazır",
