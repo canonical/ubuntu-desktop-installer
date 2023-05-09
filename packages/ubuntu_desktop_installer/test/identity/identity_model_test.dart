@@ -356,8 +356,7 @@ void main() {
       expect(model.isValid, matcher);
     }
 
-    // any field missing
-    testValid('', 'host', 'user', 'passwd', 'passwd', isFalse);
+    // required field missing
     testValid('real', '', 'user', 'passwd', 'passwd', isFalse);
     testValid('real', 'host', '', 'passwd', 'passwd', isFalse);
     testValid('real', 'host', 'user', '', 'passwd', isFalse);
@@ -386,7 +385,8 @@ void main() {
     testValid('real', 'host', 'user', 'passwd', 'passwd', isTrue);
     testValid('real', 'host', 'user', 'passwd', 'mismatch', isFalse);
 
-    // reale name validation
+    // real name validation
+    testValid('', 'host', 'user', 'passwd', 'passwd', isTrue);
     testValid(
         'these are slightly more than the allowed one hundred and sixty characters for the extraordinarily lengthy name of the user who is currently running the installer',
         'host',
