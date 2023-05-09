@@ -93,8 +93,6 @@
   "@newPartitionTableConfirmationMessage": {},
   "partitionLocationEnd": "A hely vége",
   "@partitionLocationEnd": {},
-  "partitionFormatFat": "FAT fájlrendszer",
-  "@partitionFormatFat": {},
   "partitionFormatFat12": "FAT12 fájlrendszer",
   "@partitionFormatFat12": {},
   "partitionFormatFat16": "FAT16 fájlrendszer",
