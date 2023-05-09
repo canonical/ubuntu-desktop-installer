@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -25,7 +24,7 @@ class IdentityPage extends ConsumerStatefulWidget {
 
   static final modelProvider = ChangeNotifierProvider(
     (_) => IdentityModel(
-      client: getService<SubiquityClient>(),
+      service: getService<IdentityService>(),
       activeDirectory: getService<ActiveDirectoryService>(),
       config: getService<ConfigService>(),
       network: getService<NetworkService>(),

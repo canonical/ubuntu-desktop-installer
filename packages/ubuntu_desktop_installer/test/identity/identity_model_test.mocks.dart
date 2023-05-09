@@ -5,16 +5,17 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i5;
 
-import 'package:dbus/dbus.dart' as _i8;
+import 'package:dbus/dbus.dart' as _i9;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:nm/nm.dart' as _i3;
 import 'package:subiquity_client/subiquity_client.dart' as _i2;
 import 'package:ubuntu_desktop_installer/services/active_directory_service.dart'
     as _i4;
 import 'package:ubuntu_desktop_installer/services/config_service.dart' as _i6;
-import 'package:ubuntu_desktop_installer/services/network_service.dart' as _i7;
+import 'package:ubuntu_desktop_installer/services/identity_service.dart' as _i7;
+import 'package:ubuntu_desktop_installer/services/network_service.dart' as _i8;
 import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
-    as _i9;
+    as _i10;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -38,9 +39,19 @@ class _FakeAdConnectionInfo_0 extends _i1.SmartFake
         );
 }
 
-class _FakeNetworkManagerSettings_1 extends _i1.SmartFake
+class _FakeIdentityData_1 extends _i1.SmartFake implements _i2.IdentityData {
+  _FakeIdentityData_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
+class _FakeNetworkManagerSettings_2 extends _i1.SmartFake
     implements _i3.NetworkManagerSettings {
-  _FakeNetworkManagerSettings_1(
+  _FakeNetworkManagerSettings_2(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -49,9 +60,9 @@ class _FakeNetworkManagerSettings_1 extends _i1.SmartFake
         );
 }
 
-class _FakeNetworkManagerDnsManager_2 extends _i1.SmartFake
+class _FakeNetworkManagerDnsManager_3 extends _i1.SmartFake
     implements _i3.NetworkManagerDnsManager {
-  _FakeNetworkManagerDnsManager_2(
+  _FakeNetworkManagerDnsManager_3(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -60,9 +71,9 @@ class _FakeNetworkManagerDnsManager_2 extends _i1.SmartFake
         );
 }
 
-class _FakeNetworkManagerActiveConnection_3 extends _i1.SmartFake
+class _FakeNetworkManagerActiveConnection_4 extends _i1.SmartFake
     implements _i3.NetworkManagerActiveConnection {
-  _FakeNetworkManagerActiveConnection_3(
+  _FakeNetworkManagerActiveConnection_4(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -227,10 +238,54 @@ class MockConfigService extends _i1.Mock implements _i6.ConfigService {
       ) as _i5.Future<void>);
 }
 
+/// A class which mocks [IdentityService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockIdentityService extends _i1.Mock implements _i7.IdentityService {
+  MockIdentityService() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i5.Future<_i2.IdentityData> getIdentity() => (super.noSuchMethod(
+        Invocation.method(
+          #getIdentity,
+          [],
+        ),
+        returnValue: _i5.Future<_i2.IdentityData>.value(_FakeIdentityData_1(
+          this,
+          Invocation.method(
+            #getIdentity,
+            [],
+          ),
+        )),
+      ) as _i5.Future<_i2.IdentityData>);
+  @override
+  _i5.Future<void> setIdentity(_i2.IdentityData? identity) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setIdentity,
+          [identity],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+  @override
+  _i5.Future<_i2.UsernameValidation> validateUsername(String? username) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #validateUsername,
+          [username],
+        ),
+        returnValue:
+            _i5.Future<_i2.UsernameValidation>.value(_i2.UsernameValidation.OK),
+      ) as _i5.Future<_i2.UsernameValidation>);
+}
+
 /// A class which mocks [NetworkService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockNetworkService extends _i1.Mock implements _i7.NetworkService {
+class MockNetworkService extends _i1.Mock implements _i8.NetworkService {
   MockNetworkService() {
     _i1.throwOnMissingStub(this);
   }
@@ -371,7 +426,7 @@ class MockNetworkService extends _i1.Mock implements _i7.NetworkService {
   @override
   _i3.NetworkManagerSettings get settings => (super.noSuchMethod(
         Invocation.getter(#settings),
-        returnValue: _FakeNetworkManagerSettings_1(
+        returnValue: _FakeNetworkManagerSettings_2(
           this,
           Invocation.getter(#settings),
         ),
@@ -379,13 +434,13 @@ class MockNetworkService extends _i1.Mock implements _i7.NetworkService {
   @override
   _i3.NetworkManagerDnsManager get dnsManager => (super.noSuchMethod(
         Invocation.getter(#dnsManager),
-        returnValue: _FakeNetworkManagerDnsManager_2(
+        returnValue: _FakeNetworkManagerDnsManager_3(
           this,
           Invocation.getter(#dnsManager),
         ),
       ) as _i3.NetworkManagerDnsManager);
   @override
-  Map<String, Map<String, _i8.DBusValue>> getWifiSettings(
+  Map<String, Map<String, _i9.DBusValue>> getWifiSettings(
           {required String? ssid}) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -393,8 +448,8 @@ class MockNetworkService extends _i1.Mock implements _i7.NetworkService {
           [],
           {#ssid: ssid},
         ),
-        returnValue: <String, Map<String, _i8.DBusValue>>{},
-      ) as Map<String, Map<String, _i8.DBusValue>>);
+        returnValue: <String, Map<String, _i9.DBusValue>>{},
+      ) as Map<String, Map<String, _i9.DBusValue>>);
   @override
   _i5.Future<void> markConfigured() => (super.noSuchMethod(
         Invocation.method(
@@ -443,7 +498,7 @@ class MockNetworkService extends _i1.Mock implements _i7.NetworkService {
       ) as _i5.Future<void>);
   @override
   _i5.Future<_i3.NetworkManagerActiveConnection> addAndActivateConnection({
-    Map<String, Map<String, _i8.DBusValue>>? connection = const {},
+    Map<String, Map<String, _i9.DBusValue>>? connection = const {},
     required _i3.NetworkManagerDevice? device,
     _i3.NetworkManagerAccessPoint? accessPoint,
   }) =>
@@ -458,7 +513,7 @@ class MockNetworkService extends _i1.Mock implements _i7.NetworkService {
           },
         ),
         returnValue: _i5.Future<_i3.NetworkManagerActiveConnection>.value(
-            _FakeNetworkManagerActiveConnection_3(
+            _FakeNetworkManagerActiveConnection_4(
           this,
           Invocation.method(
             #addAndActivateConnection,
@@ -488,7 +543,7 @@ class MockNetworkService extends _i1.Mock implements _i7.NetworkService {
           },
         ),
         returnValue: _i5.Future<_i3.NetworkManagerActiveConnection>.value(
-            _FakeNetworkManagerActiveConnection_3(
+            _FakeNetworkManagerActiveConnection_4(
           this,
           Invocation.method(
             #activateConnection,
@@ -526,7 +581,7 @@ class MockNetworkService extends _i1.Mock implements _i7.NetworkService {
 /// A class which mocks [TelemetryService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTelemetryService extends _i1.Mock implements _i9.TelemetryService {
+class MockTelemetryService extends _i1.Mock implements _i10.TelemetryService {
   MockTelemetryService() {
     _i1.throwOnMissingStub(this);
   }
