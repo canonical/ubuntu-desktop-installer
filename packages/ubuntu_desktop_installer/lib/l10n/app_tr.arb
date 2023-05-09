@@ -196,8 +196,6 @@
   "@newPartitionTableConfirmationTitle": {},
   "partitionCreateTitle": "Bölüm oluştur",
   "@partitionCreateTitle": {},
-  "partitionFormatZfsroot": "ZFS root dosya sistemi",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "Bölümü biçimlendir",
   "@partitionErase": {},
   "partitionMountPointLabel": "Bağlama noktası:",
