@@ -285,8 +285,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Utilisée comme :",
   "@partitionFormatLabel": {},
-  "partitionFormatZfsroot": "Système de fichiers racine ZFS",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "Formatter la partition",
   "@partitionErase": {},
   "partitionMountPointLabel": "Point de montage :",
