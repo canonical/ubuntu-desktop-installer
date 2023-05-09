@@ -250,8 +250,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Verwendet als:",
   "@partitionFormatLabel": {},
-  "partitionFormatZfsroot": "ZFS-Root-Dateisystem",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "Partition formatieren",
   "@partitionErase": {},
   "partitionMountPointLabel": "Einhängepunkt:",
