@@ -537,8 +537,6 @@
   },
   "partitionSizeLabel": "Dydis:",
   "@partitionSizeLabel": {},
-  "partitionFormatSwap": "Mainų sritis",
-  "@partitionFormatSwap": {},
   "partitionFormatZfsroot": "ZFS šakninė failų sistema",
   "@partitionFormatZfsroot": {},
   "partitionErase": "Formatuoti skaidinį",
