@@ -65,8 +65,6 @@
   "@partitionFormatFat": {},
   "partitionFormatNtfs": "NTFS 파일 시스템",
   "@partitionFormatNtfs": {},
-  "partitionFormatJfs": "JFS 저널링 파일 시스템",
-  "@partitionFormatJfs": {},
   "partitionFormatXfs": "XFS 저널링 파일 시스템",
   "@partitionFormatXfs": {},
   "partitionFormatReiserFS": "ReiserFS 파일 시스템",
