@@ -341,8 +341,6 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല",
   "@whoAreYouPagePasswordMismatch": {},
-  "partitionFormatZfsroot": "ZFS root ഫയൽ സിസ്റ്റം",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "പാർട്ടീഷൻ ഫോർമാറ്റ് ചെയ്യുക",
   "@partitionErase": {},
   "partitionMountPointLabel": "മൗണ്ട് പോയിന്റ്:",
