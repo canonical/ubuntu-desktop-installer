@@ -155,8 +155,6 @@
   "@partitionFormatXfs": {},
   "partitionFormatFat": "Файловая система FAT",
   "@partitionFormatFat": {},
-  "partitionFormatBtrfs": "Журналируемая файловая система btrfs",
-  "@partitionFormatBtrfs": {},
   "partitionUnitB": "Б",
   "@partitionUnitB": {},
   "partitionUnitKB": "КБ",
