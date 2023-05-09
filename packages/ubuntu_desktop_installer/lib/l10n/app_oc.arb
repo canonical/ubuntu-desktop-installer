@@ -134,8 +134,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizada coma :",
   "@partitionFormatLabel": {},
-  "partitionFormatXfs": "sistèma de fichièr de jornalizacion XFS",
-  "@partitionFormatXfs": {},
   "partitionFormatFat16": "sistèma de fichièr FAT16",
   "@partitionFormatFat16": {},
   "partitionFormatFat32": "sistèma de fichièr FAT32",
