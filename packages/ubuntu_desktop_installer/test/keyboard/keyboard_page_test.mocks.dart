@@ -40,16 +40,6 @@ class MockKeyboardModel extends _i1.Mock implements _i2.KeyboardModel {
         returnValue: 0,
       ) as int);
   @override
-  _i3.Stream<int> get onLayoutSelected => (super.noSuchMethod(
-        Invocation.getter(#onLayoutSelected),
-        returnValue: _i3.Stream<int>.empty(),
-      ) as _i3.Stream<int>);
-  @override
-  _i3.Stream<int> get onVariantSelected => (super.noSuchMethod(
-        Invocation.getter(#onVariantSelected),
-        returnValue: _i3.Stream<int>.empty(),
-      ) as _i3.Stream<int>);
-  @override
   int get variantCount => (super.noSuchMethod(
         Invocation.getter(#variantCount),
         returnValue: 0,
@@ -167,14 +157,6 @@ class MockKeyboardModel extends _i1.Mock implements _i2.KeyboardModel {
         returnValueForMissingStub: _i3.Future<void>.value(),
       ) as _i3.Future<void>);
   @override
-  void dispose() => super.noSuchMethod(
-        Invocation.method(
-          #dispose,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
   void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
@@ -187,6 +169,14 @@ class MockKeyboardModel extends _i1.Mock implements _i2.KeyboardModel {
         Invocation.method(
           #removeListener,
           [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
         ),
         returnValueForMissingStub: null,
       );

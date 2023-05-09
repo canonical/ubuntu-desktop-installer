@@ -2,45 +2,46 @@ import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_detector.dart';
+import 'package:ubuntu_desktop_installer/services/keyboard_service.dart';
+
+import 'keyboard_model_test.mocks.dart';
 
 void main() {
   test('init', () async {
-    final client = MockSubiquityClient();
-    when(client.getKeyboardStep('0')).thenAnswer((_) async {
+    final service = MockKeyboardService();
+    when(service.getKeyboardStep('0')).thenAnswer((_) async {
       return const AnyStep.stepPressKey(keycodes: {}, symbols: ['a', 'b', 'c']);
     });
 
-    final detector = KeyboardDetector(client);
+    final detector = KeyboardDetector(service);
     await detector.init();
-    verify(client.getKeyboardStep('0')).called(1);
+    verify(service.getKeyboardStep('0')).called(1);
 
     expect(detector.value, isA<StepPressKey>());
     expect(detector.pressKey, equals(['a', 'b', 'c']));
   });
 
   test('key press', () async {
-    final client = MockSubiquityClient();
-    when(client.getKeyboardStep('0')).thenAnswer((_) async {
+    final service = MockKeyboardService();
+    when(service.getKeyboardStep('0')).thenAnswer((_) async {
       return const AnyStep.stepPressKey(
         symbols: ['a', 'b', 'c'],
         keycodes: {12: '34'},
       );
     });
-    when(client.getKeyboardStep('34')).thenAnswer((_) async {
+    when(service.getKeyboardStep('34')).thenAnswer((_) async {
       return const AnyStep.stepKeyPresent(symbol: '56', yes: '', no: '');
     });
 
-    final detector = KeyboardDetector(client);
+    final detector = KeyboardDetector(service);
     await detector.init();
 
     final waitNotify = Completer();
     detector.addListener(waitNotify.complete);
 
     detector.press(12);
-    verify(client.getKeyboardStep('34')).called(1);
+    verify(service.getKeyboardStep('34')).called(1);
 
     await waitNotify.future;
     detector.removeListener(waitNotify.complete);
@@ -50,14 +51,14 @@ void main() {
   });
 
   test('key present', () async {
-    final client = MockSubiquityClient();
-    when(client.getKeyboardStep('78')).thenAnswer((_) async {
+    final service = MockKeyboardService();
+    when(service.getKeyboardStep('78')).thenAnswer((_) async {
       return const AnyStep.stepResult(layout: 'is', variant: 'present');
     });
 
     late AnyStep result;
     final detector = KeyboardDetector(
-      client,
+      service,
       value: const AnyStep.stepKeyPresent(symbol: 'y', yes: '78', no: ''),
       onResult: (value) => result = value,
     );
@@ -66,7 +67,7 @@ void main() {
     detector.addListener(waitNotify.complete);
 
     detector.yes();
-    verify(client.getKeyboardStep('78')).called(1);
+    verify(service.getKeyboardStep('78')).called(1);
 
     await waitNotify.future;
     detector.removeListener(waitNotify.complete);
@@ -76,14 +77,14 @@ void main() {
   });
 
   test('key not present', () async {
-    final client = MockSubiquityClient();
-    when(client.getKeyboardStep('90')).thenAnswer((_) async {
+    final service = MockKeyboardService();
+    when(service.getKeyboardStep('90')).thenAnswer((_) async {
       return const AnyStep.stepResult(layout: 'not', variant: 'present');
     });
 
     late AnyStep result;
     final detector = KeyboardDetector(
-      client,
+      service,
       value: const AnyStep.stepKeyPresent(symbol: 'n', yes: '', no: '90'),
       onResult: (value) => result = value,
     );
@@ -92,7 +93,7 @@ void main() {
     detector.addListener(waitNotify.complete);
 
     detector.no();
-    verify(client.getKeyboardStep('90')).called(1);
+    verify(service.getKeyboardStep('90')).called(1);
 
     await waitNotify.future;
     detector.removeListener(waitNotify.complete);

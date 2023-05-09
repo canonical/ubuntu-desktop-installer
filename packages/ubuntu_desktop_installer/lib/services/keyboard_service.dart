@@ -1,12 +1,21 @@
 import 'package:subiquity_client/subiquity_client.dart';
 
 export 'package:subiquity_client/subiquity_client.dart'
-    show KeyboardLayout, KeyboardSetting, KeyboardSetup, KeyboardVariant;
+    show
+        AnyStep,
+        KeyboardLayout,
+        KeyboardSetting,
+        KeyboardSetup,
+        KeyboardVariant,
+        StepKeyPresent,
+        StepPressKey,
+        StepResult;
 
 abstract class KeyboardService {
   Future<KeyboardSetup> getKeyboard();
   Future<void> setKeyboard(KeyboardSetting setting);
   Future<void> setInputSource(KeyboardSetting setting, {String? user});
+  Future<AnyStep> getKeyboardStep([String step = '0']);
 }
 
 class SubiquityKeyboardService implements KeyboardService {
@@ -25,5 +34,10 @@ class SubiquityKeyboardService implements KeyboardService {
   @override
   Future<void> setInputSource(KeyboardSetting setting, {String? user}) {
     return _subiquity.setInputSource(setting, user: user);
+  }
+
+  @override
+  Future<AnyStep> getKeyboardStep([String step = '0']) {
+    return _subiquity.getKeyboardStep(step);
   }
 }
