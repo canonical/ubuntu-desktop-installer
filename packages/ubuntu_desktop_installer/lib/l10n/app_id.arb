@@ -111,8 +111,6 @@
   "@partitionFormatVfat": {},
   "whoAreYouPageConfirmPasswordLabel": "Konfirmasikan kata sandi Anda",
   "@whoAreYouPageConfirmPasswordLabel": {},
-  "partitionFormatIso9660": "Sistem berkas ISO 9660",
-  "@partitionFormatIso9660": {},
   "partitionFormatNtfs": "Sistem berkas NTFS",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "Sistem berkas ReiserFS",
