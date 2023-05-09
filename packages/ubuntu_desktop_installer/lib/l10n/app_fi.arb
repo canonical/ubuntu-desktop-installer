@@ -327,8 +327,6 @@
   "@selectGuidedStorageInstallNow": {},
   "partitionLocationEnd": "Tilan loppu",
   "@partitionLocationEnd": {},
-  "partitionFormatSwap": "Sivutusosio (swap)",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "ISO 9660 -tiedostojärjestelmä",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "VFAT-tiedostojärjestelmä",
