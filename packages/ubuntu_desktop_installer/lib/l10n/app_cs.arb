@@ -250,8 +250,6 @@
   "@partitionFormatReiserFS": {},
   "partitionFormatNtfs": "Souborový systém NTFS",
   "@partitionFormatNtfs": {},
-  "partitionFormatVfat": "Souborový systém VFAT",
-  "@partitionFormatVfat": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
