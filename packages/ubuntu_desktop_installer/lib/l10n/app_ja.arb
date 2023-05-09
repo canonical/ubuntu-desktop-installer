@@ -272,8 +272,6 @@
   "@whoAreYouPageTitle": {},
   "whoAreYouPageRequirePassword": "ログイン時にパスワードを要求する",
   "@whoAreYouPageRequirePassword": {},
-  "partitionFormatXfs": "XFS ジャーナリングファイルシステム",
-  "@partitionFormatXfs": {},
   "partitionFormatFat16": "FAT16 ファイルシステム",
   "@partitionFormatFat16": {},
   "whoAreYouPageAutoLogin": "自動的にログインする",
