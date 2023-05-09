@@ -387,8 +387,6 @@
       "system": {}
     }
   },
-  "partitionFormatXfs": "Sistema de archivos transaccional XFS",
-  "@partitionFormatXfs": {},
   "partitionFormatZfsroot": "Sistema de archivos raíz ZFS",
   "@partitionFormatZfsroot": {},
   "photoSlideShotcut": "Editor de vídeos Shotcut",
