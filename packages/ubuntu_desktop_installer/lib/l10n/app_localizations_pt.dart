@@ -1204,10 +1204,10 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installThirdPartySubtitle => 'Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.';
 
   @override
-  String get installDriversTitle => 'Instalar drives de terceiros de wifi e gráficos';
+  String get installDriversTitle => 'Instalar drivers de terceiros para Wi-Fi e placas gráficas';
 
   @override
-  String get installDriversSubtitle => 'Esses drivers estão sujeitos aos termos de licença incluídos em sua documentação. Eles são proprietários.';
+  String get installDriversSubtitle => 'Esses drivers estão sujeitos aos termos de licença incluídos em suas documentações. Eles são proprietários.';
 
   @override
   String get installCodecsTitle => 'Baixar e instalar suporte para formatos de mídia adicionais';

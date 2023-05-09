@@ -5,7 +5,7 @@ class AppLocalizationsSk extends AppLocalizations {
   AppLocalizationsSk([String locale = 'sk']) : super(locale);
 
   @override
-  String get appTitle => 'Inštalátor Ubuntu pre stolný počítač';
+  String get appTitle => 'Inštalátor Ubuntu Desktop';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -58,7 +58,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get repairInstallation => 'Opraviť inštaláciu';
 
   @override
-  String get repairInstallationDescription => 'Oprava preinštaluje všetok nainštalovaný softvér a nedotkne sa dokumentov alebo nastavení.';
+  String get repairInstallationDescription => 'Opravou preinštalujete všetok nainštalovaný softvér bez toho, aby sa to dotklo dokumentov alebo nastavení.';
 
   @override
   String tryUbuntu(Object RELEASE) {
@@ -77,12 +77,12 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Nainštalovať $RELEASE spoločne z (alebo namiesto) vášho operačného systému. Nemalo by to trvať dlho.';
+    return 'Nainštalujte $RELEASE spoločne z (alebo namiesto) vášho operačného systému. Nemalo by to trvať dlho.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'Mohli by ste mať záujem o prečítanie <a href=\"$url\">poznámok k vydaniu</a>.';
+    return 'Mohli by ste mať záujem o prečítanie si <a href=\"$url\">poznámok k vydaniu</a>.';
   }
 
   @override
@@ -154,10 +154,10 @@ class AppLocalizationsSk extends AppLocalizations {
   String get showSecurityKey => 'Zobraziť kľúč zabezpečenia';
 
   @override
-  String get connectToInternetPageTitle => 'Pripojiť k sieti';
+  String get connectToInternetPageTitle => 'Pripojiť sa k sieti';
 
   @override
-  String get connectToInternetDescription => 'Pripojenie počítača na Internet pomôže Ubuntu nainštalovať akýkoľvek potrebný dodatočný softvér a pomôže vybrať vaše časové pásmo.\n\nPripojte sa Eternetovým káblom, alebo vyberte Wi-Fi sieť';
+  String get connectToInternetDescription => 'Pripojenie počítača na Internet pomôže Ubuntu nainštalovať akýkoľvek potrebný dodatočný softvér a pomôže vybrať vaše časové pásmo.\n\nPripojte sa Ethernetovým káblom, alebo si vyberte Wi-Fi sieť';
 
   @override
   String get useWiredConnection => 'Použiť káblové pripojenie';
@@ -175,10 +175,10 @@ class AppLocalizationsSk extends AppLocalizations {
   String get enableWired => 'Zapnúť káblové';
 
   @override
-  String get selectWifiNetwork => 'Pripojiť k Wi-Fi sieti';
+  String get selectWifiNetwork => 'Pripojiť sa k Wi-Fi sieti';
 
   @override
-  String get hiddenWifiNetwork => 'Pripojiť k skrytej Wi-Fi sieti';
+  String get hiddenWifiNetwork => 'Pripojiť sa k skrytej Wi-Fi sieti';
 
   @override
   String get hiddenWifiNetworkNameLabel => 'Názov siete';
@@ -260,7 +260,7 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Vyberte bezpečnostný kľúč';
+  String get chooseSecurityKeyHint => 'Vyberte si bezpečnostný kľúč';
 
   @override
   String get chooseSecurityKeyConfirmHint => 'Zopakujte zadanie bezpečnostného kľúča';
@@ -302,7 +302,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">UPOZORNENIE:</font> Toto zmaže všetky prípadné aplikácie, dokumenty, fotky, hudbu a všetky ostatné súbory vo všetkých operačných systémoch.';
+    return '<font color=\"$color\">UPOZORNENIE:</font> Týmto zmažete všetky prípadné aplikácie, dokumenty, fotky, hudbu a všetky ostatné súbory vo všetkých operačných systémoch.';
   }
 
   @override
@@ -349,7 +349,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">UPOZORNENIE:</font> Toto zmaže všetky aplikácie, dokumenty, fotky, hudbu a všetky ostatné súbory, nachádzajúce sa v rámci $os.';
+    return '<font color=\"$color\">UPOZORNENIE:</font> Týmto zmažete všetky aplikácie, dokumenty, fotky, hudbu a všetky ostatné súbory, nachádzajúce sa v rámci $os.';
   }
 
   @override
@@ -496,10 +496,10 @@ class AppLocalizationsSk extends AppLocalizations {
   String get partitionTypeLabel => 'Zadajte typ pre nový oddiel:';
 
   @override
-  String get partitionTypePrimary => 'Primárne';
+  String get partitionTypePrimary => 'Primárny';
 
   @override
-  String get partitionTypeLogical => 'Logické';
+  String get partitionTypeLogical => 'Logický';
 
   @override
   String get partitionLocationLabel => 'Umiestnenie nového oddielu:';
@@ -697,7 +697,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get chooseYourLookPageTitle => 'Vyberte si motív vzhľadu';
 
   @override
-  String get chooseYourLookPageHeader => 'Toto je možné neskôr kedykoľvek zmeniť v nastaveniach vzhľadu.';
+  String get chooseYourLookPageHeader => 'Môžete ho neskôr kedykoľvek zmeniť v nastaveniach vzhľadu.';
 
   @override
   String get chooseYourLookPageDarkSetting => 'Tmavý';
@@ -760,7 +760,7 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Vyberte svoje časové pásmo';
+  String get whereAreYouPageTitle => 'Vyberte si svoje časové pásmo';
 
   @override
   String get whereAreYouLocationLabel => 'Umiestnenie';
@@ -966,7 +966,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Vyžadované';
 
   @override
-  String get activeDirectoryErrorTitle => 'Chyba pri nastavovaní pre Active Directory';
+  String get activeDirectoryErrorTitle => 'Chyba pri konfigurácii pripojenia k Active Directory';
 
   @override
   String get activeDirectoryErrorMessage => 'Je nám ľúto, v tejto chvíli sa nedarí nastaviť službu Active Directory. Po spustení systému navštívte stránku <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kde získate ďalšie informácie.';
