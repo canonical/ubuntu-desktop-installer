@@ -6,9 +6,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'widget_testers.dart';
 
-// ignore_for_file: invalid_use_of_visible_for_testing_member
-// ignore_for_file: type=lint
-
 /// Waits until the specified file has been written on the disk, as in, it
 /// exists and is not empty.
 Future<void> waitForFile(
@@ -16,7 +13,7 @@ Future<void> waitForFile(
   Duration limit = const Duration(seconds: 10),
 ]) async {
   assert(limit.inMilliseconds >= 250);
-  final delay = Duration(milliseconds: 250);
+  const delay = Duration(milliseconds: 250);
 
   await Future.doWhile(() {
     return Future.delayed(delay).then((_) {
@@ -95,7 +92,7 @@ extension IntegrationTester on WidgetTester {
     Duration timeout = const Duration(seconds: 10),
   ]) async {
     assert(timeout.inMilliseconds >= 250);
-    final delay = Duration(milliseconds: 250);
+    const delay = Duration(milliseconds: 250);
 
     if (any(finder)) return;
 
