@@ -397,8 +397,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Brukt som:",
   "@partitionFormatLabel": {},
-  "partitionFormatNtfs": "NTFS-filsystem",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "ReiserFS-filsystem",
   "@partitionFormatReiserFS": {},
   "partitionErase": "Formater partisjonen",
