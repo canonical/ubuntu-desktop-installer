@@ -246,8 +246,6 @@
   "@partitionErase": {},
   "partitionFormatZfsroot": "Kořenový souborový systém na ZFS",
   "@partitionFormatZfsroot": {},
-  "partitionFormatReiserFS": "Souborový systém ReiserFS",
-  "@partitionFormatReiserFS": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
