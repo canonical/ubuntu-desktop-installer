@@ -61,8 +61,6 @@
   "@installationTypeAdvancedTitle": {},
   "newPartitionTable": "새 파티션 테이블",
   "@newPartitionTable": {},
-  "partitionFormatReiserFS": "ReiserFS 파일 시스템",
-  "@partitionFormatReiserFS": {},
   "whoAreYouPageRealNameLabel": "이름",
   "@whoAreYouPageRealNameLabel": {},
   "changeButtonText": "바꾸기",
