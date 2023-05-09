@@ -254,8 +254,6 @@
   "@partitionFormatVfat": {},
   "partitionFormatIso9660": "Souborový systém ISO 9660",
   "@partitionFormatIso9660": {},
-  "partitionFormatSwap": "Odkládací oblast",
-  "@partitionFormatSwap": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
