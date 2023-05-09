@@ -472,8 +472,6 @@
   "@partitionUnitKB": {},
   "partitionUnitMB": "MB",
   "@partitionUnitMB": {},
-  "partitionFormatVfat": "Súborový systém VFAT",
-  "@partitionFormatVfat": {},
   "partitionFormatNtfs": "Súborový systém NTFS",
   "@partitionFormatNtfs": {},
   "partitionMountPointLabel": "Prípojný bod:",
