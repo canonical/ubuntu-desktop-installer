@@ -250,8 +250,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Verwendet als:",
   "@partitionFormatLabel": {},
-  "partitionFormatVfat": "VFAT-Dateisystem",
-  "@partitionFormatVfat": {},
   "partitionFormatNtfs": "NTFS-Dateisystem",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "ReiserFS-Dateisystem",
