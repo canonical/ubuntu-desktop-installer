@@ -14,11 +14,11 @@ final log = Logger('keyboard');
 
 /// Implements the business logic of the Keyboard page.
 class KeyboardModel extends SafeChangeNotifier {
-  /// Creates a model with the specified client.
-  KeyboardModel(this._client, {@visibleForTesting Platform? platform})
+  /// Creates a model with the specified service.
+  KeyboardModel(this._service, {@visibleForTesting Platform? platform})
       : _platform = platform ?? const LocalPlatform();
 
-  final KeyboardService _client;
+  final KeyboardService _service;
   final Platform _platform;
   List<KeyboardLayout> _layouts = [];
 
@@ -108,11 +108,11 @@ class KeyboardModel extends SafeChangeNotifier {
   /// Initializes the model and detects the current system keyboard layout and
   /// variant.
   Future<void> init() async {
-    _layouts = await _client.getKeyboard().then((keyboard) {
+    _layouts = await _service.getKeyboard().then((keyboard) {
       return keyboard.layouts.sortedBy((a) => removeDiacritics(a.name));
     });
     log.info('Loaded ${_layouts.length} keyboard layouts');
-    final keyboard = await _client.getKeyboard();
+    final keyboard = await _service.getKeyboard();
     _selectedLayoutIndex = _layouts.indexWhere((layout) {
       return layout.code == keyboard.setting.layout;
     });
@@ -134,7 +134,7 @@ class KeyboardModel extends SafeChangeNotifier {
     final variant = _selectedVariant?.code;
     final keyboard = KeyboardSetting(layout: layout, variant: variant ?? '');
     log.info('Updated $layout ($variant) input source');
-    return _client.setInputSource(
+    return _service.setInputSource(
       keyboard,
       user: _platform.environment['USERNAME'] ?? _platform.environment['USER'],
     );
@@ -146,6 +146,6 @@ class KeyboardModel extends SafeChangeNotifier {
     final variant = _selectedVariant?.code;
     final keyboard = KeyboardSetting(layout: layout, variant: variant ?? '');
     log.info('Saved $layout ($variant) keyboard layout');
-    return _client.setKeyboard(keyboard);
+    return _service.setKeyboard(keyboard);
   }
 }
