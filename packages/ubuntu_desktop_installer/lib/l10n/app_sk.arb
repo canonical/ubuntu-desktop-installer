@@ -468,8 +468,6 @@
   },
   "partitionUnitGB": "GB",
   "@partitionUnitGB": {},
-  "partitionFormatFat12": "Súborový systém FAT12",
-  "@partitionFormatFat12": {},
   "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
   "partitionUnitMB": "MB",
