@@ -425,8 +425,6 @@
   "@whoAreYouPageComputerNameRequired": {},
   "whoAreYouPageComputerNameInfo": "Navn brukt ved kommunikasjon med andre datamaskiner.",
   "@whoAreYouPageComputerNameInfo": {},
-  "partitionFormatFat16": "FAT16-filsystem",
-  "@partitionFormatFat16": {},
   "partitionFormatFat32": "FAT32-filsystem",
   "@partitionFormatFat32": {},
   "whoAreYouPageInvalidUsername": "Brukernavnet er ugyldig",
