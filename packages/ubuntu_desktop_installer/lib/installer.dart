@@ -78,6 +78,8 @@ Future<void> runInstallerApp(
       () => SubiquityActiveDirectoryService(getService<SubiquityClient>()));
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
+  tryRegisterService<IdentityService>(
+      () => SubiquityIdentityService(getService<SubiquityClient>()));
   tryRegisterService(JournalService.new);
   tryRegisterService<KeyboardService>(
       () => SubiquityKeyboardService(getService<SubiquityClient>()));
