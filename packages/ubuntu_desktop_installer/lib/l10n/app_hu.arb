@@ -93,8 +93,6 @@
   "@newPartitionTableConfirmationMessage": {},
   "partitionLocationEnd": "A hely vége",
   "@partitionLocationEnd": {},
-  "partitionFormatBtrfs": "btrfs naplózó fájlrendszer",
-  "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "JFS naplózó fájlrendszer",
   "@partitionFormatJfs": {},
   "partitionFormatXfs": "XFS naplózó fájlrendszer",
