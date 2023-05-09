@@ -17,8 +17,6 @@ import 'package:yaru_window_test/yaru_window_test.dart';
 
 import 'test_pages.dart';
 
-// ignore_for_file: type=lint
-
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
@@ -192,7 +190,7 @@ void main() {
 
     await testIdentityPage(
       tester,
-      identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
+      identity: const IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
     await tester.pumpAndSettle();
@@ -243,7 +241,7 @@ void main() {
 
     await testIdentityPage(
       tester,
-      identity: IdentityData(realname: 'a', hostname: 'b', username: 'c'),
+      identity: const IdentityData(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
     await tester.pumpAndSettle();
@@ -262,7 +260,7 @@ void main() {
         path: '/dev/sda',
         partitions: [
           Partition(number: 3, size: toBytes(40000, DataUnit.megabytes)),
-          Partition(number: 6, size: 43298848768, mount: '/'),
+          const Partition(number: 6, size: 43298848768, mount: '/'),
         ],
       ),
     ]);
