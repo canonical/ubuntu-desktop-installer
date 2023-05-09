@@ -700,8 +700,6 @@
   "@whoAreYouPageUsernameInvalidChars": {},
   "restartIntoWindows": "Omstart til Windows",
   "@restartIntoWindows": {},
-  "partitionFormatIso9660": "ISO 9660-filsystem",
-  "@partitionFormatIso9660": {},
   "chooseYourLookPageTitle": "Velg utseende",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "Du kan alltid endre dette senere i utseende-innstillingene.",
