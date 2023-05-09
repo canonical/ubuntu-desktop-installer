@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -39,8 +37,6 @@ void main() {
       when(model.variantName(i)).thenReturn(variants![i]);
     }
     when(model.selectedVariantIndex).thenReturn(selectedVariantIndex ?? 0);
-    when(model.onLayoutSelected).thenAnswer((_) => const Stream<int>.empty());
-    when(model.onVariantSelected).thenAnswer((_) => const Stream<int>.empty());
     return model;
   }
 

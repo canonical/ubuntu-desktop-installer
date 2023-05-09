@@ -40,22 +40,12 @@ class KeyboardModel extends SafeChangeNotifier {
   KeyboardLayout? get _selectedLayout =>
       (_selectedLayoutIndex > -1) ? _layouts[_selectedLayoutIndex] : null;
 
-  /// Emits keyboard layout selection changes.
-  Stream<int> get onLayoutSelected => _onLayoutSelected.stream;
-  final _onLayoutSelected = StreamController<int>();
-
-  /// Emits keyboard layout variant selection changes.
-  Stream<int> get onVariantSelected => _onVariantSelected.stream;
-  final _onVariantSelected = StreamController<int>();
-
   /// Selects the keyboard layout at [index].
   Future<void> selectLayout(int index, [int variant = 0]) async {
     assert(index > -1 && index < layoutCount);
     if (_selectedLayoutIndex == index) return;
     _selectedLayoutIndex = index;
     _selectedVariantIndex = _selectedLayout!.variants.isNotEmpty ? variant : -1;
-    _onLayoutSelected.add(_selectedLayoutIndex);
-    _onVariantSelected.add(_selectedVariantIndex);
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
     notifyListeners();
@@ -157,12 +147,5 @@ class KeyboardModel extends SafeChangeNotifier {
     final keyboard = KeyboardSetting(layout: layout, variant: variant ?? '');
     log.info('Saved $layout ($variant) keyboard layout');
     return _client.setKeyboard(keyboard);
-  }
-
-  @override
-  void dispose() {
-    _onLayoutSelected.close();
-    _onVariantSelected.close();
-    super.dispose();
   }
 }

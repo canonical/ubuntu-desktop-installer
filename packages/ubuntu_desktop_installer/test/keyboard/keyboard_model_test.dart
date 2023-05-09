@@ -210,7 +210,6 @@ void main() {
       await model.trySelectLayoutVariant('foo', 'qux');
       expect(model.selectedLayoutIndex, equals(1));
       expect(model.selectedVariantIndex, equals(1));
-      await expectLater(model.onLayoutSelected, emits(1));
     });
 
     test('try selecting by invalid codes', () async {
