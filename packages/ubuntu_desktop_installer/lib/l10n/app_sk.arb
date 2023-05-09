@@ -830,8 +830,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Použité ako:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat": "Súborový systém FAT",
-  "@partitionFormatFat": {},
   "partitionFormatFat32": "Súborový systém FAT32",
   "@partitionFormatFat32": {},
   "partitionFormatSwap": "Odkladacia oblasť",
