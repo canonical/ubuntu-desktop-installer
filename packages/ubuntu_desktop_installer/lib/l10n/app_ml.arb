@@ -337,8 +337,6 @@
   "@partitionSizeLabel": {},
   "partitionUnitB": "B",
   "@partitionUnitB": {},
-  "partitionFormatSwap": "Swap സ്ഥലം",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "ISO 9660 ഫയൽ സിസ്റ്റം",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "VFAT ഫയൽ സിസ്റ്റം",
