@@ -185,8 +185,6 @@
   "@musicSlideTitle": {},
   "partitionFormatReiserFS": "ReiserFS 文件系统",
   "@partitionFormatReiserFS": {},
-  "partitionFormatNtfs": "NTFS 文件系统",
-  "@partitionFormatNtfs": {},
   "repairInstallation": "修复安装",
   "@repairInstallation": {},
   "tryUbuntuDescription": "您可以在不对电脑做任何改动的情况下试用 {RELEASE}。",
