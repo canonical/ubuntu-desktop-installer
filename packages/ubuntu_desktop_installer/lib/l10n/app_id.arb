@@ -109,8 +109,6 @@
   "@partitionUnitGB": {},
   "whoAreYouPageConfirmPasswordLabel": "Konfirmasikan kata sandi Anda",
   "@whoAreYouPageConfirmPasswordLabel": {},
-  "partitionFormatZfsroot": "Sistem berkas root ZFS",
-  "@partitionFormatZfsroot": {},
   "writeChangesPartitionEntryUnmounted": "partisi #{disk}{partition} sebagai {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
