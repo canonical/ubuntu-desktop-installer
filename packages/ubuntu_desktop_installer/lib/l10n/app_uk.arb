@@ -505,8 +505,6 @@
   "@bootLoaderDevice": {},
   "partitionCreateTitle": "Створити розділ",
   "@partitionCreateTitle": {},
-  "partitionFormatJfs": "Журнальна файлова система JFS",
-  "@partitionFormatJfs": {},
   "partitionFormatXfs": "Журнальна файлова система XFS",
   "@partitionFormatXfs": {},
   "partitionFormatFat": "Файлова система FAT",
