@@ -505,8 +505,6 @@
   "@bootLoaderDevice": {},
   "partitionCreateTitle": "Створити розділ",
   "@partitionCreateTitle": {},
-  "partitionFormatFat16": "Файлова система FAT16",
-  "@partitionFormatFat16": {},
   "partitionFormatFat32": "Файлова система FAT32",
   "@partitionFormatFat32": {},
   "partitionFormatSwap": "Своп-зона",
