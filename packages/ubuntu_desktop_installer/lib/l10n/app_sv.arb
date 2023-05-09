@@ -295,8 +295,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Används som:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt2": "Ext2 filsystem",
-  "@partitionFormatExt2": {},
   "partitionFormatBtrfs": "btrfs journalfilsystem",
   "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "JFS journalfilsystem",
