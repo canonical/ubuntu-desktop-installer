@@ -248,8 +248,6 @@
   "@startInstallingButtonText": {},
   "freeDiskSpace": "فضای آزاد",
   "@freeDiskSpace": {},
-  "partitionFormatSwap": "ناحیهٔ مبادله",
-  "@partitionFormatSwap": {},
   "partitionFormatVfat": "سامانه پروندهٔ VFAT",
   "@partitionFormatVfat": {},
   "partitionFormatNtfs": "سامانه پروندهٔ NTFS",
