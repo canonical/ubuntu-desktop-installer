@@ -57,8 +57,6 @@
   "@installUbuntuDescription": {},
   "installationTypeAdvancedLabel": "고급 기능...",
   "@installationTypeAdvancedLabel": {},
-  "partitionFormatExt3": "Ext3 저널링 파일 시스템",
-  "@partitionFormatExt3": {},
   "installationTypeAdvancedTitle": "고급 기능",
   "@installationTypeAdvancedTitle": {},
   "newPartitionTable": "새 파티션 테이블",
