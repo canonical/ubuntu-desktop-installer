@@ -448,38 +448,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Used as:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt4": "Ext4 journaling file system",
-  "@partitionFormatExt4": {},
-  "partitionFormatExt3": "Ext3 journaling file system",
-  "@partitionFormatExt3": {},
-  "partitionFormatExt2": "Ext2 file system",
-  "@partitionFormatExt2": {},
-  "partitionFormatBtrfs": "btrfs journaling file system",
-  "@partitionFormatBtrfs": {},
-  "partitionFormatJfs": "JFS journaling file system",
-  "@partitionFormatJfs": {},
-  "partitionFormatXfs": "XFS journaling file system",
-  "@partitionFormatXfs": {},
-  "partitionFormatFat": "FAT file system",
-  "@partitionFormatFat": {},
-  "partitionFormatFat12": "FAT12 file system",
-  "@partitionFormatFat12": {},
-  "partitionFormatFat16": "FAT16 file system",
-  "@partitionFormatFat16": {},
-  "partitionFormatFat32": "FAT32 file system",
-  "@partitionFormatFat32": {},
-  "partitionFormatSwap": "Swap area",
-  "@partitionFormatSwap": {},
-  "partitionFormatIso9660": "ISO 9660 file system",
-  "@partitionFormatIso9660": {},
-  "partitionFormatVfat": "VFAT file system",
-  "@partitionFormatVfat": {},
-  "partitionFormatNtfs": "NTFS file system",
-  "@partitionFormatNtfs": {},
-  "partitionFormatReiserFS": "ReiserFS file system",
-  "@partitionFormatReiserFS": {},
-  "partitionFormatZfsroot": "ZFS root file system",
-  "@partitionFormatZfsroot": {},
   "partitionFormatNone": "Leave unformatted",
   "@partitionFormatNone": {},
   "partitionErase": "Format the partition",
@@ -543,7 +511,9 @@
   "writeChangesDescription": "If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.",
   "@writeChangesDescription": {},
   "writeChangesDevicesTitle": "Devices",
+  "@writeChangesDevicesTitle": {},
   "writeChangesPartitionsTitle": "Partitions",
+  "@writeChangesPartitionsTitle": {},
   "writeChangesPartitionTablesHeader": "The partition tables of the following devices are changed:",
   "@writeChangesPartitionTablesHeader": {},
   "writeChangesPartitionTablesEntry": "{serial} ({path})",
@@ -682,8 +652,11 @@
     }
   },
   "installationSlidesAvailable": "Available:",
+  "@installationSlidesAvailable": {},
   "installationSlidesIncluded": "Included:",
+  "@installationSlidesIncluded": {},
   "installationSlidesWelcomeTitle": "Fast, free and full of new features",
+  "@installationSlidesWelcomeTitle": {},
   "installationSlidesWelcomeHeader": "The latest version of {DISTRO} makes computing easier than ever.",
   "@installationSlidesWelcomeHeader": {
     "type": "text",
@@ -699,6 +672,7 @@
     }
   },
   "installationSlidesSoftwareTitle": "All the applications you need",
+  "@installationSlidesSoftwareTitle": {},
   "installationSlidesSoftwareBody": "Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and {DISTRO} archive.",
   "@installationSlidesSoftwareBody": {
     "type": "text",
@@ -707,6 +681,7 @@
     }
   },
   "installationSlidesDevelopmentTitle": "Develop with the best of open source",
+  "@installationSlidesDevelopmentTitle": {},
   "installationSlidesDevelopmentBody": "{DISTRO} is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every {DISTRO} release includes the latest toolchains and supports all major IDEs.",
   "@installationSlidesDevelopmentBody": {
     "type": "text",
@@ -715,6 +690,7 @@
     }
   },
   "installationSlidesCreativityTitle": "Enhance your creativity",
+  "@installationSlidesCreativityTitle": {},
   "installationSlidesCreativityBody": "If you're an animator, designer, video creator or game developer it's easy to bring your workflows to {DISTRO} with support for open source and industry standard software and applications.",
   "@installationSlidesCreativityBody": {
     "type": "text",
@@ -723,6 +699,7 @@
     }
   },
   "installationSlidesGamingTitle": "Great for gaming",
+  "@installationSlidesGamingTitle": {},
   "installationSlidesGamingBody": "{DISTRO} supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on {DISTRO} via applications like Steam with no additional configuration.",
   "@installationSlidesGamingBody": {
     "type": "text",
@@ -731,6 +708,7 @@
     }
   },
   "installationSlidesSecurityTitle": "Private and secure",
+  "@installationSlidesSecurityTitle": {},
   "installationSlidesSecurityBody": "{DISTRO} provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.",
   "@installationSlidesSecurityBody": {
     "type": "text",
@@ -746,6 +724,7 @@
     }
   },
   "installationSlidesProductivityTitle": "Power up your productivity",
+  "@installationSlidesProductivityTitle": {},
   "installationSlidesProductivityBody": "{DISTRO} Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.",
   "@installationSlidesProductivityBody": {
     "type": "text",
@@ -754,6 +733,7 @@
     }
   },
   "installationSlidesAccessibilityTitle": "Access for everyone",
+  "@installationSlidesAccessibilityTitle": {},
   "installationSlidesAccessibilityBody": "At the heart of the {DISTRO} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, {DISTRO} makes computing easy - whoever and wherever you are.",
   "@installationSlidesAccessibilityBody": {
     "type": "text",
@@ -762,8 +742,11 @@
     }
   },
   "installationSlidesAccessibilityOrca": "Orca Screen Reader",
+  "@installationSlidesAccessibilityOrca": {},
   "installationSlidesAccessibilityLanguages": "Language support",
+  "@installationSlidesAccessibilityLanguages": {},
   "installationSlidesSupportTitle": "Help & Support",
+  "@installationSlidesSupportTitle": {},
   "installationSlidesSupportHeader": "The official {DISTRO} documentation is available both online and via the Help icon in the dock.",
   "@installationSlidesSupportHeader": {
     "type": "text",
@@ -772,10 +755,15 @@
     }
   },
   "installationSlidesSupportCommunity": "Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.",
+  "@installationSlidesSupportCommunity": {},
   "installationSlidesSupportEnterprise": "For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.",
+  "@installationSlidesSupportEnterprise": {},
   "installationSlidesSupportResources": "Helpful resources:",
+  "@installationSlidesSupportResources": {},
   "installationSlidesSupportDocumentation": "Official documentation",
+  "@installationSlidesSupportDocumentation": {},
   "installationSlidesSupportUbuntuPro": "Enterprise-grade 24/7 support with Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
   "copyingFiles": "Copying files…",
   "@copyingFiles": {},
   "installingSystem": "Installing the system…",
@@ -794,7 +782,9 @@
     }
   },
   "notEnoughDiskSpaceAvailable": "Available:",
+  "@notEnoughDiskSpaceAvailable": {},
   "notEnoughDiskSpaceRequired": "Required:",
+  "@notEnoughDiskSpaceRequired": {},
   "activeDirectoryOption": "Use Active Directory",
   "@activeDirectoryOption": {},
   "activeDirectoryInfo": "You'll enter domain and other details in the next step.",
