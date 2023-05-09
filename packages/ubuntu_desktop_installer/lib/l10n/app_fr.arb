@@ -285,8 +285,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Utilisée comme :",
   "@partitionFormatLabel": {},
-  "partitionFormatExt3": "Système de fichiers Ext3 journalisé",
-  "@partitionFormatExt3": {},
   "partitionFormatBtrfs": "Système de fichiers btrfs journalisé",
   "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "Système de fichiers JFS journalisé",
