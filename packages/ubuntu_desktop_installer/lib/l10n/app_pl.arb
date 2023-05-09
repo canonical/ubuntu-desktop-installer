@@ -273,8 +273,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Używana jako:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt4": "System plików z dziennikowaniem Ext4",
-  "@partitionFormatExt4": {},
   "partitionFormatExt3": "System plików z dziennikowaniem Ext3",
   "@partitionFormatExt3": {},
   "partitionFormatExt2": "System plików Ext2",
