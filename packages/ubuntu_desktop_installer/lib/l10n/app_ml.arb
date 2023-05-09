@@ -337,8 +337,6 @@
   "@partitionSizeLabel": {},
   "partitionUnitB": "B",
   "@partitionUnitB": {},
-  "partitionFormatNtfs": "NTFS ഫയൽ സിസ്റ്റം",
-  "@partitionFormatNtfs": {},
   "whoAreYouPageConfirmPasswordLabel": "നിങ്ങളുടെ പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക",
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല",
