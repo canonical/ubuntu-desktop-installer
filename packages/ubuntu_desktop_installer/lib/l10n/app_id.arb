@@ -331,8 +331,6 @@
   "@partitionFormatLabel": {},
   "partitionFormatXfs": "Sistem berkas penjurnalan XFS",
   "@partitionFormatXfs": {},
-  "partitionFormatJfs": "Sistem berkas penjurnalan JFS",
-  "@partitionFormatJfs": {},
   "partitionFormatFat": "Sistem berkas FAT",
   "@partitionFormatFat": {},
   "partitionFormatFat12": "Sistem berkas FAT12",
