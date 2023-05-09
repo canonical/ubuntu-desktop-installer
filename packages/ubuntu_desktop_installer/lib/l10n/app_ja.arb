@@ -238,8 +238,6 @@
   "@partitionUnitKB": {},
   "partitionTypeLabel": "新しいパーティションの種類を選択してください。",
   "@partitionTypeLabel": {},
-  "partitionFormatReiserFS": "ReiserFS ファイルシステム",
-  "@partitionFormatReiserFS": {},
   "partitionMountPointLabel": "マウントポイント：",
   "@partitionMountPointLabel": {},
   "partitionEditTitle": "パーティションを編集する",
