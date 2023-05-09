@@ -142,8 +142,6 @@
   "@diskHeadersSize": {},
   "partitionEditTitle": "Bölüm düzenle",
   "@partitionEditTitle": {},
-  "partitionFormatFat12": "FAT12 dosya sistemi",
-  "@partitionFormatFat12": {},
   "partitionFormatSwap": "Takas alanı",
   "@partitionFormatSwap": {},
   "whoAreYouPageComputerNameInfo": "Bu ad, diğer bilgisayarlarla kurulan iletişim esnasında kullanılır.",
