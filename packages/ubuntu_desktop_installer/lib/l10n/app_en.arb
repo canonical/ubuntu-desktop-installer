@@ -448,8 +448,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Used as:",
   "@partitionFormatLabel": {},
-  "partitionFormatZfsroot": "ZFS root file system",
-  "@partitionFormatZfsroot": {},
   "partitionFormatNone": "Leave unformatted",
   "@partitionFormatNone": {},
   "partitionErase": "Format the partition",
