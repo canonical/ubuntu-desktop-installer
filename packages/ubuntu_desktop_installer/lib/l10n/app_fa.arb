@@ -540,8 +540,6 @@
   "@allocateDiskSpace": {},
   "partitionLocationEnd": "پایان این فضا",
   "@partitionLocationEnd": {},
-  "partitionFormatIso9660": "سامانه پروندهٔ ایزو ۹۶۶۰",
-  "@partitionFormatIso9660": {},
   "bootLoaderDevice": "افزاره برای نصب بارکنندهٔ راه‌اندازی",
   "@bootLoaderDevice": {},
   "whoAreYouPageComputerNameTooLong": "نام رایانه بیش از حد طولانی است.",
