@@ -448,8 +448,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Used as:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat16": "FAT16 file system",
-  "@partitionFormatFat16": {},
   "partitionFormatFat32": "FAT32 file system",
   "@partitionFormatFat32": {},
   "partitionFormatSwap": "Swap area",
