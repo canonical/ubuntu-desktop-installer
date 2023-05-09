@@ -38,8 +38,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "ഇതായി ഉപയോഗിക്കുന്നു:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt2": "Ext2 ഫയൽ സിസ്റ്റം",
-  "@partitionFormatExt2": {},
   "partitionFormatBtrfs": "btrfs ജേണലിംഗ് ഫയൽ സിസ്റ്റം",
   "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "JFS ജേണലിംഗ് ഫയൽ സിസ്റ്റം",
