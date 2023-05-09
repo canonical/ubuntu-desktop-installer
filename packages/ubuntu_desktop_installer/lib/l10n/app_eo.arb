@@ -69,8 +69,6 @@
   "@partitionFormatFat32": {},
   "freeDiskSpace": "Disponebla spaco",
   "@freeDiskSpace": {},
-  "partitionFormatBtrfs": "Protokoliga dosiersistemo Btrfs",
-  "@partitionFormatBtrfs": {},
   "partitionTypeLogical": "Logika",
   "@partitionTypeLogical": {},
   "partitionFormatJfs": "Protokoliga dosiersistemo JFS",
