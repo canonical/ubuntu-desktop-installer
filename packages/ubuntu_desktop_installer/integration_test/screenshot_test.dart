@@ -348,20 +348,20 @@ void main() {
     );
   }, variant: themeVariant);
 
-  testWidgets('14.installation-slides', (tester) async {
+  testWidgets('14.install', (tester) async {
     await YaruTestWindow.ensureInitialized(
       state: const YaruWindowState(isActive: true, isClosable: false),
     );
 
     await runInstallerApp([
-      '--initial-route=${Routes.installationSlides}',
+      '--initial-route=${Routes.install}',
     ], flavor: currentFlavor);
     await tester.pump(kThemeAnimationDuration);
 
     for (var i = 0; i < defaultSlides.length; ++i) {
       await takeScreenshot(
         tester,
-        '$currentThemeName/14.installation-slide-$i',
+        '$currentThemeName/14.install-$i',
       );
       if (i < defaultSlides.length - 1) {
         await tester.tap(find.iconButton(YaruIcons.pan_end));
@@ -370,15 +370,17 @@ void main() {
     }
   }, variant: themeVariant);
 
-  testWidgets('15.installation-complete', (tester) async {
+  testWidgets('15.complete', (tester) async {
+    registerService<SubiquityClient>(FakeSubiquityClient.new);
+
     await runInstallerApp([
-      '--initial-route=${Routes.installationComplete}',
+      '--initial-route=${Routes.install}',
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await testInstallationCompletePage(
+    await testInstallPage(
       tester,
-      screenshot: '$currentThemeName/15.installation-complete',
+      screenshot: '$currentThemeName/15.complete',
     );
   }, variant: themeVariant);
 }
@@ -397,6 +399,13 @@ class FakeDesktopService implements DesktopService {
 class FakeProductService implements ProductService {
   @override
   ProductInfo getProductInfo() => ProductInfo(name: 'Ubuntu', version: '23.04');
+}
+
+class FakeSubiquityClient extends SubiquityClient {
+  @override
+  Future<ApplicationStatus> getStatus({ApplicationState? current}) async {
+    return fakeApplicationStatus(ApplicationState.DONE);
+  }
 }
 
 FlavorData get currentFlavor {

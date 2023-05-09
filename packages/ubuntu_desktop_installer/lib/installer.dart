@@ -433,11 +433,8 @@ class _UbuntuDesktopInstallerWizardState
           builder: (_) => const ThemePage(),
           userData: InstallationStep.look.index,
         ),
-        Routes.installationSlides: WizardRoute(
-          builder: (_) => const InstallationSlidesPage(),
-        ),
-        Routes.installationComplete: WizardRoute(
-          builder: (_) => const InstallationCompletePage(),
+        Routes.install: WizardRoute(
+          builder: (_) => const InstallPage(),
         ),
       },
       observers: [
@@ -473,11 +470,8 @@ class _UbuntuDesktopAutoinstallWizard extends StatelessWidget {
           Routes.confirm: WizardRoute(
             builder: (_) => const ConfirmPage(),
           ),
-        Routes.installationSlides: WizardRoute(
-          builder: (_) => const InstallationSlidesPage(),
-        ),
-        Routes.installationComplete: WizardRoute(
-          builder: (_) => const InstallationCompletePage(),
+        Routes.install: WizardRoute(
+          builder: (_) => const InstallPage(),
         ),
       },
     );
@@ -491,8 +485,8 @@ class _UbuntuDesktopErrorWizard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wizard(
       routes: <String, WizardRoute>{
-        Routes.installationSlides: WizardRoute(
-          builder: (_) => const InstallationSlidesPage(),
+        Routes.install: WizardRoute(
+          builder: (_) => const InstallPage(),
         ),
       },
     );

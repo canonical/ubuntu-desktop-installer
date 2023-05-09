@@ -9,11 +9,10 @@ abstract class Routes {
   static const allocateDiskSpace = '/allocate-disk-space';
   static const secureBoot = '/secure-boot';
   static const source = '/update-other-software';
-  static const installationComplete = '/installation-complete';
   static const confirm = '/confirm';
   static const theme = '/theme';
   static const identity = '/identity';
-  static const installationSlides = '/installation-slides';
+  static const install = '/install';
   static const bitlocker = '/turn-off-bitlocker';
   static const securityKey = '/security-key';
   static const installationType = '/installation-type';

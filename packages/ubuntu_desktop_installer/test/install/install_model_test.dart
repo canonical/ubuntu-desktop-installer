@@ -5,10 +5,10 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/installation_slides/installation_slides_model.dart';
+import 'package:ubuntu_desktop_installer/pages/install/install_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'installation_slides_model_test.mocks.dart';
+import 'install_model_test.mocks.dart';
 
 @GenerateMocks([JournalService, ProductService])
 void main() async {
@@ -17,7 +17,7 @@ void main() async {
     when(product.getProductInfo())
         .thenReturn(ProductInfo(name: 'Ubuntu', version: '24.04 LTS'));
 
-    final model = InstallationSlidesModel(
+    final model = InstallModel(
       MockSubiquityClient(),
       MockJournalService(),
       product,
@@ -34,7 +34,7 @@ void main() async {
     when(journal.start(['event'], output: JournalOutput.cat))
         .thenAnswer((_) => const Stream.empty());
     final product = MockProductService();
-    final model = InstallationSlidesModel(client, journal, product);
+    final model = InstallModel(client, journal, product);
 
     ApplicationState? currentState;
     for (final nextState in ApplicationState.values) {
@@ -77,7 +77,7 @@ void main() async {
 
     final product = MockProductService();
 
-    final model = InstallationSlidesModel(client, journal, product);
+    final model = InstallModel(client, journal, product);
 
     expect(model.state, isNull);
     expect(model.isInstalling, isFalse);
@@ -125,7 +125,7 @@ void main() async {
 
     final product = MockProductService();
 
-    final model = InstallationSlidesModel(client, journal, product);
+    final model = InstallModel(client, journal, product);
 
     expect(model.hasError, isFalse);
 
@@ -135,7 +135,7 @@ void main() async {
   });
 
   test('log visibility', () async {
-    final model = InstallationSlidesModel(
+    final model = InstallModel(
       MockSubiquityClient(),
       MockJournalService(),
       MockProductService(),
@@ -152,6 +152,15 @@ void main() async {
     model.toggleLogVisibility();
     expect(model.isLogVisible, isFalse);
     expect(wasNotified, equals(2));
+  });
+
+  test('reboot', () async {
+    final client = MockSubiquityClient();
+    final model =
+        InstallModel(client, MockJournalService(), MockProductService());
+
+    await model.reboot();
+    verify(client.reboot(immediate: false)).called(1);
   });
 
   test('events', () async {
@@ -173,7 +182,7 @@ void main() async {
 
     final product = MockProductService();
 
-    final model = InstallationSlidesModel(client, journal, product);
+    final model = InstallModel(client, journal, product);
 
     expect(model.event.action, InstallationAction.none);
 
