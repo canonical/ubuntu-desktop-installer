@@ -397,8 +397,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Brukt som:",
   "@partitionFormatLabel": {},
-  "partitionFormatVfat": "VFAT-filsystem",
-  "@partitionFormatVfat": {},
   "partitionFormatNtfs": "NTFS-filsystem",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "ReiserFS-filsystem",
