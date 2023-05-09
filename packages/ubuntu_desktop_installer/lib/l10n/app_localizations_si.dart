@@ -514,54 +514,6 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionFormatLabel => 'භාවිතය:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 සගනු ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 සගනු ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs සගනු ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatJfs => 'JFS සගනු ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatXfs => 'XFS සගනු ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatFat => 'FAT ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatSwap => 'හුවමාරු පෙදෙස';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatVfat => 'VFAT ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS ගොනු පද්ධතිය';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS මූල ගොනු පද්ධතිය';
-
-  @override
   String get partitionFormatNone => 'පවිත්‍ර නොකර තබන්න';
 
   @override

@@ -514,54 +514,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get partitionFormatLabel => 'Tiedostojärjestelmä:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2-tiedostojärjestelmä';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
-
-  @override
-  String get partitionFormatJfs => 'JFS-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
-
-  @override
-  String get partitionFormatXfs => 'XFS-tiedostojärjestelmä sisältäen tapahtumakirjanpidon';
-
-  @override
-  String get partitionFormatFat => 'FAT-tiedostojärjestelmä';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12-tiedostojärjestelmä';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16-tiedostojärjestelmä';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32-tiedostojärjestelmä';
-
-  @override
-  String get partitionFormatSwap => 'Sivutusosio (swap)';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 -tiedostojärjestelmä';
-
-  @override
-  String get partitionFormatVfat => 'VFAT-tiedostojärjestelmä';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS-tiedostojärjestelmä';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS-tiedostojärjestelmä';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS root -tiedostojärjestelmä';
-
-  @override
   String get partitionFormatNone => 'Jätä alustamatta';
 
   @override

@@ -514,54 +514,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get partitionFormatLabel => 'Használva mint:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 naplózó fájlrendszer';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 naplózó fájlrendszer';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 fájlrendszer';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs naplózó fájlrendszer';
-
-  @override
-  String get partitionFormatJfs => 'JFS naplózó fájlrendszer';
-
-  @override
-  String get partitionFormatXfs => 'XFS naplózó fájlrendszer';
-
-  @override
-  String get partitionFormatFat => 'FAT fájlrendszer';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 fájlrendszer';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 fájlrendszer';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 fájlrendszer';
-
-  @override
-  String get partitionFormatSwap => 'Csereterület';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 fájlrendszer';
-
-  @override
-  String get partitionFormatVfat => 'VFAT fájlrendszer';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS fájlrendszer';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS fájlrendszer';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS gyökérfájlrendszer';
-
-  @override
   String get partitionFormatNone => 'Formázatlanul hagyás';
 
   @override

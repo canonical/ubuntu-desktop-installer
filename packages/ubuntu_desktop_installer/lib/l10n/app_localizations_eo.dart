@@ -514,54 +514,6 @@ class AppLocalizationsEo extends AppLocalizations {
   String get partitionFormatLabel => 'Uzata kiel:';
 
   @override
-  String get partitionFormatExt4 => 'Protokoliga dosiersistemo ext4';
-
-  @override
-  String get partitionFormatExt3 => 'Protokoliga dosiersistemo ext3';
-
-  @override
-  String get partitionFormatExt2 => 'Dosiersistemo ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'Protokoliga dosiersistemo Btrfs';
-
-  @override
-  String get partitionFormatJfs => 'Protokoliga dosiersistemo JFS';
-
-  @override
-  String get partitionFormatXfs => 'Protokoliga dosiersistemo XFS';
-
-  @override
-  String get partitionFormatFat => 'Dosiersistemo FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Dosiersistemo FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'Dosiersistemo FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'Dosiersistemo FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Permutareo';
-
-  @override
-  String get partitionFormatIso9660 => 'Dosiersistemo ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Dosiersistemo Virtuala FAT';
-
-  @override
-  String get partitionFormatNtfs => 'Dosiersistemo NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Dosiersistemo ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'Radika dosiersistemo ZFS';
-
-  @override
   String get partitionFormatNone => 'Lasi nestrukturita';
 
   @override

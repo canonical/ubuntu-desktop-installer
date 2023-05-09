@@ -514,54 +514,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionFormatLabel => '用于：';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 日志文件系统';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 日志文件系统';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 文件系统';
-
-  @override
-  String get partitionFormatBtrfs => 'Btrfs 日志文件系统';
-
-  @override
-  String get partitionFormatJfs => 'JFS 日志文件系统';
-
-  @override
-  String get partitionFormatXfs => 'XFS 日志文件系统';
-
-  @override
-  String get partitionFormatFat => 'FAT 文件系统';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 文件系统';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 文件系统';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 文件系统';
-
-  @override
-  String get partitionFormatSwap => '交换空间';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 文件系统';
-
-  @override
-  String get partitionFormatVfat => 'VFAT 文件系统';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS 文件系统';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS 文件系统';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS 根文件系统';
-
-  @override
   String get partitionFormatNone => '保持未格式化';
 
   @override

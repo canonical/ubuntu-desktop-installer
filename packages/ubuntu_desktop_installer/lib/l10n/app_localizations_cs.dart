@@ -514,54 +514,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get partitionFormatLabel => 'Použito jako:';
 
   @override
-  String get partitionFormatExt4 => 'Žurnálovací souborový systém Ext4';
-
-  @override
-  String get partitionFormatExt3 => 'Žurnálovací souborový systém Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'Souborový systém Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'Žurnálovací souborový systém btrfs';
-
-  @override
-  String get partitionFormatJfs => 'Žurnálovací souborový systém JFS';
-
-  @override
-  String get partitionFormatXfs => 'Žurnálovací souborový systém XFS';
-
-  @override
-  String get partitionFormatFat => 'Souborový systém FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Souborový systém FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'Souborový systém FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'Souborový systém FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Odkládací oblast';
-
-  @override
-  String get partitionFormatIso9660 => 'Souborový systém ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Souborový systém VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'Souborový systém NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Souborový systém ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'Kořenový souborový systém na ZFS';
-
-  @override
   String get partitionFormatNone => 'Ponechat nenaformátované';
 
   @override

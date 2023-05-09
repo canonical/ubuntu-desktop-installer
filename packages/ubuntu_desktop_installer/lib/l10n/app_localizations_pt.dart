@@ -514,54 +514,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partitionFormatLabel => 'Utilizado como:';
 
   @override
-  String get partitionFormatExt4 => 'Sistema de ficheiros Ext4 com journaling';
-
-  @override
-  String get partitionFormatExt3 => 'Sistema de ficheiros Ext3 com journaling';
-
-  @override
-  String get partitionFormatExt2 => 'Sistema de ficheiros Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'Sistema de ficheiros btrfs com journaling';
-
-  @override
-  String get partitionFormatJfs => 'Sistema de ficheiros JFS com journaling';
-
-  @override
-  String get partitionFormatXfs => 'Sistema de ficheiros XFS com journaling';
-
-  @override
-  String get partitionFormatFat => 'Sistema de ficheiros FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Sistema de ficheiros FA12';
-
-  @override
-  String get partitionFormatFat16 => 'Sistema de ficheiros FA16';
-
-  @override
-  String get partitionFormatFat32 => 'Sistema de ficheiros FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Swap area';
-
-  @override
-  String get partitionFormatIso9660 => 'Sistema de ficheiros ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Sistema de ficheiros VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'Sistema de ficheiros NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Sistema de ficheiros ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'Sistema de ficheiros root ZFS';
-
-  @override
   String get partitionFormatNone => 'Deixar sem formatação';
 
   @override
@@ -1484,54 +1436,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get partitionFormatLabel => 'Utilizado como:';
-
-  @override
-  String get partitionFormatExt4 => 'Sistema de arquivos Ext4 com journaling';
-
-  @override
-  String get partitionFormatExt3 => 'Sistema de arquivos Ext3 com journaling';
-
-  @override
-  String get partitionFormatExt2 => 'Sistema de arquivos Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'Sistema de arquivos btrfs com journaling';
-
-  @override
-  String get partitionFormatJfs => 'Sistema de arquivos JFS com journaling';
-
-  @override
-  String get partitionFormatXfs => 'Sistema de arquivos XFS com journaling';
-
-  @override
-  String get partitionFormatFat => 'Sistema de arquivos FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Sistema de arquivos FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'Sistema de arquivos FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'Sistema de arquivos FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Espaço de Swap';
-
-  @override
-  String get partitionFormatIso9660 => 'Sistema de arquivos ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Sistema de arquivos VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'Sistema de arquivos NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Sistema de arquivos ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'Sistema de arquivos raiz ZFS';
 
   @override
   String get partitionFormatNone => 'Deixar sem formatação';
