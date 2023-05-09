@@ -250,8 +250,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Verwendet als:",
   "@partitionFormatLabel": {},
-  "partitionFormatXfs": "XFS-Journaling-Dateisystem",
-  "@partitionFormatXfs": {},
   "partitionFormatFat": "FAT-Dateisystem",
   "@partitionFormatFat": {},
   "partitionFormatFat12": "FAT12-Dateisystem",
