@@ -314,8 +314,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "בשימוש בתור:",
   "@partitionFormatLabel": {},
-  "partitionFormatReiserFS": "מערכת קבצים מסוג ReiserFS",
-  "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "מערכת קבצים לבסיס ZFS",
   "@partitionFormatZfsroot": {},
   "partitionErase": "פרמוט המחיצה",
