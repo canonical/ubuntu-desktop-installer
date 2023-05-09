@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 /// @internal
@@ -7,16 +7,16 @@ final log = Logger('keyboard');
 
 /// Detects keyboard layout with help of subiquity's keyboard API.
 class KeyboardDetector extends ValueNotifier<AnyStep?> {
-  /// Creates a keyboard layout detector with the given client. Optionally, the
+  /// Creates a keyboard layout detector with the given service. Optionally, the
   /// initial step and a result listener can be provided.
   KeyboardDetector(
-    this._client, {
+    this._service, {
     AnyStep? value,
     ValueChanged<StepResult>? onResult,
   })  : _onResult = onResult,
         super(value);
 
-  final SubiquityClient _client;
+  final KeyboardService _service;
   final ValueChanged<StepResult>? _onResult;
 
   /// Returns the list of keys to be pressed.
@@ -58,6 +58,6 @@ class KeyboardDetector extends ValueNotifier<AnyStep?> {
   void no() => _getKeyboardStep(_keyPresentStep!.no);
 
   Future<void> _getKeyboardStep([String step = '0']) {
-    return _client.getKeyboardStep(step).then(_updateCurrentStep);
+    return _service.getKeyboardStep(step).then(_updateCurrentStep);
   }
 }

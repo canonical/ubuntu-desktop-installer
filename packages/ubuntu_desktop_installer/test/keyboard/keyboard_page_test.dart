@@ -1,13 +1,9 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_page.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
@@ -16,6 +12,7 @@ import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../test_utils.dart';
+import 'keyboard_model_test.mocks.dart';
 import 'keyboard_page_test.mocks.dart';
 
 @GenerateMocks([KeyboardModel])
@@ -39,16 +36,14 @@ void main() {
       when(model.variantName(i)).thenReturn(variants![i]);
     }
     when(model.selectedVariantIndex).thenReturn(selectedVariantIndex ?? 0);
-    when(model.onLayoutSelected).thenAnswer((_) => const Stream<int>.empty());
-    when(model.onVariantSelected).thenAnswer((_) => const Stream<int>.empty());
     return model;
   }
 
   Widget buildPage(KeyboardModel model) {
-    final client = MockSubiquityClient();
-    when(client.getKeyboardStep(any)).thenAnswer(
+    final service = MockKeyboardService();
+    when(service.getKeyboardStep(any)).thenAnswer(
         (_) async => const AnyStep.stepPressKey(keycodes: {}, symbols: []));
-    registerMockService<SubiquityClient>(client);
+    registerMockService<KeyboardService>(service);
 
     return ProviderScope(
       overrides: [keyboardModelProvider.overrideWith((_) => model)],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
@@ -16,12 +15,12 @@ const _kDialogHeightFactor = 0.15;
 /// and confirm keys. Returns the result with a keyboard layout and variant
 /// codes or null if canceled.
 Future<StepResult?> showDetectKeyboardDialog(BuildContext context) async {
-  final client = getService<SubiquityClient>();
+  final service = getService<KeyboardService>();
 
   return showDialog<StepResult?>(
     context: context,
     builder: (context) {
-      final detector = KeyboardDetector(client, onResult: (result) {
+      final detector = KeyboardDetector(service, onResult: (result) {
         Navigator.of(context).pop(result);
       });
       detector.init();

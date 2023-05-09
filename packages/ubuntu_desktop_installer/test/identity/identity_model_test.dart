@@ -5,8 +5,6 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/subiquity_client.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -23,6 +21,7 @@ class MockProductNameFile extends Mock implements File {
 @GenerateMocks([
   ActiveDirectoryService,
   ConfigService,
+  IdentityService,
   NetworkService,
   TelemetryService,
 ])
@@ -35,8 +34,8 @@ void main() {
       hostname: 'impish',
     );
 
-    final client = MockSubiquityClient();
-    when(client.getIdentity()).thenAnswer((_) async => identity);
+    final service = MockIdentityService();
+    when(service.getIdentity()).thenAnswer((_) async => identity);
 
     final activeDirectory = MockActiveDirectoryService();
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
@@ -51,7 +50,7 @@ void main() {
     final telemetry = MockTelemetryService();
 
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -61,7 +60,7 @@ void main() {
     await IOOverrides.runZoned(() async {
       await model.init();
     }, createFile: (path) => MockProductNameFile('impish'));
-    verify(client.getIdentity()).called(1);
+    verify(service.getIdentity()).called(1);
 
     expect(model.realName, equals(identity.realname));
     expect(model.username, equals(identity.username));
@@ -73,8 +72,8 @@ void main() {
   });
 
   test('load auto-login', () async {
-    final client = MockSubiquityClient();
-    when(client.getIdentity()).thenAnswer((_) async => const IdentityData());
+    final service = MockIdentityService();
+    when(service.getIdentity()).thenAnswer((_) async => const IdentityData());
 
     final activeDirectory = MockActiveDirectoryService();
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
@@ -89,7 +88,7 @@ void main() {
     final telemetry = MockTelemetryService();
 
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -106,8 +105,8 @@ void main() {
   test('empty username and hostname', () async {
     const identity = IdentityData(realname: 'Ubuntu');
 
-    final client = MockSubiquityClient();
-    when(client.getIdentity()).thenAnswer((_) async => identity);
+    final service = MockIdentityService();
+    when(service.getIdentity()).thenAnswer((_) async => identity);
 
     final activeDirectory = MockActiveDirectoryService();
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
@@ -122,7 +121,7 @@ void main() {
     final telemetry = MockTelemetryService();
 
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -131,7 +130,7 @@ void main() {
     await IOOverrides.runZoned(() async {
       await model.init();
     }, createFile: (path) => MockProductNameFile('impish'));
-    verify(client.getIdentity()).called(1);
+    verify(service.getIdentity()).called(1);
 
     expect(model.hostname, equals('ubuntu-impish'));
   });
@@ -139,8 +138,8 @@ void main() {
   test('non-empty username and empty hostname', () async {
     const identity = IdentityData(username: 'user');
 
-    final client = MockSubiquityClient();
-    when(client.getIdentity()).thenAnswer((_) async => identity);
+    final service = MockIdentityService();
+    when(service.getIdentity()).thenAnswer((_) async => identity);
 
     final activeDirectory = MockActiveDirectoryService();
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
@@ -155,7 +154,7 @@ void main() {
     final telemetry = MockTelemetryService();
 
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -176,7 +175,7 @@ void main() {
       hostname: 'impish',
     );
 
-    final client = MockSubiquityClient();
+    final service = MockIdentityService();
 
     final activeDirectory = MockActiveDirectoryService();
 
@@ -190,7 +189,7 @@ void main() {
     final telemetry = MockTelemetryService();
 
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -206,13 +205,13 @@ void main() {
 
     await model.save(salt: 'test');
 
-    verify(client.setIdentity(identity)).called(1);
+    verify(service.setIdentity(identity)).called(1);
     verify(activeDirectory.markConfigured()).called(1);
     verify(telemetry.addMetric('UseActiveDirectory', false)).called(1);
   });
 
   test('save auto-login', () async {
-    final client = MockSubiquityClient();
+    final service = MockIdentityService();
 
     final activeDirectory = MockActiveDirectoryService();
 
@@ -226,7 +225,7 @@ void main() {
     final telemetry = MockTelemetryService();
 
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -246,7 +245,7 @@ void main() {
 
   test('password strength', () {
     // see password_test.dart for more detailed password strength tests
-    final client = MockSubiquityClient();
+    final service = MockIdentityService();
     final activeDirectory = MockActiveDirectoryService();
     final config = MockConfigService();
     final network = MockNetworkService();
@@ -254,7 +253,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -273,7 +272,7 @@ void main() {
   });
 
   test('notify changes', () {
-    final client = MockSubiquityClient();
+    final service = MockIdentityService();
     final activeDirectory = MockActiveDirectoryService();
     final config = MockConfigService();
     final network = MockNetworkService();
@@ -281,7 +280,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -323,7 +322,7 @@ void main() {
   });
 
   test('validation', () {
-    final client = MockSubiquityClient();
+    final service = MockIdentityService();
     final activeDirectory = MockActiveDirectoryService();
     final config = MockConfigService();
     final network = MockNetworkService();
@@ -331,7 +330,7 @@ void main() {
 
     final telemetry = MockTelemetryService();
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -356,8 +355,7 @@ void main() {
       expect(model.isValid, matcher);
     }
 
-    // any field missing
-    testValid('', 'host', 'user', 'passwd', 'passwd', isFalse);
+    // required field missing
     testValid('real', '', 'user', 'passwd', 'passwd', isFalse);
     testValid('real', 'host', '', 'passwd', 'passwd', isFalse);
     testValid('real', 'host', 'user', '', 'passwd', isFalse);
@@ -386,7 +384,8 @@ void main() {
     testValid('real', 'host', 'user', 'passwd', 'passwd', isTrue);
     testValid('real', 'host', 'user', 'passwd', 'mismatch', isFalse);
 
-    // reale name validation
+    // real name validation
+    testValid('', 'host', 'user', 'passwd', 'passwd', isTrue);
     testValid(
         'these are slightly more than the allowed one hundred and sixty characters for the extraordinarily lengthy name of the user who is currently running the installer',
         'host',
@@ -401,12 +400,12 @@ void main() {
     const kPlugdev = 'plugdev';
     const kTooLong = 'too_long';
 
-    final client = MockSubiquityClient();
-    when(client.validateUsername(kRoot))
+    final service = MockIdentityService();
+    when(service.validateUsername(kRoot))
         .thenAnswer((_) async => UsernameValidation.ALREADY_IN_USE);
-    when(client.validateUsername(kPlugdev))
+    when(service.validateUsername(kPlugdev))
         .thenAnswer((_) async => UsernameValidation.SYSTEM_RESERVED);
-    when(client.validateUsername(kTooLong))
+    when(service.validateUsername(kTooLong))
         .thenAnswer((_) async => UsernameValidation.TOO_LONG);
 
     final network = MockNetworkService();
@@ -415,7 +414,7 @@ void main() {
     final telemetry = MockTelemetryService();
 
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: MockActiveDirectoryService(),
       config: MockConfigService(),
       network: network,
@@ -444,8 +443,8 @@ void main() {
   });
 
   test('respect existing values', () async {
-    final client = MockSubiquityClient();
-    when(client.getIdentity()).thenAnswer((_) async {
+    final service = MockIdentityService();
+    when(service.getIdentity()).thenAnswer((_) async {
       return const IdentityData(
         realname: 'Default',
         username: 'default',
@@ -466,7 +465,7 @@ void main() {
     final telemetry = MockTelemetryService();
 
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -479,7 +478,7 @@ void main() {
     await IOOverrides.runZoned(() async {
       await model.init();
     }, createFile: (path) => MockProductNameFile(''));
-    verify(client.getIdentity()).called(1);
+    verify(service.getIdentity()).called(1);
 
     expect(model.realName, equals('User'));
     expect(model.username, equals('user'));
@@ -489,7 +488,7 @@ void main() {
   test('site connectivity', () async {
     final networkChanged = StreamController<List<String>>(sync: true);
 
-    final client = MockSubiquityClient();
+    final service = MockIdentityService();
     final activeDirectory = MockActiveDirectoryService();
     final config = MockConfigService();
     final network = MockNetworkService();
@@ -499,7 +498,7 @@ void main() {
     when(network.propertiesChanged).thenAnswer((_) => networkChanged.stream);
 
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,
@@ -518,8 +517,8 @@ void main() {
   });
 
   test('active directory support', () async {
-    final client = MockSubiquityClient();
-    when(client.getIdentity()).thenAnswer((_) async => const IdentityData());
+    final service = MockIdentityService();
+    when(service.getIdentity()).thenAnswer((_) async => const IdentityData());
 
     final activeDirectory = MockActiveDirectoryService();
     when(activeDirectory.hasSupport()).thenAnswer((_) async => true);
@@ -534,7 +533,7 @@ void main() {
     final telemetry = MockTelemetryService();
 
     final model = IdentityModel(
-      client: client,
+      service: service,
       activeDirectory: activeDirectory,
       config: config,
       network: network,

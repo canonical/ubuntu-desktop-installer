@@ -18,11 +18,11 @@ final keyboardModelProvider =
 
 /// Implements the business logic of the Keyboard page.
 class KeyboardModel extends SafeChangeNotifier {
-  /// Creates a model with the specified client.
-  KeyboardModel(this._client, {@visibleForTesting Platform? platform})
+  /// Creates a model with the specified service.
+  KeyboardModel(this._service, {@visibleForTesting Platform? platform})
       : _platform = platform ?? const LocalPlatform();
 
-  final KeyboardService _client;
+  final KeyboardService _service;
   final Platform _platform;
   List<KeyboardLayout> _layouts = [];
 
@@ -44,22 +44,12 @@ class KeyboardModel extends SafeChangeNotifier {
   KeyboardLayout? get _selectedLayout =>
       (_selectedLayoutIndex > -1) ? _layouts[_selectedLayoutIndex] : null;
 
-  /// Emits keyboard layout selection changes.
-  Stream<int> get onLayoutSelected => _onLayoutSelected.stream;
-  final _onLayoutSelected = StreamController<int>();
-
-  /// Emits keyboard layout variant selection changes.
-  Stream<int> get onVariantSelected => _onVariantSelected.stream;
-  final _onVariantSelected = StreamController<int>();
-
   /// Selects the keyboard layout at [index].
   Future<void> selectLayout(int index, [int variant = 0]) async {
     assert(index > -1 && index < layoutCount);
     if (_selectedLayoutIndex == index) return;
     _selectedLayoutIndex = index;
     _selectedVariantIndex = _selectedLayout!.variants.isNotEmpty ? variant : -1;
-    _onLayoutSelected.add(_selectedLayoutIndex);
-    _onVariantSelected.add(_selectedVariantIndex);
     log.info(
         'Selected ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
     notifyListeners();
@@ -122,11 +112,11 @@ class KeyboardModel extends SafeChangeNotifier {
   /// Initializes the model and detects the current system keyboard layout and
   /// variant.
   Future<void> init() async {
-    _layouts = await _client.getKeyboard().then((keyboard) {
+    _layouts = await _service.getKeyboard().then((keyboard) {
       return keyboard.layouts.sortedBy((a) => removeDiacritics(a.name));
     });
     log.info('Loaded ${_layouts.length} keyboard layouts');
-    final keyboard = await _client.getKeyboard();
+    final keyboard = await _service.getKeyboard();
     _selectedLayoutIndex = _layouts.indexWhere((layout) {
       return layout.code == keyboard.setting.layout;
     });
@@ -148,7 +138,7 @@ class KeyboardModel extends SafeChangeNotifier {
     final variant = _selectedVariant?.code;
     final keyboard = KeyboardSetting(layout: layout, variant: variant ?? '');
     log.info('Updated $layout ($variant) input source');
-    return _client.setInputSource(
+    return _service.setInputSource(
       keyboard,
       user: _platform.environment['USERNAME'] ?? _platform.environment['USER'],
     );
@@ -160,13 +150,6 @@ class KeyboardModel extends SafeChangeNotifier {
     final variant = _selectedVariant?.code;
     final keyboard = KeyboardSetting(layout: layout, variant: variant ?? '');
     log.info('Saved $layout ($variant) keyboard layout');
-    return _client.setKeyboard(keyboard);
-  }
-
-  @override
-  void dispose() {
-    _onLayoutSelected.close();
-    _onVariantSelected.close();
-    super.dispose();
+    return _service.setKeyboard(keyboard);
   }
 }

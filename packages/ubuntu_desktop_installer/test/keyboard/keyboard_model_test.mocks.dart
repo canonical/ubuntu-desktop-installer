@@ -30,6 +30,16 @@ class _FakeKeyboardSetup_0 extends _i1.SmartFake implements _i2.KeyboardSetup {
         );
 }
 
+class _FakeAnyStep_1 extends _i1.SmartFake implements _i2.AnyStep {
+  _FakeAnyStep_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [KeyboardService].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -76,4 +86,19 @@ class MockKeyboardService extends _i1.Mock implements _i3.KeyboardService {
         returnValue: _i4.Future<void>.value(),
         returnValueForMissingStub: _i4.Future<void>.value(),
       ) as _i4.Future<void>);
+  @override
+  _i4.Future<_i2.AnyStep> getKeyboardStep([String? step = r'0']) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getKeyboardStep,
+          [step],
+        ),
+        returnValue: _i4.Future<_i2.AnyStep>.value(_FakeAnyStep_1(
+          this,
+          Invocation.method(
+            #getKeyboardStep,
+            [step],
+          ),
+        )),
+      ) as _i4.Future<_i2.AnyStep>);
 }

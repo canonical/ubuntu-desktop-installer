@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -33,7 +32,7 @@ const kMaxUsernameLength = 32;
 
 final identityModelProvider = ChangeNotifierProvider(
   (_) => IdentityModel(
-    client: getService<SubiquityClient>(),
+    service: getService<IdentityService>(),
     activeDirectory: getService<ActiveDirectoryService>(),
     config: getService<ConfigService>(),
     network: getService<NetworkService>(),
@@ -45,12 +44,12 @@ final identityModelProvider = ChangeNotifierProvider(
 class IdentityModel extends PropertyStreamNotifier {
   /// Creates the model with the given client.
   IdentityModel({
-    required SubiquityClient client,
+    required IdentityService service,
     required ActiveDirectoryService activeDirectory,
     required ConfigService config,
     required NetworkService network,
     required TelemetryService telemetry,
-  })  : _client = client,
+  })  : _service = service,
         _activeDirectory = activeDirectory,
         _config = config,
         _network = network,
@@ -73,7 +72,7 @@ class IdentityModel extends PropertyStreamNotifier {
     setProperties(_network.propertiesChanged);
   }
 
-  final SubiquityClient _client;
+  final IdentityService _service;
   final ActiveDirectoryService _activeDirectory;
   final ConfigService _config;
   final NetworkService _network;
@@ -139,8 +138,7 @@ class IdentityModel extends PropertyStreamNotifier {
 
   /// Whether the current input is valid.
   bool get isValid {
-    return realName.isNotEmpty &&
-        realName.length <= kMaxRealNameLength &&
+    return realName.length <= kMaxRealNameLength &&
         hostname.isNotEmpty &&
         hostname.length <= kMaxHostnameLength &&
         username.isNotEmpty &&
@@ -159,13 +157,13 @@ class IdentityModel extends PropertyStreamNotifier {
   Future<void> validate() async {
     if (username.isNotEmpty &&
         RegExp(kValidUsernamePattern).hasMatch(username)) {
-      _usernameValidation.value = await _client.validateUsername(username);
+      _usernameValidation.value = await _service.validateUsername(username);
     }
   }
 
   /// Loads the identity data from the server, and resolves the system hostname.
   Future<void> init() async {
-    final identity = await _client.getIdentity();
+    final identity = await _service.getIdentity();
     _realName.value ??= identity.realname.orIfEmpty(null);
     _hostname.value ??= identity.hostname.orIfEmpty(null);
     _username.value ??= identity.username.orIfEmpty(null);
@@ -207,7 +205,7 @@ class IdentityModel extends PropertyStreamNotifier {
       await _activeDirectory.markConfigured();
     }
 
-    return _client.setIdentity(identity);
+    return _service.setIdentity(identity);
   }
 
   /// Defines if the password is shown or obscured.
