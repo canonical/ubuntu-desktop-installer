@@ -117,8 +117,6 @@
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "Sistem berkas ReiserFS",
   "@partitionFormatReiserFS": {},
-  "partitionFormatSwap": "Area swap",
-  "@partitionFormatSwap": {},
   "partitionFormatZfsroot": "Sistem berkas root ZFS",
   "@partitionFormatZfsroot": {},
   "writeChangesPartitionEntryUnmounted": "partisi #{disk}{partition} sebagai {format}",
