@@ -250,8 +250,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Verwendet als:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt4": "Ext4-Journaling-Dateisystem",
-  "@partitionFormatExt4": {},
   "partitionFormatExt3": "Ext3-Journaling-Dateisystem",
   "@partitionFormatExt3": {},
   "partitionFormatExt2": "Ext2-Dateisystem",
