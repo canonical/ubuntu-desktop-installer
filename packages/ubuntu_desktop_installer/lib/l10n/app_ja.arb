@@ -252,8 +252,6 @@
   "@partitionTypePrimary": {},
   "partitionLocationBeginning": "この領域の始点",
   "@partitionLocationBeginning": {},
-  "partitionFormatZfsroot": "ZFS ルートファイルシステム",
-  "@partitionFormatZfsroot": {},
   "whoAreYouPageTitle": "アカウントの設定",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageRequirePassword": "ログイン時にパスワードを要求する",
