@@ -314,8 +314,6 @@
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
   },
-  "partitionFormatZfsroot": "Radika dosiersistemo ZFS",
-  "@partitionFormatZfsroot": {},
   "partitionMountPointLabel": "Surmetingo:",
   "@partitionMountPointLabel": {},
   "writeChangesToDisk": "Preta por instalado",
