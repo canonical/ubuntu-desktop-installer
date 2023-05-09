@@ -505,8 +505,6 @@
   "@bootLoaderDevice": {},
   "partitionCreateTitle": "Створити розділ",
   "@partitionCreateTitle": {},
-  "partitionFormatNtfs": "Файлова система NTFS",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "Файлова система ReiserFS",
   "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "Коренева файлова система ZFS",
