@@ -167,8 +167,6 @@
   "@whoAreYouPageRealNameLabel": {},
   "whoAreYouPageComputerNameLabel": "Имя компьютера",
   "@whoAreYouPageComputerNameLabel": {},
-  "partitionFormatNtfs": "Файловая система NTFS",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "Файловая система ReiserFS",
   "@partitionFormatReiserFS": {},
   "partitionErase": "Форматировать раздел",
