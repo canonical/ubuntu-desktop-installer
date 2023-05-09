@@ -273,8 +273,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Używana jako:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat16": "System plików FAT16",
-  "@partitionFormatFat16": {},
   "partitionFormatFat32": "System plików FAT32",
   "@partitionFormatFat32": {},
   "partitionFormatIso9660": "System plików ISO 9660",
