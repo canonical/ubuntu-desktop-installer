@@ -149,8 +149,6 @@
   "@partitionTypeLogical": {},
   "partitionLocationLabel": "Расположение нового раздела:",
   "@partitionLocationLabel": {},
-  "partitionFormatFat": "Файловая система FAT",
-  "@partitionFormatFat": {},
   "partitionUnitB": "Б",
   "@partitionUnitB": {},
   "partitionUnitKB": "КБ",
