@@ -448,8 +448,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Used as:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt2": "Ext2 file system",
-  "@partitionFormatExt2": {},
   "partitionFormatBtrfs": "btrfs journaling file system",
   "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "JFS journaling file system",
