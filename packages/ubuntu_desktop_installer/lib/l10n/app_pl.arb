@@ -77,8 +77,6 @@
   "@diskHeadersFormat": {},
   "chooseSecurityKeyHeader": "Szyfrowanie dysku chroni pliki w przypadku utraty komputera. Wymaga ono podania klucza bezpieczeństwa przy każdym uruchomieniu komputera.\n\nWszelkie pliki spoza {RELEASE} nie zostaną zaszyfrowane.",
   "@chooseSecurityKeyHeader": {},
-  "partitionFormatReiserFS": "System plików ReiserFS",
-  "@partitionFormatReiserFS": {},
   "installationTypeEncryptInfo": "Klucz bezpieczeństwa zostanie wybrany w następnym kroku.",
   "@installationTypeEncryptInfo": {},
   "installationTypeZFS": "EKSPERYMENTALNE: wymaż dysk i użyj ZFS",
