@@ -255,8 +255,6 @@
   "@partitionLocationBeginning": {},
   "partitionLocationEnd": "Diwedd y gwagle hwn",
   "@partitionLocationEnd": {},
-  "partitionFormatFat16": "System ffeiliau FAT16",
-  "@partitionFormatFat16": {},
   "partitionFormatIso9660": "System ffeiliau ISO 9660",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "System ffeiliau VFAT",
