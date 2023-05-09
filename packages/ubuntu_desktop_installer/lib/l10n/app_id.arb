@@ -329,8 +329,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Dipakai sebagai:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt2": "Sistem berkas Ext2",
-  "@partitionFormatExt2": {},
   "partitionFormatXfs": "Sistem berkas penjurnalan XFS",
   "@partitionFormatXfs": {},
   "partitionFormatBtrfs": "Sistem berkas penjurnalan btrfs",
