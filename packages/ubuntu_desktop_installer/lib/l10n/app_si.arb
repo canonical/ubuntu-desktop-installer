@@ -245,8 +245,6 @@
   "@partitionUnitGB": {},
   "partitionTypeLogical": "තාර්කික",
   "@partitionTypeLogical": {},
-  "partitionFormatReiserFS": "ReiserFS ගොනු පද්ධතිය",
-  "@partitionFormatReiserFS": {},
   "whoAreYouPageAutoLogin": "ස්වයංක්‍රීයව පිවිසෙන්න",
   "@whoAreYouPageAutoLogin": {},
   "whoAreYouPageRequirePassword": "ප්‍රවේශය සඳහා මාගේ මුරපදය වුවමනාය",
