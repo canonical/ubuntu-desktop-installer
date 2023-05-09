@@ -258,8 +258,6 @@
   "@partitionTypePrimary": {},
   "partitionLocationBeginning": "この領域の始点",
   "@partitionLocationBeginning": {},
-  "partitionFormatSwap": "スワップ領域",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "ISO 9660 ファイルシステム",
   "@partitionFormatIso9660": {},
   "partitionFormatZfsroot": "ZFS ルートファイルシステム",
