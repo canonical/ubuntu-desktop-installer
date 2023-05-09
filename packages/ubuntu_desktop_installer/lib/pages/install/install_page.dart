@@ -43,6 +43,11 @@ class _InstallPageState extends ConsumerState<InstallPage> {
 
     final model = ref.read(installModelProvider);
     model.init();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      model.precacheSlideImages(context);
+    });
   }
 
   @override
@@ -66,17 +71,6 @@ class _SlidePage extends ConsumerStatefulWidget {
 
 class _SlidePageState extends ConsumerState<_SlidePage> {
   final _slideController = ValueNotifier(0);
-
-  @override
-  void initState() {
-    super.initState();
-
-    final model = ref.read(installModelProvider);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-      model.precacheSlideImages(context);
-    });
-  }
 
   @override
   void dispose() {
