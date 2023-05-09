@@ -41,8 +41,8 @@ class NetworkModel extends SafeChangeNotifier implements ConnectModel {
       _connectModels[_preferredConnectMode];
 
   void addConnectMode(ConnectModel model) {
-    _connectModels[model.connectMode] = model;
-    model.onAvailabilityChanged.listen((_) => _updateConnectMode());
+    _connectModels[model.connectMode] ??= model
+      ..onAvailabilityChanged.listen((_) => _updateConnectMode());
   }
 
   ConnectMode _findBestConnectMode() {

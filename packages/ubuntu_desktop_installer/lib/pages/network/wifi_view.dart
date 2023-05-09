@@ -69,7 +69,9 @@ class _WifiViewState extends ConsumerState<WifiView> {
   @override
   void initState() {
     super.initState();
-    ref.read(NetworkPage.wifiModelProvider.notifier).startPeriodicScanning();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(NetworkPage.wifiModelProvider).startPeriodicScanning();
+    });
   }
 
   @override
