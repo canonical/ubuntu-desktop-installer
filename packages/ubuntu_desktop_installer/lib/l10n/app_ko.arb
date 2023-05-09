@@ -159,8 +159,6 @@
   "@whoAreYouPageComputerNameRequired": {},
   "whoAreYouPageInvalidComputerName": "올바르지 않은 컴퓨터 이름 입니다",
   "@whoAreYouPageInvalidComputerName": {},
-  "partitionFormatZfsroot": "ZFS 루트 파일 시스템",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "파티션 포맷",
   "@partitionErase": {},
   "writeChangesPartitionsHeader": "다음과 같은 파티션 변경사항이 적용됩니다:",
