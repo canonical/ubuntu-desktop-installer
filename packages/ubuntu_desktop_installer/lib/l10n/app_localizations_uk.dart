@@ -514,54 +514,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get partitionFormatLabel => 'Використовується як:';
 
   @override
-  String get partitionFormatExt4 => 'Журнальна файлова система Ext4';
-
-  @override
-  String get partitionFormatExt3 => 'Журнальна файлова система Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'Файлова система Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'Журнальна файлова система btrfs';
-
-  @override
-  String get partitionFormatJfs => 'Журнальна файлова система JFS';
-
-  @override
-  String get partitionFormatXfs => 'Журнальна файлова система XFS';
-
-  @override
-  String get partitionFormatFat => 'Файлова система FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Файлова система FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'Файлова система FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'Файлова система FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Своп-зона';
-
-  @override
-  String get partitionFormatIso9660 => 'Файлова система ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Файлова система VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'Файлова система NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Файлова система ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'Коренева файлова система ZFS';
-
-  @override
   String get partitionFormatNone => 'Leave unformatted';
 
   @override

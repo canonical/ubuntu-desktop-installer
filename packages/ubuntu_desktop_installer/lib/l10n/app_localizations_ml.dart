@@ -514,54 +514,6 @@ class AppLocalizationsMl extends AppLocalizations {
   String get partitionFormatLabel => 'ഇതായി ഉപയോഗിക്കുന്നു:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 ജേണലിംഗ് ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 ജേണലിംഗ് ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs ജേണലിംഗ് ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatJfs => 'JFS ജേണലിംഗ് ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatXfs => 'XFS ജേണലിംഗ് ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatFat => 'FAT ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatSwap => 'Swap സ്ഥലം';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatVfat => 'VFAT ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS ഫയൽ സിസ്റ്റം';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS root ഫയൽ സിസ്റ്റം';
-
-  @override
   String get partitionFormatNone => 'Leave unformatted';
 
   @override

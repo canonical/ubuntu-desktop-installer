@@ -514,54 +514,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get partitionFormatLabel => 'Dipakai sebagai:';
 
   @override
-  String get partitionFormatExt4 => 'Sistem berkas penjurnalan Ext4';
-
-  @override
-  String get partitionFormatExt3 => 'Sistem berkas penjurnalan Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'Sistem berkas Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'Sistem berkas penjurnalan btrfs';
-
-  @override
-  String get partitionFormatJfs => 'Sistem berkas penjurnalan JFS';
-
-  @override
-  String get partitionFormatXfs => 'Sistem berkas penjurnalan XFS';
-
-  @override
-  String get partitionFormatFat => 'Sistem berkas FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Sistem berkas FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'Sistem berkas FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'Sistem berkas FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Area swap';
-
-  @override
-  String get partitionFormatIso9660 => 'Sistem berkas ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Sistem berkas VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'Sistem berkas NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Sistem berkas ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'Sistem berkas root ZFS';
-
-  @override
   String get partitionFormatNone => 'Leave unformatted';
 
   @override

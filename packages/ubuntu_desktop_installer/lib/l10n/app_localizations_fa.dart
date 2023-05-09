@@ -514,54 +514,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get partitionFormatLabel => 'استفاده شده برای:';
 
   @override
-  String get partitionFormatExt4 => 'سامانه پروندهٔ ثبت شدهٔ Ext4';
-
-  @override
-  String get partitionFormatExt3 => 'سامانه پروندهٔ ثبت شدهٔ Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'سامانه پروندهٔ Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'سامانه پروندهٔ ثبت شدهٔ btrfs';
-
-  @override
-  String get partitionFormatJfs => 'سامانه پروندهٔ ثبت شدهٔ JFS';
-
-  @override
-  String get partitionFormatXfs => 'سامانه پروندهٔ ثبت شدهٔ XFS';
-
-  @override
-  String get partitionFormatFat => 'سامانه پروندهٔ FAT';
-
-  @override
-  String get partitionFormatFat12 => 'سامانه پروندهٔ FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'سامانه پروندهٔ FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'سامانه پروندهٔ FAT32';
-
-  @override
-  String get partitionFormatSwap => 'ناحیهٔ مبادله';
-
-  @override
-  String get partitionFormatIso9660 => 'سامانه پروندهٔ ایزو ۹۶۶۰';
-
-  @override
-  String get partitionFormatVfat => 'سامانه پروندهٔ VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'سامانه پروندهٔ NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'سامانه پروندهٔ ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'سامانه پروندهٔ ریشهٔ ZFS';
-
-  @override
   String get partitionFormatNone => 'قالب‌بندی نشده گذاشتن';
 
   @override

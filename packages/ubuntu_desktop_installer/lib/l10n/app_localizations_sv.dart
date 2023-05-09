@@ -514,54 +514,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get partitionFormatLabel => 'Används som:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journalfilsystem';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 journalfilsystem';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 filsystem';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs journalfilsystem';
-
-  @override
-  String get partitionFormatJfs => 'JFS journalfilsystem';
-
-  @override
-  String get partitionFormatXfs => 'XFS journalfilsystem';
-
-  @override
-  String get partitionFormatFat => 'FAT filsystem';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 filsystem';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 filsystem';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 filsystem';
-
-  @override
-  String get partitionFormatSwap => 'Swap område';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9960 filsystem';
-
-  @override
-  String get partitionFormatVfat => 'VFAT filsystem';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS filsystem';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS filsystem';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS rotfilsystem';
-
-  @override
   String get partitionFormatNone => 'Lämna oformaterad';
 
   @override

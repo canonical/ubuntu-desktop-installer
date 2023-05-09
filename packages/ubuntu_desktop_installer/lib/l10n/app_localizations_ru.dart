@@ -514,54 +514,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get partitionFormatLabel => 'Использовано:';
 
   @override
-  String get partitionFormatExt4 => 'Журналируемая файловая система Ext4';
-
-  @override
-  String get partitionFormatExt3 => 'Журналируемая файловая система Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'Файловая система Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'Журналируемая файловая система btrfs';
-
-  @override
-  String get partitionFormatJfs => 'Журналируемая файловая система JFS';
-
-  @override
-  String get partitionFormatXfs => 'Журналируемя файловая система XFS';
-
-  @override
-  String get partitionFormatFat => 'Файловая система FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Файловая система FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'Файловая система FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'Файловая система FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Область подкачки';
-
-  @override
-  String get partitionFormatIso9660 => 'Файловая система ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Файловая система VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'Файловая система NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Файловая система ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'Корневая файловая система ZFS';
-
-  @override
   String get partitionFormatNone => 'Оставить неформатированным';
 
   @override

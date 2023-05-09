@@ -514,54 +514,6 @@ class AppLocalizationsCy extends AppLocalizations {
   String get partitionFormatLabel => 'Used as:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
-
-  @override
-  String get partitionFormatExt2 => 'System ffeiliau Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
-
-  @override
-  String get partitionFormatJfs => 'JFS journaling file system';
-
-  @override
-  String get partitionFormatXfs => 'XFS journaling file system';
-
-  @override
-  String get partitionFormatFat => 'System ffeiliau FAT';
-
-  @override
-  String get partitionFormatFat12 => 'System ffeiliau FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'System ffeiliau FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'System ffeiliau FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Swap area';
-
-  @override
-  String get partitionFormatIso9660 => 'System ffeiliau ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'System ffeiliau VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'System ffeiliau NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'System ffeiliau ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
-
-  @override
   String get partitionFormatNone => 'Leave unformatted';
 
   @override
