@@ -248,8 +248,6 @@
   "@partitionFormatZfsroot": {},
   "partitionFormatReiserFS": "Souborový systém ReiserFS",
   "@partitionFormatReiserFS": {},
-  "partitionFormatNtfs": "Souborový systém NTFS",
-  "@partitionFormatNtfs": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
