@@ -167,8 +167,6 @@
   "@whoAreYouPageRealNameLabel": {},
   "whoAreYouPageComputerNameLabel": "Имя компьютера",
   "@whoAreYouPageComputerNameLabel": {},
-  "partitionFormatFat32": "Файловая система FAT32",
-  "@partitionFormatFat32": {},
   "partitionFormatSwap": "Область подкачки",
   "@partitionFormatSwap": {},
   "partitionFormatIso9660": "Файловая система ISO 9660",
