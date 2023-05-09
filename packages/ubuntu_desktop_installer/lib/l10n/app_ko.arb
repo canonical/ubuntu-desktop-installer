@@ -67,8 +67,6 @@
   "@partitionFormatReiserFS": {},
   "whoAreYouPageRealNameLabel": "이름",
   "@whoAreYouPageRealNameLabel": {},
-  "partitionFormatVfat": "VFAT 파일 시스템",
-  "@partitionFormatVfat": {},
   "changeButtonText": "바꾸기",
   "@changeButtonText": {},
   "typeToTest": "키보드를 테스트 해보려면 이 곳을 사용하십시오",
