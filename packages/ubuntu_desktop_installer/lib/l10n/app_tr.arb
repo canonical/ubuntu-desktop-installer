@@ -259,8 +259,6 @@
   "@startInstallingButtonText": {},
   "welcomeHeader": "Dil seçin:",
   "@welcomeHeader": {},
-  "partitionFormatReiserFS": "ReiserFS dosya sistemi",
-  "@partitionFormatReiserFS": {},
   "diskHeadersSystem": "Sistem",
   "@diskHeadersSystem": {},
   "whoAreYouPageAutoLogin": "Otomatik giriş yap",
