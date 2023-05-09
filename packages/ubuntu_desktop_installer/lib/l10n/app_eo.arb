@@ -292,8 +292,6 @@
   "@allocateDiskSpace": {},
   "installationTypeManualInfo": "Vi povas mem krei subdiskojn aŭ ŝanĝi iliajn grandojn, aŭ elekti plurajn subdiskojn por {DISTRO}",
   "@installationTypeManualInfo": {},
-  "partitionFormatNtfs": "Dosiersistemo NTFS",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "Dosiersistemo ReiserFS",
   "@partitionFormatReiserFS": {},
   "whoAreYouPageTitle": "Agordu vian konton",
