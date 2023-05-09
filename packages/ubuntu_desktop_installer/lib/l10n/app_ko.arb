@@ -92,8 +92,6 @@
   "@allocateDiskSpace": {},
   "partitionEditTitle": "파티션 편집",
   "@partitionEditTitle": {},
-  "partitionFormatSwap": "스왑 영역",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "ISO 9660 파일 시스템",
   "@partitionFormatIso9660": {},
   "whoAreYouPageTitle": "계정을 설정하십시오",
