@@ -244,8 +244,6 @@
   "@partitionMountPointLabel": {},
   "partitionErase": "Naformátovat oddíl",
   "@partitionErase": {},
-  "partitionFormatZfsroot": "Kořenový souborový systém na ZFS",
-  "@partitionFormatZfsroot": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
