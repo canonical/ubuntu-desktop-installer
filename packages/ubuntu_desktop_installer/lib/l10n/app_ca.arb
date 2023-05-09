@@ -136,8 +136,6 @@
   "@partitionTypeLabel": {},
   "partitionLocationLabel": "Ubicació de la partició nova:",
   "@partitionLocationLabel": {},
-  "partitionFormatFat32": "Sistema de fitxers FAT32",
-  "@partitionFormatFat32": {},
   "partitionFormatIso9660": "Sistema de fitxers ISO 9660",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "Sistema de fitxers VFAT",
