@@ -32,8 +32,6 @@
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "പാർട്ടീഷൻ ചെയ്യാൻ നിങ്ങൾ ഒരു മുഴുവൻ ഉപകരണവും തിരഞ്ഞെടുത്തിരിക്കുന്നു. നിങ്ങൾ ഉപകരണത്തിൽ ഒരു പുതിയ പാർട്ടീഷൻ ടേബിൾ തയ്യാറാക്കുന്നത് തുടരുകയാണെങ്കിൽ, നിലവിലുള്ള എല്ലാ പാർട്ടീഷനുകളും നീക്കം ചെയ്യപ്പെടും.\n\nനിങ്ങൾക്ക് വേണമെങ്കിൽ ഈ പ്രവർത്തനം പിന്നീട് പഴയപടിയാക്കാനാകുമെന്ന കാര്യം ശ്രദ്ധിക്കുക.",
   "@newPartitionTableConfirmationMessage": {},
-  "partitionFormatExt4": "Ext4 ജേണലിംഗ് ഫയൽ സിസ്റ്റം",
-  "@partitionFormatExt4": {},
   "partitionLocationLabel": "പുതിയ പാർട്ടീഷനുള്ള സ്ഥലം:",
   "@partitionLocationLabel": {},
   "partitionLocationEnd": "ഈ ഇടത്തിന്റെ അവസാനം",
