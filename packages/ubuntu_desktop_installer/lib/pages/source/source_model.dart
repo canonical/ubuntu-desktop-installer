@@ -1,4 +1,5 @@
 import 'package:async/async.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -9,6 +10,15 @@ final log = Logger('source');
 
 const kNormalSourceId = 'ubuntu-desktop';
 const kMinimalSourceId = 'ubuntu-desktop-minimal';
+
+final sourceModelProvider = ChangeNotifierProvider(
+  (_) => SourceModel(
+    client: getService<SubiquityClient>(),
+    power: getService<PowerService>(),
+    network: getService<NetworkService>(),
+    storage: getService<StorageService>(),
+  ),
+);
 
 class SourceModel extends PropertyStreamNotifier {
   // ignore: public_member_api_docs
