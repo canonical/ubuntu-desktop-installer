@@ -449,8 +449,6 @@
   "@newPartitionTableConfirmationMessage": {},
   "partitionLocationLabel": "新しいパーティションの場所を選択してください。",
   "@partitionLocationLabel": {},
-  "partitionFormatExt4": "Ext4 ジャーナリングファイルシステム",
-  "@partitionFormatExt4": {},
   "partitionFormatExt3": "Ext3 ジャーナリングファイルシステム",
   "@partitionFormatExt3": {},
   "partitionFormatExt2": "Ext2 ファイルシステム",
