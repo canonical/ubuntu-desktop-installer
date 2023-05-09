@@ -505,8 +505,6 @@
   "@bootLoaderDevice": {},
   "partitionCreateTitle": "Створити розділ",
   "@partitionCreateTitle": {},
-  "partitionFormatIso9660": "Файлова система ISO 9660",
-  "@partitionFormatIso9660": {},
   "partitionFormatVfat": "Файлова система VFAT",
   "@partitionFormatVfat": {},
   "partitionFormatNtfs": "Файлова система NTFS",
