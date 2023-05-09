@@ -93,8 +93,6 @@
   "@newPartitionTableConfirmationMessage": {},
   "partitionLocationEnd": "A hely vége",
   "@partitionLocationEnd": {},
-  "partitionFormatXfs": "XFS naplózó fájlrendszer",
-  "@partitionFormatXfs": {},
   "partitionFormatFat": "FAT fájlrendszer",
   "@partitionFormatFat": {},
   "partitionFormatFat12": "FAT12 fájlrendszer",
