@@ -314,8 +314,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "בשימוש בתור:",
   "@partitionFormatLabel": {},
-  "partitionFormatIso9660": "מערכת קבצים מסוג ISO 9660",
-  "@partitionFormatIso9660": {},
   "partitionFormatVfat": "מערכת קבצים מסוג VFAT",
   "@partitionFormatVfat": {},
   "partitionFormatNtfs": "מערכת קבצים מסוג NTFS",
