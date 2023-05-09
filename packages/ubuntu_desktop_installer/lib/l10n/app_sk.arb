@@ -301,8 +301,6 @@
   "@partitionSizeLabel": {},
   "partitionUnitB": "B",
   "@partitionUnitB": {},
-  "partitionFormatZfsroot": "Koreňový súborový systém na ZFS",
-  "@partitionFormatZfsroot": {},
   "whoAreYouPageRealNameLabel": "Vaše meno",
   "@whoAreYouPageRealNameLabel": {},
   "whoAreYouPageRealNameTooLong": "Meno je príliš dlhé.",
