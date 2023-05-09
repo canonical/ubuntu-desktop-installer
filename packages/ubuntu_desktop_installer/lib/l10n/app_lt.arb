@@ -620,8 +620,6 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "freeDiskSpace": "Laisva vieta",
   "@freeDiskSpace": {},
-  "partitionFormatExt2": "Ext2 failų sistema",
-  "@partitionFormatExt2": {},
   "tooManyPrimaryPartitions": "Per daug pirminių skaidinių",
   "@tooManyPrimaryPartitions": {},
   "partitionFormatFat": "FAT failų sistema",
