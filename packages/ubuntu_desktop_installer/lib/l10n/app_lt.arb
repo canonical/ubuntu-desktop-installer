@@ -543,8 +543,6 @@
   "@partitionFormatFat32": {},
   "partitionFormatSwap": "Mainų sritis",
   "@partitionFormatSwap": {},
-  "partitionFormatFat12": "FAT12 failų sistema",
-  "@partitionFormatFat12": {},
   "partitionFormatZfsroot": "ZFS šakninė failų sistema",
   "@partitionFormatZfsroot": {},
   "partitionErase": "Formatuoti skaidinį",
