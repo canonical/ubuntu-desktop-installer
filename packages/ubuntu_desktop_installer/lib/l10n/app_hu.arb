@@ -425,8 +425,6 @@
   "@partitionUnitGB": {},
   "partitionTypeLabel": "Az új partíció típusa:",
   "@partitionTypeLabel": {},
-  "partitionFormatSwap": "Csereterület",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "ISO 9660 fájlrendszer",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "VFAT fájlrendszer",
