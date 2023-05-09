@@ -688,8 +688,6 @@
   },
   "installAlongsideAvailable": "Tilgjengelig:",
   "@installAlongsideAvailable": {},
-  "partitionFormatZfsroot": "ZFS-rotfilsystem",
-  "@partitionFormatZfsroot": {},
   "whoAreYouPageUsernameInvalidChars": "Navnet inneholder ugyldige tegn.",
   "@whoAreYouPageUsernameInvalidChars": {},
   "restartIntoWindows": "Omstart til Windows",
