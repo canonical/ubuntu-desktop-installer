@@ -253,8 +253,6 @@
   "@partitionLocationBeginning": {},
   "partitionLocationEnd": "Diwedd y gwagle hwn",
   "@partitionLocationEnd": {},
-  "partitionFormatNtfs": "System ffeiliau NTFS",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "System ffeiliau ReiserFS",
   "@partitionFormatReiserFS": {},
   "whoAreYouPageTitle": "Pwy ydych chi?",
