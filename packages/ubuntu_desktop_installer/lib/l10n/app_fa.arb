@@ -180,8 +180,6 @@
   "@notEnoughDiskSpaceTitle": {},
   "whoAreYouPageInvalidUsername": "نام کاربری نامعتبر است",
   "@whoAreYouPageInvalidUsername": {},
-  "partitionFormatExt3": "سامانه پروندهٔ ثبت شدهٔ Ext3",
-  "@partitionFormatExt3": {},
   "installCodecsTitle": "بارگیری و نصب پشتیبانی برای قالب‌های رسانه‌ای بیش‌تر",
   "@installCodecsTitle": {},
   "onBatteryWarning": "<font color=\"{color}\">هشدار:</font> رایانه به برق وصل نیست.",
