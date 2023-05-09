@@ -247,8 +247,6 @@
   "@partitionUnitGB": {},
   "partitionTypeLogical": "තාර්කික",
   "@partitionTypeLogical": {},
-  "partitionFormatVfat": "VFAT ගොනු පද්ධතිය",
-  "@partitionFormatVfat": {},
   "partitionFormatReiserFS": "ReiserFS ගොනු පද්ධතිය",
   "@partitionFormatReiserFS": {},
   "whoAreYouPageAutoLogin": "ස්වයංක්‍රීයව පිවිසෙන්න",
