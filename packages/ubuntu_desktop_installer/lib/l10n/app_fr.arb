@@ -285,8 +285,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Utilisée comme :",
   "@partitionFormatLabel": {},
-  "partitionFormatFat12": "Système de fichiers FAT12",
-  "@partitionFormatFat12": {},
   "partitionFormatFat16": "Système de fichiers FAT16",
   "@partitionFormatFat16": {},
   "partitionFormatFat32": "Système de fichiers FAT32",
