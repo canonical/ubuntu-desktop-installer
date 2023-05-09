@@ -509,8 +509,6 @@
   },
   "installAlongsideResizePartition": "Keisti skaidinio dydį",
   "@installAlongsideResizePartition": {},
-  "partitionFormatReiserFS": "ReiserFS failų sistema",
-  "@partitionFormatReiserFS": {},
   "diskHeadersDevice": "Įrenginys",
   "@diskHeadersDevice": {},
   "diskHeadersUsed": "Panaudotas",
