@@ -331,8 +331,6 @@
   "@partitionEditTitle": {},
   "partitionUnitB": "B",
   "@partitionUnitB": {},
-  "partitionFormatFat12": "FAT12 文件系统",
-  "@partitionFormatFat12": {},
   "partitionFormatFat32": "FAT32 文件系统",
   "@partitionFormatFat32": {},
   "partitionMountPointLabel": "挂载点：",
