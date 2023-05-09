@@ -51,7 +51,7 @@ void main() {
 
   Widget buildPage(IdentityModel model) {
     return ProviderScope(
-      overrides: [IdentityPage.modelProvider.overrideWith((_) => model)],
+      overrides: [identityModelProvider.overrideWith((_) => model)],
       child: const IdentityPage(),
     );
   }

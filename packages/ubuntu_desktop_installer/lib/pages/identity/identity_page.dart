@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_icons/yaru_icons.dart';
@@ -23,16 +22,6 @@ class IdentityPage extends ConsumerStatefulWidget {
   /// Creates a the installer page for setting up the user data.
   const IdentityPage({super.key});
 
-  static final modelProvider = ChangeNotifierProvider(
-    (_) => IdentityModel(
-      client: getService<SubiquityClient>(),
-      activeDirectory: getService<ActiveDirectoryService>(),
-      config: getService<ConfigService>(),
-      network: getService<NetworkService>(),
-      telemetry: getService<TelemetryService>(),
-    ),
-  );
-
   @override
   ConsumerState<IdentityPage> createState() => _IdentityPageState();
 }
@@ -42,7 +31,7 @@ class _IdentityPageState extends ConsumerState<IdentityPage> {
   void initState() {
     super.initState();
 
-    final model = ref.read(IdentityPage.modelProvider);
+    final model = ref.read(identityModelProvider);
     model.init();
   }
 
@@ -98,11 +87,10 @@ class _IdentityPageState extends ConsumerState<IdentityPage> {
         trailing: [
           WizardAction.next(
             context,
-            enabled:
-                ref.watch(IdentityPage.modelProvider.select((m) => m.isValid)),
+            enabled: ref.watch(identityModelProvider.select((m) => m.isValid)),
             arguments: ref.watch(
-                IdentityPage.modelProvider.select((m) => m.useActiveDirectory)),
-            onNext: ref.read(IdentityPage.modelProvider).save,
+                identityModelProvider.select((m) => m.useActiveDirectory)),
+            onNext: ref.read(identityModelProvider).save,
           ),
         ],
       ),
