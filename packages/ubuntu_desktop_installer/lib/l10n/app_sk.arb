@@ -468,8 +468,6 @@
   },
   "partitionUnitGB": "GB",
   "@partitionUnitGB": {},
-  "partitionFormatXfs": "Žurnálovací súborový systém XFS",
-  "@partitionFormatXfs": {},
   "partitionFormatFat12": "Súborový systém FAT12",
   "@partitionFormatFat12": {},
   "partitionUnitKB": "kB",
