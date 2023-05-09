@@ -601,8 +601,6 @@
   "@newPartitionTable": {},
   "partitionCreateTitle": "パーティションを作成する",
   "@partitionCreateTitle": {},
-  "partitionFormatFat": "FAT ファイルシステム",
-  "@partitionFormatFat": {},
   "chooseYourLookPageDarkSetting": "暗い",
   "@chooseYourLookPageDarkSetting": {},
   "musicSlideVLC": "VLC",
