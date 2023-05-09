@@ -213,8 +213,6 @@
   "@installAlongsideAvailable": {},
   "installAlongsideSize": "Maint:",
   "@installAlongsideSize": {},
-  "partitionFormatExt2": "System ffeiliau Ext2",
-  "@partitionFormatExt2": {},
   "cancelButtonText": "Diddymu",
   "@cancelButtonText": {},
   "changeButtonText": "Newid",
