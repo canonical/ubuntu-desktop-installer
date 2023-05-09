@@ -521,8 +521,6 @@
   },
   "partitionFormatXfs": "XFS günlüklü dosya sistemi",
   "@partitionFormatXfs": {},
-  "partitionFormatBtrfs": "btrfs günlüklü dosya sistemi",
-  "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "JFS günlüklü dosya sistemi",
   "@partitionFormatJfs": {},
   "installAlongsidePartition": "Bölüm:",
