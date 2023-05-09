@@ -250,8 +250,6 @@
   "@freeDiskSpace": {},
   "partitionFormatSwap": "ناحیهٔ مبادله",
   "@partitionFormatSwap": {},
-  "partitionFormatFat12": "سامانه پروندهٔ FAT12",
-  "@partitionFormatFat12": {},
   "partitionFormatFat16": "سامانه پروندهٔ FAT16",
   "@partitionFormatFat16": {},
   "partitionFormatVfat": "سامانه پروندهٔ VFAT",
