@@ -249,8 +249,6 @@
   "@partitionUnitGB": {},
   "partitionTypeLogical": "තාර්කික",
   "@partitionTypeLogical": {},
-  "partitionFormatExt2": "Ext2 ගොනු පද්ධතිය",
-  "@partitionFormatExt2": {},
   "partitionFormatFat": "FAT ගොනු පද්ධතිය",
   "@partitionFormatFat": {},
   "partitionFormatFat12": "FAT12 ගොනු පද්ධතිය",
