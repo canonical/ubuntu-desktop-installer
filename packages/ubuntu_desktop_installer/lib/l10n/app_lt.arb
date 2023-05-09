@@ -622,8 +622,6 @@
   "@freeDiskSpace": {},
   "tooManyPrimaryPartitions": "Per daug pirminių skaidinių",
   "@tooManyPrimaryPartitions": {},
-  "partitionFormatFat": "FAT failų sistema",
-  "@partitionFormatFat": {},
   "whoAreYouPageUsernameLabel": "Pasirinkite naudotojo vardą",
   "@whoAreYouPageUsernameLabel": {},
   "readyToUse": "**{system}** įdiegta ir paruošta naudoti",
