@@ -846,8 +846,6 @@
   "@activeDirectoryAdminInvalidChars": {},
   "activeDirectoryErrorTitle": "Klaida konfigūruojant ryšį su „Active Directory“",
   "@activeDirectoryErrorTitle": {},
-  "partitionFormatExt3": "Ext3 žurnalinė failų sistema",
-  "@partitionFormatExt3": {},
   "partitionFormatBtrfs": "btrfs žurnalinė failų sistema",
   "@partitionFormatBtrfs": {},
   "partitionFormatXfs": "XFS žurnalinė failų sistema",
