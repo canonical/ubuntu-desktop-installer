@@ -523,8 +523,6 @@
   "@diskHeadersSystem": {},
   "partitionLimitReached": "Pasiekta riba",
   "@partitionLimitReached": {},
-  "partitionFormatIso9660": "ISO 9660 failų sistema",
-  "@partitionFormatIso9660": {},
   "partitionFormatNtfs": "NTFS failų sistema",
   "@partitionFormatNtfs": {},
   "partitionTypeLogical": "Loginis",
