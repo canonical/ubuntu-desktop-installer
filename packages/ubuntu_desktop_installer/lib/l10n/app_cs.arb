@@ -272,8 +272,6 @@
   "@partitionFormatBtrfs": {},
   "partitionFormatExt2": "Souborový systém Ext2",
   "@partitionFormatExt2": {},
-  "partitionFormatExt3": "Žurnálovací souborový systém Ext3",
-  "@partitionFormatExt3": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
