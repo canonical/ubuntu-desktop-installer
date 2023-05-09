@@ -263,8 +263,6 @@
   "@partitionFormatReiserFS": {},
   "diskHeadersSystem": "Sistem",
   "@diskHeadersSystem": {},
-  "partitionFormatNtfs": "NTFS dosya sistemi",
-  "@partitionFormatNtfs": {},
   "whoAreYouPageAutoLogin": "Otomatik giriş yap",
   "@whoAreYouPageAutoLogin": {},
   "whoAreYouPageRequirePassword": "Giriş yapmak için parola iste",
