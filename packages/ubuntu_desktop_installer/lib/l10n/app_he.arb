@@ -314,8 +314,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "בשימוש בתור:",
   "@partitionFormatLabel": {},
-  "partitionFormatVfat": "מערכת קבצים מסוג VFAT",
-  "@partitionFormatVfat": {},
   "partitionFormatNtfs": "מערכת קבצים מסוג NTFS",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "מערכת קבצים מסוג ReiserFS",
