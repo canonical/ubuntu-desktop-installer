@@ -268,8 +268,6 @@
   "@partitionFormatXfs": {},
   "partitionFormatJfs": "Žurnálovací souborový systém JFS",
   "@partitionFormatJfs": {},
-  "partitionFormatBtrfs": "Žurnálovací souborový systém btrfs",
-  "@partitionFormatBtrfs": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
