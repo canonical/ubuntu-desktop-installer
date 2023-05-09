@@ -418,8 +418,6 @@
   "@partitionLocationEnd": {},
   "dontInstallDriverSoftwareNowDescription": "Vėliau galėsite ją įdiegti, atvėrę Programinę įrangą ir atnaujinimus.",
   "@dontInstallDriverSoftwareNowDescription": {},
-  "partitionFormatVfat": "VFAT failų sistema",
-  "@partitionFormatVfat": {},
   "partitionFormatLabel": "Naudojamas kaip:",
   "@partitionFormatLabel": {},
   "offlineWarning": "Šiuo metu nesate prisijungę prie interneto",
