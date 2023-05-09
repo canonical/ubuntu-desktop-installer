@@ -327,8 +327,6 @@
   "@selectGuidedStorageInstallNow": {},
   "partitionLocationEnd": "Tilan loppu",
   "@partitionLocationEnd": {},
-  "partitionFormatNtfs": "NTFS-tiedostojärjestelmä",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "ReiserFS-tiedostojärjestelmä",
   "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "ZFS root -tiedostojärjestelmä",
