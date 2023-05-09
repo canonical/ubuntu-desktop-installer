@@ -191,8 +191,6 @@
   "@softwareSlideTitle": {},
   "musicSlideTitle": "随时畅听，随地畅享",
   "@musicSlideTitle": {},
-  "partitionFormatFat": "FAT 文件系统",
-  "@partitionFormatFat": {},
   "partitionFormatReiserFS": "ReiserFS 文件系统",
   "@partitionFormatReiserFS": {},
   "partitionFormatNtfs": "NTFS 文件系统",
