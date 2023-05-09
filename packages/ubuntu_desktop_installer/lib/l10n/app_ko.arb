@@ -92,8 +92,6 @@
   "@allocateDiskSpace": {},
   "partitionEditTitle": "파티션 편집",
   "@partitionEditTitle": {},
-  "partitionFormatFat16": "FAT16 파일 시스템",
-  "@partitionFormatFat16": {},
   "partitionFormatFat32": "FAT32 파일 시스템",
   "@partitionFormatFat32": {},
   "partitionFormatSwap": "스왑 영역",
