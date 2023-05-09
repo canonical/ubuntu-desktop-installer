@@ -16,7 +16,7 @@ class SourceModel extends PropertyStreamNotifier {
       {required SubiquityClient client,
       required PowerService power,
       required NetworkService network,
-      required DiskStorageService storage,
+      required StorageService storage,
       bool installDrivers = false,
       bool installCodecs = false})
       : _client = client,
@@ -32,7 +32,7 @@ class SourceModel extends PropertyStreamNotifier {
   final SubiquityClient _client;
   final PowerService _power;
   final NetworkService _network;
-  final DiskStorageService _storage;
+  final StorageService _storage;
 
   String? _sourceId;
   String? get sourceId => _sourceId;

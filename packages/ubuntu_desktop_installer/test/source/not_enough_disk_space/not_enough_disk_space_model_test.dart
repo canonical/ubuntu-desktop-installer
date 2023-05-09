@@ -6,12 +6,12 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'not_enough_disk_space_model_test.mocks.dart';
 
-@GenerateMocks([DiskStorageService])
+@GenerateMocks([StorageService])
 void main() async {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   test('service', () {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.hasMultipleDisks).thenReturn(true);
     when(service.installMinimumSize).thenReturn(123);
     when(service.largestDiskSize).thenReturn(456);

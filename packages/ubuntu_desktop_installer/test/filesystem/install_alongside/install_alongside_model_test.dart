@@ -29,10 +29,10 @@ const windows10 = OsProber(
   type: 'chain',
 );
 
-@GenerateMocks([DiskStorageService, ProductService])
+@GenerateMocks([StorageService, ProductService])
 void main() {
   test('init guided storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [fakeDisk()]);
     when(service.getGuidedStorage()).thenAnswer((_) async =>
         fakeGuidedStorageResponse(possible: [fakeGuidedStorageTargetResize()]));
@@ -56,7 +56,7 @@ void main() {
     final resize2 = fakeGuidedStorageTargetResize(
         diskId: disk.id, partitionNumber: 2, maximum: 200);
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [resize1, resize2]));
@@ -74,7 +74,7 @@ void main() {
   });
 
   test('reset storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.resetStorage()).thenAnswer((_) async => []);
     when(service.getGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse());
@@ -85,7 +85,7 @@ void main() {
   });
 
   test('existing OS', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.existingOS).thenReturn([ubuntu2110, ubuntu2204]);
 
     final model = InstallAlongsideModel(service, MockProductService());
@@ -96,7 +96,7 @@ void main() {
     final service = MockProductService();
     when(service.getProductInfo()).thenReturn(ProductInfo(name: 'Foo'));
 
-    final model = InstallAlongsideModel(MockDiskStorageService(), service);
+    final model = InstallAlongsideModel(MockStorageService(), service);
     expect(model.productInfo.name, 'Foo');
   });
 
@@ -113,7 +113,7 @@ void main() {
     final storage2 =
         fakeGuidedStorageTargetResize(diskId: 'sdb', partitionNumber: 1);
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
@@ -154,7 +154,7 @@ void main() {
     final storage2 =
         fakeGuidedStorageTargetResize(diskId: 'sdb', partitionNumber: 1);
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
@@ -222,7 +222,7 @@ void main() {
       capabilities: [GuidedCapability.DIRECT],
     );
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));

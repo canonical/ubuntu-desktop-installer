@@ -59,10 +59,10 @@ class FilesystemPage extends StatelessWidget {
   }
 
   String? _nextRoute(dynamic arguments) {
-    final service = getService<DiskStorageService>();
+    final storage = getService<StorageService>();
     if (arguments == InstallationType.manual) {
       return Routes.allocateDiskSpace;
-    } else if (service.guidedTarget == null) {
+    } else if (storage.guidedTarget == null) {
       if (arguments == InstallationType.bitlocker) {
         return Routes.bitlocker;
       } else if (arguments == InstallationType.erase) {
@@ -70,7 +70,7 @@ class FilesystemPage extends StatelessWidget {
       } else if (arguments == InstallationType.alongside) {
         return Routes.installAlongside;
       }
-    } else if (service.useEncryption && service.securityKey == null) {
+    } else if (storage.useEncryption && storage.securityKey == null) {
       return Routes.securityKey;
     }
     return Routes.confirm;

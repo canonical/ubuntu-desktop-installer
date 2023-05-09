@@ -7,9 +7,8 @@ import 'dart:async' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/subiquity_client.dart' as _i2;
-import 'package:ubuntu_desktop_installer/services/disk_storage_service.dart'
-    as _i4;
 import 'package:ubuntu_desktop_installer/services/product_service.dart' as _i3;
+import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i4;
 import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
     as _i6;
 
@@ -45,12 +44,11 @@ class _FakeProductInfo_1 extends _i1.SmartFake implements _i3.ProductInfo {
         );
 }
 
-/// A class which mocks [DiskStorageService].
+/// A class which mocks [StorageService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockDiskStorageService extends _i1.Mock
-    implements _i4.DiskStorageService {
-  MockDiskStorageService() {
+class MockStorageService extends _i1.Mock implements _i4.StorageService {
+  MockStorageService() {
     _i1.throwOnMissingStub(this);
   }
 

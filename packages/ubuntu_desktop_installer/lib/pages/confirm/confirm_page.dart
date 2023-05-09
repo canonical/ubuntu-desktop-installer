@@ -19,7 +19,7 @@ class ConfirmPage extends ConsumerStatefulWidget {
   const ConfirmPage({super.key});
 
   static final modelProvider = ChangeNotifierProvider((_) => ConfirmModel(
-      getService<SubiquityClient>(), getService<DiskStorageService>()));
+      getService<SubiquityClient>(), getService<StorageService>()));
 
   @override
   ConsumerState<ConfirmPage> createState() => _ConfirmPageState();

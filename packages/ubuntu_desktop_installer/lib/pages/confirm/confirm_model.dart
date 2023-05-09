@@ -11,7 +11,7 @@ class ConfirmModel extends SafeChangeNotifier {
   ConfirmModel(this._client, this._service);
 
   final SubiquityClient _client;
-  final DiskStorageService _service;
+  final StorageService _service;
   List<Disk>? _disks;
   Map<String, List<Partition>>? _partitions;
   Map<String, List<Partition>>? _originals;

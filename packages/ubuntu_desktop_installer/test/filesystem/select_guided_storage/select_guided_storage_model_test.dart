@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'select_guided_storage_model_test.mocks.dart';
 
-@GenerateMocks([DiskStorageService])
+@GenerateMocks([StorageService])
 void main() {
   final testDisks = <Disk>[fakeDisk(id: 'a'), fakeDisk(id: 'b')];
   final testTargets = testDisks
@@ -17,7 +17,7 @@ void main() {
       .toList();
 
   test('load guided storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: testTargets));
@@ -30,7 +30,7 @@ void main() {
   });
 
   test('save guided storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: testTargets));
@@ -62,7 +62,7 @@ void main() {
     const storage1 =
         GuidedStorageTargetReformat(diskId: 'sdb', capabilities: []);
 
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [storage0, storage1]));
@@ -84,7 +84,7 @@ void main() {
   });
 
   test('select guided storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: testTargets));
@@ -108,7 +108,7 @@ void main() {
   });
 
   test('reset guided storage', () async {
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.resetStorage()).thenAnswer((_) async => testDisks);
 
     final model = SelectGuidedStorageModel(service);
@@ -117,7 +117,7 @@ void main() {
   });
 
   test('notify changes', () {
-    final model = SelectGuidedStorageModel(MockDiskStorageService());
+    final model = SelectGuidedStorageModel(MockStorageService());
     expect(model.selectedIndex, isZero);
 
     var wasNotified = false;

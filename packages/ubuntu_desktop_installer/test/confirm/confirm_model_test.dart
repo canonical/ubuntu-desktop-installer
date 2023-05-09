@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'confirm_model_test.mocks.dart';
 
-@GenerateMocks([DiskStorageService])
+@GenerateMocks([StorageService])
 void main() {
   final testDisks = <Disk>[
     fakeDisk(
@@ -60,7 +60,7 @@ void main() {
 
   test('get storage', () async {
     final client = MockSubiquityClient();
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.guidedTarget).thenReturn(null);
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
@@ -98,7 +98,7 @@ void main() {
         GuidedStorageTarget.reformat(diskId: 'sda', capabilities: []);
 
     final client = MockSubiquityClient();
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.guidedTarget).thenReturn(target);
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
@@ -112,7 +112,7 @@ void main() {
 
   test('start installation', () async {
     final client = MockSubiquityClient();
-    final service = MockDiskStorageService();
+    final service = MockStorageService();
     when(service.guidedTarget).thenReturn(null);
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);

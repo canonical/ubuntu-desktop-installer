@@ -76,7 +76,6 @@ Future<void> runInstallerApp(
   if (liveRun) tryRegisterService(SoundService.new);
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
-  tryRegisterService(() => DiskStorageService(getService<SubiquityClient>()));
   tryRegisterService(JournalService.new);
   tryRegisterService<KeyboardService>(
       () => SubiquityKeyboardService(getService<SubiquityClient>()));
@@ -85,6 +84,7 @@ Future<void> runInstallerApp(
   tryRegisterService(() => NetworkService(getService<SubiquityClient>()));
   tryRegisterService(PowerService.new);
   tryRegisterService(ProductService.new);
+  tryRegisterService(() => StorageService(getService<SubiquityClient>()));
   tryRegisterService(SubiquityClient.new);
   tryRegisterService(
       () => SubiquityServer(process: process, endpoint: endpoint));
@@ -365,14 +365,14 @@ class _UbuntuDesktopInstallerWizardState
         'ubuntu_pro',
       ]);
 
-      final storage = getService<DiskStorageService>();
+      final storage = getService<StorageService>();
       storage.init();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final service = getService<DiskStorageService>();
+    final storage = getService<StorageService>();
 
     return Wizard(
       initialRoute: widget.initialRoute ?? Routes.initial,
@@ -400,7 +400,7 @@ class _UbuntuDesktopInstallerWizardState
           builder: (_) => const SourceWizard(),
           userData: InstallationStep.software.index,
           onNext: (_) =>
-              service.hasSecureBoot ? Routes.secureBoot : Routes.filesystem,
+              storage.hasSecureBoot ? Routes.secureBoot : Routes.filesystem,
         ),
         Routes.secureBoot: WizardRoute(
           builder: (_) => const SecureBootPage(),

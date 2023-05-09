@@ -10,7 +10,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'source_model_test.mocks.dart';
 
-@GenerateMocks([DiskStorageService, NetworkService, PowerService])
+@GenerateMocks([StorageService, NetworkService, PowerService])
 void main() {
   late SourceModel model;
 
@@ -19,7 +19,7 @@ void main() {
       client: MockSubiquityClient(),
       power: MockPowerService(),
       network: MockNetworkService(),
-      storage: MockDiskStorageService(),
+      storage: MockStorageService(),
     );
   });
 
@@ -94,7 +94,7 @@ void main() {
       installCodecs: false,
       power: power,
       network: network,
-      storage: MockDiskStorageService(),
+      storage: MockStorageService(),
     );
 
     await model.init();
@@ -115,7 +115,7 @@ void main() {
     final network = MockNetworkService();
     when(network.isConnected).thenReturn(true);
 
-    final storage = MockDiskStorageService();
+    final storage = MockStorageService();
     when(storage.init()).thenAnswer((_) async {});
 
     final model = SourceModel(
@@ -174,7 +174,7 @@ void main() {
       client: client,
       power: power,
       network: network,
-      storage: MockDiskStorageService(),
+      storage: MockStorageService(),
     );
     verifyNever(power.propertiesChanged);
 
@@ -219,7 +219,7 @@ void main() {
       client: client,
       power: power,
       network: network,
-      storage: MockDiskStorageService(),
+      storage: MockStorageService(),
     );
     verifyNever(network.propertiesChanged);
 
@@ -244,7 +244,7 @@ void main() {
   });
 
   test('has enough disk space', () async {
-    final storage = MockDiskStorageService();
+    final storage = MockStorageService();
 
     final model = SourceModel(
       client: MockSubiquityClient(),

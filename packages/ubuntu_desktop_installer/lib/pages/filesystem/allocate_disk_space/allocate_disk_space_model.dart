@@ -32,14 +32,14 @@ enum PartitionLocation {
 
 /// Provider for [AllocateDiskSpaceModel].
 final allocateDiskSpaceModelProvider = ChangeNotifierProvider(
-    (_) => AllocateDiskSpaceModel(getService<DiskStorageService>()));
+    (_) => AllocateDiskSpaceModel(getService<StorageService>()));
 
 /// View model for [AllocateDiskSpacePage].
 class AllocateDiskSpaceModel extends SafeChangeNotifier {
   /// Creates a new model with the given disk storage service.
   AllocateDiskSpaceModel(this._service);
 
-  final DiskStorageService _service;
+  final StorageService _service;
 
   var _disks = <Disk>[];
   var _originalConfigs = <String, Partition>{};

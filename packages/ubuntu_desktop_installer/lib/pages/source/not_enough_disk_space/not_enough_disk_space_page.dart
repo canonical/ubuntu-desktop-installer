@@ -16,7 +16,7 @@ class NotEnoughDiskSpacePage extends ConsumerWidget {
   const NotEnoughDiskSpacePage({super.key});
 
   static final modelProvider = ChangeNotifierProvider<NotEnoughDiskSpaceModel>(
-      (_) => NotEnoughDiskSpaceModel(getService<DiskStorageService>()));
+      (_) => NotEnoughDiskSpaceModel(getService<StorageService>()));
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
