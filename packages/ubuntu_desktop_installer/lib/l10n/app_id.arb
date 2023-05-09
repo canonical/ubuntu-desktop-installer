@@ -109,8 +109,6 @@
   "@partitionUnitGB": {},
   "whoAreYouPageConfirmPasswordLabel": "Konfirmasikan kata sandi Anda",
   "@whoAreYouPageConfirmPasswordLabel": {},
-  "partitionFormatReiserFS": "Sistem berkas ReiserFS",
-  "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "Sistem berkas root ZFS",
   "@partitionFormatZfsroot": {},
   "writeChangesPartitionEntryUnmounted": "partisi #{disk}{partition} sebagai {format}",
