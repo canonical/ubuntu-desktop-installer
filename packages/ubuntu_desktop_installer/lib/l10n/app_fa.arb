@@ -332,8 +332,6 @@
   "@installationTypeManual": {},
   "selectGuidedStorageInstallNow": "اکنون نصب شود",
   "@selectGuidedStorageInstallNow": {},
-  "partitionFormatFat": "سامانه پروندهٔ FAT",
-  "@partitionFormatFat": {},
   "whoAreYouPagePasswordShow": "نمایش",
   "@whoAreYouPagePasswordShow": {},
   "whoAreYouPagePasswordHide": "نهفتن",
