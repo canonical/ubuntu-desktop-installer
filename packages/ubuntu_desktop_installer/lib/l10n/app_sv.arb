@@ -1,7 +1,5 @@
 {
   "@@locale": "sv",
-  "partitionFormatReiserFS": "ReiserFS filsystem",
-  "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "ZFS rotfilsystem",
   "@partitionFormatZfsroot": {},
   "partitionErase": "Formatera partitionen",
