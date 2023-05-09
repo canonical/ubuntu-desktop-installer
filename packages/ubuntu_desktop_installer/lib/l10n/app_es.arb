@@ -389,8 +389,6 @@
       "system": {}
     }
   },
-  "partitionFormatExt4": "Sistema de archivos transaccional Ext4",
-  "@partitionFormatExt4": {},
   "partitionFormatExt3": "Sistema de archivos transaccional Ext3",
   "@partitionFormatExt3": {},
   "partitionFormatBtrfs": "Sistema de archivos transaccional btrfs",
