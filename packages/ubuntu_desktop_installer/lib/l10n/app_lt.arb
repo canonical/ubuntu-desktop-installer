@@ -537,8 +537,6 @@
   },
   "partitionSizeLabel": "Dydis:",
   "@partitionSizeLabel": {},
-  "partitionFormatFat32": "FAT32 failų sistema",
-  "@partitionFormatFat32": {},
   "partitionFormatSwap": "Mainų sritis",
   "@partitionFormatSwap": {},
   "partitionFormatZfsroot": "ZFS šakninė failų sistema",
