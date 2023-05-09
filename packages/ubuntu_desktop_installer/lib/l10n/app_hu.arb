@@ -187,8 +187,6 @@
   "@availableSoftware": {},
   "supportedSoftware": "Támogatott szoftver",
   "@supportedSoftware": {},
-  "partitionFormatFat32": "FAT32 fájlrendszer",
-  "@partitionFormatFat32": {},
   "whoAreYouPagePasswordMismatch": "A jelszavak nem egyeznek",
   "@whoAreYouPagePasswordMismatch": {},
   "writeChangesPartitionTablesHeader": "A következő eszközök partíciós táblái változnak meg:",
