@@ -325,8 +325,6 @@
   "@whoAreYouPageComputerNameLabel": {},
   "whoAreYouPageComputerNameInfo": "El nombre que utiliza al comunicarse con otros equipos.",
   "@whoAreYouPageComputerNameInfo": {},
-  "partitionFormatNtfs": "Sistema de archivos NTFS",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "Sistema de archivos ReiserFS",
   "@partitionFormatReiserFS": {},
   "partitionErase": "Formatear la partición",
