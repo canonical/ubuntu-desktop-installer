@@ -248,8 +248,6 @@
   "@startInstallingButtonText": {},
   "freeDiskSpace": "فضای آزاد",
   "@freeDiskSpace": {},
-  "partitionFormatNtfs": "سامانه پروندهٔ NTFS",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "سامانه پروندهٔ ReiserFS",
   "@partitionFormatReiserFS": {},
   "partitionMountPointLabel": "نقطهٔ سوار کردن:",
