@@ -528,8 +528,6 @@
   "@partitionErase": {},
   "installAlongsideAllocateSpace": "تخصیص فضا",
   "@installAlongsideAllocateSpace": {},
-  "partitionFormatFat32": "سامانه پروندهٔ FAT32",
-  "@partitionFormatFat32": {},
   "whoAreYouPageAutoLogin": "ورود خودکار",
   "@whoAreYouPageAutoLogin": {},
   "installAlongsideAvailable": "موجود:",
