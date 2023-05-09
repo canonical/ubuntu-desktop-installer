@@ -285,8 +285,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Utilisée comme :",
   "@partitionFormatLabel": {},
-  "partitionFormatNtfs": "Système de fichiers NTFS",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "Système de fichiers ReiserFS",
   "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "Système de fichiers racine ZFS",
