@@ -167,8 +167,6 @@
   "@whoAreYouPageRealNameLabel": {},
   "whoAreYouPageComputerNameLabel": "Имя компьютера",
   "@whoAreYouPageComputerNameLabel": {},
-  "partitionFormatSwap": "Область подкачки",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "Файловая система ISO 9660",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "Файловая система VFAT",
