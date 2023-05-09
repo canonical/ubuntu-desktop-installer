@@ -246,8 +246,6 @@
   "@partitionMountPointLabel": {},
   "partitionEditTitle": "パーティションを編集する",
   "@partitionEditTitle": {},
-  "partitionFormatVfat": "VFAT ファイルシステム",
-  "@partitionFormatVfat": {},
   "whoAreYouPageRealNameRequired": "名前を入力してください",
   "@whoAreYouPageRealNameRequired": {},
   "whoAreYouPageRealNameLabel": "あなたの名前",
