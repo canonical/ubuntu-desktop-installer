@@ -448,8 +448,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Used as:",
   "@partitionFormatLabel": {},
-  "partitionFormatReiserFS": "ReiserFS file system",
-  "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "ZFS root file system",
   "@partitionFormatZfsroot": {},
   "partitionFormatNone": "Leave unformatted",
