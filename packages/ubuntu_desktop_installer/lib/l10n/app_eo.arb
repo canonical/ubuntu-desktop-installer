@@ -73,8 +73,6 @@
   "@partitionFormatBtrfs": {},
   "partitionTypeLogical": "Logika",
   "@partitionTypeLogical": {},
-  "partitionFormatExt3": "Protokoliga dosiersistemo ext3",
-  "@partitionFormatExt3": {},
   "partitionFormatJfs": "Protokoliga dosiersistemo JFS",
   "@partitionFormatJfs": {},
   "whoAreYouPageRequirePassword": "Postuli mian pasvorton por salutado",
