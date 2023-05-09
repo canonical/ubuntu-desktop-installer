@@ -119,8 +119,6 @@
   "@partitionFormatReiserFS": {},
   "partitionFormatSwap": "Area swap",
   "@partitionFormatSwap": {},
-  "partitionFormatFat16": "Sistem berkas FAT16",
-  "@partitionFormatFat16": {},
   "partitionFormatZfsroot": "Sistem berkas root ZFS",
   "@partitionFormatZfsroot": {},
   "writeChangesPartitionEntryUnmounted": "partisi #{disk}{partition} sebagai {format}",
