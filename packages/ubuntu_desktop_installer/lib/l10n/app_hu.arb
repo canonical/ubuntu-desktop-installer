@@ -425,8 +425,6 @@
   "@partitionUnitGB": {},
   "partitionTypeLabel": "Az új partíció típusa:",
   "@partitionTypeLabel": {},
-  "partitionFormatZfsroot": "ZFS gyökérfájlrendszer",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "A partíció formázása",
   "@partitionErase": {},
   "partitionMountPointLabel": "Csatolási pont:",
