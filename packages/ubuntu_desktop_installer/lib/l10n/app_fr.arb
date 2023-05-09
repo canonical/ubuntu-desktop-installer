@@ -285,8 +285,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Utilisée comme :",
   "@partitionFormatLabel": {},
-  "partitionFormatFat16": "Système de fichiers FAT16",
-  "@partitionFormatFat16": {},
   "partitionFormatFat32": "Système de fichiers FAT32",
   "@partitionFormatFat32": {},
   "partitionFormatSwap": "Espace de swap",
