@@ -369,8 +369,6 @@
       "system": {}
     }
   },
-  "partitionFormatZfsroot": "Sistema de archivos raíz ZFS",
-  "@partitionFormatZfsroot": {},
   "photoSlideShotcut": "Editor de vídeos Shotcut",
   "@photoSlideShotcut": {},
   "webSlideFirefox": "Navegador web Firefox",
