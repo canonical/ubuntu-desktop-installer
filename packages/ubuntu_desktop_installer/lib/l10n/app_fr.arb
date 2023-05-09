@@ -293,8 +293,6 @@
   "@partitionFormatXfs": {},
   "partitionFormatFat": "Système de fichiers FAT",
   "@partitionFormatFat": {},
-  "partitionFormatExt2": "Système de fichiers Ext2",
-  "@partitionFormatExt2": {},
   "partitionFormatFat12": "Système de fichiers FAT12",
   "@partitionFormatFat12": {},
   "partitionFormatFat16": "Système de fichiers FAT16",
