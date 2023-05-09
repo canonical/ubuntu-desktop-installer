@@ -295,8 +295,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Används som:",
   "@partitionFormatLabel": {},
-  "partitionFormatNtfs": "NTFS filsystem",
-  "@partitionFormatNtfs": {},
   "whoAreYouPageUsernameRequired": "Ett användarnamn krävs",
   "@whoAreYouPageUsernameRequired": {},
   "whoAreYouPageInvalidUsername": "Användarnamnet är ogiltigt",
