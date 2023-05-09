@@ -387,8 +387,6 @@
       "system": {}
     }
   },
-  "partitionFormatJfs": "Sistema de archivos transaccional JFS",
-  "@partitionFormatJfs": {},
   "partitionFormatXfs": "Sistema de archivos transaccional XFS",
   "@partitionFormatXfs": {},
   "partitionFormatZfsroot": "Sistema de archivos raíz ZFS",
