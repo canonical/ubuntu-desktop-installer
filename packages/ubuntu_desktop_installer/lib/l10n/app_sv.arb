@@ -1,7 +1,5 @@
 {
   "@@locale": "sv",
-  "partitionFormatZfsroot": "ZFS rotfilsystem",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "Formatera partitionen",
   "@partitionErase": {},
   "whoAreYouPageAutoLogin": "Logga in automatiskt",
