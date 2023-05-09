@@ -503,8 +503,6 @@
   "@partitionUnitKB": {},
   "whoAreYouPageUsernameInUse": "Brukernavnet finnes allerede.",
   "@whoAreYouPageUsernameInUse": {},
-  "partitionFormatExt3": "Ext3-journalfilsystem",
-  "@partitionFormatExt3": {},
   "writeChangesDescription": "Hvis du fortsetter vil endringene nedenfor bli skrevet til diskene. Du vil kunne gjøre videre endringer manuelt.",
   "@writeChangesDescription": {},
   "writeChangesPartitionTablesHeader": "Partisjonstabellen for følgende enheter har blitt endret:",
