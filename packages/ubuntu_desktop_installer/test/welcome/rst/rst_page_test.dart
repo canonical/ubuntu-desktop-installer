@@ -23,7 +23,7 @@ void main() {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
-          RstPage.modelProvider.overrideWith((_) => model),
+          rstModelProvider.overrideWith((_) => model),
         ],
         child: tester.buildApp((_) => const RstPage()),
       ),
@@ -64,7 +64,7 @@ void main() {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
-          RstPage.modelProvider.overrideWith((_) => model),
+          rstModelProvider.overrideWith((_) => model),
         ],
         child: tester.buildApp((_) => const RstPage()),
       ),
