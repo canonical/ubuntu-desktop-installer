@@ -226,8 +226,6 @@
   "@partitionErase": {},
   "whoAreYouPageComputerNameRequired": "コンピューターの名前を入力してください",
   "@whoAreYouPageComputerNameRequired": {},
-  "partitionFormatFat32": "FAT32 ファイルシステム",
-  "@partitionFormatFat32": {},
   "bootLoaderDevice": "ブートローダーをインストールするデバイスを選択してください",
   "@bootLoaderDevice": {},
   "partitionSizeLabel": "サイズ：",
