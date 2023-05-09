@@ -503,8 +503,6 @@
   "@partitionUnitKB": {},
   "whoAreYouPageUsernameInUse": "Brukernavnet finnes allerede.",
   "@whoAreYouPageUsernameInUse": {},
-  "partitionFormatExt4": "Ext4-journalfilsystem",
-  "@partitionFormatExt4": {},
   "partitionFormatExt3": "Ext3-journalfilsystem",
   "@partitionFormatExt3": {},
   "writeChangesDescription": "Hvis du fortsetter vil endringene nedenfor bli skrevet til diskene. Du vil kunne gjøre videre endringer manuelt.",
