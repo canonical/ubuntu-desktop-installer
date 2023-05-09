@@ -285,8 +285,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Utilisée comme :",
   "@partitionFormatLabel": {},
-  "partitionFormatIso9660": "Système de fichiers ISO 9660",
-  "@partitionFormatIso9660": {},
   "partitionFormatVfat": "Système de fichiers VFAT",
   "@partitionFormatVfat": {},
   "partitionFormatNtfs": "Système de fichiers NTFS",
