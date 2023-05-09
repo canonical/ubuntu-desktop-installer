@@ -13,13 +13,6 @@ import 'locale_model.dart';
 class LocalePage extends ConsumerStatefulWidget {
   const LocalePage({super.key});
 
-  static final modelProvider = ChangeNotifierProvider((ref) {
-    return LocaleModel(
-      locale: getService<LocaleService>(),
-      sound: tryGetService<SoundService>(),
-    );
-  });
-
   @override
   ConsumerState<LocalePage> createState() => _LocalePageState();
 }
@@ -29,7 +22,7 @@ class _LocalePageState extends ConsumerState<LocalePage> {
   void initState() {
     super.initState();
 
-    final model = ref.read(LocalePage.modelProvider);
+    final model = ref.read(localeModelProvider);
     model.loadLanguages().then((_) {
       model.selectLocale(InheritedLocale.of(context));
       model.playWelcomeSound();
@@ -39,7 +32,7 @@ class _LocalePageState extends ConsumerState<LocalePage> {
   void _selectLanguage(int index) {
     if (index == -1) return;
 
-    final model = ref.read(LocalePage.modelProvider);
+    final model = ref.read(localeModelProvider);
     model.selectedLanguageIndex = index;
 
     InheritedLocale.apply(context, model.locale(index));
@@ -48,7 +41,7 @@ class _LocalePageState extends ConsumerState<LocalePage> {
   @override
   Widget build(BuildContext context) {
     final flavor = Flavor.of(context);
-    final model = ref.watch(LocalePage.modelProvider);
+    final model = ref.watch(localeModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
