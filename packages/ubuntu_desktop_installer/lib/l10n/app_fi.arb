@@ -327,8 +327,6 @@
   "@selectGuidedStorageInstallNow": {},
   "partitionLocationEnd": "Tilan loppu",
   "@partitionLocationEnd": {},
-  "partitionFormatJfs": "JFS-tiedostojärjestelmä sisältäen tapahtumakirjanpidon",
-  "@partitionFormatJfs": {},
   "partitionFormatXfs": "XFS-tiedostojärjestelmä sisältäen tapahtumakirjanpidon",
   "@partitionFormatXfs": {},
   "partitionFormatFat": "FAT-tiedostojärjestelmä",
