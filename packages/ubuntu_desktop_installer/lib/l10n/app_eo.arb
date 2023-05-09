@@ -71,8 +71,6 @@
   "@freeDiskSpace": {},
   "partitionTypeLogical": "Logika",
   "@partitionTypeLogical": {},
-  "partitionFormatJfs": "Protokoliga dosiersistemo JFS",
-  "@partitionFormatJfs": {},
   "whoAreYouPageRequirePassword": "Postuli mian pasvorton por salutado",
   "@whoAreYouPageRequirePassword": {},
   "whoAreYouPageRealNameRequired": "Nomo bezoniĝas",
