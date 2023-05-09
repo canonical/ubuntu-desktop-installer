@@ -379,8 +379,6 @@
   "@chooseSecurityKeyRequired": {},
   "selectGuidedStorageDropdownLabel": "Seleccionatz lo disc :",
   "@selectGuidedStorageDropdownLabel": {},
-  "partitionFormatZfsroot": "sistèma de fichièr ZFS",
-  "@partitionFormatZfsroot": {},
   "writeChangesPartitionEntryMounted": "la particion #{disk}{partition} en {format} utilizada per {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
