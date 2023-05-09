@@ -128,8 +128,7 @@ class IdentityModel extends PropertyStreamNotifier {
 
   /// Whether the current input is valid.
   bool get isValid {
-    return realName.isNotEmpty &&
-        realName.length <= kMaxRealNameLength &&
+    return realName.length <= kMaxRealNameLength &&
         hostname.isNotEmpty &&
         hostname.length <= kMaxHostnameLength &&
         username.isNotEmpty &&
