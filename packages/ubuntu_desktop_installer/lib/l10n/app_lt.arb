@@ -842,8 +842,6 @@
   "@activeDirectoryAdminInvalidChars": {},
   "activeDirectoryErrorTitle": "Klaida konfigūruojant ryšį su „Active Directory“",
   "@activeDirectoryErrorTitle": {},
-  "partitionFormatXfs": "XFS žurnalinė failų sistema",
-  "@partitionFormatXfs": {},
   "turnOffRSTTitle": "Norėdami tęsti, išjunkite RST",
   "@turnOffRSTTitle": {},
   "turnOffBitlockerHeadline": "Norėdami tęsti, išjunkite „BitLocker“",
