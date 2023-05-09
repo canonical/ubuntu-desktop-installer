@@ -523,8 +523,6 @@
   },
   "partitionFormatXfs": "XFS günlüklü dosya sistemi",
   "@partitionFormatXfs": {},
-  "partitionFormatExt3": "Ext3 günlüklü dosya sistemi",
-  "@partitionFormatExt3": {},
   "partitionFormatBtrfs": "btrfs günlüklü dosya sistemi",
   "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "JFS günlüklü dosya sistemi",
