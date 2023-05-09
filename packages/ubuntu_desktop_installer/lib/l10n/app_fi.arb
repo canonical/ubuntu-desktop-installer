@@ -327,8 +327,6 @@
   "@selectGuidedStorageInstallNow": {},
   "partitionLocationEnd": "Tilan loppu",
   "@partitionLocationEnd": {},
-  "partitionFormatVfat": "VFAT-tiedostojärjestelmä",
-  "@partitionFormatVfat": {},
   "partitionFormatNtfs": "NTFS-tiedostojärjestelmä",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "ReiserFS-tiedostojärjestelmä",
