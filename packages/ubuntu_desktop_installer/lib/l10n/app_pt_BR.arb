@@ -229,8 +229,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizado como:",
   "@partitionFormatLabel": {},
-  "partitionFormatReiserFS": "Sistema de arquivos ReiserFS",
-  "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "Sistema de arquivos raiz ZFS",
   "@partitionFormatZfsroot": {},
   "partitionErase": "Formatar a partição",
