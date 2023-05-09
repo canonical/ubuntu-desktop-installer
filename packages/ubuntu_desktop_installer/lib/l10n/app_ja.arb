@@ -252,8 +252,6 @@
   "@partitionMountPointLabel": {},
   "partitionEditTitle": "パーティションを編集する",
   "@partitionEditTitle": {},
-  "partitionFormatBtrfs": "btrfs ジャーナリングファイルシステム",
-  "@partitionFormatBtrfs": {},
   "partitionFormatVfat": "VFAT ファイルシステム",
   "@partitionFormatVfat": {},
   "whoAreYouPageRealNameRequired": "名前を入力してください",
