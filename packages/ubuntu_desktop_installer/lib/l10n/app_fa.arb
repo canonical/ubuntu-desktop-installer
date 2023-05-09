@@ -557,8 +557,6 @@
   "@partitionLocationLabel": {},
   "whoAreYouPageComputerNameRequired": "نام رایانه‌ای لازم است",
   "@whoAreYouPageComputerNameRequired": {},
-  "partitionFormatZfsroot": "سامانه پروندهٔ ریشهٔ ZFS",
-  "@partitionFormatZfsroot": {},
   "installationTypeAlongsideMulti": "نصب {product} کنارشان",
   "@installationTypeAlongsideMulti": {
     "type": "text",
