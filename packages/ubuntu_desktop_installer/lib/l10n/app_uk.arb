@@ -332,8 +332,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Використовується як:",
   "@partitionFormatLabel": {},
-  "partitionFormatBtrfs": "Журнальна файлова система btrfs",
-  "@partitionFormatBtrfs": {},
   "whoAreYouPageComputerNameLabel": "Iм'я вашого комп'ютера",
   "@whoAreYouPageComputerNameLabel": {},
   "whoAreYouPageComputerNameInfo": "Iм'я, яке використовується для зв'язку з іншими комп'ютерами.",
