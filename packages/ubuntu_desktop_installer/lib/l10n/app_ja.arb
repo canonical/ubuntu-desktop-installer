@@ -258,8 +258,6 @@
   "@partitionTypePrimary": {},
   "partitionLocationBeginning": "この領域の始点",
   "@partitionLocationBeginning": {},
-  "partitionFormatIso9660": "ISO 9660 ファイルシステム",
-  "@partitionFormatIso9660": {},
   "partitionFormatZfsroot": "ZFS ルートファイルシステム",
   "@partitionFormatZfsroot": {},
   "whoAreYouPageTitle": "アカウントの設定",
