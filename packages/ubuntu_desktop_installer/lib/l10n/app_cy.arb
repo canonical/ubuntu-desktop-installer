@@ -183,8 +183,6 @@
   "@installationTypeTitle": {},
   "partitionFormatFat32": "System ffeiliau FAT32",
   "@partitionFormatFat32": {},
-  "partitionFormatFat12": "System ffeiliau FAT12",
-  "@partitionFormatFat12": {},
   "whoAreYouPageAutoLogin": "Mewngofnodi'n awtomatig",
   "@whoAreYouPageAutoLogin": {},
   "webSlideChromium": "Chromium",
