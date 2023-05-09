@@ -259,8 +259,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatFat16": "System ffeiliau FAT16",
   "@partitionFormatFat16": {},
-  "partitionFormatFat": "System ffeiliau FAT",
-  "@partitionFormatFat": {},
   "partitionFormatIso9660": "System ffeiliau ISO 9660",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "System ffeiliau VFAT",
