@@ -262,8 +262,6 @@
   },
   "partitionUnitB": "B",
   "@partitionUnitB": {},
-  "partitionFormatExt2": "Dosiersistemo ext2",
-  "@partitionFormatExt2": {},
   "partitionFormatLabel": "Uzata kiel:",
   "@partitionFormatLabel": {},
   "partitionSizeLabel": "Grando:",
