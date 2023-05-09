@@ -529,8 +529,6 @@
   },
   "partitionSizeLabel": "Dydis:",
   "@partitionSizeLabel": {},
-  "partitionFormatZfsroot": "ZFS šakninė failų sistema",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "Formatuoti skaidinį",
   "@partitionErase": {},
   "whoAreYouPageTitle": "Nusistatykite paskyrą",
