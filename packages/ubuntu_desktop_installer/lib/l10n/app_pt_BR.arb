@@ -678,7 +678,7 @@
       "newsize": {}
     }
   },
-  "installDriversTitle": "Instalar drives de terceiros de wifi e gráficos",
+  "installDriversTitle": "Instalar drivers de terceiros para Wi-Fi e placas gráficas",
   "@installDriversTitle": {},
   "installingSystem": "Instalando o sistema…",
   "@installingSystem": {},
@@ -697,7 +697,7 @@
       "SIZE": {}
     }
   },
-  "installDriversSubtitle": "Esses drivers estão sujeitos aos termos de licença incluídos em sua documentação. Eles são proprietários.",
+  "installDriversSubtitle": "Esses drivers estão sujeitos aos termos de licença incluídos em suas documentações. Eles são proprietários.",
   "@installDriversSubtitle": {},
   "notEnoughDiskSpaceTitle": "Espaço insuficiente",
   "@notEnoughDiskSpaceTitle": {},
