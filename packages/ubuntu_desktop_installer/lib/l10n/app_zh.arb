@@ -119,8 +119,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "用于：",
   "@partitionFormatLabel": {},
-  "partitionFormatExt2": "Ext2 文件系统",
-  "@partitionFormatExt2": {},
   "partitionFormatBtrfs": "Btrfs 日志文件系统",
   "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "JFS 日志文件系统",
