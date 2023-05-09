@@ -136,8 +136,6 @@
   "@partitionTypeLabel": {},
   "partitionLocationLabel": "Ubicació de la partició nova:",
   "@partitionLocationLabel": {},
-  "partitionFormatReiserFS": "Sistema de fitxers ReiserFS",
-  "@partitionFormatReiserFS": {},
   "partitionErase": "Formata la partició",
   "@partitionErase": {},
   "partitionMountPointLabel": "Punt de muntatge:",
