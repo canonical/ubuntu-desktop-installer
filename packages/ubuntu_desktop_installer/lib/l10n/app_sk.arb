@@ -671,8 +671,6 @@
   "@diskHeadersFormat": {},
   "partitionTypeLabel": "Zadajte typ pre nový oddiel:",
   "@partitionTypeLabel": {},
-  "partitionFormatFat16": "Súborový systém FAT16",
-  "@partitionFormatFat16": {},
   "whoAreYouPageComputerNameLabel": "Názov pre váš počítač",
   "@whoAreYouPageComputerNameLabel": {},
   "whoAreYouPageTitle": "Nastavenie vášho účtu",
