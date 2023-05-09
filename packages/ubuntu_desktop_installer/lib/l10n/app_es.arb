@@ -155,8 +155,6 @@
       "color": {}
     }
   },
-  "partitionFormatFat12": "Sistema de archivos FAT12",
-  "@partitionFormatFat12": {},
   "partitionFormatFat16": "Sistema de archivos FAT16",
   "@partitionFormatFat16": {},
   "shutdown": "Apagar",
