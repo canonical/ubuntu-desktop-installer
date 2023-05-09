@@ -410,8 +410,6 @@
   "@diskHeadersType": {},
   "diskHeadersMountPoint": "Prijungimo taškas",
   "@diskHeadersMountPoint": {},
-  "partitionFormatFat16": "FAT16 failų sistema",
-  "@partitionFormatFat16": {},
   "installationTypeManual": "Rankinis skaidymas",
   "@installationTypeManual": {},
   "partitionLocationLabel": "Naujo skaidinio vieta:",
