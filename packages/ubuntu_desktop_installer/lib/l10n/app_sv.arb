@@ -295,8 +295,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Används som:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt4": "Ext4 journalfilsystem",
-  "@partitionFormatExt4": {},
   "partitionFormatExt3": "Ext3 journalfilsystem",
   "@partitionFormatExt3": {},
   "partitionFormatExt2": "Ext2 filsystem",
