@@ -441,8 +441,6 @@
   "@configureSecureBootDescription": {},
   "diskHeadersUsed": "Använt",
   "@diskHeadersUsed": {},
-  "partitionFormatSwap": "Swap område",
-  "@partitionFormatSwap": {},
   "restartIntoWindows": "Starta om till Windows",
   "@restartIntoWindows": {},
   "tryUbuntuDescription": "Du kan prova {RELEASE} utan att göra några ändringar till din dator.",
