@@ -273,8 +273,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Używana jako:",
   "@partitionFormatLabel": {},
-  "partitionFormatIso9660": "System plików ISO 9660",
-  "@partitionFormatIso9660": {},
   "partitionFormatVfat": "System plików VFAT",
   "@partitionFormatVfat": {},
   "partitionFormatZfsroot": "System plików root ZFS",
