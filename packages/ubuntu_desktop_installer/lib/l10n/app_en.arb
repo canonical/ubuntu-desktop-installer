@@ -448,8 +448,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Used as:",
   "@partitionFormatLabel": {},
-  "partitionFormatSwap": "Swap area",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "ISO 9660 file system",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "VFAT file system",
