@@ -119,8 +119,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "用于：",
   "@partitionFormatLabel": {},
-  "partitionFormatVfat": "VFAT 文件系统",
-  "@partitionFormatVfat": {},
   "partitionFormatZfsroot": "ZFS 根文件系统",
   "@partitionFormatZfsroot": {},
   "partitionErase": "格式化分区",
