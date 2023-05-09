@@ -59,8 +59,6 @@
   "@minimalInstallationTitle": {},
   "installationTypeTitle": "Speco de instalado",
   "@installationTypeTitle": {},
-  "partitionFormatFat32": "Dosiersistemo FAT32",
-  "@partitionFormatFat32": {},
   "freeDiskSpace": "Disponebla spaco",
   "@freeDiskSpace": {},
   "partitionTypeLogical": "Logika",
