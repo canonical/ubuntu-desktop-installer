@@ -519,8 +519,6 @@
       "url": {}
     }
   },
-  "partitionFormatXfs": "XFS günlüklü dosya sistemi",
-  "@partitionFormatXfs": {},
   "installAlongsidePartition": "Bölüm:",
   "@installAlongsidePartition": {},
   "whoAreYouPageUsernameInUse": "Bu kullanıcı adı zaten var.",
