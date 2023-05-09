@@ -198,8 +198,6 @@
   "@newPartitionTableConfirmationTitle": {},
   "partitionCreateTitle": "Bölüm oluştur",
   "@partitionCreateTitle": {},
-  "partitionFormatFat16": "FAT16 dosya sistemi",
-  "@partitionFormatFat16": {},
   "partitionFormatFat32": "FAT32 dosya sistemi",
   "@partitionFormatFat32": {},
   "partitionFormatIso9660": "ISO 9660 dosya sistemi",
