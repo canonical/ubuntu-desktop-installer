@@ -332,8 +332,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Використовується як:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt2": "Файлова система Ext2",
-  "@partitionFormatExt2": {},
   "partitionFormatBtrfs": "Журнальна файлова система btrfs",
   "@partitionFormatBtrfs": {},
   "whoAreYouPageComputerNameLabel": "Iм'я вашого комп'ютера",
