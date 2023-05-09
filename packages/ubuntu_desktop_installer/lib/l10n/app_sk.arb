@@ -826,8 +826,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Použité ako:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat32": "Súborový systém FAT32",
-  "@partitionFormatFat32": {},
   "partitionFormatSwap": "Odkladacia oblasť",
   "@partitionFormatSwap": {},
   "partitionFormatIso9660": "Súborový systém ISO 9660",
