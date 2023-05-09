@@ -107,8 +107,6 @@
   "@partitionUnitB": {},
   "partitionUnitGB": "GB",
   "@partitionUnitGB": {},
-  "partitionFormatVfat": "Sistem berkas VFAT",
-  "@partitionFormatVfat": {},
   "whoAreYouPageConfirmPasswordLabel": "Konfirmasikan kata sandi Anda",
   "@whoAreYouPageConfirmPasswordLabel": {},
   "partitionFormatNtfs": "Sistem berkas NTFS",
