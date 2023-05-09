@@ -13,8 +13,6 @@
       "color": {}
     }
   },
-  "partitionFormatExt2": "Ext2-tiedostojärjestelmä",
-  "@partitionFormatExt2": {},
   "partitionMountPointLabel": "Liitoskohta:",
   "@partitionMountPointLabel": {},
   "whoAreYouPageTitle": "Määritä tili",
