@@ -229,8 +229,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizado como:",
   "@partitionFormatLabel": {},
-  "partitionFormatBtrfs": "Sistema de arquivos btrfs com journaling",
-  "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "Sistema de arquivos JFS com journaling",
   "@partitionFormatJfs": {},
   "partitionFormatXfs": "Sistema de arquivos XFS com journaling",
