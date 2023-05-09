@@ -4,7 +4,6 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -18,9 +17,6 @@ final log = Logger('confirm');
 class ConfirmPage extends ConsumerStatefulWidget {
   const ConfirmPage({super.key});
 
-  static final modelProvider = ChangeNotifierProvider((_) => ConfirmModel(
-      getService<SubiquityClient>(), getService<StorageService>()));
-
   @override
   ConsumerState<ConfirmPage> createState() => _ConfirmPageState();
 }
@@ -30,7 +26,7 @@ class _ConfirmPageState extends ConsumerState<ConfirmPage> {
   void initState() {
     super.initState();
 
-    final model = ref.read(ConfirmPage.modelProvider);
+    final model = ref.read(confirmModelProvider);
     model.init();
   }
 
@@ -45,7 +41,7 @@ class _ConfirmPageState extends ConsumerState<ConfirmPage> {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final model = ref.watch(ConfirmPage.modelProvider);
+    final model = ref.watch(confirmModelProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.writeChangesToDisk),
