@@ -61,8 +61,6 @@
   "@installationTypeAdvancedTitle": {},
   "newPartitionTable": "새 파티션 테이블",
   "@newPartitionTable": {},
-  "partitionFormatFat": "FAT 파일 시스템",
-  "@partitionFormatFat": {},
   "partitionFormatNtfs": "NTFS 파일 시스템",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "ReiserFS 파일 시스템",
