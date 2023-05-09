@@ -193,8 +193,6 @@
   "@musicSlideTitle": {},
   "partitionFormatFat": "FAT 文件系统",
   "@partitionFormatFat": {},
-  "partitionFormatXfs": "XFS 日志文件系统",
-  "@partitionFormatXfs": {},
   "partitionFormatReiserFS": "ReiserFS 文件系统",
   "@partitionFormatReiserFS": {},
   "partitionFormatNtfs": "NTFS 文件系统",
