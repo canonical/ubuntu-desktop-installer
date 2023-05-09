@@ -250,8 +250,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Verwendet als:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat32": "FAT32-Dateisystem",
-  "@partitionFormatFat32": {},
   "partitionFormatSwap": "Auslagerungsbereich",
   "@partitionFormatSwap": {},
   "partitionFormatIso9660": "ISO-9660-Dateisystem",
