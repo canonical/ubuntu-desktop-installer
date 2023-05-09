@@ -258,8 +258,6 @@
   "@partitionFormatSwap": {},
   "partitionFormatFat32": "Souborový systém FAT32",
   "@partitionFormatFat32": {},
-  "partitionFormatFat16": "Souborový systém FAT16",
-  "@partitionFormatFat16": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
