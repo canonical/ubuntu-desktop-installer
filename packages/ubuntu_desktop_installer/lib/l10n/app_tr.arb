@@ -521,8 +521,6 @@
   },
   "partitionFormatXfs": "XFS günlüklü dosya sistemi",
   "@partitionFormatXfs": {},
-  "partitionFormatJfs": "JFS günlüklü dosya sistemi",
-  "@partitionFormatJfs": {},
   "installAlongsidePartition": "Bölüm:",
   "@installAlongsidePartition": {},
   "whoAreYouPageUsernameInUse": "Bu kullanıcı adı zaten var.",
