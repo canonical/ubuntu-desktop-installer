@@ -196,8 +196,6 @@
   "@newPartitionTableConfirmationTitle": {},
   "partitionCreateTitle": "Bölüm oluştur",
   "@partitionCreateTitle": {},
-  "partitionFormatVfat": "VFAT dosya sistemi",
-  "@partitionFormatVfat": {},
   "partitionFormatZfsroot": "ZFS root dosya sistemi",
   "@partitionFormatZfsroot": {},
   "partitionErase": "Bölümü biçimlendir",
