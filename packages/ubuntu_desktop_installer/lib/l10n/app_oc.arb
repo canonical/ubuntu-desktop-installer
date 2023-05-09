@@ -385,8 +385,6 @@
   "@chooseSecurityKeyRequired": {},
   "selectGuidedStorageDropdownLabel": "Seleccionatz lo disc :",
   "@selectGuidedStorageDropdownLabel": {},
-  "partitionFormatFat12": "sistèma de fichièr FAT12",
-  "@partitionFormatFat12": {},
   "partitionFormatIso9660": "sistèma de fichièr ISO 9660",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "sistèma de fichièr VFAT",
