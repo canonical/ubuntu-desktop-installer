@@ -225,8 +225,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizado como:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat32": "Sistema de ficheiros FAT32",
-  "@partitionFormatFat32": {},
   "partitionFormatSwap": "Swap area",
   "@partitionFormatSwap": {},
   "partitionFormatIso9660": "Sistema de ficheiros ISO 9660",
