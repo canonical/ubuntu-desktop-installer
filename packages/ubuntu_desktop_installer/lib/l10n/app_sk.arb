@@ -822,8 +822,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Použité ako:",
   "@partitionFormatLabel": {},
-  "partitionFormatReiserFS": "Súborový systém ReiserFS",
-  "@partitionFormatReiserFS": {},
   "welcomePageTitle": "Vitajte v {DISTRO}",
   "@welcomePageTitle": {
     "type": "text",
