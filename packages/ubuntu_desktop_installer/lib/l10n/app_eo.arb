@@ -322,8 +322,6 @@
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
   },
-  "partitionFormatSwap": "Permutareo",
-  "@partitionFormatSwap": {},
   "partitionFormatZfsroot": "Radika dosiersistemo ZFS",
   "@partitionFormatZfsroot": {},
   "partitionMountPointLabel": "Surmetingo:",
