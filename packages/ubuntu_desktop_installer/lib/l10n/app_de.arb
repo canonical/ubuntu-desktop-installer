@@ -250,8 +250,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Verwendet als:",
   "@partitionFormatLabel": {},
-  "partitionFormatSwap": "Auslagerungsbereich",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "ISO-9660-Dateisystem",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "VFAT-Dateisystem",
