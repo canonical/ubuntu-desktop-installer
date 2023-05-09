@@ -327,8 +327,6 @@
   "@selectGuidedStorageInstallNow": {},
   "partitionLocationEnd": "Tilan loppu",
   "@partitionLocationEnd": {},
-  "partitionFormatZfsroot": "ZFS root -tiedostojärjestelmä",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "Alusta osio",
   "@partitionErase": {},
   "whoAreYouPageRealNameLabel": "Nimi",
