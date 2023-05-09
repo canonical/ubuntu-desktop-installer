@@ -167,8 +167,6 @@
   "@whoAreYouPageRealNameLabel": {},
   "whoAreYouPageComputerNameLabel": "Имя компьютера",
   "@whoAreYouPageComputerNameLabel": {},
-  "partitionFormatVfat": "Файловая система VFAT",
-  "@partitionFormatVfat": {},
   "partitionFormatNtfs": "Файловая система NTFS",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "Файловая система ReiserFS",
