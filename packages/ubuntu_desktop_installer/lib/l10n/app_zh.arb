@@ -119,8 +119,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "用于：",
   "@partitionFormatLabel": {},
-  "partitionFormatZfsroot": "ZFS 根文件系统",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "格式化分区",
   "@partitionErase": {},
   "whoAreYouPageRealNameRequired": "需要名字",
