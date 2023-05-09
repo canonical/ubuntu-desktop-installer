@@ -269,8 +269,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Używana jako:",
   "@partitionFormatLabel": {},
-  "partitionFormatZfsroot": "System plików root ZFS",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "Sformatuj partycję",
   "@partitionErase": {},
   "partitionMountPointLabel": "Punkt montowania:",
