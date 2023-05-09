@@ -449,8 +449,6 @@
   "@newPartitionTableConfirmationMessage": {},
   "partitionLocationLabel": "新しいパーティションの場所を選択してください。",
   "@partitionLocationLabel": {},
-  "partitionFormatExt2": "Ext2 ファイルシステム",
-  "@partitionFormatExt2": {},
   "whoAreYouPageInvalidUsername": "このユーザー名は使用できません",
   "@whoAreYouPageInvalidUsername": {},
   "whoAreYouPagePasswordLabel": "パスワードを決めてください。",
