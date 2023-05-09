@@ -505,8 +505,6 @@
   "@bootLoaderDevice": {},
   "partitionCreateTitle": "Створити розділ",
   "@partitionCreateTitle": {},
-  "partitionFormatVfat": "Файлова система VFAT",
-  "@partitionFormatVfat": {},
   "partitionFormatNtfs": "Файлова система NTFS",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "Файлова система ReiserFS",
