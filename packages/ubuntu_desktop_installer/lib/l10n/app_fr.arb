@@ -285,8 +285,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Utilisée comme :",
   "@partitionFormatLabel": {},
-  "partitionFormatXfs": "Système de fichiers XFS journalisé",
-  "@partitionFormatXfs": {},
   "partitionFormatFat": "Système de fichiers FAT",
   "@partitionFormatFat": {},
   "partitionFormatFat12": "Système de fichiers FAT12",
