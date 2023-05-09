@@ -264,8 +264,6 @@
   "@partitionFormatFat12": {},
   "partitionFormatFat": "Souborový systém FAT",
   "@partitionFormatFat": {},
-  "partitionFormatXfs": "Žurnálovací souborový systém XFS",
-  "@partitionFormatXfs": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
