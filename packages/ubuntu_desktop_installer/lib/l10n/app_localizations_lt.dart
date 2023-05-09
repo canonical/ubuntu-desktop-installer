@@ -514,54 +514,6 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionFormatLabel => 'Naudojamas kaip:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 žurnalinė failų sistema';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 žurnalinė failų sistema';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 failų sistema';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs žurnalinė failų sistema';
-
-  @override
-  String get partitionFormatJfs => 'JFS žurnalinė failų sistema';
-
-  @override
-  String get partitionFormatXfs => 'XFS žurnalinė failų sistema';
-
-  @override
-  String get partitionFormatFat => 'FAT failų sistema';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 failų sistema';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 failų sistema';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 failų sistema';
-
-  @override
-  String get partitionFormatSwap => 'Mainų sritis';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 failų sistema';
-
-  @override
-  String get partitionFormatVfat => 'VFAT failų sistema';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS failų sistema';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS failų sistema';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS šakninė failų sistema';
-
-  @override
   String get partitionFormatNone => 'Palikti neformatuotą';
 
   @override

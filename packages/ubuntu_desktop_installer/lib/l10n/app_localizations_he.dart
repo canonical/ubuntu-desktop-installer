@@ -514,54 +514,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get partitionFormatLabel => 'בשימוש בתור:';
 
   @override
-  String get partitionFormatExt4 => 'מערכת קבצים מתועדת מסוג Ext4';
-
-  @override
-  String get partitionFormatExt3 => 'מערכת קבצים מתועדת מסוג Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'מערכת קבצים מסוג Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'מערכת קבצים מתועדת מסוג btrfs';
-
-  @override
-  String get partitionFormatJfs => 'מערכת קבצים מתועדת מסוג JFS';
-
-  @override
-  String get partitionFormatXfs => 'מערכת קבצים מתועדת מסוג XFS';
-
-  @override
-  String get partitionFormatFat => 'מערכת קבצים מסוג FAT';
-
-  @override
-  String get partitionFormatFat12 => 'מערכת קבצים מסוג FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'מערכת קבצים מסוג FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'מערכת קבצים מסוג FAT32';
-
-  @override
-  String get partitionFormatSwap => 'שטח החלפה';
-
-  @override
-  String get partitionFormatIso9660 => 'מערכת קבצים מסוג ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'מערכת קבצים מסוג VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'מערכת קבצים מסוג NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'מערכת קבצים מסוג ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'מערכת קבצים לבסיס ZFS';
-
-  @override
   String get partitionFormatNone => 'להשאיר בלי פרמוט';
 
   @override

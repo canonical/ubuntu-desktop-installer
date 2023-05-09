@@ -514,54 +514,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get partitionFormatLabel => 'Verwendet als:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4-Journaling-Dateisystem';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3-Journaling-Dateisystem';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2-Dateisystem';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs-Journaling-Dateisystem';
-
-  @override
-  String get partitionFormatJfs => 'JFS-Journaling-Dateisystem';
-
-  @override
-  String get partitionFormatXfs => 'XFS-Journaling-Dateisystem';
-
-  @override
-  String get partitionFormatFat => 'FAT-Dateisystem';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12-Dateisystem';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16-Dateisystem';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32-Dateisystem';
-
-  @override
-  String get partitionFormatSwap => 'Auslagerungsbereich';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO-9660-Dateisystem';
-
-  @override
-  String get partitionFormatVfat => 'VFAT-Dateisystem';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS-Dateisystem';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS-Dateisystem';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS-Root-Dateisystem';
-
-  @override
   String get partitionFormatNone => 'Unformatiert lassen';
 
   @override

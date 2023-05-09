@@ -514,54 +514,6 @@ class AppLocalizationsCa extends AppLocalizations {
   String get partitionFormatLabel => 'Used as:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
-
-  @override
-  String get partitionFormatExt2 => 'Sistema de fitxers Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
-
-  @override
-  String get partitionFormatJfs => 'JFS journaling file system';
-
-  @override
-  String get partitionFormatXfs => 'XFS journaling file system';
-
-  @override
-  String get partitionFormatFat => 'Sistema de fitxers FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Sistema de fitxers FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'Sistema de fitxers FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'Sistema de fitxers FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Swap area';
-
-  @override
-  String get partitionFormatIso9660 => 'Sistema de fitxers ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Sistema de fitxers VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'Sistema de fitxers NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Sistema de fitxers ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
-
-  @override
   String get partitionFormatNone => 'Leave unformatted';
 
   @override

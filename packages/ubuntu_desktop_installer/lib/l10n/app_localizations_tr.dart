@@ -514,54 +514,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get partitionFormatLabel => 'Kullanılan:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 günlüklü dosya sistemi';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 günlüklü dosya sistemi';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 dosya sistemi';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs günlüklü dosya sistemi';
-
-  @override
-  String get partitionFormatJfs => 'JFS günlüklü dosya sistemi';
-
-  @override
-  String get partitionFormatXfs => 'XFS günlüklü dosya sistemi';
-
-  @override
-  String get partitionFormatFat => 'FAT dosya sistemi';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 dosya sistemi';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 dosya sistemi';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 dosya sistemi';
-
-  @override
-  String get partitionFormatSwap => 'Takas alanı';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 dosya sistemi';
-
-  @override
-  String get partitionFormatVfat => 'VFAT dosya sistemi';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS dosya sistemi';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS dosya sistemi';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS root dosya sistemi';
-
-  @override
   String get partitionFormatNone => 'Biçimlendirilmemiş bırak';
 
   @override

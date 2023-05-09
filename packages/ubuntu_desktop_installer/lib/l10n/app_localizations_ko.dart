@@ -514,54 +514,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionFormatLabel => '용도:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 저널링 파일 시스템';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 저널링 파일 시스템';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 파일 시스템';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs 저널링 파일 시스템';
-
-  @override
-  String get partitionFormatJfs => 'JFS 저널링 파일 시스템';
-
-  @override
-  String get partitionFormatXfs => 'XFS 저널링 파일 시스템';
-
-  @override
-  String get partitionFormatFat => 'FAT 파일 시스템';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 파일 시스템';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 파일 시스템';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 파일 시스템';
-
-  @override
-  String get partitionFormatSwap => '스왑 영역';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 파일 시스템';
-
-  @override
-  String get partitionFormatVfat => 'VFAT 파일 시스템';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS 파일 시스템';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS 파일 시스템';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS 루트 파일 시스템';
-
-  @override
   String get partitionFormatNone => '포맷하지 않기';
 
   @override

@@ -514,54 +514,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get partitionFormatLabel => 'Utilisée comme :';
 
   @override
-  String get partitionFormatExt4 => 'Système de fichiers Ext4 journalisé';
-
-  @override
-  String get partitionFormatExt3 => 'Système de fichiers Ext3 journalisé';
-
-  @override
-  String get partitionFormatExt2 => 'Système de fichiers Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'Système de fichiers btrfs journalisé';
-
-  @override
-  String get partitionFormatJfs => 'Système de fichiers JFS journalisé';
-
-  @override
-  String get partitionFormatXfs => 'Système de fichiers XFS journalisé';
-
-  @override
-  String get partitionFormatFat => 'Système de fichiers FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Système de fichiers FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'Système de fichiers FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'Système de fichiers FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Espace de swap';
-
-  @override
-  String get partitionFormatIso9660 => 'Système de fichiers ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Système de fichiers VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'Système de fichiers NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Système de fichiers ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'Système de fichiers racine ZFS';
-
-  @override
   String get partitionFormatNone => 'Laisser non formatée';
 
   @override

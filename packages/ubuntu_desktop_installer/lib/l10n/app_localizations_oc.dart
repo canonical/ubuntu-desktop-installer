@@ -514,54 +514,6 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionFormatLabel => 'Utilizada coma :';
 
   @override
-  String get partitionFormatExt4 => 'sistèma de fichièr de jornalizacion Ext4';
-
-  @override
-  String get partitionFormatExt3 => 'sistèma de fichièr de jornalizacion Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'sistèma de fichièr de jornalizacion Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'sistèma de fichièr de jornalizacion BTRFS';
-
-  @override
-  String get partitionFormatJfs => 'sistèma de fichièr de jornalizacion JFS';
-
-  @override
-  String get partitionFormatXfs => 'sistèma de fichièr de jornalizacion XFS';
-
-  @override
-  String get partitionFormatFat => 'sistèma de fichièr FAT';
-
-  @override
-  String get partitionFormatFat12 => 'sistèma de fichièr FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'sistèma de fichièr FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'sistèma de fichièr FAT32';
-
-  @override
-  String get partitionFormatSwap => 'zòna d’escambi';
-
-  @override
-  String get partitionFormatIso9660 => 'sistèma de fichièr ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'sistèma de fichièr VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'sistèma de fichièr NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'sistèma de fichièr ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'sistèma de fichièr ZFS';
-
-  @override
   String get partitionFormatNone => 'utilizar pas la particion';
 
   @override
