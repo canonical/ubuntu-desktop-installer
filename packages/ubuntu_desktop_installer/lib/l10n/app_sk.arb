@@ -472,8 +472,6 @@
   "@partitionUnitKB": {},
   "partitionUnitMB": "MB",
   "@partitionUnitMB": {},
-  "partitionFormatNtfs": "Súborový systém NTFS",
-  "@partitionFormatNtfs": {},
   "partitionMountPointLabel": "Prípojný bod:",
   "@partitionMountPointLabel": {},
   "whoAreYouPageUsernameTooLong": "Také meno je príliš dlhé.",
