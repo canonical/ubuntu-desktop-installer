@@ -253,8 +253,6 @@
   "@partitionLocationBeginning": {},
   "partitionLocationEnd": "Diwedd y gwagle hwn",
   "@partitionLocationEnd": {},
-  "partitionFormatIso9660": "System ffeiliau ISO 9660",
-  "@partitionFormatIso9660": {},
   "partitionFormatVfat": "System ffeiliau VFAT",
   "@partitionFormatVfat": {},
   "partitionFormatNtfs": "System ffeiliau NTFS",
