@@ -295,8 +295,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Används som:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat16": "FAT16 filsystem",
-  "@partitionFormatFat16": {},
   "partitionFormatFat32": "FAT32 filsystem",
   "@partitionFormatFat32": {},
   "partitionFormatIso9660": "ISO 9960 filsystem",
