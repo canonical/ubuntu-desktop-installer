@@ -159,8 +159,6 @@
   "@partitionUnitGB": {},
   "partitionTypeLabel": "Тип нового раздела:",
   "@partitionTypeLabel": {},
-  "partitionFormatFat16": "Файловая система FAT16",
-  "@partitionFormatFat16": {},
   "whoAreYouPageUsernameLabel": "Выберите имя пользователя",
   "@whoAreYouPageUsernameLabel": {},
   "whoAreYouPageUsernameRequired": "Необходимо имя пользователя",
