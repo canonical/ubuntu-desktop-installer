@@ -196,8 +196,6 @@
   "@newPartitionTableConfirmationTitle": {},
   "partitionCreateTitle": "Bölüm oluştur",
   "@partitionCreateTitle": {},
-  "partitionFormatIso9660": "ISO 9660 dosya sistemi",
-  "@partitionFormatIso9660": {},
   "partitionFormatVfat": "VFAT dosya sistemi",
   "@partitionFormatVfat": {},
   "partitionFormatZfsroot": "ZFS root dosya sistemi",
