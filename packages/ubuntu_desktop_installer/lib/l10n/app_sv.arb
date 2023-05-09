@@ -295,8 +295,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Används som:",
   "@partitionFormatLabel": {},
-  "partitionFormatVfat": "VFAT filsystem",
-  "@partitionFormatVfat": {},
   "partitionFormatNtfs": "NTFS filsystem",
   "@partitionFormatNtfs": {},
   "whoAreYouPageUsernameRequired": "Ett användarnamn krävs",
