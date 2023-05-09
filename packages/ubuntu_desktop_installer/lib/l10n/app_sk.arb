@@ -826,8 +826,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Použité ako:",
   "@partitionFormatLabel": {},
-  "partitionFormatSwap": "Odkladacia oblasť",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "Súborový systém ISO 9660",
   "@partitionFormatIso9660": {},
   "partitionFormatReiserFS": "Súborový systém ReiserFS",
