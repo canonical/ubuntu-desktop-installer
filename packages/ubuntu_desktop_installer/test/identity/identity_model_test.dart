@@ -20,7 +20,12 @@ class MockProductNameFile extends Mock implements File {
   Future<String> readAsString({Encoding encoding = utf8}) async => _product;
 }
 
-@GenerateMocks([ConfigService, NetworkService, TelemetryService])
+@GenerateMocks([
+  ActiveDirectoryService,
+  ConfigService,
+  NetworkService,
+  TelemetryService,
+])
 void main() {
   test('init', () async {
     const identity = IdentityData(
@@ -32,7 +37,9 @@ void main() {
 
     final client = MockSubiquityClient();
     when(client.getIdentity()).thenAnswer((_) async => identity);
-    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
+
+    final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
     when(config.get(IdentityModel.kAutoLoginUser))
@@ -45,6 +52,7 @@ void main() {
 
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -67,7 +75,9 @@ void main() {
   test('load auto-login', () async {
     final client = MockSubiquityClient();
     when(client.getIdentity()).thenAnswer((_) async => const IdentityData());
-    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
+
+    final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
     when(config.get(IdentityModel.kAutoLoginUser))
@@ -80,6 +90,7 @@ void main() {
 
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -97,7 +108,9 @@ void main() {
 
     final client = MockSubiquityClient();
     when(client.getIdentity()).thenAnswer((_) async => identity);
-    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
+
+    final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
     when(config.get(IdentityModel.kAutoLoginUser))
@@ -110,6 +123,7 @@ void main() {
 
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -127,7 +141,9 @@ void main() {
 
     final client = MockSubiquityClient();
     when(client.getIdentity()).thenAnswer((_) async => identity);
-    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
+
+    final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
     when(config.get(IdentityModel.kAutoLoginUser))
@@ -140,6 +156,7 @@ void main() {
 
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -161,6 +178,8 @@ void main() {
 
     final client = MockSubiquityClient();
 
+    final activeDirectory = MockActiveDirectoryService();
+
     final config = MockConfigService();
     when(config.get(IdentityModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
@@ -172,6 +191,7 @@ void main() {
 
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -187,12 +207,14 @@ void main() {
     await model.save(salt: 'test');
 
     verify(client.setIdentity(identity)).called(1);
-    verify(client.markConfigured(['active_directory'])).called(1);
+    verify(activeDirectory.markConfigured()).called(1);
     verify(telemetry.addMetric('UseActiveDirectory', false)).called(1);
   });
 
   test('save auto-login', () async {
     final client = MockSubiquityClient();
+
+    final activeDirectory = MockActiveDirectoryService();
 
     final config = MockConfigService();
     when(config.get(IdentityModel.kAutoLoginUser))
@@ -205,6 +227,7 @@ void main() {
 
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -224,6 +247,7 @@ void main() {
   test('password strength', () {
     // see password_test.dart for more detailed password strength tests
     final client = MockSubiquityClient();
+    final activeDirectory = MockActiveDirectoryService();
     final config = MockConfigService();
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
@@ -231,6 +255,7 @@ void main() {
     final telemetry = MockTelemetryService();
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -249,6 +274,7 @@ void main() {
 
   test('notify changes', () {
     final client = MockSubiquityClient();
+    final activeDirectory = MockActiveDirectoryService();
     final config = MockConfigService();
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
@@ -256,6 +282,7 @@ void main() {
     final telemetry = MockTelemetryService();
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -297,6 +324,7 @@ void main() {
 
   test('validation', () {
     final client = MockSubiquityClient();
+    final activeDirectory = MockActiveDirectoryService();
     final config = MockConfigService();
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
@@ -304,6 +332,7 @@ void main() {
     final telemetry = MockTelemetryService();
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -387,6 +416,7 @@ void main() {
 
     final model = IdentityModel(
       client: client,
+      activeDirectory: MockActiveDirectoryService(),
       config: MockConfigService(),
       network: network,
       telemetry: telemetry,
@@ -423,10 +453,12 @@ void main() {
       );
     });
 
+    final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
+
     final config = MockConfigService();
     when(config.get(IdentityModel.kAutoLoginUser))
         .thenAnswer((_) async => null);
-    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
 
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
@@ -435,6 +467,7 @@ void main() {
 
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -457,6 +490,7 @@ void main() {
     final networkChanged = StreamController<List<String>>(sync: true);
 
     final client = MockSubiquityClient();
+    final activeDirectory = MockActiveDirectoryService();
     final config = MockConfigService();
     final network = MockNetworkService();
     final telemetry = MockTelemetryService();
@@ -466,6 +500,7 @@ void main() {
 
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -485,7 +520,9 @@ void main() {
   test('active directory support', () async {
     final client = MockSubiquityClient();
     when(client.getIdentity()).thenAnswer((_) async => const IdentityData());
-    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => true);
+
+    final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.hasSupport()).thenAnswer((_) async => true);
 
     final config = MockConfigService();
     when(config.get(IdentityModel.kAutoLoginUser))
@@ -498,6 +535,7 @@ void main() {
 
     final model = IdentityModel(
       client: client,
+      activeDirectory: activeDirectory,
       config: config,
       network: network,
       telemetry: telemetry,
@@ -507,7 +545,7 @@ void main() {
     await model.init();
     expect(model.hasActiveDirectorySupport, isTrue);
 
-    when(client.hasActiveDirectorySupport()).thenAnswer((_) async => false);
+    when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     await model.init();
     expect(model.hasActiveDirectorySupport, isFalse);

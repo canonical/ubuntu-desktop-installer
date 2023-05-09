@@ -1,10 +1,10 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
-import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
 class ActiveDirectoryModel extends SafeChangeNotifier {
-  ActiveDirectoryModel(this._client) {
+  ActiveDirectoryModel(this._service) {
     Listenable.merge([
       _domainName,
       _adminName,
@@ -15,7 +15,7 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
     ]).addListener(notifyListeners);
   }
 
-  final SubiquityClient _client;
+  final ActiveDirectoryService _service;
   final _domainName = ValueNotifier<String?>(null);
   final _adminName = ValueNotifier<String?>(null);
   final _password = ValueNotifier<String?>(null);
@@ -36,14 +36,14 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
   }
 
   Future<void> validateDomainName() {
-    return _client
-        .checkActiveDirectoryDomainName(domainName)
+    return _service
+        .checkDomainName(domainName)
         .then((validation) => _domainNameValidation.value = validation);
   }
 
   Future<void> pingDomainController() async {
-    return _client
-        .pingActiveDirectoryDomainController(domainName)
+    return _service
+        .pingDomainController(domainName)
         .then((validation) => _domainNameValidation.value = [validation]);
   }
 
@@ -58,8 +58,8 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
   }
 
   Future<void> validateAdminName() {
-    return _client
-        .checkActiveDirectoryAdminName(adminName)
+    return _service
+        .checkAdminName(adminName)
         .then((validation) => _adminNameValidation.value = validation);
   }
 
@@ -74,15 +74,15 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
   }
 
   Future<void> validatePassword() {
-    return _client
-        .checkActiveDirectoryPassword(password)
+    return _service
+        .checkPassword(password)
         .then((validation) => _passwordValidation.value = validation);
   }
 
   bool get isValid => isDomainNameValid && isAdminNameValid && isPasswordValid;
 
   Future<void> init() {
-    return _client.getActiveDirectory().then((info) {
+    return _service.getConnectionInfo().then((info) {
       _domainName.value = info.domainName;
       _adminName.value = info.adminName;
       _password.value = info.password;
@@ -96,7 +96,7 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
   }
 
   Future<void> save() {
-    return _client.setActiveDirectory(AdConnectionInfo(
+    return _service.setConnectionInfo(AdConnectionInfo(
       domainName: domainName,
       adminName: adminName,
       password: password,
@@ -104,6 +104,6 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
   }
 
   Future<AdJoinResult> getJoinResult() {
-    return _client.getActiveDirectoryJoinResult();
+    return _service.getJoinResult();
   }
 }

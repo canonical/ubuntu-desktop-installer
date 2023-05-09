@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -15,7 +14,7 @@ class ActiveDirectoryPage extends ConsumerStatefulWidget {
   const ActiveDirectoryPage({super.key});
 
   static final modelProvider = ChangeNotifierProvider(
-    (_) => ActiveDirectoryModel(getService<SubiquityClient>()),
+    (_) => ActiveDirectoryModel(getService<ActiveDirectoryService>()),
   );
 
   @override

@@ -26,6 +26,7 @@ class IdentityPage extends ConsumerStatefulWidget {
   static final modelProvider = ChangeNotifierProvider(
     (_) => IdentityModel(
       client: getService<SubiquityClient>(),
+      activeDirectory: getService<ActiveDirectoryService>(),
       config: getService<ConfigService>(),
       network: getService<NetworkService>(),
       telemetry: getService<TelemetryService>(),

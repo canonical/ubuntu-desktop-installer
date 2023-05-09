@@ -1,5 +1,5 @@
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
 extension AdDomainNameValidationL10n on AdDomainNameValidation {
   String localize(AppLocalizations lang) {

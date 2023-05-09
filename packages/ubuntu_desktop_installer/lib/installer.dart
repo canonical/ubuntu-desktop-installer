@@ -74,6 +74,8 @@ Future<void> runInstallerApp(
 
   // conditional registration if not already registered by flavors or tests
   if (liveRun) tryRegisterService(SoundService.new);
+  tryRegisterService<ActiveDirectoryService>(
+      () => SubiquityActiveDirectoryService(getService<SubiquityClient>()));
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService(() => DiskStorageService(getService<SubiquityClient>()));
