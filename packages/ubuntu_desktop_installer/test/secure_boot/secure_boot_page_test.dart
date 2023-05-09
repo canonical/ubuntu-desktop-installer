@@ -35,7 +35,7 @@ void main() {
 
   Widget buildPage(SecureBootModel model) {
     return ProviderScope(
-      overrides: [SecureBootPage.modelProvider.overrideWith((_) => model)],
+      overrides: [secureBootModelProvider.overrideWith((_) => model)],
       child: const SecureBootPage(),
     );
   }

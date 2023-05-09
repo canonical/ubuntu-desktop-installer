@@ -11,9 +11,6 @@ import 'secure_boot_widgets.dart';
 class SecureBootPage extends ConsumerStatefulWidget {
   const SecureBootPage({super.key});
 
-  static final modelProvider = ChangeNotifierProvider(
-      (_) => SecureBootModel(secureBootMode: SecureBootMode.turnOff));
-
   @override
   ConsumerState<SecureBootPage> createState() => _SecureBootPageState();
 }
@@ -21,7 +18,7 @@ class SecureBootPage extends ConsumerStatefulWidget {
 class _SecureBootPageState extends ConsumerState<SecureBootPage> {
   @override
   Widget build(BuildContext context) {
-    final model = ref.watch(SecureBootPage.modelProvider);
+    final model = ref.watch(secureBootModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

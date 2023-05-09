@@ -1,6 +1,10 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 
 enum SecureBootMode { turnOff, dontInstall }
+
+final secureBootModelProvider = ChangeNotifierProvider(
+    (_) => SecureBootModel(secureBootMode: SecureBootMode.turnOff));
 
 class SecureBootModel extends SafeChangeNotifier {
   SecureBootModel({
