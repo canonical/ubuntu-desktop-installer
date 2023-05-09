@@ -250,8 +250,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Verwendet als:",
   "@partitionFormatLabel": {},
-  "partitionFormatReiserFS": "ReiserFS-Dateisystem",
-  "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "ZFS-Root-Dateisystem",
   "@partitionFormatZfsroot": {},
   "partitionErase": "Partition formatieren",
