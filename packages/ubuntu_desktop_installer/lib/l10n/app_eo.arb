@@ -308,8 +308,6 @@
   "@partitionFormatReiserFS": {},
   "partitionFormatIso9660": "Dosiersistemo ISO 9660",
   "@partitionFormatIso9660": {},
-  "partitionFormatXfs": "Protokoliga dosiersistemo XFS",
-  "@partitionFormatXfs": {},
   "whoAreYouPageTitle": "Agordu vian konton",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "Aŭtomate saluti",
