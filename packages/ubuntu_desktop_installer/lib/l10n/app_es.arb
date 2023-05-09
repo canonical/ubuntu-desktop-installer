@@ -321,8 +321,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizada como:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat": "Sistema de archivos FAT",
-  "@partitionFormatFat": {},
   "whoAreYouPageRealNameLabel": "Su nombre",
   "@whoAreYouPageRealNameLabel": {},
   "whoAreYouPageRealNameRequired": "Se necesita un nombre",
