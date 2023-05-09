@@ -102,8 +102,6 @@
   "@allocateDiskSpace": {},
   "partitionEditTitle": "파티션 편집",
   "@partitionEditTitle": {},
-  "partitionFormatExt4": "Ext4 저널링 파일 시스템",
-  "@partitionFormatExt4": {},
   "partitionFormatBtrfs": "btrfs 저널링 파일 시스템",
   "@partitionFormatBtrfs": {},
   "partitionFormatFat12": "FAT12 파일 시스템",
