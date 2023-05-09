@@ -844,8 +844,6 @@
   "@activeDirectoryAdminInvalidChars": {},
   "activeDirectoryErrorTitle": "Klaida konfigūruojant ryšį su „Active Directory“",
   "@activeDirectoryErrorTitle": {},
-  "partitionFormatBtrfs": "btrfs žurnalinė failų sistema",
-  "@partitionFormatBtrfs": {},
   "partitionFormatXfs": "XFS žurnalinė failų sistema",
   "@partitionFormatXfs": {},
   "turnOffRSTTitle": "Norėdami tęsti, išjunkite RST",
