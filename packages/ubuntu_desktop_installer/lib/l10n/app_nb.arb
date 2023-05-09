@@ -397,8 +397,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Brukt som:",
   "@partitionFormatLabel": {},
-  "partitionFormatSwap": "Sidevekslingsområde",
-  "@partitionFormatSwap": {},
   "partitionFormatVfat": "VFAT-filsystem",
   "@partitionFormatVfat": {},
   "partitionFormatNtfs": "NTFS-filsystem",
