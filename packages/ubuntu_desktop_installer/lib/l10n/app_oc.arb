@@ -134,8 +134,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizada coma :",
   "@partitionFormatLabel": {},
-  "partitionFormatExt2": "sistèma de fichièr de jornalizacion Ext2",
-  "@partitionFormatExt2": {},
   "partitionFormatBtrfs": "sistèma de fichièr de jornalizacion BTRFS",
   "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "sistèma de fichièr de jornalizacion JFS",
