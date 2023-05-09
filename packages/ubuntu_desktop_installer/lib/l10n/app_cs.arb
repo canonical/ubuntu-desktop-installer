@@ -256,8 +256,6 @@
   "@partitionFormatIso9660": {},
   "partitionFormatSwap": "Odkládací oblast",
   "@partitionFormatSwap": {},
-  "partitionFormatFat32": "Souborový systém FAT32",
-  "@partitionFormatFat32": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
