@@ -314,8 +314,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "בשימוש בתור:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat": "מערכת קבצים מסוג FAT",
-  "@partitionFormatFat": {},
   "partitionFormatFat12": "מערכת קבצים מסוג FAT12",
   "@partitionFormatFat12": {},
   "partitionFormatFat16": "מערכת קבצים מסוג FAT16",
