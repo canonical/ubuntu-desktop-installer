@@ -337,8 +337,6 @@
   "@partitionSizeLabel": {},
   "partitionUnitB": "B",
   "@partitionUnitB": {},
-  "partitionFormatFat16": "FAT16 ഫയൽ സിസ്റ്റം",
-  "@partitionFormatFat16": {},
   "partitionFormatFat32": "FAT32 ഫയൽ സിസ്റ്റം",
   "@partitionFormatFat32": {},
   "partitionFormatSwap": "Swap സ്ഥലം",
