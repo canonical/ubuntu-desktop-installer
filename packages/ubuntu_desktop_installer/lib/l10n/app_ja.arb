@@ -270,8 +270,6 @@
   "@whoAreYouPageTitle": {},
   "whoAreYouPageRequirePassword": "ログイン時にパスワードを要求する",
   "@whoAreYouPageRequirePassword": {},
-  "partitionFormatFat16": "FAT16 ファイルシステム",
-  "@partitionFormatFat16": {},
   "whoAreYouPageAutoLogin": "自動的にログインする",
   "@whoAreYouPageAutoLogin": {},
   "whoAreYouPageComputerNameInfo": "他のコンピューターと通信するときに使用する名前です。",
