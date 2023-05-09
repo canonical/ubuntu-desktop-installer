@@ -240,8 +240,6 @@
   "@partitionUnitKB": {},
   "partitionTypeLabel": "新しいパーティションの種類を選択してください。",
   "@partitionTypeLabel": {},
-  "partitionFormatFat12": "FAT12 ファイルシステム",
-  "@partitionFormatFat12": {},
   "partitionFormatNtfs": "NTFS ファイルシステム",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "ReiserFS ファイルシステム",
