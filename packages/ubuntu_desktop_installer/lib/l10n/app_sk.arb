@@ -12,8 +12,6 @@
   "@installThirdPartyTitle": {},
   "installThirdPartySubtitle": "Tento softvér je predmetom licenčných dojednaní, obsiahnutých v dokumentácii k nemu. Niektorý je proprietárny.",
   "@installThirdPartySubtitle": {},
-  "partitionFormatJfs": "Žurnálovací súborový systém JFS",
-  "@partitionFormatJfs": {},
   "instructionsForRST": "Ohľadne pokynov naskenujte QR kód na inom zariadení alebo choďte na: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
