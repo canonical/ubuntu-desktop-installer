@@ -277,8 +277,6 @@
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "System plików VFAT",
   "@partitionFormatVfat": {},
-  "partitionFormatSwap": "Obszar wymiany (swap)",
-  "@partitionFormatSwap": {},
   "partitionFormatZfsroot": "System plików root ZFS",
   "@partitionFormatZfsroot": {},
   "partitionErase": "Sformatuj partycję",
