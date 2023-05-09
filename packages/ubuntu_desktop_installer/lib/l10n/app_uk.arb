@@ -332,8 +332,6 @@
   "@partitionLocationLabel": {},
   "partitionFormatLabel": "Використовується як:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt3": "Журнальна файлова система Ext3",
-  "@partitionFormatExt3": {},
   "partitionFormatExt2": "Файлова система Ext2",
   "@partitionFormatExt2": {},
   "partitionFormatBtrfs": "Журнальна файлова система btrfs",
