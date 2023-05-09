@@ -448,8 +448,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Used as:",
   "@partitionFormatLabel": {},
-  "partitionFormatXfs": "XFS journaling file system",
-  "@partitionFormatXfs": {},
   "partitionFormatFat": "FAT file system",
   "@partitionFormatFat": {},
   "partitionFormatFat12": "FAT12 file system",
