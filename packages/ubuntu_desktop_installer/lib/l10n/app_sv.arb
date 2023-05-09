@@ -295,8 +295,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Används som:",
   "@partitionFormatLabel": {},
-  "partitionFormatJfs": "JFS journalfilsystem",
-  "@partitionFormatJfs": {},
   "partitionFormatXfs": "XFS journalfilsystem",
   "@partitionFormatXfs": {},
   "partitionFormatFat": "FAT filsystem",
