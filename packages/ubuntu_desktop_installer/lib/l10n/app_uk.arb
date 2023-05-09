@@ -505,8 +505,6 @@
   "@bootLoaderDevice": {},
   "partitionCreateTitle": "Створити розділ",
   "@partitionCreateTitle": {},
-  "partitionFormatReiserFS": "Файлова система ReiserFS",
-  "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "Коренева файлова система ZFS",
   "@partitionFormatZfsroot": {},
   "whoAreYouPageTitle": "Хто ви?",
