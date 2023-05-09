@@ -36,8 +36,6 @@
   "@selectGuidedStorageInstallNow": {},
   "diskHeadersDevice": "Aparato",
   "@diskHeadersDevice": {},
-  "partitionFormatFat": "Dosiersistemo FAT",
-  "@partitionFormatFat": {},
   "changeButtonText": "Ŝanĝi",
   "@changeButtonText": {},
   "chooseYourLookPageDarkSetting": "Malhela",
