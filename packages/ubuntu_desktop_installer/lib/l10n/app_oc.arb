@@ -379,8 +379,6 @@
   "@chooseSecurityKeyRequired": {},
   "selectGuidedStorageDropdownLabel": "Seleccionatz lo disc :",
   "@selectGuidedStorageDropdownLabel": {},
-  "partitionFormatNtfs": "sistèma de fichièr NTFS",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "sistèma de fichièr ReiserFS",
   "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "sistèma de fichièr ZFS",
