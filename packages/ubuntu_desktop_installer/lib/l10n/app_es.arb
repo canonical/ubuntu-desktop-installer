@@ -325,8 +325,6 @@
   "@whoAreYouPageComputerNameLabel": {},
   "whoAreYouPageComputerNameInfo": "El nombre que utiliza al comunicarse con otros equipos.",
   "@whoAreYouPageComputerNameInfo": {},
-  "partitionFormatReiserFS": "Sistema de archivos ReiserFS",
-  "@partitionFormatReiserFS": {},
   "partitionErase": "Formatear la partición",
   "@partitionErase": {},
   "partitionMountPointLabel": "Punto de montaje:",
