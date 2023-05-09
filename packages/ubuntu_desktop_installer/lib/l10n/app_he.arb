@@ -314,8 +314,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "בשימוש בתור:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt3": "מערכת קבצים מתועדת מסוג Ext3",
-  "@partitionFormatExt3": {},
   "partitionFormatExt2": "מערכת קבצים מסוג Ext2",
   "@partitionFormatExt2": {},
   "partitionFormatBtrfs": "מערכת קבצים מתועדת מסוג btrfs",
