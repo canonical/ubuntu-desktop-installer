@@ -500,8 +500,6 @@
   "@installationTypeAdvancedLabel": {},
   "partitionTypeLabel": "指定新分区的类型：",
   "@partitionTypeLabel": {},
-  "partitionFormatExt3": "Ext3 日志文件系统",
-  "@partitionFormatExt3": {},
   "chooseYourLookPageTitle": "选择您的主题",
   "@chooseYourLookPageTitle": {},
   "installationTypeLVM": "在新的 {RELEASE} 安装中使用 LVM",
