@@ -225,8 +225,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizado como:",
   "@partitionFormatLabel": {},
-  "partitionFormatFat": "Sistema de ficheiros FAT",
-  "@partitionFormatFat": {},
   "partitionFormatFat12": "Sistema de ficheiros FA12",
   "@partitionFormatFat12": {},
   "partitionFormatFat16": "Sistema de ficheiros FA16",
