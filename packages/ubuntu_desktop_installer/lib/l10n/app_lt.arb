@@ -521,8 +521,6 @@
   "@diskHeadersSystem": {},
   "partitionLimitReached": "Pasiekta riba",
   "@partitionLimitReached": {},
-  "partitionFormatNtfs": "NTFS failų sistema",
-  "@partitionFormatNtfs": {},
   "partitionTypeLogical": "Loginis",
   "@partitionTypeLogical": {},
   "partitionUnitKB": "kB",
