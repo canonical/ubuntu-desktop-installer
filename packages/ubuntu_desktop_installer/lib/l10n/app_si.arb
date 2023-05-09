@@ -35,8 +35,6 @@
   "@hiddenWifiNetworkNameRequired": {},
   "noInternet": "දැන් අන්තර්ජාලයට සම්බන්ධ වීමට අවශ්‍ය නැත",
   "@noInternet": {},
-  "partitionFormatFat32": "FAT32 ගොනු පද්ධතිය",
-  "@partitionFormatFat32": {},
   "installationTypeLVMSelected": "LVM තෝරා ඇත",
   "@installationTypeLVMSelected": {},
   "diskHeadersDevice": "උපාංගය",
