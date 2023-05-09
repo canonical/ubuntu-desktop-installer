@@ -6,7 +6,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'active_directory_l10n.dart';
-import 'active_directory_page.dart';
+import 'active_directory_model.dart';
 
 class DomainNameFormField extends ConsumerWidget {
   const DomainNameFormField({super.key, this.fieldWidth});
@@ -16,10 +16,10 @@ class DomainNameFormField extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final domainName = ref
-        .watch(ActiveDirectoryPage.modelProvider.select((m) => m.domainName));
-    final validation = ref.watch(ActiveDirectoryPage.modelProvider
-        .select((m) => m.domainNameValidation));
+    final domainName =
+        ref.watch(activeDirectoryModelProvider.select((m) => m.domainName));
+    final validation = ref.watch(
+        activeDirectoryModelProvider.select((m) => m.domainNameValidation));
 
     return ValidatedFormField(
       autofocus: true,
@@ -33,9 +33,9 @@ class DomainNameFormField extends ConsumerWidget {
             validation.singleOrNull == AdDomainNameValidation.OK,
         errorText: validation?.firstOrNull?.localize(lang) ?? '',
       ),
-      onChanged: ref.read(ActiveDirectoryPage.modelProvider).setDomainName,
+      onChanged: ref.read(activeDirectoryModelProvider).setDomainName,
       onEditingComplete:
-          ref.read(ActiveDirectoryPage.modelProvider).pingDomainController,
+          ref.read(activeDirectoryModelProvider).pingDomainController,
     );
   }
 }
@@ -49,9 +49,9 @@ class AdminNameFormField extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final adminName =
-        ref.read(ActiveDirectoryPage.modelProvider.select((m) => m.adminName));
+        ref.read(activeDirectoryModelProvider.select((m) => m.adminName));
     final validation = ref.watch(
-        ActiveDirectoryPage.modelProvider.select((m) => m.adminNameValidation));
+        activeDirectoryModelProvider.select((m) => m.adminNameValidation));
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -62,7 +62,7 @@ class AdminNameFormField extends ConsumerWidget {
         (_) => validation == AdAdminNameValidation.OK,
         errorText: validation?.localize(lang) ?? '',
       ),
-      onChanged: ref.read(ActiveDirectoryPage.modelProvider).setAdminName,
+      onChanged: ref.read(activeDirectoryModelProvider).setAdminName,
     );
   }
 }
@@ -76,9 +76,9 @@ class PasswordFormField extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final password =
-        ref.watch(ActiveDirectoryPage.modelProvider.select((m) => m.password));
+        ref.watch(activeDirectoryModelProvider.select((m) => m.password));
     final validation = ref.watch(
-        ActiveDirectoryPage.modelProvider.select((m) => m.passwordValidation));
+        activeDirectoryModelProvider.select((m) => m.passwordValidation));
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -89,7 +89,7 @@ class PasswordFormField extends ConsumerWidget {
         (_) => validation == AdPasswordValidation.OK,
         errorText: validation?.localize(lang) ?? '',
       ),
-      onChanged: ref.read(ActiveDirectoryPage.modelProvider).setPassword,
+      onChanged: ref.read(activeDirectoryModelProvider).setPassword,
     );
   }
 }

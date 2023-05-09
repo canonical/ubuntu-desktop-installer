@@ -52,7 +52,7 @@ void main() {
 
   Widget buildPage(ActiveDirectoryModel model) {
     return ProviderScope(
-      overrides: [ActiveDirectoryPage.modelProvider.overrideWith((_) => model)],
+      overrides: [activeDirectoryModelProvider.overrideWith((_) => model)],
       child: const ActiveDirectoryPage(),
     );
   }
