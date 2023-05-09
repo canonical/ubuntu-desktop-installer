@@ -119,8 +119,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "用于：",
   "@partitionFormatLabel": {},
-  "partitionFormatIso9660": "ISO 9660 文件系统",
-  "@partitionFormatIso9660": {},
   "partitionFormatVfat": "VFAT 文件系统",
   "@partitionFormatVfat": {},
   "partitionFormatZfsroot": "ZFS 根文件系统",
