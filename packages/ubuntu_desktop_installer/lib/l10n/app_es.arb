@@ -325,8 +325,6 @@
   "@whoAreYouPageComputerNameLabel": {},
   "whoAreYouPageComputerNameInfo": "El nombre que utiliza al comunicarse con otros equipos.",
   "@whoAreYouPageComputerNameInfo": {},
-  "partitionFormatIso9660": "Sistema de archivos ISO 9660",
-  "@partitionFormatIso9660": {},
   "partitionFormatVfat": "Sistema de archivos VFAT",
   "@partitionFormatVfat": {},
   "partitionFormatNtfs": "Sistema de archivos NTFS",
