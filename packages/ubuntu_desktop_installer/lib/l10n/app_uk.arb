@@ -505,8 +505,6 @@
   "@bootLoaderDevice": {},
   "partitionCreateTitle": "Створити розділ",
   "@partitionCreateTitle": {},
-  "partitionFormatZfsroot": "Коренева файлова система ZFS",
-  "@partitionFormatZfsroot": {},
   "whoAreYouPageTitle": "Хто ви?",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "Входити автоматично",
