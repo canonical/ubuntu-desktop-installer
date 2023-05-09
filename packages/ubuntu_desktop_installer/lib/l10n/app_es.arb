@@ -387,8 +387,6 @@
       "system": {}
     }
   },
-  "partitionFormatBtrfs": "Sistema de archivos transaccional btrfs",
-  "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "Sistema de archivos transaccional JFS",
   "@partitionFormatJfs": {},
   "partitionFormatXfs": "Sistema de archivos transaccional XFS",
