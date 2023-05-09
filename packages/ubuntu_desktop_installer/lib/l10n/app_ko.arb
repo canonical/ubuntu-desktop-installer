@@ -71,8 +71,6 @@
   "@partitionFormatXfs": {},
   "partitionFormatReiserFS": "ReiserFS 파일 시스템",
   "@partitionFormatReiserFS": {},
-  "partitionFormatExt2": "Ext2 파일 시스템",
-  "@partitionFormatExt2": {},
   "whoAreYouPageRealNameLabel": "이름",
   "@whoAreYouPageRealNameLabel": {},
   "partitionFormatVfat": "VFAT 파일 시스템",
