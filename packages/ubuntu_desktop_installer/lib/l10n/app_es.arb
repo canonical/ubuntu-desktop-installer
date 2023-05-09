@@ -325,8 +325,6 @@
   "@whoAreYouPageComputerNameLabel": {},
   "whoAreYouPageComputerNameInfo": "El nombre que utiliza al comunicarse con otros equipos.",
   "@whoAreYouPageComputerNameInfo": {},
-  "partitionFormatFat32": "Sistema de archivos FAT32",
-  "@partitionFormatFat32": {},
   "partitionFormatSwap": "Área de intercambio",
   "@partitionFormatSwap": {},
   "partitionFormatIso9660": "Sistema de archivos ISO 9660",
