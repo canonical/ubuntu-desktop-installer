@@ -51,7 +51,7 @@ void main() {
     registerMockService<SubiquityClient>(client);
 
     return ProviderScope(
-      overrides: [KeyboardPage.modelProvider.overrideWith((_) => model)],
+      overrides: [keyboardModelProvider.overrideWith((_) => model)],
       child: const KeyboardPage(),
     );
   }

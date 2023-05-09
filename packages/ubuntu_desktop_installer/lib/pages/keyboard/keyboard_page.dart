@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -13,9 +12,6 @@ import 'keyboard_model.dart';
 class KeyboardPage extends ConsumerStatefulWidget {
   const KeyboardPage({super.key});
 
-  static final modelProvider = ChangeNotifierProvider(
-      (_) => KeyboardModel(getService<KeyboardService>()));
-
   @override
   ConsumerState<KeyboardPage> createState() => _KeyboardPageState();
 }
@@ -25,7 +21,7 @@ class _KeyboardPageState extends ConsumerState<KeyboardPage> {
   void initState() {
     super.initState();
 
-    final model = ref.read(KeyboardPage.modelProvider);
+    final model = ref.read(keyboardModelProvider);
     model.init().then((_) => model.updateInputSource());
   }
 
@@ -36,7 +32,7 @@ class _KeyboardPageState extends ConsumerState<KeyboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    final model = ref.watch(KeyboardPage.modelProvider);
+    final model = ref.watch(keyboardModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
