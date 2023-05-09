@@ -425,8 +425,6 @@
   "@partitionUnitGB": {},
   "partitionTypeLabel": "Az új partíció típusa:",
   "@partitionTypeLabel": {},
-  "partitionFormatNtfs": "NTFS fájlrendszer",
-  "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "ReiserFS fájlrendszer",
   "@partitionFormatReiserFS": {},
   "partitionFormatZfsroot": "ZFS gyökérfájlrendszer",
