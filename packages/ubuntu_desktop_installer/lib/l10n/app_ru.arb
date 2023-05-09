@@ -149,8 +149,6 @@
   "@partitionTypeLogical": {},
   "partitionLocationLabel": "Расположение нового раздела:",
   "@partitionLocationLabel": {},
-  "partitionFormatXfs": "Журналируемя файловая система XFS",
-  "@partitionFormatXfs": {},
   "partitionFormatFat": "Файловая система FAT",
   "@partitionFormatFat": {},
   "partitionUnitB": "Б",
