@@ -273,8 +273,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Używana jako:",
   "@partitionFormatLabel": {},
-  "partitionFormatBtrfs": "System plików z dziennikowaniem btrfs",
-  "@partitionFormatBtrfs": {},
   "partitionFormatJfs": "System plików z dziennikowaniem JFS",
   "@partitionFormatJfs": {},
   "partitionFormatXfs": "System plików z dziennikowaniem XFS",
