@@ -379,8 +379,6 @@
   "@chooseSecurityKeyRequired": {},
   "selectGuidedStorageDropdownLabel": "Seleccionatz lo disc :",
   "@selectGuidedStorageDropdownLabel": {},
-  "partitionFormatVfat": "sistèma de fichièr VFAT",
-  "@partitionFormatVfat": {},
   "partitionFormatNtfs": "sistèma de fichièr NTFS",
   "@partitionFormatNtfs": {},
   "partitionFormatReiserFS": "sistèma de fichièr ReiserFS",
