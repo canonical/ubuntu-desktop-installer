@@ -505,8 +505,6 @@
   "@bootLoaderDevice": {},
   "partitionCreateTitle": "Створити розділ",
   "@partitionCreateTitle": {},
-  "partitionFormatSwap": "Своп-зона",
-  "@partitionFormatSwap": {},
   "partitionFormatIso9660": "Файлова система ISO 9660",
   "@partitionFormatIso9660": {},
   "partitionFormatVfat": "Файлова система VFAT",
