@@ -187,8 +187,6 @@
   "@partitionMountPointLabel": {},
   "whoAreYouPageTitle": "Создание своей учётной записи",
   "@whoAreYouPageTitle": {},
-  "partitionFormatFat12": "Файловая система FAT12",
-  "@partitionFormatFat12": {},
   "writeChangesPartitionTablesHeader": "Изменены таблицы разделов на следующих устройствах:",
   "@writeChangesPartitionTablesHeader": {},
   "writeChangesPartitionTablesEntry": "{serial} ({path})",
