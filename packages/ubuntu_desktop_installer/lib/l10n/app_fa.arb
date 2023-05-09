@@ -758,8 +758,6 @@
   "@partitionFormatLabel": {},
   "partitionFormatExt2": "سامانه پروندهٔ Ext2",
   "@partitionFormatExt2": {},
-  "partitionFormatExt4": "سامانه پروندهٔ ثبت شدهٔ Ext4",
-  "@partitionFormatExt4": {},
   "welcomePageTitle": "به {DISTRO} خوش آمدید",
   "@welcomePageTitle": {
     "type": "text",
