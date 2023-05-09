@@ -274,8 +274,6 @@
   "@partitionFormatExt2": {},
   "partitionFormatExt3": "Žurnálovací souborový systém Ext3",
   "@partitionFormatExt3": {},
-  "partitionFormatExt4": "Žurnálovací souborový systém Ext4",
-  "@partitionFormatExt4": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
