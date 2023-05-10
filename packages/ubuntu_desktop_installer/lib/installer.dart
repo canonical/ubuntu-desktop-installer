@@ -324,12 +324,12 @@ enum InstallationStep {
   locale,
   keyboard,
   network,
-  software,
+  source,
   type,
   filesystem,
-  location,
-  user,
-  look,
+  timezone,
+  identity,
+  theme,
 }
 
 class _UbuntuDesktopInstallerWizard extends StatefulWidget {
@@ -402,7 +402,7 @@ class _UbuntuDesktopInstallerWizardState
         ),
         Routes.source: WizardRoute(
           builder: (_) => const SourceWizard(),
-          userData: InstallationStep.software.index,
+          userData: InstallationStep.source.index,
           onNext: (_) =>
               storage.hasSecureBoot ? Routes.secureBoot : Routes.filesystem,
         ),
@@ -420,22 +420,22 @@ class _UbuntuDesktopInstallerWizardState
         ),
         Routes.timezone: WizardRoute(
           builder: (_) => const TimezonePage(),
-          userData: InstallationStep.location.index,
+          userData: InstallationStep.timezone.index,
         ),
         Routes.identity: WizardRoute(
           builder: (_) => const IdentityPage(),
-          userData: InstallationStep.user.index,
+          userData: InstallationStep.identity.index,
           onNext: (settings) => settings.arguments == true
               ? Routes.activeDirectory
               : Routes.theme,
         ),
         Routes.activeDirectory: WizardRoute(
           builder: (_) => const ActiveDirectoryPage(),
-          userData: InstallationStep.user.index,
+          userData: InstallationStep.identity.index,
         ),
         Routes.theme: WizardRoute(
           builder: (_) => const ThemePage(),
-          userData: InstallationStep.look.index,
+          userData: InstallationStep.theme.index,
         ),
         Routes.install: WizardRoute(
           builder: (_) => const InstallPage(),

@@ -19,7 +19,7 @@ class SourceWizard extends StatelessWidget {
       routes: {
         Navigator.defaultRouteName: WizardRoute(
           builder: (_) => const SourcePage(),
-          userData: InstallationStep.software.index,
+          userData: InstallationStep.source.index,
         ),
         Routes.notEnoughDiskSpace: WizardRoute(
           builder: (_) => const NotEnoughDiskSpacePage(),
