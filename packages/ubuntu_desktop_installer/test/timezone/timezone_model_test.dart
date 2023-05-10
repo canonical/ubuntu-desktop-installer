@@ -1,23 +1,29 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_desktop_installer/services/timezone_service.dart';
 
 import 'timezone_model_test.mocks.dart';
 
-@GenerateMocks([TimezoneService])
+@GenerateMocks([GeoService, TimezoneService])
 void main() {
   test('init', () async {
     final service = MockTimezoneService();
     when(service.getTimezone()).thenAnswer((_) async => 'Europe/Stockholm');
 
-    final model = TimezoneModel(service);
+    final geo = MockGeoService();
+    when(geo.searchTimezone('Europe/Stockholm')).thenAnswer(
+        (_) async => const [GeoLocation(timezone: 'Europe/Stockholm')]);
 
-    final timezone = await model.init();
-    expect(timezone, equals('Europe/Stockholm'));
+    final model = TimezoneModel(service, geo);
+
+    await model.init();
+    expect(model.selectedLocation?.timezone, equals('Europe/Stockholm'));
 
     verify(service.getTimezone()).called(1);
+    verify(geo.searchTimezone('Europe/Stockholm')).called(1);
   });
 
   test('save', () async {
@@ -25,12 +31,14 @@ void main() {
     when(service.setTimezone('geoip')).thenAnswer((_) async {});
     when(service.setTimezone('Europe/Oslo')).thenAnswer((_) async {});
 
-    final model = TimezoneModel(service);
+    final model = TimezoneModel(service, MockGeoService());
 
-    await model.save(null);
+    await model.save();
     verify(service.setTimezone('geoip')).called(1);
 
-    await model.save('Europe/Oslo');
+    model.selectLocation(const GeoLocation(timezone: 'Europe/Oslo'));
+
+    await model.save();
     verify(service.setTimezone('Europe/Oslo')).called(1);
   });
 }
