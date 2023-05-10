@@ -969,6 +969,18 @@ abstract class AppLocalizations {
   /// **'Manual partitioning'**
   String get allocateDiskSpace;
 
+  /// No description provided for @allocateDiskSpaceInvalidMountPointSlash.
+  ///
+  /// In en, this message translates to:
+  /// **'Mount points must start with \"/\"'**
+  String get allocateDiskSpaceInvalidMountPointSlash;
+
+  /// No description provided for @allocateDiskSpaceInvalidMountPointSpace.
+  ///
+  /// In en, this message translates to:
+  /// **'Mount points cannot contain spaces'**
+  String get allocateDiskSpaceInvalidMountPointSpace;
+
   /// No description provided for @startInstallingButtonText.
   ///
   /// In en, this message translates to:

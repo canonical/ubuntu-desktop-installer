@@ -427,6 +427,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get allocateDiskSpace => 'Создание разделов вручную';
 
   @override
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+
+  @override
   String get startInstallingButtonText => 'Установить';
 
   @override

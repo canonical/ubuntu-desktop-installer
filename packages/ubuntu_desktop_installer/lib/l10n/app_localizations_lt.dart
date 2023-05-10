@@ -427,6 +427,12 @@ class AppLocalizationsLt extends AppLocalizations {
   String get allocateDiskSpace => 'Rankinis skaidymas';
 
   @override
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+
+  @override
   String get startInstallingButtonText => 'Įdiegti';
 
   @override

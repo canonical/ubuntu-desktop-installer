@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
@@ -255,6 +254,7 @@ class _PartitionMountField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final lang = AppLocalizations.of(context);
     return SizedBox(
       width: _kInputFieldWidth,
       child: ValueListenableBuilder<PartitionFormat?>(
@@ -276,10 +276,17 @@ class _PartitionMountField extends StatelessWidget {
                 onChanged: (value) => partitionMount.value = value,
                 onFieldSubmitted: (_) => onFieldSubmitted(),
                 autovalidateMode: AutovalidateMode.always,
-                decoration:
-                    const InputDecoration(errorStyle: TextStyle(height: 0)),
-                validator:
-                    PatternValidator(_kValidMountPointPattern, errorText: ''),
+                validator: (value) {
+                  if (value?.isEmpty ?? true) {
+                    return null;
+                  } else if (!value!.startsWith('/')) {
+                    return lang.allocateDiskSpaceInvalidMountPointSlash;
+                  } else if (value.contains(' ')) {
+                    return lang.allocateDiskSpaceInvalidMountPointSpace;
+                  } else {
+                    return null;
+                  }
+                },
               );
             },
           );

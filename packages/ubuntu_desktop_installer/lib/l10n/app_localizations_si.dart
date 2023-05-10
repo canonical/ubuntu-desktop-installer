@@ -427,6 +427,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get allocateDiskSpace => 'තැටියේ ඉඩ වෙන් කරන්න';
 
   @override
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+
+  @override
   String get startInstallingButtonText => 'ස්ථාපනය අරඹන්න';
 
   @override
