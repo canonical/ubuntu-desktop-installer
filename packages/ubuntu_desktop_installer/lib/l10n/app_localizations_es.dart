@@ -427,6 +427,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get allocateDiskSpace => 'Particionamiento manual';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Instalar';
 
   @override

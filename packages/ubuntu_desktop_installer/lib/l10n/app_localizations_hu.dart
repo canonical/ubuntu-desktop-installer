@@ -427,6 +427,9 @@ class AppLocalizationsHu extends AppLocalizations {
   String get allocateDiskSpace => 'Kézi particionálás';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Telepítés';
 
   @override

@@ -427,6 +427,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get allocateDiskSpace => 'Создание разделов вручную';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Установить';
 
   @override

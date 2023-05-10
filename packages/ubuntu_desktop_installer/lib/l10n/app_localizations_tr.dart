@@ -427,6 +427,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get allocateDiskSpace => 'Elle biçimlendirme';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Kur';
 
   @override

@@ -427,6 +427,9 @@ class AppLocalizationsEo extends AppLocalizations {
   String get allocateDiskSpace => 'Neaŭtomata dispartigo';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Instali';
 
   @override

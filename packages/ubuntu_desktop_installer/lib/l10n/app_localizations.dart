@@ -969,6 +969,12 @@ abstract class AppLocalizations {
   /// **'Manual partitioning'**
   String get allocateDiskSpace;
 
+  /// No description provided for @allocateDiskSpaceInvalidMountPoint.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid mount point'**
+  String get allocateDiskSpaceInvalidMountPoint;
+
   /// No description provided for @startInstallingButtonText.
   ///
   /// In en, this message translates to:

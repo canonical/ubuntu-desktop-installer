@@ -427,6 +427,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get allocateDiskSpace => 'חלוקת מחיצות ידנית';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'התקנה';
 
   @override

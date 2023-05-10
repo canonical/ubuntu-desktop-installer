@@ -427,6 +427,9 @@ class AppLocalizationsSi extends AppLocalizations {
   String get allocateDiskSpace => 'තැටියේ ඉඩ වෙන් කරන්න';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'ස්ථාපනය අරඹන්න';
 
   @override

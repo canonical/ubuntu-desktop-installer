@@ -427,6 +427,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get allocateDiskSpace => '手動パーティショニング';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'インストール';
 
   @override

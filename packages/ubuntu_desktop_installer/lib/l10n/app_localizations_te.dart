@@ -427,6 +427,9 @@ class AppLocalizationsTe extends AppLocalizations {
   String get allocateDiskSpace => 'Manual partitioning';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Install';
 
   @override

@@ -390,6 +390,8 @@
   "@installAlongsideAvailable": {},
   "allocateDiskSpace": "Manual partitioning",
   "@allocateDiskSpace": {},
+  "allocateDiskSpaceInvalidMountPoint": "Invalid mount point",
+  "@allocateDiskSpaceInvalidMountPoint": {},
   "startInstallingButtonText": "Install",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Device",

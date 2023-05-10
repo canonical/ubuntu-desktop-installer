@@ -427,6 +427,9 @@ class AppLocalizationsFi extends AppLocalizations {
   String get allocateDiskSpace => 'Manuaalinen osiointi';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Asenna';
 
   @override

@@ -427,6 +427,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get allocateDiskSpace => 'Manuell partitionering';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Installera';
 
   @override

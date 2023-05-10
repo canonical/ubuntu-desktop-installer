@@ -427,6 +427,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get allocateDiskSpace => 'Ruční rozdělení';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Instalace';
 
   @override

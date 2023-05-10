@@ -427,6 +427,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get allocateDiskSpace => 'Alokasikan ruang disk';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Mulai Memasang';
 
   @override

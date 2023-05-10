@@ -427,6 +427,9 @@ class AppLocalizationsSk extends AppLocalizations {
   String get allocateDiskSpace => 'Ručné rozdelenie';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Inštalácia';
 
   @override

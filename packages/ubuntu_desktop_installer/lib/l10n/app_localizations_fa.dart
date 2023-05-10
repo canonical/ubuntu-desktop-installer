@@ -427,6 +427,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get allocateDiskSpace => 'افرازش دستی';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'نصب';
 
   @override

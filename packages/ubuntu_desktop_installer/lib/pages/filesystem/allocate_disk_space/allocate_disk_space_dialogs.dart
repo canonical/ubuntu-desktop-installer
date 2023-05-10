@@ -255,6 +255,7 @@ class _PartitionMountField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final lang = AppLocalizations.of(context);
     return SizedBox(
       width: _kInputFieldWidth,
       child: ValueListenableBuilder<PartitionFormat?>(
@@ -276,10 +277,10 @@ class _PartitionMountField extends StatelessWidget {
                 onChanged: (value) => partitionMount.value = value,
                 onFieldSubmitted: (_) => onFieldSubmitted(),
                 autovalidateMode: AutovalidateMode.always,
-                decoration:
-                    const InputDecoration(errorStyle: TextStyle(height: 0)),
-                validator:
-                    PatternValidator(_kValidMountPointPattern, errorText: ''),
+                validator: PatternValidator(
+                  _kValidMountPointPattern,
+                  errorText: lang.allocateDiskSpaceInvalidMountPoint,
+                ),
               );
             },
           );

@@ -427,6 +427,9 @@ class AppLocalizationsNb extends AppLocalizations {
   String get allocateDiskSpace => 'Tildel diskplass';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Installer';
 
   @override

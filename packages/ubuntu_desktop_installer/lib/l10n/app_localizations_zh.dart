@@ -427,6 +427,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get allocateDiskSpace => '手动分区';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => '安装';
 
   @override

@@ -427,6 +427,9 @@ class AppLocalizationsLt extends AppLocalizations {
   String get allocateDiskSpace => 'Rankinis skaidymas';
 
   @override
+  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+
+  @override
   String get startInstallingButtonText => 'Įdiegti';
 
   @override
