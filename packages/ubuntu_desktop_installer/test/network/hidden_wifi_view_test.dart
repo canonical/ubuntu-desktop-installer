@@ -6,7 +6,6 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_view.dart';
-import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
@@ -25,7 +24,7 @@ void main() {
         localizationsDelegates: localizationsDelegates,
         home: ProviderScope(
           overrides: [
-            NetworkPage.hiddenWifiModelProvider.overrideWith((_) => model)
+            hiddenWifiModelProvider.overrideWith((_) => model),
           ],
           child: Material(
             child: Column(

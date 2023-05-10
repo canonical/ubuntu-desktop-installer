@@ -6,7 +6,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'network_page.dart';
+import 'connect_model.dart';
 import 'network_tile.dart';
 import 'wifi_model.dart';
 
@@ -27,7 +27,7 @@ class WifiRadioButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(NetworkPage.wifiModelProvider);
+    final model = ref.watch(wifiModelProvider);
     final lang = AppLocalizations.of(context);
     return Padding(
       padding: const EdgeInsets.only(top: 8),
@@ -70,14 +70,14 @@ class _WifiViewState extends ConsumerState<WifiView> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref.read(NetworkPage.wifiModelProvider).startPeriodicScanning();
+      ref.read(wifiModelProvider).startPeriodicScanning();
     });
   }
 
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final model = ref.watch(NetworkPage.wifiModelProvider);
+    final model = ref.watch(wifiModelProvider);
     if (!model.isEnabled) {
       return NetworkTile(
         subtitle: Column(
@@ -124,7 +124,7 @@ class WifiListView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(NetworkPage.wifiModelProvider);
+    final model = ref.watch(wifiModelProvider);
 
     return YaruBorderContainer(
       clipBehavior: Clip.antiAlias,

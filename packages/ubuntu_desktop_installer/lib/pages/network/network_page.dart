@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -21,18 +20,6 @@ export 'connect_model.dart' show ConnectMode;
 class NetworkPage extends ConsumerStatefulWidget {
   const NetworkPage({super.key});
 
-  static final networkModelProvider = ChangeNotifierProvider((_) {
-    return NetworkModel(getService<NetworkService>());
-  });
-  static final ethernetModelProvider = ChangeNotifierProvider((_) =>
-      EthernetModel(getService<NetworkService>(), getService<UdevService>()));
-  static final wifiModelProvider = ChangeNotifierProvider((_) =>
-      WifiModel(getService<NetworkService>(), getService<UdevService>()));
-  static final hiddenWifiModelProvider = ChangeNotifierProvider((_) =>
-      HiddenWifiModel(getService<NetworkService>(), getService<UdevService>()));
-  static final noConnectModelProvider =
-      ChangeNotifierProvider((_) => NoConnectModel());
-
   @override
   ConsumerState<NetworkPage> createState() => _NetworkPageState();
 }
@@ -42,18 +29,18 @@ class _NetworkPageState extends ConsumerState<NetworkPage> {
   void initState() {
     super.initState();
 
-    final model = ref.read(NetworkPage.networkModelProvider);
-    model.addConnectMode(ref.read(NetworkPage.ethernetModelProvider));
-    model.addConnectMode(ref.read(NetworkPage.wifiModelProvider));
-    model.addConnectMode(ref.read(NetworkPage.hiddenWifiModelProvider));
-    model.addConnectMode(ref.read(NetworkPage.noConnectModelProvider));
+    final model = ref.read(networkModelProvider);
+    model.addConnectMode(ref.read(ethernetModelProvider));
+    model.addConnectMode(ref.read(wifiModelProvider));
+    model.addConnectMode(ref.read(hiddenWifiModelProvider));
+    model.addConnectMode(ref.read(noConnectModelProvider));
 
     model.init().then((_) => model.selectConnectMode());
   }
 
   @override
   Widget build(BuildContext context) {
-    final model = ref.watch(NetworkPage.networkModelProvider);
+    final model = ref.watch(networkModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

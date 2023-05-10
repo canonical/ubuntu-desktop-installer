@@ -1,9 +1,13 @@
 import 'package:collection/collection.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'connect_model.dart';
 import 'network_device.dart';
 import 'wifi_model.dart';
+
+final hiddenWifiModelProvider = ChangeNotifierProvider((_) =>
+    HiddenWifiModel(getService<NetworkService>(), getService<UdevService>()));
 
 class HiddenWifiModel extends NetworkDeviceModel<WifiDevice> {
   HiddenWifiModel(super.service, [super.udev]);

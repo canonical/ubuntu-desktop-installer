@@ -7,7 +7,8 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'network_page.dart';
+import 'connect_model.dart';
+import 'hidden_wifi_model.dart';
 import 'wifi_model.dart';
 
 class HiddenWifiRadioButton extends ConsumerWidget {
@@ -22,7 +23,7 @@ class HiddenWifiRadioButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(NetworkPage.hiddenWifiModelProvider);
+    final model = ref.watch(hiddenWifiModelProvider);
     if (!model.isEnabled || model.devices.isEmpty) {
       return const SizedBox.shrink();
     }
@@ -75,7 +76,7 @@ class _HiddenWifiViewState extends ConsumerState<HiddenWifiView> {
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
-    final model = ref.watch(NetworkPage.hiddenWifiModelProvider);
+    final model = ref.watch(hiddenWifiModelProvider);
     if (!model.isEnabled || model.devices.isEmpty) {
       return const SizedBox.shrink();
     }

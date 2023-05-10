@@ -97,13 +97,11 @@ void main() {
 
     return ProviderScope(
       overrides: [
-        NetworkPage.networkModelProvider.overrideWith((_) => model),
-        NetworkPage.ethernetModelProvider.overrideWith((_) => ethernetModel),
-        NetworkPage.wifiModelProvider.overrideWith((_) => wifiModel),
-        NetworkPage.hiddenWifiModelProvider
-            .overrideWith((_) => hiddenWifiModel),
-        NetworkPage.noConnectModelProvider
-            .overrideWith((_) => NoConnectModel()),
+        networkModelProvider.overrideWith((_) => model),
+        ethernetModelProvider.overrideWith((_) => ethernetModel),
+        wifiModelProvider.overrideWith((_) => wifiModel),
+        hiddenWifiModelProvider.overrideWith((_) => hiddenWifiModel),
+        noConnectModelProvider.overrideWith((_) => NoConnectModel()),
       ],
       child: const NetworkPage(),
     );

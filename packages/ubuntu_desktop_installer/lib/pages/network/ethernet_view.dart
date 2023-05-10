@@ -4,7 +4,8 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'network_page.dart';
+import 'connect_model.dart';
+import 'ethernet_model.dart';
 import 'network_tile.dart';
 
 class EthernetRadioButton extends ConsumerWidget {
@@ -19,7 +20,7 @@ class EthernetRadioButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(NetworkPage.ethernetModelProvider);
+    final model = ref.watch(ethernetModelProvider);
     final lang = AppLocalizations.of(context);
     if (!model.isEnabled || model.devices.isEmpty) {
       return NetworkTile(
@@ -53,7 +54,7 @@ class EthernetView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final model = ref.watch(NetworkPage.ethernetModelProvider);
+    final model = ref.watch(ethernetModelProvider);
     if (model.devices.isNotEmpty && !model.isEnabled) {
       return NetworkTile(
         subtitle: Column(

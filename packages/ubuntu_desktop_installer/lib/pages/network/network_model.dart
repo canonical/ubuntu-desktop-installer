@@ -1,8 +1,13 @@
 import 'package:collection/collection.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'connect_model.dart';
+
+final networkModelProvider = ChangeNotifierProvider((_) {
+  return NetworkModel(getService<NetworkService>());
+});
 
 /// A proxy model for the currently selected [ConnectModel] (eth, wifi, none).
 class NetworkModel extends SafeChangeNotifier implements ConnectModel {
