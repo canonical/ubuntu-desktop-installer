@@ -427,7 +427,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get allocateDiskSpace => 'Kézi particionálás';
 
   @override
-  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
 
   @override
   String get startInstallingButtonText => 'Telepítés';

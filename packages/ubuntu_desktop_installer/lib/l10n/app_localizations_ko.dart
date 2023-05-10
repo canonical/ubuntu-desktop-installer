@@ -427,7 +427,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get allocateDiskSpace => '수동 파티셔닝';
 
   @override
-  String get allocateDiskSpaceInvalidMountPoint => 'Invalid mount point';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
 
   @override
   String get startInstallingButtonText => '설치';
