@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:collection/collection.dart';
 import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -15,6 +16,9 @@ const kWifiScanInterval = Duration(seconds: 15);
 
 @visibleForTesting
 const kWifiScanTimeout = Duration(seconds: 3);
+
+final wifiModelProvider = ChangeNotifierProvider(
+    (_) => WifiModel(getService<NetworkService>(), getService<UdevService>()));
 
 /// "Connect to Wi-Fi network"
 class WifiModel extends NetworkDeviceModel<WifiDevice> {

@@ -59,7 +59,9 @@ void main() {
     await tester.pumpWidget(
       tester.buildApp(
         (_) => ProviderScope(
-          overrides: [NetworkPage.wifiModelProvider.overrideWith((_) => model)],
+          overrides: [
+            wifiModelProvider.overrideWith((_) => model),
+          ],
           child: Material(
             child: Column(
               children: [
@@ -125,7 +127,9 @@ void main() {
     await tester.pumpWidget(
       tester.buildApp(
         (_) => ProviderScope(
-          overrides: [NetworkPage.wifiModelProvider.overrideWith((_) => model)],
+          overrides: [
+            wifiModelProvider.overrideWith((_) => model),
+          ],
           child: Column(
             children: [
               WifiRadioButton(
@@ -164,7 +168,9 @@ void main() {
     await tester.pumpWidget(
       tester.buildApp(
         (_) => ProviderScope(
-          overrides: [NetworkPage.wifiModelProvider.overrideWith((_) => model)],
+          overrides: [
+            wifiModelProvider.overrideWith((_) => model),
+          ],
           child: Column(
             children: [
               WifiRadioButton(
@@ -196,7 +202,9 @@ void main() {
     await tester.pumpWidget(
       tester.buildApp(
         (_) => ProviderScope(
-          overrides: [NetworkPage.wifiModelProvider.overrideWith((_) => model)],
+          overrides: [
+            wifiModelProvider.overrideWith((_) => model),
+          ],
           child: WifiView(
             expanded: true,
             onEnabled: () {},

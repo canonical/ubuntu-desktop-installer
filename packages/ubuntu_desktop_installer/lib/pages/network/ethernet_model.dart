@@ -1,8 +1,12 @@
 import 'package:collection/collection.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'connect_model.dart';
 import 'network_device.dart';
+
+final ethernetModelProvider = ChangeNotifierProvider((_) =>
+    EthernetModel(getService<NetworkService>(), getService<UdevService>()));
 
 /// "Use wired connection"
 class EthernetModel extends NetworkDeviceModel<EthernetDevice> {

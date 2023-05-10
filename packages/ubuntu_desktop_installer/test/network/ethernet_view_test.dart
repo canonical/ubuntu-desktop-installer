@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_view.dart';
-import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -27,7 +27,7 @@ void main() {
       tester.buildApp(
         (_) => ProviderScope(
           overrides: [
-            NetworkPage.ethernetModelProvider.overrideWith((_) => model)
+            ethernetModelProvider.overrideWith((_) => model),
           ],
           child: Material(
             child: EthernetRadioButton(
@@ -56,7 +56,7 @@ void main() {
       tester.buildApp(
         (_) => ProviderScope(
           overrides: [
-            NetworkPage.ethernetModelProvider.overrideWith((_) => model)
+            ethernetModelProvider.overrideWith((_) => model),
           ],
           child: Column(
             children: [
@@ -94,7 +94,7 @@ void main() {
       tester.buildApp(
         (_) => ProviderScope(
           overrides: [
-            NetworkPage.ethernetModelProvider.overrideWith((_) => model)
+            ethernetModelProvider.overrideWith((_) => model),
           ],
           child: Column(
             children: [
