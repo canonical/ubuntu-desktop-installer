@@ -79,9 +79,9 @@ class _LocalePageState extends ConsumerState<LocalePage> {
         ),
       ),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardButton.previous(context),
         trailing: [
-          WizardAction.next(
+          WizardButton.next(
             context,
             onNext: () {
               final locale = model.locale(model.selectedLanguageIndex);

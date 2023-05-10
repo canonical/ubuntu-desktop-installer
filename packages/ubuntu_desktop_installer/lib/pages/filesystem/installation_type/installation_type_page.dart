@@ -146,9 +146,9 @@ class _InstallationTypePageState extends ConsumerState<InstallationTypePage> {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context, root: true),
+        leading: WizardButton.previous(context, root: true),
         trailing: [
-          WizardAction.next(
+          WizardButton.next(
             context,
             root: model.isDone,
             enabled: model.hasStorage,

@@ -87,14 +87,14 @@ class WelcomePageState extends ConsumerState<WelcomePage> {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context, root: true),
+        leading: WizardButton.previous(context, root: true),
         trailing: [
-          WizardAction(
+          WizardButton(
             label: UbuntuLocalizations.of(context).nextLabel,
             visible: model.option == Option.tryUbuntu,
             execute: YaruWindow.of(context).close,
           ),
-          WizardAction.next(
+          WizardButton.next(
             context,
             root: !model.hasRst,
             visible: model.option != Option.tryUbuntu,

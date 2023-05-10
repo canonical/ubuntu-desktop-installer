@@ -142,12 +142,12 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardAction.back(
+        leading: WizardButton.previous(
           context,
           enabled: false,
         ),
         trailing: [
-          WizardAction.next(
+          WizardButton.next(
             context,
             onNext: () {
               final model = ref.read(timezoneModelProvider);

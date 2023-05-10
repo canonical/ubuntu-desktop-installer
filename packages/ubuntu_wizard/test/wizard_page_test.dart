@@ -13,7 +13,7 @@ void main() {
       MaterialApp(
         home: WizardPage(
           bottomBar: WizardBar(
-            leading: WizardAction(
+            leading: WizardButton(
                 label: 'action', onActivated: () => activated = true),
           ),
         ),
@@ -36,9 +36,9 @@ void main() {
           content: const Text('content'),
           snackBar: const SnackBar(content: Text('snackbar')),
           bottomBar: const WizardBar(
-            leading: WizardAction(label: 'back'),
+            leading: WizardButton(label: 'back'),
             trailing: [
-              WizardAction(label: 'next'),
+              WizardButton(label: 'next'),
             ],
           ),
         ),
@@ -80,9 +80,9 @@ void main() {
         home: WizardPage(
           bottomBar: WizardBar(
             trailing: [
-              WizardAction(label: 'normal'),
-              WizardAction(label: 'flat', flat: true),
-              WizardAction(label: 'highlighted', highlighted: true),
+              WizardButton(label: 'normal'),
+              WizardButton(label: 'flat', flat: true),
+              WizardButton(label: 'highlighted', highlighted: true),
             ],
           ),
         ),
@@ -101,7 +101,7 @@ void main() {
         home: WizardPage(
           bottomBar: WizardBar(
             trailing: [
-              WizardAction(
+              WizardButton(
                 label: 'action',
                 enabled: false,
                 onActivated: () => activated = true,
@@ -125,7 +125,7 @@ void main() {
         home: WizardPage(
           bottomBar: WizardBar(
             trailing: [
-              WizardAction(label: 'action', visible: false),
+              WizardButton(label: 'action', visible: false),
             ],
           ),
         ),
@@ -150,9 +150,9 @@ void main() {
             return Builder(builder: (context) {
               return WizardPage(
                 bottomBar: WizardBar(
-                  leading: WizardAction.back(context),
+                  leading: WizardButton.previous(context),
                   trailing: [
-                    WizardAction.next(context),
+                    WizardButton.next(context),
                   ],
                 ),
               );
@@ -208,5 +208,35 @@ void main() {
     expect(find.text('Page 4 of 7'), findsOneWidget);
     expect((indicatorFinder.evaluate().first.widget as YaruPageIndicator).page,
         equals(3));
+  });
+
+  testWidgets('loading indicator', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: WizardButton(
+          label: 'button',
+          loading: true,
+        ),
+      ),
+    );
+
+    expect(find.text('button'), findsOneWidget);
+    expect(find.byType(YaruCircularProgressIndicator), findsNothing);
+
+    await tester.pump(const Duration(milliseconds: 100));
+
+    expect(find.text('button'), findsNothing);
+    expect(find.byType(YaruCircularProgressIndicator), findsOneWidget);
+
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: WizardButton(
+          label: 'button',
+        ),
+      ),
+    );
+
+    expect(find.text('button'), findsOneWidget);
+    expect(find.byType(YaruCircularProgressIndicator), findsNothing);
   });
 }

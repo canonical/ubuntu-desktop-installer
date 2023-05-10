@@ -78,9 +78,9 @@ class _AdvancedSetupPageState extends State<AdvancedSetupPage> {
         );
       }),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardButton.previous(context),
         trailing: [
-          WizardAction.next(
+          WizardButton.next(
             context,
             highlighted: true,
             label: lang.setupButton,

@@ -108,7 +108,7 @@ extension on WidgetTester {
                     builder: (context) => WizardPage(
                       content: const Text('first route'),
                       bottomBar: WizardBar(
-                        trailing: [WizardAction.next(context)],
+                        trailing: [WizardButton.next(context)],
                       ),
                     ),
                   ),
@@ -117,7 +117,8 @@ extension on WidgetTester {
                   '/last': WizardRoute(
                     builder: (context) => WizardPage(
                       content: const Text('last route'),
-                      bottomBar: WizardBar(leading: WizardAction.back(context)),
+                      bottomBar:
+                          WizardBar(leading: WizardButton.previous(context)),
                     ),
                   ),
                 },
