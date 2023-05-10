@@ -85,7 +85,7 @@ class RstPage extends ConsumerWidget {
           ),
         ),
         bottomBar: WizardBar(
-          leading: WizardAction.back(context),
+          leading: WizardButton.previous(context),
         ),
       ),
     );

@@ -99,9 +99,9 @@ class _InstallAlongsidePageState extends ConsumerState<InstallAlongsidePage> {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardButton.previous(context),
         trailing: [
-          WizardAction.next(
+          WizardButton.next(
             context,
             root: model.isDone,
             onNext: model.selectedStorage != null ? model.save : null,

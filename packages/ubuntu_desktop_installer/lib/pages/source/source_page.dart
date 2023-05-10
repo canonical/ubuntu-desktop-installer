@@ -108,9 +108,9 @@ class _SourcePageState extends ConsumerState<SourcePage> {
             )
           : null,
       bottomBar: WizardBar(
-        leading: WizardAction.back(context, root: true),
+        leading: WizardButton.previous(context, root: true),
         trailing: [
-          WizardAction.next(
+          WizardButton.next(
             context,
             root: model.hasEnoughDiskSpace,
             enabled: model.sourceId != null,

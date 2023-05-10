@@ -81,15 +81,15 @@ class _NetworkPageState extends ConsumerState<NetworkPage> {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardButton.previous(context),
         trailing: [
-          WizardAction(
+          WizardButton(
             label: lang.connectButtonText,
             enabled: !model.isConnecting,
             visible: model.isEnabled && model.canConnect,
             onActivated: model.connect,
           ),
-          WizardAction.next(
+          WizardButton.next(
             context,
             enabled:
                 model.isEnabled && !model.isConnecting && model.isConnected,

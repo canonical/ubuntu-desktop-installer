@@ -15,9 +15,9 @@ class ThemePage extends StatelessWidget {
     return WizardPage(
       header: Text(lang.chooseYourLookPageHeader),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardButton.previous(context),
         trailing: [
-          WizardAction.next(context),
+          WizardButton.next(context),
         ],
       ),
       title: YaruWindowTitleBar(

@@ -83,9 +83,9 @@ class _IdentityPageState extends ConsumerState<IdentityPage> {
         );
       }),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardButton.previous(context),
         trailing: [
-          WizardAction.next(
+          WizardButton.next(
             context,
             enabled: ref.watch(identityModelProvider.select((m) => m.isValid)),
             arguments: ref.watch(

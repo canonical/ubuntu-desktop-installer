@@ -311,9 +311,9 @@ class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context, enabled: false),
+        leading: WizardButton.previous(context, enabled: false),
         trailing: [
-          WizardAction.next(context, enabled: false),
+          WizardButton.next(context, enabled: false),
         ],
       ),
     );

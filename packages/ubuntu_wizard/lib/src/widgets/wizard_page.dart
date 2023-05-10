@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ubuntu_wizard/constants.dart';
 
 export 'package:wizard_router/wizard_router.dart';
-export 'wizard_action.dart';
 
 /// The base for wizard pages in the installer.
 ///

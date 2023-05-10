@@ -70,9 +70,9 @@ class _SecurityKeyPageState extends ConsumerState<SecurityKeyPage> {
         );
       }),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardButton.previous(context),
         trailing: [
-          WizardAction.next(
+          WizardButton.next(
             context,
             root: true,
             enabled: ref.watch(

@@ -121,9 +121,9 @@ class _ConfirmPageState extends ConsumerState<ConfirmPage> {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardAction.back(context),
+        leading: WizardButton.previous(context),
         trailing: [
-          WizardAction.next(
+          WizardButton.next(
             context,
             highlighted: true,
             label: lang.startInstallingButtonText,

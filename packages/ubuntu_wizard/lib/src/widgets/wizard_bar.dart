@@ -1,13 +1,9 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/widgets.dart';
 
-import 'wizard_action.dart';
-
 export 'package:wizard_router/wizard_router.dart';
-export 'wizard_action.dart';
 
 class WizardBar extends StatefulWidget {
   const WizardBar({
@@ -17,8 +13,8 @@ class WizardBar extends StatefulWidget {
     this.padding = kFooterPadding,
   });
 
-  final WizardAction? leading;
-  final List<WizardAction>? trailing;
+  final Widget? leading;
+  final List<Widget>? trailing;
   final EdgeInsetsGeometry padding;
 
   @override
@@ -39,7 +35,7 @@ class _WizardBarState extends State<WizardBar> {
         constraints:
             const BoxConstraints(maxHeight: 36), // TODO: kYaruButtonHeight
         child: NavigationToolbar(
-          leading: _buildAction(context, widget.leading),
+          leading: widget.leading,
           middle: currentStep != null && totalSteps != null
               ? YaruPageIndicator.builder(
                   page: currentStep,
@@ -52,38 +48,10 @@ class _WizardBarState extends State<WizardBar> {
               : null,
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
-            children: widget.trailing
-                    ?.map((action) => _buildAction(context, action))
-                    .whereNotNull()
-                    .withSpacing(kButtonBarSpacing) ??
-                [],
+            children: widget.trailing?.withSpacing(kButtonBarSpacing) ?? [],
           ),
         ),
       ),
-    );
-  }
-
-  Widget? _buildAction(BuildContext context, WizardAction? action) {
-    if (action == null || action.visible == false) {
-      return null;
-    }
-
-    final maybeActivate = action.enabled ?? true
-        ? () async {
-            await action.onActivated?.call();
-            if (mounted) action.execute?.call();
-          }
-        : null;
-
-    final child = Text(action.label!);
-
-    return ConstrainedBox(
-      constraints: const BoxConstraints(minWidth: 136),
-      child: action.highlighted == true
-          ? ElevatedButton(onPressed: maybeActivate, child: child)
-          : action.flat == true
-              ? OutlinedButton(onPressed: maybeActivate, child: child)
-              : FilledButton(onPressed: maybeActivate, child: child),
     );
   }
 }
