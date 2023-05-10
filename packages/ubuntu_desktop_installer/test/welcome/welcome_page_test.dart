@@ -33,7 +33,12 @@ void main() {
       overrides: [
         welcomeModelProvider.overrideWith((_) => model),
       ],
-      child: const WelcomePage(),
+      child: Consumer(
+        builder: (context, ref, child) => FutureBuilder(
+          future: WelcomePage.load(ref),
+          builder: (context, snapshot) => const WelcomePage(),
+        ),
+      ),
     );
   }
 

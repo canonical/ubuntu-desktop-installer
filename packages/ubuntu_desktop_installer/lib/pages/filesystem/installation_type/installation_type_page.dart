@@ -15,21 +15,11 @@ import 'installation_type_model.dart';
 export 'installation_type_model.dart' show AdvancedFeature, InstallationType;
 
 /// Select between guided and manual partitioning.
-class InstallationTypePage extends ConsumerStatefulWidget {
+class InstallationTypePage extends ConsumerWidget {
   const InstallationTypePage({super.key});
 
-  @override
-  ConsumerState<InstallationTypePage> createState() =>
-      _InstallationTypePageState();
-}
-
-class _InstallationTypePageState extends ConsumerState<InstallationTypePage> {
-  @override
-  void initState() {
-    super.initState();
-
-    final model = ref.read(installationTypeModelProvider);
-    model.init();
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(installationTypeModelProvider).init();
   }
 
   static String _formatHeader(BuildContext context, List<OsProber> os) {
@@ -67,7 +57,7 @@ class _InstallationTypePageState extends ConsumerState<InstallationTypePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(installationTypeModelProvider);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);

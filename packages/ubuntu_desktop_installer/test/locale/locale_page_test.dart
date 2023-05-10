@@ -31,7 +31,12 @@ void main() {
       overrides: [
         localeModelProvider.overrideWith((_) => model),
       ],
-      child: const LocalePage(),
+      child: Consumer(
+        builder: (context, ref, child) => FutureBuilder(
+          future: LocalePage.load(ref),
+          builder: (context, snapshot) => const LocalePage(),
+        ),
+      ),
     );
   }
 

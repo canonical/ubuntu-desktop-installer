@@ -87,6 +87,7 @@ ConfirmModel buildModel({
   Map<String, List<Partition>>? originals,
 }) {
   final model = MockConfirmModel();
+  when(model.init()).thenAnswer((_) async => true);
   when(model.disks).thenReturn(disks ?? <Disk>[]);
   when(model.partitions).thenReturn(partitions ?? <String, List<Partition>>{});
   when(model.getOriginalPartition(any, any)).thenAnswer((i) =>
@@ -113,7 +114,12 @@ void main() {
       overrides: [
         confirmModelProvider.overrideWith((_) => model),
       ],
-      child: const ConfirmPage(),
+      child: Consumer(
+        builder: (context, ref, child) => FutureBuilder(
+          future: ConfirmPage.load(ref),
+          builder: (context, snapshot) => const ConfirmPage(),
+        ),
+      ),
     );
   }
 

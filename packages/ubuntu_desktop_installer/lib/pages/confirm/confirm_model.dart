@@ -33,7 +33,7 @@ class ConfirmModel extends SafeChangeNotifier {
   }
 
   /// Initializes the model.
-  Future<void> init() async {
+  Future<bool> init() async {
     if (_service.guidedTarget != null) {
       await _service.setGuidedStorage();
     }
@@ -42,6 +42,7 @@ class ConfirmModel extends SafeChangeNotifier {
         Map.fromEntries(disks.map((d) => MapEntry(
             d.sysname, d.partitions.whereType<Partition>().toList()))));
     notifyListeners();
+    return true;
   }
 
   /// Starts the installation process.

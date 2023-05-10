@@ -125,14 +125,13 @@ class MockInstallModel extends _i1.Mock implements _i3.InstallModel {
         returnValueForMissingStub: null,
       );
   @override
-  _i4.Future<void> init() => (super.noSuchMethod(
+  _i4.Future<bool> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
   _i4.Future<void> precacheSlideImages(_i5.BuildContext? context) =>
       (super.noSuchMethod(

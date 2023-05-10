@@ -130,14 +130,13 @@ class MockKeyboardModel extends _i1.Mock implements _i2.KeyboardModel {
         returnValueForMissingStub: _i3.Future<void>.value(),
       ) as _i3.Future<void>);
   @override
-  _i3.Future<void> init() => (super.noSuchMethod(
+  _i3.Future<bool> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i3.Future<bool>.value(false),
+      ) as _i3.Future<bool>);
   @override
   _i3.Future<void> updateInputSource() => (super.noSuchMethod(
         Invocation.method(

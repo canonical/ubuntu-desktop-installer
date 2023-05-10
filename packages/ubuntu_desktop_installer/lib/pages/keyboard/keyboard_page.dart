@@ -12,6 +12,10 @@ import 'keyboard_model.dart';
 class KeyboardPage extends ConsumerStatefulWidget {
   const KeyboardPage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(keyboardModelProvider).init();
+  }
+
   @override
   ConsumerState<KeyboardPage> createState() => _KeyboardPageState();
 }
@@ -22,12 +26,7 @@ class _KeyboardPageState extends ConsumerState<KeyboardPage> {
     super.initState();
 
     final model = ref.read(keyboardModelProvider);
-    model.init().then((_) => model.updateInputSource());
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
+    model.updateInputSource();
   }
 
   @override

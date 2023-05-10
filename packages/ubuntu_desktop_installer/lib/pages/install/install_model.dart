@@ -148,12 +148,13 @@ class InstallModel extends SafeChangeNotifier {
   }
 
   /// Initializes and starts monitoring the status of the installation.
-  Future<void> init() {
-    return _client.getStatus().then((status) {
+  Future<bool> init() async {
+    await _client.getStatus().then((status) {
       _log = _journal.start([status.logSyslogId, status.eventSyslogId]);
       _updateStatus(status);
       _monitorStatus(status.eventSyslogId);
     });
+    return true;
   }
 
   // Resolves the path to the assets in the app bundle so that it works in the

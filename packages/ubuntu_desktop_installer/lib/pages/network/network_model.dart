@@ -95,11 +95,13 @@ class NetworkModel extends SafeChangeNotifier implements ConnectModel {
   void onDeselected() {}
 
   @override
-  Future<void> init() async {
+  Future<bool> init() async {
     await _service.connect();
     for (final model in _connectModels.values) {
       await model.init();
     }
+    selectConnectMode();
+    return true;
   }
 
   Future<void> markConfigured() => _service.markConfigured();

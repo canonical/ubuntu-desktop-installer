@@ -33,6 +33,7 @@ void main() {
     ProductInfo? productInfo,
   }) {
     final model = MockInstallModel();
+    when(model.init()).thenAnswer((_) async => true);
     when(model.state).thenReturn(state);
     when(model.isDone).thenReturn(isDone ?? false);
     when(model.hasError).thenReturn(hasError ?? false);
@@ -48,11 +49,20 @@ void main() {
 
   Widget buildPage(InstallModel model) {
     return ProviderScope(
-      overrides: [installModelProvider.overrideWith((_) => model)],
-      child: SlidesContext(slides: [
-        (context) => const SizedBox.expand(child: Text('slide1')),
-        (context) => const SizedBox.expand(child: Text('slide2')),
-      ], child: const InstallPage()),
+      overrides: [
+        installModelProvider.overrideWith((_) => model),
+      ],
+      child: Consumer(
+        builder: (context, ref, child) => FutureBuilder(
+          future: InstallPage.load(ref),
+          builder: (context, snapshot) {
+            return SlidesContext(slides: [
+              (context) => const SizedBox.expand(child: Text('slide1')),
+              (context) => const SizedBox.expand(child: Text('slide2')),
+            ], child: const InstallPage());
+          },
+        ),
+      ),
     );
   }
 

@@ -35,6 +35,7 @@ void main() {
     AdJoinResult? joinResult,
   }) {
     final model = MockActiveDirectoryModel();
+    when(model.init()).thenAnswer((_) async => true);
     when(model.isValid).thenReturn(isValid ?? false);
     when(model.domainName).thenReturn(domainName ?? '');
     when(model.adminName).thenReturn(adminName ?? '');
@@ -52,8 +53,15 @@ void main() {
 
   Widget buildPage(ActiveDirectoryModel model) {
     return ProviderScope(
-      overrides: [activeDirectoryModelProvider.overrideWith((_) => model)],
-      child: const ActiveDirectoryPage(),
+      overrides: [
+        activeDirectoryModelProvider.overrideWith((_) => model),
+      ],
+      child: Consumer(
+        builder: (context, ref, child) => FutureBuilder(
+          future: ActiveDirectoryPage.load(ref),
+          builder: (context, snapshot) => const ActiveDirectoryPage(),
+        ),
+      ),
     );
   }
 

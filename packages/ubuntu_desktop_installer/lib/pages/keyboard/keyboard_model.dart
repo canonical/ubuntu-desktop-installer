@@ -111,7 +111,7 @@ class KeyboardModel extends SafeChangeNotifier {
 
   /// Initializes the model and detects the current system keyboard layout and
   /// variant.
-  Future<void> init() async {
+  Future<bool> init() async {
     _layouts = await _service.getKeyboard().then((keyboard) {
       return keyboard.layouts.sortedBy((a) => removeDiacritics(a.name));
     });
@@ -127,7 +127,7 @@ class KeyboardModel extends SafeChangeNotifier {
     }
     log.info(
         'Initialized ${_selectedLayout?.code} (${_selectedVariant?.code}) keyboard layout');
-    notifyListeners();
+    return true;
   }
 
   /// Updates the system's input source to match the selected keyboard layout

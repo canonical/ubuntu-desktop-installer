@@ -13,6 +13,10 @@ import 'locale_model.dart';
 class LocalePage extends ConsumerStatefulWidget {
   const LocalePage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(localeModelProvider).init();
+  }
+
   @override
   ConsumerState<LocalePage> createState() => _LocalePageState();
 }
@@ -23,10 +27,8 @@ class _LocalePageState extends ConsumerState<LocalePage> {
     super.initState();
 
     final model = ref.read(localeModelProvider);
-    model.loadLanguages().then((_) {
-      model.selectLocale(InheritedLocale.of(context));
-      model.playWelcomeSound();
-    });
+    model.selectLocale(InheritedLocale.of(context));
+    model.playWelcomeSound();
   }
 
   void _selectLanguage(int index) {

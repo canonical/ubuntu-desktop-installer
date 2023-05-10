@@ -115,14 +115,13 @@ class MockInstallationTypeModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  _i4.Future<void> init() => (super.noSuchMethod(
+  _i4.Future<bool> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
   _i5.GuidedStorageTarget? preselectTarget(_i3.InstallationType? type) =>
       (super.noSuchMethod(Invocation.method(

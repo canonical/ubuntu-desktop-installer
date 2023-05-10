@@ -116,26 +116,30 @@ extension on WidgetTester {
             data: const FlavorData(name: 'Ubuntu'),
             child: MaterialApp(
               localizationsDelegates: localizationsDelegates,
-              home: Wizard(
-                routes: {
-                  '/first': WizardRoute(
-                    builder: (context) => WizardPage(
-                      content: const Text('first route'),
-                      bottomBar: WizardBar(
-                        trailing: [WizardButton.next(context)],
+              home: Consumer(
+                builder: (context, ref, child) => Wizard(
+                  routes: {
+                    '/first': WizardRoute(
+                      builder: (context) => WizardPage(
+                        content: const Text('first route'),
+                        bottomBar: WizardBar(
+                          trailing: [WizardButton.next(context)],
+                        ),
                       ),
                     ),
-                  ),
-                  Routes.source:
-                      WizardRoute(builder: (_) => const SourceWizard()),
-                  '/last': WizardRoute(
-                    builder: (context) => WizardPage(
-                      content: const Text('last route'),
-                      bottomBar:
-                          WizardBar(leading: WizardButton.previous(context)),
+                    Routes.source: WizardRoute(
+                      builder: (_) => const SourceWizard(),
+                      onLoad: (_) => SourceWizard.load(ref),
                     ),
-                  ),
-                },
+                    '/last': WizardRoute(
+                      builder: (context) => WizardPage(
+                        content: const Text('last route'),
+                        bottomBar:
+                            WizardBar(leading: WizardButton.previous(context)),
+                      ),
+                    ),
+                  },
+                ),
               ),
             ),
           ),

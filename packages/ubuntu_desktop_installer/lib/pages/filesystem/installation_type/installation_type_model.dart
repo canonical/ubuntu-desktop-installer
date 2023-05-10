@@ -135,7 +135,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   }
 
   /// Initializes the model.
-  Future<void> init() async {
+  Future<bool> init() async {
     await _diskService.getGuidedStorage().then((r) => _storages = r.possible);
     _installationType ??= canInstallAlongside
         ? InstallationType.alongside
@@ -145,6 +145,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
     _encryption = _diskService.useEncryption;
     _hasBitLocker = await _diskService.hasBitLocker();
     notifyListeners();
+    return true;
   }
 
   /// Resolves the automatic guided storage target selection for the given

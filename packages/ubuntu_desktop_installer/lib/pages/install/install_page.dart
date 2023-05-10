@@ -32,6 +32,10 @@ extension InstallationActionL10n on InstallationAction {
 class InstallPage extends ConsumerStatefulWidget {
   const InstallPage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(installModelProvider).init();
+  }
+
   @override
   ConsumerState<InstallPage> createState() => _InstallPageState();
 }
@@ -42,8 +46,6 @@ class _InstallPageState extends ConsumerState<InstallPage> {
     super.initState();
 
     final model = ref.read(installModelProvider);
-    model.init();
-
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       model.precacheSlideImages(context);

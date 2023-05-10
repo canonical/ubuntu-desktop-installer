@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,6 +27,7 @@ void main() {
     int? selectedVariantIndex,
   }) {
     final model = MockKeyboardModel();
+    when(model.init()).thenAnswer((_) async => true);
     when(model.isValid).thenReturn(isValid ?? false);
     when(model.layoutCount).thenReturn(layouts?.length ?? 0);
     for (var i = 0; i < (layouts?.length ?? 0); ++i) {
@@ -46,8 +49,15 @@ void main() {
     registerMockService<KeyboardService>(service);
 
     return ProviderScope(
-      overrides: [keyboardModelProvider.overrideWith((_) => model)],
-      child: const KeyboardPage(),
+      overrides: [
+        keyboardModelProvider.overrideWith((_) => model),
+      ],
+      child: Consumer(
+        builder: (context, ref, child) => FutureBuilder(
+          future: KeyboardPage.load(ref),
+          builder: (context, snapshot) => const KeyboardPage(),
+        ),
+      ),
     );
   }
 
@@ -174,7 +184,7 @@ void main() {
     await tester.tap(nextButton);
     await tester.pumpAndSettle();
 
-    verify(model.updateInputSource()).called(1);
+    verify(model.save()).called(1);
     expect(find.text('Next page'), findsOneWidget);
   });
 }

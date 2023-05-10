@@ -10,21 +10,11 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'timezone_model.dart';
 
 /// https://github.com/canonical/ubuntu-desktop-installer/issues/38
-class TimezonePage extends ConsumerStatefulWidget {
+class TimezonePage extends ConsumerWidget {
   const TimezonePage({super.key});
 
-  @override
-  TimezonePageState createState() => TimezonePageState();
-}
-
-@visibleForTesting
-class TimezonePageState extends ConsumerState<TimezonePage> {
-  @override
-  void initState() {
-    super.initState();
-
-    final model = ref.read(timezoneModelProvider);
-    model.init();
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(timezoneModelProvider).init().then((_) => true);
   }
 
   String formatLocation(GeoLocation? location) {
@@ -36,7 +26,7 @@ class TimezonePageState extends ConsumerState<TimezonePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final model = ref.watch(timezoneModelProvider);
 

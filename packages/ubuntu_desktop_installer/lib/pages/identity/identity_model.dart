@@ -162,7 +162,7 @@ class IdentityModel extends PropertyStreamNotifier {
   }
 
   /// Loads the identity data from the server, and resolves the system hostname.
-  Future<void> init() async {
+  Future<bool> init() async {
     final identity = await _service.getIdentity();
     _realName.value ??= identity.realname.orIfEmpty(null);
     _hostname.value ??= identity.hostname.orIfEmpty(null);
@@ -173,6 +173,7 @@ class IdentityModel extends PropertyStreamNotifier {
 
     _autoLogin.value = await _config.get(kAutoLoginUser) != null;
     _hasActiveDirectorySupport.value = await _activeDirectory.hasSupport();
+    return true;
   }
 
   /// The auto-login user config key for testing purposes.

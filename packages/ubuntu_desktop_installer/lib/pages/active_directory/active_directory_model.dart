@@ -86,8 +86,8 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
 
   bool get isValid => isDomainNameValid && isAdminNameValid && isPasswordValid;
 
-  Future<void> init() {
-    return _service.getConnectionInfo().then((info) {
+  Future<bool> init() async {
+    await _service.getConnectionInfo().then((info) {
       _domainName.value = info.domainName;
       _adminName.value = info.adminName;
       _password.value = info.password;
@@ -98,6 +98,7 @@ class ActiveDirectoryModel extends SafeChangeNotifier {
         validatePassword(),
       ]),
     );
+    return true;
   }
 
   Future<void> save() {

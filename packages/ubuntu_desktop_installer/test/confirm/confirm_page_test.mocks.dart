@@ -128,14 +128,13 @@ class MockConfirmModel extends _i1.Mock implements _i3.ConfirmModel {
         ],
       )) as _i4.Partition?);
   @override
-  _i5.Future<void> init() => (super.noSuchMethod(
+  _i5.Future<bool> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i5.Future<void>.value(),
-        returnValueForMissingStub: _i5.Future<void>.value(),
-      ) as _i5.Future<void>);
+        returnValue: _i5.Future<bool>.value(false),
+      ) as _i5.Future<bool>);
   @override
   _i5.Future<void> startInstallation() => (super.noSuchMethod(
         Invocation.method(

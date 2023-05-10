@@ -30,6 +30,7 @@ void main() {
     bool? useActiveDirectory,
   }) {
     final model = MockIdentityModel();
+    when(model.init()).thenAnswer((_) async => true);
     when(model.isValid).thenReturn(isValid ?? false);
     when(model.realName).thenReturn(realName ?? '');
     when(model.hostname).thenReturn(hostname ?? '');
@@ -51,8 +52,15 @@ void main() {
 
   Widget buildPage(IdentityModel model) {
     return ProviderScope(
-      overrides: [identityModelProvider.overrideWith((_) => model)],
-      child: const IdentityPage(),
+      overrides: [
+        identityModelProvider.overrideWith((_) => model),
+      ],
+      child: Consumer(
+        builder: (context, ref, child) => FutureBuilder(
+          future: IdentityPage.load(ref),
+          builder: (context, snapshot) => const IdentityPage(),
+        ),
+      ),
     );
   }
 

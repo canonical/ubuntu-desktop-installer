@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -11,6 +12,10 @@ export 'source_page.dart';
 
 class SourceWizard extends StatelessWidget {
   const SourceWizard({super.key});
+
+  static Future<bool> load(WidgetRef ref) {
+    return SourcePage.load(ref).then((_) => true);
+  }
 
   @override
   Widget build(BuildContext context) {

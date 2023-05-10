@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -20,6 +21,8 @@ export 'select_guided_storage/select_guided_storage_page.dart';
 
 class FilesystemPage extends StatelessWidget {
   const FilesystemPage({super.key});
+
+  static Future<bool> load(WidgetRef ref) => InstallationTypePage.load(ref);
 
   @override
   Widget build(BuildContext context) {

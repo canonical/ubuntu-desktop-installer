@@ -98,7 +98,16 @@ void main() {
         hiddenWifiModelProvider.overrideWith((_) => hiddenWifiModel),
         noConnectModelProvider.overrideWith((_) => NoConnectModel()),
       ],
-      child: const NetworkPage(),
+      child: Consumer(builder: (context, ref, child) {
+        return FutureBuilder(
+          future: NetworkPage.load(ref),
+          builder: (context, snapshot) {
+            return snapshot.data == true
+                ? const NetworkPage()
+                : const SizedBox.shrink();
+          },
+        );
+      }),
     );
   }
 
@@ -169,6 +178,7 @@ void main() {
 
   testWidgets('initializes and cleans up the model', (tester) async {
     final model = MockNetworkModel();
+    when(model.init()).thenAnswer((_) async => true);
     when(model.connectMode).thenReturn(ConnectMode.none);
     when(model.isConnecting).thenReturn(false);
     when(model.canConnect).thenReturn(false);
@@ -234,6 +244,7 @@ void main() {
 
   testWidgets('mark network configured', (tester) async {
     final model = MockNetworkModel();
+    when(model.init()).thenAnswer((_) async => true);
     when(model.connectMode).thenReturn(ConnectMode.none);
     when(model.isConnecting).thenReturn(false);
     when(model.canConnect).thenReturn(false);

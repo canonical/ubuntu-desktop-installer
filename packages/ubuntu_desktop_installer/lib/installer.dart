@@ -385,12 +385,14 @@ class _UbuntuDesktopInstallerWizardState
         Routes.locale: WizardRoute(
           builder: (_) => const LocalePage(),
           userData: InstallationStep.locale.index,
+          onLoad: (_) => LocalePage.load(ref),
         ),
-        Routes.welcome: WizardRoute(
-          builder: (_) => const WelcomePage(),
-          userData: InstallationStep.locale.index,
-          onLoad: (_) => widget.welcome == true,
-        ),
+        if (widget.welcome == true)
+          Routes.welcome: WizardRoute(
+            builder: (_) => const WelcomePage(),
+            userData: InstallationStep.locale.index,
+            onLoad: (_) => WelcomePage.load(ref),
+          ),
         Routes.rst: WizardRoute(
           builder: (_) => const RstPage(),
           onLoad: (_) => RstPage.load(ref),
@@ -398,14 +400,17 @@ class _UbuntuDesktopInstallerWizardState
         Routes.keyboard: WizardRoute(
           builder: (_) => const KeyboardPage(),
           userData: InstallationStep.keyboard.index,
+          onLoad: (_) => KeyboardPage.load(ref),
         ),
         Routes.network: WizardRoute(
           builder: (_) => const NetworkPage(),
           userData: InstallationStep.network.index,
+          onLoad: (_) => NetworkPage.load(ref),
         ),
         Routes.source: WizardRoute(
           builder: (_) => const SourceWizard(),
           userData: InstallationStep.source.index,
+          onLoad: (_) => SourceWizard.load(ref),
           onNext: (_) =>
               storage.hasSecureBoot ? Routes.secureBoot : Routes.filesystem,
         ),
@@ -416,18 +421,22 @@ class _UbuntuDesktopInstallerWizardState
         Routes.filesystem: WizardRoute(
           builder: (_) => const FilesystemPage(),
           userData: InstallationStep.filesystem.index,
+          onLoad: (_) => FilesystemPage.load(ref),
         ),
         Routes.confirm: WizardRoute(
           builder: (_) => const ConfirmPage(),
           userData: InstallationStep.filesystem.index,
+          onLoad: (_) => ConfirmPage.load(ref),
         ),
         Routes.timezone: WizardRoute(
           builder: (_) => const TimezonePage(),
           userData: InstallationStep.timezone.index,
+          onLoad: (_) => TimezonePage.load(ref),
         ),
         Routes.identity: WizardRoute(
           builder: (_) => const IdentityPage(),
           userData: InstallationStep.identity.index,
+          onLoad: (_) => IdentityPage.load(ref),
           onNext: (settings) => settings.arguments == true
               ? Routes.activeDirectory
               : Routes.theme,
@@ -435,6 +444,7 @@ class _UbuntuDesktopInstallerWizardState
         Routes.activeDirectory: WizardRoute(
           builder: (_) => const ActiveDirectoryPage(),
           userData: InstallationStep.identity.index,
+          onLoad: (_) => ActiveDirectoryPage.load(ref),
         ),
         Routes.theme: WizardRoute(
           builder: (_) => const ThemePage(),
@@ -442,6 +452,7 @@ class _UbuntuDesktopInstallerWizardState
         ),
         Routes.install: WizardRoute(
           builder: (_) => const InstallPage(),
+          onLoad: (_) => InstallPage.load(ref),
         ),
       },
       observers: [
