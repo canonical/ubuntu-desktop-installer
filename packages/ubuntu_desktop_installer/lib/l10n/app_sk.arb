@@ -169,7 +169,7 @@
   "@connectToInternetPageTitle": {},
   "useWiredConnection": "Použiť káblové pripojenie",
   "@useWiredConnection": {},
-  "noWiredConnection": "Nezistené žiadne káblové pripojenie",
+  "noWiredConnection": "Nezistilo sa žiadne káblové pripojenie",
   "@noWiredConnection": {},
   "wiredDisabled": "Káblové pripojenie je vypnuté",
   "@wiredDisabled": {},
@@ -826,5 +826,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "allocateDiskSpaceInvalidMountPointSpace": "Prípojné body nemôžu obsahovať medzery",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "Prípojné body musia začínať znakom „/“",
+  "@allocateDiskSpaceInvalidMountPointSlash": {}
 }
