@@ -31,7 +31,7 @@ void main() {
     final network = MockNetworkService();
     when(network.isConnected).thenReturn(isConnected);
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
-    model = WelcomeModel(client: client, network: network);
+    model = WelcomeModel(network: network);
 
     app = MaterialApp(
       supportedLocales: supportedLocales,

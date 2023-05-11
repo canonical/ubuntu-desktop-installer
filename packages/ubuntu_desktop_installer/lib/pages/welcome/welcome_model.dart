@@ -2,7 +2,6 @@ import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -11,10 +10,7 @@ import 'package:ubuntu_wizard/utils.dart';
 final log = Logger('welcome');
 
 final welcomeModelProvider = ChangeNotifierProvider(
-  (_) => WelcomeModel(
-    client: getService<SubiquityClient>(),
-    network: getService<NetworkService>(),
-  ),
+  (_) => WelcomeModel(network: getService<NetworkService>()),
 );
 
 /// The available options on the welcome page.
@@ -36,21 +32,18 @@ enum Option {
 class WelcomeModel extends PropertyStreamNotifier {
   /// Creates the model with the given client.
   WelcomeModel({
-    required SubiquityClient client,
     required NetworkService network,
-  })  : _client = client,
-        _network = network {
+  }) : _network = network {
     addPropertyListener('Connectivity', notifyListeners);
   }
 
   final NetworkService _network;
-  final SubiquityClient _client;
 
   Future<void> init() {
-    return Future.wait([
-      _client.hasRst().then((value) => _hasRst = value),
-      _network.connect().then((_) => setProperties(_network.propertiesChanged)),
-    ]).then((_) => notifyListeners());
+    return _network
+        .connect()
+        .then((_) => setProperties(_network.propertiesChanged))
+        .then((_) => notifyListeners());
   }
 
   /// The currently selected option.
@@ -67,10 +60,6 @@ class WelcomeModel extends PropertyStreamNotifier {
 
   /// Returns true if there is a network connection.
   bool get isConnected => _network.isConnected;
-
-  /// Returns true if RST was detected on the system.
-  bool get hasRst => _hasRst;
-  bool _hasRst = false;
 
   /// Returns the URL of the release notes for the given [locale].
   String releaseNotesURL(

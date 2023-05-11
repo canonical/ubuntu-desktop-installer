@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:file/memory.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
-import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/services/network_service.dart';
 
@@ -12,9 +11,8 @@ import 'welcome_model_test.mocks.dart';
 @GenerateMocks([NetworkService])
 void main() {
   test('selected option', () {
-    final client = MockSubiquityClient();
     final network = MockNetworkService();
-    final model = WelcomeModel(client: client, network: network);
+    final model = WelcomeModel(network: network);
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
@@ -30,9 +28,8 @@ void main() {
   });
 
   test('release notes URL from cdrom', () {
-    final client = MockSubiquityClient();
     final network = MockNetworkService();
-    final model = WelcomeModel(client: client, network: network);
+    final model = WelcomeModel(network: network);
 
     final fs = MemoryFileSystem.test();
     final file = fs.file('/cdrom/.disk/release_notes_url');
@@ -46,9 +43,8 @@ https://wiki.ubuntu.com/IntrepidReleaseNotes/\${LANG}
   });
 
   test('release notes URL from distro-info', () {
-    final client = MockSubiquityClient();
     final network = MockNetworkService();
-    final model = WelcomeModel(client: client, network: network);
+    final model = WelcomeModel(network: network);
 
     final fs = MemoryFileSystem.test();
     final file = fs.file('/usr/share/distro-info/ubuntu.csv');
@@ -64,9 +60,8 @@ version,codename,series,created,release,eol,eol-server,eol-esm
   });
 
   test('release notes URL fallback', () {
-    final client = MockSubiquityClient();
     final network = MockNetworkService();
-    final model = WelcomeModel(client: client, network: network);
+    final model = WelcomeModel(network: network);
 
     final fs = MemoryFileSystem.test();
     final url = model.releaseNotesURL(const Locale('en'), fs: fs);
