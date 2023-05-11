@@ -332,7 +332,7 @@ enum InstallationStep {
   theme,
 }
 
-class _UbuntuDesktopInstallerWizard extends StatefulWidget {
+class _UbuntuDesktopInstallerWizard extends ConsumerStatefulWidget {
   const _UbuntuDesktopInstallerWizard({
     this.initialRoute,
     this.welcome,
@@ -342,12 +342,12 @@ class _UbuntuDesktopInstallerWizard extends StatefulWidget {
   final bool? welcome;
 
   @override
-  State<_UbuntuDesktopInstallerWizard> createState() =>
+  ConsumerState<_UbuntuDesktopInstallerWizard> createState() =>
       _UbuntuDesktopInstallerWizardState();
 }
 
 class _UbuntuDesktopInstallerWizardState
-    extends State<_UbuntuDesktopInstallerWizard> {
+    extends ConsumerState<_UbuntuDesktopInstallerWizard> {
   @override
   void initState() {
     super.initState();
@@ -385,12 +385,15 @@ class _UbuntuDesktopInstallerWizardState
         Routes.locale: WizardRoute(
           builder: (_) => const LocalePage(),
           userData: InstallationStep.locale.index,
-          onNext: (_) =>
-              widget.welcome == true ? Routes.welcome : Routes.keyboard,
         ),
         Routes.welcome: WizardRoute(
-          builder: (_) => const WelcomeWizard(),
+          builder: (_) => const WelcomePage(),
           userData: InstallationStep.locale.index,
+          onLoad: (_) => widget.welcome == true,
+        ),
+        Routes.rst: WizardRoute(
+          builder: (_) => const RstPage(),
+          onLoad: (_) => RstPage.load(ref),
         ),
         Routes.keyboard: WizardRoute(
           builder: (_) => const KeyboardPage(),

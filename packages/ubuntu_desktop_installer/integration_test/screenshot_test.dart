@@ -47,7 +47,7 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('2.welcome', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await runInstallerApp(['--welcome'], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
     await tester.jumpToWizardRoute(Routes.welcome);
@@ -61,10 +61,11 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('3.rst', (tester) async {
+    registerService<SubiquityClient>(FakeSubiquityClient.new);
+
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.welcome);
     await tester.jumpToWizardRoute(Routes.rst);
     await tester.pumpAndSettle();
 
@@ -406,6 +407,9 @@ class FakeSubiquityClient extends SubiquityClient {
   Future<ApplicationStatus> getStatus({ApplicationState? current}) async {
     return fakeApplicationStatus(ApplicationState.DONE);
   }
+
+  @override
+  Future<bool> hasRst() async => true;
 }
 
 FlavorData get currentFlavor {

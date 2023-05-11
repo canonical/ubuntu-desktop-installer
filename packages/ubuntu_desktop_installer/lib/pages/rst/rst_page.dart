@@ -14,6 +14,10 @@ import 'rst_model.dart';
 class RstPage extends ConsumerWidget {
   const RstPage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(rstModelProvider).hasRst();
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(rstModelProvider);

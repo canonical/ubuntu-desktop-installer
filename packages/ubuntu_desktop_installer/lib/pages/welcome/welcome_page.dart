@@ -87,7 +87,7 @@ class WelcomePageState extends ConsumerState<WelcomePage> {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardButton.previous(context, root: true),
+        leading: WizardButton.previous(context),
         trailing: [
           WizardButton(
             label: UbuntuLocalizations.of(context).nextLabel,
@@ -96,7 +96,6 @@ class WelcomePageState extends ConsumerState<WelcomePage> {
           ),
           WizardButton.next(
             context,
-            root: !model.hasRst,
             visible: model.option != Option.tryUbuntu,
             enabled: model.option != Option.none,
             arguments: model.option,
