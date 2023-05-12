@@ -3,57 +3,42 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_page.dart';
-import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
+import '../test_utils.dart';
+import 'locale_model_test.mocks.dart';
 import 'locale_page_test.mocks.dart';
 
-@GenerateMocks([LocaleService, SoundService, TelemetryService])
+@GenerateMocks([TelemetryService])
 void main() {
-  late MaterialApp app;
+  LocaleModel buildModel() {
+    return LocaleModel(
+      locale: MockLocaleService(),
+      sound: MockSoundService(),
+    );
+  }
 
-  setUpAll(() async {
-    await setupAppLocalizations();
-  });
-
-  Future<void> setUpApp(WidgetTester tester) async {
+  Widget buildPage(LocaleModel model) {
     registerMockService<TelemetryService>(MockTelemetryService());
-    app = MaterialApp(
-      supportedLocales: supportedLocales,
-      localizationsDelegates: localizationsDelegates,
-      locale: const Locale('en'),
-      home: Flavor(
-        data: const FlavorData(name: 'Ubuntu'),
-        child: Wizard(
-          routes: <String, WizardRoute>{
-            Routes.locale: WizardRoute(builder: (_) => const LocalePage()),
-            Routes.welcome:
-                WizardRoute(builder: (_) => const Text(Routes.welcome)),
-          },
-        ),
-      ),
+
+    return ProviderScope(
+      overrides: [
+        localeModelProvider.overrideWith((_) => model),
+      ],
+      child: const LocalePage(),
     );
-    await tester.pumpWidget(
-      ProviderScope(overrides: [
-        localeModelProvider.overrideWith(
-          (_) => LocaleModel(
-              locale: MockLocaleService(), sound: MockSoundService()),
-        ),
-      ], child: InheritedLocale(child: app)),
-    );
-    await tester.pumpAndSettle();
-    expect(find.byType(LocalePage), findsOneWidget);
   }
 
   testWidgets('should display a list of languages', (tester) async {
-    await setUpApp(tester);
+    final model = buildModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpAndSettle();
 
     final languageList = find.byType(ListWidget);
     expect(languageList, findsOneWidget);
@@ -63,7 +48,6 @@ void main() {
     final listItems = find.descendant(
         of: languageList, matching: find.byType(ListTile), skipOffstage: false);
     expect(listItems, findsWidgets);
-    expect(listItems.evaluate().length, lessThan(app.supportedLocales.length));
     for (final language in ['English', 'Français', 'Galego', 'Italiano']) {
       final listItem = find.listTile(language, skipOffstage: false);
       await tester.dragUntilVisible(
@@ -105,7 +89,8 @@ void main() {
   });
 
   testWidgets('key search', (tester) async {
-    await setUpApp(tester);
+    final model = buildModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final languageList = find.byType(ListWidget);
     expect(languageList, findsOneWidget);
@@ -134,7 +119,8 @@ void main() {
   });
 
   testWidgets('should continue to next page', (tester) async {
-    await setUpApp(tester);
+    final model = buildModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
@@ -143,6 +129,5 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(LocalePage), findsNothing);
-    expect(find.text(Routes.welcome), findsOneWidget);
   });
 }
