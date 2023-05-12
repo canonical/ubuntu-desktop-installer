@@ -44,7 +44,7 @@ class StorageService {
   }
 
   /// Whether Secure Boot is enabled.
-  bool get hasSecureBoot => false; // TODO: add support for it
+  Future<bool> hasSecureBoot() async => false; // TODO: add support for it
 
   /// Whether the storage configuration should use LVM.
   bool get useLvm => _useLvm ?? false;

@@ -1,56 +1,64 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
+import 'secure_boot_model_test.mocks.dart';
+
+@GenerateMocks([StorageService])
 void main() {
-  group('SecureBootModel', () {
-    test('init model with secure boot off should have not validated form', () {
-      final model = SecureBootModel(secureBootMode: SecureBootMode.turnOff);
+  test('init model with secure boot off should have not validated form', () {
+    final model = SecureBootModel(
+        storage: MockStorageService(), secureBootMode: SecureBootMode.turnOff);
 
-      expect(model.isFormValid, false);
-    });
+    expect(model.isFormValid, false);
+  });
 
-    test('init model with secure boot off should have text field enabled', () {
-      final model = SecureBootModel(secureBootMode: SecureBootMode.turnOff);
+  test('has secure boot', () async {
+    final storage = MockStorageService();
+    final model = SecureBootModel(storage: storage);
 
-      expect(model.areTextFieldsEnabled, true);
-    });
+    when(storage.hasSecureBoot()).thenAnswer((_) async => true);
+    expect(await model.hasSecureBoot(), isTrue);
 
-    test('setting secure boot on should disable text fields', () {
-      final model = SecureBootModel(secureBootMode: SecureBootMode.turnOff);
+    when(storage.hasSecureBoot()).thenAnswer((_) async => false);
+    expect(await model.hasSecureBoot(), isFalse);
+  });
 
-      model.setSecureBootMode(SecureBootMode.dontInstall);
+  test('init model with secure boot off should have text field enabled', () {
+    final model = SecureBootModel(
+        storage: MockStorageService(), secureBootMode: SecureBootMode.turnOff);
 
-      expect(model.areTextFieldsEnabled, false);
-    });
+    expect(model.areTextFieldsEnabled, true);
+  });
 
-    test('setting secure boot off should enable text fields', () {
-      final model = SecureBootModel(secureBootMode: SecureBootMode.turnOff);
+  test('setting secure boot on should disable text fields', () {
+    final model = SecureBootModel(storage: MockStorageService());
 
-      model.setSecureBootMode(SecureBootMode.dontInstall);
-      model.setSecureBootMode(SecureBootMode.turnOff);
+    model.setSecureBootMode(SecureBootMode.dontInstall);
 
-      expect(model.areTextFieldsEnabled, true);
-    });
+    expect(model.areTextFieldsEnabled, false);
+  });
 
-    test('setting secure boot off should enable text fields', () {
-      final model = SecureBootModel(secureBootMode: SecureBootMode.turnOff);
+  test('setting secure boot off should enable text fields', () {
+    final model = SecureBootModel(storage: MockStorageService());
 
-      model.setSecureBootMode(SecureBootMode.dontInstall);
-      model.setSecureBootMode(SecureBootMode.turnOff);
+    model.setSecureBootMode(SecureBootMode.dontInstall);
+    model.setSecureBootMode(SecureBootMode.turnOff);
 
-      expect(model.areTextFieldsEnabled, true);
-    });
+    expect(model.areTextFieldsEnabled, true);
+  });
 
-    test(
-        'setting different confirmation should invalid confirmation key and form',
-        () {
-      final model = SecureBootModel(secureBootMode: SecureBootMode.turnOff);
+  test(
+      'setting different confirmation should invalid confirmation key and form',
+      () {
+    final model = SecureBootModel(storage: MockStorageService());
 
-      model.setSecurityKey('mykey');
-      model.setConfirmKey('differentkey');
+    model.setSecurityKey('mykey');
+    model.setConfirmKey('differentkey');
 
-      expect(model.isConfirmationKeyValid, false);
-      expect(model.isFormValid, false);
-    });
+    expect(model.isConfirmationKeyValid, false);
+    expect(model.isFormValid, false);
   });
 }

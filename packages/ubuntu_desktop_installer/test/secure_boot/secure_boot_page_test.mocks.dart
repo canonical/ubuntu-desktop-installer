@@ -3,7 +3,8 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:ui' as _i3;
+import 'dart:async' as _i3;
+import 'dart:ui' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart'
@@ -69,6 +70,14 @@ class MockSecureBootModel extends _i1.Mock implements _i2.SecureBootModel {
         returnValue: false,
       ) as bool);
   @override
+  _i3.Future<bool> hasSecureBoot() => (super.noSuchMethod(
+        Invocation.method(
+          #hasSecureBoot,
+          [],
+        ),
+        returnValue: _i3.Future<bool>.value(false),
+      ) as _i3.Future<bool>);
+  @override
   void setSecureBootMode(_i2.SecureBootMode? mode) => super.noSuchMethod(
         Invocation.method(
           #setSecureBootMode,
@@ -93,7 +102,7 @@ class MockSecureBootModel extends _i1.Mock implements _i2.SecureBootModel {
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i3.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -101,7 +110,7 @@ class MockSecureBootModel extends _i1.Mock implements _i2.SecureBootModel {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i3.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],

@@ -1,15 +1,21 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
 enum SecureBootMode { turnOff, dontInstall }
 
 final secureBootModelProvider = ChangeNotifierProvider(
-    (_) => SecureBootModel(secureBootMode: SecureBootMode.turnOff));
+  (_) => SecureBootModel(storage: getService<StorageService>()),
+);
 
 class SecureBootModel extends SafeChangeNotifier {
   SecureBootModel({
-    required SecureBootMode secureBootMode,
-  }) : _mode = secureBootMode;
+    required StorageService storage,
+    SecureBootMode secureBootMode = SecureBootMode.turnOff,
+  })  : _storage = storage,
+        _mode = secureBootMode;
+
+  final StorageService _storage;
 
   SecureBootMode _mode;
   SecureBootMode get secureBootMode => _mode;
@@ -27,6 +33,8 @@ class SecureBootModel extends SafeChangeNotifier {
 
   bool _isConfirmationKeyValid = true;
   bool get isConfirmationKeyValid => _isConfirmationKeyValid;
+
+  Future<bool> hasSecureBoot() => _storage.hasSecureBoot();
 
   void setSecureBootMode(SecureBootMode? mode) {
     if (mode == null || mode == _mode) {

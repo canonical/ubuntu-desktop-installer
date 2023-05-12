@@ -376,8 +376,6 @@ class _UbuntuDesktopInstallerWizardState
 
   @override
   Widget build(BuildContext context) {
-    final storage = getService<StorageService>();
-
     return Wizard(
       initialRoute: widget.initialRoute ?? Routes.initial,
       userData: InstallationStep.values.length,
@@ -406,12 +404,11 @@ class _UbuntuDesktopInstallerWizardState
         Routes.source: WizardRoute(
           builder: (_) => const SourceWizard(),
           userData: InstallationStep.source.index,
-          onNext: (_) =>
-              storage.hasSecureBoot ? Routes.secureBoot : Routes.filesystem,
         ),
         Routes.secureBoot: WizardRoute(
           builder: (_) => const SecureBootPage(),
           userData: InstallationStep.type.index,
+          onLoad: (_) => SecureBootPage.load(ref),
         ),
         Routes.filesystem: WizardRoute(
           builder: (_) => const FilesystemPage(),
