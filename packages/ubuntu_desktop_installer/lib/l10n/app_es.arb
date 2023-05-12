@@ -924,5 +924,9 @@
     }
   },
   "turnOffBitlockerHeadline": "Desactive BitLocker para continuar",
-  "@turnOffBitlockerHeadline": {}
+  "@turnOffBitlockerHeadline": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "Los puntos de montaje deben empezar por \"/\"",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Los puntos de montaje no pueden contener espacios",
+  "@allocateDiskSpaceInvalidMountPointSpace": {}
 }
