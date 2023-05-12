@@ -5,7 +5,6 @@ import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -15,8 +14,6 @@ import 'locale/locale_model_test.mocks.dart';
 import 'theme/theme_page_test.mocks.dart';
 
 void main() {
-  setUpAll(setupAppLocalizations);
-
   testWidgets('interactive installation', (tester) async {
     await tester.pumpWidget(
       tester.buildInstaller(
