@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_view.dart';
@@ -36,10 +35,6 @@ import 'network_page_test.mocks.dart';
   WifiDevice,
 ])
 void main() {
-  setUpAll(() async {
-    await setupAppLocalizations();
-  });
-
   Widget buildPage({
     required NetworkModel model,
     bool? ethernet,

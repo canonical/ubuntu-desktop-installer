@@ -3,6 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 
@@ -49,21 +50,23 @@ extension UbuntuTester on WidgetTester {
   Widget buildApp(WidgetBuilder builder) {
     binding.window.devicePixelRatioTestValue = 1;
     binding.window.physicalSizeTestValue = const Size(960, 680);
-    return Flavor(
-      data: const FlavorData(name: 'Ubuntu'),
-      child: MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        theme: yaruLight,
-        home: Wizard(
-          routes: {
-            '/': WizardRoute(
-              builder: builder,
-              onNext: (settings) => '/next',
-            ),
-            '/next': WizardRoute(
-              builder: (_) => const Text('Next page'),
-            ),
-          },
+    return InheritedLocale(
+      child: Flavor(
+        data: const FlavorData(name: 'Ubuntu'),
+        child: MaterialApp(
+          localizationsDelegates: localizationsDelegates,
+          theme: yaruLight,
+          home: Wizard(
+            routes: {
+              '/': WizardRoute(
+                builder: builder,
+                onNext: (settings) => '/next',
+              ),
+              '/next': WizardRoute(
+                builder: (_) => const Text('Next page'),
+              ),
+            },
+          ),
         ),
       ),
     );
