@@ -68,11 +68,6 @@ class MockStorageService extends _i1.Mock implements _i3.StorageService {
         returnValueForMissingStub: null,
       );
   @override
-  bool get hasSecureBoot => (super.noSuchMethod(
-        Invocation.getter(#hasSecureBoot),
-        returnValue: false,
-      ) as bool);
-  @override
   bool get useLvm => (super.noSuchMethod(
         Invocation.getter(#useLvm),
         returnValue: false,
@@ -120,6 +115,14 @@ class MockStorageService extends _i1.Mock implements _i3.StorageService {
         returnValue: _i4.Future<void>.value(),
         returnValueForMissingStub: _i4.Future<void>.value(),
       ) as _i4.Future<void>);
+  @override
+  _i4.Future<bool> hasSecureBoot() => (super.noSuchMethod(
+        Invocation.method(
+          #hasSecureBoot,
+          [],
+        ),
+        returnValue: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
   _i4.Future<bool> hasBitLocker() => (super.noSuchMethod(
         Invocation.method(

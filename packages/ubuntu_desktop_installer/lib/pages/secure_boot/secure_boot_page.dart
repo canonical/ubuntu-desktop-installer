@@ -11,6 +11,10 @@ import 'secure_boot_widgets.dart';
 class SecureBootPage extends ConsumerStatefulWidget {
   const SecureBootPage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(secureBootModelProvider.notifier).hasSecureBoot();
+  }
+
   @override
   ConsumerState<SecureBootPage> createState() => _SecureBootPageState();
 }
