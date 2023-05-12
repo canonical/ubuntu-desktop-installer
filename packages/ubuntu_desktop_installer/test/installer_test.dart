@@ -10,6 +10,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import 'install/install_model_test.mocks.dart';
+import 'loading/loading_model_test.mocks.dart';
 import 'locale/locale_model_test.mocks.dart';
 import 'theme/theme_page_test.mocks.dart';
 
@@ -43,7 +44,7 @@ void main() {
         interactive: false,
       ),
     );
-    await tester.pump();
+    await tester.pumpAndSettle();
     expect(find.byType(InstallPage), findsOneWidget);
   });
 }
@@ -64,20 +65,12 @@ extension on WidgetTester {
 
     final client = MockSubiquityClient();
     when(client.getStatus()).thenAnswer((_) async => status);
-    when(client.monitorStatus()).thenAnswer((_) => Stream.value(status));
     when(client.getStatus(current: ApplicationState.RUNNING))
         .thenAnswer((_) async => done);
-    when(client.hasRst()).thenAnswer((_) async => false);
-    when(client.hasBitLocker()).thenAnswer((_) async => false);
-    when(client.getKeyboard()).thenAnswer((_) async =>
-        const KeyboardSetup(layouts: [], setting: KeyboardSetting(layout: '')));
+    when(client.monitorStatus()).thenAnswer((_) => Stream.value(status));
     when(client.getStorageV2()).thenAnswer((_) async => fakeStorageResponse());
     when(client.getOriginalStorageV2())
         .thenAnswer((_) async => fakeStorageResponse());
-    registerMockService<SubiquityClient>(client);
-    when(client.getSource()).thenAnswer((_) async =>
-        const SourceSelectionAndSetting(
-            sources: [], currentId: kNormalSourceId, searchDrivers: false));
 
     final journal = MockJournalService();
     when(journal.start(any, output: anyNamed('output')))
@@ -86,11 +79,13 @@ extension on WidgetTester {
     final locale = MockLocaleService();
     when(locale.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
 
+    registerMockService<AppService>(MockAppService());
     registerMockService<DesktopService>(MockDesktopService());
-    registerMockService<StorageService>(StorageService(client));
     registerMockService<JournalService>(journal);
     registerMockService<LocaleService>(locale);
     registerMockService<ProductService>(ProductService());
+    registerMockService<StorageService>(StorageService(client));
+    registerMockService<SubiquityClient>(client);
     registerMockService<TelemetryService>(TelemetryService());
 
     return ProviderScope(

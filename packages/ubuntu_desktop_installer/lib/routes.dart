@@ -1,5 +1,6 @@
 abstract class Routes {
-  static const initial = locale;
+  static const initial = loading;
+  static const loading = '/loading';
   static const locale = '/locale';
   static const welcome = '/welcome';
   static const rst = '/rst';
