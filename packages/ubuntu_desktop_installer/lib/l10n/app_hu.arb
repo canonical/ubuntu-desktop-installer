@@ -970,5 +970,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "allocateDiskSpaceInvalidMountPointSpace": "A csatolási pontok nem tartalmazhatnak szóközöket",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "A csatolási pontoknak „/” karakterrel kell kezdődniük",
+  "@allocateDiskSpaceInvalidMountPointSlash": {}
 }
