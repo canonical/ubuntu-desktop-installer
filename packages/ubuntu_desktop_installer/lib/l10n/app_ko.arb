@@ -945,5 +945,9 @@
     }
   },
   "installationSlidesGamingTitle": "게이밍에 적합합니다",
-  "@installationSlidesGamingTitle": {}
+  "@installationSlidesGamingTitle": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "마운트 위치는 \"/\"로 시작해야 합니다",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "마운트 위치는 공백을 포함할 수 없습니다",
+  "@allocateDiskSpaceInvalidMountPointSpace": {}
 }
