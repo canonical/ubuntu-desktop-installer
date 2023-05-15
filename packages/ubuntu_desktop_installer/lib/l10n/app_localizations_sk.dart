@@ -163,7 +163,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get useWiredConnection => 'Použiť káblové pripojenie';
 
   @override
-  String get noWiredConnection => 'Nezistené žiadne káblové pripojenie';
+  String get noWiredConnection => 'Nezistilo sa žiadne káblové pripojenie';
 
   @override
   String get wiredDisabled => 'Káblové pripojenie je vypnuté';
@@ -427,10 +427,10 @@ class AppLocalizationsSk extends AppLocalizations {
   String get allocateDiskSpace => 'Ručné rozdelenie';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Prípojné body musia začínať znakom „/“';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Prípojné body nemôžu obsahovať medzery';
 
   @override
   String get startInstallingButtonText => 'Inštalácia';

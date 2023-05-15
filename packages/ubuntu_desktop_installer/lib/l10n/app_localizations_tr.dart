@@ -427,10 +427,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get allocateDiskSpace => 'Elle biçimlendirme';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Bağlama noktaları \"/\" ile başlamalıdır';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Bağlama noktaları boşluk içeremez';
 
   @override
   String get startInstallingButtonText => 'Kur';

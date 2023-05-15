@@ -427,10 +427,10 @@ class AppLocalizationsEo extends AppLocalizations {
   String get allocateDiskSpace => 'Neaŭtomata dispartigo';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Surmetingo devas komenciĝi per «/»';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Surmetingo devas ne enhavi spaceton';
 
   @override
   String get startInstallingButtonText => 'Instali';

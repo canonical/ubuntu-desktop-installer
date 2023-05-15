@@ -427,10 +427,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get allocateDiskSpace => 'חלוקת מחיצות ידנית';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'נקודות עיגון חייבות להתחיל ב־„/”';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace => 'נקודות עיגון לא יכולות להכיל רווחים';
 
   @override
   String get startInstallingButtonText => 'התקנה';

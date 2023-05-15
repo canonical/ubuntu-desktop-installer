@@ -427,10 +427,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get allocateDiskSpace => 'Ruční rozdělení';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Je třeba, aby přípojné body začínaly na „/“ (dopředné lomítko)';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Přípojné body nemohou obsahovat mezery';
 
   @override
   String get startInstallingButtonText => 'Instalace';
