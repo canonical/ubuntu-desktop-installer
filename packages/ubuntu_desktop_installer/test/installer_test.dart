@@ -64,6 +64,7 @@ extension on WidgetTester {
 
     final client = MockSubiquityClient();
     when(client.getStatus()).thenAnswer((_) async => status);
+    when(client.monitorStatus()).thenAnswer((_) => Stream.value(status));
     when(client.getStatus(current: ApplicationState.RUNNING))
         .thenAnswer((_) async => done);
     when(client.hasRst()).thenAnswer((_) async => false);
@@ -77,11 +78,6 @@ extension on WidgetTester {
     when(client.getSource()).thenAnswer((_) async =>
         const SourceSelectionAndSetting(
             sources: [], currentId: kNormalSourceId, searchDrivers: false));
-
-    final monitor = MockSubiquityStatusMonitor();
-    when(monitor.status).thenReturn(status);
-    when(monitor.onStatusChanged).thenAnswer((_) => const Stream.empty());
-    registerMockService<SubiquityStatusMonitor>(monitor);
 
     final journal = MockJournalService();
     when(journal.start(any, output: anyNamed('output')))
