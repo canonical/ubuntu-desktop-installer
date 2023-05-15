@@ -24,20 +24,21 @@ scripts:
 
   # format all packages
   format: >
-    find . -name '*.dart' \
-      ! -name '*.g.dart' \
-      ! -name '*.freezed.dart' \
-      ! -path '*/l10n/*' \
-      ! -path "*/.*/*" \
-      | xargs flutter format --set-exit-if-changed
+    melos exec -c 1 --fail-fast --ignore="subiquity_*" -- \
+      "find $MELOS_PACKAGE_PATH -name '*.dart' \
+          ! -name '*.g.dart' \
+          ! -name '*.freezed.dart' \
+          ! -path '*/l10n/*' \
+          ! -path '*/.*/*' \
+          | xargs dart format --set-exit-if-changed"
 
   # run build_runner to generate code in all packages
   generate: >
-    melos exec -c 1 --fail-fast --depends-on="build_runner" -- \
+    melos exec -c 1 --fail-fast --depends-on="build_runner" --ignore="subiquity_*" -- \
       dart run build_runner build --delete-conflicting-outputs
 
   # run gen-l10n to generate localizations in all packages
-  gen-l10n:
+  gen-l10n: >
     melos exec -c 1 --fail-fast --file-exists="lib/l10n.dart" -- \
      flutter gen-l10n
 
