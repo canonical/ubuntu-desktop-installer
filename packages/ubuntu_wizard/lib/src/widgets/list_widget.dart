@@ -88,6 +88,7 @@ class _ListWidgetState extends State<ListWidget> {
               child: ListView.builder(
                 key: _scrollableKey,
                 controller: _scrollController,
+                itemExtent: _kTileHeight,
                 itemCount: widget.itemCount,
                 itemBuilder: (context, index) => Builder(
                   builder: (context) {
