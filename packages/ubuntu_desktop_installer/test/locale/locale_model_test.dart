@@ -13,19 +13,26 @@ import 'locale_model_test.mocks.dart';
 void main() {
   test('load languages', () async {
     final locale = MockLocaleService();
+    when(locale.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
     final sound = MockSoundService();
 
     final model = LocaleModel(locale: locale, sound: sound);
-    await model.loadLanguages();
+    await model.init();
     expect(model.languageCount, greaterThan(1));
+    expect(model.selectedLanguageIndex, isPositive);
+
+    final selected = model.locale(model.selectedLanguageIndex);
+    expect(selected.languageCode, 'en');
+    expect(selected.countryCode, 'US');
   });
 
   test('sort languages', () async {
     final locale = MockLocaleService();
+    when(locale.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
     final sound = MockSoundService();
 
     final model = LocaleModel(locale: locale, sound: sound);
-    await model.loadLanguages();
+    await model.init();
 
     final languages = List.generate(model.languageCount, model.language);
     expect(languages.length, greaterThan(1));
@@ -37,12 +44,13 @@ void main() {
 
   test('select locale', () async {
     final locale = MockLocaleService();
+    when(locale.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
     final sound = MockSoundService();
 
     final model = LocaleModel(locale: locale, sound: sound);
-    await model.loadLanguages();
+    await model.init();
     expect(model.languageCount, greaterThan(1));
-    expect(model.selectedLanguageIndex, equals(0));
+    expect(model.selectedLanguageIndex, isPositive);
 
     // falls back to the base locale (en_US)
     model.selectLocale(const Locale('foo'));
@@ -91,10 +99,11 @@ void main() {
 
   test('search language', () async {
     final locale = MockLocaleService();
+    when(locale.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
     final sound = MockSoundService();
 
     final model = LocaleModel(locale: locale, sound: sound);
-    await model.loadLanguages();
+    await model.init();
 
     final english = model.searchLanguage('eng');
     expect(model.language(english), equals('English'));

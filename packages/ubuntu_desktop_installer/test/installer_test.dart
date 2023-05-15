@@ -87,10 +87,13 @@ extension on WidgetTester {
     when(journal.start(any, output: anyNamed('output')))
         .thenAnswer((_) => const Stream.empty());
 
+    final locale = MockLocaleService();
+    when(locale.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
+
     registerMockService<DesktopService>(MockDesktopService());
     registerMockService<StorageService>(StorageService(client));
     registerMockService<JournalService>(journal);
-    registerMockService<LocaleService>(MockLocaleService());
+    registerMockService<LocaleService>(locale);
     registerMockService<ProductService>(ProductService());
     registerMockService<TelemetryService>(TelemetryService());
 

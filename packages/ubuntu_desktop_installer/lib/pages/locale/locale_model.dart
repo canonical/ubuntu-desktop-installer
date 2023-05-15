@@ -6,6 +6,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart' show KeySearchX;
+import 'package:ubuntu_wizard/utils.dart';
 
 /// @internal
 final log = Logger('locale');
@@ -44,12 +45,15 @@ class LocaleModel extends SafeChangeNotifier {
   var _languageList = <LocalizedLanguage>[];
 
   /// Loads available languages.
-  Future<void> loadLanguages() async {
+  Future<void> init() async {
     assert(_languageList.isEmpty);
     final languages = await loadLocalizedLanguages(supportedLocales);
     _languageList = List.of(languages);
     log.info('Loaded ${_languageList.length} languages');
-    notifyListeners();
+    return _locale.getLocale().then((v) {
+      selectLocale(parseLocale(v));
+      notifyListeners();
+    });
   }
 
   /// Returns the locale for the given language [index].

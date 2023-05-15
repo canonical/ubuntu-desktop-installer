@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -18,8 +19,11 @@ import 'locale_page_test.mocks.dart';
 @GenerateMocks([TelemetryService])
 void main() {
   LocaleModel buildModel() {
+    final locale = MockLocaleService();
+    when(locale.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
+
     return LocaleModel(
-      locale: MockLocaleService(),
+      locale: locale,
       sound: MockSoundService(),
     );
   }
