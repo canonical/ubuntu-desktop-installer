@@ -344,6 +344,7 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
         Routes.identity: WizardRoute(
           builder: (_) => const IdentityPage(),
           userData: InstallationStep.identity.index,
+          onLoad: (_) => IdentityPage.load(ref),
           onNext: (settings) => settings.arguments == true
               ? Routes.activeDirectory
               : Routes.theme,

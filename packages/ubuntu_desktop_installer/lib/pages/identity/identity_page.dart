@@ -18,25 +18,16 @@ part 'identity_widgets.dart';
 /// The installer page for setting up the user data.
 ///
 /// It uses [WizardPage] and [WizardAction] to create an installer page.
-class IdentityPage extends ConsumerStatefulWidget {
+class IdentityPage extends ConsumerWidget {
   /// Creates a the installer page for setting up the user data.
   const IdentityPage({super.key});
 
-  @override
-  ConsumerState<IdentityPage> createState() => _IdentityPageState();
-}
-
-class _IdentityPageState extends ConsumerState<IdentityPage> {
-  @override
-  void initState() {
-    super.initState();
-
-    final model = ref.read(identityModelProvider);
-    model.init();
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(identityModelProvider).init().then((_) => true);
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
 
     return WizardPage(
