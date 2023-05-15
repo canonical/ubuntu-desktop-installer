@@ -315,6 +315,7 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
         Routes.keyboard: WizardRoute(
           builder: (_) => const KeyboardPage(),
           userData: InstallationStep.keyboard.index,
+          onLoad: (settings) => KeyboardPage.load(ref),
         ),
         Routes.network: WizardRoute(
           builder: (_) => const NetworkPage(),

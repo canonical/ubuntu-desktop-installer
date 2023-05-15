@@ -9,29 +9,19 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'keyboard_dialogs.dart';
 import 'keyboard_model.dart';
 
-class KeyboardPage extends ConsumerStatefulWidget {
+class KeyboardPage extends ConsumerWidget {
   const KeyboardPage({super.key});
 
-  @override
-  ConsumerState<KeyboardPage> createState() => _KeyboardPageState();
-}
-
-class _KeyboardPageState extends ConsumerState<KeyboardPage> {
-  @override
-  void initState() {
-    super.initState();
-
+  static Future<bool> load(WidgetRef ref) {
     final model = ref.read(keyboardModelProvider);
-    model.init().then((_) => model.updateInputSource());
+    return model
+        .init()
+        .then((_) => model.updateInputSource())
+        .then((_) => true);
   }
 
   @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(keyboardModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
