@@ -60,6 +60,7 @@ jobs:
       with:
         title: 'Regenerate mocks'
         commit-message: 'Regenerate mocks'
+        branch: create-pull-request/mocks
 
   l10n:
     runs-on: ubuntu-22.04
@@ -83,6 +84,7 @@ jobs:
       with:
         title: 'Regenerate l10n'
         commit-message: 'Regenerate l10n'
+        branch: create-pull-request/l10n
 
   snap:
     runs-on: ubuntu-22.04
