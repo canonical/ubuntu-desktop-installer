@@ -23,8 +23,8 @@ class _LocalePageState extends ConsumerState<LocalePage> {
     super.initState();
 
     final model = ref.read(localeModelProvider);
-    model.loadLanguages().then((_) {
-      model.selectLocale(InheritedLocale.of(context));
+    model.init().then((_) {
+      _selectLanguage(model.selectedLanguageIndex);
       model.playWelcomeSound();
     });
   }
