@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:collection/collection.dart';
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,7 +10,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_wizard/app.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
@@ -30,15 +28,6 @@ export 'slides.dart';
 
 final assetBundle =
     ProxyAssetBundle(rootBundle, package: 'ubuntu_desktop_installer');
-
-extension on ApplicationStatus {
-  bool get isStartingUp => state.index <= ApplicationState.EARLY_COMMANDS.index;
-  bool get isWaitingAutoinstall =>
-      interactive == false && state == ApplicationState.WAITING;
-  bool get isInstalling =>
-      state.index >= ApplicationState.RUNNING.index &&
-      state.index < ApplicationState.DONE.index;
-}
 
 Future<void> runInstallerApp(
   List<String> args, {
@@ -76,6 +65,8 @@ Future<void> runInstallerApp(
   if (liveRun) tryRegisterService(SoundService.new);
   tryRegisterService<ActiveDirectoryService>(
       () => SubiquityActiveDirectoryService(getService<SubiquityClient>()));
+  tryRegisterService<AppService>(
+      () => InstallerAppService(getService<SubiquityClient>()));
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService<IdentityService>(
@@ -125,8 +116,8 @@ Future<void> runInstallerApp(
     dispose: () => getService<DesktopService>().close(),
   );
 
-  final subiquityClient = getService<SubiquityClient>();
-  await subiquityClient.setVariant(Variant.DESKTOP);
+  final app = getService<AppService>();
+  await app.init();
 
   var geo = tryGetService<GeoService>();
   if (geo == null) {
@@ -252,11 +243,6 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
   }
 
   Widget buildApp(BuildContext context) {
-    if (_subiquityStatus == null ||
-        _subiquityStatus!.isStartingUp ||
-        _subiquityStatus!.isWaitingAutoinstall) {
-      return const _UbuntuDesktopInstallerLoadingPage();
-    }
     if (_subiquityStatus?.state == ApplicationState.ERROR) {
       return const _UbuntuDesktopErrorWizard();
     }
@@ -283,40 +269,6 @@ class _UbuntuDesktopInstallerBackground extends StatelessWidget {
   }
 }
 
-class _UbuntuDesktopInstallerLoadingPage extends StatelessWidget {
-  const _UbuntuDesktopInstallerLoadingPage()
-      : super(key: const ValueKey(_UbuntuDesktopInstallerLoadingPage));
-
-  @override
-  Widget build(BuildContext context) {
-    final flavor = Flavor.of(context);
-    final lang = AppLocalizations.of(context);
-    final style = Theme.of(context).textTheme.headlineSmall!;
-    return WizardPage(
-      title: YaruWindowTitleBar(
-        title: Text(lang.welcomePageTitle(flavor.name)),
-      ),
-      content: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox.square(
-            dimension: 72,
-            child: YaruCircularProgressIndicator(),
-          ),
-          const SizedBox(height: kContentSpacing * 2),
-          Text(lang.preparingUbuntu(flavor.name), style: style),
-        ],
-      ),
-      bottomBar: WizardBar(
-        leading: WizardButton.previous(context, enabled: false),
-        trailing: [
-          WizardButton.next(context, enabled: false),
-        ],
-      ),
-    );
-  }
-}
-
 enum InstallationStep {
   locale,
   keyboard,
@@ -329,7 +281,7 @@ enum InstallationStep {
   theme,
 }
 
-class _UbuntuDesktopInstallerWizard extends ConsumerStatefulWidget {
+class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
   const _UbuntuDesktopInstallerWizard({
     this.initialRoute,
     this.welcome,
@@ -339,44 +291,14 @@ class _UbuntuDesktopInstallerWizard extends ConsumerStatefulWidget {
   final bool? welcome;
 
   @override
-  ConsumerState<_UbuntuDesktopInstallerWizard> createState() =>
-      _UbuntuDesktopInstallerWizardState();
-}
-
-class _UbuntuDesktopInstallerWizardState
-    extends ConsumerState<_UbuntuDesktopInstallerWizard> {
-  @override
-  void initState() {
-    super.initState();
-
-    final client = getService<SubiquityClient>();
-    client.getSource().then((value) async {
-      final source = value.sources.firstWhereOrNull((s) => s.isDefault);
-      if (source != null) {
-        await client.setSource(source.id);
-      }
-
-      // Use the default values for a number of endpoints
-      // for which a UI page isn't implemented yet.
-      client.markConfigured([
-        'mirror',
-        'proxy',
-        'ssh',
-        'snaplist',
-        'ubuntu_pro',
-      ]);
-
-      final storage = getService<StorageService>();
-      storage.init();
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Wizard(
-      initialRoute: widget.initialRoute ?? Routes.initial,
+      initialRoute: initialRoute ?? Routes.initial,
       userData: InstallationStep.values.length,
       routes: <String, WizardRoute>{
+        Routes.loading: WizardRoute(
+          builder: (_) => const LoadingPage(),
+        ),
         Routes.locale: WizardRoute(
           builder: (_) => const LocalePage(),
           userData: InstallationStep.locale.index,
@@ -384,7 +306,7 @@ class _UbuntuDesktopInstallerWizardState
         Routes.welcome: WizardRoute(
           builder: (_) => const WelcomePage(),
           userData: InstallationStep.locale.index,
-          onLoad: (_) => widget.welcome == true,
+          onLoad: (_) => welcome == true,
         ),
         Routes.rst: WizardRoute(
           builder: (_) => const RstPage(),
@@ -467,10 +389,13 @@ class _UbuntuDesktopAutoinstallWizard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wizard(
       routes: <String, WizardRoute>{
-        if (status?.isInstalling != true)
-          Routes.confirm: WizardRoute(
-            builder: (_) => const ConfirmPage(),
-          ),
+        Routes.loading: WizardRoute(
+          builder: (_) => const LoadingPage(),
+        ),
+        Routes.confirm: WizardRoute(
+          builder: (_) => const ConfirmPage(),
+          onLoad: (_) => status?.isInstalling != true,
+        ),
         Routes.install: WizardRoute(
           builder: (_) => const InstallPage(),
         ),
