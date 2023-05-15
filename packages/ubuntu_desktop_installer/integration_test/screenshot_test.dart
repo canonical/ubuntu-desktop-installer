@@ -127,7 +127,6 @@ void main() {
       tester,
       screenshot: '$currentThemeName/6.not-enough-space',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('6.erase-disk', (tester) async {
