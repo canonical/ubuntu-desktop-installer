@@ -92,7 +92,6 @@ Future<void> runInstallerApp(
   tryRegisterService(SubiquityClient.new);
   tryRegisterService(
       () => SubiquityServer(process: process, endpoint: endpoint));
-  tryRegisterService(SubiquityStatusMonitor.new);
   tryRegisterService(TelemetryService.new);
   tryRegisterService<TimezoneService>(
       () => SubiquityTimezoneService(getService<SubiquityClient>()));
@@ -115,7 +114,6 @@ Future<void> runInstallerApp(
     options: options,
     subiquityClient: getService<SubiquityClient>(),
     subiquityServer: getService<SubiquityServer>(),
-    subiquityMonitor: getService<SubiquityStatusMonitor>(),
     serverArgs: [
       if (options['machine-config'] != null)
         '--machine-config=${options['machine-config']}',
@@ -182,9 +180,8 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
   void initState() {
     super.initState();
 
-    final monitor = getService<SubiquityStatusMonitor>();
-    _subiquityStatus = monitor.status;
-    _subiquityStatusChange = monitor.onStatusChanged.listen((status) {
+    final client = getService<SubiquityClient>();
+    _subiquityStatusChange = client.monitorStatus().listen((status) {
       YaruWindow.of(context).setClosable(status?.isInstalling != true);
       setState(() => _subiquityStatus = status);
     });
