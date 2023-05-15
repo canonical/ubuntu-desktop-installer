@@ -41,12 +41,6 @@ void main() {
     );
   }
 
-  testWidgets('initializes the model', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-    verify(model.init()).called(1);
-  });
-
   testWidgets('saves the location', (tester) async {
     final model = buildModel();
     when(model.init()).thenAnswer((_) async => '');
@@ -199,23 +193,23 @@ void main() {
     final page = find.byType(TimezonePage);
     expect(page, findsOneWidget);
 
-    final state = tester.state<TimezonePageState>(page);
-
     const city = GeoLocation(name: 'city');
-    expect(state.formatLocation(city), contains(city.name));
+    expect(TimezonePage.formatLocation(city), contains(city.name));
 
     final cityAdmin = city.copyWith(admin: 'admin');
-    expect(state.formatLocation(cityAdmin), contains(cityAdmin.name));
-    expect(state.formatLocation(cityAdmin), contains(cityAdmin.admin));
+    expect(TimezonePage.formatLocation(cityAdmin), contains(cityAdmin.name));
+    expect(TimezonePage.formatLocation(cityAdmin), contains(cityAdmin.admin));
 
     final cityCountry = city.copyWith(country: 'country');
-    expect(state.formatLocation(cityCountry), contains(cityCountry.name));
-    expect(state.formatLocation(cityCountry), contains(cityCountry.country));
+    expect(
+        TimezonePage.formatLocation(cityCountry), contains(cityCountry.name));
+    expect(TimezonePage.formatLocation(cityCountry),
+        contains(cityCountry.country));
 
     final cityAll = city.copyWith(admin: 'admin', country: 'country');
-    expect(state.formatLocation(cityAll), contains(cityAll.name));
-    expect(state.formatLocation(cityAll), contains(cityAll.name));
-    expect(state.formatLocation(cityAll), contains(cityAll.country));
+    expect(TimezonePage.formatLocation(cityAll), contains(cityAll.name));
+    expect(TimezonePage.formatLocation(cityAll), contains(cityAll.name));
+    expect(TimezonePage.formatLocation(cityAll), contains(cityAll.country));
   });
 
   testWidgets('format timezone', (tester) async {
@@ -225,11 +219,9 @@ void main() {
     final page = find.byType(TimezonePage);
     expect(page, findsOneWidget);
 
-    final state = tester.state<TimezonePageState>(page);
-
     const timezone = GeoLocation(timezone: 'America/New_York');
     expect(
-      state.formatTimezone(timezone),
+      TimezonePage.formatTimezone(timezone),
       'America/New York',
     );
   });

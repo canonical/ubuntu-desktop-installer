@@ -180,7 +180,6 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       MascotAvatar.precacheAsset(context);
-      TimezoneMap.precacheAssets(context);
     });
   }
 
@@ -340,6 +339,7 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
         Routes.timezone: WizardRoute(
           builder: (_) => const TimezonePage(),
           userData: InstallationStep.timezone.index,
+          onLoad: (_) => TimezonePage.load(context, ref),
         ),
         Routes.identity: WizardRoute(
           builder: (_) => const IdentityPage(),
