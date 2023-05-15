@@ -94,8 +94,8 @@ void main() {
   });
 
   testWidgets('edit partition', (tester) async {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = const Size(960, 680);
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(960, 680);
 
     final disk = fakeDisk(partitions: [
       const Partition(
@@ -163,8 +163,8 @@ void main() {
   });
 
   testWidgets('edit partition with invalid mount point', (tester) async {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = const Size(960, 680);
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(960, 680);
 
     final disk = fakeDisk(partitions: [
       const Partition(

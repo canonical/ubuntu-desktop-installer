@@ -107,7 +107,7 @@ void main() {
   });
 
   testWidgets('display error status', (tester) async {
-    tester.binding.window.devicePixelRatioTestValue = 1.0;
+    tester.view.devicePixelRatio = 1.0;
     MockInstallationSlidesModel model = createModel(hasError: true);
     await tester
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
@@ -148,7 +148,7 @@ void main() {
   });
 
   testWidgets('creates a model', (tester) async {
-    tester.binding.window.devicePixelRatioTestValue = 1.0;
+    tester.view.devicePixelRatio = 1.0;
     final journal = MockJournalService();
     when(journal.stream)
         .thenAnswer((realInvocation) => const Stream<String>.empty());
@@ -170,7 +170,7 @@ void main() {
 
   group('page interaction', () {
     testWidgets('toggle log view', (tester) async {
-      tester.binding.window.devicePixelRatioTestValue = 1.0;
+      tester.view.devicePixelRatio = 1.0;
       final journal = MockJournalService();
       when(journal.stream).thenAnswer(
         (_) => Stream<String>.fromIterable([lorem]).asBroadcastStream(),
@@ -197,7 +197,7 @@ void main() {
     });
 
     testWidgets('clicks slides', (tester) async {
-      tester.binding.window.devicePixelRatioTestValue = 1.0;
+      tester.view.devicePixelRatio = 1.0;
       final journal = MockJournalService();
       when(journal.stream).thenAnswer(
         (_) => Stream<String>.fromIterable([lorem]).asBroadcastStream(),

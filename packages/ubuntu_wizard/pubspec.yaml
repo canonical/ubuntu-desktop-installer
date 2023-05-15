@@ -3,8 +3,8 @@ description: Shared library for Ubuntu wizards.
 publish_to: 'none'
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
-  flutter: ">=3.0.0"
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
 
 dependencies:
   args: ^2.2.0
@@ -17,7 +17,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   form_field_validator: ^1.1.0
-  intl: ^0.17.0
+  intl: ^0.18.0
   meta: ^1.8.0
   password_strength: ^0.2.0
   path: ^1.8.0
@@ -32,7 +32,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_widgets
-      ref: aba58a93465a4ed9040f805d513d47c49f1c941a
+      ref: b193a7a8113c4c5400a9b58b42b1a104abd64bbb
   url_launcher: ^6.1.0
   wizard_router: 1.0.0-beta.3
   yaru: ^0.7.0
@@ -44,7 +44,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  mockito: 5.3.2
+  mockito: 5.4.0
   plugin_platform_interface: ^2.1.2
   subiquity_test:
     git:

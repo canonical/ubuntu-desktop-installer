@@ -127,7 +127,7 @@ parts:
 
   flutter-git:
     source: https://github.com/flutter/flutter.git
-    source-tag: 3.7.7 # run local/flutter/update-artifacts.sh [x.y.z]
+    source-tag: 3.10.0 # run local/flutter/update-artifacts.sh [x.y.z]
     source-depth: 1
     plugin: nil
     override-build: |

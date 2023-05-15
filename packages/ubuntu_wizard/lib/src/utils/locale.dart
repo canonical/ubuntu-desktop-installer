@@ -29,7 +29,8 @@ class InheritedLocale extends InheritedNotifier<ValueNotifier<Locale>> {
   InheritedLocale({super.key, required super.child, Locale? value})
       : super(notifier: ValueNotifier(value ?? _defaultLocale));
 
-  static Locale get _defaultLocale => WidgetsBinding.instance.window.locale;
+  static Locale get _defaultLocale =>
+      WidgetsBinding.instance.platformDispatcher.locale;
 
   static Locale of(BuildContext context) {
     return _getNotifier(context).value;
