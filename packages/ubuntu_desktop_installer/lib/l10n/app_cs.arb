@@ -970,5 +970,9 @@
     }
   },
   "turnOffBitlockerHeadline": "Aby bylo možné pokračovat, vypněte BitLocker",
-  "@turnOffBitlockerHeadline": {}
+  "@turnOffBitlockerHeadline": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "Je třeba, aby přípojné body začínaly na „/“ (dopředné lomítko)",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Přípojné body nemohou obsahovat mezery",
+  "@allocateDiskSpaceInvalidMountPointSpace": {}
 }

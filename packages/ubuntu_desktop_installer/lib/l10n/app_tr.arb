@@ -931,5 +931,9 @@
   "activeDirectoryAdminInvalidChars": "Geçersiz karakterler",
   "@activeDirectoryAdminInvalidChars": {},
   "activeDirectoryPasswordLabel": "Parola",
-  "@activeDirectoryPasswordLabel": {}
+  "@activeDirectoryPasswordLabel": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "Bağlama noktaları \"/\" ile başlamalıdır",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Bağlama noktaları boşluk içeremez",
+  "@allocateDiskSpaceInvalidMountPointSpace": {}
 }

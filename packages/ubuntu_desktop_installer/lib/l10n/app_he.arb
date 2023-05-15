@@ -915,5 +915,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "allocateDiskSpaceInvalidMountPointSlash": "נקודות עיגון חייבות להתחיל ב־„/”",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "נקודות עיגון לא יכולות להכיל רווחים",
+  "@allocateDiskSpaceInvalidMountPointSpace": {}
 }

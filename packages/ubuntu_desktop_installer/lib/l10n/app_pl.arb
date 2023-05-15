@@ -915,5 +915,9 @@
   "restartIntoWindowsTitle": "Uruchomić ponownie do Windows?",
   "@restartIntoWindowsTitle": {},
   "turnOffBitlockerHeadline": "Wyłącz funkcję BitLocker, aby kontynuować",
-  "@turnOffBitlockerHeadline": {}
+  "@turnOffBitlockerHeadline": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Punkty montowania nie mogą zawierać spacji",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "Punkty montowania muszą zaczynać się od „/”",
+  "@allocateDiskSpaceInvalidMountPointSlash": {}
 }
