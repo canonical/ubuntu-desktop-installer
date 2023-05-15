@@ -303,11 +303,12 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
           builder: (_) => const LocalePage(),
           userData: InstallationStep.locale.index,
         ),
-        Routes.welcome: WizardRoute(
-          builder: (_) => const WelcomePage(),
-          userData: InstallationStep.locale.index,
-          onLoad: (_) => welcome == true,
-        ),
+        if (welcome == true)
+          Routes.welcome: WizardRoute(
+            builder: (_) => const WelcomePage(),
+            userData: InstallationStep.locale.index,
+            onLoad: (_) => WelcomePage.load(ref),
+          ),
         Routes.rst: WizardRoute(
           builder: (_) => const RstPage(),
           onLoad: (_) => RstPage.load(ref),
