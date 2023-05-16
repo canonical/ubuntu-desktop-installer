@@ -17,7 +17,7 @@ dependencies:
   filesize: ^2.0.0
   flutter:
     sdk: flutter
-  flutter_html: 3.0.0-alpha.6
+  flutter_html: 3.0.0-beta.1
   flutter_localizations:
     sdk: flutter
   flutter_markdown: ^0.6.2
