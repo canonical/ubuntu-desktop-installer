@@ -20,7 +20,7 @@ class _LoadingPageState extends ConsumerState<LoadingPage> {
     super.initState();
 
     final model = ref.read(loadingModelProvider);
-    model.init().then((_) => Wizard.of(context).next());
+    model.init().then((_) => Wizard.of(context).replace());
   }
 
   @override
