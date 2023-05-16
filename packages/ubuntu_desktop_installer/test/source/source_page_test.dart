@@ -7,11 +7,13 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'source_page_test.mocks.dart';
@@ -82,7 +84,8 @@ void main() {
     final model = buildModel(installDrivers: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final checkbox = find.checkButton(tester.lang.installDriversTitle);
+    final checkbox =
+        find.checkButton(find.al10n((l10n) => l10n.installDriversTitle));
     expect(checkbox, findsOneWidget);
     expect(checkbox, isChecked);
 
@@ -97,7 +100,8 @@ void main() {
     final model = buildModel(installCodecs: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final checkbox = find.checkButton(tester.lang.installCodecsTitle);
+    final checkbox =
+        find.checkButton(find.al10n((l10n) => l10n.installCodecsTitle));
     expect(checkbox, findsOneWidget);
     expect(checkbox, isChecked);
 
@@ -113,12 +117,11 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
-    final warning = find.byType(Html);
     final theme = Theme.of(tester.element(find.byType(Scaffold)));
-    expect(warning, findsOneWidget);
+    final l10n = AppLocalizations.of(tester.element(find.byType(Scaffold)));
     expect(
-      tester.widget<Html>(warning).data,
-      equals(tester.lang.onBatteryWarning(theme.colorScheme.error.toHex())),
+      find.html(l10n.onBatteryWarning(theme.colorScheme.error.toHex())),
+      findsOneWidget,
     );
   });
 
@@ -133,9 +136,10 @@ void main() {
     final model = buildModel(isOnline: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.text(tester.lang.offlineWarning), findsNothing);
+    expect(find.al10n((l10n) => l10n.offlineWarning), findsNothing);
 
-    final checkbox = find.checkButton(tester.lang.installCodecsTitle);
+    final checkbox =
+        find.checkButton(find.al10n((l10n) => l10n.installCodecsTitle));
     expect(checkbox, findsOneWidget);
     expect(checkbox, isDisabled);
 
@@ -146,16 +150,14 @@ void main() {
     await tester.pump();
 
     await tester.pumpAndSettle(const Duration(milliseconds: 500));
-    expect(find.text(tester.lang.offlineWarning), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.offlineWarning), findsOneWidget);
   });
 
   testWidgets('continue on the next page', (tester) async {
     final model = buildModel(sourceId: kNormalSourceId);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    await tester.tap(nextButton);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     verify(model.save()).called(1);

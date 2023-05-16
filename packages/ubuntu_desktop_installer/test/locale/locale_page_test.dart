@@ -11,6 +11,7 @@ import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'locale_model_test.mocks.dart';
@@ -126,10 +127,7 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     expect(find.byType(LocalePage), findsNothing);

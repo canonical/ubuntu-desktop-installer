@@ -6,20 +6,18 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_model.dart';
 import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_page.dart';
 import 'package:yaru/yaru.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'configuration_ui_page_test.mocks.dart';
 import 'test_utils.dart';
 
 @GenerateMocks([ConfigurationUIModel])
 void main() {
-  LangTester.type = ConfigurationUIPage;
-
   ConfigurationUIModel buildModel({
     bool? isValid,
     bool? interopEnabled,
@@ -66,8 +64,8 @@ void main() {
     final model = buildModel(automountEnabled: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox =
-        find.checkButton(tester.lang.configurationUIAutoMountSubtitle);
+    final checkbox = find.checkButton(
+        find.al10n((l10n) => l10n.configurationUIAutoMountSubtitle));
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.automountEnabled = true).called(1);
@@ -77,8 +75,8 @@ void main() {
     final model = buildModel(automountMountfstab: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox =
-        find.checkButton(tester.lang.configurationUIMountFstabTitle);
+    final checkbox = find
+        .checkButton(find.al10n((l10n) => l10n.configurationUIMountFstabTitle));
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.automountMountfstab = true).called(1);
@@ -88,8 +86,8 @@ void main() {
     final model = buildModel(interopEnabled: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox =
-        find.checkButton(tester.lang.configurationUIInteroperabilitySubtitle);
+    final checkbox = find.checkButton(
+        find.al10n((l10n) => l10n.configurationUIInteroperabilitySubtitle));
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.interopEnabled = true).called(1);
@@ -99,8 +97,8 @@ void main() {
     final model = buildModel(interopAppendwindowspath: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox = find
-        .checkButton(tester.lang.configurationUIInteropAppendWindowsPathTitle);
+    final checkbox = find.checkButton(find
+        .al10n((l10n) => l10n.configurationUIInteropAppendWindowsPathTitle));
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.interopAppendwindowspath = true).called(1);
@@ -110,7 +108,7 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final saveButton = find.button(tester.lang.saveButton);
+    final saveButton = find.button(find.al10n((l10n) => l10n.saveButton));
     expect(saveButton, findsOneWidget);
     expect(saveButton, isEnabled);
   });
@@ -119,7 +117,7 @@ void main() {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final saveButton = find.button(tester.lang.saveButton);
+    final saveButton = find.button(find.al10n((l10n) => l10n.saveButton));
     expect(saveButton, findsOneWidget);
     expect(saveButton, isDisabled);
   });
@@ -131,7 +129,7 @@ void main() {
     verify(model.loadConfiguration()).called(1);
     verifyNever(model.saveConfiguration());
 
-    final saveButton = find.button(tester.lang.saveButton);
+    final saveButton = find.button(find.al10n((l10n) => l10n.saveButton));
     expect(saveButton, findsOneWidget);
     await tester.tap(saveButton);
 

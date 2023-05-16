@@ -11,6 +11,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru/yaru.dart';
 
 import 'source_model_test.mocks.dart';
 import 'source_page_test.mocks.dart';
@@ -116,6 +117,7 @@ extension on WidgetTester {
             data: const FlavorData(name: 'Ubuntu'),
             child: MaterialApp(
               localizationsDelegates: localizationsDelegates,
+              theme: yaruLight,
               home: Wizard(
                 routes: {
                   '/first': WizardRoute(

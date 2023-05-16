@@ -10,6 +10,7 @@ import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'active_directory_page_test.mocks.dart';
@@ -79,7 +80,8 @@ void main() {
     );
 
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-    final error = validation.localize(tester.lang);
+    final context = tester.element(find.byType(ActiveDirectoryPage));
+    final error = validation.localize(context);
     if (error.isNotEmpty) {
       expect(find.text(error), findsNothing);
     }
@@ -102,9 +104,10 @@ void main() {
         buildModel(adminName: 'admin', adminNameValidation: validation);
 
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-    final error = validation.localize(tester.lang);
+    final context = tester.element(find.byType(ActiveDirectoryPage));
+    final error = validation.localize(context);
     if (error.isNotEmpty) {
-      expect(find.text(validation.localize(tester.lang)), findsNothing);
+      expect(find.text(validation.localize(context)), findsNothing);
     }
 
     final textField = find.textField('admin');
@@ -124,7 +127,8 @@ void main() {
         buildModel(password: 'password', passwordValidation: validation);
 
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-    final error = validation.localize(tester.lang);
+    final context = tester.element(find.byType(ActiveDirectoryPage));
+    final error = validation.localize(context);
     if (error.isNotEmpty) {
       expect(find.text(error), findsNothing);
     }
@@ -142,24 +146,21 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
   });
 
   testWidgets('save AD connection info', (tester) async {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.save()).called(1);
 
     verify(model.getJoinResult()).called(1);
@@ -172,10 +173,7 @@ void main() {
         buildModel(isValid: true, joinResult: AdJoinResult.JOIN_ERROR);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.save()).called(1);
 
     verify(model.getJoinResult()).called(1);

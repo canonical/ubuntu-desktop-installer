@@ -10,7 +10,7 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/confirm/confirm_model.dart';
 import 'package:ubuntu_desktop_installer/pages/confirm/confirm_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'confirm_page_test.mocks.dart';
@@ -143,20 +143,20 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-        find.html(tester.lang.writeChangesPartitionFormattedMounted(
+        find.al10n((l) => l.writeChangesPartitionFormattedMounted(
             '', 'sdb3', 'ext3', '/mnt/3')),
         findsOneWidget);
     expect(
-        find.html(tester.lang.writeChangesPartitionFormatted('sdb', 4, 'ext4')),
+        find.al10n((l) => l.writeChangesPartitionFormatted('sdb', 4, 'ext4')),
         findsOneWidget);
     expect(
-        find.html(tester.lang.writeChangesPartitionMounted('sdb', 5, '/mnt/5')),
+        find.al10n((l) => l.writeChangesPartitionMounted('sdb', 5, '/mnt/5')),
         findsOneWidget);
     expect(
-        find.html(tester.lang.writeChangesPartitionResized(
+        find.al10n((l) => l.writeChangesPartitionResized(
             'sdb', 6, filesize(123), filesize(66))),
         findsOneWidget);
-    expect(find.html(tester.lang.writeChangesPartitionCreated('sdb', 7)),
+    expect(find.al10n((l) => l.writeChangesPartitionCreated('sdb', 7)),
         findsOneWidget);
   });
 
@@ -164,7 +164,8 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final installButton = find.button(tester.lang.startInstallingButtonText);
+    final installButton =
+        find.button(find.al10n((l) => l.startInstallingButtonText));
     expect(installButton, findsOneWidget);
 
     await tester.tap(installButton);

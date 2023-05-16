@@ -5,14 +5,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/install/install_model.dart';
 import 'package:ubuntu_desktop_installer/pages/install/install_page.dart';
 import 'package:ubuntu_desktop_installer/pages/install/slide_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_icons/yaru_icons.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'install_page_test.mocks.dart';
@@ -147,10 +147,10 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
-    expect(find.text(tester.lang.copyingFiles), findsOneWidget);
-    expect(find.text(tester.lang.installingSystem), findsNothing);
-    expect(find.text(tester.lang.configuringSystem), findsNothing);
-    expect(find.text(tester.lang.installationFailed), findsNothing);
+    expect(find.al10n((l10n) => l10n.copyingFiles), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.installingSystem), findsNothing);
+    expect(find.al10n((l10n) => l10n.configuringSystem), findsNothing);
+    expect(find.al10n((l10n) => l10n.installationFailed), findsNothing);
 
     when(model.event)
         .thenReturn(InstallationEvent.fromString('installing system'));
@@ -160,10 +160,10 @@ void main() {
     ));
     await tester.pump();
 
-    expect(find.text(tester.lang.installingSystem), findsOneWidget);
-    expect(find.text(tester.lang.copyingFiles), findsNothing);
-    expect(find.text(tester.lang.configuringSystem), findsNothing);
-    expect(find.text(tester.lang.installationFailed), findsNothing);
+    expect(find.al10n((l10n) => l10n.installingSystem), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.copyingFiles), findsNothing);
+    expect(find.al10n((l10n) => l10n.configuringSystem), findsNothing);
+    expect(find.al10n((l10n) => l10n.installationFailed), findsNothing);
 
     when(model.event)
         .thenReturn(InstallationEvent.fromString('final system configuration'));
@@ -173,10 +173,10 @@ void main() {
     ));
     await tester.pump();
 
-    expect(find.text(tester.lang.configuringSystem), findsOneWidget);
-    expect(find.text(tester.lang.copyingFiles), findsNothing);
-    expect(find.text(tester.lang.installingSystem), findsNothing);
-    expect(find.text(tester.lang.installationFailed), findsNothing);
+    expect(find.al10n((l10n) => l10n.configuringSystem), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.copyingFiles), findsNothing);
+    expect(find.al10n((l10n) => l10n.installingSystem), findsNothing);
+    expect(find.al10n((l10n) => l10n.installationFailed), findsNothing);
 
     when(model.hasError).thenReturn(true);
     await tester.pumpWidget(Container(
@@ -185,17 +185,18 @@ void main() {
     ));
     await tester.pump();
 
-    expect(find.text(tester.lang.installationFailed), findsOneWidget);
-    expect(find.text(tester.lang.copyingFiles), findsNothing);
-    expect(find.text(tester.lang.installingSystem), findsNothing);
-    expect(find.text(tester.lang.configuringSystem), findsNothing);
+    expect(find.al10n((l10n) => l10n.installationFailed), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.copyingFiles), findsNothing);
+    expect(find.al10n((l10n) => l10n.installingSystem), findsNothing);
+    expect(find.al10n((l10n) => l10n.configuringSystem), findsNothing);
   });
 
   testWidgets('restart', (tester) async {
     final model = buildModel(isDone: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final restartButton = find.textContaining(tester.lang.restartButtonText);
+    final l10n = AppLocalizations.of(tester.element(find.byType(InstallPage)));
+    final restartButton = find.textContaining(l10n.restartButtonText);
     expect(restartButton, findsOneWidget);
 
     final windowClosed = YaruTestWindow.waitForClosed();
@@ -211,7 +212,8 @@ void main() {
     final model = buildModel(isDone: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final continueButton = find.button(tester.lang.continueTesting);
+    final continueButton =
+        find.button(find.al10n((l10n) => l10n.continueTesting));
     expect(continueButton, findsOneWidget);
 
     final windowClosed = YaruTestWindow.waitForClosed();

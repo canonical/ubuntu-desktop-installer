@@ -7,6 +7,7 @@ import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'timezone_page_test.mocks.dart';
@@ -52,8 +53,7 @@ void main() {
     when(model.init()).thenAnswer((_) async => '');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.save()).called(1);
   });
 
@@ -238,6 +238,6 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.previousLabel), isDisabled);
+    expect(find.button(find.previousLabel), isDisabled);
   });
 }

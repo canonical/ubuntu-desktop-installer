@@ -1,18 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = AlertDialog);
-
   testWidgets('select zfs', (tester) async {
     final model = MockInstallationTypeModel();
     when(model.existingOS).thenReturn(null);
@@ -31,15 +28,15 @@ void main() {
         tester.element(find.byType(InstallationTypePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(
-        find.radioButton<AdvancedFeature>(tester.lang.installationTypeZFS));
+    await tester.tap(find.radioButton<AdvancedFeature>(
+        find.al10n((l10n) => l10n.installationTypeZFS)));
     await tester.pump();
 
-    await tester
-        .tap(find.checkButton(tester.lang.installationTypeEncrypt('Ubuntu')));
+    await tester.tap(find.checkButton(
+        find.al10n((l10n) => l10n.installationTypeEncrypt('Ubuntu'))));
     await tester.pump();
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tap(find.button(find.al10n((l10n) => l10n.okButtonText)));
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.zfs).called(1);
@@ -69,10 +66,10 @@ void main() {
     await tester.pumpAndSettle();
 
     await tester.tap(find.radioButton<AdvancedFeature>(
-        tester.lang.installationTypeLVM('Ubuntu')));
+        find.al10n((l10n) => l10n.installationTypeLVM('Ubuntu'))));
     await tester.pump();
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tap(find.button(find.al10n((l10n) => l10n.okButtonText)));
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.lvm).called(1);
@@ -102,14 +99,14 @@ void main() {
     await tester.pumpAndSettle();
 
     await tester.tap(find.radioButton<AdvancedFeature>(
-        tester.lang.installationTypeLVM('Ubuntu')));
+        find.al10n((l10n) => l10n.installationTypeLVM('Ubuntu'))));
     await tester.pump();
 
-    await tester
-        .tap(find.checkButton(tester.lang.installationTypeEncrypt('Ubuntu')));
+    await tester.tap(find.checkButton(
+        find.al10n((l10n) => l10n.installationTypeEncrypt('Ubuntu'))));
     await tester.pump();
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tap(find.button(find.al10n((l10n) => l10n.okButtonText)));
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.lvm).called(1);

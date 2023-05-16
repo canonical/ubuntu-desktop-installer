@@ -6,20 +6,18 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_model.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_page.dart';
 import 'package:yaru/yaru.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'advanced_setup_page_test.mocks.dart';
 import 'test_utils.dart';
 
 @GenerateMocks([AdvancedSetupModel])
 void main() {
-  LangTester.type = AdvancedSetupPage;
-
   AdvancedSetupModel buildModel({
     bool? isValid,
     String? mountLocation,
@@ -85,8 +83,8 @@ void main() {
     final model = buildModel(enableHostGeneration: false);
     await tester.pumpWidget(buildApp(model));
 
-    final checkbox =
-        find.checkButton(tester.lang.advancedSetupHostGenerationTitle);
+    final checkbox = find.checkButton(
+        find.al10n((l10n) => l10n.advancedSetupHostGenerationTitle));
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.enableHostGeneration = true).called(1);
@@ -96,8 +94,8 @@ void main() {
     final model = buildModel(enableResolvConfGeneration: false);
     await tester.pumpWidget(buildApp(model));
 
-    final checkbox =
-        find.checkButton(tester.lang.advancedSetupResolvConfGenerationTitle);
+    final checkbox = find.checkButton(
+        find.al10n((l10n) => l10n.advancedSetupResolvConfGenerationTitle));
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.enableResolvConfGeneration = true).called(1);
@@ -107,7 +105,7 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(buildApp(model));
 
-    final setupButton = find.button(tester.lang.setupButton);
+    final setupButton = find.button(find.al10n((l10n) => l10n.setupButton));
     expect(setupButton, findsOneWidget);
     expect(setupButton, isEnabled);
   });
@@ -116,7 +114,7 @@ void main() {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(buildApp(model));
 
-    final setupButton = find.button(tester.lang.setupButton);
+    final setupButton = find.button(find.al10n((l10n) => l10n.setupButton));
     expect(setupButton, findsOneWidget);
     expect(setupButton, isDisabled);
   });
@@ -128,7 +126,7 @@ void main() {
     verify(model.loadAdvancedSetup()).called(1);
     verifyNever(model.saveAdvancedSetup());
 
-    final setupButton = find.button(tester.lang.setupButton);
+    final setupButton = find.button(find.al10n((l10n) => l10n.setupButton));
     expect(setupButton, findsOneWidget);
 
     await tester.tap(setupButton);

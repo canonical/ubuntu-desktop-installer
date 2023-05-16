@@ -7,6 +7,7 @@ import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dar
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'secure_boot_page_test.mocks.dart';
@@ -95,13 +96,13 @@ void main() {
     final model = buildModel(isFormValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isFormValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
   });
 }

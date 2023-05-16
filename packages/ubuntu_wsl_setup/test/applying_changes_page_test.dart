@@ -11,17 +11,15 @@ import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages.dart';
 import 'package:ubuntu_wsl_setup/pages/applying_changes/applying_changes_model.dart';
 import 'package:yaru/yaru.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'applying_changes_page_test.mocks.dart';
-import 'test_utils.dart';
 
 @GenerateMocks([ApplyingChangesModel])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
 
   const theEnd = 'The end';
-  LangTester.type = ApplyingChangesModel;
 
   Widget buildPage(ApplyingChangesModel model) {
     return ChangeNotifierProvider<ApplyingChangesModel>.value(

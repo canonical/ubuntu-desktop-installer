@@ -6,7 +6,7 @@ import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wsl_setup/main.dart' as app;
 import 'package:ubuntu_wsl_setup/routes.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'test_pages.dart';
 
@@ -35,9 +35,11 @@ void main() {
 
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyGoldenFile(
-      await getSubiquityStateFile('WSLLocale'),
-      'integration_test/goldens/basic-setup/WSLLocale',
+    final stateFile = await getSubiquityStateFile('WSLLocale');
+    await expectLater(stateFile, existsLater);
+    await expectLater(
+      stateFile,
+      matchesTextFile('integration_test/goldens/basic-setup/WSLLocale'),
     );
   });
 
@@ -61,9 +63,11 @@ void main() {
     await testConfigurationUIPage(tester);
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyGoldenFile(
-      await getSubiquityConfigFile('wsl.conf'),
-      'integration_test/goldens/advanced-setup/wsl.conf',
+    final configFile = await getSubiquityConfigFile('wsl.conf');
+    await expectLater(configFile, existsLater);
+    await expectLater(
+      configFile,
+      matchesTextFile('integration_test/goldens/advanced-setup/wsl.conf'),
     );
   });
 
@@ -88,9 +92,11 @@ void main() {
 
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyGoldenFile(
-      await getSubiquityConfigFile('wsl.conf'),
-      'integration_test/goldens/reconfiguration/wsl.conf',
+    final configFile = await getSubiquityConfigFile('wsl.conf');
+    await expectLater(configFile, existsLater);
+    await expectLater(
+      configFile,
+      matchesTextFile('integration_test/goldens/reconfiguration/wsl.conf'),
     );
   });
 }

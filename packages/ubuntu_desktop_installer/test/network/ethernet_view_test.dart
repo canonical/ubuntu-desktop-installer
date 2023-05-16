@@ -6,7 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_view.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -14,8 +14,6 @@ import 'ethernet_view_test.mocks.dart';
 
 @GenerateMocks([EthernetModel, EthernetDevice])
 void main() {
-  setUpAll(() => UbuntuTester.context = Column);
-
   testWidgets('select ethernet mode', (tester) async {
     ConnectMode? mode;
 
@@ -76,10 +74,10 @@ void main() {
 
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
 
-    expect(find.text(tester.lang.wiredDisabled), findsOneWidget);
-    expect(find.text(tester.lang.wiredMustBeEnabled), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.wiredDisabled), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.wiredMustBeEnabled), findsOneWidget);
 
-    final button = find.button(tester.lang.enableWired);
+    final button = find.button(find.al10n((l10n) => l10n.enableWired));
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(wasEnabled, isTrue);
@@ -114,6 +112,6 @@ void main() {
 
     expect(find.byType(OutlinedButton), findsNothing);
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
-    expect(find.text(tester.lang.noWiredConnection), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.noWiredConnection), findsOneWidget);
   });
 }

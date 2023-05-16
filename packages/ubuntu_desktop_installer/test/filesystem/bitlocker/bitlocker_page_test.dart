@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/bitlocker/bitlocker_pa
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
 import 'bitlocker_page_test.mocks.dart';
@@ -28,7 +28,7 @@ void main() {
       ),
     );
 
-    final restartButton = find.button(tester.lang.restartIntoWindows);
+    final restartButton = find.button(find.al10n((l) => l.restartIntoWindows));
     expect(restartButton, findsOneWidget);
 
     final windowClosed = YaruTestWindow.waitForClosed();
@@ -39,7 +39,7 @@ void main() {
 
     final dialogButton = find.descendant(
         of: find.byType(AlertDialog),
-        matching: find.text(tester.lang.restartButtonText));
+        matching: find.al10n((l) => l.restartButtonText));
 
     await tester.tap(dialogButton);
     await tester.pumpAndSettle();

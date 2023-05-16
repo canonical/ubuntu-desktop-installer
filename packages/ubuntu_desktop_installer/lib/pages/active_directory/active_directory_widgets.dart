@@ -31,7 +31,7 @@ class DomainNameFormField extends ConsumerWidget {
         (_) =>
             validation == null ||
             validation.singleOrNull == AdDomainNameValidation.OK,
-        errorText: validation?.firstOrNull?.localize(lang) ?? '',
+        errorText: validation?.firstOrNull?.localize(context) ?? '',
       ),
       onChanged: ref.read(activeDirectoryModelProvider).setDomainName,
       onEditingComplete:
@@ -60,7 +60,7 @@ class AdminNameFormField extends ConsumerWidget {
       successWidget: const SuccessIcon(),
       validator: CallbackValidator(
         (_) => validation == AdAdminNameValidation.OK,
-        errorText: validation?.localize(lang) ?? '',
+        errorText: validation?.localize(context) ?? '',
       ),
       onChanged: ref.read(activeDirectoryModelProvider).setAdminName,
     );
@@ -87,7 +87,7 @@ class PasswordFormField extends ConsumerWidget {
       initialValue: password,
       validator: CallbackValidator(
         (_) => validation == AdPasswordValidation.OK,
-        errorText: validation?.localize(lang) ?? '',
+        errorText: validation?.localize(context) ?? '',
       ),
       onChanged: ref.read(activeDirectoryModelProvider).setPassword,
     );

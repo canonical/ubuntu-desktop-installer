@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'identity_page_test.mocks.dart';
@@ -201,14 +202,14 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
   });
 
   testWidgets('auto-login', (tester) async {
@@ -216,7 +217,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final requiredPasswordSwitch = find.switchButton(
-      tester.lang.whoAreYouPageRequirePassword,
+      find.al10n((l10n) => l10n.whoAreYouPageRequirePassword),
     );
     expect(requiredPasswordSwitch, findsOneWidget);
     expect(requiredPasswordSwitch, isNotChecked);
@@ -230,7 +231,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final showPasswordButton =
-        find.button(tester.lang.whoAreYouPagePasswordShow);
+        find.button(find.al10n((l10n) => l10n.whoAreYouPagePasswordShow));
     expect(showPasswordButton, findsOneWidget);
 
     await tester.tap(showPasswordButton);
@@ -242,7 +243,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final hidePasswordButton =
-        find.button(tester.lang.whoAreYouPagePasswordHide);
+        find.button(find.al10n((l10n) => l10n.whoAreYouPagePasswordHide));
     expect(hidePasswordButton, findsOneWidget);
 
     await tester.tap(hidePasswordButton);
@@ -253,10 +254,7 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.save()).called(1);
   });
 
@@ -265,7 +263,8 @@ void main() {
         buildModel(isConnected: true, hasActiveDirectorySupport: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
+    final checkbox =
+        find.checkButton(find.al10n((l10n) => l10n.activeDirectoryOption));
     expect(checkbox, findsOneWidget);
     expect(checkbox, isNotChecked);
     expect(checkbox, isEnabled);
@@ -279,7 +278,8 @@ void main() {
         buildModel(isConnected: true, hasActiveDirectorySupport: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
+    final checkbox =
+        find.checkButton(find.al10n((l10n) => l10n.activeDirectoryOption));
     expect(checkbox, findsNothing);
   });
 
@@ -288,7 +288,8 @@ void main() {
         buildModel(isConnected: false, hasActiveDirectorySupport: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
+    final checkbox =
+        find.checkButton(find.al10n((l10n) => l10n.activeDirectoryOption));
     expect(checkbox, findsOneWidget);
     expect(checkbox, isNotChecked);
     expect(checkbox, isDisabled);

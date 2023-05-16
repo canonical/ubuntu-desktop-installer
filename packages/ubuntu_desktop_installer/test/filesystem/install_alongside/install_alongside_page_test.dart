@@ -80,7 +80,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text('sda1 - Ubuntu 22.04 LTS - 123 ${tester.lang.partitionUnitB}'),
+      find.al10n((l) => 'sda1 - Ubuntu 22.04 LTS - 123 ${l.partitionUnitB}'),
       findsOneWidget,
     );
   });
@@ -140,7 +140,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.html(tester.lang.installAlongsideHiddenPartitions(4, '')),
+      find.al10n((l) => l.installAlongsideHiddenPartitions(4, '')),
       findsOneWidget,
     );
   });
@@ -153,7 +153,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text(tester.lang.installationTypeAlongsideUnknown('Ubuntu 22.10')),
+      find.al10n((l) => l.installationTypeAlongsideUnknown('Ubuntu 22.10')),
       findsOneWidget,
     );
   });
@@ -166,8 +166,8 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text(
-          tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 10')),
+      find.al10n(
+          (l) => l.installationTypeAlongside('Ubuntu 22.10', 'Windows 10')),
       findsOneWidget,
     );
   });
@@ -180,7 +180,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text(tester.lang.installationTypeAlongsideDual(
+      find.al10n((l) => l.installationTypeAlongsideDual(
           'Ubuntu 22.10', 'Ubuntu 21.10', 'Ubuntu 22.04 LTS')),
       findsOneWidget,
     );
@@ -194,7 +194,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text(tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10')),
+      find.al10n((l) => l.installationTypeAlongsideMulti('Ubuntu 22.10')),
       findsOneWidget,
     );
   });

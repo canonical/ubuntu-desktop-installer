@@ -6,6 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
 import 'security_key_page_test.mocks.dart';
@@ -59,21 +60,22 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
   });
 
   testWidgets('show security key', (tester) async {
     final model = buildModel(showSecurityKey: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final showSecurityKeyButton = find.checkButton(tester.lang.showSecurityKey);
+    final showSecurityKeyButton =
+        find.checkButton(find.al10n((l10n) => l10n.showSecurityKey));
     expect(showSecurityKeyButton, findsOneWidget);
 
     await tester.tap(showSecurityKeyButton);
@@ -84,10 +86,7 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.saveSecurityKey()).called(1);
   });
 }

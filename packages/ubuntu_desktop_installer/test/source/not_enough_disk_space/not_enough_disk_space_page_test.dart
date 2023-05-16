@@ -6,8 +6,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/source/not_enough_disk_space/not_enough_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/not_enough_disk_space/not_enough_disk_space_page.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
 import 'not_enough_disk_space_page_test.mocks.dart';
@@ -41,7 +40,7 @@ void main() {
     final model = buildModel(installMinimumSize: 123456);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.text(tester.lang.notEnoughDiskSpaceUbuntu('Ubuntu')),
+    expect(find.al10n((l10n) => l10n.notEnoughDiskSpaceUbuntu('Ubuntu')),
         findsOneWidget);
     expect(find.text(filesize(123456)), findsOneWidget);
   });
@@ -53,7 +52,7 @@ void main() {
         installMinimumSize: 654321);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.text(tester.lang.notEnoughDiskSpaceUbuntu('Ubuntu')),
+    expect(find.al10n((l10n) => l10n.notEnoughDiskSpaceUbuntu('Ubuntu')),
         findsOneWidget);
     expect(find.text(filesize(123456)), findsOneWidget);
     expect(find.text(filesize(654321)), findsOneWidget);
@@ -66,7 +65,7 @@ void main() {
         installMinimumSize: 654321);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.text(tester.lang.notEnoughDiskSpaceUbuntu('Ubuntu')),
+    expect(find.al10n((l10n) => l10n.notEnoughDiskSpaceUbuntu('Ubuntu')),
         findsOneWidget);
     expect(find.text(filesize(123456)), findsOneWidget);
     expect(find.text(filesize(654321)), findsOneWidget);
@@ -76,7 +75,7 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final button = find.button(tester.lang.quitButtonText);
+    final button = find.button(find.al10n((l10n) => l10n.quitButtonText));
     expect(button, findsOneWidget);
 
     final windowClosed = YaruTestWindow.waitForClosed();

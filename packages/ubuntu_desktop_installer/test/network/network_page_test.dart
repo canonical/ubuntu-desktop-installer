@@ -17,6 +17,7 @@ import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -136,7 +137,7 @@ void main() {
         tester.buildApp((_) => buildPage(model: model, ethernet: false)));
     await tester.pumpAndSettle();
 
-    final button = find.button(tester.lang.enableWired);
+    final button = find.button(find.al10n((l10n) => l10n.enableWired));
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(model.connectMode, ConnectMode.ethernet);
@@ -148,7 +149,7 @@ void main() {
         tester.buildApp((_) => buildPage(model: model, wifi: false)));
     await tester.pumpAndSettle();
 
-    final button = find.button(tester.lang.enableWifi);
+    final button = find.button(find.al10n((l10n) => l10n.enableWifi));
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(model.connectMode, ConnectMode.wifi);
@@ -181,9 +182,7 @@ void main() {
     verify(model.init()).called(1);
     verifyNever(model.cleanup());
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    await tester.tap(nextButton);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     verifyNever(model.init());
@@ -246,9 +245,7 @@ void main() {
     verify(model.init()).called(1);
     verifyNever(model.cleanup());
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    await tester.tap(nextButton);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     verify(model.markConfigured()).called(1);

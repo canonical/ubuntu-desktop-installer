@@ -12,6 +12,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../test_utils.dart';
@@ -19,8 +20,6 @@ import 'allocate_disk_space_page_test.dart';
 import 'allocate_disk_space_page_test.mocks.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = AlertDialog);
-
   testWidgets('create partition', (tester) async {
     final disk = fakeDisk();
     const gap = Gap(offset: 0, size: 1000000, usable: GapUsable.YES);
@@ -57,7 +56,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tapOk();
     await result;
 
     verify(model.addPartition(
@@ -90,7 +89,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst foo');
     await tester.pump();
 
-    expect(find.button(tester.lang.okButtonText), isDisabled);
+    expect(find.button(find.al10n((l) => l.okButtonText)), isDisabled);
   });
 
   testWidgets('edit partition', (tester) async {
@@ -149,7 +148,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tapOk();
     await result;
 
     verify(model.editPartition(
@@ -200,6 +199,6 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), 'tst');
     await tester.pump();
 
-    expect(find.button(tester.lang.okButtonText), isDisabled);
+    expect(find.button(find.al10n((l) => l.okButtonText)), isDisabled);
   });
 }

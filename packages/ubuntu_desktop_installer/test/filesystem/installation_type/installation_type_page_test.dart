@@ -8,6 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/inst
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';
@@ -51,7 +52,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(buildModel())));
 
     expect(
-      find.text(tester.lang.installationTypeNoOSDetected),
+      find.al10n((l10n) => l10n.installationTypeNoOSDetected),
       findsOneWidget,
     );
   });
@@ -63,7 +64,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text(tester.lang.installationTypeOSDetected('Ubuntu 18.04 LTS')),
+      find.al10n((l10n) => l10n.installationTypeOSDetected('Ubuntu 18.04 LTS')),
       findsOneWidget,
     );
   });
@@ -76,7 +77,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text(tester.lang.installationTypeDualOSDetected(
+      find.al10n((l10n) => l10n.installationTypeDualOSDetected(
           'Ubuntu 18.04 LTS', 'Ubuntu 20.04 LTS')),
       findsOneWidget,
     );
@@ -91,7 +92,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text(tester.lang.installationTypeMultiOSDetected),
+      find.al10n((l10n) => l10n.installationTypeMultiOSDetected),
       findsOneWidget,
     );
   });
@@ -104,7 +105,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text(tester.lang.installationTypeMultiOSDetected),
+      find.al10n((l10n) => l10n.installationTypeMultiOSDetected),
       findsOneWidget,
     );
   });
@@ -120,8 +121,8 @@ void main() {
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.radioButton<InstallationType>(
-        tester.lang.installationTypeReinstall('Ubuntu 18.04 LTS'));
+    final radio = find.radioButton<InstallationType>(find
+        .al10n((l10n) => l10n.installationTypeReinstall('Ubuntu 18.04 LTS')));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.reinstall).called(1);
@@ -142,8 +143,8 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.radioButton<InstallationType>(
-        tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 10'));
+    final radio = find.radioButton<InstallationType>(find.al10n((l10n) =>
+        l10n.installationTypeAlongside('Ubuntu 22.10', 'Windows 10')));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.alongside).called(1);
@@ -165,8 +166,8 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.radioButton<InstallationType>(
-        tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 11'));
+    final radio = find.radioButton<InstallationType>(find.al10n((l10n) =>
+        l10n.installationTypeAlongside('Ubuntu 22.10', 'Windows 11')));
     expect(radio, findsOneWidget);
 
     await tester.tap(radio);
@@ -188,8 +189,8 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.radioButton<InstallationType>(tester.lang
-        .installationTypeAlongside('Ubuntu 22.10', 'Ubuntu 18.04 LTS'));
+    final radio = find.radioButton<InstallationType>(find.al10n((l10n) =>
+        l10n.installationTypeAlongside('Ubuntu 22.10', 'Ubuntu 18.04 LTS')));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.alongside).called(1);
@@ -202,8 +203,8 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.radioButton<InstallationType>(
-        tester.lang.installationTypeAlongsideUnknown('Ubuntu 22.10'));
+    final radio = find.radioButton<InstallationType>(find.al10n(
+        (l10n) => l10n.installationTypeAlongsideUnknown('Ubuntu 22.10')));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.alongside).called(1);
@@ -230,9 +231,9 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.radioButton<InstallationType>(tester.lang
-        .installationTypeAlongsideDual(
-            'Ubuntu 22.10', 'Windows 10', 'Ubuntu 20.04 LTS'));
+    final radio = find.radioButton<InstallationType>(find.al10n((l10n) =>
+        l10n.installationTypeAlongsideDual(
+            'Ubuntu 22.10', 'Windows 10', 'Ubuntu 20.04 LTS')));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.alongside).called(1);
@@ -259,8 +260,8 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.radioButton<InstallationType>(
-        tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
+    final radio = find.radioButton<InstallationType>(find
+        .al10n((l10n) => l10n.installationTypeAlongsideMulti('Ubuntu 22.10')));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.alongside).called(1);
@@ -293,8 +294,8 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.radioButton<InstallationType>(
-        tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
+    final radio = find.radioButton<InstallationType>(find
+        .al10n((l10n) => l10n.installationTypeAlongsideMulti('Ubuntu 22.10')));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.alongside).called(1);
@@ -305,7 +306,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.radioButton<InstallationType>(
-        tester.lang.installationTypeErase('Ubuntu'));
+        find.al10n((l10n) => l10n.installationTypeErase('Ubuntu')));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.erase).called(1);
@@ -315,13 +316,15 @@ void main() {
     final model = buildModel(installationType: InstallationType.manual);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio =
-        find.radioButton<InstallationType>(tester.lang.installationTypeManual);
+    final radio = find.radioButton<InstallationType>(
+        find.al10n((l10n) => l10n.installationTypeManual));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.installationType = InstallationType.manual).called(1);
 
-    expect(find.button(tester.lang.installationTypeAdvancedLabel), isDisabled);
+    expect(
+        find.button(find.al10n((l10n) => l10n.installationTypeAdvancedLabel)),
+        isDisabled);
   });
 
   group('advanced features', () {
@@ -329,7 +332,8 @@ void main() {
       final model = buildModel();
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-      final button = find.button(tester.lang.installationTypeAdvancedLabel);
+      final button =
+          find.button(find.al10n((l10n) => l10n.installationTypeAdvancedLabel));
       expect(button, findsOneWidget);
       await tester.tap(button);
       await tester.pumpAndSettle();
@@ -341,16 +345,16 @@ void main() {
       final model = buildModel(advancedFeature: AdvancedFeature.none);
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-      expect(
-          find.text(tester.lang.installationTypeNoneSelected), findsOneWidget);
+      expect(find.al10n((l10n) => l10n.installationTypeNoneSelected),
+          findsOneWidget);
     });
 
     testWidgets('lvm selected', (tester) async {
       final model = buildModel(advancedFeature: AdvancedFeature.lvm);
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-      expect(
-          find.text(tester.lang.installationTypeLVMSelected), findsOneWidget);
+      expect(find.al10n((l10n) => l10n.installationTypeLVMSelected),
+          findsOneWidget);
     });
 
     testWidgets('encrypted lvm selected', (tester) async {
@@ -358,7 +362,7 @@ void main() {
           buildModel(advancedFeature: AdvancedFeature.lvm, encryption: true);
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-      expect(find.text(tester.lang.installationTypeLVMEncryptionSelected),
+      expect(find.al10n((l10n) => l10n.installationTypeLVMEncryptionSelected),
           findsOneWidget);
     });
   });
@@ -367,7 +371,7 @@ void main() {
     final model = buildModel(hasStorage: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
+    final nextButton = find.button(find.nextLabel);
     expect(nextButton, findsOneWidget);
     expect(nextButton, isDisabled);
 
@@ -379,10 +383,7 @@ void main() {
     final model = buildModel(hasStorage: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.save()).called(1);
   });
 }

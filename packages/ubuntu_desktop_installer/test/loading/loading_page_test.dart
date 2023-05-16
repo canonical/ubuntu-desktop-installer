@@ -6,6 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/loading/loading_model.dart';
 import 'package:ubuntu_desktop_installer/pages/loading/loading_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'loading_page_test.mocks.dart';
@@ -41,7 +42,7 @@ void main() {
     final model = MockLoadingModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.previousLabel), isDisabled);
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.previousLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
   });
 }

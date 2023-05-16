@@ -9,7 +9,7 @@ import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test/test_utils.dart';
 
@@ -91,7 +91,7 @@ Future<void> testKeyboardPage(
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
 
-    await tester.tapButton(tester.lang.detectButtonText);
+    await tester.tapButton(find.al10n((l) => l.detectButtonText));
     await tester.pumpAndSettle();
 
     await takeScreenshot(tester, '$screenshot-detect');
@@ -112,7 +112,7 @@ Future<void> testNetworkPage(
       tester, NetworkPage, (lang) => lang.connectToInternetPageTitle);
 
   if (mode != null) {
-    await tester.tapRadioButton<ConnectMode>(mode);
+    await tester.tapRadio<ConnectMode>(mode);
   }
   await tester.pumpAndSettle();
 
@@ -132,7 +132,7 @@ Future<void> testSourcePage(
       tester, SourcePage, (lang) => lang.updatesOtherSoftwarePageTitle);
 
   if (sourceId != null) {
-    await tester.tapRadioButton<String>(sourceId);
+    await tester.tapRadio<String>(sourceId);
   }
   await tester.pumpAndSettle();
 
@@ -155,7 +155,7 @@ Future<void> testNotEnoughDiskSpacePage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.quitButtonText);
+  await tester.tapButton(find.al10n((l) => l.quitButtonText));
   await expectLater(windowClosed, completes);
 }
 
@@ -170,20 +170,20 @@ Future<void> testInstallationTypePage(
       tester, InstallationTypePage, (lang) => lang.installationTypeTitle);
 
   if (type != null) {
-    await tester.tapRadioButton<InstallationType>(type);
+    await tester.tapRadio<InstallationType>(type);
     await tester.pump();
   }
   if (advancedFeature != null) {
-    await tester.tapButton(tester.lang.installationTypeAdvancedLabel);
+    await tester.tapButton(find.al10n((l) => l.installationTypeAdvancedLabel));
     await tester.pumpAndSettle();
 
-    await tester.tapRadioButton<AdvancedFeature>(advancedFeature);
+    await tester.tapRadio<AdvancedFeature>(advancedFeature);
     await tester.pump();
 
     if (useEncryption != null) {
-      await tester.toggleCheckbox(
-        label: tester.lang.installationTypeEncrypt('Ubuntu'),
-        value: true,
+      await tester.toggleButton(
+        find.al10n((l) => l.installationTypeEncrypt('Ubuntu')),
+        true,
       );
     }
 
@@ -193,7 +193,7 @@ Future<void> testInstallationTypePage(
       await takeScreenshot(tester, screenshot);
     }
 
-    await tester.tapButton(tester.lang.okButtonText);
+    await tester.tapOk();
   }
 
   await tester.pumpAndSettle();
@@ -214,11 +214,11 @@ Future<void> testSecurityKeyPage(
       tester, SecurityKeyPage, (lang) => lang.chooseSecurityKeyTitle);
 
   await tester.enterText(
-    find.textField(tester.lang.chooseSecurityKey),
+    find.textField(find.al10n((l) => l.chooseSecurityKey)),
     securityKey,
   );
   await tester.enterText(
-    find.textField(tester.lang.confirmSecurityKey),
+    find.textField(find.al10n((l) => l.confirmSecurityKey)),
     securityKey,
   );
 
@@ -239,13 +239,13 @@ Future<void> testAllocateDiskSpacePage(
   await expectPage(
       tester, AllocateDiskSpacePage, (lang) => lang.allocateDiskSpace);
 
-  await tester.tapButton(tester.lang.newPartitionTable);
+  await tester.tapButton(find.al10n((l) => l.newPartitionTable));
   await tester.pumpAndSettle();
 
   for (final disk in storage ?? const <Disk>[]) {
     for (final partition in disk.partitions.whereType<Partition>()) {
       // TODO: find the correct "free space" slot when there are multiple disks
-      await tester.tap(find.text(tester.lang.freeDiskSpace).last);
+      await tester.tap(find.al10n((l) => l.freeDiskSpace).last);
       await tester.pump();
 
       await tester.tap(find.byIcon(Icons.add));
@@ -272,7 +272,7 @@ Future<void> testAllocateDiskSpacePage(
         await takeScreenshot(tester, '$screenshot-${partition.sysname}');
       }
 
-      await tester.tapButton(tester.lang.okButtonText);
+      await tester.tapOk();
       await tester.pumpAndSettle();
     }
     await tester.pumpAndSettle();
@@ -322,7 +322,7 @@ Future<void> testInstallAlongsidePage(
       await takeScreenshot(tester, '$screenshot-${entry.key.split(' ').first}');
     }
 
-    await tester.tapButton(tester.lang.okButtonText);
+    await tester.tapOk();
     await tester.pumpAndSettle();
   }
 
@@ -343,7 +343,7 @@ Future<void> testConfirmPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.startInstallingButtonText);
+  await tester.tapButton(find.al10n((l) => l.startInstallingButtonText));
 }
 
 Future<void> testBitLockerPage(
@@ -356,7 +356,7 @@ Future<void> testBitLockerPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.restartIntoWindows);
+  await tester.tapButton(find.al10n((l) => l.restartIntoWindows));
   await tester.pumpAndSettle();
   expect(find.byType(AlertDialog), findsOneWidget);
 
@@ -365,7 +365,7 @@ Future<void> testBitLockerPage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.restartButtonText);
+  await tester.tapButton(find.al10n((l) => l.restartButtonText));
   await expectLater(windowClosed, completes);
 }
 
@@ -379,7 +379,7 @@ Future<void> testRstPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.restartIntoWindows);
+  await tester.tapButton(find.al10n((l) => l.restartIntoWindows));
   await tester.pumpAndSettle();
   expect(find.byType(AlertDialog), findsOneWidget);
 
@@ -388,7 +388,7 @@ Future<void> testRstPage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.restartButtonText);
+  await tester.tapButton(find.al10n((l) => l.restartButtonText));
   await expectLater(windowClosed, completes);
 }
 
@@ -404,7 +404,7 @@ Future<void> testTimezonePage(
 
   if (location != null) {
     await tester.enterText(
-      find.textField(tester.lang.whereAreYouLocationLabel),
+      find.textField(find.al10n((l) => l.whereAreYouLocationLabel)),
       location,
     );
     await tester.pump();
@@ -414,7 +414,7 @@ Future<void> testTimezonePage(
 
   if (timezone != null) {
     await tester.enterText(
-      find.textField(tester.lang.whereAreYouTimezoneLabel),
+      find.textField(find.al10n((l) => l.whereAreYouTimezoneLabel)),
       timezone,
     );
     await tester.pump();
@@ -441,29 +441,29 @@ Future<void> testIdentityPage(
 
   if (identity?.realname != null) {
     await tester.enterText(
-      find.textField(tester.lang.whoAreYouPageRealNameLabel),
+      find.textField(find.al10n((l) => l.whoAreYouPageRealNameLabel)),
       identity!.realname,
     );
   }
   if (identity?.hostname != null) {
     await tester.enterText(
-      find.textField(tester.lang.whoAreYouPageComputerNameLabel),
+      find.textField(find.al10n((l) => l.whoAreYouPageComputerNameLabel)),
       identity!.hostname,
     );
   }
   if (identity?.username != null) {
     await tester.enterText(
-      find.textField(tester.lang.whoAreYouPageUsernameLabel),
+      find.textField(find.al10n((l) => l.whoAreYouPageUsernameLabel)),
       identity!.username,
     );
   }
   if (password != null) {
     await tester.enterText(
-      find.textField(tester.lang.whoAreYouPagePasswordLabel),
+      find.textField(find.al10n((l) => l.whoAreYouPagePasswordLabel)),
       password,
     );
     await tester.enterText(
-      find.textField(tester.lang.whoAreYouPageConfirmPasswordLabel),
+      find.textField(find.al10n((l) => l.whoAreYouPageConfirmPasswordLabel)),
       password,
     );
   }
@@ -488,19 +488,19 @@ Future<void> testActiveDirectoryPage(
 
   if (domainName != null) {
     await tester.enterText(
-      find.textField(tester.lang.activeDirectoryDomainLabel),
+      find.textField(find.al10n((l) => l.activeDirectoryDomainLabel)),
       domainName,
     );
   }
   if (adminName != null) {
     await tester.enterText(
-      find.textField(tester.lang.activeDirectoryAdminLabel),
+      find.textField(find.al10n((l) => l.activeDirectoryAdminLabel)),
       adminName,
     );
   }
   if (password != null) {
     await tester.enterText(
-      find.textField(tester.lang.activeDirectoryPasswordLabel),
+      find.textField(find.al10n((l) => l.activeDirectoryPasswordLabel)),
       password,
     );
   }
@@ -545,10 +545,10 @@ Future<void> testInstallPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.pumpUntil(find.button(tester.lang.continueTesting));
+  await tester.pumpUntil(find.button(find.al10n((l) => l.continueTesting)));
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.continueTesting);
+  await tester.tapButton(find.al10n((l) => l.continueTesting));
   await expectLater(windowClosed, completes);
 }
 
@@ -559,7 +559,8 @@ Future<void> expectPage(
 ) async {
   await tester.pumpUntil(find.byType(page));
   expect(find.byType(page), findsOneWidget);
-  expect(find.widgetWithText(AppBar, title(tester.lang)), findsOneWidget);
+  expect(find.ancestor(of: find.al10n(title), matching: find.byType(AppBar)),
+      findsOneWidget);
 }
 
 Future<void> takeScreenshot(WidgetTester tester, String screenshot) async {

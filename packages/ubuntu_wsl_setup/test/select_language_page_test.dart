@@ -14,14 +14,12 @@ import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dar
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_page.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 import 'package:yaru/yaru.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'select_language_page_test.mocks.dart';
-import 'test_utils.dart';
 
 @GenerateMocks([SelectLanguageModel])
 void main() {
-  LangTester.type = SelectLanguagePage;
-
   SelectLanguageModel buildModel() {
     final model = MockSelectLanguageModel();
     when(model.languageCount).thenReturn(3);
@@ -90,10 +88,7 @@ void main() {
     verifyNever(model.getServerLocale());
     verify(model.selectLocale(const Locale('fr_FR'))).called(1);
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.applyLocale(const Locale('fr_FR'))).called(1);
   });
 

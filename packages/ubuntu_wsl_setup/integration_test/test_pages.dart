@@ -6,7 +6,7 @@ import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages.dart';
 import 'package:ubuntu_wsl_setup/splash_screen.dart';
 import 'package:ubuntu_wsl_setup/wizard.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test/test_utils.dart';
 
@@ -51,9 +51,9 @@ Future<void> testSelectYourLanguagePage(
   await tester.pumpAndSettle();
 
   // For now toggling this check box won't cause any noticeable behavior change in dry-run.
-  await tester.toggleCheckbox(
-    label: tester.lang.installLangPacksTitle(language ?? ''),
-    value: false,
+  await tester.toggleButton(
+    find.al10n((l10n) => l10n.installLangPacksTitle(language ?? '')),
+    false,
   );
 
   await tester.tapNext();
@@ -70,32 +70,35 @@ Future<void> testProfileSetupPage(
 
   if (profile?.realname != null) {
     await tester.enterText(
-      find.textField(tester.lang.profileSetupRealnameLabel),
+      find.textField(find.al10n((l10n) => l10n.profileSetupRealnameLabel)),
       profile!.realname,
     );
   }
   if (profile?.username != null) {
     await tester.enterText(
-      find.textField(tester.lang.profileSetupUsernameHint),
+      find.textField(find.al10n((l10n) => l10n.profileSetupUsernameHint)),
       profile!.username,
     );
   }
   if (password != null) {
     await tester.enterText(
-      find.textField(tester.lang.profileSetupPasswordHint),
+      find.textField(find.al10n((l10n) => l10n.profileSetupPasswordHint)),
       password,
     );
   }
   if (confirmedPassword != null) {
     await tester.enterText(
-      find.textField(tester.lang.profileSetupConfirmPasswordHint),
+      find.textField(
+          find.al10n((l10n) => l10n.profileSetupConfirmPasswordHint)),
       confirmedPassword,
     );
   }
-  await tester.toggleCheckbox(
-    label: tester.lang.profileSetupShowAdvancedOptions,
-    value: showAdvancedOptions,
-  );
+  if (showAdvancedOptions != null) {
+    await tester.toggleButton(
+      find.al10n((l10n) => l10n.profileSetupShowAdvancedOptions),
+      showAdvancedOptions,
+    );
+  }
   await tester.pumpAndSettle();
 
   await tester.tapNext();
@@ -109,27 +112,31 @@ Future<void> testAdvancedSetupPage(
 
   if (config?.automountRoot != null) {
     await tester.enterText(
-      find.textField(tester.lang.advancedSetupMountLocationHint),
+      find.textField(find.al10n((l10n) => l10n.advancedSetupMountLocationHint)),
       config!.automountRoot,
     );
   }
   if (config?.automountOptions != null) {
     await tester.enterText(
-      find.textField(tester.lang.advancedSetupMountOptionHint),
+      find.textField(find.al10n((l10n) => l10n.advancedSetupMountOptionHint)),
       config!.automountOptions,
     );
   }
-  await tester.toggleCheckbox(
-    label: tester.lang.advancedSetupHostGenerationTitle,
-    value: config?.networkGeneratehosts,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.advancedSetupResolvConfGenerationTitle,
-    value: config?.networkGenerateresolvconf,
-  );
+  if (config?.networkGeneratehosts != null) {
+    await tester.toggleButton(
+      find.al10n((l10n) => l10n.advancedSetupHostGenerationTitle),
+      config!.networkGeneratehosts,
+    );
+  }
+  if (config?.networkGenerateresolvconf != null) {
+    await tester.toggleButton(
+      find.al10n((l10n) => l10n.advancedSetupResolvConfGenerationTitle),
+      config!.networkGenerateresolvconf,
+    );
+  }
   await tester.pumpAndSettle();
 
-  await tester.tapButton(tester.lang.setupButton);
+  await tester.tapButton(find.al10n((l10n) => l10n.setupButton));
 }
 
 Future<void> testApplyingChangesPage(
@@ -152,25 +159,34 @@ Future<void> testConfigurationUIPage(
 }) async {
   expectPage(tester, ConfigurationUIPage, (lang) => lang.configurationUITitle);
 
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIAutoMountSubtitle,
-    value: config?.automountEnabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIMountFstabSubtitle,
-    value: config?.automountMountfstab,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIInteroperabilitySubtitle,
-    value: config?.interopEnabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIInteropAppendWindowsPathSubtitle,
-    value: config?.interopAppendwindowspath,
-  );
+  if (config?.automountEnabled != null) {
+    await tester.toggleButton(
+      find.al10n((l10n) => l10n.configurationUIAutoMountSubtitle),
+      config!.automountEnabled,
+    );
+  }
+  if (config?.automountMountfstab != null) {
+    await tester.toggleButton(
+      find.al10n((l10n) => l10n.configurationUIMountFstabSubtitle),
+      config!.automountMountfstab,
+    );
+  }
+  if (config?.interopEnabled != null) {
+    await tester.toggleButton(
+      find.al10n((l10n) => l10n.configurationUIInteroperabilitySubtitle),
+      config!.interopEnabled,
+    );
+  }
+  if (config?.interopAppendwindowspath != null) {
+    await tester.toggleButton(
+      find.al10n(
+          (l10n) => l10n.configurationUIInteropAppendWindowsPathSubtitle),
+      config!.interopAppendwindowspath,
+    );
+  }
   await tester.pumpAndSettle();
 
-  await tester.tapButton(tester.lang.saveButton);
+  await tester.tapButton(find.al10n((l10n) => l10n.saveButton));
 }
 
 void expectPage(
@@ -178,8 +194,9 @@ void expectPage(
   Type page,
   String Function(AppLocalizations lang) title,
 ) {
-  LangTester.type = page;
   // Prevent `Guarded function conflict` on tests.
   expectSync(find.byType(page), findsOneWidget);
-  expectSync(find.widgetWithText(AppBar, title(tester.lang)), findsWidgets);
+  expectSync(
+      find.descendant(of: find.byType(AppBar), matching: find.al10n(title)),
+      findsWidgets);
 }

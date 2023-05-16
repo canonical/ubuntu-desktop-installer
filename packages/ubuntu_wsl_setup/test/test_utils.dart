@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
-
-export 'package:ubuntu_test/ubuntu_test.dart' show UbuntuLangTester;
 
 /// An extension on [WidgetTester] that exposes a [lang] property.
 ///
@@ -25,11 +24,6 @@ export 'package:ubuntu_test/ubuntu_test.dart' show UbuntuLangTester;
 ///   });
 /// }
 /// ```
-extension LangTester on WidgetTester {
-  static late Type type;
-
-  AppLocalizations get lang {
-    final view = element(find.byType(type));
-    return AppLocalizations.of(view);
-  }
+extension AppLocalizationsFinders on CommonFinders {
+  Finder al10n(L10nFinder<AppLocalizations> f) => l10n<AppLocalizations>(f);
 }

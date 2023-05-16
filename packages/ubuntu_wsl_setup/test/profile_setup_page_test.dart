@@ -14,14 +14,12 @@ import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_model.dart';
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_page.dart';
 import 'package:yaru/yaru.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'profile_setup_page_test.mocks.dart';
-import 'test_utils.dart';
 
 @GenerateMocks([ProfileSetupModel, UrlLauncher])
 void main() {
-  LangTester.type = ProfileSetupPage;
-
   ProfileSetupModel buildModel({
     bool? isValid,
     String? realname,
@@ -115,10 +113,10 @@ void main() {
     final model = buildModel(password: '');
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.ulang.weakPassword), findsNothing);
-    expect(find.text(tester.ulang.fairPassword), findsNothing);
-    expect(find.text(tester.ulang.goodPassword), findsNothing);
-    expect(find.text(tester.ulang.strongPassword), findsNothing);
+    expect(find.ul10n((l10n) => l10n.weakPassword), findsNothing);
+    expect(find.ul10n((l10n) => l10n.fairPassword), findsNothing);
+    expect(find.ul10n((l10n) => l10n.goodPassword), findsNothing);
+    expect(find.ul10n((l10n) => l10n.strongPassword), findsNothing);
   });
 
   testWidgets('weak password', (tester) async {
@@ -128,7 +126,7 @@ void main() {
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.ulang.weakPassword), findsOneWidget);
+    expect(find.ul10n((l10n) => l10n.weakPassword), findsOneWidget);
   });
 
   testWidgets('fair password', (tester) async {
@@ -138,7 +136,7 @@ void main() {
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.ulang.fairPassword), findsOneWidget);
+    expect(find.ul10n((l10n) => l10n.fairPassword), findsOneWidget);
   });
 
   testWidgets('good password', (tester) async {
@@ -148,7 +146,7 @@ void main() {
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.ulang.goodPassword), findsOneWidget);
+    expect(find.ul10n((l10n) => l10n.goodPassword), findsOneWidget);
   });
 
   testWidgets('strong password', (tester) async {
@@ -158,14 +156,14 @@ void main() {
     );
     await tester.pumpWidget(buildApp(tester, model));
 
-    expect(find.text(tester.ulang.strongPassword), findsOneWidget);
+    expect(find.ul10n((l10n) => l10n.strongPassword), findsOneWidget);
   });
 
   testWidgets('valid input', (tester) async {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
+    final nextButton = find.button(find.nextLabel);
     expect(nextButton, findsOneWidget);
     expect(nextButton, isEnabled);
   });
@@ -174,7 +172,7 @@ void main() {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
+    final nextButton = find.button(find.nextLabel);
     expect(nextButton, findsOneWidget);
     expect(nextButton, isDisabled);
   });
@@ -205,10 +203,7 @@ void main() {
     verify(model.loadProfileSetup()).called(1);
     verifyNever(model.saveProfileSetup());
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.saveProfileSetup()).called(1);
   });
 

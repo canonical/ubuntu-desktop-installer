@@ -9,7 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'welcome_page_test.mocks.dart';
@@ -63,7 +63,7 @@ void main() {
     final model = buildModel(option: Option.none);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
 
     await tester.tap(find.radio(Option.installUbuntu));
     verify(model.selectOption(Option.installUbuntu)).called(1);
@@ -76,18 +76,18 @@ void main() {
     final model = buildModel(option: Option.installUbuntu);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
   });
 
   testWidgets('try ubuntu', (tester) async {
     final model = buildModel(option: Option.tryUbuntu);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
 
     final windowClosed = YaruTestWindow.waitForClosed();
 
-    await tester.tap(find.button(tester.ulang.nextLabel));
+    await tester.tapNext();
     await tester.pump();
 
     await expectLater(windowClosed, completes);

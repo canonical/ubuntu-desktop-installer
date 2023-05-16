@@ -114,10 +114,7 @@ void main() {
     verify(model.loadGuidedStorage()).called(1);
     verifyNever(model.saveGuidedStorage());
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.saveGuidedStorage()).called(1);
   });
 }

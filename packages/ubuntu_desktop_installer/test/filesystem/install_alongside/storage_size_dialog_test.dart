@@ -6,12 +6,11 @@ import 'package:ubuntu_desktop_installer/widgets/storage_size_box.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = AlertDialog);
-
   testWidgets('resize storage', (tester) async {
     await tester.pumpWidget(tester.buildApp((_) => const Scaffold()));
 
@@ -28,7 +27,7 @@ void main() {
 
     expect(find.text('Test title'), findsOneWidget);
     expect(find.text('/dev/sda1 (Test storage)'), findsOneWidget);
-    expect(find.text('50-200 ${tester.lang.partitionUnitMB}'), findsOneWidget);
+    expect(find.al10n((l) => '50-200 ${l.partitionUnitMB}'), findsOneWidget);
 
     expect(find.byType(StorageSizeBox), findsOneWidget);
     expect(find.byType(EditableText), findsOneWidget);
@@ -70,7 +69,7 @@ void main() {
       expect(find.textContaining(RegExp('$min-$max \\w+')), findsOneWidget);
     }
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tapOk();
     await tester.pumpAndSettle();
 
     expect(await result, toBytes(50, DataUnit.gigabytes));
@@ -89,7 +88,7 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await tester.tap(find.button(tester.lang.cancelButtonText));
+    await tester.tapCancel();
     await tester.pumpAndSettle();
 
     expect(await result, isNull);

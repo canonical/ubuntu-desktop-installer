@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
-
-export 'package:ubuntu_test/ubuntu_test.dart' show UbuntuLangTester;
 
 /// An extension on [WidgetTester] for building test apps.
 ///
@@ -40,12 +37,7 @@ export 'package:ubuntu_test/ubuntu_test.dart' show UbuntuLangTester;
 /// }
 /// ```
 extension UbuntuTester on WidgetTester {
-  static Type context = WizardPage;
-
-  AppLocalizations get lang {
-    final widget = element(find.byType(context).first);
-    return AppLocalizations.of(widget);
-  }
+  // AppLocalizations get lang => AppLocalizationsEn();
 
   Widget buildApp(WidgetBuilder builder) {
     view.devicePixelRatio = 1;
@@ -73,30 +65,6 @@ extension UbuntuTester on WidgetTester {
   }
 }
 
-extension UbuntuFinders on CommonFinders {
-  Finder asset(String assetName) {
-    return find.byWidgetPredicate((widget) {
-      bool hasAssetImage(Widget widget) {
-        return widget is Image &&
-            widget.image is AssetImage &&
-            (widget.image as AssetImage).assetName.endsWith(assetName);
-      }
-
-      bool hasAssetPicture(Widget widget) {
-        return widget is SvgPicture &&
-            widget.bytesLoader is SvgAssetLoader &&
-            (widget.bytesLoader as SvgAssetLoader)
-                .assetName
-                .endsWith(assetName);
-      }
-
-      return hasAssetImage(widget) || hasAssetPicture(widget);
-    });
-  }
-
-  Finder html(String html) {
-    return find.byWidgetPredicate((widget) {
-      return widget is Html && widget.data == html;
-    });
-  }
+extension CommonFindersX on CommonFinders {
+  Finder al10n(L10nFinder<AppLocalizations> tr) => l10n<AppLocalizations>(tr);
 }

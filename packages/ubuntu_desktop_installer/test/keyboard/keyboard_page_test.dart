@@ -10,6 +10,7 @@ import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'keyboard_model_test.mocks.dart';
@@ -93,7 +94,7 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final textField = find.textField(tester.lang.typeToTest);
+    final textField = find.textField(find.al10n((l10n) => l10n.typeToTest));
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'foo bar');
     await tester.pump();
@@ -104,7 +105,8 @@ void main() {
     final model = buildModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final detectButton = find.button(tester.lang.detectButtonText);
+    final detectButton =
+        find.button(find.al10n((l10n) => l10n.detectButtonText));
     expect(detectButton, findsOneWidget);
     await tester.tap(detectButton);
     await tester.pumpAndSettle();
@@ -123,7 +125,7 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
+    final nextButton = find.button(find.nextLabel);
     expect(nextButton, findsOneWidget);
     expect(nextButton, isEnabled);
   });
@@ -132,7 +134,7 @@ void main() {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
+    final nextButton = find.button(find.nextLabel);
     expect(nextButton, findsOneWidget);
     expect(nextButton, isDisabled);
   });
@@ -169,9 +171,7 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    await tester.tap(nextButton);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     verify(model.updateInputSource()).called(1);

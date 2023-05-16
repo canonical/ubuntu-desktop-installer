@@ -1,8 +1,10 @@
+import 'package:flutter/widgets.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
 extension AdDomainNameValidationL10n on AdDomainNameValidation {
-  String localize(AppLocalizations lang) {
+  String localize(BuildContext context) {
+    final lang = AppLocalizations.of(context);
     switch (this) {
       case AdDomainNameValidation.OK:
         return '';
@@ -29,7 +31,8 @@ extension AdDomainNameValidationL10n on AdDomainNameValidation {
 }
 
 extension AdAdminNameValidationL10n on AdAdminNameValidation {
-  String localize(AppLocalizations lang) {
+  String localize(BuildContext context) {
+    final lang = AppLocalizations.of(context);
     switch (this) {
       case AdAdminNameValidation.OK:
         return '';
@@ -42,7 +45,8 @@ extension AdAdminNameValidationL10n on AdAdminNameValidation {
 }
 
 extension AdPasswordValidationL10n on AdPasswordValidation {
-  String localize(AppLocalizations lang) {
+  String localize(BuildContext context) {
+    final lang = AppLocalizations.of(context);
     switch (this) {
       case AdPasswordValidation.OK:
         return '';

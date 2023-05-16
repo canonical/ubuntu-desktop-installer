@@ -6,7 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
@@ -14,8 +14,6 @@ import 'wifi_view_test.mocks.dart';
 
 @GenerateMocks([AccessPoint, WifiModel, WifiDevice])
 void main() {
-  setUpAll(() => UbuntuTester.context = WifiView);
-
   testWidgets('device and access point tiles', (tester) async {
     final device1 = MockWifiDevice();
     when(device1.model).thenReturn('model1');
@@ -150,10 +148,11 @@ void main() {
     expect(find.byType(WifiListView), findsNothing);
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
 
-    expect(find.text(tester.lang.wirelessNetworkingDisabled), findsOneWidget);
-    expect(find.text(tester.lang.wifiMustBeEnabled), findsOneWidget);
+    expect(
+        find.al10n((l10n) => l10n.wirelessNetworkingDisabled), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.wifiMustBeEnabled), findsOneWidget);
 
-    final button = find.button(tester.lang.enableWifi);
+    final button = find.button(find.al10n((l10n) => l10n.enableWifi));
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(wasEnabled, isTrue);
@@ -190,7 +189,7 @@ void main() {
 
     expect(find.byType(WifiListView), findsNothing);
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
-    expect(find.text(tester.lang.noWifiDevicesDetected), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.noWifiDevicesDetected), findsOneWidget);
   });
 
   testWidgets('starts periodic scanning', (tester) async {

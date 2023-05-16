@@ -13,8 +13,6 @@ import 'package:ubuntu_wizard/utils.dart';
 import '../../test_utils.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = AlertDialog);
-
   testWidgets('resize by drag', (tester) async {
     int? size;
 

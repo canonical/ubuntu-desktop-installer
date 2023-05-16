@@ -5,8 +5,6 @@ import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import '../test_utils.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = DetectKeyboardView);
-
   testWidgets('press key', (tester) async {
     int? keyPress;
 
@@ -23,7 +21,7 @@ void main() {
     expect(find.text('x'), findsOneWidget);
     expect(find.text('y'), findsOneWidget);
     expect(find.text('z'), findsOneWidget);
-    expect(find.text(tester.lang.pressOneKey), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.pressOneKey), findsOneWidget);
 
     await tester.sendKeyEvent(LogicalKeyboardKey.keyW, platform: 'linux');
     expect(keyPress, equals(25 - 8));
@@ -39,6 +37,6 @@ void main() {
 
     expect(find.byType(KeyPresentView), findsOneWidget);
     expect(find.text('x'), findsOneWidget);
-    expect(find.text(tester.lang.isKeyPresent), findsOneWidget);
+    expect(find.al10n((l10n) => l10n.isKeyPresent), findsOneWidget);
   });
 }

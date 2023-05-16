@@ -13,7 +13,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaml/yaml.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'test_pages.dart';
 
@@ -295,7 +295,7 @@ Future<void> verifyConfig({
   bool? useEncryption,
 }) async {
   final path = await getSubiquityLogFile('autoinstall-user-data');
-  await waitForFile(path);
+  await expectLater(path, existsLater);
 
   final yaml = loadYaml(File(path).readAsStringSync());
 

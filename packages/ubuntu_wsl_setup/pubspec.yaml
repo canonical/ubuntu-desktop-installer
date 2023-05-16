@@ -51,9 +51,13 @@ dev_dependencies:
     git:
       url: https://github.com/canonical/subiquity_client.dart.git
       path: packages/subiquity_test
+  # ubuntu_test: ^0.1.0-0
   ubuntu_test:
-    path: ../ubuntu_test
-  yaru_window_test: ^0.0.4
+    git:
+      url: https://github.com/jpnurmi/ubuntu-flutter-plugins.git
+      path: packages/ubuntu_test
+      ref: html-svg
+  yaru_test: ^0.1.0-0
 
 flutter:
   generate: true
