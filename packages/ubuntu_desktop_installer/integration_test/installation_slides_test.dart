@@ -12,9 +12,7 @@ import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 void main() {
-  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-  binding.window.devicePixelRatioTestValue = 1;
-  binding.window.physicalSizeTestValue = const Size(960, 680);
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   setUpAll(() => registerService(ProductService.new));
 
@@ -157,6 +155,8 @@ void main() {
 
 extension SlideTester on WidgetTester {
   Future<bool> pumpSlide(Widget slide) async {
+    view.devicePixelRatio = 1;
+    view.physicalSize = const Size(960, 680);
     return runZoned(() async {
       FlutterErrorDetails? error;
       FlutterError.onError = (e) => FlutterError.dumpErrorToConsole(error = e);

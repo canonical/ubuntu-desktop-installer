@@ -19,7 +19,7 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-        flutter-version: '3.7.x'
+        flutter-version: '3.10.x'
     - run: flutter pub global activate melos
     - run: melos pub get
     - run: melos analyze
@@ -33,7 +33,7 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-        flutter-version: '3.7.x'
+        flutter-version: '3.10.x'
     - run: flutter pub global activate melos
     - run: melos pub get
     - run: melos format
@@ -47,7 +47,7 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-        flutter-version: '3.7.x'
+        flutter-version: '3.10.x'
     - run: flutter pub global activate melos
     - run: melos pub get
     - run: melos generate
@@ -71,7 +71,7 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-        flutter-version: '3.7.x'
+        flutter-version: '3.10.x'
     - run: flutter pub global activate melos
     - run: melos pub get
     - run: melos gen-l10n
@@ -116,7 +116,7 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-        flutter-version: '3.7.x'
+        flutter-version: '3.10.x'
     - run: flutter pub global activate melos
     - name: Install dependencies
       run: |

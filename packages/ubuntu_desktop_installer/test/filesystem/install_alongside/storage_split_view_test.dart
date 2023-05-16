@@ -153,7 +153,7 @@ void main() {
     );
     expect(indicator, findsOneWidget);
 
-    final windowWidth = tester.binding.window.physicalSize.width;
+    final windowWidth = tester.view.physicalSize.width;
     await tester.drag(indicator, Offset(windowWidth, 0));
     expect(size, 75);
 

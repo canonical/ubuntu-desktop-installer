@@ -20,7 +20,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.7.x'
+          flutter-version: '3.10.x'
 
       - name: Build Windows Target
         working-directory: packages\ubuntu_wsl_setup\
@@ -47,7 +47,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.7.x'
+          flutter-version: '3.10.x'
 
       - name: Flutter Doctor
         run: flutter doctor -v

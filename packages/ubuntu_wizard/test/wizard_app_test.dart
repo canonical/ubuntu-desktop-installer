@@ -19,7 +19,8 @@ void main() {
 
   setUpAll(() {
     const methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {});
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(methodChannel, (call) => null);
   });
 
   testWidgets('initializes subiquity', (tester) async {
@@ -161,11 +162,13 @@ void main() {
   testWidgets('ensure initialized', (tester) async {
     var windowInit = false;
     const methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(methodChannel, (call) {
       if (call.method == 'init') {
         windowInit = true;
       }
       if (call.method == 'close') {}
+      return null;
     });
     final client = MockSubiquityClient();
     final server = MockSubiquityServer();

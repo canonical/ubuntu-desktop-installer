@@ -53,8 +53,8 @@ void main() {
   }
 
   Widget buildApp(WidgetTester tester, ProfileSetupModel model) {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = const Size(960, 680);
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(960, 680);
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
       theme: yaruLight,

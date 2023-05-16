@@ -48,8 +48,8 @@ extension UbuntuTester on WidgetTester {
   }
 
   Widget buildApp(WidgetBuilder builder) {
-    binding.window.devicePixelRatioTestValue = 1;
-    binding.window.physicalSizeTestValue = const Size(960, 680);
+    view.devicePixelRatio = 1;
+    view.physicalSize = const Size(960, 680);
     return InheritedLocale(
       child: Flavor(
         data: const FlavorData(name: 'Ubuntu'),

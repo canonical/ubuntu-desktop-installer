@@ -142,6 +142,8 @@ class StorageTable extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: LayoutBuilder(builder: (context, constraints) {
         final theme = Theme.of(context);
+        final rowHeight = kMinInteractiveDimension +
+            theme.visualDensity.baseSizeAdjustment.dy;
         return OverrideMouseCursor(
           cursor: SystemMouseCursors.basic,
           child: OverflowBox(
@@ -152,10 +154,9 @@ class StorageTable extends StatelessWidget {
               child: SingleChildScrollView(
                 controller: controller,
                 child: DataTable(
-                  dataRowHeight: kMinInteractiveDimension +
-                      theme.visualDensity.baseSizeAdjustment.dy,
-                  headingRowHeight: kMinInteractiveDimension +
-                      theme.visualDensity.baseSizeAdjustment.dy,
+                  dataRowMinHeight: rowHeight,
+                  dataRowMaxHeight: rowHeight,
+                  headingRowHeight: rowHeight,
                   showCheckboxColumn: false,
                   headingTextStyle: theme.textTheme.titleSmall,
                   dataTextStyle: theme.textTheme.bodyMedium,
