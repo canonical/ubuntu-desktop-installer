@@ -77,7 +77,7 @@ class _HiddenPartitionLabel extends StatelessWidget {
         ),
         'a': Style(color: context.linkColor),
       },
-      onLinkTap: (url, _, __, ___) => onTap(),
+      onLinkTap: (url, _, __) => onTap(),
     );
   }
 }

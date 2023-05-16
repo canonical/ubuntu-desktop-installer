@@ -81,7 +81,7 @@ class WelcomePageState extends ConsumerState<WelcomePage> {
                 'body': Style(margin: Margins.zero),
                 'a': Style(color: context.linkColor),
               },
-              onLinkTap: (url, _, __, ___) => launchUrl(url!),
+              onLinkTap: (url, _, __) => launchUrl(url!),
             ),
           ),
         ],

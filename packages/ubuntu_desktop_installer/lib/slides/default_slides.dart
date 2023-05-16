@@ -387,7 +387,7 @@ class _SlideLink extends StatelessWidget {
           textDecoration: TextDecoration.none,
         ),
       },
-      onAnchorTap: (url, _, __, ___) => launchUrl(url!),
+      onAnchorTap: (url, _, __) => launchUrl(url!),
     );
   }
 }
