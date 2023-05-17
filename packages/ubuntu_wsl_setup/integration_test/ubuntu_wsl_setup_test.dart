@@ -3,7 +3,7 @@ import 'package:integration_test/integration_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wsl_setup/main.dart' as app;
 import 'package:ubuntu_wsl_setup/routes.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';
