@@ -29,29 +29,19 @@ extension InstallationActionL10n on InstallationAction {
   }
 }
 
-class InstallPage extends ConsumerStatefulWidget {
+class InstallPage extends ConsumerWidget {
   const InstallPage({super.key});
 
-  @override
-  ConsumerState<InstallPage> createState() => _InstallPageState();
-}
-
-class _InstallPageState extends ConsumerState<InstallPage> {
-  @override
-  void initState() {
-    super.initState();
-
+  static Future<bool> load(BuildContext context, WidgetRef ref) {
     final model = ref.read(installModelProvider);
-    model.init();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-      model.precacheSlideImages(context);
-    });
+    return Future.wait([
+      model.init(),
+      model.precacheSlideImages(context),
+    ]).then((_) => true);
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isDone = ref.watch(installModelProvider.select((m) => m.isDone));
     return AnimatedSwitcher(
       duration: kThemeAnimationDuration,

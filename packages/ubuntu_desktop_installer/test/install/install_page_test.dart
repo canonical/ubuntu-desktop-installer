@@ -56,13 +56,6 @@ void main() {
     );
   }
 
-  testWidgets('initializes the model', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-    verify(model.init()).called(1);
-    await tester.pumpAndSettle();
-  });
-
   Finder findsSlide(String text) {
     return find.descendant(
       of: find.byType(SlideView),

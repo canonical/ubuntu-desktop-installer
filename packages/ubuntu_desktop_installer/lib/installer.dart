@@ -358,6 +358,7 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
         ),
         Routes.install: WizardRoute(
           builder: (_) => const InstallPage(),
+          onLoad: (_) => InstallPage.load(context, ref),
         ),
       },
       observers: [
