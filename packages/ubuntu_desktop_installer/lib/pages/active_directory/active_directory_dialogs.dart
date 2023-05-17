@@ -38,7 +38,7 @@ class ActiveDirectoryErrorDialog extends StatelessWidget {
                   'body': Style(margin: Margins.zero),
                   'a': Style(color: context.linkColor),
                 },
-                onAnchorTap: (url, _, __, ___) => launchUrl(url!),
+                onAnchorTap: (url, _, __) => launchUrl(url!),
                 shrinkWrap: true,
               ),
             ),

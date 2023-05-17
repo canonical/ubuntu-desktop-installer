@@ -62,7 +62,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
             'body': Style(margin: Margins.zero),
             'a': Style(textDecoration: TextDecoration.none, color: textColor),
           },
-          onLinkTap: (url, _, __, ___) => launchUrl(url!),
+          onLinkTap: (url, _, __) => launchUrl(url!),
         ),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
