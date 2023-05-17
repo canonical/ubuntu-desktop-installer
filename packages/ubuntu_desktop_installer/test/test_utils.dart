@@ -7,7 +7,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 
-export 'package:ubuntu_test/utils.dart' show UbuntuLangTester;
+export 'package:ubuntu_test/ubuntu_test.dart' show UbuntuLangTester;
 
 /// An extension on [WidgetTester] for building test apps.
 ///

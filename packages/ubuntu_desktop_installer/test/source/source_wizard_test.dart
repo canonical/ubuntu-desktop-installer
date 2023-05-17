@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_wizard.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 

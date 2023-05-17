@@ -5,7 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides/default_slides.dart';
 import 'package:ubuntu_desktop_installer/slides/slide_widgets.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../test_utils.dart';

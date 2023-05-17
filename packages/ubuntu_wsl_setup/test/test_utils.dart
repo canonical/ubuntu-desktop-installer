@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 
-export 'package:ubuntu_test/utils.dart' show UbuntuLangTester;
+export 'package:ubuntu_test/ubuntu_test.dart' show UbuntuLangTester;
 
 /// An extension on [WidgetTester] that exposes a [lang] property.
 ///

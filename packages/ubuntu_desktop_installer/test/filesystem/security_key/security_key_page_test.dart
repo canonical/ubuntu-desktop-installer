@@ -5,7 +5,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_page.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 
 import '../../test_utils.dart';
 import 'security_key_page_test.mocks.dart';

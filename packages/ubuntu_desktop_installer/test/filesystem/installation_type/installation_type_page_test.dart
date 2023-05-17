@@ -7,7 +7,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 
 import '../../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';

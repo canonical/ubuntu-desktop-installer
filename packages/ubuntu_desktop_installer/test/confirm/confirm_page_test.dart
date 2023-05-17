@@ -10,7 +10,7 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/confirm/confirm_model.dart';
 import 'package:ubuntu_desktop_installer/pages/confirm/confirm_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 
 import '../test_utils.dart';
 import 'confirm_page_test.mocks.dart';

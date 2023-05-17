@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../test_utils.dart';

@@ -10,7 +10,7 @@ import 'package:ubuntu_desktop_installer/main.dart' as app;
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaml/yaml.dart';
 import 'package:yaru_window_test/yaru_window_test.dart';

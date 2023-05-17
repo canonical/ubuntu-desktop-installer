@@ -9,7 +9,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/select_guided_storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/select_guided_storage_page.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../../test_utils.dart';
