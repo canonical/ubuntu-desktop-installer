@@ -56,7 +56,7 @@ Future<void> testSelectYourLanguagePage(
     value: false,
   );
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testProfileSetupPage(
@@ -98,7 +98,7 @@ Future<void> testProfileSetupPage(
   );
   await tester.pumpAndSettle();
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testAdvancedSetupPage(

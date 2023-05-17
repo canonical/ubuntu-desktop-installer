@@ -49,11 +49,11 @@ Future<void> verifyGoldenFile(String fileName, String goldenName) async {
 
 /// Helpers for interacting with widgets.
 extension IntegrationTester on WidgetTester {
-  /// Taps a "Go Back" button.
-  Future<void> tapBack() => tapButton(ulang.previousLabel);
+  /// Taps a "Previous" button.
+  Future<void> tapPrevious() => tapButton(ulang.previousLabel);
 
-  /// Taps a "Continue" button.
-  Future<void> tapContinue() => tapButton(ulang.nextLabel);
+  /// Taps a "Next" button.
+  Future<void> tapNext() => tapButton(ulang.nextLabel);
 
   /// Taps a button specified by its [label]. The button can be any
   /// [ButtonStyleButton] subclass, such as [OutlinedButton], [ElevatedButton],
