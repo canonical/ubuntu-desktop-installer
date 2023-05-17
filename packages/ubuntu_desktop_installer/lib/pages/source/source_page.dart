@@ -13,23 +13,15 @@ import 'source_model.dart';
 
 export 'source_model.dart' show kNormalSourceId, kMinimalSourceId;
 
-class SourcePage extends ConsumerStatefulWidget {
+class SourcePage extends ConsumerWidget {
   const SourcePage({super.key});
 
-  @override
-  ConsumerState<SourcePage> createState() => _SourcePageState();
-}
-
-class _SourcePageState extends ConsumerState<SourcePage> {
-  @override
-  void initState() {
-    super.initState();
-    final model = ref.read(sourceModelProvider);
-    model.init();
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(sourceModelProvider).init().then((_) => true);
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(sourceModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
