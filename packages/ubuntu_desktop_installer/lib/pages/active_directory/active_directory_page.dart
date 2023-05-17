@@ -13,20 +13,16 @@ import 'active_directory_widgets.dart';
 class ActiveDirectoryPage extends ConsumerStatefulWidget {
   const ActiveDirectoryPage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(activeDirectoryModelProvider).init().then((_) => true);
+  }
+
   @override
   ConsumerState<ActiveDirectoryPage> createState() =>
       _ActiveDirectoryPageState();
 }
 
 class _ActiveDirectoryPageState extends ConsumerState<ActiveDirectoryPage> {
-  @override
-  void initState() {
-    super.initState();
-
-    final model = ref.read(activeDirectoryModelProvider);
-    model.init();
-  }
-
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);

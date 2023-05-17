@@ -65,7 +65,6 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    verify(model.init()).called(1);
     expect(find.textField('ubuntu.com'), findsOneWidget);
     expect(find.textField('admin'), findsOneWidget);
     expect(find.textField('password'), findsOneWidget);
