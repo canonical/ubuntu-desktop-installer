@@ -949,5 +949,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "allocateDiskSpaceInvalidMountPointSlash": "Los ponches de montatge devon començar per « / »",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Los ponches de montatge pòdon pas conténer cap d’espaci",
+  "@allocateDiskSpaceInvalidMountPointSpace": {}
 }
