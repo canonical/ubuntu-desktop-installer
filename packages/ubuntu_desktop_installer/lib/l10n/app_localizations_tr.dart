@@ -127,7 +127,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get configureSecureBootTitle => 'Güvenli Önyüklemeyi Yapılandır';
 
   @override
-  String get configureSecureBootDescription => 'Üçüncü parti sürücüleri kurmayı seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir. \nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.';
+  String get configureSecureBootDescription => 'Üçüncü parti sürücüleri kurmayı seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir.\nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.';
 
   @override
   String get configureSecureBootOption => 'Güvenli Önyüklemeyi Yapılandır';
@@ -205,7 +205,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get connectButtonText => 'Bağlan';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Uygulama ve güncelleştirmeler';
+  String get updatesOtherSoftwarePageTitle => 'Uygulamalar ve güncellemeler';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Başlangıç olarak hangi uygulamaları kurmak istersiniz?';
@@ -354,7 +354,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return '$product\'i $os yanına kurun';
+    return '$product işletims sistemini $os yanına kur';
   }
 
   @override
@@ -755,7 +755,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
-    return 'Snap Store ve $DISTRO arşivindeki binlercesi de dahil olmak üzere tüm uygulamaları Ubuntu Software ile kurun, yönetin ve güncelleyin.';
+    return 'Snap Store ve $DISTRO arşivindeki binlerce uygulama dahil tüm uygulamaları Ubuntu Software ile kurun, yönetin ve güncelleyin.';
   }
 
   @override

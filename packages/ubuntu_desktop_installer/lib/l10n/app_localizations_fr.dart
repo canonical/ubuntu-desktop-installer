@@ -427,10 +427,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get allocateDiskSpace => 'Partitionnement manuel';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Les points de montage doivent commencer par \"/\"';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Les points de montage ne doivent pas contenir d\'espaces';
 
   @override
   String get startInstallingButtonText => 'Installer';
