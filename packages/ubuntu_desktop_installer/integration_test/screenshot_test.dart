@@ -290,9 +290,10 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('10.timezone', (tester) async {
-    await runInstallerApp([
-      '--initial-route=${Routes.timezone}',
-    ], flavor: currentFlavor);
+    await runInstallerApp([], flavor: currentFlavor);
+    await tester.pumpAndSettle();
+
+    await tester.jumpToWizardRoute(Routes.timezone);
     await tester.pumpAndSettle();
 
     await testTimezonePage(
