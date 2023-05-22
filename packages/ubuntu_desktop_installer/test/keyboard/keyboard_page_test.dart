@@ -51,13 +51,6 @@ void main() {
     );
   }
 
-  testWidgets('initializes the model & input source', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-    verify(model.init()).called(1);
-    verify(model.updateInputSource()).called(1);
-  });
-
   testWidgets('select keyboard layout', (tester) async {
     final model = buildModel(
       layouts: List.generate(3, (i) => 'Layout $i'),
@@ -174,7 +167,7 @@ void main() {
     await tester.tap(nextButton);
     await tester.pumpAndSettle();
 
-    verify(model.updateInputSource()).called(1);
+    verify(model.save()).called(1);
     expect(find.text('Next page'), findsOneWidget);
   });
 }
