@@ -427,10 +427,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get allocateDiskSpace => 'Manuaalinen osiointi';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Liitospisteiden tulee alkaa merkillä \"/\"';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Liitospisteet eivät voi sisältää välilyöntejä';
 
   @override
   String get startInstallingButtonText => 'Asenna';
