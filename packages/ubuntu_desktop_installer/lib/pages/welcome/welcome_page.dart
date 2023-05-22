@@ -13,23 +13,15 @@ import 'welcome_widgets.dart';
 
 export 'welcome_model.dart' show Option;
 
-class WelcomePage extends ConsumerStatefulWidget {
+class WelcomePage extends ConsumerWidget {
   const WelcomePage({super.key});
 
-  @override
-  WelcomePageState createState() => WelcomePageState();
-}
-
-class WelcomePageState extends ConsumerState<WelcomePage> {
-  @override
-  void initState() {
-    super.initState();
-    final model = ref.read(welcomeModelProvider);
-    model.init();
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(welcomeModelProvider).init().then((_) => true);
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(welcomeModelProvider);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
