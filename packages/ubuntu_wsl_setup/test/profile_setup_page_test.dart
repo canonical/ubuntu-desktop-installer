@@ -7,13 +7,13 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_model.dart';
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_page.dart';
 import 'package:yaru/yaru.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'profile_setup_page_test.mocks.dart';
 import 'test_utils.dart';

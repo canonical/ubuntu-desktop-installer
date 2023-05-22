@@ -6,7 +6,7 @@ import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages.dart';
 import 'package:ubuntu_wsl_setup/splash_screen.dart';
 import 'package:ubuntu_wsl_setup/wizard.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test/test_utils.dart';
 
@@ -51,9 +51,9 @@ Future<void> testSelectYourLanguagePage(
   await tester.pumpAndSettle();
 
   // For now toggling this check box won't cause any noticeable behavior change in dry-run.
-  await tester.toggleCheckbox(
-    label: tester.lang.installLangPacksTitle(language ?? ''),
-    value: false,
+  await tester.toggleButton(
+    tester.lang.installLangPacksTitle(language ?? ''),
+    false,
   );
 
   await tester.tapNext();
@@ -92,10 +92,12 @@ Future<void> testProfileSetupPage(
       confirmedPassword,
     );
   }
-  await tester.toggleCheckbox(
-    label: tester.lang.profileSetupShowAdvancedOptions,
-    value: showAdvancedOptions,
-  );
+  if (showAdvancedOptions != null) {
+    await tester.toggleButton(
+      tester.lang.profileSetupShowAdvancedOptions,
+      showAdvancedOptions,
+    );
+  }
   await tester.pumpAndSettle();
 
   await tester.tapNext();
@@ -119,14 +121,18 @@ Future<void> testAdvancedSetupPage(
       config!.automountOptions,
     );
   }
-  await tester.toggleCheckbox(
-    label: tester.lang.advancedSetupHostGenerationTitle,
-    value: config?.networkGeneratehosts,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.advancedSetupResolvConfGenerationTitle,
-    value: config?.networkGenerateresolvconf,
-  );
+  if (config?.networkGeneratehosts != null) {
+    await tester.toggleButton(
+      tester.lang.advancedSetupHostGenerationTitle,
+      config!.networkGeneratehosts,
+    );
+  }
+  if (config?.networkGenerateresolvconf != null) {
+    await tester.toggleButton(
+      tester.lang.advancedSetupResolvConfGenerationTitle,
+      config!.networkGenerateresolvconf,
+    );
+  }
   await tester.pumpAndSettle();
 
   await tester.tapButton(tester.lang.setupButton);
@@ -152,22 +158,30 @@ Future<void> testConfigurationUIPage(
 }) async {
   expectPage(tester, ConfigurationUIPage, (lang) => lang.configurationUITitle);
 
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIAutoMountSubtitle,
-    value: config?.automountEnabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIMountFstabSubtitle,
-    value: config?.automountMountfstab,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIInteroperabilitySubtitle,
-    value: config?.interopEnabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIInteropAppendWindowsPathSubtitle,
-    value: config?.interopAppendwindowspath,
-  );
+  if (config?.automountEnabled != null) {
+    await tester.toggleButton(
+      tester.lang.configurationUIAutoMountSubtitle,
+      config!.automountEnabled,
+    );
+  }
+  if (config?.automountMountfstab != null) {
+    await tester.toggleButton(
+      tester.lang.configurationUIMountFstabSubtitle,
+      config!.automountMountfstab,
+    );
+  }
+  if (config?.interopEnabled != null) {
+    await tester.toggleButton(
+      tester.lang.configurationUIInteroperabilitySubtitle,
+      config!.interopEnabled,
+    );
+  }
+  if (config?.interopAppendwindowspath != null) {
+    await tester.toggleButton(
+      tester.lang.configurationUIInteropAppendWindowsPathSubtitle,
+      config!.interopAppendwindowspath,
+    );
+  }
   await tester.pumpAndSettle();
 
   await tester.tapButton(tester.lang.saveButton);

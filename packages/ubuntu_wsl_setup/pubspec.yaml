@@ -53,7 +53,7 @@ dev_dependencies:
       path: packages/subiquity_test
   ubuntu_test:
     path: ../ubuntu_test
-  yaru_window_test: ^0.0.4
+  yaru_test: ^0.1.0
 
 flutter:
   generate: true

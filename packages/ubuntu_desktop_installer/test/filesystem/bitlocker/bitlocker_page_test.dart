@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/bitlocker/bitlocker_pa
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
 import 'bitlocker_page_test.mocks.dart';

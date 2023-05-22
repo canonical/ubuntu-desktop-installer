@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'widget_testers.dart';
 
@@ -54,36 +54,6 @@ extension IntegrationTester on WidgetTester {
 
   /// Taps a "Next" button.
   Future<void> tapNext() => tapButton(ulang.nextLabel);
-
-  /// Taps a button specified by its [label]. The button can be any
-  /// [ButtonStyleButton] subclass, such as [OutlinedButton], [ElevatedButton],
-  /// or [FilledButton].
-  Future<void> tapButton(String label) async {
-    await tap(find.ancestor(
-      of: find.text(label),
-      matching: find.bySubtype<ButtonStyleButton>(),
-    ));
-  }
-
-  /// Toggles a checkbox specified by its [label] to ensure the given [value],
-  /// or does nothing if [value] is `null`.
-  Future<void> toggleCheckbox({
-    required String label,
-    required bool? value,
-  }) async {
-    if (value == null) return;
-    final checkbox = find.widgetWithText(YaruCheckButton, label);
-    if (widget<YaruCheckButton>(checkbox).value != value) {
-      await tap(checkbox);
-    }
-  }
-
-  /// Taps a radio button specified by its [value].
-  Future<void> tapRadioButton<T>(T value) async {
-    await tap(find.byWidgetPredicate((widget) {
-      return widget is YaruRadioButton<T> && widget.value == value;
-    }));
-  }
 
   /// Pumps until the specified [finder] is satisfied. This can be used to wait
   /// until a certain page or widget becomes visible.

@@ -5,7 +5,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/loading/loading_model.dart';
 import 'package:ubuntu_desktop_installer/pages/loading/loading_page.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'loading_page_test.mocks.dart';

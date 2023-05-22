@@ -10,9 +10,8 @@ import 'package:ubuntu_desktop_installer/pages/install/install_page.dart';
 import 'package:ubuntu_desktop_installer/pages/install/slide_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_icons/yaru_icons.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'install_page_test.mocks.dart';

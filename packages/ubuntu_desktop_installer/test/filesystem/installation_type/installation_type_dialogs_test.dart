@@ -5,7 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
 import 'installation_type_page_test.mocks.dart';

@@ -10,6 +10,7 @@ import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'active_directory_page_test.mocks.dart';
