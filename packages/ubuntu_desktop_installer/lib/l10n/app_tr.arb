@@ -85,7 +85,7 @@
   "@isKeyPresent": {},
   "configureSecureBootTitle": "Güvenli Önyüklemeyi Yapılandır",
   "@configureSecureBootTitle": {},
-  "configureSecureBootDescription": "Üçüncü parti sürücüleri kurmayı seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir. \nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.",
+  "configureSecureBootDescription": "Üçüncü parti sürücüleri kurmayı seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir.\nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.",
   "@configureSecureBootDescription": {},
   "configureSecureBootOption": "Güvenli Önyüklemeyi Yapılandır",
   "@configureSecureBootOption": {},
@@ -271,7 +271,7 @@
   "@installThirdPartySubtitle": {},
   "installationTypeNoOSDetected": "Bu bilgisayarda herhangi bir işletim sistemi tespit edilmedi. Ne yapmak istersiniz?",
   "@installationTypeNoOSDetected": {},
-  "installationTypeAlongside": "{product}'i {os} yanına kurun",
+  "installationTypeAlongside": "{product} işletims sistemini {os} yanına kur",
   "@installationTypeAlongside": {
     "type": "text",
     "placeholders": {
@@ -297,7 +297,7 @@
   "@webSlideChromium": {},
   "officeSlideTitle": "Ofis için ihtiyacınız olan her şey",
   "@officeSlideTitle": {},
-  "updatesOtherSoftwarePageTitle": "Uygulama ve güncelleştirmeler",
+  "updatesOtherSoftwarePageTitle": "Uygulamalar ve güncellemeler",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "Başlangıç olarak hangi uygulamaları kurmak istersiniz?",
   "@updatesOtherSoftwarePageDescription": {},
@@ -768,7 +768,7 @@
   },
   "installationSlidesSoftwareTitle": "İhtiyacınız olan tüm uygulamalar",
   "@installationSlidesSoftwareTitle": {},
-  "installationSlidesSoftwareBody": "Snap Store ve {DISTRO} arşivindeki binlercesi de dahil olmak üzere tüm uygulamaları Ubuntu Software ile kurun, yönetin ve güncelleyin.",
+  "installationSlidesSoftwareBody": "Snap Store ve {DISTRO} arşivindeki binlerce uygulama dahil tüm uygulamaları Ubuntu Software ile kurun, yönetin ve güncelleyin.",
   "@installationSlidesSoftwareBody": {
     "type": "text",
     "placeholders": {
