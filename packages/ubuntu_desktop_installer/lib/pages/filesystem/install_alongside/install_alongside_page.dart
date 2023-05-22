@@ -1,20 +1,14 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'install_alongside_model.dart';
+import 'install_alongside_widgets.dart';
 import 'storage_split_view.dart';
-
-part 'install_alongside_widgets.dart';
 
 /// Install alongside other OSes.
 class InstallAlongsidePage extends ConsumerStatefulWidget {
@@ -68,7 +62,7 @@ class _InstallAlongsidePageState extends ConsumerState<InstallAlongsidePage> {
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          _StorageSelector(
+          StorageSelector(
             count: model.storageCount,
             selectedIndex: model.selectedIndex,
             onSelected: model.selectStorage,
@@ -91,7 +85,7 @@ class _InstallAlongsidePageState extends ConsumerState<InstallAlongsidePage> {
               ),
             ),
           const SizedBox(height: kContentSpacing / 2),
-          _HiddenPartitionLabel(
+          HiddenPartitionLabel(
             partitions: model.getAllPartitions(model.selectedIndex ?? -1) ?? [],
             onTap: () =>
                 Wizard.of(context).replace(arguments: InstallationType.manual),

@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'identity_model.dart';
-
-part 'identity_widgets.dart';
+import 'identity_widgets.dart';
 
 // The horizontal indentation of the radio button.
 // const _kRadioButtonIndentation = 36.0;
@@ -45,30 +41,30 @@ class IdentityPage extends ConsumerWidget {
           children: [
             Padding(
               padding: fieldPadding,
-              child: _RealNameFormField(fieldWidth: fieldWidth),
+              child: RealNameFormField(fieldWidth: fieldWidth),
             ),
             Padding(
               padding: fieldPadding,
-              child: _HostnameFormField(fieldWidth: fieldWidth),
+              child: HostnameFormField(fieldWidth: fieldWidth),
             ),
             Padding(
               padding: fieldPadding,
-              child: _UsernameFormField(fieldWidth: fieldWidth),
+              child: UsernameFormField(fieldWidth: fieldWidth),
             ),
             Padding(
               padding: fieldPadding,
-              child: _PasswordFormField(fieldWidth: fieldWidth),
+              child: PasswordFormField(fieldWidth: fieldWidth),
             ),
             Padding(
               padding: fieldPadding,
-              child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
+              child: ConfirmPasswordFormField(fieldWidth: fieldWidth),
             ),
             const SizedBox(height: kContentSpacing / 2),
-            const _AutoLoginSwitch(),
+            const AutoLoginSwitch(),
             const SizedBox(height: kContentSpacing / 2),
             const Padding(
               padding: kContentPadding,
-              child: _UseActiveDirectoryCheckButton(),
+              child: UseActiveDirectoryCheckButton(),
             ),
           ],
         );
