@@ -353,9 +353,10 @@ void main() {
       state: const YaruWindowState(isActive: true, isClosable: false),
     );
 
-    await runInstallerApp([
-      '--initial-route=${Routes.install}',
-    ], flavor: currentFlavor);
+    await runInstallerApp([], flavor: currentFlavor);
+    await tester.pumpAndSettle();
+
+    await tester.jumpToWizardRoute(Routes.install);
     await tester.pump(kThemeAnimationDuration);
 
     for (var i = 0; i < defaultSlides.length; ++i) {
@@ -373,9 +374,10 @@ void main() {
   testWidgets('15.complete', (tester) async {
     registerService<SubiquityClient>(FakeSubiquityClient.new);
 
-    await runInstallerApp([
-      '--initial-route=${Routes.install}',
-    ], flavor: currentFlavor);
+    await runInstallerApp([], flavor: currentFlavor);
+    await tester.pumpAndSettle();
+
+    await tester.jumpToWizardRoute(Routes.install);
     await tester.pumpAndSettle();
 
     await testInstallPage(
