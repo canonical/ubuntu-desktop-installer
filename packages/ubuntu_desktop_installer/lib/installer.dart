@@ -324,6 +324,7 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
         Routes.source: WizardRoute(
           builder: (_) => const SourceWizard(),
           userData: InstallationStep.source.index,
+          onLoad: (_) => SourcePage.load(ref),
         ),
         Routes.secureBoot: WizardRoute(
           builder: (_) => const SecureBootPage(),
