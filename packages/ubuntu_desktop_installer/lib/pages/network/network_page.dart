@@ -17,29 +17,23 @@ import 'wifi_view.dart';
 export 'connect_model.dart' show ConnectMode;
 
 /// https://github.com/canonical/ubuntu-desktop-installer/issues/30
-class NetworkPage extends ConsumerStatefulWidget {
+class NetworkPage extends ConsumerWidget {
   const NetworkPage({super.key});
 
-  @override
-  ConsumerState<NetworkPage> createState() => _NetworkPageState();
-}
-
-class _NetworkPageState extends ConsumerState<NetworkPage> {
-  @override
-  void initState() {
-    super.initState();
-
+  static Future<bool> load(WidgetRef ref) {
     final model = ref.read(networkModelProvider);
     model.addConnectMode(ref.read(ethernetModelProvider));
     model.addConnectMode(ref.read(wifiModelProvider));
     model.addConnectMode(ref.read(hiddenWifiModelProvider));
     model.addConnectMode(ref.read(noConnectModelProvider));
-
-    model.init().then((_) => model.selectConnectMode());
+    return model
+        .init()
+        .then((_) => model.selectConnectMode())
+        .then((_) => true);
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(networkModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
