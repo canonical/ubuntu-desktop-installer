@@ -337,6 +337,7 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
         Routes.confirm: WizardRoute(
           builder: (_) => const ConfirmPage(),
           userData: InstallationStep.filesystem.index,
+          onLoad: (_) => ConfirmPage.load(ref),
         ),
         Routes.timezone: WizardRoute(
           builder: (_) => const TimezonePage(),

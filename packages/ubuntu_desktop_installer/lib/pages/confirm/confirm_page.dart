@@ -14,20 +14,11 @@ import 'confirm_model.dart';
 /// @internal
 final log = Logger('confirm');
 
-class ConfirmPage extends ConsumerStatefulWidget {
+class ConfirmPage extends ConsumerWidget {
   const ConfirmPage({super.key});
 
-  @override
-  ConsumerState<ConfirmPage> createState() => _ConfirmPageState();
-}
-
-class _ConfirmPageState extends ConsumerState<ConfirmPage> {
-  @override
-  void initState() {
-    super.initState();
-
-    final model = ref.read(confirmModelProvider);
-    model.init();
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(confirmModelProvider).init().then((_) => true);
   }
 
   String prettyFormatDisk(Disk disk) {
@@ -39,7 +30,7 @@ class _ConfirmPageState extends ConsumerState<ConfirmPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final model = ref.watch(confirmModelProvider);
     return WizardPage(
