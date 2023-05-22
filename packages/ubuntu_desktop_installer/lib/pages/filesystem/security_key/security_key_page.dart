@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -9,8 +8,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'security_key_model.dart';
-
-part 'security_key_widgets.dart';
+import 'security_key_widgets.dart';
 
 /// Choose security key page.
 ///
@@ -49,11 +47,11 @@ class _SecurityKeyPageState extends ConsumerState<SecurityKeyPage> {
         final fieldWidth = constraints.maxWidth * kContentWidthFraction;
         return ListView(
           children: <Widget>[
-            _SecurityKeyFormField(fieldWidth: fieldWidth),
+            SecurityKeyFormField(fieldWidth: fieldWidth),
             const SizedBox(height: kContentSpacing),
-            _ConfirmSecurityKeyFormField(fieldWidth: fieldWidth),
+            ConfirmSecurityKeyFormField(fieldWidth: fieldWidth),
             const SizedBox(height: kContentSpacing / 2),
-            const _SecurityKeyShowButton(),
+            const SecurityKeyShowButton(),
             const SizedBox(height: kContentSpacing),
             Align(
               alignment: Alignment.centerLeft,

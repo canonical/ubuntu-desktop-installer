@@ -1,7 +1,17 @@
-part of 'identity_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:form_field_validator/form_field_validator.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_icons/yaru_icons.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
-class _RealNameFormField extends ConsumerWidget {
-  const _RealNameFormField({required this.fieldWidth});
+import 'identity_model.dart';
+
+class RealNameFormField extends ConsumerWidget {
+  const RealNameFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -35,8 +45,8 @@ class _RealNameFormField extends ConsumerWidget {
   }
 }
 
-class _HostnameFormField extends ConsumerWidget {
-  const _HostnameFormField({this.fieldWidth});
+class HostnameFormField extends ConsumerWidget {
+  const HostnameFormField({super.key, this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -92,8 +102,8 @@ extension UsernameValidationL10n on UsernameValidation {
   }
 }
 
-class _UsernameFormField extends ConsumerWidget {
-  const _UsernameFormField({this.fieldWidth});
+class UsernameFormField extends ConsumerWidget {
+  const UsernameFormField({super.key, this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -133,8 +143,8 @@ class _UsernameFormField extends ConsumerWidget {
   }
 }
 
-class _PasswordFormField extends ConsumerWidget {
-  const _PasswordFormField({this.fieldWidth});
+class PasswordFormField extends ConsumerWidget {
+  const PasswordFormField({super.key, this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -154,7 +164,7 @@ class _PasswordFormField extends ConsumerWidget {
       obscureText: !showPassword,
       successWidget: PasswordStrengthLabel(strength: passwordStrength),
       initialValue: password,
-      suffixIcon: _ShowPasswordButton(
+      suffixIcon: ShowPasswordButton(
         value: showPassword,
         onChanged: (value) =>
             ref.read(identityModelProvider).showPassword = value,
@@ -170,8 +180,8 @@ class _PasswordFormField extends ConsumerWidget {
   }
 }
 
-class _ConfirmPasswordFormField extends ConsumerWidget {
-  const _ConfirmPasswordFormField({required this.fieldWidth});
+class ConfirmPasswordFormField extends ConsumerWidget {
+  const ConfirmPasswordFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -204,8 +214,12 @@ class _ConfirmPasswordFormField extends ConsumerWidget {
   }
 }
 
-class _ShowPasswordButton extends StatelessWidget {
-  const _ShowPasswordButton({required this.value, required this.onChanged});
+class ShowPasswordButton extends StatelessWidget {
+  const ShowPasswordButton({
+    super.key,
+    required this.value,
+    required this.onChanged,
+  });
 
   final bool value;
   final ValueChanged<bool> onChanged;
@@ -254,8 +268,8 @@ class _ShowPasswordButton extends StatelessWidget {
   }
 }
 
-class _UseActiveDirectoryCheckButton extends ConsumerWidget {
-  const _UseActiveDirectoryCheckButton();
+class UseActiveDirectoryCheckButton extends ConsumerWidget {
+  const UseActiveDirectoryCheckButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -287,8 +301,8 @@ class _UseActiveDirectoryCheckButton extends ConsumerWidget {
   }
 }
 
-class _AutoLoginSwitch extends ConsumerWidget {
-  const _AutoLoginSwitch();
+class AutoLoginSwitch extends ConsumerWidget {
+  const AutoLoginSwitch({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

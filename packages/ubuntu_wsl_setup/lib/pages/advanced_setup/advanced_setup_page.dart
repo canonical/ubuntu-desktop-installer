@@ -4,12 +4,10 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'advanced_setup_model.dart';
-
-part 'advanced_setup_widgets.dart';
+import 'advanced_setup_widgets.dart';
 
 /// WSL Advanced setup page.
 ///
@@ -63,17 +61,17 @@ class _AdvancedSetupPageState extends State<AdvancedSetupPage> {
           children: <Widget>[
             Padding(
               padding: fieldPadding,
-              child: _MountLocationFormField(fieldWidth: fieldWidth),
+              child: MountLocationFormField(fieldWidth: fieldWidth),
             ),
             const SizedBox(height: kContentSpacing),
             Padding(
               padding: fieldPadding,
-              child: _MountOptionFormField(fieldWidth: fieldWidth),
+              child: MountOptionFormField(fieldWidth: fieldWidth),
             ),
             const SizedBox(height: kContentSpacing * 2),
-            const _HostGenerationCheckButton(),
+            const HostGenerationCheckButton(),
             const SizedBox(height: kContentSpacing),
-            const _ResolvConfGenerationCheckButton(),
+            const ResolvConfGenerationCheckButton(),
           ],
         );
       }),

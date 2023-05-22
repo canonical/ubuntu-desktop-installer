@@ -1,7 +1,14 @@
-part of 'security_key_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:form_field_validator/form_field_validator.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_wizard/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
-class _SecurityKeyFormField extends ConsumerWidget {
-  const _SecurityKeyFormField({this.fieldWidth});
+import 'security_key_model.dart';
+
+class SecurityKeyFormField extends ConsumerWidget {
+  const SecurityKeyFormField({super.key, this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -30,8 +37,8 @@ class _SecurityKeyFormField extends ConsumerWidget {
   }
 }
 
-class _ConfirmSecurityKeyFormField extends ConsumerWidget {
-  const _ConfirmSecurityKeyFormField({required this.fieldWidth});
+class ConfirmSecurityKeyFormField extends ConsumerWidget {
+  const ConfirmSecurityKeyFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -65,8 +72,8 @@ class _ConfirmSecurityKeyFormField extends ConsumerWidget {
   }
 }
 
-class _SecurityKeyShowButton extends ConsumerWidget {
-  const _SecurityKeyShowButton();
+class SecurityKeyShowButton extends ConsumerWidget {
+  const SecurityKeyShowButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

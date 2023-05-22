@@ -1,7 +1,18 @@
-part of 'install_alongside_page.dart';
+import 'package:filesize/filesize.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
-class _StorageSelector extends ConsumerWidget {
-  const _StorageSelector({
+import 'install_alongside_model.dart';
+
+class StorageSelector extends ConsumerWidget {
+  const StorageSelector({
+    super.key,
     required this.count,
     this.selectedIndex,
     this.onSelected,
@@ -52,8 +63,12 @@ class _StorageSelector extends ConsumerWidget {
   }
 }
 
-class _HiddenPartitionLabel extends StatelessWidget {
-  const _HiddenPartitionLabel({required this.partitions, required this.onTap});
+class HiddenPartitionLabel extends StatelessWidget {
+  const HiddenPartitionLabel({
+    super.key,
+    required this.partitions,
+    required this.onTap,
+  });
 
   final List<Partition> partitions;
   final VoidCallback onTap;

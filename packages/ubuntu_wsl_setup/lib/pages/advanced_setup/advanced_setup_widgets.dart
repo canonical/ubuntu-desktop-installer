@@ -1,7 +1,14 @@
-part of 'advanced_setup_page.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wsl_setup/l10n.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
-class _MountLocationFormField extends StatelessWidget {
-  const _MountLocationFormField({required this.fieldWidth});
+import 'advanced_setup_model.dart';
+
+class MountLocationFormField extends StatelessWidget {
+  const MountLocationFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -28,8 +35,8 @@ class _MountLocationFormField extends StatelessWidget {
   }
 }
 
-class _MountOptionFormField extends StatelessWidget {
-  const _MountOptionFormField({required this.fieldWidth});
+class MountOptionFormField extends StatelessWidget {
+  const MountOptionFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -52,8 +59,8 @@ class _MountOptionFormField extends StatelessWidget {
   }
 }
 
-class _HostGenerationCheckButton extends StatelessWidget {
-  const _HostGenerationCheckButton();
+class HostGenerationCheckButton extends StatelessWidget {
+  const HostGenerationCheckButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -80,8 +87,8 @@ class _HostGenerationCheckButton extends StatelessWidget {
   }
 }
 
-class _ResolvConfGenerationCheckButton extends StatelessWidget {
-  const _ResolvConfGenerationCheckButton();
+class ResolvConfGenerationCheckButton extends StatelessWidget {
+  const ResolvConfGenerationCheckButton({super.key});
 
   @override
   Widget build(BuildContext context) {

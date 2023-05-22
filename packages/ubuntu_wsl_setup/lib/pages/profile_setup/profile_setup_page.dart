@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
@@ -10,8 +9,7 @@ import 'package:ubuntu_wizard/widgets.dart';
 
 import '../../l10n.dart';
 import 'profile_setup_model.dart';
-
-part 'profile_setup_widgets.dart';
+import 'profile_setup_widgets.dart';
 
 /// WSL Profile setup page.
 ///
@@ -75,26 +73,26 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
           children: <Widget>[
             Padding(
               padding: fieldPadding,
-              child: _RealNameFormField(fieldWidth: fieldWidth),
+              child: RealNameFormField(fieldWidth: fieldWidth),
             ),
             Padding(
               padding: fieldPadding,
-              child: _UsernameFormField(fieldWidth: fieldWidth),
+              child: UsernameFormField(fieldWidth: fieldWidth),
             ),
             const SizedBox(height: kContentSpacing),
             Padding(
               padding: fieldPadding,
-              child: _PasswordFormField(fieldWidth: fieldWidth),
+              child: PasswordFormField(fieldWidth: fieldWidth),
             ),
             Padding(
               padding: fieldPadding,
-              child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
+              child: ConfirmPasswordFormField(fieldWidth: fieldWidth),
             ),
             // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
             //       See [ProfileSetupModel.showAdvancedOptions] for more details.
             //
             // const SizedBox(height: kContentSpacing),
-            // const _ShowAdvancedOptionsCheckButton(),
+            // const ShowAdvancedOptionsCheckButton(),
           ],
         );
       }),
