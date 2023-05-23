@@ -1,12 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';
 import 'package:ubuntu_desktop_installer/services/active_directory_service.dart';
 
-import 'active_directory_model_test.mocks.dart';
+import 'test_active_directory.dart';
 
-@GenerateMocks([ActiveDirectoryService])
 void main() {
   test('load AD connection info', () async {
     const info = AdConnectionInfo(
