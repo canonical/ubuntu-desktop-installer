@@ -9,7 +9,7 @@ import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test/test_utils.dart';
 
@@ -112,7 +112,7 @@ Future<void> testNetworkPage(
       tester, NetworkPage, (lang) => lang.connectToInternetPageTitle);
 
   if (mode != null) {
-    await tester.tapRadioButton<ConnectMode>(mode);
+    await tester.tapRadio<ConnectMode>(mode);
   }
   await tester.pumpAndSettle();
 
@@ -132,7 +132,7 @@ Future<void> testSourcePage(
       tester, SourcePage, (lang) => lang.updatesOtherSoftwarePageTitle);
 
   if (sourceId != null) {
-    await tester.tapRadioButton<String>(sourceId);
+    await tester.tapRadio<String>(sourceId);
   }
   await tester.pumpAndSettle();
 
@@ -170,20 +170,20 @@ Future<void> testInstallationTypePage(
       tester, InstallationTypePage, (lang) => lang.installationTypeTitle);
 
   if (type != null) {
-    await tester.tapRadioButton<InstallationType>(type);
+    await tester.tapRadio<InstallationType>(type);
     await tester.pump();
   }
   if (advancedFeature != null) {
     await tester.tapButton(tester.lang.installationTypeAdvancedLabel);
     await tester.pumpAndSettle();
 
-    await tester.tapRadioButton<AdvancedFeature>(advancedFeature);
+    await tester.tapRadio<AdvancedFeature>(advancedFeature);
     await tester.pump();
 
     if (useEncryption != null) {
-      await tester.toggleCheckbox(
-        label: tester.lang.installationTypeEncrypt('Ubuntu'),
-        value: true,
+      await tester.toggleButton(
+        tester.lang.installationTypeEncrypt('Ubuntu'),
+        true,
       );
     }
 

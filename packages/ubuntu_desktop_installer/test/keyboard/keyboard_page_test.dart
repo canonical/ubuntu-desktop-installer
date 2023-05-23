@@ -8,8 +8,8 @@ import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_page.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'keyboard_model_test.mocks.dart';

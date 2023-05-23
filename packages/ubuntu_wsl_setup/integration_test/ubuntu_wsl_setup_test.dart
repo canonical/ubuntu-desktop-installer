@@ -6,7 +6,7 @@ import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wsl_setup/main.dart' as app;
 import 'package:ubuntu_wsl_setup/routes.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'test_pages.dart';
 

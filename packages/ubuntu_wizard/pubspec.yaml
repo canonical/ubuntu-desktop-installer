@@ -53,3 +53,4 @@ dev_dependencies:
   ubuntu_test:
     path: ../ubuntu_test
   url_launcher_platform_interface: ^2.0.5
+  yaru_test: ^0.1.0

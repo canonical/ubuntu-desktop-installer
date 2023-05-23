@@ -6,8 +6,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/source/not_enough_disk_space/not_enough_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/not_enough_disk_space/not_enough_disk_space_page.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:yaru_window_test/yaru_window_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
 import 'not_enough_disk_space_page_test.mocks.dart';

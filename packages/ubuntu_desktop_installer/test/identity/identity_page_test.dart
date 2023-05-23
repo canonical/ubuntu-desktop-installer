@@ -8,7 +8,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_page.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
 import 'identity_page_test.mocks.dart';

@@ -6,7 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_view.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';

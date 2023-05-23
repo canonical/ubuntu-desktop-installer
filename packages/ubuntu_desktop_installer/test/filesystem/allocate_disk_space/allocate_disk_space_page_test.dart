@@ -13,7 +13,7 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/al
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_page.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_selector.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../test_utils.dart';
