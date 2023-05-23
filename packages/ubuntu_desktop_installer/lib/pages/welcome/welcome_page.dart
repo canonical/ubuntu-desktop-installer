@@ -3,6 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -16,8 +17,11 @@ export 'welcome_model.dart' show Option;
 class WelcomePage extends ConsumerWidget {
   const WelcomePage({super.key});
 
-  static Future<bool> load(WidgetRef ref) {
-    return ref.read(welcomeModelProvider).init().then((_) => true);
+  static Future<bool> load(BuildContext context, WidgetRef ref) {
+    return Future.wait([
+      ref.read(welcomeModelProvider).init(),
+      MascotAvatar.precacheAsset(context),
+    ]).then((_) => true);
   }
 
   @override
