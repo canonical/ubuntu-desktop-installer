@@ -21,7 +21,6 @@ import 'routes.dart';
 import 'services.dart';
 import 'slides.dart';
 import 'theme.dart';
-import 'widgets.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 export 'slides.dart';
@@ -176,11 +175,6 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
       YaruWindow.of(context).setClosable(status?.isInstalling != true);
       setState(() => _subiquityStatus = status);
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-      MascotAvatar.precacheAsset(context);
-    });
   }
 
   @override
@@ -306,7 +300,7 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
           Routes.welcome: WizardRoute(
             builder: (_) => const WelcomePage(),
             userData: InstallationStep.locale.index,
-            onLoad: (_) => WelcomePage.load(ref),
+            onLoad: (_) => WelcomePage.load(context, ref),
           ),
         Routes.rst: WizardRoute(
           builder: (_) => const RstPage(),
