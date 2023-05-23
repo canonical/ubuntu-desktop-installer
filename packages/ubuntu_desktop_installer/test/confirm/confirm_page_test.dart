@@ -1,19 +1,13 @@
-import 'package:collection/collection.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/confirm/confirm_model.dart';
-import 'package:ubuntu_desktop_installer/pages/confirm/confirm_page.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
-import 'confirm_page_test.mocks.dart';
+import 'test_confirm.dart';
 
 final testDisks = <Disk>[
   fakeDisk(
@@ -81,48 +75,13 @@ final testDisks = <Disk>[
   ),
 ];
 
-ConfirmModel buildModel({
-  List<Disk>? disks,
-  Map<String, List<Partition>>? partitions,
-  Map<String, List<Partition>>? originals,
-}) {
-  final model = MockConfirmModel();
-  when(model.disks).thenReturn(disks ?? <Disk>[]);
-  when(model.partitions).thenReturn(partitions ?? <String, List<Partition>>{});
-  when(model.getOriginalPartition(any, any)).thenAnswer((i) =>
-      originals?[i.positionalArguments.first]?.firstWhereOrNull(
-          (p) => p.number == i.positionalArguments.last as int));
-  return model;
-}
-
-@GenerateMocks([UdevDeviceInfo, UdevService, ConfirmModel])
 void main() {
-  Widget buildPage(ConfirmModel model) {
-    final udev = MockUdevService();
-    final sda = MockUdevDeviceInfo();
-    when(sda.modelName).thenReturn('SDA');
-    when(sda.vendorName).thenReturn('ATA');
-    when(udev.bySysname('sda')).thenReturn(sda);
-    final sdb = MockUdevDeviceInfo();
-    when(sdb.modelName).thenReturn('SDB');
-    when(sdb.vendorName).thenReturn('ATA');
-    when(udev.bySysname('sdb')).thenReturn(sdb);
-    registerMockService<UdevService>(udev);
-
-    return ProviderScope(
-      overrides: [
-        confirmModelProvider.overrideWith((_) => model),
-      ],
-      child: const ConfirmPage(),
-    );
-  }
-
   testWidgets('list of disks and partitions', (tester) async {
-    final model = buildModel(disks: testDisks, partitions: {
+    final model = buildConfirmModel(disks: testDisks, partitions: {
       testDisks.first.sysname: testDisks.first.partitions.cast<Partition>(),
       testDisks.last.sysname: testDisks.last.partitions.cast<Partition>(),
     });
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildConfirmPage(model)));
 
     for (final disk in testDisks) {
       expect(find.byKey(ValueKey(disk)), findsOneWidget);
@@ -134,13 +93,13 @@ void main() {
   });
 
   testWidgets('partition change summary', (tester) async {
-    final model = buildModel(disks: testDisks, partitions: {
+    final model = buildConfirmModel(disks: testDisks, partitions: {
       testDisks.first.sysname: testDisks.first.partitions.cast<Partition>(),
       testDisks.last.sysname: testDisks.last.partitions.cast<Partition>(),
     }, originals: {
       'sdb': [const Partition(number: 6, size: 123)],
     });
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildConfirmPage(model)));
 
     expect(
         find.html(tester.lang.writeChangesPartitionFormattedMounted(
@@ -161,8 +120,8 @@ void main() {
   });
 
   testWidgets('starts installation', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildConfirmModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildConfirmPage(model)));
 
     final installButton = find.button(tester.lang.startInstallingButtonText);
     expect(installButton, findsOneWidget);
