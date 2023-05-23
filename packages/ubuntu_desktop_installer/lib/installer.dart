@@ -320,6 +320,7 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
         Routes.network: WizardRoute(
           builder: (_) => const NetworkPage(),
           userData: InstallationStep.network.index,
+          onLoad: (_) => NetworkPage.load(ref),
         ),
         Routes.source: WizardRoute(
           builder: (_) => const SourceWizard(),

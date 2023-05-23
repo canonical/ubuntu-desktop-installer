@@ -98,7 +98,16 @@ void main() {
         hiddenWifiModelProvider.overrideWith((_) => hiddenWifiModel),
         noConnectModelProvider.overrideWith((_) => NoConnectModel()),
       ],
-      child: const NetworkPage(),
+      child: Consumer(builder: (context, ref, child) {
+        return FutureBuilder(
+          future: NetworkPage.load(ref),
+          builder: (context, snapshot) {
+            return snapshot.data == true
+                ? const NetworkPage()
+                : const SizedBox.shrink();
+          },
+        );
+      }),
     );
   }
 
@@ -178,7 +187,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model: model)));
     await tester.pumpAndSettle();
 
-    verify(model.init()).called(1);
+    verify(model.init());
     verifyNever(model.cleanup());
 
     final nextButton = find.button(tester.ulang.nextLabel);
@@ -186,14 +195,13 @@ void main() {
     await tester.tap(nextButton);
     await tester.pumpAndSettle();
 
-    verifyNever(model.init());
     verify(model.cleanup()).called(1);
 
     final context = tester.element(find.text('Next page'));
     Wizard.of(context).back();
     await tester.pumpAndSettle();
 
-    verify(model.init()).called(1);
+    verify(model.init());
     verifyNever(model.cleanup());
   });
 
