@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
@@ -12,34 +9,14 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
-import 'welcome_page_test.mocks.dart';
+import 'test_welcome.dart';
 
-const kTestReleaseNotes = 'https://wiki.ubuntu.com/foo/ReleaseNotes';
-
-@GenerateMocks([UrlLauncher, WelcomeModel])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
 
-  WelcomeModel buildModel({bool? isConnected, Option? option}) {
-    final model = MockWelcomeModel();
-    when(model.isConnected).thenReturn(isConnected ?? false);
-    when(model.option).thenReturn(option ?? Option.none);
-    when(model.releaseNotesURL(any)).thenReturn(kTestReleaseNotes);
-    return model;
-  }
-
-  Widget buildPage(WelcomeModel model) {
-    return ProviderScope(
-      overrides: [
-        welcomeModelProvider.overrideWith((_) => model),
-      ],
-      child: const WelcomePage(),
-    );
-  }
-
   testWidgets('release notes', (tester) async {
-    final model = buildModel(isConnected: true);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildWelcomeModel(isConnected: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildWelcomePage(model)));
 
     expect(find.byType(Html).hitTestable(), findsOneWidget);
 
@@ -49,19 +26,19 @@ void main() {
 
     await tester.tapLink('release notes');
 
-    verify(urlLauncher.launchUrl(kTestReleaseNotes)).called(1);
+    verify(urlLauncher.launchUrl(kTestReleastNoteUrl)).called(1);
   });
 
   testWidgets('offline', (tester) async {
-    final model = buildModel(isConnected: false);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildWelcomeModel(isConnected: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildWelcomePage(model)));
 
     expect(find.byType(Html).hitTestable(), findsNothing);
   });
 
   testWidgets('select option', (tester) async {
-    final model = buildModel(option: Option.none);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildWelcomeModel(option: Option.none);
+    await tester.pumpWidget(tester.buildApp((_) => buildWelcomePage(model)));
 
     expect(find.button(tester.ulang.nextLabel), isDisabled);
 
@@ -73,15 +50,15 @@ void main() {
   });
 
   testWidgets('install ubuntu', (tester) async {
-    final model = buildModel(option: Option.installUbuntu);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildWelcomeModel(option: Option.installUbuntu);
+    await tester.pumpWidget(tester.buildApp((_) => buildWelcomePage(model)));
 
     expect(find.button(tester.ulang.nextLabel), isEnabled);
   });
 
   testWidgets('try ubuntu', (tester) async {
-    final model = buildModel(option: Option.tryUbuntu);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildWelcomeModel(option: Option.tryUbuntu);
+    await tester.pumpWidget(tester.buildApp((_) => buildWelcomePage(model)));
 
     expect(find.button(tester.ulang.nextLabel), isEnabled);
 
