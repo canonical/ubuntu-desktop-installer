@@ -1,19 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';
-import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
-import 'active_directory_page_test.mocks.dart';
+import 'test_active_directory.dart';
 
 final domainNameValidationVariant = ValueVariant(
     AdDomainNameValidation.values.toSet()
@@ -23,48 +18,15 @@ final adminNameValidationVariant =
 final passwordValidationVariant =
     ValueVariant(AdPasswordValidation.values.toSet());
 
-@GenerateMocks([ActiveDirectoryModel, UrlLauncher])
 void main() {
-  ActiveDirectoryModel buildModel({
-    bool? isValid,
-    String? domainName,
-    String? adminName,
-    String? password,
-    List<AdDomainNameValidation>? domainNameValidation,
-    AdAdminNameValidation? adminNameValidation,
-    AdPasswordValidation? passwordValidation,
-    AdJoinResult? joinResult,
-  }) {
-    final model = MockActiveDirectoryModel();
-    when(model.isValid).thenReturn(isValid ?? false);
-    when(model.domainName).thenReturn(domainName ?? '');
-    when(model.adminName).thenReturn(adminName ?? '');
-    when(model.password).thenReturn(password ?? '');
-    when(model.domainNameValidation)
-        .thenReturn(domainNameValidation ?? [AdDomainNameValidation.OK]);
-    when(model.adminNameValidation)
-        .thenReturn(adminNameValidation ?? AdAdminNameValidation.OK);
-    when(model.passwordValidation)
-        .thenReturn(passwordValidation ?? AdPasswordValidation.OK);
-    when(model.getJoinResult())
-        .thenAnswer((_) async => joinResult ?? AdJoinResult.OK);
-    return model;
-  }
-
-  Widget buildPage(ActiveDirectoryModel model) {
-    return ProviderScope(
-      overrides: [activeDirectoryModelProvider.overrideWith((_) => model)],
-      child: const ActiveDirectoryPage(),
-    );
-  }
-
   testWidgets('init AD connection info', (tester) async {
-    final model = buildModel(
+    final model = buildActiveDirectoryModel(
       domainName: 'ubuntu.com',
       adminName: 'admin',
       password: 'password',
     );
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
 
     expect(find.textField('ubuntu.com'), findsOneWidget);
     expect(find.textField('admin'), findsOneWidget);
@@ -73,12 +35,13 @@ void main() {
 
   testWidgets('domain name input', (tester) async {
     final validation = domainNameValidationVariant.currentValue!;
-    final model = buildModel(
+    final model = buildActiveDirectoryModel(
       domainName: 'ubuntu.com',
       domainNameValidation: [validation],
     );
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
     final error = validation.localize(tester.lang);
     if (error.isNotEmpty) {
       expect(find.text(error), findsNothing);
@@ -98,10 +61,11 @@ void main() {
 
   testWidgets('admin name input', (tester) async {
     final validation = adminNameValidationVariant.currentValue!;
-    final model =
-        buildModel(adminName: 'admin', adminNameValidation: validation);
+    final model = buildActiveDirectoryModel(
+        adminName: 'admin', adminNameValidation: validation);
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
     final error = validation.localize(tester.lang);
     if (error.isNotEmpty) {
       expect(find.text(validation.localize(tester.lang)), findsNothing);
@@ -120,10 +84,11 @@ void main() {
 
   testWidgets('password input', (tester) async {
     final validation = passwordValidationVariant.currentValue!;
-    final model =
-        buildModel(password: 'password', passwordValidation: validation);
+    final model = buildActiveDirectoryModel(
+        password: 'password', passwordValidation: validation);
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
     final error = validation.localize(tester.lang);
     if (error.isNotEmpty) {
       expect(find.text(error), findsNothing);
@@ -139,22 +104,25 @@ void main() {
   }, variant: passwordValidationVariant);
 
   testWidgets('valid input', (tester) async {
-    final model = buildModel(isValid: true);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildActiveDirectoryModel(isValid: true);
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
 
     expect(find.button(tester.ulang.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
-    final model = buildModel(isValid: false);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildActiveDirectoryModel(isValid: false);
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
 
     expect(find.button(tester.ulang.nextLabel), isDisabled);
   });
 
   testWidgets('save AD connection info', (tester) async {
-    final model = buildModel(isValid: true);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildActiveDirectoryModel(isValid: true);
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
@@ -168,9 +136,10 @@ void main() {
   });
 
   testWidgets('AD join error', (tester) async {
-    final model =
-        buildModel(isValid: true, joinResult: AdJoinResult.JOIN_ERROR);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildActiveDirectoryModel(
+        isValid: true, joinResult: AdJoinResult.JOIN_ERROR);
+    await tester
+        .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);

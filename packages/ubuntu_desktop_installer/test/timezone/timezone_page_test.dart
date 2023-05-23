@@ -1,50 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:timezone_map/timezone_map.dart';
-import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_page.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
-import 'timezone_page_test.mocks.dart';
+import 'test_timezone.dart';
 
-@GenerateMocks([TimezoneModel])
 void main() {
-  MockTimezoneModel buildModel({
-    String? timezone,
-    GeoLocation? selectedLocation,
-    LatLng? selectedCoordinates,
-    Iterable<GeoLocation>? locations,
-    Iterable<GeoLocation>? timezones,
-  }) {
-    final model = MockTimezoneModel();
-    when(model.init()).thenAnswer((_) async => timezone ?? '');
-    when(model.selectedLocation).thenReturn(selectedLocation);
-    when(model.locations).thenReturn(locations ?? const <GeoLocation>[]);
-    when(model.timezones).thenReturn(timezones ?? const <GeoLocation>[]);
-    when(model.searchLocation(''))
-        .thenAnswer((_) async => const <GeoLocation>[]);
-    when(model.searchTimezone(''))
-        .thenAnswer((_) async => const <GeoLocation>[]);
-    return model;
-  }
-
-  Widget buildPage(TimezoneModel model) {
-    return ProviderScope(
-      overrides: [
-        timezoneModelProvider.overrideWith((_) => model),
-      ],
-      child: const TimezonePage(),
-    );
-  }
-
   testWidgets('saves the location', (tester) async {
-    final model = buildModel();
+    final model = buildTimezoneModel();
     when(model.init()).thenAnswer((_) async => '');
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildTimezonePage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
     await tester.tap(nextButton);
@@ -52,11 +20,11 @@ void main() {
   });
 
   testWidgets('search location', (tester) async {
-    final model = buildModel();
+    final model = buildTimezoneModel();
     when(model.searchLocation('test'))
         .thenAnswer((_) async => const <GeoLocation>[]);
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildTimezonePage(model)));
 
     await tester.enterText(find.byType(EditableText).first, 'test');
     await tester.pump();
@@ -64,11 +32,11 @@ void main() {
   });
 
   testWidgets('search timezone', (tester) async {
-    final model = buildModel();
+    final model = buildTimezoneModel();
     when(model.searchTimezone('test'))
         .thenAnswer((_) async => const <GeoLocation>[]);
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildTimezonePage(model)));
 
     await tester.enterText(find.byType(EditableText).last, 'test');
     await tester.pump();
@@ -81,11 +49,11 @@ void main() {
       GeoLocation(name: 'b'),
     ];
 
-    final model = buildModel();
+    final model = buildTimezoneModel();
     when(model.searchLocation('b')).thenAnswer((_) async => locations);
     when(model.selectLocation(const GeoLocation())).thenAnswer((_) {});
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildTimezonePage(model)));
 
     expect(find.byType(ListView), findsNothing);
     expect(find.text('b'), findsNothing);
@@ -111,11 +79,11 @@ void main() {
       GeoLocation(timezone: 'b'),
     ];
 
-    final model = buildModel();
+    final model = buildTimezoneModel();
     when(model.searchTimezone('b')).thenAnswer((_) async => timezones);
     when(model.selectTimezone(const GeoLocation())).thenAnswer((_) {});
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildTimezonePage(model)));
 
     expect(find.byType(ListView), findsNothing);
     expect(find.text('b'), findsNothing);
@@ -166,11 +134,11 @@ void main() {
       ),
     ];
 
-    final model = buildModel();
+    final model = buildTimezoneModel();
     when(model.searchCoordinates(any)).thenAnswer((_) async => locations);
     when(model.searchTimezone(any)).thenAnswer((_) async => timezones);
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildTimezonePage(model)));
 
     expect(find.byType(TimezoneMap), findsOneWidget);
     await tester.tap(find.byType(TimezoneMap));
@@ -187,8 +155,8 @@ void main() {
   });
 
   testWidgets('format location', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildTimezoneModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildTimezonePage(model)));
 
     final page = find.byType(TimezonePage);
     expect(page, findsOneWidget);
@@ -213,8 +181,8 @@ void main() {
   });
 
   testWidgets('format timezone', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildTimezoneModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildTimezonePage(model)));
 
     final page = find.byType(TimezonePage);
     expect(page, findsOneWidget);
@@ -227,8 +195,8 @@ void main() {
   });
 
   testWidgets('previous button is disabled', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildTimezoneModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildTimezonePage(model)));
 
     expect(find.button(tester.ulang.previousLabel), isDisabled);
   });

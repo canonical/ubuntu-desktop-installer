@@ -1,15 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
 
-import 'network_model_test.mocks.dart';
-import 'network_page_test.mocks.dart';
+import 'test_network.dart';
 
-@GenerateMocks([ConnectModel])
 void main() {
   test('connects the service', () async {
     final service = MockNetworkService();
@@ -58,8 +55,7 @@ void main() {
   });
 
   test('no mode selected', () {
-    final service = MockNetworkService();
-    final model = NetworkModel(service);
+    final model = NetworkModel(MockNetworkService());
     expect(model.connectMode, equals(ConnectMode.none));
     expect(model.isConnected, isFalse);
     expect(model.canConnect, isFalse);
@@ -67,8 +63,7 @@ void main() {
   });
 
   test('selected mode', () {
-    final service = MockNetworkService();
-    final model = NetworkModel(service);
+    final model = NetworkModel(MockNetworkService());
     expect(model.connectMode, equals(ConnectMode.none));
 
     final wifi = MockConnectModel();
@@ -114,8 +109,6 @@ void main() {
   });
 
   test('preferred mode', () {
-    final service = MockNetworkService();
-
     final ethernet = MockConnectModel();
     when(ethernet.isEnabled).thenReturn(true);
     when(ethernet.connectMode).thenReturn(ConnectMode.ethernet);
@@ -138,7 +131,7 @@ void main() {
     when(none.connectMode).thenReturn(ConnectMode.none);
     when(none.onAvailabilityChanged).thenAnswer((_) => const Stream.empty());
 
-    final model = NetworkModel(service);
+    final model = NetworkModel(MockNetworkService());
     model.addConnectMode(ethernet);
     model.addConnectMode(wifi);
     model.addConnectMode(hiddenWifi);
@@ -171,8 +164,6 @@ void main() {
   });
 
   test('finds best mode', () {
-    final service = MockNetworkService();
-
     final ethernet = MockConnectModel();
     final ethernetChanged = StreamController(sync: true);
     when(ethernet.connectMode).thenReturn(ConnectMode.ethernet);
@@ -202,7 +193,7 @@ void main() {
     when(none.hasActiveConnection).thenReturn(false);
     when(none.onAvailabilityChanged).thenAnswer((_) => const Stream.empty());
 
-    final model = NetworkModel(service);
+    final model = NetworkModel(MockNetworkService());
     model.addConnectMode(ethernet);
     model.addConnectMode(wifi);
     model.addConnectMode(hiddenWifi);

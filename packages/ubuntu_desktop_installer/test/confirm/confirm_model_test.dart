@@ -1,14 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/confirm/confirm_model.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'confirm_model_test.mocks.dart';
+import 'test_confirm.dart';
 
-@GenerateMocks([StorageService])
 void main() {
   final testDisks = <Disk>[
     fakeDisk(

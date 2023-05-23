@@ -5,7 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_detector.dart';
 import 'package:ubuntu_desktop_installer/services/keyboard_service.dart';
 
-import 'keyboard_model_test.mocks.dart';
+import 'test_keyboard.dart';
 
 void main() {
   test('init', () async {

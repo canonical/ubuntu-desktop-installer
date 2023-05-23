@@ -1,11 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:platform/platform.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'keyboard_model_test.mocks.dart';
+import 'test_keyboard.dart';
 
 const testLayouts = <KeyboardLayout>[
   KeyboardLayout(code: 'empty-variants', name: 'Empty variants', variants: []),
@@ -28,7 +27,6 @@ KeyboardSetup testSetup(
   return KeyboardSetup(setting: setting, layouts: layouts);
 }
 
-@GenerateMocks([KeyboardService])
 void main() {
   group('detect layout and variant when', () {
     late MockKeyboardService service;

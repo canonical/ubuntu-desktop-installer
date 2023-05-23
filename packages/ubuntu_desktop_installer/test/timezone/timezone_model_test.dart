@@ -1,13 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
-import 'package:ubuntu_desktop_installer/services/timezone_service.dart';
 
-import 'timezone_model_test.mocks.dart';
+import 'test_timezone.dart';
 
-@GenerateMocks([GeoService, TimezoneService])
 void main() {
   test('init', () async {
     final service = MockTimezoneService();

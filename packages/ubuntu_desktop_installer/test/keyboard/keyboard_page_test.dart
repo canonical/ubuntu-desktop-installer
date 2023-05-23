@@ -1,61 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_page.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import '../test_utils.dart';
-import 'keyboard_model_test.mocks.dart';
-import 'keyboard_page_test.mocks.dart';
+import 'test_keyboard.dart';
 
-@GenerateMocks([KeyboardModel])
 void main() {
-  MockKeyboardModel buildModel({
-    bool? isValid,
-    List<String>? layouts,
-    int? selectedLayoutIndex,
-    List<String>? variants,
-    int? selectedVariantIndex,
-  }) {
-    final model = MockKeyboardModel();
-    when(model.isValid).thenReturn(isValid ?? false);
-    when(model.layoutCount).thenReturn(layouts?.length ?? 0);
-    for (var i = 0; i < (layouts?.length ?? 0); ++i) {
-      when(model.layoutName(i)).thenReturn(layouts![i]);
-    }
-    when(model.selectedLayoutIndex).thenReturn(selectedLayoutIndex ?? 0);
-    when(model.variantCount).thenReturn(variants?.length ?? 0);
-    for (var i = 0; i < (variants?.length ?? 0); ++i) {
-      when(model.variantName(i)).thenReturn(variants![i]);
-    }
-    when(model.selectedVariantIndex).thenReturn(selectedVariantIndex ?? 0);
-    return model;
-  }
-
-  Widget buildPage(KeyboardModel model) {
-    final service = MockKeyboardService();
-    when(service.getKeyboardStep(any)).thenAnswer(
-        (_) async => const AnyStep.stepPressKey(keycodes: {}, symbols: []));
-    registerMockService<KeyboardService>(service);
-
-    return ProviderScope(
-      overrides: [keyboardModelProvider.overrideWith((_) => model)],
-      child: const KeyboardPage(),
-    );
-  }
-
   testWidgets('select keyboard layout', (tester) async {
-    final model = buildModel(
+    final model = buildKeyboardModel(
       layouts: List.generate(3, (i) => 'Layout $i'),
     );
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     for (var i = 0; i < 3; ++i) {
       final layoutTile = find.listTile('Layout $i');
@@ -66,10 +26,10 @@ void main() {
   });
 
   testWidgets('select keyboard variant', (tester) async {
-    final model = buildModel(
+    final model = buildKeyboardModel(
       variants: List.generate(3, (i) => 'Variant $i'),
     );
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     for (var i = 0; i < 3; ++i) {
       await tester.tap(find.byType(MenuButtonBuilder<int>));
@@ -83,8 +43,8 @@ void main() {
   });
 
   testWidgets('type to test keyboard', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildKeyboardModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     final textField = find.textField(tester.lang.typeToTest);
     expect(textField, findsOneWidget);
@@ -94,8 +54,8 @@ void main() {
   });
 
   testWidgets('detect keyboard layout', (tester) async {
-    final model = buildModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildKeyboardModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     final detectButton = find.button(tester.lang.detectButtonText);
     expect(detectButton, findsOneWidget);
@@ -113,8 +73,8 @@ void main() {
   });
 
   testWidgets('valid input', (tester) async {
-    final model = buildModel(isValid: true);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildKeyboardModel(isValid: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
@@ -122,8 +82,8 @@ void main() {
   });
 
   testWidgets('invalid input', (tester) async {
-    final model = buildModel(isValid: false);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildKeyboardModel(isValid: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);
@@ -131,11 +91,11 @@ void main() {
   });
 
   testWidgets('key search', (tester) async {
-    final model = buildModel();
+    final model = buildKeyboardModel();
     when(model.searchLayout('foo')).thenReturn(-1);
     when(model.searchLayout('bar')).thenReturn(2);
 
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     final keySearch = find.byType(KeySearch);
     expect(keySearch, findsOneWidget);
@@ -159,8 +119,8 @@ void main() {
   });
 
   testWidgets('continue on the next page', (tester) async {
-    final model = buildModel(isValid: true);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+    final model = buildKeyboardModel(isValid: true);
+    await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);

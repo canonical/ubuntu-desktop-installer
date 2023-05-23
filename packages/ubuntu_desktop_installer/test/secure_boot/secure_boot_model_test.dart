@@ -1,12 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'secure_boot_model_test.mocks.dart';
+import 'test_secure_boot.dart';
 
-@GenerateMocks([StorageService])
 void main() {
   test('init model with secure boot off should have not validated form', () {
     final model = SecureBootModel(
