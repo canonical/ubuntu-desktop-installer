@@ -11,7 +11,7 @@ import 'package:ubuntu_wizard/utils.dart';
 
 import 'install/install_model_test.mocks.dart';
 import 'loading/loading_model_test.mocks.dart';
-import 'locale/locale_model_test.mocks.dart';
+import 'locale/test_locale.dart';
 import 'theme/theme_page_test.mocks.dart';
 
 void main() {

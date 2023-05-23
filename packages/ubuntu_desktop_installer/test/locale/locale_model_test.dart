@@ -2,14 +2,11 @@ import 'dart:ui';
 
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'locale_model_test.mocks.dart';
+import 'test_locale.dart';
 
-@GenerateMocks([LocaleService, SoundService])
 void main() {
   test('load languages', () async {
     final locale = MockLocaleService();
