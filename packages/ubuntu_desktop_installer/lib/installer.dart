@@ -295,6 +295,7 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
         Routes.locale: WizardRoute(
           builder: (_) => const LocalePage(),
           userData: InstallationStep.locale.index,
+          onLoad: (_) => LocalePage.load(context, ref),
         ),
         if (welcome == true)
           Routes.welcome: WizardRoute(
