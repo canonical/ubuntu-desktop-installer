@@ -12,8 +12,7 @@ import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import 'source_model_test.mocks.dart';
-import 'source_page_test.mocks.dart';
+import 'test_source.dart';
 
 void main() {
   testWidgets('enough disk space', (tester) async {
