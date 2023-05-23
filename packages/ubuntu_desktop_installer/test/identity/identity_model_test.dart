@@ -3,13 +3,12 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import 'identity_model_test.mocks.dart';
+import 'test_identity.dart';
 
 class MockProductNameFile extends Mock implements File {
   MockProductNameFile(this._product);
@@ -18,13 +17,6 @@ class MockProductNameFile extends Mock implements File {
   Future<String> readAsString({Encoding encoding = utf8}) async => _product;
 }
 
-@GenerateMocks([
-  ActiveDirectoryService,
-  ConfigService,
-  IdentityService,
-  NetworkService,
-  TelemetryService,
-])
 void main() {
   test('init', () async {
     const identity = IdentityData(
