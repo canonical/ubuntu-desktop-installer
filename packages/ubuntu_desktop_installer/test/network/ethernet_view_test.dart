@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_view.dart';
@@ -10,18 +8,15 @@ import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
-import 'ethernet_view_test.mocks.dart';
+import 'test_network.dart';
 
-@GenerateMocks([EthernetModel, EthernetDevice])
 void main() {
   setUpAll(() => UbuntuTester.context = Column);
 
   testWidgets('select ethernet mode', (tester) async {
     ConnectMode? mode;
 
-    final model = MockEthernetModel();
-    when(model.isEnabled).thenReturn(true);
-    when(model.devices).thenReturn([MockEthernetDevice()]);
+    final model = buildEthernetModel(devices: [MockEthernetDevice()]);
 
     await tester.pumpWidget(
       tester.buildApp(
@@ -46,9 +41,8 @@ void main() {
   });
 
   testWidgets('ethernet disabled', (tester) async {
-    final model = MockEthernetModel();
-    when(model.isEnabled).thenReturn(false);
-    when(model.devices).thenReturn([MockEthernetDevice()]);
+    final model =
+        buildEthernetModel(isEnabled: false, devices: [MockEthernetDevice()]);
 
     var wasEnabled = false;
 
@@ -86,9 +80,7 @@ void main() {
   });
 
   testWidgets('no ethernet devices', (tester) async {
-    final model = MockEthernetModel();
-    when(model.devices).thenReturn([]);
-    when(model.isEnabled).thenReturn(true);
+    final model = buildEthernetModel();
 
     await tester.pumpWidget(
       tester.buildApp(

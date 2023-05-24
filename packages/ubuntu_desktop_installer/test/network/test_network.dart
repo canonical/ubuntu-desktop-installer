@@ -32,17 +32,11 @@ NetworkModel buildNetworkModel({
 }
 
 @GenerateMocks([
-  AccessPoint,
-  EthernetModel,
-  EthernetDevice,
-  HiddenWifiModel,
   NetworkModel,
   UdevDeviceInfo,
   UdevService,
-  WifiModel,
-  WifiDevice,
 ])
-Widget buildPage({
+Widget buildNetworkPage({
   required NetworkModel model,
   bool? ethernet,
   bool? wifi,
@@ -115,4 +109,48 @@ Widget buildPage({
       );
     }),
   );
+}
+
+@GenerateMocks([EthernetDevice, EthernetModel])
+EthernetModel buildEthernetModel({
+  List<EthernetDevice>? devices,
+  bool? isEnabled,
+}) {
+  final model = MockEthernetModel();
+  when(model.devices).thenReturn(devices ?? []);
+  when(model.isEnabled).thenReturn(isEnabled ?? true);
+  return model;
+}
+
+@GenerateMocks([HiddenWifiModel])
+HiddenWifiModel buildHiddenWifiModel({
+  List<WifiDevice>? devices,
+  bool? isEnabled,
+  WifiDevice? selectedDevice,
+  String? ssid,
+}) {
+  final model = MockHiddenWifiModel();
+  when(model.devices).thenReturn(devices ?? []);
+  when(model.isEnabled).thenReturn(isEnabled ?? true);
+  when(model.selectedDevice).thenReturn(selectedDevice);
+  when(model.ssid).thenReturn(ssid ?? '');
+  when(model.isSelectedDevice(any)).thenAnswer((i) =>
+      selectedDevice != null && selectedDevice == i.positionalArguments.single);
+  return model;
+}
+
+@GenerateMocks([AccessPoint, WifiDevice, WifiModel])
+WifiModel buildWifiModel({
+  List<WifiDevice>? devices,
+  bool? isEnabled,
+  WifiDevice? selectedDevice,
+}) {
+  final model = MockWifiModel();
+  when(model.devices).thenReturn(devices ?? []);
+  when(model.isEnabled).thenReturn(isEnabled ?? true);
+  when(model.selectedDevice).thenReturn(selectedDevice);
+  when(model.isSelectedDevice(any)).thenAnswer((i) =>
+      selectedDevice != null && selectedDevice == i.positionalArguments.single);
+  when(model.startPeriodicScanning()).thenReturn(null);
+  return model;
 }
