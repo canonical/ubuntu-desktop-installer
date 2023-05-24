@@ -1,11 +1,7 @@
-import 'dart:async';
-
-import 'package:collection/collection.dart';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
@@ -17,9 +13,7 @@ import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../test_utils.dart';
-import 'allocate_disk_space_page_test.mocks.dart';
-
-final selection = StreamController.broadcast();
+import 'test_allocate_disk_space.dart';
 
 final testDisks = <Disk>[
   fakeDisk(
@@ -63,48 +57,6 @@ final testDisks = <Disk>[
   ),
 ];
 
-AllocateDiskSpaceModel buildModel({
-  bool? isValid,
-  List<Disk>? disks,
-  Gap? selectedGap,
-  Disk? selectedDisk,
-  int? selectedDiskIndex,
-  Partition? selectedPartition,
-  int? selectedObjectIndex,
-  bool? canAddPartition,
-  bool? canRemovePartition,
-  bool? canEditPartition,
-  bool? canReformatDisk,
-  int? bootDiskIndex,
-}) {
-  final model = MockAllocateDiskSpaceModel();
-  when(model.isValid).thenReturn(isValid ?? false);
-  when(model.disks).thenReturn(disks ?? <Disk>[]);
-  when(model.originalConfig(any)).thenAnswer((i) {
-    return disks
-        ?.expand((d) => d.partitions.whereType<Partition>())
-        .firstWhereOrNull((p) => p.path == i.positionalArguments[0].path);
-  });
-
-  when(model.selectedGap).thenReturn(selectedGap);
-  when(model.selectedDisk).thenReturn(selectedDisk);
-  when(model.selectedDiskIndex).thenReturn(selectedDiskIndex ?? 0);
-  when(model.selectedPartition).thenReturn(selectedPartition);
-  when(model.selectedObjectIndex).thenReturn(selectedObjectIndex ?? 0);
-  when(model.onSelectionChanged).thenAnswer((_) => selection.stream);
-  when(model.isStorageSelected(any, any)).thenReturn(false);
-  when(model.canSelectStorage(any, any)).thenReturn(true);
-
-  when(model.canAddPartition).thenReturn(canAddPartition ?? false);
-  when(model.canRemovePartition).thenReturn(canRemovePartition ?? false);
-  when(model.canEditPartition).thenReturn(canEditPartition ?? false);
-  when(model.canReformatDisk).thenReturn(canReformatDisk ?? false);
-
-  when(model.bootDiskIndex).thenReturn(bootDiskIndex);
-  return model;
-}
-
-@GenerateMocks([AllocateDiskSpaceModel, UdevDeviceInfo, UdevService])
 void main() {
   Widget buildPage(AllocateDiskSpaceModel model) {
     final udev = MockUdevService();
@@ -123,7 +75,7 @@ void main() {
   }
 
   testWidgets('list of disks and partitions', (tester) async {
-    final model = buildModel(disks: testDisks);
+    final model = buildAllocateDiskSpaceModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     for (final disk in testDisks) {
@@ -139,7 +91,7 @@ void main() {
   });
 
   testWidgets('select storage', (tester) async {
-    final model = buildModel(disks: testDisks);
+    final model = buildAllocateDiskSpaceModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.text(testDisks.first.sysname));
@@ -160,7 +112,7 @@ void main() {
   });
 
   testWidgets('cannot add/edit/remove/reformat', (tester) async {
-    final model = buildModel(
+    final model = buildAllocateDiskSpaceModel(
         disks: testDisks,
         canAddPartition: false,
         canEditPartition: false,
@@ -186,7 +138,8 @@ void main() {
   });
 
   testWidgets('can add', (tester) async {
-    final model = buildModel(disks: testDisks, canAddPartition: true);
+    final model =
+        buildAllocateDiskSpaceModel(disks: testDisks, canAddPartition: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final addButton = find.iconButton(Icons.add);
@@ -195,7 +148,8 @@ void main() {
   });
 
   testWidgets('can edit', (tester) async {
-    final model = buildModel(disks: testDisks, canEditPartition: true);
+    final model =
+        buildAllocateDiskSpaceModel(disks: testDisks, canEditPartition: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final editButton = find.button(tester.lang.changeButtonText);
@@ -206,7 +160,7 @@ void main() {
   testWidgets('can format', (tester) async {
     final disk = testDisks.first;
     final partition = disk.partitions.whereType<Partition>().first;
-    final model = buildModel(disks: testDisks);
+    final model = buildAllocateDiskSpaceModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final checkbox = find.byType(YaruCheckbox);
@@ -219,7 +173,7 @@ void main() {
   testWidgets('can remove', (tester) async {
     final disk = testDisks.first;
     final partition = disk.partitions.whereType<Partition>().first;
-    final model = buildModel(
+    final model = buildAllocateDiskSpaceModel(
       disks: testDisks,
       selectedDisk: disk,
       selectedPartition: partition,
@@ -237,7 +191,7 @@ void main() {
 
   testWidgets('can reset', (tester) async {
     final disk = testDisks.first;
-    final model = buildModel(
+    final model = buildAllocateDiskSpaceModel(
       disks: testDisks,
       selectedDisk: disk,
       canReformatDisk: true,
@@ -254,7 +208,7 @@ void main() {
 
   testWidgets('confirm new partition table', (tester) async {
     final disk = fakeDisk(ptable: 'gpt', path: '/dev/sda');
-    final model = buildModel(
+    final model = buildAllocateDiskSpaceModel(
       disks: [disk],
       selectedDisk: disk,
       canReformatDisk: true,
@@ -282,7 +236,7 @@ void main() {
   });
 
   testWidgets('revert', (tester) async {
-    final model = buildModel();
+    final model = buildAllocateDiskSpaceModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final revertButton = find.button(tester.lang.revertButtonText);
@@ -294,7 +248,8 @@ void main() {
   });
 
   testWidgets('boot disk', (tester) async {
-    final model = buildModel(disks: testDisks, bootDiskIndex: 1);
+    final model =
+        buildAllocateDiskSpaceModel(disks: testDisks, bootDiskIndex: 1);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.byType(StorageSelector));
@@ -319,7 +274,7 @@ void main() {
   });
 
   testWidgets('set storage', (tester) async {
-    final model = buildModel(isValid: true);
+    final model = buildAllocateDiskSpaceModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
@@ -330,7 +285,7 @@ void main() {
   });
 
   testWidgets('invalid input', (tester) async {
-    final model = buildModel(isValid: false);
+    final model = buildAllocateDiskSpaceModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
@@ -344,7 +299,7 @@ void main() {
       size: 1,
       usable: GapUsable.TOO_MANY_PRIMARY_PARTS,
     );
-    final model = buildModel(selectedGap: unusableGap);
+    final model = buildAllocateDiskSpaceModel(selectedGap: unusableGap);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final addButton = find.iconButton(Icons.add);

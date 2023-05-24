@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
@@ -10,36 +9,9 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
-import 'installation_type_page_test.mocks.dart';
+import 'test_installation_type.dart';
 
-@GenerateMocks([InstallationTypeModel])
 void main() {
-  InstallationTypeModel buildModel({
-    InstallationType? installationType,
-    AdvancedFeature? advancedFeature,
-    bool? encryption,
-    ProductInfo? productInfo,
-    List<OsProber>? existingOS,
-    bool? canInstallAlongside,
-    bool? hasStorage,
-    bool? hasBitLocker,
-    bool? isDone,
-  }) {
-    final model = MockInstallationTypeModel();
-    when(model.installationType)
-        .thenReturn(installationType ?? InstallationType.erase);
-    when(model.advancedFeature)
-        .thenReturn(advancedFeature ?? AdvancedFeature.none);
-    when(model.encryption).thenReturn(encryption ?? false);
-    when(model.productInfo).thenReturn(productInfo ?? ProductInfo(name: ''));
-    when(model.existingOS).thenReturn(existingOS);
-    when(model.canInstallAlongside).thenReturn(canInstallAlongside ?? false);
-    when(model.hasStorage).thenReturn(hasStorage ?? true);
-    when(model.hasBitLocker).thenReturn(hasBitLocker ?? false);
-    when(model.isDone).thenReturn(isDone ?? false);
-    return model;
-  }
-
   Widget buildPage(InstallationTypeModel model) {
     return ProviderScope(
       overrides: [installationTypeModelProvider.overrideWith((_) => model)],
@@ -48,7 +20,8 @@ void main() {
   }
 
   testWidgets('no existing OS', (tester) async {
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(buildModel())));
+    await tester.pumpWidget(
+        tester.buildApp((_) => buildPage(buildInstallationTypeModel())));
 
     expect(
       find.text(tester.lang.installationTypeNoOSDetected),
@@ -57,7 +30,7 @@ void main() {
   });
 
   testWidgets('one existing OS', (tester) async {
-    final model = buildModel(existingOS: [
+    final model = buildInstallationTypeModel(existingOS: [
       const OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4')
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
@@ -69,7 +42,7 @@ void main() {
   });
 
   testWidgets('two existing OSes', (tester) async {
-    final model = buildModel(existingOS: [
+    final model = buildInstallationTypeModel(existingOS: [
       const OsProber(long: 'Ubuntu 18.04 LTS', label: 'Ubuntu', type: 'ext4'),
       const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
     ]);
@@ -83,7 +56,7 @@ void main() {
   });
 
   testWidgets('multiple existing OSes', (tester) async {
-    final model = buildModel(existingOS: [
+    final model = buildInstallationTypeModel(existingOS: [
       const OsProber(long: 'Windows 10', label: 'windows', type: 'ntfs'),
       const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
       const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
@@ -97,7 +70,7 @@ void main() {
   });
 
   testWidgets('duplicate existing OSes', (tester) async {
-    final model = buildModel(existingOS: [
+    final model = buildInstallationTypeModel(existingOS: [
       const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4'),
       const OsProber(long: 'Ubuntu 20.04 LTS', label: 'Ubuntu', type: 'ext4')
     ]);
@@ -110,7 +83,7 @@ void main() {
   });
 
   testWidgets('reinstall', (tester) async {
-    final model = buildModel(existingOS: [
+    final model = buildInstallationTypeModel(existingOS: [
       const OsProber(
         long: 'Ubuntu 18.04 LTS',
         label: 'Ubuntu',
@@ -128,7 +101,7 @@ void main() {
   }, skip: true);
 
   testWidgets('alongside windows', (tester) async {
-    final model = buildModel(
+    final model = buildInstallationTypeModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
         const OsProber(
@@ -150,7 +123,7 @@ void main() {
   });
 
   testWidgets('alongside bitlocker', (tester) async {
-    final model = buildModel(
+    final model = buildInstallationTypeModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
         const OsProber(
@@ -174,7 +147,7 @@ void main() {
   });
 
   testWidgets('alongside ubuntu', (tester) async {
-    final model = buildModel(
+    final model = buildInstallationTypeModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
         const OsProber(
@@ -196,7 +169,7 @@ void main() {
   });
 
   testWidgets('alongside unknown', (tester) async {
-    final model = buildModel(
+    final model = buildInstallationTypeModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       canInstallAlongside: true,
     );
@@ -210,7 +183,7 @@ void main() {
   });
 
   testWidgets('alongside dual os', (tester) async {
-    final model = buildModel(
+    final model = buildInstallationTypeModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
         const OsProber(
@@ -239,7 +212,7 @@ void main() {
   });
 
   testWidgets('alongside duplicate os', (tester) async {
-    final model = buildModel(
+    final model = buildInstallationTypeModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
         const OsProber(
@@ -267,7 +240,7 @@ void main() {
   });
 
   testWidgets('alongside multi os', (tester) async {
-    final model = buildModel(
+    final model = buildInstallationTypeModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),
       existingOS: [
         const OsProber(
@@ -301,7 +274,7 @@ void main() {
   });
 
   testWidgets('erase', (tester) async {
-    final model = buildModel();
+    final model = buildInstallationTypeModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio = find.radioButton<InstallationType>(
@@ -312,7 +285,8 @@ void main() {
   });
 
   testWidgets('manual', (tester) async {
-    final model = buildModel(installationType: InstallationType.manual);
+    final model =
+        buildInstallationTypeModel(installationType: InstallationType.manual);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final radio =
@@ -326,7 +300,7 @@ void main() {
 
   group('advanced features', () {
     testWidgets('dialog', (tester) async {
-      final model = buildModel();
+      final model = buildInstallationTypeModel();
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
       final button = find.button(tester.lang.installationTypeAdvancedLabel);
@@ -338,7 +312,8 @@ void main() {
     });
 
     testWidgets('none selected', (tester) async {
-      final model = buildModel(advancedFeature: AdvancedFeature.none);
+      final model =
+          buildInstallationTypeModel(advancedFeature: AdvancedFeature.none);
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
       expect(
@@ -346,7 +321,8 @@ void main() {
     });
 
     testWidgets('lvm selected', (tester) async {
-      final model = buildModel(advancedFeature: AdvancedFeature.lvm);
+      final model =
+          buildInstallationTypeModel(advancedFeature: AdvancedFeature.lvm);
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
       expect(
@@ -354,8 +330,8 @@ void main() {
     });
 
     testWidgets('encrypted lvm selected', (tester) async {
-      final model =
-          buildModel(advancedFeature: AdvancedFeature.lvm, encryption: true);
+      final model = buildInstallationTypeModel(
+          advancedFeature: AdvancedFeature.lvm, encryption: true);
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
       expect(find.text(tester.lang.installationTypeLVMEncryptionSelected),
@@ -364,7 +340,7 @@ void main() {
   });
 
   testWidgets('no storage', (tester) async {
-    final model = buildModel(hasStorage: false);
+    final model = buildInstallationTypeModel(hasStorage: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
@@ -376,7 +352,7 @@ void main() {
   });
 
   testWidgets('continue', (tester) async {
-    final model = buildModel(hasStorage: true);
+    final model = buildInstallationTypeModel(hasStorage: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);

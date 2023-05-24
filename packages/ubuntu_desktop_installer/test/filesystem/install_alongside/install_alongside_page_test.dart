@@ -1,8 +1,6 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:split_view/split_view.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -13,52 +11,9 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import '../../test_utils.dart';
 import 'install_alongside_model_test.dart';
-import 'install_alongside_page_test.mocks.dart';
+import 'test_install_alongside.dart';
 
-@GenerateMocks([InstallAlongsideModel])
 void main() {
-  InstallAlongsideModel buildModel({
-    int? storageCount,
-    int? selectedIndex,
-    GuidedStorageTargetResize? selectedStorage,
-    Disk? selectedDisk,
-    Partition? selectedPartition,
-    OsProber? selectedOS,
-    ProductInfo? productInfo,
-    List<Disk>? allDisks,
-    Map<int, List<Partition>>? allPartitions,
-    List<OsProber>? existingOs,
-    int? currentSize,
-    int? minimumSize,
-    int? maximumSize,
-    int? totalSize,
-    bool? isDone,
-  }) {
-    final model = MockInstallAlongsideModel();
-    when(model.storageCount).thenReturn(storageCount ?? 0);
-    when(model.selectedIndex).thenReturn(selectedIndex);
-    when(model.selectedStorage).thenReturn(selectedStorage);
-    when(model.selectedDisk).thenReturn(selectedDisk);
-    when(model.selectedPartition).thenReturn(selectedPartition);
-    when(model.selectedOS).thenReturn(selectedOS);
-    when(model.productInfo).thenReturn(productInfo ?? ProductInfo(name: ''));
-    when(model.existingOS).thenReturn(existingOs ?? []);
-    when(model.getDisk(any))
-        .thenAnswer((i) => allDisks?[i.positionalArguments.single as int]);
-    when(model.getPartition(any)).thenAnswer((i) =>
-        allPartitions?[i.positionalArguments.single as int]?.firstOrNull);
-    when(model.getAllPartitions(any))
-        .thenAnswer((i) => allPartitions?[i.positionalArguments.single as int]);
-    when(model.getOS(any)).thenAnswer((i) =>
-        allPartitions?[i.positionalArguments.single as int]?.singleOrNull?.os);
-    when(model.currentSize).thenReturn(currentSize ?? 0);
-    when(model.minimumSize).thenReturn(minimumSize ?? 0);
-    when(model.maximumSize).thenReturn(maximumSize ?? 1);
-    when(model.totalSize).thenReturn(totalSize ?? 0);
-    when(model.isDone).thenReturn(isDone ?? false);
-    return model;
-  }
-
   Widget buildPage(InstallAlongsideModel model) {
     return ProviderScope(
       overrides: [installAlongsideModelProvider.overrideWith((_) => model)],
@@ -67,16 +22,19 @@ void main() {
   }
 
   testWidgets('storage formatting', (tester) async {
-    final model = buildModel(storageCount: 5, selectedIndex: 1, allPartitions: {
-      1: const [
-        Partition(
-          number: 1,
-          size: 123,
-          path: '/dev/sda1',
-          os: OsProber(long: 'Ubuntu 22.04 LTS', label: '', type: ''),
-        ),
-      ],
-    });
+    final model = buildInstallAlongsideModel(
+        storageCount: 5,
+        selectedIndex: 1,
+        allPartitions: {
+          1: const [
+            Partition(
+              number: 1,
+              size: 123,
+              path: '/dev/sda1',
+              os: OsProber(long: 'Ubuntu 22.04 LTS', label: '', type: ''),
+            ),
+          ],
+        });
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
@@ -86,7 +44,7 @@ void main() {
   });
 
   testWidgets('storage selection', (tester) async {
-    final model = buildModel(storageCount: 5, selectedIndex: 1);
+    final model = buildInstallAlongsideModel(storageCount: 5, selectedIndex: 1);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final item1 = find.descendant(
@@ -109,7 +67,7 @@ void main() {
   });
 
   testWidgets('storage resize', (tester) async {
-    final model = buildModel(
+    final model = buildInstallAlongsideModel(
       selectedPartition: const Partition(number: 1),
       totalSize: 100,
     );
@@ -125,7 +83,7 @@ void main() {
   });
 
   testWidgets('hidden partitions', (tester) async {
-    final model = buildModel(
+    final model = buildInstallAlongsideModel(
       selectedIndex: 1,
       allPartitions: {
         1: const [
@@ -146,7 +104,7 @@ void main() {
   });
 
   testWidgets('alongside none', (tester) async {
-    final model = buildModel(
+    final model = buildInstallAlongsideModel(
       existingOs: [],
       productInfo: ProductInfo(name: 'Ubuntu', version: '22.10'),
     );
@@ -159,7 +117,7 @@ void main() {
   });
 
   testWidgets('alongside one OS', (tester) async {
-    final model = buildModel(
+    final model = buildInstallAlongsideModel(
       existingOs: [windows10],
       productInfo: ProductInfo(name: 'Ubuntu', version: '22.10'),
     );
@@ -173,7 +131,7 @@ void main() {
   });
 
   testWidgets('alongside two OSes', (tester) async {
-    final model = buildModel(
+    final model = buildInstallAlongsideModel(
       existingOs: [ubuntu2110, ubuntu2204],
       productInfo: ProductInfo(name: 'Ubuntu', version: '22.10'),
     );
@@ -187,7 +145,7 @@ void main() {
   });
 
   testWidgets('alongside multiple OSes', (tester) async {
-    final model = buildModel(
+    final model = buildInstallAlongsideModel(
       existingOs: [windows10, ubuntu2110, ubuntu2204],
       productInfo: ProductInfo(name: 'Ubuntu', version: '22.10'),
     );

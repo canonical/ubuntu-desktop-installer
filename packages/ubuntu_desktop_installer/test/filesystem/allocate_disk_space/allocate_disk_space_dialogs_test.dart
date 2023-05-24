@@ -15,8 +15,7 @@ import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../test_utils.dart';
-import 'allocate_disk_space_page_test.dart';
-import 'allocate_disk_space_page_test.mocks.dart';
+import 'test_allocate_disk_space.dart';
 
 void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);
@@ -24,7 +23,7 @@ void main() {
   testWidgets('create partition', (tester) async {
     final disk = fakeDisk();
     const gap = Gap(offset: 0, size: 1000000, usable: GapUsable.YES);
-    final model = buildModel(selectedDisk: disk);
+    final model = buildAllocateDiskSpaceModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
 
@@ -72,7 +71,7 @@ void main() {
   testWidgets('create partition with invalid mount point', (tester) async {
     final disk = fakeDisk();
     const gap = Gap(offset: 0, size: 1000000, usable: GapUsable.YES);
-    final model = buildModel(selectedDisk: disk);
+    final model = buildAllocateDiskSpaceModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
 
@@ -108,7 +107,7 @@ void main() {
       ),
       const Gap(offset: 123, size: 1000000, usable: GapUsable.YES),
     ]);
-    final model = buildModel(selectedDisk: disk);
+    final model = buildAllocateDiskSpaceModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
 
@@ -177,7 +176,7 @@ void main() {
       ),
       const Gap(offset: 123, size: 1000000, usable: GapUsable.YES),
     ]);
-    final model = buildModel(selectedDisk: disk);
+    final model = buildAllocateDiskSpaceModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
 
