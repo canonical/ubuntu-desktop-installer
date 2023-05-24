@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
@@ -10,9 +9,8 @@ import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
-import 'wifi_view_test.mocks.dart';
+import 'test_network.dart';
 
-@GenerateMocks([AccessPoint, WifiModel, WifiDevice])
 void main() {
   setUpAll(() => UbuntuTester.context = WifiView);
 
@@ -47,11 +45,10 @@ void main() {
     when(device2.isActiveAccessPoint(accessPoint2)).thenReturn(true);
     when(device2.isSelectedAccessPoint(accessPoint2)).thenReturn(true);
 
-    final model = MockWifiModel();
-    when(model.devices).thenReturn([device1, device2]);
-    when(model.isSelectedDevice(any)).thenReturn(false);
-    when(model.startPeriodicScanning()).thenReturn(null);
-    when(model.isEnabled).thenReturn(true);
+    final model = buildWifiModel(
+      devices: [device1, device2],
+      isEnabled: true,
+    );
 
     WifiDevice? selectedDevice;
     AccessPoint? selectedAccessPoint;
@@ -118,9 +115,7 @@ void main() {
   });
 
   testWidgets('wifi disabled', (tester) async {
-    final model = MockWifiModel();
-    when(model.startPeriodicScanning()).thenReturn(null);
-    when(model.isEnabled).thenReturn(false);
+    final model = buildWifiModel(isEnabled: false);
 
     var wasEnabled = false;
 
@@ -160,10 +155,7 @@ void main() {
   });
 
   testWidgets('no wifi devices', (tester) async {
-    final model = MockWifiModel();
-    when(model.startPeriodicScanning()).thenReturn(null);
-    when(model.isEnabled).thenReturn(true);
-    when(model.devices).thenReturn([]);
+    final model = buildWifiModel();
 
     await tester.pumpWidget(
       tester.buildApp(
@@ -194,10 +186,7 @@ void main() {
   });
 
   testWidgets('starts periodic scanning', (tester) async {
-    final model = MockWifiModel();
-    when(model.startPeriodicScanning()).thenReturn(null);
-    when(model.isEnabled).thenReturn(true);
-    when(model.devices).thenReturn([]);
+    final model = buildWifiModel();
 
     await tester.pumpWidget(
       tester.buildApp(

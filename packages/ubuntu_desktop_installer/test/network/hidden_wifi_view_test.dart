@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_model.dart';
@@ -10,9 +9,8 @@ import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import 'hidden_wifi_view_test.mocks.dart';
+import 'test_network.dart';
 
-@GenerateMocks([HiddenWifiModel, WifiDevice])
 void main() {
   Future<void> pumpHiddenWifiView(
     WidgetTester tester, {
@@ -39,10 +37,8 @@ void main() {
   }
 
   testWidgets('enter ssid', (tester) async {
-    final model = MockHiddenWifiModel();
-    when(model.ssid).thenReturn('test');
-    when(model.isEnabled).thenReturn(true);
-    when(model.devices).thenReturn([MockWifiDevice()]);
+    final model =
+        buildHiddenWifiModel(ssid: 'test', devices: [MockWifiDevice()]);
 
     await pumpHiddenWifiView(tester, model: model);
 
@@ -56,10 +52,7 @@ void main() {
   });
 
   testWidgets('updates focus when expanded and collapsed', (tester) async {
-    final model = MockHiddenWifiModel();
-    when(model.ssid).thenReturn('');
-    when(model.isEnabled).thenReturn(true);
-    when(model.devices).thenReturn([MockWifiDevice()]);
+    final model = buildHiddenWifiModel(devices: [MockWifiDevice()]);
 
     await pumpHiddenWifiView(tester, model: model, expanded: false);
     await tester.pumpAndSettle();
@@ -78,10 +71,7 @@ void main() {
   });
 
   testWidgets('wifi disabled', (tester) async {
-    final model = MockHiddenWifiModel();
-    when(model.ssid).thenReturn('');
-    when(model.isEnabled).thenReturn(false);
-    when(model.devices).thenReturn([MockWifiDevice()]);
+    final model = buildHiddenWifiModel(isEnabled: false);
 
     await pumpHiddenWifiView(tester, model: model);
 
@@ -90,10 +80,7 @@ void main() {
   });
 
   testWidgets('no wifi devices', (tester) async {
-    final model = MockHiddenWifiModel();
-    when(model.ssid).thenReturn('');
-    when(model.isEnabled).thenReturn(true);
-    when(model.devices).thenReturn([]);
+    final model = buildHiddenWifiModel(devices: []);
 
     await pumpHiddenWifiView(tester, model: model);
 
@@ -105,10 +92,7 @@ void main() {
     final device = MockWifiDevice();
     when(device.model).thenReturn('model');
 
-    final model = MockHiddenWifiModel();
-    when(model.ssid).thenReturn('');
-    when(model.isEnabled).thenReturn(true);
-    when(model.devices).thenReturn([device]);
+    final model = buildHiddenWifiModel(devices: [device]);
 
     await pumpHiddenWifiView(tester, model: model);
 
@@ -123,11 +107,10 @@ void main() {
     final device2 = MockWifiDevice();
     when(device2.model).thenReturn('device 2');
 
-    final model = MockHiddenWifiModel();
-    when(model.ssid).thenReturn('');
-    when(model.isEnabled).thenReturn(true);
-    when(model.devices).thenReturn([device1, device2]);
-    when(model.selectedDevice).thenReturn(device2);
+    final model = buildHiddenWifiModel(
+      devices: [device1, device2],
+      selectedDevice: device2,
+    );
 
     await pumpHiddenWifiView(tester, model: model);
 
