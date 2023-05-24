@@ -175,12 +175,12 @@ void main() {
 
   testWidgets('7.manual-partitioning', (tester) async {
     await runInstallerApp([
-      '--initial-route=${Routes.filesystem}',
       '--',
       '--bootloader=uefi',
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
+    await tester.jumpToWizardRoute(Routes.filesystem);
     await tester.jumpToWizardRoute(Routes.allocateDiskSpace);
     await tester.pumpAndSettle();
 
@@ -204,13 +204,13 @@ void main() {
 
   testWidgets('7.resize-windows', (tester) async {
     await runInstallerApp([
-      '--initial-route=${Routes.filesystem}',
       '--machine-config=examples/win10-along-ubuntu.json',
       '--',
       '--bootloader=uefi',
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
+    await tester.jumpToWizardRoute(Routes.filesystem);
     await tester.jumpToWizardRoute(Routes.installAlongside);
     await tester.pumpAndSettle();
 
@@ -223,11 +223,11 @@ void main() {
 
   testWidgets('7.select-disk', (tester) async {
     await runInstallerApp([
-      '--initial-route=${Routes.filesystem}',
       '--machine-config=examples/win10.json',
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
+    await tester.jumpToWizardRoute(Routes.filesystem);
     await tester.jumpToWizardRoute(Routes.selectGuidedStorage);
     await tester.pumpAndSettle();
 
@@ -238,11 +238,10 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('7.bitlocker', (tester) async {
-    await runInstallerApp([
-      '--initial-route=${Routes.filesystem}',
-    ], flavor: currentFlavor);
+    await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
+    await tester.jumpToWizardRoute(Routes.filesystem);
     await tester.jumpToWizardRoute(Routes.bitlocker);
     await tester.pumpAndSettle();
 
@@ -253,11 +252,10 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('8.security-key', (tester) async {
-    await runInstallerApp([
-      '--initial-route=${Routes.filesystem}',
-    ], flavor: currentFlavor);
+    await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
+    await tester.jumpToWizardRoute(Routes.filesystem);
     await tester.jumpToWizardRoute(Routes.securityKey);
     await tester.pumpAndSettle();
 
@@ -270,10 +268,12 @@ void main() {
 
   testWidgets('9.confirm', (tester) async {
     await runInstallerApp([
-      '--initial-route=${Routes.filesystem}',
       '--',
       '--bootloader=uefi',
     ], flavor: currentFlavor);
+    await tester.pumpAndSettle();
+
+    await tester.jumpToWizardRoute(Routes.filesystem);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(

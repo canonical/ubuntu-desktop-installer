@@ -8,7 +8,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/main.dart' as app;
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -258,9 +257,19 @@ void main() {
     await app.main(<String>[
       '--machine-config',
       'examples/win10.json',
-      '--initial-route',
-      Routes.filesystem,
     ]);
+    await tester.pumpAndSettle();
+
+    await testLocalePage(tester);
+    await tester.pumpAndSettle();
+
+    await testKeyboardPage(tester);
+    await tester.pumpAndSettle();
+
+    await testNetworkPage(tester, mode: ConnectMode.none);
+    await tester.pumpAndSettle();
+
+    await testSourcePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(tester, type: InstallationType.bitlocker);
