@@ -24,7 +24,7 @@ dependencies:
       url: https://github.com/canonical/ubuntu-desktop-installer.git
       path: packages/subiquity_client
   ubuntu_localizations: ^0.1.5
-  ubuntu_logger: ^0.0.1
+  ubuntu_logger: ^0.0.2
   ubuntu_service: ^0.2.0
   ubuntu_widgets:
     git:
