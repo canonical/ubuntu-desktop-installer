@@ -330,6 +330,7 @@ class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
         Routes.filesystem: WizardRoute(
           builder: (_) => const FilesystemPage(),
           userData: InstallationStep.filesystem.index,
+          onLoad: (_) => FilesystemPage.load(ref),
         ),
         Routes.confirm: WizardRoute(
           builder: (_) => const ConfirmPage(),

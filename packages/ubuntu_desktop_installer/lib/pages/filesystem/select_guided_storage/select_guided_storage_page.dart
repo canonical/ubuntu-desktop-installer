@@ -12,22 +12,14 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'select_guided_storage_model.dart';
 
 /// Select a storage for guided partitioning.
-class SelectGuidedStoragePage extends ConsumerStatefulWidget {
+class SelectGuidedStoragePage extends ConsumerWidget {
   const SelectGuidedStoragePage({super.key});
 
-  @override
-  ConsumerState<SelectGuidedStoragePage> createState() =>
-      _SelectGuidedStoragePageState();
-}
-
-class _SelectGuidedStoragePageState
-    extends ConsumerState<SelectGuidedStoragePage> {
-  @override
-  void initState() {
-    super.initState();
-
-    final model = ref.read(selectGuidedStorageModelProvider);
-    model.loadGuidedStorage();
+  static Future<bool> load(WidgetRef ref) {
+    return ref
+        .read(selectGuidedStorageModelProvider.notifier)
+        .loadGuidedStorage()
+        .then((_) => true);
   }
 
   String prettyFormatPartition(Disk disk, Partition partition) {
@@ -46,7 +38,7 @@ class _SelectGuidedStoragePageState
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(selectGuidedStorageModelProvider);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);

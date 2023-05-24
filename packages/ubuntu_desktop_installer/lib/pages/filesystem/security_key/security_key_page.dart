@@ -14,25 +14,18 @@ import 'security_key_widgets.dart';
 ///
 /// See also:
 /// * [SecurityKeyModel]
-class SecurityKeyPage extends ConsumerStatefulWidget {
+class SecurityKeyPage extends ConsumerWidget {
   const SecurityKeyPage({super.key});
 
-  @override
-  ConsumerState<SecurityKeyPage> createState() => _SecurityKeyPageState();
-}
-
-class _SecurityKeyPageState extends ConsumerState<SecurityKeyPage> {
-  @override
-  void initState() {
-    super.initState();
-    final model = ref.read(securityKeyModelProvider);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      model.loadSecurityKey();
-    });
+  static Future<bool> load(WidgetRef ref) {
+    return ref
+        .read(securityKeyModelProvider.notifier)
+        .loadSecurityKey()
+        .then((_) => true);
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(
