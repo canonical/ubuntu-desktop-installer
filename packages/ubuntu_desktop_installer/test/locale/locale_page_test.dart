@@ -13,6 +13,8 @@ import 'test_locale.dart';
 void main() {
   testWidgets('should display a list of languages', (tester) async {
     final model = buildLocaleModel();
+    await model.init();
+
     await tester.pumpWidget(tester.buildApp((_) => buildLocalePage(model)));
     await tester.pumpAndSettle();
 
@@ -66,6 +68,8 @@ void main() {
 
   testWidgets('key search', (tester) async {
     final model = buildLocaleModel();
+    await model.init();
+
     await tester.pumpWidget(tester.buildApp((_) => buildLocalePage(model)));
 
     final languageList = find.byType(ListWidget);
@@ -96,6 +100,8 @@ void main() {
 
   testWidgets('should continue to next page', (tester) async {
     final model = buildLocaleModel();
+    await model.init();
+
     await tester.pumpWidget(tester.buildApp((_) => buildLocalePage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);

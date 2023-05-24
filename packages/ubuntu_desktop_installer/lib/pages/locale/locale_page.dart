@@ -10,26 +10,18 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'locale_model.dart';
 
-class LocalePage extends ConsumerStatefulWidget {
+class LocalePage extends ConsumerWidget {
   const LocalePage({super.key});
 
-  @override
-  ConsumerState<LocalePage> createState() => _LocalePageState();
-}
-
-class _LocalePageState extends ConsumerState<LocalePage> {
-  @override
-  void initState() {
-    super.initState();
-
+  static Future<bool> load(BuildContext context, WidgetRef ref) {
     final model = ref.read(localeModelProvider);
-    model.init().then((_) {
-      _selectLanguage(model.selectedLanguageIndex);
-      model.playWelcomeSound();
-    });
+    return model.init().then((_) {
+      _selectLanguage(context, ref, model.selectedLanguageIndex);
+      return model.playWelcomeSound();
+    }).then((_) => true);
   }
 
-  void _selectLanguage(int index) {
+  static void _selectLanguage(BuildContext context, WidgetRef ref, int index) {
     if (index == -1) return;
 
     final model = ref.read(localeModelProvider);
@@ -39,7 +31,7 @@ class _LocalePageState extends ConsumerState<LocalePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final flavor = Flavor.of(context);
     final model = ref.watch(localeModelProvider);
     final lang = AppLocalizations.of(context);
@@ -64,12 +56,12 @@ class _LocalePageState extends ConsumerState<LocalePage> {
                   key: ValueKey(index),
                   title: Text(model.language(index)),
                   selected: index == model.selectedLanguageIndex,
-                  onTap: () => _selectLanguage(index),
+                  onTap: () => _selectLanguage(context, ref, index),
                 ),
                 onKeySearch: (value) {
                   final index = model.searchLanguage(value);
                   if (index != -1) {
-                    _selectLanguage(index);
+                    _selectLanguage(context, ref, index);
                   }
                 },
               ),
