@@ -19,7 +19,7 @@ void main() {
   }
 
   testWidgets('show slides', (tester) async {
-    final model = buildModel();
+    final model = buildInstallModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
@@ -29,7 +29,7 @@ void main() {
   });
 
   testWidgets('navigate slides', (tester) async {
-    final model = buildModel();
+    final model = buildInstallModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
@@ -69,7 +69,7 @@ void main() {
   }
 
   testWidgets('show log', (tester) async {
-    final model = buildModel(isLogVisible: false);
+    final model = buildInstallModel(isLogVisible: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
@@ -80,7 +80,7 @@ void main() {
   });
 
   testWidgets('hide log', (tester) async {
-    final model = buildModel(isLogVisible: true);
+    final model = buildInstallModel(isLogVisible: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
@@ -91,7 +91,7 @@ void main() {
   });
 
   testWidgets('installation state', (tester) async {
-    final model = buildModel();
+    final model = buildInstallModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     await tester.pumpAndSettle();
 
@@ -140,7 +140,7 @@ void main() {
   });
 
   testWidgets('restart', (tester) async {
-    final model = buildModel(isDone: true);
+    final model = buildInstallModel(isDone: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final restartButton = find.textContaining(tester.lang.restartButtonText);
@@ -156,7 +156,7 @@ void main() {
   });
 
   testWidgets('continue testing', (tester) async {
-    final model = buildModel(isDone: true);
+    final model = buildInstallModel(isDone: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final continueButton = find.button(tester.lang.continueTesting);
