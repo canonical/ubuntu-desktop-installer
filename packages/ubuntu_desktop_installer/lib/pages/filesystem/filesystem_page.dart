@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -18,11 +19,15 @@ export 'installation_type/installation_type_page.dart';
 export 'security_key/security_key_page.dart';
 export 'select_guided_storage/select_guided_storage_page.dart';
 
-class FilesystemPage extends StatelessWidget {
+class FilesystemPage extends ConsumerWidget {
   const FilesystemPage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return InstallationTypePage.load(ref);
+  }
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Wizard(
       userData: InstallationStep.values.length,
       routes: {
@@ -37,22 +42,26 @@ class FilesystemPage extends StatelessWidget {
         Routes.installAlongside: WizardRoute(
           builder: (_) => const InstallAlongsidePage(),
           userData: InstallationStep.filesystem.index,
+          onLoad: (_) => InstallAlongsidePage.load(ref),
           onReplace: (_) => Routes.allocateDiskSpace,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.selectGuidedStorage: WizardRoute(
           builder: (_) => const SelectGuidedStoragePage(),
           userData: InstallationStep.filesystem.index,
+          onLoad: (_) => SelectGuidedStoragePage.load(ref),
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.securityKey: WizardRoute(
           builder: (_) => const SecurityKeyPage(),
           userData: InstallationStep.filesystem.index,
+          onLoad: (_) => SecurityKeyPage.load(ref),
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.allocateDiskSpace: WizardRoute(
           builder: (_) => const AllocateDiskSpacePage(),
           userData: InstallationStep.filesystem.index,
+          onLoad: (_) => AllocateDiskSpacePage.load(ref),
         ),
       },
     );

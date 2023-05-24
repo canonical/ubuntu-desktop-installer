@@ -104,15 +104,12 @@ void main() {
     expect(find.text(filesize(selectedDisk.size)), findsOneWidget);
   });
 
-  testWidgets('loads and saves guided storages', (tester) async {
+  testWidgets('saves guided storage', (tester) async {
     final model = buildModel(
         storages: testStorages,
         disks: testDisks,
         selectedStorage: testStorages.first);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-
-    verify(model.loadGuidedStorage()).called(1);
-    verifyNever(model.saveGuidedStorage());
 
     final nextButton = find.button(tester.ulang.nextLabel);
     expect(nextButton, findsOneWidget);

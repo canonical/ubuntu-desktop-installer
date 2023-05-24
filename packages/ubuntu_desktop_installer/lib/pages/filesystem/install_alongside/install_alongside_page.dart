@@ -11,21 +11,11 @@ import 'install_alongside_widgets.dart';
 import 'storage_split_view.dart';
 
 /// Install alongside other OSes.
-class InstallAlongsidePage extends ConsumerStatefulWidget {
+class InstallAlongsidePage extends ConsumerWidget {
   const InstallAlongsidePage({super.key});
 
-  @override
-  ConsumerState<InstallAlongsidePage> createState() =>
-      _InstallAlongsidePageState();
-}
-
-class _InstallAlongsidePageState extends ConsumerState<InstallAlongsidePage> {
-  @override
-  void initState() {
-    super.initState();
-
-    final model = ref.read(installAlongsideModelProvider);
-    model.init();
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(installAlongsideModelProvider).init().then((_) => true);
   }
 
   static String _formatTitle(BuildContext context, WidgetRef ref) {
@@ -52,7 +42,7 @@ class _InstallAlongsidePageState extends ConsumerState<InstallAlongsidePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(installAlongsideModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(

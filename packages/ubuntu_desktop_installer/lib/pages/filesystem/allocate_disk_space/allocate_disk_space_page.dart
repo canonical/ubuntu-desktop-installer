@@ -15,6 +15,13 @@ import 'storage_selector.dart';
 class AllocateDiskSpacePage extends ConsumerStatefulWidget {
   const AllocateDiskSpacePage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return ref
+        .read(allocateDiskSpaceModelProvider.notifier)
+        .init()
+        .then((_) => true);
+  }
+
   @override
   ConsumerState<AllocateDiskSpacePage> createState() =>
       _AllocateDiskSpacePageState();
@@ -32,7 +39,7 @@ class _AllocateDiskSpacePageState extends ConsumerState<AllocateDiskSpacePage> {
     _scrollSubscription = model.onSelectionChanged.listen((_) {
       _scrollToSelection();
     });
-    model.init().then((_) => _scrollToSelection());
+    _scrollToSelection();
   }
 
   @override
