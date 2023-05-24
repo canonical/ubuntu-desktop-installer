@@ -1,31 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_page.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import '../../test_utils.dart';
-import 'security_key_page_test.mocks.dart';
+import 'test_security_key.dart';
 
-@GenerateMocks([SecurityKeyModel])
 void main() {
-  SecurityKeyModel buildModel({
-    bool? isValid,
-    String? securityKey,
-    String? confirmedSecurityKey,
-    bool? showSecurityKey,
-  }) {
-    final model = MockSecurityKeyModel();
-    when(model.isValid).thenReturn(isValid ?? false);
-    when(model.securityKey).thenReturn(securityKey ?? '');
-    when(model.confirmedSecurityKey).thenReturn(confirmedSecurityKey ?? '');
-    when(model.showSecurityKey).thenReturn(showSecurityKey ?? false);
-    return model;
-  }
-
   Widget buildPage(SecurityKeyModel model) {
     return ProviderScope(
       overrides: [securityKeyModelProvider.overrideWith((_) => model)],
@@ -34,7 +18,7 @@ void main() {
   }
 
   testWidgets('security key input', (tester) async {
-    final model = buildModel(securityKey: 'foo');
+    final model = buildSecurityKeyModel(securityKey: 'foo');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final textField = find.textField('foo');
@@ -44,7 +28,8 @@ void main() {
   });
 
   testWidgets('security key confirmation', (tester) async {
-    final model = buildModel(securityKey: 'foo', confirmedSecurityKey: 'foo');
+    final model =
+        buildSecurityKeyModel(securityKey: 'foo', confirmedSecurityKey: 'foo');
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final textFields = find.textField('foo');
@@ -56,21 +41,21 @@ void main() {
   });
 
   testWidgets('valid input', (tester) async {
-    final model = buildModel(isValid: true);
+    final model = buildSecurityKeyModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(find.button(tester.ulang.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
-    final model = buildModel(isValid: false);
+    final model = buildSecurityKeyModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(find.button(tester.ulang.nextLabel), isDisabled);
   });
 
   testWidgets('show security key', (tester) async {
-    final model = buildModel(showSecurityKey: false);
+    final model = buildSecurityKeyModel(showSecurityKey: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final showSecurityKeyButton = find.checkButton(tester.lang.showSecurityKey);
@@ -81,7 +66,7 @@ void main() {
   });
 
   testWidgets('save security key', (tester) async {
-    final model = buildModel(isValid: true);
+    final model = buildSecurityKeyModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
