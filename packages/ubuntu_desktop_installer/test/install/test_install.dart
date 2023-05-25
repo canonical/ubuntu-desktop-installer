@@ -12,7 +12,7 @@ export '../test_utils.dart';
 export 'test_install.mocks.dart';
 
 @GenerateMocks([InstallModel])
-InstallModel buildModel({
+InstallModel buildInstallModel({
   ApplicationState? state,
   bool? isDone,
   bool? hasError,

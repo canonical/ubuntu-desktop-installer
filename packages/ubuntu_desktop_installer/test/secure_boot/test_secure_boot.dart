@@ -17,6 +17,7 @@ SecureBootModel buildSecureBootModel({
   String? securityKey,
   String? confirmKey,
   SecureBootMode? secureBootMode,
+  bool? hasSecureBoot,
 }) {
   final model = MockSecureBootModel();
   when(model.isFormValid).thenReturn(isFormValid ?? false);
@@ -26,6 +27,7 @@ SecureBootModel buildSecureBootModel({
       .thenReturn(secureBootMode ?? SecureBootMode.turnOff);
   when(model.securityKey).thenReturn(securityKey ?? '');
   when(model.confirmKey).thenReturn(confirmKey ?? '');
+  when(model.hasSecureBoot()).thenAnswer((_) async => hasSecureBoot ?? false);
   return model;
 }
 

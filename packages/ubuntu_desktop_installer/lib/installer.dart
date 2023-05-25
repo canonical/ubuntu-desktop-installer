@@ -241,7 +241,7 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
     }
     return _subiquityStatus?.interactive == false
         ? _UbuntuDesktopAutoinstallWizard(status: _subiquityStatus)
-        : _UbuntuDesktopInstallerWizard(
+        : UbuntuDesktopInstallerWizard(
             initialRoute: widget.initialRoute,
             welcome: widget.welcome,
           );
@@ -274,8 +274,9 @@ enum InstallationStep {
   theme,
 }
 
-class _UbuntuDesktopInstallerWizard extends ConsumerWidget {
-  const _UbuntuDesktopInstallerWizard({
+class UbuntuDesktopInstallerWizard extends ConsumerWidget {
+  const UbuntuDesktopInstallerWizard({
+    super.key,
     this.initialRoute,
     this.welcome,
   });
