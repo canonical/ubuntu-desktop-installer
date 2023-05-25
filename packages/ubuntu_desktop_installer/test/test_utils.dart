@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:timezone_map/timezone_map.dart';
@@ -74,34 +72,6 @@ extension UbuntuTester on WidgetTester {
         ),
       ),
     );
-  }
-}
-
-extension UbuntuFinders on CommonFinders {
-  Finder asset(String assetName) {
-    return find.byWidgetPredicate((widget) {
-      bool hasAssetImage(Widget widget) {
-        return widget is Image &&
-            widget.image is AssetImage &&
-            (widget.image as AssetImage).assetName.endsWith(assetName);
-      }
-
-      bool hasAssetPicture(Widget widget) {
-        return widget is SvgPicture &&
-            widget.bytesLoader is SvgAssetLoader &&
-            (widget.bytesLoader as SvgAssetLoader)
-                .assetName
-                .endsWith(assetName);
-      }
-
-      return hasAssetImage(widget) || hasAssetPicture(widget);
-    });
-  }
-
-  Finder html(String html) {
-    return find.byWidgetPredicate((widget) {
-      return widget is Html && widget.data == html;
-    });
   }
 }
 

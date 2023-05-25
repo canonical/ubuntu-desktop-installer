@@ -7,6 +7,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/install_alongside_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/install_alongside_page.dart';
 import 'package:ubuntu_desktop_installer/services/product_service.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import 'install_alongside_model_test.dart';
