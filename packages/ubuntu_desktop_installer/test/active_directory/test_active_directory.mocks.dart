@@ -3,15 +3,13 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
-import 'dart:ui' as _i6;
+import 'dart:async' as _i3;
+import 'dart:ui' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i2;
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart'
-    as _i5;
-import 'package:ubuntu_desktop_installer/services.dart' as _i3;
-import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i7;
+    as _i2;
+import 'package:ubuntu_desktop_installer/services.dart' as _i4;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -24,126 +22,11 @@ import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i7;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeAdConnectionInfo_0 extends _i1.SmartFake
-    implements _i2.AdConnectionInfo {
-  _FakeAdConnectionInfo_0(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-/// A class which mocks [ActiveDirectoryService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockActiveDirectoryService extends _i1.Mock
-    implements _i3.ActiveDirectoryService {
-  MockActiveDirectoryService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i4.Future<bool> hasSupport() => (super.noSuchMethod(
-        Invocation.method(
-          #hasSupport,
-          [],
-        ),
-        returnValue: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
-  @override
-  _i4.Future<_i2.AdConnectionInfo> getConnectionInfo() => (super.noSuchMethod(
-        Invocation.method(
-          #getConnectionInfo,
-          [],
-        ),
-        returnValue:
-            _i4.Future<_i2.AdConnectionInfo>.value(_FakeAdConnectionInfo_0(
-          this,
-          Invocation.method(
-            #getConnectionInfo,
-            [],
-          ),
-        )),
-      ) as _i4.Future<_i2.AdConnectionInfo>);
-  @override
-  _i4.Future<void> setConnectionInfo(_i2.AdConnectionInfo? info) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #setConnectionInfo,
-          [info],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-  @override
-  _i4.Future<List<_i2.AdDomainNameValidation>> checkDomainName(
-          String? domain) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #checkDomainName,
-          [domain],
-        ),
-        returnValue: _i4.Future<List<_i2.AdDomainNameValidation>>.value(
-            <_i2.AdDomainNameValidation>[]),
-      ) as _i4.Future<List<_i2.AdDomainNameValidation>>);
-  @override
-  _i4.Future<_i2.AdAdminNameValidation> checkAdminName(String? admin) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #checkAdminName,
-          [admin],
-        ),
-        returnValue: _i4.Future<_i2.AdAdminNameValidation>.value(
-            _i2.AdAdminNameValidation.OK),
-      ) as _i4.Future<_i2.AdAdminNameValidation>);
-  @override
-  _i4.Future<_i2.AdPasswordValidation> checkPassword(String? password) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #checkPassword,
-          [password],
-        ),
-        returnValue: _i4.Future<_i2.AdPasswordValidation>.value(
-            _i2.AdPasswordValidation.OK),
-      ) as _i4.Future<_i2.AdPasswordValidation>);
-  @override
-  _i4.Future<_i2.AdDomainNameValidation> pingDomainController(String? domain) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #pingDomainController,
-          [domain],
-        ),
-        returnValue: _i4.Future<_i2.AdDomainNameValidation>.value(
-            _i2.AdDomainNameValidation.OK),
-      ) as _i4.Future<_i2.AdDomainNameValidation>);
-  @override
-  _i4.Future<_i2.AdJoinResult> getJoinResult({bool? wait = true}) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getJoinResult,
-          [],
-          {#wait: wait},
-        ),
-        returnValue: _i4.Future<_i2.AdJoinResult>.value(_i2.AdJoinResult.OK),
-      ) as _i4.Future<_i2.AdJoinResult>);
-  @override
-  _i4.Future<void> markConfigured() => (super.noSuchMethod(
-        Invocation.method(
-          #markConfigured,
-          [],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-}
-
 /// A class which mocks [ActiveDirectoryModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockActiveDirectoryModel extends _i1.Mock
-    implements _i5.ActiveDirectoryModel {
+    implements _i2.ActiveDirectoryModel {
   MockActiveDirectoryModel() {
     _i1.throwOnMissingStub(this);
   }
@@ -194,96 +77,96 @@ class MockActiveDirectoryModel extends _i1.Mock
         returnValue: false,
       ) as bool);
   @override
-  _i4.Future<void> setDomainName(String? value) => (super.noSuchMethod(
+  _i3.Future<void> setDomainName(String? value) => (super.noSuchMethod(
         Invocation.method(
           #setDomainName,
           [value],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> validateDomainName() => (super.noSuchMethod(
+  _i3.Future<void> validateDomainName() => (super.noSuchMethod(
         Invocation.method(
           #validateDomainName,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> pingDomainController() => (super.noSuchMethod(
+  _i3.Future<void> pingDomainController() => (super.noSuchMethod(
         Invocation.method(
           #pingDomainController,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> setAdminName(String? value) => (super.noSuchMethod(
+  _i3.Future<void> setAdminName(String? value) => (super.noSuchMethod(
         Invocation.method(
           #setAdminName,
           [value],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> validateAdminName() => (super.noSuchMethod(
+  _i3.Future<void> validateAdminName() => (super.noSuchMethod(
         Invocation.method(
           #validateAdminName,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> setPassword(String? value) => (super.noSuchMethod(
+  _i3.Future<void> setPassword(String? value) => (super.noSuchMethod(
         Invocation.method(
           #setPassword,
           [value],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> validatePassword() => (super.noSuchMethod(
+  _i3.Future<void> validatePassword() => (super.noSuchMethod(
         Invocation.method(
           #validatePassword,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> init() => (super.noSuchMethod(
+  _i3.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> save() => (super.noSuchMethod(
+  _i3.Future<void> save() => (super.noSuchMethod(
         Invocation.method(
           #save,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<_i2.AdJoinResult> getJoinResult() => (super.noSuchMethod(
+  _i3.Future<_i4.AdJoinResult> getJoinResult() => (super.noSuchMethod(
         Invocation.method(
           #getJoinResult,
           [],
         ),
-        returnValue: _i4.Future<_i2.AdJoinResult>.value(_i2.AdJoinResult.OK),
-      ) as _i4.Future<_i2.AdJoinResult>);
+        returnValue: _i3.Future<_i4.AdJoinResult>.value(_i4.AdJoinResult.OK),
+      ) as _i3.Future<_i4.AdJoinResult>);
   @override
-  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -291,7 +174,7 @@ class MockActiveDirectoryModel extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -314,22 +197,4 @@ class MockActiveDirectoryModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
-}
-
-/// A class which mocks [UrlLauncher].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockUrlLauncher extends _i1.Mock implements _i7.UrlLauncher {
-  MockUrlLauncher() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i4.Future<bool> launchUrl(String? url) => (super.noSuchMethod(
-        Invocation.method(
-          #launchUrl,
-          [url],
-        ),
-        returnValue: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
 }

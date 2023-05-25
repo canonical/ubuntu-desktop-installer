@@ -5,6 +5,7 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/inst
 import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'test_installation_type.mocks.dart';
+export '../../test_utils.dart';
 export 'test_installation_type.mocks.dart';
 
 @GenerateMocks([InstallationTypeModel])

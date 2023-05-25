@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
@@ -9,9 +8,8 @@ import 'package:ubuntu_desktop_installer/services/app_service.dart';
 import 'package:ubuntu_desktop_installer/services/storage_service.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 
-import 'app_service_test.mocks.dart';
+import '../test_utils.dart';
 
-@GenerateMocks([StorageService])
 void main() {
   group('subiquity', () {
     test('init interactive', () async {

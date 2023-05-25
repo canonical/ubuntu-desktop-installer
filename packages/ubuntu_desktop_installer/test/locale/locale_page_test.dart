@@ -7,7 +7,6 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../test_utils.dart';
 import 'test_locale.dart';
 
 void main() {

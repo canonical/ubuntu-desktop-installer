@@ -7,8 +7,7 @@ import 'dart:async' as _i3;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/loading/loading_model.dart'
-    as _i4;
-import 'package:ubuntu_desktop_installer/services.dart' as _i2;
+    as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -21,38 +20,10 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [AppService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockAppService extends _i1.Mock implements _i2.AppService {
-  MockAppService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i3.Future<void> init() => (super.noSuchMethod(
-        Invocation.method(
-          #init,
-          [],
-        ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
-  @override
-  _i3.Future<void> load() => (super.noSuchMethod(
-        Invocation.method(
-          #load,
-          [],
-        ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
-}
-
 /// A class which mocks [LoadingModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockLoadingModel extends _i1.Mock implements _i4.LoadingModel {
+class MockLoadingModel extends _i1.Mock implements _i2.LoadingModel {
   MockLoadingModel() {
     _i1.throwOnMissingStub(this);
   }

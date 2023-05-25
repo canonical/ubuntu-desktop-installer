@@ -1,14 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/allocate_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/allocate_disk_space/storage_types.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'allocate_disk_space_model_test.mocks.dart';
+import 'test_allocate_disk_space.dart';
 
-@GenerateMocks([StorageService])
 void main() {
   final testDisks = <Disk>[
     fakeDisk(id: 'a', partitions: [

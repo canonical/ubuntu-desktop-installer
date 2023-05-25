@@ -7,7 +7,6 @@ import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../test_utils.dart';
 import 'test_active_directory.dart';
 
 final domainNameValidationVariant = ValueVariant(

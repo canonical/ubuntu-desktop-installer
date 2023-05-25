@@ -5,7 +5,6 @@ import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_page.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../test_utils.dart';
 import 'test_timezone.dart';
 
 void main() {

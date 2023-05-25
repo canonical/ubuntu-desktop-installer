@@ -7,10 +7,12 @@ import 'package:ubuntu_desktop_installer/pages/confirm/confirm_model.dart';
 import 'package:ubuntu_desktop_installer/pages/confirm/confirm_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
+import '../test_utils.dart';
 import 'test_confirm.mocks.dart';
+export '../test_utils.dart';
 export 'test_confirm.mocks.dart';
 
-@GenerateMocks([StorageService])
+@GenerateMocks([ConfirmModel])
 ConfirmModel buildConfirmModel({
   List<Disk>? disks,
   Map<String, List<Partition>>? partitions,
@@ -25,7 +27,6 @@ ConfirmModel buildConfirmModel({
   return model;
 }
 
-@GenerateMocks([UdevDeviceInfo, UdevService, ConfirmModel])
 Widget buildConfirmPage(ConfirmModel model) {
   final udev = MockUdevService();
   final sda = MockUdevDeviceInfo();

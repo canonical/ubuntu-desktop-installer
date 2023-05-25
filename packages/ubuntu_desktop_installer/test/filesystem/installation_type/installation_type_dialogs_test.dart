@@ -7,7 +7,6 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/inst
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_page.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../../test_utils.dart';
 import 'test_installation_type.dart';
 
 void main() {

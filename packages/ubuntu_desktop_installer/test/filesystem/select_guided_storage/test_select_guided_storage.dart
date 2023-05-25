@@ -4,6 +4,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/select_guided_storage_model.dart';
 
 import 'test_select_guided_storage.mocks.dart';
+export '../../test_utils.dart';
 export 'test_select_guided_storage.mocks.dart';
 
 @GenerateMocks([SelectGuidedStorageModel])

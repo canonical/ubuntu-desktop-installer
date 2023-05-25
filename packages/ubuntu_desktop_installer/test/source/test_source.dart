@@ -8,10 +8,12 @@ import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
+import '../test_utils.dart';
 import 'test_source.mocks.dart';
+export '../test_utils.dart';
 export 'test_source.mocks.dart';
 
-@GenerateMocks([StorageService, NetworkService, PowerService])
+@GenerateMocks([SourceModel])
 SourceModel buildSourceModel({
   String? sourceId,
   bool? installDrivers,
@@ -48,7 +50,6 @@ SourceModel buildSourceModel({
   return model;
 }
 
-@GenerateMocks([SourceModel, TelemetryService])
 Widget buildSourcePage(SourceModel model) {
   registerMockService<SubiquityClient>(MockSubiquityClient());
   registerMockService<TelemetryService>(MockTelemetryService());
