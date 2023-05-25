@@ -7,6 +7,7 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
+import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';
 import 'package:ubuntu_desktop_installer/pages/confirm/confirm_model.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
@@ -32,6 +33,7 @@ import 'package:yaru/yaru.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
+import 'active_directory/test_active_directory.dart';
 import 'confirm/test_confirm.dart';
 import 'filesystem/test_filesystem.dart';
 import 'identity/test_identity.dart';
@@ -230,6 +232,33 @@ void main() {
     verify(rstModel.hasRst()).called(1);
   });
 
+  testWidgets('secure boot', (tester) async {
+    final localeModel = buildLocaleModel();
+    final sourceModel = buildSourceModel();
+    final secureBootModel = buildSecureBootModel(hasSecureBoot: true);
+
+    registerMockService<AppService>(MockAppService());
+    registerMockService<TelemetryService>(MockTelemetryService());
+
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          localeModelProvider.overrideWith((_) => localeModel),
+          sourceModelProvider.overrideWith((_) => sourceModel),
+          secureBootModelProvider.overrideWith((_) => secureBootModel),
+        ],
+        child: tester.buildTestWizard(),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await tester.jumpToWizardRoute(Routes.source);
+
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    expect(find.byType(SecureBootPage), findsOneWidget);
+    verify(secureBootModel.hasSecureBoot()).called(1);
+  });
+
   testWidgets('bitlocker', (tester) async {
     final localeModel = buildLocaleModel();
     final installationTypeModel = buildInstallationTypeModel(
@@ -262,6 +291,35 @@ void main() {
     await tester.tapNext();
     await tester.pumpAndSettle();
     expect(find.byType(BitLockerPage), findsOneWidget);
+  });
+
+  testWidgets('active directory', (tester) async {
+    final localeModel = buildLocaleModel();
+    final identityModel =
+        buildIdentityModel(useActiveDirectory: true, isValid: true);
+    final activeDirectoryModel = buildActiveDirectoryModel();
+
+    registerMockService<AppService>(MockAppService());
+    registerMockService<TelemetryService>(MockTelemetryService());
+
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          localeModelProvider.overrideWith((_) => localeModel),
+          identityModelProvider.overrideWith((_) => identityModel),
+          activeDirectoryModelProvider
+              .overrideWith((_) => activeDirectoryModel),
+        ],
+        child: tester.buildTestWizard(),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await tester.jumpToWizardRoute(Routes.identity);
+
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    expect(find.byType(ActiveDirectoryPage), findsOneWidget);
+    verify(activeDirectoryModel.init()).called(1);
   });
 }
 
