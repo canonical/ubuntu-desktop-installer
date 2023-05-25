@@ -205,5 +205,14 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "releaseNotesLabel": "قد ترغب في قراءة </a> ملاحظات الإصدار <a href=\"{url}\">.",
+  "@releaseNotesLabel": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "turnOffRSTDescription": "يستخدم هذا الكمبيوتر Intel RST (تقنية التخزين السريع). تحتاج إلى إيقاف تشغيل RST في Windows قبل تثبيت Ubuntu.",
+  "@turnOffRSTDescription": {}
 }
