@@ -93,11 +93,15 @@ Future<void> runInstallerApp(
   await runWizardApp(
     ProviderScope(
       child: InheritedLocale(
-        child: UbuntuDesktopInstallerApp(
-          flavor: flavor,
-          slides: slides,
-          initialRoute: options['initial-route'],
-          welcome: options['welcome'],
+        child: SlidesContext(
+          slides: slides ?? defaultSlides,
+          child: UbuntuDesktopInstallerApp(
+            flavor: flavor,
+            home: UbuntuDesktopInstallerWizard(
+              initialRoute: options['initial-route'],
+              welcome: options['welcome'],
+            ),
+          ),
         ),
       ),
     ),
@@ -138,49 +142,18 @@ Future<void> runInstallerApp(
   await desktop.inhibit();
 }
 
-class UbuntuDesktopInstallerApp extends StatefulWidget {
+class UbuntuDesktopInstallerApp extends StatelessWidget {
   UbuntuDesktopInstallerApp({
     super.key,
-    this.initialRoute,
-    this.welcome,
     FlavorData? flavor,
-    List<WidgetBuilder>? slides,
-  })  : flavor = flavor ?? defaultFlavor,
-        slides = slides ?? defaultSlides;
+    required this.home,
+  }) : flavor = flavor ?? defaultFlavor;
 
-  final String? initialRoute;
-  final bool? welcome;
   final FlavorData flavor;
-  final List<WidgetBuilder> slides;
+  final Widget home;
 
   static FlavorData get defaultFlavor {
     return const FlavorData(name: 'Ubuntu');
-  }
-
-  @override
-  State<UbuntuDesktopInstallerApp> createState() =>
-      _UbuntuDesktopInstallerAppState();
-}
-
-class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
-  ApplicationStatus? _subiquityStatus;
-  StreamSubscription<ApplicationStatus?>? _subiquityStatusChange;
-
-  @override
-  void initState() {
-    super.initState();
-
-    final client = getService<SubiquityClient>();
-    _subiquityStatusChange = client.monitorStatus().listen((status) {
-      YaruWindow.of(context).setClosable(status?.isInstalling != true);
-      setState(() => _subiquityStatus = status);
-    });
-  }
-
-  @override
-  void dispose() {
-    _subiquityStatusChange?.cancel();
-    super.dispose();
   }
 
   @override
@@ -188,63 +161,43 @@ class _UbuntuDesktopInstallerAppState extends State<UbuntuDesktopInstallerApp> {
     return DefaultAssetBundle(
       bundle: assetBundle,
       child: Flavor(
-        data: widget.flavor,
-        child: SlidesContext(
-          slides: widget.slides,
-          child: YaruTheme(
-            builder: (context, yaru, child) {
-              final theme = widget.flavor.theme ?? yaru.theme;
-              final darkTheme = widget.flavor.darkTheme ?? yaru.darkTheme;
-              return MaterialApp(
-                locale: InheritedLocale.of(context),
-                onGenerateTitle: (context) {
-                  final lang = AppLocalizations.of(context);
-                  final window = YaruWindow.of(context);
-                  window.setTitle(lang.windowTitle(widget.flavor.name));
-                  return lang.appTitle;
-                },
-                theme: theme?.customize(),
-                darkTheme: darkTheme?.customize(),
-                highContrastTheme: yaruHighContrastLight.customize(),
-                highContrastDarkTheme: yaruHighContrastDark.customize(),
-                debugShowCheckedModeBanner: false,
-                localizationsDelegates: <LocalizationsDelegate>[
-                  ...localizationsDelegates,
-                  ...?widget.flavor.localizationsDelegates,
+        data: flavor,
+        child: YaruTheme(
+          builder: (context, yaru, child) {
+            final theme = flavor.theme ?? yaru.theme;
+            final darkTheme = flavor.darkTheme ?? yaru.darkTheme;
+            return MaterialApp(
+              locale: InheritedLocale.of(context),
+              onGenerateTitle: (context) {
+                final lang = AppLocalizations.of(context);
+                final window = YaruWindow.of(context);
+                window.setTitle(lang.windowTitle(flavor.name));
+                return lang.appTitle;
+              },
+              theme: theme?.customize(),
+              darkTheme: darkTheme?.customize(),
+              highContrastTheme: yaruHighContrastLight.customize(),
+              highContrastDarkTheme: yaruHighContrastDark.customize(),
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: <LocalizationsDelegate>[
+                ...localizationsDelegates,
+                ...?flavor.localizationsDelegates,
+              ],
+              supportedLocales: supportedLocales,
+              home: home,
+              builder: (context, child) => Stack(
+                children: [
+                  const Positioned.fill(
+                    child: _UbuntuDesktopInstallerBackground(),
+                  ),
+                  Positioned.fill(child: child!),
                 ],
-                supportedLocales: supportedLocales,
-                home: AnimatedSwitcher(
-                  duration: const Duration(seconds: 1),
-                  switchInCurve: Curves.easeInExpo,
-                  switchOutCurve: Curves.easeOutExpo,
-                  child: buildApp(context),
-                ),
-                builder: (context, child) => Stack(
-                  children: [
-                    const Positioned.fill(
-                      child: _UbuntuDesktopInstallerBackground(),
-                    ),
-                    Positioned.fill(child: child!),
-                  ],
-                ),
-              );
-            },
-          ),
+              ),
+            );
+          },
         ),
       ),
     );
-  }
-
-  Widget buildApp(BuildContext context) {
-    if (_subiquityStatus?.state == ApplicationState.ERROR) {
-      return const _UbuntuDesktopErrorWizard();
-    }
-    return _subiquityStatus?.interactive == false
-        ? _UbuntuDesktopAutoinstallWizard(status: _subiquityStatus)
-        : UbuntuDesktopInstallerWizard(
-            initialRoute: widget.initialRoute,
-            welcome: widget.welcome,
-          );
   }
 }
 
@@ -274,12 +227,59 @@ enum InstallationStep {
   theme,
 }
 
-class UbuntuDesktopInstallerWizard extends ConsumerWidget {
+class UbuntuDesktopInstallerWizard extends ConsumerStatefulWidget {
   const UbuntuDesktopInstallerWizard({
     super.key,
     this.initialRoute,
     this.welcome,
   });
+
+  final String? initialRoute;
+  final bool? welcome;
+
+  @override
+  ConsumerState<UbuntuDesktopInstallerWizard> createState() =>
+      _UbuntuDesktopInstallerWizardState();
+}
+
+class _UbuntuDesktopInstallerWizardState
+    extends ConsumerState<UbuntuDesktopInstallerWizard> {
+  ApplicationStatus? _subiquityStatus;
+  StreamSubscription<ApplicationStatus?>? _subiquityStatusChange;
+
+  @override
+  void initState() {
+    super.initState();
+
+    final client = getService<SubiquityClient>();
+    _subiquityStatusChange = client.monitorStatus().listen((status) {
+      YaruWindow.of(context).setClosable(status?.isInstalling != true);
+      setState(() => _subiquityStatus = status);
+    });
+  }
+
+  @override
+  void dispose() {
+    _subiquityStatusChange?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_subiquityStatus?.state == ApplicationState.ERROR) {
+      return const _UbuntuDesktopErrorWizard();
+    }
+    return _subiquityStatus?.interactive == false
+        ? _UbuntuDesktopAutoinstallWizard(status: _subiquityStatus)
+        : _UbuntuDesktopInstallWizard(
+            initialRoute: widget.initialRoute,
+            welcome: widget.welcome,
+          );
+  }
+}
+
+class _UbuntuDesktopInstallWizard extends ConsumerWidget {
+  const _UbuntuDesktopInstallWizard({this.initialRoute, this.welcome});
 
   final String? initialRoute;
   final bool? welcome;
