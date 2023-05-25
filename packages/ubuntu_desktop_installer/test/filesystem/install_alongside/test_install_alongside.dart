@@ -5,6 +5,7 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/inst
 import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'test_install_alongside.mocks.dart';
+export '../../test_utils.dart';
 export 'test_install_alongside.mocks.dart';
 
 @GenerateMocks([InstallAlongsideModel])

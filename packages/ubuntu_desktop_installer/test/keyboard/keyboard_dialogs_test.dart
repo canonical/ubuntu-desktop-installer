@@ -6,7 +6,6 @@ import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../test_utils.dart';
 import 'test_keyboard.dart';
 
 void main() {

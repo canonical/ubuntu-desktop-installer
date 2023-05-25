@@ -6,7 +6,6 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_page.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../../test_utils.dart';
 import 'test_security_key.dart';
 
 void main() {

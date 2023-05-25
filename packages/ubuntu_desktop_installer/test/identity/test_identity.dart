@@ -7,15 +7,10 @@ import 'package:ubuntu_desktop_installer/pages/identity/identity_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'test_identity.mocks.dart';
+export '../test_utils.dart';
 export 'test_identity.mocks.dart';
 
-@GenerateMocks([
-  ActiveDirectoryService,
-  ConfigService,
-  IdentityService,
-  NetworkService,
-  TelemetryService,
-])
+@GenerateMocks([IdentityModel])
 IdentityModel buildIdentityModel({
   bool? isValid,
   String? realName,
@@ -50,7 +45,6 @@ IdentityModel buildIdentityModel({
   return model;
 }
 
-@GenerateMocks([IdentityModel])
 Widget buildIdentityPage(IdentityModel model) {
   return ProviderScope(
     overrides: [identityModelProvider.overrideWith((_) => model)],

@@ -3,14 +3,12 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
-import 'dart:ui' as _i6;
+import 'dart:async' as _i3;
+import 'dart:ui' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i2;
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart'
-    as _i5;
-import 'package:ubuntu_desktop_installer/services.dart' as _i3;
+    as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -23,93 +21,10 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i3;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeKeyboardSetup_0 extends _i1.SmartFake implements _i2.KeyboardSetup {
-  _FakeKeyboardSetup_0(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-class _FakeAnyStep_1 extends _i1.SmartFake implements _i2.AnyStep {
-  _FakeAnyStep_1(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-/// A class which mocks [KeyboardService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockKeyboardService extends _i1.Mock implements _i3.KeyboardService {
-  MockKeyboardService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i4.Future<_i2.KeyboardSetup> getKeyboard() => (super.noSuchMethod(
-        Invocation.method(
-          #getKeyboard,
-          [],
-        ),
-        returnValue: _i4.Future<_i2.KeyboardSetup>.value(_FakeKeyboardSetup_0(
-          this,
-          Invocation.method(
-            #getKeyboard,
-            [],
-          ),
-        )),
-      ) as _i4.Future<_i2.KeyboardSetup>);
-  @override
-  _i4.Future<void> setKeyboard(_i2.KeyboardSetting? setting) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #setKeyboard,
-          [setting],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-  @override
-  _i4.Future<void> setInputSource(
-    _i2.KeyboardSetting? setting, {
-    String? user,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #setInputSource,
-          [setting],
-          {#user: user},
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-  @override
-  _i4.Future<_i2.AnyStep> getKeyboardStep([String? step = r'0']) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getKeyboardStep,
-          [step],
-        ),
-        returnValue: _i4.Future<_i2.AnyStep>.value(_FakeAnyStep_1(
-          this,
-          Invocation.method(
-            #getKeyboardStep,
-            [step],
-          ),
-        )),
-      ) as _i4.Future<_i2.AnyStep>);
-}
-
 /// A class which mocks [KeyboardModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockKeyboardModel extends _i1.Mock implements _i5.KeyboardModel {
+class MockKeyboardModel extends _i1.Mock implements _i2.KeyboardModel {
   MockKeyboardModel() {
     _i1.throwOnMissingStub(this);
   }
@@ -158,7 +73,7 @@ class MockKeyboardModel extends _i1.Mock implements _i5.KeyboardModel {
         returnValue: '',
       ) as String);
   @override
-  _i4.Future<void> selectLayout(
+  _i3.Future<void> selectLayout(
     int? index, [
     int? variant = 0,
   ]) =>
@@ -170,11 +85,11 @@ class MockKeyboardModel extends _i1.Mock implements _i5.KeyboardModel {
             variant,
           ],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> trySelectLayoutVariant(
+  _i3.Future<void> trySelectLayoutVariant(
     String? layout,
     String? variant,
   ) =>
@@ -186,9 +101,9 @@ class MockKeyboardModel extends _i1.Mock implements _i5.KeyboardModel {
             variant,
           ],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
   int searchLayout(String? query) => (super.noSuchMethod(
         Invocation.method(
@@ -206,43 +121,43 @@ class MockKeyboardModel extends _i1.Mock implements _i5.KeyboardModel {
         returnValue: '',
       ) as String);
   @override
-  _i4.Future<void> selectVariant(int? index) => (super.noSuchMethod(
+  _i3.Future<void> selectVariant(int? index) => (super.noSuchMethod(
         Invocation.method(
           #selectVariant,
           [index],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> init() => (super.noSuchMethod(
+  _i3.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> updateInputSource() => (super.noSuchMethod(
+  _i3.Future<void> updateInputSource() => (super.noSuchMethod(
         Invocation.method(
           #updateInputSource,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> save() => (super.noSuchMethod(
+  _i3.Future<void> save() => (super.noSuchMethod(
         Invocation.method(
           #save,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -250,7 +165,7 @@ class MockKeyboardModel extends _i1.Mock implements _i5.KeyboardModel {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],

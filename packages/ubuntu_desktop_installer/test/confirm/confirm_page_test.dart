@@ -6,7 +6,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../test_utils.dart';
 import 'test_confirm.dart';
 
 final testDisks = <Disk>[

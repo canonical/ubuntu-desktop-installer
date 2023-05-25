@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_model.dart';
 
 import 'test_security_key.mocks.dart';
+export '../../test_utils.dart';
 export 'test_security_key.mocks.dart';
 
 @GenerateMocks([SecurityKeyModel])

@@ -1,12 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/install_alongside/install_alongside_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'install_alongside_model_test.mocks.dart';
+import 'test_install_alongside.dart';
 
 const ubuntu2110 = OsProber(
   long: 'Ubuntu 21.10',
@@ -29,7 +28,6 @@ const windows10 = OsProber(
   type: 'chain',
 );
 
-@GenerateMocks([StorageService, ProductService])
 void main() {
   test('init guided storage', () async {
     final service = MockStorageService();

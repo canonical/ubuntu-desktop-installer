@@ -13,7 +13,7 @@ import 'package:yaru_test/yaru_test.dart';
 import '../../test_utils.dart';
 import 'bitlocker_page_test.mocks.dart';
 
-@GenerateMocks([BitLockerModel, UrlLauncher])
+@GenerateMocks([BitLockerModel])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
 

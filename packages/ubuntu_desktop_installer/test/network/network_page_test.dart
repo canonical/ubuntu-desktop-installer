@@ -10,7 +10,6 @@ import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../test_utils.dart';
 import 'test_network.dart';
 
 void main() {

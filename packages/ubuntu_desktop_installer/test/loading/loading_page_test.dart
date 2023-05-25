@@ -3,7 +3,6 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/loading/loading_page.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../test_utils.dart';
 import 'test_loading.dart';
 
 void main() {

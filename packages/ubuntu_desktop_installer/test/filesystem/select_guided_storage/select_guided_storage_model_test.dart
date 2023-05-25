@@ -1,14 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/select_guided_storage_model.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'select_guided_storage_model_test.mocks.dart';
+import 'test_select_guided_storage.dart';
 
-@GenerateMocks([StorageService])
 void main() {
   final testDisks = <Disk>[fakeDisk(id: 'a'), fakeDisk(id: 'b')];
   final testTargets = testDisks

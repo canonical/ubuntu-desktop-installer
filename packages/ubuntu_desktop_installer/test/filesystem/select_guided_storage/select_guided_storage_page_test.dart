@@ -10,7 +10,6 @@ import 'package:ubuntu_desktop_installer/pages/filesystem/select_guided_storage/
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../../test_utils.dart';
 import 'test_select_guided_storage.dart';
 
 void main() {

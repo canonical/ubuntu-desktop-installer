@@ -6,10 +6,11 @@ import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
+import '../test_utils.dart';
 import 'test_keyboard.mocks.dart';
+export '../test_utils.dart';
 export 'test_keyboard.mocks.dart';
 
-@GenerateMocks([KeyboardService])
 MockKeyboardModel buildKeyboardModel({
   bool? isValid,
   List<String>? layouts,

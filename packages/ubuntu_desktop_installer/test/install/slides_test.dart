@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides/default_slides.dart';
@@ -9,9 +8,7 @@ import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import '../test_utils.dart';
-import 'slides_test.mocks.dart';
 
-@GenerateMocks([UrlLauncher])
 void main() {
   setUpAll(() => UbuntuTester.context = Scaffold);
 
