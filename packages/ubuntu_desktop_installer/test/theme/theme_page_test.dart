@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/theme_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test_utils.dart';
-import 'theme_page_test.mocks.dart';
 
-@GenerateMocks([DesktopService])
 void main() {
   testWidgets('ThemePage applies theme', (tester) async {
     final DesktopService desktop = MockDesktopService();

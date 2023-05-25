@@ -44,53 +44,6 @@ class _FakeInstallationEvent_1 extends _i1.SmartFake
         );
 }
 
-/// A class which mocks [JournalService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockJournalService extends _i1.Mock implements _i2.JournalService {
-  MockJournalService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i4.Stream<String> start(
-    List<String>? ids, {
-    _i2.JournalOutput? output = _i2.JournalOutput.short,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #start,
-          [ids],
-          {#output: output},
-        ),
-        returnValue: _i4.Stream<String>.empty(),
-      ) as _i4.Stream<String>);
-}
-
-/// A class which mocks [ProductService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockProductService extends _i1.Mock implements _i2.ProductService {
-  MockProductService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i2.ProductInfo getProductInfo() => (super.noSuchMethod(
-        Invocation.method(
-          #getProductInfo,
-          [],
-        ),
-        returnValue: _FakeProductInfo_0(
-          this,
-          Invocation.method(
-            #getProductInfo,
-            [],
-          ),
-        ),
-      ) as _i2.ProductInfo);
-}
-
 /// A class which mocks [InstallModel].
 ///
 /// See the documentation for Mockito's code generation for more information.

@@ -8,9 +8,10 @@ import 'package:ubuntu_desktop_installer/pages/install/install_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'test_install.mocks.dart';
+export '../test_utils.dart';
 export 'test_install.mocks.dart';
 
-@GenerateMocks([JournalService, ProductService])
+@GenerateMocks([InstallModel])
 InstallModel buildModel({
   ApplicationState? state,
   bool? isDone,
@@ -36,7 +37,6 @@ InstallModel buildModel({
   return model;
 }
 
-@GenerateMocks([InstallModel])
 Widget buildPage(InstallModel model) {
   return ProviderScope(
     overrides: [installModelProvider.overrideWith((_) => model)],

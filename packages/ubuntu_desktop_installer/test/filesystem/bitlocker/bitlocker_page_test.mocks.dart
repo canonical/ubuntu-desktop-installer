@@ -9,7 +9,6 @@ import 'dart:ui' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:ubuntu_desktop_installer/pages/filesystem/bitlocker/bitlocker_model.dart'
     as _i2;
-import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i5;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -81,22 +80,4 @@ class MockBitLockerModel extends _i1.Mock implements _i2.BitLockerModel {
         ),
         returnValueForMissingStub: null,
       );
-}
-
-/// A class which mocks [UrlLauncher].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockUrlLauncher extends _i1.Mock implements _i5.UrlLauncher {
-  MockUrlLauncher() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i3.Future<bool> launchUrl(String? url) => (super.noSuchMethod(
-        Invocation.method(
-          #launchUrl,
-          [url],
-        ),
-        returnValue: _i3.Future<bool>.value(false),
-      ) as _i3.Future<bool>);
 }

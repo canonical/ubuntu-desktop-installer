@@ -6,7 +6,6 @@ import 'package:ubuntu_desktop_installer/pages/install/slide_view.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../test_utils.dart';
 import 'test_install.dart';
 
 void main() {

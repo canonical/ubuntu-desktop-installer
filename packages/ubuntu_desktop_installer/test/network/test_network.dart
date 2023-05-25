@@ -8,12 +8,12 @@ import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'test_network.mocks.dart';
+export '../test_utils.dart';
 export 'test_network.mocks.dart';
 
-@GenerateMocks([ConnectModel, NetworkService])
+@GenerateMocks([ConnectModel, NetworkModel])
 NetworkModel buildNetworkModel({
   ConnectMode? connectMode,
   bool? isConnecting,
@@ -31,11 +31,6 @@ NetworkModel buildNetworkModel({
   return model;
 }
 
-@GenerateMocks([
-  NetworkModel,
-  UdevDeviceInfo,
-  UdevService,
-])
 Widget buildNetworkPage({
   required NetworkModel model,
   bool? ethernet,

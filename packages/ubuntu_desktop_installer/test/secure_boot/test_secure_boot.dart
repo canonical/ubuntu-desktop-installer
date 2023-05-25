@@ -4,12 +4,12 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_page.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 
 import 'test_secure_boot.mocks.dart';
+export '../test_utils.dart';
 export 'test_secure_boot.mocks.dart';
 
-@GenerateMocks([StorageService])
+@GenerateMocks([SecureBootModel])
 SecureBootModel buildSecureBootModel({
   bool? isFormValid,
   bool? isConfirmationKeyValid,
@@ -29,7 +29,6 @@ SecureBootModel buildSecureBootModel({
   return model;
 }
 
-@GenerateMocks([SecureBootModel])
 Widget buildSecureBootPage(SecureBootModel model) {
   return ProviderScope(
     overrides: [secureBootModelProvider.overrideWith((_) => model)],

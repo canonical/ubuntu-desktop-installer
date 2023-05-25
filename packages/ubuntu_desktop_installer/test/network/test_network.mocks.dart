@@ -3,22 +3,20 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i7;
-import 'dart:ui' as _i8;
+import 'dart:async' as _i6;
+import 'dart:ui' as _i7;
 
-import 'package:dbus/dbus.dart' as _i9;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:nm/nm.dart' as _i2;
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart'
-    as _i6;
+    as _i5;
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart'
-    as _i4;
+    as _i3;
 import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_model.dart'
-    as _i11;
+    as _i9;
 import 'package:ubuntu_desktop_installer/pages/network/network_model.dart'
-    as _i10;
-import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart' as _i5;
-import 'package:ubuntu_desktop_installer/services.dart' as _i3;
+    as _i8;
+import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart' as _i4;
+import 'package:ubuntu_desktop_installer/services.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -31,53 +29,9 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i3;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeNetworkManagerSettings_0 extends _i1.SmartFake
-    implements _i2.NetworkManagerSettings {
-  _FakeNetworkManagerSettings_0(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-class _FakeNetworkManagerDnsManager_1 extends _i1.SmartFake
-    implements _i2.NetworkManagerDnsManager {
-  _FakeNetworkManagerDnsManager_1(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-class _FakeNetworkManagerActiveConnection_2 extends _i1.SmartFake
-    implements _i2.NetworkManagerActiveConnection {
-  _FakeNetworkManagerActiveConnection_2(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-class _FakeUdevDeviceInfo_3 extends _i1.SmartFake
-    implements _i3.UdevDeviceInfo {
-  _FakeUdevDeviceInfo_3(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-class _FakeNetworkManagerDevice_4 extends _i1.SmartFake
+class _FakeNetworkManagerDevice_0 extends _i1.SmartFake
     implements _i2.NetworkManagerDevice {
-  _FakeNetworkManagerDevice_4(
+  _FakeNetworkManagerDevice_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -86,9 +40,9 @@ class _FakeNetworkManagerDevice_4 extends _i1.SmartFake
         );
 }
 
-class _FakeNetworkService_5 extends _i1.SmartFake
-    implements _i3.NetworkService {
-  _FakeNetworkService_5(
+class _FakeNetworkService_1 extends _i1.SmartFake
+    implements _i2.NetworkService {
+  _FakeNetworkService_1(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -97,9 +51,9 @@ class _FakeNetworkService_5 extends _i1.SmartFake
         );
 }
 
-class _FakeEthernetDevice_6 extends _i1.SmartFake
-    implements _i4.EthernetDevice {
-  _FakeEthernetDevice_6(
+class _FakeEthernetDevice_2 extends _i1.SmartFake
+    implements _i3.EthernetDevice {
+  _FakeEthernetDevice_2(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -108,8 +62,8 @@ class _FakeEthernetDevice_6 extends _i1.SmartFake
         );
 }
 
-class _FakeWifiDevice_7 extends _i1.SmartFake implements _i5.WifiDevice {
-  _FakeWifiDevice_7(
+class _FakeWifiDevice_3 extends _i1.SmartFake implements _i4.WifiDevice {
+  _FakeWifiDevice_3(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -118,9 +72,9 @@ class _FakeWifiDevice_7 extends _i1.SmartFake implements _i5.WifiDevice {
         );
 }
 
-class _FakeNetworkManagerAccessPoint_8 extends _i1.SmartFake
+class _FakeNetworkManagerAccessPoint_4 extends _i1.SmartFake
     implements _i2.NetworkManagerAccessPoint {
-  _FakeNetworkManagerAccessPoint_8(
+  _FakeNetworkManagerAccessPoint_4(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -132,7 +86,7 @@ class _FakeNetworkManagerAccessPoint_8 extends _i1.SmartFake
 /// A class which mocks [ConnectModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockConnectModel extends _i1.Mock implements _i6.ConnectModel {
+class MockConnectModel extends _i1.Mock implements _i5.ConnectModel {
   MockConnectModel() {
     _i1.throwOnMissingStub(this);
   }
@@ -163,15 +117,15 @@ class MockConnectModel extends _i1.Mock implements _i6.ConnectModel {
         returnValue: false,
       ) as bool);
   @override
-  _i7.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
+  _i6.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
         Invocation.getter(#onAvailabilityChanged),
-        returnValue: _i7.Stream<dynamic>.empty(),
-      ) as _i7.Stream<dynamic>);
+        returnValue: _i6.Stream<dynamic>.empty(),
+      ) as _i6.Stream<dynamic>);
   @override
-  _i6.ConnectMode get connectMode => (super.noSuchMethod(
+  _i5.ConnectMode get connectMode => (super.noSuchMethod(
         Invocation.getter(#connectMode),
-        returnValue: _i6.ConnectMode.none,
-      ) as _i6.ConnectMode);
+        returnValue: _i5.ConnectMode.none,
+      ) as _i5.ConnectMode);
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
@@ -199,43 +153,43 @@ class MockConnectModel extends _i1.Mock implements _i6.ConnectModel {
         returnValueForMissingStub: null,
       );
   @override
-  _i7.Future<void> init() => (super.noSuchMethod(
+  _i6.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> cleanup() => (super.noSuchMethod(
+  _i6.Future<void> cleanup() => (super.noSuchMethod(
         Invocation.method(
           #cleanup,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> enable() => (super.noSuchMethod(
+  _i6.Future<void> enable() => (super.noSuchMethod(
         Invocation.method(
           #enable,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> connect() => (super.noSuchMethod(
+  _i6.Future<void> connect() => (super.noSuchMethod(
         Invocation.method(
           #connect,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  void addListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -243,7 +197,7 @@ class MockConnectModel extends _i1.Mock implements _i6.ConnectModel {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -268,306 +222,10 @@ class MockConnectModel extends _i1.Mock implements _i6.ConnectModel {
       );
 }
 
-/// A class which mocks [NetworkService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockNetworkService extends _i1.Mock implements _i3.NetworkService {
-  MockNetworkService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  bool get isConnected => (super.noSuchMethod(
-        Invocation.getter(#isConnected),
-        returnValue: false,
-      ) as bool);
-  @override
-  bool get isConnectedSite => (super.noSuchMethod(
-        Invocation.getter(#isConnectedSite),
-        returnValue: false,
-      ) as bool);
-  @override
-  List<_i2.NetworkManagerDevice> get wiredDevices => (super.noSuchMethod(
-        Invocation.getter(#wiredDevices),
-        returnValue: <_i2.NetworkManagerDevice>[],
-      ) as List<_i2.NetworkManagerDevice>);
-  @override
-  List<_i2.NetworkManagerDevice> get wirelessDevices => (super.noSuchMethod(
-        Invocation.getter(#wirelessDevices),
-        returnValue: <_i2.NetworkManagerDevice>[],
-      ) as List<_i2.NetworkManagerDevice>);
-  @override
-  _i7.Stream<_i2.NetworkManagerDevice> get deviceAdded => (super.noSuchMethod(
-        Invocation.getter(#deviceAdded),
-        returnValue: _i7.Stream<_i2.NetworkManagerDevice>.empty(),
-      ) as _i7.Stream<_i2.NetworkManagerDevice>);
-  @override
-  _i7.Stream<_i2.NetworkManagerDevice> get deviceRemoved => (super.noSuchMethod(
-        Invocation.getter(#deviceRemoved),
-        returnValue: _i7.Stream<_i2.NetworkManagerDevice>.empty(),
-      ) as _i7.Stream<_i2.NetworkManagerDevice>);
-  @override
-  _i7.Stream<_i2.NetworkManagerActiveConnection> get activeConnectionAdded =>
-      (super.noSuchMethod(
-        Invocation.getter(#activeConnectionAdded),
-        returnValue: _i7.Stream<_i2.NetworkManagerActiveConnection>.empty(),
-      ) as _i7.Stream<_i2.NetworkManagerActiveConnection>);
-  @override
-  _i7.Stream<_i2.NetworkManagerActiveConnection> get activeConnectionRemoved =>
-      (super.noSuchMethod(
-        Invocation.getter(#activeConnectionRemoved),
-        returnValue: _i7.Stream<_i2.NetworkManagerActiveConnection>.empty(),
-      ) as _i7.Stream<_i2.NetworkManagerActiveConnection>);
-  @override
-  _i7.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
-        Invocation.getter(#propertiesChanged),
-        returnValue: _i7.Stream<List<String>>.empty(),
-      ) as _i7.Stream<List<String>>);
-  @override
-  List<_i2.NetworkManagerDevice> get devices => (super.noSuchMethod(
-        Invocation.getter(#devices),
-        returnValue: <_i2.NetworkManagerDevice>[],
-      ) as List<_i2.NetworkManagerDevice>);
-  @override
-  List<_i2.NetworkManagerDevice> get allDevices => (super.noSuchMethod(
-        Invocation.getter(#allDevices),
-        returnValue: <_i2.NetworkManagerDevice>[],
-      ) as List<_i2.NetworkManagerDevice>);
-  @override
-  bool get networkingEnabled => (super.noSuchMethod(
-        Invocation.getter(#networkingEnabled),
-        returnValue: false,
-      ) as bool);
-  @override
-  bool get wirelessEnabled => (super.noSuchMethod(
-        Invocation.getter(#wirelessEnabled),
-        returnValue: false,
-      ) as bool);
-  @override
-  bool get wirelessHardwareEnabled => (super.noSuchMethod(
-        Invocation.getter(#wirelessHardwareEnabled),
-        returnValue: false,
-      ) as bool);
-  @override
-  bool get wwanEnabled => (super.noSuchMethod(
-        Invocation.getter(#wwanEnabled),
-        returnValue: false,
-      ) as bool);
-  @override
-  bool get wwanHardwareEnabled => (super.noSuchMethod(
-        Invocation.getter(#wwanHardwareEnabled),
-        returnValue: false,
-      ) as bool);
-  @override
-  List<_i2.NetworkManagerActiveConnection> get activeConnections =>
-      (super.noSuchMethod(
-        Invocation.getter(#activeConnections),
-        returnValue: <_i2.NetworkManagerActiveConnection>[],
-      ) as List<_i2.NetworkManagerActiveConnection>);
-  @override
-  String get primaryConnectionType => (super.noSuchMethod(
-        Invocation.getter(#primaryConnectionType),
-        returnValue: '',
-      ) as String);
-  @override
-  _i2.NetworkManagerMetered get metered => (super.noSuchMethod(
-        Invocation.getter(#metered),
-        returnValue: _i2.NetworkManagerMetered.unknown,
-      ) as _i2.NetworkManagerMetered);
-  @override
-  bool get startup => (super.noSuchMethod(
-        Invocation.getter(#startup),
-        returnValue: false,
-      ) as bool);
-  @override
-  String get version => (super.noSuchMethod(
-        Invocation.getter(#version),
-        returnValue: '',
-      ) as String);
-  @override
-  _i2.NetworkManagerConnectivityState get connectivity => (super.noSuchMethod(
-        Invocation.getter(#connectivity),
-        returnValue: _i2.NetworkManagerConnectivityState.unknown,
-      ) as _i2.NetworkManagerConnectivityState);
-  @override
-  bool get connectivityCheckAvailable => (super.noSuchMethod(
-        Invocation.getter(#connectivityCheckAvailable),
-        returnValue: false,
-      ) as bool);
-  @override
-  bool get connectivityCheckEnabled => (super.noSuchMethod(
-        Invocation.getter(#connectivityCheckEnabled),
-        returnValue: false,
-      ) as bool);
-  @override
-  String get connectivityCheckUri => (super.noSuchMethod(
-        Invocation.getter(#connectivityCheckUri),
-        returnValue: '',
-      ) as String);
-  @override
-  _i2.NetworkManagerState get state => (super.noSuchMethod(
-        Invocation.getter(#state),
-        returnValue: _i2.NetworkManagerState.unknown,
-      ) as _i2.NetworkManagerState);
-  @override
-  _i2.NetworkManagerSettings get settings => (super.noSuchMethod(
-        Invocation.getter(#settings),
-        returnValue: _FakeNetworkManagerSettings_0(
-          this,
-          Invocation.getter(#settings),
-        ),
-      ) as _i2.NetworkManagerSettings);
-  @override
-  _i2.NetworkManagerDnsManager get dnsManager => (super.noSuchMethod(
-        Invocation.getter(#dnsManager),
-        returnValue: _FakeNetworkManagerDnsManager_1(
-          this,
-          Invocation.getter(#dnsManager),
-        ),
-      ) as _i2.NetworkManagerDnsManager);
-  @override
-  Map<String, Map<String, _i9.DBusValue>> getWifiSettings(
-          {required String? ssid}) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getWifiSettings,
-          [],
-          {#ssid: ssid},
-        ),
-        returnValue: <String, Map<String, _i9.DBusValue>>{},
-      ) as Map<String, Map<String, _i9.DBusValue>>);
-  @override
-  _i7.Future<void> markConfigured() => (super.noSuchMethod(
-        Invocation.method(
-          #markConfigured,
-          [],
-        ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
-  @override
-  _i7.Future<void> connect() => (super.noSuchMethod(
-        Invocation.method(
-          #connect,
-          [],
-        ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
-  @override
-  _i7.Future<void> setWirelessEnabled(bool? value) => (super.noSuchMethod(
-        Invocation.method(
-          #setWirelessEnabled,
-          [value],
-        ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
-  @override
-  _i7.Future<void> setWwanEnabled(bool? value) => (super.noSuchMethod(
-        Invocation.method(
-          #setWwanEnabled,
-          [value],
-        ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
-  @override
-  _i7.Future<void> setConnectivityCheckEnabled(bool? value) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #setConnectivityCheckEnabled,
-          [value],
-        ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
-  @override
-  _i7.Future<_i2.NetworkManagerActiveConnection> addAndActivateConnection({
-    Map<String, Map<String, _i9.DBusValue>>? connection = const {},
-    required _i2.NetworkManagerDevice? device,
-    _i2.NetworkManagerAccessPoint? accessPoint,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #addAndActivateConnection,
-          [],
-          {
-            #connection: connection,
-            #device: device,
-            #accessPoint: accessPoint,
-          },
-        ),
-        returnValue: _i7.Future<_i2.NetworkManagerActiveConnection>.value(
-            _FakeNetworkManagerActiveConnection_2(
-          this,
-          Invocation.method(
-            #addAndActivateConnection,
-            [],
-            {
-              #connection: connection,
-              #device: device,
-              #accessPoint: accessPoint,
-            },
-          ),
-        )),
-      ) as _i7.Future<_i2.NetworkManagerActiveConnection>);
-  @override
-  _i7.Future<_i2.NetworkManagerActiveConnection> activateConnection({
-    required _i2.NetworkManagerDevice? device,
-    _i2.NetworkManagerSettingsConnection? connection,
-    _i2.NetworkManagerAccessPoint? accessPoint,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #activateConnection,
-          [],
-          {
-            #device: device,
-            #connection: connection,
-            #accessPoint: accessPoint,
-          },
-        ),
-        returnValue: _i7.Future<_i2.NetworkManagerActiveConnection>.value(
-            _FakeNetworkManagerActiveConnection_2(
-          this,
-          Invocation.method(
-            #activateConnection,
-            [],
-            {
-              #device: device,
-              #connection: connection,
-              #accessPoint: accessPoint,
-            },
-          ),
-        )),
-      ) as _i7.Future<_i2.NetworkManagerActiveConnection>);
-  @override
-  _i7.Future<void> deactivateConnection(
-          _i2.NetworkManagerActiveConnection? connection) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #deactivateConnection,
-          [connection],
-        ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
-  @override
-  _i7.Future<void> close() => (super.noSuchMethod(
-        Invocation.method(
-          #close,
-          [],
-        ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
-}
-
 /// A class which mocks [NetworkModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockNetworkModel extends _i1.Mock implements _i10.NetworkModel {
+class MockNetworkModel extends _i1.Mock implements _i8.NetworkModel {
   MockNetworkModel() {
     _i1.throwOnMissingStub(this);
   }
@@ -598,15 +256,15 @@ class MockNetworkModel extends _i1.Mock implements _i10.NetworkModel {
         returnValue: false,
       ) as bool);
   @override
-  _i7.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
+  _i6.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
         Invocation.getter(#onAvailabilityChanged),
-        returnValue: _i7.Stream<dynamic>.empty(),
-      ) as _i7.Stream<dynamic>);
+        returnValue: _i6.Stream<dynamic>.empty(),
+      ) as _i6.Stream<dynamic>);
   @override
-  _i6.ConnectMode get connectMode => (super.noSuchMethod(
+  _i5.ConnectMode get connectMode => (super.noSuchMethod(
         Invocation.getter(#connectMode),
-        returnValue: _i6.ConnectMode.none,
-      ) as _i6.ConnectMode);
+        returnValue: _i5.ConnectMode.none,
+      ) as _i5.ConnectMode);
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
@@ -618,7 +276,7 @@ class MockNetworkModel extends _i1.Mock implements _i10.NetworkModel {
         returnValue: false,
       ) as bool);
   @override
-  void addConnectMode(_i6.ConnectModel? model) => super.noSuchMethod(
+  void addConnectMode(_i5.ConnectModel? model) => super.noSuchMethod(
         Invocation.method(
           #addConnectMode,
           [model],
@@ -626,7 +284,7 @@ class MockNetworkModel extends _i1.Mock implements _i10.NetworkModel {
         returnValueForMissingStub: null,
       );
   @override
-  void selectConnectMode([_i6.ConnectMode? mode]) => super.noSuchMethod(
+  void selectConnectMode([_i5.ConnectMode? mode]) => super.noSuchMethod(
         Invocation.method(
           #selectConnectMode,
           [mode],
@@ -650,52 +308,52 @@ class MockNetworkModel extends _i1.Mock implements _i10.NetworkModel {
         returnValueForMissingStub: null,
       );
   @override
-  _i7.Future<void> init() => (super.noSuchMethod(
+  _i6.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> markConfigured() => (super.noSuchMethod(
+  _i6.Future<void> markConfigured() => (super.noSuchMethod(
         Invocation.method(
           #markConfigured,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> cleanup() => (super.noSuchMethod(
+  _i6.Future<void> cleanup() => (super.noSuchMethod(
         Invocation.method(
           #cleanup,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> enable() => (super.noSuchMethod(
+  _i6.Future<void> enable() => (super.noSuchMethod(
         Invocation.method(
           #enable,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> connect() => (super.noSuchMethod(
+  _i6.Future<void> connect() => (super.noSuchMethod(
         Invocation.method(
           #connect,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  void addListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -703,7 +361,7 @@ class MockNetworkModel extends _i1.Mock implements _i10.NetworkModel {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -728,63 +386,10 @@ class MockNetworkModel extends _i1.Mock implements _i10.NetworkModel {
       );
 }
 
-/// A class which mocks [UdevDeviceInfo].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockUdevDeviceInfo extends _i1.Mock implements _i3.UdevDeviceInfo {
-  MockUdevDeviceInfo() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  String get fullName => (super.noSuchMethod(
-        Invocation.getter(#fullName),
-        returnValue: '',
-      ) as String);
-}
-
-/// A class which mocks [UdevService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockUdevService extends _i1.Mock implements _i3.UdevService {
-  MockUdevService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i3.UdevDeviceInfo bySysname(String? sysname) => (super.noSuchMethod(
-        Invocation.method(
-          #bySysname,
-          [sysname],
-        ),
-        returnValue: _FakeUdevDeviceInfo_3(
-          this,
-          Invocation.method(
-            #bySysname,
-            [sysname],
-          ),
-        ),
-      ) as _i3.UdevDeviceInfo);
-  @override
-  _i3.UdevDeviceInfo bySyspath(String? syspath) => (super.noSuchMethod(
-        Invocation.method(
-          #bySyspath,
-          [syspath],
-        ),
-        returnValue: _FakeUdevDeviceInfo_3(
-          this,
-          Invocation.method(
-            #bySyspath,
-            [syspath],
-          ),
-        ),
-      ) as _i3.UdevDeviceInfo);
-}
-
 /// A class which mocks [EthernetDevice].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockEthernetDevice extends _i1.Mock implements _i4.EthernetDevice {
+class MockEthernetDevice extends _i1.Mock implements _i3.EthernetDevice {
   MockEthernetDevice() {
     _i1.throwOnMissingStub(this);
   }
@@ -792,7 +397,7 @@ class MockEthernetDevice extends _i1.Mock implements _i4.EthernetDevice {
   @override
   _i2.NetworkManagerDevice get device => (super.noSuchMethod(
         Invocation.getter(#device),
-        returnValue: _FakeNetworkManagerDevice_4(
+        returnValue: _FakeNetworkManagerDevice_0(
           this,
           Invocation.getter(#device),
         ),
@@ -878,16 +483,16 @@ class MockEthernetDevice extends _i1.Mock implements _i4.EthernetDevice {
         returnValueForMissingStub: null,
       );
   @override
-  _i7.Future<void> disconnect() => (super.noSuchMethod(
+  _i6.Future<void> disconnect() => (super.noSuchMethod(
         Invocation.method(
           #disconnect,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  void setProperties(_i7.Stream<List<String>>? properties) =>
+  void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
           #setProperties,
@@ -898,7 +503,7 @@ class MockEthernetDevice extends _i1.Mock implements _i4.EthernetDevice {
   @override
   void addPropertyListener(
     String? property,
-    _i8.VoidCallback? onChanged,
+    _i7.VoidCallback? onChanged,
   ) =>
       super.noSuchMethod(
         Invocation.method(
@@ -935,7 +540,7 @@ class MockEthernetDevice extends _i1.Mock implements _i4.EthernetDevice {
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -943,7 +548,7 @@ class MockEthernetDevice extends _i1.Mock implements _i4.EthernetDevice {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -963,7 +568,7 @@ class MockEthernetDevice extends _i1.Mock implements _i4.EthernetDevice {
 /// A class which mocks [EthernetModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
+class MockEthernetModel extends _i1.Mock implements _i3.EthernetModel {
   MockEthernetModel() {
     _i1.throwOnMissingStub(this);
   }
@@ -994,28 +599,28 @@ class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
         returnValue: false,
       ) as bool);
   @override
-  _i6.ConnectMode get connectMode => (super.noSuchMethod(
+  _i5.ConnectMode get connectMode => (super.noSuchMethod(
         Invocation.getter(#connectMode),
-        returnValue: _i6.ConnectMode.none,
-      ) as _i6.ConnectMode);
+        returnValue: _i5.ConnectMode.none,
+      ) as _i5.ConnectMode);
   @override
-  _i3.NetworkService get service => (super.noSuchMethod(
+  _i2.NetworkService get service => (super.noSuchMethod(
         Invocation.getter(#service),
-        returnValue: _FakeNetworkService_5(
+        returnValue: _FakeNetworkService_1(
           this,
           Invocation.getter(#service),
         ),
-      ) as _i3.NetworkService);
+      ) as _i2.NetworkService);
   @override
-  List<_i4.EthernetDevice> get devices => (super.noSuchMethod(
+  List<_i3.EthernetDevice> get devices => (super.noSuchMethod(
         Invocation.getter(#devices),
-        returnValue: <_i4.EthernetDevice>[],
-      ) as List<_i4.EthernetDevice>);
+        returnValue: <_i3.EthernetDevice>[],
+      ) as List<_i3.EthernetDevice>);
   @override
-  _i7.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
+  _i6.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
         Invocation.getter(#onAvailabilityChanged),
-        returnValue: _i7.Stream<dynamic>.empty(),
-      ) as _i7.Stream<dynamic>);
+        returnValue: _i6.Stream<dynamic>.empty(),
+      ) as _i6.Stream<dynamic>);
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
@@ -1043,23 +648,23 @@ class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
         returnValueForMissingStub: null,
       );
   @override
-  _i7.Future<void> enable() => (super.noSuchMethod(
+  _i6.Future<void> enable() => (super.noSuchMethod(
         Invocation.method(
           #enable,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> connect() => (super.noSuchMethod(
+  _i6.Future<void> connect() => (super.noSuchMethod(
         Invocation.method(
           #connect,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
   List<_i2.NetworkManagerDevice> getDevices() => (super.noSuchMethod(
         Invocation.method(
@@ -1069,38 +674,38 @@ class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
         returnValue: <_i2.NetworkManagerDevice>[],
       ) as List<_i2.NetworkManagerDevice>);
   @override
-  _i4.EthernetDevice createDevice(_i2.NetworkManagerDevice? device) =>
+  _i3.EthernetDevice createDevice(_i2.NetworkManagerDevice? device) =>
       (super.noSuchMethod(
         Invocation.method(
           #createDevice,
           [device],
         ),
-        returnValue: _FakeEthernetDevice_6(
+        returnValue: _FakeEthernetDevice_2(
           this,
           Invocation.method(
             #createDevice,
             [device],
           ),
         ),
-      ) as _i4.EthernetDevice);
+      ) as _i3.EthernetDevice);
   @override
-  _i7.Future<void> init() => (super.noSuchMethod(
+  _i6.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> cleanup() => (super.noSuchMethod(
+  _i6.Future<void> cleanup() => (super.noSuchMethod(
         Invocation.method(
           #cleanup,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
   void dispose() => super.noSuchMethod(
         Invocation.method(
@@ -1118,7 +723,7 @@ class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
         returnValueForMissingStub: null,
       );
   @override
-  bool isSelectedDevice(_i4.EthernetDevice? device) => (super.noSuchMethod(
+  bool isSelectedDevice(_i3.EthernetDevice? device) => (super.noSuchMethod(
         Invocation.method(
           #isSelectedDevice,
           [device],
@@ -1126,7 +731,7 @@ class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
         returnValue: false,
       ) as bool);
   @override
-  void selectDevice(_i4.EthernetDevice? device) => super.noSuchMethod(
+  void selectDevice(_i3.EthernetDevice? device) => super.noSuchMethod(
         Invocation.method(
           #selectDevice,
           [device],
@@ -1142,7 +747,7 @@ class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
         returnValueForMissingStub: null,
       );
   @override
-  void setProperties(_i7.Stream<List<String>>? properties) =>
+  void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
           #setProperties,
@@ -1153,7 +758,7 @@ class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
   @override
   void addPropertyListener(
     String? property,
-    _i8.VoidCallback? onChanged,
+    _i7.VoidCallback? onChanged,
   ) =>
       super.noSuchMethod(
         Invocation.method(
@@ -1182,7 +787,7 @@ class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -1190,7 +795,7 @@ class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -1202,7 +807,7 @@ class MockEthernetModel extends _i1.Mock implements _i4.EthernetModel {
 /// A class which mocks [HiddenWifiModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
+class MockHiddenWifiModel extends _i1.Mock implements _i9.HiddenWifiModel {
   MockHiddenWifiModel() {
     _i1.throwOnMissingStub(this);
   }
@@ -1233,33 +838,33 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
         returnValue: false,
       ) as bool);
   @override
-  _i6.ConnectMode get connectMode => (super.noSuchMethod(
+  _i5.ConnectMode get connectMode => (super.noSuchMethod(
         Invocation.getter(#connectMode),
-        returnValue: _i6.ConnectMode.none,
-      ) as _i6.ConnectMode);
+        returnValue: _i5.ConnectMode.none,
+      ) as _i5.ConnectMode);
   @override
   String get ssid => (super.noSuchMethod(
         Invocation.getter(#ssid),
         returnValue: '',
       ) as String);
   @override
-  _i3.NetworkService get service => (super.noSuchMethod(
+  _i2.NetworkService get service => (super.noSuchMethod(
         Invocation.getter(#service),
-        returnValue: _FakeNetworkService_5(
+        returnValue: _FakeNetworkService_1(
           this,
           Invocation.getter(#service),
         ),
-      ) as _i3.NetworkService);
+      ) as _i2.NetworkService);
   @override
-  List<_i5.WifiDevice> get devices => (super.noSuchMethod(
+  List<_i4.WifiDevice> get devices => (super.noSuchMethod(
         Invocation.getter(#devices),
-        returnValue: <_i5.WifiDevice>[],
-      ) as List<_i5.WifiDevice>);
+        returnValue: <_i4.WifiDevice>[],
+      ) as List<_i4.WifiDevice>);
   @override
-  _i7.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
+  _i6.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
         Invocation.getter(#onAvailabilityChanged),
-        returnValue: _i7.Stream<dynamic>.empty(),
-      ) as _i7.Stream<dynamic>);
+        returnValue: _i6.Stream<dynamic>.empty(),
+      ) as _i6.Stream<dynamic>);
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
@@ -1271,13 +876,13 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
         returnValue: false,
       ) as bool);
   @override
-  _i7.Future<dynamic> connect() => (super.noSuchMethod(
+  _i6.Future<dynamic> connect() => (super.noSuchMethod(
         Invocation.method(
           #connect,
           [],
         ),
-        returnValue: _i7.Future<dynamic>.value(),
-      ) as _i7.Future<dynamic>);
+        returnValue: _i6.Future<dynamic>.value(),
+      ) as _i6.Future<dynamic>);
   @override
   void setSsid(String? ssid) => super.noSuchMethod(
         Invocation.method(
@@ -1287,14 +892,14 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  _i7.Future<void> enable() => (super.noSuchMethod(
+  _i6.Future<void> enable() => (super.noSuchMethod(
         Invocation.method(
           #enable,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
   void onDeselected() => super.noSuchMethod(
         Invocation.method(
@@ -1320,38 +925,38 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
         returnValue: <_i2.NetworkManagerDevice>[],
       ) as List<_i2.NetworkManagerDevice>);
   @override
-  _i5.WifiDevice createDevice(_i2.NetworkManagerDevice? device) =>
+  _i4.WifiDevice createDevice(_i2.NetworkManagerDevice? device) =>
       (super.noSuchMethod(
         Invocation.method(
           #createDevice,
           [device],
         ),
-        returnValue: _FakeWifiDevice_7(
+        returnValue: _FakeWifiDevice_3(
           this,
           Invocation.method(
             #createDevice,
             [device],
           ),
         ),
-      ) as _i5.WifiDevice);
+      ) as _i4.WifiDevice);
   @override
-  _i7.Future<void> init() => (super.noSuchMethod(
+  _i6.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> cleanup() => (super.noSuchMethod(
+  _i6.Future<void> cleanup() => (super.noSuchMethod(
         Invocation.method(
           #cleanup,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
   void dispose() => super.noSuchMethod(
         Invocation.method(
@@ -1369,7 +974,7 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  bool isSelectedDevice(_i5.WifiDevice? device) => (super.noSuchMethod(
+  bool isSelectedDevice(_i4.WifiDevice? device) => (super.noSuchMethod(
         Invocation.method(
           #isSelectedDevice,
           [device],
@@ -1377,7 +982,7 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
         returnValue: false,
       ) as bool);
   @override
-  void selectDevice(_i5.WifiDevice? device) => super.noSuchMethod(
+  void selectDevice(_i4.WifiDevice? device) => super.noSuchMethod(
         Invocation.method(
           #selectDevice,
           [device],
@@ -1393,7 +998,7 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  void setProperties(_i7.Stream<List<String>>? properties) =>
+  void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
           #setProperties,
@@ -1404,7 +1009,7 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
   @override
   void addPropertyListener(
     String? property,
-    _i8.VoidCallback? onChanged,
+    _i7.VoidCallback? onChanged,
   ) =>
       super.noSuchMethod(
         Invocation.method(
@@ -1433,7 +1038,7 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -1441,7 +1046,7 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -1453,7 +1058,7 @@ class MockHiddenWifiModel extends _i1.Mock implements _i11.HiddenWifiModel {
 /// A class which mocks [AccessPoint].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockAccessPoint extends _i1.Mock implements _i5.AccessPoint {
+class MockAccessPoint extends _i1.Mock implements _i4.AccessPoint {
   MockAccessPoint() {
     _i1.throwOnMissingStub(this);
   }
@@ -1461,7 +1066,7 @@ class MockAccessPoint extends _i1.Mock implements _i5.AccessPoint {
   @override
   _i2.NetworkManagerAccessPoint get accessPoint => (super.noSuchMethod(
         Invocation.getter(#accessPoint),
-        returnValue: _FakeNetworkManagerAccessPoint_8(
+        returnValue: _FakeNetworkManagerAccessPoint_4(
           this,
           Invocation.getter(#accessPoint),
         ),
@@ -1518,7 +1123,7 @@ class MockAccessPoint extends _i1.Mock implements _i5.AccessPoint {
         returnValueForMissingStub: null,
       );
   @override
-  void setProperties(_i7.Stream<List<String>>? properties) =>
+  void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
           #setProperties,
@@ -1529,7 +1134,7 @@ class MockAccessPoint extends _i1.Mock implements _i5.AccessPoint {
   @override
   void addPropertyListener(
     String? property,
-    _i8.VoidCallback? onChanged,
+    _i7.VoidCallback? onChanged,
   ) =>
       super.noSuchMethod(
         Invocation.method(
@@ -1566,7 +1171,7 @@ class MockAccessPoint extends _i1.Mock implements _i5.AccessPoint {
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -1574,7 +1179,7 @@ class MockAccessPoint extends _i1.Mock implements _i5.AccessPoint {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -1594,7 +1199,7 @@ class MockAccessPoint extends _i1.Mock implements _i5.AccessPoint {
 /// A class which mocks [WifiDevice].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
+class MockWifiDevice extends _i1.Mock implements _i4.WifiDevice {
   MockWifiDevice() {
     _i1.throwOnMissingStub(this);
   }
@@ -1605,10 +1210,10 @@ class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
         returnValue: false,
       ) as bool);
   @override
-  List<_i5.AccessPoint> get accessPoints => (super.noSuchMethod(
+  List<_i4.AccessPoint> get accessPoints => (super.noSuchMethod(
         Invocation.getter(#accessPoints),
-        returnValue: <_i5.AccessPoint>[],
-      ) as List<_i5.AccessPoint>);
+        returnValue: <_i4.AccessPoint>[],
+      ) as List<_i4.AccessPoint>);
   @override
   bool get scanning => (super.noSuchMethod(
         Invocation.getter(#scanning),
@@ -1622,7 +1227,7 @@ class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
   @override
   _i2.NetworkManagerDevice get device => (super.noSuchMethod(
         Invocation.getter(#device),
-        returnValue: _FakeNetworkManagerDevice_4(
+        returnValue: _FakeNetworkManagerDevice_0(
           this,
           Invocation.getter(#device),
         ),
@@ -1711,7 +1316,7 @@ class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
         returnValueForMissingStub: null,
       );
   @override
-  bool isActiveAccessPoint(_i5.AccessPoint? accessPoint) => (super.noSuchMethod(
+  bool isActiveAccessPoint(_i4.AccessPoint? accessPoint) => (super.noSuchMethod(
         Invocation.method(
           #isActiveAccessPoint,
           [accessPoint],
@@ -1719,7 +1324,7 @@ class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
         returnValue: false,
       ) as bool);
   @override
-  bool isSelectedAccessPoint(_i5.AccessPoint? accessPoint) =>
+  bool isSelectedAccessPoint(_i4.AccessPoint? accessPoint) =>
       (super.noSuchMethod(
         Invocation.method(
           #isSelectedAccessPoint,
@@ -1728,7 +1333,7 @@ class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
         returnValue: false,
       ) as bool);
   @override
-  void selectAccessPoint(_i5.AccessPoint? accessPoint) => super.noSuchMethod(
+  void selectAccessPoint(_i4.AccessPoint? accessPoint) => super.noSuchMethod(
         Invocation.method(
           #selectAccessPoint,
           [accessPoint],
@@ -1736,32 +1341,32 @@ class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
         returnValueForMissingStub: null,
       );
   @override
-  _i7.Future<void> requestScan({String? ssid}) => (super.noSuchMethod(
+  _i6.Future<void> requestScan({String? ssid}) => (super.noSuchMethod(
         Invocation.method(
           #requestScan,
           [],
           {#ssid: ssid},
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i5.AccessPoint? findAccessPoint(String? ssid) =>
+  _i4.AccessPoint? findAccessPoint(String? ssid) =>
       (super.noSuchMethod(Invocation.method(
         #findAccessPoint,
         [ssid],
-      )) as _i5.AccessPoint?);
+      )) as _i4.AccessPoint?);
   @override
-  _i7.Future<void> disconnect() => (super.noSuchMethod(
+  _i6.Future<void> disconnect() => (super.noSuchMethod(
         Invocation.method(
           #disconnect,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  void setProperties(_i7.Stream<List<String>>? properties) =>
+  void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
           #setProperties,
@@ -1772,7 +1377,7 @@ class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
   @override
   void addPropertyListener(
     String? property,
-    _i8.VoidCallback? onChanged,
+    _i7.VoidCallback? onChanged,
   ) =>
       super.noSuchMethod(
         Invocation.method(
@@ -1801,7 +1406,7 @@ class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -1809,7 +1414,7 @@ class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -1829,7 +1434,7 @@ class MockWifiDevice extends _i1.Mock implements _i5.WifiDevice {
 /// A class which mocks [WifiModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
+class MockWifiModel extends _i1.Mock implements _i4.WifiModel {
   MockWifiModel() {
     _i1.throwOnMissingStub(this);
   }
@@ -1860,28 +1465,28 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
         returnValue: false,
       ) as bool);
   @override
-  _i6.ConnectMode get connectMode => (super.noSuchMethod(
+  _i5.ConnectMode get connectMode => (super.noSuchMethod(
         Invocation.getter(#connectMode),
-        returnValue: _i6.ConnectMode.none,
-      ) as _i6.ConnectMode);
+        returnValue: _i5.ConnectMode.none,
+      ) as _i5.ConnectMode);
   @override
-  _i3.NetworkService get service => (super.noSuchMethod(
+  _i2.NetworkService get service => (super.noSuchMethod(
         Invocation.getter(#service),
-        returnValue: _FakeNetworkService_5(
+        returnValue: _FakeNetworkService_1(
           this,
           Invocation.getter(#service),
         ),
-      ) as _i3.NetworkService);
+      ) as _i2.NetworkService);
   @override
-  List<_i5.WifiDevice> get devices => (super.noSuchMethod(
+  List<_i4.WifiDevice> get devices => (super.noSuchMethod(
         Invocation.getter(#devices),
-        returnValue: <_i5.WifiDevice>[],
-      ) as List<_i5.WifiDevice>);
+        returnValue: <_i4.WifiDevice>[],
+      ) as List<_i4.WifiDevice>);
   @override
-  _i7.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
+  _i6.Stream<dynamic> get onAvailabilityChanged => (super.noSuchMethod(
         Invocation.getter(#onAvailabilityChanged),
-        returnValue: _i7.Stream<dynamic>.empty(),
-      ) as _i7.Stream<dynamic>);
+        returnValue: _i6.Stream<dynamic>.empty(),
+      ) as _i6.Stream<dynamic>);
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
@@ -1909,23 +1514,23 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  _i7.Future<void> init() => (super.noSuchMethod(
+  _i6.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> cleanup() => (super.noSuchMethod(
+  _i6.Future<void> cleanup() => (super.noSuchMethod(
         Invocation.method(
           #cleanup,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
   void dispose() => super.noSuchMethod(
         Invocation.method(
@@ -1935,23 +1540,23 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  _i7.Future<void> enable() => (super.noSuchMethod(
+  _i6.Future<void> enable() => (super.noSuchMethod(
         Invocation.method(
           #enable,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
-  _i7.Future<void> connect() => (super.noSuchMethod(
+  _i6.Future<void> connect() => (super.noSuchMethod(
         Invocation.method(
           #connect,
           [],
         ),
-        returnValue: _i7.Future<void>.value(),
-        returnValueForMissingStub: _i7.Future<void>.value(),
-      ) as _i7.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
   @override
   List<_i2.NetworkManagerDevice> getDevices() => (super.noSuchMethod(
         Invocation.method(
@@ -1961,20 +1566,20 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
         returnValue: <_i2.NetworkManagerDevice>[],
       ) as List<_i2.NetworkManagerDevice>);
   @override
-  _i5.WifiDevice createDevice(_i2.NetworkManagerDevice? device) =>
+  _i4.WifiDevice createDevice(_i2.NetworkManagerDevice? device) =>
       (super.noSuchMethod(
         Invocation.method(
           #createDevice,
           [device],
         ),
-        returnValue: _FakeWifiDevice_7(
+        returnValue: _FakeWifiDevice_3(
           this,
           Invocation.method(
             #createDevice,
             [device],
           ),
         ),
-      ) as _i5.WifiDevice);
+      ) as _i4.WifiDevice);
   @override
   void startPeriodicScanning() => super.noSuchMethod(
         Invocation.method(
@@ -1992,14 +1597,14 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  _i7.Future<dynamic> requestScan({String? ssid}) => (super.noSuchMethod(
+  _i6.Future<dynamic> requestScan({String? ssid}) => (super.noSuchMethod(
         Invocation.method(
           #requestScan,
           [],
           {#ssid: ssid},
         ),
-        returnValue: _i7.Future<dynamic>.value(),
-      ) as _i7.Future<dynamic>);
+        returnValue: _i6.Future<dynamic>.value(),
+      ) as _i6.Future<dynamic>);
   @override
   void updateDevices() => super.noSuchMethod(
         Invocation.method(
@@ -2009,7 +1614,7 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  bool isSelectedDevice(_i5.WifiDevice? device) => (super.noSuchMethod(
+  bool isSelectedDevice(_i4.WifiDevice? device) => (super.noSuchMethod(
         Invocation.method(
           #isSelectedDevice,
           [device],
@@ -2017,7 +1622,7 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
         returnValue: false,
       ) as bool);
   @override
-  void selectDevice(_i5.WifiDevice? device) => super.noSuchMethod(
+  void selectDevice(_i4.WifiDevice? device) => super.noSuchMethod(
         Invocation.method(
           #selectDevice,
           [device],
@@ -2033,7 +1638,7 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  void setProperties(_i7.Stream<List<String>>? properties) =>
+  void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
           #setProperties,
@@ -2044,7 +1649,7 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
   @override
   void addPropertyListener(
     String? property,
-    _i8.VoidCallback? onChanged,
+    _i7.VoidCallback? onChanged,
   ) =>
       super.noSuchMethod(
         Invocation.method(
@@ -2073,7 +1678,7 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -2081,7 +1686,7 @@ class MockWifiModel extends _i1.Mock implements _i5.WifiModel {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i8.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],

@@ -3,14 +3,12 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
-import 'dart:ui' as _i6;
+import 'dart:async' as _i3;
+import 'dart:ui' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i2;
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart'
-    as _i5;
-import 'package:ubuntu_desktop_installer/services.dart' as _i3;
+    as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -23,254 +21,19 @@ import 'package:ubuntu_desktop_installer/services.dart' as _i3;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeGuidedStorageResponseV2_0 extends _i1.SmartFake
-    implements _i2.GuidedStorageResponseV2 {
-  _FakeGuidedStorageResponseV2_0(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-/// A class which mocks [StorageService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockStorageService extends _i1.Mock implements _i3.StorageService {
-  MockStorageService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  bool get hasMultipleDisks => (super.noSuchMethod(
-        Invocation.getter(#hasMultipleDisks),
-        returnValue: false,
-      ) as bool);
-  @override
-  bool get needRoot => (super.noSuchMethod(
-        Invocation.getter(#needRoot),
-        returnValue: false,
-      ) as bool);
-  @override
-  bool get needBoot => (super.noSuchMethod(
-        Invocation.getter(#needBoot),
-        returnValue: false,
-      ) as bool);
-  @override
-  bool get useEncryption => (super.noSuchMethod(
-        Invocation.getter(#useEncryption),
-        returnValue: false,
-      ) as bool);
-  @override
-  set useEncryption(bool? useEncryption) => super.noSuchMethod(
-        Invocation.setter(
-          #useEncryption,
-          useEncryption,
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  bool get useLvm => (super.noSuchMethod(
-        Invocation.getter(#useLvm),
-        returnValue: false,
-      ) as bool);
-  @override
-  set useLvm(bool? useLvm) => super.noSuchMethod(
-        Invocation.setter(
-          #useLvm,
-          useLvm,
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  set securityKey(String? securityKey) => super.noSuchMethod(
-        Invocation.setter(
-          #securityKey,
-          securityKey,
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  set guidedTarget(_i2.GuidedStorageTarget? target) => super.noSuchMethod(
-        Invocation.setter(
-          #guidedTarget,
-          target,
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  int get installMinimumSize => (super.noSuchMethod(
-        Invocation.getter(#installMinimumSize),
-        returnValue: 0,
-      ) as int);
-  @override
-  int get largestDiskSize => (super.noSuchMethod(
-        Invocation.getter(#largestDiskSize),
-        returnValue: 0,
-      ) as int);
-  @override
-  _i4.Future<void> init() => (super.noSuchMethod(
-        Invocation.method(
-          #init,
-          [],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-  @override
-  _i4.Future<bool> hasSecureBoot() => (super.noSuchMethod(
-        Invocation.method(
-          #hasSecureBoot,
-          [],
-        ),
-        returnValue: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
-  @override
-  _i4.Future<bool> hasBitLocker() => (super.noSuchMethod(
-        Invocation.method(
-          #hasBitLocker,
-          [],
-        ),
-        returnValue: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
-  @override
-  _i4.Future<_i2.GuidedStorageResponseV2> getGuidedStorage() =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getGuidedStorage,
-          [],
-        ),
-        returnValue: _i4.Future<_i2.GuidedStorageResponseV2>.value(
-            _FakeGuidedStorageResponseV2_0(
-          this,
-          Invocation.method(
-            #getGuidedStorage,
-            [],
-          ),
-        )),
-      ) as _i4.Future<_i2.GuidedStorageResponseV2>);
-  @override
-  _i4.Future<void> setGuidedStorage() => (super.noSuchMethod(
-        Invocation.method(
-          #setGuidedStorage,
-          [],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-  @override
-  _i4.Future<List<_i2.Disk>> getStorage() => (super.noSuchMethod(
-        Invocation.method(
-          #getStorage,
-          [],
-        ),
-        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
-      ) as _i4.Future<List<_i2.Disk>>);
-  @override
-  _i4.Future<List<_i2.Disk>> getOriginalStorage() => (super.noSuchMethod(
-        Invocation.method(
-          #getOriginalStorage,
-          [],
-        ),
-        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
-      ) as _i4.Future<List<_i2.Disk>>);
-  @override
-  _i4.Future<List<_i2.Disk>> addPartition(
-    _i2.Disk? disk,
-    _i2.Gap? gap,
-    _i2.Partition? partition,
-  ) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #addPartition,
-          [
-            disk,
-            gap,
-            partition,
-          ],
-        ),
-        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
-      ) as _i4.Future<List<_i2.Disk>>);
-  @override
-  _i4.Future<List<_i2.Disk>> editPartition(
-    _i2.Disk? disk,
-    _i2.Partition? partition,
-  ) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #editPartition,
-          [
-            disk,
-            partition,
-          ],
-        ),
-        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
-      ) as _i4.Future<List<_i2.Disk>>);
-  @override
-  _i4.Future<List<_i2.Disk>> deletePartition(
-    _i2.Disk? disk,
-    _i2.Partition? partition,
-  ) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #deletePartition,
-          [
-            disk,
-            partition,
-          ],
-        ),
-        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
-      ) as _i4.Future<List<_i2.Disk>>);
-  @override
-  _i4.Future<List<_i2.Disk>> setStorage() => (super.noSuchMethod(
-        Invocation.method(
-          #setStorage,
-          [],
-        ),
-        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
-      ) as _i4.Future<List<_i2.Disk>>);
-  @override
-  _i4.Future<List<_i2.Disk>> resetStorage() => (super.noSuchMethod(
-        Invocation.method(
-          #resetStorage,
-          [],
-        ),
-        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
-      ) as _i4.Future<List<_i2.Disk>>);
-  @override
-  _i4.Future<List<_i2.Disk>> addBootPartition(_i2.Disk? disk) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #addBootPartition,
-          [disk],
-        ),
-        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
-      ) as _i4.Future<List<_i2.Disk>>);
-  @override
-  _i4.Future<List<_i2.Disk>> reformatDisk(_i2.Disk? disk) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #reformatDisk,
-          [disk],
-        ),
-        returnValue: _i4.Future<List<_i2.Disk>>.value(<_i2.Disk>[]),
-      ) as _i4.Future<List<_i2.Disk>>);
-}
-
 /// A class which mocks [SecureBootModel].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSecureBootModel extends _i1.Mock implements _i5.SecureBootModel {
+class MockSecureBootModel extends _i1.Mock implements _i2.SecureBootModel {
   MockSecureBootModel() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i5.SecureBootMode get secureBootMode => (super.noSuchMethod(
+  _i2.SecureBootMode get secureBootMode => (super.noSuchMethod(
         Invocation.getter(#secureBootMode),
-        returnValue: _i5.SecureBootMode.turnOff,
-      ) as _i5.SecureBootMode);
+        returnValue: _i2.SecureBootMode.turnOff,
+      ) as _i2.SecureBootMode);
   @override
   String get securityKey => (super.noSuchMethod(
         Invocation.getter(#securityKey),
@@ -307,15 +70,15 @@ class MockSecureBootModel extends _i1.Mock implements _i5.SecureBootModel {
         returnValue: false,
       ) as bool);
   @override
-  _i4.Future<bool> hasSecureBoot() => (super.noSuchMethod(
+  _i3.Future<bool> hasSecureBoot() => (super.noSuchMethod(
         Invocation.method(
           #hasSecureBoot,
           [],
         ),
-        returnValue: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
+        returnValue: _i3.Future<bool>.value(false),
+      ) as _i3.Future<bool>);
   @override
-  void setSecureBootMode(_i5.SecureBootMode? mode) => super.noSuchMethod(
+  void setSecureBootMode(_i2.SecureBootMode? mode) => super.noSuchMethod(
         Invocation.method(
           #setSecureBootMode,
           [mode],
@@ -339,7 +102,7 @@ class MockSecureBootModel extends _i1.Mock implements _i5.SecureBootModel {
         returnValueForMissingStub: null,
       );
   @override
-  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -347,7 +110,7 @@ class MockSecureBootModel extends _i1.Mock implements _i5.SecureBootModel {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],

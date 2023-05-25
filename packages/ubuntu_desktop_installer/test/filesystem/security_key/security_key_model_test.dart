@@ -1,12 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/filesystem/security_key/security_key_model.dart';
-import 'package:ubuntu_desktop_installer/services/storage_service.dart';
 
-import 'security_key_model_test.mocks.dart';
+import 'test_security_key.dart';
 
-@GenerateMocks([StorageService])
 void main() {
   test('notify changes', () {
     final model = SecurityKeyModel(MockStorageService());

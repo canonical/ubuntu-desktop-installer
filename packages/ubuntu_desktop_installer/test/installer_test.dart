@@ -12,7 +12,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'install/test_install.dart';
 import 'loading/test_loading.dart';
 import 'locale/test_locale.dart';
-import 'theme/theme_page_test.mocks.dart';
+import 'test_utils.mocks.dart';
 
 void main() {
   testWidgets('interactive installation', (tester) async {

@@ -8,7 +8,6 @@ import 'package:ubuntu_desktop_installer/pages/source/source_page.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../test_utils.dart';
 import 'test_source.dart';
 
 void main() {

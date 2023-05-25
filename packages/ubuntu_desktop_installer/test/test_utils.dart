@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 
 export 'package:ubuntu_test/ubuntu_test.dart' show UbuntuLangTester;
+export 'test_utils.mocks.dart';
 
 /// An extension on [WidgetTester] for building test apps.
 ///
@@ -70,3 +74,26 @@ extension UbuntuTester on WidgetTester {
     );
   }
 }
+
+@GenerateMocks([
+  ActiveDirectoryService,
+  AppService,
+  ConfigService,
+  DesktopService,
+  GeoService,
+  IdentityService,
+  JournalService,
+  KeyboardService,
+  LocaleService,
+  NetworkService,
+  PowerService,
+  ProductService,
+  SoundService,
+  StorageService,
+  TelemetryService,
+  TimezoneService,
+  UdevDeviceInfo,
+  UdevService,
+  UrlLauncher,
+])
+class _Dummy {} // ignore: unused_element

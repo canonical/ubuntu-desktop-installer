@@ -4,7 +4,6 @@ import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dar
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../test_utils.dart';
 import 'test_secure_boot.dart';
 
 void main() {

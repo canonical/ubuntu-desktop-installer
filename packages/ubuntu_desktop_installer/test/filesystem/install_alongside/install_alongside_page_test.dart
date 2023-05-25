@@ -10,7 +10,6 @@ import 'package:ubuntu_desktop_installer/services/product_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
-import '../../test_utils.dart';
 import 'install_alongside_model_test.dart';
 import 'test_install_alongside.dart';
 
