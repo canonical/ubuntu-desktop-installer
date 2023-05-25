@@ -176,5 +176,34 @@
   "whoAreYouPageRequirePassword": "طلب كلمة السر للولوج",
   "@whoAreYouPageRequirePassword": {},
   "notEnoughDiskSpaceTitle": "مساحة غير كافية",
-  "@notEnoughDiskSpaceTitle": {}
+  "@notEnoughDiskSpaceTitle": {},
+  "turnOffRSTTitle": "قم بإيقاف RST للمتابعة",
+  "@turnOffRSTTitle": {},
+  "preparingUbuntu": "يجري إعداد {DISTRO} ...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffRST": "تم تشغيل RST",
+  "@turnOffRST": {},
+  "instructionsForRST": "للحصول على إرشادات ، قم بمسح رمز الاستجابة السريعة ضوئيًا (QR code) على الهاتف أو أي جهاز آخر: <a href=\"https://{url}\">{url}</a>",
+  "@instructionsForRST": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "detectButtonText": "كشف",
+  "@detectButtonText": {},
+  "keyboardVariant": "نوع لوحة المفاتيح:",
+  "@keyboardVariant": {},
+  "welcomePageTitle": "مرحبا بك في {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
