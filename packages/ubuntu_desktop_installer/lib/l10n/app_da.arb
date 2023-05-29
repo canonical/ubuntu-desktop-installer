@@ -2,21 +2,21 @@
   "@@locale": "da",
   "hiddenWifiNetworkNameLabel": "Netværksnavn",
   "@hiddenWifiNetworkNameLabel": {},
-  "connectButtonText": "Forbinde",
+  "connectButtonText": "Opret forbindelse",
   "@connectButtonText": {},
-  "installThirdPartyTitle": "Installer tredjepartssoftware til grafik og trådløs hardware og yderligere medieformater",
+  "installThirdPartyTitle": "Installér tredjeparts programvare til grafik og Wi-Fi maskinel, så vel som yderligere medieformater",
   "@installThirdPartyTitle": {},
-  "chooseSecurityKeyRequired": "Der kræves en sikkerhedsnøgle",
+  "chooseSecurityKeyRequired": "En sikkerhedsnøgle er påkrævet",
   "@chooseSecurityKeyRequired": {},
-  "installDriversTitle": "Installer tredjepartssoftware til grafik og trådløs hardware",
+  "installDriversTitle": "Installér tredjeparts programvare til grafik og Wi-Fi maskinel",
   "@installDriversTitle": {},
-  "installDriversSubtitle": "Disse chauffører er underlagt de licensvilkår, der er inkluderet i deres dokumentation. De er proprietære.",
+  "installDriversSubtitle": "Disse chauffører er underlagt de licensvilkår, som er inkluderet i deres dokumentation. De er proprietære.",
   "@installDriversSubtitle": {},
-  "installCodecsTitle": "Download og installer understøttelse af yderligere medieformater",
+  "installCodecsTitle": "Hent og installér understøttelse af yderligere medieformater",
   "@installCodecsTitle": {},
-  "installCodecsSubtitle": "Denne software er underlagt licensbetingelserne i dens dokumentation. Nogle er proprietære.",
+  "installCodecsSubtitle": "Denne programvare er underlagt licensbetingelserne, som er inkluderet i dens dokumentation. Nogle er proprietære.",
   "@installCodecsSubtitle": {},
-  "onBatteryWarning": "<font color=\"{color}\">Advarsel:</font> Computeren er ikke tilsluttet en strømkilde.",
+  "onBatteryWarning": "<font color=\"{color}\">Advarsel:</font> Computeren er ikke sluttet til en strømkilde.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -35,90 +35,90 @@
   "@wiredDisabled": {},
   "showSecurityKey": "Vis sikkerhedsnøgle",
   "@showSecurityKey": {},
-  "connectToInternetPageTitle": "Forbind til internettet",
+  "connectToInternetPageTitle": "Opret forbindelse til et netværk",
   "@connectToInternetPageTitle": {},
   "useWiredConnection": "Brug kablet forbindelse",
   "@useWiredConnection": {},
-  "wiredMustBeEnabled": "En kablet forbindelse skal være aktiveret for at bruge Ethernet på denne computer",
+  "wiredMustBeEnabled": "En kablet forbindelse skal være aktiveret, for at bruge Ethernet på denne computer",
   "@wiredMustBeEnabled": {},
   "hiddenWifiNetwork": "Opret forbindelse til et skjult WiFi-netværk",
   "@hiddenWifiNetwork": {},
-  "normalInstallationSubtitle": "Webbrowsere, hjælpeprogrammer, kontorapplikationer, spil og medieafspillere.",
+  "normalInstallationSubtitle": "Netlæsere, værktøjer, kontorpakker, spil og medieafspillere.",
   "@normalInstallationSubtitle": {},
   "minimalInstallationTitle": "Minimal installation",
   "@minimalInstallationTitle": {},
-  "minimalInstallationSubtitle": "Webbrowser og grundlæggende hjælpeprogrammer.",
+  "minimalInstallationSubtitle": "Netlæsere og basale værktøjer.",
   "@minimalInstallationSubtitle": {},
-  "otherOptions": "Flere muligheder",
+  "otherOptions": "Andre muligheder",
   "@otherOptions": {},
-  "chooseSecurityKeyTitle": "Vælg sikkerhedsnøgle",
+  "chooseSecurityKeyTitle": "Sikkerhedsnøgle",
   "@chooseSecurityKeyTitle": {},
-  "appTitle": "Ubuntu-Desktop-Installationsprogram",
+  "appTitle": "Ubuntu Skrivebordsinstallatør",
   "@appTitle": {},
-  "installUbuntu": "{RELEASE} installerer",
+  "installUbuntu": "Installér {RELEASE}",
   "@installUbuntu": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Installer {RELEASE} ved siden af (eller i stedet for) dit nuværende operativsystem. Dette bør ikke tage for lang tid.",
+  "installUbuntuDescription": "Installér {RELEASE}, ved siden af (eller i stedet for) dit nuværende operativsystem. Dette burde ikke tage lang tid.",
   "@installUbuntuDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "Du vil måske læse <a href=\"{url}\">udgivelsesbemærkningerne</a>.",
+  "releaseNotesLabel": "Du kunne nok ønske at læse <a href=\"{url}\">udgivelsesnoter</a>.",
   "@releaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "quitButtonText": "Afslut installationen",
+  "quitButtonText": "Forlad installation",
   "@quitButtonText": {},
   "welcome": "Velkommen",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Prøv eller installer",
+  "tryOrInstallPageTitle": "Prøv eller installér {DISTRO}",
   "@tryOrInstallPageTitle": {},
-  "repairInstallation": "reparer installation",
+  "repairInstallation": "Reparér installation",
   "@repairInstallation": {},
-  "configureSecureBootSecurityKeyRequired": "Der kræves en sikkerhedsnøgle",
+  "configureSecureBootSecurityKeyRequired": "Sikkerhedsnøgle er påkrævet",
   "@configureSecureBootSecurityKeyRequired": {},
-  "confirmSecurityKey": "Bekræft sikkerhedsnøgle",
+  "confirmSecurityKey": "Bekræft sikkerhedsnøglen",
   "@confirmSecurityKey": {},
-  "dontInstallDriverSoftwareNow": "Installer ikke driversoftwaren lige nu",
+  "dontInstallDriverSoftwareNow": "Installér ikke driver-programvaren lige nu",
   "@dontInstallDriverSoftwareNow": {},
-  "dontInstallDriverSoftwareNowDescription": "Du kan installere dem senere fra Software og opdateringer.",
+  "dontInstallDriverSoftwareNowDescription": "Du kan installere det senere fra Programvare & Opdateringer.",
   "@dontInstallDriverSoftwareNowDescription": {},
-  "secureBootSecurityKeysDontMatch": "Sikkerhedsnøglerne stemmer ikke overens",
+  "secureBootSecurityKeysDontMatch": "Sikkerhedsnøgler stemmer ikke overens",
   "@secureBootSecurityKeysDontMatch": {},
-  "noWiredConnection": "Ingen kablet forbindelse fundet",
+  "noWiredConnection": "Ingen kablet forbindelse opfanget",
   "@noWiredConnection": {},
-  "offlineWarning": "Du er i øjeblikket offline",
+  "offlineWarning": "Du er aktuelt offline",
   "@offlineWarning": {},
   "chooseSecurityKeyMismatch": "Sikkerhedsnøglerne stemmer ikke overens",
   "@chooseSecurityKeyMismatch": {},
   "installationTypeTitle": "installationstype",
   "@installationTypeTitle": {},
-  "installationTypeOSDetected": "{os} er i øjeblikket på denne maskine. Hvordan vil du gerne komme videre?",
+  "installationTypeOSDetected": "Din computer har aktuelt {os} installeret. Hvad kunne du tænke dig at gøre?",
   "@installationTypeOSDetected": {
     "type": "text",
     "placeholders": {
       "os": {}
     }
   },
-  "windowTitle": "{RELEASE} installer",
+  "windowTitle": "Installation {RELEASE}",
   "@windowTitle": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "cancelButtonText": "Afbryde",
+  "cancelButtonText": "Afbryd",
   "@cancelButtonText": {},
-  "changeButtonText": "Ændre",
+  "changeButtonText": "Skift",
   "@changeButtonText": {},
   "okButtonText": "OK",
   "@okButtonText": {},
@@ -126,93 +126,706 @@
   "@noButtonText": {},
   "restartButtonText": "Genstart",
   "@restartButtonText": {},
-  "typeToTest": "Skriv noget her for at teste dit tastatur layout",
+  "typeToTest": "Tast her, for at afprøve dit tastatur",
   "@typeToTest": {},
-  "revertButtonText": "Nulstil til standard",
+  "revertButtonText": "Tilbagefør",
   "@revertButtonText": {},
   "yesButtonText": "Ja",
   "@yesButtonText": {},
-  "repairInstallationDescription": "Reparation geninstallerer al installeret software uden at røre ved dokumenter eller indstillinger.",
+  "repairInstallationDescription": "Reparation vil geninstallere al installeret programvare, uden at røre dokumenter eller indstillinger.",
   "@repairInstallationDescription": {},
-  "tryUbuntu": "{RELEASE} prøv",
+  "tryUbuntu": "Prøv {RELEASE}",
   "@tryUbuntu": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "Du kan prøve {RELEASE} uden at foretage ændringer på din computer.",
+  "tryUbuntuDescription": "Du kan prøve {RELEASE}, uden at foretage nogen ændringer, på din computer.",
   "@tryUbuntuDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "turnOffRST": "Sluk for RST",
+  "turnOffRST": "RST er aktiveret",
   "@turnOffRST": {},
-  "turnOffRSTDescription": "Denne lommeregner bruger Intel RST (Rapid Storage Technology). Før du installerer Ubuntu, skal RST være slået fra i Windows.",
+  "turnOffRSTDescription": "Denne computer bruger Intel RST (Rapid Storage Technology). Før installation af Ubuntu, skal du slå RST fra i Windows.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "For instruktioner skal du åbne denne side på en smartphone eller anden enhed: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "For instruktioner, skan QR-koden på en anden enhed, eller besøg: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "keyboardLayoutPageTitle": "tastatur layout",
+  "keyboardLayoutPageTitle": "Tastaturopsætning",
   "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "Vælg dit tastatur layout:",
+  "chooseYourKeyboardLayout": "Vælg din tastaturopsætning:",
   "@chooseYourKeyboardLayout": {},
-  "detectLayout": "Genkend tastaturlayout",
+  "detectLayout": "Opfang tastaturopsætning",
   "@detectLayout": {},
   "pressOneKey": "Tryk venligst på en af følgende taster:",
   "@pressOneKey": {},
-  "isKeyPresent": "Findes følgende tast på dit tastatur?",
+  "isKeyPresent": "Er følgende tast tilstede på dit tastatur?",
   "@isKeyPresent": {},
-  "configureSecureBootTitle": "Konfigurer sikker opstart",
+  "configureSecureBootTitle": "Konfigurér Sikret Start",
   "@configureSecureBootTitle": {},
-  "configureSecureBootOption": "Konfigurer sikker opstart",
+  "configureSecureBootOption": "Konfigurér Sikret Start",
   "@configureSecureBootOption": {},
   "chooseSecurityKey": "Vælg sikkerhedsnøgle",
   "@chooseSecurityKey": {},
-  "enableWired": "Aktiver kablet Ethernet",
+  "enableWired": "Aktivér kablet",
   "@enableWired": {},
   "noInternet": "Jeg vil ikke oprette forbindelse til internettet lige nu",
   "@noInternet": {},
   "wirelessNetworkingDisabled": "Trådløst netværk deaktiveret",
   "@wirelessNetworkingDisabled": {},
-  "noWifiDevicesDetected": "Ingen WiFi-enheder fundet",
+  "noWifiDevicesDetected": "Ingen WiFi-enheder opfanget",
   "@noWifiDevicesDetected": {},
-  "wifiMustBeEnabled": "For at bruge WiFi på denne computer skal det trådløse netværk være aktiveret",
+  "wifiMustBeEnabled": "For at bruge WiFi på denne computer skal trådløst netværk være aktiveret",
   "@wifiMustBeEnabled": {},
-  "enableWifi": "Skriver WiFi",
+  "enableWifi": "Aktivér WiFi",
   "@enableWifi": {},
-  "updatesOtherSoftwarePageTitle": "Opdateringer og anden software",
+  "updatesOtherSoftwarePageTitle": "Applikationer og opdateringer",
   "@updatesOtherSoftwarePageTitle": {},
-  "updatesOtherSoftwarePageDescription": "Hvilke applikationer vil du først installere?",
+  "updatesOtherSoftwarePageDescription": "Hvilke apps vil du installere, til at starte med?",
   "@updatesOtherSoftwarePageDescription": {},
-  "installThirdPartySubtitle": "Denne software er underlagt de licensvilkår, der er inkluderet i dokumentationen. Noget af det er proprietært.",
+  "installThirdPartySubtitle": "Denne programvare er underlagt de licensvilkår, som er inkluderet i dens dokumentation. Nogle er proprietære.",
   "@installThirdPartySubtitle": {},
-  "configureSecureBootDescription": "Du har valgt at installere tredjeparts driversoftware. For at gøre dette skal Secure Boot være slået fra.\nFor at gøre dette skal du nu vælge en sikkerhedsnøgle og indtaste den, når du genstarter systemet.",
+  "configureSecureBootDescription": "Du har valgt at installere tredjeparts driver-programvare. Dette kræver at man slår Sikret Start fra.\nFor at gøre dette, skal du nu vælge en sikkerhedsnøgle og indtaste den, når systemet genstarter.",
   "@configureSecureBootDescription": {},
-  "connectToInternetDescription": "Tilslutning af computeren til internettet hjælper Ubuntu med at installere yderligere software og vælge tidszonen.\n\nTilslut via Ethernet-kabel eller vælg et WiFi-netværk",
+  "connectToInternetDescription": "Tilslutning af denne computer til internettet, vil hjælpe Ubuntu, med at installere enhver ekstra nødvendig programvare og vælge din tidszone.\n\nOpret forbindelse via Ethernet-kabel, eller vælg et WiFi-netværk",
   "@connectToInternetDescription": {},
-  "hiddenWifiNetworkNameRequired": "Netværksnavnet er påkrævet",
+  "hiddenWifiNetworkNameRequired": "Et netværksnavn er påkrævet",
   "@hiddenWifiNetworkNameRequired": {},
   "normalInstallationTitle": "Normal installation",
   "@normalInstallationTitle": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Advarsel:</font> Hvis du mister denne sikkerhedsnøgle, vil alle data gå tabt. Hvis det er nødvendigt, kan du skrive nøglen ned og opbevare den et sikkert sted.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Advarsel:</font> Hvis du mister denne sikkerhedsnøgle, vil alle data gå tabt. Hvis du har verug for det, så skriv din nøgle ned og opbevare den et andet sikkert sted.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
       "color": {}
     }
   },
-  "chooseSecurityKeyHeader": "Fuld diskkryptering beskytter dine filer, hvis du mister din computer. Hver gang du starter computeren, skal du indtaste en sikkerhedsnøgle.\n\nAlle filer uden for {RELEASE} bliver ikke krypteret.",
+  "chooseSecurityKeyHeader": "Diskkryptering beskytter dine filer, i tilfælde af at du mister din computer. Det kræver at du indtaster en sikkerhedsnøgle, hver gang computeren starter op.\n\nEnhver fil uden for {RELEASE} vil ikke blive krypteret.",
   "@chooseSecurityKeyHeader": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
+    }
+  },
+  "turnOffBitlockerTitle": "BitLocker er aktiveret",
+  "@turnOffBitlockerTitle": {},
+  "startInstallingButtonText": "Installér",
+  "@startInstallingButtonText": {},
+  "newPartitionTableConfirmationMessage": "Oprettelse af ny partitionstabel, på en hel enhed, vil fjerne alle dens nuværende partitioner. Denne operation kan fortrydes, hvis det er nødvendigt.",
+  "@newPartitionTableConfirmationMessage": {},
+  "installationTypeDualOSDetected": "Denne computer har aktuelt {os1} og {os2} installeret. Hvad kunne du tænke dig at gøre?",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeNoOSDetected": "Denne computer har aktuelt ingen opfangede operativsystemer. Hvad kunne du tænke dig at gøre?",
+  "@installationTypeNoOSDetected": {},
+  "installationTypeAlongside": "Installér {product}, ved siden af {os}",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongsideDual": "Installér {product}, ved siden af {os1} og {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAlongsideMulti": "Installér {product}, ved siden af dem",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installAlongsideSize": "Størrelse:",
+  "@installAlongsideSize": {},
+  "allocateDiskSpace": "Manuel partitionering",
+  "@allocateDiskSpace": {},
+  "diskHeadersSize": "Størrelse",
+  "@diskHeadersSize": {},
+  "installAlongsideHiddenPartitions": "{num} mindre partitioner er skjulte; brug det <a href=\"{url}\">avancerede partitionsværktøj</a> for mere kontrol",
+  "@installAlongsideHiddenPartitions": {
+    "type": "text",
+    "placeholders": {
+      "num": {},
+      "url": {}
+    }
+  },
+  "diskHeadersFormat": "Format",
+  "@diskHeadersFormat": {},
+  "diskHeadersMountPoint": "Monteringspunkt",
+  "@diskHeadersMountPoint": {},
+  "whoAreYouPageComputerNameInfo": "Det navn den bruger, når den snakker med andre computere.",
+  "@whoAreYouPageComputerNameInfo": {},
+  "whoAreYouPageUsernameLabel": "Vælg et brugernavn",
+  "@whoAreYouPageUsernameLabel": {},
+  "turnOffBitlockerLinkInstructions": "For instruktioner, skan QR-koden, på en anden enhed eller besøg:<a href=\"https://{url}\">{url}</a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "Tilgængelig:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "Påkrævet:",
+  "@notEnoughDiskSpaceRequired": {},
+  "activeDirectoryInfo": "Du kan indtaste domæne og andre oplysninger i næste trin.",
+  "@activeDirectoryInfo": {},
+  "diskHeadersType": "Type",
+  "@diskHeadersType": {},
+  "whoAreYouPageRealNameRequired": "Et navn er påkrævet",
+  "@whoAreYouPageRealNameRequired": {},
+  "whoAreYouPageUsernameRequired": "Et brugernavn er påkrævet",
+  "@whoAreYouPageUsernameRequired": {},
+  "whoAreYouPagePasswordLabel": "Vælg en adgangskode",
+  "@whoAreYouPagePasswordLabel": {},
+  "activeDirectoryTestConnection": "Afprøv domæneforbindelse",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryPasswordLabel": "Adgangskode",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryPasswordEmpty": "Påkrævet",
+  "@activeDirectoryPasswordEmpty": {},
+  "turnOffRSTTitle": "Slå RST fra, for at fortsætte",
+  "@turnOffRSTTitle": {},
+  "installationTypeMultiOSDetected": "Denne computer har aktuelt flere forskellige operativsystemer installeret. Hvad kunne du tænke dig at gøre?",
+  "@installationTypeMultiOSDetected": {},
+  "installationTypeErase": "Udslet disk og installér {DISTRO}",
+  "@installationTypeErase": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationTypeEraseWarning": "<font color=\"{color}\">Advarsel:</font> Dette vil slette alle dine programmer, dokumenter, fotografier, musik, og enhver anden fil, i alle operativsystemer.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeNoneSelected": "Ingen valgt",
+  "@installationTypeNoneSelected": {},
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Advarsel:</font> Dette vil slette alle dine {os} programmer, dokumenter, fotografier, musik, og enhver anden fil.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "Installér {product}, ved siden af andre partitioner",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeManualInfo": "Du kan selv oprette eller ændre størrelse på partitioner, eller vælge flere partitioner til {DISTRO}",
+  "@installationTypeManualInfo": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installAlongsideAllocateSpace": "Allokér plads",
+  "@installAlongsideAllocateSpace": {},
+  "installAlongsidePartition": "Partition:",
+  "@installAlongsidePartition": {},
+  "diskHeadersUsed": "Brugt",
+  "@diskHeadersUsed": {},
+  "diskHeadersSystem": "System",
+  "@diskHeadersSystem": {},
+  "installAlongsideAvailable": "Tilgængelig:",
+  "@installAlongsideAvailable": {},
+  "diskHeadersDevice": "Enhed",
+  "@diskHeadersDevice": {},
+  "newPartitionTable": "Ny partitionstabel",
+  "@newPartitionTable": {},
+  "bootLoaderDevice": "Enhed til installation af opstartslæser",
+  "@bootLoaderDevice": {},
+  "freeDiskSpace": "Fri plads",
+  "@freeDiskSpace": {},
+  "newPartitionTableConfirmationTitle": "Ny tom partition",
+  "@newPartitionTableConfirmationTitle": {},
+  "partitionLocationEnd": "Ende på denne plads",
+  "@partitionLocationEnd": {},
+  "partitionFormatLabel": "Brugt som:",
+  "@partitionFormatLabel": {},
+  "partitionUnitB": "B",
+  "@partitionUnitB": {},
+  "partitionLocationBeginning": "Begyndelse på denne plads",
+  "@partitionLocationBeginning": {},
+  "whoAreYouPageAutoLogin": "Log ind automatisk",
+  "@whoAreYouPageAutoLogin": {},
+  "whoAreYouPageComputerNameLabel": "Din computers navn",
+  "@whoAreYouPageComputerNameLabel": {},
+  "whoAreYouPageUsernameSystemReserved": "Det navn er reserveret til systembrug.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "restartInto": "Genstart i {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "installationSlidesDevelopmentBody": "{DISTRO} er den idéelle arbejdsstation til app- eller netudvikling, data-videnskab og kunstig intelligens/maskinlærling, så vel som devops og administration. Hver {DISTRO}-udgivelse inkluderer de seneste værktøjskæder og understøtter alle større IDEer.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryErrorTitle": "Fejl ved konfiguration af forbindelse til Aktiv Sti",
+  "@activeDirectoryErrorTitle": {},
+  "installationTypeAdvancedLabel": "Avancerede funktioner...",
+  "@installationTypeAdvancedLabel": {},
+  "installationTypeAdvancedTitle": "Avancerede funktioner",
+  "@installationTypeAdvancedTitle": {},
+  "restartIntoWindowsTitle": "Genstart i Windows?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Er du sikker på, at du vil genstarte din computer? Du vil skulle genstarte {DISTRO}-installationen senere, for at færdiggøre installationen af {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryDomainMultipleDots": "Indeholder flere punktummer (.) i streg",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryDomainNotFound": "Domæne ikke fundet",
+  "@activeDirectoryDomainNotFound": {},
+  "installationSlidesWelcomeTitle": "Hurtigt, gratis og fyldt med nye funktioner",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "Den seneste udgave af {DISTRO} gøre computer-arbejde nemmere end nogensinde.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "Om du er udvikler, skaber, gamer, eller administrator, vil du finde nye værktøjer til at forbedre din produktivitet og berige din oplevelse med {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesDevelopmentTitle": "Udvikl det bedste indenfor åben kilde",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesGamingTitle": "Super til gaming",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesSecurityTitle": "Privat og sikkert",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityLts": "Alle {DISTRO} LTS-udgivelser kommer med fem års sikkerhedsrettelser inkluderet, som kan udvides helt op til ti år, med et Ubuntu Pro-abonnement.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "Send din produktivitet til himmels",
+  "@installationSlidesProductivityTitle": {},
+  "selectGuidedStoragePageTitle": "Udslet disk og installér {DISTRO}",
+  "@selectGuidedStoragePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "whoAreYouPageRealNameLabel": "Dit navn",
+  "@whoAreYouPageRealNameLabel": {},
+  "selectGuidedStorageDropdownLabel": "Vælg drev:",
+  "@selectGuidedStorageDropdownLabel": {},
+  "installationTypeAlongsideInfo": "Dokumenter, musik, og andre personlige filer vil blive bevaret. Du kan vælge hvilket operativsystem du vil bruge, hver gang computeren starter op.",
+  "@installationTypeAlongsideInfo": {},
+  "installationTypeManual": "Manuel partitionering",
+  "@installationTypeManual": {},
+  "selectGuidedStorageInfoLabel": "Hele disken vil blive brugt:",
+  "@selectGuidedStorageInfoLabel": {},
+  "installAlongsideSpaceDivider": "Allokér drevplads, ved at trække skellet herunder:",
+  "@installAlongsideSpaceDivider": {},
+  "partitionTypeLogical": "Logisk",
+  "@partitionTypeLogical": {},
+  "whoAreYouPageInvalidUsername": "Brugernavnet er ugyldigt",
+  "@whoAreYouPageInvalidUsername": {},
+  "whoAreYouPageUsernameInUse": "Det brugernavn findes allerede.",
+  "@whoAreYouPageUsernameInUse": {},
+  "writeChangesToDisk": "Klar til at installere",
+  "@writeChangesToDisk": {},
+  "installAlongsideResizePartition": "Ændr størrelse på partition",
+  "@installAlongsideResizePartition": {},
+  "partitionFormatNone": "Efterlad uformateret",
+  "@partitionFormatNone": {},
+  "writeChangesPartitionResized": "partition <b>{disk}{partition}</b> ændres fra <b>{oldsize}</b> til <b>{newsize}</b>",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesPartitionFormattedMounted": "partition <b>{disk}{partition}</b> formateret som <b>{format}</b> brugt til <b>{mount}</b>",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionFormatted": "partition <b>{disk}{partition}</b> formateret som <b>{format}</b>",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "writeChangesPartitionMounted": "partition <b>{disk}{partition}</b> brugt til <b>{mount}</b>",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "restartWarning": "Du kan fortsat afprøve {RELEASE} nu, men indtil du genstarter computeren, vil ingen ændringer du foretager, eller dokumenter du gemmer, blive bevaret.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "restartNow": "Genstart nu",
+  "@restartNow": {},
+  "restartIntoWindows": "Genstart i Windows",
+  "@restartIntoWindows": {},
+  "continueTesting": "Fortsæt afprøvning",
+  "@continueTesting": {},
+  "notEnoughDiskSpaceTitle": "Ikke nok plads",
+  "@notEnoughDiskSpaceTitle": {},
+  "partitionCreateTitle": "Opret partition",
+  "@partitionCreateTitle": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "Monteringspunkter skal starte med \"/\"",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Monteringspunkter må ikke indeholde mellemrum",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "partitionEditTitle": "Redigér partition",
+  "@partitionEditTitle": {},
+  "partitionSizeLabel": "Størrelse:",
+  "@partitionSizeLabel": {},
+  "partitionLocationLabel": "Placering for ny partition:",
+  "@partitionLocationLabel": {},
+  "writeChangesPartitionsTitle": "Partitioner",
+  "@writeChangesPartitionsTitle": {},
+  "chooseYourLookPageTitle": "Vælg til tema",
+  "@chooseYourLookPageTitle": {},
+  "chooseYourLookPageHeader": "Du kan altid ændre dette senere, i indstillinger for udseende.",
+  "@chooseYourLookPageHeader": {},
+  "chooseYourLookPageDarkSetting": "Mørkt",
+  "@chooseYourLookPageDarkSetting": {},
+  "chooseYourLookPageLightSetting": "Lyst",
+  "@chooseYourLookPageLightSetting": {},
+  "installationSlidesCreativityBody": "Hvis du er animator, designer, videnskaber, eller spiludvikler, så er det nemt at tage dine arbejdsgange med til {DISTRO}, med understøttelse af åben kildekode og industriel standard-programvare samt -applikationer.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityBody": "{DISTRO} Desktop inkluderer LibreOffice, en pakke Microsoft Office-kompatible applikationer med åben kildekode, til dokumenter, regneark og præsentationer. Populære kollaborationsværktøjer er også tilgængelige.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportTitle": "Hjælp & Støtte",
+  "@installationSlidesSupportTitle": {},
+  "configuringSystem": "Opsætter systemet…",
+  "@configuringSystem": {},
+  "activeDirectoryOption": "Brug Aktiv Sti",
+  "@activeDirectoryOption": {},
+  "installationFailed": "Installation slog fejl",
+  "@installationFailed": {},
+  "partitionErase": "Formatér partition",
+  "@partitionErase": {},
+  "whoAreYouPageRequirePassword": "Kræv min adgangskode, for at logge ind",
+  "@whoAreYouPageRequirePassword": {},
+  "whoAreYouPageComputerNameRequired": "Et computernavn er påkrævet",
+  "@whoAreYouPageComputerNameRequired": {},
+  "whoAreYouPageComputerNameTooLong": "Det computernavn er for langt.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "whoAreYouPagePasswordRequired": "En adgangskode er påkrævet",
+  "@whoAreYouPagePasswordRequired": {},
+  "whoAreYouPagePasswordShow": "Vis",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Skjul",
+  "@whoAreYouPagePasswordHide": {},
+  "writeChangesPartitionTablesHeader": "Partitionstabellen på de følgende enheder er ændret:",
+  "@writeChangesPartitionTablesHeader": {},
+  "writeChangesPartitionCreated": "partition <b>{disk}{partition}</b> oprettet",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Berig din kreativitet",
+  "@installationSlidesCreativityTitle": {},
+  "readyToUse": "**{system}** er installeret og klar til brug",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "whereAreYouPageTitle": "Vælg din tidszone",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouLocationLabel": "Placering",
+  "@whereAreYouLocationLabel": {},
+  "whereAreYouTimezoneLabel": "Tidszone",
+  "@whereAreYouTimezoneLabel": {},
+  "installationSlidesIncluded": "Inkluderet:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesSoftwareTitle": "Alle de applikationer du har brug for",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "Installér, administrér og opdatér alle dine apps i Ubuntu Varehus, inklusiv tusindvis af applikationer, fra både Snap Butikken og {DISTRO}s arkiv.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "Adgang for alle",
+  "@installationSlidesAccessibilityTitle": {},
+  "activeDirectoryDomainTooLong": "For langt",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryDomainLabel": "Domæne",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryDomainEmpty": "Påkrævet",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryDomainInvalidChars": "Ugyldige tegn",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryDomainStartDot": "Starter med et punktum (.)",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainEndDot": "Slutter med et punktum (.)",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainStartHyphen": "Starter med bindestreg (-)",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryDomainEndHyphen": "Slutter med bindestreg (-)",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryAdminLabel": "Domæne tilslut bruger",
+  "@activeDirectoryAdminLabel": {},
+  "activeDirectoryAdminEmpty": "Påkrævet",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryAdminInvalidChars": "Ugyldige tegn",
+  "@activeDirectoryAdminInvalidChars": {},
+  "activeDirectoryErrorMessage": "Beklager, Aktiv Sti kan ikke indstilles i øjeblikket. Når først dit system er oppe at køre, så besøg <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for hjælp.",
+  "@activeDirectoryErrorMessage": {},
+  "whoAreYouPageRealNameTooLong": "Navnet er for langt.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "partitionMountPointLabel": "Monteringspunkt:",
+  "@partitionMountPointLabel": {},
+  "whoAreYouPageTitle": "Indstil din konto",
+  "@whoAreYouPageTitle": {},
+  "whoAreYouPageInvalidComputerName": "Computernavnet er ugyldigt",
+  "@whoAreYouPageInvalidComputerName": {},
+  "installationSlidesGamingBody": "{DISTRO} understøtter de seneste NVIDIA- og Mesa-drivere, for at forbedre ydeevne og kompatibilitet. Tusindvis af Windows-titler kører glimrende på {DISTRO}, via applikationer som Stram, uden nogen yderligere konfiguration.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityBody": "{DISTRO} tilbyder alle de værktøjer, du har brug for, til at forblive privat og sikker på linjen. Med indbygget firewall og VPN-understøttelse, samt en mængde privatlivsorienterede applikationer, til at sikre at du har fuld kontrol over dine data.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryTitle": "Konfigurér Aktiv Sti",
+  "@activeDirectoryTitle": {},
+  "writeChangesFallbackSerial": "disk",
+  "@writeChangesFallbackSerial": {
+    "description": "Default display name for a disk without a serial (unlikely)"
+  },
+  "writeChangesDevicesTitle": "Enheder",
+  "@writeChangesDevicesTitle": {},
+  "turnOffBitlockerHeadline": "Slå BitLocker fra, for at fortsætte",
+  "@turnOffBitlockerHeadline": {},
+  "installationSlidesTitle": "Velkommen til {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesAvailable": "Tilgængelig:",
+  "@installationSlidesAvailable": {},
+  "installationCompleteTitle": "Installation gennemført",
+  "@installationCompleteTitle": {},
+  "installationSlidesAccessibilityBody": "I centrum for {DISTRO}-filosofien er troen på, at computere er for alle. Med avancerede tilgængelighedsværktøjer og muligheder af, at ændre sprog, farver, og tekst størrelse, gør {DISTRO} det nemt at bruge computeren - hvem end og hvor end du er.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Orca Skærmoplæser",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesAccessibilityLanguages": "Sprogunderstøttelse",
+  "@installationSlidesAccessibilityLanguages": {},
+  "preparingUbuntu": "Forbereder {DISTRO}...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationTypeNone": "Ingen",
+  "@installationTypeNone": {},
+  "installAlongsideFiles": "Filer",
+  "@installAlongsideFiles": {},
+  "selectGuidedStorageInstallNow": "Installér nu",
+  "@selectGuidedStorageInstallNow": {},
+  "shutdown": "Luk Ned",
+  "@shutdown": {},
+  "writeChangesPartitionsHeader": "De følgende partitionsændringer vil træde i kraft:",
+  "@writeChangesPartitionsHeader": {},
+  "detectButtonText": "Opfang",
+  "@detectButtonText": {},
+  "keyboardVariant": "Tastaturvariant:",
+  "@keyboardVariant": {},
+  "installationTypeLVM": "Benyt LVM med den nye {RELEASE}-installation",
+  "@installationTypeLVM": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeLVMSelected": "LVM opfanget",
+  "@installationTypeLVMSelected": {},
+  "installationTypeLVMEncryptionSelected": "LVM og kryptering valgt",
+  "@installationTypeLVMEncryptionSelected": {},
+  "installationTypeEncrypt": "Kryptér den nye {RELEASE}-installation, for en sikkerheds skyld",
+  "@installationTypeEncrypt": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeEncryptInfo": "Du vil vælge en sikkerhedsnøgle, i næste trin.",
+  "@installationTypeEncryptInfo": {},
+  "installationTypeZFS": "EKSPERIMENTEL: Udslet disk og benyt ZFS",
+  "@installationTypeZFS": {},
+  "installationTypeZFSSelected": "ZFS valgt",
+  "@installationTypeZFSSelected": {},
+  "installationTypeReinstall": "Udslet {os} og geninstallér",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "whoAreYouPageUsernameTooLong": "Det navn er for langt.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "whoAreYouPageUsernameInvalidChars": "Det navn indeholder ugyldige tegn.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "whoAreYouPageConfirmPasswordLabel": "Bekræft din adgangskode",
+  "@whoAreYouPageConfirmPasswordLabel": {},
+  "whoAreYouPagePasswordMismatch": "Adgangskoderne stemmer ikke overens",
+  "@whoAreYouPagePasswordMismatch": {},
+  "writeChangesDescription": "Hvis du fortsætter, vil ændringerne på listen nedenfor blive skrevet til disken(e). Du vil kunne foretage yderligere ændringer manuelt.",
+  "@writeChangesDescription": {},
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "turnOffBitlockerDescription": "Denne computer benytter Windows BitLocker kryptering.\nDu bliver nødt til at bruge Windows til, at frigøre plads, eller vælge '{option}\", for at fortsætte.",
+  "@turnOffBitlockerDescription": {
+    "type": "text",
+    "placeholders": {
+      "option": {}
+    }
+  },
+  "copyingFiles": "Kopierer filer…",
+  "@copyingFiles": {},
+  "installingSystem": "Installerer systemet…",
+  "@installingSystem": {},
+  "tooManyPrimaryPartitions": "For mange primære partitioner",
+  "@tooManyPrimaryPartitions": {},
+  "partitionTypeLabel": "Type for ny partition:",
+  "@partitionTypeLabel": {},
+  "partitionLimitReached": "Grænse nået",
+  "@partitionLimitReached": {},
+  "partitionUnitKB": "kB",
+  "@partitionUnitKB": {},
+  "partitionUnitMB": "MB",
+  "@partitionUnitMB": {},
+  "partitionUnitGB": "GB",
+  "@partitionUnitGB": {},
+  "partitionTypePrimary": "Primær",
+  "@partitionTypePrimary": {},
+  "installationSlidesSupportHeader": "Den officielle {DISTRO}-dokumentation er både tilgængelig på nettet og via Hjælp-ikonet i dokken.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Spørg Ubuntu dækker en bred vifte af spørgsmål og svar, og Ubuntu Discourse tilbyder vejledninger og diskussioner, for nye og erfarne brugere.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "For entreprise-brugere tilbyder Canonical kommerciel støtte, for at gøre det nemt at onboarde og administrere Ubuntu sikkert på arbejdspladsen.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesSupportResources": "Nyttige ressourcer:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "Officiel dokumentation",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "24/7 støtte på entreprise-niveau, med Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "notEnoughDiskSpaceUbuntu": "Ikke nok diskplads, til at installere {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "welcomePageTitle": "Velkommen til {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }
