@@ -38,12 +38,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return 'مرحبا بك في $DISTRO';
   }
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return 'يجري إعداد $DISTRO ...';
   }
 
   @override
@@ -82,21 +82,21 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'قد ترغب في قراءة </a> ملاحظات الإصدار <a href=\"$url\">.';
   }
 
   @override
-  String get turnOffRST => 'RST is enabled';
+  String get turnOffRST => 'تم تشغيل RST';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get turnOffRSTTitle => 'قم بإيقاف RST للمتابعة';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTDescription => 'يستخدم هذا الكمبيوتر Intel RST (تقنية التخزين السريع). تحتاج إلى إيقاف تشغيل RST في Windows قبل تثبيت Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, scan the QR code on another device or visit: <a href=\"https://$url\">$url</a>';
+    return 'للحصول على إرشادات ، قم بمسح رمز الاستجابة السريعة ضوئيًا (QR code) على الهاتف أو أي جهاز آخر: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -112,10 +112,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get detectLayout => 'كشف تخطيط لوحة المفاتيح';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get detectButtonText => 'كشف';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariant => 'نوع لوحة المفاتيح:';
 
   @override
   String get pressOneKey => 'رجاء اضغط على أحد المفاتيح التالية:';
