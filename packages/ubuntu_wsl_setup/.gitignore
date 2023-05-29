@@ -30,7 +30,6 @@
 .pub-cache/
 .pub/
 /build/
-pubspec.lock
 
 # Linux related
 generated_plugins.cmake
