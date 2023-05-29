@@ -58,8 +58,8 @@ jobs:
       if: github.event_name == 'push'
       uses: peter-evans/create-pull-request@v5
       with:
-        title: 'Regenerate mocks'
-        commit-message: 'Regenerate mocks'
+        title: 'chore: regenerate mocks'
+        commit-message: 'chore: regenerate mocks'
         branch: create-pull-request/mocks
 
   l10n:
@@ -82,8 +82,8 @@ jobs:
       if: github.event_name == 'push'
       uses: peter-evans/create-pull-request@v5
       with:
-        title: 'Regenerate l10n'
-        commit-message: 'Regenerate l10n'
+        title: 'chore: regenerate l10n'
+        commit-message: 'chore: regenerate l10n'
         branch: create-pull-request/l10n
 
   snap:
