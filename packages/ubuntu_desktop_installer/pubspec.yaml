@@ -45,7 +45,7 @@ dependencies:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/timezone_map
       ref: b193a7a8113c4c5400a9b58b42b1a104abd64bbb
-  ubuntu_localizations: ^0.1.5
+  ubuntu_localizations: ^0.1.7
   ubuntu_logger: ^0.0.2
   ubuntu_service: ^0.2.2
   ubuntu_session: ^0.0.4
