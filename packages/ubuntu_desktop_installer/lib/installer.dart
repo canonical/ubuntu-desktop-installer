@@ -184,15 +184,7 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
                 ...?flavor.localizationsDelegates,
               ],
               supportedLocales: supportedLocales,
-              home: home,
-              builder: (context, child) => Stack(
-                children: [
-                  const Positioned.fill(
-                    child: _UbuntuDesktopInstallerBackground(),
-                  ),
-                  Positioned.fill(child: child!),
-                ],
-              ),
+              home: _UbuntuDesktopInstallerBackground(child: home),
             );
           },
         ),
@@ -202,15 +194,24 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
 }
 
 class _UbuntuDesktopInstallerBackground extends StatelessWidget {
-  const _UbuntuDesktopInstallerBackground();
+  const _UbuntuDesktopInstallerBackground({required this.child});
+
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: YaruWindowTitleBar(
-        title: SizedBox.shrink(),
-        style: YaruTitleBarStyle.undecorated,
-      ),
+    return Stack(
+      children: [
+        const Positioned.fill(
+          child: Scaffold(
+            appBar: YaruWindowTitleBar(
+              title: SizedBox.shrink(),
+              style: YaruTitleBarStyle.undecorated,
+            ),
+          ),
+        ),
+        Positioned.fill(child: child),
+      ],
     );
   }
 }
