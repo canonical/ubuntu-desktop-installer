@@ -58,6 +58,7 @@ jobs:
       if: github.event_name == 'push'
       uses: peter-evans/create-pull-request@v5
       with:
+        add-paths: '**/*.mocks.dart'
         title: 'chore: regenerate mocks'
         commit-message: 'chore: regenerate mocks'
         branch: create-pull-request/mocks
@@ -82,6 +83,7 @@ jobs:
       if: github.event_name == 'push'
       uses: peter-evans/create-pull-request@v5
       with:
+        add-paths: '**/l10n/*.dart'
         title: 'chore: regenerate l10n'
         commit-message: 'chore: regenerate l10n'
         branch: create-pull-request/l10n
