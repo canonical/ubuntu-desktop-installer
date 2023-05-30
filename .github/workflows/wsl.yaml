@@ -28,13 +28,13 @@ jobs:
         run: flutter pub upgrade
 
       - name: Create PR
+        if: github.event_name == 'push'
         uses: peter-evans/create-pull-request@v5
         with:
           add-paths: packages/ubuntu_wsl_setup/pubspec.lock
           title: 'chore: update WSL pubspec.lock'
           commit-message: 'chore: update WSL pubspec.lock'
-          base: ${{ github.head_ref || github.ref_name }}
-          branch: WSL-pubspec-${{ github.head_ref || github.ref_name }}
+          branch: create-pull-request/wsl-pubspec
           delete-branch: true
 
       - name: Build Windows Target
