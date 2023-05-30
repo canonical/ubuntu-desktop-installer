@@ -135,19 +135,7 @@ void main() {
           identityModelProvider.overrideWith((_) => identityModel),
           installModelProvider.overrideWith((_) => installModel),
         ],
-        child: InheritedLocale(
-          child: Flavor(
-            data: const FlavorData(name: 'Ubuntu'),
-            child: MaterialApp(
-              localizationsDelegates: localizationsDelegates,
-              supportedLocales: supportedLocales,
-              theme: yaruLight,
-              home: const UbuntuDesktopInstallerWizard(
-                welcome: true,
-              ),
-            ),
-          ),
-        ),
+        child: tester.buildTestWizard(welcome: true),
       ),
     );
 
@@ -272,7 +260,6 @@ void main() {
 
     registerMockService<AppService>(MockAppService());
     registerMockService<StorageService>(storage);
-    registerMockService<SubiquityClient>(MockSubiquityClient());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -325,6 +312,10 @@ void main() {
 
 extension on WidgetTester {
   Widget buildTestWizard({bool? welcome}) {
+    final client = MockSubiquityClient();
+    when(client.monitorStatus()).thenAnswer((_) => const Stream.empty());
+    registerMockService<SubiquityClient>(client);
+
     return InheritedLocale(
       child: Flavor(
         data: const FlavorData(name: 'Ubuntu'),

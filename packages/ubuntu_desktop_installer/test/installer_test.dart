@@ -90,7 +90,12 @@ extension on WidgetTester {
 
     return ProviderScope(
       child: InheritedLocale(
-        child: UbuntuDesktopInstallerApp(),
+        child: SlidesContext(
+          slides: [(_) => const SizedBox.shrink()],
+          child: UbuntuDesktopInstallerApp(
+            home: const UbuntuDesktopInstallerWizard(),
+          ),
+        ),
       ),
     );
   }
