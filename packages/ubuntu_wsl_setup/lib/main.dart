@@ -19,7 +19,10 @@ import 'services/language_fallback.dart';
 Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     addCommonCliOptions(parser);
+    addLoggingOptions(parser);
   })!;
+  setupLogger(options);
+
   final window = await YaruWindow.ensureInitialized();
   final appModel = ValueNotifier<AppModel>(
     AppModel(routeFromOptions: options['initial-route']),
