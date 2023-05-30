@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io' as io;
 
 import 'package:args/args.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
@@ -35,13 +34,6 @@ Future<bool?> runWizardApp(
   Map<String, String>? serverEnvironment,
   FutureOr<void> Function()? dispose,
 }) async {
-  if (options != null) {
-    Logger.setup(
-      path: _resolveLogPath(options['log-file']),
-      level: LogLevel.fromString(options['log-level']),
-    );
-  }
-
   final subiquityReady = subiquityServer
       .start(args: serverArgs, environment: serverEnvironment)
       .then((endpoint) async {
@@ -74,21 +66,6 @@ Future<bool?> runWizardApp(
 
 String get _appName => p.basename(io.Platform.resolvedExecutable);
 
-String _resolveLogPath(String? logfile) {
-  if (logfile != null) {
-    return logfile;
-  }
-  if (kDebugMode) {
-    return '${p.dirname(io.Platform.resolvedExecutable)}/.$_appName/$_appName.log';
-  }
-  return '/var/log/installer/$_appName.log';
-}
-
-String? get _defaultLogFile => io.Platform.environment['LOG_FILE'];
-
-String? get _defaultLogLevel =>
-    io.Platform.environment['LOG_LEVEL'] ?? (kDebugMode ? 'debug' : 'info');
-
 /// Parses the given command line [args].
 ArgResults? parseCommandLine(
   List<String> args, {
@@ -102,25 +79,6 @@ ArgResults? parseCommandLine(
       defaultsTo: io.Platform.environment['LIVE_RUN'] != '1',
       help: 'Run Subiquity server in dry-run mode');
   parser.addOption('initial-route', hide: true);
-  parser.addOption(
-    'log-file',
-    valueHelp: 'path',
-    defaultsTo: _defaultLogFile,
-    help: '''
-Path of the log file.
-Can also be specified in a LOG_FILE environment variable.
-(defaults to "/var/log/installer/$_appName.log")
-''',
-  );
-  parser.addOption(
-    'log-level',
-    valueHelp: 'level',
-    defaultsTo: _defaultLogLevel,
-    help: '''
-Available logging levels: "debug", "info", "warning", "error".
-Can also be specified in a LOG_LEVEL environment variable.
-''',
-  );
   onPopulateOptions?.call(parser);
 
   ArgResults? options;

@@ -34,7 +34,10 @@ Future<void> main(List<String> args) async {
         defaultValue: 'Ubuntu-Preview',
       ),
     );
+    addLoggingOptions(parser);
   })!;
+  setupLogger(options);
+
   final liveRun = isLiveRun(options);
   final isReconf = options['reconfigure'] == true;
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;

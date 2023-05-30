@@ -43,7 +43,9 @@ Future<void> runInstallerApp(
         defaultsTo: 'examples/desktop-sources.yaml',
         help: 'Path of the source catalog (dry-run only)');
     parser.addFlag('welcome', aliases: ['try-or-install'], hide: true);
+    addLoggingOptions(parser);
   })!;
+  setupLogger(options, path: '/var/log/installer');
 
   final bool liveRun = isLiveRun(options);
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
