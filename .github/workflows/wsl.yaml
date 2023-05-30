@@ -22,10 +22,24 @@ jobs:
           channel: 'stable'
           flutter-version: '3.10.x'
 
+      - name: Update pubspec.lock
+        working-directory: packages\ubuntu_wsl_setup\
+        shell: bash
+        run: flutter pub upgrade
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          add-paths: packages/ubuntu_wsl_setup/pubspec.lock
+          title: 'chore: update WSL pubspec.lock'
+          commit-message: 'chore: update WSL pubspec.lock'
+          base: ${{ github.head_ref || github.ref_name }}
+          branch: WSL-pubspec-${{ github.head_ref || github.ref_name }}
+          delete-branch: true
+
       - name: Build Windows Target
         working-directory: packages\ubuntu_wsl_setup\
         run: |
-          flutter pub get
           flutter build windows -t .\lib\main_win.dart
 
   integration:
