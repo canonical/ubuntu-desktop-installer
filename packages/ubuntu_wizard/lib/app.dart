@@ -78,7 +78,6 @@ ArgResults? parseCommandLine(
   parser.addFlag('dry-run',
       defaultsTo: io.Platform.environment['LIVE_RUN'] != '1',
       help: 'Run Subiquity server in dry-run mode');
-  parser.addOption('initial-route', hide: true);
   onPopulateOptions?.call(parser);
 
   ArgResults? options;

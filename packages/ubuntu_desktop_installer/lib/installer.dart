@@ -100,7 +100,6 @@ Future<void> runInstallerApp(
           child: UbuntuDesktopInstallerApp(
             flavor: flavor,
             home: UbuntuDesktopInstallerWizard(
-              initialRoute: options['initial-route'],
               welcome: options['welcome'],
             ),
           ),
@@ -233,11 +232,9 @@ enum InstallationStep {
 class UbuntuDesktopInstallerWizard extends ConsumerStatefulWidget {
   const UbuntuDesktopInstallerWizard({
     super.key,
-    this.initialRoute,
     this.welcome,
   });
 
-  final String? initialRoute;
   final bool? welcome;
 
   @override
@@ -274,23 +271,19 @@ class _UbuntuDesktopInstallerWizardState
     }
     return _subiquityStatus?.interactive == false
         ? _UbuntuDesktopAutoinstallWizard(status: _subiquityStatus)
-        : _UbuntuDesktopInstallWizard(
-            initialRoute: widget.initialRoute,
-            welcome: widget.welcome,
-          );
+        : _UbuntuDesktopInstallWizard(welcome: widget.welcome);
   }
 }
 
 class _UbuntuDesktopInstallWizard extends ConsumerWidget {
-  const _UbuntuDesktopInstallWizard({this.initialRoute, this.welcome});
+  const _UbuntuDesktopInstallWizard({this.welcome});
 
-  final String? initialRoute;
   final bool? welcome;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Wizard(
-      initialRoute: initialRoute ?? Routes.initial,
+      initialRoute: Routes.initial,
       userData: InstallationStep.values.length,
       routes: <String, WizardRoute>{
         Routes.loading: WizardRoute(
