@@ -6,7 +6,6 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart' show KeySearchX;
-import 'package:ubuntu_wizard/utils.dart';
 
 /// @internal
 final log = Logger('locale');

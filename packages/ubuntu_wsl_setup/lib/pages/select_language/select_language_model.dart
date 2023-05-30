@@ -4,7 +4,6 @@ import 'package:collection/collection.dart';
 import 'package:diacritic/diacritic.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 
 import '../../l10n.dart';
