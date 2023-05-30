@@ -11,6 +11,7 @@ feeds the installer with partial information to prefill the
 screens, yet allowing user to overwrite any of those during setup.
   ''',
   );
+  parser.addOption('initial-route', hide: true);
 }
 
 List<String>? serverArgsFromOptions(ArgResults options) {
