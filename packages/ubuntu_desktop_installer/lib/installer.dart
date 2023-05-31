@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
@@ -12,7 +11,6 @@ import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_wizard/app.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'l10n.dart';
@@ -20,13 +18,9 @@ import 'pages.dart';
 import 'routes.dart';
 import 'services.dart';
 import 'slides.dart';
-import 'theme.dart';
 
 export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 export 'slides.dart';
-
-final assetBundle =
-    ProxyAssetBundle(rootBundle, package: 'ubuntu_desktop_installer');
 
 Future<void> runInstallerApp(
   List<String> args, {
@@ -94,14 +88,12 @@ Future<void> runInstallerApp(
 
   await runWizardApp(
     ProviderScope(
-      child: InheritedLocale(
-        child: SlidesContext(
-          slides: slides ?? defaultSlides,
-          child: UbuntuDesktopInstallerApp(
-            flavor: flavor,
-            home: UbuntuDesktopInstallerWizard(
-              welcome: options['welcome'],
-            ),
+      child: SlidesContext(
+        slides: slides ?? defaultSlides,
+        child: UbuntuDesktopInstallerApp(
+          flavor: flavor,
+          home: UbuntuDesktopInstallerWizard(
+            welcome: options['welcome'],
           ),
         ),
       ),
@@ -159,60 +151,21 @@ class UbuntuDesktopInstallerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultAssetBundle(
-      bundle: assetBundle,
-      child: Flavor(
-        data: flavor,
-        child: YaruTheme(
-          builder: (context, yaru, child) {
-            final theme = flavor.theme ?? yaru.theme;
-            final darkTheme = flavor.darkTheme ?? yaru.darkTheme;
-            return MaterialApp(
-              locale: InheritedLocale.of(context),
-              onGenerateTitle: (context) {
-                final lang = AppLocalizations.of(context);
-                final window = YaruWindow.of(context);
-                window.setTitle(lang.windowTitle(flavor.name));
-                return lang.appTitle;
-              },
-              theme: theme?.customize(),
-              darkTheme: darkTheme?.customize(),
-              highContrastTheme: yaruHighContrastLight.customize(),
-              highContrastDarkTheme: yaruHighContrastDark.customize(),
-              debugShowCheckedModeBanner: false,
-              localizationsDelegates: <LocalizationsDelegate>[
-                ...localizationsDelegates,
-                ...?flavor.localizationsDelegates,
-              ],
-              supportedLocales: supportedLocales,
-              home: _UbuntuDesktopInstallerBackground(child: home),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class _UbuntuDesktopInstallerBackground extends StatelessWidget {
-  const _UbuntuDesktopInstallerBackground({required this.child});
-
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const Positioned.fill(
-          child: Scaffold(
-            appBar: YaruWindowTitleBar(
-              title: SizedBox.shrink(),
-              style: YaruTitleBarStyle.undecorated,
-            ),
-          ),
-        ),
-        Positioned.fill(child: child),
+    return WizardApp(
+      appName: 'ubuntu_desktop_installer',
+      flavor: flavor,
+      onGenerateTitle: (context, flavor) {
+        final lang = AppLocalizations.of(context);
+        final window = YaruWindow.of(context);
+        window.setTitle(lang.windowTitle(flavor.name));
+        return lang.appTitle;
+      },
+      localizationsDelegates: <LocalizationsDelegate>[
+        ...localizationsDelegates,
+        ...?flavor.localizationsDelegates,
       ],
+      supportedLocales: supportedLocales,
+      home: home,
     );
   }
 }
