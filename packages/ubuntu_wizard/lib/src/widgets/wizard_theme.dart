@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yaru_colors/yaru_colors.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-extension ThemeDataX on ThemeData {
+extension WizardThemeDataX on ThemeData {
   ThemeData customize() {
     final errorColor = brightness == Brightness.light
         ? YaruColors.red[700]!

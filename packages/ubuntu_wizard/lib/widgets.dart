@@ -5,6 +5,8 @@ export 'src/widgets/list_widget.dart';
 export 'src/widgets/override_mouse_cursor.dart';
 export 'src/widgets/password_strength_label.dart';
 export 'src/widgets/validated_form_field.dart';
+export 'src/widgets/wizard_app.dart';
 export 'src/widgets/wizard_bar.dart';
 export 'src/widgets/wizard_button.dart';
 export 'src/widgets/wizard_page.dart';
+export 'src/widgets/wizard_theme.dart';
