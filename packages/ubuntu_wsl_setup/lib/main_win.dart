@@ -38,7 +38,7 @@ Future<void> main(List<String> args) async {
   })!;
   setupLogger(options);
 
-  final liveRun = isLiveRun(options);
+  final liveRun = options['dry-run'] != true;
   final isReconf = options['reconfigure'] == true;
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final tcpService = TcpSocketService();

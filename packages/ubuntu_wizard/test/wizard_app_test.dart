@@ -93,6 +93,9 @@ void main() {
 
     final dryRun = parseCommandLine(
       ['--dry-run'],
+      onPopulateOptions: (parser) {
+        parser.addFlag('dry-run');
+      },
       exit: (exitCode) => didExit = exitCode,
     );
     expect(didExit, isNull);
