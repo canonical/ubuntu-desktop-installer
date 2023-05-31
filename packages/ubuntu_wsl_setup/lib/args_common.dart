@@ -1,6 +1,11 @@
+import 'dart:io';
+
 import 'package:args/args.dart';
 
 void addCommonCliOptions(ArgParser parser) {
+  parser.addFlag('dry-run',
+      defaultsTo: Platform.environment['LIVE_RUN'] != '1',
+      help: 'Run Subiquity server in dry-run mode');
   parser.addFlag('reconfigure');
   parser.addOption(
     'prefill',

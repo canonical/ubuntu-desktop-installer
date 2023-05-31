@@ -28,6 +28,9 @@ Future<void> runInstallerApp(
   List<WidgetBuilder>? slides,
 }) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
+    parser.addFlag('dry-run',
+        defaultsTo: Platform.environment['LIVE_RUN'] != '1',
+        help: 'Run Subiquity server in dry-run mode');
     parser.addOption('machine-config',
         valueHelp: 'path',
         defaultsTo: 'examples/simple.json',
@@ -41,7 +44,7 @@ Future<void> runInstallerApp(
   })!;
   setupLogger(options, path: '/var/log/installer');
 
-  final bool liveRun = isLiveRun(options);
+  final liveRun = options['dry-run'] != true;
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final subiquityPath = await getSubiquityPath()
       .then((dir) => Directory(dir).existsSync() ? dir : null);

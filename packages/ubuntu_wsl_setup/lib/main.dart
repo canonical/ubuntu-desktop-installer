@@ -27,7 +27,7 @@ Future<void> main(List<String> args) async {
   final appModel = ValueNotifier<AppModel>(
     AppModel(routeFromOptions: options['initial-route']),
   );
-  final liveRun = isLiveRun(options);
+  final liveRun = options['dry-run'] != true;
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final subiquityPath = await getSubiquityPath()
       .then((dir) => Directory(dir).existsSync() ? dir : null);

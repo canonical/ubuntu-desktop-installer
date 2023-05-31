@@ -13,10 +13,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 /// @internal
 final log = Logger(_appName);
 
-bool isLiveRun(ArgResults? options) {
-  return options != null && options['dry-run'] != true;
-}
-
 /// Initializes and runs the given [app].
 ///
 /// Optionally, the Subiquity client and server may be overridden for building
@@ -75,9 +71,6 @@ ArgResults? parseCommandLine(
 }) {
   final parser = ArgParser();
   parser.addFlag('help', abbr: 'h', negatable: false);
-  parser.addFlag('dry-run',
-      defaultsTo: io.Platform.environment['LIVE_RUN'] != '1',
-      help: 'Run Subiquity server in dry-run mode');
   onPopulateOptions?.call(parser);
 
   ArgResults? options;
