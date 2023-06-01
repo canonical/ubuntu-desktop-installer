@@ -38,7 +38,7 @@ enum AdvancedFeature {
 final installationTypeModelProvider =
     ChangeNotifierProvider((_) => InstallationTypeModel(
           getService<StorageService>(),
-          getService<TelemetryService>(),
+          tryGetService<TelemetryService>(),
           getService<ProductService>(),
         ));
 
@@ -52,7 +52,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   );
 
   final StorageService _diskService;
-  final TelemetryService _telemetryService;
+  final TelemetryService? _telemetryService;
   final ProductService _productService;
 
   InstallationType? _installationType;
@@ -179,7 +179,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
 
     final partitionMethod = _resolvePartitionMethod();
     if (partitionMethod != null) {
-      await _telemetryService.addMetric('PartitionMethod', partitionMethod);
+      await _telemetryService?.addMetric('PartitionMethod', partitionMethod);
     }
   }
 

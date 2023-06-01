@@ -107,8 +107,8 @@ class SourcePage extends ConsumerWidget {
             root: model.hasEnoughDiskSpace,
             enabled: model.sourceId != null,
             onNext: () async {
-              final telemetry = getService<TelemetryService>();
-              await telemetry.addMetrics({
+              final telemetry = tryGetService<TelemetryService>();
+              await telemetry?.addMetrics({
                 'Minimal': model.sourceId?.contains('minimal') == true,
                 'RestrictedAddons': model.installCodecs,
               });

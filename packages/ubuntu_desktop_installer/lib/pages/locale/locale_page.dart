@@ -78,8 +78,8 @@ class LocalePage extends ConsumerWidget {
             onNext: () {
               final locale = model.locale(model.selectedLanguageIndex);
               model.applyLocale(locale);
-              getService<TelemetryService>()
-                  .addMetric('Language', locale.languageCode);
+              tryGetService<TelemetryService>()
+                  ?.addMetric('Language', locale.languageCode);
             },
           ),
         ],
