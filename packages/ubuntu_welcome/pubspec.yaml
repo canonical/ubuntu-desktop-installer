@@ -34,7 +34,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git
       path: packages/ubuntu_wizard
-  yaru: ^0.7.0
+  yaru: ^0.8.0
   yaru_icons: ^1.0.0
   yaru_widgets: ^2.4.0
 
