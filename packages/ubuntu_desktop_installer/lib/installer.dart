@@ -8,7 +8,7 @@ import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:timezone_map/timezone_map.dart';
-import 'package:ubuntu_wizard/app.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -87,10 +87,28 @@ Future<void> runInstallerApp(
   tryRegisterService(UdevService.new);
   tryRegisterService(UrlLauncher.new);
 
-  WidgetsFlutterBinding.ensureInitialized();
+  final initialized = getService<SubiquityServer>().start(args: [
+    if (options['machine-config'] != null)
+      '--machine-config=${options['machine-config']}',
+    if (options['source-catalog'] != null)
+      '--source-catalog=${options['source-catalog']}',
+    '--storage-version=2',
+    ...options.rest,
+  ]).then(_initInstallerApp);
 
-  await runWizardApp(
-    ProviderScope(
+  final log = Logger(p.basename(Platform.resolvedExecutable));
+
+  runZonedGuarded(() async {
+    FlutterError.onError = (error) {
+      log.error('Unhandled exception', error.exception, error.stack);
+    };
+
+    final window = await YaruWindow.ensureInitialized();
+    await window.onClose(_closeInstallerApp);
+
+    await setupAppLocalizations();
+
+    runApp(ProviderScope(
       child: SlidesContext(
         slides: slides ?? defaultSlides,
         child: UbuntuDesktopInstallerApp(
@@ -100,23 +118,17 @@ Future<void> runInstallerApp(
           ),
         ),
       ),
-    ),
-    options: options,
-    subiquityClient: getService<SubiquityClient>(),
-    subiquityServer: getService<SubiquityServer>(),
-    serverArgs: [
-      if (options['machine-config'] != null)
-        '--machine-config=${options['machine-config']}',
-      if (options['source-catalog'] != null)
-        '--source-catalog=${options['source-catalog']}',
-      '--storage-version=2',
-      ...options.rest,
-    ],
-    dispose: () => getService<DesktopService>().close(),
-  );
+    ));
+  }, (error, stack) => log.error('Unhandled exception', error, stack));
 
-  final app = getService<AppService>();
-  await app.init();
+  return initialized;
+}
+
+Future<void> _initInstallerApp(Endpoint endpoint) async {
+  getService<SubiquityClient>().open(endpoint);
+
+  await getService<AppService>().init();
+  await getService<DesktopService>().inhibit();
 
   var geo = tryGetService<GeoService>();
   if (geo == null) {
@@ -133,9 +145,13 @@ Future<void> runInstallerApp(
     'OEM': false,
     'Media': getService<ProductService>().getProductInfo().toString(),
   });
+}
 
-  final desktop = getService<DesktopService>();
-  await desktop.inhibit();
+Future<bool> _closeInstallerApp() async {
+  await getService<SubiquityClient>().close();
+  await getService<SubiquityServer>().stop();
+  await getService<DesktopService>().close();
+  return true;
 }
 
 class UbuntuDesktopInstallerApp extends StatelessWidget {
