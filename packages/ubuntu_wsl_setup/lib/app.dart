@@ -1,8 +1,6 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -20,8 +18,6 @@ import 'l10n.dart';
 import 'routes.dart';
 import 'wizard.dart';
 
-final log = Logger(p.basename(Platform.resolvedExecutable));
-
 Future<void> runWslSetupApp({
   required ValueNotifier<AppModel> appModel,
   required List<String>? serverArgs,
@@ -37,6 +33,8 @@ Future<void> runWslSetupApp({
     subiquityClient.open(endpoint);
     return subiquityMonitor.start(endpoint);
   });
+
+  final log = Logger();
 
   return runZonedGuarded(() async {
     FlutterError.onError = (error) {
