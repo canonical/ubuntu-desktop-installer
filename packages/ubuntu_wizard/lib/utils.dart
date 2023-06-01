@@ -1,4 +1,5 @@
 export 'src/utils/color.dart';
+export 'src/utils/command_line.dart';
 export 'src/utils/data_size.dart';
 export 'src/utils/locale.dart';
 export 'src/utils/logging.dart';

@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
@@ -15,9 +12,6 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 
-import 'wizard_app_test.mocks.dart';
-
-@GenerateMocks([IOSink])
 void main() {
   final endpoint = Endpoint.unix('socket path');
 
@@ -85,65 +79,6 @@ void main() {
     expect(tryGetService<SubiquityClient>(), isNull);
     expect(tryGetService<SubiquityServer>(), isNull);
     expect(tryGetService<SubiquityStatusMonitor>(), isNull);
-  });
-
-  testWidgets('parse command-line arguments', (tester) async {
-    int? didExit;
-    final out = MockIOSink();
-
-    final dryRun = parseCommandLine(
-      ['--dry-run'],
-      onPopulateOptions: (parser) {
-        parser.addFlag('dry-run');
-      },
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, isNull);
-    expect(dryRun, isNotNull);
-    expect(dryRun!['dry-run'], isTrue);
-
-    final machineConfig = parseCommandLine(
-      ['--machine-config', 'foo.json'],
-      onPopulateOptions: (parser) {
-        parser.addOption('machine-config');
-      },
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, isNull);
-    expect(machineConfig, isNotNull);
-    expect(machineConfig!['machine-config'], equals('foo.json'));
-
-    parseCommandLine(
-      ['--help'],
-      out: out,
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, isZero);
-
-    didExit = null;
-    parseCommandLine(
-      ['--machine-config', 'foo.json'],
-      out: out,
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, equals(1));
-
-    didExit = null;
-    parseCommandLine(
-      ['--unknown-option'],
-      out: out,
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, equals(1));
-
-    didExit = null;
-    final rest = parseCommandLine(
-      ['--', 'subiquity', 'arguments'],
-      out: out,
-      exit: (exitCode) => didExit = exitCode,
-    )?.rest;
-    expect(didExit, isNull);
-    expect(rest, ['subiquity', 'arguments']);
   });
 
   testWidgets('starts the monitor', (tester) async {
