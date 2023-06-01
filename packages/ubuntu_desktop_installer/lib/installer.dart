@@ -96,7 +96,7 @@ Future<void> runInstallerApp(
     ...options.rest,
   ]).then(_initInstallerApp);
 
-  final log = Logger(p.basename(Platform.resolvedExecutable));
+  final log = Logger();
 
   runZonedGuarded(() async {
     FlutterError.onError = (error) {
