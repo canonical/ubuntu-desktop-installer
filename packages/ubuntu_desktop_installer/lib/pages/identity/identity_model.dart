@@ -36,7 +36,7 @@ final identityModelProvider = ChangeNotifierProvider(
     activeDirectory: getService<ActiveDirectoryService>(),
     config: getService<ConfigService>(),
     network: getService<NetworkService>(),
-    telemetry: getService<TelemetryService>(),
+    telemetry: tryGetService<TelemetryService>(),
   ),
 );
 
@@ -48,7 +48,7 @@ class IdentityModel extends PropertyStreamNotifier {
     required ActiveDirectoryService activeDirectory,
     required ConfigService config,
     required NetworkService network,
-    required TelemetryService telemetry,
+    TelemetryService? telemetry,
   })  : _service = service,
         _activeDirectory = activeDirectory,
         _config = config,
@@ -76,7 +76,7 @@ class IdentityModel extends PropertyStreamNotifier {
   final ActiveDirectoryService _activeDirectory;
   final ConfigService _config;
   final NetworkService _network;
-  final TelemetryService _telemetry;
+  final TelemetryService? _telemetry;
 
   final _realName = ValueNotifier<String?>(null);
   final _username = ValueNotifier<String?>(null);
@@ -197,7 +197,7 @@ class IdentityModel extends PropertyStreamNotifier {
       await _config.set(kAutoLoginUser, null);
     }
 
-    _telemetry.addMetric('UseActiveDirectory', useActiveDirectory);
+    _telemetry?.addMetric('UseActiveDirectory', useActiveDirectory);
     if (!useActiveDirectory) {
       // the active directory endpoint is not optional so we need to explicitly
       // mark it as configured even if not used to avoid subiquity getting stuck
