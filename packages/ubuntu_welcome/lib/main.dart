@@ -1,11 +1,17 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:path/path.dart' as p;
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_welcome/l10n.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
+
+import 'welcome_wizard.dart';
 
 Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
@@ -13,9 +19,18 @@ Future<void> main(List<String> args) async {
   })!;
   setupLogger(options);
 
+  final baseName = p.basename(Platform.resolvedExecutable);
+
+  tryRegisterService<ActiveDirectoryService>(RealmdActiveDirectoryService.new);
+  // TODO: handle auto-login via IdentityService
+  tryRegisterService<ConfigService>(() => ConfigService('/tmp/$baseName.conf'));
+  tryRegisterService<LocaleService>(XdgLocaleService.new);
+  tryRegisterService<IdentityService>(XdgIdentityService.new);
+  tryRegisterService<NetworkService>(NetworkService.new);
+
   final log = Logger();
 
-  runZonedGuarded(() async {
+  return runZonedGuarded(() async {
     FlutterError.onError = (error) {
       log.error('Unhandled exception', error.exception, error.stack);
     };
@@ -24,13 +39,13 @@ Future<void> main(List<String> args) async {
 
     await setupAppLocalizations();
 
-    runApp(WizardApp(
-      appName: 'ubuntu_welcome',
-      onGenerateTitle: (context, _) => AppLocalizations.of(context).windowTitle,
-      localizationsDelegates: localizationsDelegates,
-      supportedLocales: supportedLocales,
-      home: const Scaffold(
-        appBar: YaruWindowTitleBar(),
+    runApp(ProviderScope(
+      child: WizardApp(
+        appName: 'ubuntu_welcome',
+        onGenerateTitle: (context, _) => AppLocalizations.of(context).appTitle,
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: supportedLocales,
+        home: const WelcomeWizard(),
       ),
     ));
   }, (error, stack) => log.error('Unhandled exception', error, stack));
