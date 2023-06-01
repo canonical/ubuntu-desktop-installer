@@ -3,11 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_client/subiquity_server.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'install/test_install.dart';
 import 'loading/test_loading.dart';
@@ -15,6 +17,9 @@ import 'locale/test_locale.dart';
 import 'test_utils.mocks.dart';
 
 void main() {
+  setUpAll(YaruTestWindow.ensureInitialized);
+  tearDown(resetAllServices);
+
   testWidgets('interactive installation', (tester) async {
     await tester.pumpWidget(
       tester.buildInstaller(
@@ -46,6 +51,36 @@ void main() {
     );
     await tester.pumpAndSettle();
     expect(find.byType(InstallPage), findsOneWidget);
+  });
+
+  testWidgets('initializes subiquity', (tester) async {
+    final endpoint = Endpoint.unix('/path/to/socket');
+
+    final client = MockSubiquityClient();
+    when(client.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
+    when(client.monitorStatus()).thenAnswer(
+        (_) => Stream.value(fakeApplicationStatus(ApplicationState.RUNNING)));
+    registerMockService<SubiquityClient>(client);
+
+    final server = MockSubiquityServer();
+    when(server.start(
+            args: anyNamed('args'), environment: anyNamed('environment')))
+        .thenAnswer((_) async => endpoint);
+    registerMockService<SubiquityServer>(server);
+
+    registerMockService<DesktopService>(MockDesktopService());
+    registerMockService<TelemetryService>(MockTelemetryService());
+
+    await tester
+        .runAsync(() => runInstallerApp(['--dry-run', '--', '--foo', 'bar']));
+    verify(server.start(args: [
+      '--machine-config=examples/simple.json',
+      '--source-catalog=examples/desktop-sources.yaml',
+      '--storage-version=2',
+      '--foo',
+      'bar',
+    ])).called(1);
+    verify(client.open(endpoint)).called(1);
   });
 }
 

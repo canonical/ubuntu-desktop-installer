@@ -22,9 +22,6 @@ dependencies:
   password_strength: ^0.2.0
   path: ^1.8.0
   safe_change_notifier: ^0.2.0
-  subiquity_client:
-    git:
-      url: https://github.com/canonical/subiquity_client.dart.git
   ubuntu_localizations: ^0.1.7
   ubuntu_logger: ^0.0.2
   ubuntu_service: ^0.2.2
@@ -46,10 +43,6 @@ dev_dependencies:
     sdk: flutter
   mockito: 5.4.1
   plugin_platform_interface: ^2.1.2
-  subiquity_test:
-    git:
-      url: https://github.com/canonical/subiquity_client.dart.git
-      path: packages/subiquity_test
   ubuntu_test:
     path: ../ubuntu_test
   url_launcher_platform_interface: ^2.0.5
