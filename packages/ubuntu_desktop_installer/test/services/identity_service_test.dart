@@ -59,7 +59,7 @@ void main() {
         values: [
           DBusString(testIdentity.username),
           DBusString(testIdentity.realname),
-          const DBusUint32(1),
+          const DBusInt32(1),
         ],
         replySignature: DBusSignature.objectPath,
         noReplyExpected: false,
