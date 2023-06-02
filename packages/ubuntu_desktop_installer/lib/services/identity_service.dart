@@ -117,7 +117,7 @@ class XdgIdentityService implements IdentityService {
       [
         DBusString(_identity!.username),
         DBusString(_identity!.realname),
-        const DBusUint32(1), // Administrator account
+        const DBusInt32(1), // Administrator account
       ],
       replySignature: DBusSignature.objectPath,
     );
