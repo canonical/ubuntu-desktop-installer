@@ -59,7 +59,9 @@ void main() {
         routes: {
           '/': WizardRoute(
             builder: (_) => buildPage(model, locale),
-            onNext: (settings) => '/',
+          ),
+          '/next': WizardRoute(
+            builder: (_) => const SizedBox.shrink(),
           ),
         },
       ),
