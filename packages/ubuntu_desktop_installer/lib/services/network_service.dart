@@ -6,10 +6,6 @@ export 'package:nm/nm.dart';
 
 /// Extends [NetworkManagerClient] with convenience properties and methods.
 class NetworkService extends NetworkManagerClient {
-  NetworkService(this._subiquity);
-
-  final SubiquityClient _subiquity;
-
   /// `true` if there is a full network connection.
   bool get isConnected {
     return connectivity == NetworkManagerConnectivityState.full;
@@ -47,5 +43,14 @@ class NetworkService extends NetworkManagerClient {
   }
 
   /// Marks network configured.
+  Future<void> markConfigured() async {}
+}
+
+class SubiquityNetworkService extends NetworkService {
+  SubiquityNetworkService(this._subiquity);
+
+  final SubiquityClient _subiquity;
+
+  @override
   Future<void> markConfigured() => _subiquity.markConfigured(['network']);
 }

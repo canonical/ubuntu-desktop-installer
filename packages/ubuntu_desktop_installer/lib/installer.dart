@@ -74,7 +74,8 @@ Future<void> runInstallerApp(
       () => SubiquityKeyboardService(getService<SubiquityClient>()));
   tryRegisterService<LocaleService>(
       () => SubiquityLocaleService(getService<SubiquityClient>()));
-  tryRegisterService(() => NetworkService(getService<SubiquityClient>()));
+  tryRegisterService<NetworkService>(
+      () => SubiquityNetworkService(getService<SubiquityClient>()));
   tryRegisterService(PowerService.new);
   tryRegisterService(ProductService.new);
   tryRegisterService(() => StorageService(getService<SubiquityClient>()));
