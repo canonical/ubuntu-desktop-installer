@@ -5,7 +5,7 @@ import 'package:ubuntu_desktop_installer/services/network_service.dart';
 
 void main() {
   test('mandatory wifi settings', () async {
-    final service = NetworkService(MockSubiquityClient());
+    final service = NetworkService();
     final settings = service.getWifiSettings(ssid: 'foo bar');
 
     final connection = settings['connection'];
@@ -24,7 +24,7 @@ void main() {
 
   test('mark network configured', () async {
     final client = MockSubiquityClient();
-    final service = NetworkService(client);
+    final service = SubiquityNetworkService(client);
     await service.markConfigured();
     verify(client.markConfigured(['network'])).called(1);
   });
