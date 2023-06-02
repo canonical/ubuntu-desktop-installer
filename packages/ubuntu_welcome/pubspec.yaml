@@ -51,7 +51,7 @@ dev_dependencies:
   mockito: 5.4.1
   ubuntu_test:
     path: ../ubuntu_test
-  yaru_test: ^0.1.0
+  yaru_test: ^0.1.1
 
 flutter:
   generate: true
