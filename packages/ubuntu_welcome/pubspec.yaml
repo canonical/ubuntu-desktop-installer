@@ -22,6 +22,9 @@ dependencies:
   path: ^1.8.0
   safe_change_notifier: ^0.2.0
   stdlibc: ^0.1.0
+  # TODO: move shared pages to a separate package
+  ubuntu_desktop_installer:
+    path: ../ubuntu_desktop_installer
   ubuntu_localizations: ^0.1.7
   ubuntu_logger: ^0.0.3
   ubuntu_service: ^0.2.0
@@ -48,8 +51,10 @@ dev_dependencies:
   mockito: 5.4.1
   ubuntu_test:
     path: ../ubuntu_test
-  yaru_test: ^0.1.0
+  yaru_test: ^0.1.1
 
 flutter:
   generate: true
   uses-material-design: true
+  assets:
+    - assets/

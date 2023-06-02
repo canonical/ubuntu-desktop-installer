@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart' as udi;
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 
 export 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -12,5 +13,6 @@ final List<Locale> supportedLocales = {
 
 const localizationsDelegates = <LocalizationsDelegate<dynamic>>[
   ...AppLocalizations.localizationsDelegates,
+  ...udi.AppLocalizations.localizationsDelegates,
   ...GlobalUbuntuLocalizations.delegates,
 ];
