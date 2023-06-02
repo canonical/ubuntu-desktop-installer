@@ -14,7 +14,7 @@ dependencies:
   flutter_svg: ^2.0.6
   flutter_test:
     sdk: flutter
-  ubuntu_localizations: ^0.1.7
+  ubuntu_localizations: ^0.2.0
   ubuntu_widgets:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git

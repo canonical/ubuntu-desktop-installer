@@ -25,7 +25,7 @@ dependencies:
   # TODO: move shared pages to a separate package
   ubuntu_desktop_installer:
     path: ../ubuntu_desktop_installer
-  ubuntu_localizations: ^0.1.7
+  ubuntu_localizations: ^0.2.0
   ubuntu_logger: ^0.0.3
   ubuntu_service: ^0.2.0
   ubuntu_widgets:
