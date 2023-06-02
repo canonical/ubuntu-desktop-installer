@@ -10,6 +10,7 @@ enum WelcomeStep {
 }
 
 class WelcomeRoutes {
+  static const String initial = '/';
   static const String locale = '/locale';
   static const String identity = '/identity';
 }
@@ -31,7 +32,7 @@ class _WelcomeWizardState extends ConsumerState<WelcomeWizard> {
     _controller = WizardController(
       routes: {
         // TODO: loading screen?
-        Navigator.defaultRouteName: WizardRoute(
+        WelcomeRoutes.initial: WizardRoute(
           builder: (_) => const SizedBox.shrink(),
         ),
         WelcomeRoutes.locale: WizardRoute(
@@ -43,7 +44,8 @@ class _WelcomeWizardState extends ConsumerState<WelcomeWizard> {
           builder: (_) => const IdentityPage(),
           userData: WelcomeStep.identity.index,
           onLoad: (_) => IdentityPage.load(ref),
-          onNext: (_) => YaruWindow.of(context).close().then((_) => null),
+          onNext: (_) =>
+              YaruWindow.of(context).close().then((_) => WelcomeRoutes.initial),
         ),
       },
     )..replace();

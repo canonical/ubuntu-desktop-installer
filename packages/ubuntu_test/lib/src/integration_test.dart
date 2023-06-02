@@ -55,6 +55,9 @@ extension IntegrationTester on WidgetTester {
   /// Taps a "Next" button.
   Future<void> tapNext() => tapButton(ulang.nextLabel);
 
+  /// Taps a "Done" button.
+  Future<void> tapDone() => tapButton(ulang.doneLabel);
+
   /// Pumps until the specified [finder] is satisfied. This can be used to wait
   /// until a certain page or widget becomes visible.
   Future<void> pumpUntil(
