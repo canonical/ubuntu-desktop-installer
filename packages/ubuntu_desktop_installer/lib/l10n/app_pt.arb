@@ -925,5 +925,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "allocateDiskSpaceInvalidMountPointSlash": "Os pontos de montagem devem começar com \"/\"",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Os pontos de montagem não podem conter espaços",
+  "@allocateDiskSpaceInvalidMountPointSpace": {}
 }
