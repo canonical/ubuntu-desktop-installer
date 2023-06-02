@@ -37,7 +37,7 @@ Future<void> main(List<String> args) async {
 
     await YaruWindowTitleBar.ensureInitialized();
 
-    await setupAppLocalizations();
+    await initDefaultLocale();
 
     runApp(ProviderScope(
       child: WizardApp(

@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 
 class InheritedLocale extends InheritedNotifier<ValueNotifier<Locale>> {
   InheritedLocale({super.key, required super.child, Locale? value})
@@ -11,8 +12,10 @@ class InheritedLocale extends InheritedNotifier<ValueNotifier<Locale>> {
     return _getNotifier(context).value;
   }
 
-  static void apply(BuildContext context, Locale locale) {
-    _getNotifier(context).value = locale;
+  static Future<void> apply(BuildContext context, Locale locale) async {
+    final notifier = _getNotifier(context);
+    await initDefaultLocale();
+    notifier.value = locale;
   }
 
   static ValueNotifier<Locale> _getNotifier(BuildContext context) {

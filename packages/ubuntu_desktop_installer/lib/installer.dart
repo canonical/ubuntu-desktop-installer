@@ -107,7 +107,7 @@ Future<void> runInstallerApp(
     final window = await YaruWindow.ensureInitialized();
     await window.onClose(_closeInstallerApp);
 
-    await setupAppLocalizations();
+    await initDefaultLocale();
 
     runApp(ProviderScope(
       child: SlidesContext(

@@ -49,7 +49,7 @@ Future<void> runWslSetupApp({
       return true;
     });
 
-    await setupAppLocalizations();
+    await initDefaultLocale();
 
     runApp(ValueListenableProvider<AppModel>.value(
       value: appModel,
