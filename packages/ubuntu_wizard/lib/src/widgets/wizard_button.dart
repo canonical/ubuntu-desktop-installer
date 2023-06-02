@@ -70,7 +70,10 @@ class WizardButton extends StatefulWidget {
     return AnimatedBuilder(
       animation: wizard?.controller ?? _noAnimation,
       builder: (context, child) => WizardButton(
-        label: label ?? UbuntuLocalizations.of(context).nextLabel,
+        label: label ??
+            (wizard?.hasNext == false
+                ? UbuntuLocalizations.of(context).doneLabel
+                : UbuntuLocalizations.of(context).nextLabel),
         visible: visible,
         enabled: wizard?.isLoading != true && (enabled ?? true),
         loading: wizard?.isLoading ?? false,

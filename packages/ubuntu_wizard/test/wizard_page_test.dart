@@ -158,6 +158,18 @@ void main() {
               );
             });
           }),
+          '/last': WizardRoute(builder: (_) {
+            return Builder(builder: (context) {
+              return WizardPage(
+                bottomBar: WizardBar(
+                  leading: WizardButton.previous(context),
+                  trailing: [
+                    WizardButton.next(context),
+                  ],
+                ),
+              );
+            });
+          }),
         }),
       ),
     );
@@ -177,6 +189,41 @@ void main() {
       find.descendant(
         of: find.byType(FilledButton),
         matching: find.text(lang.nextLabel),
+      ),
+      findsOneWidget,
+    );
+
+    expect(
+      find.descendant(
+        of: find.byType(FilledButton),
+        matching: find.text(lang.doneLabel),
+      ),
+      findsNothing,
+    );
+
+    Wizard.of(context).next();
+    await tester.pumpAndSettle();
+
+    expect(
+      find.descendant(
+        of: find.byType(OutlinedButton),
+        matching: find.text(lang.previousLabel),
+      ),
+      findsOneWidget,
+    );
+
+    expect(
+      find.descendant(
+        of: find.byType(FilledButton),
+        matching: find.text(lang.nextLabel),
+      ),
+      findsNothing,
+    );
+
+    expect(
+      find.descendant(
+        of: find.byType(FilledButton),
+        matching: find.text(lang.doneLabel),
       ),
       findsOneWidget,
     );
