@@ -62,7 +62,9 @@ void main() {
         routes: {
           '/': WizardRoute(
             builder: (_) => buildPage(model),
-            onNext: (settings) => '/',
+          ),
+          '/next': WizardRoute(
+            builder: (_) => const SizedBox.shrink(),
           ),
         },
       ),
