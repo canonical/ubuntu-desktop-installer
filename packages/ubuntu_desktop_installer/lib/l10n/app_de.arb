@@ -917,5 +917,9 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "allocateDiskSpaceInvalidMountPointSlash": "Einhängepunkte müssen mit „/“ beginnen",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Einhängepunkte dürfen keine Leerzeichen enthalten",
+  "@allocateDiskSpaceInvalidMountPointSpace": {}
 }
