@@ -416,10 +416,10 @@ packages:
     dependency: transitive
     description:
       name: lints
-      sha256: "6b0206b0bf4f04961fc5438198ccb3a885685cd67d4d4a32cc20ad7f8adbe015"
+      sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.1"
   list_counter:
     dependency: transitive
     description:
@@ -994,10 +994,10 @@ packages:
     dependency: "direct dev"
     description:
       name: yaru_test
-      sha256: "6116bb5efa2b5b68d8d36d19b0b343a30f3d8d93a0d5fbd2a29e9e74815c335a"
+      sha256: "0799c1b341c8ee1f660aed989ff9cd76bf2370231b9a4f38ed68726afa36dce6"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0"
+    version: "0.1.1"
   yaru_widgets:
     dependency: "direct main"
     description:
