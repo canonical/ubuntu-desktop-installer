@@ -22,6 +22,11 @@ dependencies:
   path: ^1.8.0
   safe_change_notifier: ^0.2.0
   stdlibc: ^0.1.0
+  timezone_map:
+    git:
+      url: https://github.com/canonical/ubuntu-flutter-plugins.git
+      path: packages/timezone_map
+      ref: b193a7a8113c4c5400a9b58b42b1a104abd64bbb
   # TODO: move shared pages to a separate package
   ubuntu_desktop_installer:
     path: ../ubuntu_desktop_installer
