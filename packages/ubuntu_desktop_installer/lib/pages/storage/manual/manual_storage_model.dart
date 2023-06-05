@@ -128,6 +128,7 @@ class ManualStorageModel extends SafeChangeNotifier {
       size: size,
       format: format?.type,
       mount: mount,
+      wipe: format != null ? 'superblock' : null,
     );
     return _service.addPartition(disk, gap, partition).then((disks) {
       _updateDisks(disks);

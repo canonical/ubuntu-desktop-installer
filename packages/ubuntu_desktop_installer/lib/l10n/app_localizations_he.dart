@@ -523,6 +523,11 @@ class AppLocalizationsHe extends AppLocalizations {
   String get partitionFormatNone => 'להשאיר בלי פרמוט';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'פרמוט המחיצה';
 
   @override

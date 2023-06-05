@@ -523,6 +523,11 @@ class AppLocalizationsFi extends AppLocalizations {
   String get partitionFormatNone => 'Jätä alustamatta';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'Alusta osio';
 
   @override

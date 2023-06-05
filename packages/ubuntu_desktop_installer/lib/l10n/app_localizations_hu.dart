@@ -523,6 +523,11 @@ class AppLocalizationsHu extends AppLocalizations {
   String get partitionFormatNone => 'Formázatlanul hagyás';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'A partíció formázása';
 
   @override

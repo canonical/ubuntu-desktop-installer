@@ -9,8 +9,8 @@ import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_mod
 import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_page.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_selector.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_test/yaru_test.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'test_manual_storage.dart';
 
@@ -157,16 +157,11 @@ void main() {
   });
 
   testWidgets('can format', (tester) async {
-    final disk = testDisks.first;
-    final partition = disk.partitions.whereType<Partition>().first;
     final model = buildManualStorageModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final checkbox = find.byType(YaruCheckbox);
-    expect(checkbox, findsWidgets);
-
-    await tester.tap(checkbox.first);
-    verify(model.editPartition(disk, partition, wipe: true)).called(1);
+    expect(find.byIcon(YaruIcons.checkbox), findsWidgets);
+    expect(find.byIcon(YaruIcons.checkbox_checked_filled), findsWidgets);
   });
 
   testWidgets('can remove', (tester) async {

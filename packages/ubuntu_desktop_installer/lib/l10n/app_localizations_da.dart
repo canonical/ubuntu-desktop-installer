@@ -523,6 +523,11 @@ class AppLocalizationsDa extends AppLocalizations {
   String get partitionFormatNone => 'Efterlad uformateret';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'Formatér partition';
 
   @override

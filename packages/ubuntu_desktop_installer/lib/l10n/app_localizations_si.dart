@@ -523,6 +523,11 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionFormatNone => 'පවිත්‍ර නොකර තබන්න';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'පංගුව පවිත්‍ර කරන්න';
 
   @override

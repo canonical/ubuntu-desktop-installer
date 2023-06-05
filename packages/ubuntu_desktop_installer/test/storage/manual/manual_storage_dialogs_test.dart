@@ -141,9 +141,6 @@ void main() {
     await tester.tap(find.menuItem(PartitionFormat.btrfs.name!));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byType(YaruCheckbox));
-    await tester.pump();
-
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
