@@ -747,10 +747,10 @@ packages:
     dependency: "direct main"
     description:
       name: ubuntu_localizations
-      sha256: ce954f71b1f48e4f7e972c41276b136e90e81668d11ae07f2a3fcc8314c980df
+      sha256: "1544cbe239cfb876368cf1dfeea4aa83d1c250b08b137f974b0911204c4b83ae"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.7"
+    version: "0.2.0"
   ubuntu_logger:
     dependency: "direct main"
     description:
