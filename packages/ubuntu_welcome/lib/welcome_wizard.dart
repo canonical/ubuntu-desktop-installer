@@ -6,12 +6,14 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 enum WelcomeStep {
   locale,
+  timezone,
   identity,
 }
 
 class WelcomeRoutes {
   static const String initial = '/';
   static const String locale = '/locale';
+  static const String timezone = '/timezone';
   static const String identity = '/identity';
 }
 
@@ -39,6 +41,11 @@ class _WelcomeWizardState extends ConsumerState<WelcomeWizard> {
           builder: (_) => const LocalePage(),
           userData: WelcomeStep.locale.index,
           onLoad: (_) => LocalePage.load(context, ref),
+        ),
+        WelcomeRoutes.timezone: WizardRoute(
+          builder: (_) => const TimezonePage(),
+          userData: WelcomeStep.timezone.index,
+          onLoad: (_) => TimezonePage.load(context, ref),
         ),
         WelcomeRoutes.identity: WizardRoute(
           builder: (_) => const IdentityPage(),

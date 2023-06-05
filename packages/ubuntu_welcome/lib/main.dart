@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
+import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_welcome/l10n.dart';
@@ -25,6 +26,7 @@ Future<void> main(List<String> args) async {
   // TODO: handle auto-login via IdentityService
   tryRegisterService<ConfigService>(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<LocaleService>(XdgLocaleService.new);
+  tryRegisterService<TimezoneService>(XdgTimezoneService.new);
   tryRegisterService<IdentityService>(XdgIdentityService.new);
   tryRegisterService<NetworkService>(NetworkService.new);
 
@@ -38,6 +40,15 @@ Future<void> main(List<String> args) async {
     await YaruWindowTitleBar.ensureInitialized();
 
     await initDefaultLocale();
+
+    var geo = tryGetService<GeoService>();
+    if (geo == null) {
+      final geodata = Geodata.asset();
+      final geoname = Geoname.ubuntu(geodata: geodata);
+      geo = GeoService(sources: [geodata, geoname]);
+      registerServiceInstance(geo);
+    }
+    await geo.init();
 
     runApp(ProviderScope(
       child: WizardApp(

@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
+import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_welcome/l10n.dart';
 import 'package:ubuntu_welcome/welcome_wizard.dart';
@@ -15,6 +16,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 // TODO: move to shared packages
 import '../../ubuntu_desktop_installer/test/identity/test_identity.dart';
 import '../../ubuntu_desktop_installer/test/locale/test_locale.dart';
+import '../../ubuntu_desktop_installer/test/timezone/test_timezone.dart';
 
 void main() {
   LiveTestWidgetsFlutterBinding.ensureInitialized();
@@ -23,12 +25,14 @@ void main() {
 
   testWidgets('welcome', (tester) async {
     final localeModel = buildLocaleModel();
+    final timezoneModel = buildTimezoneModel();
     final identityModel = buildIdentityModel(isValid: true);
 
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
           localeModelProvider.overrideWith((_) => localeModel),
+          timezoneModelProvider.overrideWith((_) => timezoneModel),
           identityModelProvider.overrideWith((_) => identityModel),
         ],
         child: tester.buildTestWizard(),
@@ -39,6 +43,11 @@ void main() {
 
     await tester.pumpAndSettle();
     expect(find.byType(LocalePage), findsOneWidget);
+
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    expect(find.byType(TimezonePage), findsOneWidget);
+    verify(timezoneModel.init()).called(1);
 
     await tester.tapNext();
     await tester.pumpAndSettle();
