@@ -9,7 +9,6 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';
 import 'package:ubuntu_desktop_installer/pages/confirm/confirm_model.dart';
-import 'package:ubuntu_desktop_installer/pages/filesystem/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/pages/install/install_model.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
@@ -22,6 +21,7 @@ import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/rst/rst_model.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
@@ -35,7 +35,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'active_directory/test_active_directory.dart';
 import 'confirm/test_confirm.dart';
-import 'filesystem/test_filesystem.dart';
 import 'identity/test_identity.dart';
 import 'install/test_install.dart';
 import 'keyboard/test_keyboard.dart';
@@ -45,6 +44,7 @@ import 'network/test_network.dart';
 import 'rst/test_rst.dart';
 import 'secure_boot/test_secure_boot.dart';
 import 'source/test_source.dart';
+import 'storage/test_storage.dart';
 import 'timezone/test_timezone.dart';
 import 'welcome/test_welcome.dart';
 
@@ -273,7 +273,7 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    await tester.jumpToWizardRoute(Routes.filesystem);
+    await tester.jumpToWizardRoute(Routes.storage);
 
     await tester.tapNext();
     await tester.pumpAndSettle();

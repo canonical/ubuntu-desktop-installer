@@ -1,6 +1,5 @@
 export 'pages/active_directory/active_directory_page.dart';
 export 'pages/confirm/confirm_page.dart';
-export 'pages/filesystem/filesystem_page.dart';
 export 'pages/identity/identity_page.dart';
 export 'pages/install/install_page.dart';
 export 'pages/keyboard/keyboard_page.dart';
@@ -10,6 +9,7 @@ export 'pages/network/network_page.dart';
 export 'pages/rst/rst_page.dart';
 export 'pages/secure_boot/secure_boot_page.dart';
 export 'pages/source/source_wizard.dart';
+export 'pages/storage/storage_wizard.dart';
 export 'pages/theme_page.dart';
 export 'pages/timezone/timezone_page.dart';
 export 'pages/welcome/welcome_page.dart';

@@ -132,7 +132,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.filesystem);
+    await tester.jumpToWizardRoute(Routes.storage);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(
@@ -146,7 +146,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.filesystem);
+    await tester.jumpToWizardRoute(Routes.storage);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(
@@ -163,7 +163,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.filesystem);
+    await tester.jumpToWizardRoute(Routes.storage);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(
@@ -180,7 +180,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.filesystem);
+    await tester.jumpToWizardRoute(Routes.storage);
     await tester.jumpToWizardRoute(Routes.allocateDiskSpace);
     await tester.pumpAndSettle();
 
@@ -210,7 +210,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.filesystem);
+    await tester.jumpToWizardRoute(Routes.storage);
     await tester.jumpToWizardRoute(Routes.installAlongside);
     await tester.pumpAndSettle();
 
@@ -227,7 +227,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.filesystem);
+    await tester.jumpToWizardRoute(Routes.storage);
     await tester.jumpToWizardRoute(Routes.selectGuidedStorage);
     await tester.pumpAndSettle();
 
@@ -241,7 +241,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.filesystem);
+    await tester.jumpToWizardRoute(Routes.storage);
     await tester.jumpToWizardRoute(Routes.bitlocker);
     await tester.pumpAndSettle();
 
@@ -255,7 +255,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.filesystem);
+    await tester.jumpToWizardRoute(Routes.storage);
     await tester.jumpToWizardRoute(Routes.securityKey);
     await tester.pumpAndSettle();
 
@@ -273,7 +273,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.filesystem);
+    await tester.jumpToWizardRoute(Routes.storage);
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(

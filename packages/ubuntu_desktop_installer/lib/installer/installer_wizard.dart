@@ -16,7 +16,7 @@ enum InstallationStep {
   network,
   source,
   type,
-  filesystem,
+  storage,
   timezone,
   identity,
   theme,
@@ -106,14 +106,14 @@ class _InstallWizard extends ConsumerWidget {
           userData: InstallationStep.type.index,
           onLoad: (_) => SecureBootPage.load(ref),
         ),
-        Routes.filesystem: WizardRoute(
-          builder: (_) => const FilesystemPage(),
-          userData: InstallationStep.filesystem.index,
-          onLoad: (_) => FilesystemPage.load(ref),
+        Routes.storage: WizardRoute(
+          builder: (_) => const StorageWizard(),
+          userData: InstallationStep.storage.index,
+          onLoad: (_) => StorageWizard.load(ref),
         ),
         Routes.confirm: WizardRoute(
           builder: (_) => const ConfirmPage(),
-          userData: InstallationStep.filesystem.index,
+          userData: InstallationStep.storage.index,
           onLoad: (_) => ConfirmPage.load(ref),
         ),
         Routes.timezone: WizardRoute(
