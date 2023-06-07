@@ -35,6 +35,11 @@ class MockKeyboardModel extends _i1.Mock implements _i2.KeyboardModel {
         returnValue: 0,
       ) as int);
   @override
+  bool get canDetectLayout => (super.noSuchMethod(
+        Invocation.getter(#canDetectLayout),
+        returnValue: false,
+      ) as bool);
+  @override
   int get selectedLayoutIndex => (super.noSuchMethod(
         Invocation.getter(#selectedLayoutIndex),
         returnValue: 0,

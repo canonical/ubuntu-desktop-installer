@@ -563,6 +563,11 @@ class MockKeyboardService extends _i1.Mock implements _i18.KeyboardService {
   }
 
   @override
+  bool get canDetectLayout => (super.noSuchMethod(
+        Invocation.getter(#canDetectLayout),
+        returnValue: false,
+      ) as bool);
+  @override
   _i8.Future<_i2.KeyboardSetup> getKeyboard() => (super.noSuchMethod(
         Invocation.method(
           #getKeyboard,
