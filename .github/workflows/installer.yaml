@@ -9,6 +9,9 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  FLUTTER_VERSION: '3.10.x'
+
 jobs:
   integration:
     runs-on: ubuntu-22.04
@@ -38,7 +41,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.10.x'
+          flutter-version: ${{env.FLUTTER_VERSION}}
 
       - name: Flutter Doctor
         run: flutter doctor -v
