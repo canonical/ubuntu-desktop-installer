@@ -9,6 +9,9 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  FLUTTER_VERSION: '3.10.x'
+
 jobs:
   build:
     runs-on: windows-latest
@@ -20,7 +23,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.10.x'
+          flutter-version: ${{env.FLUTTER_VERSION}}
 
       - name: Update pubspec.lock
         working-directory: packages\ubuntu_wsl_setup\
@@ -61,7 +64,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.10.x'
+          flutter-version: ${{env.FLUTTER_VERSION}}
 
       - name: Flutter Doctor
         run: flutter doctor -v
