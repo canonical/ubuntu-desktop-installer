@@ -35,10 +35,7 @@ class XdgLocaleService implements LocaleService {
   @override
   Future<void> setLocale(String locale) async {
     await _client.connect();
-    final vars = Map<String, String>.from(_client.locale);
-    for (final k in vars.keys) {
-      vars[k] = locale;
-    }
+    final vars = _client.locale.map((key, value) => MapEntry(key, locale));
     await _client.setLocale(vars, false);
   }
 }
