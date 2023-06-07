@@ -1,6 +1,6 @@
-import 'package:dbus/dbus.dart';
 import 'package:meta/meta.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:xdg_locale/xdg_locale.dart';
 
 abstract class LocaleService {
   Future<String> getLocale();
@@ -20,50 +20,22 @@ class SubiquityLocaleService implements LocaleService {
 }
 
 class XdgLocaleService implements LocaleService {
-  XdgLocaleService([@visibleForTesting DBusRemoteObject? object])
-      : _object = object ?? _createRemoteObject();
+  XdgLocaleService([@visibleForTesting XdgLocaleClient? client])
+      : _client = client ?? XdgLocaleClient();
 
-  static DBusRemoteObject _createRemoteObject() {
-    return DBusRemoteObject(
-      DBusClient.system(),
-      name: 'org.freedesktop.locale1',
-      path: DBusObjectPath('/org/freedesktop/locale1'),
-    );
-  }
-
-  final DBusRemoteObject _object;
-
+  final XdgLocaleClient _client;
   @override
-  Future<String> getLocale() => _getLocale().then((v) => v['LANG']!);
-
-  Future<Map<String, String>> _getLocale() async {
-    final vars = await _object.getProperty(
-      'org.freedesktop.locale1',
-      'Locale',
-      signature: DBusSignature.array(DBusSignature.string),
-    );
-    return Map.fromEntries(vars.asStringArray().map((e) {
-      final p = e.split('=');
-      return MapEntry(p.first, p.last);
-    }));
+  Future<String> getLocale() async {
+    await _client.connect();
+    final locale = _client.locale['LANG']!;
+    await _client.close();
+    return locale;
   }
 
   @override
   Future<void> setLocale(String locale) async {
-    final vars = await _getLocale();
-    for (final k in vars.keys) {
-      vars[k] = locale;
-    }
-    await _object.callMethod(
-      'org.freedesktop.locale1',
-      'SetLocale',
-      [
-        DBusArray.string([
-          for (final k in vars.keys) '$k=${vars[k]}',
-        ]),
-        const DBusBoolean(false),
-      ],
-      replySignature: DBusSignature.empty,
-    );
+    await _client.connect();
+    final vars = _client.locale.map((key, value) => MapEntry(key, locale));
+    await _client.setLocale(vars, false);
   }
 }
