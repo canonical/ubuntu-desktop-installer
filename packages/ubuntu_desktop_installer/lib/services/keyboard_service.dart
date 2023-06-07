@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:dbus/dbus.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gsettings/gsettings.dart';
-import 'package:meta/meta.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:xdg_locale/xdg_locale.dart';
 
@@ -61,6 +64,49 @@ class XdgKeyboardService implements KeyboardService {
   final XdgLocaleClient _client;
   final GSettings _inputSourceSettings;
 
+  String _langFilename(String lang) => 'assets/kbds/$lang.jsonl';
+
+  Future<String> _getLanguage() async {
+    await _client.connect();
+    var lang = _client.locale['LANG'] ?? 'C';
+
+    if (lang.contains('.')) {
+      lang = lang.split('.').first;
+    }
+
+    WidgetsFlutterBinding.ensureInitialized();
+    final assets = await rootBundle
+        .loadString('AssetManifest.json')
+        .then((v) => List<String>.from((json.decode(v) as Map).keys));
+
+    if (!assets.contains(_langFilename(lang))) {
+      lang = lang.split('_').first;
+    }
+    if (!assets.contains(_langFilename(lang))) {
+      lang = 'C';
+    }
+
+    return lang;
+  }
+
+  Future<List<KeyboardLayout>> _getLayouts() async {
+    final lang = await _getLanguage();
+    final keyboardData = await rootBundle.loadString(_langFilename(lang));
+    return keyboardData
+        .split('\n')
+        .where((line) => line.isNotEmpty)
+        .map((line) {
+      final jsonData = json.decode(line);
+      return KeyboardLayout(
+        code: jsonData[0],
+        name: jsonData[1],
+        variants: (jsonData[2] as List)
+            .map((e) => KeyboardVariant(code: e[0], name: e[1]))
+            .toList(),
+      );
+    }).toList();
+  }
+
   @override
   Future<KeyboardSetup> getKeyboard() async {
     await _client.connect();
@@ -72,8 +118,7 @@ class XdgKeyboardService implements KeyboardService {
             : null,
         variant: _client.x11Variant,
       ),
-      // TODO: find a way to fetch list of supported layouts
-      layouts: [],
+      layouts: await _getLayouts(),
     );
     return keyboardSetup;
   }
