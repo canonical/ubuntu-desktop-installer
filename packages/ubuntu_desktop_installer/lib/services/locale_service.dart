@@ -28,7 +28,6 @@ class XdgLocaleService implements LocaleService {
   Future<String> getLocale() async {
     await _client.connect();
     final locale = _client.locale['LANG']!;
-    await _client.close();
     return locale;
   }
 
