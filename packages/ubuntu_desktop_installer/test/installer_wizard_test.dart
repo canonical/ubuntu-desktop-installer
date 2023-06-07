@@ -311,12 +311,67 @@ void main() {
     expect(find.byType(ActiveDirectoryPage), findsOneWidget);
     verify(activeDirectoryModel.init()).called(1);
   });
+
+  testWidgets('semi-automated install', (tester) async {
+    final keyboardModel = buildKeyboardModel();
+    final confirmModel = buildConfirmModel();
+    final identityModel = buildIdentityModel(isValid: true);
+    final activeDirectoryModel =
+        buildActiveDirectoryModel(isUsed: true, isValid: true);
+    final installModel = buildInstallModel(isDone: true);
+
+    registerMockService<AppService>(MockAppService());
+    registerMockService<TelemetryService>(MockTelemetryService());
+
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          keyboardModelProvider.overrideWith((_) => keyboardModel),
+          confirmModelProvider.overrideWith((_) => confirmModel),
+          identityModelProvider.overrideWith((_) => identityModel),
+          activeDirectoryModelProvider
+              .overrideWith((_) => activeDirectoryModel),
+          installModelProvider.overrideWith((_) => installModel),
+        ],
+        child: tester.buildTestWizard(interactiveSections: [
+          'keyboard',
+          'identity',
+          'active-directory',
+        ]),
+      ),
+    );
+    await tester.pumpAndSettle();
+    expect(find.byType(KeyboardPage), findsOneWidget);
+    verify(keyboardModel.init()).called(1);
+
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    expect(find.byType(ConfirmPage), findsOneWidget);
+    verify(confirmModel.init()).called(1);
+
+    await tester.tapButton(tester.lang.startInstallingButtonText);
+    await tester.pumpAndSettle();
+    expect(find.byType(IdentityPage), findsOneWidget);
+    verify(identityModel.init()).called(1);
+
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    expect(find.byType(ActiveDirectoryPage), findsOneWidget);
+    verify(activeDirectoryModel.init()).called(1);
+
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    expect(find.byType(InstallPage), findsOneWidget);
+    verify(installModel.init()).called(1);
+  });
 }
 
 extension on WidgetTester {
-  Widget buildTestWizard({bool? welcome}) {
+  Widget buildTestWizard({bool? welcome, List<String>? interactiveSections}) {
     final client = MockSubiquityClient();
     when(client.monitorStatus()).thenAnswer((_) => const Stream.empty());
+    when(client.getInteractiveSections())
+        .thenAnswer((_) async => interactiveSections);
     registerMockService<SubiquityClient>(client);
 
     return InheritedLocale(

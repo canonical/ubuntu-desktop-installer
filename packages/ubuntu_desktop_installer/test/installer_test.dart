@@ -62,6 +62,7 @@ void main() {
     when(client.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
     when(client.monitorStatus()).thenAnswer(
         (_) => Stream.value(fakeApplicationStatus(ApplicationState.RUNNING)));
+    when(client.getInteractiveSections()).thenAnswer((_) async => null);
     registerMockService<SubiquityClient>(client);
 
     final server = MockSubiquityServer();
@@ -105,6 +106,7 @@ extension on WidgetTester {
     when(client.getStatus(current: ApplicationState.RUNNING))
         .thenAnswer((_) async => done);
     when(client.monitorStatus()).thenAnswer((_) => Stream.value(status));
+    when(client.getInteractiveSections()).thenAnswer((_) async => null);
     when(client.getStorageV2()).thenAnswer((_) async => fakeStorageResponse());
     when(client.getOriginalStorageV2())
         .thenAnswer((_) async => fakeStorageResponse());
