@@ -133,7 +133,7 @@ extension on WidgetTester {
             appName: 'ubuntu_desktop_installer',
             localizationsDelegates: localizationsDelegates,
             supportedLocales: supportedLocales,
-            home: const UbuntuDesktopInstallerWizard(),
+            home: const InstallerWizard(),
           ),
         ),
       ),
