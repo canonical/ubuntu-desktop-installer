@@ -22,5 +22,5 @@ abstract class Routes {
   static const timezone = '/timezone';
   static const notEnoughDiskSpace = '/not-enough-disk-space';
   static const activeDirectory = '/active-directory';
-  static const filesystem = '/filesystem';
+  static const storage = '/storage';
 }
