@@ -323,7 +323,7 @@ extension on WidgetTester {
           localizationsDelegates: localizationsDelegates,
           supportedLocales: supportedLocales,
           theme: yaruLight,
-          home: UbuntuDesktopInstallerWizard(welcome: welcome),
+          home: InstallerWizard(welcome: welcome),
         ),
       ),
     );
