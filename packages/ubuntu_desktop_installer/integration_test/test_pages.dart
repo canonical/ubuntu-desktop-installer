@@ -3,12 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import '../test/test_utils.dart';
@@ -568,7 +568,7 @@ Future<void> takeScreenshot(WidgetTester tester, String screenshot) async {
   await tester.pumpAndSettle();
 
   await expectLater(
-    find.byType(UbuntuDesktopInstallerApp),
+    find.byType(WizardApp),
     matchesGoldenFile('screenshots/$screenshot.png'),
   );
 }
