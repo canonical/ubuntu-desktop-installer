@@ -6,9 +6,11 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import 'install/test_install.dart';
@@ -127,7 +129,10 @@ extension on WidgetTester {
       child: InheritedLocale(
         child: SlidesContext(
           slides: [(_) => const SizedBox.shrink()],
-          child: UbuntuDesktopInstallerApp(
+          child: WizardApp(
+            appName: 'ubuntu_desktop_installer',
+            localizationsDelegates: localizationsDelegates,
+            supportedLocales: supportedLocales,
             home: const UbuntuDesktopInstallerWizard(),
           ),
         ),

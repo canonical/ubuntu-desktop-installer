@@ -112,8 +112,14 @@ Future<void> runInstallerApp(
     runApp(ProviderScope(
       child: SlidesContext(
         slides: slides ?? defaultSlides,
-        child: UbuntuDesktopInstallerApp(
-          flavor: flavor,
+        child: WizardApp(
+          appName: 'ubuntu_desktop_installer',
+          flavor: flavor ?? const FlavorData(name: 'Ubuntu'),
+          onGenerateTitle: (context, flavor) {
+            return AppLocalizations.of(context).windowTitle(flavor.name);
+          },
+          localizationsDelegates: localizationsDelegates,
+          supportedLocales: supportedLocales,
           home: UbuntuDesktopInstallerWizard(
             welcome: options['welcome'],
           ),
@@ -153,41 +159,6 @@ Future<bool> _closeInstallerApp() async {
   await getService<SubiquityServer>().stop();
   await getService<DesktopService>().close();
   return true;
-}
-
-class UbuntuDesktopInstallerApp extends StatelessWidget {
-  UbuntuDesktopInstallerApp({
-    super.key,
-    FlavorData? flavor,
-    required this.home,
-  }) : flavor = flavor ?? defaultFlavor;
-
-  final FlavorData flavor;
-  final Widget home;
-
-  static FlavorData get defaultFlavor {
-    return const FlavorData(name: 'Ubuntu');
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return WizardApp(
-      appName: 'ubuntu_desktop_installer',
-      flavor: flavor,
-      onGenerateTitle: (context, flavor) {
-        final lang = AppLocalizations.of(context);
-        final window = YaruWindow.of(context);
-        window.setTitle(lang.windowTitle(flavor.name));
-        return lang.appTitle;
-      },
-      localizationsDelegates: <LocalizationsDelegate>[
-        ...localizationsDelegates,
-        ...?flavor.localizationsDelegates,
-      ],
-      supportedLocales: supportedLocales,
-      home: home,
-    );
-  }
 }
 
 enum InstallationStep {
