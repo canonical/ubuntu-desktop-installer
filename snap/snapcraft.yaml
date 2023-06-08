@@ -127,7 +127,7 @@ parts:
 
   flutter-git:
     source: https://github.com/flutter/flutter.git
-    source-tag: 3.10.0 # run local/flutter/update-artifacts.sh [x.y.z]
+    source-tag: 3.10.0
     source-depth: 1
     plugin: nil
     override-build: |
@@ -136,9 +136,6 @@ parts:
       cp -r $CRAFT_PART_SRC $CRAFT_PART_INSTALL/usr/libexec/flutter
       ln -s $CRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $CRAFT_PART_INSTALL/usr/bin/flutter
       $CRAFT_PART_INSTALL/usr/bin/flutter doctor
-      if [[ "$CRAFT_TARGET_ARCH" == "arm64" ]]; then
-        cp -R $CRAFT_PROJECT_DIR/snap/local/flutter/shader_lib $CRAFT_PART_INSTALL/usr/libexec/flutter/bin/cache/artifacts/engine/linux-arm64
-      fi
     build-packages:
       - clang
       - cmake
