@@ -216,12 +216,24 @@ class IdentityModel extends PropertyStreamNotifier {
 /// The DMI product name file. Available for testing.
 @visibleForTesting
 const kDMIProductNameFile = '/sys/devices/virtual/dmi/id/product_name';
+@visibleForTesting
+const kDMIProductVersionFile = '/sys/devices/virtual/dmi/id/product_version';
 
-Future<String> _readProductName() {
-  return File(kDMIProductNameFile)
+Future<String> _readDmiFile(String path) {
+  return File(path)
       .readAsString()
       .then((value) => value.trim().sanitize())
       .catchError((_) => '');
+}
+
+Future<String> _readProductName() async {
+  /// Lenovo uses product_version as product name
+  /// and it's empty on HP and DELL
+  var productName = await _readDmiFile(kDMIProductVersionFile);
+  if (productName.isEmpty) {
+    productName = await _readDmiFile(kDMIProductNameFile);
+  }
+  return productName;
 }
 
 extension _IdentityDescription on IdentityData {
