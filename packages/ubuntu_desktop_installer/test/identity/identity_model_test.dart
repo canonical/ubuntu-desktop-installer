@@ -30,6 +30,7 @@ void main() {
     when(service.getIdentity()).thenAnswer((_) async => identity);
 
     final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
@@ -68,6 +69,7 @@ void main() {
     when(service.getIdentity()).thenAnswer((_) async => const IdentityData());
 
     final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
@@ -101,6 +103,7 @@ void main() {
     when(service.getIdentity()).thenAnswer((_) async => identity);
 
     final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
@@ -134,6 +137,7 @@ void main() {
     when(service.getIdentity()).thenAnswer((_) async => identity);
 
     final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
@@ -198,7 +202,7 @@ void main() {
     await model.save(salt: 'test');
 
     verify(service.setIdentity(identity)).called(1);
-    verify(activeDirectory.markConfigured()).called(1);
+    verify(activeDirectory.setUsed(false)).called(1);
     verify(telemetry.addMetric('UseActiveDirectory', false)).called(1);
   });
 
@@ -445,6 +449,7 @@ void main() {
     });
 
     final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     final config = MockConfigService();
@@ -513,6 +518,7 @@ void main() {
     when(service.getIdentity()).thenAnswer((_) async => const IdentityData());
 
     final activeDirectory = MockActiveDirectoryService();
+    when(activeDirectory.isUsed()).thenAnswer((_) async => true);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => true);
 
     final config = MockConfigService();
@@ -531,14 +537,18 @@ void main() {
       network: network,
       telemetry: telemetry,
     );
+    expect(model.useActiveDirectory, isFalse);
     expect(model.hasActiveDirectorySupport, isNull);
 
     await model.init();
+    expect(model.useActiveDirectory, isTrue);
     expect(model.hasActiveDirectorySupport, isTrue);
 
+    when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
     await model.init();
+    expect(model.useActiveDirectory, isFalse);
     expect(model.hasActiveDirectorySupport, isFalse);
   });
 }

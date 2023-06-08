@@ -75,8 +75,6 @@ class IdentityPage extends ConsumerWidget {
           WizardButton.next(
             context,
             enabled: ref.watch(identityModelProvider.select((m) => m.isValid)),
-            arguments: ref.watch(
-                identityModelProvider.select((m) => m.useActiveDirectory)),
             onNext: ref.read(identityModelProvider).save,
           ),
         ],

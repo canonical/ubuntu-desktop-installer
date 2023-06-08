@@ -12,6 +12,7 @@ export 'test_active_directory.mocks.dart';
 
 @GenerateMocks([ActiveDirectoryModel])
 ActiveDirectoryModel buildActiveDirectoryModel({
+  bool? isUsed,
   bool? isValid,
   String? domainName,
   String? adminName,
@@ -22,6 +23,7 @@ ActiveDirectoryModel buildActiveDirectoryModel({
   AdJoinResult? joinResult,
 }) {
   final model = MockActiveDirectoryModel();
+  when(model.init()).thenAnswer((_) async => isUsed ?? false);
   when(model.isValid).thenReturn(isValid ?? false);
   when(model.domainName).thenReturn(domainName ?? '');
   when(model.adminName).thenReturn(adminName ?? '');

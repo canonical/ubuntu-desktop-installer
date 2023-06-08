@@ -10,6 +10,8 @@ export 'package:subiquity_client/subiquity_client.dart'
 
 abstract class ActiveDirectoryService {
   Future<bool> hasSupport();
+  Future<bool> isUsed();
+  Future<void> setUsed(bool used);
   Future<AdConnectionInfo> getConnectionInfo();
   Future<void> setConnectionInfo(AdConnectionInfo info);
   Future<List<AdDomainNameValidation>> checkDomainName(String domain);
@@ -17,17 +19,33 @@ abstract class ActiveDirectoryService {
   Future<AdPasswordValidation> checkPassword(String password);
   Future<AdDomainNameValidation> pingDomainController(String domain);
   Future<AdJoinResult> getJoinResult({bool wait = true});
-  Future<void> markConfigured();
 }
 
 class SubiquityActiveDirectoryService implements ActiveDirectoryService {
-  const SubiquityActiveDirectoryService(this._subiquity);
+  SubiquityActiveDirectoryService(this._subiquity);
 
   final SubiquityClient _subiquity;
+  bool? _used;
 
   @override
   Future<bool> hasSupport() {
     return _subiquity.hasActiveDirectorySupport();
+  }
+
+  @override
+  Future<bool> isUsed() async {
+    return _used ?? false;
+  }
+
+  @override
+  Future<void> setUsed(bool used) async {
+    _used = used;
+    if (!used) {
+      // the active directory endpoint is not optional so we need to explicitly
+      // mark it as configured even if not used to avoid subiquity getting stuck
+      // at waiting for it to be configured.
+      _subiquity.markConfigured(['active_directory']);
+    }
   }
 
   @override
@@ -64,17 +82,16 @@ class SubiquityActiveDirectoryService implements ActiveDirectoryService {
   Future<AdJoinResult> getJoinResult({bool wait = true}) {
     return _subiquity.getActiveDirectoryJoinResult(wait: wait);
   }
-
-  @override
-  Future<void> markConfigured() {
-    return _subiquity.markConfigured(['active_directory']);
-  }
 }
 
 // TODO: implement realmd-based ActiveDirectoryService
 class RealmdActiveDirectoryService implements ActiveDirectoryService {
   @override
   Future<bool> hasSupport() async => false;
+  @override
+  Future<bool> isUsed() async => false;
+  @override
+  Future<void> setUsed(bool used) async {}
   @override
   Future<AdConnectionInfo> getConnectionInfo() async =>
       const AdConnectionInfo();
@@ -95,6 +112,4 @@ class RealmdActiveDirectoryService implements ActiveDirectoryService {
   @override
   Future<AdJoinResult> getJoinResult({bool wait = true}) async =>
       AdJoinResult.UNKNOWN;
-  @override
-  Future<void> markConfigured() async {}
 }

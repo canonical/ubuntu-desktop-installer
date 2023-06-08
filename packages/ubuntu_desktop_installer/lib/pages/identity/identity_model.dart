@@ -173,6 +173,7 @@ class IdentityModel extends PropertyStreamNotifier {
 
     _autoLogin.value = await _config.get(kAutoLoginUser) != null;
     _hasActiveDirectorySupport.value = await _activeDirectory.hasSupport();
+    _useActiveDirectory.value = await _activeDirectory.isUsed();
   }
 
   /// The auto-login user config key for testing purposes.
@@ -198,14 +199,11 @@ class IdentityModel extends PropertyStreamNotifier {
     }
 
     _telemetry?.addMetric('UseActiveDirectory', useActiveDirectory);
-    if (!useActiveDirectory) {
-      // the active directory endpoint is not optional so we need to explicitly
-      // mark it as configured even if not used to avoid subiquity getting stuck
-      // at waiting for it to be configured.
-      await _activeDirectory.markConfigured();
-    }
 
-    return _service.setIdentity(identity);
+    await Future.wait([
+      _service.setIdentity(identity),
+      _activeDirectory.setUsed(useActiveDirectory),
+    ]);
   }
 
   /// Defines if the password is shown or obscured.

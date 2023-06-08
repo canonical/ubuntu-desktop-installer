@@ -108,6 +108,7 @@ void main() {
     final confirmModel = buildConfirmModel();
     final timezoneModel = buildTimezoneModel();
     final identityModel = buildIdentityModel(isValid: true);
+    final activeDirectoryModel = buildActiveDirectoryModel();
     final installModel = buildInstallModel(isDone: true);
 
     registerMockService<AppService>(MockAppService());
@@ -133,6 +134,8 @@ void main() {
           confirmModelProvider.overrideWith((_) => confirmModel),
           timezoneModelProvider.overrideWith((_) => timezoneModel),
           identityModelProvider.overrideWith((_) => identityModel),
+          activeDirectoryModelProvider
+              .overrideWith((_) => activeDirectoryModel),
           installModelProvider.overrideWith((_) => installModel),
         ],
         child: tester.buildTestWizard(welcome: true),
@@ -284,7 +287,7 @@ void main() {
     final localeModel = buildLocaleModel();
     final identityModel =
         buildIdentityModel(useActiveDirectory: true, isValid: true);
-    final activeDirectoryModel = buildActiveDirectoryModel();
+    final activeDirectoryModel = buildActiveDirectoryModel(isUsed: true);
 
     registerMockService<AppService>(MockAppService());
     registerMockService<TelemetryService>(MockTelemetryService());

@@ -173,6 +173,23 @@ class MockActiveDirectoryService extends _i1.Mock
         returnValue: _i4.Future<bool>.value(false),
       ) as _i4.Future<bool>);
   @override
+  _i4.Future<bool> isUsed() => (super.noSuchMethod(
+        Invocation.method(
+          #isUsed,
+          [],
+        ),
+        returnValue: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
+  @override
+  _i4.Future<void> setUsed(bool? used) => (super.noSuchMethod(
+        Invocation.method(
+          #setUsed,
+          [used],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+  @override
   _i4.Future<_i2.AdConnectionInfo> getConnectionInfo() => (super.noSuchMethod(
         Invocation.method(
           #getConnectionInfo,
@@ -248,15 +265,6 @@ class MockActiveDirectoryService extends _i1.Mock
         ),
         returnValue: _i4.Future<_i2.AdJoinResult>.value(_i2.AdJoinResult.OK),
       ) as _i4.Future<_i2.AdJoinResult>);
-  @override
-  _i4.Future<void> markConfigured() => (super.noSuchMethod(
-        Invocation.method(
-          #markConfigured,
-          [],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
 }
 
 /// A class which mocks [AppService].

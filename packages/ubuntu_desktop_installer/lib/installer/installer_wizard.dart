@@ -125,9 +125,6 @@ class _InstallWizard extends ConsumerWidget {
           builder: (_) => const IdentityPage(),
           userData: InstallationStep.identity.index,
           onLoad: (_) => IdentityPage.load(ref),
-          onNext: (settings) => settings.arguments == true
-              ? Routes.activeDirectory
-              : Routes.theme,
         ),
         Routes.activeDirectory: WizardRoute(
           builder: (_) => const ActiveDirectoryPage(),
