@@ -2,14 +2,14 @@ import 'package:collection/collection.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/allocate_disk_space_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_model.dart';
 
-import 'test_allocate_disk_space.mocks.dart';
+import 'test_manual_storage.mocks.dart';
 export '../../test_utils.dart';
-export 'test_allocate_disk_space.mocks.dart';
+export 'test_manual_storage.mocks.dart';
 
-@GenerateMocks([AllocateDiskSpaceModel])
-AllocateDiskSpaceModel buildAllocateDiskSpaceModel({
+@GenerateMocks([ManualStorageModel])
+ManualStorageModel buildManualStorageModel({
   bool? isValid,
   List<Disk>? disks,
   Gap? selectedGap,
@@ -23,7 +23,7 @@ AllocateDiskSpaceModel buildAllocateDiskSpaceModel({
   bool? canReformatDisk,
   int? bootDiskIndex,
 }) {
-  final model = MockAllocateDiskSpaceModel();
+  final model = MockManualStorageModel();
   when(model.isValid).thenReturn(isValid ?? false);
   when(model.disks).thenReturn(disks ?? <Disk>[]);
   when(model.originalConfig(any)).thenAnswer((i) {

@@ -3,8 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/storage_columns.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/storage_table.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_columns.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_table.dart';
 
 void main() {
   final sda = fakeDisk(path: '/dev/sda', size: 11);

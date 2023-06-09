@@ -8,8 +8,8 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'allocate_disk_space_dialogs.dart';
-import 'allocate_disk_space_model.dart';
+import 'manual_storage_dialogs.dart';
+import 'manual_storage_model.dart';
 import 'storage_columns.dart';
 import 'storage_table.dart';
 import 'storage_types.dart';
@@ -19,7 +19,7 @@ class PartitionBar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(allocateDiskSpaceModelProvider);
+    final model = ref.watch(manualStorageModelProvider);
     return YaruBorderContainer(
       borderRadius: BorderRadius.circular(kYaruButtonRadius),
       clipBehavior: Clip.antiAlias,
@@ -43,7 +43,7 @@ class _PartitionPainter extends CustomPainter {
       : _selectedDiskIndex = _model.selectedDiskIndex,
         _selectedObjectIndex = _model.selectedObjectIndex;
 
-  final AllocateDiskSpaceModel _model;
+  final ManualStorageModel _model;
   final int _selectedDiskIndex;
   final int _selectedObjectIndex;
 
@@ -83,7 +83,7 @@ class PartitionLegend extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(allocateDiskSpaceModelProvider);
+    final model = ref.watch(manualStorageModelProvider);
     final lang = AppLocalizations.of(context);
 
     final objects = model.selectedDisk?.partitions ?? [];
@@ -165,7 +165,7 @@ class PartitionTable extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(allocateDiskSpaceModelProvider);
+    final model = ref.watch(manualStorageModelProvider);
     return StorageTable(
       columns: [
         StorageDeviceColumn(),
@@ -193,7 +193,7 @@ class PartitionButtonRow extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(allocateDiskSpaceModelProvider);
+    final model = ref.watch(manualStorageModelProvider);
     final lang = AppLocalizations.of(context);
 
     return Row(
@@ -273,7 +273,7 @@ class PartitionButtonRow extends ConsumerWidget {
   }
 
   Future<void> _maybeReformatDisk(BuildContext context, WidgetRef ref) async {
-    final model = ref.read(allocateDiskSpaceModelProvider.notifier);
+    final model = ref.read(manualStorageModelProvider.notifier);
     final lang = AppLocalizations.of(context);
 
     final disk = model.selectedDisk!;

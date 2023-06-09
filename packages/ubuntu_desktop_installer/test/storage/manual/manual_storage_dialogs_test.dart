@@ -4,17 +4,17 @@ import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/allocate_disk_space_dialogs.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/allocate_disk_space_model.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/allocate_disk_space_page.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/storage_types.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_dialogs.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_page.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'test_allocate_disk_space.dart';
+import 'test_manual_storage.dart';
 
 void main() {
   setUpAll(() => UbuntuTester.context = AlertDialog);
@@ -22,19 +22,19 @@ void main() {
   testWidgets('create partition', (tester) async {
     final disk = fakeDisk();
     const gap = Gap(offset: 0, size: 1000000, usable: GapUsable.YES);
-    final model = buildAllocateDiskSpaceModel(selectedDisk: disk);
+    final model = buildManualStorageModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
 
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [allocateDiskSpaceModelProvider.overrideWith((_) => model)],
-        child: tester.buildApp((_) => const AllocateDiskSpacePage()),
+        overrides: [manualStorageModelProvider.overrideWith((_) => model)],
+        child: tester.buildApp((_) => const ManualStoragePage()),
       ),
     );
 
     final result = showCreatePartitionDialog(
-        tester.element(find.byType(AllocateDiskSpacePage)), disk, gap);
+        tester.element(find.byType(ManualStoragePage)), disk, gap);
     await tester.pumpAndSettle();
 
     await tester.tap(find.byType(MenuButtonBuilder<DataUnit>));
@@ -70,19 +70,19 @@ void main() {
   testWidgets('create partition with invalid mount point', (tester) async {
     final disk = fakeDisk();
     const gap = Gap(offset: 0, size: 1000000, usable: GapUsable.YES);
-    final model = buildAllocateDiskSpaceModel(selectedDisk: disk);
+    final model = buildManualStorageModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
 
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [allocateDiskSpaceModelProvider.overrideWith((_) => model)],
-        child: tester.buildApp((_) => const AllocateDiskSpacePage()),
+        overrides: [manualStorageModelProvider.overrideWith((_) => model)],
+        child: tester.buildApp((_) => const ManualStoragePage()),
       ),
     );
 
     showCreatePartitionDialog(
-        tester.element(find.byType(AllocateDiskSpacePage)), disk, gap);
+        tester.element(find.byType(ManualStoragePage)), disk, gap);
     await tester.pumpAndSettle();
 
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst foo');
@@ -106,19 +106,19 @@ void main() {
       ),
       const Gap(offset: 123, size: 1000000, usable: GapUsable.YES),
     ]);
-    final model = buildAllocateDiskSpaceModel(selectedDisk: disk);
+    final model = buildManualStorageModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
 
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [allocateDiskSpaceModelProvider.overrideWith((_) => model)],
-        child: tester.buildApp((_) => const AllocateDiskSpacePage()),
+        overrides: [manualStorageModelProvider.overrideWith((_) => model)],
+        child: tester.buildApp((_) => const ManualStoragePage()),
       ),
     );
 
     final result = showEditPartitionDialog(
-      tester.element(find.byType(AllocateDiskSpacePage)),
+      tester.element(find.byType(ManualStoragePage)),
       disk,
       disk.partitions.whereType<Partition>().first,
       null,
@@ -175,19 +175,19 @@ void main() {
       ),
       const Gap(offset: 123, size: 1000000, usable: GapUsable.YES),
     ]);
-    final model = buildAllocateDiskSpaceModel(selectedDisk: disk);
+    final model = buildManualStorageModel(selectedDisk: disk);
 
     registerMockService<UdevService>(MockUdevService());
 
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [allocateDiskSpaceModelProvider.overrideWith((_) => model)],
-        child: tester.buildApp((_) => const AllocateDiskSpacePage()),
+        overrides: [manualStorageModelProvider.overrideWith((_) => model)],
+        child: tester.buildApp((_) => const ManualStoragePage()),
       ),
     );
 
     showEditPartitionDialog(
-      tester.element(find.byType(AllocateDiskSpacePage)),
+      tester.element(find.byType(ManualStoragePage)),
       disk,
       disk.partitions.whereType<Partition>().first,
       null,

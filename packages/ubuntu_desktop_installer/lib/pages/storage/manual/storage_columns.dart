@@ -6,7 +6,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'allocate_disk_space_model.dart';
+import 'manual_storage_model.dart';
 import 'storage_types.dart';
 
 typedef DiskBuilder = Widget Function(BuildContext context, Disk disk);
@@ -189,7 +189,7 @@ class StorageWipeColumn extends StorageColumn {
           },
           partitionBuilder: (context, disk, partition) {
             return Consumer(builder: (context, ref, child) {
-              final model = ref.read(allocateDiskSpaceModelProvider);
+              final model = ref.read(manualStorageModelProvider);
               final config = model.originalConfig(partition);
               final forceWipe = config?.mustWipe(partition.format) != false;
               return YaruCheckbox(

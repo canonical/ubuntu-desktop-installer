@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/allocate_disk_space_model.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/storage_types.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_types.dart';
 
-import 'test_allocate_disk_space.dart';
+import 'test_manual_storage.dart';
 
 void main() {
   final testDisks = <Disk>[
@@ -27,7 +27,7 @@ void main() {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     await model.getStorage();
     verify(service.getStorage()).called(1);
 
@@ -39,7 +39,7 @@ void main() {
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.setStorage()).thenAnswer((_) async => changedDisks);
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     await model.getStorage();
 
     await model.setStorage();
@@ -51,7 +51,7 @@ void main() {
     final service = MockStorageService();
     when(service.resetStorage()).thenAnswer((_) async => changedDisks);
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     await model.resetStorage();
     expect(model.disks, equals(changedDisks));
     verify(service.resetStorage()).called(1);
@@ -62,7 +62,7 @@ void main() {
     when(service.reformatDisk(testDisks.first))
         .thenAnswer((_) async => changedDisks);
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     await model.reformatDisk(testDisks.first);
     expect(model.disks, equals(changedDisks));
     verify(service.reformatDisk(testDisks.first)).called(1);
@@ -72,7 +72,7 @@ void main() {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     expect(model.isStorageSelected(0), isFalse);
     expect(model.isStorageSelected(1), isFalse);
     expect(model.isStorageSelected(1, 0), isFalse);
@@ -120,7 +120,7 @@ void main() {
   });
 
   test('notify selection changes', () {
-    final model = AllocateDiskSpaceModel(MockStorageService());
+    final model = ManualStorageModel(MockStorageService());
     expect(model.selectedDiskIndex, equals(-1));
 
     var wasNotified = false;
@@ -153,7 +153,7 @@ void main() {
       ];
     });
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     expect(model.bootDiskIndex, isNull);
 
     await model.getStorage();
@@ -198,7 +198,7 @@ void main() {
       ],
     );
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     expect(model.selectedDisk, isNull);
     expect(model.selectedPartition, isNull);
     expect(model.selectedGap, isNull);
@@ -282,7 +282,7 @@ void main() {
     when(service.addPartition(fakeDisk(), gap, partition))
         .thenAnswer((_) async => changedDisks);
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     await model.addPartition(fakeDisk(), gap,
         size: 123, format: PartitionFormat.ext3, mount: '/tst');
     expect(model.disks, equals(changedDisks));
@@ -299,7 +299,7 @@ void main() {
     when(service.editPartition(fakeDisk(), edited))
         .thenAnswer((_) async => changedDisks);
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     await model.editPartition(fakeDisk(), partition,
         size: 456, wipe: true, format: PartitionFormat.ext2, mount: '/tmp');
     expect(model.disks, equals(changedDisks));
@@ -317,7 +317,7 @@ void main() {
     }
 
     final service = MockStorageService();
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
 
     // get partitions -> select first disk
     when(service.getStorage()).thenAnswer((_) async => [testPartitions(2)]);
@@ -339,14 +339,14 @@ void main() {
   });
 
   test('dispose', () async {
-    final model = AllocateDiskSpaceModel(MockStorageService());
+    final model = ManualStorageModel(MockStorageService());
     model.dispose();
     expect(model.onSelectionChanged, emitsDone);
   });
 
   test('valid', () async {
     final service = MockStorageService();
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
 
     when(service.needRoot).thenReturn(true);
     when(service.needBoot).thenReturn(true);
@@ -374,7 +374,7 @@ void main() {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     await model.getStorage();
 
     model.selectStorage(0, 0);
@@ -398,7 +398,7 @@ void main() {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
 
-    final model = AllocateDiskSpaceModel(service);
+    final model = ManualStorageModel(service);
     await model.getStorage();
 
     model.selectStorage(0, 0);

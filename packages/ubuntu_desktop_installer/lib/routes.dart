@@ -7,7 +7,6 @@ abstract class Routes {
   static const keyboard = '/keyboard';
   static const repairUbuntu = '/repair-ubuntu';
   static const network = '/network';
-  static const allocateDiskSpace = '/allocate-disk-space';
   static const secureBoot = '/secure-boot';
   static const source = '/update-other-software';
   static const confirm = '/confirm';

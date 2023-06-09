@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/storage_selector.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_selector.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 void main() {

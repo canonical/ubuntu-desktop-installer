@@ -181,10 +181,10 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(Routes.allocateDiskSpace);
+    await tester.jumpToStorageWizard(StorageRoutes.manual);
     await tester.pumpAndSettle();
 
-    await testAllocateDiskSpacePage(
+    await testManualStoragePage(
       tester,
       storage: [
         fakeDisk(
