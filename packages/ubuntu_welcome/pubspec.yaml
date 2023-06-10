@@ -53,7 +53,7 @@ dev_dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
-  mockito: 5.4.1
+  mockito: 5.4.2
   ubuntu_test:
     path: ../ubuntu_test
   yaru_test: ^0.1.1
