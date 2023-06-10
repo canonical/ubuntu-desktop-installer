@@ -46,7 +46,7 @@ dev_dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
-  mockito: 5.4.1
+  mockito: 5.4.2
   subiquity_test:
     git:
       url: https://github.com/canonical/subiquity_client.dart.git
