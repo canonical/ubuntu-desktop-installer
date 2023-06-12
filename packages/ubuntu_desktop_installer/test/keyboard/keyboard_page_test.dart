@@ -71,6 +71,14 @@ void main() {
     verify(model.trySelectLayoutVariant('layout', 'variant'));
   });
 
+  testWidgets('keyboard detection unsupported', (tester) async {
+    final model = buildKeyboardModel(canDetectLayout: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
+
+    final detectButton = find.button(tester.lang.detectButtonText);
+    expect(detectButton, findsNothing);
+  });
+
   testWidgets('valid input', (tester) async {
     final model = buildKeyboardModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));

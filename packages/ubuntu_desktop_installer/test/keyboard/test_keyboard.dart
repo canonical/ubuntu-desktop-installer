@@ -17,6 +17,7 @@ MockKeyboardModel buildKeyboardModel({
   int? selectedLayoutIndex,
   List<String>? variants,
   int? selectedVariantIndex,
+  bool? canDetectLayout,
 }) {
   final model = MockKeyboardModel();
   when(model.isValid).thenReturn(isValid ?? true);
@@ -30,6 +31,7 @@ MockKeyboardModel buildKeyboardModel({
     when(model.variantName(i)).thenReturn(variants![i]);
   }
   when(model.selectedVariantIndex).thenReturn(selectedVariantIndex ?? 0);
+  when(model.canDetectLayout).thenReturn(canDetectLayout ?? true);
   return model;
 }
 

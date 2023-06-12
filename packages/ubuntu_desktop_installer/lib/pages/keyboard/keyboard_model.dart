@@ -29,6 +29,9 @@ class KeyboardModel extends SafeChangeNotifier {
   /// The number of available keyboard layouts.
   int get layoutCount => _layouts.length;
 
+  /// Whether the service supports keyboard layout detection.
+  bool get canDetectLayout => _service.canDetectLayout;
+
   /// Returns the name of the keyboard layout at [index].
   ///
   /// Note: the index must be valid.
