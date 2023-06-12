@@ -14,7 +14,7 @@ class ActiveDirectoryPage extends ConsumerStatefulWidget {
   const ActiveDirectoryPage({super.key});
 
   static Future<bool> load(WidgetRef ref) {
-    return ref.read(activeDirectoryModelProvider).init().then((_) => true);
+    return ref.read(activeDirectoryModelProvider).init();
   }
 
   @override

@@ -6,14 +6,15 @@ import 'package:ubuntu_desktop_installer/services/active_directory_service.dart'
 import 'test_active_directory.dart';
 
 void main() {
-  test('load AD connection info', () async {
-    const info = AdConnectionInfo(
-      domainName: 'ubuntu.com',
-      adminName: 'admin',
-      password: 'password',
-    );
+  const info = AdConnectionInfo(
+    domainName: 'ubuntu.com',
+    adminName: 'admin',
+    password: 'password',
+  );
 
+  test('load AD connection info', () async {
     final service = MockActiveDirectoryService();
+    when(service.isUsed()).thenAnswer((_) async => true);
     when(service.getConnectionInfo()).thenAnswer((_) async => info);
     when(service.checkDomainName(info.domainName))
         .thenAnswer((_) async => [AdDomainNameValidation.OK]);
@@ -24,7 +25,8 @@ void main() {
 
     final model = ActiveDirectoryModel(service);
 
-    await model.init();
+    expect(await model.init(), isTrue);
+    verify(service.isUsed()).called(1);
     verify(service.getConnectionInfo()).called(1);
     verify(service.checkDomainName(info.domainName)).called(1);
     verify(service.checkAdminName(info.adminName)).called(1);
@@ -33,6 +35,19 @@ void main() {
     expect(model.adminName, info.adminName);
     expect(model.domainName, info.domainName);
     expect(model.password, info.password);
+  });
+
+  test('not used', () async {
+    final service = MockActiveDirectoryService();
+    when(service.isUsed()).thenAnswer((_) async => false);
+    when(service.getConnectionInfo()).thenAnswer((_) async => info);
+
+    final model = ActiveDirectoryModel(service);
+
+    expect(await model.init(), isFalse);
+
+    verify(service.isUsed()).called(1);
+    verifyNever(service.getConnectionInfo());
   });
 
   test('domain name', () async {

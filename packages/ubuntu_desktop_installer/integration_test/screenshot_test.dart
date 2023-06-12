@@ -317,6 +317,12 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('12.active-directory', (tester) async {
+    final client = FakeSubiquityClient();
+    registerServiceInstance<SubiquityClient>(client);
+
+    final service = FakeActiveDirectoryService(client);
+    registerServiceInstance<ActiveDirectoryService>(service);
+
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
@@ -368,7 +374,8 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('15.complete', (tester) async {
-    registerService<SubiquityClient>(FakeSubiquityClient.new);
+    registerService<SubiquityClient>(
+        () => FakeSubiquityClient(ApplicationState.DONE));
 
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
@@ -381,6 +388,13 @@ void main() {
       screenshot: '$currentThemeName/15.complete',
     );
   }, variant: themeVariant);
+}
+
+class FakeActiveDirectoryService extends SubiquityActiveDirectoryService {
+  FakeActiveDirectoryService(super.client);
+
+  @override
+  Future<bool> isUsed() async => true;
 }
 
 class FakeDesktopService implements DesktopService {
@@ -400,9 +414,13 @@ class FakeProductService implements ProductService {
 }
 
 class FakeSubiquityClient extends SubiquityClient {
+  FakeSubiquityClient([this.state = ApplicationState.WAITING]);
+
+  final ApplicationState state;
+
   @override
   Future<ApplicationStatus> getStatus({ApplicationState? current}) async {
-    return fakeApplicationStatus(ApplicationState.DONE);
+    return fakeApplicationStatus(state);
   }
 
   @override

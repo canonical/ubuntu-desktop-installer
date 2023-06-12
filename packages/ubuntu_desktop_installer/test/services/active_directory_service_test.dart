@@ -94,15 +94,24 @@ void main() {
       verify(client.getActiveDirectoryJoinResult()).called(1);
     });
 
-    test('mark configured', () async {
+    test('is used', () async {
       final client = MockSubiquityClient();
       when(client.markConfigured(['active_directory']))
           .thenAnswer((_) async {});
 
       final service = SubiquityActiveDirectoryService(client);
 
-      await service.markConfigured();
+      expect(await service.isUsed(), isFalse);
+
+      await service.setUsed(true);
+      verifyNever(client.markConfigured(['active_directory']));
+
+      expect(await service.isUsed(), isTrue);
+
+      await service.setUsed(false);
       verify(client.markConfigured(['active_directory'])).called(1);
+
+      expect(await service.isUsed(), isFalse);
     });
   });
 }
