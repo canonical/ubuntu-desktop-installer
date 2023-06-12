@@ -1,32 +1,36 @@
+import 'dart:async';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_test/subiquity_test.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/installer/installer_model.dart';
 
+import 'test_utils.dart';
+
 void main() {
-  test('interactive sections', () async {
-    final client = MockSubiquityClient();
-    when(client.getInteractiveSections()).thenAnswer((_) async => ['a', 'b']);
-    when(client.monitorStatus()).thenAnswer((_) => const Stream.empty());
+  test('init', () async {
+    final controller = StreamController<ApplicationStatus>();
 
-    final model = InstallerModel(client);
+    final service = MockInstallerService();
+    when(service.monitorStatus()).thenAnswer((_) => controller.stream);
+
+    final model = InstallerModel(service);
     await model.init();
+    verify(service.monitorStatus()).called(1);
+    expect(controller.hasListener, isTrue);
 
-    expect(model.hasRoute('a'), isTrue);
-    expect(model.hasRoute('b'), isTrue);
-    expect(model.hasRoute('c'), isFalse);
+    await model.dispose();
+    expect(controller.hasListener, isFalse);
   });
 
-  test('no interactive sections', () async {
-    final client = MockSubiquityClient();
-    when(client.getInteractiveSections()).thenAnswer((_) async => null);
-    when(client.monitorStatus()).thenAnswer((_) => const Stream.empty());
+  test('has route', () async {
+    final service = MockInstallerService();
+    when(service.hasRoute('a')).thenReturn(true);
+    when(service.hasRoute('b')).thenReturn(false);
 
-    final model = InstallerModel(client);
-    await model.init();
+    final model = InstallerModel(service);
 
     expect(model.hasRoute('a'), isTrue);
-    expect(model.hasRoute('b'), isTrue);
-    expect(model.hasRoute('c'), isTrue);
+    expect(model.hasRoute('b'), isFalse);
   });
 }

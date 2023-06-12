@@ -538,6 +538,14 @@ class MockInstallerService extends _i1.Mock implements _i16.InstallerService {
         ),
         returnValue: _i8.Stream<_i2.ApplicationStatus?>.empty(),
       ) as _i8.Stream<_i2.ApplicationStatus?>);
+  @override
+  bool hasRoute(String? route) => (super.noSuchMethod(
+        Invocation.method(
+          #hasRoute,
+          [route],
+        ),
+        returnValue: false,
+      ) as bool);
 }
 
 /// A class which mocks [JournalService].

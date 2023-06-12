@@ -1,8 +1,11 @@
+import 'package:dartx/dartx.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 class InstallerService {
-  InstallerService(this._client);
+  InstallerService(this._client, {List<String>? routes})
+      : _routes = routes?.map((r) => r.removePrefix('/')).toList();
 
+  List<String>? _routes;
   final SubiquityClient _client;
 
   Future<void> init() async {
@@ -20,6 +23,7 @@ class InstallerService {
         'ubuntu_pro',
       ]);
     }
+    _routes ??= await _client.getInteractiveSections();
   }
 
   Future<void> load() {
@@ -27,6 +31,10 @@ class InstallerService {
   }
 
   Stream<ApplicationStatus?> monitorStatus() => _client.monitorStatus();
+
+  bool hasRoute(String route) {
+    return _routes?.contains(route.removePrefix('/')) ?? true;
+  }
 }
 
 extension ApplicationStatusX on ApplicationStatus {

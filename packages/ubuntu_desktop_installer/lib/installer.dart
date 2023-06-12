@@ -24,6 +24,7 @@ export 'slides.dart';
 Future<void> runInstallerApp(
   List<String> args, {
   FlavorData? flavor,
+  List<String>? routes,
   List<WidgetBuilder>? slides,
 }) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
@@ -39,6 +40,10 @@ Future<void> runInstallerApp(
         defaultsTo: 'examples/desktop-sources.yaml',
         help: 'Path of the source catalog (dry-run only)');
     parser.addFlag('welcome', aliases: ['try-or-install'], hide: true);
+    parser.addOption('routes',
+        valueHelp: 'path',
+        help: 'A comma-separated list of page routes',
+        hide: true);
     addLoggingOptions(parser);
   })!;
   setupLogger(options, path: '/var/log/installer');
@@ -66,8 +71,9 @@ Future<void> runInstallerApp(
   tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService<IdentityService>(
       () => SubiquityIdentityService(getService<SubiquityClient>()));
-  tryRegisterService<InstallerService>(
-      () => InstallerService(getService<SubiquityClient>()));
+  tryRegisterService<InstallerService>(() => InstallerService(
+      getService<SubiquityClient>(),
+      routes: options['routes']?.split(',') ?? routes));
   tryRegisterService(JournalService.new);
   tryRegisterService<KeyboardService>(
       () => SubiquityKeyboardService(getService<SubiquityClient>()));

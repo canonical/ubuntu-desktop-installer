@@ -58,7 +58,6 @@ void main() {
     final localeModel = buildLocaleModel();
     final welcomeModel = buildWelcomeModel(option: Option.tryUbuntu);
 
-    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -112,7 +111,6 @@ void main() {
     final installModel = buildInstallModel(isDone: true);
 
     registerMockService<DesktopService>(MockDesktopService());
-    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -203,7 +201,6 @@ void main() {
     final localeModel = buildLocaleModel();
     final rstModel = buildRstModel(hasRst: true);
 
-    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -228,7 +225,6 @@ void main() {
     final sourceModel = buildSourceModel();
     final secureBootModel = buildSecureBootModel(hasSecureBoot: true);
 
-    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -261,8 +257,8 @@ void main() {
     final storage = MockStorageService();
     when(storage.guidedTarget).thenReturn(null);
 
-    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<StorageService>(storage);
+    registerMockService<SubiquityClient>(MockSubiquityClient());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -289,7 +285,6 @@ void main() {
         buildIdentityModel(useActiveDirectory: true, isValid: true);
     final activeDirectoryModel = buildActiveDirectoryModel(isUsed: true);
 
-    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -312,7 +307,7 @@ void main() {
     verify(activeDirectoryModel.init()).called(1);
   });
 
-  testWidgets('semi-automated install', (tester) async {
+  testWidgets('routes', (tester) async {
     final keyboardModel = buildKeyboardModel();
     final confirmModel = buildConfirmModel();
     final identityModel = buildIdentityModel(isValid: true);
@@ -320,7 +315,6 @@ void main() {
         buildActiveDirectoryModel(isUsed: true, isValid: true);
     final installModel = buildInstallModel(isDone: true);
 
-    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -333,10 +327,10 @@ void main() {
               .overrideWith((_) => activeDirectoryModel),
           installModelProvider.overrideWith((_) => installModel),
         ],
-        child: tester.buildTestWizard(interactiveSections: [
-          'keyboard',
-          'identity',
-          'active-directory',
+        child: tester.buildTestWizard(routes: [
+          Routes.keyboard,
+          Routes.identity,
+          Routes.activeDirectory,
         ]),
       ),
     );
@@ -367,12 +361,13 @@ void main() {
 }
 
 extension on WidgetTester {
-  Widget buildTestWizard({bool? welcome, List<String>? interactiveSections}) {
-    final client = MockSubiquityClient();
-    when(client.monitorStatus()).thenAnswer((_) => const Stream.empty());
-    when(client.getInteractiveSections())
-        .thenAnswer((_) async => interactiveSections);
-    registerMockService<SubiquityClient>(client);
+  Widget buildTestWizard({bool? welcome, List<String>? routes}) {
+    final installer = MockInstallerService();
+    when(installer.hasRoute(any)).thenAnswer((i) {
+      return routes?.contains(i.positionalArguments.single) ?? true;
+    });
+    when(installer.monitorStatus()).thenAnswer((_) => const Stream.empty());
+    registerMockService<InstallerService>(installer);
 
     return InheritedLocale(
       child: Flavor(

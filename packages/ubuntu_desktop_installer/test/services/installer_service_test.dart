@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/services/installer_service.dart';
 void main() {
   test('init interactive', () async {
     final client = MockSubiquityClient();
+    when(client.getInteractiveSections()).thenAnswer((_) async => null);
     when(client.monitorStatus()).thenAnswer(
       (_) => Stream.fromIterable([
         fakeApplicationStatus(ApplicationState.STARTING_UP),
@@ -26,6 +27,7 @@ void main() {
 
   test('init non-interactive', () async {
     final client = MockSubiquityClient();
+    when(client.getInteractiveSections()).thenAnswer((_) async => null);
     when(client.monitorStatus()).thenAnswer(
       (_) => Stream.fromIterable([
         fakeApplicationStatus(ApplicationState.STARTING_UP),
@@ -105,5 +107,33 @@ void main() {
     await expectLater(service.load(), completes);
 
     verify(client.monitorStatus()).called(1);
+  });
+
+  test('interactive sections', () async {
+    final client = MockSubiquityClient();
+    when(client.getInteractiveSections()).thenAnswer((_) async => ['a', 'b']);
+    when(client.monitorStatus()).thenAnswer(
+        (_) => Stream.value(fakeApplicationStatus(ApplicationState.WAITING)));
+
+    final service = InstallerService(client);
+    await service.init();
+
+    expect(service.hasRoute('a'), isTrue);
+    expect(service.hasRoute('b'), isTrue);
+    expect(service.hasRoute('c'), isFalse);
+  });
+
+  test('no interactive sections', () async {
+    final client = MockSubiquityClient();
+    when(client.getInteractiveSections()).thenAnswer((_) async => null);
+    when(client.monitorStatus()).thenAnswer(
+        (_) => Stream.value(fakeApplicationStatus(ApplicationState.WAITING)));
+
+    final service = InstallerService(client);
+    await service.init();
+
+    expect(service.hasRoute('a'), isTrue);
+    expect(service.hasRoute('b'), isTrue);
+    expect(service.hasRoute('c'), isTrue);
   });
 }
