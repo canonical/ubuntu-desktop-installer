@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
@@ -132,7 +133,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.storage);
+    await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(
@@ -146,7 +147,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.storage);
+    await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(
@@ -163,7 +164,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.storage);
+    await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(
@@ -180,8 +181,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.storage);
-    await tester.jumpToWizardRoute(Routes.allocateDiskSpace);
+    await tester.jumpToStorageWizard(Routes.allocateDiskSpace);
     await tester.pumpAndSettle();
 
     await testAllocateDiskSpacePage(
@@ -210,8 +210,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.storage);
-    await tester.jumpToWizardRoute(Routes.installAlongside);
+    await tester.jumpToStorageWizard(Routes.installAlongside);
     await tester.pumpAndSettle();
 
     await testInstallAlongsidePage(
@@ -227,8 +226,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.storage);
-    await tester.jumpToWizardRoute(Routes.selectGuidedStorage);
+    await tester.jumpToStorageWizard(Routes.selectGuidedStorage);
     await tester.pumpAndSettle();
 
     await testSelectGuidedStoragePage(
@@ -241,8 +239,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.storage);
-    await tester.jumpToWizardRoute(Routes.bitlocker);
+    await tester.jumpToStorageWizard(Routes.bitlocker);
     await tester.pumpAndSettle();
 
     await testBitLockerPage(
@@ -255,8 +252,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.storage);
-    await tester.jumpToWizardRoute(Routes.securityKey);
+    await tester.jumpToStorageWizard(Routes.securityKey);
     await tester.pumpAndSettle();
 
     await testSecurityKeyPage(
@@ -273,7 +269,7 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.storage);
+    await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
     await testInstallationTypePage(
@@ -490,5 +486,15 @@ extension on WidgetTester {
     final context = element(find.byType(WizardPage));
     Wizard.of(context).jump(route);
     return pumpAndSettle();
+  }
+
+  Future<void> jumpToStorageWizard([String? subroute]) async {
+    // an installation source must be explicitly selected before calling storage APIs
+    await jumpToWizardRoute(Routes.source);
+    await tapNext();
+    await pumpAndSettle();
+    if (subroute != null) {
+      await jumpToWizardRoute(subroute);
+    }
   }
 }
