@@ -1,6 +1,4 @@
-import 'package:collection/collection.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 
 abstract class AppService {
   Future<void> init();
@@ -18,26 +16,15 @@ class InstallerAppService extends AppService {
     final status =
         await _client.monitorStatus().firstWhere((s) => s?.isLoading == false);
     if (status?.interactive == true) {
-      await _client.getSource().then((value) async {
-        final source = value.sources.firstWhereOrNull((s) => s.isDefault);
-        if (source != null) {
-          await _client.setSource(source.id);
-        }
-
-        // Use the default values for a number of endpoints
-        // for which a UI page isn't implemented yet.
-        await _client.markConfigured([
-          'mirror',
-          'proxy',
-          'ssh',
-          'snaplist',
-          'ubuntu_pro',
-        ]);
-
-        // TODO: de-couple InstallerAppService & StorageService
-        final storage = getService<StorageService>();
-        return storage.init();
-      });
+      // Use the default values for a number of endpoints
+      // for which a UI page isn't implemented yet.
+      await _client.markConfigured([
+        'mirror',
+        'proxy',
+        'ssh',
+        'snaplist',
+        'ubuntu_pro',
+      ]);
     }
   }
 

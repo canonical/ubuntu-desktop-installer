@@ -5,17 +5,10 @@ import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/services/app_service.dart';
-import 'package:ubuntu_desktop_installer/services/storage_service.dart';
-import 'package:ubuntu_service/ubuntu_service.dart';
-
-import '../test_utils.dart';
 
 void main() {
   group('subiquity', () {
     test('init interactive', () async {
-      final storage = MockStorageService();
-      registerMockService<StorageService>(storage);
-
       final client = MockSubiquityClient();
       when(client.monitorStatus()).thenAnswer(
         (_) => Stream.fromIterable([
@@ -25,44 +18,14 @@ void main() {
           fakeApplicationStatus(ApplicationState.WAITING, interactive: true),
         ]),
       );
-      when(client.getSource()).thenAnswer(
-        (_) async => const SourceSelectionAndSetting(
-          currentId: '',
-          sources: [
-            SourceSelection(
-              id: 'minimal',
-              name: '',
-              description: '',
-              isDefault: false,
-              size: 123,
-              variant: '',
-            ),
-            SourceSelection(
-              id: 'normal',
-              name: '',
-              description: '',
-              isDefault: true,
-              size: 456,
-              variant: '',
-            ),
-          ],
-          searchDrivers: false,
-        ),
-      );
 
       final service = InstallerAppService(client);
       await service.init();
 
-      verify(client.getSource()).called(1);
-      verify(client.setSource('normal')).called(1);
       verify(client.markConfigured(any)).called(1);
-      verify(storage.init()).called(1);
     });
 
     test('init non-interactive', () async {
-      final storage = MockStorageService();
-      registerMockService<StorageService>(storage);
-
       final client = MockSubiquityClient();
       when(client.monitorStatus()).thenAnswer(
         (_) => Stream.fromIterable([
@@ -80,7 +43,6 @@ void main() {
       verifyNever(client.getSource());
       verifyNever(client.setSource(any));
       verifyNever(client.markConfigured(any));
-      verifyNever(storage.init());
     });
 
     test('load interactive', () async {
