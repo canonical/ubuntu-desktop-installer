@@ -217,7 +217,7 @@
       "os2": {}
     }
   },
-  "installationTypeNoOSDetected": "Na tomto počítači teraz nebol zistený žiadny operačný systém. Čo si prajete urobiť?",
+  "installationTypeNoOSDetected": "Na tomto počítači sa teraz nezistil žiadny operačný systém. Čo si prajete urobiť?",
   "@installationTypeNoOSDetected": {},
   "installationTypeErase": "Vymazať disk a nainštalovať {DISTRO}",
   "@installationTypeErase": {
