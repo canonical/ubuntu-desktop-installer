@@ -293,7 +293,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get installationTypeMultiOSDetected => 'Na tomto počítači sa v súčasnosti nachádza viacero operačných systémov. Čo si prajete urobiť?';
 
   @override
-  String get installationTypeNoOSDetected => 'Na tomto počítači teraz nebol zistený žiadny operačný systém. Čo si prajete urobiť?';
+  String get installationTypeNoOSDetected => 'Na tomto počítači sa teraz nezistil žiadny operačný systém. Čo si prajete urobiť?';
 
   @override
   String installationTypeErase(Object DISTRO) {
