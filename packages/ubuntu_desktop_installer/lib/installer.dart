@@ -62,12 +62,12 @@ Future<void> runInstallerApp(
   if (liveRun) tryRegisterService(SoundService.new);
   tryRegisterService<ActiveDirectoryService>(
       () => SubiquityActiveDirectoryService(getService<SubiquityClient>()));
-  tryRegisterService<AppService>(
-      () => InstallerAppService(getService<SubiquityClient>()));
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService<IdentityService>(
       () => SubiquityIdentityService(getService<SubiquityClient>()));
+  tryRegisterService<InstallerService>(
+      () => InstallerService(getService<SubiquityClient>()));
   tryRegisterService(JournalService.new);
   tryRegisterService<KeyboardService>(
       () => SubiquityKeyboardService(getService<SubiquityClient>()));
@@ -133,7 +133,7 @@ Future<void> runInstallerApp(
 Future<void> _initInstallerApp(Endpoint endpoint) async {
   getService<SubiquityClient>().open(endpoint);
 
-  await getService<AppService>().init();
+  await getService<InstallerService>().init();
   await getService<DesktopService>().inhibit();
 
   var geo = tryGetService<GeoService>();

@@ -118,8 +118,8 @@ extension on WidgetTester {
     final locale = MockLocaleService();
     when(locale.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
 
-    registerMockService<AppService>(MockAppService());
     registerMockService<DesktopService>(MockDesktopService());
+    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<JournalService>(journal);
     registerMockService<LocaleService>(locale);
     registerMockService<ProductService>(ProductService());

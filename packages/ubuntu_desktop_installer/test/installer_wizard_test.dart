@@ -58,7 +58,7 @@ void main() {
     final localeModel = buildLocaleModel();
     final welcomeModel = buildWelcomeModel(option: Option.tryUbuntu);
 
-    registerMockService<AppService>(MockAppService());
+    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -111,8 +111,8 @@ void main() {
     final activeDirectoryModel = buildActiveDirectoryModel();
     final installModel = buildInstallModel(isDone: true);
 
-    registerMockService<AppService>(MockAppService());
     registerMockService<DesktopService>(MockDesktopService());
+    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -203,7 +203,7 @@ void main() {
     final localeModel = buildLocaleModel();
     final rstModel = buildRstModel(hasRst: true);
 
-    registerMockService<AppService>(MockAppService());
+    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -228,7 +228,7 @@ void main() {
     final sourceModel = buildSourceModel();
     final secureBootModel = buildSecureBootModel(hasSecureBoot: true);
 
-    registerMockService<AppService>(MockAppService());
+    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -261,7 +261,7 @@ void main() {
     final storage = MockStorageService();
     when(storage.guidedTarget).thenReturn(null);
 
-    registerMockService<AppService>(MockAppService());
+    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<StorageService>(storage);
     registerMockService<TelemetryService>(MockTelemetryService());
 
@@ -289,7 +289,7 @@ void main() {
         buildIdentityModel(useActiveDirectory: true, isValid: true);
     final activeDirectoryModel = buildActiveDirectoryModel(isUsed: true);
 
-    registerMockService<AppService>(MockAppService());
+    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -320,7 +320,7 @@ void main() {
         buildActiveDirectoryModel(isUsed: true, isValid: true);
     final installModel = buildInstallModel(isDone: true);
 
-    registerMockService<AppService>(MockAppService());
+    registerMockService<InstallerService>(MockInstallerService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(

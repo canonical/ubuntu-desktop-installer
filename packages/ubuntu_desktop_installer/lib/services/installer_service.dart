@@ -1,20 +1,14 @@
 import 'package:subiquity_client/subiquity_client.dart';
 
-abstract class AppService {
-  Future<void> init();
-  Future<void> load();
-}
-
-class InstallerAppService extends AppService {
-  InstallerAppService(this._client);
+class InstallerService {
+  InstallerService(this._client);
 
   final SubiquityClient _client;
 
-  @override
   Future<void> init() async {
     await _client.setVariant(Variant.DESKTOP);
     final status =
-        await _client.monitorStatus().firstWhere((s) => s?.isLoading == false);
+        await monitorStatus().firstWhere((s) => s?.isLoading == false);
     if (status?.interactive == true) {
       // Use the default values for a number of endpoints
       // for which a UI page isn't implemented yet.
@@ -28,10 +22,11 @@ class InstallerAppService extends AppService {
     }
   }
 
-  @override
   Future<void> load() {
-    return _client.monitorStatus().firstWhere((s) => s?.isLoading == false);
+    return monitorStatus().firstWhere((s) => s?.isLoading == false);
   }
+
+  Stream<ApplicationStatus?> monitorStatus() => _client.monitorStatus();
 }
 
 extension ApplicationStatusX on ApplicationStatus {

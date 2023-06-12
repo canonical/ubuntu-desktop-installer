@@ -77,11 +77,11 @@ extension UbuntuTester on WidgetTester {
 
 @GenerateMocks([
   ActiveDirectoryService,
-  AppService,
   ConfigService,
   DesktopService,
   GeoService,
   IdentityService,
+  InstallerService,
   JournalService,
   KeyboardService,
   LocaleService,
