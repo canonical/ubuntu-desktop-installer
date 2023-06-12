@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:dbus/dbus.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:mockito/annotations.dart';
@@ -28,6 +31,11 @@ void main() {
             name: 'English (US) - English (intl., with AltGr dead keys)',
           ),
         ],
+      ),
+      KeyboardLayout(
+        code: 'de',
+        name: 'German',
+        variants: [KeyboardVariant(code: '', name: 'German')],
       ),
     ],
   );
@@ -82,15 +90,22 @@ void main() {
       when(client.x11Layout).thenReturn('us');
       when(client.x11Variant).thenReturn('altgr-intl');
       when(client.vConsoleKeymapToggle).thenReturn('');
+      when(client.locale).thenReturn({'LANG': 'en_US.UTF-8'});
 
-      final service = XdgKeyboardService(client, MockGSettings());
-      expect(
-        await service.getKeyboard(),
-        equals(const KeyboardSetup(
-          setting: KeyboardSetting(layout: 'us', variant: 'altgr-intl'),
-          layouts: [],
-        )),
+      final fakeAssetBundle = FakeAssetBundle(
+        {
+          'assets/kbds/en.jsonl': '["us", "English (US)", [["", "English (US)"],'
+              '["altgr-intl", "English (US) - English (intl., with AltGr dead keys)"]]]\n'
+              '["de", "German", [["", "German"]]]'
+        },
       );
+
+      final service = XdgKeyboardService(
+        client,
+        MockGSettings(),
+        fakeAssetBundle,
+      );
+      expect(await service.getKeyboard(), equals(keyboardSetup));
     });
 
     test('set keyboard', () async {
@@ -131,4 +146,32 @@ void main() {
       )).called(1);
     });
   });
+}
+
+class FakeAssetBundle extends CachingAssetBundle {
+  FakeAssetBundle(this._fakeAssets);
+
+  final Map<String, String> _fakeAssets;
+
+  @override
+  Future<ByteData> load(String key) async {
+    var bytes = Uint8List(0);
+    final fakes = Map.fromEntries(_fakeAssets.keys.map((e) => MapEntry(e, [
+          {'asset': e, 'dpr': 1.0}
+        ])));
+    switch (key) {
+      case 'AssetManifest.bin': // 3.10.0
+      case 'AssetManifest.smcbin': // 3.10.1+
+        return const StandardMessageCodec().encodeMessage(fakes)!;
+      case 'AssetManifest.json':
+        bytes = Uint8List.fromList(jsonEncode(fakes).codeUnits);
+        break;
+      default:
+        if (_fakeAssets.containsKey(key)) {
+          bytes = utf8.encoder.convert(_fakeAssets[key]!);
+        }
+        break;
+    }
+    return ByteData.view(bytes.buffer);
+  }
 }

@@ -57,12 +57,15 @@ class XdgKeyboardService implements KeyboardService {
   XdgKeyboardService([
     @visibleForTesting XdgLocaleClient? client,
     @visibleForTesting GSettings? inputSourceSettings,
+    @visibleForTesting AssetBundle? assetBundle,
   ])  : _client = client ?? XdgLocaleClient(),
         _inputSourceSettings =
-            inputSourceSettings ?? GSettings('org.gnome.desktop.input-sources');
+            inputSourceSettings ?? GSettings('org.gnome.desktop.input-sources'),
+        _assetBundle = assetBundle ?? rootBundle;
 
   final XdgLocaleClient _client;
   final GSettings _inputSourceSettings;
+  final AssetBundle _assetBundle;
 
   String _langFilename(String lang) => 'assets/kbds/$lang.jsonl';
 
@@ -74,8 +77,7 @@ class XdgKeyboardService implements KeyboardService {
       lang = lang.split('.').first;
     }
 
-    WidgetsFlutterBinding.ensureInitialized();
-    final assets = await rootBundle
+    final assets = await _assetBundle
         .loadString('AssetManifest.json')
         .then((v) => List<String>.from((json.decode(v) as Map).keys));
 
@@ -91,7 +93,7 @@ class XdgKeyboardService implements KeyboardService {
 
   Future<List<KeyboardLayout>> _getLayouts() async {
     final lang = await _getLanguage();
-    final keyboardData = await rootBundle.loadString(_langFilename(lang));
+    final keyboardData = await _assetBundle.loadString(_langFilename(lang));
     return keyboardData
         .split('\n')
         .where((line) => line.isNotEmpty)
