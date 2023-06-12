@@ -64,6 +64,89 @@ class _InstallWizard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final preInstall = <String, WizardRoute>{
+      Routes.locale: WizardRoute(
+        builder: (_) => const LocalePage(),
+        userData: InstallationStep.locale.index,
+        onLoad: (_) => LocalePage.load(context, ref),
+      ),
+      if (welcome == true)
+        Routes.welcome: WizardRoute(
+          builder: (_) => const WelcomePage(),
+          userData: InstallationStep.locale.index,
+          onLoad: (_) => WelcomePage.load(context, ref),
+        ),
+      Routes.rst: WizardRoute(
+        builder: (_) => const RstPage(),
+        onLoad: (_) => RstPage.load(ref),
+      ),
+      Routes.keyboard: WizardRoute(
+        builder: (_) => const KeyboardPage(),
+        userData: InstallationStep.keyboard.index,
+        onLoad: (settings) => KeyboardPage.load(ref),
+      ),
+      Routes.network: WizardRoute(
+        builder: (_) => const NetworkPage(),
+        userData: InstallationStep.network.index,
+        onLoad: (_) => NetworkPage.load(ref),
+      ),
+      Routes.source: WizardRoute(
+        builder: (_) => const SourceWizard(),
+        userData: InstallationStep.source.index,
+        onLoad: (_) => SourcePage.load(ref),
+      ),
+      Routes.secureBoot: WizardRoute(
+        builder: (_) => const SecureBootPage(),
+        userData: InstallationStep.type.index,
+        onLoad: (_) => SecureBootPage.load(ref),
+      ),
+      Routes.storage: WizardRoute(
+        builder: (_) => const StorageWizard(),
+        userData: InstallationStep.storage.index,
+        onLoad: (_) => StorageWizard.load(ref),
+      ),
+    };
+
+    final postInstall = <String, WizardRoute>{
+      Routes.timezone: WizardRoute(
+        builder: (_) => const TimezonePage(),
+        userData: InstallationStep.timezone.index,
+        onLoad: (_) => TimezonePage.load(context, ref),
+      ),
+      Routes.identity: WizardRoute(
+        builder: (_) => const IdentityPage(),
+        userData: InstallationStep.identity.index,
+        onLoad: (_) => IdentityPage.load(ref),
+      ),
+      Routes.activeDirectory: WizardRoute(
+        builder: (_) => const ActiveDirectoryPage(),
+        userData: InstallationStep.identity.index,
+        onLoad: (_) => ActiveDirectoryPage.load(ref),
+      ),
+      Routes.theme: WizardRoute(
+        builder: (_) => const ThemePage(),
+        userData: InstallationStep.theme.index,
+      ),
+    };
+
+    final model = ref.watch(installerModelProvider);
+
+    MapEntry<String, WizardRoute> guardRoute(String name, WizardRoute route) {
+      return MapEntry(
+        name,
+        WizardRoute(
+          builder: route.builder,
+          userData: route.userData,
+          onLoad: (settings) async {
+            return model.hasRoute(name) &&
+                (await route.onLoad?.call(settings) ?? true);
+          },
+          onNext: route.onNext,
+          onBack: route.onBack,
+        ),
+      );
+    }
+
     return Wizard(
       initialRoute: Routes.initial,
       userData: InstallationStep.values.length,
@@ -71,70 +154,13 @@ class _InstallWizard extends ConsumerWidget {
         Routes.loading: WizardRoute(
           builder: (_) => const LoadingPage(),
         ),
-        Routes.locale: WizardRoute(
-          builder: (_) => const LocalePage(),
-          userData: InstallationStep.locale.index,
-          onLoad: (_) => LocalePage.load(context, ref),
-        ),
-        if (welcome == true)
-          Routes.welcome: WizardRoute(
-            builder: (_) => const WelcomePage(),
-            userData: InstallationStep.locale.index,
-            onLoad: (_) => WelcomePage.load(context, ref),
-          ),
-        Routes.rst: WizardRoute(
-          builder: (_) => const RstPage(),
-          onLoad: (_) => RstPage.load(ref),
-        ),
-        Routes.keyboard: WizardRoute(
-          builder: (_) => const KeyboardPage(),
-          userData: InstallationStep.keyboard.index,
-          onLoad: (settings) => KeyboardPage.load(ref),
-        ),
-        Routes.network: WizardRoute(
-          builder: (_) => const NetworkPage(),
-          userData: InstallationStep.network.index,
-          onLoad: (_) => NetworkPage.load(ref),
-        ),
-        Routes.source: WizardRoute(
-          builder: (_) => const SourceWizard(),
-          userData: InstallationStep.source.index,
-          onLoad: (_) => SourcePage.load(ref),
-        ),
-        Routes.secureBoot: WizardRoute(
-          builder: (_) => const SecureBootPage(),
-          userData: InstallationStep.type.index,
-          onLoad: (_) => SecureBootPage.load(ref),
-        ),
-        Routes.storage: WizardRoute(
-          builder: (_) => const StorageWizard(),
-          userData: InstallationStep.storage.index,
-          onLoad: (_) => StorageWizard.load(ref),
-        ),
+        ...preInstall.map(guardRoute),
         Routes.confirm: WizardRoute(
           builder: (_) => const ConfirmPage(),
           userData: InstallationStep.storage.index,
           onLoad: (_) => ConfirmPage.load(ref),
         ),
-        Routes.timezone: WizardRoute(
-          builder: (_) => const TimezonePage(),
-          userData: InstallationStep.timezone.index,
-          onLoad: (_) => TimezonePage.load(context, ref),
-        ),
-        Routes.identity: WizardRoute(
-          builder: (_) => const IdentityPage(),
-          userData: InstallationStep.identity.index,
-          onLoad: (_) => IdentityPage.load(ref),
-        ),
-        Routes.activeDirectory: WizardRoute(
-          builder: (_) => const ActiveDirectoryPage(),
-          userData: InstallationStep.identity.index,
-          onLoad: (_) => ActiveDirectoryPage.load(ref),
-        ),
-        Routes.theme: WizardRoute(
-          builder: (_) => const ThemePage(),
-          userData: InstallationStep.theme.index,
-        ),
+        ...postInstall.map(guardRoute),
         Routes.install: WizardRoute(
           builder: (_) => const InstallPage(),
           onLoad: (_) => InstallPage.load(context, ref),

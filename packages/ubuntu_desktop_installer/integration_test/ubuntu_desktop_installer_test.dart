@@ -292,6 +292,23 @@ void main() {
     await testKeyboardPage(tester);
     await tester.pumpAndSettle();
   });
+
+  testWidgets('semi-automated autoinstall', (tester) async {
+    await app.main(<String>[
+      '--',
+      '--autoinstall=examples/autoinstall-interactive.yaml',
+    ]);
+    await tester.pumpAndSettle();
+
+    await testNetworkPage(tester);
+    await tester.pumpAndSettle();
+
+    await testConfirmPage(tester);
+    await tester.pumpAndSettle();
+
+    await testInstallPage(tester);
+    await tester.pumpAndSettle();
+  });
 }
 
 Future<void> verifyConfig({
