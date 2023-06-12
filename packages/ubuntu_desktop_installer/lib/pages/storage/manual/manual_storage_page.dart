@@ -8,26 +8,25 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'allocate_disk_space_model.dart';
-import 'allocate_disk_space_widgets.dart';
+import 'manual_storage_model.dart';
+import 'manual_storage_widgets.dart';
 import 'storage_selector.dart';
 
-class AllocateDiskSpacePage extends ConsumerStatefulWidget {
-  const AllocateDiskSpacePage({super.key});
+class ManualStoragePage extends ConsumerStatefulWidget {
+  const ManualStoragePage({super.key});
 
   static Future<bool> load(WidgetRef ref) {
     return ref
-        .read(allocateDiskSpaceModelProvider.notifier)
+        .read(manualStorageModelProvider.notifier)
         .init()
         .then((_) => true);
   }
 
   @override
-  ConsumerState<AllocateDiskSpacePage> createState() =>
-      _AllocateDiskSpacePageState();
+  ConsumerState<ManualStoragePage> createState() => _ManualStoragePageState();
 }
 
-class _AllocateDiskSpacePageState extends ConsumerState<AllocateDiskSpacePage> {
+class _ManualStoragePageState extends ConsumerState<ManualStoragePage> {
   final _scrollController = AutoScrollController();
   StreamSubscription? _scrollSubscription;
 
@@ -35,7 +34,7 @@ class _AllocateDiskSpacePageState extends ConsumerState<AllocateDiskSpacePage> {
   void initState() {
     super.initState();
 
-    final model = ref.read(allocateDiskSpaceModelProvider);
+    final model = ref.read(manualStorageModelProvider);
     _scrollSubscription = model.onSelectionChanged.listen((_) {
       _scrollToSelection();
     });
@@ -52,7 +51,7 @@ class _AllocateDiskSpacePageState extends ConsumerState<AllocateDiskSpacePage> {
   void _scrollToSelection() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      final model = ref.read(allocateDiskSpaceModelProvider);
+      final model = ref.read(manualStorageModelProvider);
       if (model.selectedDiskIndex != -1) {
         _scrollController.scrollToIndex(
           Object.hashAll([model.selectedDiskIndex, model.selectedObjectIndex]),
@@ -63,7 +62,7 @@ class _AllocateDiskSpacePageState extends ConsumerState<AllocateDiskSpacePage> {
 
   @override
   Widget build(BuildContext context) {
-    final model = ref.watch(allocateDiskSpaceModelProvider);
+    final model = ref.watch(manualStorageModelProvider);
     final lang = AppLocalizations.of(context);
 
     return WizardPage(

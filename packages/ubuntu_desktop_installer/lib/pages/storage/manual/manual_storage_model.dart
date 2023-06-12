@@ -30,14 +30,14 @@ enum PartitionLocation {
   end,
 }
 
-/// Provider for [AllocateDiskSpaceModel].
-final allocateDiskSpaceModelProvider = ChangeNotifierProvider(
-    (_) => AllocateDiskSpaceModel(getService<StorageService>()));
+/// Provider for [ManualStorageModel].
+final manualStorageModelProvider = ChangeNotifierProvider(
+    (_) => ManualStorageModel(getService<StorageService>()));
 
-/// View model for [AllocateDiskSpacePage].
-class AllocateDiskSpaceModel extends SafeChangeNotifier {
+/// View model for [ManualStoragePage].
+class ManualStorageModel extends SafeChangeNotifier {
   /// Creates a new model with the given disk storage service.
-  AllocateDiskSpaceModel(this._service);
+  ManualStorageModel(this._service);
 
   final StorageService _service;
 

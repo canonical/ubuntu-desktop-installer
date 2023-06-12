@@ -5,19 +5,21 @@ import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
-import 'allocate_disk_space/allocate_disk_space_page.dart';
 import 'bitlocker/bitlocker_page.dart';
 import 'install_alongside/install_alongside_page.dart';
 import 'installation_type/installation_type_page.dart';
+import 'manual/manual_storage_page.dart';
 import 'security_key/security_key_page.dart';
 import 'select_guided_storage/select_guided_storage_page.dart';
+import 'storage_routes.dart';
 
-export 'allocate_disk_space/allocate_disk_space_page.dart';
 export 'bitlocker/bitlocker_page.dart';
 export 'install_alongside/install_alongside_page.dart';
 export 'installation_type/installation_type_page.dart';
+export 'manual/manual_storage_page.dart';
 export 'security_key/security_key_page.dart';
 export 'select_guided_storage/select_guided_storage_page.dart';
+export 'storage_routes.dart';
 
 class StorageWizard extends ConsumerWidget {
   const StorageWizard({super.key});
@@ -43,7 +45,7 @@ class StorageWizard extends ConsumerWidget {
           builder: (_) => const InstallAlongsidePage(),
           userData: InstallationStep.storage.index,
           onLoad: (_) => InstallAlongsidePage.load(ref),
-          onReplace: (_) => Routes.allocateDiskSpace,
+          onReplace: (_) => StorageRoutes.manual,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.selectGuidedStorage: WizardRoute(
@@ -58,10 +60,10 @@ class StorageWizard extends ConsumerWidget {
           onLoad: (_) => SecurityKeyPage.load(ref),
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
-        Routes.allocateDiskSpace: WizardRoute(
-          builder: (_) => const AllocateDiskSpacePage(),
+        StorageRoutes.manual: WizardRoute(
+          builder: (_) => const ManualStoragePage(),
           userData: InstallationStep.storage.index,
-          onLoad: (_) => AllocateDiskSpacePage.load(ref),
+          onLoad: (_) => ManualStoragePage.load(ref),
         ),
       },
     );
@@ -70,7 +72,7 @@ class StorageWizard extends ConsumerWidget {
   String? _nextRoute(dynamic arguments) {
     final storage = getService<StorageService>();
     if (arguments == InstallationType.manual) {
-      return Routes.allocateDiskSpace;
+      return StorageRoutes.manual;
     } else if (storage.guidedTarget == null) {
       if (arguments == InstallationType.bitlocker) {
         return Routes.bitlocker;

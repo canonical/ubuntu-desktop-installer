@@ -231,13 +231,12 @@ Future<void> testSecurityKeyPage(
   await tester.tapNext();
 }
 
-Future<void> testAllocateDiskSpacePage(
+Future<void> testManualStoragePage(
   WidgetTester tester, {
   List<Disk>? storage,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, AllocateDiskSpacePage, (lang) => lang.allocateDiskSpace);
+  await expectPage(tester, ManualStoragePage, (lang) => lang.allocateDiskSpace);
 
   await tester.tapButton(tester.lang.newPartitionTable);
   await tester.pumpAndSettle();

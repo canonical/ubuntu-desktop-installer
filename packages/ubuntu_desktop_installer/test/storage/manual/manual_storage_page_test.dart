@@ -5,14 +5,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/allocate_disk_space_model.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/allocate_disk_space_page.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/allocate_disk_space/storage_selector.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_page.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_selector.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'test_allocate_disk_space.dart';
+import 'test_manual_storage.dart';
 
 final testDisks = <Disk>[
   fakeDisk(
@@ -57,7 +57,7 @@ final testDisks = <Disk>[
 ];
 
 void main() {
-  Widget buildPage(AllocateDiskSpaceModel model) {
+  Widget buildPage(ManualStorageModel model) {
     final udev = MockUdevService();
     final sda = MockUdevDeviceInfo();
     when(sda.fullName).thenReturn('SDA');
@@ -68,13 +68,13 @@ void main() {
     registerMockService<UdevService>(udev);
 
     return ProviderScope(
-      overrides: [allocateDiskSpaceModelProvider.overrideWith((_) => model)],
-      child: const AllocateDiskSpacePage(),
+      overrides: [manualStorageModelProvider.overrideWith((_) => model)],
+      child: const ManualStoragePage(),
     );
   }
 
   testWidgets('list of disks and partitions', (tester) async {
-    final model = buildAllocateDiskSpaceModel(disks: testDisks);
+    final model = buildManualStorageModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     for (final disk in testDisks) {
@@ -90,7 +90,7 @@ void main() {
   });
 
   testWidgets('select storage', (tester) async {
-    final model = buildAllocateDiskSpaceModel(disks: testDisks);
+    final model = buildManualStorageModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.text(testDisks.first.sysname));
@@ -111,7 +111,7 @@ void main() {
   });
 
   testWidgets('cannot add/edit/remove/reformat', (tester) async {
-    final model = buildAllocateDiskSpaceModel(
+    final model = buildManualStorageModel(
         disks: testDisks,
         canAddPartition: false,
         canEditPartition: false,
@@ -138,7 +138,7 @@ void main() {
 
   testWidgets('can add', (tester) async {
     final model =
-        buildAllocateDiskSpaceModel(disks: testDisks, canAddPartition: true);
+        buildManualStorageModel(disks: testDisks, canAddPartition: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final addButton = find.iconButton(Icons.add);
@@ -148,7 +148,7 @@ void main() {
 
   testWidgets('can edit', (tester) async {
     final model =
-        buildAllocateDiskSpaceModel(disks: testDisks, canEditPartition: true);
+        buildManualStorageModel(disks: testDisks, canEditPartition: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final editButton = find.button(tester.lang.changeButtonText);
@@ -159,7 +159,7 @@ void main() {
   testWidgets('can format', (tester) async {
     final disk = testDisks.first;
     final partition = disk.partitions.whereType<Partition>().first;
-    final model = buildAllocateDiskSpaceModel(disks: testDisks);
+    final model = buildManualStorageModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final checkbox = find.byType(YaruCheckbox);
@@ -172,7 +172,7 @@ void main() {
   testWidgets('can remove', (tester) async {
     final disk = testDisks.first;
     final partition = disk.partitions.whereType<Partition>().first;
-    final model = buildAllocateDiskSpaceModel(
+    final model = buildManualStorageModel(
       disks: testDisks,
       selectedDisk: disk,
       selectedPartition: partition,
@@ -190,7 +190,7 @@ void main() {
 
   testWidgets('can reset', (tester) async {
     final disk = testDisks.first;
-    final model = buildAllocateDiskSpaceModel(
+    final model = buildManualStorageModel(
       disks: testDisks,
       selectedDisk: disk,
       canReformatDisk: true,
@@ -207,7 +207,7 @@ void main() {
 
   testWidgets('confirm new partition table', (tester) async {
     final disk = fakeDisk(ptable: 'gpt', path: '/dev/sda');
-    final model = buildAllocateDiskSpaceModel(
+    final model = buildManualStorageModel(
       disks: [disk],
       selectedDisk: disk,
       canReformatDisk: true,
@@ -235,7 +235,7 @@ void main() {
   });
 
   testWidgets('revert', (tester) async {
-    final model = buildAllocateDiskSpaceModel();
+    final model = buildManualStorageModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final revertButton = find.button(tester.lang.revertButtonText);
@@ -247,8 +247,7 @@ void main() {
   });
 
   testWidgets('boot disk', (tester) async {
-    final model =
-        buildAllocateDiskSpaceModel(disks: testDisks, bootDiskIndex: 1);
+    final model = buildManualStorageModel(disks: testDisks, bootDiskIndex: 1);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tap(find.byType(StorageSelector));
@@ -273,7 +272,7 @@ void main() {
   });
 
   testWidgets('set storage', (tester) async {
-    final model = buildAllocateDiskSpaceModel(isValid: true);
+    final model = buildManualStorageModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
@@ -284,7 +283,7 @@ void main() {
   });
 
   testWidgets('invalid input', (tester) async {
-    final model = buildAllocateDiskSpaceModel(isValid: false);
+    final model = buildManualStorageModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final nextButton = find.button(tester.ulang.nextLabel);
@@ -298,7 +297,7 @@ void main() {
       size: 1,
       usable: GapUsable.TOO_MANY_PRIMARY_PARTS,
     );
-    final model = buildAllocateDiskSpaceModel(selectedGap: unusableGap);
+    final model = buildManualStorageModel(selectedGap: unusableGap);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final addButton = find.iconButton(Icons.add);

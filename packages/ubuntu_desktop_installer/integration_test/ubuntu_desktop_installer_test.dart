@@ -172,7 +172,7 @@ void main() {
     await testInstallationTypePage(tester, type: InstallationType.manual);
     await tester.pumpAndSettle();
 
-    await testAllocateDiskSpacePage(tester, storage: storage);
+    await testManualStoragePage(tester, storage: storage);
     await tester.pumpAndSettle();
 
     await testConfirmPage(tester);

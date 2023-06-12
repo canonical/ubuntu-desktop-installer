@@ -7,7 +7,7 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'allocate_disk_space_model.dart';
+import 'manual_storage_model.dart';
 import 'storage_types.dart';
 
 const _kInputFieldWidth = 400.0;
@@ -30,7 +30,7 @@ Future<void> showCreatePartitionDialog(
 
       final lang = AppLocalizations.of(context);
       return Consumer(builder: (context, ref, child) {
-        final model = ref.read(allocateDiskSpaceModelProvider);
+        final model = ref.read(manualStorageModelProvider);
         return AlertDialog(
           title: YaruDialogTitleBar(
             title: Text(lang.partitionCreateTitle),
@@ -139,7 +139,7 @@ Future<void> showEditPartitionDialog(
 
       final lang = AppLocalizations.of(context);
       return Consumer(builder: (context, ref, child) {
-        final model = ref.read(allocateDiskSpaceModelProvider);
+        final model = ref.read(manualStorageModelProvider);
         return AlertDialog(
           title: YaruDialogTitleBar(
             title: Text(lang.partitionEditTitle),
