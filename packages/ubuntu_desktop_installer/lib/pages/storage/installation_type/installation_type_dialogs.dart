@@ -74,12 +74,12 @@ Future<void> showAdvancedFeaturesDialog(
         actions: [
           PushButton.outlined(
             onPressed: () => Navigator.of(context).pop(false),
-            child: Text(lang.cancelButtonText),
+            child: Text(UbuntuLocalizations.of(context).cancelLabel),
           ),
           const SizedBox(width: kButtonBarSpacing),
           PushButton.filled(
             onPressed: () => Navigator.of(context).pop(true),
-            child: Text(lang.okButtonText),
+            child: Text(UbuntuLocalizations.of(context).okLabel),
           ),
         ],
       );

@@ -5,12 +5,16 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_page.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import 'test_installation_type.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = AlertDialog);
+  setUpAll(() {
+    UbuntuTester.context = AlertDialog;
+    UbuntuLangTester.context = AlertDialog;
+  });
 
   testWidgets('select zfs', (tester) async {
     final model = MockInstallationTypeModel();
@@ -38,7 +42,7 @@ void main() {
         .tap(find.checkButton(tester.lang.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tapOk();
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.zfs).called(1);
@@ -71,7 +75,7 @@ void main() {
         tester.lang.installationTypeLVM('Ubuntu')));
     await tester.pump();
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tapOk();
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.lvm).called(1);
@@ -108,7 +112,7 @@ void main() {
         .tap(find.checkButton(tester.lang.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tapOk();
     await result;
 
     verify(model.advancedFeature = AdvancedFeature.lvm).called(1);

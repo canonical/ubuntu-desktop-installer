@@ -13,25 +13,13 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Avbryt';
-
-  @override
   String get changeButtonText => 'Ändra';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Nej';
 
   @override
   String get restartButtonText => 'Starta om';
 
   @override
   String get revertButtonText => 'Återställ';
-
-  @override
-  String get yesButtonText => 'Ja';
 
   @override
   String get quitButtonText => 'Avbryt installation';

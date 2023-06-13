@@ -13,25 +13,13 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Скасувати';
-
-  @override
   String get changeButtonText => 'Змінити';
-
-  @override
-  String get okButtonText => 'Гаразд';
-
-  @override
-  String get noButtonText => 'Ні';
 
   @override
   String get restartButtonText => 'Перезавантажити';
 
   @override
   String get revertButtonText => 'Відбій';
-
-  @override
-  String get yesButtonText => 'Так';
 
   @override
   String get quitButtonText => 'Скасувати встановлення';

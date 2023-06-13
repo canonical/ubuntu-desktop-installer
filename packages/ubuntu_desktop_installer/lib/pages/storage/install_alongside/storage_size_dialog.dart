@@ -121,12 +121,12 @@ class StorageSizeDialog extends StatelessWidget {
       actions: [
         PushButton.outlined(
           onPressed: () => Navigator.of(context).pop(null),
-          child: Text(lang.cancelButtonText),
+          child: Text(UbuntuLocalizations.of(context).cancelLabel),
         ),
         const SizedBox(width: kButtonBarSpacing),
         PushButton.filled(
           onPressed: canAccept ? () => Navigator.of(context).pop(size) : null,
-          child: Text(lang.okButtonText),
+          child: Text(UbuntuLocalizations.of(context).okLabel),
         ),
       ],
     );

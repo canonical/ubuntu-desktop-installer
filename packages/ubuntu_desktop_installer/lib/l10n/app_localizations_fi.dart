@@ -13,25 +13,13 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Peru';
-
-  @override
   String get changeButtonText => 'Muuta';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Ei';
 
   @override
   String get restartButtonText => 'Käynnistä uudelleen';
 
   @override
   String get revertButtonText => 'Kumoa';
-
-  @override
-  String get yesButtonText => 'Kyllä';
 
   @override
   String get quitButtonText => 'Lopeta asennus';

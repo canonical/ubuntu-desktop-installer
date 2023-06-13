@@ -13,25 +13,13 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancelar';
-
-  @override
   String get changeButtonText => 'Cambiar';
-
-  @override
-  String get okButtonText => 'Aceptar';
-
-  @override
-  String get noButtonText => 'No';
 
   @override
   String get restartButtonText => 'Reiniciar';
 
   @override
   String get revertButtonText => 'Revertir';
-
-  @override
-  String get yesButtonText => 'Sí';
 
   @override
   String get quitButtonText => 'Salir de la instalación';

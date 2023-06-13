@@ -13,25 +13,13 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Mégse';
-
-  @override
   String get changeButtonText => 'Változtatás';
-
-  @override
-  String get okButtonText => 'Rendben';
-
-  @override
-  String get noButtonText => 'Nem';
 
   @override
   String get restartButtonText => 'Újraindítás';
 
   @override
   String get revertButtonText => 'Visszaállítás';
-
-  @override
-  String get yesButtonText => 'Igen';
 
   @override
   String get quitButtonText => 'Kilépés a telepítésből';

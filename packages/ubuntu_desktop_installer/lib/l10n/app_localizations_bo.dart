@@ -13,25 +13,13 @@ class AppLocalizationsBo extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'ཕྱིར་འཐེན།';
-
-  @override
   String get changeButtonText => 'Change';
-
-  @override
-  String get okButtonText => 'འགྲིག';
-
-  @override
-  String get noButtonText => 'No';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
   String get revertButtonText => 'སླར་གསོ';
-
-  @override
-  String get yesButtonText => 'Yes';
 
   @override
   String get quitButtonText => 'Quit installation';

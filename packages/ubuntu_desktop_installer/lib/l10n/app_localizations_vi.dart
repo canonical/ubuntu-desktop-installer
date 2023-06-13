@@ -13,25 +13,13 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Hủy bỏ';
-
-  @override
   String get changeButtonText => 'Thay đổi';
-
-  @override
-  String get okButtonText => 'Đống ý';
-
-  @override
-  String get noButtonText => 'Không';
 
   @override
   String get restartButtonText => 'Khởi động lại';
 
   @override
   String get revertButtonText => 'Revert';
-
-  @override
-  String get yesButtonText => 'Có';
 
   @override
   String get quitButtonText => 'Quit installation';

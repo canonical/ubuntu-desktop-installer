@@ -13,25 +13,13 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Abbrechen';
-
-  @override
   String get changeButtonText => 'Ändern';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Nein';
 
   @override
   String get restartButtonText => 'Neustart';
 
   @override
   String get revertButtonText => 'Zurücksetzen';
-
-  @override
-  String get yesButtonText => 'Ja';
 
   @override
   String get quitButtonText => 'Installation beenden';

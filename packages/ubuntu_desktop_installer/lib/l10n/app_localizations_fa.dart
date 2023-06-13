@@ -13,25 +13,13 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'لغو';
-
-  @override
   String get changeButtonText => 'تغییر';
-
-  @override
-  String get okButtonText => 'قبول';
-
-  @override
-  String get noButtonText => 'نه';
 
   @override
   String get restartButtonText => 'آغاز دوباره';
 
   @override
   String get revertButtonText => 'بازگردانی';
-
-  @override
-  String get yesButtonText => 'بله';
 
   @override
   String get quitButtonText => 'خروج از نصب';

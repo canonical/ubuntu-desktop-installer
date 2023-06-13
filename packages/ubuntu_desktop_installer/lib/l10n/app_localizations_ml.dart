@@ -13,25 +13,13 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'റദ്ദാക്കുക';
-
-  @override
   String get changeButtonText => 'മാറ്റുക';
-
-  @override
-  String get okButtonText => 'തുടരുക';
-
-  @override
-  String get noButtonText => 'ഇല്ല';
 
   @override
   String get restartButtonText => 'പുനരാരംഭിക്കുക';
 
   @override
   String get revertButtonText => 'തിരിച്ചെടുക്കുക';
-
-  @override
-  String get yesButtonText => 'അതെ';
 
   @override
   String get quitButtonText => 'Quit installation';

@@ -13,25 +13,13 @@ class AppLocalizationsSr extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Одустани';
-
-  @override
   String get changeButtonText => 'Измени';
-
-  @override
-  String get okButtonText => 'ОК';
-
-  @override
-  String get noButtonText => 'Не';
 
   @override
   String get restartButtonText => 'Рестартуј';
 
   @override
   String get revertButtonText => 'Поврати';
-
-  @override
-  String get yesButtonText => 'Да';
 
   @override
   String get quitButtonText => 'Напусти инсталацију';
