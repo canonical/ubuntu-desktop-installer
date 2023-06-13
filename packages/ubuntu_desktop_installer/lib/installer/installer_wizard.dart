@@ -135,9 +135,8 @@ class _InstallWizard extends ConsumerWidget {
       ),
     };
 
-    final model = ref.watch(installerModelProvider);
-
     MapEntry<String, WizardRoute> guardRoute(String name, WizardRoute route) {
+      final model = ref.read(installerModelProvider);
       return MapEntry(
         name,
         WizardRoute(
