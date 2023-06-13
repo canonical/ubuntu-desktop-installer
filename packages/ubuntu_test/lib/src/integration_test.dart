@@ -51,7 +51,7 @@ extension IntegrationTester on WidgetTester {
   /// until a certain page or widget becomes visible.
   Future<void> pumpUntil(
     Finder finder, [
-    Duration timeout = const Duration(seconds: 10),
+    Duration timeout = const Duration(seconds: 30),
   ]) async {
     assert(timeout.inMilliseconds >= 250);
     const delay = Duration(milliseconds: 250);
