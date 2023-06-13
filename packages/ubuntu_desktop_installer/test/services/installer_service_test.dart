@@ -136,4 +136,14 @@ void main() {
     expect(service.hasRoute('b'), isTrue);
     expect(service.hasRoute('c'), isTrue);
   });
+
+  test('start installation', () async {
+    final client = MockSubiquityClient();
+    when(client.confirm('/dev/tty1')).thenAnswer((_) async {});
+
+    final service = InstallerService(client);
+    await service.start();
+
+    verify(client.confirm('/dev/tty1')).called(1);
+  });
 }
