@@ -16,6 +16,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_riverpod: ^2.3.6
+  gsettings: ^0.2.7
   handy_window: ^0.3.0
   intl: ^0.18.0
   meta: ^1.7.0
@@ -42,6 +43,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git
       path: packages/ubuntu_wizard
+  xdg_locale: ^0.0.1
   yaru: ^0.7.0
   yaru_icons: ^1.0.0
   yaru_widgets: ^2.4.0
