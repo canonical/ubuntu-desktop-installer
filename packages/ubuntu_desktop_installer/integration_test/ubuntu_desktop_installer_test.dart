@@ -38,7 +38,7 @@ void main() {
       username: 'user',
     );
 
-    await app.main(<String>[]);
+    await tester.runApp(() => app.main(<String>[]));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester, language: language);
@@ -90,7 +90,7 @@ void main() {
       username: 'user',
     );
 
-    await app.main(<String>[]);
+    await tester.runApp(() => app.main(<String>[]));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
@@ -153,7 +153,7 @@ void main() {
       ),
     ];
 
-    await app.main(<String>[]);
+    await tester.runApp(() => app.main(<String>[]));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
@@ -197,11 +197,11 @@ void main() {
   });
 
   testWidgets('alongside windows', (tester) async {
-    await app.main(<String>[
-      '--machine-config=examples/win10-along-ubuntu.json',
-      '--',
-      '--bootloader=uefi',
-    ]);
+    await tester.runApp(() => app.main(<String>[
+          '--machine-config=examples/win10-along-ubuntu.json',
+          '--',
+          '--bootloader=uefi',
+        ]));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
@@ -253,10 +253,10 @@ void main() {
   });
 
   testWidgets('turn off bitlocker', (tester) async {
-    await app.main(<String>[
-      '--machine-config',
-      'examples/win10.json',
-    ]);
+    await tester.runApp(() => app.main(<String>[
+          '--machine-config',
+          'examples/win10.json',
+        ]));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
@@ -279,7 +279,7 @@ void main() {
   });
 
   testWidgets('welcome', (tester) async {
-    await app.main(<String>['--welcome']);
+    await tester.runApp(() => app.main(<String>['--welcome']));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
@@ -293,10 +293,10 @@ void main() {
   });
 
   testWidgets('semi-automated autoinstall', (tester) async {
-    await app.main(<String>[
-      '--',
-      '--autoinstall=examples/autoinstall-interactive.yaml',
-    ]);
+    await tester.runApp(() => app.main(<String>[
+          '--',
+          '--autoinstall=examples/autoinstall-interactive.yaml',
+        ]));
     await tester.pumpAndSettle();
 
     await testNetworkPage(tester);

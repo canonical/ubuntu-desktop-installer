@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -73,5 +74,14 @@ extension IntegrationTester on WidgetTester {
             '\nWARNING: A call to pumpUntil() with finder "$finder" did not complete within the specified timeout $timeout.\n${StackTrace.current}');
       },
     );
+  }
+
+  /// A helper function that restores FlutterError.onError after calling the
+  /// specified [entryPoint] to avoid that tests fail and hang due to uncaught
+  /// errors.
+  Future<void> runApp(FutureOr<void> Function() entryPoint) async {
+    final onError = FlutterError.onError;
+    await entryPoint();
+    FlutterError.onError = onError;
   }
 }
