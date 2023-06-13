@@ -1,20 +1,17 @@
+import 'package:dartx/dartx.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
-abstract class AppService {
-  Future<void> init();
-  Future<void> load();
-}
+class InstallerService {
+  InstallerService(this._client, {List<String>? routes})
+      : _routes = routes?.map((r) => r.removePrefix('/')).toList();
 
-class InstallerAppService extends AppService {
-  InstallerAppService(this._client);
-
+  List<String>? _routes;
   final SubiquityClient _client;
 
-  @override
   Future<void> init() async {
     await _client.setVariant(Variant.DESKTOP);
     final status =
-        await _client.monitorStatus().firstWhere((s) => s?.isLoading == false);
+        await monitorStatus().firstWhere((s) => s?.isLoading == false);
     if (status?.interactive == true) {
       // Use the default values for a number of endpoints
       // for which a UI page isn't implemented yet.
@@ -26,11 +23,17 @@ class InstallerAppService extends AppService {
         'ubuntu_pro',
       ]);
     }
+    _routes ??= await _client.getInteractiveSections();
   }
 
-  @override
   Future<void> load() {
-    return _client.monitorStatus().firstWhere((s) => s?.isLoading == false);
+    return monitorStatus().firstWhere((s) => s?.isLoading == false);
+  }
+
+  Stream<ApplicationStatus?> monitorStatus() => _client.monitorStatus();
+
+  bool hasRoute(String route) {
+    return _routes?.contains(route.removePrefix('/')) ?? true;
   }
 }
 
