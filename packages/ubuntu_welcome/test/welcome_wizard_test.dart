@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
+import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
@@ -15,6 +16,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 // TODO: move to shared packages
 import '../../ubuntu_desktop_installer/test/identity/test_identity.dart';
+import '../../ubuntu_desktop_installer/test/keyboard/test_keyboard.dart';
 import '../../ubuntu_desktop_installer/test/locale/test_locale.dart';
 import '../../ubuntu_desktop_installer/test/timezone/test_timezone.dart';
 
@@ -25,6 +27,7 @@ void main() {
 
   testWidgets('welcome', (tester) async {
     final localeModel = buildLocaleModel();
+    final keyboardModel = buildKeyboardModel();
     final timezoneModel = buildTimezoneModel();
     final identityModel = buildIdentityModel(isValid: true);
 
@@ -32,6 +35,7 @@ void main() {
       ProviderScope(
         overrides: [
           localeModelProvider.overrideWith((_) => localeModel),
+          keyboardModelProvider.overrideWith((_) => keyboardModel),
           timezoneModelProvider.overrideWith((_) => timezoneModel),
           identityModelProvider.overrideWith((_) => identityModel),
         ],
@@ -43,6 +47,11 @@ void main() {
 
     await tester.pumpAndSettle();
     expect(find.byType(LocalePage), findsOneWidget);
+
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    expect(find.byType(KeyboardPage), findsOneWidget);
+    verify(keyboardModel.init()).called(1);
 
     await tester.tapNext();
     await tester.pumpAndSettle();
