@@ -30,6 +30,8 @@ class InstallerService {
     return monitorStatus().firstWhere((s) => s?.isLoading == false);
   }
 
+  Future<void> start() => _client.confirm('/dev/tty1');
+
   Stream<ApplicationStatus?> monitorStatus() => _client.monitorStatus();
 
   bool hasRoute(String route) {

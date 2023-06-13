@@ -3,6 +3,9 @@ import 'dart:math' as math;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
+export 'package:subiquity_client/subiquity_client.dart'
+    show Disk, DiskX, Partition;
+
 /// @internal
 final log = Logger('storage');
 

@@ -531,6 +531,15 @@ class MockInstallerService extends _i1.Mock implements _i16.InstallerService {
         returnValueForMissingStub: _i8.Future<void>.value(),
       ) as _i8.Future<void>);
   @override
+  _i8.Future<void> start() => (super.noSuchMethod(
+        Invocation.method(
+          #start,
+          [],
+        ),
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
+  @override
   _i8.Stream<_i2.ApplicationStatus?> monitorStatus() => (super.noSuchMethod(
         Invocation.method(
           #monitorStatus,

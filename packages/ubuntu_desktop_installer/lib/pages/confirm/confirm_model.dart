@@ -1,21 +1,18 @@
 import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
-
 final confirmModelProvider = ChangeNotifierProvider((_) =>
-    ConfirmModel(getService<SubiquityClient>(), getService<StorageService>()));
+    ConfirmModel(getService<InstallerService>(), getService<StorageService>()));
 
 /// View model for [ConfirmPage].
 class ConfirmModel extends SafeChangeNotifier {
-  /// Creates a model with the given client and service.
-  ConfirmModel(this._client, this._service);
+  /// Creates a model with the given installer and storage services.
+  ConfirmModel(this._installer, this._storage);
 
-  final SubiquityClient _client;
-  final StorageService _service;
+  final InstallerService _installer;
+  final StorageService _storage;
   List<Disk>? _disks;
   Map<String, List<Partition>>? _partitions;
   Map<String, List<Partition>>? _originals;
@@ -34,11 +31,11 @@ class ConfirmModel extends SafeChangeNotifier {
 
   /// Initializes the model.
   Future<void> init() async {
-    if (_service.guidedTarget != null) {
-      await _service.setGuidedStorage();
+    if (_storage.guidedTarget != null) {
+      await _storage.setGuidedStorage();
     }
-    await _service.getStorage().then(_updateDisks);
-    _originals = await _service.getOriginalStorage().then((disks) =>
+    await _storage.getStorage().then(_updateDisks);
+    _originals = await _storage.getOriginalStorage().then((disks) =>
         Map.fromEntries(disks.map((d) => MapEntry(
             d.sysname, d.partitions.whereType<Partition>().toList()))));
     notifyListeners();
@@ -46,8 +43,8 @@ class ConfirmModel extends SafeChangeNotifier {
 
   /// Starts the installation process.
   Future<void> startInstallation() async {
-    _service.securityKey = null; // no longer needed
-    await _client.confirm('/dev/tty1');
+    _storage.securityKey = null; // no longer needed
+    await _installer.start();
   }
 
   void _updateDisks(List<Disk> disks) {
