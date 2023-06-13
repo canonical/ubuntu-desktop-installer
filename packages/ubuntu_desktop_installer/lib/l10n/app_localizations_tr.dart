@@ -13,25 +13,13 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'İptal et';
-
-  @override
   String get changeButtonText => 'Değiştir';
-
-  @override
-  String get okButtonText => 'Tamam';
-
-  @override
-  String get noButtonText => 'Hayır';
 
   @override
   String get restartButtonText => 'Yeniden başlat';
 
   @override
   String get revertButtonText => 'Geri al';
-
-  @override
-  String get yesButtonText => 'Evet';
 
   @override
   String get quitButtonText => 'Kurulumdan Çık';

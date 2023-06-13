@@ -13,25 +13,13 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Avbryt';
-
-  @override
   String get changeButtonText => 'Endre';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Nei';
 
   @override
   String get restartButtonText => 'Start på nytt';
 
   @override
   String get revertButtonText => 'Tilbakefør';
-
-  @override
-  String get yesButtonText => 'Ja';
 
   @override
   String get quitButtonText => 'Avslutt installasjon';

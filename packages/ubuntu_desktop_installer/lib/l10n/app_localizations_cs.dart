@@ -13,25 +13,13 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Storno';
-
-  @override
   String get changeButtonText => 'Změnit';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Ne';
 
   @override
   String get restartButtonText => 'Restartovat';
 
   @override
   String get revertButtonText => 'Vrátit zpět';
-
-  @override
-  String get yesButtonText => 'Ano';
 
   @override
   String get quitButtonText => 'Opustit instalaci';

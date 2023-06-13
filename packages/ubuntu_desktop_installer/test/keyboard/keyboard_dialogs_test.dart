@@ -4,12 +4,15 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:yaru_test/yaru_test.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 
 import 'test_keyboard.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = DetectKeyboardView);
+  setUpAll(() {
+    UbuntuTester.context = DetectKeyboardView;
+    UbuntuLangTester.context = DetectKeyboardView;
+  });
 
   testWidgets('detect layout', (tester) async {
     final service = MockKeyboardService();
@@ -54,13 +57,13 @@ void main() {
 
     // b is present
     expect(find.text('b'), findsOneWidget);
-    await tester.tap(find.button(tester.lang.yesButtonText));
+    await tester.tapYes();
     await tester.pump();
     verify(service.getKeyboardStep('50')).called(1);
 
     // c is not present
     expect(find.text('c'), findsOneWidget);
-    await tester.tap(find.button(tester.lang.noButtonText));
+    await tester.tapNo();
     await tester.pump();
     verify(service.getKeyboardStep('60')).called(1);
 

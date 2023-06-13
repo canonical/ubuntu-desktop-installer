@@ -13,25 +13,13 @@ class AppLocalizationsPa extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'ਰੱਦ ਕਰੋ';
-
-  @override
   String get changeButtonText => 'Change';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'ਨਹੀਂ';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
   String get revertButtonText => 'Revert';
-
-  @override
-  String get yesButtonText => 'ਹਾਂ';
 
   @override
   String get quitButtonText => 'Quit installation';

@@ -13,25 +13,13 @@ class AppLocalizationsUg extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
-
-  @override
   String get changeButtonText => 'Change';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'ياق';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
   String get revertButtonText => 'ئەسلىگە قايتۇر';
-
-  @override
-  String get yesButtonText => 'ھەئە';
 
   @override
   String get quitButtonText => 'Quit installation';

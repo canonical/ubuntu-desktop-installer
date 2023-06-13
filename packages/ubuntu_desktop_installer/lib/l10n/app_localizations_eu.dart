@@ -13,25 +13,13 @@ class AppLocalizationsEu extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Utzi';
-
-  @override
   String get changeButtonText => 'Aldatu';
-
-  @override
-  String get okButtonText => 'Ondo';
-
-  @override
-  String get noButtonText => 'Ez';
 
   @override
   String get restartButtonText => 'Berrabiarazi';
 
   @override
   String get revertButtonText => 'Berrezarri';
-
-  @override
-  String get yesButtonText => 'Bai';
 
   @override
   String get quitButtonText => 'Irten instalaziotik';

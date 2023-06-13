@@ -249,29 +249,11 @@ abstract class AppLocalizations {
   /// **'Install {RELEASE}'**
   String windowTitle(Object RELEASE);
 
-  /// No description provided for @cancelButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'Cancel'**
-  String get cancelButtonText;
-
   /// No description provided for @changeButtonText.
   ///
   /// In en, this message translates to:
   /// **'Change'**
   String get changeButtonText;
-
-  /// No description provided for @okButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'OK'**
-  String get okButtonText;
-
-  /// No description provided for @noButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'No'**
-  String get noButtonText;
 
   /// No description provided for @restartButtonText.
   ///
@@ -284,12 +266,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Revert'**
   String get revertButtonText;
-
-  /// No description provided for @yesButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'Yes'**
-  String get yesButtonText;
 
   /// No description provided for @quitButtonText.
   ///

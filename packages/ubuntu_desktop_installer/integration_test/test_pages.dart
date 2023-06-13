@@ -193,7 +193,7 @@ Future<void> testInstallationTypePage(
       await takeScreenshot(tester, screenshot);
     }
 
-    await tester.tapButton(tester.lang.okButtonText);
+    await tester.tapOk();
   }
 
   await tester.pumpAndSettle();
@@ -271,7 +271,7 @@ Future<void> testManualStoragePage(
         await takeScreenshot(tester, '$screenshot-${partition.sysname}');
       }
 
-      await tester.tapButton(tester.lang.okButtonText);
+      await tester.tapOk();
       await tester.pumpAndSettle();
     }
     await tester.pumpAndSettle();
@@ -321,7 +321,7 @@ Future<void> testInstallAlongsidePage(
       await takeScreenshot(tester, '$screenshot-${entry.key.split(' ').first}');
     }
 
-    await tester.tapButton(tester.lang.okButtonText);
+    await tester.tapOk();
     await tester.pumpAndSettle();
   }
 

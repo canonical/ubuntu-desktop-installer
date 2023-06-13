@@ -13,25 +13,13 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'გაუქმება';
-
-  @override
   String get changeButtonText => 'შეცვლა';
-
-  @override
-  String get okButtonText => 'დიახ';
-
-  @override
-  String get noButtonText => 'არა';
 
   @override
   String get restartButtonText => 'გადატვირთვა';
 
   @override
   String get revertButtonText => 'აღდგენა';
-
-  @override
-  String get yesButtonText => 'დიახ';
 
   @override
   String get quitButtonText => 'დაყენებიდან გასვლა';

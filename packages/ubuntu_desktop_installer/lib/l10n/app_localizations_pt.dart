@@ -13,25 +13,13 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancelar';
-
-  @override
   String get changeButtonText => 'Alterar';
-
-  @override
-  String get okButtonText => 'Aceitar';
-
-  @override
-  String get noButtonText => 'Não';
 
   @override
   String get restartButtonText => 'Reiniciar';
 
   @override
   String get revertButtonText => 'Reverter';
-
-  @override
-  String get yesButtonText => 'Sim';
 
   @override
   String get quitButtonText => 'Sair da instalação';
@@ -943,25 +931,13 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get cancelButtonText => 'Cancelar';
-
-  @override
   String get changeButtonText => 'Alterar';
-
-  @override
-  String get okButtonText => 'Ok';
-
-  @override
-  String get noButtonText => 'Não';
 
   @override
   String get restartButtonText => 'Reiniciar';
 
   @override
   String get revertButtonText => 'Desfazer';
-
-  @override
-  String get yesButtonText => 'Sim';
 
   @override
   String get quitButtonText => 'Sair da instalação';

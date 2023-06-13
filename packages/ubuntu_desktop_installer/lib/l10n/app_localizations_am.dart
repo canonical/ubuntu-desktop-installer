@@ -13,25 +13,13 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'ተወው';
-
-  @override
   String get changeButtonText => 'ለውጥ';
-
-  @override
-  String get okButtonText => 'እሺ';
-
-  @override
-  String get noButtonText => 'አይ';
 
   @override
   String get restartButtonText => 'እንደገና ጀምር';
 
   @override
   String get revertButtonText => 'ወደ ነበረበት መመለስ';
-
-  @override
-  String get yesButtonText => 'አዎ';
 
   @override
   String get quitButtonText => 'Quit installation';

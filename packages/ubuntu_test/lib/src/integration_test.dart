@@ -2,9 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yaru_test/yaru_test.dart';
-
-import 'widget_testers.dart';
 
 /// Waits until the specified file has been written on the disk, as in, it
 /// exists and is not empty.
@@ -49,15 +46,6 @@ Future<void> verifyGoldenFile(String fileName, String goldenName) async {
 
 /// Helpers for interacting with widgets.
 extension IntegrationTester on WidgetTester {
-  /// Taps a "Previous" button.
-  Future<void> tapPrevious() => tapButton(ulang.previousLabel);
-
-  /// Taps a "Next" button.
-  Future<void> tapNext() => tapButton(ulang.nextLabel);
-
-  /// Taps a "Done" button.
-  Future<void> tapDone() => tapButton(ulang.doneLabel);
-
   /// Pumps until the specified [finder] is satisfied. This can be used to wait
   /// until a certain page or widget becomes visible.
   Future<void> pumpUntil(

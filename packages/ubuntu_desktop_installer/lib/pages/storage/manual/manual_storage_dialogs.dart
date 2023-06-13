@@ -85,7 +85,7 @@ Future<void> showCreatePartitionDialog(
           actions: [
             PushButton.outlined(
               onPressed: Navigator.of(context).pop,
-              child: Text(lang.cancelButtonText),
+              child: Text(UbuntuLocalizations.of(context).cancelLabel),
             ),
             const SizedBox(width: kButtonBarSpacing),
             ValueListenableBuilder(
@@ -105,7 +105,7 @@ Future<void> showCreatePartitionDialog(
                             Navigator.of(context).pop();
                           }
                         : null,
-                    child: Text(lang.okButtonText),
+                    child: Text(UbuntuLocalizations.of(context).okLabel),
                   );
                 }),
           ],
@@ -210,7 +210,7 @@ Future<void> showEditPartitionDialog(
           actions: [
             PushButton.outlined(
               onPressed: Navigator.of(context).pop,
-              child: Text(lang.cancelButtonText),
+              child: Text(UbuntuLocalizations.of(context).cancelLabel),
             ),
             const SizedBox(width: kButtonBarSpacing),
             ValueListenableBuilder(
@@ -231,7 +231,7 @@ Future<void> showEditPartitionDialog(
                             Navigator.of(context).pop();
                           }
                         : null,
-                    child: Text(lang.okButtonText),
+                    child: Text(UbuntuLocalizations.of(context).okLabel),
                   );
                 }),
           ],

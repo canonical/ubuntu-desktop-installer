@@ -13,25 +13,13 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Zrušiť';
-
-  @override
   String get changeButtonText => 'Zmeniť';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Nie';
 
   @override
   String get restartButtonText => 'Reštartovať';
 
   @override
   String get revertButtonText => 'Vrátiť späť';
-
-  @override
-  String get yesButtonText => 'Áno';
 
   @override
   String get quitButtonText => 'Opustiť inštaláciu';

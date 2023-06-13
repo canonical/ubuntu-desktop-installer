@@ -13,25 +13,13 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'ரத்து செய்';
-
-  @override
   String get changeButtonText => 'மாற்று';
-
-  @override
-  String get okButtonText => 'சரி';
-
-  @override
-  String get noButtonText => 'இல்லை';
 
   @override
   String get restartButtonText => 'மீண்டும் இயக்கு';
 
   @override
   String get revertButtonText => 'மீட்டல்';
-
-  @override
-  String get yesButtonText => 'ஆம்';
 
   @override
   String get quitButtonText => 'Quit installation';

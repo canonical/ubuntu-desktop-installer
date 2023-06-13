@@ -56,7 +56,7 @@ Future<StepResult?> showDetectKeyboardDialog(BuildContext context) async {
                 visible: step is StepKeyPresent,
                 child: PushButton.filled(
                   onPressed: step is StepKeyPresent ? detector.no : null,
-                  child: Text(lang.noButtonText),
+                  child: Text(UbuntuLocalizations.of(context).noLabel),
                 ),
               ),
               const SizedBox(width: kButtonBarSpacing),
@@ -67,7 +67,7 @@ Future<StepResult?> showDetectKeyboardDialog(BuildContext context) async {
                 visible: step is StepKeyPresent,
                 child: PushButton.filled(
                   onPressed: step is StepKeyPresent ? detector.yes : null,
-                  child: Text(lang.yesButtonText),
+                  child: Text(UbuntuLocalizations.of(context).yesLabel),
                 ),
               ),
             ],

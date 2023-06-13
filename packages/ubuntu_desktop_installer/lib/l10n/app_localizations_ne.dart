@@ -13,25 +13,13 @@ class AppLocalizationsNe extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'रद्द गर्नुहोस्';
-
-  @override
   String get changeButtonText => 'बदल्नुहोस्';
-
-  @override
-  String get okButtonText => 'हुन्छ';
-
-  @override
-  String get noButtonText => 'नगर्नुहोस्';
 
   @override
   String get restartButtonText => 'फेरि सुरु गर्नुहोस्';
 
   @override
   String get revertButtonText => 'फिर्ता गर्नुहोस्';
-
-  @override
-  String get yesButtonText => 'हो';
 
   @override
   String get quitButtonText => 'Quit installation';
