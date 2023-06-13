@@ -27,6 +27,7 @@ Future<void> main(List<String> args) async {
   tryRegisterService<ConfigService>(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<LocaleService>(XdgLocaleService.new);
   tryRegisterService<TimezoneService>(XdgTimezoneService.new);
+  tryRegisterService<KeyboardService>(XdgKeyboardService.new);
   tryRegisterService<IdentityService>(XdgIdentityService.new);
   tryRegisterService<NetworkService>(NetworkService.new);
 
