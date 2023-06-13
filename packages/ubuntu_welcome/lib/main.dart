@@ -12,7 +12,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'services/identity_service.dart';
+import 'services.dart';
 import 'welcome_wizard.dart';
 
 Future<void> main(List<String> args) async {
