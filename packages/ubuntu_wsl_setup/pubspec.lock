@@ -747,10 +747,10 @@ packages:
     dependency: "direct main"
     description:
       name: ubuntu_localizations
-      sha256: "1544cbe239cfb876368cf1dfeea4aa83d1c250b08b137f974b0911204c4b83ae"
+      sha256: ae880b714088b7bfbf219923eeac5e08287b14bb01a6be7b3f0d0d7f1afc8587
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.0"
+    version: "0.2.1"
   ubuntu_logger:
     dependency: "direct main"
     description:
@@ -763,10 +763,10 @@ packages:
     dependency: "direct main"
     description:
       name: ubuntu_service
-      sha256: "79b81c146c9fb1aedefa4a6f63724405de3aba0f525afe39b72c513df04a8c13"
+      sha256: f90582494cddd4c7325637930497f38598a7ec567f4f86f88fe1ac40a53832a1
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.2"
+    version: "0.2.3"
   ubuntu_test:
     dependency: "direct dev"
     description:
