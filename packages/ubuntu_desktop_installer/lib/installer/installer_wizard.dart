@@ -117,7 +117,10 @@ class _InstallWizard extends ConsumerWidget {
     final postInstall = <String, WizardRoute>{
       Routes.timezone: WizardRoute(
         builder: (_) => const TimezonePage(),
-        userData: WizardRouteData(step: InstallationStep.timezone.index),
+        userData: WizardRouteData(
+          step: InstallationStep.timezone.index,
+          hasPrevious: false,
+        ),
         onLoad: (_) => TimezonePage.load(context, ref),
       ),
       Routes.identity: WizardRoute(
@@ -158,8 +161,11 @@ class _InstallWizard extends ConsumerWidget {
       userData: WizardData(totalSteps: InstallationStep.values.length),
       routes: <String, WizardRoute>{
         Routes.loading: WizardRoute(
-          builder: (_) => const LoadingPage(),
-        ),
+            builder: (_) => const LoadingPage(),
+            userData: const WizardRouteData(
+              hasPrevious: false,
+              hasNext: false,
+            )),
         ...preInstall.map(guardRoute),
         Routes.confirm: WizardRoute(
           builder: (_) => const ConfirmPage(),
@@ -200,8 +206,11 @@ class _AutoinstallWizard extends StatelessWidget {
     return Wizard(
       routes: <String, WizardRoute>{
         Routes.loading: WizardRoute(
-          builder: (_) => const LoadingPage(),
-        ),
+            builder: (_) => const LoadingPage(),
+            userData: const WizardRouteData(
+              hasPrevious: false,
+              hasNext: false,
+            )),
         Routes.confirm: WizardRoute(
           builder: (_) => const ConfirmPage(),
           onLoad: (_) => status?.isInstalling != true,

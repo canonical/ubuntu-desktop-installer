@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -34,11 +35,11 @@ class WizardButton extends StatefulWidget {
   static Widget previous(
     BuildContext context, {
     bool? visible,
-    bool? enabled,
     WizardCallback? onBack,
     bool root = false,
   }) {
     final wizard = Wizard.maybeOf(context, root: root);
+    final routeData = wizard?.routeData as WizardRouteData?;
     return AnimatedBuilder(
       animation: wizard?.controller ?? _noAnimation,
       builder: (context, child) => WizardButton(
@@ -46,7 +47,7 @@ class WizardButton extends StatefulWidget {
         visible: visible,
         flat: true,
         enabled: wizard?.isLoading != true &&
-            (enabled ?? wizard?.hasPrevious ?? false),
+            (routeData?.hasPrevious ?? wizard?.hasPrevious ?? false),
         onActivated: onBack,
         execute: wizard?.back,
       ),
@@ -67,6 +68,7 @@ class WizardButton extends StatefulWidget {
     bool root = false,
   }) {
     final wizard = Wizard.maybeOf(context, root: root);
+    final routeData = wizard?.routeData as WizardRouteData?;
     return AnimatedBuilder(
       animation: wizard?.controller ?? _noAnimation,
       builder: (context, child) => WizardButton(
@@ -75,7 +77,8 @@ class WizardButton extends StatefulWidget {
                 ? UbuntuLocalizations.of(context).doneLabel
                 : UbuntuLocalizations.of(context).nextLabel),
         visible: visible,
-        enabled: wizard?.isLoading != true && (enabled ?? true),
+        enabled: wizard?.isLoading != true &&
+            (enabled ?? routeData?.hasNext ?? true),
         loading: wizard?.isLoading ?? false,
         flat: flat,
         highlighted: highlighted,
