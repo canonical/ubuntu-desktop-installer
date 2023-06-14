@@ -9,10 +9,7 @@ import 'package:ubuntu_test/ubuntu_test.dart';
 import 'test_keyboard.dart';
 
 void main() {
-  setUpAll(() {
-    UbuntuTester.context = DetectKeyboardView;
-    UbuntuLangTester.context = DetectKeyboardView;
-  });
+  setUpAll(() => InstallerTester.context = DetectKeyboardView);
 
   testWidgets('detect layout', (tester) async {
     final service = MockKeyboardService();

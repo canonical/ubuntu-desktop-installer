@@ -10,7 +10,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'test_network.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = Column);
+  setUpAll(() => InstallerTester.context = Column);
 
   testWidgets('select ethernet mode', (tester) async {
     ConnectMode? mode;

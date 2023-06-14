@@ -18,10 +18,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'test_manual_storage.dart';
 
 void main() {
-  setUpAll(() {
-    UbuntuTester.context = AlertDialog;
-    UbuntuLangTester.context = AlertDialog;
-  });
+  setUpAll(() => InstallerTester.context = AlertDialog);
 
   testWidgets('create partition', (tester) async {
     final disk = fakeDisk();

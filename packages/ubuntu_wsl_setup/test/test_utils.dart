@@ -1,8 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 
-export 'package:ubuntu_test/ubuntu_test.dart' show UbuntuLangTester;
-
 /// An extension on [WidgetTester] that exposes a [lang] property.
 ///
 /// The additional [lang] property returns the [AppLocalizations] instance
@@ -31,5 +29,10 @@ extension LangTester on WidgetTester {
   AppLocalizations get lang {
     final view = element(find.byType(type));
     return AppLocalizations.of(view);
+  }
+
+  UbuntuLocalizations get ulang {
+    final widget = element(find.byType(type));
+    return UbuntuLocalizations.of(widget);
   }
 }

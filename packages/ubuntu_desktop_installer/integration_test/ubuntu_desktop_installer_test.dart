@@ -320,7 +320,7 @@ Future<void> verifyConfig({
   bool? useEncryption,
 }) async {
   final path = await getSubiquityLogFile('autoinstall-user-data');
-  await waitForFile(path);
+  await expectLater(path, existsLater);
 
   final yaml = loadYaml(File(path).readAsStringSync());
 

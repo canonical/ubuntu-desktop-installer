@@ -10,7 +10,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import '../test_utils.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = Scaffold);
+  setUpAll(() => InstallerTester.context = Scaffold);
 
   testWidgets('inherited slides', (tester) async {
     slide1(_) => const Text('slide1');
