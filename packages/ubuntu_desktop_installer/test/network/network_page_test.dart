@@ -6,6 +6,7 @@ import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_view.dart';
 import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -95,9 +96,7 @@ void main() {
     verify(model.init());
     verifyNever(model.cleanup());
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    await tester.tap(nextButton);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     verify(model.cleanup()).called(1);
@@ -162,9 +161,7 @@ void main() {
     verify(model.init()).called(1);
     verifyNever(model.cleanup());
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    await tester.tap(nextButton);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     verify(model.markConfigured()).called(1);

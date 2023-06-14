@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
@@ -167,18 +168,14 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    expect(nextButton, isEnabled);
+    expect(find.button(tester.ulang.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    expect(nextButton, isDisabled);
+    expect(find.button(tester.ulang.nextLabel), isDisabled);
   });
 
   // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
@@ -207,10 +204,7 @@ void main() {
     verify(model.loadProfileSetup()).called(1);
     verifyNever(model.saveProfileSetup());
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.saveProfileSetup()).called(1);
   });
 

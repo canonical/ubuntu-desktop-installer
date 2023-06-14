@@ -123,10 +123,7 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.save()).called(1);
 
     verify(model.getJoinResult()).called(1);
@@ -140,10 +137,7 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.save()).called(1);
 
     verify(model.getJoinResult()).called(1);
