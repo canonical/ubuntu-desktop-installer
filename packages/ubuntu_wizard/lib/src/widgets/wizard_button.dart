@@ -47,7 +47,7 @@ class WizardButton extends StatefulWidget {
         visible: visible,
         flat: true,
         enabled: wizard?.isLoading != true &&
-            (routeData?.canGoBack ?? wizard?.hasPrevious ?? false),
+            (routeData?.hasPrevious ?? wizard?.hasPrevious ?? false),
         onActivated: onBack,
         execute: wizard?.back,
       ),
@@ -78,7 +78,7 @@ class WizardButton extends StatefulWidget {
                 : UbuntuLocalizations.of(context).nextLabel),
         visible: visible,
         enabled: wizard?.isLoading != true &&
-            (enabled ?? routeData?.canGoNext ?? true),
+            (enabled ?? routeData?.hasNext ?? true),
         loading: wizard?.isLoading ?? false,
         flat: flat,
         highlighted: highlighted,

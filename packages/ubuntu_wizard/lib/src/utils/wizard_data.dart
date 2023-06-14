@@ -6,10 +6,10 @@ class WizardData {
 class WizardRouteData {
   const WizardRouteData({
     this.step,
-    this.canGoBack,
-    this.canGoNext,
+    this.hasPrevious,
+    this.hasNext,
   });
   final int? step;
-  final bool? canGoBack;
-  final bool? canGoNext;
+  final bool? hasPrevious;
+  final bool? hasNext;
 }

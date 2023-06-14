@@ -119,7 +119,7 @@ class _InstallWizard extends ConsumerWidget {
         builder: (_) => const TimezonePage(),
         userData: WizardRouteData(
           step: InstallationStep.timezone.index,
-          canGoBack: false,
+          hasPrevious: false,
         ),
         onLoad: (_) => TimezonePage.load(context, ref),
       ),
@@ -163,8 +163,8 @@ class _InstallWizard extends ConsumerWidget {
         Routes.loading: WizardRoute(
             builder: (_) => const LoadingPage(),
             userData: const WizardRouteData(
-              canGoBack: false,
-              canGoNext: false,
+              hasPrevious: false,
+              hasNext: false,
             )),
         ...preInstall.map(guardRoute),
         Routes.confirm: WizardRoute(
@@ -208,8 +208,8 @@ class _AutoinstallWizard extends StatelessWidget {
         Routes.loading: WizardRoute(
             builder: (_) => const LoadingPage(),
             userData: const WizardRouteData(
-              canGoBack: false,
-              canGoNext: false,
+              hasPrevious: false,
+              hasNext: false,
             )),
         Routes.confirm: WizardRoute(
           builder: (_) => const ConfirmPage(),
