@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/src/utils/wizard_data.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/widgets.dart';
 
@@ -25,8 +26,10 @@ class _WizardBarState extends State<WizardBar> {
   @override
   Widget build(BuildContext context) {
     final wizardScope = Wizard.maybeOf(context);
-    final totalSteps = (wizardScope?.wizardData as int?);
-    final currentStep = (wizardScope?.routeData as int?);
+    final wizardData = wizardScope?.wizardData as WizardData?;
+    final wizardRouteData = wizardScope?.routeData as WizardRouteData?;
+    final totalSteps = wizardData?.totalSteps;
+    final currentStep = wizardRouteData?.step;
 
     return Hero(
       tag: 'wizard-bottom-bar', // keep in place during page transitions

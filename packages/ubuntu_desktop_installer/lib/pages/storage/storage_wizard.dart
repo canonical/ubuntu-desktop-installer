@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'bitlocker/bitlocker_page.dart';
@@ -31,11 +32,11 @@ class StorageWizard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Wizard(
-      userData: InstallationStep.values.length,
+      userData: WizardData(totalSteps: InstallationStep.values.length),
       routes: {
         Routes.installationType: WizardRoute(
           builder: (_) => const InstallationTypePage(),
-          userData: InstallationStep.type.index,
+          userData: WizardRouteData(step: InstallationStep.type.index),
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.bitlocker: WizardRoute(
@@ -43,26 +44,26 @@ class StorageWizard extends ConsumerWidget {
         ),
         Routes.installAlongside: WizardRoute(
           builder: (_) => const InstallAlongsidePage(),
-          userData: InstallationStep.storage.index,
+          userData: WizardRouteData(step: InstallationStep.storage.index),
           onLoad: (_) => InstallAlongsidePage.load(ref),
           onReplace: (_) => StorageRoutes.manual,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.selectGuidedStorage: WizardRoute(
           builder: (_) => const SelectGuidedStoragePage(),
-          userData: InstallationStep.storage.index,
+          userData: WizardRouteData(step: InstallationStep.storage.index),
           onLoad: (_) => SelectGuidedStoragePage.load(ref),
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.securityKey: WizardRoute(
           builder: (_) => const SecurityKeyPage(),
-          userData: InstallationStep.storage.index,
+          userData: WizardRouteData(step: InstallationStep.storage.index),
           onLoad: (_) => SecurityKeyPage.load(ref),
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         StorageRoutes.manual: WizardRoute(
           builder: (_) => const ManualStoragePage(),
-          userData: InstallationStep.storage.index,
+          userData: WizardRouteData(step: InstallationStep.storage.index),
           onLoad: (_) => ManualStoragePage.load(ref),
         ),
       },
