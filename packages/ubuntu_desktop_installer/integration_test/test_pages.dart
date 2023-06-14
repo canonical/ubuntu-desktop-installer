@@ -557,6 +557,8 @@ Future<void> expectPage(
   String Function(AppLocalizations lang) title,
 ) async {
   await tester.pumpUntil(find.byType(page));
+  await tester.pump(kThemeAnimationDuration);
+
   expect(find.byType(page), findsOneWidget);
   expect(find.widgetWithText(AppBar, title(tester.lang)), findsOneWidget);
 }

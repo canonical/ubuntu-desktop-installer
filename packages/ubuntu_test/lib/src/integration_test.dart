@@ -53,27 +53,20 @@ extension IntegrationTester on WidgetTester {
     Finder finder, [
     Duration timeout = const Duration(seconds: 30),
   ]) async {
-    assert(timeout.inMilliseconds >= 250);
-    const delay = Duration(milliseconds: 250);
+    assert(binding is LiveTestWidgetsFlutterBinding);
 
-    if (any(finder)) return;
+    final sw = Stopwatch()..start();
+    final stackTrace = StackTrace.current;
 
-    Future? future;
-    return Future.doWhile(() async {
+    await Future.doWhile(() async {
       if (any(finder)) return false;
-      future = pump(delay);
-      await future;
-      return true;
-    }).timeout(
-      timeout,
-      onTimeout: () async {
-        // Ensures the `pump(delay)` future is awaited even on timeout to prevent
-        // `FlutterGuardedError`s.
-        await future;
-        debugPrint(
-            '\nWARNING: A call to pumpUntil() with finder "$finder" did not complete within the specified timeout $timeout.\n${StackTrace.current}');
-      },
-    );
+      await pump();
+      return sw.elapsed < timeout;
+    });
+
+    if (sw.elapsed >= timeout) {
+      fail('IntegrationTester.pumpUntil() timed out ($timeout).\n$stackTrace');
+    }
   }
 
   /// A helper function that restores FlutterError.onError after calling the
