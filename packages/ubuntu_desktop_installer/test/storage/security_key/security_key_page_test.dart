@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/security_key/security_key_page.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import 'test_security_key.dart';
@@ -68,10 +69,7 @@ void main() {
     final model = buildSecurityKeyModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.saveSecurityKey()).called(1);
   });
 }

@@ -6,6 +6,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import 'test_installation_type.dart';
@@ -342,11 +343,9 @@ void main() {
     final model = buildInstallationTypeModel(hasStorage: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    expect(nextButton, isDisabled);
+    expect(find.button(tester.ulang.nextLabel), isDisabled);
 
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verifyNever(model.save());
   });
 
@@ -354,10 +353,7 @@ void main() {
     final model = buildInstallationTypeModel(hasStorage: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.save()).called(1);
   });
 }
