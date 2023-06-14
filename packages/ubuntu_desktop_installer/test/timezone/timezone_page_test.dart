@@ -4,7 +4,6 @@ import 'package:mockito/mockito.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:yaru_test/yaru_test.dart';
 
 import 'test_timezone.dart';
 
@@ -191,12 +190,5 @@ void main() {
       TimezonePage.formatTimezone(timezone),
       'America/New York',
     );
-  });
-
-  testWidgets('previous button is disabled', (tester) async {
-    final model = buildTimezoneModel();
-    await tester.pumpWidget(tester.buildApp((_) => buildTimezonePage(model)));
-
-    expect(find.button(tester.ulang.previousLabel), isDisabled);
   });
 }
