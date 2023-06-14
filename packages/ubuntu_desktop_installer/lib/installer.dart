@@ -46,9 +46,9 @@ Future<void> runInstallerApp(
         hide: true);
     addLoggingOptions(parser);
   })!;
-  setupLogger(options, path: '/var/log/installer');
-
   final liveRun = options['dry-run'] != true;
+  setupLogger(options, path: liveRun ? '/var/log/installer' : null);
+
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final subiquityPath = await getSubiquityPath()
       .then((dir) => Directory(dir).existsSync() ? dir : null);

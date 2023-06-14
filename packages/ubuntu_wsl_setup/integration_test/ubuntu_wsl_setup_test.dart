@@ -20,7 +20,10 @@ void main() {
 
   // Select language and setup profile
   testWidgets('basic setup', (tester) async {
-    await app.main(<String>['--initial-route', Routes.selectLanguage]);
+    await tester.runApp(() => app.main(<String>[
+          '--initial-route',
+          Routes.selectLanguage,
+        ]));
     await tester.pumpAndSettle();
 
     await testSelectYourLanguagePage(tester, language: 'Français');
@@ -43,7 +46,7 @@ void main() {
 
   // enter all WSLConfigurationBase values
   testWidgets('advanced setup', (tester) async {
-    await app.main(<String>['--reconfigure']);
+    await tester.runApp(() => app.main(<String>['--reconfigure']));
     await tester.pumpAndSettle();
 
     // NOTE: opposites of the default values to force writing the config
@@ -69,7 +72,7 @@ void main() {
 
   // enter all WSLConfigurationAdvanced values
   testWidgets('reconfiguration', (tester) async {
-    await app.main(<String>['--reconfigure']);
+    await tester.runApp(() => app.main(<String>['--reconfigure']));
     await tester.pumpAndSettle();
 
     await testAdvancedSetupPage(tester);

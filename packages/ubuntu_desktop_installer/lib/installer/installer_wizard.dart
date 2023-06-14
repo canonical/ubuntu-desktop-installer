@@ -40,9 +40,15 @@ class _InstallerWizardState extends ConsumerState<InstallerWizard> {
     super.initState();
 
     final model = ref.read(installerModelProvider);
-    model
-      ..addListener(() => YaruWindow.setClosable(context, !model.isInstalling))
-      ..init();
+    model.init();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    final model = ref.read(installerModelProvider);
+    YaruWindow.setClosable(context, !model.isInstalling);
   }
 
   @override
@@ -129,9 +135,8 @@ class _InstallWizard extends ConsumerWidget {
       ),
     };
 
-    final model = ref.watch(installerModelProvider);
-
     MapEntry<String, WizardRoute> guardRoute(String name, WizardRoute route) {
+      final model = ref.read(installerModelProvider);
       return MapEntry(
         name,
         WizardRoute(
