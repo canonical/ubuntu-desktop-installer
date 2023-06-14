@@ -770,10 +770,11 @@ packages:
   ubuntu_test:
     dependency: "direct dev"
     description:
-      path: "../ubuntu_test"
-      relative: true
-    source: path
-    version: "0.0.0"
+      name: ubuntu_test
+      sha256: c028125ca2045bcb8f5cfecc603e7089014ccfd4d76e3e6e0c589a13ab648feb
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0-beta.4"
   ubuntu_widgets:
     dependency: "direct main"
     description:

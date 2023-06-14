@@ -11,7 +11,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'test_network.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = WifiView);
+  setUpAll(() => InstallerTester.context = WifiView);
 
   testWidgets('device and access point tiles', (tester) async {
     final device1 = MockWifiDevice();

@@ -43,7 +43,6 @@ dev_dependencies:
     sdk: flutter
   mockito: 5.4.2
   plugin_platform_interface: ^2.1.2
-  ubuntu_test:
-    path: ../ubuntu_test
+  ubuntu_test: ^0.1.0-0
   url_launcher_platform_interface: ^2.0.5
   yaru_test: ^0.1.0

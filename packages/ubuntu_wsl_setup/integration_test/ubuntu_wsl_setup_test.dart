@@ -38,9 +38,11 @@ void main() {
 
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyGoldenFile(
-      await getSubiquityStateFile('WSLLocale'),
-      'integration_test/goldens/basic-setup/WSLLocale',
+    final stateFile = await getSubiquityStateFile('WSLLocale');
+    await expectLater(stateFile, existsLater);
+    expect(
+      stateFile,
+      matchesTextFile('integration_test/goldens/basic-setup/WSLLocale'),
     );
   });
 
@@ -64,9 +66,11 @@ void main() {
     await testConfigurationUIPage(tester);
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyGoldenFile(
-      await getSubiquityConfigFile('wsl.conf'),
-      'integration_test/goldens/advanced-setup/wsl.conf',
+    final configFile = await getSubiquityConfigFile('wsl.conf');
+    await expectLater(configFile, existsLater);
+    expect(
+      configFile,
+      matchesTextFile('integration_test/goldens/advanced-setup/wsl.conf'),
     );
   });
 
@@ -91,9 +95,11 @@ void main() {
 
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyGoldenFile(
-      await getSubiquityConfigFile('wsl.conf'),
-      'integration_test/goldens/reconfiguration/wsl.conf',
+    final configFile = await getSubiquityConfigFile('wsl.conf');
+    await expectLater(configFile, existsLater);
+    expect(
+      configFile,
+      matchesTextFile('integration_test/goldens/reconfiguration/wsl.conf'),
     );
   });
 }

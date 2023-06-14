@@ -1,6 +1,3 @@
-# melos_managed_dependency_overrides: ubuntu_test
 dependency_overrides:
-  ubuntu_test:
-    path: ../ubuntu_test
   ubuntu_wizard:
     path: ../ubuntu_wizard

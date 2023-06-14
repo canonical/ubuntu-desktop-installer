@@ -11,10 +11,7 @@ import 'package:yaru_test/yaru_test.dart';
 import '../../test_utils.dart';
 
 void main() {
-  setUpAll(() {
-    UbuntuTester.context = AlertDialog;
-    UbuntuLangTester.context = AlertDialog;
-  });
+  setUpAll(() => InstallerTester.context = AlertDialog);
 
   testWidgets('resize storage', (tester) async {
     await tester.pumpWidget(tester.buildApp((_) => const Scaffold()));

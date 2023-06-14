@@ -11,10 +11,7 @@ import 'package:yaru_test/yaru_test.dart';
 import 'test_installation_type.dart';
 
 void main() {
-  setUpAll(() {
-    UbuntuTester.context = AlertDialog;
-    UbuntuLangTester.context = AlertDialog;
-  });
+  setUpAll(() => InstallerTester.context = AlertDialog);
 
   testWidgets('select zfs', (tester) async {
     final model = MockInstallationTypeModel();
