@@ -133,6 +133,9 @@ class WizardButton extends StatefulWidget {
 }
 
 class _WizardButtonState extends State<WizardButton> {
+  bool activating = false;
+  bool get loading => activating || (widget.loading ?? false);
+
   @override
   Widget build(BuildContext context) {
     if (widget.visible == false) {
@@ -141,15 +144,17 @@ class _WizardButtonState extends State<WizardButton> {
 
     final maybeActivate = widget.enabled ?? true
         ? () async {
+            setState(() => activating = true);
             await widget.onActivated?.call();
+            setState(() => activating = false);
             if (mounted) widget.execute?.call();
           }
         : null;
 
     return FutureBuilder(
-      key: ValueKey(widget.loading),
-      future: widget.loading == true
-          ? Future.delayed(_kLoadingDelay, () => widget.loading)
+      key: ValueKey(loading),
+      future: loading == true
+          ? Future.delayed(_kLoadingDelay, () => loading)
           : null,
       builder: (context, snapshot) {
         final child = snapshot.data == true
