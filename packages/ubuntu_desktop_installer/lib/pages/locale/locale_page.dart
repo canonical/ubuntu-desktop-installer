@@ -75,9 +75,9 @@ class LocalePage extends ConsumerWidget {
         trailing: [
           WizardButton.next(
             context,
-            onNext: () {
+            onNext: () async {
               final locale = model.locale(model.selectedLanguageIndex);
-              model.applyLocale(locale);
+              await model.applyLocale(locale);
               tryGetService<TelemetryService>()
                   ?.addMetric('Language', locale.languageCode);
             },
