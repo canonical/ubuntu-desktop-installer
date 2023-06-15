@@ -33,7 +33,7 @@ void main() {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [fakeDisk()]);
     when(service.getGuidedStorage()).thenAnswer((_) async =>
-        fakeGuidedStorageResponse(possible: [fakeGuidedStorageTargetResize()]));
+        fakeGuidedStorageResponse(targets: [fakeGuidedStorageTargetResize()]));
 
     final model = GuidedResizeModel(service, MockProductService());
     expect(model.selectedIndex, isNull);
@@ -57,7 +57,7 @@ void main() {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(possible: [resize1, resize2]));
+        (_) async => fakeGuidedStorageResponse(targets: [resize1, resize2]));
 
     final model = GuidedResizeModel(service, MockProductService());
     await model.init();
@@ -114,7 +114,7 @@ void main() {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
+        (_) async => fakeGuidedStorageResponse(targets: [storage1, storage2]));
 
     final model = GuidedResizeModel(service, MockProductService());
     expect(model.storageCount, isZero);
@@ -155,7 +155,7 @@ void main() {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
+        (_) async => fakeGuidedStorageResponse(targets: [storage1, storage2]));
 
     final model = GuidedResizeModel(service, MockProductService());
     expect(model.storageCount, isZero);
@@ -207,7 +207,7 @@ void main() {
       minimum: 111,
       recommended: 122,
       maximum: 133,
-      capabilities: [GuidedCapability.DIRECT],
+      allowed: [GuidedCapability.DIRECT],
     );
 
     const storage2 = GuidedStorageTargetResize(
@@ -217,13 +217,13 @@ void main() {
       minimum: 211,
       recommended: 222,
       maximum: 233,
-      capabilities: [GuidedCapability.DIRECT],
+      allowed: [GuidedCapability.DIRECT],
     );
 
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
+        (_) async => fakeGuidedStorageResponse(targets: [storage1, storage2]));
 
     final model = GuidedResizeModel(service, MockProductService());
     await model.init();

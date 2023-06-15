@@ -9,15 +9,14 @@ import 'test_guided_reformat.dart';
 void main() {
   final testDisks = <Disk>[fakeDisk(id: 'a'), fakeDisk(id: 'b')];
   final testTargets = testDisks
-      .map((disk) =>
-          GuidedStorageTargetReformat(diskId: disk.id, capabilities: []))
+      .map((disk) => GuidedStorageTargetReformat(diskId: disk.id))
       .toList();
 
   test('load guided storage', () async {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(possible: testTargets));
+        (_) async => fakeGuidedStorageResponse(targets: testTargets));
 
     final model = GuidedReformatModel(service);
     await model.loadGuidedStorage();
@@ -30,7 +29,7 @@ void main() {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(possible: testTargets));
+        (_) async => fakeGuidedStorageResponse(targets: testTargets));
 
     final model = GuidedReformatModel(service);
     await model.loadGuidedStorage();
@@ -54,15 +53,13 @@ void main() {
     const sdb1 = Partition(number: 1, size: 3);
     final sdb = fakeDisk(id: 'sdb', partitions: [sdb1]);
 
-    const storage0 =
-        GuidedStorageTargetReformat(diskId: 'sda', capabilities: []);
-    const storage1 =
-        GuidedStorageTargetReformat(diskId: 'sdb', capabilities: []);
+    const storage0 = GuidedStorageTargetReformat(diskId: 'sda');
+    const storage1 = GuidedStorageTargetReformat(diskId: 'sdb');
 
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(possible: [storage0, storage1]));
+        (_) async => fakeGuidedStorageResponse(targets: [storage0, storage1]));
 
     final model = GuidedReformatModel(service);
     expect(model.getStorage(0), isNull);
@@ -84,7 +81,7 @@ void main() {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => testDisks);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(possible: testTargets));
+        (_) async => fakeGuidedStorageResponse(targets: testTargets));
 
     final model = GuidedReformatModel(service);
     expect(model.selectedIndex, isZero);
