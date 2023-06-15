@@ -53,7 +53,7 @@ void main() {
     await testSourcePage(tester, sourceId: kMinimalSourceId);
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(tester, type: InstallationType.erase);
+    await testStoragePage(tester, type: StorageType.erase);
     await tester.pumpAndSettle();
 
     await testConfirmPage(tester);
@@ -105,9 +105,9 @@ void main() {
     await testSourcePage(tester);
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(
+    await testStoragePage(
       tester,
-      type: InstallationType.erase,
+      type: StorageType.erase,
       advancedFeature: AdvancedFeature.lvm,
       useEncryption: true,
     );
@@ -168,7 +168,7 @@ void main() {
     await testSourcePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(tester, type: InstallationType.manual);
+    await testStoragePage(tester, type: StorageType.manual);
     await tester.pumpAndSettle();
 
     await testManualStoragePage(tester, storage: storage);
@@ -216,7 +216,7 @@ void main() {
     await testSourcePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(tester, type: InstallationType.alongside);
+    await testStoragePage(tester, type: StorageType.alongside);
     await tester.pumpAndSettle();
 
     await testGuidedResizePage(tester, sizes: {'sda3 (ntfs)': 40000});
@@ -271,7 +271,7 @@ void main() {
     await testSourcePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(tester, type: InstallationType.bitlocker);
+    await testStoragePage(tester, type: StorageType.bitlocker);
     await tester.pumpAndSettle();
 
     await testBitLockerPage(tester);

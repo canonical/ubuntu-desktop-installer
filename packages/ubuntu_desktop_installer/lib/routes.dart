@@ -12,9 +12,6 @@ abstract class Routes {
   static const theme = '/theme';
   static const identity = '/identity';
   static const install = '/install';
-  static const bitlocker = '/bitlocker';
-  static const securityKey = '/security-key';
-  static const installationType = '/installation-type';
   static const timezone = '/timezone';
   static const notEnoughDiskSpace = '/not-enough-disk-space';
   static const activeDirectory = '/active-directory';

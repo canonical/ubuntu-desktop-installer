@@ -4,8 +4,8 @@ import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-/// Available installation types.
-enum InstallationType {
+/// Available storage types.
+enum StorageType {
   /// Erase entire disk and perform guided partitioning.
   erase,
 
@@ -31,18 +31,17 @@ enum AdvancedFeature {
   zfs,
 }
 
-/// Provider for [InstallationTypeModel].
-final installationTypeModelProvider =
-    ChangeNotifierProvider((_) => InstallationTypeModel(
-          getService<StorageService>(),
-          tryGetService<TelemetryService>(),
-          getService<ProductService>(),
-        ));
+/// Provider for [StorageModel].
+final storageModelProvider = ChangeNotifierProvider((_) => StorageModel(
+      getService<StorageService>(),
+      tryGetService<TelemetryService>(),
+      getService<ProductService>(),
+    ));
 
-/// View model for [InstallationTypePage].
-class InstallationTypeModel extends SafeChangeNotifier {
+/// View model for [StoragePage].
+class StorageModel extends SafeChangeNotifier {
   /// Creates a new model with the given client and service.
-  InstallationTypeModel(
+  StorageModel(
     this._diskService,
     this._telemetryService,
     this._productService,
@@ -52,17 +51,17 @@ class InstallationTypeModel extends SafeChangeNotifier {
   final TelemetryService? _telemetryService;
   final ProductService _productService;
 
-  InstallationType? _installationType;
+  StorageType? _type;
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
   var _hasBitLocker = false;
   List<GuidedStorageTarget>? _storages;
 
-  /// The selected installation type.
-  InstallationType? get installationType => _installationType;
-  set installationType(InstallationType? type) {
-    if (_installationType == type) return;
-    _installationType = type;
+  /// The selected storage type.
+  StorageType? get type => _type;
+  set type(StorageType? type) {
+    if (_type == type) return;
+    _type = type;
     notifyListeners();
   }
 
@@ -115,15 +114,15 @@ class InstallationTypeModel extends SafeChangeNotifier {
 
   /// Whether the filesystem wizard is at the end.
   bool get isDone {
-    switch (_installationType) {
-      case InstallationType.erase:
+    switch (_type) {
+      case StorageType.erase:
         return !_diskService.useEncryption &&
             _storages?.whereType<GuidedStorageTargetReformat>().length == 1;
-      case InstallationType.alongside:
+      case StorageType.alongside:
         return !_diskService.useEncryption &&
             _storages?.any((t) => t is GuidedStorageTargetUseGap) == true;
-      case InstallationType.manual:
-      case InstallationType.bitlocker:
+      case StorageType.manual:
+      case StorageType.bitlocker:
       case null:
         return false;
     }
@@ -133,9 +132,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   Future<void> init() async {
     await _diskService.init();
     await _diskService.getGuidedStorage().then((r) => _storages = r.possible);
-    _installationType ??= canInstallAlongside
-        ? InstallationType.alongside
-        : InstallationType.erase;
+    _type ??= canInstallAlongside ? StorageType.alongside : StorageType.erase;
     _advancedFeature =
         _diskService.useLvm ? AdvancedFeature.lvm : AdvancedFeature.none;
     _encryption = _diskService.useEncryption;
@@ -151,12 +148,12 @@ class InstallationTypeModel extends SafeChangeNotifier {
   /// - when installing alongside an existing OS and there's a large enough gap
   ///
   /// For all other cases, the user is prompted to select or resize a target.
-  GuidedStorageTarget? preselectTarget(InstallationType type) {
+  GuidedStorageTarget? preselectTarget(StorageType type) {
     switch (type) {
-      case InstallationType.erase:
+      case StorageType.erase:
         return _storages?.whereType<GuidedStorageTargetReformat>().singleOrNull;
 
-      case InstallationType.alongside:
+      case StorageType.alongside:
         return _storages
             ?.whereType<GuidedStorageTargetUseGap>()
             .sorted((a, b) => a.gap.size.compareTo(b.gap.size))
@@ -171,7 +168,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
   /// if appropriate (single guided storage).
   Future<void> save() async {
     // automatically pre-select a guided storage target if possible
-    _diskService.guidedTarget = preselectTarget(installationType!);
+    _diskService.guidedTarget = preselectTarget(type!);
 
     final partitionMethod = _resolvePartitionMethod();
     if (partitionMethod != null) {
@@ -190,11 +187,11 @@ class InstallationTypeModel extends SafeChangeNotifier {
     } else if (_diskService.useEncryption &&
         advancedFeature != AdvancedFeature.zfs) {
       return 'use_crypto';
-    } else if (installationType == InstallationType.erase) {
+    } else if (type == StorageType.erase) {
       return 'use_device';
-    } else if (installationType == InstallationType.alongside) {
+    } else if (type == StorageType.alongside) {
       return 'resize_use_free';
-    } else if (installationType == InstallationType.manual) {
+    } else if (type == StorageType.manual) {
       return 'manual';
     }
     // TODO: map upgrading the current Ubuntu installation without

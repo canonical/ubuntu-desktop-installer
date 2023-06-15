@@ -9,20 +9,17 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'installation_type_dialogs.dart';
-import 'installation_type_model.dart';
+import 'storage_dialogs.dart';
+import 'storage_model.dart';
 
-export 'installation_type_model.dart' show AdvancedFeature, InstallationType;
+export 'storage_model.dart' show AdvancedFeature, StorageType;
 
 /// Select between guided and manual partitioning.
-class InstallationTypePage extends ConsumerWidget {
-  const InstallationTypePage({super.key});
+class StoragePage extends ConsumerWidget {
+  const StoragePage({super.key});
 
   static Future<bool> load(WidgetRef ref) {
-    return ref
-        .read(installationTypeModelProvider.notifier)
-        .init()
-        .then((_) => true);
+    return ref.read(storageModelProvider.notifier).init().then((_) => true);
   }
 
   static String _formatHeader(BuildContext context, List<OsProber> os) {
@@ -61,7 +58,7 @@ class InstallationTypePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(installationTypeModelProvider);
+    final model = ref.watch(storageModelProvider);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(
@@ -75,27 +72,27 @@ class InstallationTypePage extends ConsumerWidget {
           if (model.canInstallAlongside || model.hasBitLocker)
             Padding(
               padding: const EdgeInsets.only(bottom: kContentSpacing),
-              child: YaruRadioButton<InstallationType>(
+              child: YaruRadioButton<StorageType>(
                 title: Text(_formatAlongside(
                     lang, model.productInfo, model.existingOS ?? [])),
                 subtitle: Text(lang.installationTypeAlongsideInfo),
                 value: model.canInstallAlongside
-                    ? InstallationType.alongside
-                    : InstallationType.bitlocker, // for instructions
-                groupValue: model.installationType,
-                onChanged: (v) => model.installationType = v!,
+                    ? StorageType.alongside
+                    : StorageType.bitlocker, // for instructions
+                groupValue: model.type,
+                onChanged: (v) => model.type = v!,
               ),
             ),
-          YaruRadioButton<InstallationType>(
+          YaruRadioButton<StorageType>(
             title: Text(lang.installationTypeErase(flavor.name)),
             subtitle: Html(
               data: lang.installationTypeEraseWarning(
                   Theme.of(context).colorScheme.error.toHex()),
               style: {'body': Style(margin: Margins.zero)},
             ),
-            value: InstallationType.erase,
-            groupValue: model.installationType,
-            onChanged: (value) => model.installationType = value!,
+            value: StorageType.erase,
+            groupValue: model.type,
+            onChanged: (value) => model.type = value!,
           ),
           const SizedBox(height: kContentSpacing),
           Padding(
@@ -104,7 +101,7 @@ class InstallationTypePage extends ConsumerWidget {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 OutlinedButton(
-                  onPressed: model.installationType == InstallationType.erase
+                  onPressed: model.type == StorageType.erase
                       ? () => showAdvancedFeaturesDialog(context, model)
                       : null,
                   child: Text(lang.installationTypeAdvancedLabel),
@@ -115,12 +112,12 @@ class InstallationTypePage extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: kContentSpacing),
-          YaruRadioButton<InstallationType>(
+          YaruRadioButton<StorageType>(
             title: Text(lang.installationTypeManual),
             subtitle: Text(lang.installationTypeManualInfo(flavor.name)),
-            value: InstallationType.manual,
-            groupValue: model.installationType,
-            onChanged: (v) => model.installationType = v!,
+            value: StorageType.manual,
+            groupValue: model.type,
+            onChanged: (v) => model.type = v!,
           ),
         ],
       ),
@@ -131,7 +128,7 @@ class InstallationTypePage extends ConsumerWidget {
             context,
             root: model.isDone,
             enabled: model.hasStorage,
-            arguments: model.installationType,
+            arguments: model.type,
             onNext: model.save,
             // If the user returns back to select another installation type, the
             // previously configured storage must be reset to make all guided

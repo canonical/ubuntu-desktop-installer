@@ -2,10 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/storage_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'test_installation_type.dart';
+import 'test_storage.dart';
 
 void main() {
   test('init', () async {
@@ -16,7 +16,7 @@ void main() {
     when(service.getGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse());
 
-    final model = InstallationTypeModel(
+    final model = StorageModel(
       service,
       MockTelemetryService(),
       MockProductService(),
@@ -45,7 +45,7 @@ void main() {
     final service = MockStorageService();
     when(service.existingOS).thenReturn([ubuntu2110, ubuntu2204]);
 
-    final model = InstallationTypeModel(
+    final model = StorageModel(
       service,
       MockTelemetryService(),
       MockProductService(),
@@ -54,7 +54,7 @@ void main() {
   });
 
   test('notify changes', () {
-    final model = InstallationTypeModel(
+    final model = StorageModel(
       MockStorageService(),
       MockTelemetryService(),
       MockProductService(),
@@ -64,8 +64,8 @@ void main() {
     model.addListener(() => wasNotified = true);
 
     wasNotified = false;
-    expect(model.installationType, isNull);
-    model.installationType = InstallationType.manual;
+    expect(model.type, isNull);
+    model.type = StorageType.manual;
     expect(wasNotified, isTrue);
 
     wasNotified = false;
@@ -84,7 +84,7 @@ void main() {
     when(product.getProductInfo())
         .thenReturn(ProductInfo(name: 'Ubuntu', version: '24.04 LTS'));
 
-    final model = InstallationTypeModel(
+    final model = StorageModel(
       MockStorageService(),
       MockTelemetryService(),
       product,
@@ -99,24 +99,24 @@ void main() {
     when(storage.useEncryption).thenReturn(false);
 
     final telemetry = MockTelemetryService();
-    final model = InstallationTypeModel(
+    final model = StorageModel(
       storage,
       telemetry,
       MockProductService(),
     );
     verifyNever(telemetry.addMetric('PartitionMethod', any));
 
-    model.installationType = InstallationType.erase;
+    model.type = StorageType.erase;
     await model.save();
     verify(telemetry.addMetric('PartitionMethod', 'use_device')).called(1);
     reset(telemetry);
 
-    model.installationType = InstallationType.alongside;
+    model.type = StorageType.alongside;
     await model.save();
     verify(telemetry.addMetric('PartitionMethod', 'resize_use_free')).called(1);
     reset(telemetry);
 
-    model.installationType = InstallationType.manual;
+    model.type = StorageType.manual;
     await model.save();
     verify(telemetry.addMetric('PartitionMethod', 'manual')).called(1);
     reset(telemetry);
@@ -143,7 +143,7 @@ void main() {
     when(storage.hasMultipleDisks).thenReturn(false);
     when(storage.useEncryption).thenReturn(false);
 
-    final model = InstallationTypeModel(
+    final model = StorageModel(
       storage,
       MockTelemetryService(),
       MockProductService(),
@@ -166,7 +166,7 @@ void main() {
         (_) async => fakeGuidedStorageResponse(possible: [reformat]));
     when(service.hasBitLocker()).thenAnswer((_) async => false);
 
-    final model = InstallationTypeModel(
+    final model = StorageModel(
       service,
       MockTelemetryService(),
       MockProductService(),
@@ -187,7 +187,7 @@ void main() {
     when(service.useEncryption).thenReturn(false);
     when(service.hasBitLocker()).thenAnswer((_) async => false);
 
-    final model = InstallationTypeModel(
+    final model = StorageModel(
       service,
       MockTelemetryService(),
       MockProductService(),
@@ -244,7 +244,7 @@ void main() {
     when(service.useEncryption).thenReturn(false);
     when(service.hasBitLocker()).thenAnswer((_) async => false);
 
-    final model = InstallationTypeModel(
+    final model = StorageModel(
       service,
       MockTelemetryService(),
       MockProductService(),
@@ -254,26 +254,26 @@ void main() {
     when(service.getGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse());
     await model.init();
-    expect(model.preselectTarget(InstallationType.erase), isNull);
-    expect(model.preselectTarget(InstallationType.alongside), isNull);
-    expect(model.preselectTarget(InstallationType.manual), isNull);
+    expect(model.preselectTarget(StorageType.erase), isNull);
+    expect(model.preselectTarget(StorageType.alongside), isNull);
+    expect(model.preselectTarget(StorageType.manual), isNull);
 
     // reformat
     const reformat = GuidedStorageTargetReformat(diskId: '', capabilities: []);
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [reformat]));
     await model.init();
-    expect(model.preselectTarget(InstallationType.erase), reformat);
-    expect(model.preselectTarget(InstallationType.alongside), isNull);
-    expect(model.preselectTarget(InstallationType.manual), isNull);
+    expect(model.preselectTarget(StorageType.erase), reformat);
+    expect(model.preselectTarget(StorageType.alongside), isNull);
+    expect(model.preselectTarget(StorageType.manual), isNull);
 
     // multiple reformats
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [reformat, reformat]));
     await model.init();
-    expect(model.preselectTarget(InstallationType.erase), isNull);
-    expect(model.preselectTarget(InstallationType.alongside), isNull);
-    expect(model.preselectTarget(InstallationType.manual), isNull);
+    expect(model.preselectTarget(StorageType.erase), isNull);
+    expect(model.preselectTarget(StorageType.alongside), isNull);
+    expect(model.preselectTarget(StorageType.manual), isNull);
 
     // resize
     const resize = GuidedStorageTargetResize(
@@ -287,9 +287,9 @@ void main() {
     when(service.getGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse(possible: [resize]));
     await model.init();
-    expect(model.preselectTarget(InstallationType.erase), isNull);
-    expect(model.preselectTarget(InstallationType.alongside), isNull);
-    expect(model.preselectTarget(InstallationType.manual), isNull);
+    expect(model.preselectTarget(StorageType.erase), isNull);
+    expect(model.preselectTarget(StorageType.alongside), isNull);
+    expect(model.preselectTarget(StorageType.manual), isNull);
 
     // gap
     const gap = GuidedStorageTargetUseGap(
@@ -300,9 +300,9 @@ void main() {
     when(service.getGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse(possible: [gap]));
     await model.init();
-    expect(model.preselectTarget(InstallationType.erase), isNull);
-    expect(model.preselectTarget(InstallationType.alongside), gap);
-    expect(model.preselectTarget(InstallationType.manual), isNull);
+    expect(model.preselectTarget(StorageType.erase), isNull);
+    expect(model.preselectTarget(StorageType.alongside), gap);
+    expect(model.preselectTarget(StorageType.manual), isNull);
 
     // multiple gaps
     const gap2 = GuidedStorageTargetUseGap(
@@ -318,24 +318,24 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [gap, gap3, gap2]));
     await model.init();
-    expect(model.preselectTarget(InstallationType.erase), isNull);
-    expect(model.preselectTarget(InstallationType.alongside), gap3);
-    expect(model.preselectTarget(InstallationType.manual), isNull);
+    expect(model.preselectTarget(StorageType.erase), isNull);
+    expect(model.preselectTarget(StorageType.alongside), gap3);
+    expect(model.preselectTarget(StorageType.manual), isNull);
 
     // all
     when(service.getGuidedStorage()).thenAnswer((_) async =>
         fakeGuidedStorageResponse(possible: [reformat, resize, gap]));
     await model.init();
-    expect(model.preselectTarget(InstallationType.erase), reformat);
-    expect(model.preselectTarget(InstallationType.alongside), gap);
-    expect(model.preselectTarget(InstallationType.manual), isNull);
+    expect(model.preselectTarget(StorageType.erase), reformat);
+    expect(model.preselectTarget(StorageType.alongside), gap);
+    expect(model.preselectTarget(StorageType.manual), isNull);
   });
 
   test('reset storage', () async {
     final service = MockStorageService();
     when(service.resetStorage()).thenAnswer((_) async => []);
 
-    final model = InstallationTypeModel(
+    final model = StorageModel(
       service,
       MockTelemetryService(),
       MockProductService(),

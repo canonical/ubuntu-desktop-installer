@@ -5,11 +5,11 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'installation_type_model.dart';
+import 'storage_model.dart';
 
 /// Shows a dialog to select advanced installation features.
 Future<void> showAdvancedFeaturesDialog(
-    BuildContext context, InstallationTypeModel model) async {
+    BuildContext context, StorageModel model) async {
   final advancedFeature = ValueNotifier(model.advancedFeature);
   final encryption = ValueNotifier(model.encryption);
 

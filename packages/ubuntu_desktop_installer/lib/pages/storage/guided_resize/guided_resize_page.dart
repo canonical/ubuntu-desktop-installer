@@ -78,7 +78,7 @@ class GuidedResizePage extends ConsumerWidget {
           HiddenPartitionLabel(
             partitions: model.getAllPartitions(model.selectedIndex ?? -1) ?? [],
             onTap: () =>
-                Wizard.of(context).replace(arguments: InstallationType.manual),
+                Wizard.of(context).replace(arguments: StorageType.manual),
           ),
         ],
       ),
