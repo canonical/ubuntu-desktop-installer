@@ -111,12 +111,6 @@ void main() {
     verify(telemetry.addMetric('PartitionMethod', 'use_device')).called(1);
     reset(telemetry);
 
-    model.installationType = InstallationType.reinstall;
-    await model.save();
-    verify(telemetry.addMetric('PartitionMethod', 'reinstall_partition'))
-        .called(1);
-    reset(telemetry);
-
     model.installationType = InstallationType.alongside;
     await model.save();
     verify(telemetry.addMetric('PartitionMethod', 'resize_use_free')).called(1);
@@ -262,7 +256,6 @@ void main() {
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), isNull);
     expect(model.preselectTarget(InstallationType.alongside), isNull);
-    expect(model.preselectTarget(InstallationType.reinstall), isNull);
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // reformat
@@ -272,7 +265,6 @@ void main() {
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), reformat);
     expect(model.preselectTarget(InstallationType.alongside), isNull);
-    expect(model.preselectTarget(InstallationType.reinstall), isNull);
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // multiple reformats
@@ -281,7 +273,6 @@ void main() {
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), isNull);
     expect(model.preselectTarget(InstallationType.alongside), isNull);
-    expect(model.preselectTarget(InstallationType.reinstall), isNull);
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // resize
@@ -298,7 +289,6 @@ void main() {
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), isNull);
     expect(model.preselectTarget(InstallationType.alongside), isNull);
-    expect(model.preselectTarget(InstallationType.reinstall), isNull);
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // gap
@@ -312,7 +302,6 @@ void main() {
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), isNull);
     expect(model.preselectTarget(InstallationType.alongside), gap);
-    expect(model.preselectTarget(InstallationType.reinstall), isNull);
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // multiple gaps
@@ -331,7 +320,6 @@ void main() {
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), isNull);
     expect(model.preselectTarget(InstallationType.alongside), gap3);
-    expect(model.preselectTarget(InstallationType.reinstall), isNull);
     expect(model.preselectTarget(InstallationType.manual), isNull);
 
     // all
@@ -340,7 +328,6 @@ void main() {
     await model.init();
     expect(model.preselectTarget(InstallationType.erase), reformat);
     expect(model.preselectTarget(InstallationType.alongside), gap);
-    expect(model.preselectTarget(InstallationType.reinstall), isNull);
     expect(model.preselectTarget(InstallationType.manual), isNull);
   });
 

@@ -82,24 +82,6 @@ void main() {
     );
   });
 
-  testWidgets('reinstall', (tester) async {
-    final model = buildInstallationTypeModel(existingOS: [
-      const OsProber(
-        long: 'Ubuntu 18.04 LTS',
-        label: 'Ubuntu',
-        version: '18.04 LTS',
-        type: 'ext4',
-      )
-    ]);
-    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
-
-    final radio = find.radioButton<InstallationType>(
-        tester.lang.installationTypeReinstall('Ubuntu 18.04 LTS'));
-    expect(radio, findsOneWidget);
-    await tester.tap(radio);
-    verify(model.installationType = InstallationType.reinstall).called(1);
-  }, skip: true);
-
   testWidgets('alongside windows', (tester) async {
     final model = buildInstallationTypeModel(
       productInfo: ProductInfo(name: 'Ubuntu 22.10'),

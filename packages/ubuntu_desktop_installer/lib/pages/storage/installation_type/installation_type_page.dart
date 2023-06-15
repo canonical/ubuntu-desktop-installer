@@ -72,20 +72,6 @@ class InstallationTypePage extends ConsumerWidget {
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // TODO: offer "reinstall" when subiquity has support for it
-          // if (model.existingOS != null)
-          //   YaruRadioButton<InstallationType>(
-          //     title: Text(lang.installationTypeReinstall(model.existingOS!)),
-          //     subtitle: Html(
-          //       data: lang.installationTypeReinstallWarning(
-          //           Theme.of(context).errorColor.toHex(), model.existingOS!),
-          //       style: {'body': Style(margin: EdgeInsets.zero)},
-          //     ),
-          //     value: InstallationType.reinstall,
-          //     groupValue: model.installationType,
-          //     onChanged: (v) => model.installationType = v!,
-          //   ),
-          // if (model.existingOS != null) const SizedBox(height: kContentSpacing),
           if (model.canInstallAlongside || model.hasBitLocker)
             Padding(
               padding: const EdgeInsets.only(bottom: kContentSpacing),
