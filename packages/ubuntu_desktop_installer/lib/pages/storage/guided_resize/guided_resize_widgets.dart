@@ -8,7 +8,7 @@ import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
-import 'install_alongside_model.dart';
+import 'guided_resize_model.dart';
 
 class StorageSelector extends ConsumerWidget {
   const StorageSelector({
@@ -23,7 +23,7 @@ class StorageSelector extends ConsumerWidget {
   final ValueChanged<int?>? onSelected;
 
   static String formatStorage(BuildContext context, WidgetRef ref, int index) {
-    final model = ref.read(installAlongsideModelProvider);
+    final model = ref.read(guidedResizeModelProvider);
     final partition = model.getPartition(index);
     final os = model.getOS(index);
 

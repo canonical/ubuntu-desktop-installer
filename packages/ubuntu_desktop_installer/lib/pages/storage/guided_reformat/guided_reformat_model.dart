@@ -6,14 +6,14 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 
-/// Provider for [SelectGuidedStorageModel].
-final selectGuidedStorageModelProvider = ChangeNotifierProvider(
-    (_) => SelectGuidedStorageModel(getService<StorageService>()));
+/// Provider for [GuidedReformatModel].
+final guidedReformatModelProvider = ChangeNotifierProvider(
+    (_) => GuidedReformatModel(getService<StorageService>()));
 
-/// View model for [SelectGuidedStoragePage].
-class SelectGuidedStorageModel extends SafeChangeNotifier {
+/// View model for [GuidedReformatPage].
+class GuidedReformatModel extends SafeChangeNotifier {
   /// Creates a new model with the given service.
-  SelectGuidedStorageModel(this._service);
+  GuidedReformatModel(this._service);
 
   final StorageService _service;
   var _storages = <GuidedStorageTargetReformat>[];

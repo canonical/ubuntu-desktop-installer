@@ -202,7 +202,7 @@ void main() {
     );
   }, variant: themeVariant);
 
-  testWidgets('7.resize-windows', (tester) async {
+  testWidgets('7.guided-resize', (tester) async {
     await runInstallerApp([
       '--machine-config=examples/win10-along-ubuntu.json',
       '--',
@@ -210,28 +210,28 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(Routes.installAlongside);
+    await tester.jumpToStorageWizard(StorageRoutes.guidedResize);
     await tester.pumpAndSettle();
 
-    await testInstallAlongsidePage(
+    await testGuidedResizePage(
       tester,
       sizes: {'ext4': 32768},
-      screenshot: '$currentThemeName/7.resize-windows',
+      screenshot: '$currentThemeName/7.guided-resize',
     );
   }, variant: themeVariant);
 
-  testWidgets('7.select-disk', (tester) async {
+  testWidgets('7.guided-reformat', (tester) async {
     await runInstallerApp([
       '--machine-config=examples/win10.json',
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(Routes.selectGuidedStorage);
+    await tester.jumpToStorageWizard(StorageRoutes.guidedReformat);
     await tester.pumpAndSettle();
 
-    await testSelectGuidedStoragePage(
+    await testGuidedReformatPage(
       tester,
-      screenshot: '$currentThemeName/7.select-disk',
+      screenshot: '$currentThemeName/7.guided-reformat',
     );
   }, variant: themeVariant);
 

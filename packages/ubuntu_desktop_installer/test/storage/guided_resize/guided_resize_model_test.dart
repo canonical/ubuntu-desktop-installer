@@ -2,10 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/install_alongside/install_alongside_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/guided_resize_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'test_install_alongside.dart';
+import 'test_guided_resize.dart';
 
 const ubuntu2110 = OsProber(
   long: 'Ubuntu 21.10',
@@ -35,7 +35,7 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer((_) async =>
         fakeGuidedStorageResponse(possible: [fakeGuidedStorageTargetResize()]));
 
-    final model = InstallAlongsideModel(service, MockProductService());
+    final model = GuidedResizeModel(service, MockProductService());
     expect(model.selectedIndex, isNull);
 
     await model.init();
@@ -59,7 +59,7 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [resize1, resize2]));
 
-    final model = InstallAlongsideModel(service, MockProductService());
+    final model = GuidedResizeModel(service, MockProductService());
     await model.init();
 
     model.selectStorage(1);
@@ -77,7 +77,7 @@ void main() {
     when(service.getGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse());
 
-    final model = InstallAlongsideModel(service, MockProductService());
+    final model = GuidedResizeModel(service, MockProductService());
     await model.reset();
     verifyInOrder([service.resetStorage(), service.getGuidedStorage()]);
   });
@@ -86,7 +86,7 @@ void main() {
     final service = MockStorageService();
     when(service.existingOS).thenReturn([ubuntu2110, ubuntu2204]);
 
-    final model = InstallAlongsideModel(service, MockProductService());
+    final model = GuidedResizeModel(service, MockProductService());
     expect(model.existingOS, equals([ubuntu2110, ubuntu2204]));
   });
 
@@ -94,7 +94,7 @@ void main() {
     final service = MockProductService();
     when(service.getProductInfo()).thenReturn(ProductInfo(name: 'Foo'));
 
-    final model = InstallAlongsideModel(MockStorageService(), service);
+    final model = GuidedResizeModel(MockStorageService(), service);
     expect(model.productInfo.name, 'Foo');
   });
 
@@ -116,7 +116,7 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
 
-    final model = InstallAlongsideModel(service, MockProductService());
+    final model = GuidedResizeModel(service, MockProductService());
     expect(model.storageCount, isZero);
     expect(model.getDisk(0), isNull);
     expect(model.getDisk(1), isNull);
@@ -157,7 +157,7 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
 
-    final model = InstallAlongsideModel(service, MockProductService());
+    final model = GuidedResizeModel(service, MockProductService());
     expect(model.storageCount, isZero);
     expect(model.selectedIndex, isNull);
     expect(model.selectedStorage, isNull);
@@ -225,7 +225,7 @@ void main() {
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(possible: [storage1, storage2]));
 
-    final model = InstallAlongsideModel(service, MockProductService());
+    final model = GuidedResizeModel(service, MockProductService());
     await model.init();
     expect(model.selectedIndex, equals(0));
 

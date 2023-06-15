@@ -284,11 +284,11 @@ Future<void> testManualStoragePage(
   await tester.tapNext();
 }
 
-Future<void> testSelectGuidedStoragePage(
+Future<void> testGuidedReformatPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, SelectGuidedStoragePage,
+  await expectPage(tester, GuidedReformatPage,
       (lang) => lang.selectGuidedStoragePageTitle('Ubuntu'));
 
   if (screenshot != null) {
@@ -298,13 +298,13 @@ Future<void> testSelectGuidedStoragePage(
   await tester.tapNext();
 }
 
-Future<void> testInstallAlongsidePage(
+Future<void> testGuidedResizePage(
   WidgetTester tester, {
   Map<String, int> sizes = const {},
   String? screenshot,
 }) async {
   final productInfo = getService<ProductService>().getProductInfo();
-  await expectPage(tester, InstallAlongsidePage,
+  await expectPage(tester, GuidedResizePage,
       (lang) => lang.installationTypeAlongsideUnknown(productInfo));
 
   for (final entry in sizes.entries) {

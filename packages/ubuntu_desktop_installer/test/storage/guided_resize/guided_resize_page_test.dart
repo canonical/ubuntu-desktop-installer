@@ -4,25 +4,25 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:split_view/split_view.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/install_alongside/install_alongside_model.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/install_alongside/install_alongside_page.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/guided_resize_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/guided_resize_page.dart';
 import 'package:ubuntu_desktop_installer/services/product_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
-import 'install_alongside_model_test.dart';
-import 'test_install_alongside.dart';
+import 'guided_resize_model_test.dart';
+import 'test_guided_resize.dart';
 
 void main() {
-  Widget buildPage(InstallAlongsideModel model) {
+  Widget buildPage(GuidedResizeModel model) {
     return ProviderScope(
-      overrides: [installAlongsideModelProvider.overrideWith((_) => model)],
-      child: const InstallAlongsidePage(),
+      overrides: [guidedResizeModelProvider.overrideWith((_) => model)],
+      child: const GuidedResizePage(),
     );
   }
 
   testWidgets('storage formatting', (tester) async {
-    final model = buildInstallAlongsideModel(
+    final model = buildGuidedResizeModel(
         storageCount: 5,
         selectedIndex: 1,
         allPartitions: {
@@ -44,7 +44,7 @@ void main() {
   });
 
   testWidgets('storage selection', (tester) async {
-    final model = buildInstallAlongsideModel(storageCount: 5, selectedIndex: 1);
+    final model = buildGuidedResizeModel(storageCount: 5, selectedIndex: 1);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final item1 = find.descendant(
@@ -67,7 +67,7 @@ void main() {
   });
 
   testWidgets('storage resize', (tester) async {
-    final model = buildInstallAlongsideModel(
+    final model = buildGuidedResizeModel(
       selectedPartition: const Partition(number: 1),
       totalSize: 100,
     );
@@ -83,7 +83,7 @@ void main() {
   });
 
   testWidgets('hidden partitions', (tester) async {
-    final model = buildInstallAlongsideModel(
+    final model = buildGuidedResizeModel(
       selectedIndex: 1,
       allPartitions: {
         1: const [
@@ -104,7 +104,7 @@ void main() {
   });
 
   testWidgets('alongside none', (tester) async {
-    final model = buildInstallAlongsideModel(
+    final model = buildGuidedResizeModel(
       existingOs: [],
       productInfo: ProductInfo(name: 'Ubuntu', version: '22.10'),
     );
@@ -117,7 +117,7 @@ void main() {
   });
 
   testWidgets('alongside one OS', (tester) async {
-    final model = buildInstallAlongsideModel(
+    final model = buildGuidedResizeModel(
       existingOs: [windows10],
       productInfo: ProductInfo(name: 'Ubuntu', version: '22.10'),
     );
@@ -131,7 +131,7 @@ void main() {
   });
 
   testWidgets('alongside two OSes', (tester) async {
-    final model = buildInstallAlongsideModel(
+    final model = buildGuidedResizeModel(
       existingOs: [ubuntu2110, ubuntu2204],
       productInfo: ProductInfo(name: 'Ubuntu', version: '22.10'),
     );
@@ -145,7 +145,7 @@ void main() {
   });
 
   testWidgets('alongside multiple OSes', (tester) async {
-    final model = buildInstallAlongsideModel(
+    final model = buildGuidedResizeModel(
       existingOs: [windows10, ubuntu2110, ubuntu2204],
       productInfo: ProductInfo(name: 'Ubuntu', version: '22.10'),
     );

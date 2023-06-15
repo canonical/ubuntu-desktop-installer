@@ -7,19 +7,19 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'bitlocker/bitlocker_page.dart';
-import 'install_alongside/install_alongside_page.dart';
+import 'guided_reformat/guided_reformat_page.dart';
+import 'guided_resize/guided_resize_page.dart';
 import 'installation_type/installation_type_page.dart';
 import 'manual/manual_storage_page.dart';
 import 'security_key/security_key_page.dart';
-import 'select_guided_storage/select_guided_storage_page.dart';
 import 'storage_routes.dart';
 
 export 'bitlocker/bitlocker_page.dart';
-export 'install_alongside/install_alongside_page.dart';
+export 'guided_reformat/guided_reformat_page.dart';
+export 'guided_resize/guided_resize_page.dart';
 export 'installation_type/installation_type_page.dart';
 export 'manual/manual_storage_page.dart';
 export 'security_key/security_key_page.dart';
-export 'select_guided_storage/select_guided_storage_page.dart';
 export 'storage_routes.dart';
 
 class StorageWizard extends ConsumerWidget {
@@ -42,17 +42,17 @@ class StorageWizard extends ConsumerWidget {
         Routes.bitlocker: WizardRoute(
           builder: (_) => const BitLockerPage(),
         ),
-        Routes.installAlongside: WizardRoute(
-          builder: (_) => const InstallAlongsidePage(),
+        StorageRoutes.guidedResize: WizardRoute(
+          builder: (_) => const GuidedResizePage(),
           userData: WizardRouteData(step: InstallationStep.storage.index),
-          onLoad: (_) => InstallAlongsidePage.load(ref),
+          onLoad: (_) => GuidedResizePage.load(ref),
           onReplace: (_) => StorageRoutes.manual,
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
-        Routes.selectGuidedStorage: WizardRoute(
-          builder: (_) => const SelectGuidedStoragePage(),
+        StorageRoutes.guidedReformat: WizardRoute(
+          builder: (_) => const GuidedReformatPage(),
           userData: WizardRouteData(step: InstallationStep.storage.index),
-          onLoad: (_) => SelectGuidedStoragePage.load(ref),
+          onLoad: (_) => GuidedReformatPage.load(ref),
           onNext: (settings) => _nextRoute(settings.arguments),
         ),
         Routes.securityKey: WizardRoute(
@@ -78,9 +78,9 @@ class StorageWizard extends ConsumerWidget {
       if (arguments == InstallationType.bitlocker) {
         return Routes.bitlocker;
       } else if (arguments == InstallationType.erase) {
-        return Routes.selectGuidedStorage;
+        return StorageRoutes.guidedReformat;
       } else if (arguments == InstallationType.alongside) {
-        return Routes.installAlongside;
+        return StorageRoutes.guidedResize;
       }
     } else if (storage.useEncryption && storage.securityKey == null) {
       return Routes.securityKey;
