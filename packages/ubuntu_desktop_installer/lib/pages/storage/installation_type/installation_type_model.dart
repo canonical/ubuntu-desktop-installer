@@ -9,9 +9,6 @@ enum InstallationType {
   /// Erase entire disk and perform guided partitioning.
   erase,
 
-  /// Replace existing OS installation.
-  reinstall,
-
   /// Install alongside existing OS installation.
   alongside,
 
@@ -125,8 +122,6 @@ class InstallationTypeModel extends SafeChangeNotifier {
       case InstallationType.alongside:
         return !_diskService.useEncryption &&
             _storages?.any((t) => t is GuidedStorageTargetUseGap) == true;
-      case InstallationType.reinstall:
-        throw UnimplementedError();
       case InstallationType.manual:
       case InstallationType.bitlocker:
       case null:
@@ -197,8 +192,6 @@ class InstallationTypeModel extends SafeChangeNotifier {
       return 'use_crypto';
     } else if (installationType == InstallationType.erase) {
       return 'use_device';
-    } else if (installationType == InstallationType.reinstall) {
-      return 'reinstall_partition';
     } else if (installationType == InstallationType.alongside) {
       return 'resize_use_free';
     } else if (installationType == InstallationType.manual) {
