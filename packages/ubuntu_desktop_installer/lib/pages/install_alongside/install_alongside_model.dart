@@ -110,7 +110,7 @@ class InstallAlongsideModel extends SafeChangeNotifier {
 
   void _updateStorage(GuidedStorageResponseV2 response) {
     _storages =
-        response.possible.whereType<GuidedStorageTargetResize>().toList();
+        response.targets.whereType<GuidedStorageTargetResize>().toList();
     _selectedIndex = _storages.isEmpty ? null : 0;
     notifyListeners();
   }

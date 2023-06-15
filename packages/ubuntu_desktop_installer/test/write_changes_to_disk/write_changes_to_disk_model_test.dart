@@ -85,8 +85,7 @@ void main() {
   });
 
   test('set guided storage', () async {
-    final target =
-        GuidedStorageTarget.reformat(diskId: 'sda', capabilities: []);
+    final target = GuidedStorageTarget.reformat(diskId: 'sda', allowed: []);
 
     final client = MockSubiquityClient();
     final service = MockDiskStorageService();

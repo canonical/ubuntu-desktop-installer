@@ -15,7 +15,7 @@ Future<void> showAdvancedFeaturesDialog(
     BuildContext context, InstallationTypeModel model) async {
   final defaultCapability = model.guidedCapability;
   final availableCapabilities =
-      Set.of(model.guidedTarget?.capabilities ?? <GuidedCapability>[]);
+      Set.of(model.guidedTarget?.allowed ?? <GuidedCapability>[]);
 
   final hasDirect = availableCapabilities.contains(GuidedCapability.DIRECT);
   final hasLvm = availableCapabilities.any((cap) => cap.isLvm);

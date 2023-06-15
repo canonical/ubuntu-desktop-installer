@@ -107,12 +107,12 @@ Disk testDisk({
 GuidedStorageResponseV2 testGuidedStorageResponse({
   ProbeStatus status = ProbeStatus.DONE,
   GuidedChoiceV2? configured,
-  List<GuidedStorageTarget> possible = const [],
+  List<GuidedStorageTarget> targets = const [],
 }) {
   return GuidedStorageResponseV2(
     status: status,
     configured: configured,
-    possible: possible,
+    targets: targets,
   );
 }
 

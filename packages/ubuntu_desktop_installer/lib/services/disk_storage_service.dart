@@ -69,7 +69,7 @@ class DiskStorageService {
   set guidedTarget(GuidedStorageTarget? target) {
     log.debug('select guided target: $target');
     _guidedTarget = target;
-    _guidedCapability = target?.capabilities.firstOrNull;
+    _guidedCapability = target?.allowed.firstOrNull;
   }
 
   /// The selected guided capability.

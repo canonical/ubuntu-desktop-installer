@@ -34,8 +34,8 @@ void main() {
   test('init guided storage', () async {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [testDisk()]);
-    when(service.getGuidedStorage()).thenAnswer((_) async =>
-        testGuidedStorageResponse(possible: [testResizeStorage()]));
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => testGuidedStorageResponse(targets: [testResizeStorage()]));
 
     final model = InstallAlongsideModel(service, MockProductService());
     expect(model.selectedIndex, isNull);
@@ -58,7 +58,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: [resize1, resize2]));
+        (_) async => testGuidedStorageResponse(targets: [resize1, resize2]));
 
     final model = InstallAlongsideModel(service, MockProductService());
     await model.init();
@@ -113,7 +113,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: [storage1, storage2]));
+        (_) async => testGuidedStorageResponse(targets: [storage1, storage2]));
 
     final model = InstallAlongsideModel(service, MockProductService());
     expect(model.storageCount, isZero);
@@ -152,7 +152,7 @@ void main() {
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: [storage1, storage2]));
+        (_) async => testGuidedStorageResponse(targets: [storage1, storage2]));
 
     final model = InstallAlongsideModel(service, MockProductService());
     expect(model.storageCount, isZero);
@@ -204,7 +204,7 @@ void main() {
       minimum: 111,
       recommended: 122,
       maximum: 133,
-      capabilities: [GuidedCapability.DIRECT],
+      allowed: [GuidedCapability.DIRECT],
     );
 
     const storage2 = GuidedStorageTargetResize(
@@ -214,13 +214,13 @@ void main() {
       minimum: 211,
       recommended: 222,
       maximum: 233,
-      capabilities: [GuidedCapability.DIRECT],
+      allowed: [GuidedCapability.DIRECT],
     );
 
     final service = MockDiskStorageService();
     when(service.getStorage()).thenAnswer((_) async => [disk]);
     when(service.getGuidedStorage()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: [storage1, storage2]));
+        (_) async => testGuidedStorageResponse(targets: [storage1, storage2]));
 
     final model = InstallAlongsideModel(service, MockProductService());
     await model.init();
@@ -265,6 +265,6 @@ GuidedStorageTargetResize testResizeStorage({
     minimum: minimum,
     recommended: recommended,
     maximum: maximum,
-    capabilities: [GuidedCapability.DIRECT],
+    allowed: [GuidedCapability.DIRECT],
   );
 }

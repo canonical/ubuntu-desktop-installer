@@ -11,8 +11,7 @@ import '../test_utils.dart';
 void main() {
   final testDisks = <Disk>[testDisk(id: 'a'), testDisk(id: 'b')];
   final testTargets = testDisks
-      .map((disk) =>
-          GuidedStorageTargetReformat(diskId: disk.id, capabilities: []))
+      .map((disk) => GuidedStorageTargetReformat(diskId: disk.id, allowed: []))
       .toList();
 
   late SubiquityClient client;
@@ -20,7 +19,7 @@ void main() {
   setUp(() {
     client = MockSubiquityClient();
     when(client.getGuidedStorageV2()).thenAnswer(
-        (_) async => testGuidedStorageResponse(possible: testTargets));
+        (_) async => testGuidedStorageResponse(targets: testTargets));
     when(client.getStorageV2())
         .thenAnswer((_) async => testStorageResponse(disks: testDisks));
     when(client.hasRst()).thenAnswer((_) async => false);
@@ -40,13 +39,13 @@ void main() {
   test('get guided storage', () async {
     final service = DiskStorageService(client);
     expect(await service.getGuidedStorage(),
-        equals(testGuidedStorageResponse(possible: testTargets)));
+        equals(testGuidedStorageResponse(targets: testTargets)));
     verify(client.getGuidedStorageV2()).called(1);
   });
 
   test('set guided storage', () async {
     final target = GuidedStorageTargetReformat(
-        diskId: testDisks.last.id, capabilities: [GuidedCapability.DIRECT]);
+        diskId: testDisks.last.id, allowed: [GuidedCapability.DIRECT]);
     final choice = GuidedChoiceV2(
       target: target,
       capability: GuidedCapability.DIRECT,
@@ -65,7 +64,7 @@ void main() {
 
   test('use LVM', () async {
     final target = GuidedStorageTargetReformat(
-        diskId: testDisks.last.id, capabilities: [GuidedCapability.LVM]);
+        diskId: testDisks.last.id, allowed: [GuidedCapability.LVM]);
     final choice = GuidedChoiceV2(
       target: target,
       capability: GuidedCapability.LVM,
@@ -274,7 +273,7 @@ void main() {
 
   test('guided target', () async {
     final target = GuidedStorageTargetReformat(
-        diskId: testDisks.last.id, capabilities: [GuidedCapability.DIRECT]);
+        diskId: testDisks.last.id, allowed: [GuidedCapability.DIRECT]);
     final choice = GuidedChoiceV2(
       target: target,
       capability: GuidedCapability.DIRECT,
@@ -301,7 +300,7 @@ void main() {
 
   test('set security key', () async {
     final target = GuidedStorageTargetReformat(
-        diskId: testDisks.first.id, capabilities: [GuidedCapability.LVM_LUKS]);
+        diskId: testDisks.first.id, allowed: [GuidedCapability.LVM_LUKS]);
     final choice = GuidedChoiceV2(
         target: target,
         password: 'foo123',

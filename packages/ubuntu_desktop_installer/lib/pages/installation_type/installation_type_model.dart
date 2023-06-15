@@ -84,7 +84,7 @@ class InstallationTypeModel extends SafeChangeNotifier {
 
   /// Initializes the model.
   Future<void> init() async {
-    await _diskService.getGuidedStorage().then((r) => _storages = r.possible);
+    await _diskService.getGuidedStorage().then((r) => _storages = r.targets);
     _installationType ??= canInstallAlongside
         ? InstallationType.alongside
         : InstallationType.erase;
