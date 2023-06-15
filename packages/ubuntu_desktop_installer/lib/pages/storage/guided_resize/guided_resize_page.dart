@@ -6,21 +6,21 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'install_alongside_model.dart';
-import 'install_alongside_widgets.dart';
+import 'guided_resize_model.dart';
+import 'guided_resize_widgets.dart';
 import 'storage_split_view.dart';
 
 /// Install alongside other OSes.
-class InstallAlongsidePage extends ConsumerWidget {
-  const InstallAlongsidePage({super.key});
+class GuidedResizePage extends ConsumerWidget {
+  const GuidedResizePage({super.key});
 
   static Future<bool> load(WidgetRef ref) {
-    return ref.read(installAlongsideModelProvider).init().then((_) => true);
+    return ref.read(guidedResizeModelProvider).init().then((_) => true);
   }
 
   static String _formatTitle(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final model = ref.read(installAlongsideModelProvider);
+    final model = ref.read(guidedResizeModelProvider);
 
     switch (model.existingOS.length) {
       case 0:
@@ -43,7 +43,7 @@ class InstallAlongsidePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(installAlongsideModelProvider);
+    final model = ref.watch(guidedResizeModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(

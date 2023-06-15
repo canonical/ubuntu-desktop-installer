@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/install_alongside/storage_size_dialog.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/storage_size_dialog.dart';
 import 'package:ubuntu_desktop_installer/widgets/storage_size_box.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';

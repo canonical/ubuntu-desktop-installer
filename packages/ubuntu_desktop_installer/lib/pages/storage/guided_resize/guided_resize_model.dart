@@ -7,15 +7,15 @@ import 'package:ubuntu_desktop_installer/services.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show Disk, Partition;
 
-/// Provider for [InstallAlongsideModel].
-final installAlongsideModelProvider = ChangeNotifierProvider((_) =>
-    InstallAlongsideModel(
+/// Provider for [GuidedResizeModel].
+final guidedResizeModelProvider = ChangeNotifierProvider((_) =>
+    GuidedResizeModel(
         getService<StorageService>(), getService<ProductService>()));
 
-/// View model for [InstallAlongsidePage].
-class InstallAlongsideModel extends SafeChangeNotifier {
+/// View model for [GuidedResizePage].
+class GuidedResizeModel extends SafeChangeNotifier {
   /// Creates a new model with the given service.
-  InstallAlongsideModel(this._storage, this._product);
+  GuidedResizeModel(this._storage, this._product);
 
   final StorageService _storage;
   final ProductService _product;

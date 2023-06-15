@@ -1,15 +1,15 @@
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/install_alongside/install_alongside_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/guided_resize_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-import 'test_install_alongside.mocks.dart';
+import 'test_guided_resize.mocks.dart';
 export '../../test_utils.dart';
-export 'test_install_alongside.mocks.dart';
+export 'test_guided_resize.mocks.dart';
 
-@GenerateMocks([InstallAlongsideModel])
-InstallAlongsideModel buildInstallAlongsideModel({
+@GenerateMocks([GuidedResizeModel])
+GuidedResizeModel buildGuidedResizeModel({
   int? storageCount,
   int? selectedIndex,
   GuidedStorageTargetResize? selectedStorage,
@@ -26,7 +26,7 @@ InstallAlongsideModel buildInstallAlongsideModel({
   int? totalSize,
   bool? isDone,
 }) {
-  final model = MockInstallAlongsideModel();
+  final model = MockGuidedResizeModel();
   when(model.storageCount).thenReturn(storageCount ?? 0);
   when(model.selectedIndex).thenReturn(selectedIndex);
   when(model.selectedStorage).thenReturn(selectedStorage);

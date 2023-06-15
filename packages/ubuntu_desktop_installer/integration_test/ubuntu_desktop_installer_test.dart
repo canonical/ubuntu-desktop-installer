@@ -219,7 +219,7 @@ void main() {
     await testInstallationTypePage(tester, type: InstallationType.alongside);
     await tester.pumpAndSettle();
 
-    await testInstallAlongsidePage(tester, sizes: {'sda3 (ntfs)': 40000});
+    await testGuidedResizePage(tester, sizes: {'sda3 (ntfs)': 40000});
     await tester.pumpAndSettle();
 
     await testConfirmPage(tester);

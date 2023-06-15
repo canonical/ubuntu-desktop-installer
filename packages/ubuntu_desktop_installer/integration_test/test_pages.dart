@@ -298,13 +298,13 @@ Future<void> testGuidedReformatPage(
   await tester.tapNext();
 }
 
-Future<void> testInstallAlongsidePage(
+Future<void> testGuidedResizePage(
   WidgetTester tester, {
   Map<String, int> sizes = const {},
   String? screenshot,
 }) async {
   final productInfo = getService<ProductService>().getProductInfo();
-  await expectPage(tester, InstallAlongsidePage,
+  await expectPage(tester, GuidedResizePage,
       (lang) => lang.installationTypeAlongsideUnknown(productInfo));
 
   for (final entry in sizes.entries) {
