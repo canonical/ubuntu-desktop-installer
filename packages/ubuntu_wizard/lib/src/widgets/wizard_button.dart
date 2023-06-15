@@ -149,8 +149,10 @@ class _WizardButtonState extends State<WizardButton> {
         ? () async {
             setState(() => activating = true);
             await widget.onActivated?.call();
-            setState(() => activating = false);
-            if (mounted) widget.execute?.call();
+            if (mounted) {
+              setState(() => activating = false);
+              widget.execute?.call();
+            }
           }
         : null;
 
