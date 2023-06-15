@@ -5,12 +5,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/select_guided_storage/select_guided_storage_model.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/select_guided_storage/select_guided_storage_page.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/guided_reformat/guided_reformat_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/guided_reformat/guided_reformat_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
-import 'test_select_guided_storage.dart';
+import 'test_guided_reformat.dart';
 
 void main() {
   final testDisks = <Disk>[
@@ -22,15 +22,15 @@ void main() {
           GuidedStorageTargetReformat(diskId: disk.id, capabilities: []))
       .toList();
 
-  Widget buildPage(SelectGuidedStorageModel model) {
+  Widget buildPage(GuidedReformatModel model) {
     return ProviderScope(
-      overrides: [selectGuidedStorageModelProvider.overrideWith((_) => model)],
-      child: const SelectGuidedStoragePage(),
+      overrides: [guidedReformatModelProvider.overrideWith((_) => model)],
+      child: const GuidedReformatPage(),
     );
   }
 
   testWidgets('list of guided storages', (tester) async {
-    final model = buildSelectGuidedStorageModel(
+    final model = buildGuidedReformatModel(
       storages: testStorages,
       disks: testDisks,
     );
@@ -51,7 +51,7 @@ void main() {
   });
 
   testWidgets('select a guided storage', (tester) async {
-    final model = buildSelectGuidedStorageModel(
+    final model = buildGuidedReformatModel(
       storages: testStorages,
       disks: testDisks,
     );
@@ -73,7 +73,7 @@ void main() {
   testWidgets('selected guided storage', (tester) async {
     final selectedDisk = testDisks.last;
     final selectedStorage = testStorages.last;
-    final model = buildSelectGuidedStorageModel(
+    final model = buildGuidedReformatModel(
       disks: testDisks,
       storages: testStorages,
       selectedDisk: selectedDisk,
@@ -85,7 +85,7 @@ void main() {
   });
 
   testWidgets('saves guided storage', (tester) async {
-    final model = buildSelectGuidedStorageModel(
+    final model = buildGuidedReformatModel(
       storages: testStorages,
       disks: testDisks,
       selectedStorage: testStorages.first,

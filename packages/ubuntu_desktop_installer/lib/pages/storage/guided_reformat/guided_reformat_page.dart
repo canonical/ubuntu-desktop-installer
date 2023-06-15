@@ -9,15 +9,15 @@ import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'select_guided_storage_model.dart';
+import 'guided_reformat_model.dart';
 
-/// Select a storage for guided partitioning.
-class SelectGuidedStoragePage extends ConsumerWidget {
-  const SelectGuidedStoragePage({super.key});
+/// Select a storage for guided reformatting.
+class GuidedReformatPage extends ConsumerWidget {
+  const GuidedReformatPage({super.key});
 
   static Future<bool> load(WidgetRef ref) {
     return ref
-        .read(selectGuidedStorageModelProvider.notifier)
+        .read(guidedReformatModelProvider.notifier)
         .loadGuidedStorage()
         .then((_) => true);
   }
@@ -39,7 +39,7 @@ class SelectGuidedStoragePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final model = ref.watch(selectGuidedStorageModelProvider);
+    final model = ref.watch(guidedReformatModelProvider);
     final lang = AppLocalizations.of(context);
     final flavor = Flavor.of(context);
     return WizardPage(

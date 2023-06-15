@@ -1,14 +1,14 @@
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/select_guided_storage/select_guided_storage_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/guided_reformat/guided_reformat_model.dart';
 
-import 'test_select_guided_storage.mocks.dart';
+import 'test_guided_reformat.mocks.dart';
 export '../../test_utils.dart';
-export 'test_select_guided_storage.mocks.dart';
+export 'test_guided_reformat.mocks.dart';
 
-@GenerateMocks([SelectGuidedStorageModel])
-SelectGuidedStorageModel buildSelectGuidedStorageModel({
+@GenerateMocks([GuidedReformatModel])
+GuidedReformatModel buildGuidedReformatModel({
   List<Disk>? disks,
   List<GuidedStorageTargetReformat>? storages,
   int? selectedIndex,
@@ -16,7 +16,7 @@ SelectGuidedStorageModel buildSelectGuidedStorageModel({
   GuidedStorageTargetReformat? selectedStorage,
   bool? isDone,
 }) {
-  final model = MockSelectGuidedStorageModel();
+  final model = MockGuidedReformatModel();
   when(model.storages).thenReturn(storages ?? <GuidedStorageTargetReformat>[]);
   when(model.selectedIndex).thenReturn(selectedIndex ?? 0);
   when(model.selectedDisk).thenReturn(selectedDisk);

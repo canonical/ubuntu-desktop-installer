@@ -284,11 +284,11 @@ Future<void> testManualStoragePage(
   await tester.tapNext();
 }
 
-Future<void> testSelectGuidedStoragePage(
+Future<void> testGuidedReformatPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, SelectGuidedStoragePage,
+  await expectPage(tester, GuidedReformatPage,
       (lang) => lang.selectGuidedStoragePageTitle('Ubuntu'));
 
   if (screenshot != null) {
