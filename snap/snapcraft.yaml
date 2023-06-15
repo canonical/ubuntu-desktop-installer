@@ -35,8 +35,8 @@ apps:
       LOG_LEVEL: debug
       SNAP_PYTHON: python3
 
-  ubuntu-core-desktop-installer:
-    command: bin/ubuntu_core_desktop_installer
+  core-desktop:
+    command: bin/core-desktop
     command-chain: [bin/launcher]
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
@@ -170,6 +170,8 @@ parts:
       mkdir -p $CRAFT_PART_INSTALL/bin/lib
       cp snap/local/launcher $CRAFT_PART_INSTALL/bin/
       cp snap/local/subiquity-server $CRAFT_PART_INSTALL/bin/
+      # TODO: flutter build linux --target lib/main_core_desktop.dart
+      cp snap/local/core-desktop $CRAFT_PART_INSTALL/bin/
       cp -r packages/subiquity_client/subiquity $CRAFT_PART_INSTALL/bin/
       mkdir -p $CRAFT_PART_INSTALL/etc/subiquity
       cp -r snap/local/postinst.d $CRAFT_PART_INSTALL/etc/subiquity
@@ -179,22 +181,6 @@ parts:
       flutter pub get
       flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $CRAFT_PART_INSTALL/bin/
-
-  ubuntu-core-desktop-installer:
-    after: [flutter-git]
-    source: .
-    source-type: git
-    plugin: nil
-    override-build: |
-      set -eux
-      mkdir -p $CRAFT_PART_INSTALL/bin
-      mkdir -p $CRAFT_PART_INSTALL/usr/libexec
-      cd packages/ubuntu_desktop_installer
-      flutter pub get
-      flutter build linux --release --target lib/main_core_desktop.dart -v
-      cd build/linux/*/release/bundle
-      mv ubuntu_desktop_installer ubuntu_core_desktop_installer
-      cp -r * $CRAFT_PART_INSTALL/bin/
 
   ubuntu-wsl-setup:
     after: [flutter-git]
