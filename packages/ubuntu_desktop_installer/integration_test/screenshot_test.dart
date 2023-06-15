@@ -136,9 +136,9 @@ void main() {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(
+    await testStoragePage(
       tester,
-      type: InstallationType.erase,
+      type: StorageType.erase,
       screenshot: '$currentThemeName/6.erase-disk',
     );
   }, variant: themeVariant);
@@ -150,9 +150,9 @@ void main() {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(
+    await testStoragePage(
       tester,
-      type: InstallationType.erase,
+      type: StorageType.erase,
       advancedFeature: AdvancedFeature.lvm,
       screenshot: '$currentThemeName/6.advanced-features',
     );
@@ -167,9 +167,9 @@ void main() {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(
+    await testStoragePage(
       tester,
-      type: InstallationType.bitlocker,
+      type: StorageType.bitlocker,
       screenshot: '$currentThemeName/6.alongside-windows',
     );
   }, variant: themeVariant);
@@ -239,7 +239,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(Routes.bitlocker);
+    await tester.jumpToStorageWizard(StorageRoutes.bitlocker);
     await tester.pumpAndSettle();
 
     await testBitLockerPage(
@@ -252,7 +252,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(Routes.securityKey);
+    await tester.jumpToStorageWizard(StorageRoutes.securityKey);
     await tester.pumpAndSettle();
 
     await testSecurityKeyPage(
@@ -272,9 +272,9 @@ void main() {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(
+    await testStoragePage(
       tester,
-      type: InstallationType.erase,
+      type: StorageType.erase,
     );
     await tester.pumpAndSettle();
 

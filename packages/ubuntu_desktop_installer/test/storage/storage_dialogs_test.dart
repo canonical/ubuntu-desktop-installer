@@ -2,33 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_dialogs.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_model.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_page.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/storage_dialogs.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/storage_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/storage_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import 'test_installation_type.dart';
+import 'test_storage.dart';
 
 void main() {
   setUpAll(() => InstallerTester.context = AlertDialog);
 
   testWidgets('select zfs', (tester) async {
-    final model = MockInstallationTypeModel();
+    final model = MockStorageModel();
     when(model.existingOS).thenReturn(null);
-    when(model.installationType).thenReturn(InstallationType.erase);
+    when(model.type).thenReturn(StorageType.erase);
     when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
     when(model.encryption).thenReturn(false);
 
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [installationTypeModelProvider.overrideWith((_) => model)],
-        child: tester.buildApp((_) => const InstallationTypePage()),
+        overrides: [storageModelProvider.overrideWith((_) => model)],
+        child: tester.buildApp((_) => const StoragePage()),
       ),
     );
 
     final result = showAdvancedFeaturesDialog(
-        tester.element(find.byType(InstallationTypePage)), model);
+        tester.element(find.byType(StoragePage)), model);
     await tester.pumpAndSettle();
 
     await tester.tap(
@@ -47,9 +47,9 @@ void main() {
   }, skip: true); // #373
 
   testWidgets('select lvm', (tester) async {
-    final model = MockInstallationTypeModel();
+    final model = MockStorageModel();
     when(model.existingOS).thenReturn(null);
-    when(model.installationType).thenReturn(InstallationType.erase);
+    when(model.type).thenReturn(StorageType.erase);
     when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
     when(model.encryption).thenReturn(false);
     when(model.canInstallAlongside).thenReturn(false);
@@ -59,13 +59,13 @@ void main() {
 
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [installationTypeModelProvider.overrideWith((_) => model)],
-        child: tester.buildApp((_) => const InstallationTypePage()),
+        overrides: [storageModelProvider.overrideWith((_) => model)],
+        child: tester.buildApp((_) => const StoragePage()),
       ),
     );
 
     final result = showAdvancedFeaturesDialog(
-        tester.element(find.byType(InstallationTypePage)), model);
+        tester.element(find.byType(StoragePage)), model);
     await tester.pumpAndSettle();
 
     await tester.tap(find.radioButton<AdvancedFeature>(
@@ -80,9 +80,9 @@ void main() {
   });
 
   testWidgets('select encrypted lvm', (tester) async {
-    final model = MockInstallationTypeModel();
+    final model = MockStorageModel();
     when(model.existingOS).thenReturn(null);
-    when(model.installationType).thenReturn(InstallationType.erase);
+    when(model.type).thenReturn(StorageType.erase);
     when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
     when(model.encryption).thenReturn(false);
     when(model.canInstallAlongside).thenReturn(false);
@@ -92,13 +92,13 @@ void main() {
 
     await tester.pumpWidget(
       ProviderScope(
-        overrides: [installationTypeModelProvider.overrideWith((_) => model)],
-        child: tester.buildApp((_) => const InstallationTypePage()),
+        overrides: [storageModelProvider.overrideWith((_) => model)],
+        child: tester.buildApp((_) => const StoragePage()),
       ),
     );
 
     final result = showAdvancedFeaturesDialog(
-        tester.element(find.byType(InstallationTypePage)), model);
+        tester.element(find.byType(StoragePage)), model);
     await tester.pumpAndSettle();
 
     await tester.tap(find.radioButton<AdvancedFeature>(

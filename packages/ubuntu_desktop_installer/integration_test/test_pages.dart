@@ -159,18 +159,17 @@ Future<void> testNotEnoughDiskSpacePage(
   await expectLater(windowClosed, completes);
 }
 
-Future<void> testInstallationTypePage(
+Future<void> testStoragePage(
   WidgetTester tester, {
-  InstallationType? type,
+  StorageType? type,
   AdvancedFeature? advancedFeature,
   bool? useEncryption,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, InstallationTypePage, (lang) => lang.installationTypeTitle);
+  await expectPage(tester, StoragePage, (lang) => lang.installationTypeTitle);
 
   if (type != null) {
-    await tester.tapRadio<InstallationType>(type);
+    await tester.tapRadio<StorageType>(type);
     await tester.pump();
   }
   if (advancedFeature != null) {
