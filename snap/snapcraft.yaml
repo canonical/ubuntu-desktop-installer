@@ -35,6 +35,18 @@ apps:
       LOG_LEVEL: debug
       SNAP_PYTHON: python3
 
+  ubuntu-core-desktop-installer:
+    command: bin/ubuntu_core_desktop_installer
+    command-chain: [bin/launcher]
+    desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
+    environment:
+      PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
+      LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/dri
+      GIO_MODULE_DIR: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gio/modules
+      LIVE_RUN: 1
+      LOG_LEVEL: debug
+      SNAP_PYTHON: python3
+
   probert:
     command: bin/probert
 
@@ -167,6 +179,22 @@ parts:
       flutter pub get
       flutter build linux --release -v
       cp -r build/linux/*/release/bundle/* $CRAFT_PART_INSTALL/bin/
+
+  ubuntu-core-desktop-installer:
+    after: [flutter-git]
+    source: .
+    source-type: git
+    plugin: nil
+    override-build: |
+      set -eux
+      mkdir -p $CRAFT_PART_INSTALL/bin
+      mkdir -p $CRAFT_PART_INSTALL/usr/libexec
+      cd packages/ubuntu_desktop_installer
+      flutter pub get
+      flutter build linux --release --target lib/main_core_desktop.dart -v
+      cd build/linux/*/release/bundle
+      mv ubuntu_desktop_installer ubuntu_core_desktop_installer
+      cp -r * $CRAFT_PART_INSTALL/bin/
 
   ubuntu-wsl-setup:
     after: [flutter-git]
