@@ -131,7 +131,7 @@ class StorageModel extends SafeChangeNotifier {
   /// Initializes the model.
   Future<void> init() async {
     await _diskService.init();
-    await _diskService.getGuidedStorage().then((r) => _storages = r.possible);
+    await _diskService.getGuidedStorage().then((r) => _storages = r.targets);
     _type ??= canInstallAlongside ? StorageType.alongside : StorageType.erase;
     _advancedFeature =
         _diskService.useLvm ? AdvancedFeature.lvm : AdvancedFeature.none;

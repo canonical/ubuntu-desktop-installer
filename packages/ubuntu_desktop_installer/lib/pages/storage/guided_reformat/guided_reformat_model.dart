@@ -60,7 +60,7 @@ class GuidedReformatModel extends SafeChangeNotifier {
 
   void _updateGuidedStorage(GuidedStorageResponseV2 response) {
     _storages =
-        response.possible.whereType<GuidedStorageTargetReformat>().toList();
+        response.targets.whereType<GuidedStorageTargetReformat>().toList();
     notifyListeners();
   }
 

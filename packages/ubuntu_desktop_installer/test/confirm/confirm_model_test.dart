@@ -91,8 +91,7 @@ void main() {
   });
 
   test('set guided storage', () async {
-    const target =
-        GuidedStorageTarget.reformat(diskId: 'sda', capabilities: []);
+    const target = GuidedStorageTarget.reformat(diskId: 'sda', allowed: []);
 
     final installer = MockInstallerService();
     final storage = MockStorageService();
