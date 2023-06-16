@@ -101,7 +101,13 @@ class WizardButton extends StatefulWidget {
         execute: () async {
           // navigate the root wizard at the end of a nested wizard
           final effectiveWizard = wizard?.hasNext == true ? wizard : rootWizard;
-          await effectiveWizard?.next(arguments: arguments);
+          try {
+            await effectiveWizard?.next(arguments: arguments);
+          } on WizardException catch (_) {
+            if (effectiveWizard != rootWizard) {
+              await rootWizard?.next(arguments: arguments);
+            }
+          }
           onBack?.call();
         },
       ),
