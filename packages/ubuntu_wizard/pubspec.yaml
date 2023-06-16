@@ -31,7 +31,7 @@ dependencies:
       path: packages/ubuntu_widgets
       ref: b193a7a8113c4c5400a9b58b42b1a104abd64bbb
   url_launcher: ^6.1.0
-  wizard_router: 1.0.0
+  wizard_router: 1.0.1
   yaru: ^0.7.0
   yaru_colors: ^0.1.6
   yaru_widgets: ^2.4.0
