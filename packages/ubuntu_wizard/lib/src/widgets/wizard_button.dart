@@ -35,22 +35,32 @@ class WizardButton extends StatefulWidget {
   static Widget previous(
     BuildContext context, {
     bool? visible,
+    bool? enabled,
     WizardCallback? onBack,
-    bool root = false,
+    bool root = false, // TODO: remove
   }) {
     final wizard = Wizard.maybeOf(context, root: root);
-    final routeData = wizard?.routeData as WizardRouteData?;
+    final rootWizard = root ? wizard : Wizard.maybeOf(context, root: true);
+    final routeData =
+        (wizard?.routeData ?? rootWizard?.routeData) as WizardRouteData?;
+    final hasPrevious = routeData?.hasPrevious ??
+        (wizard?.hasPrevious == true || rootWizard?.hasPrevious == true);
+    final isLoading =
+        wizard?.isLoading == true || rootWizard?.isLoading == true;
     return AnimatedBuilder(
       animation: wizard?.controller ?? _noAnimation,
       builder: (context, child) => WizardButton(
-        label: UbuntuLocalizations.of(context).previousLabel,
-        visible: visible,
-        flat: true,
-        enabled: wizard?.isLoading != true &&
-            (routeData?.hasPrevious ?? wizard?.hasPrevious ?? false),
-        onActivated: onBack,
-        execute: wizard?.back,
-      ),
+          label: UbuntuLocalizations.of(context).previousLabel,
+          visible: visible,
+          flat: true,
+          enabled: !isLoading && (enabled ?? hasPrevious),
+          onActivated: onBack,
+          execute: () {
+            // navigate the root wizard at the end of a nested wizard
+            final effectiveWizard =
+                wizard?.hasPrevious == true ? wizard : rootWizard;
+            return effectiveWizard?.back();
+          }),
     );
   }
 
@@ -65,26 +75,33 @@ class WizardButton extends StatefulWidget {
     Object? arguments,
     WizardCallback? onNext,
     WizardCallback? onBack,
-    bool root = false,
+    bool root = false, // TODO: remove
   }) {
     final wizard = Wizard.maybeOf(context, root: root);
-    final routeData = wizard?.routeData as WizardRouteData?;
+    final rootWizard = root ? wizard : Wizard.maybeOf(context, root: true);
+    final routeData =
+        (wizard?.routeData ?? rootWizard?.routeData) as WizardRouteData?;
+    final hasNext = routeData?.hasNext ??
+        (wizard?.hasNext == true || rootWizard?.hasNext == true);
+    final isLoading =
+        wizard?.isLoading == true || rootWizard?.isLoading == true;
     return AnimatedBuilder(
       animation: wizard?.controller ?? _noAnimation,
       builder: (context, child) => WizardButton(
         label: label ??
-            (wizard?.hasNext == false
-                ? UbuntuLocalizations.of(context).doneLabel
-                : UbuntuLocalizations.of(context).nextLabel),
+            (hasNext
+                ? UbuntuLocalizations.of(context).nextLabel
+                : UbuntuLocalizations.of(context).doneLabel),
         visible: visible,
-        enabled: wizard?.isLoading != true &&
-            (enabled ?? routeData?.hasNext ?? true),
-        loading: wizard?.isLoading ?? false,
+        enabled: !isLoading && (enabled ?? hasNext),
+        loading: isLoading,
         flat: flat,
         highlighted: highlighted,
         onActivated: onNext,
         execute: () async {
-          await wizard?.next(arguments: arguments);
+          // navigate the root wizard at the end of a nested wizard
+          final effectiveWizard = wizard?.hasNext == true ? wizard : rootWizard;
+          await effectiveWizard?.next(arguments: arguments);
           onBack?.call();
         },
       ),
