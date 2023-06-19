@@ -34,7 +34,6 @@ final identityModelProvider = ChangeNotifierProvider(
   (_) => IdentityModel(
     service: getService<IdentityService>(),
     activeDirectory: getService<ActiveDirectoryService>(),
-    config: getService<ConfigService>(),
     network: getService<NetworkService>(),
     telemetry: tryGetService<TelemetryService>(),
   ),
@@ -46,12 +45,10 @@ class IdentityModel extends PropertyStreamNotifier {
   IdentityModel({
     required IdentityService service,
     required ActiveDirectoryService activeDirectory,
-    required ConfigService config,
     required NetworkService network,
     TelemetryService? telemetry,
   })  : _service = service,
         _activeDirectory = activeDirectory,
-        _config = config,
         _network = network,
         _telemetry = telemetry {
     Listenable.merge([
@@ -74,7 +71,6 @@ class IdentityModel extends PropertyStreamNotifier {
 
   final IdentityService _service;
   final ActiveDirectoryService _activeDirectory;
-  final ConfigService _config;
   final NetworkService _network;
   final TelemetryService? _telemetry;
 
@@ -171,32 +167,21 @@ class IdentityModel extends PropertyStreamNotifier {
     _productName.value = await _readProductName();
     log.info('Read product name: ${_productName.value}');
 
-    _autoLogin.value = await _config.get(kAutoLoginUser) != null;
+    _autoLogin.value = identity.autoLogin;
     _hasActiveDirectorySupport.value = await _activeDirectory.hasSupport();
     _useActiveDirectory.value = await _activeDirectory.isUsed();
   }
 
-  /// The auto-login user config key for testing purposes.
-  @visibleForTesting
-  static const kAutoLoginUser = 'AutoLoginUser';
-
   /// Saves the identity data to the server.
   Future<void> save({@visibleForTesting String? salt}) async {
-    final identity = IdentityData(
+    final identity = Identity(
       realname: realName,
       hostname: hostname,
       username: username,
       cryptedPassword: encryptPassword(password, salt: salt),
+      autoLogin: autoLogin,
     );
     log.info('Saved identity: ${identity.description}');
-
-    if (autoLogin) {
-      log.info('Enabled auto-login');
-      await _config.set(kAutoLoginUser, username);
-    } else {
-      log.info('Disabled auto-login');
-      await _config.set(kAutoLoginUser, null);
-    }
 
     _telemetry?.addMetric('UseActiveDirectory', useActiveDirectory);
 
@@ -234,7 +219,7 @@ Future<String> _readProductName() async {
   return productName;
 }
 
-extension _IdentityDescription on IdentityData {
+extension _IdentityDescription on Identity {
   String get description {
     return 'realname: "$realname", hostname: "$hostname", username: "$username"';
   }

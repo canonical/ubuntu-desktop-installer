@@ -32,7 +32,7 @@ void main() {
     const timezone = 'Europe/Paris';
     const keyboardLayout = KeyboardSetting(layout: 'Français');
     const keyboardSetting = KeyboardSetting(layout: 'fr');
-    const identity = IdentityData(
+    const identity = Identity(
       realname: 'User',
       hostname: 'ubuntu',
       username: 'user',
@@ -84,7 +84,7 @@ void main() {
   });
 
   testWidgets('guided lvm + encryption', (tester) async {
-    const identity = IdentityData(
+    const identity = Identity(
       realname: 'User',
       hostname: 'ubuntu',
       username: 'user',
@@ -182,7 +182,7 @@ void main() {
 
     await testIdentityPage(
       tester,
-      identity: const IdentityData(realname: 'a', hostname: 'b', username: 'c'),
+      identity: const Identity(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
     await tester.pumpAndSettle();
@@ -230,7 +230,7 @@ void main() {
 
     await testIdentityPage(
       tester,
-      identity: const IdentityData(realname: 'a', hostname: 'b', username: 'c'),
+      identity: const Identity(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
     await tester.pumpAndSettle();
@@ -311,7 +311,7 @@ void main() {
 }
 
 Future<void> verifyConfig({
-  IdentityData? identity,
+  Identity? identity,
   KeyboardSetting? keyboard,
   String? locale,
   String? timezone,

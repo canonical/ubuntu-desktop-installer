@@ -431,7 +431,7 @@ Future<void> testTimezonePage(
 
 Future<void> testIdentityPage(
   WidgetTester tester, {
-  IdentityData? identity,
+  Identity? identity,
   String? password,
   String? screenshot,
 }) async {
