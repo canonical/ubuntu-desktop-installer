@@ -306,7 +306,7 @@ void main() {
 
     await testIdentityPage(
       tester,
-      identity: const IdentityData(
+      identity: const Identity(
         realname: 'Ubuntu User',
         hostname: 'ubuntu',
         username: 'user',

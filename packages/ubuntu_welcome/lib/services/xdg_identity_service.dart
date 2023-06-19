@@ -14,7 +14,7 @@ class XdgIdentityService implements IdentityService {
 
   final DBusClient _dBusClient;
   final int _userId;
-  IdentityData? _identity;
+  Identity? _identity;
 
   DBusRemoteObject get _accountObject => DBusRemoteObject(
         _dBusClient,
@@ -28,13 +28,13 @@ class XdgIdentityService implements IdentityService {
       );
 
   @override
-  Future<IdentityData> getIdentity() async {
+  Future<Identity> getIdentity() async {
     if (_identity != null) {
       return _identity!;
     }
 
     if (_userId != _defaultUserId) {
-      _identity = const IdentityData();
+      _identity = const Identity();
     } else {
       final userObjectPath = await _accountObject
           .callMethod('org.freedesktop.Accounts', 'FindUserById',
@@ -55,7 +55,7 @@ class XdgIdentityService implements IdentityService {
       final hostname = await _hostnameObject
           .getProperty('org.freedesktop.hostname1', 'Hostname')
           .then((v) => v.asString());
-      _identity = IdentityData(
+      _identity = Identity(
         realname: realname,
         username: username,
         hostname: hostname,
@@ -65,7 +65,7 @@ class XdgIdentityService implements IdentityService {
   }
 
   @override
-  Future<void> setIdentity(IdentityData identity) async {
+  Future<void> setIdentity(Identity identity) async {
     if (_identity == identity) {
       return;
     }

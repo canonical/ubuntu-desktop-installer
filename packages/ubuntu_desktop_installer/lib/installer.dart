@@ -69,8 +69,8 @@ Future<void> runInstallerApp(
       () => SubiquityActiveDirectoryService(getService<SubiquityClient>()));
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
-  tryRegisterService<IdentityService>(
-      () => SubiquityIdentityService(getService<SubiquityClient>()));
+  tryRegisterService<IdentityService>(() => SubiquityIdentityService(
+      getService<SubiquityClient>(), getService<ConfigService>()));
   tryRegisterService<InstallerService>(() => InstallerService(
       getService<SubiquityClient>(),
       routes: options['routes']?.split(',') ?? routes));

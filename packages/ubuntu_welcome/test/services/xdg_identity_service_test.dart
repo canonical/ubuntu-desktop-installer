@@ -9,7 +9,7 @@ import 'xdg_identity_service_test.mocks.dart';
 
 @GenerateMocks([DBusRemoteObject, DBusClient])
 void main() {
-  const testIdentity = IdentityData(
+  const testIdentity = Identity(
     realname: 'Arthur Dent',
     username: 'adent',
     hostname: 'heart-of-gold',
@@ -65,7 +65,7 @@ void main() {
 }
 
 MockDBusClient createMockDBusClient({
-  IdentityData identityData = const IdentityData(),
+  Identity identityData = const Identity(),
 }) {
   final dBusClient = MockDBusClient();
 
