@@ -13,6 +13,7 @@ void main() {
     realname: 'Arthur Dent',
     username: 'adent',
     hostname: 'heart-of-gold',
+    autoLogin: true,
   );
   test('get default user identity', () async {
     final dBusClient = createMockDBusClient(identityData: testIdentity);
@@ -56,6 +57,20 @@ void main() {
       values: [
         const DBusString('password'),
         const DBusString(''),
+      ],
+      replySignature: DBusSignature.empty,
+      noReplyExpected: false,
+      noAutoStart: false,
+      allowInteractiveAuthorization: false,
+    )).called(1);
+
+    verify(dBusClient.callMethod(
+      destination: 'org.freedesktop.Accounts',
+      path: DBusObjectPath('/test/object/path'),
+      interface: 'org.freedesktop.Accounts.User',
+      name: 'SetAutomaticLogin',
+      values: [
+        const DBusBoolean(true),
       ],
       replySignature: DBusSignature.empty,
       noReplyExpected: false,
@@ -136,25 +151,28 @@ MockDBusClient createMockDBusClient({
           (i.namedArguments[const Symbol('values')] as List<DBusValue>);
       final destination =
           (i.namedArguments[const Symbol('destination')] as String);
-      String? response;
+      DBusValue? response;
       switch (destination) {
         case 'org.freedesktop.Accounts':
           switch (values[1].asString()) {
             case 'UserName':
-              response = identityData.username;
+              response = DBusString(identityData.username);
               break;
             case 'RealName':
-              response = identityData.realname;
+              response = DBusString(identityData.realname);
+              break;
+            case 'AutomaticLogin':
+              response = DBusBoolean(identityData.autoLogin);
               break;
           }
         case 'org.freedesktop.hostname1':
           if (values[1].asString() == 'Hostname') {
-            response = identityData.hostname;
+            response = DBusString(identityData.hostname);
             break;
           }
       }
       if (response != null) {
-        return DBusMethodSuccessResponse([DBusVariant(DBusString(response))]);
+        return DBusMethodSuccessResponse([DBusVariant(response)]);
       }
       throw DBusMethodResponseException(DBusMethodErrorResponse.invalidArgs());
     },
