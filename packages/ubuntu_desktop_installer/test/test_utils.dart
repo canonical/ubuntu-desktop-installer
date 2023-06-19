@@ -92,6 +92,7 @@ extension InstallerTester on WidgetTester {
   NetworkService,
   PowerService,
   ProductService,
+  SessionService,
   SoundService,
   StorageService,
   TelemetryService,
