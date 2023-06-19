@@ -83,6 +83,8 @@ Future<void> runInstallerApp(
       () => SubiquityNetworkService(getService<SubiquityClient>()));
   tryRegisterService(PowerService.new);
   tryRegisterService(ProductService.new);
+  tryRegisterService<SessionService>(
+      () => SubiquitySessionService(getService<SubiquityClient>()));
   tryRegisterService(() => StorageService(getService<SubiquityClient>()));
   tryRegisterService(SubiquityClient.new);
   tryRegisterService(

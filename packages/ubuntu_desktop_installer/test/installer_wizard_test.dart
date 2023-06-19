@@ -256,6 +256,7 @@ void main() {
     final storage = MockStorageService();
     when(storage.guidedTarget).thenReturn(null);
 
+    registerMockService<SessionService>(MockSessionService());
     registerMockService<StorageService>(storage);
     registerMockService<SubiquityClient>(MockSubiquityClient());
     registerMockService<TelemetryService>(MockTelemetryService());
