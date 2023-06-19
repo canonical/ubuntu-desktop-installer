@@ -27,14 +27,15 @@ import 'package:ubuntu_desktop_installer/services/locale_service.dart' as _i19;
 import 'package:ubuntu_desktop_installer/services/network_service.dart' as _i20;
 import 'package:ubuntu_desktop_installer/services/power_service.dart' as _i22;
 import 'package:ubuntu_desktop_installer/services/product_service.dart' as _i6;
-import 'package:ubuntu_desktop_installer/services/sound_service.dart' as _i23;
-import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i24;
+import 'package:ubuntu_desktop_installer/services/session_service.dart' as _i23;
+import 'package:ubuntu_desktop_installer/services/sound_service.dart' as _i24;
+import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i25;
 import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
-    as _i25;
-import 'package:ubuntu_desktop_installer/services/timezone_service.dart'
     as _i26;
+import 'package:ubuntu_desktop_installer/services/timezone_service.dart'
+    as _i27;
 import 'package:ubuntu_desktop_installer/services/udev_service.dart' as _i7;
-import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i27;
+import 'package:ubuntu_wizard/src/utils/url_launcher.dart' as _i28;
 import 'package:upower/upower.dart' as _i5;
 
 // ignore_for_file: type=lint
@@ -1093,10 +1094,40 @@ class MockProductService extends _i1.Mock implements _i6.ProductService {
       ) as _i6.ProductInfo);
 }
 
+/// A class which mocks [SessionService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSessionService extends _i1.Mock implements _i23.SessionService {
+  MockSessionService() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i9.Future<void> reboot({bool? immediate = false}) => (super.noSuchMethod(
+        Invocation.method(
+          #reboot,
+          [],
+          {#immediate: immediate},
+        ),
+        returnValue: _i9.Future<void>.value(),
+        returnValueForMissingStub: _i9.Future<void>.value(),
+      ) as _i9.Future<void>);
+  @override
+  _i9.Future<void> shutdown({bool? immediate = false}) => (super.noSuchMethod(
+        Invocation.method(
+          #shutdown,
+          [],
+          {#immediate: immediate},
+        ),
+        returnValue: _i9.Future<void>.value(),
+        returnValueForMissingStub: _i9.Future<void>.value(),
+      ) as _i9.Future<void>);
+}
+
 /// A class which mocks [SoundService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSoundService extends _i1.Mock implements _i23.SoundService {
+class MockSoundService extends _i1.Mock implements _i24.SoundService {
   MockSoundService() {
     _i1.throwOnMissingStub(this);
   }
@@ -1115,7 +1146,7 @@ class MockSoundService extends _i1.Mock implements _i23.SoundService {
 /// A class which mocks [StorageService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockStorageService extends _i1.Mock implements _i24.StorageService {
+class MockStorageService extends _i1.Mock implements _i25.StorageService {
   MockStorageService() {
     _i1.throwOnMissingStub(this);
   }
@@ -1339,7 +1370,7 @@ class MockStorageService extends _i1.Mock implements _i24.StorageService {
 /// A class which mocks [TelemetryService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTelemetryService extends _i1.Mock implements _i25.TelemetryService {
+class MockTelemetryService extends _i1.Mock implements _i26.TelemetryService {
   MockTelemetryService() {
     _i1.throwOnMissingStub(this);
   }
@@ -1394,7 +1425,7 @@ class MockTelemetryService extends _i1.Mock implements _i25.TelemetryService {
 /// A class which mocks [TimezoneService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockTimezoneService extends _i1.Mock implements _i26.TimezoneService {
+class MockTimezoneService extends _i1.Mock implements _i27.TimezoneService {
   MockTimezoneService() {
     _i1.throwOnMissingStub(this);
   }
@@ -1474,7 +1505,7 @@ class MockUdevService extends _i1.Mock implements _i7.UdevService {
 /// A class which mocks [UrlLauncher].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockUrlLauncher extends _i1.Mock implements _i27.UrlLauncher {
+class MockUrlLauncher extends _i1.Mock implements _i28.UrlLauncher {
   MockUrlLauncher() {
     _i1.throwOnMissingStub(this);
   }

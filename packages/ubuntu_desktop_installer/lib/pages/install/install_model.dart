@@ -14,6 +14,7 @@ final installModelProvider = ChangeNotifierProvider(
     getService<SubiquityClient>(),
     getService<JournalService>(),
     getService<ProductService>(),
+    getService<SessionService>(),
   ),
 );
 
@@ -57,11 +58,12 @@ class InstallationEvent {
 /// View model for [InstallPage].
 class InstallModel extends SafeChangeNotifier {
   /// Creates an instance with the given client.
-  InstallModel(this._client, this._journal, this._product);
+  InstallModel(this._client, this._journal, this._product, this._session);
 
   final SubiquityClient _client;
   final JournalService _journal;
   final ProductService _product;
+  final SessionService _session;
 
   Stream<String>? _log;
   ApplicationStatus? _status;
@@ -187,5 +189,5 @@ class InstallModel extends SafeChangeNotifier {
     subscription.cancel();
   }
 
-  Future<void> reboot() => _client.reboot(immediate: false);
+  Future<void> reboot() => _session.reboot(immediate: false);
 }
