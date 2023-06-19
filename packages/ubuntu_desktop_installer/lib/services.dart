@@ -11,6 +11,7 @@ export 'services/locale_service.dart';
 export 'services/network_service.dart';
 export 'services/power_service.dart';
 export 'services/product_service.dart';
+export 'services/session_service.dart';
 export 'services/sound_service.dart';
 export 'services/storage_service.dart' hide log;
 export 'services/telemetry_service.dart' hide log;

@@ -34,6 +34,7 @@ dependencies:
   ubuntu_localizations: ^0.2.0
   ubuntu_logger: ^0.0.3
   ubuntu_service: ^0.2.0
+  ubuntu_session: ^0.0.4
   ubuntu_widgets:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
