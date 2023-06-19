@@ -1,8 +1,8 @@
 import 'package:subiquity_client/subiquity_client.dart';
 
 abstract class SessionService {
-  Future<void> reboot();
-  Future<void> shutdown();
+  Future<void> reboot({bool immediate = false});
+  Future<void> shutdown({bool immediate = false});
 }
 
 class SubiquitySessionService implements SessionService {
@@ -11,12 +11,12 @@ class SubiquitySessionService implements SessionService {
   final SubiquityClient _subiquity;
 
   @override
-  Future<void> reboot() {
-    return _subiquity.reboot();
+  Future<void> reboot({bool immediate = false}) {
+    return _subiquity.reboot(immediate: immediate);
   }
 
   @override
-  Future<void> shutdown() {
-    return _subiquity.shutdown();
+  Future<void> shutdown({bool immediate = false}) {
+    return _subiquity.shutdown(immediate: immediate);
   }
 }

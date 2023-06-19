@@ -8,12 +8,12 @@ class XdgSessionService implements SessionService {
 
   final UbuntuSession _session;
   @override
-  Future<void> reboot() {
+  Future<void> reboot({bool immediate = false}) {
     return _session.reboot();
   }
 
   @override
-  Future<void> shutdown() {
+  Future<void> shutdown({bool immediate = false}) {
     return _session.shutdown();
   }
 }
