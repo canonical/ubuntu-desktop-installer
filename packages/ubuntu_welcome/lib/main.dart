@@ -20,11 +20,11 @@ Future<void> main(List<String> args) async {
   setupLogger(options);
 
   tryRegisterService<ActiveDirectoryService>(RealmdActiveDirectoryService.new);
-  tryRegisterService<LocaleService>(XdgLocaleService.new);
-  tryRegisterService<TimezoneService>(XdgTimezoneService.new);
-  tryRegisterService<KeyboardService>(XdgKeyboardService.new);
   tryRegisterService<IdentityService>(XdgIdentityService.new);
+  tryRegisterService<KeyboardService>(XdgKeyboardService.new);
+  tryRegisterService<LocaleService>(XdgLocaleService.new);
   tryRegisterService<NetworkService>(NetworkService.new);
+  tryRegisterService<TimezoneService>(XdgTimezoneService.new);
 
   final log = Logger();
 
