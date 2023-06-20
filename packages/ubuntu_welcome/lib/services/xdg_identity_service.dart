@@ -104,7 +104,7 @@ class XdgIdentityService implements IdentityService {
     await userObject.callMethod(
       'org.freedesktop.Accounts.User',
       'SetPassword',
-      [DBusString(_identity!.password)],
+      [DBusString(_identity!.password), const DBusString('')],
       replySignature: DBusSignature.empty,
     );
 

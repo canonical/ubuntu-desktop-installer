@@ -55,6 +55,7 @@ void main() {
       name: 'SetPassword',
       values: [
         const DBusString('password'),
+        const DBusString(''),
       ],
       replySignature: DBusSignature.empty,
       noReplyExpected: false,
