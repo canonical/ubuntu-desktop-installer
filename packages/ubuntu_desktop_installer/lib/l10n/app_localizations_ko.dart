@@ -511,6 +511,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionFormatNone => '포맷하지 않기';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => '파티션 포맷';
 
   @override

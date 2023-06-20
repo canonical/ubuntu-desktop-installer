@@ -511,6 +511,11 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionFormatNone => 'Palikti neformatuotą';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'Formatuoti skaidinį';
 
   @override

@@ -1137,6 +1137,12 @@ abstract class AppLocalizations {
   /// **'Leave unformatted'**
   String get partitionFormatNone;
 
+  /// No description provided for @partitionFormatKeep.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave formatted as {format}'**
+  String partitionFormatKeep(Object format);
+
   /// No description provided for @partitionErase.
   ///
   /// In en, this message translates to:

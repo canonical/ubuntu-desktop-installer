@@ -511,6 +511,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partitionFormatNone => 'Deixar sem formatação';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'Formatar a partição';
 
   @override

@@ -65,13 +65,27 @@ Future<void> showCreatePartitionDialog(
               ],
               <Widget>[
                 Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
-                _PartitionFormatSelector(
-                  partitionFormat: partitionFormat,
-                  partitionFormats: [
-                    ...PartitionFormat.supported,
-                    PartitionFormat.none,
-                  ],
-                )
+                ValueListenableBuilder(
+                  valueListenable: partitionFormat,
+                  builder: (context, value, child) {
+                    return MenuButtonBuilder<PartitionFormat?>(
+                      entries: [
+                        ...PartitionFormat.supported
+                            .map((f) => MenuButtonEntry(value: f)),
+                        const MenuButtonEntry(value: null, isDivider: true),
+                        const MenuButtonEntry(value: PartitionFormat.swap),
+                        const MenuButtonEntry(value: null, isDivider: true),
+                        const MenuButtonEntry(value: PartitionFormat.none),
+                      ],
+                      selected: partitionFormat.value,
+                      onSelected: (format) => partitionFormat.value = format,
+                      itemBuilder: (context, format, child) => Text(
+                        format?.name ?? lang.partitionFormatNone,
+                        key: ValueKey(format?.type),
+                      ),
+                    );
+                  },
+                ),
               ],
               <Widget>[
                 Text(lang.partitionMountPointLabel, textAlign: TextAlign.end),
@@ -128,14 +142,11 @@ Future<void> showEditPartitionDialog(
     builder: (context) {
       final partitionSize = ValueNotifier(partition.size ?? 0);
       final partitionUnit = ValueNotifier(DataUnit.megabytes);
-      final partitionFormat =
-          ValueNotifier(PartitionFormat.fromPartition(partition));
-      final partitionWipe = ValueNotifier(partition.isWiped);
+      final partitionFormat = ValueNotifier<PartitionFormat?>(
+          partition.preserve == true && !partition.isWiped
+              ? null
+              : PartitionFormat.fromPartition(partition));
       final partitionMount = ValueNotifier(partition.mount);
-
-      bool forceWipe() {
-        return originalConfig?.mustWipe(partitionFormat.value?.type) != false;
-      }
 
       final lang = AppLocalizations.of(context);
       return Consumer(builder: (context, ref, child) {
@@ -175,24 +186,43 @@ Future<void> showEditPartitionDialog(
               ],
               <Widget>[
                 Text(lang.partitionFormatLabel, textAlign: TextAlign.end),
-                _PartitionFormatSelector(
-                  partitionFormat: partitionFormat,
-                  partitionFormats: PartitionFormat.values,
-                ),
-              ],
-              <Widget>[
-                const SizedBox.shrink(),
-                AnimatedBuilder(
-                  animation: Listenable.merge([
-                    partitionFormat,
-                    partitionWipe,
-                  ]),
-                  builder: (context, child) {
-                    return _PartitionWipeCheckbox(
-                      canWipe: partitionFormat.value?.canWipe == true &&
-                          !forceWipe(),
-                      wipe: partitionWipe.value || forceWipe(),
-                      onChanged: (v) => partitionWipe.value = v,
+                ValueListenableBuilder(
+                  valueListenable: partitionFormat,
+                  builder: (context, value, child) {
+                    final configFormat = originalConfig != null
+                        ? PartitionFormat.fromPartition(originalConfig)
+                        : null;
+                    return MenuButtonBuilder<PartitionFormat?>(
+                      entries: [
+                        if (partition.preserve == true) ...[
+                          const MenuButtonEntry(value: null),
+                          const MenuButtonEntry(value: null, isDivider: true),
+                        ],
+                        ...PartitionFormat.supported
+                            .map((f) => MenuButtonEntry(value: f)),
+                        const MenuButtonEntry(value: null, isDivider: true),
+                        const MenuButtonEntry(value: PartitionFormat.swap),
+                        if (partition.preserve != true) ...[
+                          const MenuButtonEntry(value: null, isDivider: true),
+                          const MenuButtonEntry(value: PartitionFormat.none),
+                        ],
+                      ],
+                      selected: partitionFormat.value,
+                      onSelected: (format) => partitionFormat.value = format,
+                      itemBuilder: (context, format, child) => Text(
+                        format?.name ??
+                            (configFormat?.name != null
+                                ? lang.partitionFormatKeep(configFormat!.name!)
+                                : lang.partitionFormatNone),
+                        key: ValueKey(format?.type),
+                      ),
+                      child: Text(
+                        partitionFormat.value?.name ??
+                            (configFormat?.name != null
+                                ? lang.partitionFormatKeep(configFormat!.name!)
+                                : lang.partitionFormatNone),
+                        key: ValueKey(partitionFormat.value?.type),
+                      ),
                     );
                   },
                 ),
@@ -226,7 +256,8 @@ Future<void> showEditPartitionDialog(
                               size: partitionSize.value,
                               format: partitionFormat.value,
                               mount: partitionMount.value,
-                              wipe: partitionWipe.value || forceWipe(),
+                              wipe: partitionFormat.value != null &&
+                                  partitionFormat.value != PartitionFormat.none,
                             );
                             Navigator.of(context).pop();
                           }
@@ -270,7 +301,8 @@ class _PartitionMountField extends StatelessWidget {
             fieldViewBuilder:
                 (context, textEditingController, focusNode, onFieldSubmitted) {
               return TextFormField(
-                enabled: format != PartitionFormat.swap,
+                enabled: format != PartitionFormat.none &&
+                    format != PartitionFormat.swap,
                 controller: textEditingController,
                 focusNode: focusNode,
                 onChanged: (value) => partitionMount.value = value,
@@ -289,62 +321,6 @@ class _PartitionMountField extends StatelessWidget {
                 },
               );
             },
-          );
-        },
-      ),
-    );
-  }
-}
-
-class _PartitionWipeCheckbox extends StatelessWidget {
-  const _PartitionWipeCheckbox({
-    required this.canWipe,
-    required this.wipe,
-    required this.onChanged,
-  });
-
-  final bool canWipe;
-  final bool? wipe;
-  final ValueChanged<bool> onChanged;
-
-  @override
-  Widget build(BuildContext context) {
-    final lang = AppLocalizations.of(context);
-    return YaruCheckButton(
-      title: Text(lang.partitionErase),
-      value: wipe ?? false,
-      onChanged: canWipe ? (v) => onChanged(v!) : null,
-    );
-  }
-}
-
-class _PartitionFormatSelector extends StatelessWidget {
-  const _PartitionFormatSelector({
-    required this.partitionFormat,
-    required this.partitionFormats,
-  });
-
-  final ValueNotifier<PartitionFormat?> partitionFormat;
-  final List<PartitionFormat?> partitionFormats;
-
-  @override
-  Widget build(BuildContext context) {
-    final lang = AppLocalizations.of(context);
-    return SizedBox(
-      width: _kInputFieldWidth,
-      child: ValueListenableBuilder<PartitionFormat?>(
-        valueListenable: partitionFormat,
-        builder: (context, type, child) {
-          return MenuButtonBuilder<PartitionFormat?>(
-            selected: type,
-            values: partitionFormats,
-            itemBuilder: (context, format, _) {
-              return Text(
-                format?.name ?? lang.partitionFormatNone,
-                key: ValueKey(format?.type),
-              );
-            },
-            onSelected: (value) => partitionFormat.value = value,
           );
         },
       ),

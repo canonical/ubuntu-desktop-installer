@@ -511,6 +511,11 @@ class AppLocalizationsEo extends AppLocalizations {
   String get partitionFormatNone => 'Lasi nestrukturita';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'Restrukturi la subdiskon';
 
   @override

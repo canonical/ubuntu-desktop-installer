@@ -511,6 +511,11 @@ class AppLocalizationsSk extends AppLocalizations {
   String get partitionFormatNone => 'Ponechať nenaformátované';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'Naformátovať oddiel';
 
   @override

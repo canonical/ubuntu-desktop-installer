@@ -511,6 +511,11 @@ class AppLocalizationsTr extends AppLocalizations {
   String get partitionFormatNone => 'Biçimlendirilmemiş bırak';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'Bölümü biçimlendir';
 
   @override

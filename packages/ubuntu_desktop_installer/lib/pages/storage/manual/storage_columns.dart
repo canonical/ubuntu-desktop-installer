@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:yaru_icons/yaru_icons.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'manual_storage_model.dart';
 import 'storage_types.dart';
@@ -192,11 +191,10 @@ class StorageWipeColumn extends StorageColumn {
               final model = ref.read(manualStorageModelProvider);
               final config = model.originalConfig(partition);
               final forceWipe = config?.mustWipe(partition.format) != false;
-              return YaruCheckbox(
-                value: partition.isWiped || forceWipe,
-                onChanged: partition.canWipe && !forceWipe
-                    ? (wipe) => onWipe(disk, partition, wipe!)
-                    : null,
+              return Icon(
+                partition.isWiped || forceWipe
+                    ? YaruIcons.checkbox_checked_filled
+                    : YaruIcons.checkbox,
               );
             });
           },

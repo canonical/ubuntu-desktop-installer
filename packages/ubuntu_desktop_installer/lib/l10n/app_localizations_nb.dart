@@ -511,6 +511,11 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionFormatNone => 'Levn uformatert';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'Formater partisjonen';
 
   @override

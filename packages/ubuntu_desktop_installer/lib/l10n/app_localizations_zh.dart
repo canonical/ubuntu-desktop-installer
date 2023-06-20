@@ -511,6 +511,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionFormatNone => '保持未格式化';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => '格式化分区';
 
   @override

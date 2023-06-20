@@ -277,7 +277,12 @@ void main() {
 
   test('add partition', () async {
     const gap = Gap(offset: 123, size: 456, usable: GapUsable.YES);
-    const partition = Partition(size: 123, format: 'ext3', mount: '/tst');
+    const partition = Partition(
+      size: 123,
+      format: 'ext3',
+      mount: '/tst',
+      wipe: 'superblock',
+    );
 
     final service = MockStorageService();
     when(service.addPartition(fakeDisk(), gap, partition))
@@ -330,7 +335,8 @@ void main() {
     when(service.addPartition(
             testPartitions(2),
             const Gap(offset: 123, size: 456, usable: GapUsable.YES),
-            const Partition(size: 123, format: 'ext4', mount: '/tst')))
+            const Partition(
+                size: 123, format: 'ext4', mount: '/tst', wipe: 'superblock')))
         .thenAnswer((_) async => [testPartitions(2)]);
     await model.addPartition(model.selectedDisk!,
         const Gap(offset: 123, size: 456, usable: GapUsable.YES),

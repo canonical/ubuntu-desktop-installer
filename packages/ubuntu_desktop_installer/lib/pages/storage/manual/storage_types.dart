@@ -70,7 +70,7 @@ class PartitionFormat {
   static List<PartitionFormat> get values => _formats.values.toList();
 
   /// Partition formats supported for new partitions.
-  static List<PartitionFormat> get supported => [ext4, xfs, btrfs, swap];
+  static List<PartitionFormat> get supported => [ext4, xfs, btrfs];
 
   static const _formats = <String, PartitionFormat>{
     'btrfs': btrfs,

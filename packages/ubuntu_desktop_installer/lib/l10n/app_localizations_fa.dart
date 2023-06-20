@@ -511,6 +511,11 @@ class AppLocalizationsFa extends AppLocalizations {
   String get partitionFormatNone => 'قالب‌بندی نشده گذاشتن';
 
   @override
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
+
+  @override
   String get partitionErase => 'قالب‌بندی افراز';
 
   @override
