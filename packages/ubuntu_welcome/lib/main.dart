@@ -1,9 +1,7 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:path/path.dart' as p;
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -21,11 +19,7 @@ Future<void> main(List<String> args) async {
   })!;
   setupLogger(options);
 
-  final baseName = p.basename(Platform.resolvedExecutable);
-
   tryRegisterService<ActiveDirectoryService>(RealmdActiveDirectoryService.new);
-  // TODO: handle auto-login via IdentityService
-  tryRegisterService<ConfigService>(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<LocaleService>(XdgLocaleService.new);
   tryRegisterService<TimezoneService>(XdgTimezoneService.new);
   tryRegisterService<KeyboardService>(XdgKeyboardService.new);
