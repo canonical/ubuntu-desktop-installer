@@ -64,7 +64,6 @@ Future<void> runInstallerApp(
   final baseName = p.basename(Platform.resolvedExecutable);
 
   // conditional registration if not already registered by flavors or tests
-  if (liveRun) tryRegisterService(SoundService.new);
   tryRegisterService<ActiveDirectoryService>(
       () => SubiquityActiveDirectoryService(getService<SubiquityClient>()));
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
@@ -85,6 +84,7 @@ Future<void> runInstallerApp(
   tryRegisterService(ProductService.new);
   tryRegisterService<SessionService>(
       () => SubiquitySessionService(getService<SubiquityClient>()));
+  if (liveRun) tryRegisterService(SoundService.new);
   tryRegisterService(() => StorageService(getService<SubiquityClient>()));
   tryRegisterService(SubiquityClient.new);
   tryRegisterService(
