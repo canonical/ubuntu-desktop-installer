@@ -6,7 +6,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_wizard/utils.dart';
 
 import 'test_identity.dart';
 
@@ -22,7 +21,7 @@ void main() {
     const identity = Identity(
       realname: 'Ubuntu',
       username: 'ubuntu',
-      cryptedPassword: 'anything',
+      password: 'anything',
       hostname: 'impish',
     );
 
@@ -145,10 +144,10 @@ void main() {
   });
 
   test('save', () async {
-    final identity = Identity(
+    const identity = Identity(
       realname: 'Ubuntu',
       username: 'ubuntu',
-      cryptedPassword: encryptPassword('passwd', salt: 'test'),
+      password: 'passwd',
       hostname: 'impish',
     );
 
@@ -175,7 +174,7 @@ void main() {
     model.autoLogin = false;
     model.useActiveDirectory = false;
 
-    await model.save(salt: 'test');
+    await model.save();
 
     verify(service.setIdentity(identity)).called(1);
     verify(activeDirectory.setUsed(false)).called(1);
@@ -202,18 +201,18 @@ void main() {
     model.password = 'not-empty';
 
     model.autoLogin = true;
-    await model.save(salt: 'test');
-    verify(service.setIdentity(Identity(
+    await model.save();
+    verify(service.setIdentity(const Identity(
       username: 'someone',
-      cryptedPassword: encryptPassword('not-empty', salt: 'test'),
+      password: 'not-empty',
       autoLogin: true,
     ))).called(1);
 
     model.autoLogin = false;
-    await model.save(salt: 'test');
-    verify(service.setIdentity(Identity(
+    await model.save();
+    verify(service.setIdentity(const Identity(
       username: 'someone',
-      cryptedPassword: encryptPassword('not-empty', salt: 'test'),
+      password: 'not-empty',
       autoLogin: false,
     ))).called(1);
   });

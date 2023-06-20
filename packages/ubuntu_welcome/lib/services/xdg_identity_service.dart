@@ -83,16 +83,31 @@ class XdgIdentityService implements IdentityService {
           'Modifying the default user is not yet implemented');
     }
 
-    await _accountObject.callMethod(
-      'org.freedesktop.Accounts',
-      'CreateUser',
-      [
-        DBusString(_identity!.username),
-        DBusString(_identity!.realname),
-        const DBusInt32(1), // Administrator account
-      ],
-      replySignature: DBusSignature.objectPath,
+    final userObjectPath = await _accountObject
+        .callMethod(
+          'org.freedesktop.Accounts',
+          'CreateUser',
+          [
+            DBusString(_identity!.username),
+            DBusString(_identity!.realname),
+            const DBusInt32(1), // Administrator account
+          ],
+          replySignature: DBusSignature.objectPath,
+        )
+        .then((response) => response.values.first.asObjectPath());
+
+    final userObject = DBusRemoteObject(
+      _dBusClient,
+      name: 'org.freedesktop.Accounts',
+      path: userObjectPath,
     );
+    await userObject.callMethod(
+      'org.freedesktop.Accounts.User',
+      'SetPassword',
+      [DBusString(_identity!.password), const DBusString('')],
+      replySignature: DBusSignature.empty,
+    );
+
     await _hostnameObject
         .callMethod('org.freedesktop.hostname1', 'SetStaticHostname', [
       DBusString(_identity!.hostname),

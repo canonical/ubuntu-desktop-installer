@@ -1,5 +1,6 @@
 import 'package:meta/meta.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_wizard/utils.dart';
 
 import 'config_service.dart';
 
@@ -11,16 +12,32 @@ class Identity {
   const Identity({
     this.realname = '',
     this.username = '',
-    this.cryptedPassword = '',
+    this.password = '',
     this.hostname = '',
     this.autoLogin = false,
   });
 
   final String realname;
   final String username;
-  final String cryptedPassword;
+  final String password;
   final String hostname;
   final bool autoLogin;
+
+  Identity copyWith({
+    String? realname,
+    String? username,
+    String? password,
+    String? hostname,
+    bool? autoLogin,
+  }) {
+    return Identity(
+      realname: realname ?? this.realname,
+      username: username ?? this.username,
+      password: password ?? this.password,
+      hostname: hostname ?? this.hostname,
+      autoLogin: autoLogin ?? this.autoLogin,
+    );
+  }
 
   @override
   bool operator ==(Object other) {
@@ -28,7 +45,7 @@ class Identity {
     return other is Identity &&
         other.realname == realname &&
         other.username == username &&
-        other.cryptedPassword == cryptedPassword &&
+        other.password == password &&
         other.hostname == hostname &&
         other.autoLogin == autoLogin;
   }
@@ -38,7 +55,7 @@ class Identity {
     return Object.hash(
       realname,
       username,
-      cryptedPassword,
+      password,
       hostname,
       autoLogin,
     );
@@ -46,7 +63,8 @@ class Identity {
 
   @override
   String toString() {
-    return 'Identity(realname: $realname, username: $username, cryptedPassword: $cryptedPassword, hostname: $hostname, autoLogin: $autoLogin)';
+    final hiddenPassword = '*' * password.length;
+    return 'Identity(realname: $realname, username: $username, password: $hiddenPassword, hostname: $hostname, autoLogin: $autoLogin)';
   }
 }
 
@@ -72,7 +90,6 @@ class SubiquityIdentityService implements IdentityService {
     return Identity(
       realname: data.realname,
       username: data.username,
-      cryptedPassword: data.cryptedPassword,
       hostname: data.hostname,
       autoLogin: await _config.get(kAutoLoginUser) != null,
     );
@@ -89,7 +106,7 @@ class SubiquityIdentityService implements IdentityService {
     return _subiquity.setIdentity(IdentityData(
       realname: identity.realname,
       username: identity.username,
-      cryptedPassword: identity.cryptedPassword,
+      cryptedPassword: encryptPassword(identity.password),
       hostname: identity.hostname,
     ));
   }

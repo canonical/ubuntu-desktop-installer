@@ -45,7 +45,7 @@ String encryptPassword(
   Hash algorithm = Hash.sha512,
   String? salt,
 }) {
-  assert(password.isNotEmpty);
+  if (password.isEmpty) return '';
   switch (algorithm) {
     case Hash.sha256:
       return Crypt.sha256(password, salt: salt).toString();

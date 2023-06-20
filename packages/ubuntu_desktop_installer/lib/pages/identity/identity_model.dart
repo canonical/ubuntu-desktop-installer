@@ -163,7 +163,7 @@ class IdentityModel extends PropertyStreamNotifier {
     _realName.value ??= identity.realname.orIfEmpty(null);
     _hostname.value ??= identity.hostname.orIfEmpty(null);
     _username.value ??= identity.username.orIfEmpty(null);
-    log.info('Loaded identity: ${identity.description}');
+    log.info('Loaded identity: $identity');
     _productName.value = await _readProductName();
     log.info('Read product name: ${_productName.value}');
 
@@ -173,15 +173,15 @@ class IdentityModel extends PropertyStreamNotifier {
   }
 
   /// Saves the identity data to the server.
-  Future<void> save({@visibleForTesting String? salt}) async {
+  Future<void> save() async {
     final identity = Identity(
       realname: realName,
       hostname: hostname,
       username: username,
-      cryptedPassword: encryptPassword(password, salt: salt),
+      password: password,
       autoLogin: autoLogin,
     );
-    log.info('Saved identity: ${identity.description}');
+    log.info('Saved identity: $identity');
 
     _telemetry?.addMetric('UseActiveDirectory', useActiveDirectory);
 
@@ -217,12 +217,6 @@ Future<String> _readProductName() async {
     productName = await _readDmiFile(kDMIProductNameFile);
   }
   return productName;
-}
-
-extension _IdentityDescription on Identity {
-  String get description {
-    return 'realname: "$realname", hostname: "$hostname", username: "$username"';
-  }
 }
 
 extension _StringTruncate on String {
