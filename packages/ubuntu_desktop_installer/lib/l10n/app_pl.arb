@@ -919,5 +919,12 @@
   "allocateDiskSpaceInvalidMountPointSpace": "Punkty montowania nie mogą zawierać spacji",
   "@allocateDiskSpaceInvalidMountPointSpace": {},
   "allocateDiskSpaceInvalidMountPointSlash": "Punkty montowania muszą zaczynać się od „/”",
-  "@allocateDiskSpaceInvalidMountPointSlash": {}
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "partitionFormatKeep": "Pozostaw sformatowaną jako {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }
