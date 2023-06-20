@@ -52,6 +52,9 @@ class XdgIdentityService implements IdentityService {
       final realname = await userObject
           .getProperty('org.freedesktop.Accounts.User', 'RealName')
           .then((v) => v.asString());
+      final autoLogin = await userObject
+          .getProperty('org.freedesktop.Accounts.User', 'AutomaticLogin')
+          .then((v) => v.asBoolean());
       final hostname = await _hostnameObject
           .getProperty('org.freedesktop.hostname1', 'Hostname')
           .then((v) => v.asString());
@@ -59,6 +62,7 @@ class XdgIdentityService implements IdentityService {
         realname: realname,
         username: username,
         hostname: hostname,
+        autoLogin: autoLogin,
       );
     }
     return _identity!;
@@ -105,6 +109,12 @@ class XdgIdentityService implements IdentityService {
       'org.freedesktop.Accounts.User',
       'SetPassword',
       [DBusString(_identity!.password), const DBusString('')],
+      replySignature: DBusSignature.empty,
+    );
+    await userObject.callMethod(
+      'org.freedesktop.Accounts.User',
+      'SetAutomaticLogin',
+      [DBusBoolean(_identity!.autoLogin)],
       replySignature: DBusSignature.empty,
     );
 
