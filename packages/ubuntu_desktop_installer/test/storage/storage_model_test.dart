@@ -157,7 +157,10 @@ void main() {
   });
 
   test('single reformat target', () async {
-    const reformat = GuidedStorageTargetReformat(diskId: '');
+    const reformat = GuidedStorageTargetReformat(
+      diskId: '',
+      allowed: [GuidedCapability.LVM],
+    );
 
     final service = MockStorageService();
     when(service.useLvm).thenReturn(false);
@@ -200,7 +203,10 @@ void main() {
     expect(model.canInstallAlongside, isFalse);
 
     // reformat
-    const reformat = GuidedStorageTargetReformat(diskId: '');
+    const reformat = GuidedStorageTargetReformat(
+      diskId: '',
+      allowed: [GuidedCapability.LVM],
+    );
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(targets: [reformat]));
     await model.init();
@@ -214,6 +220,7 @@ void main() {
       maximum: 0,
       minimum: 0,
       recommended: 0,
+      allowed: [GuidedCapability.LVM],
     );
     when(service.getGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse(targets: [resize]));
@@ -224,6 +231,7 @@ void main() {
     const gap = GuidedStorageTargetUseGap(
       diskId: '',
       gap: Gap(offset: 0, size: 0, usable: GapUsable.YES),
+      allowed: [GuidedCapability.LVM],
     );
     when(service.getGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse(targets: [gap]));
@@ -258,7 +266,10 @@ void main() {
     expect(model.preselectTarget(StorageType.manual), isNull);
 
     // reformat
-    const reformat = GuidedStorageTargetReformat(diskId: '');
+    const reformat = GuidedStorageTargetReformat(
+      diskId: '',
+      allowed: [GuidedCapability.LVM],
+    );
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(targets: [reformat]));
     await model.init();
@@ -282,6 +293,7 @@ void main() {
       maximum: 0,
       minimum: 0,
       recommended: 0,
+      allowed: [GuidedCapability.LVM],
     );
     when(service.getGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse(targets: [resize]));
@@ -294,6 +306,7 @@ void main() {
     const gap = GuidedStorageTargetUseGap(
       diskId: '',
       gap: Gap(offset: 0, size: 1, usable: GapUsable.YES),
+      allowed: [GuidedCapability.LVM],
     );
     when(service.getGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse(targets: [gap]));
@@ -306,10 +319,12 @@ void main() {
     const gap2 = GuidedStorageTargetUseGap(
       diskId: '',
       gap: Gap(offset: 0, size: 2, usable: GapUsable.YES),
+      allowed: [GuidedCapability.LVM],
     );
     const gap3 = GuidedStorageTargetUseGap(
       diskId: '',
       gap: Gap(offset: 0, size: 3, usable: GapUsable.YES),
+      allowed: [GuidedCapability.LVM],
     );
     when(service.getGuidedStorage()).thenAnswer(
         (_) async => fakeGuidedStorageResponse(targets: [gap, gap3, gap2]));

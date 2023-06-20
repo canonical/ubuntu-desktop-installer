@@ -492,6 +492,7 @@ extension on WidgetTester {
     // an installation source must be explicitly selected before calling storage APIs
     await jumpToWizardRoute(Routes.source);
     await tapNext();
+    await pumpUntil(find.byType(StorageWizard));
     await pumpAndSettle();
     if (subroute != null) {
       await jumpToWizardRoute(subroute);
