@@ -189,11 +189,10 @@ class MockIdentityModel extends _i1.Mock implements _i2.IdentityModel {
         returnValueForMissingStub: _i5.Future<void>.value(),
       ) as _i5.Future<void>);
   @override
-  _i5.Future<void> save({String? salt}) => (super.noSuchMethod(
+  _i5.Future<void> save() => (super.noSuchMethod(
         Invocation.method(
           #save,
           [],
-          {#salt: salt},
         ),
         returnValue: _i5.Future<void>.value(),
         returnValueForMissingStub: _i5.Future<void>.value(),
