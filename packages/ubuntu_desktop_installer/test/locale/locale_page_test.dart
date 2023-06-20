@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_page.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -103,10 +104,7 @@ void main() {
 
     await tester.pumpWidget(tester.buildApp((_) => buildLocalePage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     expect(find.byType(LocalePage), findsNothing);

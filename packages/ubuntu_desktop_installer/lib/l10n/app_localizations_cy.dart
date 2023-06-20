@@ -13,25 +13,13 @@ class AppLocalizationsCy extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Diddymu';
-
-  @override
   String get changeButtonText => 'Newid';
-
-  @override
-  String get okButtonText => 'Iawn';
-
-  @override
-  String get noButtonText => 'Na';
 
   @override
   String get restartButtonText => 'Ailgychwyn';
 
   @override
   String get revertButtonText => 'Dychwelyd';
-
-  @override
-  String get yesButtonText => 'Ie';
 
   @override
   String get quitButtonText => 'Quit installation';

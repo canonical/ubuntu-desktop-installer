@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
@@ -92,10 +93,7 @@ void main() {
     verifyNever(model.getServerLocale());
     verify(model.selectLocale(const Locale('fr_FR'))).called(1);
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.applyLocale(const Locale('fr_FR'))).called(1);
   });
 

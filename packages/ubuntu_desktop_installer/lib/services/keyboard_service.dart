@@ -16,6 +16,7 @@ abstract class KeyboardService {
   Future<void> setKeyboard(KeyboardSetting setting);
   Future<void> setInputSource(KeyboardSetting setting, {String? user});
   Future<AnyStep> getKeyboardStep([String step = '0']);
+  bool get canDetectLayout;
 }
 
 class SubiquityKeyboardService implements KeyboardService {
@@ -40,4 +41,7 @@ class SubiquityKeyboardService implements KeyboardService {
   Future<AnyStep> getKeyboardStep([String step = '0']) {
     return _subiquity.getKeyboardStep(step);
   }
+
+  @override
+  bool get canDetectLayout => true;
 }

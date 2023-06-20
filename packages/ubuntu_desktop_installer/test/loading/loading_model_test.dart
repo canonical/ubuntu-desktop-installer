@@ -6,7 +6,7 @@ import 'test_loading.dart';
 
 void main() {
   test('load', () async {
-    final service = MockAppService();
+    final service = MockInstallerService();
 
     final model = LoadingModel(service);
     await model.init();

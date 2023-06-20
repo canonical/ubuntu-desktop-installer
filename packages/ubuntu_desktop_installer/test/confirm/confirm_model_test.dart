@@ -56,19 +56,19 @@ void main() {
   ];
 
   test('get storage', () async {
-    final client = MockSubiquityClient();
-    final service = MockStorageService();
-    when(service.guidedTarget).thenReturn(null);
-    when(service.getStorage()).thenAnswer((_) async => testDisks);
-    when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
+    final installer = MockInstallerService();
+    final storage = MockStorageService();
+    when(storage.guidedTarget).thenReturn(null);
+    when(storage.getStorage()).thenAnswer((_) async => testDisks);
+    when(storage.getOriginalStorage()).thenAnswer((_) async => testDisks);
 
-    final model = ConfirmModel(client, service);
+    final model = ConfirmModel(installer, storage);
     await model.init();
     verifyInOrder([
-      service.getStorage(),
-      service.getOriginalStorage(),
+      storage.getStorage(),
+      storage.getOriginalStorage(),
     ]);
-    verifyNever(service.setGuidedStorage());
+    verifyNever(storage.setGuidedStorage());
 
     expect(model.disks, equals(modifiedDisks));
     expect(
@@ -91,36 +91,35 @@ void main() {
   });
 
   test('set guided storage', () async {
-    const target =
-        GuidedStorageTarget.reformat(diskId: 'sda', capabilities: []);
+    const target = GuidedStorageTarget.reformat(diskId: 'sda', allowed: []);
 
-    final client = MockSubiquityClient();
-    final service = MockStorageService();
-    when(service.guidedTarget).thenReturn(target);
-    when(service.getStorage()).thenAnswer((_) async => testDisks);
-    when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
-    when(service.setGuidedStorage())
+    final installer = MockInstallerService();
+    final storage = MockStorageService();
+    when(storage.guidedTarget).thenReturn(target);
+    when(storage.getStorage()).thenAnswer((_) async => testDisks);
+    when(storage.getOriginalStorage()).thenAnswer((_) async => testDisks);
+    when(storage.setGuidedStorage())
         .thenAnswer((_) async => fakeGuidedStorageResponse());
 
-    final model = ConfirmModel(client, service);
+    final model = ConfirmModel(installer, storage);
     await model.init();
-    verify(service.setGuidedStorage()).called(1);
+    verify(storage.setGuidedStorage()).called(1);
   });
 
   test('start installation', () async {
-    final client = MockSubiquityClient();
-    final service = MockStorageService();
-    when(service.guidedTarget).thenReturn(null);
-    when(service.getStorage()).thenAnswer((_) async => testDisks);
-    when(service.getOriginalStorage()).thenAnswer((_) async => testDisks);
-    when(service.setStorage()).thenAnswer((_) async => modifiedDisks);
+    final installer = MockInstallerService();
+    final storage = MockStorageService();
+    when(storage.guidedTarget).thenReturn(null);
+    when(storage.getStorage()).thenAnswer((_) async => testDisks);
+    when(storage.getOriginalStorage()).thenAnswer((_) async => testDisks);
+    when(storage.setStorage()).thenAnswer((_) async => modifiedDisks);
 
-    final model = ConfirmModel(client, service);
+    final model = ConfirmModel(installer, storage);
     await model.init();
     await model.startInstallation();
 
-    verifyNever(service.setStorage());
-    verify(service.securityKey = null).called(1);
-    verify(client.confirm('/dev/tty1')).called(1);
+    verifyNever(storage.setStorage());
+    verify(storage.securityKey = null).called(1);
+    verify(installer.start()).called(1);
   });
 }

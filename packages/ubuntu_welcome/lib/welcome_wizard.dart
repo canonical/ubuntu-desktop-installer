@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
+import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 enum WelcomeStep {
   locale,
+  keyboard,
   timezone,
   identity,
 }
@@ -13,6 +15,7 @@ enum WelcomeStep {
 class WelcomeRoutes {
   static const String initial = '/';
   static const String locale = '/locale';
+  static const String keyboard = '/keyboard';
   static const String timezone = '/timezone';
   static const String identity = '/identity';
 }
@@ -39,17 +42,30 @@ class _WelcomeWizardState extends ConsumerState<WelcomeWizard> {
         ),
         WelcomeRoutes.locale: WizardRoute(
           builder: (_) => const LocalePage(),
-          userData: WelcomeStep.locale.index,
+          userData: WizardRouteData(
+            step: WelcomeStep.locale.index,
+          ),
           onLoad: (_) => LocalePage.load(context, ref),
+        ),
+        WelcomeRoutes.keyboard: WizardRoute(
+          builder: (_) => const KeyboardPage(),
+          userData: WizardRouteData(
+            step: WelcomeStep.keyboard.index,
+          ),
+          onLoad: (_) => KeyboardPage.load(ref),
         ),
         WelcomeRoutes.timezone: WizardRoute(
           builder: (_) => const TimezonePage(),
-          userData: WelcomeStep.timezone.index,
+          userData: WizardRouteData(
+            step: WelcomeStep.timezone.index,
+          ),
           onLoad: (_) => TimezonePage.load(context, ref),
         ),
         WelcomeRoutes.identity: WizardRoute(
           builder: (_) => const IdentityPage(),
-          userData: WelcomeStep.identity.index,
+          userData: WizardRouteData(
+            step: WelcomeStep.identity.index,
+          ),
           onLoad: (_) => IdentityPage.load(ref),
           onNext: (_) =>
               YaruWindow.of(context).close().then((_) => WelcomeRoutes.initial),
@@ -66,6 +82,9 @@ class _WelcomeWizardState extends ConsumerState<WelcomeWizard> {
 
   @override
   Widget build(BuildContext context) {
-    return Wizard(controller: _controller);
+    return Wizard(
+      controller: _controller,
+      userData: WizardData(totalSteps: WelcomeStep.values.length),
+    );
   }
 }

@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_mod
 import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_page.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_selector.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_test/yaru_test.dart';
 
@@ -219,10 +220,7 @@ void main() {
     expect(find.byType(AlertDialog), findsOneWidget);
     verifyNever(model.reformatDisk(disk));
 
-    final okButton = find.button(tester.ulang.okLabel);
-    expect(okButton, findsOneWidget);
-
-    await tester.tap(okButton);
+    await tester.tapOk();
     await tester.pumpAndSettle();
 
     expect(find.byType(AlertDialog), findsNothing);
@@ -270,10 +268,7 @@ void main() {
     final model = buildManualStorageModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.setStorage()).called(1);
   });
 
@@ -281,9 +276,7 @@ void main() {
     final model = buildManualStorageModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    expect(nextButton, isDisabled);
+    expect(find.button(tester.ulang.nextLabel), isDisabled);
   });
 
   testWidgets('too many primary partitions', (tester) async {

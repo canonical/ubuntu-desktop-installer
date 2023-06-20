@@ -4,7 +4,6 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/main.dart' as app;
 import 'package:ubuntu_desktop_installer/pages.dart';
@@ -33,13 +32,13 @@ void main() {
     const timezone = 'Europe/Paris';
     const keyboardLayout = KeyboardSetting(layout: 'Français');
     const keyboardSetting = KeyboardSetting(layout: 'fr');
-    const identity = IdentityData(
+    const identity = Identity(
       realname: 'User',
       hostname: 'ubuntu',
       username: 'user',
     );
 
-    await app.main(<String>[]);
+    await tester.runApp(() => app.main(<String>[]));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester, language: language);
@@ -54,7 +53,7 @@ void main() {
     await testSourcePage(tester, sourceId: kMinimalSourceId);
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(tester, type: InstallationType.erase);
+    await testStoragePage(tester, type: StorageType.erase);
     await tester.pumpAndSettle();
 
     await testConfirmPage(tester);
@@ -85,13 +84,13 @@ void main() {
   });
 
   testWidgets('guided lvm + encryption', (tester) async {
-    const identity = IdentityData(
+    const identity = Identity(
       realname: 'User',
       hostname: 'ubuntu',
       username: 'user',
     );
 
-    await app.main(<String>[]);
+    await tester.runApp(() => app.main(<String>[]));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
@@ -106,9 +105,9 @@ void main() {
     await testSourcePage(tester);
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(
+    await testStoragePage(
       tester,
-      type: InstallationType.erase,
+      type: StorageType.erase,
       advancedFeature: AdvancedFeature.lvm,
       useEncryption: true,
     );
@@ -154,7 +153,7 @@ void main() {
       ),
     ];
 
-    await app.main(<String>[]);
+    await tester.runApp(() => app.main(<String>[]));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
@@ -169,7 +168,7 @@ void main() {
     await testSourcePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(tester, type: InstallationType.manual);
+    await testStoragePage(tester, type: StorageType.manual);
     await tester.pumpAndSettle();
 
     await testManualStoragePage(tester, storage: storage);
@@ -183,7 +182,7 @@ void main() {
 
     await testIdentityPage(
       tester,
-      identity: const IdentityData(realname: 'a', hostname: 'b', username: 'c'),
+      identity: const Identity(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
     await tester.pumpAndSettle();
@@ -198,11 +197,11 @@ void main() {
   });
 
   testWidgets('alongside windows', (tester) async {
-    await app.main(<String>[
-      '--machine-config=examples/win10-along-ubuntu.json',
-      '--',
-      '--bootloader=uefi',
-    ]);
+    await tester.runApp(() => app.main(<String>[
+          '--machine-config=examples/win10-along-ubuntu.json',
+          '--',
+          '--bootloader=uefi',
+        ]));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
@@ -217,10 +216,10 @@ void main() {
     await testSourcePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(tester, type: InstallationType.alongside);
+    await testStoragePage(tester, type: StorageType.alongside);
     await tester.pumpAndSettle();
 
-    await testInstallAlongsidePage(tester, sizes: {'sda3 (ntfs)': 40000});
+    await testGuidedResizePage(tester, sizes: {'sda3 (ntfs)': 40000});
     await tester.pumpAndSettle();
 
     await testConfirmPage(tester);
@@ -231,7 +230,7 @@ void main() {
 
     await testIdentityPage(
       tester,
-      identity: const IdentityData(realname: 'a', hostname: 'b', username: 'c'),
+      identity: const Identity(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
     await tester.pumpAndSettle();
@@ -254,10 +253,10 @@ void main() {
   });
 
   testWidgets('turn off bitlocker', (tester) async {
-    await app.main(<String>[
-      '--machine-config',
-      'examples/win10.json',
-    ]);
+    await tester.runApp(() => app.main(<String>[
+          '--machine-config',
+          'examples/win10.json',
+        ]));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
@@ -272,7 +271,7 @@ void main() {
     await testSourcePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(tester, type: InstallationType.bitlocker);
+    await testStoragePage(tester, type: StorageType.bitlocker);
     await tester.pumpAndSettle();
 
     await testBitLockerPage(tester);
@@ -280,7 +279,7 @@ void main() {
   });
 
   testWidgets('welcome', (tester) async {
-    await app.main(<String>['--welcome']);
+    await tester.runApp(() => app.main(<String>['--welcome']));
     await tester.pumpAndSettle();
 
     await testLocalePage(tester);
@@ -294,10 +293,10 @@ void main() {
   });
 
   testWidgets('semi-automated autoinstall', (tester) async {
-    await app.main(<String>[
-      '--',
-      '--autoinstall=examples/autoinstall-interactive.yaml',
-    ]);
+    await tester.runApp(() => app.main(<String>[
+          '--',
+          '--autoinstall=examples/autoinstall-interactive.yaml',
+        ]));
     await tester.pumpAndSettle();
 
     await testNetworkPage(tester);
@@ -312,7 +311,7 @@ void main() {
 }
 
 Future<void> verifyConfig({
-  IdentityData? identity,
+  Identity? identity,
   KeyboardSetting? keyboard,
   String? locale,
   String? timezone,
@@ -321,7 +320,7 @@ Future<void> verifyConfig({
   bool? useEncryption,
 }) async {
   final path = await getSubiquityLogFile('autoinstall-user-data');
-  await waitForFile(path);
+  await expectLater(path, existsLater);
 
   final yaml = loadYaml(File(path).readAsStringSync());
 

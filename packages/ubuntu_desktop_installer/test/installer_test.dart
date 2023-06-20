@@ -45,6 +45,7 @@ void main() {
   });
 
   testWidgets('fully automated installation', (tester) async {
+    registerMockService<SessionService>(MockSessionService());
     await tester.pumpWidget(
       tester.buildInstaller(
         state: ApplicationState.RUNNING,
@@ -99,17 +100,10 @@ extension on WidgetTester {
       logSyslogId: '',
       eventSyslogId: '',
     );
-    final done = status.copyWith(state: ApplicationState.DONE);
 
-    final client = MockSubiquityClient();
-    when(client.getStatus()).thenAnswer((_) async => status);
-    when(client.getStatus(current: ApplicationState.RUNNING))
-        .thenAnswer((_) async => done);
-    when(client.monitorStatus()).thenAnswer((_) => Stream.value(status));
-    when(client.getInteractiveSections()).thenAnswer((_) async => null);
-    when(client.getStorageV2()).thenAnswer((_) async => fakeStorageResponse());
-    when(client.getOriginalStorageV2())
-        .thenAnswer((_) async => fakeStorageResponse());
+    final installer = MockInstallerService();
+    when(installer.hasRoute(any)).thenReturn(true);
+    when(installer.monitorStatus()).thenAnswer((_) => Stream.value(status));
 
     final journal = MockJournalService();
     when(journal.start(any, output: anyNamed('output')))
@@ -118,13 +112,13 @@ extension on WidgetTester {
     final locale = MockLocaleService();
     when(locale.getLocale()).thenAnswer((_) async => 'en_US.UTF-8');
 
-    registerMockService<AppService>(MockAppService());
     registerMockService<DesktopService>(MockDesktopService());
+    registerMockService<InstallerService>(installer);
     registerMockService<JournalService>(journal);
     registerMockService<LocaleService>(locale);
     registerMockService<ProductService>(ProductService());
-    registerMockService<StorageService>(StorageService(client));
-    registerMockService<SubiquityClient>(client);
+    registerMockService<StorageService>(StorageService(MockSubiquityClient()));
+    registerMockService<SubiquityClient>(MockSubiquityClient());
     registerMockService<TelemetryService>(TelemetryService());
 
     return ProviderScope(

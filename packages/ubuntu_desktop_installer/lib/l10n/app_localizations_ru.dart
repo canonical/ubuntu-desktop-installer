@@ -13,25 +13,13 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Отменить';
-
-  @override
   String get changeButtonText => 'Изменить';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Нет';
 
   @override
   String get restartButtonText => 'Перезагрузить';
 
   @override
   String get revertButtonText => 'Вернуть';
-
-  @override
-  String get yesButtonText => 'Да';
 
   @override
   String get quitButtonText => 'Отменить установку';

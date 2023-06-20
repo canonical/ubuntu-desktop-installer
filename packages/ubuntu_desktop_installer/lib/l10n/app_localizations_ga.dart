@@ -13,25 +13,13 @@ class AppLocalizationsGa extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cealaigh';
-
-  @override
   String get changeButtonText => 'Change';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Níl';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
   String get revertButtonText => 'Fill';
-
-  @override
-  String get yesButtonText => 'Tá';
 
   @override
   String get quitButtonText => 'Quit installation';

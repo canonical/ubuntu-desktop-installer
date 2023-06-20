@@ -19,6 +19,7 @@ void main() async {
       MockSubiquityClient(),
       MockJournalService(),
       product,
+      MockSessionService(),
     );
     expect(model.productInfo.name, 'Ubuntu');
     expect(model.productInfo.version, '24.04 LTS');
@@ -32,7 +33,8 @@ void main() async {
     when(journal.start(['event'], output: JournalOutput.cat))
         .thenAnswer((_) => const Stream.empty());
     final product = MockProductService();
-    final model = InstallModel(client, journal, product);
+    final session = MockSessionService();
+    final model = InstallModel(client, journal, product, session);
 
     ApplicationState? currentState;
     for (final nextState in ApplicationState.values) {
@@ -75,7 +77,8 @@ void main() async {
 
     final product = MockProductService();
 
-    final model = InstallModel(client, journal, product);
+    final session = MockSessionService();
+    final model = InstallModel(client, journal, product, session);
 
     expect(model.state, isNull);
     expect(model.isInstalling, isFalse);
@@ -123,7 +126,8 @@ void main() async {
 
     final product = MockProductService();
 
-    final model = InstallModel(client, journal, product);
+    final session = MockSessionService();
+    final model = InstallModel(client, journal, product, session);
 
     expect(model.hasError, isFalse);
 
@@ -137,6 +141,7 @@ void main() async {
       MockSubiquityClient(),
       MockJournalService(),
       MockProductService(),
+      MockSessionService(),
     );
     expect(model.isLogVisible, isFalse);
 
@@ -154,11 +159,16 @@ void main() async {
 
   test('reboot', () async {
     final client = MockSubiquityClient();
-    final model =
-        InstallModel(client, MockJournalService(), MockProductService());
+    final session = MockSessionService();
+    final model = InstallModel(
+      client,
+      MockJournalService(),
+      MockProductService(),
+      session,
+    );
 
     await model.reboot();
-    verify(client.reboot(immediate: false)).called(1);
+    verify(session.reboot(immediate: false)).called(1);
   });
 
   test('events', () async {
@@ -180,7 +190,8 @@ void main() async {
 
     final product = MockProductService();
 
-    final model = InstallModel(client, journal, product);
+    final session = MockSessionService();
+    final model = InstallModel(client, journal, product, session);
 
     expect(model.event.action, InstallationAction.none);
 

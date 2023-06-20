@@ -5,7 +5,7 @@ import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import '../test_utils.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = DetectKeyboardView);
+  setUpAll(() => InstallerTester.context = DetectKeyboardView);
 
   testWidgets('press key', (tester) async {
     int? keyPress;

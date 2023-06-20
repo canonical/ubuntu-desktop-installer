@@ -13,25 +13,13 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => '취소';
-
-  @override
   String get changeButtonText => '바꾸기';
-
-  @override
-  String get okButtonText => '확인';
-
-  @override
-  String get noButtonText => '아니오';
 
   @override
   String get restartButtonText => '다시 시작';
 
   @override
   String get revertButtonText => '되돌리기';
-
-  @override
-  String get yesButtonText => '예';
 
   @override
   String get quitButtonText => '인스톨러 닫기';

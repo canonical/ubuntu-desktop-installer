@@ -13,25 +13,13 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'বাতিল';
-
-  @override
   String get changeButtonText => 'পরিবর্তন';
-
-  @override
-  String get okButtonText => 'ঠিক আছে';
-
-  @override
-  String get noButtonText => 'না';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
   String get revertButtonText => 'পূর্বাবস্থায় প্রত্যাবর্তন';
-
-  @override
-  String get yesButtonText => 'হ্যাঁ';
 
   @override
   String get quitButtonText => 'Quit installation';

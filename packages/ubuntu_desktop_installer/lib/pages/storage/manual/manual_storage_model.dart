@@ -102,7 +102,7 @@ class ManualStorageModel extends SafeChangeNotifier {
 
   /// Notifies selection changes for auto-scrolling.
   Stream get onSelectionChanged => _selectionController.stream;
-  final _selectionController = StreamController();
+  final _selectionController = StreamController.broadcast();
 
   /// Whether a partition can be added for the currently selected disk.
   bool get canAddPartition => selectedGap?.usable == GapUsable.YES;

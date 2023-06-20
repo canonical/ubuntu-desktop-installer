@@ -13,25 +13,13 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'キャンセル';
-
-  @override
   String get changeButtonText => '変更';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'いいえ';
 
   @override
   String get restartButtonText => '再起動';
 
   @override
   String get revertButtonText => '元に戻す';
-
-  @override
-  String get yesButtonText => 'はい';
 
   @override
   String get quitButtonText => 'インストールを終了';

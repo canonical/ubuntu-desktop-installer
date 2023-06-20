@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_page.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_test/yaru_test.dart';
 
@@ -100,9 +101,7 @@ void main() {
     final model = buildSourceModel(sourceId: kNormalSourceId);
     await tester.pumpWidget(tester.buildApp((_) => buildSourcePage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    await tester.tap(nextButton);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     verify(model.save()).called(1);

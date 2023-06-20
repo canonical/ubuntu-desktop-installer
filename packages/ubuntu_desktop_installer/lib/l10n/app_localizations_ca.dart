@@ -13,25 +13,13 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Cancel·la';
-
-  @override
   String get changeButtonText => 'Canvia';
-
-  @override
-  String get okButtonText => 'D\'acord';
-
-  @override
-  String get noButtonText => 'No';
 
   @override
   String get restartButtonText => 'Reinicia';
 
   @override
   String get revertButtonText => 'Reverteix';
-
-  @override
-  String get yesButtonText => 'Sí';
 
   @override
   String get quitButtonText => 'Surt de la instal·lació';

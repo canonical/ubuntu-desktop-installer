@@ -13,25 +13,13 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'रद्द करें';
-
-  @override
   String get changeButtonText => 'Change';
-
-  @override
-  String get okButtonText => 'ठीक है';
-
-  @override
-  String get noButtonText => 'नहीं';
 
   @override
   String get restartButtonText => 'Restart';
 
   @override
   String get revertButtonText => 'प्रत्यावर्त';
-
-  @override
-  String get yesButtonText => 'हाँ';
 
   @override
   String get quitButtonText => 'Quit installation';

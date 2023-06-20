@@ -1,3 +1,0 @@
-dependency_overrides:
-  ubuntu_wizard:
-    path: ../ubuntu_wizard

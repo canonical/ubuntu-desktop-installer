@@ -13,25 +13,13 @@ class AppLocalizationsRo extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Renunță';
-
-  @override
   String get changeButtonText => 'Schimbă';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Nu';
 
   @override
   String get restartButtonText => 'Repornește';
 
   @override
   String get revertButtonText => 'Revert';
-
-  @override
-  String get yesButtonText => 'Yes';
 
   @override
   String get quitButtonText => 'Quit installation';

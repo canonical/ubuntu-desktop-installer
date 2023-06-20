@@ -20,7 +20,10 @@ void main() {
 
   // Select language and setup profile
   testWidgets('basic setup', (tester) async {
-    await app.main(<String>['--initial-route', Routes.selectLanguage]);
+    await tester.runApp(() => app.main(<String>[
+          '--initial-route',
+          Routes.selectLanguage,
+        ]));
     await tester.pumpAndSettle();
 
     await testSelectYourLanguagePage(tester, language: 'Français');
@@ -35,15 +38,17 @@ void main() {
 
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyGoldenFile(
-      await getSubiquityStateFile('WSLLocale'),
-      'integration_test/goldens/basic-setup/WSLLocale',
+    final stateFile = await getSubiquityStateFile('WSLLocale');
+    await expectLater(stateFile, existsLater);
+    expect(
+      stateFile,
+      matchesTextFile('integration_test/goldens/basic-setup/WSLLocale'),
     );
   });
 
   // enter all WSLConfigurationBase values
   testWidgets('advanced setup', (tester) async {
-    await app.main(<String>['--reconfigure']);
+    await tester.runApp(() => app.main(<String>['--reconfigure']));
     await tester.pumpAndSettle();
 
     // NOTE: opposites of the default values to force writing the config
@@ -61,15 +66,17 @@ void main() {
     await testConfigurationUIPage(tester);
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyGoldenFile(
-      await getSubiquityConfigFile('wsl.conf'),
-      'integration_test/goldens/advanced-setup/wsl.conf',
+    final configFile = await getSubiquityConfigFile('wsl.conf');
+    await expectLater(configFile, existsLater);
+    expect(
+      configFile,
+      matchesTextFile('integration_test/goldens/advanced-setup/wsl.conf'),
     );
   });
 
   // enter all WSLConfigurationAdvanced values
   testWidgets('reconfiguration', (tester) async {
-    await app.main(<String>['--reconfigure']);
+    await tester.runApp(() => app.main(<String>['--reconfigure']));
     await tester.pumpAndSettle();
 
     await testAdvancedSetupPage(tester);
@@ -88,9 +95,11 @@ void main() {
 
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyGoldenFile(
-      await getSubiquityConfigFile('wsl.conf'),
-      'integration_test/goldens/reconfiguration/wsl.conf',
+    final configFile = await getSubiquityConfigFile('wsl.conf');
+    await expectLater(configFile, existsLater);
+    expect(
+      configFile,
+      matchesTextFile('integration_test/goldens/reconfiguration/wsl.conf'),
     );
   });
 }

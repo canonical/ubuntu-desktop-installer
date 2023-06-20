@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_mod
 import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_page.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_test/yaru_test.dart';
@@ -17,7 +18,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'test_manual_storage.dart';
 
 void main() {
-  setUpAll(() => UbuntuTester.context = AlertDialog);
+  setUpAll(() => InstallerTester.context = AlertDialog);
 
   testWidgets('create partition', (tester) async {
     final disk = fakeDisk();
@@ -55,7 +56,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tapOk();
     await result;
 
     verify(model.addPartition(
@@ -88,7 +89,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst foo');
     await tester.pump();
 
-    expect(find.button(tester.lang.okButtonText), isDisabled);
+    expect(find.button(tester.ulang.okLabel), isDisabled);
   });
 
   testWidgets('edit partition', (tester) async {
@@ -144,7 +145,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst');
     await tester.pump();
 
-    await tester.tap(find.button(tester.lang.okButtonText));
+    await tester.tapOk();
     await result;
 
     verify(model.editPartition(
@@ -195,6 +196,6 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), 'tst');
     await tester.pump();
 
-    expect(find.button(tester.lang.okButtonText), isDisabled);
+    expect(find.button(tester.ulang.okLabel), isDisabled);
   });
 }

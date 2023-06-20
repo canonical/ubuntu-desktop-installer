@@ -13,25 +13,13 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'අවලංගු';
-
-  @override
   String get changeButtonText => 'වෙනස් කරන්න';
-
-  @override
-  String get okButtonText => 'හරි';
-
-  @override
-  String get noButtonText => 'නැහැ';
 
   @override
   String get restartButtonText => 'යළි අරඹන්න';
 
   @override
   String get revertButtonText => 'ප්‍රතිවර්තනය';
-
-  @override
-  String get yesButtonText => 'ඔව්';
 
   @override
   String get quitButtonText => 'ස්ථාපනයෙන් ඉවතට';

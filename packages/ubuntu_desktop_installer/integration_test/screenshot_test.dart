@@ -136,9 +136,9 @@ void main() {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(
+    await testStoragePage(
       tester,
-      type: InstallationType.erase,
+      type: StorageType.erase,
       screenshot: '$currentThemeName/6.erase-disk',
     );
   }, variant: themeVariant);
@@ -150,9 +150,9 @@ void main() {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(
+    await testStoragePage(
       tester,
-      type: InstallationType.erase,
+      type: StorageType.erase,
       advancedFeature: AdvancedFeature.lvm,
       screenshot: '$currentThemeName/6.advanced-features',
     );
@@ -167,9 +167,9 @@ void main() {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(
+    await testStoragePage(
       tester,
-      type: InstallationType.bitlocker,
+      type: StorageType.bitlocker,
       screenshot: '$currentThemeName/6.alongside-windows',
     );
   }, variant: themeVariant);
@@ -202,7 +202,7 @@ void main() {
     );
   }, variant: themeVariant);
 
-  testWidgets('7.resize-windows', (tester) async {
+  testWidgets('7.guided-resize', (tester) async {
     await runInstallerApp([
       '--machine-config=examples/win10-along-ubuntu.json',
       '--',
@@ -210,28 +210,28 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(Routes.installAlongside);
+    await tester.jumpToStorageWizard(StorageRoutes.guidedResize);
     await tester.pumpAndSettle();
 
-    await testInstallAlongsidePage(
+    await testGuidedResizePage(
       tester,
       sizes: {'ext4': 32768},
-      screenshot: '$currentThemeName/7.resize-windows',
+      screenshot: '$currentThemeName/7.guided-resize',
     );
   }, variant: themeVariant);
 
-  testWidgets('7.select-disk', (tester) async {
+  testWidgets('7.guided-reformat', (tester) async {
     await runInstallerApp([
       '--machine-config=examples/win10.json',
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(Routes.selectGuidedStorage);
+    await tester.jumpToStorageWizard(StorageRoutes.guidedReformat);
     await tester.pumpAndSettle();
 
-    await testSelectGuidedStoragePage(
+    await testGuidedReformatPage(
       tester,
-      screenshot: '$currentThemeName/7.select-disk',
+      screenshot: '$currentThemeName/7.guided-reformat',
     );
   }, variant: themeVariant);
 
@@ -239,7 +239,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(Routes.bitlocker);
+    await tester.jumpToStorageWizard(StorageRoutes.bitlocker);
     await tester.pumpAndSettle();
 
     await testBitLockerPage(
@@ -252,7 +252,7 @@ void main() {
     await runInstallerApp([], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(Routes.securityKey);
+    await tester.jumpToStorageWizard(StorageRoutes.securityKey);
     await tester.pumpAndSettle();
 
     await testSecurityKeyPage(
@@ -272,9 +272,9 @@ void main() {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testInstallationTypePage(
+    await testStoragePage(
       tester,
-      type: InstallationType.erase,
+      type: StorageType.erase,
     );
     await tester.pumpAndSettle();
 
@@ -306,7 +306,7 @@ void main() {
 
     await testIdentityPage(
       tester,
-      identity: const IdentityData(
+      identity: const Identity(
         realname: 'Ubuntu User',
         hostname: 'ubuntu',
         username: 'user',
@@ -492,6 +492,7 @@ extension on WidgetTester {
     // an installation source must be explicitly selected before calling storage APIs
     await jumpToWizardRoute(Routes.source);
     await tapNext();
+    await pumpUntil(find.byType(StorageWizard));
     await pumpAndSettle();
     if (subroute != null) {
       await jumpToWizardRoute(subroute);

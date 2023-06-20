@@ -48,7 +48,7 @@ class ActiveDirectoryErrorDialog extends StatelessWidget {
       actions: [
         PushButton.filled(
           onPressed: Navigator.of(context).pop,
-          child: Text(lang.okButtonText),
+          child: Text(UbuntuLocalizations.of(context).okLabel),
         ),
       ],
     );

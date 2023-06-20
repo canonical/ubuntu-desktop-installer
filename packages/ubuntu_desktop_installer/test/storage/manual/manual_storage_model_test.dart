@@ -125,6 +125,8 @@ void main() {
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
+    model.onSelectionChanged
+        .listen(expectAsync1((value) => expect(value, isNull), count: 2));
 
     wasNotified = false;
     model.selectStorage(-1);
@@ -140,7 +142,6 @@ void main() {
     model.selectStorage(1);
     expect(model.selectedDiskIndex, equals(1));
     expect(wasNotified, isTrue);
-    expect(model.onSelectionChanged, emits(null));
   });
 
   test('select boot disk', () async {

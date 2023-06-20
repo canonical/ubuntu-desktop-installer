@@ -6,7 +6,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_wizard/utils.dart';
 
 import 'test_identity.dart';
 
@@ -19,10 +18,10 @@ class MockProductNameFile extends Mock implements File {
 
 void main() {
   test('init', () async {
-    const identity = IdentityData(
+    const identity = Identity(
       realname: 'Ubuntu',
       username: 'ubuntu',
-      cryptedPassword: 'anything',
+      password: 'anything',
       hostname: 'impish',
     );
 
@@ -33,10 +32,6 @@ void main() {
     when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
-    final config = MockConfigService();
-    when(config.get(IdentityModel.kAutoLoginUser))
-        .thenAnswer((_) async => null);
-
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
@@ -45,7 +40,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -66,15 +60,12 @@ void main() {
 
   test('load auto-login', () async {
     final service = MockIdentityService();
-    when(service.getIdentity()).thenAnswer((_) async => const IdentityData());
+    when(service.getIdentity())
+        .thenAnswer((_) async => const Identity(autoLogin: true));
 
     final activeDirectory = MockActiveDirectoryService();
     when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
-
-    final config = MockConfigService();
-    when(config.get(IdentityModel.kAutoLoginUser))
-        .thenAnswer((_) async => 'someone');
 
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
@@ -84,7 +75,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -97,7 +87,7 @@ void main() {
   });
 
   test('empty username and hostname', () async {
-    const identity = IdentityData(realname: 'Ubuntu');
+    const identity = Identity(realname: 'Ubuntu');
 
     final service = MockIdentityService();
     when(service.getIdentity()).thenAnswer((_) async => identity);
@@ -105,10 +95,6 @@ void main() {
     final activeDirectory = MockActiveDirectoryService();
     when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
-
-    final config = MockConfigService();
-    when(config.get(IdentityModel.kAutoLoginUser))
-        .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
@@ -118,7 +104,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -131,7 +116,7 @@ void main() {
   });
 
   test('non-empty username and empty hostname', () async {
-    const identity = IdentityData(username: 'user');
+    const identity = Identity(username: 'user');
 
     final service = MockIdentityService();
     when(service.getIdentity()).thenAnswer((_) async => identity);
@@ -139,10 +124,6 @@ void main() {
     final activeDirectory = MockActiveDirectoryService();
     when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
-
-    final config = MockConfigService();
-    when(config.get(IdentityModel.kAutoLoginUser))
-        .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
@@ -152,7 +133,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -164,20 +144,16 @@ void main() {
   });
 
   test('save', () async {
-    final identity = IdentityData(
+    const identity = Identity(
       realname: 'Ubuntu',
       username: 'ubuntu',
-      cryptedPassword: encryptPassword('passwd', salt: 'test'),
+      password: 'passwd',
       hostname: 'impish',
     );
 
     final service = MockIdentityService();
 
     final activeDirectory = MockActiveDirectoryService();
-
-    final config = MockConfigService();
-    when(config.get(IdentityModel.kAutoLoginUser))
-        .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
@@ -187,7 +163,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -199,7 +174,7 @@ void main() {
     model.autoLogin = false;
     model.useActiveDirectory = false;
 
-    await model.save(salt: 'test');
+    await model.save();
 
     verify(service.setIdentity(identity)).called(1);
     verify(activeDirectory.setUsed(false)).called(1);
@@ -211,10 +186,6 @@ void main() {
 
     final activeDirectory = MockActiveDirectoryService();
 
-    final config = MockConfigService();
-    when(config.get(IdentityModel.kAutoLoginUser))
-        .thenAnswer((_) async => null);
-
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
@@ -223,7 +194,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -232,18 +202,25 @@ void main() {
 
     model.autoLogin = true;
     await model.save();
-    verify(config.set(IdentityModel.kAutoLoginUser, model.username)).called(1);
+    verify(service.setIdentity(const Identity(
+      username: 'someone',
+      password: 'not-empty',
+      autoLogin: true,
+    ))).called(1);
 
     model.autoLogin = false;
     await model.save();
-    verify(config.set(IdentityModel.kAutoLoginUser, null)).called(1);
+    verify(service.setIdentity(const Identity(
+      username: 'someone',
+      password: 'not-empty',
+      autoLogin: false,
+    ))).called(1);
   });
 
   test('password strength', () {
     // see password_test.dart for more detailed password strength tests
     final service = MockIdentityService();
     final activeDirectory = MockActiveDirectoryService();
-    final config = MockConfigService();
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
@@ -251,7 +228,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -270,7 +246,6 @@ void main() {
   test('notify changes', () {
     final service = MockIdentityService();
     final activeDirectory = MockActiveDirectoryService();
-    final config = MockConfigService();
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
@@ -278,7 +253,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -320,7 +294,6 @@ void main() {
   test('validation', () {
     final service = MockIdentityService();
     final activeDirectory = MockActiveDirectoryService();
-    final config = MockConfigService();
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
@@ -328,7 +301,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -412,7 +384,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: MockActiveDirectoryService(),
-      config: MockConfigService(),
       network: network,
       telemetry: telemetry,
     );
@@ -441,7 +412,7 @@ void main() {
   test('respect existing values', () async {
     final service = MockIdentityService();
     when(service.getIdentity()).thenAnswer((_) async {
-      return const IdentityData(
+      return const Identity(
         realname: 'Default',
         username: 'default',
         hostname: 'default',
@@ -452,10 +423,6 @@ void main() {
     when(activeDirectory.isUsed()).thenAnswer((_) async => false);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => false);
 
-    final config = MockConfigService();
-    when(config.get(IdentityModel.kAutoLoginUser))
-        .thenAnswer((_) async => null);
-
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
 
@@ -464,7 +431,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -487,7 +453,6 @@ void main() {
 
     final service = MockIdentityService();
     final activeDirectory = MockActiveDirectoryService();
-    final config = MockConfigService();
     final network = MockNetworkService();
     final telemetry = MockTelemetryService();
     when(network.isConnected).thenReturn(false);
@@ -497,7 +462,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );
@@ -515,15 +479,11 @@ void main() {
 
   test('active directory support', () async {
     final service = MockIdentityService();
-    when(service.getIdentity()).thenAnswer((_) async => const IdentityData());
+    when(service.getIdentity()).thenAnswer((_) async => const Identity());
 
     final activeDirectory = MockActiveDirectoryService();
     when(activeDirectory.isUsed()).thenAnswer((_) async => true);
     when(activeDirectory.hasSupport()).thenAnswer((_) async => true);
-
-    final config = MockConfigService();
-    when(config.get(IdentityModel.kAutoLoginUser))
-        .thenAnswer((_) async => null);
 
     final network = MockNetworkService();
     when(network.propertiesChanged).thenAnswer((_) => const Stream.empty());
@@ -533,7 +493,6 @@ void main() {
     final model = IdentityModel(
       service: service,
       activeDirectory: activeDirectory,
-      config: config,
       network: network,
       telemetry: telemetry,
     );

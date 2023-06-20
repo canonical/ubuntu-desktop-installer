@@ -159,18 +159,17 @@ Future<void> testNotEnoughDiskSpacePage(
   await expectLater(windowClosed, completes);
 }
 
-Future<void> testInstallationTypePage(
+Future<void> testStoragePage(
   WidgetTester tester, {
-  InstallationType? type,
+  StorageType? type,
   AdvancedFeature? advancedFeature,
   bool? useEncryption,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, InstallationTypePage, (lang) => lang.installationTypeTitle);
+  await expectPage(tester, StoragePage, (lang) => lang.installationTypeTitle);
 
   if (type != null) {
-    await tester.tapRadio<InstallationType>(type);
+    await tester.tapRadio<StorageType>(type);
     await tester.pump();
   }
   if (advancedFeature != null) {
@@ -193,7 +192,7 @@ Future<void> testInstallationTypePage(
       await takeScreenshot(tester, screenshot);
     }
 
-    await tester.tapButton(tester.lang.okButtonText);
+    await tester.tapOk();
   }
 
   await tester.pumpAndSettle();
@@ -271,7 +270,7 @@ Future<void> testManualStoragePage(
         await takeScreenshot(tester, '$screenshot-${partition.sysname}');
       }
 
-      await tester.tapButton(tester.lang.okButtonText);
+      await tester.tapOk();
       await tester.pumpAndSettle();
     }
     await tester.pumpAndSettle();
@@ -284,11 +283,11 @@ Future<void> testManualStoragePage(
   await tester.tapNext();
 }
 
-Future<void> testSelectGuidedStoragePage(
+Future<void> testGuidedReformatPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, SelectGuidedStoragePage,
+  await expectPage(tester, GuidedReformatPage,
       (lang) => lang.selectGuidedStoragePageTitle('Ubuntu'));
 
   if (screenshot != null) {
@@ -298,13 +297,13 @@ Future<void> testSelectGuidedStoragePage(
   await tester.tapNext();
 }
 
-Future<void> testInstallAlongsidePage(
+Future<void> testGuidedResizePage(
   WidgetTester tester, {
   Map<String, int> sizes = const {},
   String? screenshot,
 }) async {
   final productInfo = getService<ProductService>().getProductInfo();
-  await expectPage(tester, InstallAlongsidePage,
+  await expectPage(tester, GuidedResizePage,
       (lang) => lang.installationTypeAlongsideUnknown(productInfo));
 
   for (final entry in sizes.entries) {
@@ -321,7 +320,7 @@ Future<void> testInstallAlongsidePage(
       await takeScreenshot(tester, '$screenshot-${entry.key.split(' ').first}');
     }
 
-    await tester.tapButton(tester.lang.okButtonText);
+    await tester.tapOk();
     await tester.pumpAndSettle();
   }
 
@@ -432,7 +431,7 @@ Future<void> testTimezonePage(
 
 Future<void> testIdentityPage(
   WidgetTester tester, {
-  IdentityData? identity,
+  Identity? identity,
   String? password,
   String? screenshot,
 }) async {
@@ -557,6 +556,8 @@ Future<void> expectPage(
   String Function(AppLocalizations lang) title,
 ) async {
   await tester.pumpUntil(find.byType(page));
+  await tester.pumpAndSettle();
+
   expect(find.byType(page), findsOneWidget);
   expect(find.widgetWithText(AppBar, title(tester.lang)), findsOneWidget);
 }

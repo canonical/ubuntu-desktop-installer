@@ -13,25 +13,13 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => '取消';
-
-  @override
   String get changeButtonText => '更改';
-
-  @override
-  String get okButtonText => '好';
-
-  @override
-  String get noButtonText => '否';
 
   @override
   String get restartButtonText => '重启';
 
   @override
   String get revertButtonText => '撤销';
-
-  @override
-  String get yesButtonText => '是';
 
   @override
   String get quitButtonText => '退出安装';

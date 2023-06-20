@@ -13,25 +13,13 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'ביטול';
-
-  @override
   String get changeButtonText => 'עריכה';
-
-  @override
-  String get okButtonText => 'אישור';
-
-  @override
-  String get noButtonText => 'לא';
 
   @override
   String get restartButtonText => 'הפעלה מחדש';
 
   @override
   String get revertButtonText => 'החזרה';
-
-  @override
-  String get yesButtonText => 'כן';
 
   @override
   String get quitButtonText => 'יציאה מההתקנה';

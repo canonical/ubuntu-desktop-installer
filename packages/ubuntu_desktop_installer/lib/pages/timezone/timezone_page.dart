@@ -113,10 +113,7 @@ class TimezonePage extends ConsumerWidget {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardButton.previous(
-          context,
-          enabled: false,
-        ),
+        leading: WizardButton.previous(context),
         trailing: [
           WizardButton.next(
             context,

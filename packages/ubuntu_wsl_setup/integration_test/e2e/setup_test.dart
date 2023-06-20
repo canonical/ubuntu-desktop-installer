@@ -2,6 +2,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wsl_setup/main_win.dart' as app;
 import 'package:yaru_test/yaru_test.dart';
 
@@ -13,7 +14,7 @@ void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
 
   testWidgets('basic setup', (tester) async {
-    app.main(<String>['--no-dry-run']);
+    await tester.runApp(() => app.main(<String>['--no-dry-run']));
 
     await testInstallationSlidesPage(tester);
     await tester.pumpAndSettle();

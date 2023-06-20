@@ -1,21 +1,19 @@
 import 'dart:async';
 
-import 'package:dartx/dartx.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 
-final installerModelProvider = ChangeNotifierProvider(
-  (_) => InstallerModel(getService<SubiquityClient>()),
+final installerModelProvider = ChangeNotifierProvider.autoDispose(
+  (_) => InstallerModel(getService<InstallerService>()),
 );
 
 class InstallerModel extends SafeChangeNotifier {
-  InstallerModel(this._client);
+  InstallerModel(this._service);
 
-  final SubiquityClient _client;
+  final InstallerService _service;
 
-  List<String>? _interactiveSections;
   ApplicationStatus? _status;
   StreamSubscription<ApplicationStatus?>? _statusChange;
 
@@ -23,16 +21,13 @@ class InstallerModel extends SafeChangeNotifier {
   bool get isInstalling => status?.isInstalling == true;
 
   Future<void> init() async {
-    _interactiveSections = await _client.getInteractiveSections();
-    _statusChange = _client.monitorStatus().listen((status) {
+    _statusChange = _service.monitorStatus().listen((status) {
       _status = status;
       notifyListeners();
     });
   }
 
-  bool hasRoute(String route) {
-    return _interactiveSections?.contains(route.removePrefix('/')) != false;
-  }
+  bool hasRoute(String route) => _service.hasRoute(route);
 
   @override
   Future<void> dispose() async {

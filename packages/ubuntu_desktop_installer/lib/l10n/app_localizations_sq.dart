@@ -13,25 +13,13 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Anulo';
-
-  @override
   String get changeButtonText => 'Ndrysho';
-
-  @override
-  String get okButtonText => 'Në rregull';
-
-  @override
-  String get noButtonText => 'Jo';
 
   @override
   String get restartButtonText => 'Rinis';
 
   @override
   String get revertButtonText => 'Rikthe';
-
-  @override
-  String get yesButtonText => 'Po';
 
   @override
   String get quitButtonText => 'Dil nga instalimi';

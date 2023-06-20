@@ -13,25 +13,13 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Atsisakyti';
-
-  @override
   String get changeButtonText => 'Keisti';
-
-  @override
-  String get okButtonText => 'Gerai';
-
-  @override
-  String get noButtonText => 'Ne';
 
   @override
   String get restartButtonText => 'Paleisti iš naujo';
 
   @override
   String get revertButtonText => 'Sugrąžinti';
-
-  @override
-  String get yesButtonText => 'Taip';
 
   @override
   String get quitButtonText => 'Baigti diegimą';

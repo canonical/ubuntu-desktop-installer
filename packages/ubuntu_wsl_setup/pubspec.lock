@@ -197,10 +197,10 @@ packages:
     dependency: transitive
     description:
       name: dio
-      sha256: dfda195cbf351d538054297bbd509d8046d336194ea218655f2c326c65711d1e
+      sha256: a9d76e72985d7087eb7c5e7903224ae52b337131518d127c554b9405936752b8
       url: "https://pub.dev"
     source: hosted
-    version: "5.2.1"
+    version: "5.2.1+1"
   fake_async:
     dependency: transitive
     description:
@@ -276,10 +276,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_svg
-      sha256: "6ff8c902c8056af9736de2689f63f81c42e2d642b9f4c79dbf8790ae48b63012"
+      sha256: "8c5d68a82add3ca76d792f058b186a0599414f279f00ece4830b9b231b570338"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.6"
+    version: "2.0.7"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -747,10 +747,10 @@ packages:
     dependency: "direct main"
     description:
       name: ubuntu_localizations
-      sha256: "1544cbe239cfb876368cf1dfeea4aa83d1c250b08b137f974b0911204c4b83ae"
+      sha256: ae880b714088b7bfbf219923eeac5e08287b14bb01a6be7b3f0d0d7f1afc8587
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.0"
+    version: "0.2.1"
   ubuntu_logger:
     dependency: "direct main"
     description:
@@ -763,17 +763,18 @@ packages:
     dependency: "direct main"
     description:
       name: ubuntu_service
-      sha256: "79b81c146c9fb1aedefa4a6f63724405de3aba0f525afe39b72c513df04a8c13"
+      sha256: f90582494cddd4c7325637930497f38598a7ec567f4f86f88fe1ac40a53832a1
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.2"
+    version: "0.2.3"
   ubuntu_test:
     dependency: "direct dev"
     description:
-      path: "../ubuntu_test"
-      relative: true
-    source: path
-    version: "0.0.0"
+      name: ubuntu_test
+      sha256: c028125ca2045bcb8f5cfecc603e7089014ccfd4d76e3e6e0c589a13ab648feb
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0-beta.4"
   ubuntu_widgets:
     dependency: "direct main"
     description:
@@ -858,26 +859,26 @@ packages:
     dependency: transitive
     description:
       name: vector_graphics
-      sha256: b96f10cbdfcbd03a65758633a43e7d04574438f059b1043104b5d61b23d38a4f
+      sha256: "670f6e07aca990b4a2bcdc08a784193c4ccdd1932620244c3a86bb72a0eac67f"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.6"
+    version: "1.1.7"
   vector_graphics_codec:
     dependency: transitive
     description:
       name: vector_graphics_codec
-      sha256: "57a8e6e24662a3bdfe3b3d61257db91768700c0b8f844e235877b56480f31c69"
+      sha256: "7451721781d967db9933b63f5733b1c4533022c0ba373a01bdd79d1a5457f69f"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.6"
+    version: "1.1.7"
   vector_graphics_compiler:
     dependency: transitive
     description:
       name: vector_graphics_compiler
-      sha256: "7430f5d834d0db4560d7b19863362cd892f1e52b43838553a3c5cdfc9ab28e5b"
+      sha256: "80a13c613c8bde758b1464a1755a7b3a8f2b6cec61fbf0f5a53c94c30f03ba2e"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.6"
+    version: "1.1.7"
   vector_math:
     dependency: transitive
     description:
@@ -930,10 +931,10 @@ packages:
     dependency: transitive
     description:
       name: wizard_router
-      sha256: "08306c9bb3348992ec0a6435596b8b52fe196ffc08ec5e296af712b08d7ee21e"
+      sha256: "4fea20db0008175235798e1184b872762aeee12ee6fc761c798902f1d72fb666"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0-beta.3"
+    version: "1.0.1"
   xdg_directories:
     dependency: transitive
     description:

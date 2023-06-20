@@ -8,7 +8,6 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 
-export 'package:ubuntu_test/ubuntu_test.dart' show UbuntuLangTester;
 export 'test_utils.mocks.dart';
 
 /// An extension on [WidgetTester] for building test apps.
@@ -33,7 +32,7 @@ export 'test_utils.mocks.dart';
 /// ```
 ///
 /// If the tested widget is not in a [WizardPage], you can use the static
-/// [UbuntuTester.context] property to specify the appropriate context to use.
+/// [InstallerTester.context] property to specify the appropriate context to use.
 ///
 /// For example:
 /// ```dart
@@ -41,12 +40,17 @@ export 'test_utils.mocks.dart';
 ///   setUpAll(() => LangTester.context = MyWidget);
 /// }
 /// ```
-extension UbuntuTester on WidgetTester {
+extension InstallerTester on WidgetTester {
   static Type context = WizardPage;
 
   AppLocalizations get lang {
     final widget = element(find.byType(context).first);
     return AppLocalizations.of(widget);
+  }
+
+  UbuntuLocalizations get ulang {
+    final widget = element(find.byType(context).first);
+    return UbuntuLocalizations.of(widget);
   }
 
   Widget buildApp(WidgetBuilder builder) {
@@ -77,17 +81,18 @@ extension UbuntuTester on WidgetTester {
 
 @GenerateMocks([
   ActiveDirectoryService,
-  AppService,
   ConfigService,
   DesktopService,
   GeoService,
   IdentityService,
+  InstallerService,
   JournalService,
   KeyboardService,
   LocaleService,
   NetworkService,
   PowerService,
   ProductService,
+  SessionService,
   SoundService,
   StorageService,
   TelemetryService,

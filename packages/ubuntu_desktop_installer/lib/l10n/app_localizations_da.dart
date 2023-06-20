@@ -13,25 +13,13 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Afbryd';
-
-  @override
   String get changeButtonText => 'Skift';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Nej';
 
   @override
   String get restartButtonText => 'Genstart';
 
   @override
   String get revertButtonText => 'Tilbagefør';
-
-  @override
-  String get yesButtonText => 'Ja';
 
   @override
   String get quitButtonText => 'Forlad installation';

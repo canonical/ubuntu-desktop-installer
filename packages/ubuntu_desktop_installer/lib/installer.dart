@@ -24,6 +24,7 @@ export 'slides.dart';
 Future<void> runInstallerApp(
   List<String> args, {
   FlavorData? flavor,
+  List<String>? routes,
   List<WidgetBuilder>? slides,
 }) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
@@ -39,11 +40,15 @@ Future<void> runInstallerApp(
         defaultsTo: 'examples/desktop-sources.yaml',
         help: 'Path of the source catalog (dry-run only)');
     parser.addFlag('welcome', aliases: ['try-or-install'], hide: true);
+    parser.addOption('routes',
+        valueHelp: 'path',
+        help: 'A comma-separated list of page routes',
+        hide: true);
     addLoggingOptions(parser);
   })!;
-  setupLogger(options, path: '/var/log/installer');
-
   final liveRun = options['dry-run'] != true;
+  setupLogger(options, path: liveRun ? '/var/log/installer' : null);
+
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final subiquityPath = await getSubiquityPath()
       .then((dir) => Directory(dir).existsSync() ? dir : null);
@@ -62,12 +67,13 @@ Future<void> runInstallerApp(
   if (liveRun) tryRegisterService(SoundService.new);
   tryRegisterService<ActiveDirectoryService>(
       () => SubiquityActiveDirectoryService(getService<SubiquityClient>()));
-  tryRegisterService<AppService>(
-      () => InstallerAppService(getService<SubiquityClient>()));
   tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
-  tryRegisterService<IdentityService>(
-      () => SubiquityIdentityService(getService<SubiquityClient>()));
+  tryRegisterService<IdentityService>(() => SubiquityIdentityService(
+      getService<SubiquityClient>(), getService<ConfigService>()));
+  tryRegisterService<InstallerService>(() => InstallerService(
+      getService<SubiquityClient>(),
+      routes: options['routes']?.split(',') ?? routes));
   tryRegisterService(JournalService.new);
   tryRegisterService<KeyboardService>(
       () => SubiquityKeyboardService(getService<SubiquityClient>()));
@@ -77,6 +83,8 @@ Future<void> runInstallerApp(
       () => SubiquityNetworkService(getService<SubiquityClient>()));
   tryRegisterService(PowerService.new);
   tryRegisterService(ProductService.new);
+  tryRegisterService<SessionService>(
+      () => SubiquitySessionService(getService<SubiquityClient>()));
   tryRegisterService(() => StorageService(getService<SubiquityClient>()));
   tryRegisterService(SubiquityClient.new);
   tryRegisterService(
@@ -133,7 +141,7 @@ Future<void> runInstallerApp(
 Future<void> _initInstallerApp(Endpoint endpoint) async {
   getService<SubiquityClient>().open(endpoint);
 
-  await getService<AppService>().init();
+  await getService<InstallerService>().init();
   await getService<DesktopService>().inhibit();
 
   var geo = tryGetService<GeoService>();

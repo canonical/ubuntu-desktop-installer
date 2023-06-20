@@ -13,25 +13,13 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'الغاء';
-
-  @override
   String get changeButtonText => 'تغيير';
-
-  @override
-  String get okButtonText => 'موافق';
-
-  @override
-  String get noButtonText => 'لا';
 
   @override
   String get restartButtonText => 'إعادة تشغيل';
 
   @override
   String get revertButtonText => 'يرجع';
-
-  @override
-  String get yesButtonText => 'نعم';
 
   @override
   String get quitButtonText => 'قم بإنهاء التثبيت';

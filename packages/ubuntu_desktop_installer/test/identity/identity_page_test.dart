@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_page.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import 'test_identity.dart';
@@ -208,10 +209,7 @@ void main() {
     final model = buildIdentityModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-
-    await tester.tap(nextButton);
+    await tester.tapNext();
     verify(model.save()).called(1);
   });
 

@@ -36,17 +36,19 @@ class KeyboardPage extends ConsumerWidget {
             Row(
               children: [
                 Expanded(child: Text(lang.chooseYourKeyboardLayout)),
-                const SizedBox(width: kContentSpacing),
-                OutlinedButton(
-                  child: Text(lang.detectButtonText),
-                  onPressed: () async {
-                    final result = await showDetectKeyboardDialog(context);
-                    if (result != null) {
-                      model.trySelectLayoutVariant(
-                          result.layout, result.variant);
-                    }
-                  },
-                ),
+                if (model.canDetectLayout) ...[
+                  const SizedBox(width: kContentSpacing),
+                  OutlinedButton(
+                    child: Text(lang.detectButtonText),
+                    onPressed: () async {
+                      final result = await showDetectKeyboardDialog(context);
+                      if (result != null) {
+                        model.trySelectLayoutVariant(
+                            result.layout, result.variant);
+                      }
+                    },
+                  ),
+                ],
               ],
             ),
             const SizedBox(height: kContentSpacing),

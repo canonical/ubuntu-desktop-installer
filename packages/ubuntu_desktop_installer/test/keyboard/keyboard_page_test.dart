@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
@@ -71,22 +72,26 @@ void main() {
     verify(model.trySelectLayoutVariant('layout', 'variant'));
   });
 
+  testWidgets('keyboard detection unsupported', (tester) async {
+    final model = buildKeyboardModel(canDetectLayout: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
+
+    final detectButton = find.button(tester.lang.detectButtonText);
+    expect(detectButton, findsNothing);
+  });
+
   testWidgets('valid input', (tester) async {
     final model = buildKeyboardModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    expect(nextButton, isEnabled);
+    expect(find.button(tester.ulang.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildKeyboardModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    expect(nextButton, isDisabled);
+    expect(find.button(tester.ulang.nextLabel), isDisabled);
   });
 
   testWidgets('key search', (tester) async {
@@ -121,9 +126,7 @@ void main() {
     final model = buildKeyboardModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    final nextButton = find.button(tester.ulang.nextLabel);
-    expect(nextButton, findsOneWidget);
-    await tester.tap(nextButton);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
     verify(model.save()).called(1);

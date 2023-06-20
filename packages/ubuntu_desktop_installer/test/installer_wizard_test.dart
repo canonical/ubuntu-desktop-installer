@@ -21,7 +21,7 @@ import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/rst/rst_model.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
-import 'package:ubuntu_desktop_installer/pages/storage/installation_type/installation_type_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
@@ -58,7 +58,6 @@ void main() {
     final localeModel = buildLocaleModel();
     final welcomeModel = buildWelcomeModel(option: Option.tryUbuntu);
 
-    registerMockService<AppService>(MockAppService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -103,15 +102,14 @@ void main() {
     final hiddenWifiModel = buildHiddenWifiModel();
     final sourceModel = buildSourceModel();
     final secureBootModel = buildSecureBootModel();
-    final installationTypeModel = buildInstallationTypeModel(
-        isDone: true, installationType: InstallationType.erase);
+    final storageModel =
+        buildStorageModel(isDone: true, type: StorageType.erase);
     final confirmModel = buildConfirmModel();
     final timezoneModel = buildTimezoneModel();
     final identityModel = buildIdentityModel(isValid: true);
     final activeDirectoryModel = buildActiveDirectoryModel();
     final installModel = buildInstallModel(isDone: true);
 
-    registerMockService<AppService>(MockAppService());
     registerMockService<DesktopService>(MockDesktopService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
@@ -129,8 +127,7 @@ void main() {
           hiddenWifiModelProvider.overrideWith((_) => hiddenWifiModel),
           sourceModelProvider.overrideWith((_) => sourceModel),
           secureBootModelProvider.overrideWith((_) => secureBootModel),
-          installationTypeModelProvider
-              .overrideWith((_) => installationTypeModel),
+          storageModelProvider.overrideWith((_) => storageModel),
           confirmModelProvider.overrideWith((_) => confirmModel),
           timezoneModelProvider.overrideWith((_) => timezoneModel),
           identityModelProvider.overrideWith((_) => identityModel),
@@ -169,8 +166,8 @@ void main() {
 
     await tester.tapNext();
     await tester.pumpAndSettle();
-    expect(find.byType(InstallationTypePage), findsOneWidget);
-    verify(installationTypeModel.init()).called(1);
+    expect(find.byType(StoragePage), findsOneWidget);
+    verify(storageModel.init()).called(1);
 
     await tester.tapNext();
     await tester.pumpAndSettle();
@@ -203,7 +200,6 @@ void main() {
     final localeModel = buildLocaleModel();
     final rstModel = buildRstModel(hasRst: true);
 
-    registerMockService<AppService>(MockAppService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -228,7 +224,6 @@ void main() {
     final sourceModel = buildSourceModel();
     final secureBootModel = buildSecureBootModel(hasSecureBoot: true);
 
-    registerMockService<AppService>(MockAppService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -252,25 +247,25 @@ void main() {
 
   testWidgets('bitlocker', (tester) async {
     final localeModel = buildLocaleModel();
-    final installationTypeModel = buildInstallationTypeModel(
+    final storageModel = buildStorageModel(
       hasBitLocker: true,
-      installationType: InstallationType.bitlocker,
+      type: StorageType.bitlocker,
       isDone: false,
     );
 
     final storage = MockStorageService();
     when(storage.guidedTarget).thenReturn(null);
 
-    registerMockService<AppService>(MockAppService());
+    registerMockService<SessionService>(MockSessionService());
     registerMockService<StorageService>(storage);
+    registerMockService<SubiquityClient>(MockSubiquityClient());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
           localeModelProvider.overrideWith((_) => localeModel),
-          installationTypeModelProvider
-              .overrideWith((_) => installationTypeModel),
+          storageModelProvider.overrideWith((_) => storageModel),
         ],
         child: tester.buildTestWizard(),
       ),
@@ -289,7 +284,6 @@ void main() {
         buildIdentityModel(useActiveDirectory: true, isValid: true);
     final activeDirectoryModel = buildActiveDirectoryModel(isUsed: true);
 
-    registerMockService<AppService>(MockAppService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -312,7 +306,7 @@ void main() {
     verify(activeDirectoryModel.init()).called(1);
   });
 
-  testWidgets('semi-automated install', (tester) async {
+  testWidgets('routes', (tester) async {
     final keyboardModel = buildKeyboardModel();
     final confirmModel = buildConfirmModel();
     final identityModel = buildIdentityModel(isValid: true);
@@ -320,7 +314,6 @@ void main() {
         buildActiveDirectoryModel(isUsed: true, isValid: true);
     final installModel = buildInstallModel(isDone: true);
 
-    registerMockService<AppService>(MockAppService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -333,10 +326,10 @@ void main() {
               .overrideWith((_) => activeDirectoryModel),
           installModelProvider.overrideWith((_) => installModel),
         ],
-        child: tester.buildTestWizard(interactiveSections: [
-          'keyboard',
-          'identity',
-          'active-directory',
+        child: tester.buildTestWizard(routes: [
+          Routes.keyboard,
+          Routes.identity,
+          Routes.activeDirectory,
         ]),
       ),
     );
@@ -367,12 +360,13 @@ void main() {
 }
 
 extension on WidgetTester {
-  Widget buildTestWizard({bool? welcome, List<String>? interactiveSections}) {
-    final client = MockSubiquityClient();
-    when(client.monitorStatus()).thenAnswer((_) => const Stream.empty());
-    when(client.getInteractiveSections())
-        .thenAnswer((_) async => interactiveSections);
-    registerMockService<SubiquityClient>(client);
+  Widget buildTestWizard({bool? welcome, List<String>? routes}) {
+    final installer = MockInstallerService();
+    when(installer.hasRoute(any)).thenAnswer((i) {
+      return routes?.contains(i.positionalArguments.single) ?? true;
+    });
+    when(installer.monitorStatus()).thenAnswer((_) => const Stream.empty());
+    registerMockService<InstallerService>(installer);
 
     return InheritedLocale(
       child: Flavor(

@@ -13,25 +13,13 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Nuligi';
-
-  @override
   String get changeButtonText => 'Ŝanĝi';
-
-  @override
-  String get okButtonText => 'Bone';
-
-  @override
-  String get noButtonText => 'Ne';
 
   @override
   String get restartButtonText => 'Restartigi';
 
   @override
   String get revertButtonText => 'Malfari';
-
-  @override
-  String get yesButtonText => 'Jes';
 
   @override
   String get quitButtonText => 'Ĉesi instaladon';

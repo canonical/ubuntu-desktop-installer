@@ -12,6 +12,7 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
+import 'services.dart';
 import 'welcome_wizard.dart';
 
 Future<void> main(List<String> args) async {
@@ -27,6 +28,7 @@ Future<void> main(List<String> args) async {
   tryRegisterService<ConfigService>(() => ConfigService('/tmp/$baseName.conf'));
   tryRegisterService<LocaleService>(XdgLocaleService.new);
   tryRegisterService<TimezoneService>(XdgTimezoneService.new);
+  tryRegisterService<KeyboardService>(XdgKeyboardService.new);
   tryRegisterService<IdentityService>(XdgIdentityService.new);
   tryRegisterService<NetworkService>(NetworkService.new);
 

@@ -13,25 +13,13 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Hætta Við';
-
-  @override
   String get changeButtonText => 'Breyta';
-
-  @override
-  String get okButtonText => 'Í Lagi';
-
-  @override
-  String get noButtonText => 'Nei';
 
   @override
   String get restartButtonText => 'Endurræsa';
 
   @override
   String get revertButtonText => 'Afturkalla';
-
-  @override
-  String get yesButtonText => 'Já';
 
   @override
   String get quitButtonText => 'Quit installation';

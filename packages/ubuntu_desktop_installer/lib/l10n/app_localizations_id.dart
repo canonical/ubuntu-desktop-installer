@@ -13,25 +13,13 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Batal';
-
-  @override
   String get changeButtonText => 'Ubah';
-
-  @override
-  String get okButtonText => 'Ok';
-
-  @override
-  String get noButtonText => 'Tidak';
 
   @override
   String get restartButtonText => 'Jalankan Ulang';
 
   @override
   String get revertButtonText => 'Kembalikan';
-
-  @override
-  String get yesButtonText => 'Ya';
 
   @override
   String get quitButtonText => 'Quit installation';
