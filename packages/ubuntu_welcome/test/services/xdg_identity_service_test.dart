@@ -30,7 +30,7 @@ void main() {
   test('apply', () async {
     final dBusClient = createMockDBusClient();
     final service = XdgIdentityService(dBusClient, 0);
-    await service.setIdentity(testIdentity);
+    await service.setIdentity(testIdentity.copyWith(password: 'password'));
 
     verify(dBusClient.callMethod(
       destination: 'org.freedesktop.Accounts',
@@ -43,6 +43,20 @@ void main() {
         const DBusInt32(1),
       ],
       replySignature: DBusSignature.objectPath,
+      noReplyExpected: false,
+      noAutoStart: false,
+      allowInteractiveAuthorization: false,
+    )).called(1);
+
+    verify(dBusClient.callMethod(
+      destination: 'org.freedesktop.Accounts',
+      path: DBusObjectPath('/test/object/path'),
+      interface: 'org.freedesktop.Accounts.User',
+      name: 'SetPassword',
+      values: [
+        const DBusString('password'),
+      ],
+      replySignature: DBusSignature.empty,
       noReplyExpected: false,
       noAutoStart: false,
       allowInteractiveAuthorization: false,
@@ -144,5 +158,18 @@ MockDBusClient createMockDBusClient({
       throw DBusMethodResponseException(DBusMethodErrorResponse.invalidArgs());
     },
   );
+
+  when(dBusClient.callMethod(
+    destination: 'org.freedesktop.Accounts',
+    path: DBusObjectPath('/test/object/path'),
+    interface: 'org.freedesktop.Accounts.User',
+    name: anyNamed('name'),
+    values: anyNamed('values'),
+    replySignature: DBusSignature.empty,
+    noReplyExpected: false,
+    noAutoStart: false,
+    allowInteractiveAuthorization: false,
+  )).thenAnswer((i) async => DBusMethodSuccessResponse([]));
+
   return dBusClient;
 }

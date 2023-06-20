@@ -23,6 +23,22 @@ class Identity {
   final String hostname;
   final bool autoLogin;
 
+  Identity copyWith({
+    String? realname,
+    String? username,
+    String? password,
+    String? hostname,
+    bool? autoLogin,
+  }) {
+    return Identity(
+      realname: realname ?? this.realname,
+      username: username ?? this.username,
+      password: password ?? this.password,
+      hostname: hostname ?? this.hostname,
+      autoLogin: autoLogin ?? this.autoLogin,
+    );
+  }
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
