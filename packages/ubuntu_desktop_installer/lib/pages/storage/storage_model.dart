@@ -55,7 +55,10 @@ class StorageModel extends SafeChangeNotifier {
   var _advancedFeature = AdvancedFeature.none;
   var _encryption = false;
   var _hasBitLocker = false;
-  List<GuidedStorageTarget>? _storages;
+  List<GuidedStorageTarget>? _targets;
+
+  Iterable<T> _getTargets<T extends GuidedStorageTarget>() =>
+      _targets?.whereType<T>().where((t) => t.allowed.isNotEmpty) ?? [];
 
   /// The selected storage type.
   StorageType? get type => _type;
@@ -96,7 +99,7 @@ class StorageModel extends SafeChangeNotifier {
   List<OsProber>? get existingOS => _diskService.existingOS;
 
   /// Whether storage information has been queried and installation can proceed.
-  bool get hasStorage => _storages != null;
+  bool get hasStorage => _targets != null;
 
   /// Whether BitLocker is detected.
   bool get hasBitLocker => _hasBitLocker;
@@ -106,10 +109,8 @@ class StorageModel extends SafeChangeNotifier {
   /// That is, whether a) an existing partition can be safely resized smaller to
   /// make room for the installation, or b) there is a large enough unused gap.
   bool get canInstallAlongside {
-    return _storages?.any((target) =>
-            target is GuidedStorageTargetResize ||
-            target is GuidedStorageTargetUseGap) ??
-        false;
+    return _getTargets<GuidedStorageTargetResize>().isNotEmpty ||
+        _getTargets<GuidedStorageTargetUseGap>().isNotEmpty;
   }
 
   /// Whether the filesystem wizard is at the end.
@@ -117,10 +118,10 @@ class StorageModel extends SafeChangeNotifier {
     switch (_type) {
       case StorageType.erase:
         return !_diskService.useEncryption &&
-            _storages?.whereType<GuidedStorageTargetReformat>().length == 1;
+            _getTargets<GuidedStorageTargetReformat>().length == 1;
       case StorageType.alongside:
         return !_diskService.useEncryption &&
-            _storages?.any((t) => t is GuidedStorageTargetUseGap) == true;
+            _getTargets<GuidedStorageTargetUseGap>().isNotEmpty;
       case StorageType.manual:
       case StorageType.bitlocker:
       case null:
@@ -131,7 +132,7 @@ class StorageModel extends SafeChangeNotifier {
   /// Initializes the model.
   Future<void> init() async {
     await _diskService.init();
-    await _diskService.getGuidedStorage().then((r) => _storages = r.targets);
+    await _diskService.getGuidedStorage().then((r) => _targets = r.targets);
     _type ??= canInstallAlongside ? StorageType.alongside : StorageType.erase;
     _advancedFeature =
         _diskService.useLvm ? AdvancedFeature.lvm : AdvancedFeature.none;
@@ -151,11 +152,10 @@ class StorageModel extends SafeChangeNotifier {
   GuidedStorageTarget? preselectTarget(StorageType type) {
     switch (type) {
       case StorageType.erase:
-        return _storages?.whereType<GuidedStorageTargetReformat>().singleOrNull;
+        return _getTargets<GuidedStorageTargetReformat>().singleOrNull;
 
       case StorageType.alongside:
-        return _storages
-            ?.whereType<GuidedStorageTargetUseGap>()
+        return _getTargets<GuidedStorageTargetUseGap>()
             .sorted((a, b) => a.gap.size.compareTo(b.gap.size))
             .lastOrNull;
 
