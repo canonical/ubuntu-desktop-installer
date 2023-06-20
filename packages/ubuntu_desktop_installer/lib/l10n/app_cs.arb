@@ -974,5 +974,12 @@
   "allocateDiskSpaceInvalidMountPointSlash": "Je třeba, aby přípojné body začínaly na „/“ (dopředné lomítko)",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Přípojné body nemohou obsahovat mezery",
-  "@allocateDiskSpaceInvalidMountPointSpace": {}
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "partitionFormatKeep": "Ponechat naformátované jako {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }
