@@ -48,7 +48,6 @@ parts:
     override-build: |
       set -eux
       mkdir -p $CRAFT_PART_INSTALL/bin/lib
-      cp snap/local/launcher $CRAFT_PART_INSTALL/bin/
       # https://github.com/canonical/ubuntu-desktop-installer/issues/1146
       (cd packages/ubuntu_wizard && flutter pub get)
       cd packages/ubuntu_welcome
