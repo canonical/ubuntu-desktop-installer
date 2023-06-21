@@ -111,6 +111,7 @@ class StoragePage extends ConsumerWidget {
                             }
                       : null,
                 ),
+                const SizedBox(height: kContentSpacing),
                 Padding(
                   padding: kContentIndentation,
                   child: YaruCheckButton(
