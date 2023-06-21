@@ -14,7 +14,6 @@ GuidedReformatModel buildGuidedReformatModel({
   int? selectedIndex,
   Disk? selectedDisk,
   GuidedStorageTargetReformat? selectedStorage,
-  bool? isDone,
 }) {
   final model = MockGuidedReformatModel();
   when(model.storages).thenReturn(storages ?? <GuidedStorageTargetReformat>[]);
@@ -25,6 +24,6 @@ GuidedReformatModel buildGuidedReformatModel({
       .thenAnswer((i) => disks?.elementAtOrNull(i.positionalArguments.first));
   when(model.getStorage(any)).thenAnswer(
       (i) => storages?.elementAtOrNull(i.positionalArguments.first));
-  when(model.isDone).thenReturn(isDone ?? false);
+  when(model.init()).thenAnswer((_) async => (storages?.length ?? 0) > 1);
   return model;
 }

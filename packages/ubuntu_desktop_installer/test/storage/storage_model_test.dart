@@ -156,32 +156,6 @@ void main() {
     verify(storage.useLvm = false).called(1);
   });
 
-  test('single reformat target', () async {
-    const reformat = GuidedStorageTargetReformat(
-      diskId: '',
-      allowed: [GuidedCapability.LVM],
-    );
-
-    final service = MockStorageService();
-    when(service.useLvm).thenReturn(false);
-    when(service.useEncryption).thenReturn(false);
-    when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(targets: [reformat]));
-    when(service.hasBitLocker()).thenAnswer((_) async => false);
-
-    final model = StorageModel(
-      service,
-      MockTelemetryService(),
-      MockProductService(),
-    );
-
-    await model.init();
-
-    await model.save();
-    verify(service.guidedTarget = reformat).called(1);
-    verifyNever(service.setGuidedStorage());
-  });
-
   test('can install alongside', () async {
     final service = MockStorageService();
     when(service.useLvm).thenReturn(false);
@@ -243,103 +217,6 @@ void main() {
         fakeGuidedStorageResponse(targets: [reformat, resize, gap]));
     await model.init();
     expect(model.canInstallAlongside, isTrue);
-  });
-
-  test('pre-select target', () async {
-    final service = MockStorageService();
-    when(service.useLvm).thenReturn(false);
-    when(service.useEncryption).thenReturn(false);
-    when(service.hasBitLocker()).thenAnswer((_) async => false);
-
-    final model = StorageModel(
-      service,
-      MockTelemetryService(),
-      MockProductService(),
-    );
-
-    // none
-    when(service.getGuidedStorage())
-        .thenAnswer((_) async => fakeGuidedStorageResponse());
-    await model.init();
-    expect(model.preselectTarget(StorageType.erase), isNull);
-    expect(model.preselectTarget(StorageType.alongside), isNull);
-    expect(model.preselectTarget(StorageType.manual), isNull);
-
-    // reformat
-    const reformat = GuidedStorageTargetReformat(
-      diskId: '',
-      allowed: [GuidedCapability.LVM],
-    );
-    when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(targets: [reformat]));
-    await model.init();
-    expect(model.preselectTarget(StorageType.erase), reformat);
-    expect(model.preselectTarget(StorageType.alongside), isNull);
-    expect(model.preselectTarget(StorageType.manual), isNull);
-
-    // multiple reformats
-    when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(targets: [reformat, reformat]));
-    await model.init();
-    expect(model.preselectTarget(StorageType.erase), isNull);
-    expect(model.preselectTarget(StorageType.alongside), isNull);
-    expect(model.preselectTarget(StorageType.manual), isNull);
-
-    // resize
-    const resize = GuidedStorageTargetResize(
-      diskId: '',
-      partitionNumber: 0,
-      newSize: 0,
-      maximum: 0,
-      minimum: 0,
-      recommended: 0,
-      allowed: [GuidedCapability.LVM],
-    );
-    when(service.getGuidedStorage())
-        .thenAnswer((_) async => fakeGuidedStorageResponse(targets: [resize]));
-    await model.init();
-    expect(model.preselectTarget(StorageType.erase), isNull);
-    expect(model.preselectTarget(StorageType.alongside), isNull);
-    expect(model.preselectTarget(StorageType.manual), isNull);
-
-    // gap
-    const gap = GuidedStorageTargetUseGap(
-      diskId: '',
-      gap: Gap(offset: 0, size: 1, usable: GapUsable.YES),
-      allowed: [GuidedCapability.LVM],
-    );
-    when(service.getGuidedStorage())
-        .thenAnswer((_) async => fakeGuidedStorageResponse(targets: [gap]));
-    await model.init();
-    expect(model.preselectTarget(StorageType.erase), isNull);
-    expect(model.preselectTarget(StorageType.alongside), gap);
-    expect(model.preselectTarget(StorageType.manual), isNull);
-
-    // multiple gaps
-    const gap2 = GuidedStorageTargetUseGap(
-      diskId: '',
-      gap: Gap(offset: 0, size: 2, usable: GapUsable.YES),
-      allowed: [GuidedCapability.LVM],
-    );
-    const gap3 = GuidedStorageTargetUseGap(
-      diskId: '',
-      gap: Gap(offset: 0, size: 3, usable: GapUsable.YES),
-      allowed: [GuidedCapability.LVM],
-    );
-    when(service.getGuidedStorage()).thenAnswer(
-        (_) async => fakeGuidedStorageResponse(targets: [gap, gap3, gap2]));
-    await model.init();
-    expect(model.preselectTarget(StorageType.erase), isNull);
-    expect(model.preselectTarget(StorageType.alongside), gap3);
-    expect(model.preselectTarget(StorageType.manual), isNull);
-
-    // all
-    when(service.getGuidedStorage()).thenAnswer((_) async =>
-        fakeGuidedStorageResponse(targets: [reformat, resize, gap]));
-    await model.init();
-    expect(model.preselectTarget(StorageType.erase), reformat);
-    expect(model.preselectTarget(StorageType.alongside), gap);
-    expect(model.preselectTarget(StorageType.manual), isNull);
   });
 
   test('reset storage', () async {

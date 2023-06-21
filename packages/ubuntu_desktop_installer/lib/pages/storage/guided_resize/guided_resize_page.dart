@@ -15,7 +15,7 @@ class GuidedResizePage extends ConsumerWidget {
   const GuidedResizePage({super.key});
 
   static Future<bool> load(WidgetRef ref) {
-    return ref.read(guidedResizeModelProvider).init().then((_) => true);
+    return ref.read(guidedResizeModelProvider).init();
   }
 
   static String _formatTitle(BuildContext context, WidgetRef ref) {
@@ -87,7 +87,6 @@ class GuidedResizePage extends ConsumerWidget {
         trailing: [
           WizardButton.next(
             context,
-            root: model.isDone,
             onNext: model.selectedStorage != null ? model.save : null,
             onBack: model.reset,
           ),

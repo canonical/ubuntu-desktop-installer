@@ -55,7 +55,6 @@ void main() {
     when(model.canInstallAlongside).thenReturn(false);
     when(model.hasStorage).thenReturn(true);
     when(model.hasBitLocker).thenReturn(false);
-    when(model.isDone).thenReturn(false);
 
     await tester.pumpWidget(
       ProviderScope(
@@ -88,7 +87,6 @@ void main() {
     when(model.canInstallAlongside).thenReturn(false);
     when(model.hasStorage).thenReturn(true);
     when(model.hasBitLocker).thenReturn(false);
-    when(model.isDone).thenReturn(false);
 
     await tester.pumpWidget(
       ProviderScope(

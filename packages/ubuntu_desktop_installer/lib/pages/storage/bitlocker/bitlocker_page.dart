@@ -14,6 +14,10 @@ import 'bitlocker_model.dart';
 class BitLockerPage extends ConsumerWidget {
   const BitLockerPage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(bitLockerModelProvider.notifier).init();
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(bitLockerModelProvider);

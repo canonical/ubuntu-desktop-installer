@@ -42,11 +42,6 @@ class MockGuidedResizeModel extends _i1.Mock implements _i3.GuidedResizeModel {
   }
 
   @override
-  bool get isDone => (super.noSuchMethod(
-        Invocation.getter(#isDone),
-        returnValue: false,
-      ) as bool);
-  @override
   _i2.ProductInfo get productInfo => (super.noSuchMethod(
         Invocation.getter(#productInfo),
         returnValue: _FakeProductInfo_0(
@@ -139,14 +134,13 @@ class MockGuidedResizeModel extends _i1.Mock implements _i3.GuidedResizeModel {
         returnValueForMissingStub: null,
       );
   @override
-  _i5.Future<void> init() => (super.noSuchMethod(
+  _i5.Future<bool> init() => (super.noSuchMethod(
         Invocation.method(
           #init,
           [],
         ),
-        returnValue: _i5.Future<void>.value(),
-        returnValueForMissingStub: _i5.Future<void>.value(),
-      ) as _i5.Future<void>);
+        returnValue: _i5.Future<bool>.value(false),
+      ) as _i5.Future<bool>);
   @override
   _i5.Future<void> save() => (super.noSuchMethod(
         Invocation.method(

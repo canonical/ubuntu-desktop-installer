@@ -12,11 +12,13 @@ SecurityKeyModel buildSecurityKeyModel({
   String? securityKey,
   String? confirmedSecurityKey,
   bool? showSecurityKey,
+  bool? useSecurityKey,
 }) {
   final model = MockSecurityKeyModel();
   when(model.isValid).thenReturn(isValid ?? true);
   when(model.securityKey).thenReturn(securityKey ?? '');
   when(model.confirmedSecurityKey).thenReturn(confirmedSecurityKey ?? '');
   when(model.showSecurityKey).thenReturn(showSecurityKey ?? false);
+  when(model.init()).thenAnswer((_) async => useSecurityKey ?? true);
   return model;
 }

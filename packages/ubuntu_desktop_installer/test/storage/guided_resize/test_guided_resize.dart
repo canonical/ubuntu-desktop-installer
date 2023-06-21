@@ -24,7 +24,6 @@ GuidedResizeModel buildGuidedResizeModel({
   int? minimumSize,
   int? maximumSize,
   int? totalSize,
-  bool? isDone,
 }) {
   final model = MockGuidedResizeModel();
   when(model.storageCount).thenReturn(storageCount ?? 0);
@@ -47,6 +46,5 @@ GuidedResizeModel buildGuidedResizeModel({
   when(model.minimumSize).thenReturn(minimumSize ?? 0);
   when(model.maximumSize).thenReturn(maximumSize ?? 1);
   when(model.totalSize).thenReturn(totalSize ?? 0);
-  when(model.isDone).thenReturn(isDone ?? false);
   return model;
 }

@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -14,9 +13,6 @@ enum StorageType {
 
   /// Manual partitioning.
   manual,
-
-  /// BitLocker must be manually resized or disabled.
-  bitlocker,
 }
 
 /// Available advanced features.
@@ -113,22 +109,6 @@ class StorageModel extends SafeChangeNotifier {
         _getTargets<GuidedStorageTargetUseGap>().isNotEmpty;
   }
 
-  /// Whether the filesystem wizard is at the end.
-  bool get isDone {
-    switch (_type) {
-      case StorageType.erase:
-        return !_diskService.useEncryption &&
-            _getTargets<GuidedStorageTargetReformat>().length == 1;
-      case StorageType.alongside:
-        return !_diskService.useEncryption &&
-            _getTargets<GuidedStorageTargetUseGap>().isNotEmpty;
-      case StorageType.manual:
-      case StorageType.bitlocker:
-      case null:
-        return false;
-    }
-  }
-
   /// Initializes the model.
   Future<void> init() async {
     await _diskService.init();
@@ -141,35 +121,8 @@ class StorageModel extends SafeChangeNotifier {
     notifyListeners();
   }
 
-  /// Resolves the automatic guided storage target selection for the given
-  /// installation type.
-  ///
-  /// Automatic cases:
-  /// - when erasing the disk and there's only one reformat target
-  /// - when installing alongside an existing OS and there's a large enough gap
-  ///
-  /// For all other cases, the user is prompted to select or resize a target.
-  GuidedStorageTarget? preselectTarget(StorageType type) {
-    switch (type) {
-      case StorageType.erase:
-        return _getTargets<GuidedStorageTargetReformat>().singleOrNull;
-
-      case StorageType.alongside:
-        return _getTargets<GuidedStorageTargetUseGap>()
-            .sorted((a, b) => a.gap.size.compareTo(b.gap.size))
-            .lastOrNull;
-
-      default:
-        return null;
-    }
-  }
-
-  /// Saves the installation type selection and applies the guide storage
-  /// if appropriate (single guided storage).
+  /// Saves the storage type selection.
   Future<void> save() async {
-    // automatically pre-select a guided storage target if possible
-    _diskService.guidedTarget = preselectTarget(type!);
-
     final partitionMethod = _resolvePartitionMethod();
     if (partitionMethod != null) {
       await _telemetryService?.addMetric('PartitionMethod', partitionMethod);

@@ -7,6 +7,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'test_storage.mocks.dart';
 
 export '../test_utils.dart';
+export 'bitlocker/test_bitlocker.dart';
 export 'guided_reformat/test_guided_reformat.dart';
 export 'guided_resize/test_guided_resize.dart';
 export 'manual/test_manual_storage.dart';
@@ -23,7 +24,6 @@ StorageModel buildStorageModel({
   bool? canInstallAlongside,
   bool? hasStorage,
   bool? hasBitLocker,
-  bool? isDone,
 }) {
   final model = MockStorageModel();
   when(model.type).thenReturn(type ?? StorageType.erase);
@@ -35,6 +35,5 @@ StorageModel buildStorageModel({
   when(model.canInstallAlongside).thenReturn(canInstallAlongside ?? false);
   when(model.hasStorage).thenReturn(hasStorage ?? true);
   when(model.hasBitLocker).thenReturn(hasBitLocker ?? false);
-  when(model.isDone).thenReturn(isDone ?? false);
   return model;
 }

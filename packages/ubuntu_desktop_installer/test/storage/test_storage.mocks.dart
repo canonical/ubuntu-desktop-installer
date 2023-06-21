@@ -4,10 +4,9 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
-import 'dart:ui' as _i6;
+import 'dart:ui' as _i5;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:subiquity_client/subiquity_client.dart' as _i5;
 import 'package:ubuntu_desktop_installer/pages/storage/storage_model.dart'
     as _i3;
 import 'package:ubuntu_desktop_installer/services.dart' as _i2;
@@ -99,11 +98,6 @@ class MockStorageModel extends _i1.Mock implements _i3.StorageModel {
         returnValue: false,
       ) as bool);
   @override
-  bool get isDone => (super.noSuchMethod(
-        Invocation.getter(#isDone),
-        returnValue: false,
-      ) as bool);
-  @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,
@@ -123,12 +117,6 @@ class MockStorageModel extends _i1.Mock implements _i3.StorageModel {
         returnValueForMissingStub: _i4.Future<void>.value(),
       ) as _i4.Future<void>);
   @override
-  _i5.GuidedStorageTarget? preselectTarget(_i3.StorageType? type) =>
-      (super.noSuchMethod(Invocation.method(
-        #preselectTarget,
-        [type],
-      )) as _i5.GuidedStorageTarget?);
-  @override
   _i4.Future<void> save() => (super.noSuchMethod(
         Invocation.method(
           #save,
@@ -147,7 +135,7 @@ class MockStorageModel extends _i1.Mock implements _i3.StorageModel {
         returnValueForMissingStub: _i4.Future<void>.value(),
       ) as _i4.Future<void>);
   @override
-  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -155,7 +143,7 @@ class MockStorageModel extends _i1.Mock implements _i3.StorageModel {
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],

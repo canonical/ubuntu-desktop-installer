@@ -40,6 +40,15 @@ class SecurityKeyModel extends SafeChangeNotifier {
   bool get isValid =>
       securityKey.isNotEmpty && securityKey == confirmedSecurityKey;
 
+  /// Initializes the model.
+  Future<bool> init() async {
+    if (!_service.useEncryption) {
+      return false;
+    }
+    await loadSecurityKey();
+    return true;
+  }
+
   /// Loads the security key from the service.
   Future<void> loadSecurityKey() async {
     _securityKey.value =

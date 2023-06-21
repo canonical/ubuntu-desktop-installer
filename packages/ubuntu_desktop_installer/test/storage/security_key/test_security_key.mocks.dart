@@ -84,6 +84,14 @@ class MockSecurityKeyModel extends _i1.Mock implements _i2.SecurityKeyModel {
         returnValue: false,
       ) as bool);
   @override
+  _i3.Future<bool> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i3.Future<bool>.value(false),
+      ) as _i3.Future<bool>);
+  @override
   _i3.Future<void> loadSecurityKey() => (super.noSuchMethod(
         Invocation.method(
           #loadSecurityKey,

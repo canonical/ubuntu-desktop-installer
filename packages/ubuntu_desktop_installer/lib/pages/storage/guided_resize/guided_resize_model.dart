@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart' hide ListExtensions;
-import 'package:dartx/dartx.dart';
+import 'package:dartx/dartx.dart' hide IterableSorted, IterableLastOrNull;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -23,9 +23,6 @@ class GuidedResizeModel extends SafeChangeNotifier {
   var _disks = <String, Disk>{};
   int? _selectedIndex;
   int? _currentSize;
-
-  /// Whether the filesystem wizard is at the end.
-  bool get isDone => !_storage.useEncryption;
 
   /// Detailed info of the product being installed.
   ProductInfo get productInfo => _product.getProductInfo();
@@ -117,17 +114,30 @@ class GuidedResizeModel extends SafeChangeNotifier {
   }
 
   void _updateStorage(GuidedStorageResponseV2 response) {
-    _storages =
-        response.targets.whereType<GuidedStorageTargetResize>().toList();
+    _storages = response.targets
+        .whereType<GuidedStorageTargetResize>()
+        .where((t) => t.allowed.isNotEmpty)
+        .toList();
     _selectedIndex = _storages.isEmpty ? null : 0;
     notifyListeners();
   }
 
-  /// Loads the storages available for guided partitioning.
-  Future<void> init() {
-    return _storage.getStorage().then((disks) {
+  /// Loads the targets available for guided resizing and returns true if there
+  /// there are any available.
+  Future<bool> init() {
+    return _storage.getStorage().then((disks) async {
       _disks = Map.fromIterable(disks, key: (d) => d.id);
-      return _storage.getGuidedStorage().then(_updateStorage);
+      final response = await _storage.getGuidedStorage();
+      _updateStorage(response);
+      final gaps = response.targets
+          .whereType<GuidedStorageTargetUseGap>()
+          .where((t) => t.allowed.isNotEmpty);
+      if (gaps.isNotEmpty) {
+        _storage.guidedTarget =
+            gaps.sorted((a, b) => a.gap.size.compareTo(b.gap.size)).lastOrNull;
+        return false;
+      }
+      return true;
     });
   }
 

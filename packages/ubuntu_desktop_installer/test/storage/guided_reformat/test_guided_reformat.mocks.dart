@@ -32,11 +32,6 @@ class MockGuidedReformatModel extends _i1.Mock
   }
 
   @override
-  bool get isDone => (super.noSuchMethod(
-        Invocation.getter(#isDone),
-        returnValue: false,
-      ) as bool);
-  @override
   List<_i3.GuidedStorageTarget> get storages => (super.noSuchMethod(
         Invocation.getter(#storages),
         returnValue: <_i3.GuidedStorageTarget>[],
@@ -75,6 +70,14 @@ class MockGuidedReformatModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+  @override
+  _i4.Future<bool> init() => (super.noSuchMethod(
+        Invocation.method(
+          #init,
+          [],
+        ),
+        returnValue: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
   @override
   _i4.Future<void> loadGuidedStorage() => (super.noSuchMethod(
         Invocation.method(

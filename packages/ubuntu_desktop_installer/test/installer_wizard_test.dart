@@ -21,6 +21,9 @@ import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/rst/rst_model.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/bitlocker/bitlocker_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/guided_reformat/guided_reformat_model.dart';
+import 'package:ubuntu_desktop_installer/pages/storage/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
@@ -90,7 +93,7 @@ void main() {
     await expectLater(windowClosed, completes);
   });
 
-  testWidgets('erase disk', (tester) async {
+  testWidgets('guided reformat', (tester) async {
     final loadingModel = buildLoadingModel();
     final localeModel = buildLocaleModel();
     final welcomeModel = buildWelcomeModel(option: Option.installUbuntu);
@@ -102,8 +105,10 @@ void main() {
     final hiddenWifiModel = buildHiddenWifiModel();
     final sourceModel = buildSourceModel();
     final secureBootModel = buildSecureBootModel();
-    final storageModel =
-        buildStorageModel(isDone: true, type: StorageType.erase);
+    final storageModel = buildStorageModel(type: StorageType.erase);
+    final bitLockerModel = buildBitLockerModel();
+    final guidedReformatModel = buildGuidedReformatModel();
+    final securityKeyModel = buildSecurityKeyModel(useSecurityKey: false);
     final confirmModel = buildConfirmModel();
     final timezoneModel = buildTimezoneModel();
     final identityModel = buildIdentityModel(isValid: true);
@@ -128,6 +133,9 @@ void main() {
           sourceModelProvider.overrideWith((_) => sourceModel),
           secureBootModelProvider.overrideWith((_) => secureBootModel),
           storageModelProvider.overrideWith((_) => storageModel),
+          bitLockerModelProvider.overrideWith((_) => bitLockerModel),
+          guidedReformatModelProvider.overrideWith((_) => guidedReformatModel),
+          securityKeyModelProvider.overrideWith((_) => securityKeyModel),
           confirmModelProvider.overrideWith((_) => confirmModel),
           timezoneModelProvider.overrideWith((_) => timezoneModel),
           identityModelProvider.overrideWith((_) => identityModel),
@@ -172,6 +180,9 @@ void main() {
     await tester.tapNext();
     await tester.pumpAndSettle();
     expect(find.byType(ConfirmPage), findsOneWidget);
+    verify(bitLockerModel.init()).called(1); // skipped
+    verify(guidedReformatModel.init()).called(1); // skipped
+    verify(securityKeyModel.init()).called(1); // skipped
     verify(confirmModel.init()).called(1);
 
     await tester.tapButton(tester.lang.startInstallingButtonText);
@@ -247,11 +258,8 @@ void main() {
 
   testWidgets('bitlocker', (tester) async {
     final localeModel = buildLocaleModel();
-    final storageModel = buildStorageModel(
-      hasBitLocker: true,
-      type: StorageType.bitlocker,
-      isDone: false,
-    );
+    final storageModel = buildStorageModel(type: StorageType.alongside);
+    final bitlockerModel = buildBitLockerModel(hasBitLocker: true);
 
     final storage = MockStorageService();
     when(storage.guidedTarget).thenReturn(null);
@@ -266,6 +274,7 @@ void main() {
         overrides: [
           localeModelProvider.overrideWith((_) => localeModel),
           storageModelProvider.overrideWith((_) => storageModel),
+          bitLockerModelProvider.overrideWith((_) => bitlockerModel),
         ],
         child: tester.buildTestWizard(),
       ),
@@ -276,6 +285,7 @@ void main() {
     await tester.tapNext();
     await tester.pumpAndSettle();
     expect(find.byType(BitLockerPage), findsOneWidget);
+    verify(bitlockerModel.init()).called(1);
   });
 
   testWidgets('active directory', (tester) async {

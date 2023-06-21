@@ -271,7 +271,7 @@ void main() {
     await testSourcePage(tester, sourceId: kNormalSourceId);
     await tester.pumpAndSettle();
 
-    await testStoragePage(tester, type: StorageType.bitlocker);
+    await testStoragePage(tester, type: StorageType.alongside);
     await tester.pumpAndSettle();
 
     await testBitLockerPage(tester);

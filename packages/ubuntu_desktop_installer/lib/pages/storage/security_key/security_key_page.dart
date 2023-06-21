@@ -18,10 +18,7 @@ class SecurityKeyPage extends ConsumerWidget {
   const SecurityKeyPage({super.key});
 
   static Future<bool> load(WidgetRef ref) {
-    return ref
-        .read(securityKeyModelProvider.notifier)
-        .loadSecurityKey()
-        .then((_) => true);
+    return ref.read(securityKeyModelProvider.notifier).init();
   }
 
   @override
@@ -65,7 +62,6 @@ class SecurityKeyPage extends ConsumerWidget {
         trailing: [
           WizardButton.next(
             context,
-            root: true,
             enabled: ref.watch(
                 securityKeyModelProvider.select((model) => model.isValid)),
             onNext: ref.read(securityKeyModelProvider).saveSecurityKey,
