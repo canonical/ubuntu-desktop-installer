@@ -1,34 +1,4 @@
 import 'package:crypt/crypt.dart';
-import 'package:password_strength/password_strength.dart' as pws;
-
-/// The strength of a password.
-enum PasswordStrength {
-  /// A weak password.
-  weak,
-
-  /// A fair password.
-  fair,
-
-  /// A good password.
-  good,
-
-  /// A strong password.
-  strong,
-}
-
-/// Estimates the strength of the given [password].
-PasswordStrength estimatePasswordStrength(String password) {
-  final strength = pws.estimatePasswordStrength(password);
-  if (strength < 0.5) {
-    return PasswordStrength.weak;
-  } else if (strength < 0.75) {
-    return PasswordStrength.fair;
-  } else if (strength < 0.9) {
-    return PasswordStrength.good;
-  } else {
-    return PasswordStrength.strong;
-  }
-}
 
 /// Supported hash algorithms.
 enum Hash {

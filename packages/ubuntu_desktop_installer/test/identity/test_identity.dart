@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import 'test_identity.mocks.dart';
 export '../test_utils.dart';

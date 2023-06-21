@@ -189,10 +189,10 @@ packages:
     dependency: "direct main"
     description:
       name: diacritic
-      sha256: c09a420e737dc036122121fea9f774767e95068f34a17894ee9db30c5bda3075
+      sha256: a84e03ec2779375fb86430dbe9d8fba62c68376f2499097a5f6e75556babe706
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.3"
+    version: "0.1.4"
   dio:
     dependency: transitive
     description:
@@ -779,9 +779,9 @@ packages:
     dependency: "direct main"
     description:
       path: "packages/ubuntu_widgets"
-      ref: b193a7a8113c4c5400a9b58b42b1a104abd64bbb
-      resolved-ref: b193a7a8113c4c5400a9b58b42b1a104abd64bbb
-      url: "https://github.com/canonical/ubuntu-flutter-plugins.git"
+      ref: udi-widgets
+      resolved-ref: "6916033bdd9bcb50d9b89ec12754c8fb32e00338"
+      url: "https://github.com/jpnurmi/ubuntu-flutter-plugins.git"
     source: git
     version: "0.0.0"
   ubuntu_wizard:
@@ -835,10 +835,10 @@ packages:
     dependency: transitive
     description:
       name: url_launcher_platform_interface
-      sha256: "6c9ca697a5ae218ce56cece69d46128169a58aa8653c1b01d26fcd4aad8c4370"
+      sha256: bfdfa402f1f3298637d71ca8ecfe840b4696698213d5346e9d12d4ab647ee2ea
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.2"
+    version: "2.1.3"
   url_launcher_web:
     dependency: transitive
     description:
@@ -1011,18 +1011,18 @@ packages:
     dependency: transitive
     description:
       name: yaru_window
-      sha256: "2effc86bfe7aae870384655c029e3bc36bf5dd32727474e502832a1edaeff75d"
+      sha256: "55c8f039d13aaa1b211a8cf0b7731ae2fdcac9b1be1e0994eb14ad1d17fecaf7"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.2"
+    version: "0.1.3"
   yaru_window_linux:
     dependency: transitive
     description:
       name: yaru_window_linux
-      sha256: "9a813227137d1aafbc786d6455edc24c5febd17d6da04fe7ba2109c02bb60e69"
+      sha256: c45606cf75880ae6427bbe176dc5313356f16c876c7013a19aeee782882c40c2
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.2"
+    version: "0.1.3"
   yaru_window_manager:
     dependency: transitive
     description:
@@ -1035,10 +1035,10 @@ packages:
     dependency: transitive
     description:
       name: yaru_window_platform_interface
-      sha256: "7845d7db91e1c1acbc0f8b2f9ba6082c00a98f06cabda1732bdb7c267edc5c89"
+      sha256: e9f8cd34e207d7f7b771ae70dee347ed974cee06b981819c4181b3e474e52254
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.1"
+    version: "0.1.2"
   yaru_window_web:
     dependency: transitive
     description:
