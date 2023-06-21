@@ -181,7 +181,10 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(StorageRoutes.manual);
+    await tester.jumpToStorageWizard();
+    await tester.pumpAndSettle();
+
+    await testStoragePage(tester, type: StorageType.manual);
     await tester.pumpAndSettle();
 
     await testManualStoragePage(
@@ -210,7 +213,10 @@ void main() {
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(StorageRoutes.guidedResize);
+    await tester.jumpToStorageWizard();
+    await tester.pumpAndSettle();
+
+    await testStoragePage(tester, type: StorageType.alongside);
     await tester.pumpAndSettle();
 
     await testGuidedResizePage(
@@ -222,11 +228,14 @@ void main() {
 
   testWidgets('7.guided-reformat', (tester) async {
     await runInstallerApp([
-      '--machine-config=examples/win10.json',
+      '--machine-config=examples/imsm.json',
     ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(StorageRoutes.guidedReformat);
+    await tester.jumpToStorageWizard();
+    await tester.pumpAndSettle();
+
+    await testStoragePage(tester, type: StorageType.erase);
     await tester.pumpAndSettle();
 
     await testGuidedReformatPage(
@@ -236,10 +245,15 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('7.bitlocker', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await runInstallerApp([
+      '--machine-config=examples/win10.json',
+    ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(StorageRoutes.bitlocker);
+    await tester.jumpToStorageWizard();
+    await tester.pumpAndSettle();
+
+    await testStoragePage(tester, type: StorageType.bitlocker);
     await tester.pumpAndSettle();
 
     await testBitLockerPage(
@@ -249,10 +263,20 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('8.security-key', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await runInstallerApp([
+      '--machine-config=examples/win10-along-ubuntu.json',
+    ], flavor: currentFlavor);
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(StorageRoutes.securityKey);
+    await tester.jumpToStorageWizard();
+    await tester.pumpAndSettle();
+
+    await testStoragePage(
+      tester,
+      type: StorageType.erase,
+      advancedFeature: AdvancedFeature.lvm,
+      useEncryption: true,
+    );
     await tester.pumpAndSettle();
 
     await testSecurityKeyPage(
@@ -488,14 +512,10 @@ extension on WidgetTester {
     return pumpAndSettle();
   }
 
-  Future<void> jumpToStorageWizard([String? subroute]) async {
+  Future<void> jumpToStorageWizard() async {
     // an installation source must be explicitly selected before calling storage APIs
     await jumpToWizardRoute(Routes.source);
     await tapNext();
     await pumpUntil(find.byType(StorageWizard));
-    await pumpAndSettle();
-    if (subroute != null) {
-      await jumpToWizardRoute(subroute);
-    }
   }
 }
