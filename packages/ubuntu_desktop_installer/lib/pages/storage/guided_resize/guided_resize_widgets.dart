@@ -4,9 +4,9 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:yaru/yaru.dart';
 
 import 'guided_resize_model.dart';
 
@@ -90,7 +90,7 @@ class HiddenPartitionLabel extends StatelessWidget {
             Theme.of(context).textTheme.bodySmall!.fontSize!,
           ),
         ),
-        'a': Style(color: context.linkColor),
+        'a': Style(color: Theme.of(context).colorScheme.link),
       },
       onLinkTap: (url, _, __) => onTap(),
     );
