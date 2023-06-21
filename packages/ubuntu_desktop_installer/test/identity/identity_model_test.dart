@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import 'test_identity.dart';
 
