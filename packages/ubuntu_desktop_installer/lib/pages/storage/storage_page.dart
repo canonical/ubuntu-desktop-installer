@@ -9,7 +9,6 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'storage_dialogs.dart';
 import 'storage_model.dart';
 
 export 'storage_model.dart' show AdvancedFeature, StorageType;
@@ -97,17 +96,34 @@ class StoragePage extends ConsumerWidget {
           const SizedBox(height: kContentSpacing),
           Padding(
             padding: kContentIndentation,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                OutlinedButton(
-                  onPressed: model.type == StorageType.erase
-                      ? () => showAdvancedFeaturesDialog(context, model)
+                YaruCheckButton(
+                  title: Text(lang.installationTypeLVM(flavor.name)),
+                  value: model.advancedFeature == AdvancedFeature.lvm,
+                  onChanged: model.type == StorageType.erase
+                      ? (v) => v!
+                          ? model.advancedFeature = AdvancedFeature.lvm
+                          : {
+                              model.advancedFeature = AdvancedFeature.none,
+                              model.encryption = false
+                            }
                       : null,
-                  child: Text(lang.installationTypeAdvancedLabel),
                 ),
-                const SizedBox(width: kContentSpacing),
-                Text(model.advancedFeature.localize(lang, model.encryption)),
+                Padding(
+                  padding: kContentIndentation,
+                  child: YaruCheckButton(
+                    title: Text(lang.installationTypeEncrypt(flavor.name)),
+                    subtitle: Text(lang.installationTypeEncryptInfo),
+                    value: model.encryption,
+                    onChanged: model.type == StorageType.erase &&
+                            model.advancedFeature == AdvancedFeature.lvm
+                        ? (v) => model.encryption = v!
+                        : null,
+                  ),
+                ),
+                const SizedBox(height: kContentSpacing),
               ],
             ),
           ),
