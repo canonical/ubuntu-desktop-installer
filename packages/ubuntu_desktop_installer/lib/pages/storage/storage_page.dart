@@ -76,9 +76,7 @@ class StoragePage extends ConsumerWidget {
                 title: Text(_formatAlongside(
                     lang, model.productInfo, model.existingOS ?? [])),
                 subtitle: Text(lang.installationTypeAlongsideInfo),
-                value: model.canInstallAlongside
-                    ? StorageType.alongside
-                    : StorageType.bitlocker, // for instructions
+                value: StorageType.alongside,
                 groupValue: model.type,
                 onChanged: (v) => model.type = v!,
               ),
@@ -122,11 +120,10 @@ class StoragePage extends ConsumerWidget {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardButton.previous(context, root: true),
+        leading: WizardButton.previous(context),
         trailing: [
           WizardButton.next(
             context,
-            root: model.isDone,
             enabled: model.hasStorage,
             arguments: model.type,
             onNext: model.save,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/bitlocker/bitlocker_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/bitlocker/bitlocker_page.dart';
@@ -10,16 +9,13 @@ import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_test/yaru_test.dart';
 
-import '../../test_utils.dart';
-import 'bitlocker_page_test.mocks.dart';
+import 'test_bitlocker.dart';
 
-@GenerateMocks([BitLockerModel])
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);
 
   testWidgets('restart', (tester) async {
-    final model = MockBitLockerModel();
-    when(model.reboot()).thenAnswer((_) async {});
+    final model = buildBitLockerModel();
 
     await tester.pumpWidget(
       ProviderScope(
@@ -51,7 +47,7 @@ void main() {
   });
 
   testWidgets('tap link', (tester) async {
-    final model = MockBitLockerModel();
+    final model = buildBitLockerModel();
 
     final urlLauncher = MockUrlLauncher();
     when(urlLauncher.launchUrl('https://help.ubuntu.com/bitlocker'))

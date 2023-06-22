@@ -98,7 +98,6 @@ class _ManualStoragePageState extends ConsumerState<ManualStoragePage> {
         trailing: [
           WizardButton.next(
             context,
-            root: true,
             enabled: model.isValid,
             onNext: model.setStorage,
           ),

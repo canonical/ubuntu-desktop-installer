@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/guided_reformat/guided_reformat_model.dart';
 
@@ -9,8 +8,27 @@ import 'test_guided_reformat.dart';
 void main() {
   final testDisks = <Disk>[fakeDisk(id: 'a'), fakeDisk(id: 'b')];
   final testTargets = testDisks
-      .map((disk) => GuidedStorageTargetReformat(diskId: disk.id))
+      .map((disk) => fakeGuidedStorageTargetReformat(diskId: disk.id))
       .toList();
+
+  test('init', () async {
+    final service = MockStorageService();
+    when(service.getStorage()).thenAnswer((_) async => testDisks);
+
+    final model = GuidedReformatModel(service);
+
+    // single target
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => fakeGuidedStorageResponse(targets: [testTargets.first]));
+    expect(await model.init(), isFalse);
+    verify(service.guidedTarget = testTargets.first).called(1);
+
+    // multiple targets
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => fakeGuidedStorageResponse(targets: testTargets));
+    expect(await model.init(), isTrue);
+    verifyNever(service.guidedTarget = any);
+  });
 
   test('load guided storage', () async {
     final service = MockStorageService();
@@ -53,8 +71,8 @@ void main() {
     const sdb1 = Partition(number: 1, size: 3);
     final sdb = fakeDisk(id: 'sdb', partitions: [sdb1]);
 
-    const storage0 = GuidedStorageTargetReformat(diskId: 'sda');
-    const storage1 = GuidedStorageTargetReformat(diskId: 'sdb');
+    final storage0 = fakeGuidedStorageTargetReformat(diskId: 'sda');
+    final storage1 = fakeGuidedStorageTargetReformat(diskId: 'sdb');
 
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [sda, sdb]);

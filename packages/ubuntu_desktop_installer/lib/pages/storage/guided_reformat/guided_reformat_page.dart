@@ -16,10 +16,7 @@ class GuidedReformatPage extends ConsumerWidget {
   const GuidedReformatPage({super.key});
 
   static Future<bool> load(WidgetRef ref) {
-    return ref
-        .read(guidedReformatModelProvider.notifier)
-        .loadGuidedStorage()
-        .then((_) => true);
+    return ref.read(guidedReformatModelProvider.notifier).init();
   }
 
   String prettyFormatPartition(Disk disk, Partition partition) {
@@ -104,7 +101,6 @@ class GuidedReformatPage extends ConsumerWidget {
         trailing: [
           WizardButton.next(
             context,
-            root: model.isDone,
             onNext: model.saveGuidedStorage,
             // If the user returns back to select another disk, the previously
             // configured guided storage must be reset to avoid multiple disks

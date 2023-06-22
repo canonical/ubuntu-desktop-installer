@@ -125,7 +125,7 @@ void main() {
     expect(radio, findsOneWidget);
 
     await tester.tap(radio);
-    verify(model.type = StorageType.bitlocker).called(1);
+    verify(model.type = StorageType.alongside).called(1);
   });
 
   testWidgets('alongside ubuntu', (tester) async {

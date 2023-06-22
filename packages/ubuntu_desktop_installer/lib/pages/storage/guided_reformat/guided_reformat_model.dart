@@ -20,9 +20,6 @@ class GuidedReformatModel extends SafeChangeNotifier {
   var _disks = <String, Disk>{};
   var _selectedIndex = 0;
 
-  /// Whether the filesystem wizard is at the end.
-  bool get isDone => !_service.useEncryption;
-
   /// Available storages for guided partitioning.
   List<GuidedStorageTarget> get storages => _storages;
 
@@ -50,6 +47,16 @@ class GuidedReformatModel extends SafeChangeNotifier {
     notifyListeners();
   }
 
+  /// Loads the targets available for guided reformatting and returns true if
+  /// there are multiple to choose between.
+  Future<bool> init() async {
+    await loadGuidedStorage();
+    if (_storages.length == 1) {
+      _service.guidedTarget = _storages.single;
+    }
+    return _storages.length > 1;
+  }
+
   /// Loads the storages available for guided partitioning.
   Future<void> loadGuidedStorage() async {
     await _service.getStorage().then((disks) {
@@ -59,8 +66,10 @@ class GuidedReformatModel extends SafeChangeNotifier {
   }
 
   void _updateGuidedStorage(GuidedStorageResponseV2 response) {
-    _storages =
-        response.targets.whereType<GuidedStorageTargetReformat>().toList();
+    _storages = response.targets
+        .whereType<GuidedStorageTargetReformat>()
+        .where((t) => t.allowed.isNotEmpty)
+        .toList();
     notifyListeners();
   }
 

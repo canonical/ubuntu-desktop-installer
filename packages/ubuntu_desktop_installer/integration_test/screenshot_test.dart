@@ -169,7 +169,7 @@ void main() {
 
     await testStoragePage(
       tester,
-      type: StorageType.bitlocker,
+      type: StorageType.alongside,
       screenshot: '$currentThemeName/6.alongside-windows',
     );
   }, variant: themeVariant);
@@ -253,7 +253,7 @@ void main() {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(tester, type: StorageType.bitlocker);
+    await testStoragePage(tester, type: StorageType.alongside);
     await tester.pumpAndSettle();
 
     await testBitLockerPage(

@@ -29,7 +29,36 @@ const windows10 = OsProber(
 );
 
 void main() {
-  test('init guided storage', () async {
+  test('init', () async {
+    final service = MockStorageService();
+    when(service.getStorage()).thenAnswer((_) async => [fakeDisk()]);
+
+    final model = GuidedResizeModel(service, MockProductService());
+
+    final gap1 = fakeGuidedStorageTargetUseGap(gap: fakeGap(size: 1));
+    final gap2 = fakeGuidedStorageTargetUseGap(gap: fakeGap(size: 2));
+    final gap3 = fakeGuidedStorageTargetUseGap(gap: fakeGap(size: 3));
+
+    // single gap
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => fakeGuidedStorageResponse(targets: [gap1]));
+    expect(await model.init(), isFalse);
+    verify(service.guidedTarget = gap1).called(1);
+
+    // multiple gaps
+    when(service.getGuidedStorage()).thenAnswer(
+        (_) async => fakeGuidedStorageResponse(targets: [gap2, gap3, gap1]));
+    expect(await model.init(), isFalse);
+    verify(service.guidedTarget = gap3).called(1);
+
+    // resize
+    when(service.getGuidedStorage()).thenAnswer((_) async =>
+        fakeGuidedStorageResponse(targets: [fakeGuidedStorageTargetResize()]));
+    expect(await model.init(), isTrue);
+    verifyNever(service.guidedTarget = any);
+  });
+
+  test('load guided storage', () async {
     final service = MockStorageService();
     when(service.getStorage()).thenAnswer((_) async => [fakeDisk()]);
     when(service.getGuidedStorage()).thenAnswer((_) async =>
