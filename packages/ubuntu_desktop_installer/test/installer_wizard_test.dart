@@ -30,7 +30,6 @@ import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_test/yaru_test.dart';
@@ -378,13 +377,11 @@ extension on WidgetTester {
     when(installer.monitorStatus()).thenAnswer((_) => const Stream.empty());
     registerMockService<InstallerService>(installer);
 
-    return InheritedLocale(
-      child: MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        supportedLocales: supportedLocales,
-        theme: yaruLight,
-        home: InstallerWizard(welcome: welcome),
-      ),
+    return MaterialApp(
+      localizationsDelegates: localizationsDelegates,
+      supportedLocales: supportedLocales,
+      theme: yaruLight,
+      home: InstallerWizard(welcome: welcome),
     );
   }
 

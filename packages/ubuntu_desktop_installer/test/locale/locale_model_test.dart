@@ -16,9 +16,9 @@ void main() {
     final model = LocaleModel(locale: locale, sound: sound);
     await model.init();
     expect(model.languageCount, greaterThan(1));
-    expect(model.selectedLanguageIndex, isPositive);
+    expect(model.selectedIndex, isPositive);
 
-    final selected = model.locale(model.selectedLanguageIndex);
+    final selected = model.locale(model.selectedIndex);
     expect(selected.languageCode, 'en');
     expect(selected.countryCode, 'US');
   });
@@ -47,12 +47,11 @@ void main() {
     final model = LocaleModel(locale: locale, sound: sound);
     await model.init();
     expect(model.languageCount, greaterThan(1));
-    expect(model.selectedLanguageIndex, isPositive);
+    expect(model.selectedIndex, isPositive);
 
     // falls back to the base locale (en_US)
     model.selectLocale(const Locale('foo'));
-    expect(model.locale(model.selectedLanguageIndex),
-        equals(const Locale('en', 'US')));
+    expect(model.locale(model.selectedIndex), equals(const Locale('en', 'US')));
 
     final firstLocale = model.locale(0);
     final lastLocale = model.locale(model.languageCount - 1);
@@ -62,7 +61,7 @@ void main() {
         languageCode: lastLocale.languageCode,
         countryCode: lastLocale.countryCode,
         scriptCode: 'bar'));
-    expect(model.selectedLanguageIndex, equals(model.languageCount - 1));
+    expect(model.selectedIndex, equals(model.languageCount - 1));
   });
 
   test('set locale', () {
@@ -75,7 +74,7 @@ void main() {
     verify(locale.setLocale('fr_CA.UTF-8')).called(1);
   });
 
-  test('selected language', () {
+  test('selected language', () async {
     final locale = MockLocaleService();
     final sound = MockSoundService();
 
@@ -84,13 +83,13 @@ void main() {
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
 
-    expect(model.selectedLanguageIndex, isZero);
-    model.selectedLanguageIndex = 0;
-    expect(model.selectedLanguageIndex, isZero);
+    expect(model.selectedIndex, isZero);
+    await model.selectLanguage(0);
+    expect(model.selectedIndex, isZero);
     expect(wasNotified, isFalse);
 
-    model.selectedLanguageIndex = 1;
-    expect(model.selectedLanguageIndex, equals(1));
+    await model.selectLanguage(1);
+    expect(model.selectedIndex, equals(1));
     expect(wasNotified, isTrue);
   });
 
@@ -104,7 +103,7 @@ void main() {
 
     final english = model.searchLanguage('eng');
     expect(model.language(english), equals('English'));
-    model.selectedLanguageIndex = english;
+    await model.selectLanguage(english);
     expect(model.searchLanguage('eng'), english);
 
     // next language with the same prefix
@@ -114,12 +113,12 @@ void main() {
     // case-insensitive
     final french = model.searchLanguage('FRA');
     expect(model.language(french), equals('Français'));
-    model.selectedLanguageIndex = french;
+    await model.selectLanguage(french);
 
     // wrap around
     final danish = model.searchLanguage('d');
     expect(model.language(danish), equals('Dansk'));
-    model.selectedLanguageIndex = danish;
+    await model.selectLanguage(danish);
 
     // ignores diacritics
     final icelandic = model.searchLanguage('is');

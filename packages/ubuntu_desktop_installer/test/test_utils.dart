@@ -56,21 +56,19 @@ extension InstallerTester on WidgetTester {
   Widget buildApp(WidgetBuilder builder) {
     view.devicePixelRatio = 1;
     view.physicalSize = const Size(960, 680);
-    return InheritedLocale(
-      child: MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        theme: yaruLight,
-        home: Wizard(
-          routes: {
-            '/': WizardRoute(
-              builder: builder,
-              onNext: (settings) => '/next',
-            ),
-            '/next': WizardRoute(
-              builder: (_) => const Text('Next page'),
-            ),
-          },
-        ),
+    return MaterialApp(
+      localizationsDelegates: localizationsDelegates,
+      theme: yaruLight,
+      home: Wizard(
+        routes: {
+          '/': WizardRoute(
+            builder: builder,
+            onNext: (settings) => '/next',
+          ),
+          '/next': WizardRoute(
+            builder: (_) => const Text('Next page'),
+          ),
+        },
       ),
     );
   }

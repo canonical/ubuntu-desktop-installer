@@ -9,7 +9,6 @@ import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
@@ -122,15 +121,13 @@ extension on WidgetTester {
     registerMockService<TelemetryService>(TelemetryService());
 
     return ProviderScope(
-      child: InheritedLocale(
-        child: SlidesContext(
-          slides: [(_) => const SizedBox.shrink()],
-          child: WizardApp(
-            appName: 'ubuntu_desktop_installer',
-            localizationsDelegates: localizationsDelegates,
-            supportedLocales: supportedLocales,
-            home: const InstallerWizard(),
-          ),
+      child: SlidesContext(
+        slides: [(_) => const SizedBox.shrink()],
+        child: WizardApp(
+          appName: 'ubuntu_desktop_installer',
+          localizationsDelegates: localizationsDelegates,
+          supportedLocales: supportedLocales,
+          home: const InstallerWizard(),
         ),
       ),
     );

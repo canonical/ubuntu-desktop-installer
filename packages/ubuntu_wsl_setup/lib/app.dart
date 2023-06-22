@@ -6,7 +6,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wsl_setup/app_model.dart';
 import 'package:ubuntu_wsl_setup/splash_screen.dart';
 import 'package:yaru/yaru.dart';
@@ -15,6 +14,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'installing_state.dart';
 import 'is_locale_set.dart';
 import 'l10n.dart';
+import 'locale.dart';
 import 'routes.dart';
 import 'wizard.dart';
 

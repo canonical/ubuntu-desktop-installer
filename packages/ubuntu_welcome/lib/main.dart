@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:timezone_map/timezone_map.dart';
+import 'package:ubuntu_desktop_installer/providers.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_welcome/l10n.dart';
@@ -35,8 +36,6 @@ Future<void> main(List<String> args) async {
 
     await YaruWindowTitleBar.ensureInitialized();
 
-    await initDefaultLocale();
-
     var geo = tryGetService<GeoService>();
     if (geo == null) {
       final geodata = Geodata.asset();
@@ -47,12 +46,15 @@ Future<void> main(List<String> args) async {
     await geo.init();
 
     runApp(ProviderScope(
-      child: WizardApp(
-        appName: 'ubuntu_welcome',
-        onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
-        localizationsDelegates: localizationsDelegates,
-        supportedLocales: supportedLocales,
-        home: const WelcomeWizard(),
+      child: Consumer(
+        builder: (context, ref, child) => WizardApp(
+          appName: 'ubuntu_welcome',
+          locale: ref.watch(localeProvider),
+          onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
+          localizationsDelegates: localizationsDelegates,
+          supportedLocales: supportedLocales,
+          home: const WelcomeWizard(),
+        ),
       ),
     ));
   }, (error, stack) => log.error('Unhandled exception', error, stack));

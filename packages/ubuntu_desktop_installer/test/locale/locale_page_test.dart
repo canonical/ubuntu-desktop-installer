@@ -4,7 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import 'test_locale.dart';
@@ -19,8 +18,6 @@ void main() {
 
     final languageList = find.byType(ListWidget);
     expect(languageList, findsOneWidget);
-
-    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'en');
 
     final listItems = find.descendant(
         of: languageList, matching: find.byType(ListTile), skipOffstage: false);
@@ -43,7 +40,7 @@ void main() {
     await tester.tap(itemItalian);
     await tester.pump();
     expect((itemItalian.evaluate().single.widget as ListTile).selected, true);
-    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'it');
+    expect(model.selectedLocale?.languageCode, 'it');
 
     // scroll backward to French
     await tester.scrollUntilVisible(itemFrench, kMinInteractiveDimension / 2);
@@ -51,7 +48,7 @@ void main() {
     await tester.tap(itemFrench);
     await tester.pump();
     expect((itemFrench.evaluate().single.widget as ListTile).selected, true);
-    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'fr');
+    expect(model.selectedLocale?.languageCode, 'fr');
 
     // scroll forward to Galego
     await tester.scrollUntilVisible(itemGalego, -kMinInteractiveDimension / 2);
@@ -62,7 +59,7 @@ void main() {
     expect((itemItalian.evaluate().single.widget as ListTile).selected, false);
     expect((itemFrench.evaluate().single.widget as ListTile).selected, false);
     expect((itemGalego.evaluate().single.widget as ListTile).selected, true);
-    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'gl');
+    expect(model.selectedLocale?.languageCode, 'gl');
   });
 
   testWidgets('key search', (tester) async {
@@ -80,21 +77,21 @@ void main() {
     await tester.sendKeyEvent(LogicalKeyboardKey.keyF);
     await tester.pumpAndSettle(kKeySearchInterval);
     await tester.pumpAndSettle();
-    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'fr');
+    expect(model.selectedLocale?.languageCode, 'fr');
 
     // danish
     await tester.sendKeyEvent(LogicalKeyboardKey.keyD);
     await tester.sendKeyEvent(LogicalKeyboardKey.keyA);
     await tester.pumpAndSettle(kKeySearchInterval);
     await tester.pumpAndSettle();
-    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'da');
+    expect(model.selectedLocale?.languageCode, 'da');
 
     // swedish
     await tester.sendKeyEvent(LogicalKeyboardKey.keyS);
     await tester.sendKeyEvent(LogicalKeyboardKey.keyV);
     await tester.pumpAndSettle(kKeySearchInterval);
     await tester.pumpAndSettle();
-    expect(InheritedLocale.of(tester.element(languageList)).languageCode, 'sv');
+    expect(model.selectedLocale?.languageCode, 'sv');
   });
 
   testWidgets('should continue to next page', (tester) async {

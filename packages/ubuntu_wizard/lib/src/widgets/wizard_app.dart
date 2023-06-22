@@ -13,6 +13,7 @@ class WizardApp extends StatelessWidget {
     this.theme,
     this.darkTheme,
     this.onGenerateTitle,
+    this.locale,
     required this.localizationsDelegates,
     required this.supportedLocales,
     required this.home,
@@ -22,35 +23,34 @@ class WizardApp extends StatelessWidget {
   final ThemeData? theme;
   final ThemeData? darkTheme;
   final GenerateAppTitle? onGenerateTitle;
+  final Locale? locale;
   final Iterable<LocalizationsDelegate<dynamic>> localizationsDelegates;
   final Iterable<Locale> supportedLocales;
   final Widget home;
 
   @override
   Widget build(BuildContext context) {
-    return InheritedLocale(
-      child: DefaultAssetBundle(
-        bundle: ProxyAssetBundle(rootBundle, package: appName),
-        child: YaruTheme(
-          builder: (context, yaru, child) {
-            return MaterialApp(
-              locale: InheritedLocale.of(context),
-              onGenerateTitle: (context) {
-                final title = onGenerateTitle?.call(context) ?? '';
-                YaruWindow.of(context).setTitle(title);
-                return title;
-              },
-              theme: (theme ?? yaru.theme)?.customize(),
-              darkTheme: (darkTheme ?? yaru.darkTheme)?.customize(),
-              highContrastTheme: yaruHighContrastLight.customize(),
-              highContrastDarkTheme: yaruHighContrastDark.customize(),
-              debugShowCheckedModeBanner: false,
-              localizationsDelegates: localizationsDelegates,
-              supportedLocales: supportedLocales,
-              home: _WizardBackground(child: home),
-            );
-          },
-        ),
+    return DefaultAssetBundle(
+      bundle: ProxyAssetBundle(rootBundle, package: appName),
+      child: YaruTheme(
+        builder: (context, yaru, child) {
+          return MaterialApp(
+            locale: locale,
+            onGenerateTitle: (context) {
+              final title = onGenerateTitle?.call(context) ?? '';
+              YaruWindow.of(context).setTitle(title);
+              return title;
+            },
+            theme: (theme ?? yaru.theme)?.customize(),
+            darkTheme: (darkTheme ?? yaru.darkTheme)?.customize(),
+            highContrastTheme: yaruHighContrastLight.customize(),
+            highContrastDarkTheme: yaruHighContrastDark.customize(),
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: localizationsDelegates,
+            supportedLocales: supportedLocales,
+            home: _WizardBackground(child: home),
+          );
+        },
       ),
     );
   }
