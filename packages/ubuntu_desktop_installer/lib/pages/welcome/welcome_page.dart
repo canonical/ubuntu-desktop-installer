@@ -31,6 +31,7 @@ class WelcomePage extends ConsumerWidget {
     final lang = AppLocalizations.of(context);
     final flavor = ref.watch(flavorProvider);
     final brightness = Theme.of(context).brightness;
+    final locale = Localizations.localeOf(context);
 
     return WizardPage(
       title: YaruWindowTitleBar(
@@ -72,8 +73,7 @@ class WelcomePage extends ConsumerWidget {
             maintainState: true,
             child: Html(
               shrinkWrap: true,
-              data: lang.releaseNotesLabel(
-                  model.releaseNotesURL(InheritedLocale.of(context))),
+              data: lang.releaseNotesLabel(model.releaseNotesURL(locale)),
               style: {
                 'body': Style(margin: Margins.zero),
                 'a': Style(color: context.linkColor),
