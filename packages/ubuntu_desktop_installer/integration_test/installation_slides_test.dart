@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
@@ -16,18 +17,20 @@ void main() {
   setUpAll(() => registerService(ProductService.new));
 
   Widget buildSlide(WidgetBuilder slide, {Locale? locale}) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: yaruLight,
-      locale: locale,
-      supportedLocales: supportedLocales,
-      localizationsDelegates: localizationsDelegates,
-      home: Scaffold(
-        appBar: const YaruWindowTitleBar(
-          title: Text('Welcome to Ubuntu'),
-          backgroundColor: Colors.transparent,
+    return ProviderScope(
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: yaruLight,
+        locale: locale,
+        supportedLocales: supportedLocales,
+        localizationsDelegates: localizationsDelegates,
+        home: Scaffold(
+          appBar: const YaruWindowTitleBar(
+            title: Text('Welcome to Ubuntu'),
+            backgroundColor: Colors.transparent,
+          ),
+          body: Builder(builder: slide),
         ),
-        body: Builder(builder: slide),
       ),
     );
   }
