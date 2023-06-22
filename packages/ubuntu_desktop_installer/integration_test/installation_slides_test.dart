@@ -7,7 +7,6 @@ import 'package:integration_test/integration_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides/default_slides.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -17,21 +16,18 @@ void main() {
   setUpAll(() => registerService(ProductService.new));
 
   Widget buildSlide(WidgetBuilder slide, {Locale? locale}) {
-    return Flavor(
-      data: const FlavorData(name: 'Ubuntu'),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: yaruLight,
-        locale: locale,
-        supportedLocales: supportedLocales,
-        localizationsDelegates: localizationsDelegates,
-        home: Scaffold(
-          appBar: const YaruWindowTitleBar(
-            title: Text('Welcome to Ubuntu'),
-            backgroundColor: Colors.transparent,
-          ),
-          body: Builder(builder: slide),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: yaruLight,
+      locale: locale,
+      supportedLocales: supportedLocales,
+      localizationsDelegates: localizationsDelegates,
+      home: Scaffold(
+        appBar: const YaruWindowTitleBar(
+          title: Text('Welcome to Ubuntu'),
+          backgroundColor: Colors.transparent,
         ),
+        body: Builder(builder: slide),
       ),
     );
   }

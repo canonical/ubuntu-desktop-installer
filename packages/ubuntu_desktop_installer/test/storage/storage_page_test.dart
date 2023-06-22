@@ -282,7 +282,8 @@ void main() {
   group('advanced features', () {
     testWidgets('dialog', (tester) async {
       final model = buildStorageModel();
-      await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+      await tester.pumpWidget(
+          ProviderScope(child: tester.buildApp((_) => buildPage(model))));
 
       final button = find.button(tester.lang.installationTypeAdvancedLabel);
       expect(button, findsOneWidget);

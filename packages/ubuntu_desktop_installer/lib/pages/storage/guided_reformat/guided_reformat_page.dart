@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -38,7 +39,7 @@ class GuidedReformatPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(guidedReformatModelProvider);
     final lang = AppLocalizations.of(context);
-    final flavor = Flavor.of(context);
+    final flavor = ref.watch(flavorProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.selectGuidedStoragePageTitle(flavor.name)),

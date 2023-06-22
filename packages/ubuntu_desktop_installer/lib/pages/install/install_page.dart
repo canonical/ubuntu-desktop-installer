@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/slides.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -198,6 +198,7 @@ class _DonePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final flavor = ref.watch(flavorProvider);
     final lang = AppLocalizations.of(context);
     final model = ref.watch(installModelProvider);
     return WizardPage(
@@ -224,7 +225,7 @@ class _DonePage extends ConsumerWidget {
                   ),
                 ),
                 const SizedBox(height: kContentSpacing * 1.5),
-                Text(lang.restartWarning(Flavor.of(context).name)),
+                Text(lang.restartWarning(flavor.name)),
                 const SizedBox(height: kContentSpacing * 1.5),
                 Row(
                   children: [

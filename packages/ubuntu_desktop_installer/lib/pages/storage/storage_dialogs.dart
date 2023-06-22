@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'storage_model.dart';
@@ -17,7 +18,6 @@ Future<void> showAdvancedFeaturesDialog(
     context: context,
     builder: (context) {
       final lang = AppLocalizations.of(context);
-      final flavor = Flavor.of(context);
 
       return AlertDialog(
         title: YaruDialogTitleBar(
@@ -43,7 +43,10 @@ Future<void> showAdvancedFeaturesDialog(
                 ),
                 const SizedBox(height: kContentSpacing),
                 YaruRadioButton<AdvancedFeature>(
-                  title: Text(lang.installationTypeLVM(flavor.name)),
+                  title: Consumer(builder: (context, ref, child) {
+                    final flavor = ref.watch(flavorProvider);
+                    return Text(lang.installationTypeLVM(flavor.name));
+                  }),
                   value: AdvancedFeature.lvm,
                   groupValue: advancedFeature.value,
                   onChanged: (v) => advancedFeature.value = v!,
@@ -51,7 +54,10 @@ Future<void> showAdvancedFeaturesDialog(
                 Padding(
                   padding: kContentIndentation,
                   child: YaruCheckButton(
-                    title: Text(lang.installationTypeEncrypt(flavor.name)),
+                    title: Consumer(builder: (context, ref, child) {
+                      final flavor = ref.watch(flavorProvider);
+                      return Text(lang.installationTypeEncrypt(flavor.name));
+                    }),
                     subtitle: Text(lang.installationTypeEncryptInfo),
                     value: encryption.value,
                     onChanged: advancedFeature.value == AdvancedFeature.lvm

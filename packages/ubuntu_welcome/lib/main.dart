@@ -49,7 +49,7 @@ Future<void> main(List<String> args) async {
     runApp(ProviderScope(
       child: WizardApp(
         appName: 'ubuntu_welcome',
-        onGenerateTitle: (context, _) => AppLocalizations.of(context).appTitle,
+        onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
         localizationsDelegates: localizationsDelegates,
         supportedLocales: supportedLocales,
         home: const WelcomeWizard(),

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 
 import 'slide_layouts.dart';
 
@@ -34,7 +35,10 @@ Widget _buildWelcomeSlide(BuildContext context) {
     title: Text(lang.installationSlidesWelcomeTitle),
     body: SlideColumn(
       children: [
-        Text(lang.installationSlidesWelcomeHeader(context.flavor)),
+        Consumer(builder: (context, ref, child) {
+          final flavor = ref.watch(flavorProvider);
+          return Text(lang.installationSlidesWelcomeHeader(flavor.name));
+        }),
         Text(lang.installationSlidesWelcomeBody(product.getProductInfo())),
       ],
     ),
@@ -49,7 +53,10 @@ Widget _buildSoftwareSlide(BuildContext context) {
   final lang = AppLocalizations.of(context);
   return CinematicSlideLayout(
     title: Text(lang.installationSlidesSoftwareTitle),
-    body: Text(lang.installationSlidesSoftwareBody(context.flavor)),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesSoftwareBody(flavor.name));
+    }),
     banner: Container(
       alignment: Alignment.center,
       color: const Color(0xff2c2c2c), // TODO: fix screenshot background
@@ -85,7 +92,10 @@ Widget _buildDevelopmentSlide(BuildContext context) {
   final lang = AppLocalizations.of(context);
   return PortraitSlideLayout(
     title: Text(lang.installationSlidesDevelopmentTitle),
-    body: Text(lang.installationSlidesDevelopmentBody(context.flavor)),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesDevelopmentBody(flavor.name));
+    }),
     image: const _SlideScreenshot('vscode.png'),
     table: SlideTable(
       rows: [
@@ -117,7 +127,10 @@ Widget _buildCreativitySlide(BuildContext context) {
   final lang = AppLocalizations.of(context);
   return LandscapeSlideLayout(
     title: Text(lang.installationSlidesCreativityTitle),
-    body: Text(lang.installationSlidesCreativityBody(context.flavor)),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesCreativityBody(flavor.name));
+    }),
     image: const _SlideScreenshot('blender.png'),
     table: SlideTable(
       rows: [
@@ -149,7 +162,10 @@ Widget _buildGamingSlide(BuildContext context) {
   final lang = AppLocalizations.of(context);
   return CinematicSlideLayout(
     title: Text(lang.installationSlidesGamingTitle),
-    body: Text(lang.installationSlidesGamingBody(context.flavor)),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesGamingBody(flavor.name));
+    }),
     banner: const _SlideScreenshot(
       'steam.png',
       alignment: Alignment.topLeft,
@@ -188,7 +204,10 @@ Widget _buildSecuritySlide(BuildContext context) {
   final lang = AppLocalizations.of(context);
   return LandscapeSlideLayout(
     title: Text(lang.installationSlidesSecurityTitle),
-    body: Text(lang.installationSlidesSecurityBody(context.flavor)),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesSecurityBody(flavor.name));
+    }),
     // TODO: show installationSlidesSecurityLts in LTS releases
     image: const _SlideScreenshot('bitwarden.png'),
     table: SlideTable(
@@ -224,7 +243,10 @@ Widget _buildProductivitySlide(BuildContext context) {
   final lang = AppLocalizations.of(context);
   return CinematicSlideLayout(
     title: Text(lang.installationSlidesProductivityTitle),
-    body: Text(lang.installationSlidesProductivityBody(context.flavor)),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesProductivityBody(flavor.name));
+    }),
     banner: const _SlideScreenshot(
       'libreoffice.png',
       alignment: Alignment.topLeft,
@@ -263,7 +285,10 @@ Widget _buildAccessibilitySlide(BuildContext context) {
   final lang = AppLocalizations.of(context);
   return PortraitSlideLayout(
     title: Text(lang.installationSlidesAccessibilityTitle),
-    body: Text(lang.installationSlidesAccessibilityBody(context.flavor)),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesAccessibilityBody(flavor.name));
+    }),
     image: const _SlideScreenshot('accessibility.png'),
     table: SlideTable(
       rows: [
@@ -293,7 +318,10 @@ Widget _buildSupportSlide(BuildContext context) {
     title: Text(lang.installationSlidesSupportTitle),
     body: SlideColumn(
       children: [
-        Text(lang.installationSlidesSupportHeader(context.flavor)),
+        Consumer(builder: (context, ref, child) {
+          final flavor = ref.watch(flavorProvider);
+          return Text(lang.installationSlidesSupportHeader(flavor.name));
+        }),
         Text(lang.installationSlidesSupportCommunity),
         Text(lang.installationSlidesSupportEnterprise),
       ],
@@ -323,7 +351,6 @@ Widget _buildSupportSlide(BuildContext context) {
 }
 
 extension _SlideContext on BuildContext {
-  String get flavor => Flavor.of(this).name;
   String get theme => Theme.of(this).brightness.name;
 }
 

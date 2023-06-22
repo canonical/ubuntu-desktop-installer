@@ -379,14 +379,11 @@ extension on WidgetTester {
     registerMockService<InstallerService>(installer);
 
     return InheritedLocale(
-      child: Flavor(
-        data: const FlavorData(name: 'Ubuntu'),
-        child: MaterialApp(
-          localizationsDelegates: localizationsDelegates,
-          supportedLocales: supportedLocales,
-          theme: yaruLight,
-          home: InstallerWizard(welcome: welcome),
-        ),
+      child: MaterialApp(
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: supportedLocales,
+        theme: yaruLight,
+        home: InstallerWizard(welcome: welcome),
       ),
     );
   }

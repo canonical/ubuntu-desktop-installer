@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -20,6 +21,7 @@ class RstPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final flavor = ref.watch(flavorProvider);
     final model = ref.watch(rstModelProvider);
     final lang = AppLocalizations.of(context);
     return Scaffold(
@@ -69,8 +71,8 @@ class RstPage extends ConsumerWidget {
                         final confirmed = await showConfirmationDialog(
                           context,
                           title: lang.restartIntoWindowsTitle,
-                          message: lang.restartIntoWindowsDescription(
-                              Flavor.of(context).name),
+                          message:
+                              lang.restartIntoWindowsDescription(flavor.name),
                           okLabel: lang.restartButtonText,
                           okElevated: true,
                         );
