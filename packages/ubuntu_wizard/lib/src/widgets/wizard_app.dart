@@ -4,65 +4,52 @@ import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'flavor.dart';
 import 'wizard_theme.dart';
 
-typedef GenerateWizardTitle = String Function(BuildContext, FlavorData);
-
 class WizardApp extends StatelessWidget {
-  WizardApp({
+  const WizardApp({
     super.key,
     required this.appName,
-    FlavorData? flavor,
+    this.theme,
+    this.darkTheme,
     this.onGenerateTitle,
     required this.localizationsDelegates,
     required this.supportedLocales,
     required this.home,
-  }) : flavor = flavor ?? defaultFlavor;
+  });
 
   final String appName;
-  final FlavorData flavor;
-  final GenerateWizardTitle? onGenerateTitle;
+  final ThemeData? theme;
+  final ThemeData? darkTheme;
+  final GenerateAppTitle? onGenerateTitle;
   final Iterable<LocalizationsDelegate<dynamic>> localizationsDelegates;
   final Iterable<Locale> supportedLocales;
   final Widget home;
-
-  static FlavorData get defaultFlavor {
-    return const FlavorData(name: 'Ubuntu');
-  }
 
   @override
   Widget build(BuildContext context) {
     return InheritedLocale(
       child: DefaultAssetBundle(
         bundle: ProxyAssetBundle(rootBundle, package: appName),
-        child: Flavor(
-          data: flavor,
-          child: YaruTheme(
-            builder: (context, yaru, child) {
-              final theme = flavor.theme ?? yaru.theme;
-              final darkTheme = flavor.darkTheme ?? yaru.darkTheme;
-              return MaterialApp(
-                locale: InheritedLocale.of(context),
-                onGenerateTitle: (context) {
-                  final title = onGenerateTitle?.call(context, flavor) ?? '';
-                  YaruWindow.of(context).setTitle(title);
-                  return title;
-                },
-                theme: theme?.customize(),
-                darkTheme: darkTheme?.customize(),
-                highContrastTheme: yaruHighContrastLight.customize(),
-                highContrastDarkTheme: yaruHighContrastDark.customize(),
-                debugShowCheckedModeBanner: false,
-                localizationsDelegates: <LocalizationsDelegate>[
-                  ...localizationsDelegates,
-                  ...?flavor.localizationsDelegates,
-                ],
-                supportedLocales: supportedLocales,
-                home: _WizardBackground(child: home),
-              );
-            },
-          ),
+        child: YaruTheme(
+          builder: (context, yaru, child) {
+            return MaterialApp(
+              locale: InheritedLocale.of(context),
+              onGenerateTitle: (context) {
+                final title = onGenerateTitle?.call(context) ?? '';
+                YaruWindow.of(context).setTitle(title);
+                return title;
+              },
+              theme: (theme ?? yaru.theme)?.customize(),
+              darkTheme: (darkTheme ?? yaru.darkTheme)?.customize(),
+              highContrastTheme: yaruHighContrastLight.customize(),
+              highContrastDarkTheme: yaruHighContrastDark.customize(),
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: localizationsDelegates,
+              supportedLocales: supportedLocales,
+              home: _WizardBackground(child: home),
+            );
+          },
         ),
       ),
     );

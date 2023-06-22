@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
@@ -33,7 +34,7 @@ class LocalePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final flavor = Flavor.of(context);
+    final flavor = ref.watch(flavorProvider);
     final model = ref.watch(localeModelProvider);
     final lang = AppLocalizations.of(context);
     return WizardPage(

@@ -14,18 +14,20 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'installer/installer_wizard.dart';
 import 'l10n.dart';
+import 'providers.dart';
 import 'services.dart';
 import 'slides.dart';
 
-export 'package:ubuntu_wizard/widgets.dart' show FlavorData;
 export 'installer/installer_wizard.dart';
+export 'providers.dart';
 export 'slides.dart';
 
 Future<void> runInstallerApp(
   List<String> args, {
-  FlavorData? flavor,
   List<String>? routes,
   List<WidgetBuilder>? slides,
+  ThemeData? theme,
+  ThemeData? darkTheme,
 }) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     parser.addFlag('dry-run',
@@ -119,16 +121,20 @@ Future<void> runInstallerApp(
     runApp(ProviderScope(
       child: SlidesContext(
         slides: slides ?? defaultSlides,
-        child: WizardApp(
-          appName: 'ubuntu_desktop_installer',
-          flavor: flavor ?? const FlavorData(name: 'Ubuntu'),
-          onGenerateTitle: (context, flavor) {
-            return AppLocalizations.of(context).windowTitle(flavor.name);
-          },
-          localizationsDelegates: localizationsDelegates,
-          supportedLocales: supportedLocales,
-          home: InstallerWizard(
-            welcome: options['welcome'],
+        child: Consumer(
+          builder: (context, ref, child) => WizardApp(
+            appName: 'ubuntu_desktop_installer',
+            theme: theme,
+            darkTheme: darkTheme,
+            onGenerateTitle: (context) {
+              final flavor = ref.watch(flavorProvider);
+              return AppLocalizations.of(context).windowTitle(flavor.name);
+            },
+            localizationsDelegates: localizationsDelegates,
+            supportedLocales: supportedLocales,
+            home: InstallerWizard(
+              welcome: options['welcome'],
+            ),
           ),
         ),
       ),

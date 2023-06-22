@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -60,7 +61,7 @@ class StoragePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(storageModelProvider);
     final lang = AppLocalizations.of(context);
-    final flavor = Flavor.of(context);
+    final flavor = ref.watch(flavorProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.installationTypeTitle),

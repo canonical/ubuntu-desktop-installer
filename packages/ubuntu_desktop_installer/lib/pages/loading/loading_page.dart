@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -25,7 +26,7 @@ class _LoadingPageState extends ConsumerState<LoadingPage> {
 
   @override
   Widget build(BuildContext context) {
-    final flavor = Flavor.of(context);
+    final flavor = ref.watch(flavorProvider);
     final lang = AppLocalizations.of(context);
     final style = Theme.of(context).textTheme.headlineSmall!;
     return WizardPage(

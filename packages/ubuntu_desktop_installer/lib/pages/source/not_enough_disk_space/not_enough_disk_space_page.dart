@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/widgets.dart';
@@ -18,7 +19,7 @@ class NotEnoughDiskSpacePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(notEnoughDiskSpaceModelProvider);
     final lang = AppLocalizations.of(context);
-    final flavor = Flavor.of(context);
+    final flavor = ref.watch(flavorProvider);
     return Scaffold(
       body: WizardPage(
         title: YaruWindowTitleBar(

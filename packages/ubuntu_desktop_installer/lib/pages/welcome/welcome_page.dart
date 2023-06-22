@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
@@ -28,7 +29,7 @@ class WelcomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(welcomeModelProvider);
     final lang = AppLocalizations.of(context);
-    final flavor = Flavor.of(context);
+    final flavor = ref.watch(flavorProvider);
     final brightness = Theme.of(context).brightness;
 
     return WizardPage(

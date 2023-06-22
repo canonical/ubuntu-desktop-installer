@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -24,7 +25,7 @@ class SecurityKeyPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
-    final flavor = Flavor.of(context);
+    final flavor = ref.watch(flavorProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.chooseSecurityKeyTitle),

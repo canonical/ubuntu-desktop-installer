@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -47,8 +48,10 @@ void main() {
 
     await tester.pumpWidget(
       tester.buildApp(
-        (context) => Scaffold(
-          body: Builder(builder: defaultSlides.last),
+        (context) => ProviderScope(
+          child: Scaffold(
+            body: Builder(builder: defaultSlides.last),
+          ),
         ),
       ),
     );
