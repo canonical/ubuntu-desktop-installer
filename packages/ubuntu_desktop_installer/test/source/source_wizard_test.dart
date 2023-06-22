@@ -9,7 +9,6 @@ import 'package:ubuntu_desktop_installer/pages/source/source_wizard.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 
 import 'test_source.dart';
@@ -110,36 +109,34 @@ extension on WidgetTester {
 
     return pumpWidget(
       ProviderScope(
-        child: InheritedLocale(
-          child: MaterialApp(
-            localizationsDelegates: localizationsDelegates,
-            home: Consumer(
-              builder: (context, ref, child) {
-                return Wizard(
-                  routes: {
-                    '/first': WizardRoute(
-                      builder: (context) => WizardPage(
-                        content: const Text('first route'),
-                        bottomBar: WizardBar(
-                          trailing: [WizardButton.next(context)],
-                        ),
+        child: MaterialApp(
+          localizationsDelegates: localizationsDelegates,
+          home: Consumer(
+            builder: (context, ref, child) {
+              return Wizard(
+                routes: {
+                  '/first': WizardRoute(
+                    builder: (context) => WizardPage(
+                      content: const Text('first route'),
+                      bottomBar: WizardBar(
+                        trailing: [WizardButton.next(context)],
                       ),
                     ),
-                    Routes.source: WizardRoute(
-                      builder: (_) => const SourceWizard(),
-                      onLoad: (_) => SourcePage.load(ref),
+                  ),
+                  Routes.source: WizardRoute(
+                    builder: (_) => const SourceWizard(),
+                    onLoad: (_) => SourcePage.load(ref),
+                  ),
+                  '/last': WizardRoute(
+                    builder: (context) => WizardPage(
+                      content: const Text('last route'),
+                      bottomBar:
+                          WizardBar(leading: WizardButton.previous(context)),
                     ),
-                    '/last': WizardRoute(
-                      builder: (context) => WizardPage(
-                        content: const Text('last route'),
-                        bottomBar:
-                            WizardBar(leading: WizardButton.previous(context)),
-                      ),
-                    ),
-                  },
-                );
-              },
-            ),
+                  ),
+                },
+              );
+            },
           ),
         ),
       ),
