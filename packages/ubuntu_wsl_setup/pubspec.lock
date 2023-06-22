@@ -779,9 +779,9 @@ packages:
     dependency: "direct main"
     description:
       path: "packages/ubuntu_widgets"
-      ref: udi-widgets
-      resolved-ref: "6916033bdd9bcb50d9b89ec12754c8fb32e00338"
-      url: "https://github.com/jpnurmi/ubuntu-flutter-plugins.git"
+      ref: "3316f7a0393aea04fd586375b0b16c9e992ed058"
+      resolved-ref: "3316f7a0393aea04fd586375b0b16c9e992ed058"
+      url: "https://github.com/canonical/ubuntu-flutter-plugins.git"
     source: git
     version: "0.0.0"
   ubuntu_wizard:
@@ -1008,7 +1008,7 @@ packages:
     source: hosted
     version: "2.4.1"
   yaru_window:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: yaru_window
       sha256: "55c8f039d13aaa1b211a8cf0b7731ae2fdcac9b1be1e0994eb14ad1d17fecaf7"
