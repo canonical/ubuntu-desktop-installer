@@ -6,7 +6,7 @@ import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets/storage_size_box.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 void main() {
   testWidgets('enter size', (tester) async {

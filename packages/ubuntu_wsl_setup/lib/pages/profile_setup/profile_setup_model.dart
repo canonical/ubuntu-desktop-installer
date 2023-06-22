@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/utils.dart';
 
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter

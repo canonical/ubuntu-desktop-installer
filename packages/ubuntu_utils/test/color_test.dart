@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/src/color.dart';
 
 void main() {
   test('hex string', () {

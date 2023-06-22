@@ -6,7 +6,7 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides/default_slides.dart';
 import 'package:ubuntu_desktop_installer/slides/slide_widgets.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 import '../test_utils.dart';
 

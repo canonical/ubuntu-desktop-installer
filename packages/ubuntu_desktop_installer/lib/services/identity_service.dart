@@ -1,6 +1,6 @@
 import 'package:meta/meta.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 import 'config_service.dart';
 

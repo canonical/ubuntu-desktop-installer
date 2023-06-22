@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:path/path.dart' as p;
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/src/proxy_asset_bundle.dart';
 
 import 'proxy_asset_bundle_test.mocks.dart';
 
