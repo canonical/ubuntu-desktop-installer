@@ -830,5 +830,12 @@
   "allocateDiskSpaceInvalidMountPointSpace": "Prípojné body nemôžu obsahovať medzery",
   "@allocateDiskSpaceInvalidMountPointSpace": {},
   "allocateDiskSpaceInvalidMountPointSlash": "Prípojné body musia začínať znakom „/“",
-  "@allocateDiskSpaceInvalidMountPointSlash": {}
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "partitionFormatKeep": "Nechať naformátované ako {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }
