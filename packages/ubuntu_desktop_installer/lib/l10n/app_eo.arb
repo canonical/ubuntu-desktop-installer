@@ -919,5 +919,12 @@
   "allocateDiskSpaceInvalidMountPointSlash": "Surmetingo devas komenciĝi per «/»",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Surmetingo devas ne enhavi spaceton",
-  "@allocateDiskSpaceInvalidMountPointSpace": {}
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "partitionFormatKeep": "Lasi nestrukturita kiel {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }
