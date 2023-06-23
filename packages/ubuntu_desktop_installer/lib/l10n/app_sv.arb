@@ -974,5 +974,12 @@
   "allocateDiskSpaceInvalidMountPointSlash": "Monteringspunkter måste börja med \"/\"",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Monteringspunkter kan inte innehålla mellanslag",
-  "@allocateDiskSpaceInvalidMountPointSpace": {}
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "partitionFormatKeep": "Lämna formaterat som {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }
