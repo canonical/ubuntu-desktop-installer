@@ -754,7 +754,7 @@
   "@activeDirectoryDomainMultipleDots": {},
   "whoAreYouPageRealNameTooLong": "Esse nome é demasiado longo.",
   "@whoAreYouPageRealNameTooLong": {},
-  "whoAreYouPageComputerNameTooLong": "Esse nome é demasiado longo.",
+  "whoAreYouPageComputerNameTooLong": "Esse nome de computador é demasiado longo.",
   "@whoAreYouPageComputerNameTooLong": {},
   "activeDirectoryErrorTitle": "Erro ao configurando a ligação ao Active Directory",
   "@activeDirectoryErrorTitle": {},
