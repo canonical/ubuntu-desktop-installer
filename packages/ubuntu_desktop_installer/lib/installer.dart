@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
@@ -121,7 +122,6 @@ Future<void> runInstallerApp(
         slides: slides ?? defaultSlides,
         child: Consumer(
           builder: (context, ref, child) => WizardApp(
-            appName: 'ubuntu_desktop_installer',
             theme: theme,
             darkTheme: darkTheme,
             onGenerateTitle: (context) {
@@ -131,8 +131,14 @@ Future<void> runInstallerApp(
             locale: ref.watch(localeProvider),
             localizationsDelegates: localizationsDelegates,
             supportedLocales: supportedLocales,
-            home: InstallerWizard(
-              welcome: options['welcome'],
+            home: DefaultAssetBundle(
+              bundle: ProxyAssetBundle(
+                rootBundle,
+                package: 'ubuntu_desktop_installer',
+              ),
+              child: InstallerWizard(
+                welcome: options['welcome'],
+              ),
             ),
           ),
         ),

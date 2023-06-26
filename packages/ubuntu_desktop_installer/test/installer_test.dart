@@ -124,7 +124,6 @@ extension on WidgetTester {
       child: SlidesContext(
         slides: [(_) => const SizedBox.shrink()],
         child: WizardApp(
-          appName: 'ubuntu_desktop_installer',
           localizationsDelegates: localizationsDelegates,
           supportedLocales: supportedLocales,
           home: const InstallerWizard(),

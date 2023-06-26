@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -9,7 +7,6 @@ import 'wizard_theme.dart';
 class WizardApp extends StatelessWidget {
   const WizardApp({
     super.key,
-    required this.appName,
     this.theme,
     this.darkTheme,
     this.onGenerateTitle,
@@ -19,7 +16,6 @@ class WizardApp extends StatelessWidget {
     required this.home,
   });
 
-  final String appName;
   final ThemeData? theme;
   final ThemeData? darkTheme;
   final GenerateAppTitle? onGenerateTitle;
@@ -30,28 +26,25 @@ class WizardApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultAssetBundle(
-      bundle: ProxyAssetBundle(rootBundle, package: appName),
-      child: YaruTheme(
-        builder: (context, yaru, child) {
-          return MaterialApp(
-            locale: locale,
-            onGenerateTitle: (context) {
-              final title = onGenerateTitle?.call(context) ?? '';
-              YaruWindow.of(context).setTitle(title);
-              return title;
-            },
-            theme: (theme ?? yaru.theme)?.customize(),
-            darkTheme: (darkTheme ?? yaru.darkTheme)?.customize(),
-            highContrastTheme: yaruHighContrastLight.customize(),
-            highContrastDarkTheme: yaruHighContrastDark.customize(),
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: localizationsDelegates,
-            supportedLocales: supportedLocales,
-            home: _WizardBackground(child: home),
-          );
-        },
-      ),
+    return YaruTheme(
+      builder: (context, yaru, child) {
+        return MaterialApp(
+          locale: locale,
+          onGenerateTitle: (context) {
+            final title = onGenerateTitle?.call(context) ?? '';
+            YaruWindow.of(context).setTitle(title);
+            return title;
+          },
+          theme: (theme ?? yaru.theme)?.customize(),
+          darkTheme: (darkTheme ?? yaru.darkTheme)?.customize(),
+          highContrastTheme: yaruHighContrastLight.customize(),
+          highContrastDarkTheme: yaruHighContrastDark.customize(),
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: localizationsDelegates,
+          supportedLocales: supportedLocales,
+          home: _WizardBackground(child: home),
+        );
+      },
     );
   }
 }
