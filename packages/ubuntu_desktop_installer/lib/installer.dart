@@ -116,8 +116,6 @@ Future<void> runInstallerApp(
     final window = await YaruWindow.ensureInitialized();
     await window.onClose(_closeInstallerApp);
 
-    await initDefaultLocale();
-
     runApp(ProviderScope(
       child: SlidesContext(
         slides: slides ?? defaultSlides,
@@ -130,6 +128,7 @@ Future<void> runInstallerApp(
               final flavor = ref.watch(flavorProvider);
               return AppLocalizations.of(context).windowTitle(flavor.name);
             },
+            locale: ref.watch(localeProvider),
             localizationsDelegates: localizationsDelegates,
             supportedLocales: supportedLocales,
             home: InstallerWizard(

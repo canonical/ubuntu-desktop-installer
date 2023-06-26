@@ -29,16 +29,22 @@ class LocaleModel extends SafeChangeNotifier {
   final LocaleService _locale;
   final SoundService? _sound;
 
-  /// The index of the currently selected language.
-  int get selectedLanguageIndex => _selectedLanguageIndex;
-  int _selectedLanguageIndex = 0;
-  set selectedLanguageIndex(int index) {
-    if (_selectedLanguageIndex == index) return;
-    _selectedLanguageIndex = index;
-    if (index >= 0 && index < _languageList.length) {
-      log.info('Selected ${_languageList[index].locale} as UI language');
+  /// The index of the currently selected language and locale.
+  int get selectedIndex => _selectedIndex;
+  int _selectedIndex = 0;
+
+  /// The currently selected locale
+  Locale? get selectedLocale =>
+      _languageList.elementAtOrNull(selectedIndex)?.locale;
+
+  Future<void> selectLanguage(int index) async {
+    if (_selectedIndex == index) return;
+    _selectedIndex = index;
+    final locale = _languageList.elementAtOrNull(index)?.locale;
+    if (locale != null) {
+      log.info('Selected $locale as UI language');
     }
-    notifyListeners();
+    return initDefaultLocale(locale.toString()).then((_) => notifyListeners());
   }
 
   var _languageList = <LocalizedLanguage>[];
@@ -81,14 +87,14 @@ class LocaleModel extends SafeChangeNotifier {
     return _languageList
         .map((l) => l.name)
         .toList()
-        .keySearch(query, selectedLanguageIndex + 1);
+        .keySearch(query, selectedIndex + 1);
   }
 
   /// Selects the best match for the given [locale].
   ///
   /// See also:
   /// * [LocalizedLanguageMatcher.findBestMatch]
-  void selectLocale(Locale locale) {
-    _selectedLanguageIndex = _languageList.findBestMatch(locale);
+  Future<void> selectLocale(Locale locale) {
+    return selectLanguage(_languageList.findBestMatch(locale));
   }
 }

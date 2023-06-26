@@ -14,7 +14,7 @@ class InheritedLocale extends InheritedNotifier<ValueNotifier<Locale>> {
 
   static Future<void> apply(BuildContext context, Locale locale) async {
     final notifier = _getNotifier(context);
-    await initDefaultLocale();
+    await initDefaultLocale(locale.toString());
     notifier.value = locale;
   }
 

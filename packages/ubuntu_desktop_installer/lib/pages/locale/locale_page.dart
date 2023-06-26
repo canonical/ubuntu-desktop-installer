@@ -6,7 +6,6 @@ import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -17,19 +16,7 @@ class LocalePage extends ConsumerWidget {
 
   static Future<bool> load(BuildContext context, WidgetRef ref) {
     final model = ref.read(localeModelProvider);
-    return model.init().then((_) {
-      _selectLanguage(context, ref, model.selectedLanguageIndex);
-      return model.playWelcomeSound();
-    }).then((_) => true);
-  }
-
-  static void _selectLanguage(BuildContext context, WidgetRef ref, int index) {
-    if (index == -1) return;
-
-    final model = ref.read(localeModelProvider);
-    model.selectedLanguageIndex = index;
-
-    InheritedLocale.apply(context, model.locale(index));
+    return model.init().then((_) => model.playWelcomeSound()).then((_) => true);
   }
 
   @override
@@ -52,18 +39,18 @@ class LocalePage extends ConsumerWidget {
             const SizedBox(height: kContentSpacing / 2),
             Expanded(
               child: ListWidget.builder(
-                selectedIndex: model.selectedLanguageIndex,
+                selectedIndex: model.selectedIndex,
                 itemCount: model.languageCount,
                 itemBuilder: (context, index) => ListTile(
                   key: ValueKey(index),
                   title: Text(model.language(index)),
-                  selected: index == model.selectedLanguageIndex,
-                  onTap: () => _selectLanguage(context, ref, index),
+                  selected: index == model.selectedIndex,
+                  onTap: () => model.selectLanguage(index),
                 ),
                 onKeySearch: (value) {
                   final index = model.searchLanguage(value);
                   if (index != -1) {
-                    _selectLanguage(context, ref, index);
+                    model.selectLanguage(index);
                   }
                 },
               ),
@@ -78,7 +65,7 @@ class LocalePage extends ConsumerWidget {
           WizardButton.next(
             context,
             onNext: () async {
-              final locale = model.locale(model.selectedLanguageIndex);
+              final locale = model.locale(model.selectedIndex);
               await model.applyLocale(locale);
               tryGetService<TelemetryService>()
                   ?.addMetric('Language', locale.languageCode);
