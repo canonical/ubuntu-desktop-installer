@@ -9,6 +9,7 @@ environment:
 dependencies:
   args: ^2.2.0
   collection: ^1.17.0
+  crypt: ^4.3.0
   diacritic: ^0.1.3
   flutter:
     sdk: flutter

@@ -10,6 +10,7 @@ environment:
 dependencies:
   async: ^2.8.2
   collection: ^1.15.0
+  crypt: ^4.3.0
   dartx: ^1.0.0
   dbus: ^0.7.3
   diacritic: ^0.1.3
