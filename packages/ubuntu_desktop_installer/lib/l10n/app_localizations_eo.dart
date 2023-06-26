@@ -512,7 +512,7 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String partitionFormatKeep(Object format) {
-    return 'Leave formatted as $format';
+    return 'Lasi nestrukturita kiel $format';
   }
 
   @override

@@ -512,7 +512,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String partitionFormatKeep(Object format) {
-    return 'Leave formatted as $format';
+    return 'Ponechat naformátované jako $format';
   }
 
   @override

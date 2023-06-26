@@ -512,7 +512,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String partitionFormatKeep(Object format) {
-    return 'Leave formatted as $format';
+    return 'Deixar formatado como $format';
   }
 
   @override
@@ -549,7 +549,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get whoAreYouPageComputerNameRequired => 'O nome do computador é obrigatório';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Esse nome é demasiado longo.';
+  String get whoAreYouPageComputerNameTooLong => 'Esse nome de computador é demasiado longo.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'O nome do computador não é válido';
