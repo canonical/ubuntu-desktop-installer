@@ -6,7 +6,7 @@ import 'package:ubuntu_desktop_installer/pages/storage/bitlocker/bitlocker_model
 import 'package:ubuntu_desktop_installer/pages/storage/bitlocker/bitlocker_page.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import 'test_bitlocker.dart';

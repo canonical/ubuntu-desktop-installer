@@ -8,7 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/storage_but
 import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/storage_split_view.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/widgets/storage_size_box.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 import '../../test_utils.dart';
 

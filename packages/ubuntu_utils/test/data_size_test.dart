@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_wizard/src/utils/data_size.dart';
+import 'package:ubuntu_utils/src/data_size.dart';
 
 void main() {
   test('bytes', () {

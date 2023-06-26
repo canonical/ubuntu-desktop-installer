@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/src/command_line.dart';
 
 import 'command_line_test.mocks.dart';
 

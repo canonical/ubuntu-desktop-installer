@@ -8,8 +8,8 @@ import 'dart:ui' as _i6;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/subiquity_client.dart' as _i4;
+import 'package:ubuntu_utils/ubuntu_utils.dart' as _i7;
 import 'package:ubuntu_widgets/ubuntu_widgets.dart' as _i3;
-import 'package:ubuntu_wizard/utils.dart' as _i7;
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_model.dart'
     as _i2;
 

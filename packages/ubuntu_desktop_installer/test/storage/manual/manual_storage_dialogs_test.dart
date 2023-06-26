@@ -10,8 +10,8 @@ import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_pag
 import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_types.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
