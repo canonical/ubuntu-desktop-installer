@@ -907,5 +907,12 @@
   "allocateDiskSpaceInvalidMountPointSlash": "Les points de montage doivent commencer par \"/\"",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Les points de montage ne doivent pas contenir d'espaces",
-  "@allocateDiskSpaceInvalidMountPointSpace": {}
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "partitionFormatKeep": "Laisser formatée en {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }

@@ -921,5 +921,12 @@
   "allocateDiskSpaceInvalidMountPointSlash": "Einhängepunkte müssen mit „/“ beginnen",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Einhängepunkte dürfen keine Leerzeichen enthalten",
-  "@allocateDiskSpaceInvalidMountPointSpace": {}
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "partitionFormatKeep": "Als {format} formatiert lassen",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }
