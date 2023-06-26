@@ -7,7 +7,7 @@ import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 

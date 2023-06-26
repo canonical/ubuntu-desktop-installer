@@ -7,8 +7,8 @@ import 'package:ubuntu_desktop_installer/providers.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_welcome/l10n.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'services.dart';
