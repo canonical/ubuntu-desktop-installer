@@ -4,8 +4,6 @@ import 'package:ubuntu_wizard/src/wizard_data.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/widgets.dart';
 
-export 'package:wizard_router/wizard_router.dart';
-
 class WizardBar extends StatefulWidget {
   const WizardBar({
     super.key,
