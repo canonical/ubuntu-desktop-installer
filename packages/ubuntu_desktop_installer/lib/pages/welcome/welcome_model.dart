@@ -2,6 +2,7 @@ import 'package:file/file.dart';
 import 'package:file/local.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_wizard/utils.dart';
@@ -29,7 +30,7 @@ enum Option {
 }
 
 /// Implements the business logic of the welcome page.
-class WelcomeModel extends PropertyStreamNotifier {
+class WelcomeModel extends SafeChangeNotifier with PropertyStreamNotifier {
   /// Creates the model with the given client.
   WelcomeModel({
     required NetworkService network,

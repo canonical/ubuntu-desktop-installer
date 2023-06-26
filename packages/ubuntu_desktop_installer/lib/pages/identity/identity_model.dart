@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
@@ -39,7 +40,7 @@ final identityModelProvider = ChangeNotifierProvider(
 );
 
 /// [IdentityPage]'s view model.
-class IdentityModel extends PropertyStreamNotifier {
+class IdentityModel extends SafeChangeNotifier with PropertyStreamNotifier {
   /// Creates the model with the given client.
   IdentityModel({
     required IdentityService service,

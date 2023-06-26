@@ -492,6 +492,38 @@ class MockEthernetDevice extends _i1.Mock implements _i3.EthernetDevice {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
@@ -527,38 +559,6 @@ class MockEthernetDevice extends _i1.Mock implements _i3.EthernetDevice {
   void disablePropertyListeners() => super.noSuchMethod(
         Invocation.method(
           #disablePropertyListeners,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void dispose() => super.noSuchMethod(
-        Invocation.method(
-          #dispose,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #addListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #removeListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void notifyListeners() => super.noSuchMethod(
-        Invocation.method(
-          #notifyListeners,
           [],
         ),
         returnValueForMissingStub: null,
@@ -747,6 +747,22 @@ class MockEthernetModel extends _i1.Mock implements _i3.EthernetModel {
         returnValueForMissingStub: null,
       );
   @override
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
@@ -783,22 +799,6 @@ class MockEthernetModel extends _i1.Mock implements _i3.EthernetModel {
         Invocation.method(
           #disablePropertyListeners,
           [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #addListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #removeListener,
-          [listener],
         ),
         returnValueForMissingStub: null,
       );
@@ -998,6 +998,22 @@ class MockHiddenWifiModel extends _i1.Mock implements _i9.HiddenWifiModel {
         returnValueForMissingStub: null,
       );
   @override
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
@@ -1034,22 +1050,6 @@ class MockHiddenWifiModel extends _i1.Mock implements _i9.HiddenWifiModel {
         Invocation.method(
           #disablePropertyListeners,
           [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #addListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #removeListener,
-          [listener],
         ),
         returnValueForMissingStub: null,
       );
@@ -1123,6 +1123,38 @@ class MockAccessPoint extends _i1.Mock implements _i4.AccessPoint {
         returnValueForMissingStub: null,
       );
   @override
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
@@ -1158,38 +1190,6 @@ class MockAccessPoint extends _i1.Mock implements _i4.AccessPoint {
   void disablePropertyListeners() => super.noSuchMethod(
         Invocation.method(
           #disablePropertyListeners,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void dispose() => super.noSuchMethod(
-        Invocation.method(
-          #dispose,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #addListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #removeListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void notifyListeners() => super.noSuchMethod(
-        Invocation.method(
-          #notifyListeners,
           [],
         ),
         returnValueForMissingStub: null,
@@ -1366,6 +1366,30 @@ class MockWifiDevice extends _i1.Mock implements _i4.WifiDevice {
         returnValueForMissingStub: _i6.Future<void>.value(),
       ) as _i6.Future<void>);
   @override
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
@@ -1401,30 +1425,6 @@ class MockWifiDevice extends _i1.Mock implements _i4.WifiDevice {
   void disablePropertyListeners() => super.noSuchMethod(
         Invocation.method(
           #disablePropertyListeners,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #addListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #removeListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void notifyListeners() => super.noSuchMethod(
-        Invocation.method(
-          #notifyListeners,
           [],
         ),
         returnValueForMissingStub: null,
@@ -1638,6 +1638,22 @@ class MockWifiModel extends _i1.Mock implements _i4.WifiModel {
         returnValueForMissingStub: null,
       );
   @override
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   void setProperties(_i6.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
@@ -1674,22 +1690,6 @@ class MockWifiModel extends _i1.Mock implements _i4.WifiModel {
         Invocation.method(
           #disablePropertyListeners,
           [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #addListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #removeListener,
-          [listener],
         ),
         returnValueForMissingStub: null,
       );

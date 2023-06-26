@@ -5,6 +5,7 @@ import 'package:collection/collection.dart';
 import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
@@ -314,7 +315,7 @@ class WifiDevice extends NetworkDevice {
   }
 }
 
-class AccessPoint extends PropertyStreamNotifier {
+class AccessPoint extends SafeChangeNotifier with PropertyStreamNotifier {
   AccessPoint(this._accessPoint) {
     _setAccessPoint(_accessPoint);
     addPropertyListener('Strength', notifyListeners);

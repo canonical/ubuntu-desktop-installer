@@ -1,13 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/utils.dart';
 
 import 'connect_model.dart';
 
 abstract class NetworkDeviceModel<T extends NetworkDevice>
-    extends PropertyStreamNotifier implements ConnectModel {
+    extends SafeChangeNotifier
+    with PropertyStreamNotifier
+    implements ConnectModel {
   NetworkDeviceModel(this.service, [this.udev]) {
     addPropertyListener('Devices', updateDevices);
   }
@@ -112,7 +115,7 @@ abstract class NetworkDeviceModel<T extends NetworkDevice>
   }
 }
 
-class NetworkDevice extends PropertyStreamNotifier {
+class NetworkDevice extends SafeChangeNotifier with PropertyStreamNotifier {
   NetworkDevice(this._device, this._udev) {
     _setDevice(_device);
     addPropertyListener('ActiveConnection', notifyListeners);
