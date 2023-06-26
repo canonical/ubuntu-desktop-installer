@@ -25,6 +25,9 @@ class ActiveDirectoryErrorDialog extends StatelessWidget {
         title: Text(lang.activeDirectoryErrorTitle),
       ),
       titlePadding: EdgeInsets.zero,
+      contentPadding: const EdgeInsets.all(kYaruPagePadding),
+      actionsPadding: const EdgeInsets.all(kYaruPagePadding),
+      buttonPadding: EdgeInsets.zero,
       content: SizedBox(
         width: 600,
         child: Row(

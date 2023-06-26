@@ -75,6 +75,8 @@ class StorageSizeDialog extends StatelessWidget {
         title: Text(title),
       ),
       titlePadding: EdgeInsets.zero,
+      contentPadding: const EdgeInsets.all(kYaruPagePadding),
+      actionsPadding: const EdgeInsets.all(kYaruPagePadding),
       buttonPadding: EdgeInsets.zero,
       content: CallbackShortcuts(
         bindings: {

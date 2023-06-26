@@ -35,9 +35,8 @@ Future<StepResult?> showDetectKeyboardDialog(BuildContext context) async {
               title: Text(lang.detectLayout),
             ),
             titlePadding: EdgeInsets.zero,
-            contentPadding: kContentPadding.copyWith(
-                top: kContentSpacing, bottom: kContentSpacing),
-            actionsPadding: kFooterPadding,
+            contentPadding: const EdgeInsets.all(kYaruPagePadding),
+            actionsPadding: const EdgeInsets.all(kYaruPagePadding),
             buttonPadding: EdgeInsets.zero,
             content: SizedBox(
               width: size.width * _kDialogWidthFactor,

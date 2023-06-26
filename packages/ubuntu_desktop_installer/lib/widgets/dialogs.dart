@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets/push_button.dart';
-import 'package:ubuntu_wizard/constants.dart';
-import 'package:yaru_widgets/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 /// Shows a confirmation dialog with the given title and message.
 Future<bool> showConfirmationDialog(
@@ -19,9 +18,9 @@ Future<bool> showConfirmationDialog(
       return AlertDialog(
         title: YaruDialogTitleBar(title: Text(title)),
         titlePadding: EdgeInsets.zero,
-        contentPadding: kContentPadding.copyWith(
-            top: kContentSpacing, bottom: kContentSpacing),
-        actionsPadding: kFooterPadding,
+        contentPadding: const EdgeInsets.all(kYaruPagePadding),
+        actionsPadding: const EdgeInsets.all(kYaruPagePadding),
+        buttonPadding: EdgeInsets.zero,
         content: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 420),
             child: Text(message)),

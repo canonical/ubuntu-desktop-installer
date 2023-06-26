@@ -36,9 +36,8 @@ Future<void> showCreatePartitionDialog(
             title: Text(lang.partitionCreateTitle),
           ),
           titlePadding: EdgeInsets.zero,
-          contentPadding: kContentPadding.copyWith(
-              top: kContentSpacing, bottom: kContentSpacing),
-          actionsPadding: kFooterPadding,
+          contentPadding: const EdgeInsets.all(kYaruPagePadding),
+          actionsPadding: const EdgeInsets.all(kYaruPagePadding),
           buttonPadding: EdgeInsets.zero,
           scrollable: true,
           content: FormLayout(
@@ -156,9 +155,8 @@ Future<void> showEditPartitionDialog(
             title: Text(lang.partitionEditTitle),
           ),
           titlePadding: EdgeInsets.zero,
-          contentPadding: kContentPadding.copyWith(
-              top: kContentSpacing, bottom: kContentSpacing),
-          actionsPadding: kFooterPadding,
+          contentPadding: const EdgeInsets.all(kYaruPagePadding),
+          actionsPadding: const EdgeInsets.all(kYaruPagePadding),
           buttonPadding: EdgeInsets.zero,
           scrollable: true,
           content: FormLayout(
