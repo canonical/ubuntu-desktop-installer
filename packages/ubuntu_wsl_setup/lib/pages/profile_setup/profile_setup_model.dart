@@ -1,3 +1,4 @@
+import 'package:crypt/crypt.dart';
 import 'package:flutter/foundation.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -96,7 +97,7 @@ class ProfileSetupModel extends SafeChangeNotifier {
     final identity = IdentityData(
       realname: realname,
       username: username,
-      cryptedPassword: encryptPassword(password, salt: salt),
+      cryptedPassword: Crypt.sha512(password, salt: salt).toString(),
     );
     return _client.setIdentity(identity);
   }

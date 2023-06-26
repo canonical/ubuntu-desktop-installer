@@ -1,6 +1,6 @@
+import 'package:crypt/crypt.dart';
 import 'package:meta/meta.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 import 'config_service.dart';
 
@@ -106,7 +106,7 @@ class SubiquityIdentityService implements IdentityService {
     return _subiquity.setIdentity(IdentityData(
       realname: identity.realname,
       username: identity.username,
-      cryptedPassword: encryptPassword(identity.password),
+      cryptedPassword: Crypt.sha512(identity.password).toString(),
       hostname: identity.hostname,
     ));
   }

@@ -8,7 +8,6 @@ environment:
 
 dependencies:
   args: ^2.2.0
-  crypt: ^4.0.1
   flutter:
     sdk: flutter
   flutter_localizations:

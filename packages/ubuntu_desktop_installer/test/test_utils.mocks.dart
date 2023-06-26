@@ -35,7 +35,7 @@ import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
 import 'package:ubuntu_desktop_installer/services/timezone_service.dart'
     as _i27;
 import 'package:ubuntu_desktop_installer/services/udev_service.dart' as _i7;
-import 'package:ubuntu_utils/ubuntu_utils.dart' as _i28;
+import 'package:ubuntu_utils/src/url_launcher.dart' as _i28;
 import 'package:upower/upower.dart' as _i5;
 
 // ignore_for_file: type=lint
