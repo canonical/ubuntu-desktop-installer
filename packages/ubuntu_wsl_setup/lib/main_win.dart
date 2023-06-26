@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 import 'package:ubuntu_wsl_setup/services/tcp_socket.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';

@@ -2,14 +2,15 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path/path.dart' as p;
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'installer/installer_wizard.dart';
@@ -121,7 +122,6 @@ Future<void> runInstallerApp(
         slides: slides ?? defaultSlides,
         child: Consumer(
           builder: (context, ref, child) => WizardApp(
-            appName: 'ubuntu_desktop_installer',
             theme: theme,
             darkTheme: darkTheme,
             onGenerateTitle: (context) {
@@ -131,8 +131,14 @@ Future<void> runInstallerApp(
             locale: ref.watch(localeProvider),
             localizationsDelegates: localizationsDelegates,
             supportedLocales: supportedLocales,
-            home: InstallerWizard(
-              welcome: options['welcome'],
+            home: DefaultAssetBundle(
+              bundle: ProxyAssetBundle(
+                rootBundle,
+                package: 'ubuntu_desktop_installer',
+              ),
+              child: InstallerWizard(
+                welcome: options['welcome'],
+              ),
             ),
           ),
         ),

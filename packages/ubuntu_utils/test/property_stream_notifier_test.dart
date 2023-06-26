@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_wizard/src/utils/property_stream_notifier.dart';
+import 'package:ubuntu_utils/src/property_stream_notifier.dart';
 
 void main() {
   test('listeners', () {

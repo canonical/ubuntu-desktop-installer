@@ -3,11 +3,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru/yaru.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 void main() {
   testWidgets('app structure', (tester) async {
     await tester.pumpWidget(const WizardApp(
-      appName: 'wizard_app_test',
       localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
       supportedLocales: UbuntuLocalizations.supportedLocales,
       home: Text('home'),
@@ -15,8 +15,6 @@ void main() {
 
     expect(find.byType(YaruTheme), findsOneWidget);
     expect(find.byType(MaterialApp), findsOneWidget);
-
-    final widget = tester.widget<WizardApp>(find.byType(WizardApp));
-    expect(widget.appName, equals('wizard_app_test'));
+    expect(find.byType(YaruWindowTitleBar), findsOneWidget);
   });
 }

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/src/password.dart';
 
 void main() {
   test('encrypt password', () {

@@ -2,9 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
+
+import 'wizard_data.dart';
 
 /// Wizard activation callback signature.
 typedef WizardCallback = FutureOr<void> Function();

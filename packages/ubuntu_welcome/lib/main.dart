@@ -1,14 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/providers.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_welcome/l10n.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'services.dart';
@@ -48,12 +49,14 @@ Future<void> main(List<String> args) async {
     runApp(ProviderScope(
       child: Consumer(
         builder: (context, ref, child) => WizardApp(
-          appName: 'ubuntu_welcome',
           locale: ref.watch(localeProvider),
           onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
           localizationsDelegates: localizationsDelegates,
           supportedLocales: supportedLocales,
-          home: const WelcomeWizard(),
+          home: DefaultAssetBundle(
+            bundle: ProxyAssetBundle(rootBundle, package: 'ubuntu_welcome'),
+            child: const WelcomeWizard(),
+          ),
         ),
       ),
     ));
