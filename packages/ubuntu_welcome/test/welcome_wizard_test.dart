@@ -75,7 +75,6 @@ void main() {
 extension on WidgetTester {
   Widget buildTestWizard() {
     return WizardApp(
-      appName: 'ubuntu_welcome',
       localizationsDelegates: localizationsDelegates,
       supportedLocales: supportedLocales,
       home: const WelcomeWizard(),
