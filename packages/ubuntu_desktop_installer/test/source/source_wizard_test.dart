@@ -9,7 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/source/source_wizard.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import 'test_source.dart';
 

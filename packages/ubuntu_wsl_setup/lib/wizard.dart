@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import 'pages.dart';
 import 'routes.dart';

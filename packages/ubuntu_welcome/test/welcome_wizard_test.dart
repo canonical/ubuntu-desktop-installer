@@ -10,7 +10,7 @@ import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_welcome/l10n.dart';
 import 'package:ubuntu_welcome/welcome_wizard.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
