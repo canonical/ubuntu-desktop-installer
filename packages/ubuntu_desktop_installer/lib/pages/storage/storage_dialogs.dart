@@ -24,9 +24,8 @@ Future<void> showAdvancedFeaturesDialog(
           title: Text(lang.installationTypeAdvancedTitle),
         ),
         titlePadding: EdgeInsets.zero,
-        contentPadding: kContentPadding.copyWith(
-            top: kContentSpacing, bottom: kContentSpacing),
-        actionsPadding: kFooterPadding,
+        contentPadding: const EdgeInsets.all(kYaruPagePadding),
+        actionsPadding: const EdgeInsets.all(kYaruPagePadding),
         buttonPadding: EdgeInsets.zero,
         scrollable: true,
         content: AnimatedBuilder(
