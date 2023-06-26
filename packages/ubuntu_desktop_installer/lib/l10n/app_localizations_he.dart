@@ -13,7 +13,7 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get changeButtonText => 'עריכה';
+  String get changeButtonText => 'שינוי';
 
   @override
   String get restartButtonText => 'הפעלה מחדש';
@@ -512,7 +512,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String partitionFormatKeep(Object format) {
-    return 'Leave formatted as $format';
+    return 'להשאיר בעיצוב $format';
   }
 
   @override

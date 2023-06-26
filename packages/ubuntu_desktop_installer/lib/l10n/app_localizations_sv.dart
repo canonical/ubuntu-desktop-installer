@@ -512,7 +512,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String partitionFormatKeep(Object format) {
-    return 'Leave formatted as $format';
+    return 'Lämna formaterat som $format';
   }
 
   @override
