@@ -1,5 +1,6 @@
 import 'package:async/async.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
@@ -20,7 +21,7 @@ final sourceModelProvider = ChangeNotifierProvider(
   ),
 );
 
-class SourceModel extends PropertyStreamNotifier {
+class SourceModel extends SafeChangeNotifier with PropertyStreamNotifier {
   // ignore: public_member_api_docs
   SourceModel(
       {required SubiquityClient client,

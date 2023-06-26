@@ -113,6 +113,38 @@ class MockSourceModel extends _i1.Mock implements _i2.SourceModel {
         returnValueForMissingStub: _i4.Future<void>.value(),
       ) as _i4.Future<void>);
   @override
+  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   void setProperties(_i4.Stream<List<String>>? properties) =>
       super.noSuchMethod(
         Invocation.method(
@@ -148,38 +180,6 @@ class MockSourceModel extends _i1.Mock implements _i2.SourceModel {
   void disablePropertyListeners() => super.noSuchMethod(
         Invocation.method(
           #disablePropertyListeners,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void dispose() => super.noSuchMethod(
-        Invocation.method(
-          #dispose,
-          [],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #addListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
-        Invocation.method(
-          #removeListener,
-          [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void notifyListeners() => super.noSuchMethod(
-        Invocation.method(
-          #notifyListeners,
           [],
         ),
         returnValueForMissingStub: null,

@@ -1,11 +1,12 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_utils/src/property_stream_notifier.dart';
 
 void main() {
   test('listeners', () {
-    final notifier = PropertyStreamNotifier();
+    final notifier = TestPropertyStreamNotifier();
 
     var wasCanceled = false;
     var wasListened = false;
@@ -48,7 +49,7 @@ void main() {
   });
 
   test('enable and disable listeners', () {
-    final notifier = PropertyStreamNotifier();
+    final notifier = TestPropertyStreamNotifier();
     final controller = StreamController<List<String>>(sync: true);
     notifier.setProperties(controller.stream);
 
@@ -70,3 +71,6 @@ void main() {
     expect(bar, equals(1));
   });
 }
+
+class TestPropertyStreamNotifier extends ChangeNotifier
+    with PropertyStreamNotifier {}
