@@ -183,14 +183,14 @@ class _InstallWizard extends ConsumerWidget {
 }
 
 class _InstallerObserver extends NavigatorObserver {
-  _InstallerObserver(this._telemetryService);
+  _InstallerObserver(this._telemetry);
 
-  final TelemetryService _telemetryService;
+  final TelemetryService _telemetry;
 
   @override
   void didPush(Route route, Route? previousRoute) {
     if (route.settings.name != null) {
-      _telemetryService.addStage(route.settings.name!.removePrefix('/'));
+      _telemetry.addStage(route.settings.name!.removePrefix('/'));
     }
   }
 }
