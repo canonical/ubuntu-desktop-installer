@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/src/wizard_data.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/widgets.dart';
+
+import 'wizard_data.dart';
 
 class WizardBar extends StatefulWidget {
   const WizardBar({
