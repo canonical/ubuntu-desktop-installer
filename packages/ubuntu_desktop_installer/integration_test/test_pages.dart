@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -10,6 +9,7 @@ import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_test/yaru_test.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../test/test_utils.dart';
 
@@ -96,7 +96,9 @@ Future<void> testKeyboardPage(
 
     await takeScreenshot(tester, '$screenshot-detect');
 
-    await tester.sendKeyEvent(LogicalKeyboardKey.escape);
+    await tester.tap(find.descendant(
+        of: find.byType(AlertDialog),
+        matching: find.byType(YaruWindowControl)));
     await tester.pumpAndSettle();
   }
 
