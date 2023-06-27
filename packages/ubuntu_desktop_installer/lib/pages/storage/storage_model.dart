@@ -38,14 +38,14 @@ final storageModelProvider = ChangeNotifierProvider((_) => StorageModel(
 class StorageModel extends SafeChangeNotifier {
   /// Creates a new model with the given client and service.
   StorageModel(
-    this._diskService,
-    this._telemetryService,
-    this._productService,
+    this._storage,
+    this._telemetry,
+    this._product,
   );
 
-  final StorageService _diskService;
-  final TelemetryService? _telemetryService;
-  final ProductService _productService;
+  final StorageService _storage;
+  final TelemetryService? _telemetry;
+  final ProductService _product;
 
   StorageType? _type;
   var _advancedFeature = AdvancedFeature.none;
@@ -83,16 +83,16 @@ class StorageModel extends SafeChangeNotifier {
   }
 
   void _syncService() {
-    _diskService.useLvm = advancedFeature == AdvancedFeature.lvm;
-    _diskService.useEncryption =
+    _storage.useLvm = advancedFeature == AdvancedFeature.lvm;
+    _storage.useEncryption =
         encryption && advancedFeature == AdvancedFeature.lvm;
   }
 
   /// The version of the OS.
-  ProductInfo get productInfo => _productService.getProductInfo();
+  ProductInfo get productInfo => _product.getProductInfo();
 
   /// A list of existing OS installations or null if not detected.
-  List<OsProber>? get existingOS => _diskService.existingOS;
+  List<OsProber>? get existingOS => _storage.existingOS;
 
   /// Whether storage information has been queried and installation can proceed.
   bool get hasStorage => _targets != null;
@@ -111,13 +111,13 @@ class StorageModel extends SafeChangeNotifier {
 
   /// Initializes the model.
   Future<void> init() async {
-    await _diskService.init();
-    await _diskService.getGuidedStorage().then((r) => _targets = r.targets);
+    await _storage.init();
+    await _storage.getGuidedStorage().then((r) => _targets = r.targets);
     _type ??= canInstallAlongside ? StorageType.alongside : StorageType.erase;
     _advancedFeature =
-        _diskService.useLvm ? AdvancedFeature.lvm : AdvancedFeature.none;
-    _encryption = _diskService.useEncryption;
-    _hasBitLocker = await _diskService.hasBitLocker();
+        _storage.useLvm ? AdvancedFeature.lvm : AdvancedFeature.none;
+    _encryption = _storage.useEncryption;
+    _hasBitLocker = await _storage.hasBitLocker();
     notifyListeners();
   }
 
@@ -125,7 +125,7 @@ class StorageModel extends SafeChangeNotifier {
   Future<void> save() async {
     final partitionMethod = _resolvePartitionMethod();
     if (partitionMethod != null) {
-      await _telemetryService?.addMetric('PartitionMethod', partitionMethod);
+      await _telemetry?.addMetric('PartitionMethod', partitionMethod);
     }
   }
 
@@ -137,7 +137,7 @@ class StorageModel extends SafeChangeNotifier {
       return 'use_lvm';
     } else if (advancedFeature == AdvancedFeature.zfs) {
       return 'use_zfs';
-    } else if (_diskService.useEncryption &&
+    } else if (_storage.useEncryption &&
         advancedFeature != AdvancedFeature.zfs) {
       return 'use_crypto';
     } else if (type == StorageType.erase) {
@@ -153,5 +153,5 @@ class StorageModel extends SafeChangeNotifier {
     return null;
   }
 
-  Future<void> resetStorage() => _diskService.resetStorage();
+  Future<void> resetStorage() => _storage.resetStorage();
 }
