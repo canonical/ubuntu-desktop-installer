@@ -6,7 +6,6 @@ import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -72,7 +71,7 @@ class StoragePage extends ConsumerWidget {
         children: [
           if (model.canInstallAlongside || model.hasBitLocker)
             Padding(
-              padding: const EdgeInsets.only(bottom: kContentSpacing),
+              padding: const EdgeInsets.only(bottom: kWizardSpacing),
               child: YaruRadioButton<StorageType>(
                 title: Text(_formatAlongside(
                     lang, model.productInfo, model.existingOS ?? [])),
@@ -93,9 +92,9 @@ class StoragePage extends ConsumerWidget {
             groupValue: model.type,
             onChanged: (value) => model.type = value!,
           ),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           Padding(
-            padding: kContentIndentation,
+            padding: kWizardIndentation,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
@@ -105,12 +104,12 @@ class StoragePage extends ConsumerWidget {
                       : null,
                   child: Text(lang.installationTypeAdvancedLabel),
                 ),
-                const SizedBox(width: kContentSpacing),
+                const SizedBox(width: kWizardSpacing),
                 Text(model.advancedFeature.localize(lang, model.encryption)),
               ],
             ),
           ),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           YaruRadioButton<StorageType>(
             title: Text(lang.installationTypeManual),
             subtitle: Text(lang.installationTypeManualInfo(flavor.name)),

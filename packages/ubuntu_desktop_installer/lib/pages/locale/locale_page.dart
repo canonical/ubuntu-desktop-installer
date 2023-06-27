@@ -5,7 +5,6 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -32,11 +31,11 @@ class LocalePage extends ConsumerWidget {
         widthFactor: 0.5,
         child: Column(
           children: [
-            const SizedBox(height: kContentSpacing / 2),
+            const SizedBox(height: kWizardSpacing / 2),
             const MascotAvatar(),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             Text(lang.welcomeHeader),
-            const SizedBox(height: kContentSpacing / 2),
+            const SizedBox(height: kWizardSpacing / 2),
             Expanded(
               child: ListWidget.builder(
                 selectedIndex: model.selectedIndex,
@@ -55,7 +54,7 @@ class LocalePage extends ConsumerWidget {
                 },
               ),
             ),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
           ],
         ),
       ),

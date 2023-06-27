@@ -4,7 +4,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'manual_storage_model.dart';
@@ -41,8 +41,8 @@ Future<void> showCreatePartitionDialog(
           buttonPadding: EdgeInsets.zero,
           scrollable: true,
           content: FormLayout(
-            rowSpacing: kContentSpacing,
-            columnSpacing: kContentSpacing,
+            rowSpacing: kWizardSpacing,
+            columnSpacing: kWizardSpacing,
             rows: [
               <Widget>[
                 Text(lang.partitionSizeLabel, textAlign: TextAlign.end),
@@ -100,7 +100,7 @@ Future<void> showCreatePartitionDialog(
               onPressed: Navigator.of(context).pop,
               child: Text(UbuntuLocalizations.of(context).cancelLabel),
             ),
-            const SizedBox(width: kButtonBarSpacing),
+            const SizedBox(width: kWizardBarSpacing),
             ValueListenableBuilder(
                 valueListenable: partitionMount,
                 builder: (context, value, child) {
@@ -160,8 +160,8 @@ Future<void> showEditPartitionDialog(
           buttonPadding: EdgeInsets.zero,
           scrollable: true,
           content: FormLayout(
-            rowSpacing: kContentSpacing,
-            columnSpacing: kContentSpacing,
+            rowSpacing: kWizardSpacing,
+            columnSpacing: kWizardSpacing,
             rows: [
               <Widget>[
                 Text(lang.partitionSizeLabel, textAlign: TextAlign.end),
@@ -240,7 +240,7 @@ Future<void> showEditPartitionDialog(
               onPressed: Navigator.of(context).pop,
               child: Text(UbuntuLocalizations.of(context).cancelLabel),
             ),
-            const SizedBox(width: kButtonBarSpacing),
+            const SizedBox(width: kWizardBarSpacing),
             ValueListenableBuilder(
                 valueListenable: partitionMount,
                 builder: (context, value, child) {

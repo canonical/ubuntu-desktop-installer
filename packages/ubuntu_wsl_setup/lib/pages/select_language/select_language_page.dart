@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:ubuntu_wsl_setup/locale.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
@@ -92,9 +91,9 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
               ),
             ),
           ),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           YaruCheckButton(
-            contentPadding: kContentPadding,
+            contentPadding: kWizardPadding,
             title: Text(lang.installLangPacksTitle(
                 model.language(model.selectedLanguageIndex))),
             subtitle: Text(lang.installLangPacksSubtitle),

@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -31,23 +30,23 @@ class SecurityKeyPage extends ConsumerWidget {
         title: Text(lang.chooseSecurityKeyTitle),
       ),
       header: FractionallySizedBox(
-        widthFactor: kContentWidthFraction,
+        widthFactor: kWizardWidthFraction,
         child: Text(lang.chooseSecurityKeyHeader(flavor.name)),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
-        final fieldWidth = constraints.maxWidth * kContentWidthFraction;
+        final fieldWidth = constraints.maxWidth * kWizardWidthFraction;
         return ListView(
           children: <Widget>[
             SecurityKeyFormField(fieldWidth: fieldWidth),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             ConfirmSecurityKeyFormField(fieldWidth: fieldWidth),
-            const SizedBox(height: kContentSpacing / 2),
+            const SizedBox(height: kWizardSpacing / 2),
             const SecurityKeyShowButton(),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             Align(
               alignment: Alignment.centerLeft,
               child: FractionallySizedBox(
-                widthFactor: kContentWidthFraction,
+                widthFactor: kWizardWidthFraction,
                 child: Html(
                   data: lang.chooseSecurityKeyWarning(
                       Theme.of(context).colorScheme.error.toHex()),

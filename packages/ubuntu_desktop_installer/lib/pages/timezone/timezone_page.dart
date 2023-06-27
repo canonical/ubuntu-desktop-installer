@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -41,7 +40,7 @@ class TimezonePage extends ConsumerWidget {
       content: Column(
         children: <Widget>[
           Padding(
-            padding: kContentPadding,
+            padding: kWizardPadding,
             child: Row(
               children: <Widget>[
                 Expanded(
@@ -70,7 +69,7 @@ class TimezonePage extends ConsumerWidget {
                     onSelected: model.selectLocation,
                   ),
                 ),
-                const SizedBox(width: kContentSpacing),
+                const SizedBox(width: kWizardSpacing),
                 Expanded(
                   child: YaruAutocomplete<GeoLocation>(
                     initialValue: TextEditingValue(
@@ -100,7 +99,7 @@ class TimezonePage extends ConsumerWidget {
               ],
             ),
           ),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           Expanded(
             child: TimezoneMap(
               size: TimezoneMapSize.medium,

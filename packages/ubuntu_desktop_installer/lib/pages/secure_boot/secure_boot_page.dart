@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -32,9 +31,9 @@ class _SecureBootPageState extends ConsumerState<SecureBootPage> {
       content: LayoutBuilder(
         builder: (context, constraints) {
           final fieldPadding = EdgeInsets.symmetric(
-              horizontal: kContentPadding.left, vertical: 10);
+              horizontal: kWizardPadding.left, vertical: 10);
           final fieldWidth = (constraints.maxWidth - fieldPadding.horizontal) *
-              kContentWidthFraction;
+              kWizardWidthFraction;
 
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -46,9 +45,9 @@ class _SecureBootPageState extends ConsumerState<SecureBootPage> {
                 onChanged: model.setSecureBootMode,
               ),
               SecurityKeyFormField(fieldWidth: fieldWidth),
-              const SizedBox(height: kContentSpacing),
+              const SizedBox(height: kWizardSpacing),
               SecurityKeyConfirmFormField(fieldWidth: fieldWidth),
-              const SizedBox(height: kContentSpacing),
+              const SizedBox(height: kWizardSpacing),
               YaruRadioButton<SecureBootMode>(
                 title: Text(lang.dontInstallDriverSoftwareNow),
                 subtitle: Text(lang.dontInstallDriverSoftwareNowDescription),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -57,9 +56,9 @@ class GuidedResizePage extends ConsumerWidget {
             selectedIndex: model.selectedIndex,
             onSelected: model.selectStorage,
           ),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           Text(lang.installAlongsideSpaceDivider),
-          const SizedBox(height: kContentSpacing / 2),
+          const SizedBox(height: kWizardSpacing / 2),
           if (model.selectedPartition != null)
             SizedBox(
               height: 200,
@@ -74,7 +73,7 @@ class GuidedResizePage extends ConsumerWidget {
                 onResize: model.resizeStorage,
               ),
             ),
-          const SizedBox(height: kContentSpacing / 2),
+          const SizedBox(height: kWizardSpacing / 2),
           HiddenPartitionLabel(
             partitions: model.getAllPartitions(model.selectedIndex ?? -1) ?? [],
             onTap: () =>

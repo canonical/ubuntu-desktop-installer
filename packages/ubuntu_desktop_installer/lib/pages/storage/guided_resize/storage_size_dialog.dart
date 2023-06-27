@@ -4,7 +4,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 Future<int?> showStorageSizeDialog(
@@ -86,8 +86,8 @@ class StorageSizeDialog extends StatelessWidget {
             },
         },
         child: FormLayout(
-          rowSpacing: kContentSpacing,
-          columnSpacing: kContentSpacing,
+          rowSpacing: kWizardSpacing,
+          columnSpacing: kWizardSpacing,
           rows: [
             [
               Text(lang.installAlongsidePartition, textAlign: TextAlign.end),
@@ -125,7 +125,7 @@ class StorageSizeDialog extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(null),
           child: Text(UbuntuLocalizations.of(context).cancelLabel),
         ),
-        const SizedBox(width: kButtonBarSpacing),
+        const SizedBox(width: kWizardBarSpacing),
         PushButton.filled(
           onPressed: canAccept ? () => Navigator.of(context).pop(size) : null,
           child: Text(UbuntuLocalizations.of(context).okLabel),

@@ -6,7 +6,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import 'guided_resize_model.dart';
 
@@ -42,7 +42,7 @@ class StorageSelector extends ConsumerWidget {
     return Row(
       children: <Widget>[
         Text(lang.selectGuidedStorageDropdownLabel),
-        const SizedBox(width: kContentSpacing),
+        const SizedBox(width: kWizardSpacing),
         Expanded(
           child: MenuButtonBuilder<int>(
             values: List.generate(count, (index) => index),

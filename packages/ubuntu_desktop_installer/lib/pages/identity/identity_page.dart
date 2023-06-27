@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -32,10 +31,10 @@ class IdentityPage extends ConsumerWidget {
         title: Text(lang.whoAreYouPageTitle),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
-        final fieldPadding = EdgeInsets.symmetric(
-            horizontal: kContentPadding.left, vertical: 10);
+        final fieldPadding =
+            EdgeInsets.symmetric(horizontal: kWizardPadding.left, vertical: 10);
         final fieldWidth = (constraints.maxWidth - fieldPadding.horizontal) *
-            kContentWidthFraction;
+            kWizardWidthFraction;
 
         return ListView(
           children: [
@@ -59,11 +58,11 @@ class IdentityPage extends ConsumerWidget {
               padding: fieldPadding,
               child: ConfirmPasswordFormField(fieldWidth: fieldWidth),
             ),
-            const SizedBox(height: kContentSpacing / 2),
+            const SizedBox(height: kWizardSpacing / 2),
             const AutoLoginSwitch(),
-            const SizedBox(height: kContentSpacing / 2),
+            const SizedBox(height: kWizardSpacing / 2),
             const Padding(
-              padding: kContentPadding,
+              padding: kWizardPadding,
               child: UseActiveDirectoryCheckButton(),
             ),
           ],

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -37,7 +36,7 @@ class KeyboardPage extends ConsumerWidget {
               children: [
                 Expanded(child: Text(lang.chooseYourKeyboardLayout)),
                 if (model.canDetectLayout) ...[
-                  const SizedBox(width: kContentSpacing),
+                  const SizedBox(width: kWizardSpacing),
                   OutlinedButton(
                     child: Text(lang.detectButtonText),
                     onPressed: () async {
@@ -51,7 +50,7 @@ class KeyboardPage extends ConsumerWidget {
                 ],
               ],
             ),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             Expanded(
               child: Row(
                 children: <Widget>[
@@ -76,11 +75,11 @@ class KeyboardPage extends ConsumerWidget {
                 ],
               ),
             ),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             Row(
               children: [
                 Text(lang.keyboardVariant),
-                const SizedBox(width: kContentSpacing),
+                const SizedBox(width: kWizardSpacing),
                 Expanded(
                   child: MenuButtonBuilder<int>(
                     selected: model.selectedVariantIndex,
@@ -95,15 +94,15 @@ class KeyboardPage extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             const Divider(height: 1),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             TextField(
               decoration: InputDecoration(
                 hintText: lang.typeToTest,
               ),
             ),
-            const SizedBox(height: kContentSpacing * 2),
+            const SizedBox(height: kWizardSpacing * 2),
           ],
         ),
       ),

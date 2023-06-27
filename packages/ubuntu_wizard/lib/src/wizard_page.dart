@@ -1,5 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
+
+/// The spacing between header, content, and footer.
+const kWizardSpacing = kYaruPagePadding;
+
+/// The padding around the content.
+const kWizardPadding = EdgeInsets.symmetric(horizontal: kWizardSpacing);
+
+/// The fraction of wizard width in relation to the page.
+const kWizardWidthFraction = 0.7;
+
+/// The indentation to align with radio indicators etc.
+const kWizardIndentation =
+    EdgeInsetsDirectional.only(start: kWizardSpacing * 2);
 
 /// The base for wizard pages in the installer.
 ///
@@ -11,10 +24,11 @@ class WizardPage extends StatefulWidget {
     super.key,
     this.title,
     this.header,
-    this.headerPadding = kHeaderPadding,
+    this.headerPadding = const EdgeInsets.fromLTRB(
+        kYaruPagePadding, kYaruPagePadding, kYaruPagePadding, 0),
     this.content,
-    this.contentPadding = kContentPadding,
-    this.contentSpacing = kContentSpacing,
+    this.contentPadding = kWizardPadding,
+    this.contentSpacing = kWizardSpacing,
     this.snackBar,
     this.bottomBar,
   });

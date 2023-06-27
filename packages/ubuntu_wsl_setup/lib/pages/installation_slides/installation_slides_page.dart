@@ -20,7 +20,6 @@ import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:ubuntu_wsl_setup/app_model.dart';
 import 'package:yaru_icons/yaru_icons.dart';
@@ -133,12 +132,12 @@ class _SlidesPage extends StatelessWidget {
           ),
           Consumer<InstallationSlidesModel>(
             builder: (context, model, _) => Padding(
-              padding: const EdgeInsets.all(kContentSpacing),
+              padding: const EdgeInsets.all(kWizardSpacing),
               child: Row(
                 children: [
                   SizedBox(
-                    height: kContentSpacing,
-                    width: kContentSpacing,
+                    height: kWizardSpacing,
+                    width: kWizardSpacing,
                     child: model.hasError
                         ? const Icon(YaruIcons.error_filled)
                         : CircularProgressIndicator(
@@ -147,7 +146,7 @@ class _SlidesPage extends StatelessWidget {
                                 Theme.of(context).primaryColor.withAlpha(62),
                           ),
                   ),
-                  const SizedBox(width: kContentSpacing),
+                  const SizedBox(width: kWizardSpacing),
                   Text(
                     model.hasError
                         ? lang.installationSlidesErrorMsg
@@ -199,7 +198,7 @@ class _JournalView extends StatelessWidget {
   Widget build(BuildContext context) {
     return LogView(
       log: journal,
-      padding: const EdgeInsets.symmetric(horizontal: kContentSpacing),
+      padding: const EdgeInsets.symmetric(horizontal: kWizardSpacing),
       style: TextStyle(
         inherit: false,
         fontSize: Theme.of(context).textTheme.bodyLarge!.fontSize,
@@ -208,7 +207,7 @@ class _JournalView extends StatelessWidget {
       ),
       decoration: const InputDecoration(
         border: InputBorder.none,
-        contentPadding: EdgeInsets.symmetric(vertical: kContentSpacing / 2),
+        contentPadding: EdgeInsets.symmetric(vertical: kWizardSpacing / 2),
       ),
       background: BoxDecoration(color: Theme.of(context).shadowColor),
     );

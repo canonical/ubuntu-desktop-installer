@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/src/wizard_data.dart';
 import 'package:wizard_router/wizard_router.dart';
-import 'package:yaru_widgets/widgets.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
+
+import 'wizard_data.dart';
+
+/// The spacing between Continue and Back buttons.
+const kWizardBarSpacing = 8.0;
 
 class WizardBar extends StatefulWidget {
   const WizardBar({
     super.key,
     this.leading,
     this.trailing,
-    this.padding = kFooterPadding,
+    this.padding = const EdgeInsets.fromLTRB(
+        kYaruPagePadding, 0, kYaruPagePadding, kYaruPagePadding),
   });
 
   final Widget? leading;
@@ -49,7 +53,7 @@ class _WizardBarState extends State<WizardBar> {
               : null,
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
-            children: widget.trailing?.withSpacing(kButtonBarSpacing) ?? [],
+            children: widget.trailing?.withSpacing(kWizardBarSpacing) ?? [],
           ),
         ),
       ),

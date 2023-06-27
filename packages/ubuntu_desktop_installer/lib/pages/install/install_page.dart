@@ -5,7 +5,6 @@ import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -98,9 +97,9 @@ class _SlidePageState extends ConsumerState<_SlidePage> {
                 child: Container(
                   color: Theme.of(context).colorScheme.background,
                   padding: const EdgeInsets.only(
-                    top: kContentSpacing,
-                    left: kContentSpacing,
-                    right: kContentSpacing,
+                    top: kWizardSpacing,
+                    left: kWizardSpacing,
+                    right: kWizardSpacing,
                   ),
                   child: _JournalView(journal: model.log),
                 ),
@@ -174,7 +173,7 @@ class _JournalView extends StatelessWidget {
   Widget build(BuildContext context) {
     return LogView(
       log: journal,
-      padding: const EdgeInsets.symmetric(horizontal: kContentSpacing),
+      padding: const EdgeInsets.symmetric(horizontal: kWizardSpacing),
       style: TextStyle(
         inherit: false,
         fontSize: Theme.of(context).textTheme.bodyLarge!.fontSize,
@@ -186,7 +185,7 @@ class _JournalView extends StatelessWidget {
         enabledBorder: InputBorder.none,
         focusedBorder: InputBorder.none,
         fillColor: Colors.transparent,
-        contentPadding: EdgeInsets.symmetric(vertical: kContentSpacing / 2),
+        contentPadding: EdgeInsets.symmetric(vertical: kWizardSpacing / 2),
       ),
       background: BoxDecoration(color: Theme.of(context).shadowColor),
     );
@@ -224,9 +223,9 @@ class _DonePage extends ConsumerWidget {
                     p: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
-                const SizedBox(height: kContentSpacing * 1.5),
+                const SizedBox(height: kWizardSpacing * 1.5),
                 Text(lang.restartWarning(flavor.name)),
-                const SizedBox(height: kContentSpacing * 1.5),
+                const SizedBox(height: kWizardSpacing * 1.5),
                 Row(
                   children: [
                     Expanded(
@@ -238,7 +237,7 @@ class _DonePage extends ConsumerWidget {
                         child: Text(lang.restartNow),
                       ),
                     ),
-                    const SizedBox(width: kContentSpacing),
+                    const SizedBox(width: kWizardSpacing),
                     Expanded(
                       child: OutlinedButton(
                         onPressed: YaruWindow.of(context).close,

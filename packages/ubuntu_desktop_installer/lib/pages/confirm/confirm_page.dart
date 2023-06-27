@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -48,16 +47,16 @@ class ConfirmPage extends ConsumerWidget {
                 lang.writeChangesDevicesTitle,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              const SizedBox(height: kContentSpacing / 2),
+              const SizedBox(height: kWizardSpacing / 2),
               Text(lang.writeChangesPartitionTablesHeader)
             ],
           ),
-          const SizedBox(height: kContentSpacing / 2),
+          const SizedBox(height: kWizardSpacing / 2),
           Flexible(
             child: YaruBorderContainer(
               color: Theme.of(context).colorScheme.surface,
               padding: EdgeInsets.symmetric(
-                  horizontal: kContentPadding.left, vertical: 10),
+                  horizontal: kWizardPadding.left, vertical: 10),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +72,7 @@ class ConfirmPage extends ConsumerWidget {
               ),
             ),
           ),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -81,7 +80,7 @@ class ConfirmPage extends ConsumerWidget {
                 lang.writeChangesPartitionsTitle,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              const SizedBox(height: kContentSpacing / 2),
+              const SizedBox(height: kWizardSpacing / 2),
               Text(lang.writeChangesPartitionsHeader),
             ],
           ),
@@ -90,7 +89,7 @@ class ConfirmPage extends ConsumerWidget {
             child: YaruBorderContainer(
               color: Theme.of(context).colorScheme.surface,
               padding: EdgeInsets.symmetric(
-                  horizontal: kContentPadding.left, vertical: 10),
+                  horizontal: kWizardPadding.left, vertical: 10),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

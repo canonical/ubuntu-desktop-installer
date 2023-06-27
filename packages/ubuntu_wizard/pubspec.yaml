@@ -9,12 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
   ubuntu_localizations: ^0.2.0
-  ubuntu_logger: ^0.0.3
-  ubuntu_service: ^0.2.2
-  wizard_router: 1.0.1
+  wizard_router: ^1.0.1
   yaru: ^0.7.0
   yaru_colors: ^0.1.6
   yaru_widgets: ^2.4.0
