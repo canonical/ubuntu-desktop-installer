@@ -20,6 +20,7 @@ import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/rst/rst_model.dart';
 import 'package:ubuntu_desktop_installer/pages/secure_boot/secure_boot_model.dart';
+import 'package:ubuntu_desktop_installer/pages/source/not_enough_disk_space/not_enough_disk_space_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/bitlocker/bitlocker_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/guided_reformat/guided_reformat_model.dart';
@@ -45,6 +46,7 @@ import 'locale/test_locale.dart';
 import 'network/test_network.dart';
 import 'rst/test_rst.dart';
 import 'secure_boot/test_secure_boot.dart';
+import 'source/not_enough_disk_space/test_not_enough_disk_space.dart';
 import 'source/test_source.dart';
 import 'storage/test_storage.dart';
 import 'timezone/test_timezone.dart';
@@ -103,6 +105,7 @@ void main() {
     final wifiModel = buildWifiModel();
     final hiddenWifiModel = buildHiddenWifiModel();
     final sourceModel = buildSourceModel();
+    final notEnoughDiskSpaceModel = buildNotEnoughDiskSpaceModel();
     final secureBootModel = buildSecureBootModel();
     final storageModel = buildStorageModel(type: StorageType.erase);
     final bitLockerModel = buildBitLockerModel();
@@ -130,6 +133,8 @@ void main() {
           wifiModelProvider.overrideWith((_) => wifiModel),
           hiddenWifiModelProvider.overrideWith((_) => hiddenWifiModel),
           sourceModelProvider.overrideWith((_) => sourceModel),
+          notEnoughDiskSpaceModelProvider
+              .overrideWith((_) => notEnoughDiskSpaceModel),
           secureBootModelProvider.overrideWith((_) => secureBootModel),
           storageModelProvider.overrideWith((_) => storageModel),
           bitLockerModelProvider.overrideWith((_) => bitLockerModel),
@@ -232,6 +237,7 @@ void main() {
   testWidgets('secure boot', (tester) async {
     final localeModel = buildLocaleModel();
     final sourceModel = buildSourceModel();
+    final notEnoughDiskSpaceModel = buildNotEnoughDiskSpaceModel();
     final secureBootModel = buildSecureBootModel(hasSecureBoot: true);
 
     registerMockService<TelemetryService>(MockTelemetryService());
@@ -241,6 +247,8 @@ void main() {
         overrides: [
           localeModelProvider.overrideWith((_) => localeModel),
           sourceModelProvider.overrideWith((_) => sourceModel),
+          notEnoughDiskSpaceModelProvider
+              .overrideWith((_) => notEnoughDiskSpaceModel),
           secureBootModelProvider.overrideWith((_) => secureBootModel),
         ],
         child: tester.buildTestWizard(),

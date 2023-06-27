@@ -55,11 +55,6 @@ class MockSourceModel extends _i1.Mock implements _i2.SourceModel {
         returnValue: false,
       ) as bool);
   @override
-  bool get hasEnoughDiskSpace => (super.noSuchMethod(
-        Invocation.getter(#hasEnoughDiskSpace),
-        returnValue: false,
-      ) as bool);
-  @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,

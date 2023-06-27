@@ -46,7 +46,6 @@ SourceModel buildSourceModel({
   when(model.installCodecs).thenReturn(installCodecs ?? false);
   when(model.onBattery).thenReturn(onBattery ?? false);
   when(model.isOnline).thenReturn(isOnline ?? true);
-  when(model.hasEnoughDiskSpace).thenReturn(hasEnoughDiskSpace ?? true);
   return model;
 }
 

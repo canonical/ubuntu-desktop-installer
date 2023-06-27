@@ -14,6 +14,10 @@ import 'not_enough_disk_space_model.dart';
 class NotEnoughDiskSpacePage extends ConsumerWidget {
   const NotEnoughDiskSpacePage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(notEnoughDiskSpaceModelProvider).init();
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(notEnoughDiskSpaceModelProvider);

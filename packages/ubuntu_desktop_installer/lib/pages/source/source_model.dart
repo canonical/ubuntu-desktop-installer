@@ -114,10 +114,6 @@ class SourceModel extends SafeChangeNotifier with PropertyStreamNotifier {
   /// Returns true if there is a network connection.
   bool get isOnline => _network.isConnected;
 
-  /// Returns whether the system has enough disk space to install.
-  bool get hasEnoughDiskSpace =>
-      _storage.installMinimumSize <= _storage.largestDiskSize;
-
   /// Initializes the model and connects to the power service.
   Future<void> init() {
     return Future.wait([
