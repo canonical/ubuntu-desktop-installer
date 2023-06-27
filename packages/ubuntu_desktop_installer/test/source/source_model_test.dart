@@ -239,25 +239,4 @@ void main() {
     expect(model.isOnline, isFalse);
     verify(network.isConnected).called(1);
   });
-
-  test('has enough disk space', () async {
-    final storage = MockStorageService();
-
-    final model = SourceModel(
-      client: MockSubiquityClient(),
-      power: MockPowerService(),
-      network: MockNetworkService(),
-      storage: storage,
-    );
-
-    when(storage.largestDiskSize).thenReturn(456);
-    when(storage.installMinimumSize).thenReturn(123);
-
-    expect(model.hasEnoughDiskSpace, isTrue);
-
-    when(storage.largestDiskSize).thenReturn(456);
-    when(storage.installMinimumSize).thenReturn(789);
-
-    expect(model.hasEnoughDiskSpace, isFalse);
-  });
 }

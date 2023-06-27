@@ -116,6 +116,12 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('6.not-enough-space', (tester) async {
+    final client = FakeSubiquityClient();
+    registerServiceInstance<SubiquityClient>(client);
+
+    final service = FakeStorageService(client);
+    registerServiceInstance<StorageService>(service);
+
     await runInstallerApp([], theme: currentTheme);
     await tester.pumpAndSettle();
 
@@ -435,6 +441,16 @@ class FakeDesktopService implements DesktopService {
 class FakeProductService implements ProductService {
   @override
   ProductInfo getProductInfo() => ProductInfo(name: 'Ubuntu', version: '23.04');
+}
+
+class FakeStorageService extends StorageService {
+  FakeStorageService(super.client);
+
+  @override
+  int get installMinimumSize => 24426577920;
+
+  @override
+  int get largestDiskSize => 16284385280;
 }
 
 class FakeSubiquityClient extends SubiquityClient {

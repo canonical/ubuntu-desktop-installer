@@ -99,11 +99,10 @@ class SourcePage extends ConsumerWidget {
             )
           : null,
       bottomBar: WizardBar(
-        leading: WizardButton.previous(context, root: true),
+        leading: WizardButton.previous(context),
         trailing: [
           WizardButton.next(
             context,
-            root: model.hasEnoughDiskSpace,
             enabled: model.sourceId != null,
             onNext: () async {
               final telemetry = tryGetService<TelemetryService>();
