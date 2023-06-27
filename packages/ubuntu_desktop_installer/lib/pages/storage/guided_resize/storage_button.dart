@@ -1,6 +1,6 @@
 import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import 'storage_icon.dart';
 
@@ -31,14 +31,14 @@ class StorageButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           StorageIcon(name: name),
-          const SizedBox(height: kContentSpacing / 2),
+          const SizedBox(height: kWizardSpacing / 2),
           Text(
             name,
             style: Theme.of(context).textTheme.titleLarge,
             overflow: TextOverflow.ellipsis,
             softWrap: false,
           ),
-          const SizedBox(height: kContentSpacing / 2),
+          const SizedBox(height: kWizardSpacing / 2),
           Text(
             sysname != null && format != null
                 ? '$sysname ($format)'
@@ -46,7 +46,7 @@ class StorageButton extends StatelessWidget {
             softWrap: false,
             overflow: TextOverflow.ellipsis,
           ),
-          const SizedBox(height: kContentSpacing / 2),
+          const SizedBox(height: kWizardSpacing / 2),
           Text(
             filesize(size),
             style: Theme.of(context).textTheme.headlineSmall,

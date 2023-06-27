@@ -19,14 +19,14 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import '../../l10n.dart';
 
 /// Implements the look of a single slide presented by WSL splash screen.
 class Slide extends StatelessWidget {
-  static const kInSlideLeftSpacing = 1 * kContentSpacing;
-  static const kInSlideSpacing = 6 * kContentSpacing;
+  static const kInSlideLeftSpacing = 1 * kWizardSpacing;
+  static const kInSlideSpacing = 6 * kWizardSpacing;
   const Slide({
     super.key,
     required this.image,

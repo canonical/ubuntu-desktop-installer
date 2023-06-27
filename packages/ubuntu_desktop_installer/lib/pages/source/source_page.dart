@@ -5,7 +5,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -33,7 +32,7 @@ class SourcePage extends ConsumerWidget {
       content: ListView(
         children: [
           Padding(
-            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            padding: const EdgeInsets.all(kYaruPagePadding),
             child: Text(lang.updatesOtherSoftwarePageDescription),
           ),
           ...model.sources
@@ -42,16 +41,16 @@ class SourcePage extends ConsumerWidget {
                     child: YaruRadioButton<String>(
                       title: Text(source.localizeTitle(context)),
                       subtitle: Text(source.localizeSubtitle(context)),
-                      contentPadding: kContentPadding,
+                      contentPadding: kWizardPadding,
                       value: source.id,
                       groupValue: model.sourceId,
                       onChanged: model.setSourceId,
                     ),
                   ))
-              .withSpacing(kContentSpacing)
+              .withSpacing(kWizardSpacing)
               .toList(),
           Padding(
-            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            padding: const EdgeInsets.all(kYaruPagePadding),
             child: Text(lang.otherOptions),
           ),
           Align(
@@ -59,12 +58,12 @@ class SourcePage extends ConsumerWidget {
             child: YaruCheckButton(
               title: Text(lang.installDriversTitle),
               subtitle: Text(lang.installDriversSubtitle),
-              contentPadding: kContentPadding,
+              contentPadding: kWizardPadding,
               value: model.installDrivers,
               onChanged: model.setInstallDrivers,
             ),
           ),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           Align(
             alignment: AlignmentDirectional.centerStart,
             child: Tooltip(
@@ -72,7 +71,7 @@ class SourcePage extends ConsumerWidget {
               child: YaruCheckButton(
                 title: Text(lang.installCodecsTitle),
                 subtitle: Text(lang.installCodecsSubtitle),
-                contentPadding: kContentPadding,
+                contentPadding: kWizardPadding,
                 value: model.installCodecs && model.isOnline,
                 onChanged: model.isOnline ? model.setInstallCodecs : null,
               ),

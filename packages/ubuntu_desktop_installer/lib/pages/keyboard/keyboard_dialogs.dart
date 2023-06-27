@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'keyboard_detector.dart';
@@ -58,7 +58,7 @@ Future<StepResult?> showDetectKeyboardDialog(BuildContext context) async {
                   child: Text(UbuntuLocalizations.of(context).noLabel),
                 ),
               ),
-              const SizedBox(width: kButtonBarSpacing),
+              const SizedBox(width: kWizardBarSpacing),
               Visibility(
                 maintainSize: true,
                 maintainState: true,

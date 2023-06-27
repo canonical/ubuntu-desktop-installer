@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -34,10 +33,10 @@ class NotEnoughDiskSpacePage extends ConsumerWidget {
                 size: min(128.00, MediaQuery.of(context).size.height * 0.2),
                 color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
               ),
-              const SizedBox(height: kContentSpacing),
+              const SizedBox(height: kWizardSpacing),
               Text(lang.notEnoughDiskSpaceUbuntu(flavor.name),
                   style: Theme.of(context).textTheme.headlineSmall),
-              const SizedBox(height: kContentSpacing),
+              const SizedBox(height: kWizardSpacing),
               IntrinsicWidth(
                 child: Column(
                   children: [
@@ -78,7 +77,7 @@ class NotEnoughDiskSpacePage extends ConsumerWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: kContentSpacing),
+              const SizedBox(height: kWizardSpacing),
               FilledButton(
                   onPressed: () async {
                     YaruWindow.of(context).close();

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -32,13 +31,13 @@ class _ActiveDirectoryPageState extends ConsumerState<ActiveDirectoryPage> {
       ),
       contentPadding: EdgeInsets.zero,
       content: LayoutBuilder(builder: (context, constraints) {
-        final fieldWidth = (constraints.maxWidth - kContentPadding.horizontal) *
-            kContentWidthFraction;
+        final fieldWidth = (constraints.maxWidth - kWizardPadding.horizontal) *
+            kWizardWidthFraction;
         return ListView(
-          padding: kContentPadding,
+          padding: kWizardPadding,
           children: [
             DomainNameFormField(fieldWidth: fieldWidth),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             Align(
               alignment: AlignmentDirectional.centerStart,
               child: OutlinedButton(
@@ -47,9 +46,9 @@ class _ActiveDirectoryPageState extends ConsumerState<ActiveDirectoryPage> {
                 child: Text(lang.activeDirectoryTestConnection),
               ),
             ),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             AdminNameFormField(fieldWidth: fieldWidth),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             PasswordFormField(fieldWidth: fieldWidth),
           ],
         );

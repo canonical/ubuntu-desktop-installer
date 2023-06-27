@@ -6,7 +6,6 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -50,7 +49,7 @@ class GuidedReformatPage extends ConsumerWidget {
           Row(
             children: <Widget>[
               Text(lang.selectGuidedStorageDropdownLabel),
-              const SizedBox(width: kContentSpacing),
+              const SizedBox(width: kWizardSpacing),
               Expanded(
                 child: MenuButtonBuilder<int>(
                   values: List.generate(model.storages.length, (i) => i),
@@ -66,10 +65,10 @@ class GuidedReformatPage extends ConsumerWidget {
               )
             ],
           ),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           if (model.selectedStorage != null)
             Text(lang.selectGuidedStorageInfoLabel),
-          const SizedBox(height: kContentSpacing * 2),
+          const SizedBox(height: kWizardSpacing * 2),
           if (model.selectedDisk != null)
             Center(
               child: Column(
@@ -80,14 +79,14 @@ class GuidedReformatPage extends ConsumerWidget {
                     width: 48,
                     height: 48,
                   ),
-                  const SizedBox(height: kContentSpacing / 2),
+                  const SizedBox(height: kWizardSpacing / 2),
                   Text(
                     flavor.name,
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
-                  const SizedBox(height: kContentSpacing / 2),
+                  const SizedBox(height: kWizardSpacing / 2),
                   Text(model.selectedDisk?.sysname ?? ''),
-                  const SizedBox(height: kContentSpacing / 2),
+                  const SizedBox(height: kWizardSpacing / 2),
                   Text(
                     filesize(model.selectedDisk?.size ?? 0),
                     style: Theme.of(context).textTheme.headlineSmall,

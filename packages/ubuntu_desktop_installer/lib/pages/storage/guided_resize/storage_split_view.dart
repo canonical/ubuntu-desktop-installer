@@ -4,7 +4,7 @@ import 'package:split_view/split_view.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import 'storage_button.dart';
 import 'storage_size_dialog.dart';
@@ -91,7 +91,7 @@ class _StorageSplitViewState extends State<StorageSplitView> {
     return SplitView(
       key: ObjectKey(_controller),
       indicator: const SizedBox.shrink(key: Key('indicator')),
-      gripSize: kContentSpacing / 2,
+      gripSize: kWizardSpacing / 2,
       gripColor: Colors.transparent,
       gripColorActive: Colors.transparent,
       viewMode: SplitViewMode.Horizontal,

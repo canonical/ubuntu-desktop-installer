@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -102,9 +102,9 @@ class _WifiViewState extends ConsumerState<WifiView> {
       expanded: widget.expanded,
       child: FractionallySizedBox(
         alignment: Alignment.centerLeft,
-        widthFactor: kContentWidthFraction,
+        widthFactor: kWizardWidthFraction,
         child: Padding(
-          padding: kContentIndentation,
+          padding: kWizardIndentation,
           child: WifiListView(onSelected: widget.onSelected),
         ),
       ),

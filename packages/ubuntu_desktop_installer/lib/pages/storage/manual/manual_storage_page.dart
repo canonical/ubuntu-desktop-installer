@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -73,13 +72,13 @@ class _ManualStoragePageState extends ConsumerState<ManualStoragePage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           const PartitionBar(),
-          const SizedBox(height: kContentSpacing / 4),
+          const SizedBox(height: kWizardSpacing / 4),
           const PartitionLegend(),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           Expanded(child: PartitionTable(controller: _scrollController)),
-          const SizedBox(height: kContentSpacing / 2),
+          const SizedBox(height: kWizardSpacing / 2),
           const PartitionButtonRow(),
-          const SizedBox(height: kContentSpacing / 2),
+          const SizedBox(height: kWizardSpacing / 2),
           FractionallySizedBox(
             widthFactor: 0.5,
             alignment: Alignment.topLeft,

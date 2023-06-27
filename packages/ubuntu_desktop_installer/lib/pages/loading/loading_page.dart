@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -40,7 +39,7 @@ class _LoadingPageState extends ConsumerState<LoadingPage> {
             dimension: 72,
             child: RepaintBoundary(child: YaruCircularProgressIndicator()),
           ),
-          const SizedBox(height: kContentSpacing * 2),
+          const SizedBox(height: kWizardSpacing * 2),
           Text(lang.preparingUbuntu(flavor.name), style: style),
         ],
       ),

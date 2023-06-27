@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import '../../l10n.dart';
@@ -54,23 +53,23 @@ class _AdvancedSetupPageState extends State<AdvancedSetupPage> {
       ),
       header: Text(lang.advancedSetupHeader),
       content: LayoutBuilder(builder: (context, constraints) {
-        final fieldWidth = constraints.maxWidth * kContentWidthFraction;
+        final fieldWidth = constraints.maxWidth * kWizardWidthFraction;
         final fieldPadding =
-            EdgeInsets.symmetric(horizontal: kContentPadding.left);
+            EdgeInsets.symmetric(horizontal: kWizardPadding.left);
         return ListView(
           children: <Widget>[
             Padding(
               padding: fieldPadding,
               child: MountLocationFormField(fieldWidth: fieldWidth),
             ),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             Padding(
               padding: fieldPadding,
               child: MountOptionFormField(fieldWidth: fieldWidth),
             ),
-            const SizedBox(height: kContentSpacing * 2),
+            const SizedBox(height: kWizardSpacing * 2),
             const HostGenerationCheckButton(),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             const ResolvConfGenerationCheckButton(),
           ],
         );

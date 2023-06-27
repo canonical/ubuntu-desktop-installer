@@ -6,7 +6,6 @@ import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
-import 'package:ubuntu_wizard/constants.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -52,10 +51,10 @@ class BitLockerPage extends ConsumerWidget {
                 children: [
                   Text(lang.turnOffBitlockerTitle,
                       style: Theme.of(context).textTheme.headlineSmall),
-                  const SizedBox(height: kContentSpacing),
+                  const SizedBox(height: kWizardSpacing),
                   Text(lang.turnOffBitlockerDescription(
                       lang.installationTypeErase(flavor.name))),
-                  const SizedBox(height: kContentSpacing),
+                  const SizedBox(height: kWizardSpacing),
                   Html(
                     data: lang.turnOffBitlockerLinkInstructions(
                         'help.ubuntu.com/bitlocker'),
@@ -65,7 +64,7 @@ class BitLockerPage extends ConsumerWidget {
                     },
                     onLinkTap: (url, _, __) => launchUrl(url!),
                   ),
-                  const SizedBox(height: kContentSpacing),
+                  const SizedBox(height: kWizardSpacing),
                   FilledButton(
                     onPressed: () async {
                       final window = YaruWindow.of(context);

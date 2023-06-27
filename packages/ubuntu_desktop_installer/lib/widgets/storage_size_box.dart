@@ -3,7 +3,7 @@ import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 /// Storage size entry with a spinbox and a data size unit dropdown.
 class StorageSizeBox extends StatelessWidget {
@@ -16,7 +16,7 @@ class StorageSizeBox extends StatelessWidget {
     required this.onSizeChanged,
     required this.onUnitSelected,
     this.autofocus = false,
-    this.spacing = kButtonBarSpacing,
+    this.spacing = kWizardBarSpacing,
   });
 
   /// The current value in bytes.

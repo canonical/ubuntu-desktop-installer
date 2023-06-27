@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -72,7 +72,7 @@ class HostGenerationCheckButton extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: IntrinsicWidth(
         child: YaruCheckButton(
-          contentPadding: kContentPadding,
+          contentPadding: kWizardPadding,
           title: Text(lang.advancedSetupHostGenerationTitle),
           subtitle: Text(lang.advancedSetupHostGenerationSubtitle),
           value: enableHostGeneration,
@@ -100,7 +100,7 @@ class ResolvConfGenerationCheckButton extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: IntrinsicWidth(
         child: YaruCheckButton(
-          contentPadding: kContentPadding,
+          contentPadding: kWizardPadding,
           title: Text(lang.advancedSetupResolvConfGenerationTitle),
           subtitle: Text(lang.advancedSetupResolvConfGenerationSubtitle),
           value: enableResolvConfGeneration,

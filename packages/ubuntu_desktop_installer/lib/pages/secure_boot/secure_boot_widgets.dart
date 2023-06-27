@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import 'secure_boot_model.dart';
 
@@ -20,7 +20,7 @@ class SecurityKeyFormField extends ConsumerWidget {
     final model = ref.watch(secureBootModelProvider);
     final lang = AppLocalizations.of(context);
     return Padding(
-      padding: kContentIndentation,
+      padding: kWizardIndentation,
       child: ValidatedFormField(
         obscureText: true,
         fieldWidth: fieldWidth,
@@ -50,7 +50,7 @@ class SecurityKeyConfirmFormField extends ConsumerWidget {
     final model = ref.watch(secureBootModelProvider);
     final lang = AppLocalizations.of(context);
     return Padding(
-      padding: kContentIndentation,
+      padding: kWizardIndentation,
       child: ValidatedFormField(
         obscureText: true,
         fieldWidth: fieldWidth,

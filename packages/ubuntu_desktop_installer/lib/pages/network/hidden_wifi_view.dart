@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'connect_model.dart';
@@ -86,9 +86,9 @@ class _HiddenWifiViewState extends ConsumerState<HiddenWifiView> {
         padding: const EdgeInsets.only(top: 8),
         child: FractionallySizedBox(
           alignment: Alignment.centerLeft,
-          widthFactor: kContentWidthFraction,
+          widthFactor: kWizardWidthFraction,
           child: Padding(
-            padding: kContentIndentation,
+            padding: kWizardIndentation,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
@@ -102,7 +102,7 @@ class _HiddenWifiViewState extends ConsumerState<HiddenWifiView> {
                     },
                   ),
                 if (model.devices.length > 1)
-                  const SizedBox(height: kContentSpacing),
+                  const SizedBox(height: kWizardSpacing),
                 ValidatedFormField(
                   focusNode: _focusNode,
                   initialValue: model.ssid,

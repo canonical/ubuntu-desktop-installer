@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'storage_model.dart';
@@ -40,7 +40,7 @@ Future<void> showAdvancedFeaturesDialog(
                   groupValue: advancedFeature.value,
                   onChanged: (v) => advancedFeature.value = v!,
                 ),
-                const SizedBox(height: kContentSpacing),
+                const SizedBox(height: kWizardSpacing),
                 YaruRadioButton<AdvancedFeature>(
                   title: Consumer(builder: (context, ref, child) {
                     final flavor = ref.watch(flavorProvider);
@@ -51,7 +51,7 @@ Future<void> showAdvancedFeaturesDialog(
                   onChanged: (v) => advancedFeature.value = v!,
                 ),
                 Padding(
-                  padding: kContentIndentation,
+                  padding: kWizardIndentation,
                   child: YaruCheckButton(
                     title: Consumer(builder: (context, ref, child) {
                       final flavor = ref.watch(flavorProvider);
@@ -64,7 +64,7 @@ Future<void> showAdvancedFeaturesDialog(
                         : null,
                   ),
                 ),
-                const SizedBox(height: kContentSpacing),
+                const SizedBox(height: kWizardSpacing),
                 // https://github.com/canonical/ubuntu-desktop-installer/issues/373
                 // YaruRadioButton<AdvancedFeature>(
                 //   title: Text(lang.installationTypeZFS),
@@ -81,7 +81,7 @@ Future<void> showAdvancedFeaturesDialog(
             onPressed: () => Navigator.of(context).pop(false),
             child: Text(UbuntuLocalizations.of(context).cancelLabel),
           ),
-          const SizedBox(width: kButtonBarSpacing),
+          const SizedBox(width: kWizardBarSpacing),
           PushButton.filled(
             onPressed: () => Navigator.of(context).pop(true),
             child: Text(UbuntuLocalizations.of(context).okLabel),
