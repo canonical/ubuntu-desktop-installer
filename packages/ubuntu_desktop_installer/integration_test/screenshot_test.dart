@@ -44,6 +44,7 @@ void main() {
       tester,
       screenshot: '$currentThemeName/1.locale',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('2.welcome', (tester) async {
@@ -58,6 +59,7 @@ void main() {
       option: Option.installUbuntu,
       screenshot: '$currentThemeName/2.welcome',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('3.rst', (tester) async {
@@ -86,6 +88,7 @@ void main() {
       tester,
       screenshot: '$currentThemeName/3.keyboard',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('4.network', (tester) async {
@@ -100,6 +103,7 @@ void main() {
       mode: ConnectMode.none,
       screenshot: '$currentThemeName/4.network',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('5.updates', (tester) async {
@@ -113,6 +117,7 @@ void main() {
       tester,
       screenshot: '$currentThemeName/5.updates',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('6.not-enough-space', (tester) async {
@@ -141,6 +146,7 @@ void main() {
       type: StorageType.erase,
       screenshot: '$currentThemeName/6.erase-disk',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('6.advanced-features', (tester) async {
@@ -156,6 +162,7 @@ void main() {
       advancedFeature: AdvancedFeature.lvm,
       screenshot: '$currentThemeName/6.advanced-features',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('6.alongside-windows', (tester) async {
@@ -172,6 +179,7 @@ void main() {
       type: StorageType.alongside,
       screenshot: '$currentThemeName/6.alongside-windows',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('7.manual-partitioning', (tester) async {
@@ -203,6 +211,7 @@ void main() {
       ],
       screenshot: '$currentThemeName/7.manual-partitioning',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('7.guided-resize', (tester) async {
@@ -224,6 +233,7 @@ void main() {
       sizes: {'ext4': 32768},
       screenshot: '$currentThemeName/7.guided-resize',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('7.guided-reformat', (tester) async {
@@ -242,6 +252,7 @@ void main() {
       tester,
       screenshot: '$currentThemeName/7.guided-reformat',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('7.bitlocker', (tester) async {
@@ -284,6 +295,7 @@ void main() {
       securityKey: 'password',
       screenshot: '$currentThemeName/8.security-key',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('9.confirm', (tester) async {
@@ -306,6 +318,7 @@ void main() {
       tester,
       screenshot: '$currentThemeName/9.confirm',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('10.timezone', (tester) async {
@@ -319,6 +332,7 @@ void main() {
       tester,
       screenshot: '$currentThemeName/10.timezone',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('11.identity', (tester) async {
@@ -338,6 +352,7 @@ void main() {
       password: 'password',
       screenshot: '$currentThemeName/11.identity',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('12.active-directory', (tester) async {
@@ -359,6 +374,7 @@ void main() {
       password: 'password',
       screenshot: '$currentThemeName/12.active-directory',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('13.theme', (tester) async {
@@ -372,6 +388,7 @@ void main() {
       tester,
       screenshot: '$currentThemeName/13.theme',
     );
+    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('14.install', (tester) async {
