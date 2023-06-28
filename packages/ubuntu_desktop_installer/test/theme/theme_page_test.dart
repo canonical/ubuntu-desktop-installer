@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/theme_page.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_desktop_installer/pages/theme/theme_model.dart';
+import 'package:ubuntu_desktop_installer/pages/theme/theme_page.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../test_utils.dart';
+import 'test_theme.dart';
 
 void main() {
-  testWidgets('ThemePage applies theme', (tester) async {
-    final theme = MockThemeService();
-    registerMockService<ThemeService>(theme);
+  Widget buildPage(ThemeModel model) {
+    return ProviderScope(
+      overrides: [
+        themeModelProvider.overrideWith((_) => model),
+      ],
+      child: const ThemePage(),
+    );
+  }
 
-    await tester.pumpWidget(tester.buildApp((_) => const ThemePage()));
+  testWidgets('brightness', (tester) async {
+    final model = buildThemeModel();
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final lightOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
@@ -20,7 +28,7 @@ void main() {
     );
     expect(lightOptionCard, findsOneWidget);
     await tester.tap(lightOptionCard);
-    verify(theme.setBrightness(Brightness.light));
+    verify(model.setBrightness(Brightness.light)).called(1);
 
     final darkOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
@@ -28,6 +36,6 @@ void main() {
     );
     expect(darkOptionCard, findsOneWidget);
     await tester.tap(darkOptionCard);
-    verify(theme.setBrightness(Brightness.dark));
+    verify(model.setBrightness(Brightness.dark)).called(1);
   });
 }

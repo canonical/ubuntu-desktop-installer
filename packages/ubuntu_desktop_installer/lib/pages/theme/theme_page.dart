@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-class ThemePage extends StatelessWidget {
+import 'theme_model.dart';
+
+class ThemePage extends ConsumerWidget {
   const ThemePage({super.key});
 
+  static Future<bool> load(WidgetRef ref) {
+    return ref.read(themeModelProvider).init();
+  }
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final lang = AppLocalizations.of(context);
     final width = MediaQuery.of(context).size.width;
-    final theme = getService<ThemeService>();
+    final model = ref.watch(themeModelProvider);
     return WizardPage(
       header: Text(lang.chooseYourLookPageHeader),
       bottomBar: WizardBar(
@@ -25,27 +31,28 @@ class ThemePage extends StatelessWidget {
       ),
       content: Center(
         child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _ThemeOptionCard(
-                width: width / 3,
-                assetName: 'assets/theme/light-theme.png',
-                selected: Theme.of(context).brightness == Brightness.light,
-                onTap: () => theme.setBrightness(Brightness.light),
-                preferenceName: lang.chooseYourLookPageLightSetting,
-              ),
-              SizedBox(
-                width: width / 20,
-              ),
-              _ThemeOptionCard(
-                width: width / 3,
-                assetName: 'assets/theme/dark-theme.png',
-                selected: Theme.of(context).brightness == Brightness.dark,
-                onTap: () => theme.setBrightness(Brightness.dark),
-                preferenceName: lang.chooseYourLookPageDarkSetting,
-              ),
-            ]),
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _ThemeOptionCard(
+              width: width / 3,
+              assetName: 'assets/theme/light-theme.png',
+              selected: Theme.of(context).brightness == Brightness.light,
+              onTap: () => model.setBrightness(Brightness.light),
+              preferenceName: lang.chooseYourLookPageLightSetting,
+            ),
+            SizedBox(
+              width: width / 20,
+            ),
+            _ThemeOptionCard(
+              width: width / 3,
+              assetName: 'assets/theme/dark-theme.png',
+              selected: Theme.of(context).brightness == Brightness.dark,
+              onTap: () => model.setBrightness(Brightness.dark),
+              preferenceName: lang.chooseYourLookPageDarkSetting,
+            ),
+          ],
+        ),
       ),
     );
   }

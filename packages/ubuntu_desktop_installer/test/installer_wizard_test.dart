@@ -26,6 +26,7 @@ import 'package:ubuntu_desktop_installer/pages/storage/bitlocker/bitlocker_model
 import 'package:ubuntu_desktop_installer/pages/storage/guided_reformat/guided_reformat_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/storage_model.dart';
+import 'package:ubuntu_desktop_installer/pages/theme/theme_model.dart';
 import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
@@ -49,6 +50,7 @@ import 'secure_boot/test_secure_boot.dart';
 import 'source/not_enough_disk_space/test_not_enough_disk_space.dart';
 import 'source/test_source.dart';
 import 'storage/test_storage.dart';
+import 'theme/test_theme.dart';
 import 'timezone/test_timezone.dart';
 import 'welcome/test_welcome.dart';
 
@@ -115,10 +117,10 @@ void main() {
     final timezoneModel = buildTimezoneModel();
     final identityModel = buildIdentityModel(isValid: true);
     final activeDirectoryModel = buildActiveDirectoryModel();
+    final themeModel = buildThemeModel();
     final installModel = buildInstallModel(isDone: true);
 
     registerMockService<DesktopService>(MockDesktopService());
-    registerMockService<ThemeService>(MockThemeService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(
@@ -146,6 +148,7 @@ void main() {
           identityModelProvider.overrideWith((_) => identityModel),
           activeDirectoryModelProvider
               .overrideWith((_) => activeDirectoryModel),
+          themeModelProvider.overrideWith((_) => themeModel),
           installModelProvider.overrideWith((_) => installModel),
         ],
         child: tester.buildTestWizard(welcome: true),
@@ -203,8 +206,7 @@ void main() {
     await tester.tapNext();
     await tester.pumpAndSettle();
     expect(find.byType(ThemePage), findsOneWidget);
-    // ThemePage has no view model
-    // verify(themeModel.init()).called(1);
+    verify(themeModel.init()).called(1);
 
     await tester.tapNext();
     await tester.pumpAndSettle();
