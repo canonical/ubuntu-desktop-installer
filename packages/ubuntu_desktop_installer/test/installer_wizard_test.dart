@@ -118,6 +118,7 @@ void main() {
     final installModel = buildInstallModel(isDone: true);
 
     registerMockService<DesktopService>(MockDesktopService());
+    registerMockService<ThemeService>(MockThemeService());
     registerMockService<TelemetryService>(MockTelemetryService());
 
     await tester.pumpWidget(

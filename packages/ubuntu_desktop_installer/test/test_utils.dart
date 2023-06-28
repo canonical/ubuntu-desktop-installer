@@ -91,6 +91,7 @@ extension InstallerTester on WidgetTester {
   SoundService,
   StorageService,
   TelemetryService,
+  ThemeService,
   TimezoneService,
   UdevDeviceInfo,
   UdevService,

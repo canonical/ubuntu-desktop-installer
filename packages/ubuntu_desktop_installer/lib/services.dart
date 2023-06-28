@@ -15,5 +15,6 @@ export 'services/session_service.dart';
 export 'services/sound_service.dart';
 export 'services/storage_service.dart' hide log;
 export 'services/telemetry_service.dart' hide log;
+export 'services/theme_service.dart';
 export 'services/timezone_service.dart';
 export 'services/udev_service.dart';

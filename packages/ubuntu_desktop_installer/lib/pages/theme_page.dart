@@ -11,7 +11,7 @@ class ThemePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
     final width = MediaQuery.of(context).size.width;
-    final desktop = getService<DesktopService>();
+    final theme = getService<ThemeService>();
     return WizardPage(
       header: Text(lang.chooseYourLookPageHeader),
       bottomBar: WizardBar(
@@ -32,7 +32,7 @@ class ThemePage extends StatelessWidget {
                 width: width / 3,
                 assetName: 'assets/theme/light-theme.png',
                 selected: Theme.of(context).brightness == Brightness.light,
-                onTap: () => desktop.setTheme(Brightness.light),
+                onTap: () => theme.setBrightness(Brightness.light),
                 preferenceName: lang.chooseYourLookPageLightSetting,
               ),
               SizedBox(
@@ -42,7 +42,7 @@ class ThemePage extends StatelessWidget {
                 width: width / 3,
                 assetName: 'assets/theme/dark-theme.png',
                 selected: Theme.of(context).brightness == Brightness.dark,
-                onTap: () => desktop.setTheme(Brightness.dark),
+                onTap: () => theme.setBrightness(Brightness.dark),
                 preferenceName: lang.chooseYourLookPageDarkSetting,
               ),
             ]),

@@ -9,8 +9,8 @@ import '../test_utils.dart';
 
 void main() {
   testWidgets('ThemePage applies theme', (tester) async {
-    final DesktopService desktop = MockDesktopService();
-    registerMockService(desktop);
+    final theme = MockThemeService();
+    registerMockService<ThemeService>(theme);
 
     await tester.pumpWidget(tester.buildApp((_) => const ThemePage()));
 
@@ -20,7 +20,7 @@ void main() {
     );
     expect(lightOptionCard, findsOneWidget);
     await tester.tap(lightOptionCard);
-    verify(desktop.setTheme(Brightness.light));
+    verify(theme.setBrightness(Brightness.light));
 
     final darkOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
@@ -28,6 +28,6 @@ void main() {
     );
     expect(darkOptionCard, findsOneWidget);
     await tester.tap(darkOptionCard);
-    verify(desktop.setTheme(Brightness.dark));
+    verify(theme.setBrightness(Brightness.dark));
   });
 }

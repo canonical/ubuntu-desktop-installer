@@ -449,9 +449,6 @@ class FakeDesktopService implements DesktopService {
   Future<void> inhibit() async {}
 
   @override
-  Future<void> setTheme(Brightness brightness) async {}
-
-  @override
   Future<void> close() async {}
 }
 
