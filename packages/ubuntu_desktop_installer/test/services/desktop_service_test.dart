@@ -1,5 +1,4 @@
 import 'package:dbus/dbus.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:mockito/annotations.dart';
@@ -12,7 +11,6 @@ import 'desktop_service_test.mocks.dart';
 @GenerateMocks([GnomeSessionManager, GSettings])
 void main() {
   late MockGSettings dingSettings;
-  late MockGSettings interfaceSettings;
   late MockGSettings mediaHandlingSettings;
   late MockGSettings sessionSettings;
   late MockGSettings screensaverSettings;
@@ -20,12 +18,10 @@ void main() {
   late DesktopService service;
   setUp(() {
     dingSettings = MockGSettings();
-    interfaceSettings = MockGSettings();
     mediaHandlingSettings = MockGSettings();
     sessionSettings = MockGSettings();
     screensaverSettings = MockGSettings();
     when(dingSettings.set(any, any)).thenAnswer((_) async {});
-    when(interfaceSettings.set(any, any)).thenAnswer((_) async {});
     when(mediaHandlingSettings.set(any, any)).thenAnswer((_) async {});
     when(sessionSettings.set(any, any)).thenAnswer((_) async {});
     when(screensaverSettings.set(any, any)).thenAnswer((_) async {});
@@ -40,32 +36,11 @@ void main() {
 
     service = GnomeService(
       dingSettings: dingSettings,
-      interfaceSettings: interfaceSettings,
       mediaHandlingSettings: mediaHandlingSettings,
       sessionSettings: sessionSettings,
       screensaverSettings: screensaverSettings,
       gnomeSessionManager: gnomeSessionManager,
     );
-  });
-
-  test('set color-scheme via gsettings', () async {
-    when(interfaceSettings.get('gtk-theme'))
-        .thenAnswer((_) async => const DBusString('Yaru-dark'));
-
-    await service.setTheme(Brightness.light);
-    verifyInOrder([
-      interfaceSettings.set('gtk-theme', const DBusString('Yaru')),
-      interfaceSettings.set('color-scheme', const DBusString('prefer-light')),
-    ]);
-
-    when(interfaceSettings.get('gtk-theme'))
-        .thenAnswer((_) async => const DBusString('Yaru'));
-
-    await service.setTheme(Brightness.dark);
-    verifyInOrder([
-      interfaceSettings.set('gtk-theme', const DBusString('Yaru-dark')),
-      interfaceSettings.set('color-scheme', const DBusString('prefer-dark')),
-    ]);
   });
 
   test('inhibit', () async {

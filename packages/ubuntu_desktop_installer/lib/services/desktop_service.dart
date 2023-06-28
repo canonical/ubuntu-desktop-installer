@@ -1,6 +1,6 @@
 import 'package:dbus/dbus.dart';
-import 'package:flutter/material.dart';
 import 'package:gsettings/gsettings.dart';
+import 'package:meta/meta.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_session/ubuntu_session.dart';
 
@@ -13,9 +13,6 @@ abstract class DesktopService {
   /// screen blanking, suspending, logging out, etc.
   Future<void> inhibit() async {}
 
-  /// Applies a desktop theme matching the given [brightness].
-  Future<void> setTheme(Brightness brightness);
-
   /// Closes the service and releases any resources.
   Future<void> close() async {}
 }
@@ -26,15 +23,12 @@ class GnomeService implements DesktopService {
   /// for storing the settings.
   GnomeService({
     @visibleForTesting GSettings? dingSettings,
-    @visibleForTesting GSettings? interfaceSettings,
     @visibleForTesting GSettings? mediaHandlingSettings,
     @visibleForTesting GSettings? sessionSettings,
     @visibleForTesting GSettings? screensaverSettings,
     @visibleForTesting GnomeSessionManager? gnomeSessionManager,
   })  : _dingSettings =
             dingSettings ?? GSettings('org.gnome.shell.extensions.ding'),
-        _interfaceSettings =
-            interfaceSettings ?? GSettings('org.gnome.desktop.interface'),
         _mediaHandlingSettings = mediaHandlingSettings ??
             GSettings('org.gnome.desktop.media-handling'),
         _screensaverSettings =
@@ -44,7 +38,6 @@ class GnomeService implements DesktopService {
         _gnomeSessionManager = gnomeSessionManager ?? GnomeSessionManager();
 
   final GSettings _dingSettings;
-  final GSettings _interfaceSettings;
   final GSettings _mediaHandlingSettings;
   final GSettings _screensaverSettings;
   final GSettings _sessionSettings;
@@ -119,44 +112,11 @@ class GnomeService implements DesktopService {
   }
 
   @override
-  Future<void> setTheme(Brightness brightness) async {
-    final theme =
-        await _interfaceSettings.get('gtk-theme').then((v) => v.asString());
-    switch (brightness) {
-      case Brightness.dark:
-        await _interfaceSettings.set(
-            'gtk-theme', DBusString(theme.addSuffix('-dark')));
-        await _interfaceSettings.set(
-            'color-scheme', const DBusString('prefer-dark'));
-        break;
-      case Brightness.light:
-        await _interfaceSettings.set(
-            'gtk-theme', DBusString(theme.removeSuffix('-dark')));
-        await _interfaceSettings.set(
-            'color-scheme', const DBusString('prefer-light'));
-        break;
-    }
-  }
-
-  @override
   Future<void> close() async {
     logger.debug('Restoring desktop settings');
     await Future.wait(restoreSettings.map((r) => r.call()));
-    await _interfaceSettings.close();
     await _sessionSettings.close();
     await _screensaverSettings.close();
     await _gnomeSessionManager.close();
-  }
-}
-
-extension on String {
-  String addSuffix(String suffix) {
-    if (endsWith(suffix)) return this;
-    return '$this$suffix';
-  }
-
-  String removeSuffix(String suffix) {
-    if (!endsWith(suffix)) return this;
-    return substring(0, length - suffix.length);
   }
 }

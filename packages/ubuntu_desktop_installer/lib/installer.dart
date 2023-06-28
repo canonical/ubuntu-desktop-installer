@@ -93,6 +93,7 @@ Future<void> runInstallerApp(
   tryRegisterService(
       () => SubiquityServer(process: process, endpoint: endpoint));
   tryRegisterService(TelemetryService.new);
+  tryRegisterService<ThemeService>(GtkThemeService.new);
   tryRegisterService<TimezoneService>(
       () => SubiquityTimezoneService(getService<SubiquityClient>()));
   tryRegisterService(UdevService.new);
