@@ -1,4 +1,5 @@
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 export 'package:subiquity_client/subiquity_client.dart'
     show
@@ -7,6 +8,8 @@ export 'package:subiquity_client/subiquity_client.dart'
         AdPasswordValidation,
         AdDomainNameValidation,
         AdJoinResult;
+
+final log = Logger('ad');
 
 abstract class ActiveDirectoryService {
   Future<bool> hasSupport();
@@ -79,8 +82,13 @@ class SubiquityActiveDirectoryService implements ActiveDirectoryService {
   }
 
   @override
-  Future<AdJoinResult> getJoinResult({bool wait = true}) {
-    return _subiquity.getActiveDirectoryJoinResult(wait: wait);
+  Future<AdJoinResult> getJoinResult({bool wait = true}) async {
+    try {
+      return await _subiquity.getActiveDirectoryJoinResult(wait: wait);
+    } catch (e) {
+      log.error(e);
+      return AdJoinResult.UNKNOWN;
+    }
   }
 }
 
