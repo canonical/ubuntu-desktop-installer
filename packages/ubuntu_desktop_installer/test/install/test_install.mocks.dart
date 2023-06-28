@@ -134,6 +134,14 @@ class MockInstallModel extends _i1.Mock implements _i3.InstallModel {
         returnValueForMissingStub: _i4.Future<void>.value(),
       ) as _i4.Future<void>);
   @override
+  void dispose() => super.noSuchMethod(
+        Invocation.method(
+          #dispose,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
   _i4.Future<void> precacheSlideImages(_i5.BuildContext? context) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -165,14 +173,6 @@ class MockInstallModel extends _i1.Mock implements _i3.InstallModel {
         Invocation.method(
           #removeListener,
           [listener],
-        ),
-        returnValueForMissingStub: null,
-      );
-  @override
-  void dispose() => super.noSuchMethod(
-        Invocation.method(
-          #dispose,
-          [],
         ),
         returnValueForMissingStub: null,
       );
