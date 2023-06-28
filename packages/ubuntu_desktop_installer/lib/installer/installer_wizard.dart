@@ -135,6 +135,7 @@ class _InstallWizard extends ConsumerWidget {
       Routes.theme: WizardRoute(
         builder: (_) => const ThemePage(),
         userData: WizardRouteData(step: InstallationStep.theme.index),
+        onLoad: (_) => ThemePage.load(ref),
       ),
     };
 
