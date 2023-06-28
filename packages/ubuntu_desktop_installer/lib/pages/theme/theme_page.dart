@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'theme_model.dart';
@@ -18,6 +19,7 @@ class ThemePage extends ConsumerWidget {
     final lang = AppLocalizations.of(context);
     final width = MediaQuery.of(context).size.width;
     final model = ref.watch(themeModelProvider);
+    final yaru = YaruTheme.maybeOf(context);
     return WizardPage(
       header: Text(lang.chooseYourLookPageHeader),
       bottomBar: WizardBar(
@@ -29,30 +31,51 @@ class ThemePage extends ConsumerWidget {
       title: YaruWindowTitleBar(
         title: Text(lang.chooseYourLookPageTitle),
       ),
-      content: Center(
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _ThemeOptionCard(
-              width: width / 3,
-              assetName: 'assets/theme/light-theme.png',
-              selected: Theme.of(context).brightness == Brightness.light,
-              onTap: () => model.setBrightness(Brightness.light),
-              preferenceName: lang.chooseYourLookPageLightSetting,
+      content: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _ThemeOptionCard(
+                width: width / 3,
+                assetName: 'assets/theme/light-theme.png',
+                selected: Theme.of(context).brightness == Brightness.light,
+                onTap: () => model.setBrightness(Brightness.light),
+                preferenceName: lang.chooseYourLookPageLightSetting,
+              ),
+              SizedBox(
+                width: width / 20,
+              ),
+              _ThemeOptionCard(
+                width: width / 3,
+                assetName: 'assets/theme/dark-theme.png',
+                selected: Theme.of(context).brightness == Brightness.dark,
+                onTap: () => model.setBrightness(Brightness.dark),
+                preferenceName: lang.chooseYourLookPageDarkSetting,
+              ),
+            ],
+          ),
+          if (yaru != null)
+            Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.only(top: kWizardSpacing * 2),
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    for (final variant in YaruVariant.values.take(10))
+                      YaruColorDisk(
+                        color: variant.color,
+                        selected: variant == yaru.variant,
+                        onPressed: () => model.setAccent(variant.name),
+                      ),
+                  ],
+                ),
+              ),
             ),
-            SizedBox(
-              width: width / 20,
-            ),
-            _ThemeOptionCard(
-              width: width / 3,
-              assetName: 'assets/theme/dark-theme.png',
-              selected: Theme.of(context).brightness == Brightness.dark,
-              onTap: () => model.setBrightness(Brightness.dark),
-              preferenceName: lang.chooseYourLookPageDarkSetting,
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }

@@ -9,6 +9,9 @@ abstract class ThemeService {
   /// Applies a [brightness].
   Future<void> setBrightness(Brightness brightness);
 
+  /// Applies an [accent].
+  Future<void> setAccent(String accent);
+
   /// Closes the service and releases any resources.
   Future<void> close();
 }
@@ -36,10 +39,23 @@ class GtkThemeService implements ThemeService {
   }
 
   @override
+  Future<void> setAccent(String? accent) async {
+    final theme = await settings.get('gtk-theme').then((v) => v.asString());
+    final value = [
+      theme.getPrefix(),
+      if (accent?.isNotEmpty ?? false) accent!.toLowerCase(),
+      if (theme.hasSuffix('dark')) 'dark',
+    ].join('-');
+    return settings.set('gtk-theme', DBusString(value));
+  }
+
+  @override
   Future<void> close() => settings.close();
 }
 
 extension on String {
+  String getPrefix() => split('-').first;
+
   bool hasSuffix(String suffix) => endsWith('-$suffix');
 
   String addSuffix(String suffix) {
