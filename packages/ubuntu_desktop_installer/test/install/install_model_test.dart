@@ -25,7 +25,7 @@ void main() async {
     expect(model.productInfo.version, '24.04 LTS');
   });
 
-  test('client status query loop', () async {
+  test('client status monitor', () async {
     final client = MockSubiquityClient();
     final journal = MockJournalService();
     when(journal.start(['log', 'event'], output: JournalOutput.short))
@@ -36,13 +36,10 @@ void main() async {
     final session = MockSessionService();
     final model = InstallModel(client, journal, product, session);
 
-    ApplicationState? currentState;
-    for (final nextState in ApplicationState.values) {
-      when(client.getStatus(current: currentState)).thenAnswer(
-        (_) async => testStatus(nextState),
-      );
-      currentState = nextState;
-    }
+    when(client.getStatus())
+        .thenAnswer((_) async => testStatus(ApplicationState.values.first));
+    when(client.monitorStatus()).thenAnswer((_) => Stream.fromIterable(
+        ApplicationState.values.map((state) => testStatus(state))));
 
     final stateChanges = StreamController<ApplicationState?>();
     model.addListener(() => stateChanges.add(model.state));
@@ -61,13 +58,10 @@ void main() async {
 
   test('state values', () async {
     final client = MockSubiquityClient();
-    ApplicationState? currentState;
-    for (final nextState in ApplicationState.values) {
-      when(client.getStatus(current: currentState)).thenAnswer(
-        (_) async => testStatus(nextState),
-      );
-      currentState = nextState;
-    }
+    when(client.getStatus())
+        .thenAnswer((_) async => testStatus(ApplicationState.values.first));
+    when(client.monitorStatus()).thenAnswer((_) => Stream.fromIterable(
+        ApplicationState.values.map((state) => testStatus(state))));
 
     final journal = MockJournalService();
     when(journal.start(['log', 'event'], output: JournalOutput.short))
@@ -114,8 +108,8 @@ void main() async {
     when(client.getStatus()).thenAnswer(
       (_) async => testStatus(ApplicationState.ERROR),
     );
-    when(client.getStatus(current: ApplicationState.ERROR)).thenAnswer(
-      (_) async => testStatus(ApplicationState.ERROR),
+    when(client.monitorStatus()).thenAnswer(
+      (_) => Stream.value(testStatus(ApplicationState.ERROR)),
     );
 
     final journal = MockJournalService();
@@ -184,8 +178,8 @@ void main() async {
     when(client.getStatus()).thenAnswer(
       (_) async => testStatus(ApplicationState.RUNNING),
     );
-    when(client.getStatus(current: ApplicationState.RUNNING)).thenAnswer(
-      (_) async => testStatus(ApplicationState.RUNNING),
+    when(client.monitorStatus()).thenAnswer(
+      (_) => Stream.value(testStatus(ApplicationState.RUNNING)),
     );
 
     final product = MockProductService();

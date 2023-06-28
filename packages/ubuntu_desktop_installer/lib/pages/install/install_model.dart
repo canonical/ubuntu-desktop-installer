@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/widgets.dart';
@@ -68,6 +69,8 @@ class InstallModel extends SafeChangeNotifier {
   Stream<String>? _log;
   ApplicationStatus? _status;
   InstallationEvent _event = const InstallationEvent(InstallationAction.none);
+  StreamSubscription? _events;
+  StreamSubscription? _statuses;
 
   /// Detailed info of the product being installed.
   ProductInfo get productInfo => _product.getProductInfo();
@@ -153,9 +156,18 @@ class InstallModel extends SafeChangeNotifier {
   Future<void> init() {
     return _client.getStatus().then((status) {
       _log = _journal.start([status.logSyslogId, status.eventSyslogId]);
+      _events = _journal.start([status.eventSyslogId],
+          output: JournalOutput.cat).listen(_processEvent);
+      _statuses = _client.monitorStatus().listen(_updateStatus);
       _updateStatus(status);
-      _monitorStatus(status.eventSyslogId);
     });
+  }
+
+  @override
+  void dispose() {
+    _events?.cancel();
+    _statuses?.cancel();
+    super.dispose();
   }
 
   // Resolves the path to the assets in the app bundle so that it works in the
@@ -178,15 +190,6 @@ class InstallModel extends SafeChangeNotifier {
         precacheImage(AssetImage(path), context);
       }
     });
-  }
-
-  Future<void> _monitorStatus(String syslogId) async {
-    final events = _journal.start([syslogId], output: JournalOutput.cat);
-    final subscription = events.listen(_processEvent);
-    while (!isDone && !hasError) {
-      await _client.getStatus(current: state).then(_updateStatus);
-    }
-    subscription.cancel();
   }
 
   Future<void> reboot() => _session.reboot(immediate: false);
