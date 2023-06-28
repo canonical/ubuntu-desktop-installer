@@ -478,6 +478,11 @@ class FakeSubiquityClient extends SubiquityClient {
   }
 
   @override
+  Stream<ApplicationStatus?> monitorStatus() {
+    return Stream.value(fakeApplicationStatus(state));
+  }
+
+  @override
   Future<bool> hasRst() async => true;
 }
 
