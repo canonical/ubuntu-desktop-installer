@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:yaru_colors/yaru_colors.dart';
+import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 extension WizardThemeDataX on ThemeData {
   ThemeData customize() {
-    final errorColor = brightness == Brightness.light
-        ? YaruColors.red[700]!
-        : YaruColors.red[300]!;
+    final errorColor = YaruColors.from(brightness).error;
     final mouseCursor = MaterialStateProperty.all(SystemMouseCursors.basic);
     return copyWith(
       colorScheme: colorScheme.copyWith(error: errorColor),

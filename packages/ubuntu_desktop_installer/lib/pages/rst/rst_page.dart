@@ -7,6 +7,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'rst_model.dart';
@@ -59,7 +60,7 @@ class RstPage extends ConsumerWidget {
                       data: lang.instructionsForRST('help.ubuntu.com/rst'),
                       style: {
                         'body': Style(margin: Margins.zero),
-                        'a': Style(color: context.linkColor),
+                        'a': Style(color: Theme.of(context).colorScheme.link),
                       },
                       onLinkTap: (url, _, __) => launchUrl(url!),
                     ),

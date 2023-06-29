@@ -68,7 +68,6 @@ dependencies:
   upower: ^0.7.0
   xdg_locale: ^0.0.1
   yaru: ^0.9.0
-  yaru_colors: ^0.1.6
   yaru_icons: ^1.0.0
   yaru_widgets: ^2.5.0
   yaru_window: ^0.1.3

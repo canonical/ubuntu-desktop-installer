@@ -4,6 +4,7 @@ import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:yaru/yaru.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -39,7 +40,7 @@ class ActiveDirectoryErrorDialog extends StatelessWidget {
                 data: lang.activeDirectoryErrorMessage,
                 style: {
                   'body': Style(margin: Margins.zero),
-                  'a': Style(color: context.linkColor),
+                  'a': Style(color: Theme.of(context).colorScheme.link),
                 },
                 onAnchorTap: (url, _, __) => launchUrl(url!),
                 shrinkWrap: true,
