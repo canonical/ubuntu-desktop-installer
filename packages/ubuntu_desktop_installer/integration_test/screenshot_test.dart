@@ -19,8 +19,10 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'test_pages.dart';
 
-void main() {
+Future<void> main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
+  final window = await YaruWindow.ensureInitialized();
 
   setUpAll(() => autoUpdateGoldenFiles = true);
 
@@ -34,7 +36,12 @@ void main() {
     );
   });
 
-  tearDown(() async => await resetAllServices());
+  tearDown(() async {
+    final windowClosed = YaruTestWindow.waitForClosed();
+    window.close();
+    await windowClosed;
+    await resetAllServices();
+  });
 
   testWidgets('1.locale', (tester) async {
     await runInstallerApp([], theme: currentTheme);
