@@ -140,10 +140,8 @@ class _SlidesPage extends StatelessWidget {
                     width: kWizardSpacing,
                     child: model.hasError
                         ? const Icon(YaruIcons.error_filled)
-                        : CircularProgressIndicator(
+                        : YaruCircularProgressIndicator(
                             value: model.isRegistering ? null : 0,
-                            backgroundColor:
-                                Theme.of(context).primaryColor.withAlpha(62),
                           ),
                   ),
                   const SizedBox(width: kWizardSpacing),

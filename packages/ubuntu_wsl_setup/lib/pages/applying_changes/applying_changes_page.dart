@@ -55,7 +55,7 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
       content: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const CircularProgressIndicator(),
+          const YaruCircularProgressIndicator(),
           const SizedBox(height: kWizardSpacing),
           Text(lang.applyingChanges),
           const SizedBox(height: kWizardSpacing),

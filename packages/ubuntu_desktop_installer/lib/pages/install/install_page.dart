@@ -122,7 +122,7 @@ class _SlidePageState extends ConsumerState<_SlidePage> {
                       : null),
             ),
             subtitle: RepaintBoundary(
-              child: LinearProgressIndicator(
+              child: YaruLinearProgressIndicator(
                 value: model.isInstalling ? null : 0,
               ),
             ),
