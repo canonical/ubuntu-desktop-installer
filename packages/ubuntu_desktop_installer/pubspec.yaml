@@ -45,7 +45,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/timezone_map
-      ref: b193a7a8113c4c5400a9b58b42b1a104abd64bbb
+      ref: e9fedca56a8122cae6f3ab26e2b33c2d83e225ca
   ubuntu_flavor: ^0.2.0
   ubuntu_localizations: ^0.2.0
   ubuntu_logger: ^0.0.3
@@ -59,7 +59,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_widgets
-      ref: 3316f7a0393aea04fd586375b0b16c9e992ed058
+      ref: e9fedca56a8122cae6f3ab26e2b33c2d83e225ca
   ubuntu_wizard:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git
