@@ -61,7 +61,7 @@ void main() async {
     when(client.getStatus())
         .thenAnswer((_) async => testStatus(ApplicationState.values.first));
     when(client.monitorStatus()).thenAnswer((_) => Stream.fromIterable(
-        ApplicationState.values.map((state) => testStatus(state))));
+        [...ApplicationState.values.map((state) => testStatus(state)), null]));
 
     final journal = MockJournalService();
     when(journal.start(['log', 'event'], output: JournalOutput.short))
@@ -78,7 +78,7 @@ void main() async {
     expect(model.isInstalling, isFalse);
     expect(model.isDone, isFalse);
 
-    Future<void> waitForState(ApplicationState state) async {
+    Future<void> waitForState(ApplicationState? state) async {
       final completer = Completer();
       model.addListener(() {
         if (model.state == state) {
@@ -99,6 +99,10 @@ void main() async {
     expect(model.isDone, isFalse);
 
     await waitForState(ApplicationState.DONE);
+    expect(model.isInstalling, isFalse);
+    expect(model.isDone, isTrue);
+
+    await waitForState(null);
     expect(model.isInstalling, isFalse);
     expect(model.isDone, isTrue);
   });

@@ -82,7 +82,8 @@ class InstallModel extends SafeChangeNotifier {
   InstallationEvent get event => _event;
 
   /// Whether the installation state is DONE.
-  bool get isDone => state == ApplicationState.DONE;
+  bool get isDone =>
+      state == ApplicationState.DONE || (_status == null && _statuses != null);
 
   /// Whether the installation state is ERROR.
   bool get hasError => state == ApplicationState.ERROR;
