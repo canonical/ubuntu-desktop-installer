@@ -26,7 +26,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/timezone_map
-      ref: b193a7a8113c4c5400a9b58b42b1a104abd64bbb
+      ref: e9fedca56a8122cae6f3ab26e2b33c2d83e225ca
   # TODO: move shared pages to a separate package
   ubuntu_desktop_installer:
     path: ../ubuntu_desktop_installer
@@ -43,15 +43,15 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_widgets
-      ref: 3316f7a0393aea04fd586375b0b16c9e992ed058
+      ref: e9fedca56a8122cae6f3ab26e2b33c2d83e225ca
   ubuntu_wizard:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git
       path: packages/ubuntu_wizard
   xdg_locale: ^0.0.1
-  yaru: ^0.7.0
+  yaru: ^0.9.0
   yaru_icons: ^1.0.0
-  yaru_widgets: ^2.4.0
+  yaru_widgets: ^2.5.0
   yaru_window: ^0.1.3
 
 dev_dependencies:
