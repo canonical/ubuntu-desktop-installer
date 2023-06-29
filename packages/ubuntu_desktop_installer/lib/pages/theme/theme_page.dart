@@ -65,7 +65,7 @@ class ThemePage extends ConsumerWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (final variant in YaruVariant.values.take(10))
+                    for (final variant in YaruVariant.accents)
                       YaruColorDisk(
                         color: variant.color,
                         selected: variant == yaru.variant,

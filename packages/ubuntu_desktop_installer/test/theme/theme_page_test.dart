@@ -45,7 +45,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp(
         (_) => YaruTheme(builder: (context, yaru, child) => buildPage(model))));
 
-    for (final variant in YaruVariant.values.take(10)) {
+    for (final variant in YaruVariant.accents) {
       final colorDisk = find.byWidgetPredicate((widget) {
         return widget is YaruColorDisk && widget.color == variant.color;
       });
