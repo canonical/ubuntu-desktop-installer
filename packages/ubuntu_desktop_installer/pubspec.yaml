@@ -67,7 +67,7 @@ dependencies:
   udev: ^0.0.3
   upower: ^0.7.0
   xdg_locale: ^0.0.1
-  yaru: ^0.7.0
+  yaru: ^0.9.0
   yaru_colors: ^0.1.6
   yaru_icons: ^1.0.0
   yaru_widgets: ^2.4.0

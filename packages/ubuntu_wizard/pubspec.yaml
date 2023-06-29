@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
   ubuntu_localizations: ^0.2.0
   wizard_router: ^1.0.1
-  yaru: ^0.7.0
+  yaru: ^0.9.0
   yaru_colors: ^0.1.6
   yaru_widgets: ^2.4.0
 
