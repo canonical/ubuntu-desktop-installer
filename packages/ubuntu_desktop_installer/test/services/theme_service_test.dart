@@ -34,4 +34,25 @@ void main() {
       settings.set('color-scheme', const DBusString('prefer-dark')),
     ]);
   });
+
+  test('set accent color via gsettings', () async {
+    final settings = MockGSettings();
+    when(settings.set('gtk-theme', any)).thenAnswer((_) async {});
+
+    final service = GtkThemeService(settings);
+
+    when(settings.get('gtk-theme'))
+        .thenAnswer((_) async => const DBusString('Yaru-dark'));
+
+    await service.setAccent('red');
+    verify(settings.set('gtk-theme', const DBusString('Yaru-red-dark')))
+        .called(1);
+
+    when(settings.get('gtk-theme'))
+        .thenAnswer((_) async => const DBusString('Any-red'));
+
+    await service.setAccent('prussianGreen');
+    verify(settings.set('gtk-theme', const DBusString('Any-prussiangreen')))
+        .called(1);
+  });
 }

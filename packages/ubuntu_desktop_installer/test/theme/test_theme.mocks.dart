@@ -45,4 +45,13 @@ class MockThemeModel extends _i1.Mock implements _i2.ThemeModel {
         returnValue: _i3.Future<void>.value(),
         returnValueForMissingStub: _i3.Future<void>.value(),
       ) as _i3.Future<void>);
+  @override
+  _i3.Future<void> setAccent(String? value) => (super.noSuchMethod(
+        Invocation.method(
+          #setAccent,
+          [value],
+        ),
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }

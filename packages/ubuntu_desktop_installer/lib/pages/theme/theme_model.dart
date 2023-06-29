@@ -16,4 +16,5 @@ class ThemeModel {
   Future<bool> init() async => true;
 
   Future<void> setBrightness(Brightness value) => _service.setBrightness(value);
+  Future<void> setAccent(String value) => _service.setAccent(value);
 }
