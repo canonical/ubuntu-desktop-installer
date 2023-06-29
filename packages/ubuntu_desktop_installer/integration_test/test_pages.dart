@@ -545,6 +545,7 @@ Future<void> testInstallPage(
     await takeScreenshot(tester, screenshot);
   }
 
+  await tester.pumpAndSettle();
   await tester.pumpUntil(find.button(tester.lang.continueTesting));
 
   final windowClosed = YaruTestWindow.waitForClosed();
