@@ -4,17 +4,13 @@
   "@noButtonText": {},
   "whoAreYouPageRealNameLabel": "Via nomo",
   "@whoAreYouPageRealNameLabel": {},
-  "partitionFormatFat12": "Dosiersistemo FAT12",
-  "@partitionFormatFat12": {},
-  "partitionFormatFat16": "Dosiersistemo FAT16",
-  "@partitionFormatFat16": {},
   "restartButtonText": "Restartigi",
   "@restartButtonText": {},
   "chooseYourLookPageLightSetting": "Hela",
   "@chooseYourLookPageLightSetting": {},
   "windowTitle": "Instali {RELEASE}",
   "@windowTitle": {},
-  "startInstallingButtonText": "Komenci instaladon",
+  "startInstallingButtonText": "Instali",
   "@startInstallingButtonText": {},
   "diskHeadersSize": "Grando",
   "@diskHeadersSize": {},
@@ -36,8 +32,6 @@
   "@selectGuidedStorageInstallNow": {},
   "diskHeadersDevice": "Aparato",
   "@diskHeadersDevice": {},
-  "partitionFormatFat": "Dosiersistemo FAT",
-  "@partitionFormatFat": {},
   "changeButtonText": "Ŝanĝi",
   "@changeButtonText": {},
   "chooseYourLookPageDarkSetting": "Malhela",
@@ -65,20 +59,10 @@
   "@minimalInstallationTitle": {},
   "installationTypeTitle": "Speco de instalado",
   "@installationTypeTitle": {},
-  "partitionFormatFat32": "Dosiersistemo FAT32",
-  "@partitionFormatFat32": {},
-  "freeDiskSpace": "disponebla spaco",
+  "freeDiskSpace": "Disponebla spaco",
   "@freeDiskSpace": {},
-  "partitionFormatBtrfs": "Protokoliga dosiersistemo Btrfs",
-  "@partitionFormatBtrfs": {},
   "partitionTypeLogical": "Logika",
   "@partitionTypeLogical": {},
-  "partitionFormatExt4": "Protokoliga dosiersistemo ext4",
-  "@partitionFormatExt4": {},
-  "partitionFormatExt3": "Protokoliga dosiersistemo ext3",
-  "@partitionFormatExt3": {},
-  "partitionFormatJfs": "Protokoliga dosiersistemo JFS",
-  "@partitionFormatJfs": {},
   "whoAreYouPageRequirePassword": "Postuli mian pasvorton por salutado",
   "@whoAreYouPageRequirePassword": {},
   "whoAreYouPageRealNameRequired": "Nomo bezoniĝas",
@@ -99,7 +83,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "chooseYourKeyboardLayout": "Elektu vian klavaranĝon:",
   "@chooseYourKeyboardLayout": {},
-  "turnOffBitlockerTitle": "Malŝalti BitLocker",
+  "turnOffBitlockerTitle": "BitLocker estas ŝaltita",
   "@turnOffBitlockerTitle": {},
   "installationTypeReinstall": "Forviŝi {os} kaj reinstali",
   "@installationTypeReinstall": {
@@ -118,9 +102,9 @@
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "La sekurigaj ŝlosiloj ne kongruas",
   "@secureBootSecurityKeysDontMatch": {},
-  "updatesOtherSoftwarePageTitle": "Ĝisdatigoj kaj aliaj programoj",
+  "updatesOtherSoftwarePageTitle": "Programoj kaj ĝisdatigoj",
   "@updatesOtherSoftwarePageTitle": {},
-  "turnOffRST": "Malŝalti RST",
+  "turnOffRST": "Rapid-Konserveja Tekniko (RST) estas ŝaltita",
   "@turnOffRST": {},
   "writeChangesPartitionEntryUnmounted": "subdisko #{disk}{partition} kiel {format}",
   "@writeChangesPartitionEntryUnmounted": {
@@ -150,7 +134,7 @@
   "@okButtonText": {},
   "welcome": "Bonvenon",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Provi aŭ instali",
+  "tryOrInstallPageTitle": "Provi aŭ instali {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Ripari instalaĵon",
   "@repairInstallation": {},
@@ -188,9 +172,9 @@
   "@dontInstallDriverSoftwareNow": {},
   "dontInstallDriverSoftwareNowDescription": "Vi povas instali ilin poste per Programaroj kaj Ĝisdatigoj.",
   "@dontInstallDriverSoftwareNowDescription": {},
-  "turnOffRSTDescription": "Ĉi tiu komputilo uzas Intel RST (Rapid Storage Technology). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.",
+  "turnOffRSTDescription": "Ĉi tiu komputilo uzas Intel RST (Rapid-Konservejan Teknikon). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Por instrukcioj, malfermu ĉi tiun paĝon per via telefono aŭ alia aparato: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -205,7 +189,7 @@
   "@configureSecureBootOption": {},
   "installThirdPartySubtitle": "Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.",
   "@installThirdPartySubtitle": {},
-  "chooseSecurityKeyTitle": "Elektu sekurigan ŝlosilon",
+  "chooseSecurityKeyTitle": "Sekuriga ŝlosilo",
   "@chooseSecurityKeyTitle": {},
   "installationTypeNone": "Nenio",
   "@installationTypeNone": {},
@@ -257,7 +241,7 @@
       "color": {}
     }
   },
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Averto</font>: Se vi perdos ĉi tiun sekurigan ŝlosilon, vi perdos ĉiom da datenoj. Skribu vian ŝlosilon kaj konservu ĝin en sekura alia loko, se tio necesas.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Averto:</font> Se vi perdos ĉi tiun sekurigan ŝlosilon, vi perdos ĉiom da datenoj. Skribu vian ŝlosilon kaj konservu ĝin en sekura alia loko, se tio necesas.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -266,8 +250,6 @@
   },
   "partitionUnitB": "B",
   "@partitionUnitB": {},
-  "partitionFormatExt2": "Dosiersistemo ext2",
-  "@partitionFormatExt2": {},
   "partitionFormatLabel": "Uzata kiel:",
   "@partitionFormatLabel": {},
   "partitionSizeLabel": "Grando:",
@@ -278,7 +260,7 @@
   "@diskHeadersSystem": {},
   "selectGuidedStorageDropdownLabel": "Elektu diskon:",
   "@selectGuidedStorageDropdownLabel": {},
-  "installationTypeManual": "Io alia",
+  "installationTypeManual": "Neaŭtomata dispartigo",
   "@installationTypeManual": {},
   "selectGuidedStoragePageTitle": "Forviŝi la diskon kaj instali {DISTRO}",
   "@selectGuidedStoragePageTitle": {},
@@ -306,21 +288,11 @@
   "@diskHeadersFormat": {},
   "bootLoaderDevice": "Aparato, sur kiun instaliĝos la praŝargilo",
   "@bootLoaderDevice": {},
-  "allocateDiskSpace": "Asigni diskospacon",
+  "allocateDiskSpace": "Neaŭtomata dispartigo",
   "@allocateDiskSpace": {},
   "installationTypeManualInfo": "Vi povas mem krei subdiskojn aŭ ŝanĝi iliajn grandojn, aŭ elekti plurajn subdiskojn por {DISTRO}",
   "@installationTypeManualInfo": {},
-  "partitionFormatVfat": "Dosiersistemo Virtuala FAT",
-  "@partitionFormatVfat": {},
-  "partitionFormatNtfs": "Dosiersistemo NTFS",
-  "@partitionFormatNtfs": {},
-  "partitionFormatReiserFS": "Dosiersistemo ReiserFS",
-  "@partitionFormatReiserFS": {},
-  "partitionFormatIso9660": "Dosiersistemo ISO 9660",
-  "@partitionFormatIso9660": {},
-  "partitionFormatXfs": "Protokoliga dosiersistemo XFS",
-  "@partitionFormatXfs": {},
-  "whoAreYouPageTitle": "Kiu vi estas?",
+  "whoAreYouPageTitle": "Agordu vian konton",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "Aŭtomate saluti",
   "@whoAreYouPageAutoLogin": {},
@@ -342,13 +314,9 @@
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
   },
-  "partitionFormatSwap": "Permutareo",
-  "@partitionFormatSwap": {},
-  "partitionFormatZfsroot": "Radika dosiersistemo ZFS",
-  "@partitionFormatZfsroot": {},
   "partitionMountPointLabel": "Surmetingo:",
   "@partitionMountPointLabel": {},
-  "writeChangesToDisk": "Skribi ŝanĝojn sur diskon",
+  "writeChangesToDisk": "Preta por instalado",
   "@writeChangesToDisk": {},
   "writeChangesPartitionsHeader": "La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:",
   "@writeChangesPartitionsHeader": {},
@@ -374,7 +342,7 @@
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.",
   "@chooseYourLookPageHeader": {},
-  "readyToUse": "**{system}** estas instalita kaj preta por uzo.",
+  "readyToUse": "**{system}** estas instalita kaj preta por uzo",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -385,9 +353,9 @@
   "@shutdown": {},
   "restartIntoWindows": "Restartigi al Windows",
   "@restartIntoWindows": {},
-  "turnOffBitlockerDescription": "Ĉi tiu komputilo uzas ĉifradon de Windows BitLocker.\nVi devas malŝalti BitLocker en Windows antaŭ ol instali Ubuntu.",
+  "turnOffBitlockerDescription": "Ĉi tiun komputilon ĉifras Windows BitLocker.\nLiberigu diskospacon per Windows, aŭ elektu «{option}» por daŭrigi.",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Por instrukcioj, malfermu ĉi tiun paĝon per via telefono aŭ alia aparato: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -398,7 +366,7 @@
   "@enableWifi": {},
   "wifiMustBeEnabled": "Por uzi sendratajn retojn kun ĉi tiu komputilo, vi devas ebligi sendratajn retojn",
   "@wifiMustBeEnabled": {},
-  "connectToInternetPageTitle": "Konekti al Interreto",
+  "connectToInternetPageTitle": "Konekti al reto",
   "@connectToInternetPageTitle": {},
   "noWifiDevicesDetected": "Neniu sendratreta aparato troviĝis",
   "@noWifiDevicesDetected": {},
@@ -422,11 +390,11 @@
   "@wiredDisabled": {},
   "wiredMustBeEnabled": "Por uzi Eterreton kun ĉi tiu komputilo, vi devas ebligi dratajn retojn",
   "@wiredMustBeEnabled": {},
-  "newPartitionTableConfirmationMessage": "Vi elektis dividi la tutan aparaton en subdiskojn. Se vi daŭrigas la kreadon de nova subdiskotabelo sur ĝin, ĉiuj ĝiaj ekzistantaj subdiskoj estos forviŝitaj.\n\nNotu, ke vi povos laŭvole malfari ĉi tiun operacion poste.",
+  "newPartitionTableConfirmationMessage": "Kreado de nova subdiskotabelo sur la tuta aparato forviŝos ĉiujn ekzistantajn subdiskojn. Vi povos laŭvole malfari ĉi tiun operacion poste.",
   "@newPartitionTableConfirmationMessage": {},
-  "newPartitionTableConfirmationTitle": "Ĉu krei novan subdiskotabelon sur ĉi tiun aparaton?",
+  "newPartitionTableConfirmationTitle": "Nova malplena subdisko",
   "@newPartitionTableConfirmationTitle": {},
-  "onBatteryWarning": "<font color=\"{color}\">Averto</font>: La komputilo ne estas konektita al energifonto.",
+  "onBatteryWarning": "<font color=\"{color}\">Averto:</font> La komputilo ne estas konektita al energifonto.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -439,7 +407,7 @@
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Nomo de reto estas postulata",
   "@hiddenWifiNetworkNameRequired": {},
-  "whereAreYouPageTitle": "Kie vi estas?",
+  "whereAreYouPageTitle": "Elektu vian horzonon",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "Loko",
   "@whereAreYouLocationLabel": {},
@@ -645,7 +613,7 @@
   },
   "quitButtonText": "Ĉesi instaladon",
   "@quitButtonText": {},
-  "writeChangesPartitionCreated": "krei la subdiskon #{disk}{partition}",
+  "writeChangesPartitionCreated": "krei la subdiskon <b>{disk}{partition}</b>",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -653,7 +621,7 @@
       "partition": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la subdisko #{disk}{partition} strukturota laŭ {format} kaj uzota por {mount}",
+  "writeChangesPartitionFormattedMounted": "la subdisko <b>{disk}{partition}</b> strukturota laŭ <b>{format}</b> kaj uzota por <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -663,9 +631,9 @@
       "mount": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "Pardonu",
+  "notEnoughDiskSpaceTitle": "Ne sufiĉas spaco",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "ŝanĝi la grandon de la subdisko #{disk}{partition} de {oldsize} al {newsize}",
+  "writeChangesPartitionResized": "ŝanĝi la grandon de la subdisko <b>{disk}{partition}</b> de <b>{oldsize}</b> al <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -675,7 +643,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionMounted": "la subdisko #{disk}{partition} uzota por {mount}",
+  "writeChangesPartitionMounted": "la subdisko <b>{disk}{partition}</b> uzota por <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -692,7 +660,7 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionFormatted": "la subdisko #{disk}{partition} strukturota laŭ {format}",
+  "writeChangesPartitionFormatted": "la subdisko <b>{disk}{partition}</b> strukturota laŭ <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -731,5 +699,232 @@
   "offlineWarning": "Vi estas aktuale ne konektita al Interreto",
   "@offlineWarning": {},
   "partitionFormatNone": "Lasi nestrukturita",
-  "@partitionFormatNone": {}
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordShow": "Malkaŝi",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Kaŝi",
+  "@whoAreYouPagePasswordHide": {},
+  "activeDirectoryInfo": "Vi tajpos la domanion kaj aliajn detalojn dum la sekva paŝo.",
+  "@activeDirectoryInfo": {},
+  "activeDirectoryDomainTooLong": "Tro longa",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryDomainEmpty": "Deviga",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryDomainInvalidChars": "Nevalidaj signoj",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryTestConnection": "Provi konekton al la domanio",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryDomainStartDot": "Komenciĝas per punkto (.)",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainLabel": "Domanio",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryDomainStartHyphen": "Komenciĝas per dividstreko (-)",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryDomainMultipleDots": "Enhavas plurajn sinsekvajn punktojn (..)",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryPasswordLabel": "Pasvorto",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryAdminEmpty": "Deviga",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryPasswordEmpty": "Deviga",
+  "@activeDirectoryPasswordEmpty": {},
+  "activeDirectoryAdminInvalidChars": "Nevalidaj signoj",
+  "@activeDirectoryAdminInvalidChars": {},
+  "activeDirectoryDomainNotFound": "Domanio ne troviĝis",
+  "@activeDirectoryDomainNotFound": {},
+  "activeDirectoryDomainEndDot": "Finiĝas per punkto (.)",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryOption": "Uzi Aktivan Dosierujon",
+  "@activeDirectoryOption": {},
+  "activeDirectoryTitle": "Agordi Aktivan Dosierujon",
+  "@activeDirectoryTitle": {},
+  "activeDirectoryDomainEndHyphen": "Finiĝas per dividstreko (-)",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryAdminLabel": "Uzanto por aliĝi al la domanio",
+  "@activeDirectoryAdminLabel": {},
+  "whoAreYouPageRealNameTooLong": "Tiu nomo estas tro longa.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Tiu nomo estas tro longa.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryErrorTitle": "Eraro agordante konekton al Aktiva Dosierujo",
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "Pardonu, Aktiva Dosierujo ne estas agordebla nuntempe. Post kiam via sistemo funkcias, vizitu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> por helpo.",
+  "@activeDirectoryErrorMessage": {},
+  "preparingUbuntu": "Preparante {DISTRO}…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "keyboardVariant": "Klavara varianto:",
+  "@keyboardVariant": {},
+  "detectButtonText": "Identigi",
+  "@detectButtonText": {},
+  "writeChangesDevicesTitle": "Aparatoj",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Subdiskoj",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesDevelopmentTitle": "Programu helpate de malfermitaj kodoj",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesWelcomeHeader": "La nova versio de {DISTRO} igas komputadon pli facila ol iam ajn.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "Ĉu vi programas, kreas, ludas aŭ administras? Vi trovos novajn rimedojn por plibonigi viajn produktivecon kaj sperton en {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Pliigu vian povon krei",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesSecurityLts": "Ĉiu Longdaŭre Subtenata (LTS) versio de {DISTRO} provizas kvin jarojn da sekurigaj flikoj; abono de Ubuntu Pro plilongigas tion al dek jaroj.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityBody": "Ĉe la koro de la filozofio de {DISTRO} estas la kredo, ke komputado estu por ĉiuj. Per altnivelaj alirebligiloj kaj la kapablo ŝanĝi lingvon, kolorojn kaj tekstograndon, {DISTRO} faciligas komputadon – por ĉiuj ajn, ĉie ajn.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "Produktiviĝu",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesSoftwareBody": "Instalu, administru kaj ĝisdatigu ĉiujn viajn programojn per Ubuntu-Programvendejo, inkluzive de miloj da programoj en la Snap-Vendejo kaj en la arkivoj de {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityBody": "{DISTRO} provizas ĉiujn ilojn, kiujn vi bezonas por resti privata kaj sekura Interrete. Per subtenataj fajroŝirmilo kaj virtuala privata reto kaj amaso da privatigaj programoj, vi povas certigi, ke vi plene regas viajn datenojn.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityBody": "{DISTRO} inkluzivas LibreOffice, malfermitkodan oficejan programaron kongruan kun Microsoft Office por verki dokumentojn, kalkultabelojn kaj prezentaĵojn. Popularaj kunlaboriloj ankaŭ estas haveblaj.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportHeader": "La oficiala dokumentaro de {DISTRO} estas havebla Interrete kaj per la Helpo-piktogramo en la doko.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportResources": "Utilaj rimedoj:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportEnterprise": "Al entreprenoj, Canonical ofertas komercan subtenon por facile enkonduki kaj sekure administri Ubuntu.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesSupportCommunity": "Ĉe Ask Ubuntu troviĝas gamo da demandoj kaj respondoj, kaj ĉe Ubuntu Discourse estas gvidiloj kaj diskutejoj por kaj novaj kaj spertaj uzantoj.",
+  "@installationSlidesSupportCommunity": {},
+  "welcomePageTitle": "Bonvenon al {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesTitle": "Bonvenon al {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesWelcomeTitle": "Rapida, senpaga, plena de novaj funkcioj",
+  "@installationSlidesWelcomeTitle": {},
+  "notEnoughDiskSpaceRequired": "Bezonata:",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesAccessibilityTitle": "Uzebla por ĉiuj",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesSecurityTitle": "Privata kaj sekura",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSupportDocumentation": "Oficiala dokumentaro",
+  "@installationSlidesSupportDocumentation": {},
+  "notEnoughDiskSpaceUbuntu": "Ne sufiĉas diska spaco por instali {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Ekranlegilo Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "notEnoughDiskSpaceAvailable": "Disponebla:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "installationSlidesAccessibilityLanguages": "Lingvosubteno",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "Helpo kaj subteno",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesIncluded": "Inkluzivitaj:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesAvailable": "Instaleblaj:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesSupportUbuntuPro": "Entreprene taŭga subteno ĉiutage ĉiuhore per Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesSoftwareTitle": "Ĉiom da programoj, kiom vi bezonas",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesGamingTitle": "Bonega por videoludoj",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} estas la ideala laborstacio por verkado de poŝaparataj kaj Interretaj programoj, datenscienco, artefarita intelekto, maŝina lernado, evoluoperacioj kaj servila administrado. Ĉiu versio de {DISTRO} inkluzivas la plej novajn ilĉenojn kaj subtenas ĉiujn precipajn programadmediojn.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingBody": "{DISTRO} subtenas la plej novajn zorgilojn de NVIDIA kaj Mesa por plibonigi rendimenton kaj kongruecon. Miloj da videoludoj por Windows ludiĝas bonege sur {DISTRO} per Steam kaj aliaj programoj sen kroma agordado.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityBody": "Se vi estas movbildisto, dezajnisto, videoverkisto aŭ ludprogramisto, estas facile alporti viajn laborfluojn al {DISTRO} uzante malfermitkodajn kaj industrie normajn programojn.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffRSTTitle": "Malŝaltu RST por daŭrigi",
+  "@turnOffRSTTitle": {},
+  "turnOffBitlockerHeadline": "Malŝaltu BitLocker por daŭrigi",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "Ĉu restartigi al Windows?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Ĉu vi certas, ke vi volas restartigi vian komputilon? Vi devos rekomenci la instaladon de {DISTRO} poste por fini instali {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "allocateDiskSpaceInvalidMountPointSlash": "Surmetingo devas komenciĝi per «/»",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Surmetingo devas ne enhavi spaceton",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "partitionFormatKeep": "Lasi nestrukturita kiel {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }

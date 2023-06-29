@@ -1,8 +1,9 @@
+import 'package:crypt/crypt.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:subiquity_test/subiquity_test.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_model.dart';
 
 void main() {
@@ -10,11 +11,11 @@ void main() {
     const identity = IdentityData(username: 'ubuntu');
 
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => identity);
+    when(client.getIdentity()).thenAnswer((_) async => identity);
 
     final model = ProfileSetupModel(client);
     await model.loadProfileSetup();
-    verify(client.identity()).called(1);
+    verify(client.getIdentity()).called(1);
 
     expect(model.username, equals(identity.username));
   });
@@ -30,7 +31,7 @@ void main() {
     final identity = IdentityData(
       realname: model.realname,
       username: model.username,
-      cryptedPassword: encryptPassword('password', salt: 'test'),
+      cryptedPassword: Crypt.sha512('password', salt: 'test').toString(),
     );
 
     await model.saveProfileSetup(salt: 'test');

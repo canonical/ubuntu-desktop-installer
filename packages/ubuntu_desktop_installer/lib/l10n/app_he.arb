@@ -1,6 +1,6 @@
 {
   "@@locale": "he",
-  "turnOffBitlockerLinkInstructions": "לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -22,7 +22,7 @@
   "@dontInstallDriverSoftwareNowDescription": {},
   "revertButtonText": "החזרה",
   "@revertButtonText": {},
-  "changeButtonText": "עריכה",
+  "changeButtonText": "שינוי",
   "@changeButtonText": {},
   "noButtonText": "לא",
   "@noButtonText": {},
@@ -38,9 +38,9 @@
   "@tryUbuntu": {},
   "installUbuntu": "להתקין את {RELEASE}",
   "@installUbuntu": {},
-  "turnOffRST": "כיבוי RST",
+  "turnOffRST": "RST פעיל",
   "@turnOffRST": {},
-  "restartIntoWindows": "הפעלה מחדש אל Windows",
+  "restartIntoWindows": "להפעיל מחדש אל Windows",
   "@restartIntoWindows": {},
   "confirmSecurityKey": "אישור מפתח האבטחה",
   "@confirmSecurityKey": {},
@@ -48,9 +48,9 @@
   "@secureBootSecurityKeysDontMatch": {},
   "updatesOtherSoftwarePageDescription": "אילו יישומים להתקין בתור התחלה?",
   "@updatesOtherSoftwarePageDescription": {},
-  "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.",
+  "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש להשתמש ב־Windows כדי לפנות מקום או לבחור ב‚{option}’ כדי להמשיך.",
   "@turnOffBitlockerDescription": {},
-  "readyToUse": "המערכת **{system}** מותקנת ומוכנה לשימוש.",
+  "readyToUse": "המערכת **{system}** מותקנת ומוכנה לשימוש",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -63,7 +63,7 @@
   "@chooseSecurityKey": {},
   "dontInstallDriverSoftwareNow": "לא להתקין את תכנית מנהל ההתקן לבינתיים",
   "@dontInstallDriverSoftwareNow": {},
-  "updatesOtherSoftwarePageTitle": "עדכונים ותכניות נוספות",
+  "updatesOtherSoftwarePageTitle": "יישומים ועדכונים",
   "@updatesOtherSoftwarePageTitle": {},
   "normalInstallationTitle": "התקנה רגילה",
   "@normalInstallationTitle": {},
@@ -73,7 +73,7 @@
   "@yesButtonText": {},
   "welcome": "ברוך בואך",
   "@welcome": {},
-  "tryOrInstallPageTitle": "להתנסות או להתקין",
+  "tryOrInstallPageTitle": "להתנסות או להתקין את {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "תיקון התקנה",
   "@repairInstallation": {},
@@ -81,7 +81,7 @@
   "@repairInstallationDescription": {},
   "turnOffRSTDescription": "המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -116,7 +116,7 @@
   "@minimalInstallationSubtitle": {},
   "otherOptions": "אפשרויות נוספות",
   "@otherOptions": {},
-  "turnOffBitlockerTitle": "כיבוי BitLocker",
+  "turnOffBitlockerTitle": "BitLocker פעיל",
   "@turnOffBitlockerTitle": {},
   "installationCompleteTitle": "ההתקנה הושלמה",
   "@installationCompleteTitle": {},
@@ -131,7 +131,7 @@
   "@chooseYourLookPageDarkSetting": {},
   "shutdown": "כיבוי",
   "@shutdown": {},
-  "chooseYourLookPageTitle": "נא לבחור את הסגנון שלך",
+  "chooseYourLookPageTitle": "נא לבחור את ערכת העיצוב שלך",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.",
   "@chooseYourLookPageHeader": {},
@@ -200,7 +200,7 @@
   "@installThirdPartyTitle": {},
   "installThirdPartySubtitle": "התכניות האלו כפופות לתנאי אישוי שנכללים בתיעוד שלהן. חלקן קנייניות.",
   "@installThirdPartySubtitle": {},
-  "chooseSecurityKeyTitle": "נא לבחור מפתח אבטחה",
+  "chooseSecurityKeyTitle": "מפתח אבטחה",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHeader": "הצפנת הכונן מגנה על הקבצים שלך במקרה של אובדן המחשב. התכונה דורשת ממך להזין מפתח אבטחה עם כל הפעלה של המחשב.\n\nקבצים שמחוץ ל־{RELEASE} לא יוצפנו.",
   "@chooseSecurityKeyHeader": {},
@@ -208,7 +208,7 @@
   "@chooseSecurityKeyHint": {},
   "chooseSecurityKeyConfirmHint": "אישור מפתח האבטחה",
   "@chooseSecurityKeyConfirmHint": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">אזהרה</font>: אובדן מפתח האבטחה עשוי להוביל לאובדן כל הנתונים. במקרה הצורך, מומלץ לכתוב את המפתח על פתק ולאחסן אותו במקום בטוח.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">אזהרה:</font> אובדן מפתח האבטחה עשוי להוביל לאובדן כל הנתונים. במקרה הצורך, מומלץ לכתוב את המפתח על פתק ולאחסן אותו במקום בטוח.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -264,7 +264,7 @@
       "os": {}
     }
   },
-  "installationTypeManual": "משהו אחר",
+  "installationTypeManual": "חלוקה ידנית למחיצות",
   "@installationTypeManual": {},
   "selectGuidedStoragePageTitle": "למחוק את הכונן ולהתקין את {DISTRO}",
   "@selectGuidedStoragePageTitle": {},
@@ -272,9 +272,9 @@
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "להתקין כעת",
   "@selectGuidedStorageInstallNow": {},
-  "allocateDiskSpace": "הקצאת מקום בכונן",
+  "allocateDiskSpace": "חלוקת מחיצות ידנית",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "להתחיל בהתקנה",
+  "startInstallingButtonText": "התקנה",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "התקן",
   "@diskHeadersDevice": {},
@@ -290,7 +290,7 @@
   "@diskHeadersSystem": {},
   "diskHeadersFormat": "פורמט",
   "@diskHeadersFormat": {},
-  "freeDiskSpace": "מקום פנוי",
+  "freeDiskSpace": "שטח פנוי",
   "@freeDiskSpace": {},
   "newPartitionTable": "טבלת מחיצות חדשה",
   "@newPartitionTable": {},
@@ -314,41 +314,9 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "בשימוש בתור:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt4": "מערכת קבצים מתועדת מסוג Ext4",
-  "@partitionFormatExt4": {},
-  "partitionFormatExt3": "מערכת קבצים מתועדת מסוג Ext3",
-  "@partitionFormatExt3": {},
-  "partitionFormatExt2": "מערכת קבצים מסוג Ext2",
-  "@partitionFormatExt2": {},
-  "partitionFormatBtrfs": "מערכת קבצים מתועדת מסוג btrfs",
-  "@partitionFormatBtrfs": {},
-  "partitionFormatJfs": "מערכת קבצים מתועדת מסוג JFS",
-  "@partitionFormatJfs": {},
-  "partitionFormatXfs": "מערכת קבצים מתועדת מסוג XFS",
-  "@partitionFormatXfs": {},
-  "partitionFormatFat": "מערכת קבצים מסוג FAT",
-  "@partitionFormatFat": {},
-  "partitionFormatFat12": "מערכת קבצים מסוג FAT12",
-  "@partitionFormatFat12": {},
-  "partitionFormatFat16": "מערכת קבצים מסוג FAT16",
-  "@partitionFormatFat16": {},
-  "partitionFormatFat32": "מערכת קבצים מסוג FAT32",
-  "@partitionFormatFat32": {},
-  "partitionFormatSwap": "שטח החלפה",
-  "@partitionFormatSwap": {},
-  "partitionFormatIso9660": "מערכת קבצים מסוג ISO 9660",
-  "@partitionFormatIso9660": {},
-  "partitionFormatVfat": "מערכת קבצים מסוג VFAT",
-  "@partitionFormatVfat": {},
-  "partitionFormatNtfs": "מערכת קבצים מסוג NTFS",
-  "@partitionFormatNtfs": {},
-  "partitionFormatReiserFS": "מערכת קבצים מסוג ReiserFS",
-  "@partitionFormatReiserFS": {},
-  "partitionFormatZfsroot": "מערכת קבצים לבסיס ZFS",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "פרמוט המחיצה",
   "@partitionErase": {},
-  "whoAreYouPageTitle": "עם מי הכבוד?",
+  "whoAreYouPageTitle": "הקמת החשבון שלך",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "כניסה אוטומטית",
   "@whoAreYouPageAutoLogin": {},
@@ -374,7 +342,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "הסיסמאות סותרות זו את זו",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesToDisk": "כתיבת השינויים לכונן",
+  "writeChangesToDisk": "סיימנו להתכונן להתקנה",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "כונן",
   "@writeChangesFallbackSerial": {
@@ -394,7 +362,7 @@
   },
   "writeChangesPartitionsHeader": "השינויים הבאים יחולו על המחיצות:",
   "@writeChangesPartitionsHeader": {},
-  "connectToInternetPageTitle": "התחברות לאינטרנט",
+  "connectToInternetPageTitle": "התחברות לרשת",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "חיבור המחשב הזה לאינטרנט יסייע לאובונטו להתקין תכניות נוספות חיוניות ויסייע בבחירת אזור הזמן שלך.\n\nאפשר להתחבר בכבל רשת או לבחור רשת אלחוטית",
   "@connectToInternetDescription": {},
@@ -422,11 +390,11 @@
   "@enableWifi": {},
   "connectButtonText": "התחברות",
   "@connectButtonText": {},
-  "newPartitionTableConfirmationMessage": "בחרת לחלק התקן שלם למחיצות. בחירה להמשיך ביצירת טבלת מחיצות חדשה בהתקן תסיר את כל המחיצות הנוכחיות.\n\nנא לשים לב שזאת פעולה בלתי הפיכה.",
+  "newPartitionTableConfirmationMessage": "יצירת טבלת מחיצות חדשה על כל הכונן תסיר את כל המחיצות הנוכחיות שלו. אי אפשר להשתקם מהפעולה הזאת במקרה הצורך.",
   "@newPartitionTableConfirmationMessage": {},
-  "newPartitionTableConfirmationTitle": "ליצור טבלת מחיצות ריקה בהתקן הזה?",
+  "newPartitionTableConfirmationTitle": "מחיצה ריקה חדשה",
   "@newPartitionTableConfirmationTitle": {},
-  "onBatteryWarning": "<font color=\"{color}\">אזהרה</font>: המחשב לא מחובר למקור חשמל.",
+  "onBatteryWarning": "<font color=\"{color}\">אזהרה:</font> המחשב לא מחובר למקור חשמל.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -439,7 +407,7 @@
   "@whereAreYouTimezoneLabel": {},
   "whereAreYouLocationLabel": "מיקום",
   "@whereAreYouLocationLabel": {},
-  "whereAreYouPageTitle": "מה מיקומך?",
+  "whereAreYouPageTitle": "נא לבחור את אזור הזמן שלך",
   "@whereAreYouPageTitle": {},
   "welcomeSlideTitle": "ברוך בואך אל {RELEASE}",
   "@welcomeSlideTitle": {
@@ -625,7 +593,7 @@
   },
   "installAlongsideAvailable": "זמין:",
   "@installAlongsideAvailable": {},
-  "writeChangesPartitionFormattedMounted": "מחיצה מס׳ {disk}{partition} תפורמט כ־{format} ותשמש עבור {mount}",
+  "writeChangesPartitionFormattedMounted": "מחיצה <b>{disk}{partition}</b> פורמטה כ־<b>{format}</b> ומשמשת עבור <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -635,7 +603,7 @@
       "mount": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "מחילה",
+  "notEnoughDiskSpaceTitle": "אין מספיק מקום",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceHeader": "נדרשים {SIZE} לפחות של מקום פנוי כדי להתקין את {RELEASE}.",
   "@notEnoughDiskSpaceHeader": {
@@ -645,7 +613,7 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "הגודל של מחיצה מס׳ {disk}{partition} ישתנה מ־{oldsize} ל־{newsize}",
+  "writeChangesPartitionResized": "הגודל של מחיצה <b>{disk}{partition}</b> ישתנה מ־<b>{oldsize}</b> ל־<b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -657,7 +625,7 @@
   },
   "quitButtonText": "יציאה מההתקנה",
   "@quitButtonText": {},
-  "writeChangesPartitionCreated": "מחיצה מס׳ {disk}{partition} נוצרה",
+  "writeChangesPartitionCreated": "המחיצה <b>{disk}{partition}</b> נוצרה",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -672,7 +640,7 @@
       "SIZE": {}
     }
   },
-  "writeChangesPartitionFormatted": "מחיצה מס׳ {disk}{partition} תפורמט בתור {format}",
+  "writeChangesPartitionFormatted": "מחיצה <b>{disk}{partition}</b> פורמטה בתור <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -681,7 +649,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "מחיצה מס׳ {disk}{partition} תשמש עבור {mount}",
+  "writeChangesPartitionMounted": "מחיצה <b>{disk}{partition}</b> תשמש עבור <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -715,7 +683,7 @@
   "@installCodecsSubtitle": {},
   "tooManyPrimaryPartitions": "יותר מדי מחיצות ראשיות",
   "@tooManyPrimaryPartitions": {},
-  "partitionLimitReached": "הגעת לגבול",
+  "partitionLimitReached": "הגעת למגבלה",
   "@partitionLimitReached": {},
   "restartNow": "להפעיל מחדש כעת",
   "@restartNow": {},
@@ -731,5 +699,232 @@
   "offlineWarning": "החיבור שלך מנותק",
   "@offlineWarning": {},
   "partitionFormatNone": "להשאיר בלי פרמוט",
-  "@partitionFormatNone": {}
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordShow": "חשיפה",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "הסתרה",
+  "@whoAreYouPagePasswordHide": {},
+  "activeDirectoryOption": "להשתמש ב־Active Directory",
+  "@activeDirectoryOption": {},
+  "activeDirectoryInfo": "אפשר למלא את פרטי שם התחום (דומיין) ופרטים נוספים בצעד הבא.",
+  "@activeDirectoryInfo": {},
+  "activeDirectoryDomainInvalidChars": "תווים שגויים",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryDomainStartDot": "מתחיל בנקודה (.)",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainEndDot": "מסתיים בנקודה (.)",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainEndHyphen": "מסתיים במינוס (-)",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryDomainMultipleDots": "מכיל מספר נקודות ברצף (..)",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryDomainNotFound": "שם התחום לא נמצא",
+  "@activeDirectoryDomainNotFound": {},
+  "activeDirectoryAdminLabel": "צירוף משתמש לתחום",
+  "@activeDirectoryAdminLabel": {},
+  "activeDirectoryPasswordLabel": "סיסמה",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryPasswordEmpty": "חובה",
+  "@activeDirectoryPasswordEmpty": {},
+  "activeDirectoryDomainLabel": "שם תחום (דומיין)",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryTestConnection": "בדיקת חיבור לתחום",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryTitle": "הגדרת Active Directory",
+  "@activeDirectoryTitle": {},
+  "activeDirectoryAdminEmpty": "חובה",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryDomainEmpty": "חובה",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryDomainTooLong": "ארוך מדי",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryDomainStartHyphen": "מתחיל במינוס (-)",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryAdminInvalidChars": "תווים שגויים",
+  "@activeDirectoryAdminInvalidChars": {},
+  "whoAreYouPageRealNameTooLong": "השם ארוך מדי.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "שם המחשב הזה ארוך מדי.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryErrorTitle": "שגיאה בהגדרת החיבור ל־Active Directory",
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "אי אפשר להגדיר חיבור ל־Active Directory כרגע, עמך הסליחה. לאחר סיום התקנת המערכת, יש לבקר בכתובת <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> לקבלת עזרה.",
+  "@activeDirectoryErrorMessage": {},
+  "preparingUbuntu": "{DISTRO} בהכנות…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "זיהוי",
+  "@detectButtonText": {},
+  "keyboardVariant": "הגוון מקלדת:",
+  "@keyboardVariant": {},
+  "writeChangesPartitionsTitle": "מחיצות",
+  "@writeChangesPartitionsTitle": {},
+  "notEnoughDiskSpaceUbuntu": "אין מספיק מקום להתקין את {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "פנוי:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "נחוץ:",
+  "@notEnoughDiskSpaceRequired": {},
+  "writeChangesDevicesTitle": "התקנים",
+  "@writeChangesDevicesTitle": {},
+  "installationSlidesSoftwareTitle": "כל היישומים שדרושים לך",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesDevelopmentTitle": "כלי פיתוח קוד פתוח מהשורה הראשונה",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} היא תחנת העבודה האידאלית לפיתוח יישומים ואתרים, מדעי נתונים ובינה מלאכותית/למידת מכונה לרבות DevOps וניהול. כל מהדורה של {DISTRO} כוללת את סוללת כלי העבודה העדכנית ביותר ותומכת בכל סביבות הפיתוח המשולבות העיקריות.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportResources": "משאבים חיוניים:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "תיעוד רשמי",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "תמיכה 24/7 ברמה תעשייתית עם אובונטו פרו",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesSupportEnterprise": "למשתמשים תאגידיים מספקת Canonical תמיכה מסחרית כדי להקל על ההגירה והניהול של אובונטו בצורה מאובטחת בסביבת העבודה.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesAccessibilityOrca": "מקריא המסך Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesAccessibilityLanguages": "תמיכה בשפות",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "עזרה ותמיכה",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSupportHeader": "התיעוד הרשמי של {DISTRO} זמין גם דרך האינטרנט וגם דרך סמל העזרה במעגן.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityBody": "במרכז הפילוסופיה של {DISTRO} קיימת האמונה שמחשוב מיועד לכולם. עם כלי נגישות מתקדמים ואפשרויות להחלפת השפה, הצבעים וגודל הכתב, {DISTRO} מקל על השימוש במחשב - בכל אופן ואזור גאוגרפי.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "welcomePageTitle": "ברוך בואך אל {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesTitle": "ברוך בואך אל {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesIncluded": "כחלק:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesAvailable": "זמין:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesWelcomeTitle": "מהיר, חינמי ומפוצץ ביכולות חדשות",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "הגרסה העדכנית ביותר של {DISTRO} הופכת את השימוש במחשב לפשוט מאי פעם.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "בין אם למטרות פיתוח, יצירה, משחקים או ניהול ניתן למצוא כלים חדשים לשיפור היעילות והחוויה עם {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSoftwareBody": "אפשר להתקין, לנהל ולעדכן את כל היישומים שלך עם מרכז התוכנה של אובונטו לרבות אלפי יישומים מחנות Snap ומארכיון {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityBody": "מנפישים, מעצבים, יוצרי סרטונים ומפתחי משחקים יכולים להביא את הרגלי העבודה שלהם לתוך {DISTRO} עם תמיכה בקוד פתוח ובתוכנות ויישומים שמקובלים בתעשייה.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "לפרוץ את גבולות הדמיון",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesGamingTitle": "מעולה למשחקים",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesGamingBody": "ב־{DISTRO} יש תמיכה במנהלי ההתקנים העדכניים ביותר של NVIDIA ושל Mesa כדי לשפר את הביצועים והתאימות. אלפי משחקי צמרת שנתמכים ב־Windows פועלים היטב עם {DISTRO} דרך יישומים כמו Steam ללא הגדרות נוספות.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "פרטי ומאובטח",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityBody": "כחלק מ־{DISTRO} מסופקים כל הכלים שדרושים לך כדי לשמור על פרטיות ואבטחה באינטרנט. עם חומת אש מובנית ותמיכה ב־VPN ובכמות מרשימה של יישומים ששומרים על פרטיותך בקנאות כדי לעזור לך לוודא שיש לך שליטה מלאה על המידע שלך.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "האתר Ask Ubuntu חולש על פני מגוון רחב של שאלות ותשובות ו־Ubuntu Discourse מספק מדריכים ודיונים למשתמשים חדשים ומנוסים.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesProductivityTitle": "פשוט להפיק יותר",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesProductivityBody": "שולחן העבודה של {DISTRO} כולל את LibreOffice, חבילת יישומי קוד פתוח תואמי Microsoft Office עבור מסמכים, גיליונות נתונים ומצגות. לרבות כלי שיתוף פעולה נוספים.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "גישה לכל אחד ואחת",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesSecurityLts": "כל מהדורות {DISTRO} LTS (תמיכה לזמן ארוך) זוכות לחמש שנים של תיקוני אבטחת מידע אותן ניתן להרחיב לעשר עם מינוי של אובונטו פרו.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffRSTTitle": "יש לכבות את ה־RST כדי להמשיך",
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsTitle": "לעלות מחדש ל־Windows?",
+  "@restartIntoWindowsTitle": {},
+  "turnOffBitlockerHeadline": "יש לכבות את BitLocker",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsDescription": "להפעיל את המחשב מחדש? יש להפעיל את ההתקנה של {DISTRO} מחדש בהמשך כדי לסיים את התקנת {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "allocateDiskSpaceInvalidMountPointSlash": "נקודות עיגון חייבות להתחיל ב־„/”",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "נקודות עיגון לא יכולות להכיל רווחים",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "partitionFormatKeep": "להשאיר בעיצוב {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }

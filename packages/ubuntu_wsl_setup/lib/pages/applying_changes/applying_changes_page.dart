@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
@@ -57,9 +56,9 @@ class _ApplyingChangesPageState extends State<ApplyingChangesPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const YaruCircularProgressIndicator(),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           Text(lang.applyingChanges),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           Text(
             lang.applyingChangesDisclaimer,
             style: Theme.of(context).textTheme.bodySmall,

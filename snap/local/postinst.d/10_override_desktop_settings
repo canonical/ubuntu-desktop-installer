@@ -22,7 +22,6 @@ dconf_dump() {
 
 dconf_dump a11y
 dconf_dump interface
-dconf_dump input-sources
 dconf_dump peripherals
 dconf_dump wm
 

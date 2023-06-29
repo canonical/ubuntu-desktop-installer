@@ -13,16 +13,7 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'İptal et';
-
-  @override
   String get changeButtonText => 'Değiştir';
-
-  @override
-  String get okButtonText => 'Tamam';
-
-  @override
-  String get noButtonText => 'Hayır';
 
   @override
   String get restartButtonText => 'Yeniden başlat';
@@ -31,19 +22,25 @@ class AppLocalizationsTr extends AppLocalizations {
   String get revertButtonText => 'Geri al';
 
   @override
-  String get yesButtonText => 'Evet';
-
-  @override
   String get quitButtonText => 'Kurulumdan Çık';
 
   @override
-  String get welcome => 'Hoş Geldiniz';
+  String welcomePageTitle(Object DISTRO) {
+    return '$DISTRO dağıtımına hoş geldiniz';
+  }
+
+  @override
+  String preparingUbuntu(Object DISTRO) {
+    return '$DISTRO hazırlanıyor...';
+  }
 
   @override
   String get welcomeHeader => 'Dil seçin:';
 
   @override
-  String get tryOrInstallPageTitle => 'Dene veya kur';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return '$DISTRO\'yu dene veya kur';
+  }
 
   @override
   String get repairInstallation => 'Kurulumu tamir et';
@@ -77,14 +74,17 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST\'yi kapat';
+  String get turnOffRST => 'RST etkin';
+
+  @override
+  String get turnOffRSTTitle => 'Devam etmek için RST\'yi kapatın';
 
   @override
   String get turnOffRSTDescription => 'Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu\'yu kurmadan önce Windows\'tan RST\'yi kapatmalısınız.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Talimatlar için şu adresi bir telefondan veya başka bir cihazdan açın: <a href=\"https://$url\">$url</a>';
+    return 'Talimatlar için QR kodunu başka bir cihazda tarayın veya ziyaret edin: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -97,7 +97,13 @@ class AppLocalizationsTr extends AppLocalizations {
   String get typeToTest => 'Klavyenizi test etmek için buraya yazın';
 
   @override
-  String get detectLayout => 'Klavye Düzenini Tespit Et';
+  String get detectLayout => 'Klavye düzenini algıla';
+
+  @override
+  String get detectButtonText => 'Algıla';
+
+  @override
+  String get keyboardVariant => 'Klavye yerleşimi:';
 
   @override
   String get pressOneKey => 'Lütfen aşağıdaki tuşlardan birine basın:';
@@ -109,7 +115,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get configureSecureBootTitle => 'Güvenli Önyüklemeyi Yapılandır';
 
   @override
-  String get configureSecureBootDescription => 'Üçüncü parti sürücüleri kurmayı seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir. \nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.';
+  String get configureSecureBootDescription => 'Üçüncü parti sürücüleri kurmayı seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir.\nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.';
 
   @override
   String get configureSecureBootOption => 'Güvenli Önyüklemeyi Yapılandır';
@@ -136,7 +142,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get showSecurityKey => 'Güvenlik anahtarını göster';
 
   @override
-  String get connectToInternetPageTitle => 'İnternete bağlan';
+  String get connectToInternetPageTitle => 'Bir ağa bağlan';
 
   @override
   String get connectToInternetDescription => 'Bu bilgisayarı internete bağlamak, Ubuntu\'nun ihtiyacı olan ek yazılımları kurmasına ve zaman diliminizi seçmenize yardımcı olur.\n\nEthernet kablosuyla bağlan veya bir Wi-Fi ağı seç';
@@ -151,7 +157,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get wiredDisabled => 'Kablolu bağlantı kapalı';
 
   @override
-  String get wiredMustBeEnabled => 'Bilgisayarda etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir';
+  String get wiredMustBeEnabled => 'Bilgisayarda Etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir';
 
   @override
   String get enableWired => 'Kablolu bağlantıyı etkinleştir';
@@ -187,7 +193,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get connectButtonText => 'Bağlan';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Güncellemeler ve diğer yazılımlar';
+  String get updatesOtherSoftwarePageTitle => 'Uygulamalar ve güncellemeler';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Başlangıç olarak hangi uygulamaları kurmak istersiniz?';
@@ -220,21 +226,21 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installDriversSubtitle => 'Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.';
 
   @override
-  String get installCodecsTitle => 'Ek ortam biçimleri desteğini kur';
+  String get installCodecsTitle => 'Ek ortam biçimleri desteğini indir ve kur';
 
   @override
   String get installCodecsSubtitle => 'Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.';
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Uyarı</font>: Bilgisayar güç kaynağına takılı değil.';
+    return '<font color=\"$color\">Uyarı:</font> Bilgisayar güç kaynağına takılı değil.';
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Şu anda çevrimdışısın';
 
   @override
-  String get chooseSecurityKeyTitle => 'Güvenlik anahtarı seç';
+  String get chooseSecurityKeyTitle => 'Güvenlik anahtarı';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -255,7 +261,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Uyarı</font>: Bu güvenlik anahtarını kaybederseniz tüm veriler kaybolur. Gerekirse, anahtarınızı bir yere yazın ve güvenli başka bir yerde saklayın.';
+    return '<font color=\"$color\">Uyarı:</font> Bu güvenlik anahtarını kaybederseniz tüm veriler kaybolur. Gerekirse, anahtarınızı bir yere yazın ve güvenli başka bir yerde saklayın.';
   }
 
   @override
@@ -288,7 +294,7 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'İleri Seviye Özellikler...';
+  String get installationTypeAdvancedLabel => 'Gelişmiş özellikler...';
 
   @override
   String get installationTypeAdvancedTitle => 'İleri seviye özellikler';
@@ -336,7 +342,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return '$product\'i $os yanına kurun';
+    return '$product işletims sistemini $os yanına kur';
   }
 
   @override
@@ -358,7 +364,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Belgeler, müzik ve diğer kişisel dosyalar korunacak. Bilgisayar her başlatıldığında hangi işletim sistemini istediğinizi seçebilirsiniz.';
 
   @override
-  String get installationTypeManual => 'Başka bir şey';
+  String get installationTypeManual => 'Elle bölümlendirme';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -377,7 +383,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get selectGuidedStorageInfoLabel => 'Bütün disk kullanılacaktır:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Şimdi Kur';
+  String get selectGuidedStorageInstallNow => 'Şimdi kur';
 
   @override
   String get installAlongsideSpaceDivider => 'Aşağıdaki ayırıcıyı sürükleyerek sürücü alanı ayır:';
@@ -406,10 +412,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installAlongsideAvailable => 'Kullanılabilir:';
 
   @override
-  String get allocateDiskSpace => 'Disk alanı ayır';
+  String get allocateDiskSpace => 'Elle biçimlendirme';
 
   @override
-  String get startInstallingButtonText => 'Kurulumu Başlat';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Bağlama noktaları \"/\" ile başlamalıdır';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Bağlama noktaları boşluk içeremez';
+
+  @override
+  String get startInstallingButtonText => 'Kur';
 
   @override
   String get diskHeadersDevice => 'Cihaz';
@@ -433,22 +445,22 @@ class AppLocalizationsTr extends AppLocalizations {
   String get diskHeadersFormat => 'Biçim';
 
   @override
-  String get freeDiskSpace => 'boş alan';
+  String get freeDiskSpace => 'Boş alan';
 
   @override
   String get newPartitionTable => 'Yeni bölüm tablosu';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Bu cihazda yeni bir boş bölüm tablosu oluşturulsun mu?';
+  String get newPartitionTableConfirmationTitle => 'Yeni boş bölüm';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Bölümlemek için tüm cihazı seçtiniz. Yeni bölüm tablosu oluşturmaya devam ederseniz, cihazdaki mevcut tüm bölümler kaldırılacak.\n\nDilerseniz bu işlemi daha sonra geri alabileceğinizi unutmayın.';
+  String get newPartitionTableConfirmationMessage => 'Cihazın tamamında yeni bir bölüm tablosu oluşturmak var olan bölümleri siler. Bu işlem gerekirse geri alınabilir.';
 
   @override
   String get tooManyPrimaryPartitions => 'Çok fazla birincil bölüm';
 
   @override
-  String get partitionLimitReached => 'sınıra ulaşıldı';
+  String get partitionLimitReached => 'Sınıra ulaşıldı';
 
   @override
   String get bootLoaderDevice => 'Önyükleyici kurulumu yapılacak cihaz';
@@ -496,55 +508,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get partitionFormatLabel => 'Kullanılan:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 günlüklü dosya sistemi';
+  String get partitionFormatNone => 'Biçimlendirilmemiş bırak';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 günlüklü dosya sistemi';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 dosya sistemi';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs günlüklü dosya sistemi';
-
-  @override
-  String get partitionFormatJfs => 'JFS günlüklü dosya sistemi';
-
-  @override
-  String get partitionFormatXfs => 'XFS günlüklü dosya sistemi';
-
-  @override
-  String get partitionFormatFat => 'FAT dosya sistemi';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 dosya sistemi';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 dosya sistemi';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 dosya sistemi';
-
-  @override
-  String get partitionFormatSwap => 'Takas alanı';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 dosya sistemi';
-
-  @override
-  String get partitionFormatVfat => 'VFAT dosya sistemi';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS dosya sistemi';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS dosya sistemi';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS root dosya sistemi';
-
-  @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
 
   @override
   String get partitionErase => 'Bölümü biçimlendir';
@@ -553,7 +522,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get partitionMountPointLabel => 'Bağlama noktası:';
 
   @override
-  String get whoAreYouPageTitle => 'Kimsiniz?';
+  String get whoAreYouPageTitle => 'Hesap oluşturun';
 
   @override
   String get whoAreYouPageAutoLogin => 'Otomatik giriş yap';
@@ -568,6 +537,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'İsim gereklidir';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'Bu isim çok uzun.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Bilgisayar adı';
 
   @override
@@ -575,6 +547,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Bilgisayar adı gereklidir';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'Bu bilgisayar ismi çok uzun.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Bilgisayar adı geçersiz';
@@ -613,16 +588,25 @@ class AppLocalizationsTr extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Parolalar uyuşmuyor';
 
   @override
-  String get whoAreYouPageShowPassword => 'Parolayı göster';
+  String get whoAreYouPagePasswordShow => 'Göster';
 
   @override
-  String get writeChangesToDisk => 'Değişiklikleri diske yaz';
+  String get whoAreYouPagePasswordHide => 'Gizle';
+
+  @override
+  String get writeChangesToDisk => 'Kuruluma hazır';
 
   @override
   String get writeChangesFallbackSerial => 'disk';
 
   @override
   String get writeChangesDescription => 'Devam ederseniz, aşağıda listelenen değişiklikler disklere yazılacak. Daha fazla değişikliği elle yapabileceksiniz.';
+
+  @override
+  String get writeChangesDevicesTitle => 'Aygıtlar';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Disk bölümleri';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Aşağıdaki cihazların bölüm tabloları değiştirildi:';
@@ -637,31 +621,31 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return '#$disk$partition bölümü $oldsize boyutundan $newsize boyutuna yeniden boyutlandırıldı';
+    return '<b>$disk$partition</b> bölümü <b>$oldsize</b> boyutundan <b>$newsize</b> boyutuna yeniden boyutlandırıldı';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return '#$disk$partition bölümü ($format olarak biçimlendirilmiş) $mount için kullanıldı';
+    return '<b>$format </b> biçimindeki <b>$disk$partition</b> bölümü <b>$mount</b> için kullanıldı';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '#$disk$partition bölümü $format olarak biçimlendirildi';
+    return '<b>$disk$partition</b> bölümü <b>$format</b> olarak biçimlendirildi';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return '#$disk$partition bölümü $mount için kullanıldı';
+    return '<b>$disk$partition</b> bölümü <b>$mount</b> için kullanıldı';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '#$disk$partition bölümü oluşturuldu';
+    return '<b>$disk$partition</b> bölümü oluşturuldu';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Görünüm seçin';
+  String get chooseYourLookPageTitle => 'Temanızı seçin';
 
   @override
   String get chooseYourLookPageHeader => 'Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.';
@@ -677,7 +661,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** kuruldu ve kullanıma hazır.';
+    return '**$system** kuruldu ve kullanıma hazır';
   }
 
   @override
@@ -694,27 +678,40 @@ class AppLocalizationsTr extends AppLocalizations {
   String get shutdown => 'Kapat';
 
   @override
-  String get restartNow => 'Şimdi Yeniden Başlat';
+  String get restartNow => 'Şimdi yeniden başlat';
 
   @override
-  String get continueTesting => 'Test Etmeye Devam Et';
+  String get continueTesting => 'Test etmeye devam et';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker\'ı kapat';
+  String get turnOffBitlockerTitle => 'BitLocker aktif';
 
   @override
-  String get turnOffBitlockerDescription => 'Bu bilgisayar Windows BitLocker şifreleme kullanıyor.\nUbuntu\'yu kurmadan önce Windows\'ta BitLocker\'ı kapatmanız gerekli.';
+  String get turnOffBitlockerHeadline => 'Devam etmek için BitLocker\'ı kapat';
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Talimatlar için bu sayfayı telefonda veya başka bir cihazda açın: <a href=\"https://$url\">$url</a>';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Bu bilgisayar Windows BitLocker şifreleme kullanmaktadır.\nBoş alan oluşturmak için Windows\'u kullanmanız ya da devam etmek için \'$option\'i seçmeniz gerekir.';
   }
 
   @override
-  String get restartIntoWindows => 'Windows\'a Yeniden Başlat';
+  String turnOffBitlockerLinkInstructions(Object url) {
+    return 'Talimatlar için QR kodunu başka bir cihazda tarayın ya da <a href=\"https://$url\">$url</a> sayfasını ziyaret edin';
+  }
 
   @override
-  String get whereAreYouPageTitle => 'Neredesiniz?';
+  String get restartIntoWindows => 'Windows\'a yeniden başlat';
+
+  @override
+  String get restartIntoWindowsTitle => 'Windows\'a yeniden başlatılsın mı?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Bilgisayarınızı yeniden başlatmak istediğinizden emin misiniz? $DISTRO kurulumunu tamamlamak için $DISTRO kurulumunu daha sonra yeniden başlatmanız gerekecektir.';
+  }
+
+  @override
+  String get whereAreYouPageTitle => 'Saat diliminizi seçin';
 
   @override
   String get whereAreYouLocationLabel => 'Konum';
@@ -723,129 +720,118 @@ class AppLocalizationsTr extends AppLocalizations {
   String get whereAreYouTimezoneLabel => 'Saat Dilimi';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
-    return '$RELEASE hoşgeldiniz';
+  String installationSlidesTitle(Object RELEASE) {
+    return '$RELEASE sürümüne hoş geldiniz';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return 'Hızlı ve yeni özelliklerle dolu $RELEASE en son sürümü, bilgisayar kullanımını her zamankinden daha kolay hale getiriyor. İşte dikkatinici çekecek birkaç harika yenilik...';
+  String get installationSlidesAvailable => 'Mevcut:';
+
+  @override
+  String get installationSlidesIncluded => 'Dahil:';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'Hızlı, ücretsiz ve yeni özelliklerle dolu';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return '$DISTRO\'nun son sürümü işleri hiç olmadığı kadar kolaylaştırır.';
   }
 
   @override
-  String get softwareSlideTitle => 'Daha fazla yazılım bul';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return 'İnternette yeni yazılım aramaya veda edin. Snap Store ve $RELEASE yazılım arşivine erişim sayesinde yeni uygulamaları kolaylıkla bulup kurabilirsiniz. Sadece aradığınızı yazın ya da diğer kullanıcıların faydalı incelemelerini de içeren Grafik ve Fotoğraf, Oyunlar ve Üretkenlik gibi kategorileri keşfedin.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'Geliştirici, içerik üreticisi, sanatçı, oyuncu ya da sistem yöneticisi olun fark etmez, $RELEASE sürümünde verimliliğinizi arttıracak ve deneyiminizi iyileştirecek yeni araçlar bulacaksınız.';
   }
 
   @override
-  String get musicSlideTitle => 'Müziğini yanında bulundur';
+  String get installationSlidesSoftwareTitle => 'İhtiyacınız olan tüm uygulamalar';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE muhteşem Rhythmbox müzik çalar ile birlikte geliyor. Gelişmiş çalma seçenekleri ile şarkıları sıraya koymak çok kolay. Ayrıca CD\'ler ve taşınabilir müzik çalarlarla harika çalışır, böylece nereye giderseniz gidin tüm müziklerinizin keyfini çıkarabilirsiniz.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'Snap Store ve $DISTRO arşivindeki binlerce uygulama dahil tüm uygulamaları Ubuntu Software ile kurun, yönetin ve güncelleyin.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Müzik Oynatıcısı';
+  String get installationSlidesDevelopmentTitle => 'Açık kaynağın en iyisi ile geliştir';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => 'Fotoğraflarınızla iyi eğlenceler';
-
-  @override
-  String get photoSlideDescription => 'Shotwell, cihazlarınız için kullanıma hazır olan kullanışlı bir fotoğraf yöneticisidir. Fotoğraflarınızı aktarmak için kamera veya telefon bağlayın, ardından onları paylaşmak ve saklamak çok kolay. Kendinizi üretken hissediyorsanız, Ubuntu Yazılımlar ile başka birçok fotoğraf uygulaması da bulabilirsiniz.';
-
-  @override
-  String get photoSlideShotwell => 'Shotwell Fotoğraf Yöneticisi';
-
-  @override
-  String get photoSlideGimp => 'GIMP Görüntü Düzenleyici';
-
-  @override
-  String get photoSlideShotcut => 'Shotcut Video Düzenleyici';
-
-  @override
-  String get webSlideTitle => 'İnternetten en iyi şekilde yararlanın';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE dünya çapında milyonlarca kişi tarafından kullanılan web tarayıcısı Firefox ile geliyor. Ayrıca sık kullandığınız internet uygulamaları (örneğin Facebook veya Gmail gibi), tıpkı bilgisayarınızdaki uygulamalar gibi daha hızlı erişim için masaüstünüze sabitleyebilirsiniz.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO uygulama veya web geliştirme, veri bilimi, yapay zeka ve makine öğrenmesi yanı sıra sistem yönetimi ve DevOps için ideal iş istasyonudur. Her $DISTRO sürümü en güncel toolchainleri içerir ve tüm popüler IDE\'leri destekler.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web tarayıcısı';
+  String get installationSlidesCreativityTitle => 'Yaratıcılığınızı zenginleştirin';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
-
-  @override
-  String get webSlideChromium => 'Chromium';
-
-  @override
-  String get officeSlideTitle => 'Ofis için ihtiyacınız olan her şey';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice belgeler, tablolar ve sunumlar oluşturmak için ihtiyacınız olan her şeyi içeren özgür bir ofis paketidir. Microsoft Office dosya biçimleriyle uyumlu olan bu paket, ihtiyacınız olan tüm özellikleri size sunar.';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => 'Herkes için erişim';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return '$RELEASE felsefesinin temelinde, bilgisayarın herkes için olduğu inancı yatmaktadır. Gelişmiş erişilebilirlik araçları ve dil, renk ve metin boyutunu değiştirme seçenekleriyle $RELEASE, kim ve nerede olursanız olun bilgisayar kullanmayı kolaylaştırır.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'Bir animatör, tasarımcı, video üreticisi ya da oyun geliştiricisiyseniz, açık kaynak ve endüstri standardı yazılım ve uygulama desteği ile iş akışlarınızı $DISTRO dağıtımına taşımak çok kolay.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Özelleştirme seçenekleri';
+  String get installationSlidesGamingTitle => 'Oyun için harika';
 
   @override
-  String get accessSlideAppearance => 'Görünüm';
-
-  @override
-  String get accessSlideAssistiveTechnologies => 'Yardımcı teknolojiler';
-
-  @override
-  String get accessSlideLanguageSupport => 'Dil desteği';
-
-  @override
-  String get supportSlideTitle => 'Yardım ve destek';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return 'Resmi belgeler $RELEASE ile ilgili en yaygın konuları kapsar. Hem <a href=\"https://help.ubuntu.com\">çevrim içi</a> hem de rıhtımdaki Yardım simgesi aracılığıyla kullanılabilir.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO performansı ve uyumluluğu artırmak için en yeni NVIDIA ve Mesa sürücülerini destekler. Binlerce Windows oyunu, Steam gibi uygulamalar aracılığıyla $DISTRO üstünde, ek yapılandırma gerektirmeden harika bir şekilde oynatılır.';
   }
 
   @override
-  String get supportSlideQuestions => '<a href=\"https://askubuntu.com\">Ask Ubuntu</a> adresinden sorularınızı sorabilir ve daha önce yanıtlanmış sorular arasında arama yapabilirsiniz. Kendi dilinizde destek <a href=\"https://loco.ubuntu.com/teams/ubuntu-tr/\">Yerel Topluluk Ekibi</a> adresinden sağlanabilir.';
+  String get installationSlidesSecurityTitle => 'Özel ve güvenli';
 
   @override
-  String get supportSlideResources => 'Diğer faydalı kaynaklara yönlendirmeler için lütfen <a href=\"https://www.ubuntu.com/support/community-support\">Topluluk desteği</a> ya da <a href=\"https://www.ubuntu.com/support\">Kurumsal destek</a> adreslerini ziyaret edin.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO çevrimiçi ortamda gizli ve güvende kalmak için ihtiyacınız olan tüm araçları sağlar. Yerleşik güvenlik duvarı ve VPN desteğinin yanı sıra verilerinizin tam kontrolünü sağlamak için bir dizi gizlilik merkezli uygulama da sağlar.';
+  }
 
   @override
-  String get includedSoftware => 'Birlikte gelen yazılımlar';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'Tüm $DISTRO LTS sürümleri, Ubuntu Pro aboneliği ile on yıla kadar uzanan beş yıllık güvenlik yaması ile birlikte gelir.';
+  }
 
   @override
-  String get availableSoftware => 'Kullanılabilir yazılım';
+  String get installationSlidesProductivityTitle => 'Verimliliğinizi artırın';
 
   @override
-  String get supportedSoftware => 'Desteklenen yazılım';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO Masaüstü, belgeler, elektronik tablolar ve sunumlar için Microsoft Office uyumlu açık kaynak uygulamaları paketi olan LibreOffice\'i içerir. Popüler işbirliği araçları da mevcuttur.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'Herkes için erişim';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return '$DISTRO felsefesinin temelinde bilgisayarın herkes için olduğu inancı yatmaktadır. Gelişmiş erişilebilirlik araçları ve dili, renkleri ve metin boyutunu değiştirme seçenekleriyle $DISTRO, kim ve nerede olursanız olun bilgisayar kullanmayı kolaylaştırır.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Orca Ekran Okuyucu';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'Dil desteği';
+
+  @override
+  String get installationSlidesSupportTitle => 'Yardım ve Destek';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'Resmi $DISTRO belgelerine hem çevrimiçi olarak hem de rıhtımdaki Yardım simgesi aracılığıyla ulaşabilirsiniz.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Ubuntu\'ya Sor çeşitli soru ve yanıtlarını kapsar. Ubuntu Discourse yeni ve deneyimli kullanıcılar için kılavuzlar ve tartışmalar sunar.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'Kurumsal kullanıcılar için Canonical, Ubuntu\'nun işyerinde güvenli bir şekilde kurulmasını ve yönetilmesini kolaylaştırmak için ticari destek sağlar.';
+
+  @override
+  String get installationSlidesSupportResources => 'Yararlı kaynaklar:';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'Resmi belgelendirme';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'Ubuntu Pro ile kurumsal sınıf 7/24 destek';
 
   @override
   String get copyingFiles => 'Dosyalar kopyalanıyor…';
@@ -860,20 +846,79 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installationFailed => 'Kurulum başarısız oldu';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Üzgünüm';
+  String get notEnoughDiskSpaceTitle => 'Yeterli alan yok';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return '$RELEASE kurmak için en az $SIZE disk alanına ihtiyacınız var.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return '$DISTRO kurmak için yeterli disk alanı yok';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Bu bilgisayarda yalnızca $SIZE alan var.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Kullanılabilir:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'Bu bilgisayardaki en büyük disk yalnızca $SIZE boyutunda.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Gerekli:';
+
+  @override
+  String get activeDirectoryOption => 'Active Directory kullan';
+
+  @override
+  String get activeDirectoryInfo => 'Bir sonraki adımda alan adı ve diğer ayrıntıları gireceksiniz.';
+
+  @override
+  String get activeDirectoryTitle => 'Active Directory\'yi Yapılandır';
+
+  @override
+  String get activeDirectoryTestConnection => 'Etki alanı bağlantısını sına';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Etki alanı';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Gerekli';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Çok uzun';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Geçersiz karakterler';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Bir nokta (.) ile başlar';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Bir nokta ile biter (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Kısa çizgi (-) ile başlar';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Kısa çizgi (-) ile biter';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Birden fazla sıralı nokta içerir (...)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Etki alanı bulunamadı';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Etki alanına katılma kullanıcısı';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Gerekli';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Geçersiz karakterler';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Parola';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Gerekli';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Active Directory bağlantısı yapılandırılamadı';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Üzgünüz, Active Directory şu anda kurulamıyor. Sisteminiz kurulup çalışmaya başladığında, yardım için <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> adresini ziyaret edin.';
 }

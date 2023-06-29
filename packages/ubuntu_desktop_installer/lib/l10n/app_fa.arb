@@ -10,11 +10,11 @@
   "@repairInstallation": {},
   "cancelButtonText": "لغو",
   "@cancelButtonText": {},
-  "okButtonText": "باشه",
+  "okButtonText": "قبول",
   "@okButtonText": {},
   "repairInstallationDescription": "تعمیر، همهٔ نرم افزارهای نصب شده را بدون دست زدن به اسناد یا تنظیمات، دوباره نصب می‌کند.",
   "@repairInstallationDescription": {},
-  "noButtonText": "خیر",
+  "noButtonText": "نه",
   "@noButtonText": {},
   "quitButtonText": "خروج از نصب",
   "@quitButtonText": {},
@@ -33,7 +33,7 @@
   "@chooseYourKeyboardLayout": {},
   "typeToTest": "برای آزمایش صفحه‌کلیدتان، این‌جا بنویسید",
   "@typeToTest": {},
-  "instructionsForRST": "برای دستورالعمل‌ها، این صفحه را در تلفن یا دستگاه دیگری باز کنید: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "برای دستورالعمل‌ها، رمز پاس را روی افزاره‌ای دیگر پوییده یا ببینید: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -56,7 +56,7 @@
   "@appTitle": {},
   "changeButtonText": "تغییر",
   "@changeButtonText": {},
-  "restartButtonText": "شروع دوباره",
+  "restartButtonText": "آغاز دوباره",
   "@restartButtonText": {},
   "revertButtonText": "بازگردانی",
   "@revertButtonText": {},
@@ -71,7 +71,7 @@
       "RELEASE": {}
     }
   },
-  "tryOrInstallPageTitle": "امتحان کردن یا نصب",
+  "tryOrInstallPageTitle": "آزمودن یا نصب {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "tryUbuntuDescription": "شما می‌توانید {RELEASE} را بدون ایجاد هیچ تغییری در رایانه خود امتحان کنید.",
   "@tryUbuntuDescription": {
@@ -87,7 +87,7 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "امتحان {RELEASE}",
+  "tryUbuntu": "آزمودن {RELEASE}",
   "@tryUbuntu": {
     "type": "text",
     "placeholders": {
@@ -101,7 +101,7 @@
       "url": {}
     }
   },
-  "turnOffRST": "خاموش کردن RST",
+  "turnOffRST": "RST به کار افتاده",
   "@turnOffRST": {},
   "keyboardLayoutPageTitle": "چیدمان صفحه‌کلید",
   "@keyboardLayoutPageTitle": {},
@@ -119,9 +119,9 @@
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "کلیدهای امنیتی مطابقت ندارند",
   "@secureBootSecurityKeysDontMatch": {},
-  "connectToInternetPageTitle": "اتّصال به اینترنت",
+  "connectToInternetPageTitle": "وصل شدن به شبکه",
   "@connectToInternetPageTitle": {},
-  "connectToInternetDescription": "اتّصال این رایانه به اینترنت به اوبونتو کمک می‌کند تا هر نرم‌افزار اضافی مورد نیاز را نصب کند و به انتخاب منطقهٔ زمانی شما کمک کند.\n\nبا کابل اترنت متّصل شوید یا یک شبکهٔ وای‌فای را انتخاب کنید",
+  "connectToInternetDescription": "وصل کردن این رایانه به اینترنت می‌گذارد اوبونتو هر نرم‌افزار اضافی مورد نیازی را نصب کرده و به گزینش ناحیهٔ زمانیتان کمک می‌کند.\n\nبا کابل اترنت وصل شده یا شبکهٔ وای‌فای‌ای را برگزینید",
   "@connectToInternetDescription": {},
   "useWiredConnection": "استفاده از اتّصال سیمی",
   "@useWiredConnection": {},
@@ -129,7 +129,7 @@
   "@noWiredConnection": {},
   "wiredDisabled": "اتّصال سیمی خاموش است",
   "@wiredDisabled": {},
-  "wiredMustBeEnabled": "برای استفاده از اترنت در این رایانه، اتّصال سیمی باید به کار انداخته شود",
+  "wiredMustBeEnabled": "برای استفاده از اترنت روی این رایانه، باید یک اتّصال سیمی به کار افتد",
   "@wiredMustBeEnabled": {},
   "enableWired": "به کار انداختن اتّصال سیمی",
   "@enableWired": {},
@@ -147,9 +147,9 @@
   "@wifiMustBeEnabled": {},
   "enableWifi": "به کار انداختن وای‌فای",
   "@enableWifi": {},
-  "connectButtonText": "اتّصال",
+  "connectButtonText": "وصل شدن",
   "@connectButtonText": {},
-  "updatesOtherSoftwarePageTitle": "به‌روز رسانی‌ها و دیگر نرم‌افزارها",
+  "updatesOtherSoftwarePageTitle": "برنامه‌ها و به‌روز رسانی‌ها",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "برای شروع چه برنامه‌هایی را می‌خواهید نصب کنید؟",
   "@updatesOtherSoftwarePageDescription": {},
@@ -160,5 +160,579 @@
   "otherOptions": "دیگر گزینه‌ها",
   "@otherOptions": {},
   "installThirdPartyTitle": "نرم‌افزارهای شخص ثالث را برای سخت‌افزارهای گرافیکی و وای‌فای و همچنین قالب‌های رسانه‌ای اضافی نصب کنید",
-  "@installThirdPartyTitle": {}
+  "@installThirdPartyTitle": {},
+  "partitionSizeLabel": "اندازه:",
+  "@partitionSizeLabel": {},
+  "partitionUnitGB": "گ‌ب",
+  "@partitionUnitGB": {},
+  "restartWarning": "اکنون می‌توانید به آزمودن {RELEASE} ادامه دهید؛ ولی تا زمانی که رایانه را دوباره آغاز کنید، هر تغییری یا سندی که ایجاد کنید حفظ نخواهد شد.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "shutdown": "خاموش کردن",
+  "@shutdown": {},
+  "restartNow": "اکنون دوباره آغاز شود",
+  "@restartNow": {},
+  "notEnoughDiskSpaceTitle": "فضای ناکافی",
+  "@notEnoughDiskSpaceTitle": {},
+  "whoAreYouPageInvalidUsername": "نام کاربری نامعتبر است",
+  "@whoAreYouPageInvalidUsername": {},
+  "installCodecsTitle": "بارگیری و نصب پشتیبانی برای قالب‌های رسانه‌ای بیش‌تر",
+  "@installCodecsTitle": {},
+  "onBatteryWarning": "<font color=\"{color}\">هشدار:</font> رایانه به برق وصل نیست.",
+  "@onBatteryWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "installationTypeErase": "پاک کردن دیسک و نصب {DISTRO}",
+  "@installationTypeErase": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationTypeNoOSDetected": "این رایانه هم‌اکنون دارای هیچ سیستم‌عامل شناخته‌شده‌ای نیست. می‌خواهید چه کنید؟",
+  "@installationTypeNoOSDetected": {},
+  "installationTypeNone": "هیچ‌کدام",
+  "@installationTypeNone": {},
+  "installationTypeAdvancedTitle": "ویژگی‌های پیش‌رفته",
+  "@installationTypeAdvancedTitle": {},
+  "installationTypeLVMEncryptionSelected": "استفاده از LVM و رمزنگاری گزیده شد",
+  "@installationTypeLVMEncryptionSelected": {},
+  "installationTypeEncryptInfo": "در گام بعدی، کلید امنیتی‌ای خواهید گزید.",
+  "@installationTypeEncryptInfo": {},
+  "whoAreYouPageUsernameRequired": "نام کاربری‌ای لازم است",
+  "@whoAreYouPageUsernameRequired": {},
+  "whoAreYouPageUsernameInUse": "این نام کاربری از پیش وجود دارد.",
+  "@whoAreYouPageUsernameInUse": {},
+  "installingSystem": "نصب کردن سامانه…",
+  "@installingSystem": {},
+  "chooseYourLookPageHeader": "بعدها همواره می‌توانید این مورد را در تنظیمات ظاهر تغییر دهید.",
+  "@chooseYourLookPageHeader": {},
+  "whereAreYouPageTitle": "گزینش ناحیهٔ زمانیتان",
+  "@whereAreYouPageTitle": {},
+  "whereAreYouLocationLabel": "مکان",
+  "@whereAreYouLocationLabel": {},
+  "activeDirectoryAdminEmpty": "لازم",
+  "@activeDirectoryAdminEmpty": {},
+  "installationTypeZFSSelected": "استفاده از ZFS گزیده شد",
+  "@installationTypeZFSSelected": {},
+  "installationTypeZFS": "آزمایشی: پاک کردن دیسک و استفاده از ZFS",
+  "@installationTypeZFS": {},
+  "diskHeadersSystem": "سامانه",
+  "@diskHeadersSystem": {},
+  "diskHeadersFormat": "قالب‌بندی",
+  "@diskHeadersFormat": {},
+  "diskHeadersMountPoint": "نقطهٔ سوار شدن",
+  "@diskHeadersMountPoint": {},
+  "turnOffRSTTitle": "برای ادامه RST را خاموش کنید",
+  "@turnOffRSTTitle": {},
+  "installationTypeLVMSelected": "استفاده از LVM گزیده شد",
+  "@installationTypeLVMSelected": {},
+  "installationTypeAlongside": "نصب {product} کنار {os}",
+  "@installationTypeAlongside": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os": {}
+    }
+  },
+  "installAlongsideFiles": "پرونده‌ها",
+  "@installAlongsideFiles": {},
+  "startInstallingButtonText": "نصب",
+  "@startInstallingButtonText": {},
+  "freeDiskSpace": "فضای آزاد",
+  "@freeDiskSpace": {},
+  "partitionMountPointLabel": "نقطهٔ سوار کردن:",
+  "@partitionMountPointLabel": {},
+  "whoAreYouPageRealNameLabel": "نامتان",
+  "@whoAreYouPageRealNameLabel": {},
+  "whoAreYouPageUsernameSystemReserved": "این نام برای استفادهٔ سامانه کنار گذاشته شده.",
+  "@whoAreYouPageUsernameSystemReserved": {},
+  "whoAreYouPageUsernameTooLong": "نام بیش از حد طولانی است.",
+  "@whoAreYouPageUsernameTooLong": {},
+  "writeChangesPartitionTablesEntry": "{serial} ({path})",
+  "@writeChangesPartitionTablesEntry": {
+    "description": "An entry for a disk whose partition table is being changed",
+    "placeholders": {
+      "serial": {},
+      "path": {}
+    }
+  },
+  "writeChangesPartitionMounted": "افراز <b>{disk}{partition}</b> برای <b>{mount}</b> استفاده شد",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionCreated": "افراز <b>{disk}{partition}</b> ایجاد شد",
+  "@writeChangesPartitionCreated": {
+    "description": "A created partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {}
+    }
+  },
+  "chooseYourLookPageLightSetting": "روشن",
+  "@chooseYourLookPageLightSetting": {},
+  "restartInto": "آغاز دوباره به {system}",
+  "@restartInto": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "installationSlidesIncluded": "دارای:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesGamingTitle": "عالی برای بازی",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesSecurityTitle": "محرمانه و امن",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityLts": "تمامی نگارش‌های LTS {DISTRO} با پنج سال وصلهٔ امنیتی آمده که با اشتراک Pro اوبونتو به ده سال افزایش می‌یابد.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityLanguages": "پشتیبانی زبان",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "راهنمایی و پشتیبانی",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSupportHeader": "مستندات رسمی {DISTRO} هم به صورت برخط و هم از نقشک راهنما در داک موجودند.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryDomainLabel": "دامنه",
+  "@activeDirectoryDomainLabel": {},
+  "installationTypeManual": "افرازش دستی",
+  "@installationTypeManual": {},
+  "selectGuidedStorageInstallNow": "اکنون نصب شود",
+  "@selectGuidedStorageInstallNow": {},
+  "whoAreYouPagePasswordShow": "نمایش",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "نهفتن",
+  "@whoAreYouPagePasswordHide": {},
+  "readyToUse": "**{system}** نصب شده و آمادهٔ استفاده است",
+  "@readyToUse": {
+    "type": "text",
+    "placeholders": {
+      "system": {}
+    }
+  },
+  "configuringSystem": "برپا کردن سامانه…",
+  "@configuringSystem": {},
+  "restartIntoWindowsTitle": "آغاز دوباره به ویندوز؟",
+  "@restartIntoWindowsTitle": {},
+  "whereAreYouTimezoneLabel": "ناحیهٔ زمانی",
+  "@whereAreYouTimezoneLabel": {},
+  "installationSlidesDevelopmentTitle": "توسعه با بهترین‌های نرم‌افزار آزاد",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesProductivityTitle": "افزایش بهره‌وریتان",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesAccessibilityOrca": "صفحه‌خوان اورکا",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesSupportResources": "منبع‌های مفید:",
+  "@installationSlidesSupportResources": {},
+  "turnOffBitlockerHeadline": "برای ادامه بیت‌لاکر را خاموش کنید",
+  "@turnOffBitlockerHeadline": {},
+  "installationSlidesTitle": "به {RELEASE} خوش آمدید",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesAvailable": "موجود:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesWelcomeTitle": "سریع، آزاد و پر از ویژگی‌های جدید",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesAccessibilityTitle": "دسترسی برای همگان",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesSupportDocumentation": "مستندات رسمی",
+  "@installationSlidesSupportDocumentation": {},
+  "notEnoughDiskSpaceAvailable": "موجود:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "لازم:",
+  "@notEnoughDiskSpaceRequired": {},
+  "activeDirectoryOption": "استفاده از شاخهٔ فعّال",
+  "@activeDirectoryOption": {},
+  "activeDirectoryDomainMultipleDots": "دارای جندین دنباله از نقطه‌هاست (..)",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryPasswordLabel": "گذرواژه",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryPasswordEmpty": "لازم",
+  "@activeDirectoryPasswordEmpty": {},
+  "diskHeadersSize": "اندازه‌",
+  "@diskHeadersSize": {},
+  "diskHeadersUsed": "استفاده شده",
+  "@diskHeadersUsed": {},
+  "whoAreYouPagePasswordMismatch": "گذرواژه‌ها یکسان نیستند",
+  "@whoAreYouPagePasswordMismatch": {},
+  "writeChangesToDisk": "آمادهٔ نصب",
+  "@writeChangesToDisk": {},
+  "chooseYourLookPageTitle": "گزینش زمینه‌تان",
+  "@chooseYourLookPageTitle": {},
+  "chooseSecurityKeyTitle": "کلید امنیتی",
+  "@chooseSecurityKeyTitle": {},
+  "chooseSecurityKeyHint": "گزینش کلید امنیتی",
+  "@chooseSecurityKeyHint": {},
+  "chooseSecurityKeyRequired": "کلید امنیتی‌ای لازم است",
+  "@chooseSecurityKeyRequired": {},
+  "partitionUnitKB": "ک‌ب",
+  "@partitionUnitKB": {},
+  "chooseYourLookPageDarkSetting": "تیره",
+  "@chooseYourLookPageDarkSetting": {},
+  "offlineWarning": "در حال حاضر برون‌خطید",
+  "@offlineWarning": {},
+  "restartIntoWindows": "آغاز دوباره به ویندوز",
+  "@restartIntoWindows": {},
+  "partitionFormatNone": "قالب‌بندی نشده گذاشتن",
+  "@partitionFormatNone": {},
+  "whoAreYouPageComputerNameLabel": "نام رایانه‌تان",
+  "@whoAreYouPageComputerNameLabel": {},
+  "whoAreYouPageRealNameRequired": "نامی لازم است",
+  "@whoAreYouPageRealNameRequired": {},
+  "whoAreYouPageInvalidComputerName": "نام رایانه نامعتبر است",
+  "@whoAreYouPageInvalidComputerName": {},
+  "writeChangesFallbackSerial": "دیسک",
+  "@writeChangesFallbackSerial": {
+    "description": "Default display name for a disk without a serial (unlikely)"
+  },
+  "writeChangesPartitionTablesHeader": "جدول افرازهای افزاره‌های زیر تغییر کرده‌اند:",
+  "@writeChangesPartitionTablesHeader": {},
+  "whoAreYouPagePasswordLabel": "گزینش گذرواژه",
+  "@whoAreYouPagePasswordLabel": {},
+  "whoAreYouPagePasswordRequired": "گذرواژه‌ای لازم است",
+  "@whoAreYouPagePasswordRequired": {},
+  "whoAreYouPageUsernameInvalidChars": "نام دارای نویسه‌های نامعتبر است.",
+  "@whoAreYouPageUsernameInvalidChars": {},
+  "writeChangesPartitionsHeader": "تغییرهای افراز زیرمی‌خواهند اعمال شوند:",
+  "@writeChangesPartitionsHeader": {},
+  "whoAreYouPageConfirmPasswordLabel": "تأیید گذرواژه‌تان",
+  "@whoAreYouPageConfirmPasswordLabel": {},
+  "writeChangesPartitionsTitle": "افزارها",
+  "@writeChangesPartitionsTitle": {},
+  "writeChangesPartitionFormatted": "افراز <b>{disk}{partition}</b> به صورت <b>{format}</b> قالب‌بندی شد",
+  "@writeChangesPartitionFormatted": {
+    "description": "A formatted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {}
+    }
+  },
+  "continueTesting": "ادامهٔ آزمودن",
+  "@continueTesting": {},
+  "installationCompleteTitle": "نصب کامل شد",
+  "@installationCompleteTitle": {},
+  "writeChangesPartitionFormattedMounted": "افراز <b>{disk}{partition}</b> به صورت <b>{format}</b> برای <b>{mount}</b> قالب‌بندی شد",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "installationSlidesWelcomeHeader": "جدیدترین نگارش {DISTRO} رایانش را آسان‌تر از همیشه کرده است.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "تمامی برنامه‌هایی که نیاز دارید",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "نصب، مدیریت و به‌روز رسانی تمامی کاره‌هایتان در نرم‌افزارهای اوبونتو، شامل هزاران برنامه از مخازن {DISTRO} و فروشگاه اسنپ.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "چه توسعه‌دهنده باشید، چه سازندهٔ محتوا، بازیکن یا مدیر، ابزارهایی جدید برای بهبود بهره‌وری و ارتقای تجربه‌تان در {RELEASE} خواهید یافت.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "ارتقای خلّاقیتتان",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesSupportUbuntuPro": "پشتیبانی ردهٔ تجاری ۲۴/۷ با Pro اوبونتو",
+  "@installationSlidesSupportUbuntuPro": {},
+  "copyingFiles": "رونوشت کردن پرونده‌ها…",
+  "@copyingFiles": {},
+  "notEnoughDiskSpaceUbuntu": "فضای ناکافی برای نصب {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryDomainInvalidChars": "نویسه‌های نامعتبر",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryDomainStartDot": "با نقطه(.) آغاز می‌شود",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainEndDot": "با نقطه(.) پایان می‌پذیرد",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainEndHyphen": "با خط تیره(-) پایان می‌پذیرد",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryDomainNotFound": "دامنه پیدا نشد",
+  "@activeDirectoryDomainNotFound": {},
+  "installationFailed": "نصب شکست خورد",
+  "@installationFailed": {},
+  "preparingUbuntu": "آماده‌سازی {DISTRO}…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "activeDirectoryDomainStartHyphen": "با خط تیره(-) آغاز می‌شود",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryAdminInvalidChars": "نویسه‌های نامعتبر",
+  "@activeDirectoryAdminInvalidChars": {},
+  "installAlongsidePartition": "افراز:",
+  "@installAlongsidePartition": {},
+  "diskHeadersType": "گونه",
+  "@diskHeadersType": {},
+  "installAlongsideSize": "اندازه:",
+  "@installAlongsideSize": {},
+  "partitionCreateTitle": "ایجاد افراز",
+  "@partitionCreateTitle": {},
+  "newPartitionTable": "جدول افراز جدید",
+  "@newPartitionTable": {},
+  "partitionErase": "قالب‌بندی افراز",
+  "@partitionErase": {},
+  "installAlongsideAllocateSpace": "تخصیص فضا",
+  "@installAlongsideAllocateSpace": {},
+  "whoAreYouPageAutoLogin": "ورود خودکار",
+  "@whoAreYouPageAutoLogin": {},
+  "installAlongsideAvailable": "موجود:",
+  "@installAlongsideAvailable": {},
+  "selectGuidedStorageDropdownLabel": "گزینش گرداننده:",
+  "@selectGuidedStorageDropdownLabel": {},
+  "whoAreYouPageUsernameLabel": "گزینش نام کاربری",
+  "@whoAreYouPageUsernameLabel": {},
+  "newPartitionTableConfirmationTitle": "افراز خالی جدید",
+  "@newPartitionTableConfirmationTitle": {},
+  "allocateDiskSpace": "افرازش دستی",
+  "@allocateDiskSpace": {},
+  "partitionLocationEnd": "پایان این فضا",
+  "@partitionLocationEnd": {},
+  "bootLoaderDevice": "افزاره برای نصب بارکنندهٔ راه‌اندازی",
+  "@bootLoaderDevice": {},
+  "whoAreYouPageComputerNameTooLong": "نام رایانه بیش از حد طولانی است.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "installationTypeAlongsideDual": "نصب {product} کنار {os1} و {os2}",
+  "@installationTypeAlongsideDual": {
+    "type": "text",
+    "placeholders": {
+      "product": {},
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "chooseSecurityKeyMismatch": "کلیدهای امنیتی یکسان نیستند",
+  "@chooseSecurityKeyMismatch": {},
+  "whoAreYouPageRequirePassword": "برای ورود گذر‌واژه لازم است",
+  "@whoAreYouPageRequirePassword": {},
+  "whoAreYouPageComputerNameInfo": "نامی که هنگام صحبت با دیگر رایانه‌ها استفاده می‌کند.",
+  "@whoAreYouPageComputerNameInfo": {},
+  "partitionLocationLabel": "مکان افراز جدید:",
+  "@partitionLocationLabel": {},
+  "whoAreYouPageComputerNameRequired": "نام رایانه‌ای لازم است",
+  "@whoAreYouPageComputerNameRequired": {},
+  "installationTypeAlongsideMulti": "نصب {product} کنارشان",
+  "@installationTypeAlongsideMulti": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeReinstallWarning": "<font color=\"{color}\">هشدار:</font> این کار تمامی برنامه‌ها، سندها، نگاره‌ها، آهنگ‌ها و هر پروندهٔ دیگری روی {os} را حذف خواهد کرد.",
+  "@installationTypeReinstallWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {},
+      "os": {}
+    }
+  },
+  "whoAreYouPageTitle": "برپایی حسابتان",
+  "@whoAreYouPageTitle": {},
+  "installationTypeOSDetected": "این رایانه اکنون {os} دارد. می‌خواهید چه کنید؟",
+  "@installationTypeOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "installationTypeMultiOSDetected": "این رایانه هم‌اکنون دارای چندین سیستم‌عامل است. می‌خواهید چه کنید؟",
+  "@installationTypeMultiOSDetected": {},
+  "installationTypeEraseWarning": "<font color=\"{color}\">هشدار:</font> این کار تمامی برنامه‌ها، سندها، نگاره‌ها، آهنگ‌ها و هر پروندهٔ دیگری را روی هر سیستم‌عاملی حذف خواهد کرد.",
+  "@installationTypeEraseWarning": {
+    "type": "text",
+    "placeholders": {
+      "color": {}
+    }
+  },
+  "partitionTypeLabel": "گونهٔ افراز جدید:",
+  "@partitionTypeLabel": {},
+  "whoAreYouPageRealNameTooLong": "نام بیش از حد طولانی است.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "installationTypeLVM": "استفاده از LVM برای نصب {RELEASE} جدید",
+  "@installationTypeLVM": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installDriversTitle": "نصب نرم‌افزارهای سوم‌شخص برای سخت‌افزارهای وای‌فای و گرافیک",
+  "@installDriversTitle": {},
+  "turnOffBitlockerLinkInstructions": "برای دستورالعمل‌ها، رمز پاس را روی افزاره‌ای دیگر پوییده یا ببینید: <a href=\"https://{url}\">{url}</a>",
+  "@turnOffBitlockerLinkInstructions": {
+    "type": "text",
+    "placeholders": {
+      "url": {}
+    }
+  },
+  "chooseSecurityKeyHeader": "رمزنگاری دیسک، از پرونده‌هایتان در صورت گم کردن رایانه‌تان حفاظت می‌کند. این کار نیازمند وارد کردن یک کلید امنیتی در هر بار روشن کردن رایانه است.\n\nهیچ پرونده‌ای بیرون {RELEASE} رمزنگاری نخواهد شد.",
+  "@chooseSecurityKeyHeader": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "showSecurityKey": "نمایش کلید امنیتی",
+  "@showSecurityKey": {},
+  "diskHeadersDevice": "افزاره",
+  "@diskHeadersDevice": {},
+  "detectButtonText": "تشخیص",
+  "@detectButtonText": {},
+  "keyboardVariant": "دگرگونهٔ صفحه‌کلید:",
+  "@keyboardVariant": {},
+  "installationTypeTitle": "گونهٔ نصب",
+  "@installationTypeTitle": {},
+  "chooseSecurityKeyConfirmHint": "تأیید کلید امنیتی",
+  "@chooseSecurityKeyConfirmHint": {},
+  "installationTypeDualOSDetected": "این رایانه اکنون {os1} و {os2} را دارد. می‌خواهید چه کنید؟",
+  "@installationTypeDualOSDetected": {
+    "type": "text",
+    "placeholders": {
+      "os1": {},
+      "os2": {}
+    }
+  },
+  "installationTypeAdvancedLabel": "ویژگی‌های پیش‌رفته…",
+  "@installationTypeAdvancedLabel": {},
+  "installationTypeNoneSelected": "هیچ‌کدام گزیده نشدند",
+  "@installationTypeNoneSelected": {},
+  "installationTypeEncrypt": "رمزنگاری نصب {RELEASE} جدید برای امنیت",
+  "@installationTypeEncrypt": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationTypeAlongsideUnknown": "نصب {product} کنار دیگر افرازها",
+  "@installationTypeAlongsideUnknown": {
+    "type": "text",
+    "placeholders": {
+      "product": {}
+    }
+  },
+  "installationTypeAlongsideInfo": "سندها، آهنگ‌ها و دیگرپرونده‌های شخصی حفظ خواهند شد. هر بار که رایانه روشن می‌شود می‌توانید بگزینید که کدام سیستم‌عامل را می‌خواهید.",
+  "@installationTypeAlongsideInfo": {},
+  "installationTypeReinstall": "پاک کردن {os} و نصب دوباره",
+  "@installationTypeReinstall": {
+    "type": "text",
+    "placeholders": {
+      "os": {}
+    }
+  },
+  "selectGuidedStoragePageTitle": "پاک کردن دیسک و نصب {DISTRO}",
+  "@selectGuidedStoragePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationTypeManualInfo": "می‌توانید خودتان افرازها را ایحاد و تغییر اندازه داده یا چندین افراز را برای {DISTRO} برگزینید",
+  "@installationTypeManualInfo": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installAlongsideResizePartition": "تغییر اندازهٔ افراز",
+  "@installAlongsideResizePartition": {},
+  "selectGuidedStorageInfoLabel": "تمام دیسک استفاده خواهد شد:",
+  "@selectGuidedStorageInfoLabel": {},
+  "installAlongsideSpaceDivider": "با کشیدن تقسیم‌کنندهٔ زیر، فضای گرداننده را تخصیص دهید:",
+  "@installAlongsideSpaceDivider": {},
+  "writeChangesPartitionResized": "اندازهٔ افراز <b>{disk}{partition}</b> از <b>{oldsize}</b> به <b>{newsize}</b> تغییر کرد",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "writeChangesDevicesTitle": "افزاره‌ها",
+  "@writeChangesDevicesTitle": {},
+  "turnOffBitlockerTitle": "بیت‌لاکر به کار افتاده",
+  "@turnOffBitlockerTitle": {},
+  "activeDirectoryInfo": "در گام بعدی دامنه و دیگر حزییات را وارد خواهید کرد.",
+  "@activeDirectoryInfo": {},
+  "activeDirectoryTitle": "پیکربندی شاخهٔ فعّال",
+  "@activeDirectoryTitle": {},
+  "activeDirectoryTestConnection": "آزمون اتّصال دامنه",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryDomainEmpty": "لازم",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryDomainTooLong": "بیش از حد طولانی",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryErrorTitle": "خطا در پیکربندی وصل شدن به شاخهٔ فعّال",
+  "@activeDirectoryErrorTitle": {},
+  "partitionUnitB": "ب",
+  "@partitionUnitB": {},
+  "partitionUnitMB": "م‌ب",
+  "@partitionUnitMB": {},
+  "partitionTypePrimary": "اصلی",
+  "@partitionTypePrimary": {},
+  "partitionTypeLogical": "منطقی",
+  "@partitionTypeLogical": {},
+  "partitionEditTitle": "ویرایش افراز",
+  "@partitionEditTitle": {},
+  "partitionLimitReached": "به محدودیت رسیده",
+  "@partitionLimitReached": {},
+  "partitionLocationBeginning": "ابتدای این فضا",
+  "@partitionLocationBeginning": {},
+  "tooManyPrimaryPartitions": "افرازهای اصلی بیش از حد",
+  "@tooManyPrimaryPartitions": {},
+  "partitionFormatLabel": "استفاده شده برای:",
+  "@partitionFormatLabel": {},
+  "welcomePageTitle": "به {DISTRO} خوش آمدید",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

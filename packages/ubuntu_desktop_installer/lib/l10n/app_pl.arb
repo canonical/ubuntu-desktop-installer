@@ -6,7 +6,7 @@
   "@okButtonText": {},
   "repairInstallation": "Napraw instalację",
   "@repairInstallation": {},
-  "tryOrInstallPageTitle": "Wypróbuj lub zainstaluj",
+  "tryOrInstallPageTitle": "Wypróbuj lub zainstaluj {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallationDescription": "Naprawa spowoduje ponowną instalację całego zainstalowanego oprogramowania bez naruszania dokumentów lub ustawień.",
   "@repairInstallationDescription": {},
@@ -18,7 +18,7 @@
   "@changeButtonText": {},
   "tryUbuntu": "Wypróbuj {RELEASE}",
   "@tryUbuntu": {},
-  "instructionsForRST": "Aby uzyskać instrukcje, otwórz tę stronę w telefonie lub innym urządzeniu: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Aby uzyskać instrukcje, zeskanuj kod QR na innym urządzeniu lub odwiedź: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -39,7 +39,7 @@
   "@configureSecureBootOption": {},
   "chooseSecurityKey": "Wybierz klucz bezpieczeństwa",
   "@chooseSecurityKey": {},
-  "chooseSecurityKeyTitle": "Wybierz klucz bezpieczeństwa",
+  "chooseSecurityKeyTitle": "Klucz bezpieczeństwa",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyConfirmHint": "Potwierdź klucz bezpieczeństwa",
   "@chooseSecurityKeyConfirmHint": {},
@@ -77,8 +77,6 @@
   "@diskHeadersFormat": {},
   "chooseSecurityKeyHeader": "Szyfrowanie dysku chroni pliki w przypadku utraty komputera. Wymaga ono podania klucza bezpieczeństwa przy każdym uruchomieniu komputera.\n\nWszelkie pliki spoza {RELEASE} nie zostaną zaszyfrowane.",
   "@chooseSecurityKeyHeader": {},
-  "partitionFormatReiserFS": "System plików ReiserFS",
-  "@partitionFormatReiserFS": {},
   "installationTypeEncryptInfo": "Klucz bezpieczeństwa zostanie wybrany w następnym kroku.",
   "@installationTypeEncryptInfo": {},
   "installationTypeZFS": "EKSPERYMENTALNE: wymaż dysk i użyj ZFS",
@@ -91,7 +89,7 @@
   "@installationTypeZFSSelected": {},
   "selectGuidedStoragePageTitle": "Wymaż dysk i zainstaluj {DISTRO}",
   "@selectGuidedStoragePageTitle": {},
-  "allocateDiskSpace": "Przydziel przestrzeń dyskową",
+  "allocateDiskSpace": "Ręczne partycjonowanie",
   "@allocateDiskSpace": {},
   "diskHeadersType": "Typ",
   "@diskHeadersType": {},
@@ -99,8 +97,6 @@
   "@newPartitionTable": {},
   "partitionTypeLogical": "Logiczna",
   "@partitionTypeLogical": {},
-  "partitionFormatNtfs": "System plików NTFS",
-  "@partitionFormatNtfs": {},
   "installationTypeAlongside": "Zainstaluj {product} obok {os}",
   "@installationTypeAlongside": {
     "type": "text",
@@ -111,13 +107,13 @@
   },
   "selectGuidedStorageInstallNow": "Zainstaluj teraz",
   "@selectGuidedStorageInstallNow": {},
-  "startInstallingButtonText": "Rozpocznij instalację",
+  "startInstallingButtonText": "Instaluj",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Urządzenie",
   "@diskHeadersDevice": {},
   "diskHeadersMountPoint": "Punkt montowania",
   "@diskHeadersMountPoint": {},
-  "freeDiskSpace": "dostępna przestrzeń",
+  "freeDiskSpace": "Wolna przestrzeń",
   "@freeDiskSpace": {},
   "selectGuidedStorageInfoLabel": "Zostanie użyta cała powierzchnia dysku:",
   "@selectGuidedStorageInfoLabel": {},
@@ -129,7 +125,7 @@
   "@diskHeadersSystem": {},
   "whoAreYouPageComputerNameRequired": "Wymagane jest podanie nazwy komputera",
   "@whoAreYouPageComputerNameRequired": {},
-  "whoAreYouPageTitle": "Kim jesteś?",
+  "whoAreYouPageTitle": "Skonfiguruj swoje konto",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "Automatyczne logowanie",
   "@whoAreYouPageAutoLogin": {},
@@ -167,9 +163,9 @@
       "url": {}
     }
   },
-  "turnOffRST": "Wyłącz RST",
+  "turnOffRST": "Funkcja RST jest włączona",
   "@turnOffRST": {},
-  "turnOffRSTDescription": "Ten komputer wykorzystuje technologię Intel RST (Rapid Storage Technology). Musisz wyłączyć RST w systemie Windows przed instalacją Ubuntu.",
+  "turnOffRSTDescription": "Ten komputer wykorzystuje funkcję Intel RST (Rapid Storage Technology). Musisz wyłączyć RST w systemie Windows przed instalacją Ubuntu.",
   "@turnOffRSTDescription": {},
   "keyboardLayoutPageTitle": "Układ klawiatury",
   "@keyboardLayoutPageTitle": {},
@@ -193,7 +189,7 @@
   "@dontInstallDriverSoftwareNowDescription": {},
   "configureSecureBootSecurityKeyRequired": "Wymagany jest klucz bezpieczeństwa",
   "@configureSecureBootSecurityKeyRequired": {},
-  "updatesOtherSoftwarePageTitle": "Aktualizacje i inne oprogramowanie",
+  "updatesOtherSoftwarePageTitle": "Aplikacje i aktualizacje",
   "@updatesOtherSoftwarePageTitle": {},
   "normalInstallationTitle": "Instalacja normalna",
   "@normalInstallationTitle": {},
@@ -211,14 +207,14 @@
   "@chooseSecurityKeyHint": {},
   "chooseSecurityKeyRequired": "Wymagany jest klucz bezpieczeństwa",
   "@chooseSecurityKeyRequired": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Ostrzeżenie</font>: jeśli zgubisz ten klucz bezpieczeństwa, wszystkie dane zostaną utracone. Jeżeli potrzebujesz, zapisz swój klucz i przechowuj go w bezpiecznym miejscu gdzie indziej.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Ostrzeżenie:</font> jeśli zgubisz ten klucz bezpieczeństwa, wszystkie dane zostaną utracone. Jeżeli potrzebujesz, zapisz swój klucz i przechowuj go w bezpiecznym miejscu gdzie indziej.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
       "color": {}
     }
   },
-  "installationTypeOSDetected": "Na tym komputerze jest obecnie zainstalowany {os}. Co chcesz zrobić?",
+  "installationTypeOSDetected": "Na tym komputerze jest obecnie zainstalowany system {os}. Co chcesz zrobić?",
   "@installationTypeOSDetected": {
     "type": "text",
     "placeholders": {
@@ -243,7 +239,7 @@
   "@installationTypeEncrypt": {},
   "installationTypeAlongsideInfo": "Dokumenty, muzyka i inne pliki osobiste zostaną zachowane. Przy każdym uruchomieniu komputera można wybrać system operacyjny, który ma być używany.",
   "@installationTypeAlongsideInfo": {},
-  "installationTypeManual": "Coś innego",
+  "installationTypeManual": "Ręczne partycjonowanie",
   "@installationTypeManual": {},
   "chooseSecurityKeyMismatch": "Klucze bezpieczeństwa nie są zgodne",
   "@chooseSecurityKeyMismatch": {},
@@ -273,34 +269,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Używana jako:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt4": "System plików z dziennikowaniem Ext4",
-  "@partitionFormatExt4": {},
-  "partitionFormatExt3": "System plików z dziennikowaniem Ext3",
-  "@partitionFormatExt3": {},
-  "partitionFormatExt2": "System plików Ext2",
-  "@partitionFormatExt2": {},
-  "partitionFormatBtrfs": "System plików z dziennikowaniem btrfs",
-  "@partitionFormatBtrfs": {},
-  "partitionFormatJfs": "System plików z dziennikowaniem JFS",
-  "@partitionFormatJfs": {},
-  "partitionFormatXfs": "System plików z dziennikowaniem XFS",
-  "@partitionFormatXfs": {},
-  "partitionFormatFat": "System plików FAT",
-  "@partitionFormatFat": {},
-  "partitionFormatFat12": "System plików FAT12",
-  "@partitionFormatFat12": {},
-  "partitionFormatFat16": "System plików FAT16",
-  "@partitionFormatFat16": {},
-  "partitionFormatFat32": "System plików FAT32",
-  "@partitionFormatFat32": {},
-  "partitionFormatIso9660": "System plików ISO 9660",
-  "@partitionFormatIso9660": {},
-  "partitionFormatVfat": "System plików VFAT",
-  "@partitionFormatVfat": {},
-  "partitionFormatSwap": "Obszar wymiany (swap)",
-  "@partitionFormatSwap": {},
-  "partitionFormatZfsroot": "System plików root ZFS",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "Sformatuj partycję",
   "@partitionErase": {},
   "partitionMountPointLabel": "Punkt montowania:",
@@ -327,7 +295,7 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "Hasła nie są zgodne",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesToDisk": "Zapisz zmiany na dysku",
+  "writeChangesToDisk": "Gotów do instalacji",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "dysk",
   "@writeChangesFallbackSerial": {
@@ -355,7 +323,7 @@
       "mount": {}
     }
   },
-  "chooseYourLookPageTitle": "Wybierz swój wygląd",
+  "chooseYourLookPageTitle": "Wybierz swój motyw",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "Zawsze możesz zmienić to później w ustawieniach wyglądu.",
   "@chooseYourLookPageHeader": {},
@@ -365,36 +333,36 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "Instalacja zakończona",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** został zainstalowany i jest gotowy do użycia.",
+  "readyToUse": "**{system}** został zainstalowany i jest gotowy do użycia",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
       "system": {}
     }
   },
-  "restartInto": "Uruchom ponownie {system}",
+  "restartInto": "Uruchom ponownie do {system}",
   "@restartInto": {
     "type": "text",
     "placeholders": {
       "system": {}
     }
   },
-  "shutdown": "Zamknij system",
+  "shutdown": "Zamknij",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "Wyłącz funkcję BitLocker",
+  "turnOffBitlockerTitle": "Funkcja BitLocker jest włączona",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Ten komputer używa szyfrowania Windows BitLocker.\nMusisz wyłączyć funkcję BitLocker w systemie Windows przed instalacją Ubuntu.",
+  "turnOffBitlockerDescription": "Ten komputer używa szyfrowania Windows BitLocker.\nNależy użyć systemu Windows do utworzenia wolnej przestrzeni lub wybrać '{option}', aby kontynuować.",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Aby uzyskać instrukcje, otwórz tę stronę w telefonie lub innym urządzeniu: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Aby uzyskać instrukcje, zeskanuj kod QR na innym urządzeniu lub odwiedź: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "restartIntoWindows": "Uruchom ponownie Windows",
+  "restartIntoWindows": "Uruchom ponownie do Windows",
   "@restartIntoWindows": {},
-  "connectToInternetPageTitle": "Połącz się z Internetem",
+  "connectToInternetPageTitle": "Połącz się z siecią",
   "@connectToInternetPageTitle": {},
   "useWiredConnection": "Użyj połączenia przewodowego",
   "@useWiredConnection": {},
@@ -418,15 +386,15 @@
   "@wiredMustBeEnabled": {},
   "wiredDisabled": "Połączenie przewodowe jest wyłączone",
   "@wiredDisabled": {},
-  "connectToInternetDescription": "Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla ethernetowego lub wybierz sieć Wi-Fi",
+  "connectToInternetDescription": "Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla Ethernetowego lub wybierz sieć Wi-Fi",
   "@connectToInternetDescription": {},
   "enableWired": "Włącz przewodowe",
   "@enableWired": {},
-  "newPartitionTableConfirmationTitle": "Utworzyć nową pustą tablicę partycji na tym urządzeniu?",
+  "newPartitionTableConfirmationTitle": "Nowa pusta partycja",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "Wybrano całe urządzenie do podziału na partycje. Jeśli przejdziesz do tworzenia na nim nowej tabeli partycji, wszystkie jego bieżące partycje zostaną usunięte.\n\nPamiętaj, że możesz cofnąć tę operację później, jeśli zechcesz.",
+  "newPartitionTableConfirmationMessage": "Utworzenie nowej tabeli partycji na całym urządzeniu spowoduje usunięcie wszystkich jego bieżących partycji. Operację tę można cofnąć w razie potrzeby.",
   "@newPartitionTableConfirmationMessage": {},
-  "onBatteryWarning": "<font color=\"{color}\">Ostrzeżenie</font>: komputer nie jest podłączony do źródła zasilania.",
+  "onBatteryWarning": "<font color=\"{color}\">Ostrzeżenie:</font> komputer nie jest podłączony do źródła zasilania.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -437,7 +405,7 @@
   "@whereAreYouTimezoneLabel": {},
   "whereAreYouLocationLabel": "Lokalizacja",
   "@whereAreYouLocationLabel": {},
-  "whereAreYouPageTitle": "Gdzie jesteś?",
+  "whereAreYouPageTitle": "Wybierz swoją strefę czasową",
   "@whereAreYouPageTitle": {},
   "welcomeHeader": "Wybierz swój język:",
   "@welcomeHeader": {},
@@ -625,7 +593,7 @@
   },
   "installAlongsideSize": "Rozmiar:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionFormattedMounted": "partycja #{disk}{partition} sformatowana jako {format} używana do {mount}",
+  "writeChangesPartitionFormattedMounted": "partycja <b>{disk}{partition}</b> sformatowana jako <b>{format}</b> używana do <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -635,11 +603,11 @@
       "mount": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "Przepraszamy",
+  "notEnoughDiskSpaceTitle": "Za mało przestrzeni",
   "@notEnoughDiskSpaceTitle": {},
   "quitButtonText": "Zakończ instalację",
   "@quitButtonText": {},
-  "writeChangesPartitionMounted": "partycja #{disk}{partition} używana do {mount}",
+  "writeChangesPartitionMounted": "partycja <b>{disk}{partition}</b> używana do <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -648,7 +616,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "partycja #{disk}{partition} zmieniła rozmiar z {oldsize} na {newsize}",
+  "writeChangesPartitionResized": "partycja <b>{disk}{partition}</b> zmieniła rozmiar z <b>{oldsize}</b> na <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -658,7 +626,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "partycja #{disk}{partition} sformatowana jako {format}",
+  "writeChangesPartitionFormatted": "partycja <b>{disk}{partition}</b> sformatowana jako <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -667,7 +635,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionCreated": "utworzona partycja #{disk}{partition}",
+  "writeChangesPartitionCreated": "utworzona partycja <b>{disk}{partition}</b>",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -715,9 +683,9 @@
   "@installDriversSubtitle": {},
   "tooManyPrimaryPartitions": "Zbyt wiele partycji podstawowych",
   "@tooManyPrimaryPartitions": {},
-  "partitionLimitReached": "osiągnięto limit",
+  "partitionLimitReached": "Osiągnięto limit",
   "@partitionLimitReached": {},
-  "restartNow": "Uruchom ponownie komputer",
+  "restartNow": "Uruchom ponownie teraz",
   "@restartNow": {},
   "restartWarning": "Możesz teraz kontynuować testowanie wersji {RELEASE}, ale dopóki nie uruchomisz ponownie komputera, wszelkie wprowadzone zmiany lub zapisane dokumenty nie zostaną zachowane.",
   "@restartWarning": {
@@ -731,5 +699,232 @@
   "offlineWarning": "Jesteś obecnie offline",
   "@offlineWarning": {},
   "partitionFormatNone": "Pozostaw niesformatowaną",
-  "@partitionFormatNone": {}
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordHide": "Ukryj",
+  "@whoAreYouPagePasswordHide": {},
+  "whoAreYouPagePasswordShow": "Pokaż",
+  "@whoAreYouPagePasswordShow": {},
+  "activeDirectoryDomainEmpty": "Wymagana",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryInfo": "W kolejnym kroku podasz domenę i inne szczegóły.",
+  "@activeDirectoryInfo": {},
+  "activeDirectoryDomainInvalidChars": "Nieprawidłowe znaki",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryDomainStartHyphen": "Zaczyna się od łącznika (-)",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryDomainEndHyphen": "Kończy się łącznikiem (-)",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryDomainMultipleDots": "Zawiera wiele sekwencyjnych kropek (..)",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryDomainNotFound": "Nie znaleziono domeny",
+  "@activeDirectoryDomainNotFound": {},
+  "activeDirectoryAdminLabel": "Użytkownik dołączający do domeny",
+  "@activeDirectoryAdminLabel": {},
+  "activeDirectoryAdminEmpty": "Wymagany",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryOption": "Użyj Active Directory",
+  "@activeDirectoryOption": {},
+  "activeDirectoryDomainStartDot": "Zaczyna się od kropki (.)",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryTitle": "Konfigurowanie Active Directory",
+  "@activeDirectoryTitle": {},
+  "activeDirectoryDomainLabel": "Domena",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryTestConnection": "Przetestuj łączność domeny",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryDomainTooLong": "Zbyt długa",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryDomainEndDot": "Kończy się kropką (.)",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryAdminInvalidChars": "Nieprawidłowe znaki",
+  "@activeDirectoryAdminInvalidChars": {},
+  "activeDirectoryPasswordLabel": "Hasło",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryPasswordEmpty": "Wymagane",
+  "@activeDirectoryPasswordEmpty": {},
+  "whoAreYouPageRealNameTooLong": "To imię i nazwisko jest za długie.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Ta nazwa komputera jest za długa.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryErrorTitle": "Błąd podczas konfigurowania połączenia z Active Directory",
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "Przepraszamy, w tej chwili nie można skonfigurować usługi Active Directory. Gdy system będzie gotowy do pracy, odwiedź <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, aby uzyskać pomoc.",
+  "@activeDirectoryErrorMessage": {},
+  "preparingUbuntu": "Przygotowywanie {DISTRO}…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "keyboardVariant": "Wariant klawiatury:",
+  "@keyboardVariant": {},
+  "detectButtonText": "Wykryj",
+  "@detectButtonText": {},
+  "writeChangesDevicesTitle": "Urządzenia",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Partycje",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesTitle": "Witaj w {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesIncluded": "Dołączone:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "Szybki, darmowy i pełen nowych funkcji",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeBody": "Niezależnie od tego, czy jesteś programistą, twórcą, graczem czy administratorem, w {RELEASE} znajdziesz nowe narzędzia, które poprawią produktywność i wrażenia.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "Wszystkie potrzebne aplikacje",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesDevelopmentTitle": "Twórz z wykorzystaniem najlepszych rozwiązań open source",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesCreativityTitle": "Zwiększ swoją kreatywność",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesGamingTitle": "Świetny do gier",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesGamingBody": "{DISTRO} obsługuje najnowsze sterowniki NVIDIA i Mesa, aby poprawić wydajność i kompatybilność. Tysiące tytułów dla systemu Windows działa świetnie na {DISTRO} za pośrednictwem aplikacji takich jak Steam bez dodatkowej konfiguracji.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "Prywatny i bezpieczny",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesProductivityTitle": "Zwiększ swoją produktywność",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesProductivityBody": "{DISTRO} Desktop zawiera LibreOffice, pakiet kompatybilnych z Microsoft Office aplikacji open source do dokumentów, arkuszy kalkulacyjnych i prezentacji. Dostępne są również popularne narzędzia do współpracy.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "Dostęp dla wszystkich",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesAccessibilityOrca": "Czytnik ekranu Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesSupportTitle": "Pomoc i wsparcie",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSupportHeader": "Oficjalna dokumentacja {DISTRO} jest dostępna zarówno online, jak i za pośrednictwem ikony Pomoc umieszczonej w doku.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Serwis Ask Ubuntu obejmuje szereg pytań i odpowiedzi, a Ubuntu Discourse zawiera przewodniki i dyskusje dla nowych i doświadczonych użytkowników.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "Dla użytkowników korporacyjnych Canonical zapewnia komercyjne wsparcie, aby ułatwić wdrożenie i bezpieczne zarządzanie systemem Ubuntu w miejscu pracy.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesCreativityBody": "Jeśli zajmujesz się animacją, projektowaniem, tworzeniem wideo lub gier, możesz łatwo przenieść swoje przepływy pracy do {DISTRO} dzięki obsłudze oprogramowania i aplikacji będących standardem branżowym oraz open source.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceUbuntu": "Za mało przestrzeni na dysku do zainstalowania {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportUbuntuPro": "Całodobowe wsparcie klasy korporacyjnej za pomocą Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesAvailable": "Dostępne:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesWelcomeHeader": "Najnowsza wersja {DISTRO} sprawia, że korzystanie z komputera jest łatwiejsze niż kiedykolwiek.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentBody": "{DISTRO} to idealna stacja robocza do tworzenia aplikacji lub stron internetowych, nauki o danych i sztucznej inteligencji/uczenia maszynowego, a także DevOps i administracji. Każda wersja {DISTRO} zawiera najnowsze zestawy narzędzi i obsługuje wszystkie główne IDE.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityLts": "Wszystkie wersje {DISTRO} LTS są dostarczane z pięcioletnim łataniem zabezpieczeń, które można wydłużyć do dziesięciu lat za pomocą subskrypcji Ubuntu Pro.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSoftwareBody": "Instaluj, zarządzaj i aktualizuj wszystkie aplikacje w Ubuntu Software, w tym tysiące aplikacji zarówno z Snap Store, jak i archiwum {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityBody": "{DISTRO} zapewnia wszystkie narzędzia potrzebne do zachowania prywatności i bezpieczeństwa w Internecie. Dzięki wbudowanej zaporze sieciowej, obsłudze VPN oraz wielu aplikacjom zorientowanym na prywatność, aby zapewnić pełną kontrolę nad danymi.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityBody": "U podstaw filozofii {DISTRO} leży przekonanie, że informatyka jest dla każdego. Dzięki zaawansowanym narzędziom ułatwień dostępu i opcjom zmiany języka, kolorów oraz rozmiaru tekstu {DISTRO} sprawia, że korzystanie z komputera jest łatwe — kimkolwiek i gdziekolwiek jesteś.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportResources": "Pomocne zasoby:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesAccessibilityLanguages": "Obsługa języków",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportDocumentation": "Oficjalna dokumentacja",
+  "@installationSlidesSupportDocumentation": {},
+  "notEnoughDiskSpaceAvailable": "Dostępna:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "Wymagana:",
+  "@notEnoughDiskSpaceRequired": {},
+  "welcomePageTitle": "Witaj w {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffRSTTitle": "Wyłącz funkcję RST, aby kontynuować",
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsDescription": "Czy na pewno chcesz ponownie uruchomić komputer? Później będziesz musieć ponownie uruchomić instalację {DISTRO}, aby zakończyć instalowanie {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "restartIntoWindowsTitle": "Uruchomić ponownie do Windows?",
+  "@restartIntoWindowsTitle": {},
+  "turnOffBitlockerHeadline": "Wyłącz funkcję BitLocker, aby kontynuować",
+  "@turnOffBitlockerHeadline": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Punkty montowania nie mogą zawierać spacji",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "Punkty montowania muszą zaczynać się od „/”",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "partitionFormatKeep": "Pozostaw sformatowaną jako {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }

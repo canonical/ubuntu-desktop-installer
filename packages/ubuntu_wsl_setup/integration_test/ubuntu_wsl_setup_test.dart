@@ -1,22 +1,29 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wsl_setup/main.dart' as app;
 import 'package:ubuntu_wsl_setup/routes.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'test_pages.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
+  setUpAll(YaruTestWindow.ensureInitialized);
+
   setUp(() async => await cleanUpSubiquity());
   tearDown(() async => await resetAllServices());
 
   // Select language and setup profile
   testWidgets('basic setup', (tester) async {
-    await app.main(<String>['--initial-route', Routes.selectLanguage]);
+    await tester.runApp(() => app.main(<String>[
+          '--initial-route',
+          Routes.selectLanguage,
+        ]));
     await tester.pumpAndSettle();
 
     await testSelectYourLanguagePage(tester, language: 'Français');
@@ -31,12 +38,17 @@ void main() {
 
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyStateFile('basic-setup/WSLLocale');
+    final stateFile = await getSubiquityStateFile('WSLLocale');
+    await expectLater(stateFile, existsLater);
+    expect(
+      stateFile,
+      matchesTextFile('integration_test/goldens/basic-setup/WSLLocale'),
+    );
   });
 
   // enter all WSLConfigurationBase values
   testWidgets('advanced setup', (tester) async {
-    await app.main(<String>['--reconfigure']);
+    await tester.runApp(() => app.main(<String>['--reconfigure']));
     await tester.pumpAndSettle();
 
     // NOTE: opposites of the default values to force writing the config
@@ -54,12 +66,17 @@ void main() {
     await testConfigurationUIPage(tester);
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyConfigFile('advanced-setup/wsl.conf');
+    final configFile = await getSubiquityConfigFile('wsl.conf');
+    await expectLater(configFile, existsLater);
+    expect(
+      configFile,
+      matchesTextFile('integration_test/goldens/advanced-setup/wsl.conf'),
+    );
   });
 
   // enter all WSLConfigurationAdvanced values
   testWidgets('reconfiguration', (tester) async {
-    await app.main(<String>['--reconfigure']);
+    await tester.runApp(() => app.main(<String>['--reconfigure']));
     await tester.pumpAndSettle();
 
     await testAdvancedSetupPage(tester);
@@ -78,6 +95,11 @@ void main() {
 
     await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyConfigFile('reconfiguration/wsl.conf');
+    final configFile = await getSubiquityConfigFile('wsl.conf');
+    await expectLater(configFile, existsLater);
+    expect(
+      configFile,
+      matchesTextFile('integration_test/goldens/reconfiguration/wsl.conf'),
+    );
   });
 }

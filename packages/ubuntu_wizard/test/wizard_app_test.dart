@@ -1,183 +1,20 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
-import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/app.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:yaru/yaru.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'wizard_app_test.mocks.dart';
-
-// ignore_for_file: type=lint
-
-@GenerateMocks([IOSink])
 void main() {
-  final endpoint = Endpoint.unix('socket path');
-  tearDown(() => unregisterMockService<SubiquityClient>());
+  testWidgets('app structure', (tester) async {
+    await tester.pumpWidget(const WizardApp(
+      localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
+      supportedLocales: UbuntuLocalizations.supportedLocales,
+      home: Text('home'),
+    ));
 
-  setUpAll(() {
-    final methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {});
-  });
-
-  testWidgets('initializes subiquity', (tester) async {
-    final client = MockSubiquityClient();
-    final server = MockSubiquityServer();
-    when(server.start(
-            args: anyNamed('args'), environment: anyNamed('environment')))
-        .thenAnswer((_) async => endpoint);
-
-    await runWizardApp(
-      Container(),
-      subiquityClient: client,
-      subiquityServer: server,
-      serverArgs: ['--foo', 'bar'],
-      serverEnvironment: {'baz': 'qux'},
-    );
-    verify(server.start(args: ['--foo', 'bar'], environment: {'baz': 'qux'}))
-        .called(1);
-    verify(client.open(endpoint)).called(1);
-  });
-
-  testWidgets('registers the client', (tester) async {
-    final client = MockSubiquityClient();
-    final server = MockSubiquityServer();
-    when(server.start(
-            args: anyNamed('args'), environment: anyNamed('environment')))
-        .thenAnswer(
-      (_) async => Endpoint.unix(''),
-    );
-
-    await runWizardApp(
-      SizedBox(),
-      subiquityClient: client,
-      subiquityServer: server,
-    );
-
-    expect(getService<SubiquityClient>(), equals(client));
-  });
-
-  testWidgets('parse command-line arguments', (tester) async {
-    int? didExit;
-    final out = MockIOSink();
-
-    final dryRun = parseCommandLine(
-      ['--dry-run'],
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, isNull);
-    expect(dryRun, isNotNull);
-    expect(dryRun!['dry-run'], isTrue);
-
-    final machineConfig = parseCommandLine(
-      ['--machine-config', 'foo.json'],
-      onPopulateOptions: (parser) {
-        parser.addOption('machine-config');
-      },
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, isNull);
-    expect(machineConfig, isNotNull);
-    expect(machineConfig!['machine-config'], equals('foo.json'));
-
-    parseCommandLine(
-      ['--help'],
-      out: out,
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, isZero);
-
-    didExit = null;
-    parseCommandLine(
-      ['--machine-config', 'foo.json'],
-      out: out,
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, equals(1));
-
-    didExit = null;
-    parseCommandLine(
-      ['--unknown-option'],
-      out: out,
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, equals(1));
-
-    didExit = null;
-    parseCommandLine(
-      ['unknown rest arguments'],
-      out: out,
-      exit: (exitCode) => didExit = exitCode,
-    );
-    expect(didExit, equals(1));
-  });
-
-  testWidgets('starts and registers the monitor', (tester) async {
-    final endpoint = Endpoint.unix('/tmp/subiquity.sock');
-    final monitor = MockSubiquityStatusMonitor();
-    when(monitor.start(endpoint)).thenAnswer((_) async => true);
-
-    final server = MockSubiquityServer();
-    when(server.start(
-            args: anyNamed('args'), environment: anyNamed('environment')))
-        .thenAnswer((_) async => endpoint);
-
-    await runWizardApp(
-      SizedBox(),
-      subiquityServer: server,
-      subiquityMonitor: monitor,
-      subiquityClient: MockSubiquityClient(),
-    );
-
-    expect(getService<SubiquityStatusMonitor>(), equals(monitor));
-    verify(monitor.start(endpoint)).called(1);
-  });
-
-  testWidgets('does not mark UI-specific pages configured', (tester) async {
-    final client = MockSubiquityClient();
-    final server = MockSubiquityServer();
-    when(server.start(
-            args: anyNamed('args'), environment: anyNamed('environment')))
-        .thenAnswer(
-      (_) async => Endpoint.unix(''),
-    );
-
-    await runWizardApp(
-      SizedBox(),
-      subiquityClient: client,
-      subiquityServer: server,
-    );
-
-    verifyNever(client.markConfigured(any));
-  });
-
-  testWidgets('ensure initialized', (tester) async {
-    var windowInit = false;
-    final methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {
-      if (call.method == 'init') {
-        windowInit = true;
-      }
-      if (call.method == 'close') {}
-    });
-    final client = MockSubiquityClient();
-    final server = MockSubiquityServer();
-    when(server.start(
-            args: anyNamed('args'), environment: anyNamed('environment')))
-        .thenAnswer(
-      (_) async => Endpoint.unix(''),
-    );
-
-    await runWizardApp(
-      SizedBox(),
-      subiquityClient: client,
-      subiquityServer: server,
-    );
-
-    expect(windowInit, isTrue);
+    expect(find.byType(YaruTheme), findsOneWidget);
+    expect(find.byType(MaterialApp), findsOneWidget);
+    expect(find.byType(YaruWindowTitleBar), findsOneWidget);
   });
 }

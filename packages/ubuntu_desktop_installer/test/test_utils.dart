@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:subiquity_client/subiquity_client.dart';
+import 'package:mockito/annotations.dart';
+import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:yaru/yaru.dart';
 
-export 'package:ubuntu_test/utils.dart' show UbuntuLangTester;
+export 'test_utils.mocks.dart';
 
 /// An extension on [WidgetTester] for building test apps.
 ///
@@ -30,7 +32,7 @@ export 'package:ubuntu_test/utils.dart' show UbuntuLangTester;
 /// ```
 ///
 /// If the tested widget is not in a [WizardPage], you can use the static
-/// [UbuntuTester.context] property to specify the appropriate context to use.
+/// [InstallerTester.context] property to specify the appropriate context to use.
 ///
 /// For example:
 /// ```dart
@@ -38,7 +40,7 @@ export 'package:ubuntu_test/utils.dart' show UbuntuLangTester;
 ///   setUpAll(() => LangTester.context = MyWidget);
 /// }
 /// ```
-extension UbuntuTester on WidgetTester {
+extension InstallerTester on WidgetTester {
   static Type context = WizardPage;
 
   AppLocalizations get lang {
@@ -46,113 +48,53 @@ extension UbuntuTester on WidgetTester {
     return AppLocalizations.of(widget);
   }
 
+  UbuntuLocalizations get ulang {
+    final widget = element(find.byType(context).first);
+    return UbuntuLocalizations.of(widget);
+  }
+
   Widget buildApp(WidgetBuilder builder) {
-    binding.window.devicePixelRatioTestValue = 1;
-    binding.window.physicalSizeTestValue = const Size(960, 680);
-    return Flavor(
-      data: const FlavorData(name: 'Ubuntu'),
-      child: MaterialApp(
-        localizationsDelegates: localizationsDelegates,
-        home: Wizard(
-          routes: {
-            '/': WizardRoute(
-              builder: builder,
-              onNext: (settings) => '/next',
-            ),
-            '/next': WizardRoute(
-              builder: (_) => const Text('Next page'),
-            ),
-          },
-        ),
+    view.devicePixelRatio = 1;
+    view.physicalSize = const Size(960, 680);
+    return MaterialApp(
+      localizationsDelegates: localizationsDelegates,
+      theme: yaruLight,
+      home: Wizard(
+        routes: {
+          '/': WizardRoute(
+            builder: builder,
+            onNext: (settings) => '/next',
+          ),
+          '/next': WizardRoute(
+            builder: (_) => const Text('Next page'),
+          ),
+        },
       ),
     );
   }
 }
 
-Disk testDisk({
-  String? id,
-  String? label,
-  String? path,
-  String? type,
-  int? size,
-  List<String>? usageLabels,
-  List<DiskObject>? partitions,
-  bool? okForGuided,
-  String? ptable,
-  bool? preserve,
-  bool? bootDevice,
-  String? model,
-  String? vendor,
-}) {
-  return Disk(
-    id: id ?? '',
-    label: label ?? '',
-    path: path,
-    type: type ?? '',
-    size: size ?? 0,
-    usageLabels: usageLabels ?? [],
-    partitions: partitions ?? [],
-    okForGuided: okForGuided ?? false,
-    ptable: ptable,
-    preserve: preserve ?? false,
-    bootDevice: bootDevice ?? false,
-    model: model,
-    vendor: vendor,
-  );
-}
-
-GuidedStorageResponseV2 testGuidedStorageResponse({
-  ProbeStatus status = ProbeStatus.DONE,
-  GuidedChoiceV2? configured,
-  List<GuidedStorageTarget> possible = const [],
-}) {
-  return GuidedStorageResponseV2(
-    status: status,
-    configured: configured,
-    possible: possible,
-  );
-}
-
-StorageResponseV2 testStorageResponse({
-  ProbeStatus status = ProbeStatus.DONE,
-  List<Disk> disks = const [],
-  bool needBoot = false,
-  bool needRoot = false,
-  int installMinimumSize = 0,
-}) {
-  return StorageResponseV2(
-    status: status,
-    disks: disks,
-    needBoot: needBoot,
-    needRoot: needRoot,
-    installMinimumSize: installMinimumSize,
-  );
-}
-
-extension UbuntuFinders on CommonFinders {
-  Finder asset(String assetName) {
-    return find.byWidgetPredicate((widget) {
-      bool hasAssetImage(Widget widget) {
-        return widget is Image &&
-            widget.image is AssetImage &&
-            (widget.image as AssetImage).assetName.endsWith(assetName);
-      }
-
-      bool hasAssetPicture(Widget widget) {
-        return widget is SvgPicture &&
-            widget.pictureProvider is ExactAssetPicture &&
-            (widget.pictureProvider as ExactAssetPicture)
-                .assetName
-                .endsWith(assetName);
-      }
-
-      return hasAssetImage(widget) || hasAssetPicture(widget);
-    });
-  }
-
-  Finder html(String html) {
-    return find.byWidgetPredicate((widget) {
-      return widget is Html && widget.data == html;
-    });
-  }
-}
+@GenerateMocks([
+  ActiveDirectoryService,
+  ConfigService,
+  DesktopService,
+  GeoService,
+  IdentityService,
+  InstallerService,
+  JournalService,
+  KeyboardService,
+  LocaleService,
+  NetworkService,
+  PowerService,
+  ProductService,
+  SessionService,
+  SoundService,
+  StorageService,
+  TelemetryService,
+  ThemeService,
+  TimezoneService,
+  UdevDeviceInfo,
+  UdevService,
+  UrlLauncher,
+])
+class _Dummy {} // ignore: unused_element

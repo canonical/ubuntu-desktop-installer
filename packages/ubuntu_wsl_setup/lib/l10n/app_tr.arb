@@ -179,5 +179,21 @@
   "advancedSetupMountOptionHelper": "Oto-yerleştirme için yerleştirme seçeneği atlandı",
   "@advancedSetupMountOptionHelper": {},
   "advancedSetupGUIIntegrationSubtitle": "Seçildiğinde otomatik GÖRÜNTÜ ortamı kurulumu etkinleştirilir. Üçüncü parti X sunucusu gerektirir.",
-  "@advancedSetupGUIIntegrationSubtitle": {}
+  "@advancedSetupGUIIntegrationSubtitle": {},
+  "installationSlidesErrorText": "\nDüzeltilemez bir hata oluştu.\n\nLütfen bu uygulamayı kapatın, Powershell'i veya komut istemini açın ve aşağıdaki komutları verin:\n",
+  "@installationSlidesErrorText": {},
+  "installationSlidesErrorSub": "Lütfen WSL'yi aşağıdaki komutla yeniden başlatın ve tekrar deneyin:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME",
+  "@installationSlidesErrorSub": {},
+  "installationSlidesUbuntuWslWebDevText": "VS Code ve IntelliJ gibi yerel Windows IDE'lerini kullanarak WSL'de geliştirin ve tam NodeJS ve Ruby desteğinden yararlanın.",
+  "@installationSlidesUbuntuWslWebDevText": {},
+  "installationSlidesUbuntuWslGuiAppsText": "Çoklu platform geliştirme için WSLg kullanarak Linux üzerinde web ve grafik uygulamaları geliştirin ve önizleyin.",
+  "@installationSlidesUbuntuWslGuiAppsText": {},
+  "installationSlidesUbuntuWslDevOpsText": "Ubuntu üretim ortamında yayınlamadan önce yerel olarak Ubuntu WSL üzerinde geliştirme yaparak CI/CD işlem hattı uyumluluğunu sağlayın",
+  "@installationSlidesUbuntuWslDevOpsText": {},
+  "configurationUIInteropAppendWindowsPathSubtitle": "Windows Yolunun WSL'de PATH ortam değişkenine eklenip eklenmeyeceği",
+  "@configurationUIInteropAppendWindowsPathSubtitle": {},
+  "installationSlidesExitContents": "Bu pencerenin kapatılması kurulumun arka planda devam etmesini engellemeyecektir.\n\nAyrıca, WSL üzerinde Ubuntu ile neler yapabileceğinizi keşfetmeye devam edebilirsiniz.",
+  "@installationSlidesExitContents": {},
+  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Veri Bilimi Yığını, yerel Windows NVIDIA sürücülerinin üzerinde Veri Bilimi ve Makine Öğrenimi projelerinin performansını en üst düzeye çıkarmanızı sağlar.",
+  "@installationSlidesUbuntuWslDataScienceText": {}
 }

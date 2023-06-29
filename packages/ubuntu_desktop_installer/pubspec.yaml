@@ -4,12 +4,13 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.17.0 <3.0.0'
-  flutter: '>=3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
 
 dependencies:
   async: ^2.8.2
   collection: ^1.15.0
+  crypt: ^4.3.0
   dartx: ^1.0.0
   dbus: ^0.7.3
   diacritic: ^0.1.3
@@ -17,20 +18,22 @@ dependencies:
   filesize: ^2.0.0
   flutter:
     sdk: flutter
-  flutter_html: 3.0.0-alpha.6
+  flutter_html: 3.0.0-beta.1
   flutter_localizations:
     sdk: flutter
   flutter_markdown: ^0.6.2
-  flutter_spinbox: ^0.12.0
-  flutter_svg: ^1.1.0
+  flutter_riverpod: ^2.3.6
+  flutter_spinbox: ^0.13.0
+  flutter_svg: ^2.0.0
   form_field_validator: ^1.1.0
   gsettings: ^0.2.5
   handy_window: ^0.3.0
-  intl: ^0.17.0
+  intl: ^0.18.0
   meta: ^1.7.0
   nm: ^0.5.0
   path: ^1.8.0
-  provider: ^6.0.0
+  platform: ^3.1.0
+  progress_indicators: ^1.0.0
   safe_change_notifier: ^0.2.0
   scroll_to_index: ^3.0.0
   split_view: ^3.2.1
@@ -42,22 +45,33 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/timezone_map
-  ubuntu_localizations: ^0.0.5
-  ubuntu_logger: ^0.0.1
-  ubuntu_service: ^0.2.0
+      ref: b193a7a8113c4c5400a9b58b42b1a104abd64bbb
+  ubuntu_flavor: ^0.2.0
+  ubuntu_localizations: ^0.2.0
+  ubuntu_logger: ^0.0.3
+  ubuntu_service: ^0.2.2
+  ubuntu_session: ^0.0.4
+  ubuntu_utils:
+    git:
+      url: https://github.com/canonical/ubuntu-desktop-installer.git
+      path: packages/ubuntu_utils
   ubuntu_widgets:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/ubuntu_widgets
+      ref: 3316f7a0393aea04fd586375b0b16c9e992ed058
   ubuntu_wizard:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git
       path: packages/ubuntu_wizard
-  udev: ^0.0.2
+  udev: ^0.0.3
   upower: ^0.7.0
-  yaru: ^0.5.0
+  xdg_locale: ^0.0.1
+  yaru: ^0.7.0
+  yaru_colors: ^0.1.6
   yaru_icons: ^1.0.0
-  yaru_widgets: ^2.1.0
+  yaru_widgets: ^2.4.0
+  yaru_window: ^0.1.3
 
 dev_dependencies:
   build_runner: ^2.2.0
@@ -67,23 +81,28 @@ dev_dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
-  mockito: 5.3.2
-  ubuntu_test:
-    path: ../ubuntu_test
+  mockito: 5.4.2
+  subiquity_test:
+    git:
+      url: https://github.com/canonical/subiquity_client.dart.git
+      path: packages/subiquity_test
+  ubuntu_test: ^0.1.0-0
   yaml: ^3.1.0
+  yaru_test: ^0.1.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/
-    - assets/choose_your_look/
+    - assets/bitlocker/
     - assets/install_alongside/
-    - assets/installation_complete/
     - assets/installation_slides/
     - assets/installation_slides/icons/
+    - assets/installation_slides/icons/dark/
     - assets/installation_slides/screenshots/
+    - assets/installation_slides/screenshots/dark/
+    - assets/installation_slides/screenshots/light/
+    - assets/rst/
     - assets/select_guided_storage/
-    - assets/try_or_install/
-    - assets/turn_off_bitlocker/
-    - assets/turn_off_rst/
+    - assets/theme/
     - assets/welcome/

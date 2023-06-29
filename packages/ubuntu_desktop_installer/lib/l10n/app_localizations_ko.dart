@@ -13,16 +13,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => '취소';
-
-  @override
   String get changeButtonText => '바꾸기';
-
-  @override
-  String get okButtonText => '확인';
-
-  @override
-  String get noButtonText => '아니오';
 
   @override
   String get restartButtonText => '다시 시작';
@@ -31,19 +22,25 @@ class AppLocalizationsKo extends AppLocalizations {
   String get revertButtonText => '되돌리기';
 
   @override
-  String get yesButtonText => '예';
-
-  @override
   String get quitButtonText => '인스톨러 닫기';
 
   @override
-  String get welcome => '환영합니다';
+  String welcomePageTitle(Object DISTRO) {
+    return '$DISTRO사용을 환영합니다';
+  }
+
+  @override
+  String preparingUbuntu(Object DISTRO) {
+    return '$DISTRO 준비 중...';
+  }
 
   @override
   String get welcomeHeader => '언어를 선택하십시오:';
 
   @override
-  String get tryOrInstallPageTitle => '체험 또는 설치';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return '$DISTRO 체험 또는 설치';
+  }
 
   @override
   String get repairInstallation => '설치 복구';
@@ -77,14 +74,17 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST 끄기';
+  String get turnOffRST => 'RST가 활성화됨';
+
+  @override
+  String get turnOffRSTTitle => '계속하려면 RST를 끄십시오';
 
   @override
   String get turnOffRSTDescription => '이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.';
 
   @override
   String instructionsForRST(Object url) {
-    return '절차를 알아보려면, 휴대전화나 다른 기기에서 이 페이지를 방문하십시오: <a href=\"https://$url\">$url</a>';
+    return '절차를 알아보려면, 다른 장치로 QR코드를 스캔 하거나 이 페이지를 방문하십시오: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -98,6 +98,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get detectLayout => '키보드 레이아웃 감지';
+
+  @override
+  String get detectButtonText => '감지';
+
+  @override
+  String get keyboardVariant => '키보드 유형:';
 
   @override
   String get pressOneKey => '다음 키 중 하나를 누르십시오:';
@@ -136,10 +142,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get showSecurityKey => '보안 키 보이기';
 
   @override
-  String get connectToInternetPageTitle => '인터넷에 연결하기';
+  String get connectToInternetPageTitle => '네트워크에 연결하기';
 
   @override
-  String get connectToInternetDescription => '이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블을 연결하거나, Wi-Fi 네트워크를 선택하십시오';
+  String get connectToInternetDescription => '이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블이나, Wi-Fi 네트워크를 선택하여 연결하십시오';
 
   @override
   String get useWiredConnection => '유선 연결 사용';
@@ -187,7 +193,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get connectButtonText => '연결하기';
 
   @override
-  String get updatesOtherSoftwarePageTitle => '업데이트 및 다른 소프트웨어';
+  String get updatesOtherSoftwarePageTitle => '애플리케이션 및 업데이트';
 
   @override
   String get updatesOtherSoftwarePageDescription => '어떤 앱을 설치하고 시작하시겠습니까?';
@@ -220,21 +226,21 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installDriversSubtitle => '이러한 드라이버는 문서에 포함된 라이선스 조건의 적용을 받습니다. 또한 독점 소프트웨어 입니다.';
 
   @override
-  String get installCodecsTitle => '추가 미디어 포맷 지원 설치';
+  String get installCodecsTitle => '추가 미디어 포맷 지원을 내려받아 설치';
 
   @override
   String get installCodecsSubtitle => '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">경고</font>: 컴퓨터에 전원이 연결되어 있지 않습니다.';
+    return '<font color=\"$color\">경고:</font> 컴퓨터에 전원이 연결되어 있지 않습니다.';
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => '현재 오프라인';
 
   @override
-  String get chooseSecurityKeyTitle => '보안 키 선택';
+  String get chooseSecurityKeyTitle => '보안 키';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -255,7 +261,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">경고</font>: 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.';
+    return '<font color=\"$color\">경고:</font> 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.';
   }
 
   @override
@@ -358,7 +364,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationTypeAlongsideInfo => '문서, 음악, 및 다른 개인 파일이 그대로 유지됩니다. 컴퓨터를 시작할 때 마다 원하는 운영체제를 선택하실 수 있습니다.';
 
   @override
-  String get installationTypeManual => '다른 방법';
+  String get installationTypeManual => '수동 파티셔닝';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -406,10 +412,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installAlongsideAvailable => '이용 가능:';
 
   @override
-  String get allocateDiskSpace => '디스크 공간 할당';
+  String get allocateDiskSpace => '수동 파티셔닝';
 
   @override
-  String get startInstallingButtonText => '설치 시작하기';
+  String get allocateDiskSpaceInvalidMountPointSlash => '마운트 위치는 \"/\"로 시작해야 합니다';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => '마운트 위치는 공백을 포함할 수 없습니다';
+
+  @override
+  String get startInstallingButtonText => '설치';
 
   @override
   String get diskHeadersDevice => '장치';
@@ -439,16 +451,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get newPartitionTable => '새 파티션 테이블';
 
   @override
-  String get newPartitionTableConfirmationTitle => '이 장치에 빈 파티션을 새로 생성하시겠습니까?';
+  String get newPartitionTableConfirmationTitle => '새로운 빈 파티션';
 
   @override
-  String get newPartitionTableConfirmationMessage => '장치 전체를 파티션으로 지정하셨습니다. 계속해서 장치에 새 파티션을 생성하시면, 기존 파티션은 모두 삭제됩니다.\n\n원하시는 경우 추후 이 작업을 되돌리실 수 있습니다.';
+  String get newPartitionTableConfirmationMessage => '장치 전체에 새 파티션을 생성하면, 기존 파티션은 모두 삭제됩니다. 필요하신 경우 작업을 되돌리실 수 있습니다.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => '주 파티션이 너무 많음';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => '한도 도달';
 
   @override
   String get bootLoaderDevice => '부트 로더 설치에 사용할 장치';
@@ -496,55 +508,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionFormatLabel => '용도:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 저널링 파일 시스템';
+  String get partitionFormatNone => '포맷하지 않기';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 저널링 파일 시스템';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 파일 시스템';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs 저널링 파일 시스템';
-
-  @override
-  String get partitionFormatJfs => 'JFS 저널링 파일 시스템';
-
-  @override
-  String get partitionFormatXfs => 'XFS 저널링 파일 시스템';
-
-  @override
-  String get partitionFormatFat => 'FAT 파일 시스템';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 파일 시스템';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 파일 시스템';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 파일 시스템';
-
-  @override
-  String get partitionFormatSwap => '스왑 영역';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9660 파일 시스템';
-
-  @override
-  String get partitionFormatVfat => 'VFAT 파일 시스템';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS 파일 시스템';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS 파일 시스템';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS 루트 파일 시스템';
-
-  @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
 
   @override
   String get partitionErase => '파티션 포맷';
@@ -553,7 +522,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionMountPointLabel => '마운트 위치:';
 
   @override
-  String get whoAreYouPageTitle => '당신은 누구십니까?';
+  String get whoAreYouPageTitle => '계정을 설정하십시오';
 
   @override
   String get whoAreYouPageAutoLogin => '자동으로 로그인';
@@ -568,6 +537,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => '이름이 필요합니다';
 
   @override
+  String get whoAreYouPageRealNameTooLong => '너무 긴 이름입니다.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => '컴퓨터 이름';
 
   @override
@@ -575,6 +547,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => '컴퓨터 이름이 필요합니다';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => '너무 긴 컴퓨터 이름입니다.';
 
   @override
   String get whoAreYouPageInvalidComputerName => '올바르지 않은 컴퓨터 이름 입니다';
@@ -613,16 +588,25 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => '암호가 일치하지 않습니다';
 
   @override
-  String get whoAreYouPageShowPassword => '암호 보여주기';
+  String get whoAreYouPagePasswordShow => '표시';
 
   @override
-  String get writeChangesToDisk => '디스크에 변경사항 쓰기';
+  String get whoAreYouPagePasswordHide => '숨기기';
+
+  @override
+  String get writeChangesToDisk => '설치 준비 완료';
 
   @override
   String get writeChangesFallbackSerial => '디스크';
 
   @override
   String get writeChangesDescription => '계속 하시면 아래 나열된 변경사항을 디스크에 기록됩니다. 수동으로 추가적인 변경사항을 만드실 수 있습니다.';
+
+  @override
+  String get writeChangesDevicesTitle => '장치';
+
+  @override
+  String get writeChangesPartitionsTitle => '파티션';
 
   @override
   String get writeChangesPartitionTablesHeader => '다음과 같은 장치의 파티션 테이블이 변경되었습니다:';
@@ -637,31 +621,31 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk$partition resized from $oldsize to $newsize';
+    return '파티션 <b>$disk$partition</b>의 크기를 <b>$oldsize</b>에서 <b>$newsize</b>로 조정';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk$partition formatted as $format used for $mount';
+    return '파티션 <b>$disk$partition</b> 을(를) <b>$format</b>(으)로 포맷하고 <b>$mount</b>에 마운트';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '파티션 #$disk$partition 을(를) $format (으)로 포맷함';
+    return '파티션 <b>$disk$partition</b>을(를) <b>$format</b> (으)로 포맷함';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk$partition used for $mount';
+    return '파티션 <b>$disk$partition</b>을(를) <b>$mount</b>에 사용';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '파티션 #$disk$partition 생성됨';
+    return '파티션 <b>$disk$partition</b> 생성됨';
   }
 
   @override
-  String get chooseYourLookPageTitle => '모양을 선택하십시오';
+  String get chooseYourLookPageTitle => '테마를 선택하십시오';
 
   @override
   String get chooseYourLookPageHeader => '모양 설정에서 언제든 변경하실 수 있습니다.';
@@ -677,44 +661,57 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** 설치가 완료 되었으며 사용할 준비가 되었습니다.';
+    return '**$system** 설치가 완료 되었으며 사용할 준비가 되었습니다';
   }
 
   @override
   String restartInto(Object system) {
-    return '$system 으(로) 다시 시작';
+    return '$system (으)로 다시 시작';
   }
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return '$RELEASE을(를) 계속 사용할 수 있습니다. 하지만 컴퓨터를 다시 시작하지 않으면 바뀐 내용이나 저장한 문서를 잃게 됩니다.';
   }
 
   @override
   String get shutdown => '시스템 종료';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => '지금 다시 시작';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => '체험 계속하기';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker 끄기';
+  String get turnOffBitlockerTitle => 'BitLocker 활성화됨';
 
   @override
-  String get turnOffBitlockerDescription => '이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n우분투를 설치하기 전 Windows 에서 BitLocker를 꺼야 합니다.';
+  String get turnOffBitlockerHeadline => '계속하려면 BitLocker를 끄십시오';
+
+  @override
+  String turnOffBitlockerDescription(Object option) {
+    return '이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n계속하려면 Windows를 사용하여 여유 공간을 만들거나 \'$option\'을 선택해야 합니다.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return '절차를 확인하려면, 이 페이지를 휴대전화나 다른 기기에서 열으십시오: <a href=\"https://$url\">$url</a>';
+    return '절차를 확인하려면, 다른 장치에서 QR코드를 스캔하거나 링크를 방문 하십시오: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Windows로 다시 시작';
 
   @override
-  String get whereAreYouPageTitle => '어디에 계시나요?';
+  String get restartIntoWindowsTitle => 'Windows로 다시 시작하시겠습니까?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return '컴퓨터를 정말로 다시 시작하시겠습니까? $DISTRO 설치를 완료 하려면 나중에 $DISTRO 설치를 다시 시작 해야 합니다.';
+  }
+
+  @override
+  String get whereAreYouPageTitle => '시간대를 선택하십시오';
 
   @override
   String get whereAreYouLocationLabel => '위치';
@@ -723,129 +720,118 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whereAreYouTimezoneLabel => '시간대';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
-    return '$RELEASE에 오신 것을 환영합니다';
+  String installationSlidesTitle(Object RELEASE) {
+    return '$RELEASE사용을 환영합니다';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return '빠르고 새로운 기능으로 가득한 최신 버전의 $RELEASE가 그 어느 때 보다 컴퓨팅을 쉽게 해 줄 것입니다. 여기에 몇 가지의 눈 여겨 볼 만한 새로운 기능이 있습니다...';
+  String get installationSlidesAvailable => '이용가능:';
+
+  @override
+  String get installationSlidesIncluded => '포함됨:';
+
+  @override
+  String get installationSlidesWelcomeTitle => '빠르고, 무료이며 새로운 기능으로 가득합니다';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return '최신 버전의 $DISTRO는 컴퓨팅을 그 어느 때보다 쉽게 합니다.';
   }
 
   @override
-  String get softwareSlideTitle => '더 많은 소프트웨어 찾아보기';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return '더 이상 웹에서 새로운 소프트웨어를 검색하지 않아도 됩니다. Snap 스토어와 $RELEASE 소프트웨어 아카이브를 통해, 새 소프트웨어를 쉽게 찾아 설치할 수 있습니다. 찾고 있는 것을 입력하거나, 다른 사용자의 유용한 후기와 함께 그래픽 및 사진, 게임 및 생산성과 같은 카테고리를 탐색 해 보십시오.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return '개발자, 크리에이터, 게이머, 관리자 등 누구에게나 생산성을 향상하고 $RELEASE에서의 경험을 개선할 수 있는 새로운 도구를 찾으실 수 있습니다.';
   }
 
   @override
-  String get musicSlideTitle => '항상 음악과 함께 하십시오';
+  String get installationSlidesSoftwareTitle => '필요한 모든 애플리케이션';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE에는 메우 훌룡한 리듬박스 음악 연주기가 포함되어 있습니다. 고급 재생 옵션으로 완벽한 노래를 간단히 선택할 수 있습니다. 또한 CD와 휴대용 음악 재생기와 잘 작동해서 어디를 가든 항상 음악을 즐길 수 있습니다.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return '스냅 스토어와 $DISTRO 아카이브에 있는 수천개의 애플리케이션과, 여러분의 모든 애플리케이션을 우분투 소프트웨어에서 설치하고 관리하고, 업데이트 하십시오.';
   }
 
   @override
-  String get musicSlideRhythmbox => '리듬박스 음악 연주기';
+  String get installationSlidesDevelopmentTitle => '최고의 오픈소스로 개발하십시오';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => '사진과 함께하는 즐거운 시간';
-
-  @override
-  String get photoSlideDescription => '샷웰은 당신의 전자기기를 위해 준비된 편리한 사진 관리자 입니다. 카메라나 휴대전화를 연결하여 사진을 옮긴 후, 쉽게 공유하고 안전하게 보관할 수 있습니다. 번뜩이는 아이디어가 있다면 우분투 소프트웨어에서 수많은 사진 프로그램을 찾을 수 있습니다.';
-
-  @override
-  String get photoSlideShotwell => '샷웰 사진 관리자';
-
-  @override
-  String get photoSlideGimp => '김프 이미지 편집기';
-
-  @override
-  String get photoSlideShotcut => '샷컷 동영상 편집기';
-
-  @override
-  String get webSlideTitle => '웹을 최대한 활용하십시오';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE에는 전 세계 수백만 명이 사용하는 웹 브라우저인 파이어폭스가 포함되어 있습니다. 또한 페이스북이나 지메일 같은 웹 응용 프로그램을 데스크탑에 고정하여 컴퓨터에 설치된 프로그램처럼 빠르게 접근할 수 있습니다.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO 는 앱 또는 웹 개발, 데이터 과학과 AI/ML 및 DevOps와 시스템 관리에 최적의 워크스테이션 입니다. 모든 $DISTRO 릴리스에는 최신 툴체인과 모든 주요 IDE 지원이 포함되어 있습니다.';
   }
 
   @override
-  String get webSlideFirefox => '파이어폭스 웹 브라우저';
+  String get installationSlidesCreativityTitle => '창의력 향상';
 
   @override
-  String get webSlideThunderbird => '썬더버드';
-
-  @override
-  String get webSlideChromium => '크로미움';
-
-  @override
-  String get officeSlideTitle => '사무에 필요한 모든 것';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice는 문서, 스프레드시트와 발표 자료를 만드는데 필요한 모든 것을 제공하는 자유로운 사무용 프로그램 입니다. Microsoft Office 파일과 호환되며, 필요한 모든 기능을 제공합니다.';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => '누구나 사용할 수 있습니다';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return '$RELEASE의 철학의 중심에는 컴퓨팅은 모두를 위한 것이라는 믿음이 있습니다. 고급 접근성 도구와 언어, 색상 및 글자 크기 변경 옵션으로, $RELEASE는 누구든 어디에서든 컴퓨팅을 쉽게 합니다.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return '애니메이터, 디자이너, 비디오 크리에이터 또는 게임 개발자라면 오픈 소스 및 업계 표준 소프트웨어와 애플리케이션을 지원하는 $DISTRO로 워크플로우를 쉽게 가져올 수 있습니다.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => '사용자 정의 옵션';
+  String get installationSlidesGamingTitle => '게이밍에 적합합니다';
 
   @override
-  String get accessSlideAppearance => '모습';
-
-  @override
-  String get accessSlideAssistiveTechnologies => '보조 기술';
-
-  @override
-  String get accessSlideLanguageSupport => '언어 지원';
-
-  @override
-  String get supportSlideTitle => '도움말과 지원';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return '공식 문서에는 $RELEASE에 대한 가장 일반적인 사항이 포함되어 있습니다. <a href=\"https://help.ubuntu.com\">온라인 도움말</a>과 독에 있는 도움말 아이콘으로 확인하실 수 있습니다.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO 는 성능과 호환성을 개선하기 위해 최신 NVIDIA 및 Mesa 드라이버를 지원합니다. 수천 개의 Windows 타이틀을 추가 구성 없이도 Steam과 같은 애플리케이션을 통해 $DISTRO에서 훌륭하게 즐기실 수 있습니다.';
   }
 
   @override
-  String get supportSlideQuestions => '<a href=\"https://askubuntu.com\">Ask Ubuntu</a>에서 질문을 하거나 이미 답변된 질문 모음에서 검색할 수 있습니다. 모국어 지원은 <a href=\"https://loco.ubuntu.com/teams\">로컬 커뮤니티 팀</a>에서 받아볼 수 있습니다.';
+  String get installationSlidesSecurityTitle => '개인 및 보안';
 
   @override
-  String get supportSlideResources => '다른 유용한 리소스를 찾아보려면, <a href=\"https://www.ubuntu.com/support/community-support\">커뮤니티 지원</a> 또는<a href=\"https://www.ubuntu.com/support\">상용 지원</a>을 방문하십시오.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO 는 온라인에서 개인 정보를 보호하고 보안을 유지하는 데 필요한 모든 도구를 제공합니다. 내장된 방화벽 및 VPN 지원과 다양한 개인 정보 보호 중심 애플리케이션을 통해 데이터를 완벽하게 제어할 수 있습니다.';
+  }
 
   @override
-  String get includedSoftware => '포함된 소프트웨어';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return '모든 $DISTRO LTS 릴리스에는 5년의 보안 패치가 포함되어 있으며, Ubuntu Pro 구독으로 10년 연장됩니다.';
+  }
 
   @override
-  String get availableSoftware => '사용할 수 있는 소프트웨어';
+  String get installationSlidesProductivityTitle => '생산성 향상';
 
   @override
-  String get supportedSoftware => '지원되는 소프트웨어';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO 데스크톱에는 문서, 스프레드시트 및 프레젠테이션을 위한 Microsoft Office 호환 오픈 소스 애플리케이션 제품군인 LibreOffice가 포함되어 있습니다. 인기 있는 협업 도구도 이용하실 수 있습니다.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => '모두에게 열린 접근';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return '$DISTRO 철학의 핵심은 컴퓨팅은 모두를 위한 것이라는 믿음입니다. 고급 접근성 도구와 언어, 색상 및 텍스트 크기를 변경할 수 있는 옵션을 통해 $DISTRO는 언제 어디서나 쉽게 컴퓨팅을 할 수 있도록 지원합니다.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Orca 스크린 리더';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => '언어 지원';
+
+  @override
+  String get installationSlidesSupportTitle => '도움 & 지원';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return '공식 $DISTRO 문서는 온라인과 독의 도움말로 사용할 수 있습니다.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu에는 넒은 범위의 질문과 답변이 있으며 Ubuntu Discourse 에서는 신규 사용자와 숙련된 사용자를 위한 가이드와 토론이 제공됩니다.';
+
+  @override
+  String get installationSlidesSupportEnterprise => '엔터프라이즈 사용자를 위해 Canonical에서는 직장에서 우분투를 쉽게 온보딩하고 안전하게 관리할 수 있도록 상용 지원을 제공합니다.';
+
+  @override
+  String get installationSlidesSupportResources => '유용한 지원:';
+
+  @override
+  String get installationSlidesSupportDocumentation => '공식 문서';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'Ubuntu Pro 의 엔터프라이즈 급 24/7 지원';
 
   @override
   String get copyingFiles => '파일 복사 중…';
@@ -860,20 +846,79 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationFailed => '설치 실패';
 
   @override
-  String get notEnoughDiskSpaceTitle => '죄송합니다';
+  String get notEnoughDiskSpaceTitle => '공간이 부족합니다';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return '$RELEASE 을(를) 설치하려면 적어도 $SIZE의 디스크 공간이 필요합니다.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return '$DISTRO 설치하기 위한 디스크 공간 부족';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return '이 컴퓨터는 $SIZE밖에 없습니다.';
-  }
+  String get notEnoughDiskSpaceAvailable => '사용 가능:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return '이 컴퓨터의 가장 큰 디스크는 $SIZE밖에 되지 않습니다.';
-  }
+  String get notEnoughDiskSpaceRequired => '필수:';
+
+  @override
+  String get activeDirectoryOption => '액티브 디렉토리 사용';
+
+  @override
+  String get activeDirectoryInfo => '다음 단계에서 도메인 및 기타 세부 사항을 입력합니다.';
+
+  @override
+  String get activeDirectoryTitle => '액티브 디렉토리 구성';
+
+  @override
+  String get activeDirectoryTestConnection => '도메인 연결 테스트';
+
+  @override
+  String get activeDirectoryDomainLabel => '도메인';
+
+  @override
+  String get activeDirectoryDomainEmpty => '필수';
+
+  @override
+  String get activeDirectoryDomainTooLong => '너무 깁니다';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => '유효하지 않은 문자';
+
+  @override
+  String get activeDirectoryDomainStartDot => '점 (.)으로 시작';
+
+  @override
+  String get activeDirectoryDomainEndDot => '점 (.)으로 끝';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => '하이픈 (-)으로 시작';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => '하이픈 (-)으로 끝';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => '연속된 여러 점(..) 포함';
+
+  @override
+  String get activeDirectoryDomainNotFound => '도메인을 찾을 수 없습니다';
+
+  @override
+  String get activeDirectoryAdminLabel => '도메인 사용자 연결';
+
+  @override
+  String get activeDirectoryAdminEmpty => '필수';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => '유효하지 않은 문자';
+
+  @override
+  String get activeDirectoryPasswordLabel => '비밀 번호';
+
+  @override
+  String get activeDirectoryPasswordEmpty => '필수';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Active Directory 연결 구성 오류';
+
+  @override
+  String get activeDirectoryErrorMessage => '죄송합니다, 현재 Active Directory를 설정할 수 없습니다. 시스템이 준비되면, <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>에 방문하셔서 도움을 받으시기 바랍니다.';
 }

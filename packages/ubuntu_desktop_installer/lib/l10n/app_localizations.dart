@@ -233,7 +233,8 @@ abstract class AppLocalizations {
     Locale('ug'),
     Locale('uk'),
     Locale('vi'),
-    Locale('zh')
+    Locale('zh'),
+    Locale('zh', 'TW')
   ];
 
   /// No description provided for @appTitle.
@@ -248,29 +249,11 @@ abstract class AppLocalizations {
   /// **'Install {RELEASE}'**
   String windowTitle(Object RELEASE);
 
-  /// No description provided for @cancelButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'Cancel'**
-  String get cancelButtonText;
-
   /// No description provided for @changeButtonText.
   ///
   /// In en, this message translates to:
   /// **'Change'**
   String get changeButtonText;
-
-  /// No description provided for @okButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'OK'**
-  String get okButtonText;
-
-  /// No description provided for @noButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'No'**
-  String get noButtonText;
 
   /// No description provided for @restartButtonText.
   ///
@@ -284,23 +267,23 @@ abstract class AppLocalizations {
   /// **'Revert'**
   String get revertButtonText;
 
-  /// No description provided for @yesButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'Yes'**
-  String get yesButtonText;
-
   /// No description provided for @quitButtonText.
   ///
   /// In en, this message translates to:
-  /// **'Quit Installation'**
+  /// **'Quit installation'**
   String get quitButtonText;
 
-  /// No description provided for @welcome.
+  /// No description provided for @welcomePageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Welcome'**
-  String get welcome;
+  /// **'Welcome to {DISTRO}'**
+  String welcomePageTitle(Object DISTRO);
+
+  /// No description provided for @preparingUbuntu.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing {DISTRO}...'**
+  String preparingUbuntu(Object DISTRO);
 
   /// No description provided for @welcomeHeader.
   ///
@@ -311,8 +294,8 @@ abstract class AppLocalizations {
   /// No description provided for @tryOrInstallPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Try or install'**
-  String get tryOrInstallPageTitle;
+  /// **'Try or install {DISTRO}'**
+  String tryOrInstallPageTitle(Object DISTRO);
 
   /// No description provided for @repairInstallation.
   ///
@@ -359,8 +342,14 @@ abstract class AppLocalizations {
   /// No description provided for @turnOffRST.
   ///
   /// In en, this message translates to:
-  /// **'Turn off RST'**
+  /// **'RST is enabled'**
   String get turnOffRST;
+
+  /// No description provided for @turnOffRSTTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn off RST to continue'**
+  String get turnOffRSTTitle;
 
   /// No description provided for @turnOffRSTDescription.
   ///
@@ -371,7 +360,7 @@ abstract class AppLocalizations {
   /// No description provided for @instructionsForRST.
   ///
   /// In en, this message translates to:
-  /// **'For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>'**
+  /// **'For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>'**
   String instructionsForRST(Object url);
 
   /// No description provided for @keyboardLayoutPageTitle.
@@ -395,8 +384,20 @@ abstract class AppLocalizations {
   /// No description provided for @detectLayout.
   ///
   /// In en, this message translates to:
-  /// **'Detect Keyboard Layout'**
+  /// **'Detect keyboard layout'**
   String get detectLayout;
+
+  /// No description provided for @detectButtonText.
+  ///
+  /// In en, this message translates to:
+  /// **'Detect'**
+  String get detectButtonText;
+
+  /// No description provided for @keyboardVariant.
+  ///
+  /// In en, this message translates to:
+  /// **'Keyboard variant:'**
+  String get keyboardVariant;
 
   /// No description provided for @pressOneKey.
   ///
@@ -473,13 +474,13 @@ abstract class AppLocalizations {
   /// No description provided for @connectToInternetPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Connect to internet'**
+  /// **'Connect to a network'**
   String get connectToInternetPageTitle;
 
   /// No description provided for @connectToInternetDescription.
   ///
   /// In en, this message translates to:
-  /// **'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network'**
+  /// **'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network'**
   String get connectToInternetDescription;
 
   /// No description provided for @useWiredConnection.
@@ -503,7 +504,7 @@ abstract class AppLocalizations {
   /// No description provided for @wiredMustBeEnabled.
   ///
   /// In en, this message translates to:
-  /// **'To use ethernet on this computer, a wired connection must be enabled'**
+  /// **'To use Ethernet on this computer, a wired connection must be enabled'**
   String get wiredMustBeEnabled;
 
   /// No description provided for @enableWired.
@@ -575,7 +576,7 @@ abstract class AppLocalizations {
   /// No description provided for @updatesOtherSoftwarePageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Updates and other software'**
+  /// **'Applications and updates'**
   String get updatesOtherSoftwarePageTitle;
 
   /// No description provided for @updatesOtherSoftwarePageDescription.
@@ -653,7 +654,7 @@ abstract class AppLocalizations {
   /// No description provided for @onBatteryWarning.
   ///
   /// In en, this message translates to:
-  /// **'<font color=\"{color}\">Warning</font>: The computer is not plugged in to a power source.'**
+  /// **'<font color=\"{color}\">Warning:</font> The computer is not plugged in to a power source.'**
   String onBatteryWarning(Object color);
 
   /// No description provided for @offlineWarning.
@@ -665,7 +666,7 @@ abstract class AppLocalizations {
   /// No description provided for @chooseSecurityKeyTitle.
   ///
   /// In en, this message translates to:
-  /// **'Choose a security key'**
+  /// **'Security key'**
   String get chooseSecurityKeyTitle;
 
   /// No description provided for @chooseSecurityKeyHeader.
@@ -701,13 +702,13 @@ abstract class AppLocalizations {
   /// No description provided for @chooseSecurityKeyWarning.
   ///
   /// In en, this message translates to:
-  /// **'<font color=\"{color}\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.'**
+  /// **'<font color=\"{color}\">Warning:</font> If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.'**
   String chooseSecurityKeyWarning(Object color);
 
   /// No description provided for @installationTypeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Installation type'**
+  /// **'Type of installation'**
   String get installationTypeTitle;
 
   /// No description provided for @installationTypeOSDetected.
@@ -749,7 +750,7 @@ abstract class AppLocalizations {
   /// No description provided for @installationTypeAdvancedLabel.
   ///
   /// In en, this message translates to:
-  /// **'Advanced Features...'**
+  /// **'Advanced features...'**
   String get installationTypeAdvancedLabel;
 
   /// No description provided for @installationTypeAdvancedTitle.
@@ -857,7 +858,7 @@ abstract class AppLocalizations {
   /// No description provided for @installationTypeManual.
   ///
   /// In en, this message translates to:
-  /// **'Something else'**
+  /// **'Manual partitioning'**
   String get installationTypeManual;
 
   /// No description provided for @installationTypeManualInfo.
@@ -887,7 +888,7 @@ abstract class AppLocalizations {
   /// No description provided for @selectGuidedStorageInstallNow.
   ///
   /// In en, this message translates to:
-  /// **'Install Now'**
+  /// **'Install now'**
   String get selectGuidedStorageInstallNow;
 
   /// No description provided for @installAlongsideSpaceDivider.
@@ -941,13 +942,25 @@ abstract class AppLocalizations {
   /// No description provided for @allocateDiskSpace.
   ///
   /// In en, this message translates to:
-  /// **'Allocate disk space'**
+  /// **'Manual partitioning'**
   String get allocateDiskSpace;
+
+  /// No description provided for @allocateDiskSpaceInvalidMountPointSlash.
+  ///
+  /// In en, this message translates to:
+  /// **'Mount points must start with \"/\"'**
+  String get allocateDiskSpaceInvalidMountPointSlash;
+
+  /// No description provided for @allocateDiskSpaceInvalidMountPointSpace.
+  ///
+  /// In en, this message translates to:
+  /// **'Mount points cannot contain spaces'**
+  String get allocateDiskSpaceInvalidMountPointSpace;
 
   /// No description provided for @startInstallingButtonText.
   ///
   /// In en, this message translates to:
-  /// **'Start Installing'**
+  /// **'Install'**
   String get startInstallingButtonText;
 
   /// No description provided for @diskHeadersDevice.
@@ -995,7 +1008,7 @@ abstract class AppLocalizations {
   /// No description provided for @freeDiskSpace.
   ///
   /// In en, this message translates to:
-  /// **'free space'**
+  /// **'Free space'**
   String get freeDiskSpace;
 
   /// No description provided for @newPartitionTable.
@@ -1007,13 +1020,13 @@ abstract class AppLocalizations {
   /// No description provided for @newPartitionTableConfirmationTitle.
   ///
   /// In en, this message translates to:
-  /// **'Create a new empty partition table on this device?'**
+  /// **'New empty partition'**
   String get newPartitionTableConfirmationTitle;
 
   /// No description provided for @newPartitionTableConfirmationMessage.
   ///
   /// In en, this message translates to:
-  /// **'You have selected an entire device to partition. If you proceed with creating a new partition table on it, all its current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.'**
+  /// **'Creating a new partition table on an entire device will remove all of its current partitions. This operation can be undone if needed.'**
   String get newPartitionTableConfirmationMessage;
 
   /// No description provided for @tooManyPrimaryPartitions.
@@ -1025,7 +1038,7 @@ abstract class AppLocalizations {
   /// No description provided for @partitionLimitReached.
   ///
   /// In en, this message translates to:
-  /// **'limit reached'**
+  /// **'Limit reached'**
   String get partitionLimitReached;
 
   /// No description provided for @bootLoaderDevice.
@@ -1118,107 +1131,17 @@ abstract class AppLocalizations {
   /// **'Used as:'**
   String get partitionFormatLabel;
 
-  /// No description provided for @partitionFormatExt4.
-  ///
-  /// In en, this message translates to:
-  /// **'Ext4 journaling file system'**
-  String get partitionFormatExt4;
-
-  /// No description provided for @partitionFormatExt3.
-  ///
-  /// In en, this message translates to:
-  /// **'Ext3 journaling file system'**
-  String get partitionFormatExt3;
-
-  /// No description provided for @partitionFormatExt2.
-  ///
-  /// In en, this message translates to:
-  /// **'Ext2 file system'**
-  String get partitionFormatExt2;
-
-  /// No description provided for @partitionFormatBtrfs.
-  ///
-  /// In en, this message translates to:
-  /// **'btrfs journaling file system'**
-  String get partitionFormatBtrfs;
-
-  /// No description provided for @partitionFormatJfs.
-  ///
-  /// In en, this message translates to:
-  /// **'JFS journaling file system'**
-  String get partitionFormatJfs;
-
-  /// No description provided for @partitionFormatXfs.
-  ///
-  /// In en, this message translates to:
-  /// **'XFS journaling file system'**
-  String get partitionFormatXfs;
-
-  /// No description provided for @partitionFormatFat.
-  ///
-  /// In en, this message translates to:
-  /// **'FAT file system'**
-  String get partitionFormatFat;
-
-  /// No description provided for @partitionFormatFat12.
-  ///
-  /// In en, this message translates to:
-  /// **'FAT12 file system'**
-  String get partitionFormatFat12;
-
-  /// No description provided for @partitionFormatFat16.
-  ///
-  /// In en, this message translates to:
-  /// **'FAT16 file system'**
-  String get partitionFormatFat16;
-
-  /// No description provided for @partitionFormatFat32.
-  ///
-  /// In en, this message translates to:
-  /// **'FAT32 file system'**
-  String get partitionFormatFat32;
-
-  /// No description provided for @partitionFormatSwap.
-  ///
-  /// In en, this message translates to:
-  /// **'Swap area'**
-  String get partitionFormatSwap;
-
-  /// No description provided for @partitionFormatIso9660.
-  ///
-  /// In en, this message translates to:
-  /// **'ISO 9660 file system'**
-  String get partitionFormatIso9660;
-
-  /// No description provided for @partitionFormatVfat.
-  ///
-  /// In en, this message translates to:
-  /// **'VFAT file system'**
-  String get partitionFormatVfat;
-
-  /// No description provided for @partitionFormatNtfs.
-  ///
-  /// In en, this message translates to:
-  /// **'NTFS file system'**
-  String get partitionFormatNtfs;
-
-  /// No description provided for @partitionFormatReiserFS.
-  ///
-  /// In en, this message translates to:
-  /// **'ReiserFS file system'**
-  String get partitionFormatReiserFS;
-
-  /// No description provided for @partitionFormatZfsroot.
-  ///
-  /// In en, this message translates to:
-  /// **'ZFS root file system'**
-  String get partitionFormatZfsroot;
-
   /// No description provided for @partitionFormatNone.
   ///
   /// In en, this message translates to:
   /// **'Leave unformatted'**
   String get partitionFormatNone;
+
+  /// No description provided for @partitionFormatKeep.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave formatted as {format}'**
+  String partitionFormatKeep(Object format);
 
   /// No description provided for @partitionErase.
   ///
@@ -1235,7 +1158,7 @@ abstract class AppLocalizations {
   /// No description provided for @whoAreYouPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Who are you?'**
+  /// **'Set up your account'**
   String get whoAreYouPageTitle;
 
   /// No description provided for @whoAreYouPageAutoLogin.
@@ -1262,6 +1185,12 @@ abstract class AppLocalizations {
   /// **'A name is required'**
   String get whoAreYouPageRealNameRequired;
 
+  /// No description provided for @whoAreYouPageRealNameTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'That name is too long.'**
+  String get whoAreYouPageRealNameTooLong;
+
   /// No description provided for @whoAreYouPageComputerNameLabel.
   ///
   /// In en, this message translates to:
@@ -1279,6 +1208,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'A computer name is required'**
   String get whoAreYouPageComputerNameRequired;
+
+  /// No description provided for @whoAreYouPageComputerNameTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'That computer name is too long.'**
+  String get whoAreYouPageComputerNameTooLong;
 
   /// No description provided for @whoAreYouPageInvalidComputerName.
   ///
@@ -1352,16 +1287,22 @@ abstract class AppLocalizations {
   /// **'The passwords do not match'**
   String get whoAreYouPagePasswordMismatch;
 
-  /// No description provided for @whoAreYouPageShowPassword.
+  /// No description provided for @whoAreYouPagePasswordShow.
   ///
   /// In en, this message translates to:
-  /// **'Show password'**
-  String get whoAreYouPageShowPassword;
+  /// **'Show'**
+  String get whoAreYouPagePasswordShow;
+
+  /// No description provided for @whoAreYouPagePasswordHide.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide'**
+  String get whoAreYouPagePasswordHide;
 
   /// No description provided for @writeChangesToDisk.
   ///
   /// In en, this message translates to:
-  /// **'Write changes to disk'**
+  /// **'Ready to install'**
   String get writeChangesToDisk;
 
   /// Default display name for a disk without a serial (unlikely)
@@ -1375,6 +1316,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.'**
   String get writeChangesDescription;
+
+  /// No description provided for @writeChangesDevicesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Devices'**
+  String get writeChangesDevicesTitle;
+
+  /// No description provided for @writeChangesPartitionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Partitions'**
+  String get writeChangesPartitionsTitle;
 
   /// No description provided for @writeChangesPartitionTablesHeader.
   ///
@@ -1397,37 +1350,37 @@ abstract class AppLocalizations {
   /// A resized partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} resized from {oldsize} to {newsize}'**
+  /// **'partition <b>{disk}{partition}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>'**
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize);
 
   /// A formatted and mounted partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} formatted as {format} used for {mount}'**
+  /// **'partition <b>{disk}{partition}</b> formatted as <b>{format}</b> used for <b>{mount}</b>'**
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount);
 
   /// A formatted partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} formatted as {format}'**
+  /// **'partition <b>{disk}{partition}</b> formatted as <b>{format}</b>'**
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format);
 
   /// A mounted partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} used for {mount}'**
+  /// **'partition <b>{disk}{partition}</b> used for <b>{mount}</b>'**
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount);
 
   /// A created partition entry
   ///
   /// In en, this message translates to:
-  /// **'partition #{disk}{partition} created'**
+  /// **'partition <b>{disk}{partition}</b> created'**
   String writeChangesPartitionCreated(Object disk, Object partition);
 
   /// No description provided for @chooseYourLookPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Choose your look'**
+  /// **'Choose your theme'**
   String get chooseYourLookPageTitle;
 
   /// No description provided for @chooseYourLookPageHeader.
@@ -1457,7 +1410,7 @@ abstract class AppLocalizations {
   /// No description provided for @readyToUse.
   ///
   /// In en, this message translates to:
-  /// **'**{system}** is installed and ready to use.'**
+  /// **'**{system}** is installed and ready to use'**
   String readyToUse(Object system);
 
   /// No description provided for @restartInto.
@@ -1481,43 +1434,61 @@ abstract class AppLocalizations {
   /// No description provided for @restartNow.
   ///
   /// In en, this message translates to:
-  /// **'Restart Now'**
+  /// **'Restart now'**
   String get restartNow;
 
   /// No description provided for @continueTesting.
   ///
   /// In en, this message translates to:
-  /// **'Continue Testing'**
+  /// **'Continue testing'**
   String get continueTesting;
 
   /// No description provided for @turnOffBitlockerTitle.
   ///
   /// In en, this message translates to:
-  /// **'Turn off BitLocker'**
+  /// **'BitLocker is enabled'**
   String get turnOffBitlockerTitle;
+
+  /// No description provided for @turnOffBitlockerHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn off BitLocker to continue'**
+  String get turnOffBitlockerHeadline;
 
   /// No description provided for @turnOffBitlockerDescription.
   ///
   /// In en, this message translates to:
-  /// **'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.'**
-  String get turnOffBitlockerDescription;
+  /// **'This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose \'{option}\' to continue.'**
+  String turnOffBitlockerDescription(Object option);
 
   /// No description provided for @turnOffBitlockerLinkInstructions.
   ///
   /// In en, this message translates to:
-  /// **'For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>'**
+  /// **'For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>'**
   String turnOffBitlockerLinkInstructions(Object url);
 
   /// No description provided for @restartIntoWindows.
   ///
   /// In en, this message translates to:
-  /// **'Restart Into Windows'**
+  /// **'Restart into Windows'**
   String get restartIntoWindows;
+
+  /// No description provided for @restartIntoWindowsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Restart into Windows?'**
+  String get restartIntoWindowsTitle;
+
+  /// No description provided for @restartIntoWindowsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to restart your computer? You will need to restart the {DISTRO} installation later to finish installing {DISTRO}.'**
+  String restartIntoWindowsDescription(Object DISTRO);
 
   /// No description provided for @whereAreYouPageTitle.
   ///
   /// In en, this message translates to:
-  /// **'Where are you?'**
+  /// **'Select your timezone'**
   String get whereAreYouPageTitle;
 
   /// No description provided for @whereAreYouLocationLabel.
@@ -1532,227 +1503,185 @@ abstract class AppLocalizations {
   /// **'Timezone'**
   String get whereAreYouTimezoneLabel;
 
-  /// No description provided for @welcomeSlideTitle.
+  /// No description provided for @installationSlidesTitle.
   ///
   /// In en, this message translates to:
   /// **'Welcome to {RELEASE}'**
-  String welcomeSlideTitle(Object RELEASE);
+  String installationSlidesTitle(Object RELEASE);
 
-  /// No description provided for @welcomeSlideDescription.
+  /// No description provided for @installationSlidesAvailable.
   ///
   /// In en, this message translates to:
-  /// **'Fast and full of new features, the latest version of {RELEASE} makes computing easier than ever. Here are just a few cool new things to look out for...'**
-  String welcomeSlideDescription(Object RELEASE);
+  /// **'Available:'**
+  String get installationSlidesAvailable;
 
-  /// No description provided for @softwareSlideTitle.
+  /// No description provided for @installationSlidesIncluded.
   ///
   /// In en, this message translates to:
-  /// **'Find even more software'**
-  String get softwareSlideTitle;
+  /// **'Included:'**
+  String get installationSlidesIncluded;
 
-  /// No description provided for @softwareSlideDescription.
+  /// No description provided for @installationSlidesWelcomeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Say goodbye to searching the web for new software. With access to the Snap Store and the {RELEASE} software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.'**
-  String softwareSlideDescription(Object RELEASE);
+  /// **'Fast, free and full of new features'**
+  String get installationSlidesWelcomeTitle;
 
-  /// No description provided for @musicSlideTitle.
+  /// No description provided for @installationSlidesWelcomeHeader.
   ///
   /// In en, this message translates to:
-  /// **'Take your music with you'**
-  String get musicSlideTitle;
+  /// **'The latest version of {DISTRO} makes computing easier than ever.'**
+  String installationSlidesWelcomeHeader(Object DISTRO);
 
-  /// No description provided for @musicSlideDescription.
+  /// No description provided for @installationSlidesWelcomeBody.
   ///
   /// In en, this message translates to:
-  /// **'{RELEASE} comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.'**
-  String musicSlideDescription(Object RELEASE);
+  /// **'Whether you\'re a developer, creator, gamer or administrator you\'ll find new tools to improve your productivity and enhance your experience in {RELEASE}.'**
+  String installationSlidesWelcomeBody(Object RELEASE);
 
-  /// No description provided for @musicSlideRhythmbox.
+  /// No description provided for @installationSlidesSoftwareTitle.
   ///
   /// In en, this message translates to:
-  /// **'Rhythmbox Music Player'**
-  String get musicSlideRhythmbox;
+  /// **'All the applications you need'**
+  String get installationSlidesSoftwareTitle;
 
-  /// No description provided for @musicSlideSpotify.
+  /// No description provided for @installationSlidesSoftwareBody.
   ///
   /// In en, this message translates to:
-  /// **'Spotify'**
-  String get musicSlideSpotify;
+  /// **'Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and {DISTRO} archive.'**
+  String installationSlidesSoftwareBody(Object DISTRO);
 
-  /// No description provided for @musicSlideVLC.
+  /// No description provided for @installationSlidesDevelopmentTitle.
   ///
   /// In en, this message translates to:
-  /// **'VLC'**
-  String get musicSlideVLC;
+  /// **'Develop with the best of open source'**
+  String get installationSlidesDevelopmentTitle;
 
-  /// No description provided for @photoSlideTitle.
+  /// No description provided for @installationSlidesDevelopmentBody.
   ///
   /// In en, this message translates to:
-  /// **'Have fun with your photos'**
-  String get photoSlideTitle;
+  /// **'{DISTRO} is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every {DISTRO} release includes the latest toolchains and supports all major IDEs.'**
+  String installationSlidesDevelopmentBody(Object DISTRO);
 
-  /// No description provided for @photoSlideDescription.
+  /// No description provided for @installationSlidesCreativityTitle.
   ///
   /// In en, this message translates to:
-  /// **'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.'**
-  String get photoSlideDescription;
+  /// **'Enhance your creativity'**
+  String get installationSlidesCreativityTitle;
 
-  /// No description provided for @photoSlideShotwell.
+  /// No description provided for @installationSlidesCreativityBody.
   ///
   /// In en, this message translates to:
-  /// **'Shotwell Photo Manager'**
-  String get photoSlideShotwell;
+  /// **'If you\'re an animator, designer, video creator or game developer it\'s easy to bring your workflows to {DISTRO} with support for open source and industry standard software and applications.'**
+  String installationSlidesCreativityBody(Object DISTRO);
 
-  /// No description provided for @photoSlideGimp.
+  /// No description provided for @installationSlidesGamingTitle.
   ///
   /// In en, this message translates to:
-  /// **'GIMP Image Editor'**
-  String get photoSlideGimp;
+  /// **'Great for gaming'**
+  String get installationSlidesGamingTitle;
 
-  /// No description provided for @photoSlideShotcut.
+  /// No description provided for @installationSlidesGamingBody.
   ///
   /// In en, this message translates to:
-  /// **'Shotcut Video Editor'**
-  String get photoSlideShotcut;
+  /// **'{DISTRO} supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on {DISTRO} via applications like Steam with no additional configuration.'**
+  String installationSlidesGamingBody(Object DISTRO);
 
-  /// No description provided for @webSlideTitle.
+  /// No description provided for @installationSlidesSecurityTitle.
   ///
   /// In en, this message translates to:
-  /// **'Make the most of the web'**
-  String get webSlideTitle;
+  /// **'Private and secure'**
+  String get installationSlidesSecurityTitle;
 
-  /// No description provided for @webSlideDescription.
+  /// No description provided for @installationSlidesSecurityBody.
   ///
   /// In en, this message translates to:
-  /// **'{RELEASE} includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.'**
-  String webSlideDescription(Object RELEASE);
+  /// **'{DISTRO} provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.'**
+  String installationSlidesSecurityBody(Object DISTRO);
 
-  /// No description provided for @webSlideFirefox.
+  /// No description provided for @installationSlidesSecurityLts.
   ///
   /// In en, this message translates to:
-  /// **'Firefox web browser'**
-  String get webSlideFirefox;
+  /// **'All {DISTRO} LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.'**
+  String installationSlidesSecurityLts(Object DISTRO);
 
-  /// No description provided for @webSlideThunderbird.
+  /// No description provided for @installationSlidesProductivityTitle.
   ///
   /// In en, this message translates to:
-  /// **'Thunderbird'**
-  String get webSlideThunderbird;
+  /// **'Power up your productivity'**
+  String get installationSlidesProductivityTitle;
 
-  /// No description provided for @webSlideChromium.
+  /// No description provided for @installationSlidesProductivityBody.
   ///
   /// In en, this message translates to:
-  /// **'Chromium'**
-  String get webSlideChromium;
+  /// **'{DISTRO} Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.'**
+  String installationSlidesProductivityBody(Object DISTRO);
 
-  /// No description provided for @officeSlideTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Everything you need for the office'**
-  String get officeSlideTitle;
-
-  /// No description provided for @officeSlideDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.'**
-  String get officeSlideDescription;
-
-  /// No description provided for @officeSlideWriter.
-  ///
-  /// In en, this message translates to:
-  /// **'LibreOffice Writer'**
-  String get officeSlideWriter;
-
-  /// No description provided for @officeSlideCalc.
-  ///
-  /// In en, this message translates to:
-  /// **'LibreOffice Calc'**
-  String get officeSlideCalc;
-
-  /// No description provided for @officeSlideImpress.
-  ///
-  /// In en, this message translates to:
-  /// **'LibreOffice Impress'**
-  String get officeSlideImpress;
-
-  /// No description provided for @accessSlideTitle.
+  /// No description provided for @installationSlidesAccessibilityTitle.
   ///
   /// In en, this message translates to:
   /// **'Access for everyone'**
-  String get accessSlideTitle;
+  String get installationSlidesAccessibilityTitle;
 
-  /// No description provided for @accessSlideDescription.
+  /// No description provided for @installationSlidesAccessibilityBody.
   ///
   /// In en, this message translates to:
-  /// **'At the heart of the {RELEASE} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colors and text size, {RELEASE} makes computing easy — whoever and wherever you are.'**
-  String accessSlideDescription(Object RELEASE);
+  /// **'At the heart of the {DISTRO} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, {DISTRO} makes computing easy - whoever and wherever you are.'**
+  String installationSlidesAccessibilityBody(Object DISTRO);
 
-  /// No description provided for @accessSlideCustomizationOptions.
+  /// No description provided for @installationSlidesAccessibilityOrca.
   ///
   /// In en, this message translates to:
-  /// **'Customization options'**
-  String get accessSlideCustomizationOptions;
+  /// **'Orca Screen Reader'**
+  String get installationSlidesAccessibilityOrca;
 
-  /// No description provided for @accessSlideAppearance.
-  ///
-  /// In en, this message translates to:
-  /// **'Appearance'**
-  String get accessSlideAppearance;
-
-  /// No description provided for @accessSlideAssistiveTechnologies.
-  ///
-  /// In en, this message translates to:
-  /// **'Assistive technologies'**
-  String get accessSlideAssistiveTechnologies;
-
-  /// No description provided for @accessSlideLanguageSupport.
+  /// No description provided for @installationSlidesAccessibilityLanguages.
   ///
   /// In en, this message translates to:
   /// **'Language support'**
-  String get accessSlideLanguageSupport;
+  String get installationSlidesAccessibilityLanguages;
 
-  /// No description provided for @supportSlideTitle.
+  /// No description provided for @installationSlidesSupportTitle.
   ///
   /// In en, this message translates to:
-  /// **'Help and support'**
-  String get supportSlideTitle;
+  /// **'Help & Support'**
+  String get installationSlidesSupportTitle;
 
-  /// No description provided for @supportSlideDocumentation.
+  /// No description provided for @installationSlidesSupportHeader.
   ///
   /// In en, this message translates to:
-  /// **'The official documentation covers many of the most common aspects of {RELEASE}. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.'**
-  String supportSlideDocumentation(Object RELEASE);
+  /// **'The official {DISTRO} documentation is available both online and via the Help icon in the dock.'**
+  String installationSlidesSupportHeader(Object DISTRO);
 
-  /// No description provided for @supportSlideQuestions.
+  /// No description provided for @installationSlidesSupportCommunity.
   ///
   /// In en, this message translates to:
-  /// **'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.'**
-  String get supportSlideQuestions;
+  /// **'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.'**
+  String get installationSlidesSupportCommunity;
 
-  /// No description provided for @supportSlideResources.
+  /// No description provided for @installationSlidesSupportEnterprise.
   ///
   /// In en, this message translates to:
-  /// **'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.'**
-  String get supportSlideResources;
+  /// **'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.'**
+  String get installationSlidesSupportEnterprise;
 
-  /// No description provided for @includedSoftware.
+  /// No description provided for @installationSlidesSupportResources.
   ///
   /// In en, this message translates to:
-  /// **'Included software'**
-  String get includedSoftware;
+  /// **'Helpful resources:'**
+  String get installationSlidesSupportResources;
 
-  /// No description provided for @availableSoftware.
+  /// No description provided for @installationSlidesSupportDocumentation.
   ///
   /// In en, this message translates to:
-  /// **'Available software'**
-  String get availableSoftware;
+  /// **'Official documentation'**
+  String get installationSlidesSupportDocumentation;
 
-  /// No description provided for @supportedSoftware.
+  /// No description provided for @installationSlidesSupportUbuntuPro.
   ///
   /// In en, this message translates to:
-  /// **'Supported software'**
-  String get supportedSoftware;
+  /// **'Enterprise-grade 24/7 support with Ubuntu Pro'**
+  String get installationSlidesSupportUbuntuPro;
 
   /// No description provided for @copyingFiles.
   ///
@@ -1781,26 +1710,152 @@ abstract class AppLocalizations {
   /// No description provided for @notEnoughDiskSpaceTitle.
   ///
   /// In en, this message translates to:
-  /// **'Sorry'**
+  /// **'Not enough space'**
   String get notEnoughDiskSpaceTitle;
 
-  /// No description provided for @notEnoughDiskSpaceHeader.
+  /// No description provided for @notEnoughDiskSpaceUbuntu.
   ///
   /// In en, this message translates to:
-  /// **'You need at least {SIZE} disk space to install {RELEASE}.'**
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE);
+  /// **'Not enough disk space to install {DISTRO}'**
+  String notEnoughDiskSpaceUbuntu(Object DISTRO);
 
-  /// No description provided for @notEnoughDiskSpaceHasOnly.
+  /// No description provided for @notEnoughDiskSpaceAvailable.
   ///
   /// In en, this message translates to:
-  /// **'This computer has only {SIZE}.'**
-  String notEnoughDiskSpaceHasOnly(Object SIZE);
+  /// **'Available:'**
+  String get notEnoughDiskSpaceAvailable;
 
-  /// No description provided for @notEnoughDiskSpaceBiggestDisk.
+  /// No description provided for @notEnoughDiskSpaceRequired.
   ///
   /// In en, this message translates to:
-  /// **'The biggest disk on this computer is only {SIZE}.'**
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE);
+  /// **'Required:'**
+  String get notEnoughDiskSpaceRequired;
+
+  /// No description provided for @activeDirectoryOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Active Directory'**
+  String get activeDirectoryOption;
+
+  /// No description provided for @activeDirectoryInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll enter domain and other details in the next step.'**
+  String get activeDirectoryInfo;
+
+  /// No description provided for @activeDirectoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure Active Directory'**
+  String get activeDirectoryTitle;
+
+  /// No description provided for @activeDirectoryTestConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Test domain connectivity'**
+  String get activeDirectoryTestConnection;
+
+  /// No description provided for @activeDirectoryDomainLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain'**
+  String get activeDirectoryDomainLabel;
+
+  /// No description provided for @activeDirectoryDomainEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get activeDirectoryDomainEmpty;
+
+  /// No description provided for @activeDirectoryDomainTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Too long'**
+  String get activeDirectoryDomainTooLong;
+
+  /// No description provided for @activeDirectoryDomainInvalidChars.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid characters'**
+  String get activeDirectoryDomainInvalidChars;
+
+  /// No description provided for @activeDirectoryDomainStartDot.
+  ///
+  /// In en, this message translates to:
+  /// **'Starts with a dot (.)'**
+  String get activeDirectoryDomainStartDot;
+
+  /// No description provided for @activeDirectoryDomainEndDot.
+  ///
+  /// In en, this message translates to:
+  /// **'Ends with a dot (.)'**
+  String get activeDirectoryDomainEndDot;
+
+  /// No description provided for @activeDirectoryDomainStartHyphen.
+  ///
+  /// In en, this message translates to:
+  /// **'Starts with a hyphen (-)'**
+  String get activeDirectoryDomainStartHyphen;
+
+  /// No description provided for @activeDirectoryDomainEndHyphen.
+  ///
+  /// In en, this message translates to:
+  /// **'Ends with a hyphen (-)'**
+  String get activeDirectoryDomainEndHyphen;
+
+  /// No description provided for @activeDirectoryDomainMultipleDots.
+  ///
+  /// In en, this message translates to:
+  /// **'Contains multiple sequenced dots (..)'**
+  String get activeDirectoryDomainMultipleDots;
+
+  /// No description provided for @activeDirectoryDomainNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain not found'**
+  String get activeDirectoryDomainNotFound;
+
+  /// No description provided for @activeDirectoryAdminLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Domain join user'**
+  String get activeDirectoryAdminLabel;
+
+  /// No description provided for @activeDirectoryAdminEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get activeDirectoryAdminEmpty;
+
+  /// No description provided for @activeDirectoryAdminInvalidChars.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid characters'**
+  String get activeDirectoryAdminInvalidChars;
+
+  /// No description provided for @activeDirectoryPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get activeDirectoryPasswordLabel;
+
+  /// No description provided for @activeDirectoryPasswordEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get activeDirectoryPasswordEmpty;
+
+  /// No description provided for @activeDirectoryErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Error configuring connection to Active Directory'**
+  String get activeDirectoryErrorTitle;
+
+  /// No description provided for @activeDirectoryErrorMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.'**
+  String get activeDirectoryErrorMessage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -1825,6 +1880,12 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
     case 'pt': {
   switch (locale.countryCode) {
     case 'BR': return AppLocalizationsPtBr();
+   }
+  break;
+   }
+    case 'zh': {
+  switch (locale.countryCode) {
+    case 'TW': return AppLocalizationsZhTw();
    }
   break;
    }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_wsl_setup/splash_screen.dart';
+import 'package:yaru/yaru.dart';
 
 void main() {
   const animationContent = 'Animation';
@@ -11,6 +12,7 @@ void main() {
 
   MaterialApp buildApp({Widget? Function(BuildContext)? builder}) =>
       MaterialApp(
+        theme: yaruLight,
         home: SplashScreen(
           animationDuration: kDuration,
           transitionDuration: kDuration,

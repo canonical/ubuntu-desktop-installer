@@ -13,16 +13,7 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Отменить';
-
-  @override
   String get changeButtonText => 'Изменить';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Нет';
 
   @override
   String get restartButtonText => 'Перезагрузить';
@@ -31,19 +22,25 @@ class AppLocalizationsRu extends AppLocalizations {
   String get revertButtonText => 'Вернуть';
 
   @override
-  String get yesButtonText => 'Да';
-
-  @override
   String get quitButtonText => 'Отменить установку';
 
   @override
-  String get welcome => 'Добро пожаловать';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Добро пожаловать в $DISTRO';
+  }
+
+  @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Подготовка $DISTRO...';
+  }
 
   @override
   String get welcomeHeader => 'Выберите язык:';
 
   @override
-  String get tryOrInstallPageTitle => 'Попробовать или установить';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Попробовать или установить $DISTRO';
+  }
 
   @override
   String get repairInstallation => 'Исправить установку';
@@ -77,14 +74,17 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Выключить RST';
+  String get turnOffRST => 'RST включён';
+
+  @override
+  String get turnOffRSTTitle => 'Для продолжения отключите RST';
 
   @override
   String get turnOffRSTDescription => 'Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Для получения справки, откройте эту страницу на телефоне или другом устройстве: <a href=\"https://$url\">$url</a>';
+    return 'Для получения справки отсканируйте QR-код на другом устройстве или посетите: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -94,10 +94,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get chooseYourKeyboardLayout => 'Выберите раскладку клавиатуры:';
 
   @override
-  String get typeToTest => 'Введите здесь, чтобы проверить свою клавиатуру';
+  String get typeToTest => 'Напечатайте здесь, чтобы проверить свою клавиатуру';
 
   @override
   String get detectLayout => 'Определить раскладку клавиатуры';
+
+  @override
+  String get detectButtonText => 'Определить';
+
+  @override
+  String get keyboardVariant => 'Вариант клавиатуры:';
 
   @override
   String get pressOneKey => 'Нажмите одну из следующих клавиш:';
@@ -136,7 +142,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get showSecurityKey => 'Показать ключ безопасности';
 
   @override
-  String get connectToInternetPageTitle => 'Интернет соединение';
+  String get connectToInternetPageTitle => 'Подключение к сети';
 
   @override
   String get connectToInternetDescription => 'Соединение данного компьютера с интернетом позволит Ubuntu установить дополнительное программное обеспечение и поможет выбрать ваш часовой пояс.\n\nПрисоедините кабель сети интернет или выберите сеть Wi-Fi';
@@ -187,7 +193,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get connectButtonText => 'Соединение';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Обновления и другое программное обеспечение';
+  String get updatesOtherSoftwarePageTitle => 'Приложения и обновления';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Какие приложения вы хотели бы установить для начала?';
@@ -220,21 +226,21 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installDriversSubtitle => 'На эти драйверы распространяются лицензионные условия, прилагаемые к их документации. Они являются проприетарными.';
 
   @override
-  String get installCodecsTitle => 'Установить поддержку дополнительных медиаформатов';
+  String get installCodecsTitle => 'Загрузить и установить поддержку дополнительных медиаформатов';
 
   @override
   String get installCodecsSubtitle => 'На это программное обеспечение распространяются лицензионные условия, прилагаемые к его документации. Некоторые из них являются проприетарными.';
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Внимание</font>. Компьютер не подключен к источнику питания.';
+    return '<font color=\"$color\">Внимание:</font> Компьютер не подключен к источнику питания.';
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Вы сейчас не в сети';
 
   @override
-  String get chooseSecurityKeyTitle => 'Выберите ключ безопасности';
+  String get chooseSecurityKeyTitle => 'Ключ безопасности';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -255,7 +261,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Предупреждение</font>. Если вы потеряете этот ключ безопасности, все данные будут потеряны. При необходимости вы можете записать ключ и хранить его в безопасном месте.';
+    return '<font color=\"$color\">Предупреждение:</font> Если вы потеряете этот ключ безопасности, все данные будут потеряны. При необходимости вы можете записать ключ и хранить его в безопасном месте.';
   }
 
   @override
@@ -358,7 +364,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Документы, музыка и другие личные файлы будут сохранены. Вы сможете выбрать нужную операционную систему для загрузки при каждом запуске компьютера.';
 
   @override
-  String get installationTypeManual => 'Другой вариант';
+  String get installationTypeManual => 'Создание разделов вручную';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -406,10 +412,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installAlongsideAvailable => 'Доступно:';
 
   @override
-  String get allocateDiskSpace => 'Выделить место на диске';
+  String get allocateDiskSpace => 'Создание разделов вручную';
 
   @override
-  String get startInstallingButtonText => 'Начать установку';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Точки монтирования должны начинаться с «/»';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Точки монтирования не могут содержать пробелы';
+
+  @override
+  String get startInstallingButtonText => 'Установить';
 
   @override
   String get diskHeadersDevice => 'Устройство';
@@ -433,22 +445,22 @@ class AppLocalizationsRu extends AppLocalizations {
   String get diskHeadersFormat => 'Формат';
 
   @override
-  String get freeDiskSpace => 'свободное место';
+  String get freeDiskSpace => 'Свободное место';
 
   @override
   String get newPartitionTable => 'Новая таблица разделов';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Создать новую пустую таблицу разделов на этом устройстве?';
+  String get newPartitionTableConfirmationTitle => 'Новый пустой раздел';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Вы выбрали целое устройство для разбиения его на разделы. Если вы продолжите создание новой таблицы разделов на устройстве, все текущие разделы будут удалены.\n\nОбратите внимание, что, если захотите, то сможете отменить эту операцию позже.';
+  String get newPartitionTableConfirmationMessage => 'Создание новой таблицы разделов на этом устройстве удалит все его текущие разделы. При необходимости эту операцию можно отменить.';
 
   @override
   String get tooManyPrimaryPartitions => 'Слишком много первичных разделов';
 
   @override
-  String get partitionLimitReached => 'достигнут предел';
+  String get partitionLimitReached => 'Достигнут предел';
 
   @override
   String get bootLoaderDevice => 'Устройство для установки загрузчика';
@@ -496,55 +508,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get partitionFormatLabel => 'Использовано:';
 
   @override
-  String get partitionFormatExt4 => 'Журналируемая файловая система Ext4';
+  String get partitionFormatNone => 'Оставить неформатированным';
 
   @override
-  String get partitionFormatExt3 => 'Журналируемая файловая система Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'Файловая система Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'Журналируемая файловая система btrfs';
-
-  @override
-  String get partitionFormatJfs => 'Журналируемая файловая система JFS';
-
-  @override
-  String get partitionFormatXfs => 'Журналируемя файловая система XFS';
-
-  @override
-  String get partitionFormatFat => 'Файловая система FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Файловая система FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'Файловая система FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'Файловая система FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Область подкачки';
-
-  @override
-  String get partitionFormatIso9660 => 'Файловая система ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Файловая система VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'Файловая система NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Файловая система ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'Корневая файловая система ZFS';
-
-  @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
 
   @override
   String get partitionErase => 'Форматировать раздел';
@@ -553,7 +522,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get partitionMountPointLabel => 'Точка монтирования:';
 
   @override
-  String get whoAreYouPageTitle => 'Кто вы?';
+  String get whoAreYouPageTitle => 'Создание своей учётной записи';
 
   @override
   String get whoAreYouPageAutoLogin => 'Входить в систему автоматически';
@@ -568,6 +537,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Укажите имя';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'Слишком длинное имя.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Имя компьютера';
 
   @override
@@ -575,6 +547,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Требуется имя компьютера';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'Слишком длинное имя компьютера.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Недопустимое имя компьютера';
@@ -613,16 +588,25 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Пароли не совпадают';
 
   @override
-  String get whoAreYouPageShowPassword => 'Показать пароль';
+  String get whoAreYouPagePasswordShow => 'Показать';
 
   @override
-  String get writeChangesToDisk => 'Записать изменения на диск';
+  String get whoAreYouPagePasswordHide => 'Скрыть';
+
+  @override
+  String get writeChangesToDisk => 'Готово к установке';
 
   @override
   String get writeChangesFallbackSerial => 'диск';
 
   @override
   String get writeChangesDescription => 'Если вы продолжите, перечисленные ниже изменения будут записаны на диски. Дальнейшие изменения вы сможете внести вручную.';
+
+  @override
+  String get writeChangesDevicesTitle => 'Устройства';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Разделы';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Изменены таблицы разделов на следующих устройствах:';
@@ -637,31 +621,31 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'размер раздела #$disk$partition изменен с $oldsize на $newsize';
+    return 'размер раздела <b>$disk$partition</b> изменён с <b>$oldsize</b> на <b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'раздел #$disk$partition отформатирован как $format и использован для $mount';
+    return 'раздел <b>$disk$partition</b> отформатирован как <b>$format</b> и использован для <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'раздел #$disk$partition отформатирован как $format';
+    return 'раздел <b>$disk$partition</b> отформатирован как <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'раздел #$disk$partition использован для $mount';
+    return 'раздел <b>$disk$partition</b> использован для <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'раздел #$disk$partition создан';
+    return 'раздел <b>$disk$partition</b> создан';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Выберите свой внешний вид';
+  String get chooseYourLookPageTitle => 'Выберите свою тему';
 
   @override
   String get chooseYourLookPageHeader => 'Вы всегда можете изменить это позже в настройках внешнего вида.';
@@ -677,7 +661,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** установлена и готова к использованию.';
+    return '**$system** установлена и готова к использованию';
   }
 
   @override
@@ -700,21 +684,34 @@ class AppLocalizationsRu extends AppLocalizations {
   String get continueTesting => 'Продолжить тестирование';
 
   @override
-  String get turnOffBitlockerTitle => 'Отключить BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker включён';
 
   @override
-  String get turnOffBitlockerDescription => 'Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо отключить BitLocker в Windows перед установкой Ubuntu.';
+  String get turnOffBitlockerHeadline => 'Для продолжения отключите BitLocker';
+
+  @override
+  String turnOffBitlockerDescription(Object option) {
+    return 'Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо использовать Windows для создания свободного места или выбрать \'$option\' для продолжения.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Чтобы получить инструкции, откройте страницу <a href=\"https://$url\">$url</a> на телефоне или другом устройстве';
+    return 'Чтобы получить инструкции, отсканируйте QR-код на другом устройстве или посетите: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Перезагрузить в Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Где вы находитесь?';
+  String get restartIntoWindowsTitle => 'Перезагрузить в Windows?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Вы уверены, что хотите перезагрузить компьютер? Вам потребуется позже перезапустить установку $DISTRO, чтобы завершить установку $DISTRO.';
+  }
+
+  @override
+  String get whereAreYouPageTitle => 'Выберите свой часовой пояс';
 
   @override
   String get whereAreYouLocationLabel => 'Место нахождения';
@@ -723,129 +720,118 @@ class AppLocalizationsRu extends AppLocalizations {
   String get whereAreYouTimezoneLabel => 'Часовой пояс';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
+  String installationSlidesTitle(Object RELEASE) {
     return 'Добро пожаловать в $RELEASE';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return 'Быстрая и изобилующая новыми функциями последняя версия $RELEASE делает работу компьютера проще, чем когда-либо. Вот несколько крутых новинок, на которые стоит обратить внимание...';
+  String get installationSlidesAvailable => 'Доступно:';
+
+  @override
+  String get installationSlidesIncluded => 'Включено:';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'Быстрый, бесплатный и полный новых возможностей';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return 'Последняя версия $DISTRO делает использование вашего компьютера проще, чем когда-либо.';
   }
 
   @override
-  String get softwareSlideTitle => 'Найдите ещё больше программного обеспечения';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return 'Попрощайтесь с поиском в интернете нового программного обеспечения. Имея доступ к Snap Store и архиву программного обеспечения $RELEASE, вы можете легко находить и устанавливать новые приложения. Просто наберите на клавиатуре то, что вы ищете, или просмотрите такие категории, как «Графика и фотография», «Игры» и «Работа», а также отзывы других пользователей.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'Независимо от того, являетесь ли вы разработчиком, создателем, игроком или администратором, $RELEASE предлагает новые инструменты для повышения вашей производительности и опыта.';
   }
 
   @override
-  String get musicSlideTitle => 'Возьмите с собой свою музыку';
+  String get installationSlidesSoftwareTitle => 'Все необходимые приложения';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE поставляется с потрясающим музыкальным проигрывателем Rhythmbox. Благодаря расширенным параметрам воспроизведения легко ставить в очередь любимые песни. Кроме того, он отлично работает с компакт-дисками и портативными музыкальными проигрывателями, поэтому вы можете наслаждаться музыкой, куда бы ни отправились.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'Устанавливайте, управляйте и обновляйте все свои приложения в Ubuntu Software, включая тысячи приложений из Snap Store и архива $DISTRO.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Аудио проигрыватель Rhythmbox';
+  String get installationSlidesDevelopmentTitle => 'Разрабатывайте с использованием лучшего из открытого исходного кода';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => 'Получайте удовольствие от своих фотографий';
-
-  @override
-  String get photoSlideDescription => 'Shotwell — удобный менеджер фотографий, доступный для ваших гаджетов. Подключите камеру или телефон, чтобы загрузить фотографии, после этого вы можете как делиться ими, так и безопасно хранить. А если вы ощущаете себя творческим человеком, то можете найти множество других приложений для работы с фотографиями в Ubuntu Software.';
-
-  @override
-  String get photoSlideShotwell => 'Менеджер фотографий Shotwell';
-
-  @override
-  String get photoSlideGimp => 'Редактор изображений GIMP';
-
-  @override
-  String get photoSlideShotcut => 'Видеоредактор Shotcut';
-
-  @override
-  String get webSlideTitle => 'Получите максимум от интернета';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE включает Firefox, веб-браузер, которым пользуются миллионы людей по всему миру. И, часто используемые вами веб-приложения (например, Facebook или Gmail), могут быть закреплены на рабочем столе для более быстрого доступа, как и приложения на вашем компьютере.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO - это идеальная рабочая станция для разработки приложений и веб-приложений, data science и AI/ML, а также devops и администрирования. Каждый выпуск $DISTRO включает новейшие инструментальные цепочки и поддерживает все основные IDE.';
   }
 
   @override
-  String get webSlideFirefox => 'Веб-браузер Firefox';
+  String get installationSlidesCreativityTitle => 'Повышайте свою креативность';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
-
-  @override
-  String get webSlideChromium => 'Веб-браузер Chromium';
-
-  @override
-  String get officeSlideTitle => 'Всё что нужно для офиса';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice — это бесплатный офисный пакет, в котором есть всё необходимое для создания документов, электронных таблиц и презентаций. Совместимый с форматами файлов Microsoft Office, он предоставляет вам все необходимые функции совершенно бесплатно.';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => 'Доступ для каждого';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return 'В основе философии $RELEASE лежит убеждение, что компьютеры предназначены для каждого. Благодаря расширенным инструментам специальных возможностей и параметрам изменения языка, цветовой схемы и размера текста $RELEASE упрощает работу с компьютером, где бы вы ни находились.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'Если вы аниматор, дизайнер, создатель видео или разработчик игр, вам будет легко перенести свои рабочие процессы в $DISTRO благодаря поддержке программного обеспечения и приложений с открытым исходным кодом и промышленных стандартов.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Параметры настройки';
+  String get installationSlidesGamingTitle => 'Отлично подходит для игр';
 
   @override
-  String get accessSlideAppearance => 'Внешний вид';
-
-  @override
-  String get accessSlideAssistiveTechnologies => 'Специальные возможности';
-
-  @override
-  String get accessSlideLanguageSupport => 'Языковая поддержка';
-
-  @override
-  String get supportSlideTitle => 'Помощь и поддержка';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return 'Официальная документация охватывает многие из наиболее распространенных областей $RELEASE. Она доступна как <a href=\"https://help.ubuntu.com\">онлайн</a>, так и с помощью значка справки на панели задач.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO поддерживает последние версии драйверов NVIDIA и Mesa для повышения производительности и совместимости. Тысячи игр для Windows отлично воспроизводятся на $DISTRO через такие приложения, как Steam, без дополнительной настройки.';
   }
 
   @override
-  String get supportSlideQuestions => 'На странице <a href=\"https://askubuntu.com\">Ask Ubuntu</a> вы можете задавать вопросы и выполнять поиск по внушительной коллекции уже отвеченных вопросов. Поддержка на вашем родном языке может быть предоставлена вашей <a href=\"https://loco.ubuntu.com/teams\">местной командой сообщества</a>.';
+  String get installationSlidesSecurityTitle => 'Конфиденциальность и безопасность';
 
   @override
-  String get supportSlideResources => 'Чтобы получить ссылки на другие полезные ресурсы, посетите <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> или <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO предоставляет все инструменты, необходимые для обеспечения конфиденциальности и безопасности в Интернете. Благодаря встроенному брандмауэру и поддержке VPN, а также множеству приложений, ориентированных на конфиденциальность, вы полностью контролируете свои данные.';
+  }
 
   @override
-  String get includedSoftware => 'Включённое программное обеспечение';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'Все выпуски $DISTRO LTS предоставляют исправления безопасности в течение пяти лет, которые могут быть продлены до десяти лет при подписке на Ubuntu Pro.';
+  }
 
   @override
-  String get availableSoftware => 'Доступное программное обеспечение';
+  String get installationSlidesProductivityTitle => 'Повысьте свою производительность';
 
   @override
-  String get supportedSoftware => 'Поддерживаемое программное обеспечение';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO Рабочий стол включает LibreOffice, набор совместимых с Microsoft Office приложений с открытым исходным кодом для работы с документами, электронными таблицами и презентациями. Также доступны популярные инструменты для совместной работы.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'Доступно для каждого';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return 'В основе философии $DISTRO лежит убеждение в том, что компьютер - для всех. Благодаря расширенным инструментам доступности и возможности изменения языка, цветов и размера текста, $DISTRO делает работу с компьютером простой - где бы и кем бы вы ни были.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Программа чтения с экрана Orca';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'Языковая поддержка';
+
+  @override
+  String get installationSlidesSupportTitle => 'Помощь и поддержка';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'Официальная поддержка $DISTRO доступна как в Интернете, так и через значок справки в док-панели.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu охватывает ряд вопросов и ответов, а Ubuntu Discourse содержит руководства и обсуждения для новых и опытных пользователей.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'Для корпоративных пользователей Canonical предоставляет коммерческую поддержку, чтобы упростить внедрение и безопасное управление Ubuntu на рабочем месте.';
+
+  @override
+  String get installationSlidesSupportResources => 'Полезные ресурсы:';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'Официальная документация';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'Поддержка корпоративных пользователей в режиме 24/7 в Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Копирование файлов…';
@@ -860,20 +846,79 @@ class AppLocalizationsRu extends AppLocalizations {
   String get installationFailed => 'Ошибка установки';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Извините';
+  String get notEnoughDiskSpaceTitle => 'Недостаточно места';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'Вам потребуется как минимум $SIZE дискового пространства для установки $RELEASE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Недостаточно места на диске для установки $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'На этом компьютере имеется только $SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Доступно:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'Самый большой диск на этом компьютере имеет всего $SIZE.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Требуется:';
+
+  @override
+  String get activeDirectoryOption => 'Использовать Active Directory';
+
+  @override
+  String get activeDirectoryInfo => 'Вы введёте домен и другие данные на следующем шаге.';
+
+  @override
+  String get activeDirectoryTitle => 'Настроить Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Проверка подключения к домену';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Домен';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Требуется';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Слишком длинный';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Недопустимые символы';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Начинается с точки (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Заканчивается точкой (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Начинается со знака дефиса (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Заканчивается знаком дефиса (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Содержит несколько последовательных точек (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Домен не найден';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Пользователь, присоединившийся к домену';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Требуется';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Недопустимые символы';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Пароль';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Требуется';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Ошибка настройки подключения к Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Извините, Active Directory не может быть настроен в данный момент. Как только ваша система будет запущена, посетите <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> для получения помощи.';
 }

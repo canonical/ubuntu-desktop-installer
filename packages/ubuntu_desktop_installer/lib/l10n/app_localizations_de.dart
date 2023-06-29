@@ -13,16 +13,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Abbrechen';
-
-  @override
   String get changeButtonText => 'Ändern';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Nein';
 
   @override
   String get restartButtonText => 'Neustart';
@@ -31,19 +22,25 @@ class AppLocalizationsDe extends AppLocalizations {
   String get revertButtonText => 'Zurücksetzen';
 
   @override
-  String get yesButtonText => 'Ja';
-
-  @override
   String get quitButtonText => 'Installation beenden';
 
   @override
-  String get welcome => 'Willkommen';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Willkommen bei $DISTRO';
+  }
+
+  @override
+  String preparingUbuntu(Object DISTRO) {
+    return '$DISTRO wird vorbereitet ...';
+  }
 
   @override
   String get welcomeHeader => 'Wählen Sie Ihre Sprache aus:';
 
   @override
-  String get tryOrInstallPageTitle => 'Ausprobieren oder installieren';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return '$DISTRO ausprobieren oder installieren';
+  }
 
   @override
   String get repairInstallation => 'Installation reparieren';
@@ -77,14 +74,17 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST ausschalten';
+  String get turnOffRST => 'RST ist aktiviert';
 
   @override
-  String get turnOffRSTDescription => 'Dieser Rechner verwendet Intel RST (Rapid Storage Technology). Vor der Installation von Ubuntu muss RST in Windows ausgeschaltet werden.';
+  String get turnOffRSTTitle => 'Schalten Sie RST aus, um fortzufahren';
+
+  @override
+  String get turnOffRSTDescription => 'Dieser Computer verwendet Intel RST (Rapid Storage Technology). Vor der Installation von Ubuntu muss RST in Windows ausgeschaltet werden.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Um Anweisungen zu erhalten, öffnen Sie diese Seite auf einem Smartphone oder einem anderen Gerät: <a href=\"https://$url\">$url</a>';
+    return 'Um Anweisungen zu erhalten, scannen Sie den QR-Code mit einem anderen Gerät oder besuchen Sie: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -98,6 +98,12 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get detectLayout => 'Tastaturbelegung erkennen';
+
+  @override
+  String get detectButtonText => 'Erkennen';
+
+  @override
+  String get keyboardVariant => 'Tastaturvariante:';
 
   @override
   String get pressOneKey => 'Bitte drücken Sie eine der folgenden Tasten:';
@@ -136,7 +142,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get showSecurityKey => 'Sicherheitsschlüssel anzeigen';
 
   @override
-  String get connectToInternetPageTitle => 'Mit dem Internet verbinden';
+  String get connectToInternetPageTitle => 'Mit einem Netzwerk verbinden';
 
   @override
   String get connectToInternetDescription => 'Die Verbindung des Computers mit dem Internet hilft Ubuntu bei der Installation zusätzlicher Software und bei der Auswahl der Zeitzone.\n\nPer Ethernet-Kabel verbinden oder ein WLAN-Netzwerk auswählen';
@@ -187,7 +193,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get connectButtonText => 'Verbinden';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Aktualisierungen und andere Software';
+  String get updatesOtherSoftwarePageTitle => 'Anwendungen und Aktualisierungen';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Welche Anwendungen möchten Sie am Anfang installieren?';
@@ -227,18 +233,18 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warnung</font>: Der Rechner ist nicht an eine Stromquelle angeschlossen.';
+    return '<font color=\"$color\">Warnung:</font> Der Computer ist nicht an eine Stromquelle angeschlossen.';
   }
 
   @override
   String get offlineWarning => 'Sie sind derzeit offline';
 
   @override
-  String get chooseSecurityKeyTitle => 'Sicherheitsschlüssel auswählen';
+  String get chooseSecurityKeyTitle => 'Sicherheitsschlüssel';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Die Festplattenverschlüsselung schützt Ihre Dateien, falls Sie Ihren Rechner verlieren. Bei jedem Start des Rechners müssen Sie einen Sicherheitsschlüssel eingeben.\n\nAlle Dateien außerhalb von $RELEASE werden nicht verschlüsselt.';
+    return 'Die Festplattenverschlüsselung schützt Ihre Dateien, falls Sie Ihren Computer verlieren. Bei jedem Start des Computers müssen Sie einen Sicherheitsschlüssel eingeben.\n\nAlle Dateien außerhalb von $RELEASE werden nicht verschlüsselt.';
   }
 
   @override
@@ -255,15 +261,15 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warnung</font>: Falls Sie diesen Sicherheitsschlüssel verlieren, sind alle Daten verloren. Bei Bedarf können Sie sich den Schlüssel aufschreiben und ihn an einem sicheren Ort verwahren.';
+    return '<font color=\"$color\">Warnung:</font> Falls Sie diesen Sicherheitsschlüssel verlieren, sind alle Daten verloren. Bei Bedarf können Sie sich den Schlüssel aufschreiben und ihn an einem sicheren Ort verwahren.';
   }
 
   @override
-  String get installationTypeTitle => 'Installationsart';
+  String get installationTypeTitle => 'Art der Installation';
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'Auf diesem Rechner befindet sich momentan $os. Wie möchten Sie vorgehen?';
+    return 'Auf diesem Computer befindet sich momentan $os. Wie möchten Sie vorgehen?';
   }
 
   @override
@@ -275,7 +281,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationTypeMultiOSDetected => 'Auf diesem Computer sind aktuell mehrere Betriebssysteme installiert. Was möchten Sie tun?';
 
   @override
-  String get installationTypeNoOSDetected => 'Auf diesem Rechner befinden sich momentan keine erkannten Betriebssysteme. Wie möchten Sie vorgehen?';
+  String get installationTypeNoOSDetected => 'Auf diesem Computer befinden sich momentan keine erkannten Betriebssysteme. Wie möchten Sie vorgehen?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -288,7 +294,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Erweiterte Funktionen …';
+  String get installationTypeAdvancedLabel => 'Erweiterte Funktionen ...';
 
   @override
   String get installationTypeAdvancedTitle => 'Erweiterte Funktionen';
@@ -355,10 +361,10 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Dokumente, Musik und andere persönliche Dateien bleiben erhalten. Sie können bei jedem Start des Rechners auswählen, welches Betriebssystem Sie verwenden möchten.';
+  String get installationTypeAlongsideInfo => 'Dokumente, Musik und andere persönliche Dateien bleiben erhalten. Sie können bei jedem Start des Computers auswählen, welches Betriebssystem Sie verwenden möchten.';
 
   @override
-  String get installationTypeManual => 'Etwas Anderes';
+  String get installationTypeManual => 'Manuelle Partitionierung';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -406,10 +412,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installAlongsideAvailable => 'Verfügbar:';
 
   @override
-  String get allocateDiskSpace => 'Festplattenspeicher zuweisen';
+  String get allocateDiskSpace => 'Manuelle Partitionierung';
 
   @override
-  String get startInstallingButtonText => 'Installation starten';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Einhängepunkte müssen mit „/“ beginnen';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Einhängepunkte dürfen keine Leerzeichen enthalten';
+
+  @override
+  String get startInstallingButtonText => 'Installieren';
 
   @override
   String get diskHeadersDevice => 'Laufwerk';
@@ -439,10 +451,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get newPartitionTable => 'Neue Partitionstabelle';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Eine neue leere Partitionstabelle auf diesem Gerät erstellen?';
+  String get newPartitionTableConfirmationTitle => 'Neue leere Partition';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Sie haben ein ganzes Gerät zur Partitionierung ausgewählt. Wenn Sie mit der Erstellung einer neuen Partitionstabelle fortfahren, werden alle aktuellen Partitionen entfernt.\n\nBeachten Sie, dass Sie diesen Vorgang später rückgängig machen können, wenn Sie dies wünschen.';
+  String get newPartitionTableConfirmationMessage => 'Die Erstellung einer neuen Partitionstabelle auf einem gesamten Gerät entfernt alle aktuellen Partitionen. Dieser Vorgang kann bei Bedarf rückgängig gemacht werden.';
 
   @override
   String get tooManyPrimaryPartitions => 'Zu viele primäre Partitionen';
@@ -496,55 +508,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get partitionFormatLabel => 'Verwendet als:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4-Journaling-Dateisystem';
+  String get partitionFormatNone => 'Unformatiert lassen';
 
   @override
-  String get partitionFormatExt3 => 'Ext3-Journaling-Dateisystem';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2-Dateisystem';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs-Journaling-Dateisystem';
-
-  @override
-  String get partitionFormatJfs => 'JFS-Journaling-Dateisystem';
-
-  @override
-  String get partitionFormatXfs => 'XFS-Journaling-Dateisystem';
-
-  @override
-  String get partitionFormatFat => 'FAT-Dateisystem';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12-Dateisystem';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16-Dateisystem';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32-Dateisystem';
-
-  @override
-  String get partitionFormatSwap => 'Auslagerungsbereich';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO-9660-Dateisystem';
-
-  @override
-  String get partitionFormatVfat => 'VFAT-Dateisystem';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS-Dateisystem';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS-Dateisystem';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS-Root-Dateisystem';
-
-  @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String partitionFormatKeep(Object format) {
+    return 'Als $format formatiert lassen';
+  }
 
   @override
   String get partitionErase => 'Partition formatieren';
@@ -553,7 +522,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get partitionMountPointLabel => 'Einhängepunkt:';
 
   @override
-  String get whoAreYouPageTitle => 'Wer sind Sie?';
+  String get whoAreYouPageTitle => 'Ihr Konto einrichten';
 
   @override
   String get whoAreYouPageAutoLogin => 'Automatisch anmelden';
@@ -568,16 +537,22 @@ class AppLocalizationsDe extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Ein Name ist erforderlich';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Name Ihres Rechners';
+  String get whoAreYouPageRealNameTooLong => 'Dieser Name ist zu lang.';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Der Name, der bei der Kommunikation mit anderen Rechnern verwendet wird.';
+  String get whoAreYouPageComputerNameLabel => 'Name Ihres Computers';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Ein Rechnername ist erforderlich';
+  String get whoAreYouPageComputerNameInfo => 'Der Name, der bei der Kommunikation mit anderen Computern verwendet wird.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'Der Rechnername ist ungültig';
+  String get whoAreYouPageComputerNameRequired => 'Ein Computername ist erforderlich';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'Dieser Computername ist zu lang.';
+
+  @override
+  String get whoAreYouPageInvalidComputerName => 'Der Computername ist ungültig';
 
   @override
   String get whoAreYouPageUsernameLabel => 'Einen Benutzernamen auswählen';
@@ -613,16 +588,25 @@ class AppLocalizationsDe extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Die Passwörter stimmen nicht überein';
 
   @override
-  String get whoAreYouPageShowPassword => 'Passwort anzeigen';
+  String get whoAreYouPagePasswordShow => 'Anzeigen';
 
   @override
-  String get writeChangesToDisk => 'Änderungen auf die Festplatte schreiben';
+  String get whoAreYouPagePasswordHide => 'Ausblenden';
+
+  @override
+  String get writeChangesToDisk => 'Bereit zur Installation';
 
   @override
   String get writeChangesFallbackSerial => 'Festplatte';
 
   @override
   String get writeChangesDescription => 'Wenn Sie fortfahren, werden die unten aufgeführten Änderungen auf die Festplatten geschrieben. Sie haben die Möglichkeit, weitere Änderungen manuell vorzunehmen.';
+
+  @override
+  String get writeChangesDevicesTitle => 'Geräte';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitionen';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Die Partitionstabellen der folgenden Laufwerke werden geändert:';
@@ -637,31 +621,31 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'Größe der Partition #$disk$partition von $oldsize auf $newsize geändert';
+    return 'Größe der Partition <b>$disk$partition</b> von <b>$oldsize</b> auf <b>$newsize</b> geändert';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'Partition #$disk$partition formatiert als $format verwendet für $mount';
+    return 'Partition <b>$disk$partition</b> formatiert als <b>$format</b> verwendet für <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'Partition #$disk$partition formatiert als $format';
+    return 'Partition <b>$disk$partition</b> formatiert als <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'Partition #$disk$partition verwendet für $mount';
+    return 'Partition <b>$disk$partition</b> verwendet für <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'Partition #$disk$partition erstellt';
+    return 'Partition <b>$disk$partition</b> erstellt';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Wählen Sie Ihr Aussehen aus';
+  String get chooseYourLookPageTitle => 'Wählen Sie Ihr Thema aus';
 
   @override
   String get chooseYourLookPageHeader => 'Sie können dies später in den Einstellungen für das Erscheinungsbild jederzeit ändern.';
@@ -677,7 +661,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** ist installiert und einsatzbereit.';
+    return '**$system** ist installiert und einsatzbereit';
   }
 
   @override
@@ -700,21 +684,34 @@ class AppLocalizationsDe extends AppLocalizations {
   String get continueTesting => 'Testen fortsetzen';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker ausschalten';
+  String get turnOffBitlockerTitle => 'BitLocker ist aktiviert';
 
   @override
-  String get turnOffBitlockerDescription => 'Dieser Rechner verwendet die Windows-BitLocker-Verschlüsselung.\nSie müssen BitLocker in Windows deaktivieren, bevor Sie Ubuntu installieren.';
+  String get turnOffBitlockerHeadline => 'Schalten Sie BitLocker aus, um fortzufahren';
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Um Anweisungen zu erhalten, öffnen Sie diese Seite auf einem Smartphone oder einem anderen Gerät: <a href=\"https://$url\">$url</a>';
+  String turnOffBitlockerDescription(Object option) {
+    return 'Dieser Computer verwendet die Windows-BitLocker-Verschlüsselung.\nSie müssen Windows verwenden, um freien Speicherplatz zu schaffen, oder wählen Sie \'$option\', um fortzufahren.';
   }
 
   @override
-  String get restartIntoWindows => 'Neustart unter Windows';
+  String turnOffBitlockerLinkInstructions(Object url) {
+    return 'Für Anweisungen scannen Sie den QR-Code mit einem anderen Gerät oder besuchen Sie: <a href=\"https://$url\">$url</a>';
+  }
 
   @override
-  String get whereAreYouPageTitle => 'Wo bist du?';
+  String get restartIntoWindows => 'Neustart in Windows';
+
+  @override
+  String get restartIntoWindowsTitle => 'Neustart in Windows hinein?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Sind Sie sicher, dass Sie Ihren Computer neu starten möchten? Sie müssen die Installation von $DISTRO später neu starten, um die Installation von $DISTRO abzuschließen.';
+  }
+
+  @override
+  String get whereAreYouPageTitle => 'Wählen Sie Ihre Zeitzone aus';
 
   @override
   String get whereAreYouLocationLabel => 'Standort';
@@ -723,129 +720,118 @@ class AppLocalizationsDe extends AppLocalizations {
   String get whereAreYouTimezoneLabel => 'Zeitzone';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
-    return 'Willkommen zu $RELEASE';
+  String installationSlidesTitle(Object RELEASE) {
+    return 'Willkommen bei $RELEASE';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return 'Schnell und voller neuer Funktionen, die neueste Version von $RELEASE macht Computerarbeit noch einfacher. Hier sind nur ein paar der neuen klasse Sachen nach denen man gucken sollte...';
+  String get installationSlidesAvailable => 'Verfügbar:';
+
+  @override
+  String get installationSlidesIncluded => 'Einschließlich:';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'Schnell, kostenlos und mit vielen neuen Funktionen';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return 'Die neueste Version von $DISTRO macht Computerarbeiten so einfach wie nie zuvor.';
   }
 
   @override
-  String get softwareSlideTitle => 'Find sogar mehr Software';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return 'Verabschiede dich von der Softwaresuche im Internet. Dank des Zugriffs auf den Snap Store und dem $RELEASE Software-Archiv können Sie neue Anwendungen ganz einfach finden und installieren. Geben Sie einfach ein, was Sie suchen möchten, oder erkunden Sie Kategorien wie Grafik & Fotografie, Spiele und Produktivität sowie hilfreiche Bewertungen von anderen Nutzern.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'Egal, ob Sie Entwickler, Grafiker, Spieler oder Administrator sind, in $RELEASE finden Sie neue Werkzeuge, um Ihre Produktivität zu steigern und Ihre Erfahrung zu verbessern.';
   }
 
   @override
-  String get musicSlideTitle => 'Nimm deine Musik mit dir mit';
+  String get installationSlidesSoftwareTitle => 'Alle Anwendungen, die Sie brauchen';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE wird mit dem fantastischen Rhythmbox-Musikspieler geliefert. Mit den erweiterten Wiedergabeoptionen ist es ganz einfach, die perfekten Lieder in die Warteschlange hinzuzufügen. Und es funktioniert hervorragend mit CDs und tragbaren Musikspielern, so dass Sie Ihre Musik überall genießen können, wo auch immer Sie hingehen.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'Installieren, verwalten und aktualisieren Sie alle Ihre Anwendungen in Ubuntu Software, einschließlich Tausender von Anwendungen aus dem Snap Store und dem $DISTRO-Archiv.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhytmbox Musikspieler';
+  String get installationSlidesDevelopmentTitle => 'Entwickeln Sie mit dem Besten aus Open Source';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => 'Hab Spaß mit deinen Bildern';
-
-  @override
-  String get photoSlideDescription => 'Shotwell ist ein praktischer Foto-Manager, der für Ihre Geräte bereit ist. Schließen Sie eine Kamera oder ein Telefon an, um Ihre Fotos zu übertragen, dann ist es einfach, sie zu teilen und sie sicher aufzubewahren. Und wenn Sie sich kreativ fühlen, finden Sie in der Ubuntu-Software viele weitere Foto-Apps.';
-
-  @override
-  String get photoSlideShotwell => 'Shotwell Bildermanager';
-
-  @override
-  String get photoSlideGimp => 'GIMP Bildbearbeitung';
-
-  @override
-  String get photoSlideShotcut => 'Shotcut Videobearbeitung';
-
-  @override
-  String get webSlideTitle => 'Mache das beste aus dem Internet';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE enthält Firefox, den Internetbrowser, der von Millionen von Menschen auf der ganzen Welt genutzt wird. Und Webanwendungen, die Sie häufig nutzen (z. B. Facebook oder Google Mail), können für einen schnelleren Zugriff an Ihren Desktop angeheftet werden, genau wie Anwendungen auf Ihrem Computer.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO ist die ideale Arbeitsumgebung für App- oder Webentwicklung, Datenwissenschaft und KI/ML sowie für Devops und Administration. Jede $DISTRO-Version enthält die neuesten Toolchains und unterstützt alle wichtigen IDEs.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox Internetbrowser';
+  String get installationSlidesCreativityTitle => 'Steigern Sie Ihre Kreativität';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
-
-  @override
-  String get webSlideChromium => 'Chromium';
-
-  @override
-  String get officeSlideTitle => 'Alles was du für das Büro brauchst';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice ist ein kostenloses Office-Paket, das alles enthält, was Sie zum Erstellen von Dokumenten, Tabellenkalkulationen und Präsentationen benötigen. Es ist mit den Dateiformaten von Microsoft Office kompatibel und bietet Ihnen alle Funktionen, die Sie benötigen.';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Textverarbeitung';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Tabellenkalkulation';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Präsentationen';
-
-  @override
-  String get accessSlideTitle => 'Zugang für jede:n';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return 'Im Mittelpunkt der $RELEASE-Philosophie steht die Überzeugung, dass Computer für jeden da sind. Mit fortschrittlichen Werkzeugen für Barrierefreiheit und Optionen zum Ändern von Sprache, Farbe und Textgröße macht $RELEASE die Computerarbeit einfach — egal wer und wo Sie sind.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'Wenn Sie ein Animator, Designer, Videokünstler oder Spieleentwickler sind, können Sie Ihre Arbeitsabläufe dank der Unterstützung von Open-Source- und Industriestandard-Software und -Anwendungen ganz einfach in $DISTRO einbringen.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Personalisierungsoptionen';
+  String get installationSlidesGamingTitle => 'Ideal für Spiele';
 
   @override
-  String get accessSlideAppearance => 'Aussehen';
-
-  @override
-  String get accessSlideAssistiveTechnologies => 'Unterstützende Funktionen';
-
-  @override
-  String get accessSlideLanguageSupport => 'Sprachunterstützung';
-
-  @override
-  String get supportSlideTitle => 'Hilfe und Unterstützung';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return 'Die offizielle Dokumentation umfasst viele der gängigsten Aspekte von $RELEASE. Es ist sowohl <a href=\"https://help.ubuntu.com\">Online</a> als auch über das Hilfesymbol verfügbar.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO unterstützt die neuesten NVIDIA- und Mesa-Treiber, um Leistung und Kompatibilität zu verbessern. Tausende von Windows-Titeln lassen sich auf $DISTRO über Anwendungen wie Steam ohne zusätzliche Konfiguration problemlos spielen.';
   }
 
   @override
-  String get supportSlideQuestions => 'Auf <a href=\"https://askubuntu.com\">Ask Ubuntu</a> können Sie Fragen stellen und durch eine beeindruckende Sammlung von bereits beantworteten Fragen stöbern. Unterstützung in Ihrer Sprache können Sie in Ihrem <a href=\"https://loco.ubuntu.com/teams\">lokalen Team</a> finden.';
+  String get installationSlidesSecurityTitle => 'Privat und sicher';
 
   @override
-  String get supportSlideResources => 'Hinweise auf andere nützliche Ressourcen finden Sie unter <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> oder <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO bietet alle Werkzeuge, die Sie brauchen, um privat und sicher online zu sein. Mit integrierter Firewall- und VPN-Unterstützung und einer Vielzahl von datenschutzfreundlichen Anwendungen, die Ihnen die volle Kontrolle über Ihre Daten geben.';
+  }
 
   @override
-  String get includedSoftware => 'Enthaltene Software';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'Alle $DISTRO LTS-Versionen enthalten fünf Jahre lang Sicherheitspatches, mit einem Ubuntu Pro-Abonnement sogar zehn Jahre.';
+  }
 
   @override
-  String get availableSoftware => 'Verfügbare Software';
+  String get installationSlidesProductivityTitle => 'Erhöhen Sie Ihre Produktivität';
 
   @override
-  String get supportedSoftware => 'Unterstützte Software';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO Desktop enthält LibreOffice, eine Suite von Microsoft Office-kompatiblen quelloffenen Anwendungen für Dokumente, Tabellenkalkulationen und Präsentationen. Beliebte Werkzeuge für die Zusammenarbeit sind ebenfalls verfügbar.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'Zugänglichkeit für alle';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return 'Im Mittelpunkt der $DISTRO-Philosophie steht die Überzeugung, dass Computer für alle da sind. Mit fortschrittlichen Werkzeugen für die Barrierefreiheit und Optionen zum Ändern von Sprache, Farben und Textgröße macht $DISTRO das Computerarbeiten einfach - egal wer und wo Sie sind.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Orca-Screenreader';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'Sprachunterstützung';
+
+  @override
+  String get installationSlidesSupportTitle => 'Hilfe & Unterstützung';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'Die offizielle $DISTRO-Dokumentation ist sowohl online als auch über das Hilfesymbol im Dock verfügbar.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu deckt eine Reihe von Fragen und Antworten ab und der Ubuntu Discourse bietet Anleitungen und Diskussionen für neue und erfahrene Benutzer.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'Für Unternehmensanwender bietet Canonical kommerzielle Unterstützung an, um die Einführung und sichere Verwaltung von Ubuntu am Arbeitsplatz zu erleichtern.';
+
+  @override
+  String get installationSlidesSupportResources => 'Hilfreiche Ressourcen:';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'Offizielle Dokumentation';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'Unternehmenstaugliche 24/7-Unterstützung mit Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Dateien werden kopiert …';
@@ -860,20 +846,79 @@ class AppLocalizationsDe extends AppLocalizations {
   String get installationFailed => 'Installation fehlgeschlagen';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Entschuldigung';
+  String get notEnoughDiskSpaceTitle => 'Nicht genug Platz';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'Sie benötigen mindestens $SIZE Festplattenspeicher für die Installation von $RELEASE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Nicht genügend Festplattenplatz für die Installation von $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Dieser Computer hat nur $SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Verfügbar:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'Die größte Festplatte in diesem Computer hat nur $SIZE.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Erforderlich:';
+
+  @override
+  String get activeDirectoryOption => 'Active Directory verwenden';
+
+  @override
+  String get activeDirectoryInfo => 'Im nächsten Schritt geben Sie die Domäne und andere Details ein.';
+
+  @override
+  String get activeDirectoryTitle => 'Active Directory konfigurieren';
+
+  @override
+  String get activeDirectoryTestConnection => 'Domänenverbindung testen';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domäne';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Erforderlich';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Zu lang';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Ungültige Zeichen';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Beginnt mit einem Punkt (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Endet mit einem Punkt (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Beginnt mit einem Bindestrich (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Endet mit einem Bindestrich (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Enthält mehrere aufeinanderfolgende Punkte (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domäne nicht gefunden';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Benutzername für den Domänenbeitritt';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Erforderlich';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Ungültige Zeichen';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Passwort';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Erforderlich';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Fehler beim Konfigurieren der Verbindung zum Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Entschuldigung, Active Directory kann im Moment nicht eingerichtet werden. Besuchen Sie für Hilfe <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, sobald Ihr System hochgefahren und in Betrieb ist.';
 }

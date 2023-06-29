@@ -4,17 +4,15 @@ import 'package:diacritic/diacritic.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/mocks.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_wsl_setup/pages/select_language/select_language_model.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
-
-// ignore_for_file: type=lint
 
 void main() {
   test('load languages', () async {
     final model = SelectLanguageModel(
       MockSubiquityClient(),
-      LanguageFallbackService({}),
+      const LanguageFallbackService({}),
     );
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
@@ -23,7 +21,7 @@ void main() {
   test('sort languages', () async {
     final model = SelectLanguageModel(
       MockSubiquityClient(),
-      LanguageFallbackService({}),
+      const LanguageFallbackService({}),
     );
     await model.loadLanguages();
 
@@ -38,16 +36,16 @@ void main() {
   test('select locale', () async {
     final model = SelectLanguageModel(
       MockSubiquityClient(),
-      LanguageFallbackService({}),
+      const LanguageFallbackService({}),
     );
     await model.loadLanguages();
     expect(model.languageCount, greaterThan(1));
     expect(model.selectedLanguageIndex, equals(0));
 
     // falls back to the base locale (en_US)
-    model.selectLocale(Locale('foo'));
-    expect(
-        model.locale(model.selectedLanguageIndex), equals(Locale('en', 'US')));
+    model.selectLocale(const Locale('foo'));
+    expect(model.locale(model.selectedLanguageIndex),
+        equals(const Locale('en', 'US')));
 
     final firstLocale = model.locale(0);
     final lastLocale = model.locale(model.languageCount - 1);
@@ -59,25 +57,27 @@ void main() {
 
   test('load locale', () async {
     final client = MockSubiquityClient();
-    when(client.locale()).thenAnswer((_) async => 'fr_FR.UTF-8');
+    when(client.getLocale()).thenAnswer((_) async => 'fr_FR.UTF-8');
 
-    final model = SelectLanguageModel(client, LanguageFallbackService({}));
+    final model =
+        SelectLanguageModel(client, const LanguageFallbackService({}));
     final locale = await model.getServerLocale();
-    verify(client.locale()).called(1);
-    expect(locale, equals(Locale('fr', 'FR')));
+    verify(client.getLocale()).called(1);
+    expect(locale, equals(const Locale('fr', 'FR')));
   });
 
   test('set locale', () {
     final client = MockSubiquityClient();
-    final model = SelectLanguageModel(client, LanguageFallbackService({}));
-    model.applyLocale(Locale('fr', 'CA'));
+    final model =
+        SelectLanguageModel(client, const LanguageFallbackService({}));
+    model.applyLocale(const Locale('fr', 'CA'));
     verify(client.setLocale('fr_CA.UTF-8')).called(1);
   });
 
   test('selected language', () {
     final model = SelectLanguageModel(
       MockSubiquityClient(),
-      LanguageFallbackService({}),
+      const LanguageFallbackService({}),
     );
 
     var wasNotified = false;
@@ -118,10 +118,11 @@ void main() {
   test('get install lang packs option', () async {
     final client = MockSubiquityClient();
     when(client.wslSetupOptions()).thenAnswer(
-      (_) async => WSLSetupOptions(installLanguageSupportPackages: false),
+      (_) async => const WSLSetupOptions(installLanguageSupportPackages: false),
     );
 
-    final model = SelectLanguageModel(client, LanguageFallbackService({}));
+    final model =
+        SelectLanguageModel(client, const LanguageFallbackService({}));
     await model.getInstallLanguagePacks();
     verify(client.wslSetupOptions()).called(1);
     expect(model.installLanguagePacks, isFalse);
@@ -129,11 +130,12 @@ void main() {
 
   test('set install lang packs option', () {
     final client = MockSubiquityClient();
-    final model = SelectLanguageModel(client, LanguageFallbackService({}));
+    final model =
+        SelectLanguageModel(client, const LanguageFallbackService({}));
     model.setInstallLanguagePacks(false);
     model.applyInstallLanguagePacks();
     verify(client.setWslSetupOptions(
-      WSLSetupOptions(installLanguageSupportPackages: false),
+      const WSLSetupOptions(installLanguageSupportPackages: false),
     )).called(1);
   });
 }

@@ -18,7 +18,7 @@ enum JournalOutput {
 class JournalService {
   /// Starts a `journalctl` process.
   Stream<String> start(
-    String id, {
+    List<String> ids, {
     JournalOutput output = JournalOutput.short,
   }) async* {
     final process = await Process.start(
@@ -27,7 +27,7 @@ class JournalService {
         '--follow',
         '--no-pager',
         '--no-tail',
-        '--identifier=$id',
+        for (final id in ids) '--identifier=$id',
         '--output=${output.name}'
       ],
       environment: {'SYSTEMD_COLORS': '0'},

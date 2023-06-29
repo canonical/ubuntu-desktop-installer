@@ -8,7 +8,7 @@
   "@okButtonText": {},
   "yesButtonText": "예",
   "@yesButtonText": {},
-  "tryOrInstallPageTitle": "체험 또는 설치",
+  "tryOrInstallPageTitle": "{DISTRO} 체험 또는 설치",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "설치 복구",
   "@repairInstallation": {},
@@ -16,7 +16,7 @@
   "@installUbuntu": {},
   "keyboardLayoutPageTitle": "키보드 레이아웃",
   "@keyboardLayoutPageTitle": {},
-  "instructionsForRST": "절차를 알아보려면, 휴대전화나 다른 기기에서 이 페이지를 방문하십시오: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "절차를 알아보려면, 다른 장치로 QR코드를 스캔 하거나 이 페이지를 방문하십시오: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -57,28 +57,12 @@
   "@installUbuntuDescription": {},
   "installationTypeAdvancedLabel": "고급 기능...",
   "@installationTypeAdvancedLabel": {},
-  "partitionFormatExt3": "Ext3 저널링 파일 시스템",
-  "@partitionFormatExt3": {},
   "installationTypeAdvancedTitle": "고급 기능",
   "@installationTypeAdvancedTitle": {},
   "newPartitionTable": "새 파티션 테이블",
   "@newPartitionTable": {},
-  "partitionFormatFat": "FAT 파일 시스템",
-  "@partitionFormatFat": {},
-  "partitionFormatNtfs": "NTFS 파일 시스템",
-  "@partitionFormatNtfs": {},
-  "partitionFormatJfs": "JFS 저널링 파일 시스템",
-  "@partitionFormatJfs": {},
-  "partitionFormatXfs": "XFS 저널링 파일 시스템",
-  "@partitionFormatXfs": {},
-  "partitionFormatReiserFS": "ReiserFS 파일 시스템",
-  "@partitionFormatReiserFS": {},
-  "partitionFormatExt2": "Ext2 파일 시스템",
-  "@partitionFormatExt2": {},
   "whoAreYouPageRealNameLabel": "이름",
   "@whoAreYouPageRealNameLabel": {},
-  "partitionFormatVfat": "VFAT 파일 시스템",
-  "@partitionFormatVfat": {},
   "changeButtonText": "바꾸기",
   "@changeButtonText": {},
   "typeToTest": "키보드를 테스트 해보려면 이 곳을 사용하십시오",
@@ -98,25 +82,11 @@
   },
   "installationTypeNoOSDetected": "현재 이 컴퓨터에서 발견된 운영체제가 없습니다. 어떻게 하시겠습니까?",
   "@installationTypeNoOSDetected": {},
-  "allocateDiskSpace": "디스크 공간 할당",
+  "allocateDiskSpace": "수동 파티셔닝",
   "@allocateDiskSpace": {},
   "partitionEditTitle": "파티션 편집",
   "@partitionEditTitle": {},
-  "partitionFormatExt4": "Ext4 저널링 파일 시스템",
-  "@partitionFormatExt4": {},
-  "partitionFormatBtrfs": "btrfs 저널링 파일 시스템",
-  "@partitionFormatBtrfs": {},
-  "partitionFormatFat12": "FAT12 파일 시스템",
-  "@partitionFormatFat12": {},
-  "partitionFormatFat16": "FAT16 파일 시스템",
-  "@partitionFormatFat16": {},
-  "partitionFormatFat32": "FAT32 파일 시스템",
-  "@partitionFormatFat32": {},
-  "partitionFormatSwap": "스왑 영역",
-  "@partitionFormatSwap": {},
-  "partitionFormatIso9660": "ISO 9660 파일 시스템",
-  "@partitionFormatIso9660": {},
-  "whoAreYouPageTitle": "당신은 누구십니까?",
+  "whoAreYouPageTitle": "계정을 설정하십시오",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "자동으로 로그인",
   "@whoAreYouPageAutoLogin": {},
@@ -142,7 +112,7 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST 끄기",
+  "turnOffRST": "RST가 활성화됨",
   "@turnOffRST": {},
   "turnOffRSTDescription": "이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.",
   "@turnOffRSTDescription": {},
@@ -150,7 +120,7 @@
   "@dontInstallDriverSoftwareNow": {},
   "dontInstallDriverSoftwareNowDescription": "소프트웨어 & 업데이트에서 나중에 설치하실 수 있습니다.",
   "@dontInstallDriverSoftwareNowDescription": {},
-  "updatesOtherSoftwarePageTitle": "업데이트 및 다른 소프트웨어",
+  "updatesOtherSoftwarePageTitle": "애플리케이션 및 업데이트",
   "@updatesOtherSoftwarePageTitle": {},
   "minimalInstallationSubtitle": "웹 브라우저와 기본 유틸리티.",
   "@minimalInstallationSubtitle": {},
@@ -189,8 +159,6 @@
   "@whoAreYouPageComputerNameRequired": {},
   "whoAreYouPageInvalidComputerName": "올바르지 않은 컴퓨터 이름 입니다",
   "@whoAreYouPageInvalidComputerName": {},
-  "partitionFormatZfsroot": "ZFS 루트 파일 시스템",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "파티션 포맷",
   "@partitionErase": {},
   "writeChangesPartitionsHeader": "다음과 같은 파티션 변경사항이 적용됩니다:",
@@ -205,15 +173,15 @@
   "@whoAreYouPageInvalidUsername": {},
   "whoAreYouPagePasswordMismatch": "암호가 일치하지 않습니다",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesToDisk": "디스크에 변경사항 쓰기",
+  "writeChangesToDisk": "설치 준비 완료",
   "@writeChangesToDisk": {},
   "writeChangesPartitionTablesHeader": "다음과 같은 장치의 파티션 테이블이 변경되었습니다:",
   "@writeChangesPartitionTablesHeader": {},
-  "turnOffBitlockerTitle": "BitLocker 끄기",
+  "turnOffBitlockerTitle": "BitLocker 활성화됨",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n우분투를 설치하기 전 Windows 에서 BitLocker를 꺼야 합니다.",
+  "turnOffBitlockerDescription": "이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n계속하려면 Windows를 사용하여 여유 공간을 만들거나 '{option}'을 선택해야 합니다.",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "절차를 확인하려면, 이 페이지를 휴대전화나 다른 기기에서 열으십시오: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "절차를 확인하려면, 다른 장치에서 QR코드를 스캔하거나 링크를 방문 하십시오: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -236,7 +204,7 @@
   "@chooseSecurityKey": {},
   "installThirdPartySubtitle": "이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.",
   "@installThirdPartySubtitle": {},
-  "chooseSecurityKeyTitle": "보안 키 선택",
+  "chooseSecurityKeyTitle": "보안 키",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHeader": "디스크 암호화는 컴퓨터를 잃어버렸을 때 파일을 보호할 수 있습니다. 하지만 컴퓨터를 시작할 때 매번 보안 키를 입력해야 합니다.\n\n{RELEASE} 밖의 파일은 암호화 되지 않습니다.",
   "@chooseSecurityKeyHeader": {
@@ -251,7 +219,7 @@
   "@chooseSecurityKeyConfirmHint": {},
   "chooseSecurityKeyMismatch": "보안 키가 일치하지 않습니다",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">경고</font>: 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">경고:</font> 보안 키를 분실하면, 모든 데이터를 잃게 됩니다. 필요한 경우, 보안 키를 적어서 안전한 곳에 보관하십시오.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -295,7 +263,7 @@
   },
   "wirelessNetworkingDisabled": "무선 네트워킹 비활성화됨",
   "@wirelessNetworkingDisabled": {},
-  "connectToInternetDescription": "이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블을 연결하거나, Wi-Fi 네트워크를 선택하십시오",
+  "connectToInternetDescription": "이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블이나, Wi-Fi 네트워크를 선택하여 연결하십시오",
   "@connectToInternetDescription": {},
   "installationTypeManualInfo": "파티션을 직접 만들고 크기를 조절 하거나, {DISTRO}에 대해 여러 파티션을 선택할 수 있습니다",
   "@installationTypeManualInfo": {
@@ -311,7 +279,7 @@
       "DISTRO": {}
     }
   },
-  "connectToInternetPageTitle": "인터넷에 연결하기",
+  "connectToInternetPageTitle": "네트워크에 연결하기",
   "@connectToInternetPageTitle": {},
   "useWiredConnection": "유선 연결 사용",
   "@useWiredConnection": {},
@@ -347,11 +315,11 @@
   "@installationTypeAlongsideInfo": {},
   "installationTypeNone": "선택 안 함",
   "@installationTypeNone": {},
-  "installationTypeManual": "다른 방법",
+  "installationTypeManual": "수동 파티셔닝",
   "@installationTypeManual": {},
   "selectGuidedStorageDropdownLabel": "드라이브 선택:",
   "@selectGuidedStorageDropdownLabel": {},
-  "startInstallingButtonText": "설치 시작하기",
+  "startInstallingButtonText": "설치",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "장치",
   "@diskHeadersDevice": {},
@@ -401,18 +369,18 @@
   "@shutdown": {},
   "installationCompleteTitle": "설치 완료",
   "@installationCompleteTitle": {},
-  "chooseYourLookPageTitle": "모양을 선택하십시오",
+  "chooseYourLookPageTitle": "테마를 선택하십시오",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "모양 설정에서 언제든 변경하실 수 있습니다.",
   "@chooseYourLookPageHeader": {},
-  "readyToUse": "**{system}** 설치가 완료 되었으며 사용할 준비가 되었습니다.",
+  "readyToUse": "**{system}** 설치가 완료 되었으며 사용할 준비가 되었습니다",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
       "system": {}
     }
   },
-  "restartInto": "{system} 으(로) 다시 시작",
+  "restartInto": "{system} (으)로 다시 시작",
   "@restartInto": {
     "type": "text",
     "placeholders": {
@@ -433,9 +401,9 @@
       "mount": {}
     }
   },
-  "newPartitionTableConfirmationTitle": "이 장치에 빈 파티션을 새로 생성하시겠습니까?",
+  "newPartitionTableConfirmationTitle": "새로운 빈 파티션",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "장치 전체를 파티션으로 지정하셨습니다. 계속해서 장치에 새 파티션을 생성하시면, 기존 파티션은 모두 삭제됩니다.\n\n원하시는 경우 추후 이 작업을 되돌리실 수 있습니다.",
+  "newPartitionTableConfirmationMessage": "장치 전체에 새 파티션을 생성하면, 기존 파티션은 모두 삭제됩니다. 필요하신 경우 작업을 되돌리실 수 있습니다.",
   "@newPartitionTableConfirmationMessage": {},
   "installationTypeNoneSelected": "선택 안 함",
   "@installationTypeNoneSelected": {},
@@ -456,7 +424,7 @@
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
   },
-  "onBatteryWarning": "<font color=\"{color}\">경고</font>: 컴퓨터에 전원이 연결되어 있지 않습니다.",
+  "onBatteryWarning": "<font color=\"{color}\">경고:</font> 컴퓨터에 전원이 연결되어 있지 않습니다.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -539,7 +507,7 @@
   "@officeSlideCalc": {},
   "welcomeHeader": "언어를 선택하십시오:",
   "@welcomeHeader": {},
-  "whereAreYouPageTitle": "어디에 계시나요?",
+  "whereAreYouPageTitle": "시간대를 선택하십시오",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "위치",
   "@whereAreYouLocationLabel": {},
@@ -657,7 +625,7 @@
   "@installDriversTitle": {},
   "installCodecsSubtitle": "이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.",
   "@installCodecsSubtitle": {},
-  "installCodecsTitle": "추가 미디어 포맷 지원 설치",
+  "installCodecsTitle": "추가 미디어 포맷 지원을 내려받아 설치",
   "@installCodecsTitle": {},
   "installDriversSubtitle": "이러한 드라이버는 문서에 포함된 라이선스 조건의 적용을 받습니다. 또한 독점 소프트웨어 입니다.",
   "@installDriversSubtitle": {},
@@ -673,7 +641,7 @@
   "@configuringSystem": {},
   "installingSystem": "시스템 설치 중…",
   "@installingSystem": {},
-  "writeChangesPartitionCreated": "파티션 #{disk}{partition} 생성됨",
+  "writeChangesPartitionCreated": "파티션 <b>{disk}{partition}</b> 생성됨",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -696,7 +664,7 @@
       "SIZE": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "죄송합니다",
+  "notEnoughDiskSpaceTitle": "공간이 부족합니다",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceBiggestDisk": "이 컴퓨터의 가장 큰 디스크는 {SIZE}밖에 되지 않습니다.",
   "@notEnoughDiskSpaceBiggestDisk": {
@@ -705,7 +673,7 @@
       "SIZE": {}
     }
   },
-  "writeChangesPartitionFormatted": "파티션 #{disk}{partition} 을(를) {format} (으)로 포맷함",
+  "writeChangesPartitionFormatted": "파티션 <b>{disk}{partition}</b>을(를) <b>{format}</b> (으)로 포맷함",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -713,5 +681,273 @@
       "partition": {},
       "format": {}
     }
-  }
+  },
+  "restartNow": "지금 다시 시작",
+  "@restartNow": {},
+  "continueTesting": "체험 계속하기",
+  "@continueTesting": {},
+  "writeChangesPartitionFormattedMounted": "파티션 <b>{disk}{partition}</b> 을(를) <b>{format}</b>(으)로 포맷하고 <b>{mount}</b>에 마운트",
+  "@writeChangesPartitionFormattedMounted": {
+    "description": "A formatted and mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "format": {},
+      "mount": {}
+    }
+  },
+  "writeChangesPartitionMounted": "파티션 <b>{disk}{partition}</b>을(를) <b>{mount}</b>에 사용",
+  "@writeChangesPartitionMounted": {
+    "description": "A mounted partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "mount": {}
+    }
+  },
+  "offlineWarning": "현재 오프라인",
+  "@offlineWarning": {},
+  "partitionFormatNone": "포맷하지 않기",
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordHide": "숨기기",
+  "@whoAreYouPagePasswordHide": {},
+  "whoAreYouPagePasswordShow": "표시",
+  "@whoAreYouPagePasswordShow": {},
+  "restartWarning": "{RELEASE}을(를) 계속 사용할 수 있습니다. 하지만 컴퓨터를 다시 시작하지 않으면 바뀐 내용이나 저장한 문서를 잃게 됩니다.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "writeChangesPartitionResized": "파티션 <b>{disk}{partition}</b>의 크기를 <b>{oldsize}</b>에서 <b>{newsize}</b>로 조정",
+  "@writeChangesPartitionResized": {
+    "description": "A resized partition entry",
+    "placeholders": {
+      "disk": {},
+      "partition": {},
+      "oldsize": {},
+      "newsize": {}
+    }
+  },
+  "tooManyPrimaryPartitions": "주 파티션이 너무 많음",
+  "@tooManyPrimaryPartitions": {},
+  "partitionLimitReached": "한도 도달",
+  "@partitionLimitReached": {},
+  "activeDirectoryTitle": "액티브 디렉토리 구성",
+  "@activeDirectoryTitle": {},
+  "activeDirectoryDomainLabel": "도메인",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryDomainEmpty": "필수",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryDomainTooLong": "너무 깁니다",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryTestConnection": "도메인 연결 테스트",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryAdminLabel": "도메인 사용자 연결",
+  "@activeDirectoryAdminLabel": {},
+  "activeDirectoryDomainNotFound": "도메인을 찾을 수 없습니다",
+  "@activeDirectoryDomainNotFound": {},
+  "activeDirectoryAdminEmpty": "필수",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryInfo": "다음 단계에서 도메인 및 기타 세부 사항을 입력합니다.",
+  "@activeDirectoryInfo": {},
+  "activeDirectoryOption": "액티브 디렉토리 사용",
+  "@activeDirectoryOption": {},
+  "activeDirectoryPasswordLabel": "비밀 번호",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryPasswordEmpty": "필수",
+  "@activeDirectoryPasswordEmpty": {},
+  "installationSlidesIncluded": "포함됨:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "빠르고, 무료이며 새로운 기능으로 가득합니다",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "최신 버전의 {DISTRO}는 컴퓨팅을 그 어느 때보다 쉽게 합니다.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "개발자, 크리에이터, 게이머, 관리자 등 누구에게나 생산성을 향상하고 {RELEASE}에서의 경험을 개선할 수 있는 새로운 도구를 찾으실 수 있습니다.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "필요한 모든 애플리케이션",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesDevelopmentTitle": "최고의 오픈소스로 개발하십시오",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesSoftwareBody": "스냅 스토어와 {DISTRO} 아카이브에 있는 수천개의 애플리케이션과, 여러분의 모든 애플리케이션을 우분투 소프트웨어에서 설치하고 관리하고, 업데이트 하십시오.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentBody": "{DISTRO} 는 앱 또는 웹 개발, 데이터 과학과 AI/ML 및 DevOps와 시스템 관리에 최적의 워크스테이션 입니다. 모든 {DISTRO} 릴리스에는 최신 툴체인과 모든 주요 IDE 지원이 포함되어 있습니다.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesTitle": "{RELEASE}사용을 환영합니다",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "whoAreYouPageComputerNameTooLong": "너무 긴 컴퓨터 이름입니다.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "preparingUbuntu": "{DISTRO} 준비 중...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "whoAreYouPageRealNameTooLong": "너무 긴 이름입니다.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "detectButtonText": "감지",
+  "@detectButtonText": {},
+  "keyboardVariant": "키보드 유형:",
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "장치",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "파티션",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesAvailable": "이용가능:",
+  "@installationSlidesAvailable": {},
+  "welcomePageTitle": "{DISTRO}사용을 환영합니다",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "생산성 향상",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesAccessibilityLanguages": "언어 지원",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesAccessibilityTitle": "모두에게 열린 접근",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesSupportUbuntuPro": "Ubuntu Pro 의 엔터프라이즈 급 24/7 지원",
+  "@installationSlidesSupportUbuntuPro": {},
+  "notEnoughDiskSpaceUbuntu": "{DISTRO} 설치하기 위한 디스크 공간 부족",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Orca 스크린 리더",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesSupportResources": "유용한 지원:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "공식 문서",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportTitle": "도움 & 지원",
+  "@installationSlidesSupportTitle": {},
+  "notEnoughDiskSpaceRequired": "필수:",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesSupportHeader": "공식 {DISTRO} 문서는 온라인과 독의 도움말로 사용할 수 있습니다.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "사용 가능:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "activeDirectoryDomainInvalidChars": "유효하지 않은 문자",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryDomainEndHyphen": "하이픈 (-)으로 끝",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryDomainStartDot": "점 (.)으로 시작",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainMultipleDots": "연속된 여러 점(..) 포함",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryDomainEndDot": "점 (.)으로 끝",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainStartHyphen": "하이픈 (-)으로 시작",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryAdminInvalidChars": "유효하지 않은 문자",
+  "@activeDirectoryAdminInvalidChars": {},
+  "installationSlidesCreativityTitle": "창의력 향상",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesSecurityTitle": "개인 및 보안",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityLts": "모든 {DISTRO} LTS 릴리스에는 5년의 보안 패치가 포함되어 있으며, Ubuntu Pro 구독으로 10년 연장됩니다.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffRSTTitle": "계속하려면 RST를 끄십시오",
+  "@turnOffRSTTitle": {},
+  "installationSlidesAccessibilityBody": "{DISTRO} 철학의 핵심은 컴퓨팅은 모두를 위한 것이라는 믿음입니다. 고급 접근성 도구와 언어, 색상 및 텍스트 크기를 변경할 수 있는 옵션을 통해 {DISTRO}는 언제 어디서나 쉽게 컴퓨팅을 할 수 있도록 지원합니다.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffBitlockerHeadline": "계속하려면 BitLocker를 끄십시오",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "Windows로 다시 시작하시겠습니까?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "컴퓨터를 정말로 다시 시작하시겠습니까? {DISTRO} 설치를 완료 하려면 나중에 {DISTRO} 설치를 다시 시작 해야 합니다.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityBody": "{DISTRO} 데스크톱에는 문서, 스프레드시트 및 프레젠테이션을 위한 Microsoft Office 호환 오픈 소스 애플리케이션 제품군인 LibreOffice가 포함되어 있습니다. 인기 있는 협업 도구도 이용하실 수 있습니다.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Ask Ubuntu에는 넒은 범위의 질문과 답변이 있으며 Ubuntu Discourse 에서는 신규 사용자와 숙련된 사용자를 위한 가이드와 토론이 제공됩니다.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "엔터프라이즈 사용자를 위해 Canonical에서는 직장에서 우분투를 쉽게 온보딩하고 안전하게 관리할 수 있도록 상용 지원을 제공합니다.",
+  "@installationSlidesSupportEnterprise": {},
+  "activeDirectoryErrorTitle": "Active Directory 연결 구성 오류",
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "죄송합니다, 현재 Active Directory를 설정할 수 없습니다. 시스템이 준비되면, <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>에 방문하셔서 도움을 받으시기 바랍니다.",
+  "@activeDirectoryErrorMessage": {},
+  "installationSlidesGamingBody": "{DISTRO} 는 성능과 호환성을 개선하기 위해 최신 NVIDIA 및 Mesa 드라이버를 지원합니다. 수천 개의 Windows 타이틀을 추가 구성 없이도 Steam과 같은 애플리케이션을 통해 {DISTRO}에서 훌륭하게 즐기실 수 있습니다.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityBody": "{DISTRO} 는 온라인에서 개인 정보를 보호하고 보안을 유지하는 데 필요한 모든 도구를 제공합니다. 내장된 방화벽 및 VPN 지원과 다양한 개인 정보 보호 중심 애플리케이션을 통해 데이터를 완벽하게 제어할 수 있습니다.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityBody": "애니메이터, 디자이너, 비디오 크리에이터 또는 게임 개발자라면 오픈 소스 및 업계 표준 소프트웨어와 애플리케이션을 지원하는 {DISTRO}로 워크플로우를 쉽게 가져올 수 있습니다.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingTitle": "게이밍에 적합합니다",
+  "@installationSlidesGamingTitle": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "마운트 위치는 \"/\"로 시작해야 합니다",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "마운트 위치는 공백을 포함할 수 없습니다",
+  "@allocateDiskSpaceInvalidMountPointSpace": {}
 }

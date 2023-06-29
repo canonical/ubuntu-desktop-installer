@@ -1,10 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/mocks.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_model.dart';
-
-// ignore_for_file: type=lint
 
 void main() {
   test('load UI configuration', () async {
@@ -38,7 +36,7 @@ void main() {
     model.automountEnabled = false;
     model.automountMountfstab = false;
 
-    final conf = WSLConfigurationAdvanced(
+    const conf = WSLConfigurationAdvanced(
       interopEnabled: true,
       interopAppendwindowspath: true,
       automountEnabled: false,

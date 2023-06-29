@@ -1,114 +1,89 @@
+import 'dart:async';
 import 'dart:ui';
 
-import 'package:diacritic/diacritic.dart';
+import 'package:file/memory.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
-import 'package:ubuntu_test/mocks.dart';
 
-// ignore_for_file: type=lint
+import 'test_welcome.dart';
 
 void main() {
-  test('load languages', () async {
-    final client = MockSubiquityClient();
+  test('network connectivity', () async {
+    final network = MockNetworkService();
+    when(network.isConnected).thenReturn(false);
+    final networkChanged = StreamController<List<String>>(sync: true);
+    when(network.propertiesChanged).thenAnswer((_) => networkChanged.stream);
 
-    final model = WelcomeModel(client);
-    await model.loadLanguages();
-    expect(model.languageCount, greaterThan(1));
-  });
+    final model = WelcomeModel(network: network);
+    await model.init();
 
-  test('sort languages', () async {
-    final client = MockSubiquityClient();
-
-    final model = WelcomeModel(client);
-    await model.loadLanguages();
-
-    final languages = List.generate(model.languageCount, model.language);
-    expect(languages.length, greaterThan(1));
-
-    final sortedLanguages = List.of(languages)
-      ..sort((a, b) => removeDiacritics(a).compareTo(removeDiacritics(b)));
-    expect(languages, equals(sortedLanguages));
-  });
-
-  test('select locale', () async {
-    final client = MockSubiquityClient();
-
-    final model = WelcomeModel(client);
-    await model.loadLanguages();
-    expect(model.languageCount, greaterThan(1));
-    expect(model.selectedLanguageIndex, equals(0));
-
-    // falls back to the base locale (en_US)
-    model.selectLocale(Locale('foo'));
-    expect(
-        model.locale(model.selectedLanguageIndex), equals(Locale('en', 'US')));
-
-    final firstLocale = model.locale(0);
-    final lastLocale = model.locale(model.languageCount - 1);
-    expect(firstLocale, isNot(equals(lastLocale)));
-
-    model.selectLocale(Locale.fromSubtags(
-        languageCode: lastLocale.languageCode,
-        countryCode: lastLocale.countryCode,
-        scriptCode: 'bar'));
-    expect(model.selectedLanguageIndex, equals(model.languageCount - 1));
-  });
-
-  test('set locale', () {
-    final client = MockSubiquityClient();
-    when(client.setLocale('fr_CA.UTF-8')).thenAnswer((_) async {});
-
-    final model = WelcomeModel(client);
-    model.applyLocale(Locale('fr', 'CA'));
-    verify(client.setLocale('fr_CA.UTF-8')).called(1);
-  });
-
-  test('selected language', () {
-    final model = WelcomeModel(MockSubiquityClient());
+    expect(model.isConnected, isFalse);
 
     var wasNotified = false;
     model.addListener(() => wasNotified = true);
 
-    expect(model.selectedLanguageIndex, isZero);
-    model.selectedLanguageIndex = 0;
-    expect(model.selectedLanguageIndex, isZero);
-    expect(wasNotified, isFalse);
-
-    model.selectedLanguageIndex = 1;
-    expect(model.selectedLanguageIndex, equals(1));
+    when(network.isConnected).thenReturn(true);
+    networkChanged.add(['Connectivity']);
+    expect(model.isConnected, isTrue);
     expect(wasNotified, isTrue);
   });
 
-  test('search language', () async {
-    final model = WelcomeModel(MockSubiquityClient());
-    await model.loadLanguages();
+  test('selected option', () {
+    final network = MockNetworkService();
+    final model = WelcomeModel(network: network);
 
-    final english = model.searchLanguage('eng');
-    expect(model.language(english), equals('English'));
-    model.selectedLanguageIndex = english;
-    expect(model.searchLanguage('eng'), english);
+    var wasNotified = false;
+    model.addListener(() => wasNotified = true);
 
-    // next language with the same prefix
-    final spanish = model.searchLanguage('e');
-    expect(model.language(spanish), equals('Español'));
+    expect(model.option, equals(Option.none));
+    model.selectOption(Option.none);
+    expect(model.option, equals(Option.none));
+    expect(wasNotified, isFalse);
 
-    // case-insensitive
-    final french = model.searchLanguage('FRA');
-    expect(model.language(french), equals('Français'));
-    model.selectedLanguageIndex = french;
+    model.selectOption(Option.installUbuntu);
+    expect(model.option, equals(Option.installUbuntu));
+    expect(wasNotified, isTrue);
+  });
 
-    // wrap around
-    final danish = model.searchLanguage('d');
-    expect(model.language(danish), equals('Dansk'));
-    model.selectedLanguageIndex = danish;
+  test('release notes URL from cdrom', () {
+    final network = MockNetworkService();
+    final model = WelcomeModel(network: network);
 
-    // ignores diacritics
-    final icelandic = model.searchLanguage('is');
-    expect(model.language(icelandic), equals('Íslenska'));
+    final fs = MemoryFileSystem.test();
+    final file = fs.file('/cdrom/.disk/release_notes_url');
+    file.createSync(recursive: true);
+    file.writeAsStringSync('''
+https://wiki.ubuntu.com/IntrepidReleaseNotes/\${LANG}
+    ''');
 
-    // no match
-    expect(model.searchLanguage('foo'), isNegative);
-    expect(model.searchLanguage('none'), isNegative);
+    final url = model.releaseNotesURL(const Locale('fr'), fs: fs);
+    expect(url, equals('https://wiki.ubuntu.com/IntrepidReleaseNotes/fr'));
+  });
+
+  test('release notes URL from distro-info', () {
+    final network = MockNetworkService();
+    final model = WelcomeModel(network: network);
+
+    final fs = MemoryFileSystem.test();
+    final file = fs.file('/usr/share/distro-info/ubuntu.csv');
+    file.createSync(recursive: true);
+    file.writeAsStringSync('''
+version,codename,series,created,release,eol,eol-server,eol-esm
+4.10,Warty Warthog,warty,2004-03-05,2004-10-20,2006-04-30
+5.04,Hoary Hedgehog,hoary,2004-10-20,2005-04-08,2006-10-31
+    ''');
+
+    final url = model.releaseNotesURL(const Locale('en'), fs: fs);
+    expect(url, equals('https://wiki.ubuntu.com/HoaryHedgehog/ReleaseNotes'));
+  });
+
+  test('release notes URL fallback', () {
+    final network = MockNetworkService();
+    final model = WelcomeModel(network: network);
+
+    final fs = MemoryFileSystem.test();
+    final url = model.releaseNotesURL(const Locale('en'), fs: fs);
+    expect(url, equals('https://ubuntu.com/download/desktop'));
   });
 }

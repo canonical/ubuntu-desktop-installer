@@ -1,30 +1,25 @@
 import 'dart:io';
 
 import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_wizard/app.dart';
-import 'package:ubuntu_wizard/utils.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 import 'app.dart';
 import 'app_model.dart';
 import 'args_common.dart';
-import 'installing_state.dart';
-import 'is_locale_set.dart';
 import 'services/language_fallback.dart';
 
 Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     addCommonCliOptions(parser);
+    addLoggingOptions(parser);
   })!;
-  final window = await YaruWindow.ensureInitialized();
-  final appModel = ValueNotifier<AppModel>(
-    AppModel(routeFromOptions: options['initial-route']),
-  );
-  final liveRun = isLiveRun(options);
+  setupLogger(options);
+
+  final liveRun = options['dry-run'] != true;
+  final isReconf = options['reconfigure'] == true;
   final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
   final subiquityPath = await getSubiquityPath()
       .then((dir) => Directory(dir).existsSync() ? dir : null);
@@ -34,37 +29,20 @@ Future<void> main(List<String> args) async {
     serverMode: serverMode,
     subiquityPath: subiquityPath,
   );
-  final serverArgs = serverArgsFromOptions(options);
 
-  final subiquityClient = SubiquityClient();
-  final subiquityMonitor = SubiquityStatusMonitor();
+  registerService(SubiquityClient.new);
+  registerService(() => SubiquityServer(process: process, endpoint: endpoint));
+  registerService(SubiquityStatusMonitor.new);
   registerService(UrlLauncher.new);
   registerService(LanguageFallbackService.linux);
-  await runWizardApp(
-    ValueListenableProvider<AppModel>.value(
-      value: appModel,
-      child: const UbuntuWslSetupApp(),
+
+  return runWslSetupApp(
+    appModel: ValueNotifier<AppModel>(
+      AppModel(routeFromOptions: options['initial-route']),
     ),
-    options: options,
-    subiquityClient: subiquityClient,
-    subiquityServer: SubiquityServer(process: process, endpoint: endpoint),
-    subiquityMonitor: subiquityMonitor,
-    serverArgs: serverArgs,
+    serverArgs: serverArgsFromOptions(options),
     serverEnvironment: {
-      if (!liveRun && options['reconfigure'] == true) 'DRYRUN_RECONFIG': 'true',
+      if (!liveRun && isReconf) 'DRYRUN_RECONFIG': 'true',
     },
   );
-  await subiquityClient.variant().then((value) {
-    if (value == Variant.WSL_SETUP) {
-      isLocaleSet(subiquityClient).then(
-        (isSet) => appModel.value =
-            appModel.value.copyWith(variant: value, languageAlreadySet: isSet),
-      );
-      subiquityMonitor.onStatusChanged.listen((status) {
-        window.setClosable(status?.state.isInstalling != true);
-      });
-    } else {
-      appModel.value = appModel.value.copyWith(variant: value);
-    }
-  });
 }

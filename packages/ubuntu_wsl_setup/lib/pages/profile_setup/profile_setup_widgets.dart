@@ -1,7 +1,14 @@
-part of 'profile_setup_page.dart';
+import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
+import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:ubuntu_wsl_setup/l10n.dart';
 
-class _RealNameFormField extends StatelessWidget {
-  const _RealNameFormField({required this.fieldWidth});
+import 'profile_setup_model.dart';
+
+class RealNameFormField extends StatelessWidget {
+  const RealNameFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -46,8 +53,8 @@ extension UsernameValidationL10n on UsernameValidation {
   }
 }
 
-class _UsernameFormField extends StatelessWidget {
-  const _UsernameFormField({required this.fieldWidth});
+class UsernameFormField extends StatelessWidget {
+  const UsernameFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -84,8 +91,8 @@ class _UsernameFormField extends StatelessWidget {
   }
 }
 
-class _PasswordFormField extends StatelessWidget {
-  const _PasswordFormField({required this.fieldWidth});
+class PasswordFormField extends StatelessWidget {
+  const PasswordFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -115,8 +122,8 @@ class _PasswordFormField extends StatelessWidget {
   }
 }
 
-class _ConfirmPasswordFormField extends StatelessWidget {
-  const _ConfirmPasswordFormField({required this.fieldWidth});
+class ConfirmPasswordFormField extends StatelessWidget {
+  const ConfirmPasswordFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -150,8 +157,8 @@ class _ConfirmPasswordFormField extends StatelessWidget {
 // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
 //       See [ProfileSetupModel.showAdvancedOptions] for more details.
 //
-// class _ShowAdvancedOptionsCheckButton extends StatelessWidget {
-//   const _ShowAdvancedOptionsCheckButton();
+// class ShowAdvancedOptionsCheckButton extends StatelessWidget {
+//   const ShowAdvancedOptionsCheckButton({super.key});
 
 //   @override
 //   Widget build(BuildContext context) {

@@ -13,16 +13,7 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Anullar';
-
-  @override
   String get changeButtonText => 'Modificar';
-
-  @override
-  String get okButtonText => 'D’acòrdi';
-
-  @override
-  String get noButtonText => 'Non';
 
   @override
   String get restartButtonText => 'Reaviar';
@@ -31,19 +22,25 @@ class AppLocalizationsOc extends AppLocalizations {
   String get revertButtonText => 'Restablir';
 
   @override
-  String get yesButtonText => 'Òc';
-
-  @override
   String get quitButtonText => 'Quitar l’installacion';
 
   @override
-  String get welcome => 'La benvenguda';
+  String welcomePageTitle(Object DISTRO) {
+    return 'La benvenguda a $DISTRO';
+  }
+
+  @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Preparacion de $DISTRO...';
+  }
 
   @override
   String get welcomeHeader => 'Causissètz vòstra lenga :';
 
   @override
-  String get tryOrInstallPageTitle => 'Ensajar o installar';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Ensajar o installar $DISTRO';
+  }
 
   @override
   String get repairInstallation => 'Reparar l’installacion';
@@ -77,14 +74,17 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Desactivar RST';
+  String get turnOffRST => 'RST es activat';
+
+  @override
+  String get turnOffRSTTitle => 'Desactivatz lo RST per contunhar';
 
   @override
   String get turnOffRSTDescription => 'Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Per las consignas detalhadas, mercés de dobrir aqueste ligam sus un mobil o un autre aparelh : <a href=\"https://$url\">$url</a>';
+    return 'Per las consignas, numerizatz aqueste còdi QR sus un autre aparelh o consultatz : <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -98,6 +98,12 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String get detectLayout => 'Detectar l’agençament del clavièr';
+
+  @override
+  String get detectButtonText => 'Detectar';
+
+  @override
+  String get keyboardVariant => 'Varianta del clavièr :';
 
   @override
   String get pressOneKey => 'Mercés de quichar una de las tòcas seguentas :';
@@ -136,7 +142,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get showSecurityKey => 'Mostrar la clau de seguretat';
 
   @override
-  String get connectToInternetPageTitle => 'Se connectar a internet';
+  String get connectToInternetPageTitle => 'Se connectar a un ret';
 
   @override
   String get connectToInternetDescription => 'Connectar aqueste ordenador a internet permetrà a Ubuntu d’installar de logicials suplementaris e de definir vòstre fus orari.\n\nConnectatz un cable Ethernet, o causissètz un ret Wifi';
@@ -187,7 +193,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get connectButtonText => 'Se connectar';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Mesas a jorn e logicials suplementaris';
+  String get updatesOtherSoftwarePageTitle => 'Aplicacions e mesas a jorn';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Quinas aplicacions volètz installar per començar ?';
@@ -227,14 +233,14 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Avertiment </font>: l’ordenador es pas brancat a una font d’alimentacion.';
+    return '<font color=\"$color\">Avertiment :</font> l’ordenador es pas brancat a una font d’alimentacion.';
   }
 
   @override
   String get offlineWarning => 'Sètz fòra linha';
 
   @override
-  String get chooseSecurityKeyTitle => 'Causida de clau de seguretat';
+  String get chooseSecurityKeyTitle => 'Clau de seguretat';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -255,7 +261,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Atencion </font>: se perdètz aquesta clau de seguretat, totas las donadas seràn perdudas. Se cal, escrivètz vòstra clau e gardatz-la dins un endrech dins un lòc segur.';
+    return '<font color=\"$color\">Avertiment :</font> se perdètz aquesta clau de seguretat, totas las donadas seràn perdudas. Se cal, escrivètz vòstra clau e gardatz-la dins un endrech dins un lòc segur.';
   }
 
   @override
@@ -358,7 +364,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Los documents, la musica e los autres fichièrs personals seràn gardats. Podètz causir quin sistèma operatiu volètz cada que l’ordenador s’aluca.';
 
   @override
-  String get installationTypeManual => 'Quicòm mai';
+  String get installationTypeManual => 'Particionament manual';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -406,10 +412,16 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installAlongsideAvailable => 'Disponible :';
 
   @override
-  String get allocateDiskSpace => 'Atribuir l’espaci disc';
+  String get allocateDiskSpace => 'Particionament manual';
 
   @override
-  String get startInstallingButtonText => 'Començar l’installacion';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Los ponches de montatge devon començar per « / »';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Los ponches de montatge pòdon pas conténer cap d’espaci';
+
+  @override
+  String get startInstallingButtonText => 'Installar';
 
   @override
   String get diskHeadersDevice => 'Disc';
@@ -433,22 +445,22 @@ class AppLocalizationsOc extends AppLocalizations {
   String get diskHeadersFormat => 'Formatar';
 
   @override
-  String get freeDiskSpace => 'espaci liure';
+  String get freeDiskSpace => 'Espaci liure';
 
   @override
   String get newPartitionTable => 'Taula de particion novèla';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Crear una taula novèla de particions sus aqueste periferic ?';
+  String get newPartitionTableConfirmationTitle => 'Particion novèla voida';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Avètz seleccionat un periferic complèt de particionar. Se volètz contunhar en creant una taula de particions novèla dessús, totas sas particions actualas seràn suprimidas.\n\nPoiretz anullar aquesta operacion mai tard s\'o volètz.';
+  String get newPartitionTableConfirmationMessage => 'La creacion d’una taula de particions novèla sus un periferic entièr suprimirà totas sas particions actualas. Poiretz anullar aquesta operacion mai tard s\'o volètz.';
 
   @override
   String get tooManyPrimaryPartitions => 'Tròp de particions primàrias';
 
   @override
-  String get partitionLimitReached => 'limit atenh';
+  String get partitionLimitReached => 'Limit atenh';
 
   @override
   String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';
@@ -496,55 +508,12 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionFormatLabel => 'Utilizada coma :';
 
   @override
-  String get partitionFormatExt4 => 'sistèma de fichièr de jornalizacion Ext4';
-
-  @override
-  String get partitionFormatExt3 => 'sistèma de fichièr de jornalizacion Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'sistèma de fichièr de jornalizacion Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'sistèma de fichièr de jornalizacion BTRFS';
-
-  @override
-  String get partitionFormatJfs => 'sistèma de fichièr de jornalizacion JFS';
-
-  @override
-  String get partitionFormatXfs => 'sistèma de fichièr de jornalizacion XFS';
-
-  @override
-  String get partitionFormatFat => 'sistèma de fichièr FAT';
-
-  @override
-  String get partitionFormatFat12 => 'sistèma de fichièr FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'sistèma de fichièr FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'sistèma de fichièr FAT32';
-
-  @override
-  String get partitionFormatSwap => 'zòna d’escambi';
-
-  @override
-  String get partitionFormatIso9660 => 'sistèma de fichièr ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'sistèma de fichièr VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'sistèma de fichièr NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'sistèma de fichièr ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'sistèma de fichièr ZFS';
-
-  @override
   String get partitionFormatNone => 'utilizar pas la particion';
+
+  @override
+  String partitionFormatKeep(Object format) {
+    return 'Gardar lo formatatge en $format';
+  }
 
   @override
   String get partitionErase => 'Formatar la particion';
@@ -553,7 +522,7 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionMountPointLabel => 'Punt de montatge :';
 
   @override
-  String get whoAreYouPageTitle => 'Qual sètz ?';
+  String get whoAreYouPageTitle => 'Configuratz vòstre compte';
 
   @override
   String get whoAreYouPageAutoLogin => 'Se connectar automaticament';
@@ -568,6 +537,9 @@ class AppLocalizationsOc extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Cal un prenom';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'Aqueste nom es tròp long.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Lo nom de l’ordenador';
 
   @override
@@ -575,6 +547,9 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Un nom d’ordenador es requerit';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'Aqueste nom d’ordenador es tròp long.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Lo nom de l’ordenador es invalid';
@@ -613,16 +588,25 @@ class AppLocalizationsOc extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Los senhals correspondon pas';
 
   @override
-  String get whoAreYouPageShowPassword => 'Afichar lo senhal';
+  String get whoAreYouPagePasswordShow => 'Mostrar';
 
   @override
-  String get writeChangesToDisk => 'Aplicar las modificacions suls disques';
+  String get whoAreYouPagePasswordHide => 'Rescondre';
+
+  @override
+  String get writeChangesToDisk => 'Lèst per installacion';
 
   @override
   String get writeChangesFallbackSerial => 'disc';
 
   @override
   String get writeChangesDescription => 'Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.';
+
+  @override
+  String get writeChangesDevicesTitle => 'Periferics';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Particions';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Las taulas de particions dels periferics seguents seràn modificadas :';
@@ -637,31 +621,31 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'la particion #$disk$partition redimensionada de $oldsize a $newsize';
+    return 'la particion <b>$disk$partition</b> redimensionada de <b>$oldsize</b> a <b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'la particion #$disk$partition formatada en $format utilizada per $mount';
+    return 'la particion <b>$disk$partition</b> formatada en <b>$format</b> utilizada per <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'la particion #$disk$partition formatada en $format';
+    return 'la particion <b>$disk$partition</b> formatada en <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'la particion #$disk$partition utilizada per $mount';
+    return 'la particion <b>$disk$partition</b> utilizada per <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'particion #$disk$partition creada';
+    return 'particion <b>$disk$partition</b> creada';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Causissètz l’aparéncia';
+  String get chooseYourLookPageTitle => 'Causissètz vòstre tèma';
 
   @override
   String get chooseYourLookPageHeader => 'La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.';
@@ -677,7 +661,7 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** es installat e prèst a utilizar.';
+    return '**$system** es installat e prèst a utilizar';
   }
 
   @override
@@ -700,21 +684,34 @@ class AppLocalizationsOc extends AppLocalizations {
   String get continueTesting => 'Contunhar d’ensajar';
 
   @override
-  String get turnOffBitlockerTitle => 'Desactivar BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker es activat';
 
   @override
-  String get turnOffBitlockerDescription => 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\n Vos cal desactivar BitLocker dins Windows abans d’installacion d’Ubuntu.';
+  String get turnOffBitlockerHeadline => 'Desactivatz BitLocker per contunhar';
+
+  @override
+  String turnOffBitlockerDescription(Object option) {
+    return 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\nVos cal utilizar Windows per crear un espaci liure o causir « $option » per contunhar.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Per las consignas, dobrissètz aquesta pagina sus un mobil o un autre aparelh : <a href=\"https://$url\">$url</a>';
+    return 'Per las consignas, numerizatz aqueste còdi QR d’un autre aparelh estant o consultatz : <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Reaviar jos Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Ont sètz ?';
+  String get restartIntoWindowsTitle => 'Reaviar jos Windows ?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Volètz vertadièrament reaviar l’ordenador ? Deuretz relançar lo processús d’installacion de $DISTRO mai tard per terminar l’installacion de $DISTRO.';
+  }
+
+  @override
+  String get whereAreYouPageTitle => 'Seleccionatz vòstre fus orari';
 
   @override
   String get whereAreYouLocationLabel => 'Localizacion';
@@ -723,129 +720,118 @@ class AppLocalizationsOc extends AppLocalizations {
   String get whereAreYouTimezoneLabel => 'Fus orari';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
+  String installationSlidesTitle(Object RELEASE) {
     return 'La benvenguda a $RELEASE';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return 'Rapida e plena de foncionalitats novèlas, la darrièra version d’$RELEASE fa venir l’informatica mai faciala que jamai. Vaquí d’unas novetats de descobrir…';
+  String get installationSlidesAvailable => 'Disponible :';
+
+  @override
+  String get installationSlidesIncluded => 'Inclús :';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'Rapid, gratuit e plen de foncionalitats novèlas';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return 'La darrièra version de $DISTRO fa venir l’informatica mai simpla que jamai.';
   }
 
   @override
-  String get softwareSlideTitle => 'Obtenètz mai de logicials';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return 'Acabada la recèrca de novèls logicials sul Web. Amb las logitècas Snap Store e los archius logicials d’ $RELEASE , podètz trobar e installar aisidament d\'aplicacions novèlas. Picatz juste çò que cercatz o exploratz las categorias coma grafismes e fotografia, jòcs o productivitat, acompanhadas de comentaris utils d’autres utilizaires.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'Que siatz un desvolopaire, creator, jogaire o administrator, traparetz d’aisinas novèlas per melhorar vòstra productivitat e experiéncia sus $RELEASE.';
   }
 
   @override
-  String get musicSlideTitle => 'Emportatz vòstra musica amb vos';
+  String get installationSlidesSoftwareTitle => 'Totas las aplicacions que vos fan mestièr';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE es liurat amb l’excellent lector de musica Rhythmbox. Gràcias a sas opcions de lectura avançadas, es un jòc d\'enfant de preparar la playlist perfièita. Amai, gerís perfèitament CD e lectors numerics portables, doncas, podètz profeitar de vòstra musica pertot ont anatz.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'Installatz, gerissètz e metatz a jorn vòstras aplicacions dins Ubuntu Software, incluses milierats d’aplicacions venent de Snap Store e dels archius $DISTRO.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Lector de musica Rhythmbox';
+  String get installationSlidesDevelopmentTitle => 'Desvolopatz amb çò melhor del monde liure';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => 'Divertissètz vos amb vòstras fòtos';
-
-  @override
-  String get photoSlideDescription => 'Shotwell es un gestionari de fòtos practic que pòt connectar vòstres periferics. Connectatz un aparelh de fòto o un telefòn per transferir vòstras fòtos, partejatz-las e salvagardatz-las facilament. E se vos sentissètz creatiu, trobaretz un molon d’autras aplicacions per retocar de fòto dins la logitècas Ubuntu.';
-
-  @override
-  String get photoSlideShotwell => 'Gestionari de fòto Shotwell';
-
-  @override
-  String get photoSlideGimp => 'Editor d’imatge GIMP';
-
-  @override
-  String get photoSlideShotcut => 'Editor de vidèo Shotcut';
-
-  @override
-  String get webSlideTitle => 'Trapatz çò melhor del Web';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE inclutz Firefox, lo navegador Web utilizat per de milions de personas dins lo monde entièr. E, per un accès mai rapid, podètz penjar sus vòstre burèu las aplicacions Web qu\'utilizatz lo mai sovent (coma Facebook o Gmail per exemple), exactament coma d\'aplicacions sus vòstre ordenador.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO es un pòst de trabalh ideal pel desvolopament de logicials o web, las sciéncias de las donadas, l’intelligéncia artificiala e l’aprentissatge automatic, mas tanben pel devops e l’administracion. Totas las versions de $DISTRO incluson las darrièras cadenas d’aisinas e prenon en carga totes los principals environaments de desvolopament integrats.';
   }
 
   @override
-  String get webSlideFirefox => 'Navegador web Firefox';
+  String get installationSlidesCreativityTitle => 'Melhoratz vòstra creativitat';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
-
-  @override
-  String get webSlideChromium => 'Chromium';
-
-  @override
-  String get officeSlideTitle => 'Tot çò que vos fa mestièr pel burèu';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice es una seguida burotica liura liurada amb tot çò que n\'auretz besonh per crear de documents, fuèlhs de calcul e presentacions. Compatible amb los formats de fichièrs de Microsoft Office, vos ofrís totas las foncionalitats que n\'avètz besonh.';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => 'Accès per totes';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return 'Al còs de la filosofia d’ $RELEASE se tròba la cresença que l’informatica es per cadun. Amb d’aisinas d’accessibilitat avançadas e d’opcions per modificar la lenga, las colors e la talha de tèxt, $RELEASE fa venir l’informatica simpla, qual e ont que siatz.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'Se sètz animator, designer, cineasta o desvolopaire de jòcs, es facil de passar vòstre pòst de trabalh cap a $DISTRO gràcia a la compatibilitat de logicials e aplicacions liuras e dels estandards de l’industria.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Opcions de personalizacion';
+  String get installationSlidesGamingTitle => 'Extra pels jòcs';
 
   @override
-  String get accessSlideAppearance => 'Aparéncia';
-
-  @override
-  String get accessSlideAssistiveTechnologies => 'Accessibilitat';
-
-  @override
-  String get accessSlideLanguageSupport => 'Presa en carga de las lengas';
-
-  @override
-  String get supportSlideTitle => 'Ajuda e assisténcia';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return 'La documentacion oficiala cobrís los aspèctes màgers a prepaus de $RELEASE. Es disponibla <a href=\"https://help.ubuntu.com\">sul site web</a> e via l’icòn d’ajuda de l’aviador.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO pren en carga los darrièra pilòts NVIDIA e Mesa per melhorar las performanças e la compatibilitat. Milierats de jòcs per Windows foncionan coma cal sus $DISTRO via d’aplicacions coma Steam amb cap de configuracion suplementària.';
   }
 
   @override
-  String get supportSlideQuestions => 'Sus <a href=\"https://askubuntu.com\">Ask Ubuntu</a>, podètz pausar de questions e recercar dins una colleccion impressionanta de questions qu\'an ja una responsa. L\'assisténcia dins vòstra pròpria lenga pòt èsser provesida per vòstra <a href=\"https://loco.ubuntu.com/teams/\">Equipa comunautària locala</a>.';
+  String get installationSlidesSecurityTitle => 'Privat e securizat';
 
   @override
-  String get supportSlideResources => 'Per mai d’entresenhas, visitatz las paginas <a href=\"https://www.ubuntu.com/support/community-support\">assisténcia de la comunautat</a> o <a href=\"https://www.ubuntu.com/support\">l’assiténcia comerciala</a>.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO provesís totas las aisinas que vos fa mestièr per demorar privat e segur en linha. Amb un parafuòc e la presa en carga VPN integrats e una seria d’aplicacions pensadas per la confidencialitat avètz tot lo contraròtle de vòstras donadas.';
+  }
 
   @override
-  String get includedSoftware => 'Logicials incluses';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'Totas las versions de $DISTRO LTS son fornidas amb cinc ans de patches de seguretat, fins a detz ans amb un abonament Ubuntu Pro.';
+  }
 
   @override
-  String get availableSoftware => 'Logicials disponibles';
+  String get installationSlidesProductivityTitle => 'Aumentatz vòstra productivitat';
 
   @override
-  String get supportedSoftware => 'Logicials preses en carga';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO Desktop inclutz LibreOffice, una seguida burotica liura compatibla amb Microsoft Office pels documents, fuèlhs de calcul e las presentacion. D’espleches de collaboracion populars son tanben disponibles.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'Accès per totes';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return 'Al còs de la filosofia de $DISTRO se tròba la conviccion que l’informatica deu èsser accessibla a totes. En prepausant d’aisinas d’accessibilitat avançadas e d’opcions per cambiar de lenga, de tèma de colors, de talha de polissas, $DISTRO vos fa venir l’informatica facila, qual que siatz e ont que siatz.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Lector d’ecran Orca';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'Presa en carga lingüistica';
+
+  @override
+  String get installationSlidesSupportTitle => 'Ajuda e assisténcia';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'La documentacion oficiala de $DISTRO es disponibla tant en linha coma via l’icòna Ajuda al dock.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu cobrís una larga plaja de questions e responsas e lo Discourse d’Ubuntu provesís de guidas e de discussions pels nòuvenguts e los utilizaires experimentats.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'Per las entrepresas Canonical fornís una assisténcia comerciala per facilitar l’integracion e la gestion d’Ubuntu en tota seguretat al lòc de trabalh.';
+
+  @override
+  String get installationSlidesSupportResources => 'Ressorsas utilas :';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'Documentacion oficiala';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'Assisténcia professionala disponibla 24h de 24h e 7 jorns de 7 amb Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Còpia dels fichièrs…';
@@ -860,20 +846,79 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationFailed => 'Fracàs de l’installacion';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Desolat';
+  String get notEnoughDiskSpaceTitle => 'Pas pro d’espaci';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'Vos cal almens $SIZE d’espaci disc per installar $RELEASE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Pas pro d’espaci per installar $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Aqueste ordenador a sonque $SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Disponible :';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'Lo disc mai grand d’aqueste ordenador a sonque $SIZE.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Requesit :';
+
+  @override
+  String get activeDirectoryOption => 'Utilizar Active Directory';
+
+  @override
+  String get activeDirectoryInfo => 'Picaretz lo domeni e los autres detalhs a l’etapa que ven.';
+
+  @override
+  String get activeDirectoryTitle => 'Configurar Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Ensajar la connexion al domeni';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domeni';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Obligatòri';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Tròp long';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Caractèrs invalids';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Comença per un ponch (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Termina per un ponch (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Comença per un jonhent (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Termina per un jonhent (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Conten mantun ponch (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domeni introbable';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Nom d’utilizaire per rejónher lo domeni';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Obligatòri';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Caractèrs invalids';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Senhal';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Obligatòri';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Error en configurant la connexion a l’Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'O planhèm, se pòt pas configurar Active Directory pel moment. Un còp lo sistèma operacional, consultatz <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> per d’ajuda.';
 }

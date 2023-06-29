@@ -1,12 +1,12 @@
 {
   "@@locale": "hu",
-  "hiddenWifiNetwork": "Csatlakozás rejtett Wi-Fi hálózathoz",
+  "hiddenWifiNetwork": "Kapcsolódás rejtett Wi-Fi-hálózathoz",
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameLabel": "Hálózat neve",
   "@hiddenWifiNetworkNameLabel": {},
-  "hiddenWifiNetworkNameRequired": "Hálózati név szükséges",
+  "hiddenWifiNetworkNameRequired": "A hálózat neve szükséges",
   "@hiddenWifiNetworkNameRequired": {},
-  "chooseSecurityKeyHeader": "A lemez titkosítása megvédi fájljait, ha elveszíti a számítógépét. A számítógép minden egyes indításakor meg kell adnia egy biztonsági kulcsot.\n\nA {RELEASE}-n kívüli fájlok nem lesznek titkosítva.",
+  "chooseSecurityKeyHeader": "A lemez titkosítása megvédi fájljait, ha elveszíti a számítógépét. A számítógép minden egyes indításakor meg kell adnia egy biztonsági kulcsot.\n\nA(z) {RELEASE} kezelésén kívüli fájlok nem lesznek titkosítva.",
   "@chooseSecurityKeyHeader": {
     "type": "text",
     "placeholders": {
@@ -22,7 +22,7 @@
       "os": {}
     }
   },
-  "partitionFormatLabel": "Használt mint:",
+  "partitionFormatLabel": "Használva mint:",
   "@partitionFormatLabel": {},
   "webSlideTitle": "Használja ki a webet a lehető legjobban",
   "@webSlideTitle": {},
@@ -36,7 +36,7 @@
   "@officeSlideWriter": {},
   "officeSlideCalc": "LibreOffice Calc",
   "@officeSlideCalc": {},
-  "writeChangesDescription": "Ha folytatja, az alább felsorolt módosítások íródnak a lemezekre. A további módosításokat kézzel végezheti el.",
+  "writeChangesDescription": "Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.",
   "@writeChangesDescription": {},
   "writeChangesPartitionEntryUnmounted": "partíció #<{disk}{partition} mint {format}",
   "@writeChangesPartitionEntryUnmounted": {
@@ -57,63 +57,45 @@
   },
   "installationTypeMultiOSDetected": "Ezen a számítógépen jelenleg több operációs rendszer van. Mit szeretne tenni?",
   "@installationTypeMultiOSDetected": {},
-  "installationTypeNoOSDetected": "Ezen a számítógépen jelenleg nincs észlelt operációs rendszer. Mit szeretne tenni?",
+  "installationTypeNoOSDetected": "Ezen a számítógépen jelenleg nincs felismert operációs rendszer. Mit szeretne tenni?",
   "@installationTypeNoOSDetected": {},
-  "installationTypeErase": "Lemez törlése és {DISTRO} telepítése",
+  "installationTypeErase": "Lemez törlése és a(z) {DISTRO} telepítése",
   "@installationTypeErase": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "installationTypeEraseWarning": "<font color=\"{color}\">Figyelmeztetés:</font> Ez minden operációs rendszerben törli az összes programot, dokumentumot, fényképet, zenét és minden más fájlt.",
+  "installationTypeEraseWarning": "<font color=\"{color}\">Figyelmeztetés:</font> ez törölni fogja az összes programot, dokumentumot, fényképet, zenét és minden más fájlt az összes operációs rendszeren.",
   "@installationTypeEraseWarning": {
     "type": "text",
     "placeholders": {
       "color": {}
     }
   },
-  "selectGuidedStoragePageTitle": "Lemez törlése és {DISTRO} telepítése",
+  "selectGuidedStoragePageTitle": "Lemez törlése és a(z) {DISTRO} telepítése",
   "@selectGuidedStoragePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "newPartitionTableConfirmationTitle": "Új üres partíciós tábla létrehozása ezen az eszközön?",
+  "newPartitionTableConfirmationTitle": "Új üres partíció",
   "@newPartitionTableConfirmationTitle": {},
-  "installationTypeManualInfo": "A partíciókat létrehozhatja vagy átméretezheti saját maga, vagy több partíciót is választhat {DISTRO}",
+  "installationTypeManualInfo": "Létrehozhat vagy átméretezhet partíciókat saját maga, vagy több partíciót is választhat a(z) {DISTRO} telepítéséhez",
   "@installationTypeManualInfo": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "newPartitionTableConfirmationMessage": "Egy teljes eszközt választott ki a particionáláshoz. Ha új partíciós táblát hoz létre az eszközön, akkor az összes jelenlegi partíciót eltávolítja.\n\nVegye figyelembe, hogy ezt a műveletet később vissza tudja vonni, ha szeretné.",
+  "newPartitionTableConfirmationMessage": "Egy új partíciós tábla létrehozása egy teljes eszközön eltávolítja az összes jelenlegi partíciót. Ez a művelet visszavonható, ha szükséges.",
   "@newPartitionTableConfirmationMessage": {},
   "partitionLocationEnd": "A hely vége",
   "@partitionLocationEnd": {},
-  "partitionFormatExt4": "Ext4 naplózó fájlrendszer",
-  "@partitionFormatExt4": {},
-  "partitionFormatExt3": "Ext3 naplózó fájlrendszer",
-  "@partitionFormatExt3": {},
-  "partitionFormatExt2": "Ext2 fájlrendszer",
-  "@partitionFormatExt2": {},
-  "partitionFormatBtrfs": "btrfs naplózó fájlrendszer",
-  "@partitionFormatBtrfs": {},
-  "partitionFormatJfs": "JFS naplózó fájlrendszer",
-  "@partitionFormatJfs": {},
-  "partitionFormatXfs": "XFS naplózó fájlrendszer",
-  "@partitionFormatXfs": {},
-  "partitionFormatFat": "FAT fájlrendszer",
-  "@partitionFormatFat": {},
-  "partitionFormatFat12": "FAT12 fájlrendszer",
-  "@partitionFormatFat12": {},
-  "partitionFormatFat16": "FAT16 fájlrendszer",
-  "@partitionFormatFat16": {},
   "whoAreYouPageShowPassword": "Jelszó megjelenítése",
   "@whoAreYouPageShowPassword": {},
-  "writeChangesToDisk": "Változások írása a lemezre",
+  "writeChangesToDisk": "Telepítésre kész",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "lemez",
   "@writeChangesFallbackSerial": {
@@ -127,11 +109,11 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "A következő partícióváltozásokat kell alkalmazni:",
+  "writeChangesPartitionsHeader": "A következő partícióváltoztatások kerülnek alkalmazásra:",
   "@writeChangesPartitionsHeader": {},
-  "whereAreYouPageTitle": "Hol vagy?",
+  "whereAreYouPageTitle": "Időzóna kiválasztása",
   "@whereAreYouPageTitle": {},
-  "whereAreYouLocationLabel": "Pozíció",
+  "whereAreYouLocationLabel": "Hely",
   "@whereAreYouLocationLabel": {},
   "whereAreYouTimezoneLabel": "Időzóna",
   "@whereAreYouTimezoneLabel": {},
@@ -205,31 +187,29 @@
   "@availableSoftware": {},
   "supportedSoftware": "Támogatott szoftver",
   "@supportedSoftware": {},
-  "partitionFormatFat32": "FAT32 fájlrendszer",
-  "@partitionFormatFat32": {},
   "whoAreYouPagePasswordMismatch": "A jelszavak nem egyeznek",
   "@whoAreYouPagePasswordMismatch": {},
-  "writeChangesPartitionTablesHeader": "A következő eszközök partíciós táblái módosulnak:",
+  "writeChangesPartitionTablesHeader": "A következő eszközök partíciós táblái változnak meg:",
   "@writeChangesPartitionTablesHeader": {},
   "useWiredConnection": "Vezetékes kapcsolat használata",
   "@useWiredConnection": {},
-  "noWiredConnection": "Nincs vezetékes kapcsolat észlelve",
+  "noWiredConnection": "Nincs vezetékes kapcsolat felismerve",
   "@noWiredConnection": {},
   "wiredDisabled": "A vezetékes kapcsolat ki van kapcsolva",
   "@wiredDisabled": {},
   "enableWired": "Vezetékes engedélyezése",
   "@enableWired": {},
-  "selectWifiNetwork": "Csatlakozás Wi-Fi hálózathoz",
+  "selectWifiNetwork": "Kapcsolódás Wi-Fi-hálózathoz",
   "@selectWifiNetwork": {},
-  "noInternet": "Most nem akarok csatlakozni az internethez",
+  "noInternet": "Most nem szeretnék kapcsolódni az internethez",
   "@noInternet": {},
-  "noWifiDevicesDetected": "Nincs észlelt Wi-Fi eszköz",
+  "noWifiDevicesDetected": "Nincsenek felismert Wi-Fi-eszközök",
   "@noWifiDevicesDetected": {},
-  "wifiMustBeEnabled": "A Wi-Fi használatához ezen a számítógépen engedélyezni kell a vezeték nélküli hálózatot",
+  "wifiMustBeEnabled": "Az ezen a számítógépen történő Wi-Fi használatához a vezeték nélküli hálózatkezelésnek engedélyezve kell lennie",
   "@wifiMustBeEnabled": {},
   "enableWifi": "Wi-Fi engedélyezése",
   "@enableWifi": {},
-  "connectButtonText": "Csatlakozás",
+  "connectButtonText": "Kapcsolódás",
   "@connectButtonText": {},
   "musicSlideTitle": "Vigye magával a zenét",
   "@musicSlideTitle": {},
@@ -239,15 +219,15 @@
   "@appTitle": {},
   "cancelButtonText": "Mégse",
   "@cancelButtonText": {},
-  "changeButtonText": "Csere",
+  "changeButtonText": "Változtatás",
   "@changeButtonText": {},
-  "okButtonText": "Ok",
+  "okButtonText": "Rendben",
   "@okButtonText": {},
   "noButtonText": "Nem",
   "@noButtonText": {},
   "turnOffRSTDescription": "Ez a számítógép Intel RST (Rapid Storage Technology) technológiát használ. Az RST-t ki kell kapcsolnia a Windowsban az Ubuntu telepítése előtt.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Az utasításokért nyissa meg ezt az oldalt telefonon vagy más eszközön: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Az utasításokért olvassa le a QR-kódot egy másik eszközön vagy látogassa meg ezt az oldalt: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -256,60 +236,60 @@
   },
   "keyboardLayoutPageTitle": "Billentyűzetkiosztás",
   "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "Válassza ki a billentyűzetkiosztást:",
+  "chooseYourKeyboardLayout": "Válasszon billentyűzetkiosztást:",
   "@chooseYourKeyboardLayout": {},
-  "typeToTest": "Írja be ide a billentyűzet teszteléséhez",
+  "typeToTest": "Gépeljen itt a billentyűzet kipróbálásához",
   "@typeToTest": {},
-  "detectLayout": "Billentyűzetkiosztás észlelése",
+  "detectLayout": "Billentyűzetkiosztás felismerése",
   "@detectLayout": {},
-  "pressOneKey": "Kérjük, nyomja meg az alábbi billentyűk egyikét:",
+  "pressOneKey": "Nyomja meg a következő billentyűk egyikét:",
   "@pressOneKey": {},
-  "isKeyPresent": "A következő billentyű jelen van a billentyűzeten?",
+  "isKeyPresent": "A következő billentyű rajta van a billentyűzetén?",
   "@isKeyPresent": {},
-  "configureSecureBootTitle": "Biztonságos rendszerindítás konfigurálása",
+  "configureSecureBootTitle": "Biztonságos rendszerindítás beállítása",
   "@configureSecureBootTitle": {},
-  "configureSecureBootDescription": "Ön úgy döntött, hogy harmadik féltől származó illesztőprogramot telepít. Ehhez ki kell kapcsolni a Secure Boot funkciót.\nEhhez most ki kell választania egy biztonsági kulcsot, és azt a rendszer újraindításakor meg kell adnia.",
+  "configureSecureBootDescription": "Úgy döntött, hogy harmadik féltől származó illesztőprogramot telepít. Ez a biztonságos rendszerindítás kikapcsolását igényli.\nEhhez most választania kell egy biztonsági kulcsot, és a rendszer újraindításakor meg kell adnia azt.",
   "@configureSecureBootDescription": {},
-  "configureSecureBootOption": "Secure Boot konfigurálása",
+  "configureSecureBootOption": "Biztonságos rendszerindítás beállítása",
   "@configureSecureBootOption": {},
-  "chooseSecurityKey": "Biztonsági kulcs kiválasztása",
+  "chooseSecurityKey": "Biztonsági kulcs választása",
   "@chooseSecurityKey": {},
-  "confirmSecurityKey": "Erősítse meg a biztonsági kulcsot",
+  "confirmSecurityKey": "A biztonsági kulcs megerősítése",
   "@confirmSecurityKey": {},
   "restartButtonText": "Újraindítás",
   "@restartButtonText": {},
-  "revertButtonText": "Vissza",
+  "revertButtonText": "Visszaállítás",
   "@revertButtonText": {},
   "yesButtonText": "Igen",
   "@yesButtonText": {},
   "welcome": "Üdvözöljük",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Próbálja ki vagy telepítse",
+  "tryOrInstallPageTitle": "A(z) {DISTRO} kipróbálása vagy telepítése",
   "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Javító telepítés",
+  "repairInstallation": "Telepítés javítása",
   "@repairInstallation": {},
-  "repairInstallationDescription": "A javítás újratelepíti az összes telepített szoftvert anélkül, hogy a dokumentumokat vagy beállításokat érintené.",
+  "repairInstallationDescription": "A javítás újratelepíti az összes telepített szoftvert, anélkül hogy a dokumentumokat vagy a beállításokat érintené.",
   "@repairInstallationDescription": {},
-  "releaseNotesLabel": "Érdemes elolvasni a <a href=\"{url}\">kiadási jegyzeteket</a>.",
+  "releaseNotesLabel": "Érdemes lehet elolvasni a <a href=\"{url}\">kiadási megjegyzéseket</a>.",
   "@releaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "turnOffRST": "RST kikapcsolása",
+  "turnOffRST": "Az RST engedélyezve van",
   "@turnOffRST": {},
-  "chooseSecurityKeyTitle": "Biztonsági kulcs kiválasztása",
+  "chooseSecurityKeyTitle": "Biztonsági kulcs",
   "@chooseSecurityKeyTitle": {},
-  "chooseSecurityKeyHint": "Biztonsági kulcs kiválasztása",
+  "chooseSecurityKeyHint": "Biztonsági kulcs választása",
   "@chooseSecurityKeyHint": {},
-  "chooseSecurityKeyConfirmHint": "Erősítse meg a biztonsági kulcsot",
+  "chooseSecurityKeyConfirmHint": "A biztonsági kulcs megerősítése",
   "@chooseSecurityKeyConfirmHint": {},
   "chooseSecurityKeyRequired": "Biztonsági kulcs szükséges",
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "A biztonsági kulcsok nem egyeznek",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Figyelmeztetés</font>: Ha elveszíti ezt a biztonsági kulcsot, minden adat elveszik. Szükség esetén írja le a kulcsot, és tartsa máshol, biztonságos helyen.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Figyelmeztetés:</font> ha elveszíti ezt a biztonsági kulcsot, akkor az összes adat elvész. Ha szükséges, írja le a kulcsot, és tartsa valahol máshol egy biztonságos helyen.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -318,13 +298,13 @@
   },
   "dontInstallDriverSoftwareNow": "Egyelőre ne telepítse az illesztőprogramot",
   "@dontInstallDriverSoftwareNow": {},
-  "dontInstallDriverSoftwareNowDescription": "Később telepítheti a Szoftver & Frissítések menüpontból.",
+  "dontInstallDriverSoftwareNowDescription": "Később a Szoftver és frissítések menüpontból telepítheti.",
   "@dontInstallDriverSoftwareNowDescription": {},
   "configureSecureBootSecurityKeyRequired": "Biztonsági kulcs szükséges",
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "A biztonsági kulcsok nem egyeznek",
   "@secureBootSecurityKeysDontMatch": {},
-  "updatesOtherSoftwarePageTitle": "Frissítések és egyéb szoftverek",
+  "updatesOtherSoftwarePageTitle": "Alkalmazások és frissítések",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "Milyen alkalmazásokat szeretne telepíteni a kezdéshez?",
   "@updatesOtherSoftwarePageDescription": {},
@@ -338,21 +318,21 @@
   "@minimalInstallationSubtitle": {},
   "otherOptions": "Egyéb lehetőségek",
   "@otherOptions": {},
-  "installThirdPartyTitle": "Harmadik féltől származó szoftverek telepítése grafikus és Wi-Fi hardverekhez, valamint további médiaformátumokhoz",
+  "installThirdPartyTitle": "Harmadik féltől származó szoftverek grafikus és Wi-Fi-hardverekhez, valamint további médiaformátumok telepítése",
   "@installThirdPartyTitle": {},
-  "installThirdPartySubtitle": "A szoftverre a dokumentációban szereplő licencfeltételek vonatkoznak. Egyesek védettek.",
+  "installThirdPartySubtitle": "Erre a szoftverre a dokumentációjában szereplő licencfeltételek vonatkoznak. Néhányuk kereskedelmi forgalomban kapható tulajdonosi szoftver.",
   "@installThirdPartySubtitle": {},
-  "installationTypeAdvancedLabel": "Speciális funkciók...",
+  "installationTypeAdvancedLabel": "Speciális funkciók…",
   "@installationTypeAdvancedLabel": {},
   "installationTypeAdvancedTitle": "Speciális funkciók",
   "@installationTypeAdvancedTitle": {},
   "installationTypeNone": "Nincs",
   "@installationTypeNone": {},
-  "installationTypeEncryptInfo": "A biztonsági kulcsot a következő lépésben fogja kiválasztani.",
+  "installationTypeEncryptInfo": "Biztonsági kulcsot a következő lépésben fog választani.",
   "@installationTypeEncryptInfo": {},
-  "installationTypeZFS": "KÍSÉRLETI: Lemez törlése és ZFS használata",
+  "installationTypeZFS": "KÍSÉRLETI: lemez törlése és ZFS használata",
   "@installationTypeZFS": {},
-  "installationTypeAlongside": "{product} telepítése a {os} mellett",
+  "installationTypeAlongside": "A(z) {product} telepítése a(z) {os} mellé",
   "@installationTypeAlongside": {
     "type": "text",
     "placeholders": {
@@ -362,7 +342,7 @@
   },
   "installationTypeAlongsideInfo": "A dokumentumok, zenék és egyéb személyes fájlok megőrzésre kerülnek. A számítógép minden egyes indításakor kiválaszthatja, hogy melyik operációs rendszert szeretné használni.",
   "@installationTypeAlongsideInfo": {},
-  "installationTypeManual": "Valami más",
+  "installationTypeManual": "Kézi particionálás",
   "@installationTypeManual": {},
   "installationTypeLVMSelected": "LVM kiválasztva",
   "@installationTypeLVMSelected": {},
@@ -384,22 +364,22 @@
       "RELEASE": {}
     }
   },
-  "installationTypeReinstall": "Törölje a {os} és telepítse újra",
+  "installationTypeReinstall": "A(z) {os} törlése és újratelepítés",
   "@installationTypeReinstall": {
     "type": "text",
     "placeholders": {
       "os": {}
     }
   },
-  "selectGuidedStorageDropdownLabel": "Válassza ki a meghajtót:",
+  "selectGuidedStorageDropdownLabel": "Meghajtó kiválasztása:",
   "@selectGuidedStorageDropdownLabel": {},
   "selectGuidedStorageInfoLabel": "A teljes lemez felhasználásra kerül:",
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "Telepítés most",
   "@selectGuidedStorageInstallNow": {},
-  "allocateDiskSpace": "Lemezterület kiosztása",
+  "allocateDiskSpace": "Kézi particionálás",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Telepítés megkezdése",
+  "startInstallingButtonText": "Telepítés",
   "@startInstallingButtonText": {},
   "partitionTypePrimary": "Elsődleges",
   "@partitionTypePrimary": {},
@@ -413,17 +393,17 @@
   "@diskHeadersDevice": {},
   "diskHeadersType": "Típus",
   "@diskHeadersType": {},
-  "diskHeadersMountPoint": "Csatlakoztatási pont",
+  "diskHeadersMountPoint": "Csatolási pont",
   "@diskHeadersMountPoint": {},
   "diskHeadersSize": "Méret",
   "@diskHeadersSize": {},
-  "diskHeadersUsed": "Használt",
+  "diskHeadersUsed": "Használva",
   "@diskHeadersUsed": {},
   "diskHeadersSystem": "Rendszer",
   "@diskHeadersSystem": {},
   "diskHeadersFormat": "Formátum",
   "@diskHeadersFormat": {},
-  "freeDiskSpace": "szabad hely",
+  "freeDiskSpace": "Szabad hely",
   "@freeDiskSpace": {},
   "newPartitionTable": "Új partíciós tábla",
   "@newPartitionTable": {},
@@ -445,23 +425,11 @@
   "@partitionUnitGB": {},
   "partitionTypeLabel": "Az új partíció típusa:",
   "@partitionTypeLabel": {},
-  "partitionFormatSwap": "Swap terület",
-  "@partitionFormatSwap": {},
-  "partitionFormatIso9660": "ISO 9660 fájlrendszer",
-  "@partitionFormatIso9660": {},
-  "partitionFormatVfat": "VFAT fájlrendszer",
-  "@partitionFormatVfat": {},
-  "partitionFormatNtfs": "NTFS fájlrendszer",
-  "@partitionFormatNtfs": {},
-  "partitionFormatReiserFS": "ReiserFS fájlrendszer",
-  "@partitionFormatReiserFS": {},
-  "partitionFormatZfsroot": "ZFS gyökér fájlrendszer",
-  "@partitionFormatZfsroot": {},
   "partitionErase": "A partíció formázása",
   "@partitionErase": {},
-  "partitionMountPointLabel": "Csatlakoztatási pont:",
+  "partitionMountPointLabel": "Csatolási pont:",
   "@partitionMountPointLabel": {},
-  "whoAreYouPageTitle": "Ki vagy te?",
+  "whoAreYouPageTitle": "A fiók beállítása",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "Automatikus bejelentkezés",
   "@whoAreYouPageAutoLogin": {},
@@ -469,31 +437,31 @@
   "@whoAreYouPageRequirePassword": {},
   "whoAreYouPageRealNameLabel": "Az Ön neve",
   "@whoAreYouPageRealNameLabel": {},
-  "whoAreYouPageRealNameRequired": "Név megadása kötelező",
+  "whoAreYouPageRealNameRequired": "A név megadása kötelező",
   "@whoAreYouPageRealNameRequired": {},
   "whoAreYouPageComputerNameLabel": "Az Ön számítógépének neve",
   "@whoAreYouPageComputerNameLabel": {},
-  "whoAreYouPageComputerNameInfo": "A név, amelyet akkor használ, amikor más számítógépekkel beszél.",
+  "whoAreYouPageComputerNameInfo": "A más számítógépekkel való kommunikáció során használt név.",
   "@whoAreYouPageComputerNameInfo": {},
-  "whoAreYouPageComputerNameRequired": "A számítógép neve kötelező",
+  "whoAreYouPageComputerNameRequired": "A számítógépnév megadása kötelező",
   "@whoAreYouPageComputerNameRequired": {},
   "whoAreYouPageInvalidComputerName": "A számítógép neve érvénytelen",
   "@whoAreYouPageInvalidComputerName": {},
-  "whoAreYouPageUsernameLabel": "Válasszon egy felhasználónevet",
+  "whoAreYouPageUsernameLabel": "Felhasználónév választása",
   "@whoAreYouPageUsernameLabel": {},
-  "whoAreYouPageUsernameRequired": "Felhasználónév megadása kötelező",
+  "whoAreYouPageUsernameRequired": "A felhasználónév megadása kötelező",
   "@whoAreYouPageUsernameRequired": {},
   "whoAreYouPageInvalidUsername": "A felhasználónév érvénytelen",
   "@whoAreYouPageInvalidUsername": {},
-  "whoAreYouPagePasswordLabel": "Jelszó kiválasztása",
+  "whoAreYouPagePasswordLabel": "Jelszó választása",
   "@whoAreYouPagePasswordLabel": {},
-  "whoAreYouPagePasswordRequired": "Jelszó kötelező",
+  "whoAreYouPagePasswordRequired": "A jelszó megadása kötelező",
   "@whoAreYouPagePasswordRequired": {},
   "whoAreYouPageConfirmPasswordLabel": "Jelszó megerősítése",
   "@whoAreYouPageConfirmPasswordLabel": {},
-  "chooseYourLookPageTitle": "Válassza ki a megjelenést",
+  "chooseYourLookPageTitle": "Téma kiválasztása",
   "@chooseYourLookPageTitle": {},
-  "chooseYourLookPageHeader": "Ezt később bármikor megváltoztathatja a megjelenési beállításoknál.",
+  "chooseYourLookPageHeader": "Ezt később bármikor megváltoztathatja a megjelenési beállításokban.",
   "@chooseYourLookPageHeader": {},
   "chooseYourLookPageDarkSetting": "Sötét",
   "@chooseYourLookPageDarkSetting": {},
@@ -501,14 +469,14 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "A telepítés befejeződött",
   "@installationCompleteTitle": {},
-  "readyToUse": "**<{system}** telepítve van és használatra kész.",
+  "readyToUse": "A(z) **{system}** telepítve van és használatra kész",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
       "system": {}
     }
   },
-  "restartInto": "Indítsa újra {system}",
+  "restartInto": "Újraindítás és {system} használata",
   "@restartInto": {
     "type": "text",
     "placeholders": {
@@ -517,37 +485,37 @@
   },
   "shutdown": "Leállítás",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "Kapcsolja ki a BitLockert",
+  "turnOffBitlockerTitle": "A BitLocker engedélyezve van",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Ez a számítógép Windows BitLocker titkosítást használ.\nAz Ubuntu telepítése előtt ki kell kapcsolnia a BitLockert a Windowsban.",
+  "turnOffBitlockerDescription": "Ez a számítógép Windows BitLocker titkosítást használ.\nWindowst kell használnia a szabad terület létrehozásához, vagy a(z) „{option}” választása szükséges a folytatáshoz.",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Az utasításokért nyissa meg ezt az oldalt telefonon vagy más eszközön: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Az utasításokért olvassa le a QR-kódot egy másik eszközön vagy látogassa meg ezt az oldalt: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "restartIntoWindows": "Indítsa újra a Windows-t",
+  "restartIntoWindows": "Újraindítás és Windows használata",
   "@restartIntoWindows": {},
-  "welcomeHeader": "Válassza ki a nyelvet:",
+  "welcomeHeader": "Válasszon nyelvet:",
   "@welcomeHeader": {},
-  "connectToInternetPageTitle": "Csatlakozás az internethez",
+  "connectToInternetPageTitle": "Kapcsolódás hálózathoz",
   "@connectToInternetPageTitle": {},
-  "connectToInternetDescription": "Ha csatlakoztatja a számítógépet az internethez, az Ubuntu telepít minden szükséges extra szoftvert, és segít kiválasztani az időzónát.\n\nCsatlakozás ethernet-kábellel, vagy válasszon Wi-Fi hálózatot",
+  "connectToInternetDescription": "A számítógép internethez való kapcsolódása segít az Ubuntunak telepíteni a szükséges további szoftvereket, és segít kiválasztani az időzónát.\n\nKapcsolódás Ethernet-kábellel vagy Wi-Fi-hálózat kiválasztása",
   "@connectToInternetDescription": {},
-  "wiredMustBeEnabled": "Az ethernet használatához ezen a számítógépen engedélyezni kell a vezetékes kapcsolatot",
+  "wiredMustBeEnabled": "Az ezen a számítógépen történő Ethernet használatához egy vezetékes kapcsolatnak engedélyezve kell lennie",
   "@wiredMustBeEnabled": {},
-  "wirelessNetworkingDisabled": "Vezeték nélküli hálózat letiltva",
+  "wirelessNetworkingDisabled": "A vezeték nélküli hálózatkezelés letiltva",
   "@wirelessNetworkingDisabled": {},
-  "onBatteryWarning": "<font color=\"{color}\">Figyelmeztetés</font>: A számítógép nincs csatlakoztatva áramforráshoz.",
+  "onBatteryWarning": "<font color=\"{color}\">Figyelmeztetés:</font> a számítógép nincs csatlakoztatva az áramforráshoz.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
       "color": {}
     }
   },
-  "installationTypeReinstallWarning": "<font color=\"{color}\">Figyelmeztetés:</font> Ez az összes {os} programot, dokumentumot, fényképet, zenét és minden más fájlt törölni fog.",
+  "installationTypeReinstallWarning": "<font color=\"{color}\">Figyelmeztetés:</font> ez törölni fogja az összes {os} programot, dokumentumot, fényképet, zenét és minden más fájlt.",
   "@installationTypeReinstallWarning": {
     "type": "text",
     "placeholders": {
@@ -588,35 +556,35 @@
   },
   "supportSlideResources": "Egyéb hasznos forrásokra mutató hivatkozásokért látogasson el a <a href=\"https://www.ubuntu.com/support/community-support\">Közösségi támogatás</a> vagy a <a href=\"https://www.ubuntu.com/support\">Kereskedelmi támogatás</a> oldalra.",
   "@supportSlideResources": {},
-  "windowTitle": "Telepítés {RELEASE}",
+  "windowTitle": "A(z) {RELEASE} telepítése",
   "@windowTitle": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "Próbálja ki {RELEASE}",
+  "tryUbuntu": "A(z) {RELEASE} kipróbálása",
   "@tryUbuntu": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "Kipróbálhatja a {RELEASE}-t anélkül, hogy bármilyen változtatást végezne a számítógépén.",
+  "tryUbuntuDescription": "A(z) {RELEASE} kipróbálható anélkül, hogy bármilyen változtatást végezne a számítógépén.",
   "@tryUbuntuDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Telepítés {RELEASE}",
+  "installUbuntu": "A(z) {RELEASE} telepítése",
   "@installUbuntu": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Telepítse {RELEASE} a jelenlegi operációs rendszere mellé (vagy helyett). Ez nem fog túl sokáig tartani.",
+  "installUbuntuDescription": "A(z) {RELEASE} telepítése a jelenlegi operációs rendszere mellé (vagy helyett). Ez nem fog túl sokáig tartani.",
   "@installUbuntuDescription": {
     "type": "text",
     "placeholders": {
@@ -625,7 +593,7 @@
   },
   "whoAreYouPageUsernameInUse": "Ez a felhasználónév már létezik.",
   "@whoAreYouPageUsernameInUse": {},
-  "whoAreYouPageUsernameSystemReserved": "Ez a név a rendszer használatára van fenntartva.",
+  "whoAreYouPageUsernameSystemReserved": "Ez a név a rendszer számára van fenntartva.",
   "@whoAreYouPageUsernameSystemReserved": {},
   "whoAreYouPageUsernameTooLong": "Ez a név túl hosszú.",
   "@whoAreYouPageUsernameTooLong": {},
@@ -633,9 +601,9 @@
   "@installationFailed": {},
   "whoAreYouPageUsernameInvalidChars": "Ez a név érvénytelen karaktereket tartalmaz.",
   "@whoAreYouPageUsernameInvalidChars": {},
-  "copyingFiles": "Fájlok másolása...",
+  "copyingFiles": "Fájlok másolása…",
   "@copyingFiles": {},
-  "installationTypeAlongsideDual": "Telepítse a {product} oldalt a {os1} és {os2}",
+  "installationTypeAlongsideDual": "A(z) {product} telepítése a(z) {os1} és {os2} mellé",
   "@installationTypeAlongsideDual": {
     "type": "text",
     "placeholders": {
@@ -644,25 +612,25 @@
       "os2": {}
     }
   },
-  "installationTypeAlongsideMulti": "Telepítse melléjük a {product}",
+  "installationTypeAlongsideMulti": "A(z) {product} telepítése melléjük",
   "@installationTypeAlongsideMulti": {
     "type": "text",
     "placeholders": {
       "product": {}
     }
   },
-  "installationTypeAlongsideUnknown": "Telepítse a {product} oldalt más partíciók mellé",
+  "installationTypeAlongsideUnknown": "A(z) {product} telepítése más partíciók mellé",
   "@installationTypeAlongsideUnknown": {
     "type": "text",
     "placeholders": {
       "product": {}
     }
   },
-  "installAlongsideSpaceDivider": "Ossza ki a meghajtóterületet az alábbi osztóvonal húzásával:",
+  "installAlongsideSpaceDivider": "Meghajtóterület lefoglalása az alábbi osztóvonal húzásával:",
   "@installAlongsideSpaceDivider": {},
   "installAlongsideResizePartition": "Partíció átméretezése",
   "@installAlongsideResizePartition": {},
-  "installAlongsideAllocateSpace": "Hely kiosztása",
+  "installAlongsideAllocateSpace": "Hely lefoglalása",
   "@installAlongsideAllocateSpace": {},
   "installAlongsideFiles": "Fájlok",
   "@installAlongsideFiles": {},
@@ -670,7 +638,7 @@
   "@installAlongsidePartition": {},
   "installAlongsideAvailable": "Elérhető:",
   "@installAlongsideAvailable": {},
-  "installAlongsideHiddenPartitions": "{num} a kisebb partíciók el vannak rejtve, használja a <a href=\"{url}\">speciális partícionáló eszközt</a> a nagyobb ellenőrzésért",
+  "installAlongsideHiddenPartitions": "{num} a kisebb partíció el van rejtve, használja a <a href=\"{url}\">speciális particionáló eszközt</a> a jobb szabályozáshoz",
   "@installAlongsideHiddenPartitions": {
     "type": "text",
     "placeholders": {
@@ -680,11 +648,11 @@
   },
   "installAlongsideSize": "Méret:",
   "@installAlongsideSize": {},
-  "installingSystem": "Rendszer telepítése...",
+  "installingSystem": "A rendszer telepítése…",
   "@installingSystem": {},
-  "configuringSystem": "Rendszer konfigurálása...",
+  "configuringSystem": "A rendszer beállítása…",
   "@configuringSystem": {},
-  "notEnoughDiskSpaceTitle": "Sajnálom",
+  "notEnoughDiskSpaceTitle": "Nincs elegendő hely",
   "@notEnoughDiskSpaceTitle": {},
   "notEnoughDiskSpaceHeader": "A {RELEASE} telepítéséhez legalább {SIZE} lemezterületre van szüksége.",
   "@notEnoughDiskSpaceHeader": {
@@ -703,7 +671,7 @@
   },
   "showSecurityKey": "Biztonsági kulcs megjelenítése",
   "@showSecurityKey": {},
-  "writeChangesPartitionCreated": "partíció #{disk}{partition} létrehozott",
+  "writeChangesPartitionCreated": "<b>{disk}{partition}</b> partíció létrehozva",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -713,7 +681,7 @@
   },
   "installationTypeLVMEncryptionSelected": "LVM és titkosítás kiválasztva",
   "@installationTypeLVMEncryptionSelected": {},
-  "writeChangesPartitionResized": "partíció #{disk}{partition} átméretezve {oldsize} -ről {newsize} -ra.",
+  "writeChangesPartitionResized": "<b>{disk}{partition}</b> partíció átméretezve <b>{oldsize}</b> méretről <b>{newsize}</b> méretre",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -723,7 +691,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "partíció #{disk}{partition} formázva mint {format}",
+  "writeChangesPartitionFormatted": "<b>{disk}{partition}</b> partíció <b>{format}</b> formátumra formázva",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -732,7 +700,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partíció #{disk}{partition} formázott {format}, amelyet a következő célokra használnak {mount}",
+  "writeChangesPartitionFormattedMounted": "<b>{disk}{partition}</b> partíció <b>{format}</b> formátumra formázva, <b>{mount}</b> helyre csatolva",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -742,7 +710,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "partíció #{disk}{partition} használt {mount}",
+  "writeChangesPartitionMounted": "<b>{disk}{partition}</b> partíció <b>{mount}</b> helyre csatolva",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -759,5 +727,252 @@
     "placeholders": {
       "SIZE": {}
     }
-  }
+  },
+  "restartNow": "Újraindítás most",
+  "@restartNow": {},
+  "installDriversTitle": "Harmadik féltől származó szoftverek telepítése grafikus és Wi-Fi-hardverekhez",
+  "@installDriversTitle": {},
+  "restartWarning": "Most folytathatja a(z) {RELEASE} kipróbálását, de amíg nem indítja újra a számítógépet, addig semmilyen elvégzett változtatás vagy elmentett dokumentum nem lesz megtartva.",
+  "@restartWarning": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "restartIntoWindowsDescription": "Biztosan újra szeretné indítani a számítógépet? Később újra kell majd indítania a(z) {DISTRO} telepítését a(z) {DISTRO} telepítésének befejezéséhez.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesTitle": "Üdvözli a(z) {RELEASE}!",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesAvailable": "Elérhető:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesIncluded": "Tartalmazott:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesSoftwareBody": "Telepítse, kezelje és frissítse az Ubuntu szoftverben található összes alkalmazást, beleértve a Snap alkalmazásboltból és a(z) {DISTRO} archívumából származó több ezer alkalmazást is.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "Legyen akár fejlesztő, alkotó, játékos vagy rendszergazda, a(z) {RELEASE} új eszközöket nyújt Önnek a termelékenység és a felhasználói élmény javításához.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesAccessibilityBody": "A(z) {DISTRO} filozófiájának középpontjában az a meggyőződés áll, hogy a számítástechnika mindenkié. A fejlett akadálymentesítési eszközökkel, valamint a nyelv, a színek és a szövegméret megváltoztatásának lehetőségeivel a(z) {DISTRO} egyszerűvé teszi a számítástechnikát – bárki és bárhol is legyen.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Orca képernyőolvasó",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesSupportHeader": "A hivatalos {DISTRO} dokumentáció az interneten és az alkalmazásindítóban lévő Súgó ikonon keresztül is elérhető.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Az Ask Ubuntu a kérdések és válaszok széles skáláját lefedi, az Ubuntu Discourse pedig útmutatókat és beszélgetési lehetőségeket nyújt új és tapasztalt felhasználók számára.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "Vállalati felhasználóknak a Canonical kereskedelmi támogatást nyújt, hogy megkönnyítse az Ubuntu bevezetését és biztonságos kezelését a munkahelyen.",
+  "@installationSlidesSupportEnterprise": {},
+  "activeDirectoryInfo": "A tartományt és egyéb részleteket a következő lépésben fogja megadni.",
+  "@activeDirectoryInfo": {},
+  "activeDirectoryDomainTooLong": "Túl hosszú",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryDomainInvalidChars": "Érvénytelen karakterek",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryDomainNotFound": "A tartomány nem található",
+  "@activeDirectoryDomainNotFound": {},
+  "activeDirectoryAdminLabel": "A tartomány csatlakozási felhasználója",
+  "@activeDirectoryAdminLabel": {},
+  "activeDirectoryErrorTitle": "Hiba az Active Directory kapcsolatának beállításakor",
+  "@activeDirectoryErrorTitle": {},
+  "installDriversSubtitle": "Ezekre az illesztőprogramokra a dokumentációjukban szereplő licencfeltételek vonatkoznak. Kereskedelmi forgalomban kapható tulajdonosi szoftverek.",
+  "@installDriversSubtitle": {},
+  "activeDirectoryOption": "Active Directory használata",
+  "@activeDirectoryOption": {},
+  "activeDirectoryDomainStartDot": "Ponttal (.) kezdődik",
+  "@activeDirectoryDomainStartDot": {},
+  "turnOffRSTTitle": "Az RST kikapcsolása a folytatáshoz",
+  "@turnOffRSTTitle": {},
+  "installCodecsTitle": "További médiaformátumok támogatásának letöltése és telepítése",
+  "@installCodecsTitle": {},
+  "installCodecsSubtitle": "Erre a szoftverre a dokumentációjában szereplő licencfeltételek vonatkoznak. Néhányuk kereskedelmi forgalomban kapható tulajdonosi szoftver.",
+  "@installCodecsSubtitle": {},
+  "offlineWarning": "Jelenleg kapcsolat nélkül van",
+  "@offlineWarning": {},
+  "whoAreYouPageRealNameTooLong": "Ez a név túl hosszú.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Ez a számítógépnév túl hosszú.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "whoAreYouPagePasswordShow": "Megjelenítés",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Elrejtés",
+  "@whoAreYouPagePasswordHide": {},
+  "installationSlidesGamingBody": "A(z) {DISTRO} támogatja a legújabb NVIDIA és Mesa illesztőprogramokat a teljesítmény és a kompatibilitás javítása érdekében. A(z) {DISTRO} további beállítások nélkül is remekül futtatja a Windowsra írt játékok ezreit az olyan alkalmazásokon keresztül, mint például a Steam.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityTitle": "Személyes és biztonságos",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityLts": "Az összes {DISTRO} LTS kiadás öt évre szóló biztonsági javítást tartalmaz, ami Ubuntu Pro előfizetéssel tíz évre növelhető.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "Növelje a termelékenységét",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesProductivityBody": "A(z) {DISTRO} asztali változatában megtalálható a LibreOffice, a Microsoft Office-szal kompatibilis, nyílt forráskódú alkalmazáscsomag dokumentumokhoz, táblázatokhoz és prezentációkhoz. Népszerű együttműködési eszközök is rendelkezésre állnak.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "Hozzáférés mindenkinek",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesSupportResources": "Hasznos erőforrások:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "Hivatalos dokumentáció",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "Vállalati szintű 24/7 támogatás Ubuntu Pro előfizetéssel",
+  "@installationSlidesSupportUbuntuPro": {},
+  "notEnoughDiskSpaceUbuntu": "Nincs elegendő lemezterület a(z) {DISTRO} telepítéséhez",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "Elérhető:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "Szükséges:",
+  "@notEnoughDiskSpaceRequired": {},
+  "activeDirectoryPasswordLabel": "Jelszó",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryPasswordEmpty": "Kötelező",
+  "@activeDirectoryPasswordEmpty": {},
+  "turnOffBitlockerHeadline": "A BitLocker kikapcsolása a folytatáshoz",
+  "@turnOffBitlockerHeadline": {},
+  "restartIntoWindowsTitle": "Újraindítja a számítógépet Windows használatával?",
+  "@restartIntoWindowsTitle": {},
+  "installationSlidesWelcomeTitle": "Gyors, ingyenes és tele új funkciókkal",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "A(z) {DISTRO} legújabb verziója minden eddiginél könnyebbé teszi a számítástechnikát.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "Minden alkalmazás, amire szüksége van",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesDevelopmentTitle": "Fejlesszen a nyílt forráskód legjobbjaival",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesGamingTitle": "Nagyszerű a játékokhoz",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesSecurityBody": "A(z) {DISTRO} minden olyan eszközt biztosít, amelyre szüksége van ahhoz, hogy tiszteletben tartsák a magánéletét és biztonságban legyen az interneten. Beépített tűzfallal és VPN-támogatással, valamint az adatvédelemre összpontosító rengeteg alkalmazással érkezik annak biztosításához, hogy az adatai felett teljes ellenőrzést gyakorolhasson.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityLanguages": "Nyelvi támogatás",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "Súgó és támogatás",
+  "@installationSlidesSupportTitle": {},
+  "activeDirectoryTitle": "Active Directory beállítása",
+  "@activeDirectoryTitle": {},
+  "activeDirectoryTestConnection": "Tartomány összekapcsolhatóságának kipróbálása",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryDomainLabel": "Tartomány",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryDomainEmpty": "Kötelező",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryDomainEndDot": "Ponttal (.) végződik",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainStartHyphen": "Kötőjellel (-) kezdődik",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryDomainEndHyphen": "Kötőjellel (-) végződik",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryDomainMultipleDots": "Több egymás utáni pontot (..) tartalmaz",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryAdminEmpty": "Kötelező",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryAdminInvalidChars": "Érvénytelen karakterek",
+  "@activeDirectoryAdminInvalidChars": {},
+  "activeDirectoryErrorMessage": "Elnézést, az Active Directory jelenleg nem állítható be. Amint a rendszere elkészült és működik, látogasson el a <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> oldalra a segítségért.",
+  "@activeDirectoryErrorMessage": {},
+  "continueTesting": "Kipróbálás folytatása",
+  "@continueTesting": {},
+  "partitionFormatNone": "Formázatlanul hagyás",
+  "@partitionFormatNone": {},
+  "preparingUbuntu": "A(z) {DISTRO} előkészítése…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "Felismerés",
+  "@detectButtonText": {},
+  "keyboardVariant": "Billentyűzetváltozat:",
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "Eszközök",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Partíciók",
+  "@writeChangesPartitionsTitle": {},
+  "partitionLimitReached": "Korlát elérve",
+  "@partitionLimitReached": {},
+  "tooManyPrimaryPartitions": "Túl sok elsődleges partíció",
+  "@tooManyPrimaryPartitions": {},
+  "installationSlidesDevelopmentBody": "A(z) {DISTRO} ideális munkaállomás az alkalmazás- vagy webfejlesztéshez, az adattudományhoz és a mesterséges intelligenciához vagy gépi tanuláshoz, valamint a fejlesztésekhez és az adminisztrációhoz. Minden {DISTRO} kiadás a legújabb eszközláncokat tartalmazza, és támogatja az összes főbb integrált fejlesztőkörnyezetet.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Növelje a kreativitását",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesCreativityBody": "Ha Ön animátor, tervező, videókészítő vagy játékfejlesztő, akkor könnyedén áthozhatja a munkafolyamatait a nyílt forráskódú és az iparági szabványokat használó szoftverek és alkalmazások támogatásával rendelkező {DISTRO} rendszerbe.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "welcomePageTitle": "Üdvözli a(z) {DISTRO}!",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "allocateDiskSpaceInvalidMountPointSpace": "A csatolási pontok nem tartalmazhatnak szóközöket",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "A csatolási pontoknak „/” karakterrel kell kezdődniük",
+  "@allocateDiskSpaceInvalidMountPointSlash": {}
 }

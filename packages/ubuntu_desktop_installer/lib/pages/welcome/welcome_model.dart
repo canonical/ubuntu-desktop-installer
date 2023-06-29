@@ -1,77 +1,94 @@
-import 'dart:ui';
-
+import 'package:file/file.dart';
+import 'package:file/local.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
-import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart' show KeySearchX;
-
-import '../../l10n.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 /// @internal
 final log = Logger('welcome');
 
+final welcomeModelProvider = ChangeNotifierProvider(
+  (_) => WelcomeModel(network: getService<NetworkService>()),
+);
+
+/// The available options on the welcome page.
+enum Option {
+  /// No option is selected.
+  none,
+
+  /// The user wants to repair Ubuntu.
+  repairUbuntu,
+
+  /// The user wants to try Ubuntu.
+  tryUbuntu,
+
+  /// The user wants to install Ubuntu.
+  installUbuntu,
+}
+
 /// Implements the business logic of the welcome page.
-class WelcomeModel extends SafeChangeNotifier {
-  /// Creates a model with the specified [client].
-  WelcomeModel(this._client);
+class WelcomeModel extends SafeChangeNotifier with PropertyStreamNotifier {
+  /// Creates the model with the given client.
+  WelcomeModel({
+    required NetworkService network,
+  }) : _network = network {
+    addPropertyListener('Connectivity', notifyListeners);
+  }
 
-  final SubiquityClient _client;
+  final NetworkService _network;
 
-  /// The index of the currently selected language.
-  int get selectedLanguageIndex => _selectedLanguageIndex;
-  int _selectedLanguageIndex = 0;
-  set selectedLanguageIndex(int index) {
-    if (_selectedLanguageIndex == index) return;
-    _selectedLanguageIndex = index;
-    if (index >= 0 && index < _languageList.length) {
-      log.info('Selected ${_languageList[index].locale} as UI language');
+  Future<void> init() {
+    return _network
+        .connect()
+        .then((_) => setProperties(_network.propertiesChanged))
+        .then((_) => notifyListeners());
+  }
+
+  /// The currently selected option.
+  Option get option => _option;
+  Option _option = Option.none;
+
+  /// Selects the given [option].
+  void selectOption(Option option) {
+    if (_option == option) return;
+    _option = option;
+    log.info('Selected ${option.name} option');
+    notifyListeners();
+  }
+
+  /// Returns true if there is a network connection.
+  bool get isConnected => _network.isConnected;
+
+  /// Returns the URL of the release notes for the given [locale].
+  String releaseNotesURL(
+    Locale locale, {
+    @visibleForTesting FileSystem fs = const LocalFileSystem(),
+  }) {
+    final fileOnCdrom = fs.file('/cdrom/.disk/release_notes_url');
+    if (fileOnCdrom.existsSync()) {
+      try {
+        final url = fileOnCdrom
+            .readAsLinesSync()
+            .firstWhere((line) => line.trim().isNotEmpty);
+        return url.replaceAll(r'${LANG}', locale.languageCode);
+        // ignore: empty_catches
+      } catch (e) {}
     }
-    notifyListeners();
-  }
-
-  final _languageList = <LocalizedLanguage>[];
-
-  /// Loads available languages.
-  Future<void> loadLanguages() async {
-    assert(_languageList.isEmpty);
-    final languages = await loadLocalizedLanguages(supportedLocales);
-    _languageList.addAll(languages);
-    log.info('Loaded ${languages.length} languages');
-    notifyListeners();
-  }
-
-  /// Returns the locale for the given language [index].
-  Locale locale(int index) => _languageList[index].locale;
-
-  /// Applies the given [locale].
-  Future<void> applyLocale(Locale locale) {
-    log.info('Set $locale as system locale');
-    return _client
-        .setLocale('${locale.languageCode}_${locale.countryCode}.UTF-8');
-  }
-
-  /// Returns the number of languages.
-  int get languageCount => _languageList.length;
-
-  /// Returns the name of the language at the given [index].
-  String language(int index) => _languageList[index].name;
-
-  /// Searches for a language matching the given [query].
-  ///
-  /// See also:
-  /// * [KeySearchX.keySearch]
-  int searchLanguage(String query) {
-    return _languageList
-        .map((l) => l.name)
-        .toList()
-        .keySearch(query, selectedLanguageIndex + 1);
-  }
-
-  /// Selects the best match for the given [locale].
-  ///
-  /// See also:
-  /// * [LocalizedLanguageMatcher.findBestMatch]
-  void selectLocale(Locale locale) {
-    _selectedLanguageIndex = _languageList.findBestMatch(locale);
+    try {
+      final lines =
+          fs.file('/usr/share/distro-info/ubuntu.csv').readAsLinesSync();
+      final last = lines.lastWhere((line) => line.trim().isNotEmpty);
+      final codeName = last.split(',')[1].replaceAll(RegExp('\\s+'), '');
+      assert(codeName.isNotEmpty);
+      return 'https://wiki.ubuntu.com/$codeName/ReleaseNotes';
+      // ignore: avoid_catches_without_on_clauses
+    } catch (e) {
+      // Those are not actual release notes,
+      // but it's a better fallback than a non-existent wiki page.
+      return 'https://ubuntu.com/download/desktop';
+    }
   }
 }

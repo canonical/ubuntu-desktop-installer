@@ -1,137 +1,103 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
-import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/widgets.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../../l10n.dart';
-import '../../services.dart';
-import '../../settings.dart';
 import 'welcome_model.dart';
+import 'welcome_widgets.dart';
 
-class WelcomePage extends StatefulWidget {
-  const WelcomePage({
-    super.key,
-  });
+export 'welcome_model.dart' show Option;
 
-  static Widget create(BuildContext context) {
-    final client = getService<SubiquityClient>();
-    return ChangeNotifierProvider(
-      create: (_) => WelcomeModel(client),
-      child: const WelcomePage(),
-    );
+class WelcomePage extends ConsumerWidget {
+  const WelcomePage({super.key});
+
+  static Future<bool> load(BuildContext context, WidgetRef ref) {
+    return Future.wait([
+      ref.read(welcomeModelProvider).init(),
+      MascotAvatar.precacheAsset(context),
+    ]).then((_) => true);
   }
 
   @override
-  State<WelcomePage> createState() => _WelcomePageState();
-}
-
-class _WelcomePageState extends State<WelcomePage> {
-  final _languageListFocusNode = FocusNode();
-  final _languageListScrollController = AutoScrollController();
-
-  @override
-  void initState() {
-    super.initState();
-
-    final model = Provider.of<WelcomeModel>(context, listen: false);
-    model.loadLanguages().then((_) {
-      final settings = Settings.of(context, listen: false);
-      model.selectLocale(settings.locale);
-
-      _selectAndScrollToLanguage(
-          model.selectedLanguageIndex, AutoScrollPosition.middle);
-    });
-  }
-
-  @override
-  void dispose() {
-    _languageListFocusNode.dispose();
-    _languageListScrollController.dispose();
-    super.dispose();
-  }
-
-  void _selectAndScrollToLanguage(int index, [AutoScrollPosition? position]) {
-    if (index == -1) return;
-
-    final model = context.read<WelcomeModel>();
-    model.selectedLanguageIndex = index;
-
-    final settings = Settings.of(context, listen: false);
-    settings.applyLocale(model.locale(index));
-
-    _languageListFocusNode.requestFocus();
-    _languageListScrollController.scrollToIndex(index,
-        preferPosition: position, duration: const Duration(milliseconds: 1));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<WelcomeModel>(context);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(welcomeModelProvider);
     final lang = AppLocalizations.of(context);
-    final height = MediaQuery.of(context).size.height;
+    final flavor = ref.watch(flavorProvider);
+    final brightness = Theme.of(context).brightness;
+    final locale = Localizations.localeOf(context);
+
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(lang.welcome),
+        title: Text(lang.tryOrInstallPageTitle(flavor.name)),
       ),
-      header: Text(lang.welcomeHeader),
-      content: FractionallySizedBox(
-        child: Row(
-          children: [
-            Expanded(
-              child: KeySearch(
-                autofocus: true,
-                focusNode: _languageListFocusNode,
-                onSearch: (value) {
-                  _selectAndScrollToLanguage(model.searchLanguage(value));
-                },
-                child: YaruBorderContainer(
-                  clipBehavior: Clip.antiAlias,
-                  child: ListView.builder(
-                    controller: _languageListScrollController,
-                    itemCount: model.languageCount,
-                    itemBuilder: (context, index) {
-                      return AutoScrollTag(
-                        index: index,
-                        key: ValueKey(index),
-                        controller: _languageListScrollController,
-                        child: ListTile(
-                          title: Text(model.language(index)),
-                          selected: index == model.selectedLanguageIndex,
-                          onTap: () => _selectAndScrollToLanguage(index),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
+      content: Column(
+        children: [
+          const Spacer(),
+          SvgPicture.asset('assets/welcome/logo-${brightness.name}.svg'),
+          const Spacer(),
+          OptionButton(
+            value: Option.installUbuntu,
+            groupValue: model.option,
+            title: Text(lang.installUbuntu(flavor.name)),
+            subtitle: Text(lang.installUbuntuDescription(flavor.name)),
+            onChanged: (value) => model.selectOption(value!),
+          ),
+          const SizedBox(height: kWizardSpacing / 2),
+          OptionButton(
+            value: Option.tryUbuntu,
+            groupValue: model.option,
+            title: Text(lang.tryUbuntu(flavor.name)),
+            subtitle: Text(lang.tryUbuntuDescription(flavor.name)),
+            onChanged: (value) => model.selectOption(value!),
+          ),
+          // const SizedBox(height: kContentSpacing / 2),
+          // OptionButton(
+          //   value: Option.repairUbuntu,
+          //   groupValue: model.option,
+          //   title: Text(lang.repairInstallation),
+          //   subtitle: Text(lang.repairInstallationDescription),
+          //   onChanged: (value) => model.selectOption(value!),
+          // ),
+          const Spacer(flex: 3),
+          Visibility(
+            visible: model.isConnected,
+            maintainSize: true,
+            maintainAnimation: true,
+            maintainState: true,
+            child: Html(
+              shrinkWrap: true,
+              data: lang.releaseNotesLabel(model.releaseNotesURL(locale)),
+              style: {
+                'body': Style(margin: Margins.zero),
+                'a': Style(color: context.linkColor),
+              },
+              onLinkTap: (url, _, __) => launchUrl(url!),
             ),
-            const SizedBox(width: kContentSpacing),
-            Expanded(
-              child: SvgPicture.asset(
-                'assets/welcome/logo.svg',
-                height: height / 2,
-              ),
-            )
-          ],
-        ),
+          ),
+        ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          onNext: () {
-            final locale = model.locale(model.selectedLanguageIndex);
-            model.applyLocale(locale);
-            getService<TelemetryService>()
-                .addMetric('Language', locale.languageCode);
-          },
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardButton.previous(context),
+        trailing: [
+          WizardButton(
+            label: UbuntuLocalizations.of(context).nextLabel,
+            visible: model.option == Option.tryUbuntu,
+            execute: YaruWindow.of(context).close,
+          ),
+          WizardButton.next(
+            context,
+            visible: model.option != Option.tryUbuntu,
+            enabled: model.option != Option.none,
+            arguments: model.option,
+          ),
+        ],
+      ),
     );
   }
 }

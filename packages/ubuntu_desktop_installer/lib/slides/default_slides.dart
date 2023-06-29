@@ -1,517 +1,420 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ubuntu_desktop_installer/installer.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_desktop_installer/widgets.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 
-import '../l10n.dart';
-import 'slide_widgets.dart';
+import 'slide_layouts.dart';
 
-const _kHeaderWidth = 440.0;
-const _kIconSpacing = 8.0;
-const _kCardWidth = 360.0;
-const _kInsets = EdgeInsetsDirectional.fromSTEB(64, 48, 48, 24);
-const _kSmallSpacing = 8.0;
-const _kLargeSpacing = 16.0;
-const _kTextColor = Color(0xfff7f6f6);
-
-String _slideAsset(String name) => 'assets/installation_slides/$name.png';
-String _slideIcon(String name) => 'assets/installation_slides/icons/$name.png';
-String _slideScreenshot(String name) =>
-    'assets/installation_slides/screenshots/$name.png';
+String _slideAsset(String name) => 'assets/installation_slides/$name';
+String _slideIcon(String name) => _slideAsset('icons/$name');
+String _slideScreenshot(String name) => _slideAsset('screenshots/$name');
 
 /// The list of default installation slides.
-final defaultSlides = <Slide>[
-  _welcomeSlide,
-  _softwareSlide,
-  _musicSlide,
-  _photoSlide,
-  _webSlide,
-  _officeSlide,
-  _accessSlide,
-  _supportSlide,
+final defaultSlides = <WidgetBuilder>[
+  _buildWelcomeSlide,
+  _buildSoftwareSlide,
+  _buildDevelopmentSlide,
+  _buildCreativitySlide,
+  _buildGamingSlide,
+  _buildSecuritySlide,
+  _buildProductivitySlide,
+  _buildAccessibilitySlide,
+  // TODO: ubuntu pro slide in LTS releases
+  _buildSupportSlide,
 ];
 
-final _welcomeSlide = Slide(
-  title: (context) => Text(context.lang.welcomeSlideTitle(context.flavor.name)),
-  body: (context) {
-    return SlideLayout(
-      background: Image.asset(_slideAsset('welcome')),
-      content: _SlideLabel.large(
-        context.lang.welcomeSlideDescription(context.flavor.name),
-        width: _kHeaderWidth,
-      ),
-    );
-  },
-);
-
-final _softwareSlide = Slide(
-  title: (context) => Text(context.lang.softwareSlideTitle),
-  body: (context) {
-    return SlideLayout(
-      background: Image.asset(_slideAsset('background')),
-      content: SlideCard(
-        width: _kCardWidth,
-        child: _SlideLabel(
-          context.lang.softwareSlideDescription(context.flavor.name),
-        ),
-      ),
-      image: Image.asset(_slideScreenshot('software')),
-    );
-  },
-);
-
-final _musicSlide = Slide(
-  title: (context) => Text(context.lang.musicSlideTitle),
-  body: (context) {
-    return SlideLayout(
-      background: Image.asset(_slideAsset('background')),
-      content: _SlideColumn(
-        spacing: _kSmallSpacing,
-        children: [
-          SlideCard(
-            width: _kCardWidth,
-            child: _SlideLabel(
-              context.lang.musicSlideDescription(context.flavor.name),
-            ),
-          ),
-          SlideCard(
-            width: _kCardWidth,
-            child: _SlideColumn(
-              spacing: _kLargeSpacing,
-              children: <Widget>[
-                _SlideColumn(
-                  spacing: _kSmallSpacing,
-                  children: <Widget>[
-                    _SlideLabel(context.lang.includedSoftware),
-                    _SlideLabel.icon(
-                      icon: 'rhythmbox',
-                      text: context.lang.musicSlideRhythmbox,
-                    ),
-                  ],
-                ),
-                _SlideColumn(
-                  spacing: _kSmallSpacing,
-                  children: <Widget>[
-                    _SlideLabel(context.lang.availableSoftware),
-                    _SlideLabel.icon(
-                      icon: 'spotify',
-                      text: context.lang.musicSlideSpotify,
-                    ),
-                    _SlideLabel.icon(
-                      icon: 'vlc',
-                      text: context.lang.musicSlideVLC,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-      image: Image.asset(_slideScreenshot('music')),
-    );
-  },
-);
-
-final _photoSlide = Slide(
-  title: (context) => Text(context.lang.photoSlideTitle),
-  body: (context) {
-    return SlideLayout(
-      background: Image.asset(_slideAsset('background')),
-      content: _SlideColumn(
-        spacing: _kSmallSpacing,
-        children: [
-          SlideCard(
-            width: _kCardWidth,
-            child: _SlideLabel(context.lang.photoSlideDescription),
-          ),
-          SlideCard(
-            width: _kCardWidth,
-            child: _SlideColumn(
-              spacing: _kLargeSpacing,
-              children: <Widget>[
-                _SlideColumn(
-                  spacing: _kSmallSpacing,
-                  children: <Widget>[
-                    _SlideLabel(context.lang.includedSoftware),
-                    _SlideLabel.icon(
-                      icon: 'shotwell',
-                      text: context.lang.photoSlideShotwell,
-                    ),
-                  ],
-                ),
-                _SlideColumn(
-                  spacing: _kSmallSpacing,
-                  children: <Widget>[
-                    _SlideLabel(context.lang.supportedSoftware),
-                    _SlideLabel.icon(
-                      icon: 'gimp',
-                      text: context.lang.photoSlideGimp,
-                    ),
-                    _SlideLabel.icon(
-                      icon: 'shotcut',
-                      text: context.lang.photoSlideShotcut,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-      image: Image.asset(_slideScreenshot('photos')),
-    );
-  },
-);
-
-final _webSlide = Slide(
-  title: (context) => Text(context.lang.webSlideTitle),
-  body: (context) {
-    return SlideLayout(
-      background: Image.asset(_slideAsset('background')),
-      content: _SlideColumn(
-        spacing: _kSmallSpacing,
-        children: [
-          SlideCard(
-            width: _kCardWidth,
-            child: _SlideLabel(
-              context.lang.webSlideDescription(context.flavor.name),
-            ),
-          ),
-          SlideCard(
-            width: _kCardWidth,
-            child: _SlideColumn(
-              spacing: _kLargeSpacing,
-              children: <Widget>[
-                _SlideColumn(
-                  spacing: _kSmallSpacing,
-                  children: [
-                    _SlideLabel(context.lang.includedSoftware),
-                    _SlideLabel.icon(
-                      icon: 'firefox',
-                      text: context.lang.webSlideFirefox,
-                    ),
-                    _SlideLabel.icon(
-                      icon: 'thunderbird',
-                      text: context.lang.webSlideThunderbird,
-                    ),
-                  ],
-                ),
-                _SlideColumn(
-                  spacing: _kSmallSpacing,
-                  children: [
-                    _SlideLabel(context.lang.supportedSoftware),
-                    _SlideLabel.icon(
-                      icon: 'chromium',
-                      text: context.lang.webSlideChromium,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-      image: Image.asset(_slideScreenshot('web')),
-    );
-  },
-);
-
-final _officeSlide = Slide(
-  title: (context) => Text(context.lang.officeSlideTitle),
-  body: (context) {
-    return SlideLayout(
-      background: Image.asset(_slideAsset('background')),
-      content: _SlideColumn(
-        spacing: _kSmallSpacing,
-        children: [
-          SlideCard(
-            width: _kCardWidth,
-            child: _SlideLabel(context.lang.officeSlideDescription),
-          ),
-          SlideCard(
-            width: _kCardWidth,
-            child: _SlideColumn(
-              spacing: _kSmallSpacing,
-              children: <Widget>[
-                _SlideLabel(context.lang.includedSoftware),
-                _SlideLabel.icon(
-                  icon: 'libreoffice-writer',
-                  text: context.lang.officeSlideWriter,
-                ),
-                _SlideLabel.icon(
-                  icon: 'libreoffice-calc',
-                  text: context.lang.officeSlideCalc,
-                ),
-                _SlideLabel.icon(
-                  icon: 'libreoffice-impress',
-                  text: context.lang.officeSlideImpress,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-      image: Image.asset(_slideScreenshot('office')),
-    );
-  },
-);
-
-final _accessSlide = Slide(
-  title: (context) => Text(context.lang.accessSlideTitle),
-  body: (context) {
-    return SlideLayout(
-      background: Image.asset(_slideAsset('background')),
-      content: _SlideColumn(
-        spacing: _kSmallSpacing,
-        children: [
-          SlideCard(
-            width: _kCardWidth,
-            child: _SlideLabel(
-              context.lang.accessSlideDescription(context.flavor.name),
-            ),
-          ),
-          SlideCard(
-            width: _kCardWidth,
-            child: _SlideColumn(
-              spacing: _kSmallSpacing,
-              children: <Widget>[
-                _SlideLabel(context.lang.accessSlideCustomizationOptions),
-                _SlideLabel.icon(
-                  icon: 'themes',
-                  text: context.lang.accessSlideAppearance,
-                ),
-                _SlideLabel.icon(
-                  icon: 'access',
-                  text: context.lang.accessSlideAssistiveTechnologies,
-                ),
-                _SlideLabel.icon(
-                  icon: 'languages',
-                  text: context.lang.accessSlideLanguageSupport,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-      image: Image.asset(_slideScreenshot('settings')),
-    );
-  },
-);
-
-final _supportSlide = Slide(
-  title: (context) => Text(context.lang.supportSlideTitle),
-  body: (context) {
-    return SlideLayout(
-      background: Image.asset(_slideAsset('welcome')),
-      content: _SlideColumn(
-        spacing: _kLargeSpacing,
-        children: [
-          _SlideLabel.large(
-            context.lang.supportSlideDocumentation(context.flavor.name),
-            width: _kHeaderWidth,
-          ),
-          _SlideLabel.large(
-            context.lang.supportSlideQuestions,
-            width: _kHeaderWidth,
-          ),
-          _SlideLabel.large(
-            context.lang.supportSlideResources,
-            width: _kHeaderWidth,
-          ),
-        ],
-      ),
-    );
-  },
-);
-
-class _SlideColumn extends StatelessWidget {
-  const _SlideColumn({required this.children, required this.spacing});
-
-  final List<Widget> children;
-  final double? spacing;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: _withSpacing(children, spacing ?? 0),
-    );
-  }
-
-  static List<Widget> _withSpacing(List<Widget> children, double spacing) {
-    return children
-        .expand((item) sync* {
-          yield SizedBox(height: spacing);
-          yield item;
-        })
-        .skip(1)
-        .toList();
-  }
-}
-
-class _SlideLabel extends StatelessWidget {
-  // A text-only label.
-  _SlideLabel(
-    this.text, {
-    double? width,
-  })  : icon = null,
-        _fontSize = FontSize.medium,
-        _width = width;
-
-  // A rich text label with a large font suitable for headers.
-  _SlideLabel.large(
-    this.text, {
-    double? width,
-  })  : icon = null,
-        _fontSize = FontSize.xLarge,
-        _width = width;
-
-  // A plain text label prefixed with an icon.
-  _SlideLabel.icon({
-    required this.text,
-    this.icon,
-    double? width,
-  })  : _fontSize = FontSize.medium,
-        _width = width;
-
-  final String? icon;
-  final String text;
-  final FontSize? _fontSize;
-  final double? _width;
-
-  Widget _buildLabel(BuildContext context) {
-    if (icon == null) {
-      return Html(
-        data: text,
-        style: {
-          'body': Style(
-            color: _kTextColor,
-            fontSize: _fontSize,
-            fontWeight: FontWeight.w400,
-            lineHeight: LineHeight.normal,
-            margin: Margins.zero,
-          ),
-          'a': Style(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            textDecoration: TextDecoration.none,
-          ),
-        },
-        onLinkTap: (url, _, __, ___) {
-          if (url != null) {
-            launchUrl(url);
-          }
-        },
-      );
-    }
-
-    return Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
-      Image.asset(_slideIcon(icon!)),
-      const SizedBox(width: _kIconSpacing),
-      Text(
-        text,
-        style: const TextStyle(color: _kTextColor),
-      ),
-    ]);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final label = _buildLabel(context);
-    return _width == null ? label : SizedBox(width: _width, child: label);
-  }
-}
-
-// A rounded card with a 50% translucent background for labels and lists.
-class SlideCard extends StatelessWidget {
-  const SlideCard({
-    super.key,
-    this.width,
-    required this.child,
-  });
-
-  final double? width;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      padding: const EdgeInsets.all(16.0),
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(4)),
-        color: Theme.of(context).shadowColor.withAlpha(64),
-      ),
-      child: child,
-    );
-  }
-}
-
-// A common slide layout with background, content, and image. The background
-// fills the entire slide, and the alignment of the content and the image can
-// be specified.
-class SlideLayout extends StatelessWidget {
-  const SlideLayout({
-    super.key,
-    this.background,
-    this.content,
-    this.contentAlignment = AlignmentDirectional.topStart,
-    this.image,
-    this.imageAlignment = AlignmentDirectional.bottomEnd,
-    this.padding = _kInsets,
-  });
-
-  final Widget? background;
-  final Widget? content;
-  final AlignmentGeometry? contentAlignment;
-  final Widget? image;
-  final AlignmentGeometry? imageAlignment;
-  final EdgeInsetsGeometry? padding;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        if (background != null) background!,
-        if (content != null)
-          _buildLayout(
-            context,
-            alignment: contentAlignment ?? Alignment.center,
-            child: content!,
-          ),
-        if (image != null)
-          _buildLayout(
-            context,
-            alignment: imageAlignment ?? Alignment.center,
-            child: image!,
-          ),
+Widget _buildWelcomeSlide(BuildContext context) {
+  final lang = AppLocalizations.of(context);
+  final product = getService<ProductService>();
+  return IntroSlideLayout(
+    title: Text(lang.installationSlidesWelcomeTitle),
+    body: SlideColumn(
+      children: [
+        Consumer(builder: (context, ref, child) {
+          final flavor = ref.watch(flavorProvider);
+          return Text(lang.installationSlidesWelcomeHeader(flavor.name));
+        }),
+        Text(lang.installationSlidesWelcomeBody(product.getProductInfo())),
       ],
-    );
-  }
+    ),
+    image: MascotAvatar(
+      image: AssetImage(_slideAsset('mascot.png')),
+      size: const Size.square(300),
+    ),
+  );
+}
 
-  Positioned _buildLayout(
-    BuildContext context, {
-    required Widget child,
-    required AlignmentGeometry alignment,
-  }) {
-    final direction = Directionality.of(context);
-    final insets = padding?.resolve(direction) ?? EdgeInsets.zero;
-    return Positioned(
-      top: insets.top,
-      left: insets.left,
-      right: insets.right,
-      bottom: insets.bottom,
-      child: Align(
-        alignment: alignment.resolve(direction),
-        child: child,
-      ),
-    );
-  }
+Widget _buildSoftwareSlide(BuildContext context) {
+  final lang = AppLocalizations.of(context);
+  return CinematicSlideLayout(
+    title: Text(lang.installationSlidesSoftwareTitle),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesSoftwareBody(flavor.name));
+    }),
+    banner: Container(
+      alignment: Alignment.center,
+      color: const Color(0xff2c2c2c), // TODO: fix screenshot background
+      child: const _SlideScreenshot('store.png'),
+    ),
+    table: SlideTable(
+      rows: [
+        [
+          Text(lang.installationSlidesAvailable),
+          const SlideLabel(
+            icon: _SlideIcon('spotify.png'),
+            label: Text('Spotify'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('shotcut.png'),
+            label: Text('Shotcut'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('telegram.png'),
+            label: Text('Telegram'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('nextcloud.png'),
+            label: Text('Nextcloud'),
+          ),
+        ],
+      ],
+    ),
+  );
+}
+
+Widget _buildDevelopmentSlide(BuildContext context) {
+  final lang = AppLocalizations.of(context);
+  return PortraitSlideLayout(
+    title: Text(lang.installationSlidesDevelopmentTitle),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesDevelopmentBody(flavor.name));
+    }),
+    image: const _SlideScreenshot('vscode.png'),
+    table: SlideTable(
+      rows: [
+        [
+          Text(lang.installationSlidesAvailable),
+          const SlideLabel(
+            icon: _SlideIcon('vscode.png'),
+            label: Text('Visual Studio Code'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('intellij.png'),
+            label: Text('IDEA Ultimate'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('pycharm.png'),
+            label: Text('Pycharm'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('gitkraken.png'),
+            label: Text('GitKraken'),
+          ),
+        ],
+      ],
+    ),
+  );
+}
+
+Widget _buildCreativitySlide(BuildContext context) {
+  final lang = AppLocalizations.of(context);
+  return LandscapeSlideLayout(
+    title: Text(lang.installationSlidesCreativityTitle),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesCreativityBody(flavor.name));
+    }),
+    image: const _SlideScreenshot('blender.png'),
+    table: SlideTable(
+      rows: [
+        [
+          Text(lang.installationSlidesAvailable),
+          const SlideLabel(
+            icon: _SlideIcon('blender.png'),
+            label: Text('Blender'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('audacity.png'),
+            label: Text('Audacity'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('kdenlive.png'),
+            label: Text('Kdenlive'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('godot.png'),
+            label: Text('Godot'),
+          ),
+        ],
+      ],
+    ),
+  );
+}
+
+Widget _buildGamingSlide(BuildContext context) {
+  final lang = AppLocalizations.of(context);
+  return CinematicSlideLayout(
+    title: Text(lang.installationSlidesGamingTitle),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesGamingBody(flavor.name));
+    }),
+    banner: const _SlideScreenshot(
+      'steam.png',
+      alignment: Alignment.topLeft,
+      fit: BoxFit.cover,
+    ),
+    table: SlideTable(
+      rows: [
+        [
+          Text(lang.installationSlidesIncluded),
+          const SlideLabel(
+            icon: _SlideIcon('gamemode.png'),
+            label: Text('Feral GameMode'),
+          ),
+        ],
+        [
+          Text(lang.installationSlidesAvailable),
+          const SlideLabel(
+            icon: _SlideIcon('steam.png'),
+            label: Text('Steam'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('discord.png'),
+            label: Text('Discord'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('obs.png'),
+            label: Text('OBS Studio'),
+          ),
+        ],
+      ],
+    ),
+  );
+}
+
+Widget _buildSecuritySlide(BuildContext context) {
+  final lang = AppLocalizations.of(context);
+  return LandscapeSlideLayout(
+    title: Text(lang.installationSlidesSecurityTitle),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesSecurityBody(flavor.name));
+    }),
+    // TODO: show installationSlidesSecurityLts in LTS releases
+    image: const _SlideScreenshot('bitwarden.png'),
+    table: SlideTable(
+      rows: [
+        [
+          Text(lang.installationSlidesIncluded),
+          const SlideLabel(
+            icon: _SlideIcon('firefox.png'),
+            label: Text('Firefox'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('wireguard.png'),
+            label: Text('WireGuard'),
+          ),
+        ],
+        [
+          Text(lang.installationSlidesAvailable),
+          const SlideLabel(
+            icon: _SlideIcon('brave.png'),
+            label: Text('Brave'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('bitwarden.png'),
+            label: Text('Bitwarden'),
+          ),
+        ],
+      ],
+    ),
+  );
+}
+
+Widget _buildProductivitySlide(BuildContext context) {
+  final lang = AppLocalizations.of(context);
+  return CinematicSlideLayout(
+    title: Text(lang.installationSlidesProductivityTitle),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesProductivityBody(flavor.name));
+    }),
+    banner: const _SlideScreenshot(
+      'libreoffice.png',
+      alignment: Alignment.topLeft,
+      fit: BoxFit.cover,
+    ),
+    table: SlideTable(
+      rows: [
+        [
+          Text(lang.installationSlidesIncluded),
+          const SlideLabel(
+            icon: _SlideIcon('thunderbird.png'),
+            label: Text('Thunderbird'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('libreoffice.png'),
+            label: Text('LibreOffice'),
+          ),
+        ],
+        [
+          Text(lang.installationSlidesAvailable),
+          const SlideLabel(
+            icon: _SlideIcon('teams.png'),
+            label: Text('Microsoft Teams'),
+          ),
+          const SlideLabel(
+            icon: _SlideIcon('slack.png'),
+            label: Text('Slack'),
+          ),
+        ],
+      ],
+    ),
+  );
+}
+
+Widget _buildAccessibilitySlide(BuildContext context) {
+  final lang = AppLocalizations.of(context);
+  return PortraitSlideLayout(
+    title: Text(lang.installationSlidesAccessibilityTitle),
+    body: Consumer(builder: (context, ref, child) {
+      final flavor = ref.watch(flavorProvider);
+      return Text(lang.installationSlidesAccessibilityBody(flavor.name));
+    }),
+    image: const _SlideScreenshot('accessibility.png'),
+    table: SlideTable(
+      rows: [
+        [
+          Text(lang.installationSlidesIncluded),
+          const SlideLabel(
+            icon: _SlideIcon('writer.png'),
+            label: Text('LibreOffice Writer'),
+          ),
+          SlideLabel(
+            icon: const _SlideIcon('orca.png'),
+            label: Text(lang.installationSlidesAccessibilityOrca),
+          ),
+          SlideLabel(
+            icon: const _SlideIcon('languages.png'),
+            label: Text(lang.installationSlidesAccessibilityLanguages),
+          ),
+        ],
+      ],
+    ),
+  );
+}
+
+Widget _buildSupportSlide(BuildContext context) {
+  final lang = AppLocalizations.of(context);
+  return OutroSlideLayout(
+    title: Text(lang.installationSlidesSupportTitle),
+    body: SlideColumn(
+      children: [
+        Consumer(builder: (context, ref, child) {
+          final flavor = ref.watch(flavorProvider);
+          return Text(lang.installationSlidesSupportHeader(flavor.name));
+        }),
+        Text(lang.installationSlidesSupportCommunity),
+        Text(lang.installationSlidesSupportEnterprise),
+      ],
+    ),
+    image: SvgPicture.asset(_slideAsset('ask-ubuntu-${context.theme}.svg')),
+    list: SlideList(
+      children: [
+        _SlideLink(
+          text: lang.installationSlidesSupportDocumentation,
+          url: 'https://help.ubuntu.com',
+        ),
+        const _SlideLink(
+          text: 'Ask Ubuntu',
+          url: 'https://askubuntu.com',
+        ),
+        const _SlideLink(
+          text: 'Ubuntu Discourse',
+          url: 'https://discourse.ubuntu.com',
+        ),
+        _SlideLink(
+          text: lang.installationSlidesSupportUbuntuPro,
+          url: 'https://ubuntu.com/pro',
+        ),
+      ],
+    ),
+  );
 }
 
 extension _SlideContext on BuildContext {
-  FlavorData get flavor => Flavor.of(this);
-  AppLocalizations get lang => AppLocalizations.of(this);
+  String get theme => Theme.of(this).brightness.name;
+}
+
+class _SlideIcon extends StatelessWidget {
+  const _SlideIcon(this.name);
+
+  final String name;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context).brightness.name;
+    return Image.asset(
+      _slideIcon('$theme/$name'),
+      errorBuilder: (_, __, ___) => Image.asset(_slideIcon(name)),
+    );
+  }
+}
+
+class _SlideScreenshot extends StatelessWidget {
+  const _SlideScreenshot(
+    this.name, {
+    this.alignment = Alignment.center,
+    this.fit,
+  });
+
+  final String name;
+  final AlignmentGeometry alignment;
+  final BoxFit? fit;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context).brightness.name;
+    return Image.asset(
+      _slideScreenshot('$theme/$name'),
+      errorBuilder: (_, __, ___) => Image.asset(
+        _slideScreenshot(name),
+        alignment: alignment,
+        fit: fit,
+      ),
+      alignment: alignment,
+      fit: fit,
+    );
+  }
+}
+
+class _SlideLink extends StatelessWidget {
+  const _SlideLink({required this.text, required this.url});
+
+  final String text;
+  final String url;
+
+  @override
+  Widget build(BuildContext context) {
+    return Html(
+      data: '<a href="$url">$text</a>',
+      shrinkWrap: true,
+      style: {
+        'body': Style(margin: Margins.zero),
+        'a': Style(
+          color: Theme.of(context).colorScheme.onBackground,
+          textDecoration: TextDecoration.none,
+        ),
+      },
+      onAnchorTap: (url, _, __) => launchUrl(url!),
+    );
+  }
 }

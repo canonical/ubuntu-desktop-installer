@@ -44,7 +44,7 @@
   "@yesButtonText": {},
   "welcome": "Vítejte",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Vyzkoušet nebo nainstalovat",
+  "tryOrInstallPageTitle": "Vyzkoušet nebo nainstalovat {DISTRO}",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Opravit instalaci",
   "@repairInstallation": {},
@@ -57,11 +57,11 @@
       "url": {}
     }
   },
-  "turnOffRST": "Vypněte RST",
+  "turnOffRST": "RST je zapnuté",
   "@turnOffRST": {},
   "turnOffRSTDescription": "Na tomto počítači je zapnutá technologie Intel RST (Rapit Storage Technology). Aby bylo možné Ubuntu nainstalovat, je třeba ve Windows funkci RST vypnout.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "Návod jak to udělat si otevřete na jiném zařízení (třeba telefonu): <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -100,7 +100,7 @@
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "Do každé z kolonek pro klíč zabezpečení jste napsali něco jiného",
   "@secureBootSecurityKeysDontMatch": {},
-  "updatesOtherSoftwarePageTitle": "Aktualizace a ostatní software",
+  "updatesOtherSoftwarePageTitle": "Aplikace a aktualizace",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "Které aplikace chcete mít hned od začátku nainstalované?",
   "@updatesOtherSoftwarePageDescription": {},
@@ -118,7 +118,7 @@
   "@installThirdPartyTitle": {},
   "installThirdPartySubtitle": "Tento software je předmětem licenčních ujednání, obsažených v dokumentaci k němu. Některý je proprietární.",
   "@installThirdPartySubtitle": {},
-  "chooseSecurityKeyTitle": "Zvolte si šifrovací klíč",
+  "chooseSecurityKeyTitle": "Klíč zabezpečení",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHint": "Zvolte si šifrovací klíč",
   "@chooseSecurityKeyHint": {},
@@ -130,7 +130,7 @@
   "@installationTypeTitle": {},
   "chooseSecurityKeyMismatch": "Do každé z kolonek pro šifrovací klíč jste napsali něco jiného",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">VAROVÁNÍ</font>: Pokud tento šifrovací klíč zapomenete, ke svým datům už se nedostanete. Pokud vám to pomůže, šifrovací klíč si zapište na papír a ten si bezpečně uložte někam mimo počítač.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">VAROVÁNÍ:</font> Pokud tento šifrovací klíč zapomenete, ke svým datům už se nedostanete. Pokud vám to pomůže, šifrovací klíč si zapište na papír a ten si bezpečně uložte někam mimo počítač.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
@@ -194,7 +194,7 @@
   },
   "installationTypeAlongsideInfo": "Dokumenty, hudba a ostatní osobní soubory zůstanou zachovány. Pokaždé, když počítač spustíte z vypnutého stavu (tedy nikoli uspání), budete si moci zvolit který operační systém spustit.",
   "@installationTypeAlongsideInfo": {},
-  "installationTypeManual": "Něco jiného",
+  "installationTypeManual": "Ruční rozdělení na oddíly",
   "@installationTypeManual": {},
   "selectGuidedStorageDropdownLabel": "Vyberte jednotku:",
   "@selectGuidedStorageDropdownLabel": {},
@@ -202,9 +202,9 @@
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "Nainstalovat nyní",
   "@selectGuidedStorageInstallNow": {},
-  "allocateDiskSpace": "Přidělit prostor na disku",
+  "allocateDiskSpace": "Ruční rozdělení",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Zahájit instalaci",
+  "startInstallingButtonText": "Instalace",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Zařízení",
   "@diskHeadersDevice": {},
@@ -220,7 +220,7 @@
   "@diskHeadersSystem": {},
   "diskHeadersFormat": "Formátovat",
   "@diskHeadersFormat": {},
-  "freeDiskSpace": "volné místo",
+  "freeDiskSpace": "Volné místo",
   "@freeDiskSpace": {},
   "newPartitionTable": "Nová tabulka rozdělení na oddíly",
   "@newPartitionTable": {},
@@ -238,44 +238,12 @@
   "@whoAreYouPageRequirePassword": {},
   "whoAreYouPageAutoLogin": "Přihlásit se automaticky",
   "@whoAreYouPageAutoLogin": {},
-  "whoAreYouPageTitle": "Kdo jste?",
+  "whoAreYouPageTitle": "Nastavení vašeho účtu",
   "@whoAreYouPageTitle": {},
   "partitionMountPointLabel": "Přípojný bod:",
   "@partitionMountPointLabel": {},
   "partitionErase": "Naformátovat oddíl",
   "@partitionErase": {},
-  "partitionFormatZfsroot": "Kořenový souborový systém na ZFS",
-  "@partitionFormatZfsroot": {},
-  "partitionFormatReiserFS": "Souborový systém ReiserFS",
-  "@partitionFormatReiserFS": {},
-  "partitionFormatNtfs": "Souborový systém NTFS",
-  "@partitionFormatNtfs": {},
-  "partitionFormatVfat": "Souborový systém VFAT",
-  "@partitionFormatVfat": {},
-  "partitionFormatIso9660": "Souborový systém ISO 9660",
-  "@partitionFormatIso9660": {},
-  "partitionFormatSwap": "Odkládací oblast",
-  "@partitionFormatSwap": {},
-  "partitionFormatFat32": "Souborový systém FAT32",
-  "@partitionFormatFat32": {},
-  "partitionFormatFat16": "Souborový systém FAT16",
-  "@partitionFormatFat16": {},
-  "partitionFormatFat12": "Souborový systém FAT12",
-  "@partitionFormatFat12": {},
-  "partitionFormatFat": "Souborový systém FAT",
-  "@partitionFormatFat": {},
-  "partitionFormatXfs": "Žurnálovací souborový systém XFS",
-  "@partitionFormatXfs": {},
-  "partitionFormatJfs": "Žurnálovací souborový systém JFS",
-  "@partitionFormatJfs": {},
-  "partitionFormatBtrfs": "Žurnálovací souborový systém btrfs",
-  "@partitionFormatBtrfs": {},
-  "partitionFormatExt2": "Souborový systém Ext2",
-  "@partitionFormatExt2": {},
-  "partitionFormatExt3": "Žurnálovací souborový systém Ext3",
-  "@partitionFormatExt3": {},
-  "partitionFormatExt4": "Žurnálovací souborový systém Ext4",
-  "@partitionFormatExt4": {},
   "partitionFormatLabel": "Použito jako:",
   "@partitionFormatLabel": {},
   "partitionLocationEnd": "Konec tohoto prostoru",
@@ -320,7 +288,7 @@
       "format": {}
     }
   },
-  "readyToUse": "**{system}** je nainstalovaný a připravený k použití.",
+  "readyToUse": "**{system}** je nainstalované a připravené k použití",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -335,7 +303,7 @@
   "@chooseYourLookPageLightSetting": {},
   "chooseYourLookPageHeader": "Toto je možné později kdykoli změnit v nastavení vzhledu.",
   "@chooseYourLookPageHeader": {},
-  "chooseYourLookPageTitle": "Zvolte si vzhled pro své prostředí",
+  "chooseYourLookPageTitle": "Zvolte si motiv vzhledu",
   "@chooseYourLookPageTitle": {},
   "writeChangesPartitionEntryMounted": "oddíl č. {disk}{partition} jako {format}, použitý pro {mount}",
   "@writeChangesPartitionEntryMounted": {
@@ -357,7 +325,7 @@
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
   },
-  "writeChangesToDisk": "Zapsat změny na disk",
+  "writeChangesToDisk": "Připraveno k instalaci",
   "@writeChangesToDisk": {},
   "whoAreYouPagePasswordMismatch": "Do každé z kolonek pro heslo jste napsali něco jiného",
   "@whoAreYouPagePasswordMismatch": {},
@@ -387,13 +355,13 @@
       "path": {}
     }
   },
-  "turnOffBitlockerDescription": "Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné Ubuntu nainstalovat, je třeba Bitlocker vypnout.",
+  "turnOffBitlockerDescription": "Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné pokračovat, je třeba pomocí Windows udělat volné místo nebo zvolit '{option}'.",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerTitle": "Vypněte BitLocker",
+  "turnOffBitlockerTitle": "BitLocker je zapnutý",
   "@turnOffBitlockerTitle": {},
   "restartIntoWindows": "Restartovat do Windows",
   "@restartIntoWindows": {},
-  "turnOffBitlockerLinkInstructions": "Návod jak to udělat si otevřete na jiném zařízení (třeba telefonu): <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerLinkInstructions": "Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
@@ -449,7 +417,7 @@
       "DISTRO": {}
     }
   },
-  "connectToInternetPageTitle": "Připojit k Internetu",
+  "connectToInternetPageTitle": "Připojit k síti",
   "@connectToInternetPageTitle": {},
   "useWiredConnection": "Použít drátové připojení",
   "@useWiredConnection": {},
@@ -457,11 +425,11 @@
   "@noWiredConnection": {},
   "noWifiDevicesDetected": "Nevybrána žádná Wi-Fi zařízení",
   "@noWifiDevicesDetected": {},
-  "connectToInternetDescription": "Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se ethernetovým kabelem, nebo zvolte Wi-Fi síť",
+  "connectToInternetDescription": "Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se Ethernetovým kabelem, nebo zvolte Wi-Fi síť",
   "@connectToInternetDescription": {},
   "wiredDisabled": "Drátové připojení je vypnuto",
   "@wiredDisabled": {},
-  "wiredMustBeEnabled": "Aby na tomto počítači bylo možné použít rozhraní ethernet, je třeba zapnout drátové připojení",
+  "wiredMustBeEnabled": "Aby na tomto počítači bylo možné použít rozhraní Ethernet, je třeba zapnout drátové připojení",
   "@wiredMustBeEnabled": {},
   "enableWired": "Zapnout drátové",
   "@enableWired": {},
@@ -477,11 +445,11 @@
   "@wirelessNetworkingDisabled": {},
   "noInternet": "V tuto chvíli se nechci připojovat k Internetu",
   "@noInternet": {},
-  "newPartitionTableConfirmationTitle": "Vytvořit na tomto zařízení novou prázdnou tabulku oddílů?",
+  "newPartitionTableConfirmationTitle": "Nový prázdný oddíl",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na něm, budou všechny stávající oddíly na něm odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.",
+  "newPartitionTableConfirmationMessage": "Vytvoření nové tabulky oddílů na celém zařízení z něj odebere veškeré stávající oddíly. V případě potřeby lze v tomto kroku ještě tuto operaci vzít zpět (ovšem po zapsání změn už pak ne).",
   "@newPartitionTableConfirmationMessage": {},
-  "onBatteryWarning": "<font color=\"{color}\">Upozornění</font>: Počítač není připojen k napájení ze zásuvky.",
+  "onBatteryWarning": "<font color=\"{color}\">Upozornění:</font> Počítač není připojen k napájení ze zásuvky.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -490,7 +458,7 @@
   },
   "welcomeHeader": "Zvolte svůj jazyk:",
   "@welcomeHeader": {},
-  "whereAreYouPageTitle": "Kde se nacházíte?",
+  "whereAreYouPageTitle": "Vyberte své časové pásmo",
   "@whereAreYouPageTitle": {},
   "whereAreYouTimezoneLabel": "Časové pásmo",
   "@whereAreYouTimezoneLabel": {},
@@ -661,7 +629,7 @@
   "@installAlongsideSpaceDivider": {},
   "installAlongsideAvailable": "K dispozici:",
   "@installAlongsideAvailable": {},
-  "notEnoughDiskSpaceTitle": "Omlouváme se",
+  "notEnoughDiskSpaceTitle": "Nedostatek místa",
   "@notEnoughDiskSpaceTitle": {},
   "installationTypeLVMEncryptionSelected": "Vybráno LVM a šifrování",
   "@installationTypeLVMEncryptionSelected": {},
@@ -673,7 +641,7 @@
       "url": {}
     }
   },
-  "writeChangesPartitionResized": "velikost oddílu #{disk}{partition} změněna z {oldsize} na {newsize}",
+  "writeChangesPartitionResized": "velikost oddílu <b>{disk}{partition}</b> změněna z <b>{oldsize}</b> na <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -685,7 +653,7 @@
   },
   "installAlongsideResizePartition": "Změnit velikost oddílu",
   "@installAlongsideResizePartition": {},
-  "writeChangesPartitionCreated": "oddíl #{disk}{partition} vytvořen",
+  "writeChangesPartitionCreated": "oddíl <b>{disk}{partition}</b> vytvořen",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -693,7 +661,7 @@
       "partition": {}
     }
   },
-  "writeChangesPartitionMounted": "oddíl #{disk}{partition} použit pro {mount}",
+  "writeChangesPartitionMounted": "oddíl <b>{disk}{partition}</b> použit pro <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -741,7 +709,7 @@
   "@installAlongsidePartition": {},
   "installAlongsideSize": "Velikost:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionFormattedMounted": "oddíl #{disk}{partition} naformátován jako {format} použit pro {mount}",
+  "writeChangesPartitionFormattedMounted": "oddíl <b>{disk}{partition}</b> naformátovaný jako <b>{format}</b> použit pro <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -751,7 +719,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "oddíl #{disk}{partition} naformátován jako {format}",
+  "writeChangesPartitionFormatted": "oddíl <b>{disk}{partition}</b> naformátován jako <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -783,6 +751,235 @@
   "@continueTesting": {},
   "tooManyPrimaryPartitions": "Příliš mnoho primárních oddílů",
   "@tooManyPrimaryPartitions": {},
-  "partitionLimitReached": "dosaženo limitu",
-  "@partitionLimitReached": {}
+  "partitionLimitReached": "Dosaženo limitu",
+  "@partitionLimitReached": {},
+  "whoAreYouPagePasswordShow": "Zobrazit",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Skrýt",
+  "@whoAreYouPagePasswordHide": {},
+  "partitionFormatNone": "Ponechat nenaformátované",
+  "@partitionFormatNone": {},
+  "whoAreYouPageRealNameTooLong": "Jméno je příliš dlouhé.",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "Takový název počítače je příliš dlouhý.",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryOption": "Použít Active Directory",
+  "@activeDirectoryOption": {},
+  "activeDirectoryInfo": "V dalším kroku zadáte doménu a další podrobnosti.",
+  "@activeDirectoryInfo": {},
+  "activeDirectoryTitle": "Nastavit pro Active Directory",
+  "@activeDirectoryTitle": {},
+  "activeDirectoryTestConnection": "Vyzkoušet spojení s doménou",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryDomainLabel": "Doména",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryDomainEmpty": "Vyžadováno",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryDomainTooLong": "Příliš dlouhé",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryDomainInvalidChars": "Neplatné znaky",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryDomainStartDot": "Začíná na tečku (.)",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainEndDot": "Končí na tečku (.)",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainStartHyphen": "Začíná na spojovník/pomlčku (-)",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryDomainEndHyphen": "Končí na spojovník/pomlčku (-)",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryDomainMultipleDots": "Obsahuje několik teček za sebou (..)",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryDomainNotFound": "Doména nenalezena",
+  "@activeDirectoryDomainNotFound": {},
+  "activeDirectoryAdminLabel": "Uživatel s oprávněním pro přidání do domény",
+  "@activeDirectoryAdminLabel": {},
+  "activeDirectoryAdminEmpty": "Vyžadováno",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryAdminInvalidChars": "Neplatné znaky",
+  "@activeDirectoryAdminInvalidChars": {},
+  "activeDirectoryPasswordLabel": "Heslo",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryPasswordEmpty": "Vyžadováno",
+  "@activeDirectoryPasswordEmpty": {},
+  "activeDirectoryErrorMessage": "Je nám líto, v tuto chvíli se nedaří nastavit pro Active Directory. Po nastartování nového systému pak navštivte <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kde získáte další informace.",
+  "@activeDirectoryErrorMessage": {},
+  "activeDirectoryErrorTitle": "Chyba při nastavování pro Active Directory",
+  "@activeDirectoryErrorTitle": {},
+  "preparingUbuntu": "Připravuje se {DISTRO}…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "detectButtonText": "Zjistit",
+  "@detectButtonText": {},
+  "keyboardVariant": "Varianta klávesnice:",
+  "@keyboardVariant": {},
+  "writeChangesDevicesTitle": "Zařízení",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Oddíly",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesAvailable": "K dispozici:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesWelcomeBody": "Ať už jste vývojáři, tvůrci, hráči či správci, naleznete zde nové nástroje zvyšující vaši produktivitu a vylepšující váš dojem z používání {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSoftwareTitle": "Všechny aplikace které potřebujete",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "Instalujte, spravujte a aktualizujte vámi používané aplikace v Ubuntu Software, obsahujícího tisíce aplikací jak ze Snap Store, tak z archivu balíčků {DISTRO}.",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentTitle": "Vyvíjejte s nejlepším open source",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesGamingTitle": "Skvělé pro hraní her",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesSecurityTitle": "Soukromé a bezpečné",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityBody": "{DISTRO} poskytuje veškeré nástroje které jsou zapotřebí pro ochranu soukromí a bezpečné používání Internetu. Díky vestavěné bráně firewall, podpoře VPN a řadě aplikací zaměřených na ochranu soukromí máte svá data plně pod kontrolou.",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityLts": "Všechna {DISTRO} LTS vydání dostávají po dobu pěti let opravy zabezpečení s tím, že je možné prodloužit na deset let předplatným Ubuntu Pro.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityBody": "{DISTRO} Desktop obsahuje LibreOffice – sadu open source aplikaci, kompatibilní s Microsoft Office pro dokumenty, tabulky a prezentace. Jsou též k dispozici oblíbené nástroje pro spolupráci.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "Přístupnost pro každého",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesAccessibilityOrca": "Čtečka obrazovky Orca",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesAccessibilityLanguages": "Podpora jazyků",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportHeader": "Oficiální dokumentace k {DISTRO} je k dispozici jak online, tak přes ikonu Nápověda na panelu.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Web Ask Ubuntu pokrývá celou škálu otázek a odpovědí, dále na fóru Ubuntu Discourse jsou k dispozici návody a diskuze pro nové i pokročilé uživatele.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "Pro firemní uživatele Canonical poskytuje komerční podporu, díky které je snadné zavést a spravovat Ubuntu na pracovišti.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesSupportResources": "Užitečné zdroje:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "Oficiální dokumentace",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "Podpora 24/7 na podnikové úrovni s Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
+  "notEnoughDiskSpaceRequired": "Vyžadováno:",
+  "@notEnoughDiskSpaceRequired": {},
+  "welcomePageTitle": "Vítejte v {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesTitle": "Vítejte v {RELEASE}",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesIncluded": "Obsaženo:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "Rychlé, svobodné a plné nových funkcí",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "Nejnovější verze {DISTRO} usnadňuje používání počítače víc než kdy dříve.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityTitle": "Buďte tvořivější",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} je ideální prostředí pro vývoj aplikací či webů, datovou vědu a umělou inteligenci / strojové učení, stejně tak pro devops a správu systémů. Každé vydání {DISTRO} obsahuje nejnovější sady potřebných nástrojů a podporuje všechna hlavní integrovaná vývojářská prostředí.",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityBody": "Poku jste animátory, designéry, tvůrci videí či vývojáři her, je snadné přenést své pracovní postupy na {DISTRO} díky podpoře software a aplikací, které patří k open source a oborovým standardům.",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingBody": "{DISTRO} podporuje nejnovější ovladače od NVIDIA (to stejné ty z Mesa), což zlepšuje výkon a kompatibilitu. Tisíce her pro Windows skvěle fungují na {DISTRO} prostřednictvím aplikací jako je Steam, bez potřeby něco dále nastavovat.",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "Zvyšte svou produktivitu",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesAccessibilityBody": "V srdci filozofie {DISTRO} je myšlenka, že počítače jsou pro všechny. Díky pokročilým nástrojům pro zpřístupnění hendikepovaným a možnosti změnit jazyk, barvy a velikost textu rozhraní, {DISTRO} činí používání počítače snadné – ať už jste kdokoli a žijete kdekoli.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportTitle": "Nápověda a podpora",
+  "@installationSlidesSupportTitle": {},
+  "notEnoughDiskSpaceAvailable": "K dispozici:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceUbuntu": "Nedostatek místa na disku pro instalaci {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffRSTTitle": "Aby bylo možné pokračovat, vypněte RST",
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsTitle": "Restartovat do Windows?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Opravdu chcete váš počítač restartovat? Pokud poté budete chtít dokončit instalaci {DISTRO}, bude třeba znovu spustit instalaci {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "turnOffBitlockerHeadline": "Aby bylo možné pokračovat, vypněte BitLocker",
+  "@turnOffBitlockerHeadline": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "Je třeba, aby přípojné body začínaly na „/“ (dopředné lomítko)",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Přípojné body nemohou obsahovat mezery",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "partitionFormatKeep": "Ponechat naformátované jako {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  }
 }

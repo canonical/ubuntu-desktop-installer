@@ -9,28 +9,37 @@
       "RELEASE": {}
     }
   },
-  "cancelButtonText": "Cancel",
-  "@cancelButtonText": {},
   "changeButtonText": "Change",
   "@changeButtonText": {},
-  "okButtonText": "OK",
-  "@okButtonText": {},
-  "noButtonText": "No",
-  "@noButtonText": {},
   "restartButtonText": "Restart",
   "@restartButtonText": {},
   "revertButtonText": "Revert",
   "@revertButtonText": {},
-  "yesButtonText": "Yes",
-  "@yesButtonText": {},
-  "quitButtonText": "Quit Installation",
+  "quitButtonText": "Quit installation",
   "@quitButtonText": {},
-  "welcome": "Welcome",
-  "@welcome": {},
+  "welcomePageTitle": "Welcome to {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "preparingUbuntu": "Preparing {DISTRO}...",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
   "welcomeHeader": "Choose your language:",
   "@welcomeHeader": {},
-  "tryOrInstallPageTitle": "Try or install",
-  "@tryOrInstallPageTitle": {},
+  "tryOrInstallPageTitle": "Try or install {DISTRO}",
+  "@tryOrInstallPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
   "repairInstallation": "Repair installation",
   "@repairInstallation": {},
   "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",
@@ -70,11 +79,13 @@
       "url": {}
     }
   },
-  "turnOffRST": "Turn off RST",
+  "turnOffRST": "RST is enabled",
   "@turnOffRST": {},
+  "turnOffRSTTitle": "Turn off RST to continue",
+  "@turnOffRSTTitle": {},
   "turnOffRSTDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
   "@turnOffRSTDescription": {},
-  "instructionsForRST": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
+  "instructionsForRST": "For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -87,8 +98,12 @@
   "@chooseYourKeyboardLayout": {},
   "typeToTest": "Type here to test your keyboard",
   "@typeToTest": {},
-  "detectLayout": "Detect Keyboard Layout",
+  "detectLayout": "Detect keyboard layout",
   "@detectLayout": {},
+  "detectButtonText": "Detect",
+  "@detectButtonText": {},
+  "keyboardVariant": "Keyboard variant:",
+  "@keyboardVariant": {},
   "pressOneKey": "Please press one of the following keys:",
   "@pressOneKey": {},
   "isKeyPresent": "Is the following key present on your keyboard?",
@@ -113,9 +128,9 @@
   "@secureBootSecurityKeysDontMatch": {},
   "showSecurityKey": "Show security key",
   "@showSecurityKey": {},
-  "connectToInternetPageTitle": "Connect to internet",
+  "connectToInternetPageTitle": "Connect to a network",
   "@connectToInternetPageTitle": {},
-  "connectToInternetDescription": "Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network",
+  "connectToInternetDescription": "Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network",
   "@connectToInternetDescription": {},
   "useWiredConnection": "Use wired connection",
   "@useWiredConnection": {},
@@ -123,7 +138,7 @@
   "@noWiredConnection": {},
   "wiredDisabled": "Wired connection is turned off",
   "@wiredDisabled": {},
-  "wiredMustBeEnabled": "To use ethernet on this computer, a wired connection must be enabled",
+  "wiredMustBeEnabled": "To use Ethernet on this computer, a wired connection must be enabled",
   "@wiredMustBeEnabled": {},
   "enableWired": "Enable wired",
   "@enableWired": {},
@@ -147,7 +162,7 @@
   "@enableWifi": {},
   "connectButtonText": "Connect",
   "@connectButtonText": {},
-  "updatesOtherSoftwarePageTitle": "Updates and other software",
+  "updatesOtherSoftwarePageTitle": "Applications and updates",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "What apps would you like to install to start with?",
   "@updatesOtherSoftwarePageDescription": {},
@@ -173,7 +188,7 @@
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "This software is subject to license terms included with its documentation. Some are proprietary.",
   "@installCodecsSubtitle": {},
-  "onBatteryWarning": "<font color=\"{color}\">Warning</font>: The computer is not plugged in to a power source.",
+  "onBatteryWarning": "<font color=\"{color}\">Warning:</font> The computer is not plugged in to a power source.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -182,7 +197,7 @@
   },
   "offlineWarning": "You are currently offline",
   "@offlineWarning": {},
-  "chooseSecurityKeyTitle": "Choose a security key",
+  "chooseSecurityKeyTitle": "Security key",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHeader": "Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of {RELEASE} will not be encrypted.",
   "@chooseSecurityKeyHeader": {
@@ -199,14 +214,14 @@
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "The security keys do not match",
   "@chooseSecurityKeyMismatch": {},
-  "chooseSecurityKeyWarning": "<font color=\"{color}\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.",
+  "chooseSecurityKeyWarning": "<font color=\"{color}\">Warning:</font> If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
     "placeholders": {
       "color": {}
     }
   },
-  "installationTypeTitle": "Installation type",
+  "installationTypeTitle": "Type of installation",
   "@installationTypeTitle": {},
   "installationTypeOSDetected": "This computer currently has {os} on it. What would you like to do?",
   "@installationTypeOSDetected": {
@@ -241,7 +256,7 @@
       "color": {}
     }
   },
-  "installationTypeAdvancedLabel": "Advanced Features...",
+  "installationTypeAdvancedLabel": "Advanced features...",
   "@installationTypeAdvancedLabel": {},
   "installationTypeAdvancedTitle": "Advanced features",
   "@installationTypeAdvancedTitle": {},
@@ -321,7 +336,7 @@
   },
   "installationTypeAlongsideInfo": "Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.",
   "@installationTypeAlongsideInfo": {},
-  "installationTypeManual": "Something else",
+  "installationTypeManual": "Manual partitioning",
   "@installationTypeManual": {},
   "installationTypeManualInfo": "You can create or resize partitions yourself, or choose multiple partitions for {DISTRO}",
   "@installationTypeManualInfo": {
@@ -341,7 +356,7 @@
   "@selectGuidedStorageDropdownLabel": {},
   "selectGuidedStorageInfoLabel": "The entire disk will be used:",
   "@selectGuidedStorageInfoLabel": {},
-  "selectGuidedStorageInstallNow": "Install Now",
+  "selectGuidedStorageInstallNow": "Install now",
   "@selectGuidedStorageInstallNow": {},
   "installAlongsideSpaceDivider": "Allocate drive space by dragging the divider below:",
   "@installAlongsideSpaceDivider": {},
@@ -365,9 +380,13 @@
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "Available:",
   "@installAlongsideAvailable": {},
-  "allocateDiskSpace": "Allocate disk space",
+  "allocateDiskSpace": "Manual partitioning",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Start Installing",
+  "allocateDiskSpaceInvalidMountPointSlash": "Mount points must start with \"/\"",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Mount points cannot contain spaces",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "startInstallingButtonText": "Install",
   "@startInstallingButtonText": {},
   "diskHeadersDevice": "Device",
   "@diskHeadersDevice": {},
@@ -383,17 +402,17 @@
   "@diskHeadersSystem": {},
   "diskHeadersFormat": "Format",
   "@diskHeadersFormat": {},
-  "freeDiskSpace": "free space",
+  "freeDiskSpace": "Free space",
   "@freeDiskSpace": {},
   "newPartitionTable": "New partition table",
   "@newPartitionTable": {},
-  "newPartitionTableConfirmationTitle": "Create a new empty partition table on this device?",
+  "newPartitionTableConfirmationTitle": "New empty partition",
   "@newPartitionTableConfirmationTitle": {},
-  "newPartitionTableConfirmationMessage": "You have selected an entire device to partition. If you proceed with creating a new partition table on it, all its current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.",
+  "newPartitionTableConfirmationMessage": "Creating a new partition table on an entire device will remove all of its current partitions. This operation can be undone if needed.",
   "@newPartitionTableConfirmationMessage": {},
   "tooManyPrimaryPartitions": "Too many primary partitions",
   "@tooManyPrimaryPartitions": {},
-  "partitionLimitReached": "limit reached",
+  "partitionLimitReached": "Limit reached",
   "@partitionLimitReached": {},
   "bootLoaderDevice": "Device for boot loader installation",
   "@bootLoaderDevice": {},
@@ -425,45 +444,20 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Used as:",
   "@partitionFormatLabel": {},
-  "partitionFormatExt4": "Ext4 journaling file system",
-  "@partitionFormatExt4": {},
-  "partitionFormatExt3": "Ext3 journaling file system",
-  "@partitionFormatExt3": {},
-  "partitionFormatExt2": "Ext2 file system",
-  "@partitionFormatExt2": {},
-  "partitionFormatBtrfs": "btrfs journaling file system",
-  "@partitionFormatBtrfs": {},
-  "partitionFormatJfs": "JFS journaling file system",
-  "@partitionFormatJfs": {},
-  "partitionFormatXfs": "XFS journaling file system",
-  "@partitionFormatXfs": {},
-  "partitionFormatFat": "FAT file system",
-  "@partitionFormatFat": {},
-  "partitionFormatFat12": "FAT12 file system",
-  "@partitionFormatFat12": {},
-  "partitionFormatFat16": "FAT16 file system",
-  "@partitionFormatFat16": {},
-  "partitionFormatFat32": "FAT32 file system",
-  "@partitionFormatFat32": {},
-  "partitionFormatSwap": "Swap area",
-  "@partitionFormatSwap": {},
-  "partitionFormatIso9660": "ISO 9660 file system",
-  "@partitionFormatIso9660": {},
-  "partitionFormatVfat": "VFAT file system",
-  "@partitionFormatVfat": {},
-  "partitionFormatNtfs": "NTFS file system",
-  "@partitionFormatNtfs": {},
-  "partitionFormatReiserFS": "ReiserFS file system",
-  "@partitionFormatReiserFS": {},
-  "partitionFormatZfsroot": "ZFS root file system",
-  "@partitionFormatZfsroot": {},
   "partitionFormatNone": "Leave unformatted",
   "@partitionFormatNone": {},
+  "partitionFormatKeep": "Leave formatted as {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  },
   "partitionErase": "Format the partition",
   "@partitionErase": {},
   "partitionMountPointLabel": "Mount point:",
   "@partitionMountPointLabel": {},
-  "whoAreYouPageTitle": "Who are you?",
+  "whoAreYouPageTitle": "Set up your account",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageAutoLogin": "Log in automatically",
   "@whoAreYouPageAutoLogin": {},
@@ -473,12 +467,16 @@
   "@whoAreYouPageRealNameLabel": {},
   "whoAreYouPageRealNameRequired": "A name is required",
   "@whoAreYouPageRealNameRequired": {},
+  "whoAreYouPageRealNameTooLong": "That name is too long.",
+  "@whoAreYouPageRealNameTooLong": {},
   "whoAreYouPageComputerNameLabel": "Your computer's name",
   "@whoAreYouPageComputerNameLabel": {},
   "whoAreYouPageComputerNameInfo": "The name it uses when it talks to other computers.",
   "@whoAreYouPageComputerNameInfo": {},
   "whoAreYouPageComputerNameRequired": "A computer name is required",
   "@whoAreYouPageComputerNameRequired": {},
+  "whoAreYouPageComputerNameTooLong": "That computer name is too long.",
+  "@whoAreYouPageComputerNameTooLong": {},
   "whoAreYouPageInvalidComputerName": "The computer name is invalid",
   "@whoAreYouPageInvalidComputerName": {},
   "whoAreYouPageUsernameLabel": "Pick a username",
@@ -503,9 +501,11 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "whoAreYouPagePasswordMismatch": "The passwords do not match",
   "@whoAreYouPagePasswordMismatch": {},
-  "whoAreYouPageShowPassword": "Show password",
-  "@whoAreYouPageShowPassword": {},
-  "writeChangesToDisk": "Write changes to disk",
+  "whoAreYouPagePasswordShow": "Show",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "Hide",
+  "@whoAreYouPagePasswordHide": {},
+  "writeChangesToDisk": "Ready to install",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "disk",
   "@writeChangesFallbackSerial": {
@@ -513,6 +513,10 @@
   },
   "writeChangesDescription": "If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.",
   "@writeChangesDescription": {},
+  "writeChangesDevicesTitle": "Devices",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Partitions",
+  "@writeChangesPartitionsTitle": {},
   "writeChangesPartitionTablesHeader": "The partition tables of the following devices are changed:",
   "@writeChangesPartitionTablesHeader": {},
   "writeChangesPartitionTablesEntry": "{serial} ({path})",
@@ -525,7 +529,7 @@
   },
   "writeChangesPartitionsHeader": "The following partition changes are going to be applied:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionResized": "partition #{disk}{partition} resized from {oldsize} to {newsize}",
+  "writeChangesPartitionResized": "partition <b>{disk}{partition}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -535,7 +539,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partition #{disk}{partition} formatted as {format} used for {mount}",
+  "writeChangesPartitionFormattedMounted": "partition <b>{disk}{partition}</b> formatted as <b>{format}</b> used for <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -545,7 +549,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partition #{disk}{partition} formatted as {format}",
+  "writeChangesPartitionFormatted": "partition <b>{disk}{partition}</b> formatted as <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -554,7 +558,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partition #{disk}{partition} used for {mount}",
+  "writeChangesPartitionMounted": "partition <b>{disk}{partition}</b> used for <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -563,7 +567,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partition #{disk}{partition} created",
+  "writeChangesPartitionCreated": "partition <b>{disk}{partition}</b> created",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -571,7 +575,7 @@
       "partition": {}
     }
   },
-  "chooseYourLookPageTitle": "Choose your look",
+  "chooseYourLookPageTitle": "Choose your theme",
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "You can always change this later in the appearance settings.",
   "@chooseYourLookPageHeader": {},
@@ -581,7 +585,7 @@
   "@chooseYourLookPageLightSetting": {},
   "installationCompleteTitle": "Installation complete",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** is installed and ready to use.",
+  "readyToUse": "**{system}** is installed and ready to use",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -604,138 +608,165 @@
   },
   "shutdown": "Shut Down",
   "@shutdown": {},
-  "restartNow": "Restart Now",
+  "restartNow": "Restart now",
   "@restartNow": {},
-  "continueTesting": "Continue Testing",
+  "continueTesting": "Continue testing",
   "@continueTesting": {},
-  "turnOffBitlockerTitle": "Turn off BitLocker",
+  "turnOffBitlockerTitle": "BitLocker is enabled",
   "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "For instructions, open this page on a phone or other device: <a href=\"https://{url}\">{url}</a>",
+  "turnOffBitlockerHeadline": "Turn off BitLocker to continue",
+  "@turnOffBitlockerHeadline": {},
+  "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose '{option}' to continue.",
+  "@turnOffBitlockerDescription": {
+    "type": "text",
+    "placeholders": {
+      "option": {}
+    }
+  },
+  "turnOffBitlockerLinkInstructions": "For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "restartIntoWindows": "Restart Into Windows",
+  "restartIntoWindows": "Restart into Windows",
   "@restartIntoWindows": {},
-  "whereAreYouPageTitle": "Where are you?",
+  "restartIntoWindowsTitle": "Restart into Windows?",
+  "@restartIntoWindowsTitle": {},
+  "restartIntoWindowsDescription": "Are you sure you want to restart your computer? You will need to restart the {DISTRO} installation later to finish installing {DISTRO}.",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "whereAreYouPageTitle": "Select your timezone",
   "@whereAreYouPageTitle": {},
   "whereAreYouLocationLabel": "Location",
   "@whereAreYouLocationLabel": {},
   "whereAreYouTimezoneLabel": "Timezone",
   "@whereAreYouTimezoneLabel": {},
-  "welcomeSlideTitle": "Welcome to {RELEASE}",
-  "@welcomeSlideTitle": {
+  "installationSlidesTitle": "Welcome to {RELEASE}",
+  "@installationSlidesTitle": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "welcomeSlideDescription": "Fast and full of new features, the latest version of {RELEASE} makes computing easier than ever. Here are just a few cool new things to look out for...",
-  "@welcomeSlideDescription": {
+  "installationSlidesAvailable": "Available:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesIncluded": "Included:",
+  "@installationSlidesIncluded": {},
+  "installationSlidesWelcomeTitle": "Fast, free and full of new features",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesWelcomeHeader": "The latest version of {DISTRO} makes computing easier than ever.",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "Whether you're a developer, creator, gamer or administrator you'll find new tools to improve your productivity and enhance your experience in {RELEASE}.",
+  "@installationSlidesWelcomeBody": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "softwareSlideTitle": "Find even more software",
-  "@softwareSlideTitle": {},
-  "softwareSlideDescription": "Say goodbye to searching the web for new software. With access to the Snap Store and the {RELEASE} software archive, you can find and install new apps with ease. Just type in what you're looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.",
-  "@softwareSlideDescription": {
+  "installationSlidesSoftwareTitle": "All the applications you need",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesSoftwareBody": "Install, manage and update all your apps in Ubuntu Software, including thousands of applications from both the Snap Store and {DISTRO} archive.",
+  "@installationSlidesSoftwareBody": {
     "type": "text",
     "placeholders": {
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "musicSlideTitle": "Take your music with you",
-  "@musicSlideTitle": {},
-  "musicSlideDescription": "{RELEASE} comes with the amazing Rhythmbox music player. With advanced playback options, it's simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.",
-  "@musicSlideDescription": {
+  "installationSlidesDevelopmentTitle": "Develop with the best of open source",
+  "@installationSlidesDevelopmentTitle": {},
+  "installationSlidesDevelopmentBody": "{DISTRO} is the ideal workstation for app or web development, data science and AI/ML as well as devops and administration. Every {DISTRO} release includes the latest toolchains and supports all major IDEs.",
+  "@installationSlidesDevelopmentBody": {
     "type": "text",
     "placeholders": {
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "musicSlideRhythmbox": "Rhythmbox Music Player",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideTitle": "Have fun with your photos",
-  "@photoSlideTitle": {},
-  "photoSlideDescription": "Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it's easy to share them and keep them safe. And if you're feeling creative, you can find many other photo apps in Ubuntu Software.",
-  "@photoSlideDescription": {},
-  "photoSlideShotwell": "Shotwell Photo Manager",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "GIMP Image Editor",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Shotcut Video Editor",
-  "@photoSlideShotcut": {},
-  "webSlideTitle": "Make the most of the web",
-  "@webSlideTitle": {},
-  "webSlideDescription": "{RELEASE} includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.",
-  "@webSlideDescription": {
+  "installationSlidesCreativityTitle": "Enhance your creativity",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesCreativityBody": "If you're an animator, designer, video creator or game developer it's easy to bring your workflows to {DISTRO} with support for open source and industry standard software and applications.",
+  "@installationSlidesCreativityBody": {
     "type": "text",
     "placeholders": {
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "webSlideFirefox": "Firefox web browser",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Everything you need for the office",
-  "@officeSlideTitle": {},
-  "officeSlideDescription": "LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.",
-  "@officeSlideDescription": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideTitle": "Access for everyone",
-  "@accessSlideTitle": {},
-  "accessSlideDescription": "At the heart of the {RELEASE} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colors and text size, {RELEASE} makes computing easy — whoever and wherever you are.",
-  "@accessSlideDescription": {
+  "installationSlidesGamingTitle": "Great for gaming",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesGamingBody": "{DISTRO} supports the latest NVIDIA and Mesa drivers to improve performance and compatibility. Thousands of Windows titles play great on {DISTRO} via applications like Steam with no additional configuration.",
+  "@installationSlidesGamingBody": {
     "type": "text",
     "placeholders": {
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "accessSlideCustomizationOptions": "Customization options",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "Appearance",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Assistive technologies",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Language support",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Help and support",
-  "@supportSlideTitle": {},
-  "supportSlideDocumentation": "The official documentation covers many of the most common aspects of {RELEASE}. It's available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.",
-  "@supportSlideDocumentation": {
+  "installationSlidesSecurityTitle": "Private and secure",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSecurityBody": "{DISTRO} provides all of the tools you need to stay private and secure online. With built in firewall and VPN support and a host of privacy-centric applications to ensure you are in full control of your data.",
+  "@installationSlidesSecurityBody": {
     "type": "text",
     "placeholders": {
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "supportSlideQuestions": "At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.",
-  "@supportSlideQuestions": {},
-  "supportSlideResources": "For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.",
-  "@supportSlideResources": {},
-  "includedSoftware": "Included software",
-  "@includedSoftware": {},
-  "availableSoftware": "Available software",
-  "@availableSoftware": {},
-  "supportedSoftware": "Supported software",
-  "@supportedSoftware": {},
+  "installationSlidesSecurityLts": "All {DISTRO} LTS releases come with five years of security patching included, extending to ten years with an Ubuntu Pro subscription.",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityTitle": "Power up your productivity",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesProductivityBody": "{DISTRO} Desktop includes LibreOffice, a suite of Microsoft Office compatible open source applications for documents, spreadsheets and presentations. Popular collaboration tools are also available.",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityTitle": "Access for everyone",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesAccessibilityBody": "At the heart of the {DISTRO} philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colours and text size, {DISTRO} makes computing easy - whoever and wherever you are.",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityOrca": "Orca Screen Reader",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesAccessibilityLanguages": "Language support",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "Help & Support",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesSupportHeader": "The official {DISTRO} documentation is available both online and via the Help icon in the dock.",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.",
+  "@installationSlidesSupportEnterprise": {},
+  "installationSlidesSupportResources": "Helpful resources:",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportDocumentation": "Official documentation",
+  "@installationSlidesSupportDocumentation": {},
+  "installationSlidesSupportUbuntuPro": "Enterprise-grade 24/7 support with Ubuntu Pro",
+  "@installationSlidesSupportUbuntuPro": {},
   "copyingFiles": "Copying files…",
   "@copyingFiles": {},
   "installingSystem": "Installing the system…",
@@ -744,28 +775,59 @@
   "@configuringSystem": {},
   "installationFailed": "Installation failed",
   "@installationFailed": {},
-  "notEnoughDiskSpaceTitle": "Sorry",
+  "notEnoughDiskSpaceTitle": "Not enough space",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "You need at least {SIZE} disk space to install {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
+  "notEnoughDiskSpaceUbuntu": "Not enough disk space to install {DISTRO}",
+  "@notEnoughDiskSpaceUbuntu": {
     "type": "text",
     "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
+      "DISTRO": {}
     }
   },
-  "notEnoughDiskSpaceHasOnly": "This computer has only {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "The biggest disk on this computer is only {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  }
+  "notEnoughDiskSpaceAvailable": "Available:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "notEnoughDiskSpaceRequired": "Required:",
+  "@notEnoughDiskSpaceRequired": {},
+  "activeDirectoryOption": "Use Active Directory",
+  "@activeDirectoryOption": {},
+  "activeDirectoryInfo": "You'll enter domain and other details in the next step.",
+  "@activeDirectoryInfo": {},
+  "activeDirectoryTitle": "Configure Active Directory",
+  "@activeDirectoryTitle": {},
+  "activeDirectoryTestConnection": "Test domain connectivity",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryDomainLabel": "Domain",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryDomainEmpty": "Required",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryDomainTooLong": "Too long",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryDomainInvalidChars": "Invalid characters",
+  "@activeDirectoryDomainInvalidChars": {},
+  "activeDirectoryDomainStartDot": "Starts with a dot (.)",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainEndDot": "Ends with a dot (.)",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainStartHyphen": "Starts with a hyphen (-)",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryDomainEndHyphen": "Ends with a hyphen (-)",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryDomainMultipleDots": "Contains multiple sequenced dots (..)",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryDomainNotFound": "Domain not found",
+  "@activeDirectoryDomainNotFound": {},
+  "activeDirectoryAdminLabel": "Domain join user",
+  "@activeDirectoryAdminLabel": {},
+  "activeDirectoryAdminEmpty": "Required",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryAdminInvalidChars": "Invalid characters",
+  "@activeDirectoryAdminInvalidChars": {},
+  "activeDirectoryPasswordLabel": "Password",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryPasswordEmpty": "Required",
+  "@activeDirectoryPasswordEmpty": {},
+  "activeDirectoryErrorTitle": "Error configuring connection to Active Directory",
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "Sorry, Active Directory can't be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.",
+  "@activeDirectoryErrorMessage": {}
 }

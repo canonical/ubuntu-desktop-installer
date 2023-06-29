@@ -1,0 +1,19 @@
+name: PR
+
+on: [pull_request_target]
+
+jobs:
+  cla-check:
+    if: contains(fromJson('["weblate", "renovate[bot]"]'), github.event.pull_request.user.login) == false
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check if CLA signed
+        uses: canonical/has-signed-canonical-cla@v1
+
+  labeler:
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/labeler@v4

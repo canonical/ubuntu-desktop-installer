@@ -1,7 +1,9 @@
+import 'package:crypt/crypt.dart';
 import 'package:flutter/foundation.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter
@@ -85,7 +87,7 @@ class ProfileSetupModel extends SafeChangeNotifier {
 
   /// Loads the profile setup.
   Future<void> loadProfileSetup() async {
-    final identity = await _client.identity();
+    final identity = await _client.getIdentity();
     _realname.value = identity.realname.orIfEmpty(null);
     _username.value = identity.username.orIfEmpty(null);
   }
@@ -95,7 +97,7 @@ class ProfileSetupModel extends SafeChangeNotifier {
     final identity = IdentityData(
       realname: realname,
       username: username,
-      cryptedPassword: encryptPassword(password, salt: salt),
+      cryptedPassword: Crypt.sha512(password, salt: salt).toString(),
     );
     return _client.setIdentity(identity);
   }

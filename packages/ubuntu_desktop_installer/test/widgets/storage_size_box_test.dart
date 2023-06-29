@@ -6,9 +6,7 @@ import 'package:flutter_spinbox/flutter_spinbox.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/widgets/storage_size_box.dart';
-import 'package:ubuntu_wizard/utils.dart';
-
-// ignore_for_file: type=lint
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 void main() {
   testWidgets('enter size', (tester) async {
@@ -47,10 +45,10 @@ void main() {
       ),
     );
 
-    await tester.tap(find.byType(DropdownButton<DataUnit>));
+    await tester.tap(find.byType(MenuAnchor));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byKey(ValueKey(DataUnit.megabytes)).last);
+    await tester.tap(find.byKey(const ValueKey(DataUnit.megabytes)).last);
     await tester.pump();
 
     expect(unit, equals(DataUnit.megabytes));

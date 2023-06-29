@@ -1,14 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>ubuntu-flutter-community/renovate-config"
-  ],
-  "enabledManagers": [
-    "git-submodules",
-    "github-actions",
-    "pub"
-  ],
-  "git-submodules": {
-    "enabled": true
-  }
+    "github>ubuntu-flutter-community/renovate-config",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)"
+  ]
 }

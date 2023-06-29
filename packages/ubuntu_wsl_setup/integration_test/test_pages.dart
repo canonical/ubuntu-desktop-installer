@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/utils.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages.dart';
 import 'package:ubuntu_wsl_setup/splash_screen.dart';
 import 'package:ubuntu_wsl_setup/wizard.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import '../test/test_utils.dart';
 
@@ -39,7 +40,7 @@ Future<void> testSelectYourLanguagePage(
   expectPage(tester, SelectLanguagePage, (lang) => lang.selectLanguageTitle);
 
   if (language != null) {
-    final tile = find.widgetWithText(ListTile, language, skipOffstage: false);
+    final tile = find.listTile(language, skipOffstage: false);
     expect(tile, findsOneWidget);
     final viewRect = tester.getRect(find.byType(ListView));
     await tester.scrollUntilVisible(tile, viewRect.height / 2);
@@ -50,12 +51,12 @@ Future<void> testSelectYourLanguagePage(
   await tester.pumpAndSettle();
 
   // For now toggling this check box won't cause any noticeable behavior change in dry-run.
-  await tester.toggleCheckbox(
-    label: tester.lang.installLangPacksTitle(language ?? ''),
-    value: false,
+  await tester.toggleButton(
+    tester.lang.installLangPacksTitle(language ?? ''),
+    false,
   );
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testProfileSetupPage(
@@ -67,29 +68,39 @@ Future<void> testProfileSetupPage(
 }) async {
   expectPage(tester, ProfileSetupPage, (lang) => lang.profileSetupTitle);
 
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupRealnameLabel,
-    value: profile?.realname,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupUsernameHint,
-    value: profile?.username,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupPasswordHint,
-    value: password,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupConfirmPasswordHint,
-    value: confirmedPassword,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.profileSetupShowAdvancedOptions,
-    value: showAdvancedOptions,
-  );
+  if (profile?.realname != null) {
+    await tester.enterText(
+      find.textField(tester.lang.profileSetupRealnameLabel),
+      profile!.realname,
+    );
+  }
+  if (profile?.username != null) {
+    await tester.enterText(
+      find.textField(tester.lang.profileSetupUsernameHint),
+      profile!.username,
+    );
+  }
+  if (password != null) {
+    await tester.enterText(
+      find.textField(tester.lang.profileSetupPasswordHint),
+      password,
+    );
+  }
+  if (confirmedPassword != null) {
+    await tester.enterText(
+      find.textField(tester.lang.profileSetupConfirmPasswordHint),
+      confirmedPassword,
+    );
+  }
+  if (showAdvancedOptions != null) {
+    await tester.toggleButton(
+      tester.lang.profileSetupShowAdvancedOptions,
+      showAdvancedOptions,
+    );
+  }
   await tester.pumpAndSettle();
 
-  await tester.tapContinue();
+  await tester.tapNext();
 }
 
 Future<void> testAdvancedSetupPage(
@@ -98,38 +109,46 @@ Future<void> testAdvancedSetupPage(
 }) async {
   expectPage(tester, AdvancedSetupPage, (lang) => lang.advancedSetupTitle);
 
-  await tester.enterTextValue(
-    label: tester.lang.advancedSetupMountLocationHint,
-    value: config?.automountRoot,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.advancedSetupMountOptionHint,
-    value: config?.automountOptions,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.advancedSetupHostGenerationTitle,
-    value: config?.networkGeneratehosts,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.advancedSetupResolvConfGenerationTitle,
-    value: config?.networkGenerateresolvconf,
-  );
+  if (config?.automountRoot != null) {
+    await tester.enterText(
+      find.textField(tester.lang.advancedSetupMountLocationHint),
+      config!.automountRoot,
+    );
+  }
+  if (config?.automountOptions != null) {
+    await tester.enterText(
+      find.textField(tester.lang.advancedSetupMountOptionHint),
+      config!.automountOptions,
+    );
+  }
+  if (config?.networkGeneratehosts != null) {
+    await tester.toggleButton(
+      tester.lang.advancedSetupHostGenerationTitle,
+      config!.networkGeneratehosts,
+    );
+  }
+  if (config?.networkGenerateresolvconf != null) {
+    await tester.toggleButton(
+      tester.lang.advancedSetupResolvConfGenerationTitle,
+      config!.networkGenerateresolvconf,
+    );
+  }
   await tester.pumpAndSettle();
 
-  await tester.tapButton(label: tester.lang.setupButton, highlighted: true);
+  await tester.tapButton(tester.lang.setupButton);
 }
 
 Future<void> testApplyingChangesPage(
   WidgetTester tester, {
   bool expectClose = false,
 }) async {
-  final windowClosed = expectClose ? waitForWindowClosed() : null;
+  final windowClosed = expectClose ? YaruTestWindow.waitForClosed() : null;
 
   await tester.pumpUntil(find.byType(ApplyingChangesPage));
   expectPage(tester, ApplyingChangesPage, (lang) => lang.setupCompleteTitle);
 
   if (windowClosed != null) {
-    expect(await windowClosed, isTrue);
+    await expectLater(windowClosed, completes);
   }
 }
 
@@ -139,25 +158,33 @@ Future<void> testConfigurationUIPage(
 }) async {
   expectPage(tester, ConfigurationUIPage, (lang) => lang.configurationUITitle);
 
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIAutoMountSubtitle,
-    value: config?.automountEnabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIMountFstabSubtitle,
-    value: config?.automountMountfstab,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIInteroperabilitySubtitle,
-    value: config?.interopEnabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIInteropAppendWindowsPathSubtitle,
-    value: config?.interopAppendwindowspath,
-  );
+  if (config?.automountEnabled != null) {
+    await tester.toggleButton(
+      tester.lang.configurationUIAutoMountSubtitle,
+      config!.automountEnabled,
+    );
+  }
+  if (config?.automountMountfstab != null) {
+    await tester.toggleButton(
+      tester.lang.configurationUIMountFstabSubtitle,
+      config!.automountMountfstab,
+    );
+  }
+  if (config?.interopEnabled != null) {
+    await tester.toggleButton(
+      tester.lang.configurationUIInteroperabilitySubtitle,
+      config!.interopEnabled,
+    );
+  }
+  if (config?.interopAppendwindowspath != null) {
+    await tester.toggleButton(
+      tester.lang.configurationUIInteropAppendWindowsPathSubtitle,
+      config!.interopAppendwindowspath,
+    );
+  }
   await tester.pumpAndSettle();
 
-  await tester.tapButton(label: tester.lang.saveButton, highlighted: true);
+  await tester.tapButton(tester.lang.saveButton);
 }
 
 void expectPage(
@@ -166,6 +193,7 @@ void expectPage(
   String Function(AppLocalizations lang) title,
 ) {
   LangTester.type = page;
-  expect(find.byType(page), findsOneWidget);
-  expect(find.widgetWithText(AppBar, title(tester.lang)), findsWidgets);
+  // Prevent `Guarded function conflict` on tests.
+  expectSync(find.byType(page), findsOneWidget);
+  expectSync(find.widgetWithText(AppBar, title(tester.lang)), findsWidgets);
 }

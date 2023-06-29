@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinbox/flutter_spinbox.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/utils.dart';
-
-import '../l10n.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 /// Storage size entry with a spinbox and a data size unit dropdown.
 class StorageSizeBox extends StatelessWidget {
@@ -17,7 +16,7 @@ class StorageSizeBox extends StatelessWidget {
     required this.onSizeChanged,
     required this.onUnitSelected,
     this.autofocus = false,
-    this.spacing = kButtonBarSpacing,
+    this.spacing = kWizardBarSpacing,
   });
 
   /// The current value in bytes.
@@ -52,25 +51,36 @@ class StorageSizeBox extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Expanded(
-          child: SpinBox(
-            value: fromBytes(size, unit),
-            min: fromBytes(minimum, unit),
-            max: fromBytes(maximum, unit),
-            onChanged: (value) => onSizeChanged(toBytes(value, unit)),
-            autofocus: autofocus,
+          flex: 3,
+          child: SizedBox(
+            width: 240,
+            child: SpinBox(
+              value: fromBytes(size, unit),
+              min: fromBytes(minimum, unit),
+              max: fromBytes(maximum, unit),
+              onChanged: (value) => onSizeChanged(toBytes(value, unit)),
+              autofocus: autofocus,
+            ),
           ),
         ),
         SizedBox(width: spacing),
         IntrinsicWidth(
-          child: DropdownBuilder<DataUnit>(
+          child: MenuButtonBuilder<DataUnit>(
             values: DataUnit.values,
             selected: unit,
-            onSelected: (value) => onUnitSelected(value!),
+            onSelected: (value) => onUnitSelected(value),
             itemBuilder: (context, unit, _) {
               return Text(unit.l10n(context), key: ValueKey(unit));
             },
+            child: IndexedStack(
+              index: unit.index,
+              children: DataUnit.values
+                  .map((unit) => Text(unit.l10n(context)))
+                  .toList(),
+            ),
           ),
         ),
+        const Spacer(),
       ],
     );
   }

@@ -5,7 +5,7 @@ class AppLocalizationsSv extends AppLocalizations {
   AppLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get appTitle => 'Skrivbordsinstallatören för Ubuntu';
+  String get appTitle => 'Ubuntu skrivbordsinstallatören';
 
   @override
   String windowTitle(Object RELEASE) {
@@ -13,16 +13,7 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Avbryt';
-
-  @override
   String get changeButtonText => 'Ändra';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Nej';
 
   @override
   String get restartButtonText => 'Starta om';
@@ -31,19 +22,25 @@ class AppLocalizationsSv extends AppLocalizations {
   String get revertButtonText => 'Återställ';
 
   @override
-  String get yesButtonText => 'Ja';
-
-  @override
   String get quitButtonText => 'Avbryt installation';
 
   @override
-  String get welcome => 'Välkommen';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Välkommen till $DISTRO';
+  }
+
+  @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Förbereder $DISTRO...';
+  }
 
   @override
   String get welcomeHeader => 'Välj ditt språk:';
 
   @override
-  String get tryOrInstallPageTitle => 'Prova eller installera';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Prova eller installera $DISTRO';
+  }
 
   @override
   String get repairInstallation => 'Reparera installation';
@@ -77,14 +74,17 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Stäng av RST';
+  String get turnOffRST => 'RST är aktiverat';
+
+  @override
+  String get turnOffRSTTitle => 'Slå av RST för att fortsätta';
 
   @override
   String get turnOffRSTDescription => 'Den här datorn använder Intel RST (Rapid Storage Technology). Du måste stänga av RST i Windows innan du installerar Ubuntu.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'För instruktioner, öppna den här sidan på en telefon eller annan enhet: <a href=\"https://$url\">$url</a>';
+    return 'För instruktioner, scanna QR-koden på en annan enhet eller besök:<a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -98,6 +98,12 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get detectLayout => 'Upptäck tangentbordslayout';
+
+  @override
+  String get detectButtonText => 'Upptäck';
+
+  @override
+  String get keyboardVariant => 'Tangentbordsvariant:';
 
   @override
   String get pressOneKey => 'Vänligen tryck på en av följande tangenter:';
@@ -136,7 +142,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get showSecurityKey => 'Visa säkerhetsnyckel';
 
   @override
-  String get connectToInternetPageTitle => 'Anslut till internet';
+  String get connectToInternetPageTitle => 'Anslut till ett nätverk';
 
   @override
   String get connectToInternetDescription => 'Att ansluta den här datorn till internet hjälper Ubuntu att installera all extra programvara som behövs och hjälpa dig att välja din tidszon.\n\nAnslut med Ethernet-kabel eller välj ett Wi-Fi-nätverk';
@@ -187,7 +193,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get connectButtonText => 'Anslut';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Uppdateringar och annan programvara';
+  String get updatesOtherSoftwarePageTitle => 'Program och uppdateringar';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Vilka program skulle du vilja installera till att börja med?';
@@ -227,14 +233,14 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Varning</font>: Datorn är inte ansluten till en strömkälla.';
+    return '<font color=\"$color\">Varning:</font> Denna dator är inte ansluten till en strömkälla.';
   }
 
   @override
   String get offlineWarning => 'Du är för närvarande offline';
 
   @override
-  String get chooseSecurityKeyTitle => 'Välj en säkerhetsnyckel';
+  String get chooseSecurityKeyTitle => 'Säkerhetsnyckel';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -255,11 +261,11 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Varning</font>: Om du tappar den här säkerhetsnyckeln kommer all data att gå förlorad. Om du behöver, skriv ner din nyckel och förvara den på ett säkert ställe någon annanstans.';
+    return '<font color=\"$color\">Varning:</font> Om du tappar den här säkerhetsnyckeln kommer all data att gå förlorad. Om du behöver, skriv ner din nyckel och förvara den på ett säkert ställe någon annanstans.';
   }
 
   @override
-  String get installationTypeTitle => 'Installationstyp';
+  String get installationTypeTitle => 'Typ av installation';
 
   @override
   String installationTypeOSDetected(Object os) {
@@ -358,7 +364,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Dokument, musik och andra personliga filer kommer att sparas. Du kan välja vilket operativsystem du vill ha varje gång datorn startar.';
 
   @override
-  String get installationTypeManual => 'Något annat';
+  String get installationTypeManual => 'Manuell partitionering';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -406,10 +412,16 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installAlongsideAvailable => 'Tillgängligt:';
 
   @override
-  String get allocateDiskSpace => 'Tilldela diskutrymme';
+  String get allocateDiskSpace => 'Manuell partitionering';
 
   @override
-  String get startInstallingButtonText => 'Börja installera';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Monteringspunkter måste börja med \"/\"';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Monteringspunkter kan inte innehålla mellanslag';
+
+  @override
+  String get startInstallingButtonText => 'Installera';
 
   @override
   String get diskHeadersDevice => 'Enhet';
@@ -433,22 +445,22 @@ class AppLocalizationsSv extends AppLocalizations {
   String get diskHeadersFormat => 'Formatera';
 
   @override
-  String get freeDiskSpace => 'ledigt utrymme';
+  String get freeDiskSpace => 'Ledigt utrymme';
 
   @override
   String get newPartitionTable => 'Ny partitionstabell';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Skapa en ny tom partitionstabell på den här enheten?';
+  String get newPartitionTableConfirmationTitle => 'Skapa en ny tom partition';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Du har valt en hel enhet att partitionera. Om du fortsätter med att skapa en ny partitionstabell så kommer alla nuvarande partitioner att tas bort.\n\nObservera att du kommer att kunna ångra denna operation senare om du vill.';
+  String get newPartitionTableConfirmationMessage => 'Att skapa en ny partitionstabell på en hel enhet tar bort alla dess nuvarande partitioner. Denna operation kan ångras om det behövs.';
 
   @override
   String get tooManyPrimaryPartitions => 'För många primära partitioner';
 
   @override
-  String get partitionLimitReached => 'gränsen nådd';
+  String get partitionLimitReached => 'Gränsen nådd';
 
   @override
   String get bootLoaderDevice => 'Enhet för installation av starthanteraren';
@@ -496,55 +508,12 @@ class AppLocalizationsSv extends AppLocalizations {
   String get partitionFormatLabel => 'Används som:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journalfilsystem';
-
-  @override
-  String get partitionFormatExt3 => 'Ext3 journalfilsystem';
-
-  @override
-  String get partitionFormatExt2 => 'Ext2 filsystem';
-
-  @override
-  String get partitionFormatBtrfs => 'btrfs journalfilsystem';
-
-  @override
-  String get partitionFormatJfs => 'JFS journalfilsystem';
-
-  @override
-  String get partitionFormatXfs => 'XFS journalfilsystem';
-
-  @override
-  String get partitionFormatFat => 'FAT filsystem';
-
-  @override
-  String get partitionFormatFat12 => 'FAT12 filsystem';
-
-  @override
-  String get partitionFormatFat16 => 'FAT16 filsystem';
-
-  @override
-  String get partitionFormatFat32 => 'FAT32 filsystem';
-
-  @override
-  String get partitionFormatSwap => 'Swap område';
-
-  @override
-  String get partitionFormatIso9660 => 'ISO 9960 filsystem';
-
-  @override
-  String get partitionFormatVfat => 'VFAT filsystem';
-
-  @override
-  String get partitionFormatNtfs => 'NTFS filsystem';
-
-  @override
-  String get partitionFormatReiserFS => 'ReiserFS filsystem';
-
-  @override
-  String get partitionFormatZfsroot => 'ZFS rotfilsystem';
-
-  @override
   String get partitionFormatNone => 'Lämna oformaterad';
+
+  @override
+  String partitionFormatKeep(Object format) {
+    return 'Lämna formaterat som $format';
+  }
 
   @override
   String get partitionErase => 'Formatera partitionen';
@@ -553,7 +522,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get partitionMountPointLabel => 'Monteringspunkt:';
 
   @override
-  String get whoAreYouPageTitle => 'Vem är du?';
+  String get whoAreYouPageTitle => 'Ställ in ditt konto';
 
   @override
   String get whoAreYouPageAutoLogin => 'Logga in automatiskt';
@@ -568,6 +537,9 @@ class AppLocalizationsSv extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Ett namn krävs';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'Det namnet är för långt.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Din dators namn';
 
   @override
@@ -575,6 +547,9 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Ett datornamn krävs';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'Det datornamnet är för långt.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Datornamnet är ogiltigt';
@@ -613,16 +588,25 @@ class AppLocalizationsSv extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Lösenorden stämmer inte överens';
 
   @override
-  String get whoAreYouPageShowPassword => 'Visa lösenord';
+  String get whoAreYouPagePasswordShow => 'Visa';
 
   @override
-  String get writeChangesToDisk => 'Skriv ändringar till disk';
+  String get whoAreYouPagePasswordHide => 'Dölj';
+
+  @override
+  String get writeChangesToDisk => 'Redo att installera';
 
   @override
   String get writeChangesFallbackSerial => 'disk';
 
   @override
   String get writeChangesDescription => 'Om du fortsätter kommer ändringarna nedan att skrivas till diskarna. Du kommer att kunna göra ytterligare ändringar manuellt.';
+
+  @override
+  String get writeChangesDevicesTitle => 'Enheter';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitioner';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Följande enheters partitionstabeller är ändrade:';
@@ -637,31 +621,31 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk$partition storleksändrad från $oldsize till $newsize';
+    return 'partition <b>$disk$partition</b> storleksändrad från <b>$oldsize</b> till <b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk$partition formaterad som $format används för $mount';
+    return 'partition <b>$disk$partition</b> formaterad som <b>$format</b> används för <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk$partition formaterad som $format';
+    return 'partition <b>$disk$partition</b> formaterad som <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk$partition används för $mount';
+    return 'partition <b>$disk$partition</b> används för <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk$partition skapad';
+    return 'partition <b>$disk$partition</b> skapad';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Välj ditt utseende';
+  String get chooseYourLookPageTitle => 'Välj ditt tema';
 
   @override
   String get chooseYourLookPageHeader => 'Du kan alltid ändra detta senare i utseendeinställningarna.';
@@ -677,7 +661,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** är installerat och redo att användas.';
+    return '**$system** är installerat och redo att användas';
   }
 
   @override
@@ -700,21 +684,34 @@ class AppLocalizationsSv extends AppLocalizations {
   String get continueTesting => 'Fortsätt att testa';
 
   @override
-  String get turnOffBitlockerTitle => 'Slå av BitLocker';
+  String get turnOffBitlockerTitle => 'Bitlocker är aktiverat';
 
   @override
-  String get turnOffBitlockerDescription => 'Den här datorn använder Windows BitLocker-kryptering.\nDu måste stänga av BitLocker i Windows innan du installerar Ubuntu.';
+  String get turnOffBitlockerHeadline => 'Slå av Bitlocker för att fortsätta';
+
+  @override
+  String turnOffBitlockerDescription(Object option) {
+    return 'Den här datorn använder Windows BitLocker-kryptering.\nDu behöver använda Windows för att skapa fritt utrymme eller välja \'$option\' för att fortsätta.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'För instruktioner, öppna den här sidan på en telefon eller annan enhet: <a href=\"https://$url\">$url</a>';
+    return 'För instruktioner, scanna QR-koden på en annan enhet eller besök: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Starta om till Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Var är du?';
+  String get restartIntoWindowsTitle => 'Starta om till Windows?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Är du säker på att du vill starta om din dator? Du kommer att behöva starta om $DISTRO senare för att slutföra installationen av $DISTRO.';
+  }
+
+  @override
+  String get whereAreYouPageTitle => 'Välj din tidszon';
 
   @override
   String get whereAreYouLocationLabel => 'Plats';
@@ -723,129 +720,118 @@ class AppLocalizationsSv extends AppLocalizations {
   String get whereAreYouTimezoneLabel => 'Tidszon';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
+  String installationSlidesTitle(Object RELEASE) {
     return 'Välkommen till $RELEASE';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return 'Snabb och full av nya funktioner, den senaste versionen av $RELEASE gör datoranvändning enklare än någonsin. Här är bara några coola nya saker att hålla utkik efter...';
+  String get installationSlidesAvailable => 'Tillgängligt:';
+
+  @override
+  String get installationSlidesIncluded => 'Inkluderat:';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'Snabb, gratis och full av nya funktioner';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return 'Den senaste versionen av $DISTRO gör datoranvändning enklare än någonsin.';
   }
 
   @override
-  String get softwareSlideTitle => 'Hitta ännu mer programvara';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return 'Säg adjö till att söka på nätet efter ny programvara. Med åtkomst till Snap butiken och $RELEASE programvaru arkiv, så kan du kan enkelt hitta och installera nya program. Bara skriv in det du letar efter, eller utforska kategorier som Grafik och Fotografi, Spel och Produktivitet, tillsammans med användbara recensioner från andra användare.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'Oavsett om du är en utvecklare, skapare, spelare eller administratör hittar du nya verktyg för att förbättra din produktivitet och förbättra din upplevelse i $RELEASE.';
   }
 
   @override
-  String get musicSlideTitle => 'Ta din musik med dig';
+  String get installationSlidesSoftwareTitle => 'Alla program du behöver';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE kommer med den fantastiska musikspelaren Rhythmbox. Med avancerade uppspelningsalternativ är det enkelt att ställa de perfekta låtarna i kö. Och det fungerar utmärkt med CD-skivor och bärbara musikspelare, så att du kan njuta av all din musik var du än går.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'Installera, hantera och uppdatera alla dina program med Ubuntu Software, inklusive tusentals program från både Snap Store och $DISTRO-arkivet.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Musikspelare';
+  String get installationSlidesDevelopmentTitle => 'Utveckla med det bästa av öppen källkod';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => 'Ha kul med dina bilder';
-
-  @override
-  String get photoSlideDescription => 'Shotwell är en praktisk fotohanterare som är redo för dina prylar. Anslut en kamera eller en telefon för att överföra dina foton, så är det enkelt att dela dem och förvara dem säkra. Och om du känner dig kreativ kan du hitta många andra fotoappar i Ubuntu Software.';
-
-  @override
-  String get photoSlideShotwell => 'Shotwell fotohanterare';
-
-  @override
-  String get photoSlideGimp => 'GIMP bildredigerare';
-
-  @override
-  String get photoSlideShotcut => 'Shotcut videoedigerare';
-
-  @override
-  String get webSlideTitle => 'Få ut det mesta av webben';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE inkluderar Firefox, webbläsaren som används av miljontals människor runt om i världen. Och webbapplikationer som du använder ofta (som Facebook eller Gmail, till exempel) kan fästas på skrivbordet för snabbare åtkomst, precis som program på din dator.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO är den idealiska arbetsstationen för app eller webbutveckling, datavetenskap och AI/ML samt devops och administration. Varje $DISTRO-version innehåller de senaste verktygskedjorna och stöder alla större IDE:er.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox webbläsare';
+  String get installationSlidesCreativityTitle => 'Förbättra din kreativitet';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
-
-  @override
-  String get webSlideChromium => 'Chromium';
-
-  @override
-  String get officeSlideTitle => 'Allt du behöver för kontoret';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice är en libre kontorssvit fullpackad med allt du behöver för att skapa dokument, kalkylblad och presentationer. Den är kompatibel med Microsoft Office-filformat och ger dig alla funktioner du behöver';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => 'Åtkomst för alla';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return 'Hjärtat i $RELEASE-filosofin är tron att datoranvändning är till för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färger och textstorlek, gör $RELEASE datoranvändning enkel — vem du än är och var du än är.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'Om du är en animatör, designer, videoskapare eller spelutvecklare är det enkelt att ta med dina arbetsflöden till $DISTRO med stöd för industristandard programvara och applikationer med öppen källkod.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Anpassnings alternativ';
+  String get installationSlidesGamingTitle => 'Perfekt för spel';
 
   @override
-  String get accessSlideAppearance => 'Utseende';
-
-  @override
-  String get accessSlideAssistiveTechnologies => 'Hjälpmedel';
-
-  @override
-  String get accessSlideLanguageSupport => 'Språk stöd';
-
-  @override
-  String get supportSlideTitle => 'Hjälp och support';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return 'Den officiella dokumentationen täcker många av de vanligaste aspekter om $RELEASE. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO stödjer dom senaste NVIDIA och Mesa drivrutinerna för att förbättra prestanda och kompatibilitet. Tusen av Windows titlar fungerar bra att spela på $DISTRO via program som Steam utan ytterligare konfiguration.';
   }
 
   @override
-  String get supportSlideQuestions => 'På <a href=\"https://askubuntu.com\">Fråga Ubuntu</a> kan du ställa frågor och söka i en imponerande samling av redan besvarade frågor. Support på ditt eget språk kan tillhandahållas av ditt <a href=\"https://loco.ubuntu.com/teams\">lokala gruppteam</a>.';
+  String get installationSlidesSecurityTitle => 'Privat och säker';
 
   @override
-  String get supportSlideResources => 'För tips på andra användbara resurser, besök <a href=\"https://www.ubuntu.com/support/community-support\">Community-support</a> eller <a href=\"https://www.ubuntu. .com/support\">Kommersiell support</a>.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO ger dig alla verktyg du behöver för att hålla dig privat och säker online. Med inbyggd brandvägg och VPN-stöd och en mängd sekretesscentrerade program för att säkerställa att du har full kontroll över din data.';
+  }
 
   @override
-  String get includedSoftware => 'Inkluderad programvara';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'Alla $DISTRO LTS-släpp kommer med fem års av säkerhetskorrigering ingår, samt sträcker sig till tio år med ett Ubuntu Pro-abonnemang.';
+  }
 
   @override
-  String get availableSoftware => 'Tillgänglig programvara';
+  String get installationSlidesProductivityTitle => 'Öka din produktivitet';
 
   @override
-  String get supportedSoftware => 'Programvara som stöds';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO Skrivbord inkluderar Libreoffice, en svit av Microsoft Office kompatibla öppen källkods program för dokument, kalkylblad och presentationer. Populära samarbetsverktyg finns också tillgängliga.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'Tillgång för alla';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return 'I hjärtat av $DISTRO filosofin är tron att datoranvändning är för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färger och textstorlek gör $DISTRO datoranvändning enkel - vem och var du än är.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Orca skärmläsare';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'Språk stöd';
+
+  @override
+  String get installationSlidesSupportTitle => 'Hjälp & Support';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'Den officiella $DISTRO dokumentation är tillgänglig både online och via Hjälp ikonen i dockan.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Ask Ubuntu täcker en rad frågor och svar och Ubuntu Discourse ger guider och diskussioner för nya och erfarna användare.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'För företagsanvändare tillhandahåller Canonical kommersiell support för att göra det enkelt att installera och hantera Ubuntu säkert på arbetsplatsen.';
+
+  @override
+  String get installationSlidesSupportResources => 'Hjälpsamma resurser:';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'Officiell dokumentation';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'Support i företagsklass 24/7 med Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Kopierar filer…';
@@ -860,20 +846,79 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationFailed => 'Installationen misslyckades';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Förlåt';
+  String get notEnoughDiskSpaceTitle => 'Inte tillräckligt med utrymme';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'Du behöver minst $SIZE diskutrymme för att installera $RELEASE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Inte tillräckligt med diskutrymme för att installera $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Den här datorn har bara $SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'Tillgängligt:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'Den största disken på den här datorn är bara $SIZE.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Krävs:';
+
+  @override
+  String get activeDirectoryOption => 'Använd Active Directory';
+
+  @override
+  String get activeDirectoryInfo => 'Du anger domän och andra detaljer i nästa steg.';
+
+  @override
+  String get activeDirectoryTitle => 'Konfigurera Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Testa domänanslutning';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domän';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Krävs';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'För lång';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Ogiltiga tecken';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Börjar med en punkt (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Slutar med en punkt (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Börjar med ett bindestreck (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Slutar med ett bindestreck (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Innehåller flera sekvenserade punkter (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domän hittades inte';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Domän gå med användare';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Krävs';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Ogiltiga tecken';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Lösenord';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Krävs';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Fel vid konfiguration av anslutning till Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Tyvärr, Active Directory kan inte ställas in just nu. när ditt system är igång, besök <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> för hjälp.';
 }

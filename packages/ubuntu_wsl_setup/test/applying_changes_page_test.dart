@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages.dart';
 import 'package:ubuntu_wsl_setup/pages/applying_changes/applying_changes_model.dart';
+import 'package:yaru/yaru.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'applying_changes_page_test.mocks.dart';
 import 'test_utils.dart';
 
-// ignore_for_file: type=lint
-
 @GenerateMocks([ApplyingChangesModel])
 void main() {
+  setUpAll(YaruTestWindow.ensureInitialized);
+
   const theEnd = 'The end';
   LangTester.type = ApplyingChangesModel;
 
   Widget buildPage(ApplyingChangesModel model) {
     return ChangeNotifierProvider<ApplyingChangesModel>.value(
       value: model,
-      child: ApplyingChangesPage(),
+      child: const ApplyingChangesPage(),
     );
   }
 
@@ -35,6 +36,7 @@ void main() {
   }) {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
+      theme: yaruLight,
       home: Wizard(
         routes: {
           '/': WizardRoute(
@@ -43,8 +45,8 @@ void main() {
           ),
           if (hasNext)
             '/end': WizardRoute(
-              builder: (_) => Center(
-                child: const Text(theEnd),
+              builder: (_) => const Center(
+                child: Text(theEnd),
               ),
               onNext: (settings) => '/end',
             ),
@@ -58,23 +60,15 @@ void main() {
     when(model.init())
         .thenAnswer((_) async => Future.delayed(const Duration(seconds: 2)));
 
-    var windowClosed = false;
-    final methodChannel = MethodChannel('yaru_window');
-    methodChannel.setMockMethodCallHandler((call) async {
-      expect(call.method, equals('close'));
-      windowClosed = true;
-    });
+    final windowClosed = YaruTestWindow.waitForClosed();
 
     await tester.pumpWidget(buildApp(
       builder: (_) => buildPage(model),
       hasNext: false,
     ));
 
-    expect(windowClosed, isFalse);
-    await tester.pump(const Duration(seconds: 1));
-    expect(windowClosed, isFalse);
-    await tester.pump(const Duration(seconds: 1));
-    expect(windowClosed, isTrue);
+    await tester.pump(const Duration(seconds: 2));
+    await expectLater(windowClosed, completes);
   });
 
   testWidgets('won\'t go next while still installing', (tester) async {

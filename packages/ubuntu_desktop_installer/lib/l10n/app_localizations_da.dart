@@ -5,426 +5,438 @@ class AppLocalizationsDa extends AppLocalizations {
   AppLocalizationsDa([String locale = 'da']) : super(locale);
 
   @override
-  String get appTitle => 'Ubuntu Desktop Installer';
+  String get appTitle => 'Ubuntu Skrivebordsinstallatør';
 
   @override
   String windowTitle(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Installation $RELEASE';
   }
 
   @override
-  String get cancelButtonText => 'Cancel';
+  String get changeButtonText => 'Skift';
 
   @override
-  String get changeButtonText => 'Change';
+  String get restartButtonText => 'Genstart';
 
   @override
-  String get okButtonText => 'OK';
+  String get revertButtonText => 'Tilbagefør';
 
   @override
-  String get noButtonText => 'No';
+  String get quitButtonText => 'Forlad installation';
 
   @override
-  String get restartButtonText => 'Restart';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Velkommen til $DISTRO';
+  }
 
   @override
-  String get revertButtonText => 'Revert';
+  String preparingUbuntu(Object DISTRO) {
+    return 'Forbereder $DISTRO...';
+  }
 
   @override
-  String get yesButtonText => 'Yes';
+  String get welcomeHeader => 'Vælg dit sprog:';
 
   @override
-  String get quitButtonText => 'Quit Installation';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Prøv eller installér $DISTRO';
+  }
 
   @override
-  String get welcome => 'Welcome';
+  String get repairInstallation => 'Reparér installation';
 
   @override
-  String get welcomeHeader => 'Choose your language:';
-
-  @override
-  String get tryOrInstallPageTitle => 'Try or install';
-
-  @override
-  String get repairInstallation => 'Repair installation';
-
-  @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get repairInstallationDescription => 'Reparation vil geninstallere al installeret programvare, uden at røre dokumenter eller indstillinger.';
 
   @override
   String tryUbuntu(Object RELEASE) {
-    return 'Try $RELEASE';
+    return 'Prøv $RELEASE';
   }
 
   @override
   String tryUbuntuDescription(Object RELEASE) {
-    return 'You can try $RELEASE without making any changes to your computer.';
+    return 'Du kan prøve $RELEASE, uden at foretage nogen ændringer, på din computer.';
   }
 
   @override
   String installUbuntu(Object RELEASE) {
-    return 'Install $RELEASE';
+    return 'Installér $RELEASE';
   }
 
   @override
   String installUbuntuDescription(Object RELEASE) {
-    return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
+    return 'Installér $RELEASE, ved siden af (eller i stedet for) dit nuværende operativsystem. Dette burde ikke tage lang tid.';
   }
 
   @override
   String releaseNotesLabel(Object url) {
-    return 'You may wish to read the <a href=\"$url\">release notes</a>.';
+    return 'Du kunne nok ønske at læse <a href=\"$url\">udgivelsesnoter</a>.';
   }
 
   @override
-  String get turnOffRST => 'Turn off RST';
+  String get turnOffRST => 'RST er aktiveret';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get turnOffRSTTitle => 'Slå RST fra, for at fortsætte';
+
+  @override
+  String get turnOffRSTDescription => 'Denne computer bruger Intel RST (Rapid Storage Technology). Før installation af Ubuntu, skal du slå RST fra i Windows.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'For instruktioner, skan QR-koden på en anden enhed, eller besøg: <a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Keyboard layout';
+  String get keyboardLayoutPageTitle => 'Tastaturopsætning';
 
   @override
-  String get chooseYourKeyboardLayout => 'Choose your keyboard layout:';
+  String get chooseYourKeyboardLayout => 'Vælg din tastaturopsætning:';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get typeToTest => 'Tast her, for at afprøve dit tastatur';
 
   @override
-  String get detectLayout => 'Detect Keyboard Layout';
+  String get detectLayout => 'Opfang tastaturopsætning';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get detectButtonText => 'Opfang';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get keyboardVariant => 'Tastaturvariant:';
 
   @override
-  String get configureSecureBootTitle => 'Configure Secure Boot';
+  String get pressOneKey => 'Tryk venligst på en af følgende taster:';
 
   @override
-  String get configureSecureBootDescription => 'You\'ve chosen to install third-party driver software. This requires turning off Secure Boot.\nTo do this, you need to choose a security key now, and enter it when the system restarts.';
+  String get isKeyPresent => 'Er følgende tast tilstede på dit tastatur?';
 
   @override
-  String get configureSecureBootOption => 'Configure Secure Boot';
+  String get configureSecureBootTitle => 'Konfigurér Sikret Start';
 
   @override
-  String get chooseSecurityKey => 'Choose a security key';
+  String get configureSecureBootDescription => 'Du har valgt at installere tredjeparts driver-programvare. Dette kræver at man slår Sikret Start fra.\nFor at gøre dette, skal du nu vælge en sikkerhedsnøgle og indtaste den, når systemet genstarter.';
 
   @override
-  String get confirmSecurityKey => 'Confirm the security key';
+  String get configureSecureBootOption => 'Konfigurér Sikret Start';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Don\'t install the driver software for now';
+  String get chooseSecurityKey => 'Vælg sikkerhedsnøgle';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'You can install it later from Software & Updates.';
+  String get confirmSecurityKey => 'Bekræft sikkerhedsnøglen';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Security key is required';
+  String get dontInstallDriverSoftwareNow => 'Installér ikke driver-programvaren lige nu';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Security keys do not match';
+  String get dontInstallDriverSoftwareNowDescription => 'Du kan installere det senere fra Programvare & Opdateringer.';
 
   @override
-  String get showSecurityKey => 'Show security key';
+  String get configureSecureBootSecurityKeyRequired => 'Sikkerhedsnøgle er påkrævet';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to internet';
+  String get secureBootSecurityKeysDontMatch => 'Sikkerhedsnøgler stemmer ikke overens';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by ethernet cable, or choose a Wi-Fi network';
+  String get showSecurityKey => 'Vis sikkerhedsnøgle';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get connectToInternetPageTitle => 'Opret forbindelse til et netværk';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get connectToInternetDescription => 'Tilslutning af denne computer til internettet, vil hjælpe Ubuntu, med at installere enhver ekstra nødvendig programvare og vælge din tidszone.\n\nOpret forbindelse via Ethernet-kabel, eller vælg et WiFi-netværk';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get useWiredConnection => 'Brug kablet forbindelse';
 
   @override
-  String get wiredMustBeEnabled => 'To use ethernet on this computer, a wired connection must be enabled';
+  String get noWiredConnection => 'Ingen kablet forbindelse opfanget';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get wiredDisabled => 'Kablet forbindelse er slået fra';
 
   @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
+  String get wiredMustBeEnabled => 'En kablet forbindelse skal være aktiveret, for at bruge Ethernet på denne computer';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get enableWired => 'Aktivér kablet';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get selectWifiNetwork => 'Opret forbindelse til et WiFi-netværk';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get hiddenWifiNetwork => 'Opret forbindelse til et skjult WiFi-netværk';
 
   @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
+  String get hiddenWifiNetworkNameLabel => 'Netværksnavn';
 
   @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
+  String get hiddenWifiNetworkNameRequired => 'Et netværksnavn er påkrævet';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get noInternet => 'Jeg vil ikke oprette forbindelse til internettet lige nu';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get wirelessNetworkingDisabled => 'Trådløst netværk deaktiveret';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get noWifiDevicesDetected => 'Ingen WiFi-enheder opfanget';
 
   @override
-  String get connectButtonText => 'Connect';
+  String get wifiMustBeEnabled => 'For at bruge WiFi på denne computer skal trådløst netværk være aktiveret';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Updates and other software';
+  String get enableWifi => 'Aktivér WiFi';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'What apps would you like to install to start with?';
+  String get connectButtonText => 'Opret forbindelse';
+
+  @override
+  String get updatesOtherSoftwarePageTitle => 'Applikationer og opdateringer';
+
+  @override
+  String get updatesOtherSoftwarePageDescription => 'Hvilke apps vil du installere, til at starte med?';
 
   @override
   String get normalInstallationTitle => 'Normal installation';
 
   @override
-  String get normalInstallationSubtitle => 'Web browser, utilities, office software, games and media players.';
+  String get normalInstallationSubtitle => 'Netlæsere, værktøjer, kontorpakker, spil og medieafspillere.';
 
   @override
   String get minimalInstallationTitle => 'Minimal installation';
 
   @override
-  String get minimalInstallationSubtitle => 'Web browser and basic utilities.';
+  String get minimalInstallationSubtitle => 'Netlæsere og basale værktøjer.';
 
   @override
-  String get otherOptions => 'Other options';
+  String get otherOptions => 'Andre muligheder';
 
   @override
-  String get installThirdPartyTitle => 'Install third-party software for graphics and Wi-Fi hardware, as well as additional media formats';
+  String get installThirdPartyTitle => 'Installér tredjeparts programvare til grafik og Wi-Fi maskinel, så vel som yderligere medieformater';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle => 'Denne programvare er underlagt de licensvilkår, som er inkluderet i dens dokumentation. Nogle er proprietære.';
 
   @override
-  String get installDriversTitle => 'Install third-party software for graphics and Wi-Fi hardware';
+  String get installDriversTitle => 'Installér tredjeparts programvare til grafik og Wi-Fi maskinel';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle => 'Disse chauffører er underlagt de licensvilkår, som er inkluderet i deres dokumentation. De er proprietære.';
 
   @override
-  String get installCodecsTitle => 'Download and install support for additional media formats';
+  String get installCodecsTitle => 'Hent og installér understøttelse af yderligere medieformater';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle => 'Denne programvare er underlagt licensbetingelserne, som er inkluderet i dens dokumentation. Nogle er proprietære.';
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: The computer is not plugged in to a power source.';
+    return '<font color=\"$color\">Advarsel:</font> Computeren er ikke sluttet til en strømkilde.';
   }
 
   @override
-  String get offlineWarning => 'You are currently offline';
+  String get offlineWarning => 'Du er aktuelt offline';
 
   @override
-  String get chooseSecurityKeyTitle => 'Choose a security key';
+  String get chooseSecurityKeyTitle => 'Sikkerhedsnøgle';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
-    return 'Disk encryption protects your files in case you lose your computer. It requires you to enter a security key each time the computer starts up.\n\nAny files outside of $RELEASE will not be encrypted.';
+    return 'Diskkryptering beskytter dine filer, i tilfælde af at du mister din computer. Det kræver at du indtaster en sikkerhedsnøgle, hver gang computeren starter op.\n\nEnhver fil uden for $RELEASE vil ikke blive krypteret.';
   }
 
   @override
-  String get chooseSecurityKeyHint => 'Choose a security key';
+  String get chooseSecurityKeyHint => 'Vælg en sikkerhedsnøgle';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Confirm the security key';
+  String get chooseSecurityKeyConfirmHint => 'Bekræft sikkerhedsnøglen';
 
   @override
-  String get chooseSecurityKeyRequired => 'A security key is required';
+  String get chooseSecurityKeyRequired => 'En sikkerhedsnøgle er påkrævet';
 
   @override
-  String get chooseSecurityKeyMismatch => 'The security keys do not match';
+  String get chooseSecurityKeyMismatch => 'Sikkerhedsnøglerne stemmer ikke overens';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">Warning</font>: If you lose this security key, all data will be lost. If you need to, write down your key and keep it in a safe place elsewhere.';
+    return '<font color=\"$color\">Advarsel:</font> Hvis du mister denne sikkerhedsnøgle, vil alle data gå tabt. Hvis du har verug for det, så skriv din nøgle ned og opbevare den et andet sikkert sted.';
   }
 
   @override
-  String get installationTypeTitle => 'Installation type';
+  String get installationTypeTitle => 'installationstype';
 
   @override
   String installationTypeOSDetected(Object os) {
-    return 'This computer currently has $os on it. What would you like to do?';
+    return 'Din computer har aktuelt $os installeret. Hvad kunne du tænke dig at gøre?';
   }
 
   @override
   String installationTypeDualOSDetected(Object os1, Object os2) {
-    return 'This computer currently has $os1 and $os2 on it. What would you like to do?';
+    return 'Denne computer har aktuelt $os1 og $os2 installeret. Hvad kunne du tænke dig at gøre?';
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'This computer currently has multiple operating systems on it. What would you like to do?';
+  String get installationTypeMultiOSDetected => 'Denne computer har aktuelt flere forskellige operativsystemer installeret. Hvad kunne du tænke dig at gøre?';
 
   @override
-  String get installationTypeNoOSDetected => 'This computer currently has no detected operating systems. What would you like to do?';
+  String get installationTypeNoOSDetected => 'Denne computer har aktuelt ingen opfangede operativsystemer. Hvad kunne du tænke dig at gøre?';
 
   @override
   String installationTypeErase(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'Udslet disk og installér $DISTRO';
   }
 
   @override
   String installationTypeEraseWarning(Object color) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your programs, documents, photos, music, and any other files in all operating systems.';
+    return '<font color=\"$color\">Advarsel:</font> Dette vil slette alle dine programmer, dokumenter, fotografier, musik, og enhver anden fil, i alle operativsystemer.';
   }
 
   @override
-  String get installationTypeAdvancedLabel => 'Advanced Features...';
+  String get installationTypeAdvancedLabel => 'Avancerede funktioner...';
 
   @override
-  String get installationTypeAdvancedTitle => 'Advanced features';
+  String get installationTypeAdvancedTitle => 'Avancerede funktioner';
 
   @override
-  String get installationTypeNone => 'None';
+  String get installationTypeNone => 'Ingen';
 
   @override
-  String get installationTypeNoneSelected => 'None selected';
+  String get installationTypeNoneSelected => 'Ingen valgt';
 
   @override
   String installationTypeLVM(Object RELEASE) {
-    return 'Use LVM with the new $RELEASE installation';
+    return 'Benyt LVM med den nye $RELEASE-installation';
   }
 
   @override
-  String get installationTypeLVMSelected => 'LVM selected';
+  String get installationTypeLVMSelected => 'LVM opfanget';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM and encryption selected';
+  String get installationTypeLVMEncryptionSelected => 'LVM og kryptering valgt';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
-    return 'Encrypt the new $RELEASE installation for security';
+    return 'Kryptér den nye $RELEASE-installation, for en sikkerheds skyld';
   }
 
   @override
-  String get installationTypeEncryptInfo => 'You will choose a security key in the next step.';
+  String get installationTypeEncryptInfo => 'Du vil vælge en sikkerhedsnøgle, i næste trin.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL: Erase disk and use ZFS';
+  String get installationTypeZFS => 'EKSPERIMENTEL: Udslet disk og benyt ZFS';
 
   @override
-  String get installationTypeZFSSelected => 'ZFS selected';
+  String get installationTypeZFSSelected => 'ZFS valgt';
 
   @override
   String installationTypeReinstall(Object os) {
-    return 'Erase $os and reinstall';
+    return 'Udslet $os og geninstallér';
   }
 
   @override
   String installationTypeReinstallWarning(Object color, Object os) {
-    return '<font color=\"$color\">Warning:</font> This will delete all your $os programs, documents, photos, music, and any other files.';
+    return '<font color=\"$color\">Advarsel:</font> Dette vil slette alle dine $os programmer, dokumenter, fotografier, musik, og enhver anden fil.';
   }
 
   @override
   String installationTypeAlongside(Object product, Object os) {
-    return 'Install $product alongside $os';
+    return 'Installér $product, ved siden af $os';
   }
 
   @override
   String installationTypeAlongsideDual(Object product, Object os1, Object os2) {
-    return 'Install $product alongside $os1 and $os2';
+    return 'Installér $product, ved siden af $os1 og $os2';
   }
 
   @override
   String installationTypeAlongsideMulti(Object product) {
-    return 'Install $product alongside them';
+    return 'Installér $product, ved siden af dem';
   }
 
   @override
   String installationTypeAlongsideUnknown(Object product) {
-    return 'Install $product alongside other partitions';
+    return 'Installér $product, ved siden af andre partitioner';
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Documents, music, and other other personal files will be kept. You can choose which operating system you want each time the computer starts up.';
+  String get installationTypeAlongsideInfo => 'Dokumenter, musik, og andre personlige filer vil blive bevaret. Du kan vælge hvilket operativsystem du vil bruge, hver gang computeren starter op.';
 
   @override
-  String get installationTypeManual => 'Something else';
+  String get installationTypeManual => 'Manuel partitionering';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
-    return 'You can create or resize partitions yourself, or choose multiple partitions for $DISTRO';
+    return 'Du kan selv oprette eller ændre størrelse på partitioner, eller vælge flere partitioner til $DISTRO';
   }
 
   @override
   String selectGuidedStoragePageTitle(Object DISTRO) {
-    return 'Erase disk and install $DISTRO';
+    return 'Udslet disk og installér $DISTRO';
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Select drive:';
+  String get selectGuidedStorageDropdownLabel => 'Vælg drev:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'The entire disk will be used:';
+  String get selectGuidedStorageInfoLabel => 'Hele disken vil blive brugt:';
 
   @override
-  String get selectGuidedStorageInstallNow => 'Install Now';
+  String get selectGuidedStorageInstallNow => 'Installér nu';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allocate drive space by dragging the divider below:';
+  String get installAlongsideSpaceDivider => 'Allokér drevplads, ved at trække skellet herunder:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
-    return '$num smaller partitions are hidden, use the <a href=\"$url\">advanced partitioning tool</a> for more control';
+    return '$num mindre partitioner er skjulte; brug det <a href=\"$url\">avancerede partitionsværktøj</a> for mere kontrol';
   }
 
   @override
-  String get installAlongsideResizePartition => 'Resize partition';
+  String get installAlongsideResizePartition => 'Ændr størrelse på partition';
 
   @override
-  String get installAlongsideAllocateSpace => 'Allocate space';
+  String get installAlongsideAllocateSpace => 'Allokér plads';
 
   @override
-  String get installAlongsideFiles => 'Files';
+  String get installAlongsideFiles => 'Filer';
 
   @override
   String get installAlongsidePartition => 'Partition:';
 
   @override
-  String get installAlongsideSize => 'Size:';
+  String get installAlongsideSize => 'Størrelse:';
 
   @override
-  String get installAlongsideAvailable => 'Available:';
+  String get installAlongsideAvailable => 'Tilgængelig:';
 
   @override
-  String get allocateDiskSpace => 'Allocate disk space';
+  String get allocateDiskSpace => 'Manuel partitionering';
 
   @override
-  String get startInstallingButtonText => 'Start Installing';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Monteringspunkter skal starte med \"/\"';
 
   @override
-  String get diskHeadersDevice => 'Device';
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Monteringspunkter må ikke indeholde mellemrum';
+
+  @override
+  String get startInstallingButtonText => 'Installér';
+
+  @override
+  String get diskHeadersDevice => 'Enhed';
 
   @override
   String get diskHeadersType => 'Type';
 
   @override
-  String get diskHeadersMountPoint => 'Mount point';
+  String get diskHeadersMountPoint => 'Monteringspunkt';
 
   @override
-  String get diskHeadersSize => 'Size';
+  String get diskHeadersSize => 'Størrelse';
 
   @override
-  String get diskHeadersUsed => 'Used';
+  String get diskHeadersUsed => 'Brugt';
 
   @override
   String get diskHeadersSystem => 'System';
@@ -433,34 +445,34 @@ class AppLocalizationsDa extends AppLocalizations {
   String get diskHeadersFormat => 'Format';
 
   @override
-  String get freeDiskSpace => 'free space';
+  String get freeDiskSpace => 'Fri plads';
 
   @override
-  String get newPartitionTable => 'New partition table';
+  String get newPartitionTable => 'Ny partitionstabel';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Create a new empty partition table on this device?';
+  String get newPartitionTableConfirmationTitle => 'Ny tom partition';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'You have selected an entire device to partition. If you proceed with creating a new partition table on it, all its current partitions will be removed.\n\nNote that you will be able to undo this operation later if you wish.';
+  String get newPartitionTableConfirmationMessage => 'Oprettelse af ny partitionstabel, på en hel enhed, vil fjerne alle dens nuværende partitioner. Denne operation kan fortrydes, hvis det er nødvendigt.';
 
   @override
-  String get tooManyPrimaryPartitions => 'Too many primary partitions';
+  String get tooManyPrimaryPartitions => 'For mange primære partitioner';
 
   @override
-  String get partitionLimitReached => 'limit reached';
+  String get partitionLimitReached => 'Grænse nået';
 
   @override
-  String get bootLoaderDevice => 'Device for boot loader installation';
+  String get bootLoaderDevice => 'Enhed til installation af opstartslæser';
 
   @override
-  String get partitionCreateTitle => 'Create partition';
+  String get partitionCreateTitle => 'Opret partition';
 
   @override
-  String get partitionEditTitle => 'Edit partition';
+  String get partitionEditTitle => 'Redigér partition';
 
   @override
-  String get partitionSizeLabel => 'Size:';
+  String get partitionSizeLabel => 'Størrelse:';
 
   @override
   String get partitionUnitB => 'B';
@@ -475,157 +487,129 @@ class AppLocalizationsDa extends AppLocalizations {
   String get partitionUnitGB => 'GB';
 
   @override
-  String get partitionTypeLabel => 'Type for the new partition:';
+  String get partitionTypeLabel => 'Type for ny partition:';
 
   @override
-  String get partitionTypePrimary => 'Primary';
+  String get partitionTypePrimary => 'Primær';
 
   @override
-  String get partitionTypeLogical => 'Logical';
+  String get partitionTypeLogical => 'Logisk';
 
   @override
-  String get partitionLocationLabel => 'Location for the new partition:';
+  String get partitionLocationLabel => 'Placering for ny partition:';
 
   @override
-  String get partitionLocationBeginning => 'Beginning of this space';
+  String get partitionLocationBeginning => 'Begyndelse på denne plads';
 
   @override
-  String get partitionLocationEnd => 'End of this space';
+  String get partitionLocationEnd => 'Ende på denne plads';
 
   @override
-  String get partitionFormatLabel => 'Used as:';
+  String get partitionFormatLabel => 'Brugt som:';
 
   @override
-  String get partitionFormatExt4 => 'Ext4 journaling file system';
+  String get partitionFormatNone => 'Efterlad uformateret';
 
   @override
-  String get partitionFormatExt3 => 'Ext3 journaling file system';
+  String partitionFormatKeep(Object format) {
+    return 'Leave formatted as $format';
+  }
 
   @override
-  String get partitionFormatExt2 => 'Ext2 file system';
+  String get partitionErase => 'Formatér partition';
 
   @override
-  String get partitionFormatBtrfs => 'btrfs journaling file system';
+  String get partitionMountPointLabel => 'Monteringspunkt:';
 
   @override
-  String get partitionFormatJfs => 'JFS journaling file system';
+  String get whoAreYouPageTitle => 'Indstil din konto';
 
   @override
-  String get partitionFormatXfs => 'XFS journaling file system';
+  String get whoAreYouPageAutoLogin => 'Log ind automatisk';
 
   @override
-  String get partitionFormatFat => 'FAT file system';
+  String get whoAreYouPageRequirePassword => 'Kræv min adgangskode, for at logge ind';
 
   @override
-  String get partitionFormatFat12 => 'FAT12 file system';
+  String get whoAreYouPageRealNameLabel => 'Dit navn';
 
   @override
-  String get partitionFormatFat16 => 'FAT16 file system';
+  String get whoAreYouPageRealNameRequired => 'Et navn er påkrævet';
 
   @override
-  String get partitionFormatFat32 => 'FAT32 file system';
+  String get whoAreYouPageRealNameTooLong => 'Navnet er for langt.';
 
   @override
-  String get partitionFormatSwap => 'Swap area';
+  String get whoAreYouPageComputerNameLabel => 'Din computers navn';
 
   @override
-  String get partitionFormatIso9660 => 'ISO 9660 file system';
+  String get whoAreYouPageComputerNameInfo => 'Det navn den bruger, når den snakker med andre computere.';
 
   @override
-  String get partitionFormatVfat => 'VFAT file system';
+  String get whoAreYouPageComputerNameRequired => 'Et computernavn er påkrævet';
 
   @override
-  String get partitionFormatNtfs => 'NTFS file system';
+  String get whoAreYouPageComputerNameTooLong => 'Det computernavn er for langt.';
 
   @override
-  String get partitionFormatReiserFS => 'ReiserFS file system';
+  String get whoAreYouPageInvalidComputerName => 'Computernavnet er ugyldigt';
 
   @override
-  String get partitionFormatZfsroot => 'ZFS root file system';
+  String get whoAreYouPageUsernameLabel => 'Vælg et brugernavn';
 
   @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String get whoAreYouPageUsernameRequired => 'Et brugernavn er påkrævet';
 
   @override
-  String get partitionErase => 'Format the partition';
+  String get whoAreYouPageInvalidUsername => 'Brugernavnet er ugyldigt';
 
   @override
-  String get partitionMountPointLabel => 'Mount point:';
+  String get whoAreYouPageUsernameInUse => 'Det brugernavn findes allerede.';
 
   @override
-  String get whoAreYouPageTitle => 'Who are you?';
+  String get whoAreYouPageUsernameSystemReserved => 'Det navn er reserveret til systembrug.';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Log in automatically';
+  String get whoAreYouPageUsernameTooLong => 'Det navn er for langt.';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Require my password to log in';
+  String get whoAreYouPageUsernameInvalidChars => 'Det navn indeholder ugyldige tegn.';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Your name';
+  String get whoAreYouPagePasswordLabel => 'Vælg en adgangskode';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A name is required';
+  String get whoAreYouPagePasswordRequired => 'En adgangskode er påkrævet';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Your computer\'s name';
+  String get whoAreYouPageConfirmPasswordLabel => 'Bekræft din adgangskode';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'The name it uses when it talks to other computers.';
+  String get whoAreYouPagePasswordMismatch => 'Adgangskoderne stemmer ikke overens';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A computer name is required';
+  String get whoAreYouPagePasswordShow => 'Vis';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'The computer name is invalid';
+  String get whoAreYouPagePasswordHide => 'Skjul';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pick a username';
-
-  @override
-  String get whoAreYouPageUsernameRequired => 'A username is required';
-
-  @override
-  String get whoAreYouPageInvalidUsername => 'The username is invalid';
-
-  @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
-
-  @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
-
-  @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
-
-  @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
-
-  @override
-  String get whoAreYouPagePasswordLabel => 'Choose a password';
-
-  @override
-  String get whoAreYouPagePasswordRequired => 'A password is required';
-
-  @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirm your password';
-
-  @override
-  String get whoAreYouPagePasswordMismatch => 'The passwords do not match';
-
-  @override
-  String get whoAreYouPageShowPassword => 'Show password';
-
-  @override
-  String get writeChangesToDisk => 'Write changes to disk';
+  String get writeChangesToDisk => 'Klar til at installere';
 
   @override
   String get writeChangesFallbackSerial => 'disk';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get writeChangesDescription => 'Hvis du fortsætter, vil ændringerne på listen nedenfor blive skrevet til disken(e). Du vil kunne foretage yderligere ændringer manuelt.';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'The partition tables of the following devices are changed:';
+  String get writeChangesDevicesTitle => 'Enheder';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Partitioner';
+
+  @override
+  String get writeChangesPartitionTablesHeader => 'Partitionstabellen på de følgende enheder er ændret:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -633,247 +617,308 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'The following partition changes are going to be applied:';
+  String get writeChangesPartitionsHeader => 'De følgende partitionsændringer vil træde i kraft:';
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'partition #$disk$partition resized from $oldsize to $newsize';
+    return 'partition <b>$disk$partition</b> ændres fra <b>$oldsize</b> til <b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partition #$disk$partition formatted as $format used for $mount';
+    return 'partition <b>$disk$partition</b> formateret som <b>$format</b> brugt til <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partition #$disk$partition formatted as $format';
+    return 'partition <b>$disk$partition</b> formateret som <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partition #$disk$partition used for $mount';
+    return 'partition <b>$disk$partition</b> brugt til <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partition #$disk$partition created';
+    return 'partition <b>$disk$partition</b> oprettet';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your look';
+  String get chooseYourLookPageTitle => 'Vælg til tema';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get chooseYourLookPageHeader => 'Du kan altid ændre dette senere, i indstillinger for udseende.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get chooseYourLookPageDarkSetting => 'Mørkt';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get chooseYourLookPageLightSetting => 'Lyst';
 
   @override
-  String get installationCompleteTitle => 'Installation complete';
+  String get installationCompleteTitle => 'Installation gennemført';
 
   @override
   String readyToUse(Object system) {
-    return '**$system** is installed and ready to use.';
+    return '**$system** er installeret og klar til brug';
   }
 
   @override
   String restartInto(Object system) {
-    return 'Restart into $system';
+    return 'Genstart i $system';
   }
 
   @override
   String restartWarning(Object RELEASE) {
-    return 'You can continue testing $RELEASE now, but until you restart the computer, any changes you make or documents you save will not be preserved.';
+    return 'Du kan fortsat afprøve $RELEASE nu, men indtil du genstarter computeren, vil ingen ændringer du foretager, eller dokumenter du gemmer, blive bevaret.';
   }
 
   @override
-  String get shutdown => 'Shut Down';
+  String get shutdown => 'Luk Ned';
 
   @override
-  String get restartNow => 'Restart Now';
+  String get restartNow => 'Genstart nu';
 
   @override
-  String get continueTesting => 'Continue Testing';
+  String get continueTesting => 'Fortsæt afprøvning';
 
   @override
-  String get turnOffBitlockerTitle => 'Turn off BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker er aktiveret';
 
   @override
-  String get turnOffBitlockerDescription => 'This computer uses Windows BitLocker encryption.\nYou need to turn off BitLocker in Windows before installing Ubuntu.';
+  String get turnOffBitlockerHeadline => 'Slå BitLocker fra, for at fortsætte';
+
+  @override
+  String turnOffBitlockerDescription(Object option) {
+    return 'Denne computer benytter Windows BitLocker kryptering.\nDu bliver nødt til at bruge Windows til, at frigøre plads, eller vælge \'$option\", for at fortsætte.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'For instructions, open this page on a phone or other device: <a href=\"https://$url\">$url</a>';
+    return 'For instruktioner, skan QR-koden, på en anden enhed eller besøg:<a href=\"https://$url\">$url</a>';
   }
 
   @override
-  String get restartIntoWindows => 'Restart Into Windows';
+  String get restartIntoWindows => 'Genstart i Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Where are you?';
+  String get restartIntoWindowsTitle => 'Genstart i Windows?';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
-
-  @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
-
-  @override
-  String welcomeSlideTitle(Object RELEASE) {
-    return 'Welcome to $RELEASE';
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Er du sikker på, at du vil genstarte din computer? Du vil skulle genstarte $DISTRO-installationen senere, for at færdiggøre installationen af $DISTRO.';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return 'Fast and full of new features, the latest version of $RELEASE makes computing easier than ever. Here are just a few cool new things to look out for...';
+  String get whereAreYouPageTitle => 'Vælg din tidszone';
+
+  @override
+  String get whereAreYouLocationLabel => 'Placering';
+
+  @override
+  String get whereAreYouTimezoneLabel => 'Tidszone';
+
+  @override
+  String installationSlidesTitle(Object RELEASE) {
+    return 'Velkommen til $RELEASE';
   }
 
   @override
-  String get softwareSlideTitle => 'Find even more software';
+  String get installationSlidesAvailable => 'Tilgængelig:';
 
   @override
-  String softwareSlideDescription(Object RELEASE) {
-    return 'Say goodbye to searching the web for new software. With access to the Snap Store and the $RELEASE software archive, you can find and install new apps with ease. Just type in what you\'re looking for, or explore categories such as Graphics & Photography, Games and Productivity, alongside helpful reviews from other users.';
+  String get installationSlidesIncluded => 'Inkluderet:';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'Hurtigt, gratis og fyldt med nye funktioner';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return 'Den seneste udgave af $DISTRO gøre computer-arbejde nemmere end nogensinde.';
   }
 
   @override
-  String get musicSlideTitle => 'Take your music with you';
-
-  @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE comes with the amazing Rhythmbox music player. With advanced playback options, it\'s simple to queue up the perfect songs. And it works great with CDs and portable music players, so you can enjoy all your music wherever you go.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'Om du er udvikler, skaber, gamer, eller administrator, vil du finde nye værktøjer til at forbedre din produktivitet og berige din oplevelse med $RELEASE.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Rhythmbox Music Player';
+  String get installationSlidesSoftwareTitle => 'Alle de applikationer du har brug for';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => 'Have fun with your photos';
-
-  @override
-  String get photoSlideDescription => 'Shotwell is a handy photo manager that is ready for your gadgets. Connect a camera or a phone to transfer your photos, then it\'s easy to share them and keep them safe. And if you\'re feeling creative, you can find many other photo apps in Ubuntu Software.';
-
-  @override
-  String get photoSlideShotwell => 'Shotwell Photo Manager';
-
-  @override
-  String get photoSlideGimp => 'GIMP Image Editor';
-
-  @override
-  String get photoSlideShotcut => 'Shotcut Video Editor';
-
-  @override
-  String get webSlideTitle => 'Make the most of the web';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE includes Firefox, the web browser used by millions of people around the world. And web applications you use frequently (like Facebook or Gmail, for example) can be pinned to your desktop for faster access, just like apps on your computer.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'Installér, administrér og opdatér alle dine apps i Ubuntu Varehus, inklusiv tusindvis af applikationer, fra både Snap Butikken og ${DISTRO}s arkiv.';
   }
 
   @override
-  String get webSlideFirefox => 'Firefox web browser';
+  String get installationSlidesDevelopmentTitle => 'Udvikl det bedste indenfor åben kilde';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
-
-  @override
-  String get webSlideChromium => 'Chromium';
-
-  @override
-  String get officeSlideTitle => 'Everything you need for the office';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice is a libre office suite packed with everything you need to create documents, spreadsheets and presentations. Compatible with Microsoft Office file formats, it gives you all the features you need.';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => 'Access for everyone';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return 'At the heart of the $RELEASE philosophy is the belief that computing is for everyone. With advanced accessibility tools and options to change language, colors and text size, $RELEASE makes computing easy — whoever and wherever you are.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO er den idéelle arbejdsstation til app- eller netudvikling, data-videnskab og kunstig intelligens/maskinlærling, så vel som devops og administration. Hver $DISTRO-udgivelse inkluderer de seneste værktøjskæder og understøtter alle større IDEer.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Customization options';
+  String get installationSlidesCreativityTitle => 'Berig din kreativitet';
 
   @override
-  String get accessSlideAppearance => 'Appearance';
-
-  @override
-  String get accessSlideAssistiveTechnologies => 'Assistive technologies';
-
-  @override
-  String get accessSlideLanguageSupport => 'Language support';
-
-  @override
-  String get supportSlideTitle => 'Help and support';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return 'The official documentation covers many of the most common aspects of $RELEASE. It\'s available both <a href=\"https://help.ubuntu.com\">online</a> and via the Help icon in the dock.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'Hvis du er animator, designer, videnskaber, eller spiludvikler, så er det nemt at tage dine arbejdsgange med til $DISTRO, med understøttelse af åben kildekode og industriel standard-programvare samt -applikationer.';
   }
 
   @override
-  String get supportSlideQuestions => 'At <a href=\"https://askubuntu.com\">Ask Ubuntu</a> you can ask questions and search an impressive collection of already answered questions. Support in your own language may be provided at your <a href=\"https://loco.ubuntu.com/teams\">Local Community Team</a>.';
+  String get installationSlidesGamingTitle => 'Super til gaming';
 
   @override
-  String get supportSlideResources => 'For pointers to other useful resources, please visit <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> or <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.';
-
-  @override
-  String get includedSoftware => 'Included software';
-
-  @override
-  String get availableSoftware => 'Available software';
-
-  @override
-  String get supportedSoftware => 'Supported software';
-
-  @override
-  String get copyingFiles => 'Copying files…';
-
-  @override
-  String get installingSystem => 'Installing the system…';
-
-  @override
-  String get configuringSystem => 'Setting up the system…';
-
-  @override
-  String get installationFailed => 'Installation failed';
-
-  @override
-  String get notEnoughDiskSpaceTitle => 'Sorry';
-
-  @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'You need at least $SIZE disk space to install $RELEASE.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO understøtter de seneste NVIDIA- og Mesa-drivere, for at forbedre ydeevne og kompatibilitet. Tusindvis af Windows-titler kører glimrende på $DISTRO, via applikationer som Stram, uden nogen yderligere konfiguration.';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'This computer has only $SIZE.';
+  String get installationSlidesSecurityTitle => 'Privat og sikkert';
+
+  @override
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO tilbyder alle de værktøjer, du har brug for, til at forblive privat og sikker på linjen. Med indbygget firewall og VPN-understøttelse, samt en mængde privatlivsorienterede applikationer, til at sikre at du har fuld kontrol over dine data.';
   }
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'The biggest disk on this computer is only $SIZE.';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'Alle $DISTRO LTS-udgivelser kommer med fem års sikkerhedsrettelser inkluderet, som kan udvides helt op til ti år, med et Ubuntu Pro-abonnement.';
   }
+
+  @override
+  String get installationSlidesProductivityTitle => 'Send din produktivitet til himmels';
+
+  @override
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO Desktop inkluderer LibreOffice, en pakke Microsoft Office-kompatible applikationer med åben kildekode, til dokumenter, regneark og præsentationer. Populære kollaborationsværktøjer er også tilgængelige.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'Adgang for alle';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return 'I centrum for $DISTRO-filosofien er troen på, at computere er for alle. Med avancerede tilgængelighedsværktøjer og muligheder af, at ændre sprog, farver, og tekst størrelse, gør $DISTRO det nemt at bruge computeren - hvem end og hvor end du er.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Orca Skærmoplæser';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'Sprogunderstøttelse';
+
+  @override
+  String get installationSlidesSupportTitle => 'Hjælp & Støtte';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'Den officielle $DISTRO-dokumentation er både tilgængelig på nettet og via Hjælp-ikonet i dokken.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Spørg Ubuntu dækker en bred vifte af spørgsmål og svar, og Ubuntu Discourse tilbyder vejledninger og diskussioner, for nye og erfarne brugere.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'For entreprise-brugere tilbyder Canonical kommerciel støtte, for at gøre det nemt at onboarde og administrere Ubuntu sikkert på arbejdspladsen.';
+
+  @override
+  String get installationSlidesSupportResources => 'Nyttige ressourcer:';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'Officiel dokumentation';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => '24/7 støtte på entreprise-niveau, med Ubuntu Pro';
+
+  @override
+  String get copyingFiles => 'Kopierer filer…';
+
+  @override
+  String get installingSystem => 'Installerer systemet…';
+
+  @override
+  String get configuringSystem => 'Opsætter systemet…';
+
+  @override
+  String get installationFailed => 'Installation slog fejl';
+
+  @override
+  String get notEnoughDiskSpaceTitle => 'Ikke nok plads';
+
+  @override
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Ikke nok diskplads, til at installere $DISTRO';
+  }
+
+  @override
+  String get notEnoughDiskSpaceAvailable => 'Tilgængelig:';
+
+  @override
+  String get notEnoughDiskSpaceRequired => 'Påkrævet:';
+
+  @override
+  String get activeDirectoryOption => 'Brug Aktiv Sti';
+
+  @override
+  String get activeDirectoryInfo => 'Du kan indtaste domæne og andre oplysninger i næste trin.';
+
+  @override
+  String get activeDirectoryTitle => 'Konfigurér Aktiv Sti';
+
+  @override
+  String get activeDirectoryTestConnection => 'Afprøv domæneforbindelse';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domæne';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Påkrævet';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'For langt';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Ugyldige tegn';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Starter med et punktum (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Slutter med et punktum (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Starter med bindestreg (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Slutter med bindestreg (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Indeholder flere punktummer (.) i streg';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domæne ikke fundet';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Domæne tilslut bruger';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Påkrævet';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Ugyldige tegn';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Adgangskode';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Påkrævet';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Fejl ved konfiguration af forbindelse til Aktiv Sti';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Beklager, Aktiv Sti kan ikke indstilles i øjeblikket. Når først dit system er oppe at køre, så besøg <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for hjælp.';
 }

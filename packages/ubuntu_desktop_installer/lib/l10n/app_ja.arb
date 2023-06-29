@@ -8,9 +8,9 @@
   "@hiddenWifiNetworkNameRequired": {},
   "wirelessNetworkingDisabled": "無線ネットワークが無効になっています",
   "@wirelessNetworkingDisabled": {},
-  "updatesOtherSoftwarePageTitle": "アップデートとその他のソフトウェア",
+  "updatesOtherSoftwarePageTitle": "アプリケーションとアップデート",
   "@updatesOtherSoftwarePageTitle": {},
-  "updatesOtherSoftwarePageDescription": "あらかじめいくつかのアプリケーションをインストールします。選択してください:",
+  "updatesOtherSoftwarePageDescription": "あらかじめいくつかのアプリケーションをインストールします。選択してください。",
   "@updatesOtherSoftwarePageDescription": {},
   "normalInstallationTitle": "おすすめのアプリもインストールする",
   "@normalInstallationTitle": {},
@@ -22,9 +22,9 @@
   "@otherOptions": {},
   "installThirdPartySubtitle": "このソフトウェアの使用には、それぞれのドキュメントに記載されているライセンス規約が適用されます。一部のソフトウェアはプロプライエタリです。",
   "@installThirdPartySubtitle": {},
-  "chooseSecurityKeyTitle": "セキュリティキーを決めて下さい",
+  "chooseSecurityKeyTitle": "セキュリティキー",
   "@chooseSecurityKeyTitle": {},
-  "welcomeHeader": "使用する言語を選択してください:",
+  "welcomeHeader": "使用する言語を選択してください。",
   "@welcomeHeader": {},
   "cancelButtonText": "キャンセル",
   "@cancelButtonText": {},
@@ -35,7 +35,7 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST をオフにして下さい",
+  "turnOffRST": "RSTが有効になっています。",
   "@turnOffRST": {},
   "turnOffRSTDescription": "このコンピューターは Intel RST (Rapid Storage Technology) を使用しています。Ubuntu をインストールする前に Windows で RST を無効にする必要があります。",
   "@turnOffRSTDescription": {},
@@ -49,7 +49,7 @@
   "@wifiMustBeEnabled": {},
   "installThirdPartyTitle": "グラフィックスや Wi-Fi 機器のためのサードパーティ製ソフトウェア、および追加メディアフォーマットをインストールする",
   "@installThirdPartyTitle": {},
-  "chooseSecurityKeyHint": "セキュリティキーを決めて下さい",
+  "chooseSecurityKeyHint": "セキュリティキーを決めてください。",
   "@chooseSecurityKeyHint": {},
   "chooseSecurityKeyWarning": "<font color=\"{color}\">注意</font> このセキュリティキーを紛失すると、すべてのデータが失われます。必要に応じて、キーを書き留めておき、他の安全な場所に保管してください。",
   "@chooseSecurityKeyWarning": {
@@ -58,7 +58,7 @@
       "color": {}
     }
   },
-  "onBatteryWarning": "<font color=\"{color}\">警告</font>: このコンピューターは電源に接続されていません。",
+  "onBatteryWarning": "<font color=\"{color}\">警告</font> このコンピューターは電源に接続されていません。",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
@@ -79,7 +79,7 @@
   "@noInternet": {},
   "noWifiDevicesDetected": "Wi-Fi デバイスが見つかりません",
   "@noWifiDevicesDetected": {},
-  "connectToInternetPageTitle": "インターネットに接続",
+  "connectToInternetPageTitle": "ネットワークに接続",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "このコンピューターをインターネットに接続すると、必要な追加ソフトウェアのインストールし、タイムゾーンを選択するのを手助けします。\n\nイーサネットケーブルを接続するか、Wi-Fi ネットワークを選択してください",
   "@connectToInternetDescription": {},
@@ -102,7 +102,7 @@
       "RELEASE": {}
     }
   },
-  "appTitle": "Ubuntu デスクトップインストーラー",
+  "appTitle": "Ubuntuデスクトップインストーラー",
   "@appTitle": {},
   "changeButtonText": "変更",
   "@changeButtonText": {},
@@ -120,9 +120,9 @@
   "@yesButtonText": {},
   "welcome": "ようこそ",
   "@welcome": {},
-  "tryOrInstallPageTitle": "試してみるか、インストールします",
+  "tryOrInstallPageTitle": "{DISTRO}を試してみるか、インストールします",
   "@tryOrInstallPageTitle": {},
-  "instructionsForRST": "手順は、スマートフォンなどで <a href=\"https://{url}\">{url}</a> をご確認ください。",
+  "instructionsForRST": "手順は、別のデバイスでQRコードをスキャンするか、<a href=\"https://{url}\">{url}</a>をご確認ください。",
   "@instructionsForRST": {
     "type": "text",
     "placeholders": {
@@ -131,17 +131,17 @@
   },
   "keyboardLayoutPageTitle": "キーボードレイアウト",
   "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "キーボードレイアウトを選択してください:",
+  "chooseYourKeyboardLayout": "キーボードレイアウトを選択してください。",
   "@chooseYourKeyboardLayout": {},
   "typeToTest": "ここに入力して、キーボードをテストできます",
   "@typeToTest": {},
   "detectLayout": "キーボードレイアウトを検出する",
   "@detectLayout": {},
-  "pressOneKey": "以下のキーのうち 1 つを押してください:",
+  "pressOneKey": "以下のキーのうち 1 つを押してください。",
   "@pressOneKey": {},
   "configureSecureBootTitle": "セキュアブートの設定",
   "@configureSecureBootTitle": {},
-  "chooseSecurityKey": "セキュリティキーを決めて下さい",
+  "chooseSecurityKey": "セキュリティキーを決めてください。",
   "@chooseSecurityKey": {},
   "configureSecureBootOption": "セキュアブートを設定",
   "@configureSecureBootOption": {},
@@ -196,7 +196,7 @@
   },
   "installationTypeLVMSelected": "LVM を選択しました",
   "@installationTypeLVMSelected": {},
-  "newPartitionTableConfirmationTitle": "このデバイスに新しい空のパーティションテーブルを作成しますか？",
+  "newPartitionTableConfirmationTitle": "新しい空のパーティション",
   "@newPartitionTableConfirmationTitle": {},
   "musicSlideTitle": "音楽を持ち歩こう",
   "@musicSlideTitle": {},
@@ -214,9 +214,9 @@
   "@diskHeadersType": {},
   "installationTypeZFSSelected": "ZFS を選択しました",
   "@installationTypeZFSSelected": {},
-  "selectGuidedStorageDropdownLabel": "ドライブを選択してください:",
+  "selectGuidedStorageDropdownLabel": "ドライブを選択してください。",
   "@selectGuidedStorageDropdownLabel": {},
-  "startInstallingButtonText": "インストールを開始する",
+  "startInstallingButtonText": "インストール",
   "@startInstallingButtonText": {},
   "diskHeadersSize": "サイズ",
   "@diskHeadersSize": {},
@@ -226,11 +226,9 @@
   "@partitionErase": {},
   "whoAreYouPageComputerNameRequired": "コンピューターの名前を入力してください",
   "@whoAreYouPageComputerNameRequired": {},
-  "partitionFormatFat32": "FAT32 ファイルシステム",
-  "@partitionFormatFat32": {},
   "bootLoaderDevice": "ブートローダーをインストールするデバイスを選択してください",
   "@bootLoaderDevice": {},
-  "partitionSizeLabel": "サイズ:",
+  "partitionSizeLabel": "サイズ：",
   "@partitionSizeLabel": {},
   "partitionUnitMB": "MB",
   "@partitionUnitMB": {},
@@ -238,24 +236,12 @@
   "@partitionUnitB": {},
   "partitionUnitKB": "kB",
   "@partitionUnitKB": {},
-  "partitionTypeLabel": "新しいパーティションの種類を選択してください:",
+  "partitionTypeLabel": "新しいパーティションの種類を選択してください。",
   "@partitionTypeLabel": {},
-  "partitionFormatJfs": "JFS ジャーナリングファイルシステム",
-  "@partitionFormatJfs": {},
-  "partitionFormatFat12": "FAT12 ファイルシステム",
-  "@partitionFormatFat12": {},
-  "partitionFormatNtfs": "NTFS ファイルシステム",
-  "@partitionFormatNtfs": {},
-  "partitionFormatReiserFS": "ReiserFS ファイルシステム",
-  "@partitionFormatReiserFS": {},
-  "partitionMountPointLabel": "マウントポイント:",
+  "partitionMountPointLabel": "マウントポイント：",
   "@partitionMountPointLabel": {},
   "partitionEditTitle": "パーティションを編集する",
   "@partitionEditTitle": {},
-  "partitionFormatBtrfs": "btrfs ジャーナリングファイルシステム",
-  "@partitionFormatBtrfs": {},
-  "partitionFormatVfat": "VFAT ファイルシステム",
-  "@partitionFormatVfat": {},
   "whoAreYouPageRealNameRequired": "名前を入力してください",
   "@whoAreYouPageRealNameRequired": {},
   "whoAreYouPageRealNameLabel": "あなたの名前",
@@ -266,20 +252,10 @@
   "@partitionTypePrimary": {},
   "partitionLocationBeginning": "この領域の始点",
   "@partitionLocationBeginning": {},
-  "partitionFormatSwap": "スワップ領域",
-  "@partitionFormatSwap": {},
-  "partitionFormatIso9660": "ISO 9660 ファイルシステム",
-  "@partitionFormatIso9660": {},
-  "partitionFormatZfsroot": "ZFS ルートファイルシステム",
-  "@partitionFormatZfsroot": {},
-  "whoAreYouPageTitle": "あなたの情報を入力してください",
+  "whoAreYouPageTitle": "アカウントの設定",
   "@whoAreYouPageTitle": {},
   "whoAreYouPageRequirePassword": "ログイン時にパスワードを要求する",
   "@whoAreYouPageRequirePassword": {},
-  "partitionFormatXfs": "XFS ジャーナリングファイルシステム",
-  "@partitionFormatXfs": {},
-  "partitionFormatFat16": "FAT16 ファイルシステム",
-  "@partitionFormatFat16": {},
   "whoAreYouPageAutoLogin": "自動的にログインする",
   "@whoAreYouPageAutoLogin": {},
   "whoAreYouPageComputerNameInfo": "他のコンピューターと通信するときに使用する名前です。",
@@ -294,7 +270,7 @@
   "@whoAreYouPageUsernameLabel": {},
   "partitionLocationEnd": "この領域の終点",
   "@partitionLocationEnd": {},
-  "partitionFormatLabel": "使用方法:",
+  "partitionFormatLabel": "使用方法：",
   "@partitionFormatLabel": {},
   "whoAreYouPagePasswordRequired": "パスワードを入力してください",
   "@whoAreYouPagePasswordRequired": {},
@@ -306,9 +282,9 @@
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
   },
-  "writeChangesToDisk": "ディスクに変更を書き込む",
+  "writeChangesToDisk": "インストールの準備完了",
   "@writeChangesToDisk": {},
-  "writeChangesPartitionTablesHeader": "以下のデバイスのパーティションテーブルが変更されます:",
+  "writeChangesPartitionTablesHeader": "以下のデバイスのパーティションテーブルが変更されます。",
   "@writeChangesPartitionTablesHeader": {},
   "chooseYourLookPageLightSetting": "明るい",
   "@chooseYourLookPageLightSetting": {},
@@ -320,9 +296,9 @@
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "以下のパーティション変更が適用されます:",
+  "writeChangesPartitionsHeader": "以下のパーティション変更が適用されます：",
   "@writeChangesPartitionsHeader": {},
-  "chooseYourLookPageTitle": "外観の選択",
+  "chooseYourLookPageTitle": "テーマを選択してください。",
   "@chooseYourLookPageTitle": {},
   "writeChangesPartitionEntryMounted": "パーティション、#{disk}{partition} は {format} にフォーマットされ、 {mount} に割り当てられます",
   "@writeChangesPartitionEntryMounted": {
@@ -347,7 +323,7 @@
   "@chooseYourLookPageHeader": {},
   "installationCompleteTitle": "インストールが完了しました",
   "@installationCompleteTitle": {},
-  "readyToUse": "**{system}** のインストールは完了し、使い始める準備が整いました。",
+  "readyToUse": "**{system}** のインストールは完了し、使い始める準備が整いました",
   "@readyToUse": {
     "type": "text",
     "placeholders": {
@@ -363,7 +339,7 @@
   },
   "shutdown": "シャットダウン",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "BitLocker をオフにしてください",
+  "turnOffBitlockerTitle": "BitLockerが有効になっています。",
   "@turnOffBitlockerTitle": {},
   "welcomeSlideTitle": "{RELEASE}へ、ようこそ。",
   "@welcomeSlideTitle": {
@@ -420,7 +396,7 @@
   "@installationTypeMultiOSDetected": {},
   "installationTypeEncryptInfo": "セキュリティキーは次のステップで選択します。",
   "@installationTypeEncryptInfo": {},
-  "installationTypeZFS": "試験的: ディスクを消去して ZFS を使用する",
+  "installationTypeZFS": "試験的： ディスクを消去して ZFS を使用する",
   "@installationTypeZFS": {},
   "installationTypeReinstall": "{os} を削除して再インストール",
   "@installationTypeReinstall": {
@@ -445,19 +421,13 @@
       "os": {}
     }
   },
-  "newPartitionTableConfirmationMessage": "デバイス全体を新しいパーティションに使用するよう選択しました。デバイスで新しいパーティションテーブルの作成を続行すると、現在のすべてのパーティションが削除されます。\n\nなお、この操作は後で取り消すことができます。",
+  "newPartitionTableConfirmationMessage": "デバイスに対して新しいパーティションを作成すると、現在のパーティションがすべて削除されます。この操作は必要に応じて戻すことができます。",
   "@newPartitionTableConfirmationMessage": {},
-  "partitionLocationLabel": "新しいパーティションの場所を選択してください:",
+  "partitionLocationLabel": "新しいパーティションの場所を選択してください。",
   "@partitionLocationLabel": {},
-  "partitionFormatExt4": "Ext4 ジャーナリングファイルシステム",
-  "@partitionFormatExt4": {},
-  "partitionFormatExt3": "Ext3 ジャーナリングファイルシステム",
-  "@partitionFormatExt3": {},
-  "partitionFormatExt2": "Ext2 ファイルシステム",
-  "@partitionFormatExt2": {},
   "whoAreYouPageInvalidUsername": "このユーザー名は使用できません",
   "@whoAreYouPageInvalidUsername": {},
-  "whoAreYouPagePasswordLabel": "パスワードを決めて下さい",
+  "whoAreYouPagePasswordLabel": "パスワードを決めてください。",
   "@whoAreYouPagePasswordLabel": {},
   "whoAreYouPageConfirmPasswordLabel": "パスワードをもう一度入力",
   "@whoAreYouPageConfirmPasswordLabel": {},
@@ -465,16 +435,16 @@
   "@whoAreYouPageShowPassword": {},
   "writeChangesDescription": "続行すると、以下の変更がディスクに書き込まれます。さらに手動で変更を加えることもできます。",
   "@writeChangesDescription": {},
-  "turnOffBitlockerDescription": "このコンピューターは Windows BitLocker で暗号化されています。\nUbuntu をインストールする前に Windows で BitLocker をオフにしてください。",
+  "turnOffBitlockerDescription": "このコンピューターはWindows BitLockerで暗号化されています。\nWindowsを使って空き領域を作るか、'{option}'を選択してください。",
   "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "手順は、スマートフォンなどで <a href=\"https://{url}\">{url}</a> をご確認ください",
+  "turnOffBitlockerLinkInstructions": "手順については、別のデバイスでこのQRコードを読み取るか、次のURLへアクセスしてください：<a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "whereAreYouPageTitle": "あなたの大まかな現在地を選択してください",
+  "whereAreYouPageTitle": "タイムゾーンを選択してください。",
   "@whereAreYouPageTitle": {},
   "photoSlideDescription": "Shotwell をご紹介しましょう。Shotwell は、便利な写真管理ツールです。カメラや携帯電話を接続して写真を転送すれば、簡単に写真を共有したり安全に保管したりできます。クリエイティブな気分なら、その他にも多くの写真アプリを Ubuntu Software で見つけることができます。",
   "@photoSlideDescription": {},
@@ -589,15 +559,15 @@
   },
   "installationTypeNoOSDetected": "コンピューターにインストールされた OS は見つかりませんでした。インストール方法を選択してください。",
   "@installationTypeNoOSDetected": {},
-  "installationTypeAdvancedLabel": "高度な機能...",
+  "installationTypeAdvancedLabel": "高度な機能…",
   "@installationTypeAdvancedLabel": {},
-  "installationTypeManual": "それ以外",
+  "installationTypeManual": "手動パーティショニング",
   "@installationTypeManual": {},
-  "selectGuidedStorageInfoLabel": "ディスク全体が使用されます:",
+  "selectGuidedStorageInfoLabel": "ディスク全体が使用されます。",
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "インストール",
   "@selectGuidedStorageInstallNow": {},
-  "allocateDiskSpace": "ディスク領域の割り当て",
+  "allocateDiskSpace": "手動パーティショニング",
   "@allocateDiskSpace": {},
   "diskHeadersDevice": "デバイス",
   "@diskHeadersDevice": {},
@@ -613,8 +583,6 @@
   "@newPartitionTable": {},
   "partitionCreateTitle": "パーティションを作成する",
   "@partitionCreateTitle": {},
-  "partitionFormatFat": "FAT ファイルシステム",
-  "@partitionFormatFat": {},
   "chooseYourLookPageDarkSetting": "暗い",
   "@chooseYourLookPageDarkSetting": {},
   "musicSlideVLC": "VLC",
@@ -635,15 +603,15 @@
   "@whoAreYouPageUsernameTooLong": {},
   "whoAreYouPageUsernameInvalidChars": "その名前には無効な文字が含まれています。",
   "@whoAreYouPageUsernameInvalidChars": {},
-  "installAlongsidePartition": "パーティション:",
+  "installAlongsidePartition": "パーティション：",
   "@installAlongsidePartition": {},
-  "installAlongsideSize": "サイズ:",
+  "installAlongsideSize": "サイズ：",
   "@installAlongsideSize": {},
   "installAlongsideFiles": "ファイル",
   "@installAlongsideFiles": {},
   "installAlongsideAllocateSpace": "ディスク領域の割り当て",
   "@installAlongsideAllocateSpace": {},
-  "installAlongsideAvailable": "利用可能:",
+  "installAlongsideAvailable": "利用可能：",
   "@installAlongsideAvailable": {},
   "installationTypeAlongsideMulti": "それと並んで{product}をインストールする",
   "@installationTypeAlongsideMulti": {
@@ -652,7 +620,7 @@
       "product": {}
     }
   },
-  "notEnoughDiskSpaceTitle": "申し訳ありません",
+  "notEnoughDiskSpaceTitle": "空き容量が足りません",
   "@notEnoughDiskSpaceTitle": {},
   "installationTypeAlongsideDual": "{os1}と{os2}と並んで{product}をインストールする",
   "@installationTypeAlongsideDual": {
@@ -663,7 +631,7 @@
       "os2": {}
     }
   },
-  "installAlongsideSpaceDivider": "境界をドラッグしてディスク領域を割り当てます:",
+  "installAlongsideSpaceDivider": "境界をドラッグしてディスク領域を割り当てます。",
   "@installAlongsideSpaceDivider": {},
   "installingSystem": "システムをインストールしています…",
   "@installingSystem": {},
@@ -726,7 +694,7 @@
   "@continueTesting": {},
   "restartNow": "今すぐ再起動する",
   "@restartNow": {},
-  "writeChangesPartitionFormatted": "パーティション #{disk}{partition} は {format} としてフォーマットされます。",
+  "writeChangesPartitionFormatted": "パーティション<b>{disk}{partition}</b>は<b>{format}</b>としてフォーマットされます。",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -735,7 +703,7 @@
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "パーティション #{disk}{partition} は {mount} として使用されます。",
+  "writeChangesPartitionMounted": "パーティション<b>{disk}{partition}</b>は<b>{mount}</b>として使用されます。",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -744,7 +712,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "パーティション #{disk}{partition} は {format} としてフォーマットされ、{mount} として使用されます。",
+  "writeChangesPartitionFormattedMounted": "パーティション<b>{disk}{partition}</b>は<b>{format}</b>としてフォーマットされ、<b>{mount}</b>として使用されます。",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -761,7 +729,7 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "パーティション #{disk}{partition} のサイズが{oldsize}から{newsize}に変更されます。",
+  "writeChangesPartitionResized": "パーティション<b>{disk}{partition}</b>のサイズが<b>{oldsize}</b>から<b>{newsize}</b>に変更されます。",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -771,7 +739,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionCreated": "パーティション #{disk}{partition} が作成されました。",
+  "writeChangesPartitionCreated": "パーティション<b>{disk}{partition}</b>が作成されました。",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
@@ -784,5 +752,223 @@
   "partitionLimitReached": "制限に達しました",
   "@partitionLimitReached": {},
   "offlineWarning": "現在オフラインです",
-  "@offlineWarning": {}
+  "@offlineWarning": {},
+  "partitionFormatNone": "フォーマットしない",
+  "@partitionFormatNone": {},
+  "whoAreYouPagePasswordShow": "表示",
+  "@whoAreYouPagePasswordShow": {},
+  "whoAreYouPagePasswordHide": "非表示",
+  "@whoAreYouPagePasswordHide": {},
+  "activeDirectoryDomainTooLong": "長すぎます",
+  "@activeDirectoryDomainTooLong": {},
+  "activeDirectoryDomainLabel": "ドメイン",
+  "@activeDirectoryDomainLabel": {},
+  "activeDirectoryInfo": "次のステップでドメインやその他の詳細を入力します。",
+  "@activeDirectoryInfo": {},
+  "activeDirectoryAdminEmpty": "必須",
+  "@activeDirectoryAdminEmpty": {},
+  "activeDirectoryAdminLabel": "ドメイン接続用のユーザー名",
+  "@activeDirectoryAdminLabel": {},
+  "activeDirectoryPasswordLabel": "パスワード",
+  "@activeDirectoryPasswordLabel": {},
+  "activeDirectoryPasswordEmpty": "必須",
+  "@activeDirectoryPasswordEmpty": {},
+  "activeDirectoryDomainEmpty": "必須",
+  "@activeDirectoryDomainEmpty": {},
+  "activeDirectoryOption": "アクティブディレクトリを使用する",
+  "@activeDirectoryOption": {},
+  "activeDirectoryTestConnection": "ドメイン接続テスト",
+  "@activeDirectoryTestConnection": {},
+  "activeDirectoryTitle": "アクティブディレクトリの設定",
+  "@activeDirectoryTitle": {},
+  "activeDirectoryDomainNotFound": "ドメインが見つかりません",
+  "@activeDirectoryDomainNotFound": {},
+  "activeDirectoryDomainStartDot": "ピリオド「.」で始まります。",
+  "@activeDirectoryDomainStartDot": {},
+  "activeDirectoryDomainEndDot": "ピリオド「.」で終わります。",
+  "@activeDirectoryDomainEndDot": {},
+  "activeDirectoryDomainInvalidChars": "無効な文字が含まれています。",
+  "@activeDirectoryDomainInvalidChars": {},
+  "whoAreYouPageRealNameTooLong": "その名前は長すぎます。",
+  "@whoAreYouPageRealNameTooLong": {},
+  "whoAreYouPageComputerNameTooLong": "その名前は長すぎます。",
+  "@whoAreYouPageComputerNameTooLong": {},
+  "activeDirectoryDomainEndHyphen": "ハイフン「-」で終わります。",
+  "@activeDirectoryDomainEndHyphen": {},
+  "activeDirectoryDomainMultipleDots": "二つのピリオド「..」を含んでいます。",
+  "@activeDirectoryDomainMultipleDots": {},
+  "activeDirectoryAdminInvalidChars": "無効な文字が含まれています。",
+  "@activeDirectoryAdminInvalidChars": {},
+  "activeDirectoryDomainStartHyphen": "ハイフン「-」で始まります。",
+  "@activeDirectoryDomainStartHyphen": {},
+  "activeDirectoryErrorTitle": "アクティブディレクトリへの接続設定エラー",
+  "@activeDirectoryErrorTitle": {},
+  "activeDirectoryErrorMessage": "申し訳ありませんが、Active Directoryは現在セットアップできません。システムが稼働したら、<a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> にアクセスしてサポートを受けてください。",
+  "@activeDirectoryErrorMessage": {},
+  "installationSlidesSupportTitle": "ヘルプとサポート",
+  "@installationSlidesSupportTitle": {},
+  "installationSlidesAccessibilityBody": "{DISTRO}の哲学の中心となっているのは、「あらゆる人のためのコンピューター」という信念です。高度なアクセシビリティツールや、言語・カラー・テキストサイズの変更といったオプションにより、{DISTRO}はあらゆる人に寄り添います。あなたが誰であっても、どこにいようとも。",
+  "@installationSlidesAccessibilityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAccessibilityLanguages": "言語サポート",
+  "@installationSlidesAccessibilityLanguages": {},
+  "preparingUbuntu": "{DISTRO}を準備しています…",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "writeChangesDevicesTitle": "デバイス",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "パーティション",
+  "@writeChangesPartitionsTitle": {},
+  "installationSlidesAccessibilityTitle": "すべての人へ",
+  "@installationSlidesAccessibilityTitle": {},
+  "installationSlidesAccessibilityOrca": "Orcaスクリーンリーダー",
+  "@installationSlidesAccessibilityOrca": {},
+  "notEnoughDiskSpaceRequired": "必要：",
+  "@notEnoughDiskSpaceRequired": {},
+  "installationSlidesTitle": "{RELEASE}へようこそ",
+  "@installationSlidesTitle": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "welcomePageTitle": "{DISTRO}へ、ようこそ。",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesAvailable": "インストール可能：",
+  "@installationSlidesAvailable": {},
+  "installationSlidesIncluded": "含まれるソフト：",
+  "@installationSlidesIncluded": {},
+  "notEnoughDiskSpaceUbuntu": "{DISTRO}をインストールするのに十分なストレージ容量がありません",
+  "@notEnoughDiskSpaceUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "notEnoughDiskSpaceAvailable": "利用可能：",
+  "@notEnoughDiskSpaceAvailable": {},
+  "installationSlidesWelcomeTitle": "高速で無料で、新機能が満載",
+  "@installationSlidesWelcomeTitle": {},
+  "installationSlidesCreativityTitle": "創造性の向上",
+  "@installationSlidesCreativityTitle": {},
+  "installationSlidesProductivityTitle": "生産性の向上",
+  "@installationSlidesProductivityTitle": {},
+  "installationSlidesDevelopmentTitle": "最高のオープンソースを活用して開発",
+  "@installationSlidesDevelopmentTitle": {},
+  "keyboardVariant": "キーボードバリアント：",
+  "@keyboardVariant": {},
+  "installationSlidesSecurityTitle": "プライバシーと安全性",
+  "@installationSlidesSecurityTitle": {},
+  "installationSlidesSoftwareTitle": "必要なアプリケーションを網羅",
+  "@installationSlidesSoftwareTitle": {},
+  "installationSlidesGamingTitle": "ゲームに最適",
+  "@installationSlidesGamingTitle": {},
+  "installationSlidesSupportDocumentation": "公式ドキュメント",
+  "@installationSlidesSupportDocumentation": {},
+  "turnOffRSTTitle": "続行するにはRSTをオフにしてください。",
+  "@turnOffRSTTitle": {},
+  "restartIntoWindowsTitle": "Windowsに再起動しますか？",
+  "@restartIntoWindowsTitle": {},
+  "turnOffBitlockerHeadline": "続行するにはBitLockerをオフにしてください。",
+  "@turnOffBitlockerHeadline": {},
+  "detectButtonText": "検出",
+  "@detectButtonText": {},
+  "installationSlidesWelcomeHeader": "最新版の{DISTRO}では、これまで以上にコンピューティングが容易になります。",
+  "@installationSlidesWelcomeHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportResources": "役に立つ情報：",
+  "@installationSlidesSupportResources": {},
+  "installationSlidesSupportUbuntuPro": "Ubuntu Proで24時間365日サポート",
+  "@installationSlidesSupportUbuntuPro": {},
+  "installationSlidesSupportHeader": "{DISTRO}の公式ドキュメントは、オンラインおよびDock上のヘルプアイコンの両方から閲覧できます。",
+  "@installationSlidesSupportHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesCreativityBody": "アニメーター、デザイナー、動画クリエーターやゲーム開発者であれば、必要なワークフローを、オープンソースであり業界標準のソフトウェアやアプリケーションをサポートしている{DISTRO}に簡単に導入できます。",
+  "@installationSlidesCreativityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesGamingBody": "{DISTRO}は最新のNVIDIAはMesaのドライバーをサポートし、パフォーマンスや互換性が向上しています。Steamのようなアプリケーションを利用することで、数多くのWindowsゲームを{DISTRO}上で特別な設定なくプレイできます。",
+  "@installationSlidesGamingBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSecurityLts": "すべての{DISTRO} LTSリリースは、5年間のセキュリティパッチが含まれており、Ubuntu Proサブスクリプションによって10年に延長できます。",
+  "@installationSlidesSecurityLts": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesDevelopmentBody": "{DISTRO}はDevOpsや運用だけでなく、アプリケーションやウェブの開発、データサイエンス、AI/MLにも最適なワークステーションです。{DISTRO}のリリースごとに、最新のツールチェインやすべての主要なIDEが含まれています。",
+  "@installationSlidesDevelopmentBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSoftwareBody": "Ubuntu Softwareを使えば、Snap Storeと{DISTRO}リポジトリの両方から、数多のアプリケーションをインストール・管理・更新できます。",
+  "@installationSlidesSoftwareBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "restartIntoWindowsDescription": "本当にコンピュータを再起動しますか？ {DISTRO}のインストールを完了するためには、後で再起動する必要があります。",
+  "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesWelcomeBody": "開発者・クリエーター・ゲーマー・管理者のいずれであっても、{RELEASE}では生産性を向上し、より良い体験を得られる新しいツールを見つけることができます。",
+  "@installationSlidesWelcomeBody": {
+    "type": "text",
+    "placeholders": {
+      "RELEASE": {}
+    }
+  },
+  "installationSlidesSecurityBody": "{DISTRO}はプライベートで安全なオンライン環境を維持するために必要なすべてのツールを提供します。ファイアウォールやVPNをサポートし、プライバシーを重視したアプリケーションによって、データを完全に管理できます。",
+  "@installationSlidesSecurityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesProductivityBody": "デスクトップ版の{DISTRO}には、Microsoft Office互換なオープンソースのドキュメント、表計算、プレゼンテーションのアプリケーションセットであるLibreOfficeが同梱されています。人気のコラボレーションツールも利用可能です。",
+  "@installationSlidesProductivityBody": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "installationSlidesSupportCommunity": "Ask Ubuntuでは様々な質問と回答をカバーし、Ubuntu Discourseは新規ユーザーと経験豊富なユーザーのためのガイドと議論の場を提供します。",
+  "@installationSlidesSupportCommunity": {},
+  "installationSlidesSupportEnterprise": "Canonicalは、企業ユーザー向けに職場でUbuntuを安全に導入・管理するための商用サポートを提供しています。",
+  "@installationSlidesSupportEnterprise": {}
 }

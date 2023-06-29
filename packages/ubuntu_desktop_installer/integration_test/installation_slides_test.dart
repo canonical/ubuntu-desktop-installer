@@ -2,25 +2,22 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides/default_slides.dart';
-import 'package:ubuntu_desktop_installer/slides/slide_widgets.dart';
-import 'package:ubuntu_wizard/widgets.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../test/test_utils.dart';
-
 void main() {
-  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-  binding.window.devicePixelRatioTestValue = 1;
-  binding.window.physicalSizeTestValue = const Size(960, 680);
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  Widget buildSlide(Slide slide, {Locale? locale}) {
-    return Flavor(
-      data: const FlavorData(name: 'Ubuntu'),
+  setUpAll(() => registerService(ProductService.new));
+
+  Widget buildSlide(WidgetBuilder slide, {Locale? locale}) {
+    return ProviderScope(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: yaruLight,
@@ -28,27 +25,14 @@ void main() {
         supportedLocales: supportedLocales,
         localizationsDelegates: localizationsDelegates,
         home: Scaffold(
-          appBar: YaruWindowTitleBar(
-            title: Builder(builder: slide.title),
+          appBar: const YaruWindowTitleBar(
+            title: Text('Welcome to Ubuntu'),
+            backgroundColor: Colors.transparent,
           ),
-          body: Builder(builder: slide.body),
+          body: Builder(builder: slide),
         ),
       ),
     );
-  }
-
-  void expectSlide({
-    String? title,
-    String? text,
-    String? description,
-    String? background,
-    String? screenshot,
-  }) {
-    if (title != null) expect(find.text(title), findsOneWidget);
-    if (text != null) expect(find.text(text), findsOneWidget);
-    if (description != null) expect(find.html(description), findsOneWidget);
-    if (background != null) expect(find.asset(background), findsOneWidget);
-    if (screenshot != null) expect(find.asset(screenshot), findsOneWidget);
   }
 
   Future<void> dumpSlide(String name, Locale locale) async {
@@ -62,7 +46,7 @@ void main() {
   }
 
   test('slides', () {
-    expect(defaultSlides.length, equals(8),
+    expect(defaultSlides.length, equals(9),
         reason:
             'Update `installation_slides_test.dart` to match the number of slides');
   });
@@ -71,15 +55,11 @@ void main() {
     final locale = localeVariant.currentValue!;
     final slide = buildSlide(defaultSlides[0], locale: locale);
     if (!await tester.pumpSlide(slide)) {
-      await dumpSlide('photos', locale);
+      await dumpSlide('welcome', locale);
     }
 
     final l10n = await AppLocalizations.delegate.load(locale);
-    expectSlide(
-      title: l10n.welcomeSlideTitle('Ubuntu'),
-      text: l10n.welcomeSlideDescription('Ubuntu'),
-      background: 'welcome.png',
-    );
+    expect(find.text(l10n.installationSlidesWelcomeTitle), findsOneWidget);
   }, variant: localeVariant);
 
   testWidgets('software', (tester) async {
@@ -90,112 +70,92 @@ void main() {
     }
 
     final l10n = await AppLocalizations.delegate.load(locale);
-    expectSlide(
-      title: l10n.softwareSlideTitle,
-      description: l10n.softwareSlideDescription('Ubuntu'),
-      screenshot: 'software.png',
-      background: 'background.png',
-    );
+    expect(find.text(l10n.installationSlidesSoftwareTitle), findsOneWidget);
   }, variant: localeVariant);
 
-  testWidgets('music', (tester) async {
+  testWidgets('development', (tester) async {
     final locale = localeVariant.currentValue!;
     final slide = buildSlide(defaultSlides[2], locale: locale);
     if (!await tester.pumpSlide(slide)) {
-      await dumpSlide('music', locale);
+      await dumpSlide('development', locale);
     }
 
     final l10n = await AppLocalizations.delegate.load(locale);
-    expectSlide(
-      title: l10n.musicSlideTitle,
-      description: l10n.musicSlideDescription('Ubuntu'),
-      screenshot: 'music.png',
-      background: 'background.png',
-    );
+    expect(find.text(l10n.installationSlidesDevelopmentTitle), findsOneWidget);
   }, variant: localeVariant);
 
-  testWidgets('photos', (tester) async {
+  testWidgets('creativity', (tester) async {
     final locale = localeVariant.currentValue!;
     final slide = buildSlide(defaultSlides[3], locale: locale);
     if (!await tester.pumpSlide(slide)) {
-      await dumpSlide('photos', locale);
+      await dumpSlide('creativity', locale);
     }
 
     final l10n = await AppLocalizations.delegate.load(locale);
-    expectSlide(
-      title: l10n.photoSlideTitle,
-      description: l10n.photoSlideDescription,
-      screenshot: 'photos.png',
-      background: 'background.png',
-    );
+    expect(find.text(l10n.installationSlidesCreativityTitle), findsOneWidget);
   }, variant: localeVariant);
 
-  testWidgets('web', (tester) async {
+  testWidgets('gaming', (tester) async {
     final locale = localeVariant.currentValue!;
     final slide = buildSlide(defaultSlides[4], locale: locale);
     if (!await tester.pumpSlide(slide)) {
-      await dumpSlide('photos', locale);
+      await dumpSlide('gaming', locale);
     }
 
     final l10n = await AppLocalizations.delegate.load(locale);
-    expectSlide(
-      title: l10n.webSlideTitle,
-      description: l10n.webSlideDescription('Ubuntu'),
-      screenshot: 'web.png',
-      background: 'background.png',
-    );
+    expect(find.text(l10n.installationSlidesGamingTitle), findsOneWidget);
   }, variant: localeVariant);
 
-  testWidgets('office', (tester) async {
+  testWidgets('security', (tester) async {
     final locale = localeVariant.currentValue!;
     final slide = buildSlide(defaultSlides[5], locale: locale);
     if (!await tester.pumpSlide(slide)) {
-      await dumpSlide('photos', locale);
+      await dumpSlide('security', locale);
     }
 
     final l10n = await AppLocalizations.delegate.load(locale);
-    expectSlide(
-      title: l10n.officeSlideTitle,
-      description: l10n.officeSlideDescription,
-      screenshot: 'office.png',
-      background: 'background.png',
-    );
+    expect(find.text(l10n.installationSlidesSecurityTitle), findsOneWidget);
   }, variant: localeVariant);
 
-  testWidgets('access', (tester) async {
+  testWidgets('productivity', (tester) async {
     final locale = localeVariant.currentValue!;
     final slide = buildSlide(defaultSlides[6], locale: locale);
     if (!await tester.pumpSlide(slide)) {
-      await dumpSlide('access', locale);
+      await dumpSlide('productivity', locale);
     }
 
     final l10n = await AppLocalizations.delegate.load(locale);
-    expectSlide(
-      title: l10n.accessSlideTitle,
-      description: l10n.accessSlideDescription('Ubuntu'),
-      screenshot: 'settings.png',
-      background: 'background.png',
-    );
+    expect(find.text(l10n.installationSlidesProductivityTitle), findsOneWidget);
+  }, variant: localeVariant);
+
+  testWidgets('accessibility', (tester) async {
+    final locale = localeVariant.currentValue!;
+    final slide = buildSlide(defaultSlides[7], locale: locale);
+    if (!await tester.pumpSlide(slide)) {
+      await dumpSlide('accessibility', locale);
+    }
+
+    final l10n = await AppLocalizations.delegate.load(locale);
+    expect(
+        find.text(l10n.installationSlidesAccessibilityTitle), findsOneWidget);
   }, variant: localeVariant);
 
   testWidgets('support', (tester) async {
     final locale = localeVariant.currentValue!;
-    final slide = buildSlide(defaultSlides[7], locale: locale);
+    final slide = buildSlide(defaultSlides[8], locale: locale);
     if (!await tester.pumpSlide(slide)) {
-      await dumpSlide('photos', locale);
+      await dumpSlide('support', locale);
     }
 
     final l10n = await AppLocalizations.delegate.load(locale);
-    expectSlide(
-      title: l10n.supportSlideTitle,
-      description: l10n.supportSlideResources,
-      background: 'welcome.png',
-    );
+    expect(find.text(l10n.installationSlidesSupportTitle), findsOneWidget);
   }, variant: localeVariant);
 }
 
 extension SlideTester on WidgetTester {
   Future<bool> pumpSlide(Widget slide) async {
+    view.devicePixelRatio = 1;
+    view.physicalSize = const Size(960, 680);
     return runZoned(() async {
       FlutterErrorDetails? error;
       FlutterError.onError = (e) => FlutterError.dumpErrorToConsole(error = e);

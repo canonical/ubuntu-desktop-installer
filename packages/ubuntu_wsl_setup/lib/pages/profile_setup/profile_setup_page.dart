@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:form_field_validator/form_field_validator.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import '../../l10n.dart';
 import 'profile_setup_model.dart';
-
-part 'profile_setup_widgets.dart';
+import 'profile_setup_widgets.dart';
 
 /// WSL Profile setup page.
 ///
@@ -62,51 +59,53 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
             'body': Style(margin: Margins.zero),
             'a': Style(textDecoration: TextDecoration.none, color: textColor),
           },
-          onLinkTap: (url, _, __, ___) => launchUrl(url!),
+          onLinkTap: (url, _, __) => launchUrl(url!),
         ),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
-        final fieldPadding = EdgeInsets.symmetric(
-            horizontal: kContentPadding.left, vertical: 12);
+        final fieldPadding =
+            EdgeInsets.symmetric(horizontal: kWizardPadding.left, vertical: 12);
         final fieldWidth = (constraints.maxWidth - fieldPadding.horizontal) *
-            kContentWidthFraction;
+            kWizardWidthFraction;
 
         return ListView(
           children: <Widget>[
             Padding(
               padding: fieldPadding,
-              child: _RealNameFormField(fieldWidth: fieldWidth),
+              child: RealNameFormField(fieldWidth: fieldWidth),
             ),
             Padding(
               padding: fieldPadding,
-              child: _UsernameFormField(fieldWidth: fieldWidth),
+              child: UsernameFormField(fieldWidth: fieldWidth),
             ),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             Padding(
               padding: fieldPadding,
-              child: _PasswordFormField(fieldWidth: fieldWidth),
+              child: PasswordFormField(fieldWidth: fieldWidth),
             ),
             Padding(
               padding: fieldPadding,
-              child: _ConfirmPasswordFormField(fieldWidth: fieldWidth),
+              child: ConfirmPasswordFormField(fieldWidth: fieldWidth),
             ),
             // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
             //       See [ProfileSetupModel.showAdvancedOptions] for more details.
             //
             // const SizedBox(height: kContentSpacing),
-            // const _ShowAdvancedOptionsCheckButton(),
+            // const ShowAdvancedOptionsCheckButton(),
           ],
         );
       }),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          enabled: model.isValid,
-          arguments: model.showAdvancedOptions,
-          onNext: model.saveProfileSetup,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardButton.previous(context),
+        trailing: [
+          WizardButton.next(
+            context,
+            enabled: model.isValid,
+            arguments: model.showAdvancedOptions,
+            onNext: model.saveProfileSetup,
+          ),
+        ],
+      ),
     );
   }
 }

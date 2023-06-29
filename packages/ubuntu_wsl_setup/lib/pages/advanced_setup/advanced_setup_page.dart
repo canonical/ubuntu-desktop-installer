@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/widgets.dart';
-import 'package:yaru_widgets/yaru_widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import '../../l10n.dart';
 import 'advanced_setup_model.dart';
-
-part 'advanced_setup_widgets.dart';
+import 'advanced_setup_widgets.dart';
 
 /// WSL Advanced setup page.
 ///
@@ -56,37 +53,39 @@ class _AdvancedSetupPageState extends State<AdvancedSetupPage> {
       ),
       header: Text(lang.advancedSetupHeader),
       content: LayoutBuilder(builder: (context, constraints) {
-        final fieldWidth = constraints.maxWidth * kContentWidthFraction;
+        final fieldWidth = constraints.maxWidth * kWizardWidthFraction;
         final fieldPadding =
-            EdgeInsets.symmetric(horizontal: kContentPadding.left);
+            EdgeInsets.symmetric(horizontal: kWizardPadding.left);
         return ListView(
           children: <Widget>[
             Padding(
               padding: fieldPadding,
-              child: _MountLocationFormField(fieldWidth: fieldWidth),
+              child: MountLocationFormField(fieldWidth: fieldWidth),
             ),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             Padding(
               padding: fieldPadding,
-              child: _MountOptionFormField(fieldWidth: fieldWidth),
+              child: MountOptionFormField(fieldWidth: fieldWidth),
             ),
-            const SizedBox(height: kContentSpacing * 2),
-            const _HostGenerationCheckButton(),
-            const SizedBox(height: kContentSpacing),
-            const _ResolvConfGenerationCheckButton(),
+            const SizedBox(height: kWizardSpacing * 2),
+            const HostGenerationCheckButton(),
+            const SizedBox(height: kWizardSpacing),
+            const ResolvConfGenerationCheckButton(),
           ],
         );
       }),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          highlighted: true,
-          label: lang.setupButton,
-          enabled: model.isValid,
-          onNext: model.saveAdvancedSetup,
-        ),
-      ],
+      bottomBar: WizardBar(
+        leading: WizardButton.previous(context),
+        trailing: [
+          WizardButton.next(
+            context,
+            highlighted: true,
+            label: lang.setupButton,
+            enabled: model.isValid,
+            onNext: model.saveAdvancedSetup,
+          ),
+        ],
+      ),
     );
   }
 }

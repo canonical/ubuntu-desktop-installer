@@ -1,9 +1,9 @@
 import 'dart:ui';
 
+import 'package:collection/collection.dart';
 import 'package:diacritic/diacritic.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/utils.dart';
 import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
 
 import '../../l10n.dart';
@@ -55,8 +55,7 @@ class SelectLanguageModel extends SafeChangeNotifier {
   /// Loads available languages.
   Future<void> loadLanguages() async {
     return loadLocalizedLanguages(supportedLocales).then((languages) {
-      _languages = languages;
-      _languages.sort((a, b) =>
+      _languages = languages.sorted((a, b) =>
           removeDiacritics(_languageFallback.displayNameFor(a)).compareTo(
               removeDiacritics(_languageFallback.displayNameFor(b))));
     }).then((_) => notifyListeners());
@@ -99,6 +98,6 @@ class SelectLanguageModel extends SafeChangeNotifier {
 
   /// Returns the [locale] defined in Subiquity server.
   Future<Locale> getServerLocale() {
-    return _client.locale().then(parseLocale);
+    return _client.getLocale().then(parseLocale);
   }
 }

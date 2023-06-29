@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
-import 'package:ubuntu_wizard/widgets.dart';
-
-// ignore_for_file: type=lint
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:yaru_test/yaru_test.dart';
+import 'package:yaru_widgets/widgets.dart';
 
 void main() {
   testWidgets('activation', (tester) async {
@@ -12,15 +12,16 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
-          actions: <WizardAction>[
-            WizardAction(label: 'action', onActivated: () => activated = true),
-          ],
+          bottomBar: WizardBar(
+            leading: WizardButton(
+                label: 'action', onActivated: () => activated = true),
+          ),
         ),
       ),
     );
 
     await tester.tap(find.descendant(
-      of: find.byType(OutlinedButton),
+      of: find.byType(FilledButton),
       matching: find.text('action'),
     ));
     expect(activated, isTrue);
@@ -33,14 +34,17 @@ void main() {
           title: AppBar(title: const Text('title')),
           header: const Text('header'),
           content: const Text('content'),
-          footer: const Text('footer'),
-          actions: const <WizardAction>[
-            WizardAction(label: 'back'),
-            WizardAction(label: 'next'),
-          ],
+          snackBar: const SnackBar(content: Text('snackbar')),
+          bottomBar: const WizardBar(
+            leading: WizardButton(label: 'back'),
+            trailing: [
+              WizardButton(label: 'next'),
+            ],
+          ),
         ),
       ),
     );
+    await tester.pumpAndSettle();
 
     final title = find.descendant(
       of: find.byType(AppBar),
@@ -54,38 +58,39 @@ void main() {
     final content = find.text('content');
     expect(content, findsOneWidget);
 
-    final footer = find.text('footer');
-    expect(footer, findsOneWidget);
+    final snackBar = find.text('snackbar');
+    expect(snackBar, findsOneWidget);
+
+    final back = find.text('back');
+    expect(back, findsOneWidget);
+
+    final next = find.text('next');
+    expect(next, findsOneWidget);
 
     expect(tester.getCenter(title).dy, lessThan(tester.getCenter(header).dy));
     expect(tester.getCenter(header).dy, lessThan(tester.getCenter(content).dy));
-    expect(tester.getCenter(content).dy, lessThan(tester.getCenter(footer).dy));
+    expect(tester.getCenter(back).dx, lessThan(tester.getCenter(content).dx));
+    expect(
+        tester.getCenter(next).dx, greaterThan(tester.getCenter(content).dx));
   });
 
-  testWidgets('highlighted action', (tester) async {
+  testWidgets('normal/flat/highlighted action', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: WizardPage(
-          actions: const <WizardAction>[
-            WizardAction(label: 'action', highlighted: false),
-          ],
+          bottomBar: WizardBar(
+            trailing: [
+              WizardButton(label: 'normal'),
+              WizardButton(label: 'flat', flat: true),
+              WizardButton(label: 'highlighted', highlighted: true),
+            ],
+          ),
         ),
       ),
     );
-    expect(find.widgetWithText(OutlinedButton, 'action'), findsOneWidget);
-    expect(find.widgetWithText(ElevatedButton, 'action'), findsNothing);
-
-    await tester.pumpWidget(
-      MaterialApp(
-        home: WizardPage(
-          actions: const <WizardAction>[
-            WizardAction(label: 'action', highlighted: true),
-          ],
-        ),
-      ),
-    );
-    expect(find.widgetWithText(OutlinedButton, 'action'), findsNothing);
-    expect(find.widgetWithText(ElevatedButton, 'action'), findsOneWidget);
+    expect(find.button('normal'), findsOneWidget);
+    expect(find.button('flat'), findsOneWidget);
+    expect(find.button('highlighted'), findsOneWidget);
   });
 
   testWidgets('disabled action', (tester) async {
@@ -94,19 +99,21 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: WizardPage(
-          actions: <WizardAction>[
-            WizardAction(
-              label: 'action',
-              enabled: false,
-              onActivated: () => activated = true,
-            ),
-          ],
+          bottomBar: WizardBar(
+            trailing: [
+              WizardButton(
+                label: 'action',
+                enabled: false,
+                onActivated: () => activated = true,
+              ),
+            ],
+          ),
         ),
       ),
     );
 
     await tester.tap(find.descendant(
-      of: find.byType(OutlinedButton),
+      of: find.byType(FilledButton),
       matching: find.text('action'),
     ));
     expect(activated, isFalse);
@@ -114,11 +121,13 @@ void main() {
 
   testWidgets('hidden action', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: WizardPage(
-          actions: const <WizardAction>[
-            WizardAction(label: 'action', visible: false),
-          ],
+          bottomBar: WizardBar(
+            trailing: [
+              WizardButton(label: 'action', visible: false),
+            ],
+          ),
         ),
       ),
     );
@@ -140,10 +149,24 @@ void main() {
           '/': WizardRoute(builder: (_) {
             return Builder(builder: (context) {
               return WizardPage(
-                actions: <WizardAction>[
-                  WizardAction.back(context),
-                  WizardAction.next(context),
-                ],
+                bottomBar: WizardBar(
+                  leading: WizardButton.previous(context),
+                  trailing: [
+                    WizardButton.next(context),
+                  ],
+                ),
+              );
+            });
+          }),
+          '/last': WizardRoute(builder: (_) {
+            return Builder(builder: (context) {
+              return WizardPage(
+                bottomBar: WizardBar(
+                  leading: WizardButton.previous(context),
+                  trailing: [
+                    WizardButton.next(context),
+                  ],
+                ),
               );
             });
           }),
@@ -157,17 +180,110 @@ void main() {
     expect(
       find.descendant(
         of: find.byType(OutlinedButton),
-        matching: find.text(lang.backAction),
+        matching: find.text(lang.previousLabel),
       ),
       findsOneWidget,
     );
 
     expect(
       find.descendant(
-        of: find.byType(OutlinedButton),
-        matching: find.text(lang.continueAction),
+        of: find.byType(FilledButton),
+        matching: find.text(lang.nextLabel),
       ),
       findsOneWidget,
     );
+
+    expect(
+      find.descendant(
+        of: find.byType(FilledButton),
+        matching: find.text(lang.doneLabel),
+      ),
+      findsNothing,
+    );
+
+    Wizard.of(context).next();
+    await tester.pumpAndSettle();
+
+    expect(
+      find.descendant(
+        of: find.byType(OutlinedButton),
+        matching: find.text(lang.previousLabel),
+      ),
+      findsOneWidget,
+    );
+
+    expect(
+      find.descendant(
+        of: find.byType(FilledButton),
+        matching: find.text(lang.nextLabel),
+      ),
+      findsNothing,
+    );
+
+    expect(
+      find.descendant(
+        of: find.byType(FilledButton),
+        matching: find.text(lang.doneLabel),
+      ),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('page indicator', (tester) async {
+    final routes = <String, WizardRoute>{
+      '/foo': WizardRoute(
+        builder: (context) => const WizardPage(
+          content: Text('Page 4 of 7'),
+          bottomBar: WizardBar(),
+        ),
+        userData: const WizardRouteData(step: 3),
+      ),
+    };
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: UbuntuLocalizations.localizationsDelegates,
+        home: Wizard(
+          userData: const WizardData(totalSteps: 7),
+          routes: routes,
+          initialRoute: '/foo',
+        ),
+      ),
+    );
+
+    final indicatorFinder = find.byType(YaruPageIndicator);
+    expect(indicatorFinder, findsOneWidget);
+    expect(find.text('Page 4 of 7'), findsOneWidget);
+    expect((indicatorFinder.evaluate().first.widget as YaruPageIndicator).page,
+        equals(3));
+  });
+
+  testWidgets('loading indicator', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: WizardButton(
+          label: 'button',
+          loading: true,
+        ),
+      ),
+    );
+
+    expect(find.text('button'), findsOneWidget);
+    expect(find.byType(YaruCircularProgressIndicator), findsNothing);
+
+    await tester.pump(const Duration(milliseconds: 100));
+
+    expect(find.text('button'), findsNothing);
+    expect(find.byType(YaruCircularProgressIndicator), findsOneWidget);
+
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: WizardButton(
+          label: 'button',
+        ),
+      ),
+    );
+
+    expect(find.text('button'), findsOneWidget);
+    expect(find.byType(YaruCircularProgressIndicator), findsNothing);
   });
 }

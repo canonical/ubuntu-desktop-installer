@@ -13,16 +13,7 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'Storno';
-
-  @override
   String get changeButtonText => 'Změnit';
-
-  @override
-  String get okButtonText => 'OK';
-
-  @override
-  String get noButtonText => 'Ne';
 
   @override
   String get restartButtonText => 'Restartovat';
@@ -31,19 +22,25 @@ class AppLocalizationsCs extends AppLocalizations {
   String get revertButtonText => 'Vrátit zpět';
 
   @override
-  String get yesButtonText => 'Ano';
-
-  @override
   String get quitButtonText => 'Opustit instalaci';
 
   @override
-  String get welcome => 'Vítejte';
+  String welcomePageTitle(Object DISTRO) {
+    return 'Vítejte v $DISTRO';
+  }
+
+  @override
+  String preparingUbuntu(Object DISTRO) {
+    return 'Připravuje se $DISTRO…';
+  }
 
   @override
   String get welcomeHeader => 'Zvolte svůj jazyk:';
 
   @override
-  String get tryOrInstallPageTitle => 'Vyzkoušet nebo nainstalovat';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'Vyzkoušet nebo nainstalovat $DISTRO';
+  }
 
   @override
   String get repairInstallation => 'Opravit instalaci';
@@ -77,14 +74,17 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Vypněte RST';
+  String get turnOffRST => 'RST je zapnuté';
+
+  @override
+  String get turnOffRSTTitle => 'Aby bylo možné pokračovat, vypněte RST';
 
   @override
   String get turnOffRSTDescription => 'Na tomto počítači je zapnutá technologie Intel RST (Rapit Storage Technology). Aby bylo možné Ubuntu nainstalovat, je třeba ve Windows funkci RST vypnout.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'Návod jak to udělat si otevřete na jiném zařízení (třeba telefonu): <a href=\"https://$url\">$url</a>';
+    return 'Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -98,6 +98,12 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get detectLayout => 'Zjistit rozvržení klávesnice';
+
+  @override
+  String get detectButtonText => 'Zjistit';
+
+  @override
+  String get keyboardVariant => 'Varianta klávesnice:';
 
   @override
   String get pressOneKey => 'Stiskněte některou z následujících kláves:';
@@ -136,10 +142,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get showSecurityKey => 'Zobrazit klíč zabezpečení';
 
   @override
-  String get connectToInternetPageTitle => 'Připojit k Internetu';
+  String get connectToInternetPageTitle => 'Připojit k síti';
 
   @override
-  String get connectToInternetDescription => 'Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se ethernetovým kabelem, nebo zvolte Wi-Fi síť';
+  String get connectToInternetDescription => 'Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se Ethernetovým kabelem, nebo zvolte Wi-Fi síť';
 
   @override
   String get useWiredConnection => 'Použít drátové připojení';
@@ -151,7 +157,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get wiredDisabled => 'Drátové připojení je vypnuto';
 
   @override
-  String get wiredMustBeEnabled => 'Aby na tomto počítači bylo možné použít rozhraní ethernet, je třeba zapnout drátové připojení';
+  String get wiredMustBeEnabled => 'Aby na tomto počítači bylo možné použít rozhraní Ethernet, je třeba zapnout drátové připojení';
 
   @override
   String get enableWired => 'Zapnout drátové';
@@ -187,7 +193,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get connectButtonText => 'Připojit';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'Aktualizace a ostatní software';
+  String get updatesOtherSoftwarePageTitle => 'Aplikace a aktualizace';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'Které aplikace chcete mít hned od začátku nainstalované?';
@@ -227,14 +233,14 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">Upozornění</font>: Počítač není připojen k napájení ze zásuvky.';
+    return '<font color=\"$color\">Upozornění:</font> Počítač není připojen k napájení ze zásuvky.';
   }
 
   @override
   String get offlineWarning => 'V tu chvíli nejste připojení k Internetu';
 
   @override
-  String get chooseSecurityKeyTitle => 'Zvolte si šifrovací klíč';
+  String get chooseSecurityKeyTitle => 'Klíč zabezpečení';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -255,7 +261,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">VAROVÁNÍ</font>: Pokud tento šifrovací klíč zapomenete, ke svým datům už se nedostanete. Pokud vám to pomůže, šifrovací klíč si zapište na papír a ten si bezpečně uložte někam mimo počítač.';
+    return '<font color=\"$color\">VAROVÁNÍ:</font> Pokud tento šifrovací klíč zapomenete, ke svým datům už se nedostanete. Pokud vám to pomůže, šifrovací klíč si zapište na papír a ten si bezpečně uložte někam mimo počítač.';
   }
 
   @override
@@ -358,7 +364,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'Dokumenty, hudba a ostatní osobní soubory zůstanou zachovány. Pokaždé, když počítač spustíte z vypnutého stavu (tedy nikoli uspání), budete si moci zvolit který operační systém spustit.';
 
   @override
-  String get installationTypeManual => 'Něco jiného';
+  String get installationTypeManual => 'Ruční rozdělení na oddíly';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -406,10 +412,16 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installAlongsideAvailable => 'K dispozici:';
 
   @override
-  String get allocateDiskSpace => 'Přidělit prostor na disku';
+  String get allocateDiskSpace => 'Ruční rozdělení';
 
   @override
-  String get startInstallingButtonText => 'Zahájit instalaci';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Je třeba, aby přípojné body začínaly na „/“ (dopředné lomítko)';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Přípojné body nemohou obsahovat mezery';
+
+  @override
+  String get startInstallingButtonText => 'Instalace';
 
   @override
   String get diskHeadersDevice => 'Zařízení';
@@ -433,22 +445,22 @@ class AppLocalizationsCs extends AppLocalizations {
   String get diskHeadersFormat => 'Formátovat';
 
   @override
-  String get freeDiskSpace => 'volné místo';
+  String get freeDiskSpace => 'Volné místo';
 
   @override
   String get newPartitionTable => 'Nová tabulka rozdělení na oddíly';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'Vytvořit na tomto zařízení novou prázdnou tabulku oddílů?';
+  String get newPartitionTableConfirmationTitle => 'Nový prázdný oddíl';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Vybrali jste celé zařízení, které chcete rozdělit na oddíly. Pokud budete pokračovat ve vytváření nové tabulky oddílů na něm, budou všechny stávající oddíly na něm odstraněny.\n\nUpozorňujeme, že tuto operaci budete moci později (v rámci instalátoru) vrátit, pokud si to budete přát.';
+  String get newPartitionTableConfirmationMessage => 'Vytvoření nové tabulky oddílů na celém zařízení z něj odebere veškeré stávající oddíly. V případě potřeby lze v tomto kroku ještě tuto operaci vzít zpět (ovšem po zapsání změn už pak ne).';
 
   @override
   String get tooManyPrimaryPartitions => 'Příliš mnoho primárních oddílů';
 
   @override
-  String get partitionLimitReached => 'dosaženo limitu';
+  String get partitionLimitReached => 'Dosaženo limitu';
 
   @override
   String get bootLoaderDevice => 'Zařízení na které nainstalovat zavaděč systému';
@@ -496,55 +508,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get partitionFormatLabel => 'Použito jako:';
 
   @override
-  String get partitionFormatExt4 => 'Žurnálovací souborový systém Ext4';
+  String get partitionFormatNone => 'Ponechat nenaformátované';
 
   @override
-  String get partitionFormatExt3 => 'Žurnálovací souborový systém Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'Souborový systém Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'Žurnálovací souborový systém btrfs';
-
-  @override
-  String get partitionFormatJfs => 'Žurnálovací souborový systém JFS';
-
-  @override
-  String get partitionFormatXfs => 'Žurnálovací souborový systém XFS';
-
-  @override
-  String get partitionFormatFat => 'Souborový systém FAT';
-
-  @override
-  String get partitionFormatFat12 => 'Souborový systém FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'Souborový systém FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'Souborový systém FAT32';
-
-  @override
-  String get partitionFormatSwap => 'Odkládací oblast';
-
-  @override
-  String get partitionFormatIso9660 => 'Souborový systém ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'Souborový systém VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'Souborový systém NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'Souborový systém ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'Kořenový souborový systém na ZFS';
-
-  @override
-  String get partitionFormatNone => 'Leave unformatted';
+  String partitionFormatKeep(Object format) {
+    return 'Ponechat naformátované jako $format';
+  }
 
   @override
   String get partitionErase => 'Naformátovat oddíl';
@@ -553,7 +522,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get partitionMountPointLabel => 'Přípojný bod:';
 
   @override
-  String get whoAreYouPageTitle => 'Kdo jste?';
+  String get whoAreYouPageTitle => 'Nastavení vašeho účtu';
 
   @override
   String get whoAreYouPageAutoLogin => 'Přihlásit se automaticky';
@@ -568,6 +537,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'Je třeba zadat jméno';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'Jméno je příliš dlouhé.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'Název pro váš počítač';
 
   @override
@@ -575,6 +547,9 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'Je třeba zadat název pro počítač';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'Takový název počítače je příliš dlouhý.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'Daný název pro počítač nelze použít (neplatný znak)';
@@ -613,16 +588,25 @@ class AppLocalizationsCs extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'Do každé z kolonek pro heslo jste napsali něco jiného';
 
   @override
-  String get whoAreYouPageShowPassword => 'Zobrazit heslo';
+  String get whoAreYouPagePasswordShow => 'Zobrazit';
 
   @override
-  String get writeChangesToDisk => 'Zapsat změny na disk';
+  String get whoAreYouPagePasswordHide => 'Skrýt';
+
+  @override
+  String get writeChangesToDisk => 'Připraveno k instalaci';
 
   @override
   String get writeChangesFallbackSerial => 'disk';
 
   @override
   String get writeChangesDescription => 'Pokud budete pokračovat, níže uvedené změny budou zapsány na disky. Další změny pak můžete udělat ručně.';
+
+  @override
+  String get writeChangesDevicesTitle => 'Zařízení';
+
+  @override
+  String get writeChangesPartitionsTitle => 'Oddíly';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Budou změněny tabulky rozdělení na oddíly následujících zařízení:';
@@ -637,31 +621,31 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'velikost oddílu #$disk$partition změněna z $oldsize na $newsize';
+    return 'velikost oddílu <b>$disk$partition</b> změněna z <b>$oldsize</b> na <b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'oddíl #$disk$partition naformátován jako $format použit pro $mount';
+    return 'oddíl <b>$disk$partition</b> naformátovaný jako <b>$format</b> použit pro <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'oddíl #$disk$partition naformátován jako $format';
+    return 'oddíl <b>$disk$partition</b> naformátován jako <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'oddíl #$disk$partition použit pro $mount';
+    return 'oddíl <b>$disk$partition</b> použit pro <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'oddíl #$disk$partition vytvořen';
+    return 'oddíl <b>$disk$partition</b> vytvořen';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Zvolte si vzhled pro své prostředí';
+  String get chooseYourLookPageTitle => 'Zvolte si motiv vzhledu';
 
   @override
   String get chooseYourLookPageHeader => 'Toto je možné později kdykoli změnit v nastavení vzhledu.';
@@ -677,7 +661,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** je nainstalovaný a připravený k použití.';
+    return '**$system** je nainstalované a připravené k použití';
   }
 
   @override
@@ -700,21 +684,34 @@ class AppLocalizationsCs extends AppLocalizations {
   String get continueTesting => 'Pokračovat ve zkoušení';
 
   @override
-  String get turnOffBitlockerTitle => 'Vypněte BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker je zapnutý';
 
   @override
-  String get turnOffBitlockerDescription => 'Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné Ubuntu nainstalovat, je třeba Bitlocker vypnout.';
+  String get turnOffBitlockerHeadline => 'Aby bylo možné pokračovat, vypněte BitLocker';
+
+  @override
+  String turnOffBitlockerDescription(Object option) {
+    return 'Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné pokračovat, je třeba pomocí Windows udělat volné místo nebo zvolit \'$option\'.';
+  }
 
   @override
   String turnOffBitlockerLinkInstructions(Object url) {
-    return 'Návod jak to udělat si otevřete na jiném zařízení (třeba telefonu): <a href=\"https://$url\">$url</a>';
+    return 'Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://$url\">$url</a>';
   }
 
   @override
   String get restartIntoWindows => 'Restartovat do Windows';
 
   @override
-  String get whereAreYouPageTitle => 'Kde se nacházíte?';
+  String get restartIntoWindowsTitle => 'Restartovat do Windows?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'Opravdu chcete váš počítač restartovat? Pokud poté budete chtít dokončit instalaci $DISTRO, bude třeba znovu spustit instalaci $DISTRO.';
+  }
+
+  @override
+  String get whereAreYouPageTitle => 'Vyberte své časové pásmo';
 
   @override
   String get whereAreYouLocationLabel => 'Umístění';
@@ -723,129 +720,118 @@ class AppLocalizationsCs extends AppLocalizations {
   String get whereAreYouTimezoneLabel => 'Časové pásmo';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
+  String installationSlidesTitle(Object RELEASE) {
     return 'Vítejte v $RELEASE';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return 'Rychlá a plná nových funkcí, nejnovější verze $RELEASE usnadňuje používání počítače víc než předtím. Zde je ukázka několika z nových skvělých věcí, na které je možné se těšit…';
+  String get installationSlidesAvailable => 'K dispozici:';
+
+  @override
+  String get installationSlidesIncluded => 'Obsaženo:';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'Rychlé, svobodné a plné nových funkcí';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return 'Nejnovější verze $DISTRO usnadňuje používání počítače víc než kdy dříve.';
   }
 
   @override
-  String get softwareSlideTitle => 'Nalezněte ještě více software';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return 'Dejte sbohem únavnému prohledávání webu při získávání nového software. Díky přístupu do Snap Store a archivu softwaru $RELEASE, je snadné najít a nainstalovat nové aplikace. Stačí jen napsat, co hledáte nebo procházet kategoriemi, jako např. Grafika a fotky, Hry a produktivita – vše doprovázeno užitečnými recenzemi ostatních uživatelů.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'Ať už jste vývojáři, tvůrci, hráči či správci, naleznete zde nové nástroje zvyšující vaši produktivitu a vylepšující váš dojem z používání $RELEASE.';
   }
 
   @override
-  String get musicSlideTitle => 'Vezměte si hudbu s sebou';
+  String get installationSlidesSoftwareTitle => 'Všechny aplikace které potřebujete';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return '$RELEASE přináší skvělý přehrávač hudby Rhythmbox. S pokročilými funkcemi pro přehrávání je snadné si seřadit skladby, které se vám líbí. A funguje skvěle s CD disky a přenosnými přehrávači hudby, takže si veškerou svou hudbu můžete nosit s sebou.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'Instalujte, spravujte a aktualizujte vámi používané aplikace v Ubuntu Software, obsahujícího tisíce aplikací jak ze Snap Store, tak z archivu balíčků $DISTRO.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'Přehrávač hudby Rhytmbox';
+  String get installationSlidesDevelopmentTitle => 'Vyvíjejte s nejlepším open source';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => 'Bavte se svými fotkami';
-
-  @override
-  String get photoSlideDescription => 'Shotwell je šikovný správce fotek, který je připraven na vaše foto zařízení. Připojte fotoaparát nebo telefon a přeneste své fotky a pak je jednoduše nasdílejte a mějte je v bezpečí před ztrátou. A pokud jste tvořiví, v Ubuntu Software je k dispozici mnoho dalších aplikací pro práci s fotkami.';
-
-  @override
-  String get photoSlideShotwell => 'Správce fotek Shotwell';
-
-  @override
-  String get photoSlideGimp => 'Editor obrázků GIMP';
-
-  @override
-  String get photoSlideShotcut => 'Editor videa Shotcut';
-
-  @override
-  String get webSlideTitle => 'Získejte z webu maximum';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return '$RELEASE obsahuje Firefox – webový prohlížeč, používaný miliony lidí z celého světa. Webové aplikace, které používáte nejčastěji (jako např. Facebook a Gmail), je možné připnout do vašeho desktopového prostředí a mít je tak více po ruce, úplně jako ostatní aplikace v počítači.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO je ideální prostředí pro vývoj aplikací či webů, datovou vědu a umělou inteligenci / strojové učení, stejně tak pro devops a správu systémů. Každé vydání $DISTRO obsahuje nejnovější sady potřebných nástrojů a podporuje všechna hlavní integrovaná vývojářská prostředí.';
   }
 
   @override
-  String get webSlideFirefox => 'Webový prohlížeč Firefox';
+  String get installationSlidesCreativityTitle => 'Buďte tvořivější';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
-
-  @override
-  String get webSlideChromium => 'Chromium';
-
-  @override
-  String get officeSlideTitle => 'Vše co potřebujete pro kancelář';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice je svobodná sada kancelářských aplikací, obsahující vše potřebné pro vytváření dokumentů, tabulek a prezentací. Je kompatibilní se souborovými formáty Microsoft Office, nabízí veškeré potřebné funkce.';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => 'Přístupnost pro všechny';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return 'Středobodem filozofie $RELEASE je, že počítače jsou pro všechny. Pomocí pokročilých nástrojů pro zpřístupnění a možnostmi pro změnu jazyka, barev a velikosti textu, $RELEASE usnadňuje používání počítače – ať už jste kdokoli a odkudkoli.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'Poku jste animátory, designéry, tvůrci videí či vývojáři her, je snadné přenést své pracovní postupy na $DISTRO díky podpoře software a aplikací, které patří k open source a oborovým standardům.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'Možnosti přizpůsobení si';
+  String get installationSlidesGamingTitle => 'Skvělé pro hraní her';
 
   @override
-  String get accessSlideAppearance => 'Vzhled';
-
-  @override
-  String get accessSlideAssistiveTechnologies => 'Technologie pro zpřístupnění';
-
-  @override
-  String get accessSlideLanguageSupport => 'Podpora jazyků';
-
-  @override
-  String get supportSlideTitle => 'Nápověda a podpora';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return 'Oficiální dokumentace pokrývá mnohé z nejběžnějších aspektů $RELEASE. Je k dispozici jak <a href=\"https://help.ubuntu.com\">online</a>, tak lokálně prostřednictvím ikony Nápověda v doku.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return '$DISTRO podporuje nejnovější ovladače od NVIDIA (to stejné ty z Mesa), což zlepšuje výkon a kompatibilitu. Tisíce her pro Windows skvěle fungují na $DISTRO prostřednictvím aplikací jako je Steam, bez potřeby něco dále nastavovat.';
   }
 
   @override
-  String get supportSlideQuestions => 'Na <a href=\"https://askubuntu.com\">Ask Ubuntu</a> je možné pokládat dotazy a hledat v rozsáhlé sbírce těch už zodpovězených. Podpora ve vašem jazyce může být poskytována vaším <a href=\"https://loco.ubuntu.com/teams\">Místním komunitním týmem</a>.';
+  String get installationSlidesSecurityTitle => 'Soukromé a bezpečné';
 
   @override
-  String get supportSlideResources => 'Ohledně ukazatelů na ostatní užitečné zdroje, navštivte <a href=\"https://www.ubuntu.com/support/community-support\">Komunitní podporu</a> nebo <a href=\"https://www.ubuntu.com/support\">Komerční podporu</a>.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return '$DISTRO poskytuje veškeré nástroje které jsou zapotřebí pro ochranu soukromí a bezpečné používání Internetu. Díky vestavěné bráně firewall, podpoře VPN a řadě aplikací zaměřených na ochranu soukromí máte svá data plně pod kontrolou.';
+  }
 
   @override
-  String get includedSoftware => 'Obsažený software';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'Všechna $DISTRO LTS vydání dostávají po dobu pěti let opravy zabezpečení s tím, že je možné prodloužit na deset let předplatným Ubuntu Pro.';
+  }
 
   @override
-  String get availableSoftware => 'Software k dispozici';
+  String get installationSlidesProductivityTitle => 'Zvyšte svou produktivitu';
 
   @override
-  String get supportedSoftware => 'Podporovaný software';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return '$DISTRO Desktop obsahuje LibreOffice – sadu open source aplikaci, kompatibilní s Microsoft Office pro dokumenty, tabulky a prezentace. Jsou též k dispozici oblíbené nástroje pro spolupráci.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'Přístupnost pro každého';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return 'V srdci filozofie $DISTRO je myšlenka, že počítače jsou pro všechny. Díky pokročilým nástrojům pro zpřístupnění hendikepovaným a možnosti změnit jazyk, barvy a velikost textu rozhraní, $DISTRO činí používání počítače snadné – ať už jste kdokoli a žijete kdekoli.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'Čtečka obrazovky Orca';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'Podpora jazyků';
+
+  @override
+  String get installationSlidesSupportTitle => 'Nápověda a podpora';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'Oficiální dokumentace k $DISTRO je k dispozici jak online, tak přes ikonu Nápověda na panelu.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'Web Ask Ubuntu pokrývá celou škálu otázek a odpovědí, dále na fóru Ubuntu Discourse jsou k dispozici návody a diskuze pro nové i pokročilé uživatele.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'Pro firemní uživatele Canonical poskytuje komerční podporu, díky které je snadné zavést a spravovat Ubuntu na pracovišti.';
+
+  @override
+  String get installationSlidesSupportResources => 'Užitečné zdroje:';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'Oficiální dokumentace';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'Podpora 24/7 na podnikové úrovni s Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Kopírování souborů…';
@@ -860,20 +846,79 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installationFailed => 'Instalace se nezdařila';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'Omlouváme se';
+  String get notEnoughDiskSpaceTitle => 'Nedostatek místa';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'Aby bylo možné nainstalovat $RELEASE, je zapotřebí alespoň $SIZE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'Nedostatek místa na disku pro instalaci $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'Tento počítač disponuje pouze $SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'K dispozici:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'Největší disk v tomto počítači má velikost pouze $SIZE.';
-  }
+  String get notEnoughDiskSpaceRequired => 'Vyžadováno:';
+
+  @override
+  String get activeDirectoryOption => 'Použít Active Directory';
+
+  @override
+  String get activeDirectoryInfo => 'V dalším kroku zadáte doménu a další podrobnosti.';
+
+  @override
+  String get activeDirectoryTitle => 'Nastavit pro Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Vyzkoušet spojení s doménou';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Doména';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Vyžadováno';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Příliš dlouhé';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Neplatné znaky';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Začíná na tečku (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Končí na tečku (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Začíná na spojovník/pomlčku (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Končí na spojovník/pomlčku (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Obsahuje několik teček za sebou (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Doména nenalezena';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Uživatel s oprávněním pro přidání do domény';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Vyžadováno';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Neplatné znaky';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Heslo';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Vyžadováno';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Chyba při nastavování pro Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Je nám líto, v tuto chvíli se nedaří nastavit pro Active Directory. Po nastartování nového systému pak navštivte <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kde získáte další informace.';
 }

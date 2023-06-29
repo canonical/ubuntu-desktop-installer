@@ -13,16 +13,7 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get cancelButtonText => 'ביטול';
-
-  @override
-  String get changeButtonText => 'עריכה';
-
-  @override
-  String get okButtonText => 'אישור';
-
-  @override
-  String get noButtonText => 'לא';
+  String get changeButtonText => 'שינוי';
 
   @override
   String get restartButtonText => 'הפעלה מחדש';
@@ -31,19 +22,25 @@ class AppLocalizationsHe extends AppLocalizations {
   String get revertButtonText => 'החזרה';
 
   @override
-  String get yesButtonText => 'כן';
-
-  @override
   String get quitButtonText => 'יציאה מההתקנה';
 
   @override
-  String get welcome => 'ברוך בואך';
+  String welcomePageTitle(Object DISTRO) {
+    return 'ברוך בואך אל $DISTRO';
+  }
+
+  @override
+  String preparingUbuntu(Object DISTRO) {
+    return '$DISTRO בהכנות…';
+  }
 
   @override
   String get welcomeHeader => 'נא לבחור שפה:';
 
   @override
-  String get tryOrInstallPageTitle => 'להתנסות או להתקין';
+  String tryOrInstallPageTitle(Object DISTRO) {
+    return 'להתנסות או להתקין את $DISTRO';
+  }
 
   @override
   String get repairInstallation => 'תיקון התקנה';
@@ -77,14 +74,17 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'כיבוי RST';
+  String get turnOffRST => 'RST פעיל';
+
+  @override
+  String get turnOffRSTTitle => 'יש לכבות את ה־RST כדי להמשיך';
 
   @override
   String get turnOffRSTDescription => 'המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.';
 
   @override
   String instructionsForRST(Object url) {
-    return 'לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://$url\">$url</a>';
+    return 'לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://$url\">$url</a>';
   }
 
   @override
@@ -98,6 +98,12 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get detectLayout => 'איתור פריסת המקלדת';
+
+  @override
+  String get detectButtonText => 'זיהוי';
+
+  @override
+  String get keyboardVariant => 'הגוון מקלדת:';
 
   @override
   String get pressOneKey => 'נא ללחוץ על אחד מהתווים הבאים:';
@@ -136,7 +142,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get showSecurityKey => 'הצגת מפתח אבטחה';
 
   @override
-  String get connectToInternetPageTitle => 'התחברות לאינטרנט';
+  String get connectToInternetPageTitle => 'התחברות לרשת';
 
   @override
   String get connectToInternetDescription => 'חיבור המחשב הזה לאינטרנט יסייע לאובונטו להתקין תכניות נוספות חיוניות ויסייע בבחירת אזור הזמן שלך.\n\nאפשר להתחבר בכבל רשת או לבחור רשת אלחוטית';
@@ -187,7 +193,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get connectButtonText => 'התחברות';
 
   @override
-  String get updatesOtherSoftwarePageTitle => 'עדכונים ותכניות נוספות';
+  String get updatesOtherSoftwarePageTitle => 'יישומים ועדכונים';
 
   @override
   String get updatesOtherSoftwarePageDescription => 'אילו יישומים להתקין בתור התחלה?';
@@ -227,14 +233,14 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String onBatteryWarning(Object color) {
-    return '<font color=\"$color\">אזהרה</font>: המחשב לא מחובר למקור חשמל.';
+    return '<font color=\"$color\">אזהרה:</font> המחשב לא מחובר למקור חשמל.';
   }
 
   @override
   String get offlineWarning => 'החיבור שלך מנותק';
 
   @override
-  String get chooseSecurityKeyTitle => 'נא לבחור מפתח אבטחה';
+  String get chooseSecurityKeyTitle => 'מפתח אבטחה';
 
   @override
   String chooseSecurityKeyHeader(Object RELEASE) {
@@ -255,7 +261,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String chooseSecurityKeyWarning(Object color) {
-    return '<font color=\"$color\">אזהרה</font>: אובדן מפתח האבטחה עשוי להוביל לאובדן כל הנתונים. במקרה הצורך, מומלץ לכתוב את המפתח על פתק ולאחסן אותו במקום בטוח.';
+    return '<font color=\"$color\">אזהרה:</font> אובדן מפתח האבטחה עשוי להוביל לאובדן כל הנתונים. במקרה הצורך, מומלץ לכתוב את המפתח על פתק ולאחסן אותו במקום בטוח.';
   }
 
   @override
@@ -358,7 +364,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installationTypeAlongsideInfo => 'המסמכים, המוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.';
 
   @override
-  String get installationTypeManual => 'משהו אחר';
+  String get installationTypeManual => 'חלוקה ידנית למחיצות';
 
   @override
   String installationTypeManualInfo(Object DISTRO) {
@@ -406,10 +412,16 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installAlongsideAvailable => 'זמין:';
 
   @override
-  String get allocateDiskSpace => 'הקצאת מקום בכונן';
+  String get allocateDiskSpace => 'חלוקת מחיצות ידנית';
 
   @override
-  String get startInstallingButtonText => 'להתחיל בהתקנה';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'נקודות עיגון חייבות להתחיל ב־„/”';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'נקודות עיגון לא יכולות להכיל רווחים';
+
+  @override
+  String get startInstallingButtonText => 'התקנה';
 
   @override
   String get diskHeadersDevice => 'התקן';
@@ -433,22 +445,22 @@ class AppLocalizationsHe extends AppLocalizations {
   String get diskHeadersFormat => 'פורמט';
 
   @override
-  String get freeDiskSpace => 'מקום פנוי';
+  String get freeDiskSpace => 'שטח פנוי';
 
   @override
   String get newPartitionTable => 'טבלת מחיצות חדשה';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'ליצור טבלת מחיצות ריקה בהתקן הזה?';
+  String get newPartitionTableConfirmationTitle => 'מחיצה ריקה חדשה';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'בחרת לחלק התקן שלם למחיצות. בחירה להמשיך ביצירת טבלת מחיצות חדשה בהתקן תסיר את כל המחיצות הנוכחיות.\n\nנא לשים לב שזאת פעולה בלתי הפיכה.';
+  String get newPartitionTableConfirmationMessage => 'יצירת טבלת מחיצות חדשה על כל הכונן תסיר את כל המחיצות הנוכחיות שלו. אי אפשר להשתקם מהפעולה הזאת במקרה הצורך.';
 
   @override
   String get tooManyPrimaryPartitions => 'יותר מדי מחיצות ראשיות';
 
   @override
-  String get partitionLimitReached => 'הגעת לגבול';
+  String get partitionLimitReached => 'הגעת למגבלה';
 
   @override
   String get bootLoaderDevice => 'התקן להתקנת מנהל טעינה';
@@ -496,55 +508,12 @@ class AppLocalizationsHe extends AppLocalizations {
   String get partitionFormatLabel => 'בשימוש בתור:';
 
   @override
-  String get partitionFormatExt4 => 'מערכת קבצים מתועדת מסוג Ext4';
-
-  @override
-  String get partitionFormatExt3 => 'מערכת קבצים מתועדת מסוג Ext3';
-
-  @override
-  String get partitionFormatExt2 => 'מערכת קבצים מסוג Ext2';
-
-  @override
-  String get partitionFormatBtrfs => 'מערכת קבצים מתועדת מסוג btrfs';
-
-  @override
-  String get partitionFormatJfs => 'מערכת קבצים מתועדת מסוג JFS';
-
-  @override
-  String get partitionFormatXfs => 'מערכת קבצים מתועדת מסוג XFS';
-
-  @override
-  String get partitionFormatFat => 'מערכת קבצים מסוג FAT';
-
-  @override
-  String get partitionFormatFat12 => 'מערכת קבצים מסוג FAT12';
-
-  @override
-  String get partitionFormatFat16 => 'מערכת קבצים מסוג FAT16';
-
-  @override
-  String get partitionFormatFat32 => 'מערכת קבצים מסוג FAT32';
-
-  @override
-  String get partitionFormatSwap => 'שטח החלפה';
-
-  @override
-  String get partitionFormatIso9660 => 'מערכת קבצים מסוג ISO 9660';
-
-  @override
-  String get partitionFormatVfat => 'מערכת קבצים מסוג VFAT';
-
-  @override
-  String get partitionFormatNtfs => 'מערכת קבצים מסוג NTFS';
-
-  @override
-  String get partitionFormatReiserFS => 'מערכת קבצים מסוג ReiserFS';
-
-  @override
-  String get partitionFormatZfsroot => 'מערכת קבצים לבסיס ZFS';
-
-  @override
   String get partitionFormatNone => 'להשאיר בלי פרמוט';
+
+  @override
+  String partitionFormatKeep(Object format) {
+    return 'להשאיר בעיצוב $format';
+  }
 
   @override
   String get partitionErase => 'פרמוט המחיצה';
@@ -553,7 +522,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get partitionMountPointLabel => 'נקודת עגינה:';
 
   @override
-  String get whoAreYouPageTitle => 'עם מי הכבוד?';
+  String get whoAreYouPageTitle => 'הקמת החשבון שלך';
 
   @override
   String get whoAreYouPageAutoLogin => 'כניסה אוטומטית';
@@ -568,6 +537,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get whoAreYouPageRealNameRequired => 'דרוש שם';
 
   @override
+  String get whoAreYouPageRealNameTooLong => 'השם ארוך מדי.';
+
+  @override
   String get whoAreYouPageComputerNameLabel => 'שם המחשב שלך';
 
   @override
@@ -575,6 +547,9 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get whoAreYouPageComputerNameRequired => 'דרוש שם מחשב';
+
+  @override
+  String get whoAreYouPageComputerNameTooLong => 'שם המחשב הזה ארוך מדי.';
 
   @override
   String get whoAreYouPageInvalidComputerName => 'שם המחשב שגוי';
@@ -613,16 +588,25 @@ class AppLocalizationsHe extends AppLocalizations {
   String get whoAreYouPagePasswordMismatch => 'הסיסמאות סותרות זו את זו';
 
   @override
-  String get whoAreYouPageShowPassword => 'הצגת הסיסמה';
+  String get whoAreYouPagePasswordShow => 'חשיפה';
 
   @override
-  String get writeChangesToDisk => 'כתיבת השינויים לכונן';
+  String get whoAreYouPagePasswordHide => 'הסתרה';
+
+  @override
+  String get writeChangesToDisk => 'סיימנו להתכונן להתקנה';
 
   @override
   String get writeChangesFallbackSerial => 'כונן';
 
   @override
   String get writeChangesDescription => 'בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.';
+
+  @override
+  String get writeChangesDevicesTitle => 'התקנים';
+
+  @override
+  String get writeChangesPartitionsTitle => 'מחיצות';
 
   @override
   String get writeChangesPartitionTablesHeader => 'טבלאות המחיצות של ההתקנים הבאים נערכו:';
@@ -637,31 +621,31 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'הגודל של מחיצה מס׳ $disk$partition ישתנה מ־$oldsize ל־$newsize';
+    return 'הגודל של מחיצה <b>$disk$partition</b> ישתנה מ־<b>$oldsize</b> ל־<b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'מחיצה מס׳ $disk$partition תפורמט כ־$format ותשמש עבור $mount';
+    return 'מחיצה <b>$disk$partition</b> פורמטה כ־<b>$format</b> ומשמשת עבור <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'מחיצה מס׳ $disk$partition תפורמט בתור $format';
+    return 'מחיצה <b>$disk$partition</b> פורמטה בתור <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'מחיצה מס׳ $disk$partition תשמש עבור $mount';
+    return 'מחיצה <b>$disk$partition</b> תשמש עבור <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'מחיצה מס׳ $disk$partition נוצרה';
+    return 'המחיצה <b>$disk$partition</b> נוצרה';
   }
 
   @override
-  String get chooseYourLookPageTitle => 'נא לבחור את הסגנון שלך';
+  String get chooseYourLookPageTitle => 'נא לבחור את ערכת העיצוב שלך';
 
   @override
   String get chooseYourLookPageHeader => 'תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.';
@@ -677,7 +661,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return 'המערכת **$system** מותקנת ומוכנה לשימוש.';
+    return 'המערכת **$system** מותקנת ומוכנה לשימוש';
   }
 
   @override
@@ -700,21 +684,34 @@ class AppLocalizationsHe extends AppLocalizations {
   String get continueTesting => 'להמשיך לבחון';
 
   @override
-  String get turnOffBitlockerTitle => 'כיבוי BitLocker';
+  String get turnOffBitlockerTitle => 'BitLocker פעיל';
 
   @override
-  String get turnOffBitlockerDescription => 'המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש לכבות את BitLocker ב־Windows בטרם התקנת אובונטו.';
+  String get turnOffBitlockerHeadline => 'יש לכבות את BitLocker';
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
-    return 'לקבלת הנחיות, יש לפתוח את העמוד הזה בטלפון שלך או בכל מכשיר אחר: <a href=\"https://$url\">$url</a>';
+  String turnOffBitlockerDescription(Object option) {
+    return 'המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש להשתמש ב־Windows כדי לפנות מקום או לבחור ב‚$option’ כדי להמשיך.';
   }
 
   @override
-  String get restartIntoWindows => 'הפעלה מחדש אל Windows';
+  String turnOffBitlockerLinkInstructions(Object url) {
+    return 'לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://$url\">$url</a>';
+  }
 
   @override
-  String get whereAreYouPageTitle => 'מה מיקומך?';
+  String get restartIntoWindows => 'להפעיל מחדש אל Windows';
+
+  @override
+  String get restartIntoWindowsTitle => 'לעלות מחדש ל־Windows?';
+
+  @override
+  String restartIntoWindowsDescription(Object DISTRO) {
+    return 'להפעיל את המחשב מחדש? יש להפעיל את ההתקנה של $DISTRO מחדש בהמשך כדי לסיים את התקנת $DISTRO.';
+  }
+
+  @override
+  String get whereAreYouPageTitle => 'נא לבחור את אזור הזמן שלך';
 
   @override
   String get whereAreYouLocationLabel => 'מיקום';
@@ -723,129 +720,118 @@ class AppLocalizationsHe extends AppLocalizations {
   String get whereAreYouTimezoneLabel => 'אזור זמן';
 
   @override
-  String welcomeSlideTitle(Object RELEASE) {
+  String installationSlidesTitle(Object RELEASE) {
     return 'ברוך בואך אל $RELEASE';
   }
 
   @override
-  String welcomeSlideDescription(Object RELEASE) {
-    return 'עם מהירות משופרת ומגוון יכולות, המהדורה העדכנית של $RELEASE מקלה על השימוש במחשב יותר מאי פעם. בהמשך מופיעים מגוון דברים מרתקים ששווה לצפות להם…';
+  String get installationSlidesAvailable => 'זמין:';
+
+  @override
+  String get installationSlidesIncluded => 'כחלק:';
+
+  @override
+  String get installationSlidesWelcomeTitle => 'מהיר, חינמי ומפוצץ ביכולות חדשות';
+
+  @override
+  String installationSlidesWelcomeHeader(Object DISTRO) {
+    return 'הגרסה העדכנית ביותר של $DISTRO הופכת את השימוש במחשב לפשוט מאי פעם.';
   }
 
   @override
-  String get softwareSlideTitle => 'מגוון רחב של תוכנות';
-
-  @override
-  String softwareSlideDescription(Object RELEASE) {
-    return 'חסל סדר חיפוש אחר תוכנות חדשות באינטרנט. עם גישה לחנות Snap ולארכיון התוכנה של $RELEASE, ניתן למצוא ולהתקין יישומים חדשים בקלות. פשוט יש להקליד את מה שמעניין אותך או לעיין בקטגוריות כגון גרפיקה וצילום, משחקים וכלי משרד, לצד ביקורות מועילות מצד משתמשים אחרים.';
+  String installationSlidesWelcomeBody(Object RELEASE) {
+    return 'בין אם למטרות פיתוח, יצירה, משחקים או ניהול ניתן למצוא כלים חדשים לשיפור היעילות והחוויה עם $RELEASE.';
   }
 
   @override
-  String get musicSlideTitle => 'המוזיקה שלך הולכת איתך';
+  String get installationSlidesSoftwareTitle => 'כל היישומים שדרושים לך';
 
   @override
-  String musicSlideDescription(Object RELEASE) {
-    return 'כחלק מההיצע של $RELEASE ניתן למצוא את נגן המוזיקה Rhythmbox. אפשרויות הנגינה המתקדמות שלו מאפשרות לך להכין רשימות עם השירים הכי מושלמים שיש. הוא עובד נפלא עם תקליטורים ונגני מוזיקה ניידים, כך שכל המוזיקה שלך יכולה ללוות אותך לכל מקום.';
+  String installationSlidesSoftwareBody(Object DISTRO) {
+    return 'אפשר להתקין, לנהל ולעדכן את כל היישומים שלך עם מרכז התוכנה של אובונטו לרבות אלפי יישומים מחנות Snap ומארכיון $DISTRO.';
   }
 
   @override
-  String get musicSlideRhythmbox => 'נגן המוזיקה Rhythmbox';
+  String get installationSlidesDevelopmentTitle => 'כלי פיתוח קוד פתוח מהשורה הראשונה';
 
   @override
-  String get musicSlideSpotify => 'Spotify';
-
-  @override
-  String get musicSlideVLC => 'VLC';
-
-  @override
-  String get photoSlideTitle => 'להשתולל עם התמונות שלך';
-
-  @override
-  String get photoSlideDescription => 'Shotwell הוא מנהל תמונות שימושי שמתנהל נהדר מול הגאדג׳טים שלך. אפשר לחבר מצלמה או טלפון כדי להעביר את התמונות שלך, לאחר מכן, אפשר לשתף או להגן עליהן בקלות. כשתוקפת אותך היצירתיות אפשר למצוא יישומי תמונות נוספים בחנות התוכנות של אובונטו.';
-
-  @override
-  String get photoSlideShotwell => 'מנהל התמונות Shotwell';
-
-  @override
-  String get photoSlideGimp => 'עורך התמונות GIMP';
-
-  @override
-  String get photoSlideShotcut => 'עורך הווידאו Shotcut';
-
-  @override
-  String get webSlideTitle => 'להפיק את המיטב מהאינטרנט';
-
-  @override
-  String webSlideDescription(Object RELEASE) {
-    return 'למערכת $RELEASE מצורף Firefox, הדפדפן שמשמש מיליונים ברחבי העולם. וניתן לנעוץ יישומים שמשמשים אותך באופן תדיר (כגון פייסבוק או Gmail, למשל) לשולחן העבודה לגישה מהירה יותר, כמו כל יישום אחר במחשב שלך.';
+  String installationSlidesDevelopmentBody(Object DISTRO) {
+    return '$DISTRO היא תחנת העבודה האידאלית לפיתוח יישומים ואתרים, מדעי נתונים ובינה מלאכותית/למידת מכונה לרבות DevOps וניהול. כל מהדורה של $DISTRO כוללת את סוללת כלי העבודה העדכנית ביותר ותומכת בכל סביבות הפיתוח המשולבות העיקריות.';
   }
 
   @override
-  String get webSlideFirefox => 'דפדפן האינטרנט Firefox';
+  String get installationSlidesCreativityTitle => 'לפרוץ את גבולות הדמיון';
 
   @override
-  String get webSlideThunderbird => 'Thunderbird';
-
-  @override
-  String get webSlideChromium => 'Chromium';
-
-  @override
-  String get officeSlideTitle => 'כל מה שנחוץ למשרד';
-
-  @override
-  String get officeSlideDescription => 'LibreOffice היא חבילת כלים משרדיים שכוללת בתוכה את כל מה שדרוש כדי ליצור מסמכים, גיליונות נתונים ומצגות. תואם לתצורות הקבצים של Microsoft Office, היא נותנת לך את כל מה שנחוץ לך, בלי שורת המחיר.';
-
-  @override
-  String get officeSlideWriter => 'LibreOffice Writer';
-
-  @override
-  String get officeSlideCalc => 'LibreOffice Calc';
-
-  @override
-  String get officeSlideImpress => 'LibreOffice Impress';
-
-  @override
-  String get accessSlideTitle => 'גישה לכולם';
-
-  @override
-  String accessSlideDescription(Object RELEASE) {
-    return 'בלב הפילוסופיה שמאחורי $RELEASE קיימת האמונה שמחשוב מיועד לכל אחד ואחת. עם כלי נגישות מתקדמים, אפשרויות להחלפת השפה, ערכות צבעים וגודלי כתב, קל יותר להשתמש במחשב עם $RELEASE - ללא תלות בזהות או במיקום.';
+  String installationSlidesCreativityBody(Object DISTRO) {
+    return 'מנפישים, מעצבים, יוצרי סרטונים ומפתחי משחקים יכולים להביא את הרגלי העבודה שלהם לתוך $DISTRO עם תמיכה בקוד פתוח ובתוכנות ויישומים שמקובלים בתעשייה.';
   }
 
   @override
-  String get accessSlideCustomizationOptions => 'אפשרויות התאמה';
+  String get installationSlidesGamingTitle => 'מעולה למשחקים';
 
   @override
-  String get accessSlideAppearance => 'מראה';
-
-  @override
-  String get accessSlideAssistiveTechnologies => 'טכנולוגיות מסייעות';
-
-  @override
-  String get accessSlideLanguageSupport => 'תמיכה בשפות';
-
-  @override
-  String get supportSlideTitle => 'עזרה ותמיכה';
-
-  @override
-  String supportSlideDocumentation(Object RELEASE) {
-    return 'התיעוד הרשמי נותן מענה נרחב למגוון תחומים בנושא $RELEASE. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.';
+  String installationSlidesGamingBody(Object DISTRO) {
+    return 'ב־$DISTRO יש תמיכה במנהלי ההתקנים העדכניים ביותר של NVIDIA ושל Mesa כדי לשפר את הביצועים והתאימות. אלפי משחקי צמרת שנתמכים ב־Windows פועלים היטב עם $DISTRO דרך יישומים כמו Steam ללא הגדרות נוספות.';
   }
 
   @override
-  String get supportSlideQuestions => 'ב־<a href=\"https://askubuntu.com\">Ask Ubuntu</a> אפשר לשאול שאלות ולחפש במאגר מרשים של שאלות שנענו. יתכן ש<a href=\"https://loco.ubuntu.com/teams\">צוות הקהילה המקומית</a> שלך מספק תמיכה בשפה שנוחה לך.';
+  String get installationSlidesSecurityTitle => 'פרטי ומאובטח';
 
   @override
-  String get supportSlideResources => 'לקבלת הכוונות למשאבים שימושיים נפוצים, מומלץ לפנות ל<a href=\"https://www.ubuntu.com/support/community-support\">תמיכה הקהילתית</a> או ל<a href=\"https://www.ubuntu.com/support\">תמיכה המסחרית</a>.';
+  String installationSlidesSecurityBody(Object DISTRO) {
+    return 'כחלק מ־$DISTRO מסופקים כל הכלים שדרושים לך כדי לשמור על פרטיות ואבטחה באינטרנט. עם חומת אש מובנית ותמיכה ב־VPN ובכמות מרשימה של יישומים ששומרים על פרטיותך בקנאות כדי לעזור לך לוודא שיש לך שליטה מלאה על המידע שלך.';
+  }
 
   @override
-  String get includedSoftware => 'תוכנות מצורפות';
+  String installationSlidesSecurityLts(Object DISTRO) {
+    return 'כל מהדורות $DISTRO LTS (תמיכה לזמן ארוך) זוכות לחמש שנים של תיקוני אבטחת מידע אותן ניתן להרחיב לעשר עם מינוי של אובונטו פרו.';
+  }
 
   @override
-  String get availableSoftware => 'תוכנות זמינות';
+  String get installationSlidesProductivityTitle => 'פשוט להפיק יותר';
 
   @override
-  String get supportedSoftware => 'תוכנות נתמכות';
+  String installationSlidesProductivityBody(Object DISTRO) {
+    return 'שולחן העבודה של $DISTRO כולל את LibreOffice, חבילת יישומי קוד פתוח תואמי Microsoft Office עבור מסמכים, גיליונות נתונים ומצגות. לרבות כלי שיתוף פעולה נוספים.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityTitle => 'גישה לכל אחד ואחת';
+
+  @override
+  String installationSlidesAccessibilityBody(Object DISTRO) {
+    return 'במרכז הפילוסופיה של $DISTRO קיימת האמונה שמחשוב מיועד לכולם. עם כלי נגישות מתקדמים ואפשרויות להחלפת השפה, הצבעים וגודל הכתב, $DISTRO מקל על השימוש במחשב - בכל אופן ואזור גאוגרפי.';
+  }
+
+  @override
+  String get installationSlidesAccessibilityOrca => 'מקריא המסך Orca';
+
+  @override
+  String get installationSlidesAccessibilityLanguages => 'תמיכה בשפות';
+
+  @override
+  String get installationSlidesSupportTitle => 'עזרה ותמיכה';
+
+  @override
+  String installationSlidesSupportHeader(Object DISTRO) {
+    return 'התיעוד הרשמי של $DISTRO זמין גם דרך האינטרנט וגם דרך סמל העזרה במעגן.';
+  }
+
+  @override
+  String get installationSlidesSupportCommunity => 'האתר Ask Ubuntu חולש על פני מגוון רחב של שאלות ותשובות ו־Ubuntu Discourse מספק מדריכים ודיונים למשתמשים חדשים ומנוסים.';
+
+  @override
+  String get installationSlidesSupportEnterprise => 'למשתמשים תאגידיים מספקת Canonical תמיכה מסחרית כדי להקל על ההגירה והניהול של אובונטו בצורה מאובטחת בסביבת העבודה.';
+
+  @override
+  String get installationSlidesSupportResources => 'משאבים חיוניים:';
+
+  @override
+  String get installationSlidesSupportDocumentation => 'תיעוד רשמי';
+
+  @override
+  String get installationSlidesSupportUbuntuPro => 'תמיכה 24/7 ברמה תעשייתית עם אובונטו פרו';
 
   @override
   String get copyingFiles => 'קבצים מועתקים…';
@@ -860,20 +846,79 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installationFailed => 'ההתקנה נכשלה';
 
   @override
-  String get notEnoughDiskSpaceTitle => 'מחילה';
+  String get notEnoughDiskSpaceTitle => 'אין מספיק מקום';
 
   @override
-  String notEnoughDiskSpaceHeader(Object SIZE, Object RELEASE) {
-    return 'נדרשים $SIZE לפחות של מקום פנוי כדי להתקין את $RELEASE.';
+  String notEnoughDiskSpaceUbuntu(Object DISTRO) {
+    return 'אין מספיק מקום להתקין את $DISTRO';
   }
 
   @override
-  String notEnoughDiskSpaceHasOnly(Object SIZE) {
-    return 'במחשב זה יש רק $SIZE.';
-  }
+  String get notEnoughDiskSpaceAvailable => 'פנוי:';
 
   @override
-  String notEnoughDiskSpaceBiggestDisk(Object SIZE) {
-    return 'גודל הכונן הגדול ביותר במחשב הזה הוא $SIZE בלבד.';
-  }
+  String get notEnoughDiskSpaceRequired => 'נחוץ:';
+
+  @override
+  String get activeDirectoryOption => 'להשתמש ב־Active Directory';
+
+  @override
+  String get activeDirectoryInfo => 'אפשר למלא את פרטי שם התחום (דומיין) ופרטים נוספים בצעד הבא.';
+
+  @override
+  String get activeDirectoryTitle => 'הגדרת Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'בדיקת חיבור לתחום';
+
+  @override
+  String get activeDirectoryDomainLabel => 'שם תחום (דומיין)';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'חובה';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'ארוך מדי';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'תווים שגויים';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'מתחיל בנקודה (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'מסתיים בנקודה (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'מתחיל במינוס (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'מסתיים במינוס (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'מכיל מספר נקודות ברצף (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'שם התחום לא נמצא';
+
+  @override
+  String get activeDirectoryAdminLabel => 'צירוף משתמש לתחום';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'חובה';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'תווים שגויים';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'סיסמה';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'חובה';
+
+  @override
+  String get activeDirectoryErrorTitle => 'שגיאה בהגדרת החיבור ל־Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'אי אפשר להגדיר חיבור ל־Active Directory כרגע, עמך הסליחה. לאחר סיום התקנת המערכת, יש לבקר בכתובת <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> לקבלת עזרה.';
 }

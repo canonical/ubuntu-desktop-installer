@@ -7,22 +7,23 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_test/mocks.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:ubuntu_wsl_setup/app_model.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_model.dart';
 import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_page.dart';
 import 'package:ubuntu_wsl_setup/pages/installation_slides/slides.dart';
 import 'package:ubuntu_wsl_setup/services/journal.dart';
+import 'package:yaru/yaru.dart';
+import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'installation_slides_page_test.mocks.dart';
 import 'test_utils.dart';
 
-// ignore_for_file: type=lint
 const theEnd = 'The end';
 const title = 'A title';
 const lorem = 'Lorem ipsum';
@@ -62,23 +63,25 @@ void main() {
     final provider = SlidesProvider(slides);
     return ChangeNotifierProvider<InstallationSlidesModel>.value(
       value: model,
-      child: Provider.value(value: provider, child: InstallationSlidesPage()),
+      child: Provider.value(
+          value: provider, child: const InstallationSlidesPage()),
     );
   }
 
   Widget buildApp(Widget Function(BuildContext) builder) {
     return Provider<AppModel>(
-      create: (_) => AppModel(),
+      create: (_) => const AppModel(),
       child: MaterialApp(
         localizationsDelegates: localizationsDelegates,
+        theme: yaruLight,
         home: Wizard(routes: {
           '/': WizardRoute(
             builder: builder,
             onNext: (settings) => '/end',
           ),
           '/end': WizardRoute(
-            builder: (_) => Center(
-              child: const Text(theEnd),
+            builder: (_) => const Center(
+              child: Text(theEnd),
             ),
             onNext: (settings) => '/end',
           ),
@@ -105,7 +108,7 @@ void main() {
   });
 
   testWidgets('display error status', (tester) async {
-    tester.binding.window.devicePixelRatioTestValue = 1.0;
+    tester.view.devicePixelRatio = 1.0;
     MockInstallationSlidesModel model = createModel(hasError: true);
     await tester
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
@@ -131,7 +134,7 @@ void main() {
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byIcon(Icons.terminal));
+    await tester.tap(find.iconButton(Icons.terminal));
     verify(model.toggleLogVisibility()).called(1);
   });
 
@@ -141,18 +144,19 @@ void main() {
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byIcon(Icons.terminal));
+    await tester.tap(find.iconButton(Icons.terminal));
     verify(model.toggleLogVisibility()).called(1);
   });
 
   testWidgets('creates a model', (tester) async {
-    tester.binding.window.devicePixelRatioTestValue = 1.0;
+    tester.view.devicePixelRatio = 1.0;
     final journal = MockJournalService();
-    when(journal.stream).thenAnswer((realInvocation) => Stream<String>.empty());
+    when(journal.stream)
+        .thenAnswer((realInvocation) => const Stream<String>.empty());
     final monitor = MockSubiquityStatusMonitor();
     when(monitor.status).thenAnswer((realInvocation) => null);
     when(monitor.onStatusChanged).thenAnswer(
-      (realInvocation) => Stream.empty(),
+      (realInvocation) => const Stream.empty(),
     );
     registerMockService<JournalService>(journal);
     registerMockService<SubiquityStatusMonitor>(monitor);
@@ -167,14 +171,14 @@ void main() {
 
   group('page interaction', () {
     testWidgets('toggle log view', (tester) async {
-      tester.binding.window.devicePixelRatioTestValue = 1.0;
+      tester.view.devicePixelRatio = 1.0;
       final journal = MockJournalService();
       when(journal.stream).thenAnswer(
         (_) => Stream<String>.fromIterable([lorem]).asBroadcastStream(),
       );
       final monitor = MockSubiquityStatusMonitor();
       when(monitor.status).thenAnswer((_) => null);
-      when(monitor.onStatusChanged).thenAnswer((_) => Stream.empty());
+      when(monitor.onStatusChanged).thenAnswer((_) => const Stream.empty());
       registerMockService<JournalService>(journal);
       registerMockService<SubiquityStatusMonitor>(monitor);
 
@@ -183,25 +187,25 @@ void main() {
 
       // hidden
       expect(getLogOffsetByText(tester, lorem), equals(1.0));
-      await tester.tap(find.byIcon(Icons.terminal));
+      await tester.tap(find.iconButton(Icons.terminal));
       await tester.pump();
       // visible
       expect(getLogOffsetByText(tester, lorem), equals(0.0));
-      await tester.tap(find.byIcon(Icons.terminal));
+      await tester.tap(find.iconButton(Icons.terminal));
       await tester.pump();
       // hidden again
       expect(getLogOffsetByText(tester, lorem), equals(1.0));
     });
 
     testWidgets('clicks slides', (tester) async {
-      tester.binding.window.devicePixelRatioTestValue = 1.0;
+      tester.view.devicePixelRatio = 1.0;
       final journal = MockJournalService();
       when(journal.stream).thenAnswer(
         (_) => Stream<String>.fromIterable([lorem]).asBroadcastStream(),
       );
       final monitor = MockSubiquityStatusMonitor();
       when(monitor.status).thenAnswer((_) => null);
-      when(monitor.onStatusChanged).thenAnswer((_) => Stream.empty());
+      when(monitor.onStatusChanged).thenAnswer((_) => const Stream.empty());
       registerMockService<JournalService>(journal);
       registerMockService<SubiquityStatusMonitor>(monitor);
       await tester.pumpWidget(buildApp(InstallationSlidesPage.create));
@@ -209,7 +213,7 @@ void main() {
 
       final image1 = find.byType(SvgPicture);
       expect(image1, findsWidgets);
-      await tester.tap(find.byIcon(Icons.chevron_right));
+      await tester.tap(find.iconButton(Icons.chevron_right));
       await tester.pump();
       final image2 = find.byType(SvgPicture);
       expect(image1, findsWidgets);
