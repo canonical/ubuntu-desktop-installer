@@ -21,7 +21,7 @@ void main() {
     );
 
     await tester.tap(find.descendant(
-      of: find.byType(FilledButton),
+      of: find.bySubtype<FilledButton>(),
       matching: find.text('action'),
     ));
     expect(activated, isTrue);
@@ -113,7 +113,7 @@ void main() {
     );
 
     await tester.tap(find.descendant(
-      of: find.byType(FilledButton),
+      of: find.bySubtype<FilledButton>(),
       matching: find.text('action'),
     ));
     expect(activated, isFalse);
@@ -179,7 +179,7 @@ void main() {
 
     expect(
       find.descendant(
-        of: find.byType(OutlinedButton),
+        of: find.bySubtype<OutlinedButton>(),
         matching: find.text(lang.previousLabel),
       ),
       findsOneWidget,
@@ -187,7 +187,7 @@ void main() {
 
     expect(
       find.descendant(
-        of: find.byType(FilledButton),
+        of: find.bySubtype<FilledButton>(),
         matching: find.text(lang.nextLabel),
       ),
       findsOneWidget,
@@ -195,7 +195,7 @@ void main() {
 
     expect(
       find.descendant(
-        of: find.byType(FilledButton),
+        of: find.bySubtype<FilledButton>(),
         matching: find.text(lang.doneLabel),
       ),
       findsNothing,
@@ -206,7 +206,7 @@ void main() {
 
     expect(
       find.descendant(
-        of: find.byType(OutlinedButton),
+        of: find.bySubtype<OutlinedButton>(),
         matching: find.text(lang.previousLabel),
       ),
       findsOneWidget,
@@ -214,7 +214,7 @@ void main() {
 
     expect(
       find.descendant(
-        of: find.byType(FilledButton),
+        of: find.bySubtype<FilledButton>(),
         matching: find.text(lang.nextLabel),
       ),
       findsNothing,
@@ -222,7 +222,7 @@ void main() {
 
     expect(
       find.descendant(
-        of: find.byType(FilledButton),
+        of: find.bySubtype<FilledButton>(),
         matching: find.text(lang.doneLabel),
       ),
       findsOneWidget,
