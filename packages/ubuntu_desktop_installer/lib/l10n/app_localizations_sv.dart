@@ -808,7 +808,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationSlidesAccessibilityOrca => 'Orca skärmläsare';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Språk stöd';
+  String get installationSlidesAccessibilityLanguages => 'Språkstöd';
 
   @override
   String get installationSlidesSupportTitle => 'Hjälp & Support';
