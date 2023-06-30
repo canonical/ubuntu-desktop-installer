@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -37,8 +38,7 @@ class _WizardBarState extends State<WizardBar> {
       tag: 'wizard-bottom-bar', // keep in place during page transitions
       child: Container(
         margin: widget.padding,
-        constraints:
-            const BoxConstraints(maxHeight: 36), // TODO: kYaruButtonHeight
+        constraints: BoxConstraints(maxHeight: kPushButtonSize.height),
         child: NavigationToolbar(
           leading: widget.leading,
           middle: currentStep != null && totalSteps != null
