@@ -620,28 +620,28 @@ class AppLocalizationsUk extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'Будуть застосовані наступні зміни розділів:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'розмір розділу #$disk$partition змінено з $oldsize на $newsize';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return 'розмір розділу #$sysname змінено з $oldsize на $newsize';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'розділ #$disk$partition, відформатований як $format, використано для $mount';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return 'розділ #$sysname, відформатований як $format, використано для $mount';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'розділ #$disk$partition відформатовано як $format';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return 'розділ #$sysname відформатовано як $format';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'розділ #$disk$partition використано для $mount';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return 'розділ #$sysname використано для $mount';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'створено розділ #$disk$partition';
+  String writeChangesPartitionCreated(Object sysname) {
+    return 'створено розділ #$sysname';
   }
 
   @override

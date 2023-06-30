@@ -310,12 +310,11 @@
   },
   "writeChangesPartitionsHeader": "Bus pritaikyti šie skaidinių pakeitimai:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionResized": "skaidinio <b>{disk}{partition}</b> dydis pakeistas iš <b>{oldsize}</b> į <b>{newsize}</b>",
+  "writeChangesPartitionResized": "skaidinio <b>{sysname}</b> dydis pakeistas iš <b>{oldsize}</b> į <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
@@ -381,12 +380,11 @@
   "@whoAreYouPagePasswordMismatch": {},
   "writeChangesPartitionTablesHeader": "Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:",
   "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionCreated": "sukurtas skaidinys <b>{disk}{partition}</b>",
+  "writeChangesPartitionCreated": "sukurtas skaidinys <b>{sysname}</b>",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "chooseYourLookPageHeader": "Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.",
@@ -455,12 +453,11 @@
   "@partitionUnitGB": {},
   "writeChangesToDisk": "Pasiruošę įdiegti",
   "@writeChangesToDisk": {},
-  "writeChangesPartitionFormattedMounted": "skaidinys <b>{disk}{partition}</b> formatuotas kaip <b>{format}</b> ir panaudotas kaip <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "skaidinys <b>{sysname}</b> formatuotas kaip <b>{format}</b> ir panaudotas kaip <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -557,21 +554,19 @@
   "@whoAreYouPageUsernameInUse": {},
   "installationCompleteTitle": "Įdiegimas baigtas",
   "@installationCompleteTitle": {},
-  "writeChangesPartitionMounted": "skaidinys <b>{disk}{partition}</b> panaudotas kaip <b>{mount}</b>",
+  "writeChangesPartitionMounted": "skaidinys <b>{sysname}</b> panaudotas kaip <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "skaidinys <b>{disk}{partition}</b> formatuotas kaip <b>{format}</b>",
+  "writeChangesPartitionFormatted": "skaidinys <b>{sysname}</b> formatuotas kaip <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },

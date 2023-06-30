@@ -526,23 +526,21 @@
   },
   "partitionFormatLabel": "Kullanılan:",
   "@partitionFormatLabel": {},
-  "writeChangesPartitionMounted": "<b>{disk}{partition}</b> bölümü <b>{mount}</b> için kullanıldı",
+  "writeChangesPartitionMounted": "<b>{sysname}</b> bölümü <b>{mount}</b> için kullanıldı",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
   "writeChangesPartitionTablesHeader": "Aşağıdaki cihazların bölüm tabloları değiştirildi:",
   "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionResized": "<b>{disk}{partition}</b> bölümü <b>{oldsize}</b> boyutundan <b>{newsize}</b> boyutuna yeniden boyutlandırıldı",
+  "writeChangesPartitionResized": "<b>{sysname}</b> bölümü <b>{oldsize}</b> boyutundan <b>{newsize}</b> boyutuna yeniden boyutlandırıldı",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
@@ -561,12 +559,11 @@
   "@installAlongsideAvailable": {},
   "whoAreYouPageUsernameTooLong": "Bu ad çok uzun.",
   "@whoAreYouPageUsernameTooLong": {},
-  "writeChangesPartitionFormatted": "<b>{disk}{partition}</b> bölümü <b>{format}</b> olarak biçimlendirildi",
+  "writeChangesPartitionFormatted": "<b>{sysname}</b> bölümü <b>{format}</b> olarak biçimlendirildi",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -588,12 +585,11 @@
       "product": {}
     }
   },
-  "writeChangesPartitionCreated": "<b>{disk}{partition}</b> bölümü oluşturuldu",
+  "writeChangesPartitionCreated": "<b>{sysname}</b> bölümü oluşturuldu",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "installationTypeLVM": "Yeni {RELEASE} kurulumuyla LVM kullan",
@@ -619,12 +615,11 @@
       "os2": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "<b>{format} </b> biçimindeki <b>{disk}{partition}</b> bölümü <b>{mount}</b> için kullanıldı",
+  "writeChangesPartitionFormattedMounted": "<b>{format} </b> biçimindeki <b>{sysname}</b> bölümü <b>{mount}</b> için kullanıldı",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }

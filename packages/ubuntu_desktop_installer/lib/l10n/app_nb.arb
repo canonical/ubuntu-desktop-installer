@@ -583,12 +583,11 @@
   },
   "bootLoaderDevice": "Enhet å installere oppstartslaster på",
   "@bootLoaderDevice": {},
-  "writeChangesPartitionMounted": "partisjon #{disk}{partition} brukt til {mount}",
+  "writeChangesPartitionMounted": "partisjon #{sysname} brukt til {mount}",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
@@ -599,40 +598,36 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "endret størrelse fra {oldsize} til {newsize} for #{disk}{partition}",
+  "writeChangesPartitionResized": "endret størrelse fra {oldsize} til {newsize} for #{sysname}",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partisjon #{disk}{partition} formatert som {format} og brukt til {mount}",
+  "writeChangesPartitionFormattedMounted": "partisjon #{sysname} formatert som {format} og brukt til {mount}",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partisjon #{disk}{partition} opprettet",
+  "writeChangesPartitionCreated": "partisjon #{sysname} opprettet",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
-  "writeChangesPartitionFormatted": "partisjon #{disk}{partition} formatert som {format}",
+  "writeChangesPartitionFormatted": "partisjon #{sysname} formatert som {format}",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },

@@ -306,22 +306,20 @@
   },
   "writeChangesPartitionsHeader": "Die folgenden Partitionsänderungen werden vorgenommen:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "Partition #{disk}{partition} als {format} benutzt für {mount}",
+  "writeChangesPartitionEntryMounted": "Partition #{sysname} als {format} benutzt für {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "Ein Eintrag einer eingehängten Partition",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "Partition #{disk}{partition} als {format}",
+  "writeChangesPartitionEntryUnmounted": "Partition #{sysname} als {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "Ein Eintrag einer nicht eingehängten Partition",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -597,22 +595,20 @@
   "@installAlongsideAvailable": {},
   "quitButtonText": "Installation beenden",
   "@quitButtonText": {},
-  "writeChangesPartitionFormattedMounted": "Partition <b>{disk}{partition}</b> formatiert als <b>{format}</b> verwendet für <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "Partition <b>{sysname}</b> formatiert als <b>{format}</b> verwendet für <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "Partition <b>{disk}{partition}</b> erstellt",
+  "writeChangesPartitionCreated": "Partition <b>{sysname}</b> erstellt",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "notEnoughDiskSpaceHasOnly": "Dieser Computer hat nur {SIZE}.",
@@ -629,31 +625,28 @@
       "SIZE": {}
     }
   },
-  "writeChangesPartitionFormatted": "Partition <b>{disk}{partition}</b> formatiert als <b>{format}</b>",
+  "writeChangesPartitionFormatted": "Partition <b>{sysname}</b> formatiert als <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionResized": "Größe der Partition <b>{disk}{partition}</b> von <b>{oldsize}</b> auf <b>{newsize}</b> geändert",
+  "writeChangesPartitionResized": "Größe der Partition <b>{sysname}</b> von <b>{oldsize}</b> auf <b>{newsize}</b> geändert",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionMounted": "Partition <b>{disk}{partition}</b> verwendet für <b>{mount}</b>",
+  "writeChangesPartitionMounted": "Partition <b>{sysname}</b> verwendet für <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },

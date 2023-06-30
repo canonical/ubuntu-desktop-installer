@@ -542,41 +542,37 @@
   "@noInternet": {},
   "selectGuidedStorageInstallNow": "Nainštalovať teraz",
   "@selectGuidedStorageInstallNow": {},
-  "writeChangesPartitionFormattedMounted": "oddiel <b>{disk}{partition}</b> naformátovaný ako <b>{format}</b> použitý pre <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "oddiel <b>{sysname}</b> naformátovaný ako <b>{format}</b> použitý pre <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "veľkosť oddielu <b>{disk}{partition}</b> zmenené z <b>{oldsize}</b> na <b>{newsize}</b>",
+  "writeChangesPartitionResized": "veľkosť oddielu <b>{sysname}</b> zmenené z <b>{oldsize}</b> na <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionMounted": "oddiel <b>{disk}{partition}</b> použitý pre <b>{mount}</b>",
+  "writeChangesPartitionMounted": "oddiel <b>{sysname}</b> použitý pre <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "oddiel <b>{disk}{partition}</b> naformátovaný ako <b>{format}</b>",
+  "writeChangesPartitionFormatted": "oddiel <b>{sysname}</b> naformátovaný ako <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -782,12 +778,11 @@
       "path": {}
     }
   },
-  "writeChangesPartitionCreated": "oddiel <b>{disk}{partition}</b> vytvorený",
+  "writeChangesPartitionCreated": "oddiel <b>{sysname}</b> vytvorený",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "readyToUse": "**{system}** je nainštalované a pripravené na použitie",

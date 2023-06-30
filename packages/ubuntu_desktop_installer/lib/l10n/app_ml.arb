@@ -77,12 +77,11 @@
   "@writeChangesDescription": {},
   "writeChangesPartitionsHeader": "ഇനിപ്പറയുന്ന പാർട്ടീഷനുകൾ ഫോർമാറ്റ് ചെയ്യാൻ പോകുന്നു:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "പാർട്ടീഷൻ #{disk}{partition} {format} ആയി {mount} ഉപയോഗിച്ചു",
+  "writeChangesPartitionEntryMounted": "പാർട്ടീഷൻ #{sysname} {format} ആയി {mount} ഉപയോഗിച്ചു",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -373,12 +372,11 @@
   "@whoAreYouPagePasswordLabel": {},
   "whoAreYouPagePasswordRequired": "ഒരു പാസ്‌വേഡ് ആവശ്യമാണ്",
   "@whoAreYouPagePasswordRequired": {},
-  "writeChangesPartitionEntryUnmounted": "പാർട്ടീഷൻ #{disk}{partition} {format} ആയി",
+  "writeChangesPartitionEntryUnmounted": "പാർട്ടീഷൻ #{sysname} {format} ആയി",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },

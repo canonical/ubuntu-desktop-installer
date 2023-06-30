@@ -619,22 +619,20 @@
   },
   "newPartitionTableConfirmationMessage": "ඔබ පංගුකරණයට සමස්ත උපාංගයක් තෝරාගෙන ඇත. ඔබ එහි නව පංගු වගුවක් සෑදීමට ගියහොත්, පවතින සියළුම පංගු ඉවත් කෙරෙනු ඇත.\n\nඔබට අවශ්‍ය නම් මෙම මෙහෙයුම පසුව අහෝසි කිරීමට හැකිය.",
   "@newPartitionTableConfirmationMessage": {},
-  "writeChangesPartitionFormattedMounted": "#{disk}{partition} පංගුව {mount} සඳහා භාවිතයට {format} ලෙස පවිත්‍රව ඇත",
+  "writeChangesPartitionFormattedMounted": "#{sysname} පංගුව {mount} සඳහා භාවිතයට {format} ලෙස පවිත්‍රව ඇත",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "#{disk}{partition} පංගුව {format} ලෙස පවිත්‍රව ඇත",
+  "writeChangesPartitionFormatted": "#{sysname} පංගුව {format} ලෙස පවිත්‍රව ඇත",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -655,21 +653,19 @@
   "@newPartitionTableConfirmationTitle": {},
   "partitionCreateTitle": "පංගුව සාදන්න",
   "@partitionCreateTitle": {},
-  "writeChangesPartitionMounted": "#{disk}{partition} පංගුව {mount} සඳහා භාවිතා වේ",
+  "writeChangesPartitionMounted": "#{sysname} පංගුව {mount} සඳහා භාවිතා වේ",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "#{disk}{partition} පංගුව සෑදිණි",
+  "writeChangesPartitionCreated": "#{sysname} පංගුව සෑදිණි",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "welcomeSlideDescription": "වේගවත් සහ නව විශේෂාංග වලින් පිරුණු {RELEASE} හි නවතම අනුවාදය අන් කවරදාටත් වඩා පරිගණනය පහසු කරයි. මෙන්න බලන්න අළුත් දේවල් ටිකක්...",
@@ -730,12 +726,11 @@
   "@writeChangesPartitionTablesHeader": {},
   "writeChangesPartitionsHeader": "පහත පංගු වෙනස්කම් යෙදෙනු ඇත:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionResized": "#{disk}{partition} පංගුව {oldsize} සිට {newsize} දක්වා ප්‍රමාණනය කෙරිණි",
+  "writeChangesPartitionResized": "#{sysname} පංගුව {oldsize} සිට {newsize} දක්වා ප්‍රමාණනය කෙරිණි",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }

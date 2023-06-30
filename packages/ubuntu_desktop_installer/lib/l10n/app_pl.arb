@@ -135,12 +135,11 @@
   "@whoAreYouPageInvalidUsername": {},
   "writeChangesPartitionsHeader": "Zostaną zastosowane następujące zmiany partycji:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryUnmounted": "partycja #{disk}{partition} jako {format}",
+  "writeChangesPartitionEntryUnmounted": "partycja #{sysname} jako {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -313,12 +312,11 @@
       "path": {}
     }
   },
-  "writeChangesPartitionEntryMounted": "partycja #{disk}{partition} jako {format} używana do {mount}",
+  "writeChangesPartitionEntryMounted": "partycja #{sysname} jako {format} używana do {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -593,12 +591,11 @@
   },
   "installAlongsideSize": "Rozmiar:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionFormattedMounted": "partycja <b>{disk}{partition}</b> sformatowana jako <b>{format}</b> używana do <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "partycja <b>{sysname}</b> sformatowana jako <b>{format}</b> używana do <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -607,40 +604,36 @@
   "@notEnoughDiskSpaceTitle": {},
   "quitButtonText": "Zakończ instalację",
   "@quitButtonText": {},
-  "writeChangesPartitionMounted": "partycja <b>{disk}{partition}</b> używana do <b>{mount}</b>",
+  "writeChangesPartitionMounted": "partycja <b>{sysname}</b> używana do <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "partycja <b>{disk}{partition}</b> zmieniła rozmiar z <b>{oldsize}</b> na <b>{newsize}</b>",
+  "writeChangesPartitionResized": "partycja <b>{sysname}</b> zmieniła rozmiar z <b>{oldsize}</b> na <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "partycja <b>{disk}{partition}</b> sformatowana jako <b>{format}</b>",
+  "writeChangesPartitionFormatted": "partycja <b>{sysname}</b> sformatowana jako <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionCreated": "utworzona partycja <b>{disk}{partition}</b>",
+  "writeChangesPartitionCreated": "utworzona partycja <b>{sysname}</b>",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "notEnoughDiskSpaceHeader": "Potrzebujesz co najmniej {SIZE} przestrzeni dyskowej, aby zainstalować {RELEASE}.",

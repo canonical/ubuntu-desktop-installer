@@ -620,28 +620,28 @@ class AppLocalizationsRu extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'Будут применены следующие изменения разделов:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'размер раздела <b>$disk$partition</b> изменён с <b>$oldsize</b> на <b>$newsize</b>';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return 'размер раздела <b>$sysname</b> изменён с <b>$oldsize</b> на <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'раздел <b>$disk$partition</b> отформатирован как <b>$format</b> и использован для <b>$mount</b>';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return 'раздел <b>$sysname</b> отформатирован как <b>$format</b> и использован для <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'раздел <b>$disk$partition</b> отформатирован как <b>$format</b>';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return 'раздел <b>$sysname</b> отформатирован как <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'раздел <b>$disk$partition</b> использован для <b>$mount</b>';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return 'раздел <b>$sysname</b> использован для <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'раздел <b>$disk$partition</b> создан';
+  String writeChangesPartitionCreated(Object sysname) {
+    return 'раздел <b>$sysname</b> создан';
   }
 
   @override

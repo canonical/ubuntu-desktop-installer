@@ -620,28 +620,28 @@ class AppLocalizationsLt extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'Bus pritaikyti šie skaidinių pakeitimai:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'skaidinio <b>$disk$partition</b> dydis pakeistas iš <b>$oldsize</b> į <b>$newsize</b>';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return 'skaidinio <b>$sysname</b> dydis pakeistas iš <b>$oldsize</b> į <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'skaidinys <b>$disk$partition</b> formatuotas kaip <b>$format</b> ir panaudotas kaip <b>$mount</b>';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return 'skaidinys <b>$sysname</b> formatuotas kaip <b>$format</b> ir panaudotas kaip <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'skaidinys <b>$disk$partition</b> formatuotas kaip <b>$format</b>';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return 'skaidinys <b>$sysname</b> formatuotas kaip <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'skaidinys <b>$disk$partition</b> panaudotas kaip <b>$mount</b>';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return 'skaidinys <b>$sysname</b> panaudotas kaip <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'sukurtas skaidinys <b>$disk$partition</b>';
+  String writeChangesPartitionCreated(Object sysname) {
+    return 'sukurtas skaidinys <b>$sysname</b>';
   }
 
   @override

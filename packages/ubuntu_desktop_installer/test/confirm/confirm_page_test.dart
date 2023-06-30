@@ -102,20 +102,20 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildConfirmPage(model)));
 
     expect(
-        find.html(tester.lang.writeChangesPartitionFormattedMounted(
-            '', 'sdb3', 'ext3', '/mnt/3')),
+        find.html(tester.lang
+            .writeChangesPartitionFormattedMounted('sdb3', 'ext3', '/mnt/3')),
         findsOneWidget);
     expect(
-        find.html(tester.lang.writeChangesPartitionFormatted('sdb', 4, 'ext4')),
+        find.html(tester.lang.writeChangesPartitionFormatted('sdb4', 'ext4')),
         findsOneWidget);
     expect(
-        find.html(tester.lang.writeChangesPartitionMounted('sdb', 5, '/mnt/5')),
+        find.html(tester.lang.writeChangesPartitionMounted('sdb5', '/mnt/5')),
         findsOneWidget);
     expect(
-        find.html(tester.lang.writeChangesPartitionResized(
-            'sdb', 6, filesize(123), filesize(66))),
+        find.html(tester.lang
+            .writeChangesPartitionResized('sdb6', filesize(123), filesize(66))),
         findsOneWidget);
-    expect(find.html(tester.lang.writeChangesPartitionCreated('sdb', 7)),
+    expect(find.html(tester.lang.writeChangesPartitionCreated('sdb7')),
         findsOneWidget);
   });
 

@@ -620,28 +620,28 @@ class AppLocalizationsHe extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'השינויים הבאים יחולו על המחיצות:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'הגודל של מחיצה <b>$disk$partition</b> ישתנה מ־<b>$oldsize</b> ל־<b>$newsize</b>';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return 'הגודל של מחיצה <b>$sysname</b> ישתנה מ־<b>$oldsize</b> ל־<b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'מחיצה <b>$disk$partition</b> פורמטה כ־<b>$format</b> ומשמשת עבור <b>$mount</b>';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return 'מחיצה <b>$sysname</b> פורמטה כ־<b>$format</b> ומשמשת עבור <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'מחיצה <b>$disk$partition</b> פורמטה בתור <b>$format</b>';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return 'מחיצה <b>$sysname</b> פורמטה בתור <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'מחיצה <b>$disk$partition</b> תשמש עבור <b>$mount</b>';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return 'מחיצה <b>$sysname</b> תשמש עבור <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'המחיצה <b>$disk$partition</b> נוצרה';
+  String writeChangesPartitionCreated(Object sysname) {
+    return 'המחיצה <b>$sysname</b> נוצרה';
   }
 
   @override

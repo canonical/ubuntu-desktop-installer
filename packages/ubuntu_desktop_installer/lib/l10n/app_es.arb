@@ -632,50 +632,45 @@
   "@installingSystem": {},
   "configuringSystem": "Configurando el sistema…",
   "@configuringSystem": {},
-  "writeChangesPartitionResized": "partición <b>{disk}{partition}</b> redimensionada de <b>{oldsize}</b> a <b>{newsize}</b>",
+  "writeChangesPartitionResized": "partición <b>{sysname}</b> redimensionada de <b>{oldsize}</b> a <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "partición <b>{disk}{partition}</b> formateada como <b>{format}</b>",
+  "writeChangesPartitionFormatted": "partición <b>{sysname}</b> formateada como <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partición <b>{disk}{partition}</b> formateada como <b>{format}</b> utilizada para <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "partición <b>{sysname}</b> formateada como <b>{format}</b> utilizada para <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "partición <b>{disk}{partition}</b> utilizada para <b>{mount}</b>",
+  "writeChangesPartitionMounted": "partición <b>{sysname}</b> utilizada para <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partición <b>{disk}{partition}</b> creada",
+  "writeChangesPartitionCreated": "partición <b>{sysname}</b> creada",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "showSecurityKey": "Mostrar la clave de seguridad",

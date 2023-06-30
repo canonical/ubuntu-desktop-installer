@@ -620,28 +620,28 @@ class AppLocalizationsEo extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'ŝanĝi la grandon de la subdisko <b>$disk$partition</b> de <b>$oldsize</b> al <b>$newsize</b>';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return 'ŝanĝi la grandon de la subdisko <b>$sysname</b> de <b>$oldsize</b> al <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'la subdisko <b>$disk$partition</b> strukturota laŭ <b>$format</b> kaj uzota por <b>$mount</b>';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return 'la subdisko <b>$sysname</b> strukturota laŭ <b>$format</b> kaj uzota por <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'la subdisko <b>$disk$partition</b> strukturota laŭ <b>$format</b>';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return 'la subdisko <b>$sysname</b> strukturota laŭ <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'la subdisko <b>$disk$partition</b> uzota por <b>$mount</b>';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return 'la subdisko <b>$sysname</b> uzota por <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'krei la subdiskon <b>$disk$partition</b>';
+  String writeChangesPartitionCreated(Object sysname) {
+    return 'krei la subdiskon <b>$sysname</b>';
   }
 
   @override

@@ -620,28 +620,28 @@ class AppLocalizationsHu extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'A következő partícióváltoztatások kerülnek alkalmazásra:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return '<b>$disk$partition</b> partíció átméretezve <b>$oldsize</b> méretről <b>$newsize</b> méretre';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return '<b>$sysname</b> partíció átméretezve <b>$oldsize</b> méretről <b>$newsize</b> méretre';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return '<b>$disk$partition</b> partíció <b>$format</b> formátumra formázva, <b>$mount</b> helyre csatolva';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return '<b>$sysname</b> partíció <b>$format</b> formátumra formázva, <b>$mount</b> helyre csatolva';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '<b>$disk$partition</b> partíció <b>$format</b> formátumra formázva';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return '<b>$sysname</b> partíció <b>$format</b> formátumra formázva';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return '<b>$disk$partition</b> partíció <b>$mount</b> helyre csatolva';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return '<b>$sysname</b> partíció <b>$mount</b> helyre csatolva';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '<b>$disk$partition</b> partíció létrehozva';
+  String writeChangesPartitionCreated(Object sysname) {
+    return '<b>$sysname</b> partíció létrehozva';
   }
 
   @override

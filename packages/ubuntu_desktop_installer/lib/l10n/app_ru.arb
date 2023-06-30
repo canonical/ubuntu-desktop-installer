@@ -401,21 +401,19 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "раздел #{disk}{partition} как {format}",
+  "writeChangesPartitionEntryUnmounted": "раздел #{sysname} как {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionEntryMounted": "раздел #{disk}{partition} как {format} используется для {mount}",
+  "writeChangesPartitionEntryMounted": "раздел #{sysname} как {format} используется для {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -591,23 +589,21 @@
   },
   "installAlongsideAvailable": "Доступно:",
   "@installAlongsideAvailable": {},
-  "writeChangesPartitionMounted": "раздел <b>{disk}{partition}</b> использован для <b>{mount}</b>",
+  "writeChangesPartitionMounted": "раздел <b>{sysname}</b> использован для <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
   "quitButtonText": "Отменить установку",
   "@quitButtonText": {},
-  "writeChangesPartitionResized": "размер раздела <b>{disk}{partition}</b> изменён с <b>{oldsize}</b> на <b>{newsize}</b>",
+  "writeChangesPartitionResized": "размер раздела <b>{sysname}</b> изменён с <b>{oldsize}</b> на <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
@@ -647,31 +643,28 @@
       "SIZE": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "раздел <b>{disk}{partition}</b> отформатирован как <b>{format}</b> и использован для <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "раздел <b>{sysname}</b> отформатирован как <b>{format}</b> и использован для <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "раздел <b>{disk}{partition}</b> отформатирован как <b>{format}</b>",
+  "writeChangesPartitionFormatted": "раздел <b>{sysname}</b> отформатирован как <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionCreated": "раздел <b>{disk}{partition}</b> создан",
+  "writeChangesPartitionCreated": "раздел <b>{sysname}</b> создан",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "installationTypeLVMEncryptionSelected": "LVM и шифрование выбраны",

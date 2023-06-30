@@ -300,22 +300,20 @@
   "@writeChangesPartitionsHeader": {},
   "chooseYourLookPageTitle": "テーマを選択してください。",
   "@chooseYourLookPageTitle": {},
-  "writeChangesPartitionEntryMounted": "パーティション、#{disk}{partition} は {format} にフォーマットされ、 {mount} に割り当てられます",
+  "writeChangesPartitionEntryMounted": "パーティション、#{sysname} は {format} にフォーマットされ、 {mount} に割り当てられます",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "パーティション、#{disk}{partition} は {format} にフォーマットされます",
+  "writeChangesPartitionEntryUnmounted": "パーティション、#{sysname} は {format} にフォーマットされます",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -694,30 +692,27 @@
   "@continueTesting": {},
   "restartNow": "今すぐ再起動する",
   "@restartNow": {},
-  "writeChangesPartitionFormatted": "パーティション<b>{disk}{partition}</b>は<b>{format}</b>としてフォーマットされます。",
+  "writeChangesPartitionFormatted": "パーティション<b>{sysname}</b>は<b>{format}</b>としてフォーマットされます。",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "パーティション<b>{disk}{partition}</b>は<b>{mount}</b>として使用されます。",
+  "writeChangesPartitionMounted": "パーティション<b>{sysname}</b>は<b>{mount}</b>として使用されます。",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "パーティション<b>{disk}{partition}</b>は<b>{format}</b>としてフォーマットされ、<b>{mount}</b>として使用されます。",
+  "writeChangesPartitionFormattedMounted": "パーティション<b>{sysname}</b>は<b>{format}</b>としてフォーマットされ、<b>{mount}</b>として使用されます。",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -729,22 +724,20 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "パーティション<b>{disk}{partition}</b>のサイズが<b>{oldsize}</b>から<b>{newsize}</b>に変更されます。",
+  "writeChangesPartitionResized": "パーティション<b>{sysname}</b>のサイズが<b>{oldsize}</b>から<b>{newsize}</b>に変更されます。",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionCreated": "パーティション<b>{disk}{partition}</b>が作成されました。",
+  "writeChangesPartitionCreated": "パーティション<b>{sysname}</b>が作成されました。",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "tooManyPrimaryPartitions": "基本パーティションが多すぎます",

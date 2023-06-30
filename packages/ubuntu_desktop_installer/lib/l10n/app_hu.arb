@@ -38,12 +38,11 @@
   "@officeSlideCalc": {},
   "writeChangesDescription": "Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.",
   "@writeChangesDescription": {},
-  "writeChangesPartitionEntryUnmounted": "partíció #<{disk}{partition} mint {format}",
+  "writeChangesPartitionEntryUnmounted": "partíció #<{sysname} mint {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -523,12 +522,11 @@
       "os": {}
     }
   },
-  "writeChangesPartitionEntryMounted": "#{disk}{partition} partíció, mint {format} a {mount} esetében",
+  "writeChangesPartitionEntryMounted": "#{sysname} partíció, mint {format} a {mount} esetében",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -671,51 +669,46 @@
   },
   "showSecurityKey": "Biztonsági kulcs megjelenítése",
   "@showSecurityKey": {},
-  "writeChangesPartitionCreated": "<b>{disk}{partition}</b> partíció létrehozva",
+  "writeChangesPartitionCreated": "<b>{sysname}</b> partíció létrehozva",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "installationTypeLVMEncryptionSelected": "LVM és titkosítás kiválasztva",
   "@installationTypeLVMEncryptionSelected": {},
-  "writeChangesPartitionResized": "<b>{disk}{partition}</b> partíció átméretezve <b>{oldsize}</b> méretről <b>{newsize}</b> méretre",
+  "writeChangesPartitionResized": "<b>{sysname}</b> partíció átméretezve <b>{oldsize}</b> méretről <b>{newsize}</b> méretre",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "<b>{disk}{partition}</b> partíció <b>{format}</b> formátumra formázva",
+  "writeChangesPartitionFormatted": "<b>{sysname}</b> partíció <b>{format}</b> formátumra formázva",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "<b>{disk}{partition}</b> partíció <b>{format}</b> formátumra formázva, <b>{mount}</b> helyre csatolva",
+  "writeChangesPartitionFormattedMounted": "<b>{sysname}</b> partíció <b>{format}</b> formátumra formázva, <b>{mount}</b> helyre csatolva",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "<b>{disk}{partition}</b> partíció <b>{mount}</b> helyre csatolva",
+  "writeChangesPartitionMounted": "<b>{sysname}</b> partíció <b>{mount}</b> helyre csatolva",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },

@@ -109,12 +109,11 @@
   "@partitionUnitGB": {},
   "whoAreYouPageConfirmPasswordLabel": "Konfirmasikan kata sandi Anda",
   "@whoAreYouPageConfirmPasswordLabel": {},
-  "writeChangesPartitionEntryUnmounted": "partisi #{disk}{partition} sebagai {format}",
+  "writeChangesPartitionEntryUnmounted": "partisi #{sysname} sebagai {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -319,12 +318,11 @@
   "@whoAreYouPagePasswordMismatch": {},
   "writeChangesPartitionsHeader": "Partisi berikut akan diformat:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "partisi #{disk}{partition} sebagai {format} dipakai untuk {mount}",
+  "writeChangesPartitionEntryMounted": "partisi #{sysname} sebagai {format} dipakai untuk {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }

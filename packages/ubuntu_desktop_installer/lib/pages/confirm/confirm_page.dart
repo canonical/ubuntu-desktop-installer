@@ -141,36 +141,29 @@ class _PartitionLabel extends StatelessWidget {
   String formatPartition(AppLocalizations lang) {
     if (partition.resize == true) {
       return lang.writeChangesPartitionResized(
-        '', // TODO: remove unused {disk} argument
         partition.sysname,
         filesize(original?.size ?? 0),
         filesize(partition.size ?? 0),
       );
     } else if (partition.wipe != null && partition.mount?.isNotEmpty == true) {
       return lang.writeChangesPartitionFormattedMounted(
-        '', // TODO: remove unused {disk} argument
         partition.sysname,
         partition.format ?? '',
         partition.mount ?? '',
       );
     } else if (partition.wipe != null && partition.format?.isNotEmpty == true) {
       return lang.writeChangesPartitionFormatted(
-        '', // TODO: remove unused {disk} argument
         partition.sysname,
         partition.format ?? '',
       );
     } else if (partition.mount?.isNotEmpty == true) {
       return lang.writeChangesPartitionMounted(
-        '', // TODO: remove unused {disk} argument
         partition.sysname,
         partition.mount ?? '',
       );
     } else {
       assert(partition.preserve == false);
-      return lang.writeChangesPartitionCreated(
-        '', // TODO: remove unused {disk} argument
-        partition.sysname,
-      );
+      return lang.writeChangesPartitionCreated(partition.sysname);
     }
   }
 

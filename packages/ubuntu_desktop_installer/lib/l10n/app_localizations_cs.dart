@@ -620,28 +620,28 @@ class AppLocalizationsCs extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'Budou provedeny následující změny na oddílech:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'velikost oddílu <b>$disk$partition</b> změněna z <b>$oldsize</b> na <b>$newsize</b>';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return 'velikost oddílu <b>$sysname</b> změněna z <b>$oldsize</b> na <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'oddíl <b>$disk$partition</b> naformátovaný jako <b>$format</b> použit pro <b>$mount</b>';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return 'oddíl <b>$sysname</b> naformátovaný jako <b>$format</b> použit pro <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'oddíl <b>$disk$partition</b> naformátován jako <b>$format</b>';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return 'oddíl <b>$sysname</b> naformátován jako <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'oddíl <b>$disk$partition</b> použit pro <b>$mount</b>';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return 'oddíl <b>$sysname</b> použit pro <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'oddíl <b>$disk$partition</b> vytvořen';
+  String writeChangesPartitionCreated(Object sysname) {
+    return 'oddíl <b>$sysname</b> vytvořen';
   }
 
   @override

@@ -620,28 +620,28 @@ class AppLocalizationsFi extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'Seuraavat osiomuutokset toteutetaan:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'osion <b>$disk$partition</b> koko <b>$oldsize</b> muutettu kokoon <b>$newsize</b>';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return 'osion <b>$sysname</b> koko <b>$oldsize</b> muutettu kokoon <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'osio <b>$disk$partition</b> alustettu muotoon <b>$format</b> käytettäväksi liitospisteenä <b>$mount</b>';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return 'osio <b>$sysname</b> alustettu muotoon <b>$format</b> käytettäväksi liitospisteenä <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'osio <b>$disk$partition</b> alustettu muotoon <b>$format</b>';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return 'osio <b>$sysname</b> alustettu muotoon <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'osio <b>$disk$partition</b> käytettäväksi liitospisteenä <b>$mount</b>';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return 'osio <b>$sysname</b> käytettäväksi liitospisteenä <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'osio <b>$disk$partition</b> luotu';
+  String writeChangesPartitionCreated(Object sysname) {
+    return 'osio <b>$sysname</b> luotu';
   }
 
   @override

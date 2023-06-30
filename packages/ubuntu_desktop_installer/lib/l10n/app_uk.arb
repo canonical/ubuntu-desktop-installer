@@ -136,12 +136,11 @@
   },
   "partitionLocationEnd": "Кінець цього простору",
   "@partitionLocationEnd": {},
-  "writeChangesPartitionFormatted": "розділ #{disk}{partition} відформатовано як {format}",
+  "writeChangesPartitionFormatted": "розділ #{sysname} відформатовано як {format}",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -158,12 +157,11 @@
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
   },
-  "writeChangesPartitionFormattedMounted": "розділ #{disk}{partition}, відформатований як {format}, використано для {mount}",
+  "writeChangesPartitionFormattedMounted": "розділ #{sysname}, відформатований як {format}, використано для {mount}",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -521,21 +519,19 @@
   "@whoAreYouPageUsernameInUse": {},
   "whoAreYouPagePasswordLabel": "Оберіть пароль",
   "@whoAreYouPagePasswordLabel": {},
-  "writeChangesPartitionMounted": "розділ #{disk}{partition} використано для {mount}",
+  "writeChangesPartitionMounted": "розділ #{sysname} використано для {mount}",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "створено розділ #{disk}{partition}",
+  "writeChangesPartitionCreated": "створено розділ #{sysname}",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "installationCompleteTitle": "Встановлення завершено",
@@ -605,12 +601,11 @@
   "@whoAreYouPagePasswordMismatch": {},
   "whoAreYouPageShowPassword": "Показати пароль",
   "@whoAreYouPageShowPassword": {},
-  "writeChangesPartitionResized": "розмір розділу #{disk}{partition} змінено з {oldsize} на {newsize}",
+  "writeChangesPartitionResized": "розмір розділу #{sysname} змінено з {oldsize} на {newsize}",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
