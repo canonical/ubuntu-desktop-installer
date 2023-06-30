@@ -210,7 +210,6 @@ parts:
       - libglapi-mesa
       - libgraphite2-3
       - libxshmfence1
-      - libllvm12
       - libpciaccess0
       - libvulkan1
       - shared-mime-info
@@ -240,7 +239,6 @@ parts:
       - usr/lib/*/libglapi*.so.*
       - usr/lib/*/libgraphite2*.so.*
       - usr/lib/*/libxshmfence*.so.*
-      - usr/lib/*/libLLVM-12.so.*
       - usr/lib/*/libpciaccess*.so.*
       - usr/lib/*/libsensors*.so.*
       - usr/lib/*/libvulkan*.so.*
