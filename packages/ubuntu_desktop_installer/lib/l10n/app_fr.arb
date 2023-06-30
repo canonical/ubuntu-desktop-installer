@@ -311,22 +311,20 @@
   "@whoAreYouPagePasswordRequired": {},
   "whoAreYouPageConfirmPasswordLabel": "Confirmez votre mot de passe",
   "@whoAreYouPageConfirmPasswordLabel": {},
-  "writeChangesPartitionEntryMounted": "la partition #{disk}{partition} en {format} est utilisée pour {mount}",
+  "writeChangesPartitionEntryMounted": "la partition #{sysname} en {format} est utilisée pour {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "partition #{disk}{partition} en {format}",
+  "writeChangesPartitionEntryUnmounted": "partition #{sysname} en {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -581,12 +579,11 @@
       "url": {}
     }
   },
-  "writeChangesPartitionFormatted": "la partition <b>{disk}{partition}</b> formatée en <b>{format}</b>",
+  "writeChangesPartitionFormatted": "la partition <b>{sysname}</b> formatée en <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -605,12 +602,11 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionCreated": "la partition <b>{disk}{partition}</b> créée",
+  "writeChangesPartitionCreated": "la partition <b>{sysname}</b> créée",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "notEnoughDiskSpaceHasOnly": "Cet ordinateur n’a que {SIZE}.",
@@ -624,32 +620,29 @@
   "@quitButtonText": {},
   "notEnoughDiskSpaceTitle": "Pas assez d’espace",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "la partition <b>{disk}{partition}</b> redimensionnée de <b>{oldsize}</b> à <b>{newsize}</b>",
+  "writeChangesPartitionResized": "la partition <b>{sysname}</b> redimensionnée de <b>{oldsize}</b> à <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la partition <b>{disk}{partition}</b> formatée en <b>{format}</b> utilisée pour <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "la partition <b>{sysname}</b> formatée en <b>{format}</b> utilisée pour <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "la partition <b>{disk}{partition}</b> utilisée pour <b>{mount}</b>",
+  "writeChangesPartitionMounted": "la partition <b>{sysname}</b> utilisée pour <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },

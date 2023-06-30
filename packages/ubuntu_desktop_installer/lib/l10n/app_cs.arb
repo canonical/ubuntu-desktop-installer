@@ -279,12 +279,11 @@
       "system": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "oddíl č. {disk}{partition} jako {format}",
+  "writeChangesPartitionEntryUnmounted": "oddíl č. {sysname} jako {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -305,12 +304,11 @@
   "@chooseYourLookPageHeader": {},
   "chooseYourLookPageTitle": "Zvolte si motiv vzhledu",
   "@chooseYourLookPageTitle": {},
-  "writeChangesPartitionEntryMounted": "oddíl č. {disk}{partition} jako {format}, použitý pro {mount}",
+  "writeChangesPartitionEntryMounted": "oddíl č. {sysname} jako {format}, použitý pro {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -641,32 +639,29 @@
       "url": {}
     }
   },
-  "writeChangesPartitionResized": "velikost oddílu <b>{disk}{partition}</b> změněna z <b>{oldsize}</b> na <b>{newsize}</b>",
+  "writeChangesPartitionResized": "velikost oddílu <b>{sysname}</b> změněna z <b>{oldsize}</b> na <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
   "installAlongsideResizePartition": "Změnit velikost oddílu",
   "@installAlongsideResizePartition": {},
-  "writeChangesPartitionCreated": "oddíl <b>{disk}{partition}</b> vytvořen",
+  "writeChangesPartitionCreated": "oddíl <b>{sysname}</b> vytvořen",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
-  "writeChangesPartitionMounted": "oddíl <b>{disk}{partition}</b> použit pro <b>{mount}</b>",
+  "writeChangesPartitionMounted": "oddíl <b>{sysname}</b> použit pro <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
@@ -709,22 +704,20 @@
   "@installAlongsidePartition": {},
   "installAlongsideSize": "Velikost:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionFormattedMounted": "oddíl <b>{disk}{partition}</b> naformátovaný jako <b>{format}</b> použit pro <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "oddíl <b>{sysname}</b> naformátovaný jako <b>{format}</b> použit pro <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "oddíl <b>{disk}{partition}</b> naformátován jako <b>{format}</b>",
+  "writeChangesPartitionFormatted": "oddíl <b>{sysname}</b> naformátován jako <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },

@@ -529,50 +529,45 @@
   },
   "writeChangesPartitionsHeader": "The following partition changes are going to be applied:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionResized": "partition <b>{disk}{partition}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>",
+  "writeChangesPartitionResized": "partition <b>{sysname}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partition <b>{disk}{partition}</b> formatted as <b>{format}</b> used for <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "partition <b>{sysname}</b> formatted as <b>{format}</b> used for <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partition <b>{disk}{partition}</b> formatted as <b>{format}</b>",
+  "writeChangesPartitionFormatted": "partition <b>{sysname}</b> formatted as <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partition <b>{disk}{partition}</b> used for <b>{mount}</b>",
+  "writeChangesPartitionMounted": "partition <b>{sysname}</b> used for <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partition <b>{disk}{partition}</b> created",
+  "writeChangesPartitionCreated": "partition <b>{sysname}</b> created",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "chooseYourLookPageTitle": "Choose your theme",

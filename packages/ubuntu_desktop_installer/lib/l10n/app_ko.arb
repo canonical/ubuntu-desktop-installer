@@ -391,12 +391,11 @@
   "@chooseYourLookPageDarkSetting": {},
   "chooseYourLookPageLightSetting": "밝음",
   "@chooseYourLookPageLightSetting": {},
-  "writeChangesPartitionEntryMounted": "{mount} 로 사용되는 {format} 포맷의 #{disk}{partition} 파티션",
+  "writeChangesPartitionEntryMounted": "{mount} 로 사용되는 {format} 포맷의 #{sysname} 파티션",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -411,12 +410,11 @@
   "@diskHeadersFormat": {},
   "partitionFormatLabel": "용도:",
   "@partitionFormatLabel": {},
-  "writeChangesPartitionEntryUnmounted": "#{disk}{partition} 파티션을 {format} 로 포맷",
+  "writeChangesPartitionEntryUnmounted": "#{sysname} 파티션을 {format} 로 포맷",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -641,12 +639,11 @@
   "@configuringSystem": {},
   "installingSystem": "시스템 설치 중…",
   "@installingSystem": {},
-  "writeChangesPartitionCreated": "파티션 <b>{disk}{partition}</b> 생성됨",
+  "writeChangesPartitionCreated": "파티션 <b>{sysname}</b> 생성됨",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "notEnoughDiskSpaceHeader": "{RELEASE} 을(를) 설치하려면 적어도 {SIZE}의 디스크 공간이 필요합니다.",
@@ -673,12 +670,11 @@
       "SIZE": {}
     }
   },
-  "writeChangesPartitionFormatted": "파티션 <b>{disk}{partition}</b>을(를) <b>{format}</b> (으)로 포맷함",
+  "writeChangesPartitionFormatted": "파티션 <b>{sysname}</b>을(를) <b>{format}</b> (으)로 포맷함",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -686,22 +682,20 @@
   "@restartNow": {},
   "continueTesting": "체험 계속하기",
   "@continueTesting": {},
-  "writeChangesPartitionFormattedMounted": "파티션 <b>{disk}{partition}</b> 을(를) <b>{format}</b>(으)로 포맷하고 <b>{mount}</b>에 마운트",
+  "writeChangesPartitionFormattedMounted": "파티션 <b>{sysname}</b> 을(를) <b>{format}</b>(으)로 포맷하고 <b>{mount}</b>에 마운트",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "파티션 <b>{disk}{partition}</b>을(를) <b>{mount}</b>에 사용",
+  "writeChangesPartitionMounted": "파티션 <b>{sysname}</b>을(를) <b>{mount}</b>에 사용",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
@@ -720,12 +714,11 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "파티션 <b>{disk}{partition}</b>의 크기를 <b>{oldsize}</b>에서 <b>{newsize}</b>로 조정",
+  "writeChangesPartitionResized": "파티션 <b>{sysname}</b>의 크기를 <b>{oldsize}</b>에서 <b>{newsize}</b>로 조정",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }

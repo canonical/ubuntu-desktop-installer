@@ -620,28 +620,28 @@ class AppLocalizationsJa extends AppLocalizations {
   String get writeChangesPartitionsHeader => '以下のパーティション変更が適用されます：';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'パーティション<b>$disk$partition</b>のサイズが<b>$oldsize</b>から<b>$newsize</b>に変更されます。';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return 'パーティション<b>$sysname</b>のサイズが<b>$oldsize</b>から<b>$newsize</b>に変更されます。';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'パーティション<b>$disk$partition</b>は<b>$format</b>としてフォーマットされ、<b>$mount</b>として使用されます。';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return 'パーティション<b>$sysname</b>は<b>$format</b>としてフォーマットされ、<b>$mount</b>として使用されます。';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'パーティション<b>$disk$partition</b>は<b>$format</b>としてフォーマットされます。';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return 'パーティション<b>$sysname</b>は<b>$format</b>としてフォーマットされます。';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'パーティション<b>$disk$partition</b>は<b>$mount</b>として使用されます。';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return 'パーティション<b>$sysname</b>は<b>$mount</b>として使用されます。';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'パーティション<b>$disk$partition</b>が作成されました。';
+  String writeChangesPartitionCreated(Object sysname) {
+    return 'パーティション<b>$sysname</b>が作成されました。';
   }
 
   @override

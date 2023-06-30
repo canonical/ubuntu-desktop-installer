@@ -264,21 +264,19 @@
       "path": {}
     }
   },
-  "writeChangesPartitionMounted": "افراز <b>{disk}{partition}</b> برای <b>{mount}</b> استفاده شد",
+  "writeChangesPartitionMounted": "افراز <b>{sysname}</b> برای <b>{mount}</b> استفاده شد",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "افراز <b>{disk}{partition}</b> ایجاد شد",
+  "writeChangesPartitionCreated": "افراز <b>{sysname}</b> ایجاد شد",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "chooseYourLookPageLightSetting": "روشن",
@@ -424,12 +422,11 @@
   "@whoAreYouPageConfirmPasswordLabel": {},
   "writeChangesPartitionsTitle": "افزارها",
   "@writeChangesPartitionsTitle": {},
-  "writeChangesPartitionFormatted": "افراز <b>{disk}{partition}</b> به صورت <b>{format}</b> قالب‌بندی شد",
+  "writeChangesPartitionFormatted": "افراز <b>{sysname}</b> به صورت <b>{format}</b> قالب‌بندی شد",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -437,12 +434,11 @@
   "@continueTesting": {},
   "installationCompleteTitle": "نصب کامل شد",
   "@installationCompleteTitle": {},
-  "writeChangesPartitionFormattedMounted": "افراز <b>{disk}{partition}</b> به صورت <b>{format}</b> برای <b>{mount}</b> قالب‌بندی شد",
+  "writeChangesPartitionFormattedMounted": "افراز <b>{sysname}</b> به صورت <b>{format}</b> برای <b>{mount}</b> قالب‌بندی شد",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -684,12 +680,11 @@
   "@selectGuidedStorageInfoLabel": {},
   "installAlongsideSpaceDivider": "با کشیدن تقسیم‌کنندهٔ زیر، فضای گرداننده را تخصیص دهید:",
   "@installAlongsideSpaceDivider": {},
-  "writeChangesPartitionResized": "اندازهٔ افراز <b>{disk}{partition}</b> از <b>{oldsize}</b> به <b>{newsize}</b> تغییر کرد",
+  "writeChangesPartitionResized": "اندازهٔ افراز <b>{sysname}</b> از <b>{oldsize}</b> به <b>{newsize}</b> تغییر کرد",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }

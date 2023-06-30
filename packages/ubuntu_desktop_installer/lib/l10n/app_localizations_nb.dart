@@ -620,28 +620,28 @@ class AppLocalizationsNb extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'Følgende partisjonsendringer vil bli utført:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'endret størrelse fra $oldsize til $newsize for #$disk$partition';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return 'endret størrelse fra $oldsize til $newsize for #$sysname';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'partisjon #$disk$partition formatert som $format og brukt til $mount';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return 'partisjon #$sysname formatert som $format og brukt til $mount';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'partisjon #$disk$partition formatert som $format';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return 'partisjon #$sysname formatert som $format';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'partisjon #$disk$partition brukt til $mount';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return 'partisjon #$sysname brukt til $mount';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'partisjon #$disk$partition opprettet';
+  String writeChangesPartitionCreated(Object sysname) {
+    return 'partisjon #$sysname opprettet';
   }
 
   @override

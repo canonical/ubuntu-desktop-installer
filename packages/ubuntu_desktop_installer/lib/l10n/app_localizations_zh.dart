@@ -620,28 +620,28 @@ class AppLocalizationsZh extends AppLocalizations {
   String get writeChangesPartitionsHeader => '将应用以下分区更改：';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return '分区<b>$disk$partition</b> 从<b>$oldsize</b> 调整为<b>$newsize</b>';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return '分区<b>$sysname</b> 从<b>$oldsize</b> 调整为<b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return '分区<b>$disk$partition</b> 格式化为<b>$format</b> 并挂载到<b>$mount</b>';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return '分区<b>$sysname</b> 格式化为<b>$format</b> 并挂载到<b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '分区<b>$disk$partition</b> 格式化为<b>$format</b>';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return '分区<b>$sysname</b> 格式化为<b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return '分区 <b>$disk$partition</b> 挂载到 <b>$mount</b>';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return '分区 <b>$sysname</b> 挂载到 <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '分区 <b>$disk$partition</b> 已创建';
+  String writeChangesPartitionCreated(Object sysname) {
+    return '分区 <b>$sysname</b> 已创建';
   }
 
   @override

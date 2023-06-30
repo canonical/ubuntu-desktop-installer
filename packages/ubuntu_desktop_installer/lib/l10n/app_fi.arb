@@ -196,22 +196,20 @@
   },
   "writeChangesPartitionsHeader": "Seuraavat osiomuutokset toteutetaan:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "osio #{disk}{partition} tiedostojärjestelmänä {format} liitetty kohtaan {mount}",
+  "writeChangesPartitionEntryMounted": "osio #{sysname} tiedostojärjestelmänä {format} liitetty kohtaan {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "osio #{disk}{partition} tiedostojärjestelmänä {format}",
+  "writeChangesPartitionEntryUnmounted": "osio #{sysname} tiedostojärjestelmänä {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -654,50 +652,45 @@
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "Raja saavutettu",
   "@partitionLimitReached": {},
-  "writeChangesPartitionResized": "osion <b>{disk}{partition}</b> koko <b>{oldsize}</b> muutettu kokoon <b>{newsize}</b>",
+  "writeChangesPartitionResized": "osion <b>{sysname}</b> koko <b>{oldsize}</b> muutettu kokoon <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "osio <b>{disk}{partition}</b> alustettu muotoon <b>{format}</b> käytettäväksi liitospisteenä <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "osio <b>{sysname}</b> alustettu muotoon <b>{format}</b> käytettäväksi liitospisteenä <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "osio <b>{disk}{partition}</b> alustettu muotoon <b>{format}</b>",
+  "writeChangesPartitionFormatted": "osio <b>{sysname}</b> alustettu muotoon <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "osio <b>{disk}{partition}</b> käytettäväksi liitospisteenä <b>{mount}</b>",
+  "writeChangesPartitionMounted": "osio <b>{sysname}</b> käytettäväksi liitospisteenä <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "osio <b>{disk}{partition}</b> luotu",
+  "writeChangesPartitionCreated": "osio <b>{sysname}</b> luotu",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "whoAreYouPagePasswordShow": "Näytä",

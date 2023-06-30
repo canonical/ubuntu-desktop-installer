@@ -620,28 +620,28 @@ class AppLocalizationsKo extends AppLocalizations {
   String get writeChangesPartitionsHeader => '다음과 같은 파티션 변경사항이 적용됩니다:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return '파티션 <b>$disk$partition</b>의 크기를 <b>$oldsize</b>에서 <b>$newsize</b>로 조정';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return '파티션 <b>$sysname</b>의 크기를 <b>$oldsize</b>에서 <b>$newsize</b>로 조정';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return '파티션 <b>$disk$partition</b> 을(를) <b>$format</b>(으)로 포맷하고 <b>$mount</b>에 마운트';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return '파티션 <b>$sysname</b> 을(를) <b>$format</b>(으)로 포맷하고 <b>$mount</b>에 마운트';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '파티션 <b>$disk$partition</b>을(를) <b>$format</b> (으)로 포맷함';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return '파티션 <b>$sysname</b>을(를) <b>$format</b> (으)로 포맷함';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return '파티션 <b>$disk$partition</b>을(를) <b>$mount</b>에 사용';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return '파티션 <b>$sysname</b>을(를) <b>$mount</b>에 사용';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '파티션 <b>$disk$partition</b> 생성됨';
+  String writeChangesPartitionCreated(Object sysname) {
+    return '파티션 <b>$sysname</b> 생성됨';
   }
 
   @override

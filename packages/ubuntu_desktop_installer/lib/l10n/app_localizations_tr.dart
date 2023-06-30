@@ -620,28 +620,28 @@ class AppLocalizationsTr extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'Aşağıdaki bölüm değişiklikleri uygulanacak:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return '<b>$disk$partition</b> bölümü <b>$oldsize</b> boyutundan <b>$newsize</b> boyutuna yeniden boyutlandırıldı';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return '<b>$sysname</b> bölümü <b>$oldsize</b> boyutundan <b>$newsize</b> boyutuna yeniden boyutlandırıldı';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return '<b>$format </b> biçimindeki <b>$disk$partition</b> bölümü <b>$mount</b> için kullanıldı';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return '<b>$format </b> biçimindeki <b>$sysname</b> bölümü <b>$mount</b> için kullanıldı';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '<b>$disk$partition</b> bölümü <b>$format</b> olarak biçimlendirildi';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return '<b>$sysname</b> bölümü <b>$format</b> olarak biçimlendirildi';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return '<b>$disk$partition</b> bölümü <b>$mount</b> için kullanıldı';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return '<b>$sysname</b> bölümü <b>$mount</b> için kullanıldı';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '<b>$disk$partition</b> bölümü oluşturuldu';
+  String writeChangesPartitionCreated(Object sysname) {
+    return '<b>$sysname</b> bölümü oluşturuldu';
   }
 
   @override

@@ -135,22 +135,20 @@
   "@chooseYourLookPageTitle": {},
   "chooseYourLookPageHeader": "תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.",
   "@chooseYourLookPageHeader": {},
-  "writeChangesPartitionEntryMounted": "מחיצה מס׳ {disk}{partition} בתור {format} משמשת עבור {mount}",
+  "writeChangesPartitionEntryMounted": "מחיצה מס׳ {sysname} בתור {format} משמשת עבור {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "מחיצה מס׳ {disk}{partition} בתור {format}",
+  "writeChangesPartitionEntryUnmounted": "מחיצה מס׳ {sysname} בתור {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -593,12 +591,11 @@
   },
   "installAlongsideAvailable": "זמין:",
   "@installAlongsideAvailable": {},
-  "writeChangesPartitionFormattedMounted": "מחיצה <b>{disk}{partition}</b> פורמטה כ־<b>{format}</b> ומשמשת עבור <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "מחיצה <b>{sysname}</b> פורמטה כ־<b>{format}</b> ומשמשת עבור <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -613,24 +610,22 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "הגודל של מחיצה <b>{disk}{partition}</b> ישתנה מ־<b>{oldsize}</b> ל־<b>{newsize}</b>",
+  "writeChangesPartitionResized": "הגודל של מחיצה <b>{sysname}</b> ישתנה מ־<b>{oldsize}</b> ל־<b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
   "quitButtonText": "יציאה מההתקנה",
   "@quitButtonText": {},
-  "writeChangesPartitionCreated": "המחיצה <b>{disk}{partition}</b> נוצרה",
+  "writeChangesPartitionCreated": "המחיצה <b>{sysname}</b> נוצרה",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "notEnoughDiskSpaceHasOnly": "במחשב זה יש רק {SIZE}.",
@@ -640,21 +635,19 @@
       "SIZE": {}
     }
   },
-  "writeChangesPartitionFormatted": "מחיצה <b>{disk}{partition}</b> פורמטה בתור <b>{format}</b>",
+  "writeChangesPartitionFormatted": "מחיצה <b>{sysname}</b> פורמטה בתור <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "מחיצה <b>{disk}{partition}</b> תשמש עבור <b>{mount}</b>",
+  "writeChangesPartitionMounted": "מחיצה <b>{sysname}</b> תשמש עבור <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },

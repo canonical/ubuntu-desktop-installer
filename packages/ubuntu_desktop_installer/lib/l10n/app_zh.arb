@@ -207,24 +207,22 @@
   "@normalInstallationTitle": {},
   "installationTypeAlongsideInfo": "将保存文件、音乐和其他个人文件。每次启动时，您可以选择所需的操作系统。",
   "@installationTypeAlongsideInfo": {},
-  "writeChangesPartitionEntryMounted": "分区#{disk}{partition}作为{format}用于{mount}",
+  "writeChangesPartitionEntryMounted": "分区#{sysname}作为{format}用于{mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
   "repairInstallationDescription": "修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。",
   "@repairInstallationDescription": {},
-  "writeChangesPartitionEntryUnmounted": "分区#{disk}{partition}作为{format}",
+  "writeChangesPartitionEntryUnmounted": "分区#{sysname}作为{format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -650,30 +648,27 @@
   },
   "quitButtonText": "退出安装",
   "@quitButtonText": {},
-  "writeChangesPartitionFormatted": "分区<b>{disk}{partition}</b> 格式化为<b>{format}</b>",
+  "writeChangesPartitionFormatted": "分区<b>{sysname}</b> 格式化为<b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "分区 <b>{disk}{partition}</b> 挂载到 <b>{mount}</b>",
+  "writeChangesPartitionMounted": "分区 <b>{sysname}</b> 挂载到 <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "分区 <b>{disk}{partition}</b> 已创建",
+  "writeChangesPartitionCreated": "分区 <b>{sysname}</b> 已创建",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "notEnoughDiskSpaceTitle": "空间不足",
@@ -686,22 +681,20 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "分区<b>{disk}{partition}</b> 从<b>{oldsize}</b> 调整为<b>{newsize}</b>",
+  "writeChangesPartitionResized": "分区<b>{sysname}</b> 从<b>{oldsize}</b> 调整为<b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "分区<b>{disk}{partition}</b> 格式化为<b>{format}</b> 并挂载到<b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "分区<b>{sysname}</b> 格式化为<b>{format}</b> 并挂载到<b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }

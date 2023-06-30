@@ -321,22 +321,20 @@
   },
   "writeChangesPartitionsHeader": "Följande partitionsändringar kommer att tillämpas:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "partition #{disk}{partition} som {format} används för {mount}",
+  "writeChangesPartitionEntryMounted": "partition #{sysname} som {format} används för {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "partition #{disk}{partition} som {format}",
+  "writeChangesPartitionEntryUnmounted": "partition #{sysname} som {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -646,30 +644,27 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionFormatted": "partition <b>{disk}{partition}</b> formaterad som <b>{format}</b>",
+  "writeChangesPartitionFormatted": "partition <b>{sysname}</b> formaterad som <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partition <b>{disk}{partition}</b> används för <b>{mount}</b>",
+  "writeChangesPartitionMounted": "partition <b>{sysname}</b> används för <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partition <b>{disk}{partition}</b> skapad",
+  "writeChangesPartitionCreated": "partition <b>{sysname}</b> skapad",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "notEnoughDiskSpaceTitle": "Inte tillräckligt med utrymme",
@@ -698,22 +693,20 @@
   },
   "quitButtonText": "Avbryt installation",
   "@quitButtonText": {},
-  "writeChangesPartitionFormattedMounted": "partition <b>{disk}{partition}</b> formaterad som <b>{format}</b> används för <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "partition <b>{sysname}</b> formaterad som <b>{format}</b> används för <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "partition <b>{disk}{partition}</b> storleksändrad från <b>{oldsize}</b> till <b>{newsize}</b>",
+  "writeChangesPartitionResized": "partition <b>{sysname}</b> storleksändrad från <b>{oldsize}</b> till <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }

@@ -620,28 +620,28 @@ class AppLocalizationsSi extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'පහත පංගු වෙනස්කම් යෙදෙනු ඇත:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return '#$disk$partition පංගුව $oldsize සිට $newsize දක්වා ප්‍රමාණනය කෙරිණි';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return '#$sysname පංගුව $oldsize සිට $newsize දක්වා ප්‍රමාණනය කෙරිණි';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return '#$disk$partition පංගුව $mount සඳහා භාවිතයට $format ලෙස පවිත්‍රව ඇත';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return '#$sysname පංගුව $mount සඳහා භාවිතයට $format ලෙස පවිත්‍රව ඇත';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return '#$disk$partition පංගුව $format ලෙස පවිත්‍රව ඇත';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return '#$sysname පංගුව $format ලෙස පවිත්‍රව ඇත';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return '#$disk$partition පංගුව $mount සඳහා භාවිතා වේ';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return '#$sysname පංගුව $mount සඳහා භාවිතා වේ';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return '#$disk$partition පංගුව සෑදිණි';
+  String writeChangesPartitionCreated(Object sysname) {
+    return '#$sysname පංගුව සෑදිණි';
   }
 
   @override

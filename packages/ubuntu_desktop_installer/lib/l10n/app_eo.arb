@@ -106,12 +106,11 @@
   "@updatesOtherSoftwarePageTitle": {},
   "turnOffRST": "Rapid-Konserveja Tekniko (RST) estas ŝaltita",
   "@turnOffRST": {},
-  "writeChangesPartitionEntryUnmounted": "subdisko #{disk}{partition} kiel {format}",
+  "writeChangesPartitionEntryUnmounted": "subdisko #{sysname} kiel {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -320,12 +319,11 @@
   "@writeChangesToDisk": {},
   "writeChangesPartitionsHeader": "La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "subdisko #{disk}{partition} kiel {format} ĉe {mount}",
+  "writeChangesPartitionEntryMounted": "subdisko #{sysname} kiel {format} ĉe {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
@@ -613,42 +611,38 @@
   },
   "quitButtonText": "Ĉesi instaladon",
   "@quitButtonText": {},
-  "writeChangesPartitionCreated": "krei la subdiskon <b>{disk}{partition}</b>",
+  "writeChangesPartitionCreated": "krei la subdiskon <b>{sysname}</b>",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la subdisko <b>{disk}{partition}</b> strukturota laŭ <b>{format}</b> kaj uzota por <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b> kaj uzota por <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
   "notEnoughDiskSpaceTitle": "Ne sufiĉas spaco",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "ŝanĝi la grandon de la subdisko <b>{disk}{partition}</b> de <b>{oldsize}</b> al <b>{newsize}</b>",
+  "writeChangesPartitionResized": "ŝanĝi la grandon de la subdisko <b>{sysname}</b> de <b>{oldsize}</b> al <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionMounted": "la subdisko <b>{disk}{partition}</b> uzota por <b>{mount}</b>",
+  "writeChangesPartitionMounted": "la subdisko <b>{sysname}</b> uzota por <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
@@ -660,12 +654,11 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionFormatted": "la subdisko <b>{disk}{partition}</b> strukturota laŭ <b>{format}</b>",
+  "writeChangesPartitionFormatted": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },

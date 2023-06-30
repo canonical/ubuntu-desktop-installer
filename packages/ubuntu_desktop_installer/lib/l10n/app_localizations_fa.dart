@@ -620,28 +620,28 @@ class AppLocalizationsFa extends AppLocalizations {
   String get writeChangesPartitionsHeader => 'تغییرهای افراز زیرمی‌خواهند اعمال شوند:';
 
   @override
-  String writeChangesPartitionResized(Object disk, Object partition, Object oldsize, Object newsize) {
-    return 'اندازهٔ افراز <b>$disk$partition</b> از <b>$oldsize</b> به <b>$newsize</b> تغییر کرد';
+  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+    return 'اندازهٔ افراز <b>$sysname</b> از <b>$oldsize</b> به <b>$newsize</b> تغییر کرد';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object disk, Object partition, Object format, Object mount) {
-    return 'افراز <b>$disk$partition</b> به صورت <b>$format</b> برای <b>$mount</b> قالب‌بندی شد';
+  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+    return 'افراز <b>$sysname</b> به صورت <b>$format</b> برای <b>$mount</b> قالب‌بندی شد';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object disk, Object partition, Object format) {
-    return 'افراز <b>$disk$partition</b> به صورت <b>$format</b> قالب‌بندی شد';
+  String writeChangesPartitionFormatted(Object sysname, Object format) {
+    return 'افراز <b>$sysname</b> به صورت <b>$format</b> قالب‌بندی شد';
   }
 
   @override
-  String writeChangesPartitionMounted(Object disk, Object partition, Object mount) {
-    return 'افراز <b>$disk$partition</b> برای <b>$mount</b> استفاده شد';
+  String writeChangesPartitionMounted(Object sysname, Object mount) {
+    return 'افراز <b>$sysname</b> برای <b>$mount</b> استفاده شد';
   }
 
   @override
-  String writeChangesPartitionCreated(Object disk, Object partition) {
-    return 'افراز <b>$disk$partition</b> ایجاد شد';
+  String writeChangesPartitionCreated(Object sysname) {
+    return 'افراز <b>$sysname</b> ایجاد شد';
   }
 
   @override

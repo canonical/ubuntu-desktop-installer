@@ -379,22 +379,20 @@
   "@chooseSecurityKeyRequired": {},
   "selectGuidedStorageDropdownLabel": "Seleccionatz lo disc :",
   "@selectGuidedStorageDropdownLabel": {},
-  "writeChangesPartitionEntryMounted": "la particion #{disk}{partition} en {format} utilizada per {mount}",
+  "writeChangesPartitionEntryMounted": "la particion #{sysname} en {format} utilizada per {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "particion #{disk}{partition} en {format}",
+  "writeChangesPartitionEntryUnmounted": "particion #{sysname} en {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -608,12 +606,11 @@
   "@installingSystem": {},
   "configuringSystem": "Configuracion del sistèma…",
   "@configuringSystem": {},
-  "writeChangesPartitionResized": "la particion <b>{disk}{partition}</b> redimensionada de <b>{oldsize}</b> a <b>{newsize}</b>",
+  "writeChangesPartitionResized": "la particion <b>{sysname}</b> redimensionada de <b>{oldsize}</b> a <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
@@ -628,39 +625,35 @@
   },
   "supportSlideResources": "Per mai d’entresenhas, visitatz las paginas <a href=\"https://www.ubuntu.com/support/community-support\">assisténcia de la comunautat</a> o <a href=\"https://www.ubuntu.com/support\">l’assiténcia comerciala</a>.",
   "@supportSlideResources": {},
-  "writeChangesPartitionCreated": "particion <b>{disk}{partition}</b> creada",
+  "writeChangesPartitionCreated": "particion <b>{sysname}</b> creada",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
-  "writeChangesPartitionMounted": "la particion <b>{disk}{partition}</b> utilizada per <b>{mount}</b>",
+  "writeChangesPartitionMounted": "la particion <b>{sysname}</b> utilizada per <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la particion <b>{disk}{partition}</b> formatada en <b>{format}</b> utilizada per <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "la particion <b>{sysname}</b> formatada en <b>{format}</b> utilizada per <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "la particion <b>{disk}{partition}</b> formatada en <b>{format}</b>",
+  "writeChangesPartitionFormatted": "la particion <b>{sysname}</b> formatada en <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },

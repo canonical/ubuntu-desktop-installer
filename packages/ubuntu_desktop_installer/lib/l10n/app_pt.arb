@@ -277,22 +277,20 @@
   },
   "writeChangesPartitionsHeader": "As seguintes alterações às partições serão aplicadas:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "partição #{disk}{partition} como {format} usada para {mount}",
+  "writeChangesPartitionEntryMounted": "partição #{sysname} como {format} usada para {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "partição #{disk}{partition} como {format}",
+  "writeChangesPartitionEntryUnmounted": "partição #{sysname} como {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
@@ -471,22 +469,20 @@
   "@whoAreYouPageUsernameTooLong": {},
   "whoAreYouPageShowPassword": "Mostrar palavra-passe",
   "@whoAreYouPageShowPassword": {},
-  "writeChangesPartitionResized": "partição <b>{disk}{partition}</b> redimensionada de <b>{oldsize}</b> para <b>{newsize}</b>",
+  "writeChangesPartitionResized": "partição <b>{sysname}</b> redimensionada de <b>{oldsize}</b> para <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionCreated": "partição <b>{disk}{partition}</b> criada",
+  "writeChangesPartitionCreated": "partição <b>{sysname}</b> criada",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "whereAreYouPageTitle": "Selecione o seu fuso-horário",
@@ -535,31 +531,28 @@
       "url": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partição <b>{disk}{partition}</b> formatada como <b>{format}</b> usada para <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "partição <b>{sysname}</b> formatada como <b>{format}</b> usada para <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partição <b>{disk}{partition}</b> formatada como <b>{format}</b>",
+  "writeChangesPartitionFormatted": "partição <b>{sysname}</b> formatada como <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partição <b>{disk}{partition}</b> usada para <b>{mount}</b>",
+  "writeChangesPartitionMounted": "partição <b>{sysname}</b> usada para <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },

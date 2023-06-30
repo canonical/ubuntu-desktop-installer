@@ -475,41 +475,37 @@
   "@installAlongsideResizePartition": {},
   "partitionFormatNone": "Efterlad uformateret",
   "@partitionFormatNone": {},
-  "writeChangesPartitionResized": "partition <b>{disk}{partition}</b> ændres fra <b>{oldsize}</b> til <b>{newsize}</b>",
+  "writeChangesPartitionResized": "partition <b>{sysname}</b> ændres fra <b>{oldsize}</b> til <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "oldsize": {},
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partition <b>{disk}{partition}</b> formateret som <b>{format}</b> brugt til <b>{mount}</b>",
+  "writeChangesPartitionFormattedMounted": "partition <b>{sysname}</b> formateret som <b>{format}</b> brugt til <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partition <b>{disk}{partition}</b> formateret som <b>{format}</b>",
+  "writeChangesPartitionFormatted": "partition <b>{sysname}</b> formateret som <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partition <b>{disk}{partition}</b> brugt til <b>{mount}</b>",
+  "writeChangesPartitionMounted": "partition <b>{sysname}</b> brugt til <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {},
+      "sysname": {},
       "mount": {}
     }
   },
@@ -588,12 +584,11 @@
   "@whoAreYouPagePasswordHide": {},
   "writeChangesPartitionTablesHeader": "Partitionstabellen på de følgende enheder er ændret:",
   "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionCreated": "partition <b>{disk}{partition}</b> oprettet",
+  "writeChangesPartitionCreated": "partition <b>{sysname}</b> oprettet",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
-      "disk": {},
-      "partition": {}
+      "sysname": {}
     }
   },
   "installationSlidesCreativityTitle": "Berig din kreativitet",
