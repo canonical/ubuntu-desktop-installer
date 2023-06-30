@@ -6,7 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:ubuntu_utils/ubuntu_utils.dart';
+import 'package:yaru/yaru.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import 'test_source.dart';
