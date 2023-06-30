@@ -55,11 +55,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git
       path: packages/ubuntu_utils
-  ubuntu_widgets:
-    git:
-      url: https://github.com/canonical/ubuntu-flutter-plugins.git
-      path: packages/ubuntu_widgets
-      ref: e9fedca56a8122cae6f3ab26e2b33c2d83e225ca
+  ubuntu_widgets: ^0.1.0
   ubuntu_wizard:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git

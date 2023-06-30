@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/widgets/push_button.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 /// Shows a confirmation dialog with the given title and message.
