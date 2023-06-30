@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:wizard_router/wizard_router.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -193,14 +194,11 @@ class _WizardButtonState extends State<WizardButton> {
               )
             : Text(widget.label!);
 
-        return ConstrainedBox(
-          constraints: const BoxConstraints(minWidth: 136),
-          child: widget.highlighted == true
-              ? ElevatedButton(onPressed: maybeActivate, child: child)
-              : widget.flat == true
-                  ? OutlinedButton(onPressed: maybeActivate, child: child)
-                  : FilledButton(onPressed: maybeActivate, child: child),
-        );
+        return widget.highlighted == true
+            ? PushButton.elevated(onPressed: maybeActivate, child: child)
+            : widget.flat == true
+                ? PushButton.outlined(onPressed: maybeActivate, child: child)
+                : PushButton.filled(onPressed: maybeActivate, child: child);
       },
     );
   }
