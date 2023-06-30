@@ -5,8 +5,8 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'storage_dialogs.dart';

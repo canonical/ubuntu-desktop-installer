@@ -1,4 +1,3 @@
-export 'src/color.dart';
 export 'src/command_line.dart';
 export 'src/data_size.dart';
 export 'src/logging.dart';
