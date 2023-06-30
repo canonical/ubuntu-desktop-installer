@@ -39,10 +39,9 @@ class WizardButton extends StatefulWidget {
     bool? visible,
     bool? enabled,
     WizardCallback? onBack,
-    bool root = false, // TODO: remove
   }) {
-    final wizard = Wizard.maybeOf(context, root: root);
-    final rootWizard = root ? wizard : Wizard.maybeOf(context, root: true);
+    final wizard = Wizard.maybeOf(context);
+    final rootWizard = Wizard.maybeOf(context, root: true);
     final routeData =
         (wizard?.routeData ?? rootWizard?.routeData) as WizardRouteData?;
     final hasPrevious = routeData?.hasPrevious ??
@@ -77,10 +76,9 @@ class WizardButton extends StatefulWidget {
     Object? arguments,
     WizardCallback? onNext,
     WizardCallback? onBack,
-    bool root = false, // TODO: remove
   }) {
-    final wizard = Wizard.maybeOf(context, root: root);
-    final rootWizard = root ? wizard : Wizard.maybeOf(context, root: true);
+    final wizard = Wizard.maybeOf(context);
+    final rootWizard = Wizard.maybeOf(context, root: true);
     final routeData =
         (wizard?.routeData ?? rootWizard?.routeData) as WizardRouteData?;
     final hasNext = routeData?.hasNext ??
