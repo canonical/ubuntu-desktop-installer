@@ -542,10 +542,13 @@ class YaruThemeVariant extends ValueVariant<ThemeData> {
 }
 
 extension on WidgetTester {
-  Future<void> jumpToWizardRoute(String route) {
+  Future<void> jumpToWizardRoute(String route) async {
     final context = element(find.byType(WizardPage));
     Wizard.of(context).jump(route);
-    return pumpAndSettle();
+    await pumpUntil(find.byElementPredicate((element) {
+      return Wizard.maybeOf(element)?.controller.currentRoute == route;
+    }));
+    await pumpAndSettle();
   }
 
   Future<void> jumpToStorageWizard() async {
