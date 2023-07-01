@@ -225,6 +225,7 @@ Future<void> main() async {
       ],
       screenshot: '$currentThemeName/7.manual-partitioning',
     );
+    await tester.pumpUntil(find.byType(ConfirmPage));
     await tester.pumpAndSettle();
   }, variant: themeVariant);
 
@@ -247,6 +248,7 @@ Future<void> main() async {
       sizes: {'ext4': 32768},
       screenshot: '$currentThemeName/7.guided-resize',
     );
+    await tester.pumpUntil(find.byType(ConfirmPage));
     await tester.pumpAndSettle();
   }, variant: themeVariant);
 
@@ -266,6 +268,7 @@ Future<void> main() async {
       tester,
       screenshot: '$currentThemeName/7.guided-reformat',
     );
+    await tester.pumpUntil(find.byType(ConfirmPage));
     await tester.pumpAndSettle();
   }, variant: themeVariant);
 
