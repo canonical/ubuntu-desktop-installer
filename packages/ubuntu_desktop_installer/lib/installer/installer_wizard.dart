@@ -161,11 +161,8 @@ class _InstallWizard extends ConsumerWidget {
       userData: WizardData(totalSteps: InstallationStep.values.length),
       routes: <String, WizardRoute>{
         Routes.loading: WizardRoute(
-            builder: (_) => const LoadingPage(),
-            userData: const WizardRouteData(
-              hasPrevious: false,
-              hasNext: false,
-            )),
+          builder: (_) => const LoadingPage(),
+        ),
         ...preInstall.map(guardRoute),
         Routes.confirm: WizardRoute(
           builder: (_) => const ConfirmPage(),
