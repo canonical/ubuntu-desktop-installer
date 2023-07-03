@@ -522,76 +522,76 @@ class AppLocalizationsHe extends AppLocalizations {
   String get partitionMountPointLabel => 'נקודת עגינה:';
 
   @override
-  String get whoAreYouPageTitle => 'הקמת החשבון שלך';
+  String get identityPageTitle => 'הקמת החשבון שלך';
 
   @override
-  String get whoAreYouPageAutoLogin => 'כניסה אוטומטית';
+  String get identityAutoLogin => 'כניסה אוטומטית';
 
   @override
-  String get whoAreYouPageRequirePassword => 'דרישת הסיסמה שלי לצורך כניסה';
+  String get identityRequirePassword => 'דרישת הסיסמה שלי לצורך כניסה';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'שמך';
+  String get identityRealNameLabel => 'שמך';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'דרוש שם';
+  String get identityRealNameRequired => 'דרוש שם';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'השם ארוך מדי.';
+  String get identityRealNameTooLong => 'השם ארוך מדי.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'שם המחשב שלך';
+  String get identityHostnameLabel => 'שם המחשב שלך';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'השם שישמש את המחשב בעת תקשורת מול מחשבים אחרים.';
+  String get identityHostnameInfo => 'השם שישמש את המחשב בעת תקשורת מול מחשבים אחרים.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'דרוש שם מחשב';
+  String get identityHostnameRequired => 'דרוש שם מחשב';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'שם המחשב הזה ארוך מדי.';
+  String get identityHostnameTooLong => 'שם המחשב הזה ארוך מדי.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'שם המחשב שגוי';
+  String get identityInvalidHostname => 'שם המחשב שגוי';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'נא לבחור שם משתמש';
+  String get identityUsernameLabel => 'נא לבחור שם משתמש';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'דרוש שם משתמש';
+  String get identityUsernameRequired => 'דרוש שם משתמש';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'שם המשתמש שגוי';
+  String get identityInvalidUsername => 'שם המשתמש שגוי';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'שם משתמש זה כבר קיים.';
+  String get identityUsernameInUse => 'שם משתמש זה כבר קיים.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'שם זה שמור לטובת המערכת.';
+  String get identityUsernameSystemReserved => 'שם זה שמור לטובת המערכת.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'השם הזה ארוך מדי.';
+  String get identityUsernameTooLong => 'השם הזה ארוך מדי.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'השם הזה מכיל תווים שגויים.';
+  String get identityUsernameInvalidChars => 'השם הזה מכיל תווים שגויים.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'נא לבחור סיסמה';
+  String get identityPasswordLabel => 'נא לבחור סיסמה';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'דרושה סיסמה';
+  String get identityPasswordRequired => 'דרושה סיסמה';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'אישור הסיסמה שלך';
+  String get identityConfirmPasswordLabel => 'אישור הסיסמה שלך';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'הסיסמאות סותרות זו את זו';
+  String get identityPasswordMismatch => 'הסיסמאות סותרות זו את זו';
 
   @override
-  String get whoAreYouPagePasswordShow => 'חשיפה';
+  String get identityPasswordShow => 'חשיפה';
 
   @override
-  String get whoAreYouPagePasswordHide => 'הסתרה';
+  String get identityPasswordHide => 'הסתרה';
 
   @override
   String get writeChangesToDisk => 'סיימנו להתכונן להתקנה';

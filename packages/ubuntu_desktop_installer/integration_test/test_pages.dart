@@ -437,33 +437,33 @@ Future<void> testIdentityPage(
   String? password,
   String? screenshot,
 }) async {
-  await expectPage(tester, IdentityPage, (lang) => lang.whoAreYouPageTitle);
+  await expectPage(tester, IdentityPage, (lang) => lang.identityPageTitle);
 
   if (identity?.realname != null) {
     await tester.enterText(
-      find.textField(tester.lang.whoAreYouPageRealNameLabel),
+      find.textField(tester.lang.identityRealNameLabel),
       identity!.realname,
     );
   }
   if (identity?.hostname != null) {
     await tester.enterText(
-      find.textField(tester.lang.whoAreYouPageComputerNameLabel),
+      find.textField(tester.lang.identityHostnameLabel),
       identity!.hostname,
     );
   }
   if (identity?.username != null) {
     await tester.enterText(
-      find.textField(tester.lang.whoAreYouPageUsernameLabel),
+      find.textField(tester.lang.identityUsernameLabel),
       identity!.username,
     );
   }
   if (password != null) {
     await tester.enterText(
-      find.textField(tester.lang.whoAreYouPagePasswordLabel),
+      find.textField(tester.lang.identityPasswordLabel),
       password,
     );
     await tester.enterText(
-      find.textField(tester.lang.whoAreYouPageConfirmPasswordLabel),
+      find.textField(tester.lang.identityConfirmPasswordLabel),
       password,
     );
   }

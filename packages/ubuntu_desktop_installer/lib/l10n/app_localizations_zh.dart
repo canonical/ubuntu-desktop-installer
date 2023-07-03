@@ -522,76 +522,76 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionMountPointLabel => '挂载点：';
 
   @override
-  String get whoAreYouPageTitle => '设置您的帐户';
+  String get identityPageTitle => '设置您的帐户';
 
   @override
-  String get whoAreYouPageAutoLogin => '自动登录';
+  String get identityAutoLogin => '自动登录';
 
   @override
-  String get whoAreYouPageRequirePassword => '登录时需要密码';
+  String get identityRequirePassword => '登录时需要密码';
 
   @override
-  String get whoAreYouPageRealNameLabel => '您的姓名';
+  String get identityRealNameLabel => '您的姓名';
 
   @override
-  String get whoAreYouPageRealNameRequired => '需要名字';
+  String get identityRealNameRequired => '需要名字';
 
   @override
-  String get whoAreYouPageRealNameTooLong => '名字过长。';
+  String get identityRealNameTooLong => '名字过长。';
 
   @override
-  String get whoAreYouPageComputerNameLabel => '您的电脑主机名';
+  String get identityHostnameLabel => '您的电脑主机名';
 
   @override
-  String get whoAreYouPageComputerNameInfo => '与其他计算机联络时使用的名称。';
+  String get identityHostnameInfo => '与其他计算机联络时使用的名称。';
 
   @override
-  String get whoAreYouPageComputerNameRequired => '需要计算机名称';
+  String get identityHostnameRequired => '需要计算机名称';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => '电脑名称太长了。';
+  String get identityHostnameTooLong => '电脑名称太长了。';
 
   @override
-  String get whoAreYouPageInvalidComputerName => '计算机主机名无效';
+  String get identityInvalidHostname => '计算机主机名无效';
 
   @override
-  String get whoAreYouPageUsernameLabel => '键入一个用户名';
+  String get identityUsernameLabel => '键入一个用户名';
 
   @override
-  String get whoAreYouPageUsernameRequired => '需要用户名';
+  String get identityUsernameRequired => '需要用户名';
 
   @override
-  String get whoAreYouPageInvalidUsername => '用户名无效';
+  String get identityInvalidUsername => '用户名无效';
 
   @override
-  String get whoAreYouPageUsernameInUse => '这个用户名已经存在。';
+  String get identityUsernameInUse => '这个用户名已经存在。';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => '这个名称保留给系统使用。';
+  String get identityUsernameSystemReserved => '这个名称保留给系统使用。';
 
   @override
-  String get whoAreYouPageUsernameTooLong => '名字过长.';
+  String get identityUsernameTooLong => '名字过长.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => '这个名称包含无效字符。';
+  String get identityUsernameInvalidChars => '这个名称包含无效字符。';
 
   @override
-  String get whoAreYouPagePasswordLabel => '选择一个密码';
+  String get identityPasswordLabel => '选择一个密码';
 
   @override
-  String get whoAreYouPagePasswordRequired => '需要密码';
+  String get identityPasswordRequired => '需要密码';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => '确认您的密码';
+  String get identityConfirmPasswordLabel => '确认您的密码';
 
   @override
-  String get whoAreYouPagePasswordMismatch => '密码不匹配';
+  String get identityPasswordMismatch => '密码不匹配';
 
   @override
-  String get whoAreYouPagePasswordShow => '显示';
+  String get identityPasswordShow => '显示';
 
   @override
-  String get whoAreYouPagePasswordHide => '隐藏';
+  String get identityPasswordHide => '隐藏';
 
   @override
   String get writeChangesToDisk => '准备安装';

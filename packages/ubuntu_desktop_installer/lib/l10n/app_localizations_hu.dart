@@ -522,76 +522,76 @@ class AppLocalizationsHu extends AppLocalizations {
   String get partitionMountPointLabel => 'Csatolási pont:';
 
   @override
-  String get whoAreYouPageTitle => 'A fiók beállítása';
+  String get identityPageTitle => 'A fiók beállítása';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Automatikus bejelentkezés';
+  String get identityAutoLogin => 'Automatikus bejelentkezés';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Jelszavam kérése a bejelentkezéshez';
+  String get identityRequirePassword => 'Jelszavam kérése a bejelentkezéshez';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Az Ön neve';
+  String get identityRealNameLabel => 'Az Ön neve';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'A név megadása kötelező';
+  String get identityRealNameRequired => 'A név megadása kötelező';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'Ez a név túl hosszú.';
+  String get identityRealNameTooLong => 'Ez a név túl hosszú.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Az Ön számítógépének neve';
+  String get identityHostnameLabel => 'Az Ön számítógépének neve';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'A más számítógépekkel való kommunikáció során használt név.';
+  String get identityHostnameInfo => 'A más számítógépekkel való kommunikáció során használt név.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'A számítógépnév megadása kötelező';
+  String get identityHostnameRequired => 'A számítógépnév megadása kötelező';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Ez a számítógépnév túl hosszú.';
+  String get identityHostnameTooLong => 'Ez a számítógépnév túl hosszú.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'A számítógép neve érvénytelen';
+  String get identityInvalidHostname => 'A számítógép neve érvénytelen';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Felhasználónév választása';
+  String get identityUsernameLabel => 'Felhasználónév választása';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'A felhasználónév megadása kötelező';
+  String get identityUsernameRequired => 'A felhasználónév megadása kötelező';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'A felhasználónév érvénytelen';
+  String get identityInvalidUsername => 'A felhasználónév érvénytelen';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Ez a felhasználónév már létezik.';
+  String get identityUsernameInUse => 'Ez a felhasználónév már létezik.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'Ez a név a rendszer számára van fenntartva.';
+  String get identityUsernameSystemReserved => 'Ez a név a rendszer számára van fenntartva.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Ez a név túl hosszú.';
+  String get identityUsernameTooLong => 'Ez a név túl hosszú.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'Ez a név érvénytelen karaktereket tartalmaz.';
+  String get identityUsernameInvalidChars => 'Ez a név érvénytelen karaktereket tartalmaz.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Jelszó választása';
+  String get identityPasswordLabel => 'Jelszó választása';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'A jelszó megadása kötelező';
+  String get identityPasswordRequired => 'A jelszó megadása kötelező';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Jelszó megerősítése';
+  String get identityConfirmPasswordLabel => 'Jelszó megerősítése';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'A jelszavak nem egyeznek';
+  String get identityPasswordMismatch => 'A jelszavak nem egyeznek';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Megjelenítés';
+  String get identityPasswordShow => 'Megjelenítés';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Elrejtés';
+  String get identityPasswordHide => 'Elrejtés';
 
   @override
   String get writeChangesToDisk => 'Telepítésre kész';

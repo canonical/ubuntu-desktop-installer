@@ -522,76 +522,76 @@ class AppLocalizationsRu extends AppLocalizations {
   String get partitionMountPointLabel => 'Точка монтирования:';
 
   @override
-  String get whoAreYouPageTitle => 'Создание своей учётной записи';
+  String get identityPageTitle => 'Создание своей учётной записи';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Входить в систему автоматически';
+  String get identityAutoLogin => 'Входить в систему автоматически';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Требовать пароль для входа в систему';
+  String get identityRequirePassword => 'Требовать пароль для входа в систему';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Ваше имя';
+  String get identityRealNameLabel => 'Ваше имя';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'Укажите имя';
+  String get identityRealNameRequired => 'Укажите имя';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'Слишком длинное имя.';
+  String get identityRealNameTooLong => 'Слишком длинное имя.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Имя компьютера';
+  String get identityHostnameLabel => 'Имя компьютера';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Имя, используемое при общении с другими компьютерами.';
+  String get identityHostnameInfo => 'Имя, используемое при общении с другими компьютерами.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Требуется имя компьютера';
+  String get identityHostnameRequired => 'Требуется имя компьютера';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Слишком длинное имя компьютера.';
+  String get identityHostnameTooLong => 'Слишком длинное имя компьютера.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'Недопустимое имя компьютера';
+  String get identityInvalidHostname => 'Недопустимое имя компьютера';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Выберите имя пользователя';
+  String get identityUsernameLabel => 'Выберите имя пользователя';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Необходимо имя пользователя';
+  String get identityUsernameRequired => 'Необходимо имя пользователя';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'Недопустимое имя пользователя';
+  String get identityInvalidUsername => 'Недопустимое имя пользователя';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Это имя пользователя уже существует.';
+  String get identityUsernameInUse => 'Это имя пользователя уже существует.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'Это имя зарезервировано для использования системой.';
+  String get identityUsernameSystemReserved => 'Это имя зарезервировано для использования системой.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Это имя слишком длинное.';
+  String get identityUsernameTooLong => 'Это имя слишком длинное.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'Это имя содержит недопустимые символы.';
+  String get identityUsernameInvalidChars => 'Это имя содержит недопустимые символы.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Выберите пароль';
+  String get identityPasswordLabel => 'Выберите пароль';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'Требуется пароль';
+  String get identityPasswordRequired => 'Требуется пароль';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Подтвердите пароль';
+  String get identityConfirmPasswordLabel => 'Подтвердите пароль';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'Пароли не совпадают';
+  String get identityPasswordMismatch => 'Пароли не совпадают';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Показать';
+  String get identityPasswordShow => 'Показать';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Скрыть';
+  String get identityPasswordHide => 'Скрыть';
 
   @override
   String get writeChangesToDisk => 'Готово к установке';

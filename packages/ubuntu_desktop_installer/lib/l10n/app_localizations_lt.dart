@@ -522,76 +522,76 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionMountPointLabel => 'Prijungimo taškas:';
 
   @override
-  String get whoAreYouPageTitle => 'Nusistatykite paskyrą';
+  String get identityPageTitle => 'Nusistatykite paskyrą';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Automatiškai prisijungti prie paskyros';
+  String get identityAutoLogin => 'Automatiškai prisijungti prie paskyros';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Prisijungiant prie paskyros reikalauti slaptažodžio';
+  String get identityRequirePassword => 'Prisijungiant prie paskyros reikalauti slaptažodžio';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Jūsų vardas';
+  String get identityRealNameLabel => 'Jūsų vardas';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'Reikia nurodyti vardą';
+  String get identityRealNameRequired => 'Reikia nurodyti vardą';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'Šis vardas per ilgas.';
+  String get identityRealNameTooLong => 'Šis vardas per ilgas.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Jūsų kompiuterio pavadinimas';
+  String get identityHostnameLabel => 'Jūsų kompiuterio pavadinimas';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Pavadinimas yra naudojamas bendraujant su kitais kompiuteriais.';
+  String get identityHostnameInfo => 'Pavadinimas yra naudojamas bendraujant su kitais kompiuteriais.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Reikia nurodyti kompiuterio pavadinimą';
+  String get identityHostnameRequired => 'Reikia nurodyti kompiuterio pavadinimą';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Šis kompiuterio pavadinimas per ilgas.';
+  String get identityHostnameTooLong => 'Šis kompiuterio pavadinimas per ilgas.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'Kompiuterio pavadinimas yra netinkamas';
+  String get identityInvalidHostname => 'Kompiuterio pavadinimas yra netinkamas';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Pasirinkite naudotojo vardą';
+  String get identityUsernameLabel => 'Pasirinkite naudotojo vardą';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Reikia nurodyti naudotojo vardą';
+  String get identityUsernameRequired => 'Reikia nurodyti naudotojo vardą';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'Netinkamas naudotojo vardas';
+  String get identityInvalidUsername => 'Netinkamas naudotojo vardas';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Šis naudotojo vardas jau yra.';
+  String get identityUsernameInUse => 'Šis naudotojo vardas jau yra.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'Šis vardas yra rezervuotas sisteminiam naudojimui.';
+  String get identityUsernameSystemReserved => 'Šis vardas yra rezervuotas sisteminiam naudojimui.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Šis vardas per ilgas.';
+  String get identityUsernameTooLong => 'Šis vardas per ilgas.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'Šiame varde yra netinkamų simbolių.';
+  String get identityUsernameInvalidChars => 'Šiame varde yra netinkamų simbolių.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Pasirinkite slaptažodį';
+  String get identityPasswordLabel => 'Pasirinkite slaptažodį';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'Reikia nurodyti slaptažodį';
+  String get identityPasswordRequired => 'Reikia nurodyti slaptažodį';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Pakartokite slaptažodį';
+  String get identityConfirmPasswordLabel => 'Pakartokite slaptažodį';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'Slaptažodžiai nesutampa';
+  String get identityPasswordMismatch => 'Slaptažodžiai nesutampa';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Rodyti';
+  String get identityPasswordShow => 'Rodyti';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Slėpti';
+  String get identityPasswordHide => 'Slėpti';
 
   @override
   String get writeChangesToDisk => 'Pasiruošę įdiegti';

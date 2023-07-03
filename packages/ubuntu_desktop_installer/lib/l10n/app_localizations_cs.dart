@@ -522,76 +522,76 @@ class AppLocalizationsCs extends AppLocalizations {
   String get partitionMountPointLabel => 'Přípojný bod:';
 
   @override
-  String get whoAreYouPageTitle => 'Nastavení vašeho účtu';
+  String get identityPageTitle => 'Nastavení vašeho účtu';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Přihlásit se automaticky';
+  String get identityAutoLogin => 'Přihlásit se automaticky';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Při přihlašování se vyžadovat heslo';
+  String get identityRequirePassword => 'Při přihlašování se vyžadovat heslo';
 
   @override
-  String get whoAreYouPageRealNameLabel => '(Vaše) jméno';
+  String get identityRealNameLabel => '(Vaše) jméno';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'Je třeba zadat jméno';
+  String get identityRealNameRequired => 'Je třeba zadat jméno';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'Jméno je příliš dlouhé.';
+  String get identityRealNameTooLong => 'Jméno je příliš dlouhé.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Název pro váš počítač';
+  String get identityHostnameLabel => 'Název pro váš počítač';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Tento název slouží při komunikaci s ostatními počítači.';
+  String get identityHostnameInfo => 'Tento název slouží při komunikaci s ostatními počítači.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Je třeba zadat název pro počítač';
+  String get identityHostnameRequired => 'Je třeba zadat název pro počítač';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Takový název počítače je příliš dlouhý.';
+  String get identityHostnameTooLong => 'Takový název počítače je příliš dlouhý.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'Daný název pro počítač nelze použít (neplatný znak)';
+  String get identityInvalidHostname => 'Daný název pro počítač nelze použít (neplatný znak)';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Zvolte si uživatelské jméno';
+  String get identityUsernameLabel => 'Zvolte si uživatelské jméno';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Je třeba zadat uživatelské jméno';
+  String get identityUsernameRequired => 'Je třeba zadat uživatelské jméno';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'Dané uživatelské jméno nelze použít (neplatný znak)';
+  String get identityInvalidUsername => 'Dané uživatelské jméno nelze použít (neplatný znak)';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Takové uživatelské jméno už existuje.';
+  String get identityUsernameInUse => 'Takové uživatelské jméno už existuje.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'Takové jméno je rezervováno pro využití systémem.';
+  String get identityUsernameSystemReserved => 'Takové jméno je rezervováno pro využití systémem.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Takové jméno je příliš dlouhé.';
+  String get identityUsernameTooLong => 'Takové jméno je příliš dlouhé.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'Takové jméno obsahuje neplatné znaky.';
+  String get identityUsernameInvalidChars => 'Takové jméno obsahuje neplatné znaky.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Zvolte si heslo';
+  String get identityPasswordLabel => 'Zvolte si heslo';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'Je třeba zadat heslo';
+  String get identityPasswordRequired => 'Je třeba zadat heslo';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Zopakujte zadání hesla (prevence překlepu)';
+  String get identityConfirmPasswordLabel => 'Zopakujte zadání hesla (prevence překlepu)';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'Do každé z kolonek pro heslo jste napsali něco jiného';
+  String get identityPasswordMismatch => 'Do každé z kolonek pro heslo jste napsali něco jiného';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Zobrazit';
+  String get identityPasswordShow => 'Zobrazit';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Skrýt';
+  String get identityPasswordHide => 'Skrýt';
 
   @override
   String get writeChangesToDisk => 'Připraveno k instalaci';

@@ -522,76 +522,76 @@ class AppLocalizationsNb extends AppLocalizations {
   String get partitionMountPointLabel => 'Monteringspunkt:';
 
   @override
-  String get whoAreYouPageTitle => 'Hvem er du?';
+  String get identityPageTitle => 'Hvem er du?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Logg inn automatisk';
+  String get identityAutoLogin => 'Logg inn automatisk';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Krev passord for å logge inn';
+  String get identityRequirePassword => 'Krev passord for å logge inn';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Ditt navn';
+  String get identityRealNameLabel => 'Ditt navn';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'Navn er påkrevd';
+  String get identityRealNameRequired => 'Navn er påkrevd';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'Navnet er for langt.';
+  String get identityRealNameTooLong => 'Navnet er for langt.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Datamaskinens navn';
+  String get identityHostnameLabel => 'Datamaskinens navn';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Navn brukt ved kommunikasjon med andre datamaskiner.';
+  String get identityHostnameInfo => 'Navn brukt ved kommunikasjon med andre datamaskiner.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Et datamaskinsnavn er påkrevd';
+  String get identityHostnameRequired => 'Et datamaskinsnavn er påkrevd';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Datamaskinsnavnet er for langt.';
+  String get identityHostnameTooLong => 'Datamaskinsnavnet er for langt.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'Datamaskinsnavnet er ugyldig';
+  String get identityInvalidHostname => 'Datamaskinsnavnet er ugyldig';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Velg et brukernavn';
+  String get identityUsernameLabel => 'Velg et brukernavn';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Et brukernavn er påkrevd';
+  String get identityUsernameRequired => 'Et brukernavn er påkrevd';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'Brukernavnet er ugyldig';
+  String get identityInvalidUsername => 'Brukernavnet er ugyldig';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Brukernavnet finnes allerede.';
+  String get identityUsernameInUse => 'Brukernavnet finnes allerede.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'Navnet er reservert for systembruk.';
+  String get identityUsernameSystemReserved => 'Navnet er reservert for systembruk.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Navnet er for langt.';
+  String get identityUsernameTooLong => 'Navnet er for langt.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'Navnet inneholder ugyldige tegn.';
+  String get identityUsernameInvalidChars => 'Navnet inneholder ugyldige tegn.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Velg et passord';
+  String get identityPasswordLabel => 'Velg et passord';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'Et passord er påkrevd';
+  String get identityPasswordRequired => 'Et passord er påkrevd';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Bekreft passordet ditt';
+  String get identityConfirmPasswordLabel => 'Bekreft passordet ditt';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'Passordene samsvarer ikke';
+  String get identityPasswordMismatch => 'Passordene samsvarer ikke';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Vis';
+  String get identityPasswordShow => 'Vis';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Skjul';
+  String get identityPasswordHide => 'Skjul';
 
   @override
   String get writeChangesToDisk => 'Skriv endringer til disk';

@@ -522,76 +522,76 @@ class AppLocalizationsCa extends AppLocalizations {
   String get partitionMountPointLabel => 'Punt de muntatge:';
 
   @override
-  String get whoAreYouPageTitle => 'Qui sou?';
+  String get identityPageTitle => 'Qui sou?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Entra de manera automàtica';
+  String get identityAutoLogin => 'Entra de manera automàtica';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Fes que calgui una contrasenya per a entrar';
+  String get identityRequirePassword => 'Fes que calgui una contrasenya per a entrar';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'El vostre nom';
+  String get identityRealNameLabel => 'El vostre nom';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'Cal un nom';
+  String get identityRealNameRequired => 'Cal un nom';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get identityRealNameTooLong => 'That name is too long.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'El nom de l\'ordinador';
+  String get identityHostnameLabel => 'El nom de l\'ordinador';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'El nom que utilitza quan es comunica amb altres ordinadors.';
+  String get identityHostnameInfo => 'El nom que utilitza quan es comunica amb altres ordinadors.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Cal un nom per a l\'ordinador';
+  String get identityHostnameRequired => 'Cal un nom per a l\'ordinador';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get identityHostnameTooLong => 'That computer name is too long.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'El nom de l\'ordinador no és vàlid';
+  String get identityInvalidHostname => 'El nom de l\'ordinador no és vàlid';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Trieu un nom d\'usuari';
+  String get identityUsernameLabel => 'Trieu un nom d\'usuari';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Cal un nom d\'usuari';
+  String get identityUsernameRequired => 'Cal un nom d\'usuari';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'El nom d\'usuari no és vàlid';
+  String get identityInvalidUsername => 'El nom d\'usuari no és vàlid';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get identityUsernameInUse => 'That user name already exists.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get identityUsernameSystemReserved => 'That name is reserved for system usage.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Aquest nom és massa llarg.';
+  String get identityUsernameTooLong => 'Aquest nom és massa llarg.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get identityUsernameInvalidChars => 'That name contains invalid characters.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Trieu una contrasenya';
+  String get identityPasswordLabel => 'Trieu una contrasenya';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'Cal una contrasenya';
+  String get identityPasswordRequired => 'Cal una contrasenya';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirmeu la contrasenya';
+  String get identityConfirmPasswordLabel => 'Confirmeu la contrasenya';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'Les contrasenyes no coincideixen';
+  String get identityPasswordMismatch => 'Les contrasenyes no coincideixen';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get identityPasswordShow => 'Show';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get identityPasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Ready to install';

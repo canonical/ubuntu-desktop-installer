@@ -24,16 +24,16 @@ class RealNameFormField extends ConsumerWidget {
     return ValidatedFormField(
       autofocus: true,
       fieldWidth: fieldWidth,
-      labelText: lang.whoAreYouPageRealNameLabel,
+      labelText: lang.identityRealNameLabel,
       successWidget: const SuccessIcon(),
       initialValue: realName,
       validator: MultiValidator([
         RequiredValidator(
-          errorText: lang.whoAreYouPageRealNameRequired,
+          errorText: lang.identityRealNameRequired,
         ),
         MaxLengthValidator(
           kMaxRealNameLength,
-          errorText: lang.whoAreYouPageRealNameTooLong,
+          errorText: lang.identityRealNameTooLong,
         ),
       ]),
       onChanged: (value) async {
@@ -58,21 +58,21 @@ class HostnameFormField extends ConsumerWidget {
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
-      labelText: lang.whoAreYouPageComputerNameLabel,
-      helperText: lang.whoAreYouPageComputerNameInfo,
+      labelText: lang.identityHostnameLabel,
+      helperText: lang.identityHostnameInfo,
       successWidget: const SuccessIcon(),
       initialValue: hostname,
       validator: MultiValidator([
         RequiredValidator(
-          errorText: lang.whoAreYouPageComputerNameRequired,
+          errorText: lang.identityHostnameRequired,
         ),
         PatternValidator(
           kValidHostnamePattern,
-          errorText: lang.whoAreYouPageInvalidComputerName,
+          errorText: lang.identityInvalidHostname,
         ),
         MaxLengthValidator(
           kMaxHostnameLength,
-          errorText: lang.whoAreYouPageComputerNameTooLong,
+          errorText: lang.identityHostnameTooLong,
         )
       ]),
       onChanged: (value) {
@@ -89,13 +89,13 @@ extension UsernameValidationL10n on UsernameValidation {
       case UsernameValidation.OK:
         return '';
       case UsernameValidation.ALREADY_IN_USE:
-        return lang.whoAreYouPageUsernameInUse;
+        return lang.identityUsernameInUse;
       case UsernameValidation.SYSTEM_RESERVED:
-        return lang.whoAreYouPageUsernameSystemReserved;
+        return lang.identityUsernameSystemReserved;
       case UsernameValidation.INVALID_CHARS:
-        return lang.whoAreYouPageUsernameInvalidChars;
+        return lang.identityUsernameInvalidChars;
       case UsernameValidation.TOO_LONG:
-        return lang.whoAreYouPageUsernameTooLong;
+        return lang.identityUsernameTooLong;
       default:
         throw UnimplementedError(toString());
     }
@@ -118,16 +118,16 @@ class UsernameFormField extends ConsumerWidget {
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
-      labelText: lang.whoAreYouPageUsernameLabel,
+      labelText: lang.identityUsernameLabel,
       successWidget: const SuccessIcon(),
       initialValue: username,
       validator: MultiValidator([
         RequiredValidator(
-          errorText: lang.whoAreYouPageUsernameRequired,
+          errorText: lang.identityUsernameRequired,
         ),
         PatternValidator(
           kValidUsernamePattern,
-          errorText: lang.whoAreYouPageInvalidUsername,
+          errorText: lang.identityInvalidUsername,
         ),
         CallbackValidator(
           (_) => model.usernameOk,
@@ -160,7 +160,7 @@ class PasswordFormField extends ConsumerWidget {
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
-      labelText: lang.whoAreYouPagePasswordLabel,
+      labelText: lang.identityPasswordLabel,
       obscureText: !showPassword,
       successWidget: PasswordStrengthLabel(strength: passwordStrength),
       initialValue: password,
@@ -170,7 +170,7 @@ class PasswordFormField extends ConsumerWidget {
             ref.read(identityModelProvider).showPassword = value,
       ),
       validator: RequiredValidator(
-        errorText: lang.whoAreYouPagePasswordRequired,
+        errorText: lang.identityPasswordRequired,
       ),
       onChanged: (value) {
         final model = ref.read(identityModelProvider);
@@ -198,13 +198,13 @@ class ConfirmPasswordFormField extends ConsumerWidget {
     return ValidatedFormField(
       obscureText: !showPassword,
       fieldWidth: fieldWidth,
-      labelText: lang.whoAreYouPageConfirmPasswordLabel,
+      labelText: lang.identityConfirmPasswordLabel,
       successWidget: password.isNotEmpty ? const SuccessIcon() : null,
       initialValue: confirmedPassword,
       autovalidateMode: AutovalidateMode.always,
       validator: EqualValidator(
         password,
-        errorText: lang.whoAreYouPagePasswordMismatch,
+        errorText: lang.identityPasswordMismatch,
       ),
       onChanged: (value) {
         final model = ref.read(identityModelProvider);
@@ -259,8 +259,8 @@ class ShowPasswordButton extends StatelessWidget {
         label: IndexedStack(
           index: value ? 1 : 0,
           children: [
-            Text(lang.whoAreYouPagePasswordShow),
-            Text(lang.whoAreYouPagePasswordHide),
+            Text(lang.identityPasswordShow),
+            Text(lang.identityPasswordHide),
           ],
         ),
       ),
@@ -311,7 +311,7 @@ class AutoLoginSwitch extends ConsumerWidget {
         ref.watch(identityModelProvider.select((model) => model.autoLogin));
 
     return YaruSwitchButton(
-      title: Text(lang.whoAreYouPageRequirePassword),
+      title: Text(lang.identityRequirePassword),
       contentPadding: kWizardPadding,
       value: !autoLogin,
       onChanged: (value) {
