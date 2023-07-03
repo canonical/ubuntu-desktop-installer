@@ -34,7 +34,7 @@ class TimezonePage extends ConsumerWidget {
 
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(lang.whereAreYouPageTitle),
+        title: Text(lang.timezonePageTitle),
       ),
       contentPadding: EdgeInsets.zero,
       content: Column(
@@ -57,7 +57,7 @@ class TimezonePage extends ConsumerWidget {
                         focusNode: focusNode,
                         controller: editor,
                         decoration: InputDecoration(
-                          labelText: lang.whereAreYouLocationLabel,
+                          labelText: lang.timezoneLocationLabel,
                         ),
                         onFieldSubmitted: (value) => onSubmitted(),
                       );
@@ -84,7 +84,7 @@ class TimezonePage extends ConsumerWidget {
                         focusNode: focusNode,
                         controller: editor,
                         decoration: InputDecoration(
-                          labelText: lang.whereAreYouTimezoneLabel,
+                          labelText: lang.timezoneTimezoneLabel,
                         ),
                         onFieldSubmitted: (value) => onFieldSubmitted(),
                       );

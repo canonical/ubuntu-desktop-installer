@@ -711,13 +711,13 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'گزینش ناحیهٔ زمانیتان';
+  String get timezonePageTitle => 'گزینش ناحیهٔ زمانیتان';
 
   @override
-  String get whereAreYouLocationLabel => 'مکان';
+  String get timezoneLocationLabel => 'مکان';
 
   @override
-  String get whereAreYouTimezoneLabel => 'ناحیهٔ زمانی';
+  String get timezoneTimezoneLabel => 'ناحیهٔ زمانی';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

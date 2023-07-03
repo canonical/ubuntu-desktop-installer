@@ -711,13 +711,13 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Wybierz swoją strefę czasową';
+  String get timezonePageTitle => 'Wybierz swoją strefę czasową';
 
   @override
-  String get whereAreYouLocationLabel => 'Lokalizacja';
+  String get timezoneLocationLabel => 'Lokalizacja';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Strefa czasowa';
+  String get timezoneTimezoneLabel => 'Strefa czasowa';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

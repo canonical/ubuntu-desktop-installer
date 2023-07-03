@@ -254,8 +254,8 @@
   "@officeSlideWriter": {},
   "photoSlideDescription": "Shotwell - це зручний фото-менеджер, який вже готовий для ваших гаджетів. Підключіть камеру або телефон, щоб перенести свої фотографії, а потім легко ділитися ними та зберігати їх у безпеці. А якщо ви відчуваєте себе творчою людиною, ви можете знайти багато інших програм для роботи з фотографіями в Ubuntu Software.",
   "@photoSlideDescription": {},
-  "whereAreYouPageTitle": "Де ви знаходитесь?",
-  "@whereAreYouPageTitle": {},
+  "timezonePageTitle": "Де ви знаходитесь?",
+  "@timezonePageTitle": {},
   "welcomeSlideDescription": "Швидка і повна нових можливостей, остання версія {RELEASE} робить роботу комп'ютера простішою, ніж будь-коли. Ось лише кілька цікавих нововведень, на які варто звернути увагу...",
   "@welcomeSlideDescription": {
     "type": "text",
@@ -545,10 +545,10 @@
       "url": {}
     }
   },
-  "whereAreYouLocationLabel": "Місце розташування",
-  "@whereAreYouLocationLabel": {},
-  "whereAreYouTimezoneLabel": "Часовий пояс",
-  "@whereAreYouTimezoneLabel": {},
+  "timezoneLocationLabel": "Місце розташування",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Часовий пояс",
+  "@timezoneTimezoneLabel": {},
   "webSlideTitle": "Використовуйте можливості Інтернету на повну",
   "@webSlideTitle": {},
   "webSlideThunderbird": "Thunderbird",

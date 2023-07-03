@@ -711,13 +711,13 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Seleccionatz vòstre fus orari';
+  String get timezonePageTitle => 'Seleccionatz vòstre fus orari';
 
   @override
-  String get whereAreYouLocationLabel => 'Localizacion';
+  String get timezoneLocationLabel => 'Localizacion';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Fus orari';
+  String get timezoneTimezoneLabel => 'Fus orari';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

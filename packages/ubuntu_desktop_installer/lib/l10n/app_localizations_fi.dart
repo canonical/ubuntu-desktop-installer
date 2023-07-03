@@ -711,13 +711,13 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Valitse aikavyöhyke';
+  String get timezonePageTitle => 'Valitse aikavyöhyke';
 
   @override
-  String get whereAreYouLocationLabel => 'Sijainti';
+  String get timezoneLocationLabel => 'Sijainti';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Aikavyöhyke';
+  String get timezoneTimezoneLabel => 'Aikavyöhyke';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

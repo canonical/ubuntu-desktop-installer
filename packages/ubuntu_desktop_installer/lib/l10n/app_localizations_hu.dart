@@ -711,13 +711,13 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Időzóna kiválasztása';
+  String get timezonePageTitle => 'Időzóna kiválasztása';
 
   @override
-  String get whereAreYouLocationLabel => 'Hely';
+  String get timezoneLocationLabel => 'Hely';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Időzóna';
+  String get timezoneTimezoneLabel => 'Időzóna';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

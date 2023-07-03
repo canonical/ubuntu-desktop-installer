@@ -711,13 +711,13 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => '시간대를 선택하십시오';
+  String get timezonePageTitle => '시간대를 선택하십시오';
 
   @override
-  String get whereAreYouLocationLabel => '위치';
+  String get timezoneLocationLabel => '위치';
 
   @override
-  String get whereAreYouTimezoneLabel => '시간대';
+  String get timezoneTimezoneLabel => '시간대';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

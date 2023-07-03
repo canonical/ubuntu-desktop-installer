@@ -600,12 +600,12 @@
       "system": {}
     }
   },
-  "whereAreYouPageTitle": "Vælg din tidszone",
-  "@whereAreYouPageTitle": {},
-  "whereAreYouLocationLabel": "Placering",
-  "@whereAreYouLocationLabel": {},
-  "whereAreYouTimezoneLabel": "Tidszone",
-  "@whereAreYouTimezoneLabel": {},
+  "timezonePageTitle": "Vælg din tidszone",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Placering",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Tidszone",
+  "@timezoneTimezoneLabel": {},
   "installationSlidesIncluded": "Inkluderet:",
   "@installationSlidesIncluded": {},
   "installationSlidesSoftwareTitle": "Alle de applikationer du har brug for",

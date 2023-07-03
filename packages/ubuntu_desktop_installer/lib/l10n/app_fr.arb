@@ -387,8 +387,8 @@
       "color": {}
     }
   },
-  "whereAreYouLocationLabel": "Localisation",
-  "@whereAreYouLocationLabel": {},
+  "timezoneLocationLabel": "Localisation",
+  "@timezoneLocationLabel": {},
   "softwareSlideDescription": "Dites au revoir à la recherche de nouveaux logiciels sur le web. Avec l’accès au Snap Store et aux archives logicielles d’{RELEASE}, vous pouvez trouver et installer facilement de nouvelles applications. Saisissez juste ce que vous cherchez ou explorez les catégories comme Graphisme & photographie, Jeux ou Productivité accompagnées de commentaires d’autres utilisateurs.",
   "@softwareSlideDescription": {
     "type": "text",
@@ -476,8 +476,8 @@
   "@supportedSoftware": {},
   "supportSlideResources": "Pour des renseignements vers d’autres ressources utiles, veuillez vous référer à l’<a href=\"https://www.ubuntu.com/support/community-support\">assistance communautaire</a> ou à l’<a href=\"http://www.ubuntu.com/support\">assistance commerciale</a>.",
   "@supportSlideResources": {},
-  "whereAreYouPageTitle": "Sélectionnez votre fuseau horaire",
-  "@whereAreYouPageTitle": {},
+  "timezonePageTitle": "Sélectionnez votre fuseau horaire",
+  "@timezonePageTitle": {},
   "welcomeSlideDescription": "Rapide et pleine de nouvelles fonctionnalités, la dernière version d’{RELEASE} rend l’informatique plus facile que jamais. Voici quelques nouveautés à découvrir…",
   "@welcomeSlideDescription": {
     "type": "text",
@@ -485,8 +485,8 @@
       "RELEASE": {}
     }
   },
-  "whereAreYouTimezoneLabel": "Fuseau horaire",
-  "@whereAreYouTimezoneLabel": {},
+  "timezoneTimezoneLabel": "Fuseau horaire",
+  "@timezoneTimezoneLabel": {},
   "welcomeHeader": "Choisissez votre langue :",
   "@welcomeHeader": {},
   "officeSlideDescription": "LibreOffice est une suite bureautique libre livrée avec tout ce dont vous aurez besoin pour créer des documents, feuilles de calcul et présentations. Compatible avec les formats de fichiers de Microsoft Office, elle vous offre toutes les fonctionnalités dont vous avez besoin.",

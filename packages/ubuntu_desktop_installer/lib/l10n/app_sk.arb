@@ -118,8 +118,8 @@
   "@whoAreYouPageInvalidComputerName": {},
   "chooseYourLookPageTitle": "Vyberte si motív vzhľadu",
   "@chooseYourLookPageTitle": {},
-  "whereAreYouPageTitle": "Vyberte si svoje časové pásmo",
-  "@whereAreYouPageTitle": {},
+  "timezonePageTitle": "Vyberte si svoje časové pásmo",
+  "@timezonePageTitle": {},
   "turnOffBitlockerLinkInstructions": "Ohľadne pokynov naskenujte QR kód na inom zariadení alebo choďte na: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
@@ -127,8 +127,8 @@
       "url": {}
     }
   },
-  "whereAreYouLocationLabel": "Umiestnenie",
-  "@whereAreYouLocationLabel": {},
+  "timezoneLocationLabel": "Umiestnenie",
+  "@timezoneLocationLabel": {},
   "activeDirectoryDomainEndHyphen": "Končí na spojovník/pomlčku (-)",
   "@activeDirectoryDomainEndHyphen": {},
   "activeDirectoryDomainNotFound": "Doména nenájdená",
@@ -386,8 +386,8 @@
   "@installationSlidesProductivityTitle": {},
   "restartIntoWindowsTitle": "Reštartovať do Windows?",
   "@restartIntoWindowsTitle": {},
-  "whereAreYouTimezoneLabel": "Časové pásmo",
-  "@whereAreYouTimezoneLabel": {},
+  "timezoneTimezoneLabel": "Časové pásmo",
+  "@timezoneTimezoneLabel": {},
   "installationSlidesTitle": "Vitajte v {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",

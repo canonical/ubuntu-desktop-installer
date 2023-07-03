@@ -711,13 +711,13 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Välj din tidszon';
+  String get timezonePageTitle => 'Välj din tidszon';
 
   @override
-  String get whereAreYouLocationLabel => 'Plats';
+  String get timezoneLocationLabel => 'Plats';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Tidszon';
+  String get timezoneTimezoneLabel => 'Tidszon';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

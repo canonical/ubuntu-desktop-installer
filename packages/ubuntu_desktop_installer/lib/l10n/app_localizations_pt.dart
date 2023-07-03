@@ -711,13 +711,13 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Selecione o seu fuso-horário';
+  String get timezonePageTitle => 'Selecione o seu fuso-horário';
 
   @override
-  String get whereAreYouLocationLabel => 'Localização';
+  String get timezoneLocationLabel => 'Localização';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Fuso horário';
+  String get timezoneTimezoneLabel => 'Fuso horário';
 
   @override
   String installationSlidesTitle(Object RELEASE) {
@@ -1623,13 +1623,13 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Selecione seu fuso horário';
+  String get timezonePageTitle => 'Selecione seu fuso horário';
 
   @override
-  String get whereAreYouLocationLabel => 'Localização';
+  String get timezoneLocationLabel => 'Localização';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Fuso horário';
+  String get timezoneTimezoneLabel => 'Fuso horário';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

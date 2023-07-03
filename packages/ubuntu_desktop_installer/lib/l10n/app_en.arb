@@ -636,12 +636,12 @@
       "DISTRO": {}
     }
   },
-  "whereAreYouPageTitle": "Select your timezone",
-  "@whereAreYouPageTitle": {},
-  "whereAreYouLocationLabel": "Location",
-  "@whereAreYouLocationLabel": {},
-  "whereAreYouTimezoneLabel": "Timezone",
-  "@whereAreYouTimezoneLabel": {},
+  "timezonePageTitle": "Select your timezone",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Location",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Timezone",
+  "@timezoneTimezoneLabel": {},
   "installationSlidesTitle": "Welcome to {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",

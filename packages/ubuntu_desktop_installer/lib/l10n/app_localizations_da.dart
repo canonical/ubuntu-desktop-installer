@@ -711,13 +711,13 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Vælg din tidszone';
+  String get timezonePageTitle => 'Vælg din tidszone';
 
   @override
-  String get whereAreYouLocationLabel => 'Placering';
+  String get timezoneLocationLabel => 'Placering';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Tidszone';
+  String get timezoneTimezoneLabel => 'Tidszone';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

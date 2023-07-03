@@ -711,13 +711,13 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Vyberte své časové pásmo';
+  String get timezonePageTitle => 'Vyberte své časové pásmo';
 
   @override
-  String get whereAreYouLocationLabel => 'Umístění';
+  String get timezoneLocationLabel => 'Umístění';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Časové pásmo';
+  String get timezoneTimezoneLabel => 'Časové pásmo';
 
   @override
   String installationSlidesTitle(Object RELEASE) {
