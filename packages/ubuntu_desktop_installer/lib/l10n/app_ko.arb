@@ -423,78 +423,10 @@
   },
   "hiddenWifiNetworkNameLabel": "네트워크 이름",
   "@hiddenWifiNetworkNameLabel": {},
-  "softwareSlideTitle": "더 많은 소프트웨어 찾아보기",
-  "@softwareSlideTitle": {},
-  "musicSlideTitle": "항상 음악과 함께 하십시오",
-  "@musicSlideTitle": {},
-  "musicSlideDescription": "{RELEASE}에는 메우 훌룡한 리듬박스 음악 연주기가 포함되어 있습니다. 고급 재생 옵션으로 완벽한 노래를 간단히 선택할 수 있습니다. 또한 CD와 휴대용 음악 재생기와 잘 작동해서 어디를 가든 항상 음악을 즐길 수 있습니다.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideRhythmbox": "리듬박스 음악 연주기",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideShotwell": "샷웰 사진 관리자",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "김프 이미지 편집기",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "샷컷 동영상 편집기",
-  "@photoSlideShotcut": {},
-  "webSlideTitle": "웹을 최대한 활용하십시오",
-  "@webSlideTitle": {},
-  "webSlideFirefox": "파이어폭스 웹 브라우저",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "썬더버드",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "크로미움",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "사무에 필요한 모든 것",
-  "@officeSlideTitle": {},
-  "officeSlideDescription": "LibreOffice는 문서, 스프레드시트와 발표 자료를 만드는데 필요한 모든 것을 제공하는 자유로운 사무용 프로그램 입니다. Microsoft Office 파일과 호환되며, 필요한 모든 기능을 제공합니다.",
-  "@officeSlideDescription": {},
-  "accessSlideTitle": "누구나 사용할 수 있습니다",
-  "@accessSlideTitle": {},
   "hiddenWifiNetwork": "숨겨진 Wi-Fi 네트워크에 연결",
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameRequired": "네트워크 이름이 필요합니다",
   "@hiddenWifiNetworkNameRequired": {},
-  "welcomeSlideDescription": "빠르고 새로운 기능으로 가득한 최신 버전의 {RELEASE}가 그 어느 때 보다 컴퓨팅을 쉽게 해 줄 것입니다. 여기에 몇 가지의 눈 여겨 볼 만한 새로운 기능이 있습니다...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideDescription": "더 이상 웹에서 새로운 소프트웨어를 검색하지 않아도 됩니다. Snap 스토어와 {RELEASE} 소프트웨어 아카이브를 통해, 새 소프트웨어를 쉽게 찾아 설치할 수 있습니다. 찾고 있는 것을 입력하거나, 다른 사용자의 유용한 후기와 함께 그래픽 및 사진, 게임 및 생산성과 같은 카테고리를 탐색 해 보십시오.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideTitle": "사진과 함께하는 즐거운 시간",
-  "@photoSlideTitle": {},
-  "photoSlideDescription": "샷웰은 당신의 전자기기를 위해 준비된 편리한 사진 관리자 입니다. 카메라나 휴대전화를 연결하여 사진을 옮긴 후, 쉽게 공유하고 안전하게 보관할 수 있습니다. 번뜩이는 아이디어가 있다면 우분투 소프트웨어에서 수많은 사진 프로그램을 찾을 수 있습니다.",
-  "@photoSlideDescription": {},
-  "webSlideDescription": "{RELEASE}에는 전 세계 수백만 명이 사용하는 웹 브라우저인 파이어폭스가 포함되어 있습니다. 또한 페이스북이나 지메일 같은 웹 응용 프로그램을 데스크탑에 고정하여 컴퓨터에 설치된 프로그램처럼 빠르게 접근할 수 있습니다.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
   "welcomeHeader": "언어를 선택하십시오:",
   "@welcomeHeader": {},
   "timezonePageTitle": "시간대를 선택하십시오",
@@ -503,57 +435,16 @@
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "시간대",
   "@timezoneTimezoneLabel": {},
-  "welcomeSlideTitle": "{RELEASE}에 오신 것을 환영합니다",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideCustomizationOptions": "사용자 정의 옵션",
-  "@accessSlideCustomizationOptions": {},
-  "includedSoftware": "포함된 소프트웨어",
-  "@includedSoftware": {},
   "installationTypeMultiOSDetected": "이 컴퓨터에는 여러 운영체제가 설치되어 있습니다. 어떻게 하시겠습니까?",
   "@installationTypeMultiOSDetected": {},
   "identityShowPassword": "암호 보여주기",
   "@identityShowPassword": {},
-  "accessSlideAppearance": "모습",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "보조 기술",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "언어 지원",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "도움말과 지원",
-  "@supportSlideTitle": {},
-  "availableSoftware": "사용할 수 있는 소프트웨어",
-  "@availableSoftware": {},
-  "supportedSoftware": "지원되는 소프트웨어",
-  "@supportedSoftware": {},
-  "supportSlideQuestions": "<a href=\"https://askubuntu.com\">Ask Ubuntu</a>에서 질문을 하거나 이미 답변된 질문 모음에서 검색할 수 있습니다. 모국어 지원은 <a href=\"https://loco.ubuntu.com/teams\">로컬 커뮤니티 팀</a>에서 받아볼 수 있습니다.",
-  "@supportSlideQuestions": {},
-  "supportSlideResources": "다른 유용한 리소스를 찾아보려면, <a href=\"https://www.ubuntu.com/support/community-support\">커뮤니티 지원</a> 또는<a href=\"https://www.ubuntu.com/support\">상용 지원</a>을 방문하십시오.",
-  "@supportSlideResources": {},
   "installationTypeDualOSDetected": "이 컴퓨터에 이미 {os1} 및 {os2}이(가) 설치되어 있습니다. 어떻게 하시겠습니까?",
   "@installationTypeDualOSDetected": {
     "type": "text",
     "placeholders": {
       "os1": {},
       "os2": {}
-    }
-  },
-  "accessSlideDescription": "{RELEASE}의 철학의 중심에는 컴퓨팅은 모두를 위한 것이라는 믿음이 있습니다. 고급 접근성 도구와 언어, 색상 및 글자 크기 변경 옵션으로, {RELEASE}는 누구든 어디에서든 컴퓨팅을 쉽게 합니다.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideDocumentation": "공식 문서에는 {RELEASE}에 대한 가장 일반적인 사항이 포함되어 있습니다. <a href=\"https://help.ubuntu.com\">온라인 도움말</a>과 독에 있는 도움말 아이콘으로 확인하실 수 있습니다.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
     }
   },
   "identityUsernameInUse": "해당 사용자 이름이 이미 존재합니다.",

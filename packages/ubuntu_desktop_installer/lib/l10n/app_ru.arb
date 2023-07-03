@@ -247,8 +247,6 @@
       "color": {}
     }
   },
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
   "chooseSecurityKeyRequired": "Требуется ключ безопасности",
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyConfirmHint": "Подтвердить ключ безопасности",
@@ -287,51 +285,10 @@
   "@restartIntoWindows": {},
   "shutdown": "Отключить",
   "@shutdown": {},
-  "softwareSlideTitle": "Найдите ещё больше программного обеспечения",
-  "@softwareSlideTitle": {},
-  "photoSlideGimp": "Редактор изображений GIMP",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Видеоредактор Shotcut",
-  "@photoSlideShotcut": {},
-  "webSlideTitle": "Получите максимум от интернета",
-  "@webSlideTitle": {},
-  "webSlideFirefox": "Веб-браузер Firefox",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
   "installationFailed": "Ошибка установки",
   "@installationFailed": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "webSlideChromium": "Веб-браузер Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Всё что нужно для офиса",
-  "@officeSlideTitle": {},
-  "includedSoftware": "Включённое программное обеспечение",
-  "@includedSoftware": {},
   "copyingFiles": "Копирование файлов…",
   "@copyingFiles": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "photoSlideShotwell": "Менеджер фотографий Shotwell",
-  "@photoSlideShotwell": {},
-  "photoSlideDescription": "Shotwell — удобный менеджер фотографий, доступный для ваших гаджетов. Подключите камеру или телефон, чтобы загрузить фотографии, после этого вы можете как делиться ими, так и безопасно хранить. А если вы ощущаете себя творческим человеком, то можете найти множество других приложений для работы с фотографиями в Ubuntu Software.",
-  "@photoSlideDescription": {},
-  "photoSlideTitle": "Получайте удовольствие от своих фотографий",
-  "@photoSlideTitle": {},
-  "webSlideDescription": "{RELEASE} включает Firefox, веб-браузер, которым пользуются миллионы людей по всему миру. И, часто используемые вами веб-приложения (например, Facebook или Gmail), могут быть закреплены на рабочем столе для более быстрого доступа, как и приложения на вашем компьютере.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideDescription": "LibreOffice — это бесплатный офисный пакет, в котором есть всё необходимое для создания документов, электронных таблиц и презентаций. Совместимый с форматами файлов Microsoft Office, он предоставляет вам все необходимые функции совершенно бесплатно.",
-  "@officeSlideDescription": {},
-  "supportSlideQuestions": "На странице <a href=\"https://askubuntu.com\">Ask Ubuntu</a> вы можете задавать вопросы и выполнять поиск по внушительной коллекции уже отвеченных вопросов. Поддержка на вашем родном языке может быть предоставлена вашей <a href=\"https://loco.ubuntu.com/teams\">местной командой сообщества</a>.",
-  "@supportSlideQuestions": {},
   "onBatteryWarning": "<font color=\"{color}\">Внимание:</font> Компьютер не подключен к источнику питания.",
   "@onBatteryWarning": {
     "type": "text",
@@ -352,20 +309,6 @@
   "@identityUsernameSystemReserved": {},
   "writeChangesDescription": "Если вы продолжите, перечисленные ниже изменения будут записаны на диски. Дальнейшие изменения вы сможете внести вручную.",
   "@writeChangesDescription": {},
-  "welcomeSlideDescription": "Быстрая и изобилующая новыми функциями последняя версия {RELEASE} делает работу компьютера проще, чем когда-либо. Вот несколько крутых новинок, на которые стоит обратить внимание...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideDescription": "{RELEASE} поставляется с потрясающим музыкальным проигрывателем Rhythmbox. Благодаря расширенным параметрам воспроизведения легко ставить в очередь любимые песни. Кроме того, он отлично работает с компакт-дисками и портативными музыкальными проигрывателями, поэтому вы можете наслаждаться музыкой, куда бы ни отправились.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "installationTypeMultiOSDetected": "На этом компьютере установлено несколько операционных систем. Что вы хотите сделать?",
   "@installationTypeMultiOSDetected": {},
   "installationTypeDualOSDetected": "На этом компьютере установлены {os1} и {os2}. Что вы хотите сделать?",
@@ -386,13 +329,6 @@
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Часовой пояс",
   "@timezoneTimezoneLabel": {},
-  "welcomeSlideTitle": "Добро пожаловать в {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "writeChangesPartitionEntryUnmounted": "раздел #{sysname} как {format}",
   "@writeChangesPartitionEntryUnmounted": {
     "description": "An unmounted partition entry",
@@ -410,47 +346,6 @@
       "mount": {}
     }
   },
-  "musicSlideTitle": "Возьмите с собой свою музыку",
-  "@musicSlideTitle": {},
-  "softwareSlideDescription": "Попрощайтесь с поиском в интернете нового программного обеспечения. Имея доступ к Snap Store и архиву программного обеспечения {RELEASE}, вы можете легко находить и устанавливать новые приложения. Просто наберите на клавиатуре то, что вы ищете, или просмотрите такие категории, как «Графика и фотография», «Игры» и «Работа», а также отзывы других пользователей.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideAppearance": "Внешний вид",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Специальные возможности",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideCustomizationOptions": "Параметры настройки",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideTitle": "Доступ для каждого",
-  "@accessSlideTitle": {},
-  "accessSlideDescription": "В основе философии {RELEASE} лежит убеждение, что компьютеры предназначены для каждого. Благодаря расширенным инструментам специальных возможностей и параметрам изменения языка, цветовой схемы и размера текста {RELEASE} упрощает работу с компьютером, где бы вы ни находились.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideLanguageSupport": "Языковая поддержка",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Помощь и поддержка",
-  "@supportSlideTitle": {},
-  "supportSlideDocumentation": "Официальная документация охватывает многие из наиболее распространенных областей {RELEASE}. Она доступна как <a href=\"https://help.ubuntu.com\">онлайн</a>, так и с помощью значка справки на панели задач.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideResources": "Чтобы получить ссылки на другие полезные ресурсы, посетите <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> или <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.",
-  "@supportSlideResources": {},
-  "supportedSoftware": "Поддерживаемое программное обеспечение",
-  "@supportedSoftware": {},
-  "availableSoftware": "Доступное программное обеспечение",
-  "@availableSoftware": {},
   "connectToInternetPageTitle": "Подключение к сети",
   "@connectToInternetPageTitle": {},
   "noWiredConnection": "Проводное подключение не обнаружено",
@@ -467,10 +362,6 @@
   "@wiredMustBeEnabled": {},
   "connectButtonText": "Соединение",
   "@connectButtonText": {},
-  "musicSlideRhythmbox": "Аудио проигрыватель Rhythmbox",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
   "revertButtonText": "Вернуть",
   "@revertButtonText": {},
   "configureSecureBootOption": "Настроить Secure Boot",

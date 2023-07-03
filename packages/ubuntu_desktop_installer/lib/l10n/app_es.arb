@@ -361,77 +361,24 @@
       "system": {}
     }
   },
-  "photoSlideShotcut": "Editor de vídeos Shotcut",
-  "@photoSlideShotcut": {},
-  "webSlideFirefox": "Navegador web Firefox",
-  "@webSlideFirefox": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Todo lo que necesita para la oficina",
-  "@officeSlideTitle": {},
   "hiddenWifiNetworkNameRequired": "Se requiere un nombre de red",
   "@hiddenWifiNetworkNameRequired": {},
-  "musicSlideRhythmbox": "Reproductor de música Rhythmbox",
-  "@musicSlideRhythmbox": {},
-  "webSlideTitle": "Saque el máximo partido de la web",
-  "@webSlideTitle": {},
-  "accessSlideLanguageSupport": "Soporte de idiomas",
-  "@accessSlideLanguageSupport": {},
   "connectToInternetPageTitle": "Conectarse a una red",
   "@connectToInternetPageTitle": {},
   "hiddenWifiNetwork": "Conectarse a una red Wi-Fi oculta",
   "@hiddenWifiNetwork": {},
-  "supportSlideTitle": "Ayuda y asistencia",
-  "@supportSlideTitle": {},
   "identityShowPassword": "Mostrar contraseña",
   "@identityShowPassword": {},
   "connectToInternetDescription": "Conectar este equipo a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y ayudará a elegir su zona horaria.\n\nConectar por cable Ethernet, o elegir una red Wi-Fi",
   "@connectToInternetDescription": {},
   "hiddenWifiNetworkNameLabel": "Nombre de la red",
   "@hiddenWifiNetworkNameLabel": {},
-  "photoSlideGimp": "Editor de imágenes GIMP",
-  "@photoSlideGimp": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
   "timezoneTimezoneLabel": "Huso horario",
   "@timezoneTimezoneLabel": {},
-  "welcomeSlideTitle": "Le damos la bienvenida a {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "timezonePageTitle": "Selecciona tu zona horaria",
   "@timezonePageTitle": {},
   "timezoneLocationLabel": "Ubicación",
   "@timezoneLocationLabel": {},
-  "musicSlideTitle": "Lleve su música consigo",
-  "@musicSlideTitle": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideTitle": "Diviértase con sus fotos",
-  "@photoSlideTitle": {},
-  "photoSlideShotwell": "Gestor fotográfico Shotwell",
-  "@photoSlideShotwell": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideCustomizationOptions": "Opciones de personalización",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "Apariencia",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Tecnologías de asistencia",
-  "@accessSlideAssistiveTechnologies": {},
-  "availableSoftware": "Programas disponibles",
-  "@availableSoftware": {},
-  "includedSoftware": "Programas incluidos",
-  "@includedSoftware": {},
-  "supportedSoftware": "Programas compatibles",
-  "@supportedSoftware": {},
   "welcomeHeader": "Elija su idioma:",
   "@welcomeHeader": {},
   "useWiredConnection": "Utilizar conexión por cable",
@@ -448,22 +395,11 @@
   "@noInternet": {},
   "wiredDisabled": "La conexión por cable está desactivada",
   "@wiredDisabled": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "photoSlideDescription": "Shotwell es un práctico gestor de imágenes que está preparado para sus dispositivos. Conecte una cámara o un teléfono para transferir sus fotos; es fácil compartirlas y mantenerlas seguras. Y, para sacar provecho de su creatividad, hallará otras aplicaciones de retoque fotográfico en Software de Ubuntu.",
-  "@photoSlideDescription": {},
   "onBatteryWarning": "<font color=\"{color}\">Advertencia:</font> El equipo no está conectado a una fuente de alimentación.",
   "@onBatteryWarning": {
     "type": "text",
     "placeholders": {
       "color": {}
-    }
-  },
-  "supportSlideDocumentation": "La documentación oficial abarca muchas de las áreas comunes acerca de {RELEASE}. Está disponible <a href=\"https://help.ubuntu.com\">en la web</a> y a través del icono de ayuda en el iniciador.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
     }
   },
   "installationTypeDualOSDetected": "Actualmente este equipo tiene {os1} y {os2} instalado. ¿Qué le gustaría hacer?",
@@ -482,51 +418,6 @@
   "@newPartitionTableConfirmationMessage": {},
   "turnOffBitlockerDescription": "Este ordenador utiliza el cifrado BitLocker de Windows.\nDebe utilizar Windows para crear espacio libre o elegir '{option}' para continuar.",
   "@turnOffBitlockerDescription": {},
-  "softwareSlideTitle": "Encuentre aun más aplicaciones",
-  "@softwareSlideTitle": {},
-  "softwareSlideDescription": "Olvídese de buscar programas nuevos en la web. Acceda a la tienda de snaps y al archivo de programas de {RELEASE} para instalar aplicaciones nuevas con facilidad. Tan solo escriba un término de búsqueda, o bien, explore las categorías (gráficos y fotografía, juegos, productividad…) y obtenga reseñas valiosas de otros usuarios.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "welcomeSlideDescription": "Rápido y repleto de funcionalidades nuevas, la versión más reciente de {RELEASE} hace que la informática sea más fácil que nunca. Echemos un vistazo…",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideDescription": "{RELEASE} incluye el fantástico reproductor de música Rhythmbox. Con sus avanzadas opciones de reproducción, es sencillo programar las canciones perfectas. Además, se integra a la perfección con discos CD y reproductores portátiles, por lo que podrá disfrutar de toda su música dondequiera que vaya.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideDescription": "LibreOffice es un paquete ofimático que incluye todo lo necesario para crear documentos, hojas de cálculo y presentaciones. Además de ser compatible con los formatos de archivo de Microsoft Office, le ofrece todas las prestaciones que necesita, y sin tener que pagar nada.",
-  "@officeSlideDescription": {},
-  "webSlideDescription": "{RELEASE} incluye Firefox, el navegador web que utilizan millones de personas alrededor del mundo. Y las aplicaciones web que usa frecuentemente (como Facebook o Gmail, por ejemplo) pueden anclarse en el escritorio para un acceso rápido, igual que aplicaciones en su equipo.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideTitle": "Acceso para todos",
-  "@accessSlideTitle": {},
-  "accessSlideDescription": "En el corazón de la filosofía de {RELEASE} reside la creencia de que la informática es para todas las personas. Las herramientas avanzadas de accesibilidad y las opciones de idioma, colores y tamaño del texto hacen que la computación con {RELEASE} sea sencilla, sea quien sea y esté donde esté.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "En <a href=\"https://askubuntu.com\">Ask Ubuntu</a> puede formular preguntas y explorar una inmensa colección de dudas ya respondidas. Es posible que su <a href=\"https://loco.ubuntu.com/teams\">equipo comunitario regional</a> ofrezca asistencia en su idioma.",
-  "@supportSlideQuestions": {},
-  "supportSlideResources": "Para explorar más recursos, visite las páginas de <a href=\"https://www.ubuntu.com/support/community-support\">asistencia comunitaria</a> y <a href=\"https://www.ubuntu.com/support\">comercial</a>.",
-  "@supportSlideResources": {},
   "wifiMustBeEnabled": "Para utilizar Wi-Fi en este equipo, la red inalámbrica debe estar activada",
   "@wifiMustBeEnabled": {},
   "noWifiDevicesDetected": "No se han detectado dispositivos Wi-Fi",

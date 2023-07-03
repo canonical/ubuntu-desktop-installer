@@ -399,16 +399,6 @@
   "@timezoneTimezoneLabel": {},
   "timezonePageTitle": "Di manakah Anda?",
   "@timezonePageTitle": {},
-  "welcomeSlideTitle": "Selamat Datang ke {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "Temukan lebih banyak lagi perangkat lunak",
-  "@softwareSlideTitle": {},
-  "welcomeSlideDescription": "Cepat dan penuh dengan fitur baru, versi terakhir {RELEASE} membuat komputasi menjadi semakin mudah. Berikut adalah beberapa hal keren baru yang dapat diperhatikan...",
   "@welcomeSlideDescription": {
     "type": "text",
     "placeholders": {

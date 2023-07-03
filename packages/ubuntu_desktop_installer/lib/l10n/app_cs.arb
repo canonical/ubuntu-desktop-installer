@@ -454,121 +454,12 @@
   "@timezoneTimezoneLabel": {},
   "timezoneLocationLabel": "Umístění",
   "@timezoneLocationLabel": {},
-  "photoSlideGimp": "Editor obrázků GIMP",
-  "@photoSlideGimp": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideTitle": "Přístupnost pro všechny",
-  "@accessSlideTitle": {},
-  "accessSlideLanguageSupport": "Podpora jazyků",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Nápověda a podpora",
-  "@supportSlideTitle": {},
-  "musicSlideTitle": "Vezměte si hudbu s sebou",
-  "@musicSlideTitle": {},
   "hiddenWifiNetworkNameLabel": "Název sítě",
   "@hiddenWifiNetworkNameLabel": {},
-  "softwareSlideTitle": "Nalezněte ještě více software",
-  "@softwareSlideTitle": {},
   "hiddenWifiNetworkNameRequired": "Je vyžadován název sítě",
   "@hiddenWifiNetworkNameRequired": {},
   "hiddenWifiNetwork": "Připojit ke skryté Wi-Fi síti",
   "@hiddenWifiNetwork": {},
-  "welcomeSlideTitle": "Vítejte v {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "welcomeSlideDescription": "Rychlá a plná nových funkcí, nejnovější verze {RELEASE} usnadňuje používání počítače víc než předtím. Zde je ukázka několika z nových skvělých věcí, na které je možné se těšit…",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideCustomizationOptions": "Možnosti přizpůsobení si",
-  "@accessSlideCustomizationOptions": {},
-  "photoSlideShotwell": "Správce fotek Shotwell",
-  "@photoSlideShotwell": {},
-  "photoSlideShotcut": "Editor videa Shotcut",
-  "@photoSlideShotcut": {},
-  "officeSlideTitle": "Vše co potřebujete pro kancelář",
-  "@officeSlideTitle": {},
-  "accessSlideAppearance": "Vzhled",
-  "@accessSlideAppearance": {},
-  "webSlideFirefox": "Webový prohlížeč Firefox",
-  "@webSlideFirefox": {},
-  "supportSlideDocumentation": "Oficiální dokumentace pokrývá mnohé z nejběžnějších aspektů {RELEASE}. Je k dispozici jak <a href=\"https://help.ubuntu.com\">online</a>, tak lokálně prostřednictvím ikony Nápověda v doku.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "includedSoftware": "Obsažený software",
-  "@includedSoftware": {},
-  "availableSoftware": "Software k dispozici",
-  "@availableSoftware": {},
-  "supportedSoftware": "Podporovaný software",
-  "@supportedSoftware": {},
-  "accessSlideAssistiveTechnologies": "Technologie pro zpřístupnění",
-  "@accessSlideAssistiveTechnologies": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "supportSlideResources": "Ohledně ukazatelů na ostatní užitečné zdroje, navštivte <a href=\"https://www.ubuntu.com/support/community-support\">Komunitní podporu</a> nebo <a href=\"https://www.ubuntu.com/support\">Komerční podporu</a>.",
-  "@supportSlideResources": {},
-  "supportSlideQuestions": "Na <a href=\"https://askubuntu.com\">Ask Ubuntu</a> je možné pokládat dotazy a hledat v rozsáhlé sbírce těch už zodpovězených. Podpora ve vašem jazyce může být poskytována vaším <a href=\"https://loco.ubuntu.com/teams\">Místním komunitním týmem</a>.",
-  "@supportSlideQuestions": {},
-  "accessSlideDescription": "Středobodem filozofie {RELEASE} je, že počítače jsou pro všechny. Pomocí pokročilých nástrojů pro zpřístupnění a možnostmi pro změnu jazyka, barev a velikosti textu, {RELEASE} usnadňuje používání počítače – ať už jste kdokoli a odkudkoli.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideDescription": "{RELEASE} obsahuje Firefox – webový prohlížeč, používaný miliony lidí z celého světa. Webové aplikace, které používáte nejčastěji (jako např. Facebook a Gmail), je možné připnout do vašeho desktopového prostředí a mít je tak více po ruce, úplně jako ostatní aplikace v počítači.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideDescription": "{RELEASE} přináší skvělý přehrávač hudby Rhythmbox. S pokročilými funkcemi pro přehrávání je snadné si seřadit skladby, které se vám líbí. A funguje skvěle s CD disky a přenosnými přehrávači hudby, takže si veškerou svou hudbu můžete nosit s sebou.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideDescription": "LibreOffice je svobodná sada kancelářských aplikací, obsahující vše potřebné pro vytváření dokumentů, tabulek a prezentací. Je kompatibilní se souborovými formáty Microsoft Office, nabízí veškeré potřebné funkce.",
-  "@officeSlideDescription": {},
-  "webSlideTitle": "Získejte z webu maximum",
-  "@webSlideTitle": {},
-  "photoSlideDescription": "Shotwell je šikovný správce fotek, který je připraven na vaše foto zařízení. Připojte fotoaparát nebo telefon a přeneste své fotky a pak je jednoduše nasdílejte a mějte je v bezpečí před ztrátou. A pokud jste tvořiví, v Ubuntu Software je k dispozici mnoho dalších aplikací pro práci s fotkami.",
-  "@photoSlideDescription": {},
-  "softwareSlideDescription": "Dejte sbohem únavnému prohledávání webu při získávání nového software. Díky přístupu do Snap Store a archivu softwaru {RELEASE}, je snadné najít a nainstalovat nové aplikace. Stačí jen napsat, co hledáte nebo procházet kategoriemi, jako např. Grafika a fotky, Hry a produktivita – vše doprovázeno užitečnými recenzemi ostatních uživatelů.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "musicSlideRhythmbox": "Přehrávač hudby Rhytmbox",
-  "@musicSlideRhythmbox": {},
-  "photoSlideTitle": "Bavte se svými fotkami",
-  "@photoSlideTitle": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
   "identityShowPassword": "Zobrazit heslo",
   "@identityShowPassword": {},
   "installationTypeDualOSDetected": "Na tomto počítači se už nacházejí {os1} a {os2}. Co si přejete udělat?",

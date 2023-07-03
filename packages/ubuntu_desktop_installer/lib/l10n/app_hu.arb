@@ -24,18 +24,6 @@
   },
   "partitionFormatLabel": "Használva mint:",
   "@partitionFormatLabel": {},
-  "webSlideTitle": "Használja ki a webet a lehető legjobban",
-  "@webSlideTitle": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Minden, amire az irodában szüksége van",
-  "@officeSlideTitle": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
   "writeChangesDescription": "Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.",
   "@writeChangesDescription": {},
   "writeChangesPartitionEntryUnmounted": "partíció #<{sysname} mint {format}",
@@ -116,76 +104,6 @@
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Időzóna",
   "@timezoneTimezoneLabel": {},
-  "welcomeSlideTitle": "Üdvözöljük {RELEASE} oldalon.",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "Keressen még több szoftvert",
-  "@softwareSlideTitle": {},
-  "softwareSlideDescription": "Búcsúzzon el az új szoftverek keresgélésétől a világhálón. A Snap Store és a {RELEASE} szoftverarchívum elérésével könnyedén megtalálhatja és telepítheti az új alkalmazásokat. Csak írja be, hogy mit keres, vagy fedezze fel az olyan kategóriákat, mint a Grafika és fényképezés, Játékok és Termelékenység, más felhasználók hasznos véleményei mellett.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideDescription": "{RELEASE} a csodálatos Rhythmbox zenelejátszóval érkezik. A fejlett lejátszási lehetőségekkel egyszerűen sorbarendezheti a tökéletes dalokat. És nagyszerűen működik CD-kkel és hordozható zenelejátszókkal, így bárhol élvezheti a zenét.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideRhythmbox": "Rhythmbox zenelejátszó",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideTitle": "Jó szórakozást a fotóihoz",
-  "@photoSlideTitle": {},
-  "photoSlideDescription": "A Shotwell egy praktikus fotókezelő, amely készen áll a kütyükre. Csatlakoztasson egy fényképezőgépet vagy egy telefont a fényképek átviteléhez, majd könnyen megoszthatja és biztonságban tarthatja őket. Ha pedig kreatívnak érzi magát, az Ubuntu szoftverek között számos más fotóalkalmazást is találhat.",
-  "@photoSlideDescription": {},
-  "photoSlideShotwell": "Shotwell fotókezelő",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "GIMP képszerkesztő",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Shotcut videószerkesztő",
-  "@photoSlideShotcut": {},
-  "officeSlideDescription": "A LibreOffice egy ingyenes irodai programcsomag, amely mindent tartalmaz, ami dokumentumok, táblázatok és prezentációk készítéséhez szükséges. Kompatibilis a Microsoft Office fájlformátumokkal, így az összes szükséges funkciót biztosítja, fizetés nélkül.",
-  "@officeSlideDescription": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideTitle": "Hozzáférés mindenkinek",
-  "@accessSlideTitle": {},
-  "accessSlideCustomizationOptions": "Testreszabási lehetőségek",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "Megjelenés",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Támogató technológiák",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Nyelvi támogatás",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Segítség és támogatás",
-  "@supportSlideTitle": {},
-  "supportSlideDocumentation": "A hivatalos dokumentáció számos, a {RELEASE}-val kapcsolatos leggyakoribb területet lefed. Elérhető mind <a href=\"https://help.ubuntu.com\">online</a>, mind a dokkolóban található Súgó ikonon keresztül.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "A <a href=\"https://askubuntu.com\">Ask Ubuntu</a> oldalon kérdéseket tehet fel, és a már megválaszolt kérdések lenyűgöző gyűjteményében kereshet. A saját nyelvén a <a href=\"https://loco.ubuntu.com/teams\">Lokális közösségi csapat</a> nyújt támogatást.",
-  "@supportSlideQuestions": {},
-  "includedSoftware": "Mellékelt szoftver",
-  "@includedSoftware": {},
-  "availableSoftware": "Elérhető szoftver",
-  "@availableSoftware": {},
-  "supportedSoftware": "Támogatott szoftver",
-  "@supportedSoftware": {},
   "identityPasswordMismatch": "A jelszavak nem egyeznek",
   "@identityPasswordMismatch": {},
   "writeChangesPartitionTablesHeader": "A következő eszközök partíciós táblái változnak meg:",
@@ -210,10 +128,6 @@
   "@enableWifi": {},
   "connectButtonText": "Kapcsolódás",
   "@connectButtonText": {},
-  "musicSlideTitle": "Vigye magával a zenét",
-  "@musicSlideTitle": {},
-  "webSlideFirefox": "Firefox webböngésző",
-  "@webSlideFirefox": {},
   "appTitle": "Ubuntu asztali telepítő",
   "@appTitle": {},
   "changeButtonText": "Változtatás",
@@ -523,29 +437,6 @@
       "mount": {}
     }
   },
-  "welcomeSlideDescription": "A gyors és új funkciókkal teli {RELEASE} legújabb verziója minden eddiginél könnyebbé teszi a számítástechnikát. Íme néhány újdonság, amire érdemes odafigyelni...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideDescription": "{RELEASE} tartalmazza a Firefoxot, a világszerte emberek milliói által használt webböngészőt. A gyakran használt webes alkalmazásokat (például a Facebookot vagy a Gmailt) pedig a gyorsabb elérés érdekében az asztalra teheti, akárcsak a számítógépen lévő alkalmazásokat.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideDescription": "A {RELEASE} filozófia középpontjában az a meggyőződés áll, hogy a számítástechnika mindenkié. A fejlett akadálymentesítési eszközökkel és a nyelv, a színséma és a szövegméret megváltoztatásának lehetőségeivel a {RELEASE} megkönnyíti a számítástechnikát - bárki és bárhol is legyen.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideResources": "Egyéb hasznos forrásokra mutató hivatkozásokért látogasson el a <a href=\"https://www.ubuntu.com/support/community-support\">Közösségi támogatás</a> vagy a <a href=\"https://www.ubuntu.com/support\">Kereskedelmi támogatás</a> oldalra.",
-  "@supportSlideResources": {},
   "windowTitle": "A(z) {RELEASE} telepítése",
   "@windowTitle": {
     "type": "text",

@@ -441,118 +441,16 @@
   "@timezonePageTitle": {},
   "timezoneLocationLabel": "Plats",
   "@timezoneLocationLabel": {},
-  "musicSlideTitle": "Ta din musik med dig",
-  "@musicSlideTitle": {},
-  "musicSlideRhythmbox": "Rhythmbox Musikspelare",
-  "@musicSlideRhythmbox": {},
-  "webSlideTitle": "Få ut det mesta av webben",
-  "@webSlideTitle": {},
-  "webSlideFirefox": "Firefox webbläsare",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Allt du behöver för kontoret",
-  "@officeSlideTitle": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideAssistiveTechnologies": "Hjälpmedel",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Språk stöd",
-  "@accessSlideLanguageSupport": {},
-  "includedSoftware": "Inkluderad programvara",
-  "@includedSoftware": {},
-  "availableSoftware": "Tillgänglig programvara",
-  "@availableSoftware": {},
-  "supportedSoftware": "Programvara som stöds",
-  "@supportedSoftware": {},
   "timezoneTimezoneLabel": "Tidszon",
   "@timezoneTimezoneLabel": {},
-  "supportSlideTitle": "Hjälp och support",
-  "@supportSlideTitle": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "accessSlideCustomizationOptions": "Anpassnings alternativ",
-  "@accessSlideCustomizationOptions": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
   "welcomeHeader": "Välj ditt språk:",
   "@welcomeHeader": {},
-  "welcomeSlideTitle": "Välkommen till {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "accessSlideAppearance": "Utseende",
-  "@accessSlideAppearance": {},
   "hiddenWifiNetworkNameLabel": "Nätverksnamn",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Ett nätverksnamn krävs",
   "@hiddenWifiNetworkNameRequired": {},
-  "softwareSlideTitle": "Hitta ännu mer programvara",
-  "@softwareSlideTitle": {},
-  "photoSlideShotcut": "Shotcut videoedigerare",
-  "@photoSlideShotcut": {},
-  "officeSlideDescription": "LibreOffice är en libre kontorssvit fullpackad med allt du behöver för att skapa dokument, kalkylblad och presentationer. Den är kompatibel med Microsoft Office-filformat och ger dig alla funktioner du behöver",
-  "@officeSlideDescription": {},
-  "softwareSlideDescription": "Säg adjö till att söka på nätet efter ny programvara. Med åtkomst till Snap butiken och {RELEASE} programvaru arkiv, så kan du kan enkelt hitta och installera nya program. Bara skriv in det du letar efter, eller utforska kategorier som Grafik och Fotografi, Spel och Produktivitet, tillsammans med användbara recensioner från andra användare.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "hiddenWifiNetwork": "Anslut till ett dolt Wi-Fi-nätverk",
   "@hiddenWifiNetwork": {},
-  "musicSlideDescription": "{RELEASE} kommer med den fantastiska musikspelaren Rhythmbox. Med avancerade uppspelningsalternativ är det enkelt att sätta de perfekta låtarna på kö. Och den fungerar utmärkt med CD-skivor och bärbara musikspelare, så att du kan njuta av all din musik var du än går.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideDescription": "{RELEASE} inkluderar Firefox, webbläsaren som används av miljontals människor runt om i världen. Och webbapplikationer som du använder ofta (som Facebook eller Gmail, till exempel) kan fästas på skrivbordet för snabbare åtkomst, precis som program på din dator.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "På <a href=\"https://askubuntu.com\">Fråga Ubuntu</a> kan du ställa frågor och söka i en imponerande samling av redan besvarade frågor. Support på ditt eget språk kan tillhandahållas av ditt <a href=\"https://loco.ubuntu.com/teams\">lokala gruppteam</a>.",
-  "@supportSlideQuestions": {},
-  "supportSlideDocumentation": "Den officiella dokumentationen täcker många av de vanligaste aspekterna om {RELEASE}. Den är tillgänglig både <a href=\"https://help.ubuntu.com\">online</a> och via hjälpikonen i dockan.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideResources": "För tips på andra användbara resurser, besök <a href=\"https://www.ubuntu.com/support/community-support\">Community-support</a> eller <a href=\"https://www.ubuntu. .com/support\">Kommersiell support</a>.",
-  "@supportSlideResources": {},
-  "welcomeSlideDescription": "Snabb och full av nya funktioner, den senaste versionen av {RELEASE} gör datoranvändning enklare än någonsin. Här är bara några coola nya saker att hålla utkik efter...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideTitle": "Ha kul med dina bilder",
-  "@photoSlideTitle": {},
-  "photoSlideDescription": "Shotwell är en praktisk fotohanterare som är redo för dina prylar. Anslut en kamera eller en telefon för att överföra dina foton, så är det enkelt att dela dem och förvara dem säkert. Och om du känner dig kreativ kan du hitta många andra fotoappar i Programvara för Ubuntu.",
-  "@photoSlideDescription": {},
-  "photoSlideGimp": "GIMP bildredigerare",
-  "@photoSlideGimp": {},
-  "photoSlideShotwell": "Shotwell fotohanterare",
-  "@photoSlideShotwell": {},
-  "accessSlideTitle": "Åtkomst för alla",
-  "@accessSlideTitle": {},
   "identityShowPassword": "Visa lösenord",
   "@identityShowPassword": {},
   "installationTypeMultiOSDetected": "Den här datorn har för närvarande flera operativsystem på sig. Vad skulle du vilja göra?",
@@ -629,13 +527,6 @@
   "@installAlongsidePartition": {},
   "installAlongsideSize": "Storlek:",
   "@installAlongsideSize": {},
-  "accessSlideDescription": "Hjärtat i {RELEASE}-filosofin är tron att datoranvändning är till för alla. Med avancerade tillgänglighetsverktyg och alternativ för att ändra språk, färger och textstorlek, gör {RELEASE} datoranvändning enkel — vem du än är och var du än är.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "writeChangesPartitionFormatted": "partition <b>{sysname}</b> formaterad som <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",

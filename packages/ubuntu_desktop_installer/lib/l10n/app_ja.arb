@@ -190,10 +190,6 @@
   "@installationTypeLVMSelected": {},
   "newPartitionTableConfirmationTitle": "新しい空のパーティション",
   "@newPartitionTableConfirmationTitle": {},
-  "musicSlideTitle": "音楽を持ち歩こう",
-  "@musicSlideTitle": {},
-  "musicSlideRhythmbox": "Rhythmbox ミュージックプレイヤー",
-  "@musicSlideRhythmbox": {},
   "installationTypeDualOSDetected": "コンピューターには {os1} と {os2} がインストールされています。インストール方法を選択してください。",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -331,57 +327,10 @@
   "@shutdown": {},
   "turnOffBitlockerTitle": "BitLockerが有効になっています。",
   "@turnOffBitlockerTitle": {},
-  "welcomeSlideTitle": "{RELEASE}へ、ようこそ。",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "timezoneTimezoneLabel": "タイムゾーン",
   "@timezoneTimezoneLabel": {},
   "timezoneLocationLabel": "現在地",
   "@timezoneLocationLabel": {},
-  "welcomeSlideDescription": "高速で、新機能満載の最新版 {RELEASE} では、これまで以上に簡単、使いやすくなりました。ここで紹介するのは、気の利いた新機能のほんの一部です…",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "お気に入りのソフトウェアを見つけましょう",
-  "@softwareSlideTitle": {},
-  "softwareSlideDescription": "新しいソフトウェアを Web で探すのにさよならしましょう。Snap Store や {RELEASE} ソフトウェアアーカイブにアクセスすることで、簡単に、新しいアプリを見つけてインストールすることができます。探しているものを入力するだけ、あるいは、「グラフィックと写真」、「ゲーム」、「生産性向上アプリ」といったカテゴリを探すだけ。他のユーザーの便利なレビューも見られます。",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideDescription": "{RELEASE} には Rhythmbox という素晴らしいミュージックプレーヤーが付属しています。進化した再生オプションでは、簡単に大好きな音楽を追加することができます。そしてCDやポータブルミュージックプレイヤーと連携し、あなたがどこにいてもお気に入りの音楽を楽しむことができます。",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "photoSlideTitle": "写真を楽しもう",
-  "@photoSlideTitle": {},
-  "supportSlideTitle": "ヘルプとサポート",
-  "@supportSlideTitle": {},
-  "supportSlideDocumentation": "公式ドキュメントには {RELEASE} に多くの一般的な情報がされています。<a href=\"https://help.ubuntu.com\">インターネット</a>と Dock 上の「？(ヘルプアイコン)」の両方から閲覧できます。",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "<a href=\"https://askubuntu.com\">Ask Ubuntu</a> では、あなたが質問をしたり、回答済みの素晴らしい質問と答えを検索できます。\n日本語でのサポートは、<a href=\"http://www.ubuntulinux.jp/\">Ubuntu 日本 チーム</a> で提供されており、他の言語でのサポートは、<a href=\"https://loco.ubuntu.com/teams\">ローカルコミュニティチーム一覧</a> をご覧ください。",
-  "@supportSlideQuestions": {},
-  "includedSoftware": "含まれるソフトウェア",
-  "@includedSoftware": {},
   "installationTypeMultiOSDetected": "コンピューターには複数の OS がインストールされています。インストール方法を選択してください。",
   "@installationTypeMultiOSDetected": {},
   "installationTypeEncryptInfo": "セキュリティキーは次のステップで選択します。",
@@ -436,58 +385,6 @@
   },
   "timezonePageTitle": "タイムゾーンを選択してください。",
   "@timezonePageTitle": {},
-  "photoSlideDescription": "Shotwell をご紹介しましょう。Shotwell は、便利な写真管理ツールです。カメラや携帯電話を接続して写真を転送すれば、簡単に写真を共有したり安全に保管したりできます。クリエイティブな気分なら、その他にも多くの写真アプリを Ubuntu Software で見つけることができます。",
-  "@photoSlideDescription": {},
-  "photoSlideShotwell": "Shotwell 写真管理ツール",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "GIMP 画像エディター",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Shotcut ビデオエディター",
-  "@photoSlideShotcut": {},
-  "webSlideTitle": "ウェブを最大限に活用しよう",
-  "@webSlideTitle": {},
-  "webSlideDescription": "{RELEASE} には、世界中の多くの人々に使われているウェブ ブラウザである、Firefox が付属しています。また、Facebook や Gmail のような頻繁に使用するウェブアプリケーションは、デスクトップにピン留めして、パソコン上のアプリケーションと同じように素早くアクセスすることができます。",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideFirefox": "Firefox ウェブ ブラウザー",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "オフィスに必要なもの、すべてあなたに",
-  "@officeSlideTitle": {},
-  "officeSlideDescription": "LibreOffice は、ドキュメント、表計算、プレゼンテーションの作成に必要なもの、すべてを備えた自由ソフトのオフィススイートです。Microsoft Office のファイル形式と互換性を持ち、必要な機能をすべて使用できます。",
-  "@officeSlideDescription": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "accessSlideTitle": "すべての人へ",
-  "@accessSlideTitle": {},
-  "accessSlideDescription": "{RELEASE} の哲学の中心となっているのは、「あらゆる人のためのコンピューター」という信念です。高度なアクセシビリティツールや、言語・カラー・テキストサイズの変更といったオプションにより、{RELEASE} はあらゆる人に寄り添います。あなたが誰であっても、どこにいようとも。",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideCustomizationOptions": "カスタマイズオプション",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "外観",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "補助技術",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "言語サポート",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideResources": "その他の役立つリソースへのポインタについては、<a href=\"https://www.ubuntu.com/support/community-support\">コミュニティサポート</a> や <a href=\"https://www.ubuntu.com/support\">商用サポート</a> をご覧ください。",
-  "@supportSlideResources": {},
-  "availableSoftware": "利用可能なソフトウェア",
-  "@availableSoftware": {},
-  "supportedSoftware": "サポートされているソフトウェア",
-  "@supportedSoftware": {},
   "installationTypeErase": "ディスクを削除して {DISTRO} をインストールする",
   "@installationTypeErase": {
     "type": "text",
@@ -575,12 +472,6 @@
   "@partitionCreateTitle": {},
   "themeDark": "暗い",
   "@themeDark": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
   "copyingFiles": "ファイルをコピーしています…",
   "@copyingFiles": {},
   "installationFailed": "インストールに失敗しました",
