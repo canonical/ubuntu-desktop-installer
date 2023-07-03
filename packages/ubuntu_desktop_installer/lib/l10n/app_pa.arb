@@ -1,11 +1,5 @@
 {
   "@@locale": "pa",
-  "cancelButtonText": "ਰੱਦ ਕਰੋ",
-  "@cancelButtonText": {},
-  "noButtonText": "ਨਹੀਂ",
-  "@noButtonText": {},
-  "yesButtonText": "ਹਾਂ",
-  "@yesButtonText": {},
   "windowTitle": "{RELEASE} ਇੰਸਟਾਲ ਕਰੋ",
   "@windowTitle": {
     "type": "text",

@@ -1,13 +1,7 @@
 {
   "@@locale": "ga",
-  "cancelButtonText": "Cealaigh",
-  "@cancelButtonText": {},
-  "noButtonText": "Níl",
-  "@noButtonText": {},
   "revertButtonText": "Fill",
   "@revertButtonText": {},
-  "yesButtonText": "Tá",
-  "@yesButtonText": {},
   "welcome": "Fáilte",
   "@welcome": {},
   "windowTitle": "Suiteáil {RELEASE}",

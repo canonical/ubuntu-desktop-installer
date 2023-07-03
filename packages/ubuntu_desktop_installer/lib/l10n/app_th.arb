@@ -1,7 +1,5 @@
 {
   "@@locale": "th",
-  "okButtonText": "ตกลง",
-  "@okButtonText": {},
   "tryUbuntu": "ทดลอง {RELEASE}",
   "@tryUbuntu": {
     "type": "text",
@@ -24,8 +22,6 @@
   "@isKeyPresent": {},
   "welcome": "ยินดีต้อนรับ",
   "@welcome": {},
-  "cancelButtonText": "ยกเลิก",
-  "@cancelButtonText": {},
   "windowTitle": "ติดตั้ง {RELEASE}",
   "@windowTitle": {
     "type": "text",

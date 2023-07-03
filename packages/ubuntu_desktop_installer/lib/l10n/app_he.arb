@@ -7,8 +7,6 @@
       "url": {}
     }
   },
-  "okButtonText": "אישור",
-  "@okButtonText": {},
   "restartButtonText": "הפעלה מחדש",
   "@restartButtonText": {},
   "releaseNotesLabel": "ממליצים לך לקרוא את <a href=\"{url}\">הערות ההוצאה לאור</a>.",
@@ -24,8 +22,6 @@
   "@revertButtonText": {},
   "changeButtonText": "שינוי",
   "@changeButtonText": {},
-  "noButtonText": "לא",
-  "@noButtonText": {},
   "tryUbuntuDescription": "אפשר להתנסות ב־{RELEASE} מבלי לערוך שינויים במחשב שלך.",
   "@tryUbuntuDescription": {},
   "appTitle": "אשף התקנת אובונטו לשולחן עבודה",
@@ -67,10 +63,6 @@
   "@updatesOtherSoftwarePageTitle": {},
   "normalInstallationTitle": "התקנה רגילה",
   "@normalInstallationTitle": {},
-  "cancelButtonText": "ביטול",
-  "@cancelButtonText": {},
-  "yesButtonText": "כן",
-  "@yesButtonText": {},
   "welcome": "ברוך בואך",
   "@welcome": {},
   "tryOrInstallPageTitle": "להתנסות או להתקין את {DISTRO}",

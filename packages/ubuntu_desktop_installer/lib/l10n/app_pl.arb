@@ -2,8 +2,6 @@
   "@@locale": "pl",
   "windowTitle": "Zainstaluj {RELEASE}",
   "@windowTitle": {},
-  "okButtonText": "OK",
-  "@okButtonText": {},
   "repairInstallation": "Napraw instalację",
   "@repairInstallation": {},
   "tryOrInstallPageTitle": "Wypróbuj lub zainstaluj {DISTRO}",
@@ -25,8 +23,6 @@
       "url": {}
     }
   },
-  "noButtonText": "Nie",
-  "@noButtonText": {},
   "tryUbuntuDescription": "Możesz wypróbować {RELEASE} bez wprowadzania jakichkolwiek zmian na swoim komputerze.",
   "@tryUbuntuDescription": {},
   "installUbuntuDescription": "Zainstaluj {RELEASE} obok (lub zamiast) obecnego systemu operacyjnego. Nie powinno to potrwać zbyt długo.",
@@ -143,14 +139,10 @@
       "format": {}
     }
   },
-  "cancelButtonText": "Anuluj",
-  "@cancelButtonText": {},
   "restartButtonText": "Uruchom ponownie",
   "@restartButtonText": {},
   "revertButtonText": "Przywróć",
   "@revertButtonText": {},
-  "yesButtonText": "Tak",
-  "@yesButtonText": {},
   "welcome": "Witamy",
   "@welcome": {},
   "installUbuntu": "Zainstaluj {RELEASE}",
