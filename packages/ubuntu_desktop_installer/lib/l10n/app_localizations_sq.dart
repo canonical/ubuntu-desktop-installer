@@ -711,13 +711,13 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Ku ndodheni?';
+  String get timezonePageTitle => 'Ku ndodheni?';
 
   @override
-  String get whereAreYouLocationLabel => 'Vendndodhja';
+  String get timezoneLocationLabel => 'Vendndodhja';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Zona orare';
+  String get timezoneTimezoneLabel => 'Zona orare';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

@@ -711,13 +711,13 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'タイムゾーンを選択してください。';
+  String get timezonePageTitle => 'タイムゾーンを選択してください。';
 
   @override
-  String get whereAreYouLocationLabel => '現在地';
+  String get timezoneLocationLabel => '現在地';
 
   @override
-  String get whereAreYouTimezoneLabel => 'タイムゾーン';
+  String get timezoneTimezoneLabel => 'タイムゾーン';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

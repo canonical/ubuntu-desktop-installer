@@ -711,13 +711,13 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Sélectionnez votre fuseau horaire';
+  String get timezonePageTitle => 'Sélectionnez votre fuseau horaire';
 
   @override
-  String get whereAreYouLocationLabel => 'Localisation';
+  String get timezoneLocationLabel => 'Localisation';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Fuseau horaire';
+  String get timezoneTimezoneLabel => 'Fuseau horaire';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

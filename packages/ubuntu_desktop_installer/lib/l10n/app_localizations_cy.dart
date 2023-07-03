@@ -711,13 +711,13 @@ class AppLocalizationsCy extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Select your timezone';
+  String get timezonePageTitle => 'Select your timezone';
 
   @override
-  String get whereAreYouLocationLabel => 'Lleoliad';
+  String get timezoneLocationLabel => 'Lleoliad';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Cylchfa amser';
+  String get timezoneTimezoneLabel => 'Cylchfa amser';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

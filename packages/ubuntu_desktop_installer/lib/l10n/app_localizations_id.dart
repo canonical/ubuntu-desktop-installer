@@ -711,13 +711,13 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Di manakah Anda?';
+  String get timezonePageTitle => 'Di manakah Anda?';
 
   @override
-  String get whereAreYouLocationLabel => 'Lokasi';
+  String get timezoneLocationLabel => 'Lokasi';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Zona waktu';
+  String get timezoneTimezoneLabel => 'Zona waktu';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

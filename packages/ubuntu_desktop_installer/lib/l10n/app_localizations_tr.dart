@@ -711,13 +711,13 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Saat diliminizi seçin';
+  String get timezonePageTitle => 'Saat diliminizi seçin';
 
   @override
-  String get whereAreYouLocationLabel => 'Konum';
+  String get timezoneLocationLabel => 'Konum';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Saat Dilimi';
+  String get timezoneTimezoneLabel => 'Saat Dilimi';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

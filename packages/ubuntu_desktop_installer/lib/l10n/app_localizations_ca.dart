@@ -711,13 +711,13 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'On sou?';
+  String get timezonePageTitle => 'On sou?';
 
   @override
-  String get whereAreYouLocationLabel => 'Ubicació';
+  String get timezoneLocationLabel => 'Ubicació';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Fus horari';
+  String get timezoneTimezoneLabel => 'Fus horari';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

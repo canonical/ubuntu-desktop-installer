@@ -711,13 +711,13 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Pasirinkite laiko juostą';
+  String get timezonePageTitle => 'Pasirinkite laiko juostą';
 
   @override
-  String get whereAreYouLocationLabel => 'Vieta';
+  String get timezoneLocationLabel => 'Vieta';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Laiko juosta';
+  String get timezoneTimezoneLabel => 'Laiko juosta';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

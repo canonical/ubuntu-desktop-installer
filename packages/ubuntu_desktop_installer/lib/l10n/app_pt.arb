@@ -485,12 +485,12 @@
       "sysname": {}
     }
   },
-  "whereAreYouPageTitle": "Selecione o seu fuso-horário",
-  "@whereAreYouPageTitle": {},
-  "whereAreYouLocationLabel": "Localização",
-  "@whereAreYouLocationLabel": {},
-  "whereAreYouTimezoneLabel": "Fuso horário",
-  "@whereAreYouTimezoneLabel": {},
+  "timezonePageTitle": "Selecione o seu fuso-horário",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Localização",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Fuso horário",
+  "@timezoneTimezoneLabel": {},
   "musicSlideTitle": "Leve a sua música consigo",
   "@musicSlideTitle": {},
   "installAlongsideFiles": "Ficheiros",

@@ -711,13 +711,13 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Elektu vian horzonon';
+  String get timezonePageTitle => 'Elektu vian horzonon';
 
   @override
-  String get whereAreYouLocationLabel => 'Loko';
+  String get timezoneLocationLabel => 'Loko';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Horzono';
+  String get timezoneTimezoneLabel => 'Horzono';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

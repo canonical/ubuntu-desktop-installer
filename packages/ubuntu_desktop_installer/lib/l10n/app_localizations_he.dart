@@ -711,13 +711,13 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'נא לבחור את אזור הזמן שלך';
+  String get timezonePageTitle => 'נא לבחור את אזור הזמן שלך';
 
   @override
-  String get whereAreYouLocationLabel => 'מיקום';
+  String get timezoneLocationLabel => 'מיקום';
 
   @override
-  String get whereAreYouTimezoneLabel => 'אזור זמן';
+  String get timezoneTimezoneLabel => 'אזור זמן';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

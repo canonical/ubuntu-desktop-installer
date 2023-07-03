@@ -711,13 +711,13 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'ඔබ කොහිද?';
+  String get timezonePageTitle => 'ඔබ කොහිද?';
 
   @override
-  String get whereAreYouLocationLabel => 'ස්ථානය';
+  String get timezoneLocationLabel => 'ස්ථානය';
 
   @override
-  String get whereAreYouTimezoneLabel => 'වේලා කලාපය';
+  String get timezoneTimezoneLabel => 'වේලා කලාපය';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

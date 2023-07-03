@@ -399,12 +399,12 @@
       "color": {}
     }
   },
-  "whereAreYouTimezoneLabel": "Strefa czasowa",
-  "@whereAreYouTimezoneLabel": {},
-  "whereAreYouLocationLabel": "Lokalizacja",
-  "@whereAreYouLocationLabel": {},
-  "whereAreYouPageTitle": "Wybierz swoją strefę czasową",
-  "@whereAreYouPageTitle": {},
+  "timezoneTimezoneLabel": "Strefa czasowa",
+  "@timezoneTimezoneLabel": {},
+  "timezoneLocationLabel": "Lokalizacja",
+  "@timezoneLocationLabel": {},
+  "timezonePageTitle": "Wybierz swoją strefę czasową",
+  "@timezonePageTitle": {},
   "welcomeHeader": "Wybierz swój język:",
   "@welcomeHeader": {},
   "softwareSlideTitle": "Znajdź jeszcze więcej oprogramowania",

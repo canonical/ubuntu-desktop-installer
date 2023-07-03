@@ -711,13 +711,13 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Выберите свой часовой пояс';
+  String get timezonePageTitle => 'Выберите свой часовой пояс';
 
   @override
-  String get whereAreYouLocationLabel => 'Место нахождения';
+  String get timezoneLocationLabel => 'Место нахождения';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Часовой пояс';
+  String get timezoneTimezoneLabel => 'Часовой пояс';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

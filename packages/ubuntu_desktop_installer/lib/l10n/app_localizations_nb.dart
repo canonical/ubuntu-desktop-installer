@@ -711,13 +711,13 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Hvem er du?';
+  String get timezonePageTitle => 'Hvem er du?';
 
   @override
-  String get whereAreYouLocationLabel => 'Sted';
+  String get timezoneLocationLabel => 'Sted';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Tidssone';
+  String get timezoneTimezoneLabel => 'Tidssone';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

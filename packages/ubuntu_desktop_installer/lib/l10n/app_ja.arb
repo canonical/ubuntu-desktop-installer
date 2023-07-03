@@ -346,10 +346,10 @@
       "RELEASE": {}
     }
   },
-  "whereAreYouTimezoneLabel": "タイムゾーン",
-  "@whereAreYouTimezoneLabel": {},
-  "whereAreYouLocationLabel": "現在地",
-  "@whereAreYouLocationLabel": {},
+  "timezoneTimezoneLabel": "タイムゾーン",
+  "@timezoneTimezoneLabel": {},
+  "timezoneLocationLabel": "現在地",
+  "@timezoneLocationLabel": {},
   "welcomeSlideDescription": "高速で、新機能満載の最新版 {RELEASE} では、これまで以上に簡単、使いやすくなりました。ここで紹介するのは、気の利いた新機能のほんの一部です…",
   "@welcomeSlideDescription": {
     "type": "text",
@@ -442,8 +442,8 @@
       "url": {}
     }
   },
-  "whereAreYouPageTitle": "タイムゾーンを選択してください。",
-  "@whereAreYouPageTitle": {},
+  "timezonePageTitle": "タイムゾーンを選択してください。",
+  "@timezonePageTitle": {},
   "photoSlideDescription": "Shotwell をご紹介しましょう。Shotwell は、便利な写真管理ツールです。カメラや携帯電話を接続して写真を転送すれば、簡単に写真を共有したり安全に保管したりできます。クリエイティブな気分なら、その他にも多くの写真アプリを Ubuntu Software で見つけることができます。",
   "@photoSlideDescription": {},
   "photoSlideShotwell": "Shotwell 写真管理ツール",

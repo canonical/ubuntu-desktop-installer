@@ -403,8 +403,8 @@
   "@webSlideThunderbird": {},
   "officeSlideWriter": "LibreOffice Writer",
   "@officeSlideWriter": {},
-  "whereAreYouTimezoneLabel": "Huso horario",
-  "@whereAreYouTimezoneLabel": {},
+  "timezoneTimezoneLabel": "Huso horario",
+  "@timezoneTimezoneLabel": {},
   "welcomeSlideTitle": "Le damos la bienvenida a {RELEASE}",
   "@welcomeSlideTitle": {
     "type": "text",
@@ -412,10 +412,10 @@
       "RELEASE": {}
     }
   },
-  "whereAreYouPageTitle": "Selecciona tu zona horaria",
-  "@whereAreYouPageTitle": {},
-  "whereAreYouLocationLabel": "Ubicación",
-  "@whereAreYouLocationLabel": {},
+  "timezonePageTitle": "Selecciona tu zona horaria",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Ubicación",
+  "@timezoneLocationLabel": {},
   "musicSlideTitle": "Lleve su música consigo",
   "@musicSlideTitle": {},
   "musicSlideSpotify": "Spotify",

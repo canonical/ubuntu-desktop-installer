@@ -711,13 +711,13 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => '选择您的时区';
+  String get timezonePageTitle => '选择您的时区';
 
   @override
-  String get whereAreYouLocationLabel => '位置';
+  String get timezoneLocationLabel => '位置';
 
   @override
-  String get whereAreYouTimezoneLabel => '时区';
+  String get timezoneTimezoneLabel => '时区';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

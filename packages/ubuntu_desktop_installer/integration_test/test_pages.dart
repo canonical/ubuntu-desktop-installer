@@ -398,13 +398,13 @@ Future<void> testTimezonePage(
   String? timezone,
   String? screenshot,
 }) async {
-  await expectPage(tester, TimezonePage, (lang) => lang.whereAreYouPageTitle);
+  await expectPage(tester, TimezonePage, (lang) => lang.timezonePageTitle);
 
   await tester.pumpAndSettle(); // progress indicator
 
   if (location != null) {
     await tester.enterText(
-      find.textField(tester.lang.whereAreYouLocationLabel),
+      find.textField(tester.lang.timezoneLocationLabel),
       location,
     );
     await tester.pump();
@@ -414,7 +414,7 @@ Future<void> testTimezonePage(
 
   if (timezone != null) {
     await tester.enterText(
-      find.textField(tester.lang.whereAreYouTimezoneLabel),
+      find.textField(tester.lang.timezoneTimezoneLabel),
       timezone,
     );
     await tester.pump();

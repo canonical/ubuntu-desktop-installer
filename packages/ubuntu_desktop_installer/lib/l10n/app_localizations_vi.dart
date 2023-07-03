@@ -711,13 +711,13 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Select your timezone';
+  String get timezonePageTitle => 'Select your timezone';
 
   @override
-  String get whereAreYouLocationLabel => 'Location';
+  String get timezoneLocationLabel => 'Location';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Timezone';
+  String get timezoneTimezoneLabel => 'Timezone';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

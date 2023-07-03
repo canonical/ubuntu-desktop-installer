@@ -711,13 +711,13 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get whereAreYouPageTitle => 'Де ви знаходитесь?';
+  String get timezonePageTitle => 'Де ви знаходитесь?';
 
   @override
-  String get whereAreYouLocationLabel => 'Місце розташування';
+  String get timezoneLocationLabel => 'Місце розташування';
 
   @override
-  String get whereAreYouTimezoneLabel => 'Часовий пояс';
+  String get timezoneTimezoneLabel => 'Часовий пояс';
 
   @override
   String installationSlidesTitle(Object RELEASE) {
