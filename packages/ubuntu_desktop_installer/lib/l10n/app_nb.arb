@@ -310,8 +310,6 @@
   },
   "freeDiskSpace": "Ledig plass",
   "@freeDiskSpace": {},
-  "identityShowPassword": "Vis passord",
-  "@identityShowPassword": {},
   "timezoneTimezoneLabel": "Tidssone",
   "@timezoneTimezoneLabel": {},
   "diskHeadersSystem": "System",
@@ -495,13 +493,6 @@
   },
   "identityUsernameSystemReserved": "Navnet er reservert for systembruk.",
   "@identityUsernameSystemReserved": {},
-  "notEnoughDiskSpaceBiggestDisk": "Den største lagringsenheten på datamaskinen er kun {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "turnOffBitlockerLinkInstructions": "Instruks er tilgjengelig hvis du åpner denne siden på en telefon eller en annen enhet: <a href=\"https://{url}\"></a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
@@ -580,21 +571,6 @@
   "@quitButtonText": {},
   "notEnoughDiskSpaceTitle": "Beklager",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "Du trenger minst {SIZE} lagringsplass for å installere {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Denne datamaskinen har kun {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "activeDirectoryDomainMultipleDots": "Inneholder flere gjentagende punktum (..)",
   "@activeDirectoryDomainMultipleDots": {},
   "activeDirectoryPasswordLabel": "Passord",

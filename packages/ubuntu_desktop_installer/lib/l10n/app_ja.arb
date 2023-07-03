@@ -288,23 +288,6 @@
   "@writeChangesPartitionsHeader": {},
   "themePageTitle": "テーマを選択してください。",
   "@themePageTitle": {},
-  "writeChangesPartitionEntryMounted": "パーティション、#{sysname} は {format} にフォーマットされ、 {mount} に割り当てられます",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "パーティション、#{sysname} は {format} にフォーマットされます",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "themePageHeader": "これは、外観設定でいつでも変更できます。",
   "@themePageHeader": {},
   "installationCompleteTitle": "インストールが完了しました",
@@ -370,8 +353,6 @@
   "@identityPasswordLabel": {},
   "identityConfirmPasswordLabel": "パスワードをもう一度入力",
   "@identityConfirmPasswordLabel": {},
-  "identityShowPassword": "パスワードを表示",
-  "@identityShowPassword": {},
   "writeChangesDescription": "続行すると、以下の変更がディスクに書き込まれます。さらに手動で変更を加えることもできます。",
   "@writeChangesDescription": {},
   "turnOffBitlockerDescription": "このコンピューターはWindows BitLockerで暗号化されています。\nWindowsを使って空き領域を作るか、'{option}'を選択してください。",
@@ -518,30 +499,8 @@
   "@installingSystem": {},
   "configuringSystem": "システムを設定しています…",
   "@configuringSystem": {},
-  "notEnoughDiskSpaceHeader": "{RELEASE} をインストールするには、最低でも{SIZE}のディスク容量が必要です。",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "quitButtonText": "インストールを終了",
   "@quitButtonText": {},
-  "notEnoughDiskSpaceHasOnly": "このコンピュータは{SIZE}しかありません。",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "このコンピューターに搭載されているディスクの中で、一番容量が大きいものは{SIZE}です。",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installAlongsideResizePartition": "パーティションのサイズを変更する",
   "@installAlongsideResizePartition": {},
   "installAlongsideHiddenPartitions": "{num}の小さなパーティションは非表示になっています、<a href=\"{url}\">高度なパーティションツール</a>で更に多くの機能を使ってください",

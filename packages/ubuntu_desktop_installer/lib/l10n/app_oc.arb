@@ -126,12 +126,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizada coma :",
   "@partitionFormatLabel": {},
-  "partitionFormatBios": "zòna reservada a l’aviada del BIOS",
-  "@partitionFormatBios": {},
-  "partitionFormatEfi": "particion sistèma EFI",
-  "@partitionFormatEfi": {},
-  "partitionFormatPhysical": "volum fisic pel chiframent",
-  "@partitionFormatPhysical": {},
   "partitionFormatNone": "utilizar pas la particion",
   "@partitionFormatNone": {},
   "partitionErase": "Formatar la particion",
@@ -190,34 +184,6 @@
   },
   "writeChangesPartitionsHeader": "Las modificacions seguenta seràn aplicadas a las particions :",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryPrimaryFull": "particion n° {partitionNumber} de {diskSerial} ({diskPath}) de tipe {fstype} coma {mountPath}",
-  "@writeChangesPartitionEntryPrimaryFull": {
-    "description": "Una entrada per una particion primària sens particion segondària",
-    "placeholders": {
-      "partitionNumber": {},
-      "diskSerial": {},
-      "diskPath": {},
-      "fstype": {},
-      "mountPath": {}
-    }
-  },
-  "writeChangesPartitionEntryPrimary": "particion n° {partitionNumber} de {diskSerial} ({diskPath}) coma",
-  "@writeChangesPartitionEntryPrimary": {
-    "description": "Una entrada per una particion primària amb particions segondàrias",
-    "placeholders": {
-      "partitionNumber": {},
-      "diskSerial": {},
-      "diskPath": {}
-    }
-  },
-  "writeChangesPartitionEntrySecondary": "        particion n° de tipe {fstype} coma {mountPath}",
-  "@writeChangesPartitionEntrySecondary": {
-    "description": "Una entrada per una particion segondària",
-    "placeholders": {
-      "fstype": {},
-      "mountPath": {}
-    }
-  },
   "themePageTitle": "Causissètz vòstre tèma",
   "@themePageTitle": {},
   "themePageHeader": "La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.",
@@ -371,23 +337,6 @@
   "@chooseSecurityKeyRequired": {},
   "selectGuidedStorageDropdownLabel": "Seleccionatz lo disc :",
   "@selectGuidedStorageDropdownLabel": {},
-  "writeChangesPartitionEntryMounted": "la particion #{sysname} en {format} utilizada per {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "particion #{sysname} en {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "newPartitionTableConfirmationTitle": "Particion novèla voida",
   "@newPartitionTableConfirmationTitle": {},
   "wiredDisabled": "La connexion filara es desactivada",
@@ -451,8 +400,6 @@
       "os2": {}
     }
   },
-  "identityShowPassword": "Afichar lo senhal",
-  "@identityShowPassword": {},
   "copyingFiles": "Còpia dels fichièrs…",
   "@copyingFiles": {},
   "installationFailed": "Fracàs de l’installacion",
@@ -504,30 +451,8 @@
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "Disponible :",
   "@installAlongsideAvailable": {},
-  "notEnoughDiskSpaceHeader": "Vos cal almens {SIZE} d’espaci disc per installar {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "notEnoughDiskSpaceTitle": "Pas pro d’espaci",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHasOnly": "Aqueste ordenador a sonque {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Lo disc mai grand d’aqueste ordenador a sonque {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installingSystem": "Installacion del sistèma…",
   "@installingSystem": {},
   "configuringSystem": "Configuracion del sistèma…",

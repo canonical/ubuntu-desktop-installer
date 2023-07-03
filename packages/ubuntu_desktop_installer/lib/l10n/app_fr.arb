@@ -86,12 +86,6 @@
   "@writeChangesPartitionTablesEntry": {},
   "writeChangesPartitionsHeader": "Les modification suivantes sur les partitions seront appliquées :",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryPrimaryFull": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) de type {fstype} en tant que {mountPath}",
-  "@writeChangesPartitionEntryPrimaryFull": {},
-  "writeChangesPartitionEntryPrimary": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) en tant que",
-  "@writeChangesPartitionEntryPrimary": {},
-  "writeChangesPartitionEntrySecondary": "        partition n° de type {fstype} en tant que {mountPath}",
-  "@writeChangesPartitionEntrySecondary": {},
   "themePageTitle": "Choisissez l’apparence",
   "@themePageTitle": {},
   "themePageHeader": "Vous pourrez la changer ultérieurement dans les préférences d’apparence.",
@@ -303,23 +297,6 @@
   "@identityPasswordRequired": {},
   "identityConfirmPasswordLabel": "Confirmez votre mot de passe",
   "@identityConfirmPasswordLabel": {},
-  "writeChangesPartitionEntryMounted": "la partition #{sysname} en {format} est utilisée pour {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "partition #{sysname} en {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "readyToUse": "**{system}** est installé et prêt à être utilisé",
   "@readyToUse": {
     "type": "text",
@@ -393,8 +370,6 @@
   "@hiddenWifiNetworkNameRequired": {},
   "hiddenWifiNetwork": "Se connecter à un réseau Wi-Fi caché",
   "@hiddenWifiNetwork": {},
-  "identityShowPassword": "Afficher le mot de passe",
-  "@identityShowPassword": {},
   "installationTypeDualOSDetected": "Cet ordinateur est installé avec {os1} et {os2}. Que voulez-vous faire ?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -470,33 +445,11 @@
       "format": {}
     }
   },
-  "notEnoughDiskSpaceBiggestDisk": "Le plus grand disque sur cet ordinateur n’a que {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceHeader": "Vous avec besoin d’au moins {SIZE} d’espace disque pour installer {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "writeChangesPartitionCreated": "la partition <b>{sysname}</b> créée",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Cet ordinateur n’a que {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
     }
   },
   "quitButtonText": "Quitter l’installation",

@@ -297,8 +297,6 @@
   "@installingSystem": {},
   "identityUsernameTooLong": "Aquest nom és massa llarg.",
   "@identityUsernameTooLong": {},
-  "identityShowPassword": "Mostra la contrasenya",
-  "@identityShowPassword": {},
   "connectToInternetPageTitle": "Connecta a internet",
   "@connectToInternetPageTitle": {},
   "configureSecureBootOption": "Configurar Arrencada Segura",

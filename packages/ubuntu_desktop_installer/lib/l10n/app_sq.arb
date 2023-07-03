@@ -83,8 +83,6 @@
   "@partitionUnitMB": {},
   "partitionUnitGB": "GB",
   "@partitionUnitGB": {},
-  "identityShowPassword": "Shfaq fjalëkalimin",
-  "@identityShowPassword": {},
   "writeChangesFallbackSerial": "disku",
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"

@@ -176,14 +176,6 @@
   "@configuringSystem": {},
   "notEnoughDiskSpaceTitle": "Вибачте",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "Для встановлення {RELEASE} потрібно щонайменше {SIZE} дискового простору.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "installationTypeOSDetected": "На цьому комп'ютері зараз встановлено {os}. Що б ви хотіли зробити?",
   "@installationTypeOSDetected": {
     "type": "text",
@@ -298,20 +290,6 @@
   "@copyingFiles": {},
   "installationFailed": "Встановлення не вдалося",
   "@installationFailed": {},
-  "notEnoughDiskSpaceHasOnly": "На цьому комп'ютері є лише {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Найбільший диск на цьому комп'ютері лише {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "showSecurityKey": "Показати ключ безпеки",
   "@showSecurityKey": {},
   "connectToInternetPageTitle": "Підключитись до інтернету",
@@ -500,8 +478,6 @@
   "@identityUsernameInvalidChars": {},
   "identityPasswordMismatch": "Паролі не збігаються",
   "@identityPasswordMismatch": {},
-  "identityShowPassword": "Показати пароль",
-  "@identityShowPassword": {},
   "writeChangesPartitionResized": "розмір розділу #{sysname} змінено з {oldsize} на {newsize}",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",

@@ -127,23 +127,6 @@
   "@themePageTitle": {},
   "themePageHeader": "תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.",
   "@themePageHeader": {},
-  "writeChangesPartitionEntryMounted": "מחיצה מס׳ {sysname} בתור {format} משמשת עבור {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "מחיצה מס׳ {sysname} בתור {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "chooseSecurityKeyRequired": "נדרש מפתח אבטחה",
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "מפתחות האבטחה סותרים זה את זה",
@@ -407,8 +390,6 @@
   "@hiddenWifiNetworkNameLabel": {},
   "installationTypeMultiOSDetected": "במחשב זה מותקנות מספר מערכות הפעלה. מה לעשות?",
   "@installationTypeMultiOSDetected": {},
-  "identityShowPassword": "הצגת הסיסמה",
-  "@identityShowPassword": {},
   "installationTypeDualOSDetected": "במחשב זה מותקנות כרגע {os1} ו־{os2}. מה לעשות?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -485,14 +466,6 @@
   },
   "notEnoughDiskSpaceTitle": "אין מספיק מקום",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "נדרשים {SIZE} לפחות של מקום פנוי כדי להתקין את {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "writeChangesPartitionResized": "הגודל של מחיצה <b>{sysname}</b> ישתנה מ־<b>{oldsize}</b> ל־<b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
@@ -511,13 +484,6 @@
       "sysname": {}
     }
   },
-  "notEnoughDiskSpaceHasOnly": "במחשב זה יש רק {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "writeChangesPartitionFormatted": "מחיצה <b>{sysname}</b> פורמטה בתור <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
@@ -532,13 +498,6 @@
     "placeholders": {
       "sysname": {},
       "mount": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "גודל הכונן הגדול ביותר במחשב הזה הוא {SIZE} בלבד.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
     }
   },
   "installingSystem": "המערכת מותקנת…",

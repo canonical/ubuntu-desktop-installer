@@ -26,14 +26,6 @@
   "@partitionFormatLabel": {},
   "writeChangesDescription": "Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.",
   "@writeChangesDescription": {},
-  "writeChangesPartitionEntryUnmounted": "partíció #<{sysname} mint {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "installationTypeDualOSDetected": "Ezen a számítógépen jelenleg {os1} és {os2} van. Mit szeretne tenni?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -80,8 +72,6 @@
   "@newPartitionTableConfirmationMessage": {},
   "partitionLocationEnd": "A hely vége",
   "@partitionLocationEnd": {},
-  "identityShowPassword": "Jelszó megjelenítése",
-  "@identityShowPassword": {},
   "writeChangesToDisk": "Telepítésre kész",
   "@writeChangesToDisk": {},
   "writeChangesFallbackSerial": "lemez",
@@ -428,15 +418,6 @@
       "os": {}
     }
   },
-  "writeChangesPartitionEntryMounted": "#{sysname} partíció, mint {format} a {mount} esetében",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "windowTitle": "A(z) {RELEASE} telepítése",
   "@windowTitle": {
     "type": "text",
@@ -535,21 +516,6 @@
   "@configuringSystem": {},
   "notEnoughDiskSpaceTitle": "Nincs elegendő hely",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "A {RELEASE} telepítéséhez legalább {SIZE} lemezterületre van szüksége.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "A legnagyobb lemez ezen a számítógépen csak {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "showSecurityKey": "Biztonsági kulcs megjelenítése",
   "@showSecurityKey": {},
   "writeChangesPartitionCreated": "<b>{sysname}</b> partíció létrehozva",
@@ -597,13 +563,6 @@
   },
   "quitButtonText": "Kilépés a telepítésből",
   "@quitButtonText": {},
-  "notEnoughDiskSpaceHasOnly": "Ez a számítógép csak {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "restartNow": "Újraindítás most",
   "@restartNow": {},
   "installDriversTitle": "Harmadik féltől származó szoftverek telepítése grafikus és Wi-Fi-hardverekhez",

@@ -190,8 +190,6 @@
   "@identityInvalidUsername": {},
   "identityPasswordLabel": "Parola seç",
   "@identityPasswordLabel": {},
-  "identityShowPassword": "Parolayı göster",
-  "@identityShowPassword": {},
   "timezonePageTitle": "Saat diliminizi seçin",
   "@timezonePageTitle": {},
   "timezoneLocationLabel": "Konum",
@@ -541,28 +539,6 @@
   },
   "notEnoughDiskSpaceTitle": "Yeterli alan yok",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "{RELEASE} kurmak için en az {SIZE} disk alanına ihtiyacınız var.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Bu bilgisayarda yalnızca {SIZE} alan var.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Bu bilgisayardaki en büyük disk yalnızca {SIZE} boyutunda.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "showSecurityKey": "Güvenlik anahtarını göster",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM ve şifreleme seçildi",

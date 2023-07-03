@@ -271,14 +271,6 @@
       "system": {}
     }
   },
-  "writeChangesPartitionEntryUnmounted": "oddíl č. {sysname} jako {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "readyToUse": "**{system}** je nainstalované a připravené k použití",
   "@readyToUse": {
     "type": "text",
@@ -296,15 +288,6 @@
   "@themePageHeader": {},
   "themePageTitle": "Zvolte si motiv vzhledu",
   "@themePageTitle": {},
-  "writeChangesPartitionEntryMounted": "oddíl č. {sysname} jako {format}, použitý pro {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "writeChangesPartitionsHeader": "Budou provedeny následující změny na oddílech:",
   "@writeChangesPartitionsHeader": {},
   "writeChangesPartitionTablesHeader": "Budou změněny tabulky rozdělení na oddíly následujících zařízení:",
@@ -460,8 +443,6 @@
   "@hiddenWifiNetworkNameRequired": {},
   "hiddenWifiNetwork": "Připojit ke skryté Wi-Fi síti",
   "@hiddenWifiNetwork": {},
-  "identityShowPassword": "Zobrazit heslo",
-  "@identityShowPassword": {},
   "installationTypeDualOSDetected": "Na tomto počítači se už nacházejí {os1} a {os2}. Co si přejete udělat?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -490,13 +471,6 @@
   "@installingSystem": {},
   "configuringSystem": "Nastavování systému…",
   "@configuringSystem": {},
-  "notEnoughDiskSpaceBiggestDisk": "Největší disk v tomto počítači má velikost pouze {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installationTypeAlongsideDual": "Nainstalovat {product} vedle {os1} a {os2}",
   "@installationTypeAlongsideDual": {
     "type": "text",
@@ -550,21 +524,6 @@
   },
   "showSecurityKey": "Zobrazit klíč zabezpečení",
   "@showSecurityKey": {},
-  "notEnoughDiskSpaceHeader": "Aby bylo možné nainstalovat {RELEASE}, je zapotřebí alespoň {SIZE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Tento počítač disponuje pouze {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installationTypeAlongsideMulti": "Nainstalovat {product} vedle nich",
   "@installationTypeAlongsideMulti": {
     "type": "text",

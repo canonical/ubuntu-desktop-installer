@@ -321,31 +321,12 @@
   },
   "newPartitionTableConfirmationMessage": "Создание новой таблицы разделов на этом устройстве удалит все его текущие разделы. При необходимости эту операцию можно отменить.",
   "@newPartitionTableConfirmationMessage": {},
-  "identityShowPassword": "Показать пароль",
-  "@identityShowPassword": {},
   "timezonePageTitle": "Выберите свой часовой пояс",
   "@timezonePageTitle": {},
   "timezoneLocationLabel": "Место нахождения",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Часовой пояс",
   "@timezoneTimezoneLabel": {},
-  "writeChangesPartitionEntryUnmounted": "раздел #{sysname} как {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
-  "writeChangesPartitionEntryMounted": "раздел #{sysname} как {format} используется для {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "connectToInternetPageTitle": "Подключение к сети",
   "@connectToInternetPageTitle": {},
   "noWiredConnection": "Проводное подключение не обнаружено",
@@ -502,30 +483,8 @@
   "@installingSystem": {},
   "configuringSystem": "Настройка системы…",
   "@configuringSystem": {},
-  "notEnoughDiskSpaceHeader": "Вам потребуется как минимум {SIZE} дискового пространства для установки {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "notEnoughDiskSpaceTitle": "Недостаточно места",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHasOnly": "На этом компьютере имеется только {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Самый большой диск на этом компьютере имеет всего {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "writeChangesPartitionFormattedMounted": "раздел <b>{sysname}</b> отформатирован как <b>{format}</b> и использован для <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",

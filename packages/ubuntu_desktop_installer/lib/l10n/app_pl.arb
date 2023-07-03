@@ -131,14 +131,6 @@
   "@identityInvalidUsername": {},
   "writeChangesPartitionsHeader": "Zostaną zastosowane następujące zmiany partycji:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryUnmounted": "partycja #{sysname} jako {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "restartButtonText": "Uruchom ponownie",
   "@restartButtonText": {},
   "revertButtonText": "Przywróć",
@@ -304,15 +296,6 @@
       "path": {}
     }
   },
-  "writeChangesPartitionEntryMounted": "partycja #{sysname} jako {format} używana do {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "themePageTitle": "Wybierz swój motyw",
   "@themePageTitle": {},
   "themePageHeader": "Zawsze możesz zmienić to później w ustawieniach wyglądu.",
@@ -405,8 +388,6 @@
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameRequired": "Wymagana jest nazwa sieci",
   "@hiddenWifiNetworkNameRequired": {},
-  "identityShowPassword": "Pokaż hasło",
-  "@identityShowPassword": {},
   "installationTypeDualOSDetected": "Na tym komputerze są obecnie zainstalowane systemy {os1} i {os2}. Co chcesz zrobić?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -517,28 +498,6 @@
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
-    }
-  },
-  "notEnoughDiskSpaceHeader": "Potrzebujesz co najmniej {SIZE} przestrzeni dyskowej, aby zainstalować {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Ten komputer ma tylko {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Największy dysk na tym komputerze ma tylko {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
     }
   },
   "configuringSystem": "Konfigurowanie systemu…",

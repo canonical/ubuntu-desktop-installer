@@ -104,34 +104,6 @@
   },
   "writeChangesPartitionsHeader": "Se aplicarán los cambios siguientes a las particiones:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryPrimaryFull": "partición #{partitionNumber} de {diskSerial} ({diskPath}) como {fstype} usada para {mountPath}",
-  "@writeChangesPartitionEntryPrimaryFull": {
-    "description": "Entrada para una partición primaria sin particiones secundarias",
-    "placeholders": {
-      "partitionNumber": {},
-      "diskSerial": {},
-      "diskPath": {},
-      "fstype": {},
-      "mountPath": {}
-    }
-  },
-  "writeChangesPartitionEntryPrimary": "partición #{partitionNumber} de {diskSerial} ({diskPath}) como",
-  "@writeChangesPartitionEntryPrimary": {
-    "description": "Entrada para una partición primaria con particiones secundarias",
-    "placeholders": {
-      "partitionNumber": {},
-      "diskSerial": {},
-      "diskPath": {}
-    }
-  },
-  "writeChangesPartitionEntrySecondary": "        partición # como {fstype} usada para {mountPath}",
-  "@writeChangesPartitionEntrySecondary": {
-    "description": "Entrada para una partición secundaria",
-    "placeholders": {
-      "fstype": {},
-      "mountPath": {}
-    }
-  },
   "themePageTitle": "Elige tu tema",
   "@themePageTitle": {},
   "themePageHeader": "Puede cambiarlo después en la configuración de apariencia.",
@@ -367,8 +339,6 @@
   "@connectToInternetPageTitle": {},
   "hiddenWifiNetwork": "Conectarse a una red Wi-Fi oculta",
   "@hiddenWifiNetwork": {},
-  "identityShowPassword": "Mostrar contraseña",
-  "@identityShowPassword": {},
   "connectToInternetDescription": "Conectar este equipo a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y ayudará a elegir su zona horaria.\n\nConectar por cable Ethernet, o elegir una red Wi-Fi",
   "@connectToInternetDescription": {},
   "hiddenWifiNetworkNameLabel": "Nombre de la red",
@@ -483,28 +453,6 @@
     "type": "text",
     "placeholders": {
       "product": {}
-    }
-  },
-  "notEnoughDiskSpaceHeader": "Por lo menos necesita {SIZE} de espacio en disco para instalar {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "El equipo solo tiene {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "El disco más grande del equipo es de solo {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
     }
   },
   "quitButtonText": "Salir de la instalación",

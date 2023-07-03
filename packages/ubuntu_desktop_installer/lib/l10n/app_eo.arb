@@ -100,14 +100,6 @@
   "@updatesOtherSoftwarePageTitle": {},
   "turnOffRST": "Rapid-Konserveja Tekniko (RST) estas ŝaltita",
   "@turnOffRST": {},
-  "writeChangesPartitionEntryUnmounted": "subdisko #{sysname} kiel {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "releaseNotesLabel": "Vi eble volas legi la <a href=\"{url}\">liverajn notojn</a>.",
   "@releaseNotesLabel": {
     "type": "text",
@@ -311,15 +303,6 @@
   "@writeChangesToDisk": {},
   "writeChangesPartitionsHeader": "La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "subdisko #{sysname} kiel {format} ĉe {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "identityHostnameInfo": "La nomo, kiun ĝi uzas por alparoli aliajn komputilojn.",
   "@identityHostnameInfo": {},
   "partitionErase": "Restrukturi la subdiskon",
@@ -415,8 +398,6 @@
   },
   "installationTypeMultiOSDetected": "Ĉi tiu komputilo aktuale portas instalaĵojn de pluraj mastrumaj sistemoj. Kion vi volas?",
   "@installationTypeMultiOSDetected": {},
-  "identityShowPassword": "Montri pasvorton",
-  "@identityShowPassword": {},
   "identityUsernameInvalidChars": "Tiu salutnomo enhavas nevalidajn signojn.",
   "@identityUsernameInvalidChars": {},
   "identityUsernameInUse": "Tiu salutnomo jam ekzistas.",
@@ -478,20 +459,6 @@
   "@installingSystem": {},
   "configuringSystem": "Agordante la sistemon…",
   "@configuringSystem": {},
-  "notEnoughDiskSpaceBiggestDisk": "La plej granda disko en ĉi tiu komputilo havas nur {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Ĉi tiu komputilo disponas nur ${SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "quitButtonText": "Ĉesi instaladon",
   "@quitButtonText": {},
   "writeChangesPartitionCreated": "krei la subdiskon <b>{sysname}</b>",
@@ -527,14 +494,6 @@
     "placeholders": {
       "sysname": {},
       "mount": {}
-    }
-  },
-  "notEnoughDiskSpaceHeader": "Oni bezonas almenaŭ ${SIZE} da diskspaco por instali ${RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
     }
   },
   "writeChangesPartitionFormatted": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b>",

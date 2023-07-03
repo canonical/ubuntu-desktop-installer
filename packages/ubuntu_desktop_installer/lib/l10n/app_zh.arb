@@ -190,25 +190,8 @@
   "@normalInstallationTitle": {},
   "installationTypeAlongsideInfo": "将保存文件、音乐和其他个人文件。每次启动时，您可以选择所需的操作系统。",
   "@installationTypeAlongsideInfo": {},
-  "writeChangesPartitionEntryMounted": "分区#{sysname}作为{format}用于{mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "repairInstallationDescription": "修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。",
   "@repairInstallationDescription": {},
-  "writeChangesPartitionEntryUnmounted": "分区#{sysname}作为{format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "turnOffBitlockerDescription": "这台电脑使用了 Windows BitLocker 进行加密。\n在安装 Ubuntu 之前，您需要关闭 Windows 的 BitLocker 功能。",
   "@turnOffBitlockerDescription": {},
   "chooseSecurityKeyTitle": "安全密钥",
@@ -462,8 +445,6 @@
   },
   "installationTypeMultiOSDetected": "这台计算机已经安装了多个操作系统。您准备怎么做？",
   "@installationTypeMultiOSDetected": {},
-  "identityShowPassword": "显示密码",
-  "@identityShowPassword": {},
   "installationTypeDualOSDetected": "这台计算机已安装有{os1}与{os2}了。您准备怎么做？",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -556,14 +537,6 @@
   },
   "notEnoughDiskSpaceTitle": "空间不足",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "你至少需要 {SIZE} 的磁盘空间来安装 {RELEASE}。",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "writeChangesPartitionResized": "分区<b>{sysname}</b> 从<b>{oldsize}</b> 调整为<b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
@@ -580,20 +553,6 @@
       "sysname": {},
       "format": {},
       "mount": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "本机只有 {SIZE} 空间。",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "本机上最大的硬盘只有 {SIZE} 空间。",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
     }
   },
   "configuringSystem": "正在设置系统……",

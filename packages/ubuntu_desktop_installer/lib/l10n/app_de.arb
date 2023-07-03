@@ -272,8 +272,6 @@
   "@identityInvalidUsername": {},
   "identityPasswordLabel": "Ein Passwort auswählen",
   "@identityPasswordLabel": {},
-  "identityPassword\n\"Required": "Ein Passwort ist erforderlich",
-  "@identityPassword\n\"Required": {},
   "identityConfirmPasswordLabel": "Bestätigen Sie Ihr Passwort",
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Die Passwörter stimmen nicht überein",
@@ -298,23 +296,6 @@
   },
   "writeChangesPartitionsHeader": "Die folgenden Partitionsänderungen werden vorgenommen:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "Partition #{sysname} als {format} benutzt für {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "Ein Eintrag einer eingehängten Partition",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "Partition #{sysname} als {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "Ein Eintrag einer nicht eingehängten Partition",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "themePageTitle": "Wählen Sie Ihr Thema aus",
   "@themePageTitle": {},
   "themePageHeader": "Sie können dies später in den Einstellungen für das Erscheinungsbild jederzeit ändern.",
@@ -405,8 +386,6 @@
   },
   "installationTypeMultiOSDetected": "Auf diesem Computer sind aktuell mehrere Betriebssysteme installiert. Was möchten Sie tun?",
   "@installationTypeMultiOSDetected": {},
-  "identityShowPassword": "Passwort anzeigen",
-  "@identityShowPassword": {},
   "hiddenWifiNetworkNameLabel": "Netzwerkname",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Der Netzwerkname wird benötigt",
@@ -494,20 +473,6 @@
       "sysname": {}
     }
   },
-  "notEnoughDiskSpaceHasOnly": "Dieser Computer hat nur {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Die größte Festplatte in diesem Computer hat nur {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "writeChangesPartitionFormatted": "Partition <b>{sysname}</b> formatiert als <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
@@ -535,14 +500,6 @@
   },
   "notEnoughDiskSpaceTitle": "Nicht genug Platz",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "Sie benötigen mindestens {SIZE} Festplattenspeicher für die Installation von {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "installingSystem": "System wird installiert …",
   "@installingSystem": {},
   "configuringSystem": "System wird eingerichtet …",

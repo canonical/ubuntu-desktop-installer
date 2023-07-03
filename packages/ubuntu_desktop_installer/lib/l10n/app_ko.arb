@@ -383,15 +383,6 @@
   "@themeDark": {},
   "themeLight": "밝음",
   "@themeLight": {},
-  "writeChangesPartitionEntryMounted": "{mount} 로 사용되는 {format} 포맷의 #{sysname} 파티션",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "newPartitionTableConfirmationTitle": "새로운 빈 파티션",
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "장치 전체에 새 파티션을 생성하면, 기존 파티션은 모두 삭제됩니다. 필요하신 경우 작업을 되돌리실 수 있습니다.",
@@ -402,14 +393,6 @@
   "@diskHeadersFormat": {},
   "partitionFormatLabel": "용도:",
   "@partitionFormatLabel": {},
-  "writeChangesPartitionEntryUnmounted": "#{sysname} 파티션을 {format} 로 포맷",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "writeChangesFallbackSerial": "디스크",
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
@@ -437,8 +420,6 @@
   "@timezoneTimezoneLabel": {},
   "installationTypeMultiOSDetected": "이 컴퓨터에는 여러 운영체제가 설치되어 있습니다. 어떻게 하시겠습니까?",
   "@installationTypeMultiOSDetected": {},
-  "identityShowPassword": "암호 보여주기",
-  "@identityShowPassword": {},
   "installationTypeDualOSDetected": "이 컴퓨터에 이미 {os1} 및 {os2}이(가) 설치되어 있습니다. 어떻게 하시겠습니까?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -529,30 +510,8 @@
       "sysname": {}
     }
   },
-  "notEnoughDiskSpaceHeader": "{RELEASE} 을(를) 설치하려면 적어도 {SIZE}의 디스크 공간이 필요합니다.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "이 컴퓨터는 {SIZE}밖에 없습니다.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "notEnoughDiskSpaceTitle": "공간이 부족합니다",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceBiggestDisk": "이 컴퓨터의 가장 큰 디스크는 {SIZE}밖에 되지 않습니다.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "writeChangesPartitionFormatted": "파티션 <b>{sysname}</b>을(를) <b>{format}</b> (으)로 포맷함",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",

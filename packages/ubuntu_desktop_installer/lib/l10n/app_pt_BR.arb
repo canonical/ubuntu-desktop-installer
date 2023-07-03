@@ -277,23 +277,6 @@
   },
   "writeChangesPartitionsHeader": "As seguintes partições serão formatadas:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "partição #{sysname} como {format} usada para {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "Um registro de partição montada",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "partição #{sysname} como {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "Um registro de partição não montada",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "themePageTitle": "Escolha seu tema",
   "@themePageTitle": {},
   "themePageHeader": "Você pode sempre alterar isso depois nas configurações de aparência.",
@@ -408,8 +391,6 @@
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "Criar uma nova tabela de partição em um dispositivo inteiro removerá todas as suas partições atuais. Esta operação pode ser desfeita se necessário.",
   "@newPartitionTableConfirmationMessage": {},
-  "identityShowPassword": "Mostrar senha",
-  "@identityShowPassword": {},
   "timezonePageTitle": "Selecione seu fuso horário",
   "@timezonePageTitle": {},
   "timezoneLocationLabel": "Localização",
@@ -526,32 +507,10 @@
   "@installDriversTitle": {},
   "installingSystem": "Instalando o sistema…",
   "@installingSystem": {},
-  "notEnoughDiskSpaceHeader": "Você precisa de {SIZE} de espaço no disco para instalar o {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "O maior disco neste computador é de apenas {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installDriversSubtitle": "Esses drivers estão sujeitos aos termos de licença incluídos em suas documentações. Eles são proprietários.",
   "@installDriversSubtitle": {},
   "notEnoughDiskSpaceTitle": "Espaço insuficiente",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHasOnly": "Esse computador tem apenas {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "configuringSystem": "Iniciando o sistema…",
   "@configuringSystem": {},
   "installAlongsideHiddenPartitions": "{num} partições menores estão ocultas, use a <a href=\"{url}\">ferramenta de particionamento avançada</a> para obter mais controle",

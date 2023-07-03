@@ -313,23 +313,6 @@
   },
   "writeChangesPartitionsHeader": "Följande partitionsändringar kommer att tillämpas:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "partition #{sysname} som {format} används för {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "partition #{sysname} som {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "themePageTitle": "Välj ditt tema",
   "@themePageTitle": {},
   "themePageHeader": "Du kan alltid ändra detta senare i utseendeinställningarna.",
@@ -451,8 +434,6 @@
   "@hiddenWifiNetworkNameRequired": {},
   "hiddenWifiNetwork": "Anslut till ett dolt Wi-Fi-nätverk",
   "@hiddenWifiNetwork": {},
-  "identityShowPassword": "Visa lösenord",
-  "@identityShowPassword": {},
   "installationTypeMultiOSDetected": "Den här datorn har för närvarande flera operativsystem på sig. Vad skulle du vilja göra?",
   "@installationTypeMultiOSDetected": {},
   "installationTypeDualOSDetected": "Den här datorn har för närvarande {os1} och {os2} på sig. Vad skulle du vilja göra?",
@@ -552,28 +533,6 @@
   },
   "notEnoughDiskSpaceTitle": "Inte tillräckligt med utrymme",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "Du behöver minst {SIZE} diskutrymme för att installera {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Den här datorn har bara {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Den största disken på den här datorn är bara {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "quitButtonText": "Avbryt installation",
   "@quitButtonText": {},
   "writeChangesPartitionFormattedMounted": "partition <b>{sysname}</b> formaterad som <b>{format}</b> används för <b>{mount}</b>",

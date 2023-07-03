@@ -221,8 +221,6 @@
   "@identityUsernameInUse": {},
   "identityPasswordMismatch": "මුරපද නොගැළපේ",
   "@identityPasswordMismatch": {},
-  "identityShowPassword": "මුරපදය පෙන්වන්න",
-  "@identityShowPassword": {},
   "writeChangesFallbackSerial": "තැටිය",
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
@@ -439,13 +437,6 @@
   "@installationTypeZFS": {},
   "installationTypeAlongsideInfo": "ලේඛන, ගීත සහ අනෙකුත් පෞද්. ගොනු රඳවා ගැනෙයි. පරිගණකය ආරම්භ වන සැමවිට අවශ්‍ය මෙහෙයුම් පද්ධතිය තේරීමට හැකිය.",
   "@installationTypeAlongsideInfo": {},
-  "notEnoughDiskSpaceBiggestDisk": "මෙම පරිගණකයේ විශාලම තැටිය {SIZE} පමණි.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installationTypeOSDetected": "මෙම පරිගණකයෙහි දැනට {os} තිබේ. ඔබ කිරීමට කැමති කුමක්ද?",
   "@installationTypeOSDetected": {
     "type": "text",
@@ -514,13 +505,6 @@
   "@installAlongsidePartition": {},
   "writeChangesDescription": "ඔබ ඉදිරියට ගියහොත්, පහත ලැයිස්තුගත වෙනස්කම් තැටියට ලියනු ඇත. ඔබට අතින් තවත් වෙනස්කම් සිදු කිරීමට හැකි වනු ඇත.",
   "@writeChangesDescription": {},
-  "notEnoughDiskSpaceHasOnly": "මෙම පරිගණකය සතුව {SIZE} පමණක් ඇත.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installationTypeManualInfo": "ඔබටම පංගු සෑදීමට හෝ යළි ප්‍රමාණනයට, හෝ {DISTRO} සඳහා පංගු කිහිපයක් තේරීමට හැකිය",
   "@installationTypeManualInfo": {
     "type": "text",
@@ -589,14 +573,6 @@
   },
   "partitionFormatNone": "පවිත්‍ර නොකර තබන්න",
   "@partitionFormatNone": {},
-  "notEnoughDiskSpaceHeader": "{RELEASE} ස්ථාපනයට අවම වශයෙන් {SIZE} තැටි ඉඩක් අවශ්‍යයි.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "tooManyPrimaryPartitions": "ප්‍රාථමික පංගු බොහෝය",
   "@tooManyPrimaryPartitions": {},
   "partitionEditTitle": "පංගුව සංස්කරණය",

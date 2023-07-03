@@ -269,23 +269,6 @@
   },
   "writeChangesPartitionsHeader": "As seguintes alterações às partições serão aplicadas:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "partição #{sysname} como {format} usada para {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "partição #{sysname} como {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "themePageTitle": "Escolha o seu tema",
   "@themePageTitle": {},
   "themePageHeader": "Pode sempre alterar isso depois nas configurações de aparência.",
@@ -436,8 +419,6 @@
   "@newPartitionTableConfirmationTitle": {},
   "identityUsernameTooLong": "Esse nome é demasiado longo.",
   "@identityUsernameTooLong": {},
-  "identityShowPassword": "Mostrar palavra-passe",
-  "@identityShowPassword": {},
   "writeChangesPartitionResized": "partição <b>{sysname}</b> redimensionada de <b>{oldsize}</b> para <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
@@ -535,13 +516,6 @@
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Este software está sujeito aos termos de licença incluídos com a sua documentação. Alguns são proprietários.",
   "@installCodecsSubtitle": {},
-  "notEnoughDiskSpaceBiggestDisk": "O maior disco deste computador é de apenas {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installingSystem": "A instalar o sistema…",
   "@installingSystem": {},
   "notEnoughDiskSpaceTitle": "Espaço insuficiente",
@@ -552,21 +526,6 @@
   "@configuringSystem": {},
   "installationFailed": "Falha ao instalar",
   "@installationFailed": {},
-  "notEnoughDiskSpaceHeader": "É necessário pelo menos {SIZE} de espaço em disco para instalar o {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Este computador tem apenas {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "restartWarning": "Pode continuar a testar o {RELEASE} agora, mas até reiniciar o computador, quaisquer alterações que faça ou documentos que guarde não serão preservados.",
   "@restartWarning": {
     "type": "text",

@@ -196,23 +196,6 @@
   },
   "writeChangesPartitionsHeader": "Seuraavat osiomuutokset toteutetaan:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "osio #{sysname} tiedostojärjestelmänä {format} liitetty kohtaan {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "osio #{sysname} tiedostojärjestelmänä {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "installationCompleteTitle": "Asennus on valmis",
   "@installationCompleteTitle": {},
   "readyToUse": "**{system}** on asennettu ja on valmis käytettäväksi.",
@@ -415,28 +398,12 @@
   },
   "installationTypeMultiOSDetected": "Tässä tietokoneessa on jo useita käyttöjärjestelmiä. Mitä haluat tehdä?",
   "@installationTypeMultiOSDetected": {},
-  "identityShowPassword": "Näytä salasana",
-  "@identityShowPassword": {},
   "showSecurityKey": "Näytä salausavain",
   "@showSecurityKey": {},
   "restartNow": "Käynnistä uudelleen nyt",
   "@restartNow": {},
   "continueTesting": "Jatka testaamista",
   "@continueTesting": {},
-  "notEnoughDiskSpaceBiggestDisk": "Kapasiteetiltaan suurin levy tässä tietokoneessa on vain {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Tässä tietokoneessa on levytilaa vain {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "copyingFiles": "Kopioidaan tiedostoja…",
   "@copyingFiles": {},
   "installationTypeAlongsideUnknown": "Asenna {product} muiden osioiden rinnalle",
@@ -510,14 +477,6 @@
   "@installationFailed": {},
   "notEnoughDiskSpaceTitle": "Tilaa ei ole riittävästi",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "Tarvitse levytilaa vähintään {SIZE} asentaaksesi {RELEASE}n.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "installDriversTitle": "Asenna kolmannen osapuolen ohjelmistot näytönohjainta ja wifi-laitteistoa varten",
   "@installDriversTitle": {},
   "installDriversSubtitle": "Näihin ajureihin pätee niiden dokumentaation mukana tulevat lisenssiehdot. Nämä ajurit ovat omisteellisia.",
