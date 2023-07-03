@@ -57,8 +57,8 @@
       "system": {}
     }
   },
-  "chooseYourLookPageLightSetting": "בהיר",
-  "@chooseYourLookPageLightSetting": {},
+  "themeLight": "בהיר",
+  "@themeLight": {},
   "chooseSecurityKey": "נא לבחור מפתח אבטחה",
   "@chooseSecurityKey": {},
   "dontInstallDriverSoftwareNow": "לא להתקין את תכנית מנהל ההתקן לבינתיים",
@@ -127,14 +127,14 @@
       "system": {}
     }
   },
-  "chooseYourLookPageDarkSetting": "כהה",
-  "@chooseYourLookPageDarkSetting": {},
+  "themeDark": "כהה",
+  "@themeDark": {},
   "shutdown": "כיבוי",
   "@shutdown": {},
-  "chooseYourLookPageTitle": "נא לבחור את ערכת העיצוב שלך",
-  "@chooseYourLookPageTitle": {},
-  "chooseYourLookPageHeader": "תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.",
-  "@chooseYourLookPageHeader": {},
+  "themePageTitle": "נא לבחור את ערכת העיצוב שלך",
+  "@themePageTitle": {},
+  "themePageHeader": "תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.",
+  "@themePageHeader": {},
   "writeChangesPartitionEntryMounted": "מחיצה מס׳ {sysname} בתור {format} משמשת עבור {mount}",
   "@writeChangesPartitionEntryMounted": {
     "description": "A mounted partition entry",

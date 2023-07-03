@@ -645,16 +645,16 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Wählen Sie Ihr Thema aus';
+  String get themePageTitle => 'Wählen Sie Ihr Thema aus';
 
   @override
-  String get chooseYourLookPageHeader => 'Sie können dies später in den Einstellungen für das Erscheinungsbild jederzeit ändern.';
+  String get themePageHeader => 'Sie können dies später in den Einstellungen für das Erscheinungsbild jederzeit ändern.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dunkel';
+  String get themeDark => 'Dunkel';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Hell';
+  String get themeLight => 'Hell';
 
   @override
   String get installationCompleteTitle => 'Installation abgeschlossen';

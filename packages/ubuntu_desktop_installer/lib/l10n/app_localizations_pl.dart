@@ -645,16 +645,16 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Wybierz swój motyw';
+  String get themePageTitle => 'Wybierz swój motyw';
 
   @override
-  String get chooseYourLookPageHeader => 'Zawsze możesz zmienić to później w ustawieniach wyglądu.';
+  String get themePageHeader => 'Zawsze możesz zmienić to później w ustawieniach wyglądu.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Ciemny';
+  String get themeDark => 'Ciemny';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Jasny';
+  String get themeLight => 'Jasny';
 
   @override
   String get installationCompleteTitle => 'Instalacja zakończona';

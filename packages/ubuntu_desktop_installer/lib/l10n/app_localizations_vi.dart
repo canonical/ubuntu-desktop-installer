@@ -645,16 +645,16 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your theme';
+  String get themePageTitle => 'Choose your theme';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get themePageHeader => 'You can always change this later in the appearance settings.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Dark';
+  String get themeDark => 'Dark';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get themeLight => 'Light';
 
   @override
   String get installationCompleteTitle => 'Installation complete';

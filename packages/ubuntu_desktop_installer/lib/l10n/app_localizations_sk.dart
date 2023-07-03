@@ -645,16 +645,16 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Vyberte si motív vzhľadu';
+  String get themePageTitle => 'Vyberte si motív vzhľadu';
 
   @override
-  String get chooseYourLookPageHeader => 'Môžete ho neskôr kedykoľvek zmeniť v nastaveniach vzhľadu.';
+  String get themePageHeader => 'Môžete ho neskôr kedykoľvek zmeniť v nastaveniach vzhľadu.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Tmavý';
+  String get themeDark => 'Tmavý';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Svetlý';
+  String get themeLight => 'Svetlý';
 
   @override
   String get installationCompleteTitle => 'Inštalácia dokončená';

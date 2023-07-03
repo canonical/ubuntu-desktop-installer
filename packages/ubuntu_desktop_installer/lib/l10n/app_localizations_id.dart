@@ -645,16 +645,16 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Pilih penampilan Anda';
+  String get themePageTitle => 'Pilih penampilan Anda';
 
   @override
-  String get chooseYourLookPageHeader => 'Anda selalu dapat mengubahnya nanti di pengaturan tampilan.';
+  String get themePageHeader => 'Anda selalu dapat mengubahnya nanti di pengaturan tampilan.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Gelap';
+  String get themeDark => 'Gelap';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Terang';
+  String get themeLight => 'Terang';
 
   @override
   String get installationCompleteTitle => 'Instalasi selesai';

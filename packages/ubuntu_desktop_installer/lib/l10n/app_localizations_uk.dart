@@ -645,16 +645,16 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Оберіть зовнішній вигляд';
+  String get themePageTitle => 'Оберіть зовнішній вигляд';
 
   @override
-  String get chooseYourLookPageHeader => 'Ви завжди можете змінити це пізніше в налаштуваннях зовнішнього вигляду.';
+  String get themePageHeader => 'Ви завжди можете змінити це пізніше в налаштуваннях зовнішнього вигляду.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Темний';
+  String get themeDark => 'Темний';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Світлий';
+  String get themeLight => 'Світлий';
 
   @override
   String get installationCompleteTitle => 'Встановлення завершено';

@@ -645,16 +645,16 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Valitse teema';
+  String get themePageTitle => 'Valitse teema';
 
   @override
-  String get chooseYourLookPageHeader => 'Voit vaihtaa ulkoasua milloin tahansa asetusten kautta.';
+  String get themePageHeader => 'Voit vaihtaa ulkoasua milloin tahansa asetusten kautta.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Tumma';
+  String get themeDark => 'Tumma';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Vaalea';
+  String get themeLight => 'Vaalea';
 
   @override
   String get installationCompleteTitle => 'Asennus on valmis';

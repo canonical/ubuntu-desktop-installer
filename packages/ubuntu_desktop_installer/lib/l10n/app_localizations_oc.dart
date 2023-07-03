@@ -645,16 +645,16 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Causissètz vòstre tèma';
+  String get themePageTitle => 'Causissètz vòstre tèma';
 
   @override
-  String get chooseYourLookPageHeader => 'La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.';
+  String get themePageHeader => 'La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Fosc';
+  String get themeDark => 'Fosc';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Clar';
+  String get themeLight => 'Clar';
 
   @override
   String get installationCompleteTitle => 'Installacion acabada';

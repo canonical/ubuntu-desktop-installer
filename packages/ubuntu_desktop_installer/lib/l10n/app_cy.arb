@@ -191,8 +191,8 @@
   "@partitionUnitKB": {},
   "whoAreYouPageRequirePassword": "Gofyn am fy nghyfrinair i fewngofnodi",
   "@whoAreYouPageRequirePassword": {},
-  "chooseYourLookPageLightSetting": "Golau",
-  "@chooseYourLookPageLightSetting": {},
+  "themeLight": "Golau",
+  "@themeLight": {},
   "turnOffBitlockerTitle": "Diffoddwch BitLocker",
   "@turnOffBitlockerTitle": {},
   "musicSlideSpotify": "Spotify",
@@ -271,8 +271,8 @@
       "path": {}
     }
   },
-  "chooseYourLookPageDarkSetting": "Tywyll",
-  "@chooseYourLookPageDarkSetting": {},
+  "themeDark": "Tywyll",
+  "@themeDark": {},
   "installationCompleteTitle": "Gosodi wedi cwblhau",
   "@installationCompleteTitle": {}
 }

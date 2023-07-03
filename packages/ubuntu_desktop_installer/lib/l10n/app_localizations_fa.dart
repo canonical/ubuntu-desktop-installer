@@ -645,16 +645,16 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'گزینش زمینه‌تان';
+  String get themePageTitle => 'گزینش زمینه‌تان';
 
   @override
-  String get chooseYourLookPageHeader => 'بعدها همواره می‌توانید این مورد را در تنظیمات ظاهر تغییر دهید.';
+  String get themePageHeader => 'بعدها همواره می‌توانید این مورد را در تنظیمات ظاهر تغییر دهید.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'تیره';
+  String get themeDark => 'تیره';
 
   @override
-  String get chooseYourLookPageLightSetting => 'روشن';
+  String get themeLight => 'روشن';
 
   @override
   String get installationCompleteTitle => 'نصب کامل شد';

@@ -645,16 +645,16 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => '选择您的主题';
+  String get themePageTitle => '选择您的主题';
 
   @override
-  String get chooseYourLookPageHeader => '稍后您可以在“外观设置”中进行更改。';
+  String get themePageHeader => '稍后您可以在“外观设置”中进行更改。';
 
   @override
-  String get chooseYourLookPageDarkSetting => '深色';
+  String get themeDark => '深色';
 
   @override
-  String get chooseYourLookPageLightSetting => '浅色';
+  String get themeLight => '浅色';
 
   @override
   String get installationCompleteTitle => '安装完成';

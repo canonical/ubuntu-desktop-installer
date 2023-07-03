@@ -645,16 +645,16 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Temanızı seçin';
+  String get themePageTitle => 'Temanızı seçin';
 
   @override
-  String get chooseYourLookPageHeader => 'Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.';
+  String get themePageHeader => 'Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Koyu';
+  String get themeDark => 'Koyu';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Açık';
+  String get themeLight => 'Açık';
 
   @override
   String get installationCompleteTitle => 'Kurulum tamamlandı';

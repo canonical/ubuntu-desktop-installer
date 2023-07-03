@@ -645,16 +645,16 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'உங்கள் தோற்றத்தை தேர்வு செய்யவும்';
+  String get themePageTitle => 'உங்கள் தோற்றத்தை தேர்வு செய்யவும்';
 
   @override
-  String get chooseYourLookPageHeader => 'தோற்ற அமைப்புகளில் இதை எப்போது வேண்டுமானாலும் மாற்றலாம்.';
+  String get themePageHeader => 'தோற்ற அமைப்புகளில் இதை எப்போது வேண்டுமானாலும் மாற்றலாம்.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'கருமை';
+  String get themeDark => 'கருமை';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Light';
+  String get themeLight => 'Light';
 
   @override
   String get installationCompleteTitle => 'நிறுவல் முடிவுற்றது';

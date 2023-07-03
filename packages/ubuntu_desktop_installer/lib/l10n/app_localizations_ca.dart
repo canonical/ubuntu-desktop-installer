@@ -645,16 +645,16 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Trieu l’aspecte';
+  String get themePageTitle => 'Trieu l’aspecte';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get themePageHeader => 'You can always change this later in the appearance settings.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Fosc';
+  String get themeDark => 'Fosc';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Clar';
+  String get themeLight => 'Clar';
 
   @override
   String get installationCompleteTitle => 'S\'ha completat la instal·lació';

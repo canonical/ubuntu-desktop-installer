@@ -1377,29 +1377,29 @@ abstract class AppLocalizations {
   /// **'partition <b>{sysname}</b> created'**
   String writeChangesPartitionCreated(Object sysname);
 
-  /// No description provided for @chooseYourLookPageTitle.
+  /// No description provided for @themePageTitle.
   ///
   /// In en, this message translates to:
   /// **'Choose your theme'**
-  String get chooseYourLookPageTitle;
+  String get themePageTitle;
 
-  /// No description provided for @chooseYourLookPageHeader.
+  /// No description provided for @themePageHeader.
   ///
   /// In en, this message translates to:
   /// **'You can always change this later in the appearance settings.'**
-  String get chooseYourLookPageHeader;
+  String get themePageHeader;
 
-  /// No description provided for @chooseYourLookPageDarkSetting.
+  /// No description provided for @themeDark.
   ///
   /// In en, this message translates to:
   /// **'Dark'**
-  String get chooseYourLookPageDarkSetting;
+  String get themeDark;
 
-  /// No description provided for @chooseYourLookPageLightSetting.
+  /// No description provided for @themeLight.
   ///
   /// In en, this message translates to:
   /// **'Light'**
-  String get chooseYourLookPageLightSetting;
+  String get themeLight;
 
   /// No description provided for @installationCompleteTitle.
   ///

@@ -645,16 +645,16 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Zgjidh pamjen tënde';
+  String get themePageTitle => 'Zgjidh pamjen tënde';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get themePageHeader => 'You can always change this later in the appearance settings.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'E errët';
+  String get themeDark => 'E errët';
 
   @override
-  String get chooseYourLookPageLightSetting => 'E çelur';
+  String get themeLight => 'E çelur';
 
   @override
   String get installationCompleteTitle => 'Instalimi u Kompletua';

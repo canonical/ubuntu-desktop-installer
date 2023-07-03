@@ -387,12 +387,12 @@
       "sysname": {}
     }
   },
-  "chooseYourLookPageHeader": "Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.",
-  "@chooseYourLookPageHeader": {},
-  "chooseYourLookPageDarkSetting": "Tamsus",
-  "@chooseYourLookPageDarkSetting": {},
-  "chooseYourLookPageLightSetting": "Šviesus",
-  "@chooseYourLookPageLightSetting": {},
+  "themePageHeader": "Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.",
+  "@themePageHeader": {},
+  "themeDark": "Tamsus",
+  "@themeDark": {},
+  "themeLight": "Šviesus",
+  "@themeLight": {},
   "welcomeSlideTitle": "Jus sveikina {RELEASE}",
   "@welcomeSlideTitle": {
     "type": "text",
@@ -570,8 +570,8 @@
       "format": {}
     }
   },
-  "chooseYourLookPageTitle": "Pasirinkite apipavidalinimą",
-  "@chooseYourLookPageTitle": {},
+  "themePageTitle": "Pasirinkite apipavidalinimą",
+  "@themePageTitle": {},
   "turnOffBitlockerLinkInstructions": "Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://{url}\">{url}</a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",

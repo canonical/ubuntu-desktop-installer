@@ -645,16 +645,16 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => '테마를 선택하십시오';
+  String get themePageTitle => '테마를 선택하십시오';
 
   @override
-  String get chooseYourLookPageHeader => '모양 설정에서 언제든 변경하실 수 있습니다.';
+  String get themePageHeader => '모양 설정에서 언제든 변경하실 수 있습니다.';
 
   @override
-  String get chooseYourLookPageDarkSetting => '어두움';
+  String get themeDark => '어두움';
 
   @override
-  String get chooseYourLookPageLightSetting => '밝음';
+  String get themeLight => '밝음';
 
   @override
   String get installationCompleteTitle => '설치 완료';

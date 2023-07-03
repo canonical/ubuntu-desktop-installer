@@ -645,16 +645,16 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Elektu vian etoson';
+  String get themePageTitle => 'Elektu vian etoson';
 
   @override
-  String get chooseYourLookPageHeader => 'Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.';
+  String get themePageHeader => 'Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Malhela';
+  String get themeDark => 'Malhela';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Hela';
+  String get themeLight => 'Hela';
 
   @override
   String get installationCompleteTitle => 'Instalado finiĝis';

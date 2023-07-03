@@ -645,16 +645,16 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'נא לבחור את ערכת העיצוב שלך';
+  String get themePageTitle => 'נא לבחור את ערכת העיצוב שלך';
 
   @override
-  String get chooseYourLookPageHeader => 'תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.';
+  String get themePageHeader => 'תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'כהה';
+  String get themeDark => 'כהה';
 
   @override
-  String get chooseYourLookPageLightSetting => 'בהיר';
+  String get themeLight => 'בהיר';
 
   @override
   String get installationCompleteTitle => 'ההתקנה הושלמה';
