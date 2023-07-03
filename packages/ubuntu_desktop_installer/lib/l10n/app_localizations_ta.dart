@@ -522,76 +522,76 @@ class AppLocalizationsTa extends AppLocalizations {
   String get partitionMountPointLabel => 'Mount point:';
 
   @override
-  String get whoAreYouPageTitle => 'நீங்கள் யார்?';
+  String get identityPageTitle => 'நீங்கள் யார்?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'தானியங்கியாக உள்நுழையவும்';
+  String get identityAutoLogin => 'தானியங்கியாக உள்நுழையவும்';
 
   @override
-  String get whoAreYouPageRequirePassword => 'உள்நுழைய எனது கடவுச்சொல் தேவை';
+  String get identityRequirePassword => 'உள்நுழைய எனது கடவுச்சொல் தேவை';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'உங்கள் பெயர்';
+  String get identityRealNameLabel => 'உங்கள் பெயர்';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'ஒரு பெயர் தேவை';
+  String get identityRealNameRequired => 'ஒரு பெயர் தேவை';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get identityRealNameTooLong => 'That name is too long.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'உங்கள் கணினியின் பெயர்';
+  String get identityHostnameLabel => 'உங்கள் கணினியின் பெயர்';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'மற்ற கணினிகளுடன் பேசும்போது அது பயன்படுத்தும் பெயர்.';
+  String get identityHostnameInfo => 'மற்ற கணினிகளுடன் பேசும்போது அது பயன்படுத்தும் பெயர்.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'கணினி பெயர் தேவை';
+  String get identityHostnameRequired => 'கணினி பெயர் தேவை';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get identityHostnameTooLong => 'That computer name is too long.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'கணினியின் பெயர் தவறானது';
+  String get identityInvalidHostname => 'கணினியின் பெயர் தவறானது';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'பயனர்பெயரை தேர்ந்தெடுங்கள்';
+  String get identityUsernameLabel => 'பயனர்பெயரை தேர்ந்தெடுங்கள்';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'ஒரு பயனர்பெயர் தேவை';
+  String get identityUsernameRequired => 'ஒரு பயனர்பெயர் தேவை';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'பயனர்பெயர் தவறானது';
+  String get identityInvalidUsername => 'பயனர்பெயர் தவறானது';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get identityUsernameInUse => 'That user name already exists.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get identityUsernameSystemReserved => 'That name is reserved for system usage.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get identityUsernameTooLong => 'That name is too long.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get identityUsernameInvalidChars => 'That name contains invalid characters.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'கடவுச்சொல்லை தேர்வு செய்யவும்';
+  String get identityPasswordLabel => 'கடவுச்சொல்லை தேர்வு செய்யவும்';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'கடவுச்சொல் தேவை';
+  String get identityPasswordRequired => 'கடவுச்சொல் தேவை';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'உங்கள் கடவுச்சொல்லை உறுதிப்படுத்தவும்';
+  String get identityConfirmPasswordLabel => 'உங்கள் கடவுச்சொல்லை உறுதிப்படுத்தவும்';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'கடவுச்சொற்கள் பொருந்தவில்லை';
+  String get identityPasswordMismatch => 'கடவுச்சொற்கள் பொருந்தவில்லை';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get identityPasswordShow => 'Show';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get identityPasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'Ready to install';

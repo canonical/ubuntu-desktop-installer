@@ -522,76 +522,76 @@ class AppLocalizationsEo extends AppLocalizations {
   String get partitionMountPointLabel => 'Surmetingo:';
 
   @override
-  String get whoAreYouPageTitle => 'Agordu vian konton';
+  String get identityPageTitle => 'Agordu vian konton';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Aŭtomate saluti';
+  String get identityAutoLogin => 'Aŭtomate saluti';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Postuli mian pasvorton por salutado';
+  String get identityRequirePassword => 'Postuli mian pasvorton por salutado';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Via nomo';
+  String get identityRealNameLabel => 'Via nomo';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'Nomo bezoniĝas';
+  String get identityRealNameRequired => 'Nomo bezoniĝas';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'Tiu nomo estas tro longa.';
+  String get identityRealNameTooLong => 'Tiu nomo estas tro longa.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Nomo de via komputilo';
+  String get identityHostnameLabel => 'Nomo de via komputilo';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'La nomo, kiun ĝi uzas por alparoli aliajn komputilojn.';
+  String get identityHostnameInfo => 'La nomo, kiun ĝi uzas por alparoli aliajn komputilojn.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Nomo de komputilo bezoniĝas';
+  String get identityHostnameRequired => 'Nomo de komputilo bezoniĝas';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Tiu nomo estas tro longa.';
+  String get identityHostnameTooLong => 'Tiu nomo estas tro longa.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'La nomo de komputilo ne validas';
+  String get identityInvalidHostname => 'La nomo de komputilo ne validas';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Elektu salutnomon';
+  String get identityUsernameLabel => 'Elektu salutnomon';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Salutnomo bezoniĝas';
+  String get identityUsernameRequired => 'Salutnomo bezoniĝas';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'La salutnomo ne validas';
+  String get identityInvalidUsername => 'La salutnomo ne validas';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Tiu salutnomo jam ekzistas.';
+  String get identityUsernameInUse => 'Tiu salutnomo jam ekzistas.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'Tiu salutnomo estas rezervita por sistema uzado.';
+  String get identityUsernameSystemReserved => 'Tiu salutnomo estas rezervita por sistema uzado.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Tiu salutnomo estas tro longa.';
+  String get identityUsernameTooLong => 'Tiu salutnomo estas tro longa.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'Tiu salutnomo enhavas nevalidajn signojn.';
+  String get identityUsernameInvalidChars => 'Tiu salutnomo enhavas nevalidajn signojn.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Elektu pasvorton';
+  String get identityPasswordLabel => 'Elektu pasvorton';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'Pasvorto bezoniĝas';
+  String get identityPasswordRequired => 'Pasvorto bezoniĝas';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Konfirmu vian pasvorton';
+  String get identityConfirmPasswordLabel => 'Konfirmu vian pasvorton';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'La pasvortoj ne kongruas';
+  String get identityPasswordMismatch => 'La pasvortoj ne kongruas';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Malkaŝi';
+  String get identityPasswordShow => 'Malkaŝi';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Kaŝi';
+  String get identityPasswordHide => 'Kaŝi';
 
   @override
   String get writeChangesToDisk => 'Preta por instalado';

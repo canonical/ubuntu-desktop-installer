@@ -522,76 +522,76 @@ class AppLocalizationsFi extends AppLocalizations {
   String get partitionMountPointLabel => 'Liitoskohta:';
 
   @override
-  String get whoAreYouPageTitle => 'Määritä tili';
+  String get identityPageTitle => 'Määritä tili';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Kirjaudu sisään automaattisesti';
+  String get identityAutoLogin => 'Kirjaudu sisään automaattisesti';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Vaadi salasana sisäänkirjautumiseen';
+  String get identityRequirePassword => 'Vaadi salasana sisäänkirjautumiseen';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Nimi';
+  String get identityRealNameLabel => 'Nimi';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'Nimi vaaditaan';
+  String get identityRealNameRequired => 'Nimi vaaditaan';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'Nimi on liian pitkä.';
+  String get identityRealNameTooLong => 'Nimi on liian pitkä.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Tietokoneen nimi';
+  String get identityHostnameLabel => 'Tietokoneen nimi';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Nimi, jolla tietokone tunnistautuu toisille tietokoneille.';
+  String get identityHostnameInfo => 'Nimi, jolla tietokone tunnistautuu toisille tietokoneille.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Tietokoneen nimi vaaditaan';
+  String get identityHostnameRequired => 'Tietokoneen nimi vaaditaan';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Tietokoneen nimi on liian pitkä.';
+  String get identityHostnameTooLong => 'Tietokoneen nimi on liian pitkä.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'Tietokoneen nimi on virheellinen';
+  String get identityInvalidHostname => 'Tietokoneen nimi on virheellinen';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Valitse käyttäjätunnus';
+  String get identityUsernameLabel => 'Valitse käyttäjätunnus';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Käyttäjätunnus vaaditaan';
+  String get identityUsernameRequired => 'Käyttäjätunnus vaaditaan';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'Käyttäjätunnus on virheellinen';
+  String get identityInvalidUsername => 'Käyttäjätunnus on virheellinen';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Kyseinen käyttäjänimi on jo olemassa.';
+  String get identityUsernameInUse => 'Kyseinen käyttäjänimi on jo olemassa.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'Kyseinen nimi on varattu järjestelmän käytettäväksi.';
+  String get identityUsernameSystemReserved => 'Kyseinen nimi on varattu järjestelmän käytettäväksi.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Kyseinen nimi on liian pitkä.';
+  String get identityUsernameTooLong => 'Kyseinen nimi on liian pitkä.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'Kyseinen nimi sisältää virheellisiä merkkejä.';
+  String get identityUsernameInvalidChars => 'Kyseinen nimi sisältää virheellisiä merkkejä.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Valitse salasana';
+  String get identityPasswordLabel => 'Valitse salasana';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'Salasana vaaditaan';
+  String get identityPasswordRequired => 'Salasana vaaditaan';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Vahvista salasana';
+  String get identityConfirmPasswordLabel => 'Vahvista salasana';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'Salasanat eivät täsmää';
+  String get identityPasswordMismatch => 'Salasanat eivät täsmää';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Näytä';
+  String get identityPasswordShow => 'Näytä';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Piilota';
+  String get identityPasswordHide => 'Piilota';
 
   @override
   String get writeChangesToDisk => 'Valmis asennukseen';

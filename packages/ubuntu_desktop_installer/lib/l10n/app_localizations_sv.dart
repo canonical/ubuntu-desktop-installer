@@ -522,76 +522,76 @@ class AppLocalizationsSv extends AppLocalizations {
   String get partitionMountPointLabel => 'Monteringspunkt:';
 
   @override
-  String get whoAreYouPageTitle => 'Ställ in ditt konto';
+  String get identityPageTitle => 'Ställ in ditt konto';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Logga in automatiskt';
+  String get identityAutoLogin => 'Logga in automatiskt';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Kräv mitt lösenord för att logga in';
+  String get identityRequirePassword => 'Kräv mitt lösenord för att logga in';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Ditt namn';
+  String get identityRealNameLabel => 'Ditt namn';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'Ett namn krävs';
+  String get identityRealNameRequired => 'Ett namn krävs';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'Det namnet är för långt.';
+  String get identityRealNameTooLong => 'Det namnet är för långt.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Din dators namn';
+  String get identityHostnameLabel => 'Din dators namn';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Namnet den använder när den pratar med andra datorer.';
+  String get identityHostnameInfo => 'Namnet den använder när den pratar med andra datorer.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Ett datornamn krävs';
+  String get identityHostnameRequired => 'Ett datornamn krävs';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Det datornamnet är för långt.';
+  String get identityHostnameTooLong => 'Det datornamnet är för långt.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'Datornamnet är ogiltigt';
+  String get identityInvalidHostname => 'Datornamnet är ogiltigt';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Välj ett användarnamn';
+  String get identityUsernameLabel => 'Välj ett användarnamn';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Ett användarnamn krävs';
+  String get identityUsernameRequired => 'Ett användarnamn krävs';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'Användarnamnet är ogiltigt';
+  String get identityInvalidUsername => 'Användarnamnet är ogiltigt';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Det användarnamnet existerar redan.';
+  String get identityUsernameInUse => 'Det användarnamnet existerar redan.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'Det namnet är reserverat för systemanvändning.';
+  String get identityUsernameSystemReserved => 'Det namnet är reserverat för systemanvändning.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Det namnet är för långt.';
+  String get identityUsernameTooLong => 'Det namnet är för långt.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'Det namnet innehåller ogiltiga tecken.';
+  String get identityUsernameInvalidChars => 'Det namnet innehåller ogiltiga tecken.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Välj ett lösenord';
+  String get identityPasswordLabel => 'Välj ett lösenord';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'Ett lösenord krävs';
+  String get identityPasswordRequired => 'Ett lösenord krävs';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Bekräfta ditt lösenord';
+  String get identityConfirmPasswordLabel => 'Bekräfta ditt lösenord';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'Lösenorden stämmer inte överens';
+  String get identityPasswordMismatch => 'Lösenorden stämmer inte överens';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Visa';
+  String get identityPasswordShow => 'Visa';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Dölj';
+  String get identityPasswordHide => 'Dölj';
 
   @override
   String get writeChangesToDisk => 'Redo att installera';

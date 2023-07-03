@@ -522,76 +522,76 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionMountPointLabel => 'සවිවන ස්ථානය:';
 
   @override
-  String get whoAreYouPageTitle => 'ඔබ කවුද?';
+  String get identityPageTitle => 'ඔබ කවුද?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'ස්වයංක්‍රීයව පිවිසෙන්න';
+  String get identityAutoLogin => 'ස්වයංක්‍රීයව පිවිසෙන්න';
 
   @override
-  String get whoAreYouPageRequirePassword => 'ප්‍රවේශය සඳහා මාගේ මුරපදය වුවමනාය';
+  String get identityRequirePassword => 'ප්‍රවේශය සඳහා මාගේ මුරපදය වුවමනාය';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'ඔබගේ නම';
+  String get identityRealNameLabel => 'ඔබගේ නම';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'නමක් වුවමනාය';
+  String get identityRealNameRequired => 'නමක් වුවමනාය';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get identityRealNameTooLong => 'That name is too long.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'ඔබගේ පරිගණකයේ නම';
+  String get identityHostnameLabel => 'ඔබගේ පරිගණකයේ නම';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'වෙනත් පරිගණක වෙත අමතන විට නම භාවිතා වේ.';
+  String get identityHostnameInfo => 'වෙනත් පරිගණක වෙත අමතන විට නම භාවිතා වේ.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'පරිගණකයට නමක් වුවමනාය';
+  String get identityHostnameRequired => 'පරිගණකයට නමක් වුවමනාය';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get identityHostnameTooLong => 'That computer name is too long.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'පරිගණකයේ නම වැරදිය';
+  String get identityInvalidHostname => 'පරිගණකයේ නම වැරදිය';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'පරිශ්‍රීලක නාමයක් තෝරන්න';
+  String get identityUsernameLabel => 'පරිශ්‍රීලක නාමයක් තෝරන්න';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'පරිශ්‍රීලක නාමයක් වුවමනාය';
+  String get identityUsernameRequired => 'පරිශ්‍රීලක නාමයක් වුවමනාය';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'පරිශ්‍රීලක නාමය වැරදිය';
+  String get identityInvalidUsername => 'පරිශ්‍රීලක නාමය වැරදිය';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'පරිශ්‍රීලක නාමය දැනටමත් පවතී.';
+  String get identityUsernameInUse => 'පරිශ්‍රීලක නාමය දැනටමත් පවතී.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'එම නම පද්ධතියේ භාවිතයට වෙන් කර ඇත.';
+  String get identityUsernameSystemReserved => 'එම නම පද්ධතියේ භාවිතයට වෙන් කර ඇත.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'නම ඉතා දිගයි.';
+  String get identityUsernameTooLong => 'නම ඉතා දිගයි.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'නමෙහි වලංගු නොවන අකුරු අඩංගුය.';
+  String get identityUsernameInvalidChars => 'නමෙහි වලංගු නොවන අකුරු අඩංගුය.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'මුරපදයක් තෝරන්න';
+  String get identityPasswordLabel => 'මුරපදයක් තෝරන්න';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'මුරපදයක් වුවමනාය';
+  String get identityPasswordRequired => 'මුරපදයක් වුවමනාය';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'මුරපදය තහවුරු කරන්න';
+  String get identityConfirmPasswordLabel => 'මුරපදය තහවුරු කරන්න';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'මුරපද නොගැළපේ';
+  String get identityPasswordMismatch => 'මුරපද නොගැළපේ';
 
   @override
-  String get whoAreYouPagePasswordShow => 'පෙන්වන්න';
+  String get identityPasswordShow => 'පෙන්වන්න';
 
   @override
-  String get whoAreYouPagePasswordHide => 'සඟවන්න';
+  String get identityPasswordHide => 'සඟවන්න';
 
   @override
   String get writeChangesToDisk => 'වෙනස්කම් තැටියට ලියන්න';

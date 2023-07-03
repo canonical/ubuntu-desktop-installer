@@ -172,7 +172,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final requiredPasswordSwitch = find.switchButton(
-      tester.lang.whoAreYouPageRequirePassword,
+      tester.lang.identityRequirePassword,
     );
     expect(requiredPasswordSwitch, findsOneWidget);
     expect(requiredPasswordSwitch, isNotChecked);
@@ -185,8 +185,7 @@ void main() {
     final model = buildIdentityModel(showPassword: false);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
-    final showPasswordButton =
-        find.button(tester.lang.whoAreYouPagePasswordShow);
+    final showPasswordButton = find.button(tester.lang.identityPasswordShow);
     expect(showPasswordButton, findsOneWidget);
 
     await tester.tap(showPasswordButton);
@@ -197,8 +196,7 @@ void main() {
     final model = buildIdentityModel(showPassword: true);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
-    final hidePasswordButton =
-        find.button(tester.lang.whoAreYouPagePasswordHide);
+    final hidePasswordButton = find.button(tester.lang.identityPasswordHide);
     expect(hidePasswordButton, findsOneWidget);
 
     await tester.tap(hidePasswordButton);

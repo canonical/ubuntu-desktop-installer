@@ -522,76 +522,76 @@ class AppLocalizationsTr extends AppLocalizations {
   String get partitionMountPointLabel => 'Bağlama noktası:';
 
   @override
-  String get whoAreYouPageTitle => 'Hesap oluşturun';
+  String get identityPageTitle => 'Hesap oluşturun';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Otomatik giriş yap';
+  String get identityAutoLogin => 'Otomatik giriş yap';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Giriş yapmak için parola iste';
+  String get identityRequirePassword => 'Giriş yapmak için parola iste';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Adınız';
+  String get identityRealNameLabel => 'Adınız';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'İsim gereklidir';
+  String get identityRealNameRequired => 'İsim gereklidir';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'Bu isim çok uzun.';
+  String get identityRealNameTooLong => 'Bu isim çok uzun.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'Bilgisayar adı';
+  String get identityHostnameLabel => 'Bilgisayar adı';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'Bu ad, diğer bilgisayarlarla kurulan iletişim esnasında kullanılır.';
+  String get identityHostnameInfo => 'Bu ad, diğer bilgisayarlarla kurulan iletişim esnasında kullanılır.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Bilgisayar adı gereklidir';
+  String get identityHostnameRequired => 'Bilgisayar adı gereklidir';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'Bu bilgisayar ismi çok uzun.';
+  String get identityHostnameTooLong => 'Bu bilgisayar ismi çok uzun.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'Bilgisayar adı geçersiz';
+  String get identityInvalidHostname => 'Bilgisayar adı geçersiz';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Kullanıcı adı seç';
+  String get identityUsernameLabel => 'Kullanıcı adı seç';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Kullanıcı adı gereklidir';
+  String get identityUsernameRequired => 'Kullanıcı adı gereklidir';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'Kullanıcı adı geçersiz';
+  String get identityInvalidUsername => 'Kullanıcı adı geçersiz';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Bu kullanıcı adı zaten var.';
+  String get identityUsernameInUse => 'Bu kullanıcı adı zaten var.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'Bu ad sistem kullanımı için ayrılmış.';
+  String get identityUsernameSystemReserved => 'Bu ad sistem kullanımı için ayrılmış.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Bu ad çok uzun.';
+  String get identityUsernameTooLong => 'Bu ad çok uzun.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'Bu ad geçersiz karakter içeriyor.';
+  String get identityUsernameInvalidChars => 'Bu ad geçersiz karakter içeriyor.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Parola seç';
+  String get identityPasswordLabel => 'Parola seç';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'Parola gereklidir';
+  String get identityPasswordRequired => 'Parola gereklidir';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Parolanızı doğrulayın';
+  String get identityConfirmPasswordLabel => 'Parolanızı doğrulayın';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'Parolalar uyuşmuyor';
+  String get identityPasswordMismatch => 'Parolalar uyuşmuyor';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Göster';
+  String get identityPasswordShow => 'Göster';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Gizle';
+  String get identityPasswordHide => 'Gizle';
 
   @override
   String get writeChangesToDisk => 'Kuruluma hazır';

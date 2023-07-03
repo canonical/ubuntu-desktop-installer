@@ -1155,149 +1155,149 @@ abstract class AppLocalizations {
   /// **'Mount point:'**
   String get partitionMountPointLabel;
 
-  /// No description provided for @whoAreYouPageTitle.
+  /// No description provided for @identityPageTitle.
   ///
   /// In en, this message translates to:
   /// **'Set up your account'**
-  String get whoAreYouPageTitle;
+  String get identityPageTitle;
 
-  /// No description provided for @whoAreYouPageAutoLogin.
+  /// No description provided for @identityAutoLogin.
   ///
   /// In en, this message translates to:
   /// **'Log in automatically'**
-  String get whoAreYouPageAutoLogin;
+  String get identityAutoLogin;
 
-  /// No description provided for @whoAreYouPageRequirePassword.
+  /// No description provided for @identityRequirePassword.
   ///
   /// In en, this message translates to:
   /// **'Require my password to log in'**
-  String get whoAreYouPageRequirePassword;
+  String get identityRequirePassword;
 
-  /// No description provided for @whoAreYouPageRealNameLabel.
+  /// No description provided for @identityRealNameLabel.
   ///
   /// In en, this message translates to:
   /// **'Your name'**
-  String get whoAreYouPageRealNameLabel;
+  String get identityRealNameLabel;
 
-  /// No description provided for @whoAreYouPageRealNameRequired.
+  /// No description provided for @identityRealNameRequired.
   ///
   /// In en, this message translates to:
   /// **'A name is required'**
-  String get whoAreYouPageRealNameRequired;
+  String get identityRealNameRequired;
 
-  /// No description provided for @whoAreYouPageRealNameTooLong.
+  /// No description provided for @identityRealNameTooLong.
   ///
   /// In en, this message translates to:
   /// **'That name is too long.'**
-  String get whoAreYouPageRealNameTooLong;
+  String get identityRealNameTooLong;
 
-  /// No description provided for @whoAreYouPageComputerNameLabel.
+  /// No description provided for @identityHostnameLabel.
   ///
   /// In en, this message translates to:
   /// **'Your computer\'s name'**
-  String get whoAreYouPageComputerNameLabel;
+  String get identityHostnameLabel;
 
-  /// No description provided for @whoAreYouPageComputerNameInfo.
+  /// No description provided for @identityHostnameInfo.
   ///
   /// In en, this message translates to:
   /// **'The name it uses when it talks to other computers.'**
-  String get whoAreYouPageComputerNameInfo;
+  String get identityHostnameInfo;
 
-  /// No description provided for @whoAreYouPageComputerNameRequired.
+  /// No description provided for @identityHostnameRequired.
   ///
   /// In en, this message translates to:
   /// **'A computer name is required'**
-  String get whoAreYouPageComputerNameRequired;
+  String get identityHostnameRequired;
 
-  /// No description provided for @whoAreYouPageComputerNameTooLong.
+  /// No description provided for @identityHostnameTooLong.
   ///
   /// In en, this message translates to:
   /// **'That computer name is too long.'**
-  String get whoAreYouPageComputerNameTooLong;
+  String get identityHostnameTooLong;
 
-  /// No description provided for @whoAreYouPageInvalidComputerName.
+  /// No description provided for @identityInvalidHostname.
   ///
   /// In en, this message translates to:
   /// **'The computer name is invalid'**
-  String get whoAreYouPageInvalidComputerName;
+  String get identityInvalidHostname;
 
-  /// No description provided for @whoAreYouPageUsernameLabel.
+  /// No description provided for @identityUsernameLabel.
   ///
   /// In en, this message translates to:
   /// **'Pick a username'**
-  String get whoAreYouPageUsernameLabel;
+  String get identityUsernameLabel;
 
-  /// No description provided for @whoAreYouPageUsernameRequired.
+  /// No description provided for @identityUsernameRequired.
   ///
   /// In en, this message translates to:
   /// **'A username is required'**
-  String get whoAreYouPageUsernameRequired;
+  String get identityUsernameRequired;
 
-  /// No description provided for @whoAreYouPageInvalidUsername.
+  /// No description provided for @identityInvalidUsername.
   ///
   /// In en, this message translates to:
   /// **'The username is invalid'**
-  String get whoAreYouPageInvalidUsername;
+  String get identityInvalidUsername;
 
-  /// No description provided for @whoAreYouPageUsernameInUse.
+  /// No description provided for @identityUsernameInUse.
   ///
   /// In en, this message translates to:
   /// **'That user name already exists.'**
-  String get whoAreYouPageUsernameInUse;
+  String get identityUsernameInUse;
 
-  /// No description provided for @whoAreYouPageUsernameSystemReserved.
+  /// No description provided for @identityUsernameSystemReserved.
   ///
   /// In en, this message translates to:
   /// **'That name is reserved for system usage.'**
-  String get whoAreYouPageUsernameSystemReserved;
+  String get identityUsernameSystemReserved;
 
-  /// No description provided for @whoAreYouPageUsernameTooLong.
+  /// No description provided for @identityUsernameTooLong.
   ///
   /// In en, this message translates to:
   /// **'That name is too long.'**
-  String get whoAreYouPageUsernameTooLong;
+  String get identityUsernameTooLong;
 
-  /// No description provided for @whoAreYouPageUsernameInvalidChars.
+  /// No description provided for @identityUsernameInvalidChars.
   ///
   /// In en, this message translates to:
   /// **'That name contains invalid characters.'**
-  String get whoAreYouPageUsernameInvalidChars;
+  String get identityUsernameInvalidChars;
 
-  /// No description provided for @whoAreYouPagePasswordLabel.
+  /// No description provided for @identityPasswordLabel.
   ///
   /// In en, this message translates to:
   /// **'Choose a password'**
-  String get whoAreYouPagePasswordLabel;
+  String get identityPasswordLabel;
 
-  /// No description provided for @whoAreYouPagePasswordRequired.
+  /// No description provided for @identityPasswordRequired.
   ///
   /// In en, this message translates to:
   /// **'A password is required'**
-  String get whoAreYouPagePasswordRequired;
+  String get identityPasswordRequired;
 
-  /// No description provided for @whoAreYouPageConfirmPasswordLabel.
+  /// No description provided for @identityConfirmPasswordLabel.
   ///
   /// In en, this message translates to:
   /// **'Confirm your password'**
-  String get whoAreYouPageConfirmPasswordLabel;
+  String get identityConfirmPasswordLabel;
 
-  /// No description provided for @whoAreYouPagePasswordMismatch.
+  /// No description provided for @identityPasswordMismatch.
   ///
   /// In en, this message translates to:
   /// **'The passwords do not match'**
-  String get whoAreYouPagePasswordMismatch;
+  String get identityPasswordMismatch;
 
-  /// No description provided for @whoAreYouPagePasswordShow.
+  /// No description provided for @identityPasswordShow.
   ///
   /// In en, this message translates to:
   /// **'Show'**
-  String get whoAreYouPagePasswordShow;
+  String get identityPasswordShow;
 
-  /// No description provided for @whoAreYouPagePasswordHide.
+  /// No description provided for @identityPasswordHide.
   ///
   /// In en, this message translates to:
   /// **'Hide'**
-  String get whoAreYouPagePasswordHide;
+  String get identityPasswordHide;
 
   /// No description provided for @writeChangesToDisk.
   ///

@@ -522,76 +522,76 @@ class AppLocalizationsMl extends AppLocalizations {
   String get partitionMountPointLabel => 'മൗണ്ട് പോയിന്റ്:';
 
   @override
-  String get whoAreYouPageTitle => 'നിങ്ങൾ ആരാണ്?';
+  String get identityPageTitle => 'നിങ്ങൾ ആരാണ്?';
 
   @override
-  String get whoAreYouPageAutoLogin => 'സ്വയമേവ ലോഗിൻ ചെയ്യുക';
+  String get identityAutoLogin => 'സ്വയമേവ ലോഗിൻ ചെയ്യുക';
 
   @override
-  String get whoAreYouPageRequirePassword => 'ലോഗിൻ ചെയ്യാൻ എന്റെ പാസ്‌വേഡ് ആവശ്യപ്പെടുക';
+  String get identityRequirePassword => 'ലോഗിൻ ചെയ്യാൻ എന്റെ പാസ്‌വേഡ് ആവശ്യപ്പെടുക';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'താങ്കളുടെ പേര്';
+  String get identityRealNameLabel => 'താങ്കളുടെ പേര്';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'ഒരു പേര് ആവശ്യമാണ്';
+  String get identityRealNameRequired => 'ഒരു പേര് ആവശ്യമാണ്';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'That name is too long.';
+  String get identityRealNameTooLong => 'That name is too long.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'നിങ്ങളുടെ കമ്പ്യൂട്ടറിന്റെ പേര്';
+  String get identityHostnameLabel => 'നിങ്ങളുടെ കമ്പ്യൂട്ടറിന്റെ പേര്';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'മറ്റ് കമ്പ്യൂട്ടറുകളുമായി സംസാരിക്കുമ്പോൾ അത് ഉപയോഗിക്കുന്ന പേര്.';
+  String get identityHostnameInfo => 'മറ്റ് കമ്പ്യൂട്ടറുകളുമായി സംസാരിക്കുമ്പോൾ അത് ഉപയോഗിക്കുന്ന പേര്.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'ഒരു കമ്പ്യൂട്ടറിന്റെ പേര് ആവശ്യമാണ്';
+  String get identityHostnameRequired => 'ഒരു കമ്പ്യൂട്ടറിന്റെ പേര് ആവശ്യമാണ്';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'That computer name is too long.';
+  String get identityHostnameTooLong => 'That computer name is too long.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'കമ്പ്യൂട്ടറിന്റെ പേര് അസാധുവാണ്';
+  String get identityInvalidHostname => 'കമ്പ്യൂട്ടറിന്റെ പേര് അസാധുവാണ്';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'ഒരു യൂസർനെയിം തിരഞ്ഞെടുക്കുക';
+  String get identityUsernameLabel => 'ഒരു യൂസർനെയിം തിരഞ്ഞെടുക്കുക';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'ഒരു യൂസർനെയിം ആവശ്യമാണ്';
+  String get identityUsernameRequired => 'ഒരു യൂസർനെയിം ആവശ്യമാണ്';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'യൂസർനെയിം അസാധുവാണ്';
+  String get identityInvalidUsername => 'യൂസർനെയിം അസാധുവാണ്';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'That user name already exists.';
+  String get identityUsernameInUse => 'That user name already exists.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'That name is reserved for system usage.';
+  String get identityUsernameSystemReserved => 'That name is reserved for system usage.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'That name is too long.';
+  String get identityUsernameTooLong => 'That name is too long.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'That name contains invalid characters.';
+  String get identityUsernameInvalidChars => 'That name contains invalid characters.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'ഒരു പാസ്വേഡ് തിരഞ്ഞെടുക്കുക';
+  String get identityPasswordLabel => 'ഒരു പാസ്വേഡ് തിരഞ്ഞെടുക്കുക';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'ഒരു പാസ്‌വേഡ് ആവശ്യമാണ്';
+  String get identityPasswordRequired => 'ഒരു പാസ്‌വേഡ് ആവശ്യമാണ്';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'നിങ്ങളുടെ പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക';
+  String get identityConfirmPasswordLabel => 'നിങ്ങളുടെ പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല';
+  String get identityPasswordMismatch => 'പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Show';
+  String get identityPasswordShow => 'Show';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Hide';
+  String get identityPasswordHide => 'Hide';
 
   @override
   String get writeChangesToDisk => 'ഡിസ്കിൽ മാറ്റങ്ങൾ എഴുതുക';

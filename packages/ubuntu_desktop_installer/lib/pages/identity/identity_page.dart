@@ -28,7 +28,7 @@ class IdentityPage extends ConsumerWidget {
     return WizardPage(
       contentPadding: EdgeInsets.zero,
       title: YaruWindowTitleBar(
-        title: Text(lang.whoAreYouPageTitle),
+        title: Text(lang.identityPageTitle),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
         final fieldPadding =

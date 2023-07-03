@@ -522,76 +522,76 @@ class AppLocalizationsKo extends AppLocalizations {
   String get partitionMountPointLabel => '마운트 위치:';
 
   @override
-  String get whoAreYouPageTitle => '계정을 설정하십시오';
+  String get identityPageTitle => '계정을 설정하십시오';
 
   @override
-  String get whoAreYouPageAutoLogin => '자동으로 로그인';
+  String get identityAutoLogin => '자동으로 로그인';
 
   @override
-  String get whoAreYouPageRequirePassword => '로그인 할 때 암호 요구';
+  String get identityRequirePassword => '로그인 할 때 암호 요구';
 
   @override
-  String get whoAreYouPageRealNameLabel => '이름';
+  String get identityRealNameLabel => '이름';
 
   @override
-  String get whoAreYouPageRealNameRequired => '이름이 필요합니다';
+  String get identityRealNameRequired => '이름이 필요합니다';
 
   @override
-  String get whoAreYouPageRealNameTooLong => '너무 긴 이름입니다.';
+  String get identityRealNameTooLong => '너무 긴 이름입니다.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => '컴퓨터 이름';
+  String get identityHostnameLabel => '컴퓨터 이름';
 
   @override
-  String get whoAreYouPageComputerNameInfo => '다른 컴퓨터와 통신할 때 사용하는 이름 입니다.';
+  String get identityHostnameInfo => '다른 컴퓨터와 통신할 때 사용하는 이름 입니다.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => '컴퓨터 이름이 필요합니다';
+  String get identityHostnameRequired => '컴퓨터 이름이 필요합니다';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => '너무 긴 컴퓨터 이름입니다.';
+  String get identityHostnameTooLong => '너무 긴 컴퓨터 이름입니다.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => '올바르지 않은 컴퓨터 이름 입니다';
+  String get identityInvalidHostname => '올바르지 않은 컴퓨터 이름 입니다';
 
   @override
-  String get whoAreYouPageUsernameLabel => '사용자 이름 선택';
+  String get identityUsernameLabel => '사용자 이름 선택';
 
   @override
-  String get whoAreYouPageUsernameRequired => '사용자 이름이 필요합니다';
+  String get identityUsernameRequired => '사용자 이름이 필요합니다';
 
   @override
-  String get whoAreYouPageInvalidUsername => '올바르지 않은 사용자 이름 입니다';
+  String get identityInvalidUsername => '올바르지 않은 사용자 이름 입니다';
 
   @override
-  String get whoAreYouPageUsernameInUse => '해당 사용자 이름이 이미 존재합니다.';
+  String get identityUsernameInUse => '해당 사용자 이름이 이미 존재합니다.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => '시스템 사용을 위해 예약된 사용자 이름입니다.';
+  String get identityUsernameSystemReserved => '시스템 사용을 위해 예약된 사용자 이름입니다.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => '사용자 이름이 너무 깁니다.';
+  String get identityUsernameTooLong => '사용자 이름이 너무 깁니다.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => '사용자 이름에 허용되지 않은 문자가 포함되어 있습니다.';
+  String get identityUsernameInvalidChars => '사용자 이름에 허용되지 않은 문자가 포함되어 있습니다.';
 
   @override
-  String get whoAreYouPagePasswordLabel => '암호 선택';
+  String get identityPasswordLabel => '암호 선택';
 
   @override
-  String get whoAreYouPagePasswordRequired => '암호가 필요합니다';
+  String get identityPasswordRequired => '암호가 필요합니다';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => '암호 확인';
+  String get identityConfirmPasswordLabel => '암호 확인';
 
   @override
-  String get whoAreYouPagePasswordMismatch => '암호가 일치하지 않습니다';
+  String get identityPasswordMismatch => '암호가 일치하지 않습니다';
 
   @override
-  String get whoAreYouPagePasswordShow => '표시';
+  String get identityPasswordShow => '표시';
 
   @override
-  String get whoAreYouPagePasswordHide => '숨기기';
+  String get identityPasswordHide => '숨기기';
 
   @override
   String get writeChangesToDisk => '설치 준비 완료';

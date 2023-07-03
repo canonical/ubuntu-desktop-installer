@@ -522,76 +522,76 @@ class AppLocalizationsFa extends AppLocalizations {
   String get partitionMountPointLabel => 'نقطهٔ سوار کردن:';
 
   @override
-  String get whoAreYouPageTitle => 'برپایی حسابتان';
+  String get identityPageTitle => 'برپایی حسابتان';
 
   @override
-  String get whoAreYouPageAutoLogin => 'ورود خودکار';
+  String get identityAutoLogin => 'ورود خودکار';
 
   @override
-  String get whoAreYouPageRequirePassword => 'برای ورود گذر‌واژه لازم است';
+  String get identityRequirePassword => 'برای ورود گذر‌واژه لازم است';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'نامتان';
+  String get identityRealNameLabel => 'نامتان';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'نامی لازم است';
+  String get identityRealNameRequired => 'نامی لازم است';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'نام بیش از حد طولانی است.';
+  String get identityRealNameTooLong => 'نام بیش از حد طولانی است.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'نام رایانه‌تان';
+  String get identityHostnameLabel => 'نام رایانه‌تان';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'نامی که هنگام صحبت با دیگر رایانه‌ها استفاده می‌کند.';
+  String get identityHostnameInfo => 'نامی که هنگام صحبت با دیگر رایانه‌ها استفاده می‌کند.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'نام رایانه‌ای لازم است';
+  String get identityHostnameRequired => 'نام رایانه‌ای لازم است';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'نام رایانه بیش از حد طولانی است.';
+  String get identityHostnameTooLong => 'نام رایانه بیش از حد طولانی است.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'نام رایانه نامعتبر است';
+  String get identityInvalidHostname => 'نام رایانه نامعتبر است';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'گزینش نام کاربری';
+  String get identityUsernameLabel => 'گزینش نام کاربری';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'نام کاربری‌ای لازم است';
+  String get identityUsernameRequired => 'نام کاربری‌ای لازم است';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'نام کاربری نامعتبر است';
+  String get identityInvalidUsername => 'نام کاربری نامعتبر است';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'این نام کاربری از پیش وجود دارد.';
+  String get identityUsernameInUse => 'این نام کاربری از پیش وجود دارد.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'این نام برای استفادهٔ سامانه کنار گذاشته شده.';
+  String get identityUsernameSystemReserved => 'این نام برای استفادهٔ سامانه کنار گذاشته شده.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'نام بیش از حد طولانی است.';
+  String get identityUsernameTooLong => 'نام بیش از حد طولانی است.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'نام دارای نویسه‌های نامعتبر است.';
+  String get identityUsernameInvalidChars => 'نام دارای نویسه‌های نامعتبر است.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'گزینش گذرواژه';
+  String get identityPasswordLabel => 'گزینش گذرواژه';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'گذرواژه‌ای لازم است';
+  String get identityPasswordRequired => 'گذرواژه‌ای لازم است';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'تأیید گذرواژه‌تان';
+  String get identityConfirmPasswordLabel => 'تأیید گذرواژه‌تان';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'گذرواژه‌ها یکسان نیستند';
+  String get identityPasswordMismatch => 'گذرواژه‌ها یکسان نیستند';
 
   @override
-  String get whoAreYouPagePasswordShow => 'نمایش';
+  String get identityPasswordShow => 'نمایش';
 
   @override
-  String get whoAreYouPagePasswordHide => 'نهفتن';
+  String get identityPasswordHide => 'نهفتن';
 
   @override
   String get writeChangesToDisk => 'آمادهٔ نصب';

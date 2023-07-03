@@ -522,76 +522,76 @@ class AppLocalizationsEs extends AppLocalizations {
   String get partitionMountPointLabel => 'Punto de montaje:';
 
   @override
-  String get whoAreYouPageTitle => 'Crea tú cuenta';
+  String get identityPageTitle => 'Crea tú cuenta';
 
   @override
-  String get whoAreYouPageAutoLogin => 'Acceder automáticamente';
+  String get identityAutoLogin => 'Acceder automáticamente';
 
   @override
-  String get whoAreYouPageRequirePassword => 'Solicitar mi contraseña para acceder';
+  String get identityRequirePassword => 'Solicitar mi contraseña para acceder';
 
   @override
-  String get whoAreYouPageRealNameLabel => 'Su nombre';
+  String get identityRealNameLabel => 'Su nombre';
 
   @override
-  String get whoAreYouPageRealNameRequired => 'Se necesita un nombre';
+  String get identityRealNameRequired => 'Se necesita un nombre';
 
   @override
-  String get whoAreYouPageRealNameTooLong => 'Este nombre es demasiado largo.';
+  String get identityRealNameTooLong => 'Este nombre es demasiado largo.';
 
   @override
-  String get whoAreYouPageComputerNameLabel => 'El nombre del equipo';
+  String get identityHostnameLabel => 'El nombre del equipo';
 
   @override
-  String get whoAreYouPageComputerNameInfo => 'El nombre que utiliza al comunicarse con otros equipos.';
+  String get identityHostnameInfo => 'El nombre que utiliza al comunicarse con otros equipos.';
 
   @override
-  String get whoAreYouPageComputerNameRequired => 'Se necesita un nombre de equipo';
+  String get identityHostnameRequired => 'Se necesita un nombre de equipo';
 
   @override
-  String get whoAreYouPageComputerNameTooLong => 'El nombre del ordenador es demasiado largo.';
+  String get identityHostnameTooLong => 'El nombre del ordenador es demasiado largo.';
 
   @override
-  String get whoAreYouPageInvalidComputerName => 'El nombre del equipo no es válido';
+  String get identityInvalidHostname => 'El nombre del equipo no es válido';
 
   @override
-  String get whoAreYouPageUsernameLabel => 'Elija un nombre de usuario';
+  String get identityUsernameLabel => 'Elija un nombre de usuario';
 
   @override
-  String get whoAreYouPageUsernameRequired => 'Se necesita un nombre de usuario';
+  String get identityUsernameRequired => 'Se necesita un nombre de usuario';
 
   @override
-  String get whoAreYouPageInvalidUsername => 'El nombre de usuario no es válido';
+  String get identityInvalidUsername => 'El nombre de usuario no es válido';
 
   @override
-  String get whoAreYouPageUsernameInUse => 'Ese nombre de usuario ya existe.';
+  String get identityUsernameInUse => 'Ese nombre de usuario ya existe.';
 
   @override
-  String get whoAreYouPageUsernameSystemReserved => 'Ese nombre está reservado para uso del sistema.';
+  String get identityUsernameSystemReserved => 'Ese nombre está reservado para uso del sistema.';
 
   @override
-  String get whoAreYouPageUsernameTooLong => 'Ese nombre es demasiado extenso.';
+  String get identityUsernameTooLong => 'Ese nombre es demasiado extenso.';
 
   @override
-  String get whoAreYouPageUsernameInvalidChars => 'Ese nombre contiene caracteres no válidos.';
+  String get identityUsernameInvalidChars => 'Ese nombre contiene caracteres no válidos.';
 
   @override
-  String get whoAreYouPagePasswordLabel => 'Elija una contraseña';
+  String get identityPasswordLabel => 'Elija una contraseña';
 
   @override
-  String get whoAreYouPagePasswordRequired => 'Se requiere una contraseña';
+  String get identityPasswordRequired => 'Se requiere una contraseña';
 
   @override
-  String get whoAreYouPageConfirmPasswordLabel => 'Confirme su contraseña';
+  String get identityConfirmPasswordLabel => 'Confirme su contraseña';
 
   @override
-  String get whoAreYouPagePasswordMismatch => 'Las contraseñas no coinciden';
+  String get identityPasswordMismatch => 'Las contraseñas no coinciden';
 
   @override
-  String get whoAreYouPagePasswordShow => 'Mostrar';
+  String get identityPasswordShow => 'Mostrar';
 
   @override
-  String get whoAreYouPagePasswordHide => 'Ocultar';
+  String get identityPasswordHide => 'Ocultar';
 
   @override
   String get writeChangesToDisk => 'Listo para instalar';
