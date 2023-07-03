@@ -44,8 +44,8 @@ class _LoadingPageState extends ConsumerState<LoadingPage> {
         ],
       ),
       bottomBar: WizardBar(
-        leading: WizardButton.previous(context),
-        trailing: [WizardButton.next(context)],
+        leading: WizardButton.previous(context, enabled: false),
+        trailing: [WizardButton.next(context, enabled: false)],
       ),
     );
   }
