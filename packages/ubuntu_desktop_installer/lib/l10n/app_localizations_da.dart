@@ -645,16 +645,16 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Vælg til tema';
+  String get themePageTitle => 'Vælg til tema';
 
   @override
-  String get chooseYourLookPageHeader => 'Du kan altid ændre dette senere, i indstillinger for udseende.';
+  String get themePageHeader => 'Du kan altid ændre dette senere, i indstillinger for udseende.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Mørkt';
+  String get themeDark => 'Mørkt';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Lyst';
+  String get themeLight => 'Lyst';
 
   @override
   String get installationCompleteTitle => 'Installation gennemført';

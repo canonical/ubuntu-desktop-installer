@@ -645,16 +645,16 @@ class AppLocalizationsCy extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Choose your theme';
+  String get themePageTitle => 'Choose your theme';
 
   @override
-  String get chooseYourLookPageHeader => 'You can always change this later in the appearance settings.';
+  String get themePageHeader => 'You can always change this later in the appearance settings.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Tywyll';
+  String get themeDark => 'Tywyll';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Golau';
+  String get themeLight => 'Golau';
 
   @override
   String get installationCompleteTitle => 'Gosodi wedi cwblhau';

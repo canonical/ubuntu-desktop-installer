@@ -117,8 +117,8 @@
       "format": {}
     }
   },
-  "chooseYourLookPageHeader": "Anda selalu dapat mengubahnya nanti di pengaturan tampilan.",
-  "@chooseYourLookPageHeader": {},
+  "themePageHeader": "Anda selalu dapat mengubahnya nanti di pengaturan tampilan.",
+  "@themePageHeader": {},
   "partitionErase": "Format partisi",
   "@partitionErase": {},
   "partitionMountPointLabel": "Titik kait:",
@@ -163,10 +163,10 @@
       "path": {}
     }
   },
-  "chooseYourLookPageDarkSetting": "Gelap",
-  "@chooseYourLookPageDarkSetting": {},
-  "chooseYourLookPageLightSetting": "Terang",
-  "@chooseYourLookPageLightSetting": {},
+  "themeDark": "Gelap",
+  "@themeDark": {},
+  "themeLight": "Terang",
+  "@themeLight": {},
   "appTitle": "Penginstal Desktop Ubuntu",
   "@appTitle": {},
   "cancelButtonText": "Batal",
@@ -327,8 +327,8 @@
       "mount": {}
     }
   },
-  "chooseYourLookPageTitle": "Pilih penampilan Anda",
-  "@chooseYourLookPageTitle": {},
+  "themePageTitle": "Pilih penampilan Anda",
+  "@themePageTitle": {},
   "installationCompleteTitle": "Instalasi selesai",
   "@installationCompleteTitle": {},
   "readyToUse": "**{system}** telah terpasang dan siap digunakan.",

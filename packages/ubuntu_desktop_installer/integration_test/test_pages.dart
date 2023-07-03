@@ -518,7 +518,7 @@ Future<void> testThemePage(
   Brightness? theme,
   String? screenshot,
 }) async {
-  await expectPage(tester, ThemePage, (lang) => lang.chooseYourLookPageTitle);
+  await expectPage(tester, ThemePage, (lang) => lang.themePageTitle);
 
   if (theme != null) {
     final asset = find.asset('assets/theme/${theme.name}-theme.png');

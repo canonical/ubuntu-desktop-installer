@@ -645,16 +645,16 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Выберите свою тему';
+  String get themePageTitle => 'Выберите свою тему';
 
   @override
-  String get chooseYourLookPageHeader => 'Вы всегда можете изменить это позже в настройках внешнего вида.';
+  String get themePageHeader => 'Вы всегда можете изменить это позже в настройках внешнего вида.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Тёмный';
+  String get themeDark => 'Тёмный';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Светлый';
+  String get themeLight => 'Светлый';
 
   @override
   String get installationCompleteTitle => 'Установка завершена';

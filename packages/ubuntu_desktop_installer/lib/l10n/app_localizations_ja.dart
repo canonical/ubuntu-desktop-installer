@@ -645,16 +645,16 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'テーマを選択してください。';
+  String get themePageTitle => 'テーマを選択してください。';
 
   @override
-  String get chooseYourLookPageHeader => 'これは、外観設定でいつでも変更できます。';
+  String get themePageHeader => 'これは、外観設定でいつでも変更できます。';
 
   @override
-  String get chooseYourLookPageDarkSetting => '暗い';
+  String get themeDark => '暗い';
 
   @override
-  String get chooseYourLookPageLightSetting => '明るい';
+  String get themeLight => '明るい';
 
   @override
   String get installationCompleteTitle => 'インストールが完了しました';

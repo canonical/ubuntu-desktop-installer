@@ -21,7 +21,7 @@ class ThemePage extends ConsumerWidget {
     final model = ref.watch(themeModelProvider);
     final yaru = YaruTheme.maybeOf(context);
     return WizardPage(
-      header: Text(lang.chooseYourLookPageHeader),
+      header: Text(lang.themePageHeader),
       bottomBar: WizardBar(
         leading: WizardButton.previous(context),
         trailing: [
@@ -29,7 +29,7 @@ class ThemePage extends ConsumerWidget {
         ],
       ),
       title: YaruWindowTitleBar(
-        title: Text(lang.chooseYourLookPageTitle),
+        title: Text(lang.themePageTitle),
       ),
       content: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +43,7 @@ class ThemePage extends ConsumerWidget {
                 assetName: 'assets/theme/light-theme.png',
                 selected: Theme.of(context).brightness == Brightness.light,
                 onTap: () => model.setBrightness(Brightness.light),
-                preferenceName: lang.chooseYourLookPageLightSetting,
+                preferenceName: lang.themeLight,
               ),
               SizedBox(
                 width: width / 20,
@@ -53,7 +53,7 @@ class ThemePage extends ConsumerWidget {
                 assetName: 'assets/theme/dark-theme.png',
                 selected: Theme.of(context).brightness == Brightness.dark,
                 onTap: () => model.setBrightness(Brightness.dark),
-                preferenceName: lang.chooseYourLookPageDarkSetting,
+                preferenceName: lang.themeDark,
               ),
             ],
           ),

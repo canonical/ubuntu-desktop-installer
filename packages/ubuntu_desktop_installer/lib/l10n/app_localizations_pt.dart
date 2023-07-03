@@ -645,16 +645,16 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Escolha o seu tema';
+  String get themePageTitle => 'Escolha o seu tema';
 
   @override
-  String get chooseYourLookPageHeader => 'Pode sempre alterar isso depois nas configurações de aparência.';
+  String get themePageHeader => 'Pode sempre alterar isso depois nas configurações de aparência.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Escuro';
+  String get themeDark => 'Escuro';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Claro';
+  String get themeLight => 'Claro';
 
   @override
   String get installationCompleteTitle => 'Instalação concluída';
@@ -1557,16 +1557,16 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Escolha seu tema';
+  String get themePageTitle => 'Escolha seu tema';
 
   @override
-  String get chooseYourLookPageHeader => 'Você pode sempre alterar isso depois nas configurações de aparência.';
+  String get themePageHeader => 'Você pode sempre alterar isso depois nas configurações de aparência.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Escuro';
+  String get themeDark => 'Escuro';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Claro';
+  String get themeLight => 'Claro';
 
   @override
   String get installationCompleteTitle => 'Instalação concluída';

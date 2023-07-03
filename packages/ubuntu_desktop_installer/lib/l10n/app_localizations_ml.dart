@@ -645,16 +645,16 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'നിങ്ങളുടെ രൂപം തിരഞ്ഞെടുക്കുക';
+  String get themePageTitle => 'നിങ്ങളുടെ രൂപം തിരഞ്ഞെടുക്കുക';
 
   @override
-  String get chooseYourLookPageHeader => 'രൂപഭാവ ക്രമീകരണങ്ങളിൽ നിങ്ങൾക്ക് ഇത് പിന്നീട് എപ്പോൾ വേണമെങ്കിലും മാറ്റാവുന്നതാണ്.';
+  String get themePageHeader => 'രൂപഭാവ ക്രമീകരണങ്ങളിൽ നിങ്ങൾക്ക് ഇത് പിന്നീട് എപ്പോൾ വേണമെങ്കിലും മാറ്റാവുന്നതാണ്.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'ഇരുട്ട്';
+  String get themeDark => 'ഇരുട്ട്';
 
   @override
-  String get chooseYourLookPageLightSetting => 'വെളിച്ചം';
+  String get themeLight => 'വെളിച്ചം';
 
   @override
   String get installationCompleteTitle => 'ഇൻസ്റ്റലേഷൻ പൂർത്തിയായി';

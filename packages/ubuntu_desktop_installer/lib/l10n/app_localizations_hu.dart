@@ -645,16 +645,16 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Téma kiválasztása';
+  String get themePageTitle => 'Téma kiválasztása';
 
   @override
-  String get chooseYourLookPageHeader => 'Ezt később bármikor megváltoztathatja a megjelenési beállításokban.';
+  String get themePageHeader => 'Ezt később bármikor megváltoztathatja a megjelenési beállításokban.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Sötét';
+  String get themeDark => 'Sötét';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Világos';
+  String get themeLight => 'Világos';
 
   @override
   String get installationCompleteTitle => 'A telepítés befejeződött';

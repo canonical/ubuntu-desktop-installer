@@ -645,16 +645,16 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get chooseYourLookPageTitle => 'Pasirinkite apipavidalinimą';
+  String get themePageTitle => 'Pasirinkite apipavidalinimą';
 
   @override
-  String get chooseYourLookPageHeader => 'Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.';
+  String get themePageHeader => 'Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.';
 
   @override
-  String get chooseYourLookPageDarkSetting => 'Tamsus';
+  String get themeDark => 'Tamsus';
 
   @override
-  String get chooseYourLookPageLightSetting => 'Šviesus';
+  String get themeLight => 'Šviesus';
 
   @override
   String get installationCompleteTitle => 'Įdiegimas baigtas';
