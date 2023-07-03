@@ -34,7 +34,7 @@ dependencies:
   path: ^1.8.0
   platform: ^3.1.0
   progress_indicators: ^1.0.0
-  safe_change_notifier: ^0.2.0
+  safe_change_notifier: ^0.3.0
   scroll_to_index: ^3.0.0
   split_view: ^3.2.1
   stdlibc: ^0.1.0
