@@ -1,0 +1,6 @@
+arb-dir: lib/src/l10n
+template-arb-file: ubuntu_provision_en.arb
+output-class: UbuntuProvisionLocalizations
+output-localization-file: ubuntu_provision_localizations.dart
+synthetic-package: false
+nullable-getter: false
