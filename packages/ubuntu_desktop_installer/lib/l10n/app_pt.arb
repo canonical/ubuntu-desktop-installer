@@ -585,7 +585,7 @@
   "@identityHostnameTooLong": {},
   "activeDirectoryErrorTitle": "Erro ao configurando a ligação ao Active Directory",
   "@activeDirectoryErrorTitle": {},
-  "preparingUbuntu": "A preparar o {DISTRO}...",
+  "preparingUbuntu": "A preparar o {DISTRO}…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {
