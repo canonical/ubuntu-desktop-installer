@@ -612,7 +612,7 @@
       "DISTRO": {}
     }
   },
-  "preparingUbuntu": "Preparando o {DISTRO}...",
+  "preparingUbuntu": "Preparando o {DISTRO}…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {
