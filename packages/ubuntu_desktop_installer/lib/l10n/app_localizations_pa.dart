@@ -88,28 +88,28 @@ class AppLocalizationsPa extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'ਕੀ-ਬੋਰਡ ਲੇਆਉਟ';
+  String get keyboardTitle => 'ਕੀ-ਬੋਰਡ ਲੇਆਉਟ';
 
   @override
-  String get chooseYourKeyboardLayout => 'ਆਪਣਾ ਕੀਬੋਰਡ ਲੇਆਉਟ ਚੁਣੋ:';
+  String get keyboardHeader => 'ਆਪਣਾ ਕੀਬੋਰਡ ਲੇਆਉਟ ਚੁਣੋ:';
 
   @override
-  String get typeToTest => 'ਆਪਣੇ ਕੀਬੋਰਡ ਨੂੰ ਟੈਸਟ ਕਰਨ ਲਈ ਇੱਥੇ ਲਿਖੋ';
+  String get keyboardTestHint => 'ਆਪਣੇ ਕੀਬੋਰਡ ਨੂੰ ਟੈਸਟ ਕਰਨ ਲਈ ਇੱਥੇ ਲਿਖੋ';
 
   @override
-  String get detectLayout => 'ਕੀਬੋਰਡ ਲੇਆਉਟ ਖੋਜੋ';
+  String get keyboardDetectTitle => 'ਕੀਬੋਰਡ ਲੇਆਉਟ ਖੋਜੋ';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'ਅੱਗੇ ਦਿੱਤੀਆਂ ਸਵਿੱਚਾਂ ਦੱਬੋ:';
+  String get keyboardPressKeyLabel => 'ਅੱਗੇ ਦਿੱਤੀਆਂ ਸਵਿੱਚਾਂ ਦੱਬੋ:';
 
   @override
-  String get isKeyPresent => 'ਕੀ ਤੁਹਾਡੇ ਕੀਬੋਰਡ ਉੱਤੇ ਅੱਗੇ ਦਿੱਤੀ ਸਵਿੱਚ ਮੌਜੂਦ ਹੈ?';
+  String get keyboardKeyPresentLabel => 'ਕੀ ਤੁਹਾਡੇ ਕੀਬੋਰਡ ਉੱਤੇ ਅੱਗੇ ਦਿੱਤੀ ਸਵਿੱਚ ਮੌਜੂਦ ਹੈ?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

@@ -25,7 +25,7 @@ class KeyboardPage extends ConsumerWidget {
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(lang.keyboardLayoutPageTitle),
+        title: Text(lang.keyboardTitle),
       ),
       content: FractionallySizedBox(
         widthFactor: 0.5,
@@ -34,11 +34,11 @@ class KeyboardPage extends ConsumerWidget {
           children: <Widget>[
             Row(
               children: [
-                Expanded(child: Text(lang.chooseYourKeyboardLayout)),
+                Expanded(child: Text(lang.keyboardHeader)),
                 if (model.canDetectLayout) ...[
                   const SizedBox(width: kWizardSpacing),
                   OutlinedButton(
-                    child: Text(lang.detectButtonText),
+                    child: Text(lang.keyboardDetectButton),
                     onPressed: () async {
                       final result = await showDetectKeyboardDialog(context);
                       if (result != null) {
@@ -78,7 +78,7 @@ class KeyboardPage extends ConsumerWidget {
             const SizedBox(height: kWizardSpacing),
             Row(
               children: [
-                Text(lang.keyboardVariant),
+                Text(lang.keyboardVariantLabel),
                 const SizedBox(width: kWizardSpacing),
                 Expanded(
                   child: MenuButtonBuilder<int>(
@@ -99,7 +99,7 @@ class KeyboardPage extends ConsumerWidget {
             const SizedBox(height: kWizardSpacing),
             TextField(
               decoration: InputDecoration(
-                hintText: lang.typeToTest,
+                hintText: lang.keyboardTestHint,
               ),
             ),
             const SizedBox(height: kWizardSpacing * 2),

@@ -32,7 +32,7 @@ Future<StepResult?> showDetectKeyboardDialog(BuildContext context) async {
           final size = MediaQuery.of(context).size;
           return AlertDialog(
             title: YaruDialogTitleBar(
-              title: Text(lang.detectLayout),
+              title: Text(lang.keyboardDetectTitle),
             ),
             titlePadding: EdgeInsets.zero,
             contentPadding: const EdgeInsets.all(kYaruPagePadding),

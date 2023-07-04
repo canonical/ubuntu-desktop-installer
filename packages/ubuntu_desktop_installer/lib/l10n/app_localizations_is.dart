@@ -88,28 +88,28 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Lyklaborðsútfærsla';
+  String get keyboardTitle => 'Lyklaborðsútfærsla';
 
   @override
-  String get chooseYourKeyboardLayout => 'Veldu lyklaborðsútfærslu:';
+  String get keyboardHeader => 'Veldu lyklaborðsútfærslu:';
 
   @override
-  String get typeToTest => 'Innsláðu hér til að prófa lyklaborðið þitt';
+  String get keyboardTestHint => 'Innsláðu hér til að prófa lyklaborðið þitt';
 
   @override
-  String get detectLayout => 'Greina Sjálfvirkt Lyklaborðsútfærslu';
+  String get keyboardDetectTitle => 'Greina Sjálfvirkt Lyklaborðsútfærslu';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get keyboardPressKeyLabel => 'Please press one of the following keys:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get keyboardKeyPresentLabel => 'Is the following key present on your keyboard?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

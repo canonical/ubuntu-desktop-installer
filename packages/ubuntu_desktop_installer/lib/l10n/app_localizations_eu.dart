@@ -88,28 +88,28 @@ class AppLocalizationsEu extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Teklatuaren diseinua';
+  String get keyboardTitle => 'Teklatuaren diseinua';
 
   @override
-  String get chooseYourKeyboardLayout => 'Aukeratu zure teklatuaren diseinua:';
+  String get keyboardHeader => 'Aukeratu zure teklatuaren diseinua:';
 
   @override
-  String get typeToTest => 'Idatzi hemen zure teklatua probatzeko';
+  String get keyboardTestHint => 'Idatzi hemen zure teklatua probatzeko';
 
   @override
-  String get detectLayout => 'Detektatu teklatuaren diseinua';
+  String get keyboardDetectTitle => 'Detektatu teklatuaren diseinua';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Mesedez, sakatu hurrengo tekletariko bat:';
+  String get keyboardPressKeyLabel => 'Mesedez, sakatu hurrengo tekletariko bat:';
 
   @override
-  String get isKeyPresent => 'Hurrengo tekla zure teklatuan al dago?';
+  String get keyboardKeyPresentLabel => 'Hurrengo tekla zure teklatuan al dago?';
 
   @override
   String get configureSecureBootTitle => 'Konfiguratu abio segurua';

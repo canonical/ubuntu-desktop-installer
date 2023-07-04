@@ -88,28 +88,28 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'የፊደል ገበታ አቀማመጥ';
+  String get keyboardTitle => 'የፊደል ገበታ አቀማመጥ';
 
   @override
-  String get chooseYourKeyboardLayout => 'የፊደል ገበታ ማዘጋጃ ይምረጡ :';
+  String get keyboardHeader => 'የፊደል ገበታ ማዘጋጃ ይምረጡ :';
 
   @override
-  String get typeToTest => 'የፊደል ገበታውን ለመሞከር እዚህ ይጻፉ';
+  String get keyboardTestHint => 'የፊደል ገበታውን ለመሞከር እዚህ ይጻፉ';
 
   @override
-  String get detectLayout => 'የፊደል ገበታ አዘገጃጀቱን በመፈለግ ላይ';
+  String get keyboardDetectTitle => 'የፊደል ገበታ አዘገጃጀቱን በመፈለግ ላይ';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'እባክዎን ከእነዚህ ቁልፎች አንዱን ይጫኑ :';
+  String get keyboardPressKeyLabel => 'እባክዎን ከእነዚህ ቁልፎች አንዱን ይጫኑ :';
 
   @override
-  String get isKeyPresent => 'ይህ የሚቀጥለው ቁልፍ በእርስዎ የፊደል ገብታው ውስጥ አለ?';
+  String get keyboardKeyPresentLabel => 'ይህ የሚቀጥለው ቁልፍ በእርስዎ የፊደል ገብታው ውስጥ አለ?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

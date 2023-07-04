@@ -88,28 +88,28 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Tastaturoppsett';
+  String get keyboardTitle => 'Tastaturoppsett';
 
   @override
-  String get chooseYourKeyboardLayout => 'Velg tastaturoppsettet ditt:';
+  String get keyboardHeader => 'Velg tastaturoppsettet ditt:';
 
   @override
-  String get typeToTest => 'Skriv her for å teste tastaturet';
+  String get keyboardTestHint => 'Skriv her for å teste tastaturet';
 
   @override
-  String get detectLayout => 'Finn tastaturoppsett';
+  String get keyboardDetectTitle => 'Finn tastaturoppsett';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Trykk på en av følgende taster:';
+  String get keyboardPressKeyLabel => 'Trykk på en av følgende taster:';
 
   @override
-  String get isKeyPresent => 'Finnes følgende tast på tastaturet ditt?';
+  String get keyboardKeyPresentLabel => 'Finnes følgende tast på tastaturet ditt?';
 
   @override
   String get configureSecureBootTitle => 'Tilpass Sikkeroppstart';

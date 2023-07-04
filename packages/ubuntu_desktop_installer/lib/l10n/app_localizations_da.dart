@@ -88,28 +88,28 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Tastaturopsætning';
+  String get keyboardTitle => 'Tastaturopsætning';
 
   @override
-  String get chooseYourKeyboardLayout => 'Vælg din tastaturopsætning:';
+  String get keyboardHeader => 'Vælg din tastaturopsætning:';
 
   @override
-  String get typeToTest => 'Tast her, for at afprøve dit tastatur';
+  String get keyboardTestHint => 'Tast her, for at afprøve dit tastatur';
 
   @override
-  String get detectLayout => 'Opfang tastaturopsætning';
+  String get keyboardDetectTitle => 'Opfang tastaturopsætning';
 
   @override
-  String get detectButtonText => 'Opfang';
+  String get keyboardDetectButton => 'Opfang';
 
   @override
-  String get keyboardVariant => 'Tastaturvariant:';
+  String get keyboardVariantLabel => 'Tastaturvariant:';
 
   @override
-  String get pressOneKey => 'Tryk venligst på en af følgende taster:';
+  String get keyboardPressKeyLabel => 'Tryk venligst på en af følgende taster:';
 
   @override
-  String get isKeyPresent => 'Er følgende tast tilstede på dit tastatur?';
+  String get keyboardKeyPresentLabel => 'Er følgende tast tilstede på dit tastatur?';
 
   @override
   String get configureSecureBootTitle => 'Konfigurér Sikret Start';

@@ -88,28 +88,28 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Näppäimistön asettelu';
+  String get keyboardTitle => 'Näppäimistön asettelu';
 
   @override
-  String get chooseYourKeyboardLayout => 'Valitse näppäimistön asettelu:';
+  String get keyboardHeader => 'Valitse näppäimistön asettelu:';
 
   @override
-  String get typeToTest => 'Kokeile näppäimistön asetuksia kirjoittamalla tähän';
+  String get keyboardTestHint => 'Kokeile näppäimistön asetuksia kirjoittamalla tähän';
 
   @override
-  String get detectLayout => 'Tunnista näppäimistön asettelu';
+  String get keyboardDetectTitle => 'Tunnista näppäimistön asettelu';
 
   @override
-  String get detectButtonText => 'Tunnista';
+  String get keyboardDetectButton => 'Tunnista';
 
   @override
-  String get keyboardVariant => 'Näppäimistömuunnelma:';
+  String get keyboardVariantLabel => 'Näppäimistömuunnelma:';
 
   @override
-  String get pressOneKey => 'Paina yhtä seuraavista näppäimistä:';
+  String get keyboardPressKeyLabel => 'Paina yhtä seuraavista näppäimistä:';
 
   @override
-  String get isKeyPresent => 'Löytyykö seuraava näppäin näppäimistöstäsi?';
+  String get keyboardKeyPresentLabel => 'Löytyykö seuraava näppäin näppäimistöstäsi?';
 
   @override
   String get configureSecureBootTitle => 'Määritä Secure Boot';

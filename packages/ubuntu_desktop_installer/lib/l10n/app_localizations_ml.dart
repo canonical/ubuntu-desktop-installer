@@ -88,28 +88,28 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'കീബോർഡിന്റെ ക്രമീകരണം';
+  String get keyboardTitle => 'കീബോർഡിന്റെ ക്രമീകരണം';
 
   @override
-  String get chooseYourKeyboardLayout => 'നിങ്ങളുടെ കീബോർഡിന്റെ ക്രമീകരണം തിരഞ്ഞെടുക്കുക:';
+  String get keyboardHeader => 'നിങ്ങളുടെ കീബോർഡിന്റെ ക്രമീകരണം തിരഞ്ഞെടുക്കുക:';
 
   @override
-  String get typeToTest => 'നിങ്ങളുടെ കീബോർഡ് പരിശോധിക്കാൻ ഇവിടെ ടൈപ്പ് ചെയ്യുക';
+  String get keyboardTestHint => 'നിങ്ങളുടെ കീബോർഡ് പരിശോധിക്കാൻ ഇവിടെ ടൈപ്പ് ചെയ്യുക';
 
   @override
-  String get detectLayout => 'കീബോർഡിന്റെ ക്രമീകരണം കണ്ടുപിടിക്കുക';
+  String get keyboardDetectTitle => 'കീബോർഡിന്റെ ക്രമീകരണം കണ്ടുപിടിക്കുക';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'ഈ കീകളിൽ ഒന്ന് അമർത്തുക:';
+  String get keyboardPressKeyLabel => 'ഈ കീകളിൽ ഒന്ന് അമർത്തുക:';
 
   @override
-  String get isKeyPresent => 'നിങ്ങളുടെ കീബോർഡിൽ ഈ കീ നിലവിലുണ്ടോ?';
+  String get keyboardKeyPresentLabel => 'നിങ്ങളുടെ കീബോർഡിൽ ഈ കീ നിലവിലുണ്ടോ?';
 
   @override
   String get configureSecureBootTitle => 'സെക്യൂർ ബൂട്ട് ക്രമീകരിക്കുക';

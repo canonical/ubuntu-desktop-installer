@@ -88,28 +88,28 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Klavaranĝo';
+  String get keyboardTitle => 'Klavaranĝo';
 
   @override
-  String get chooseYourKeyboardLayout => 'Elektu vian klavaranĝon:';
+  String get keyboardHeader => 'Elektu vian klavaranĝon:';
 
   @override
-  String get typeToTest => 'Tajpu ĉi tie por provi vian klavaron';
+  String get keyboardTestHint => 'Tajpu ĉi tie por provi vian klavaron';
 
   @override
-  String get detectLayout => 'Rekoni klavaranĝon';
+  String get keyboardDetectTitle => 'Rekoni klavaranĝon';
 
   @override
-  String get detectButtonText => 'Identigi';
+  String get keyboardDetectButton => 'Identigi';
 
   @override
-  String get keyboardVariant => 'Klavara varianto:';
+  String get keyboardVariantLabel => 'Klavara varianto:';
 
   @override
-  String get pressOneKey => 'Bonvolu premi unu el la jenaj klavoj:';
+  String get keyboardPressKeyLabel => 'Bonvolu premi unu el la jenaj klavoj:';
 
   @override
-  String get isKeyPresent => 'Ĉu la jena klavo troviĝas en via klavaro?';
+  String get keyboardKeyPresentLabel => 'Ĉu la jena klavo troviĝas en via klavaro?';
 
   @override
   String get configureSecureBootTitle => 'Agordi Sekuran Praŝargon';

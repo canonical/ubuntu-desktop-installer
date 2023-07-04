@@ -88,28 +88,28 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Disposizione della tastiera';
+  String get keyboardTitle => 'Disposizione della tastiera';
 
   @override
-  String get chooseYourKeyboardLayout => 'Scegliere la disposizione della tastiera:';
+  String get keyboardHeader => 'Scegliere la disposizione della tastiera:';
 
   @override
-  String get typeToTest => 'Digitare qui per provare la tastiera';
+  String get keyboardTestHint => 'Digitare qui per provare la tastiera';
 
   @override
-  String get detectLayout => 'Rileva disposizione tastiera';
+  String get keyboardDetectTitle => 'Rileva disposizione tastiera';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Prego premere uno dei seguenti tasti:';
+  String get keyboardPressKeyLabel => 'Prego premere uno dei seguenti tasti:';
 
   @override
-  String get isKeyPresent => 'Il seguente tasto è presente sulla propria tastiera?';
+  String get keyboardKeyPresentLabel => 'Il seguente tasto è presente sulla propria tastiera?';
 
   @override
   String get configureSecureBootTitle => 'Configura Avvio Sicuro';

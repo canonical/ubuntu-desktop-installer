@@ -88,28 +88,28 @@ class AppLocalizationsTa extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'விசைப்பலகை அமைப்பு';
+  String get keyboardTitle => 'விசைப்பலகை அமைப்பு';
 
   @override
-  String get chooseYourKeyboardLayout => 'உங்களின் விசைப்பலகை அமைப்பைத் தேர்வு செய்யவும்:';
+  String get keyboardHeader => 'உங்களின் விசைப்பலகை அமைப்பைத் தேர்வு செய்யவும்:';
 
   @override
-  String get typeToTest => 'உங்கள் விசைப்பலகையை சோதிக்க இங்கு தட்டச்சு செய்யவும்';
+  String get keyboardTestHint => 'உங்கள் விசைப்பலகையை சோதிக்க இங்கு தட்டச்சு செய்யவும்';
 
   @override
-  String get detectLayout => 'விசைப்பலகையின் அமைப்பைக் கண்டறியவும்';
+  String get keyboardDetectTitle => 'விசைப்பலகையின் அமைப்பைக் கண்டறியவும்';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'பின்வரும் விசைகளில் ஒன்றை அழுத்துங்கள்:';
+  String get keyboardPressKeyLabel => 'பின்வரும் விசைகளில் ஒன்றை அழுத்துங்கள்:';
 
   @override
-  String get isKeyPresent => 'பின்வரும் விசை உங்களுடைய தட்டச்சு பலகையில் இருக்கிறதா?';
+  String get keyboardKeyPresentLabel => 'பின்வரும் விசை உங்களுடைய தட்டச்சு பலகையில் இருக்கிறதா?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

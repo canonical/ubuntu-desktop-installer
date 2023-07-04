@@ -88,28 +88,28 @@ class AppLocalizationsSr extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Распоред тастатуре';
+  String get keyboardTitle => 'Распоред тастатуре';
 
   @override
-  String get chooseYourKeyboardLayout => 'Изаберите ваш распоред тастатуре:';
+  String get keyboardHeader => 'Изаберите ваш распоред тастатуре:';
 
   @override
-  String get typeToTest => 'Куцајте овде како би испробали вашу тастатуру';
+  String get keyboardTestHint => 'Куцајте овде како би испробали вашу тастатуру';
 
   @override
-  String get detectLayout => 'Откриј распоред тастатуре';
+  String get keyboardDetectTitle => 'Откриј распоред тастатуре';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Молимо притисните један од следећих тастера:';
+  String get keyboardPressKeyLabel => 'Молимо притисните један од следећих тастера:';
 
   @override
-  String get isKeyPresent => 'Да ли следећи тастер постоји на вашој тастатури?';
+  String get keyboardKeyPresentLabel => 'Да ли следећи тастер постоји на вашој тастатури?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

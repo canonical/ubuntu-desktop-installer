@@ -88,28 +88,28 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Tastaturbelegung';
+  String get keyboardTitle => 'Tastaturbelegung';
 
   @override
-  String get chooseYourKeyboardLayout => 'Wählen Sie Ihre Tastaturbelegung aus:';
+  String get keyboardHeader => 'Wählen Sie Ihre Tastaturbelegung aus:';
 
   @override
-  String get typeToTest => 'Geben Sie hier etwas ein, um Ihre Tastaturbelegung zu überprüfen';
+  String get keyboardTestHint => 'Geben Sie hier etwas ein, um Ihre Tastaturbelegung zu überprüfen';
 
   @override
-  String get detectLayout => 'Tastaturbelegung erkennen';
+  String get keyboardDetectTitle => 'Tastaturbelegung erkennen';
 
   @override
-  String get detectButtonText => 'Erkennen';
+  String get keyboardDetectButton => 'Erkennen';
 
   @override
-  String get keyboardVariant => 'Tastaturvariante:';
+  String get keyboardVariantLabel => 'Tastaturvariante:';
 
   @override
-  String get pressOneKey => 'Bitte drücken Sie eine der folgenden Tasten:';
+  String get keyboardPressKeyLabel => 'Bitte drücken Sie eine der folgenden Tasten:';
 
   @override
-  String get isKeyPresent => 'Ist die folgende Taste auf Ihrer Tastatur vorhanden?';
+  String get keyboardKeyPresentLabel => 'Ist die folgende Taste auf Ihrer Tastatur vorhanden?';
 
   @override
   String get configureSecureBootTitle => 'Secure Boot konfigurieren';

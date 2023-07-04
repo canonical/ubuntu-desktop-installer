@@ -23,7 +23,7 @@ void main() {
     expect(find.text('x'), findsOneWidget);
     expect(find.text('y'), findsOneWidget);
     expect(find.text('z'), findsOneWidget);
-    expect(find.text(tester.lang.pressOneKey), findsOneWidget);
+    expect(find.text(tester.lang.keyboardPressKeyLabel), findsOneWidget);
 
     await tester.sendKeyEvent(LogicalKeyboardKey.keyW, platform: 'linux');
     expect(keyPress, equals(25 - 8));
@@ -39,6 +39,6 @@ void main() {
 
     expect(find.byType(KeyPresentView), findsOneWidget);
     expect(find.text('x'), findsOneWidget);
-    expect(find.text(tester.lang.isKeyPresent), findsOneWidget);
+    expect(find.text(tester.lang.keyboardKeyPresentLabel), findsOneWidget);
   });
 }

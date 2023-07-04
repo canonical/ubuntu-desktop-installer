@@ -32,16 +32,16 @@
       "RELEASE": {}
     }
   },
-  "detectLayout": "Aimsigh leagan amach an méarchláir",
-  "@detectLayout": {},
-  "pressOneKey": "Brúigh cheann de na heochracha se:",
-  "@pressOneKey": {},
-  "chooseYourKeyboardLayout": "Roghnaigh leagan amach do mhéarchláir:",
-  "@chooseYourKeyboardLayout": {},
-  "keyboardLayoutPageTitle": "Leagan amach méarchláir",
-  "@keyboardLayoutPageTitle": {},
-  "isKeyPresent": "An bhfuil an eochair seo ann ar do mhéarchlár?",
-  "@isKeyPresent": {},
-  "typeToTest": "Scríobh anseo chun do mhéarchlár a tástáil",
-  "@typeToTest": {}
+  "keyboardDetectTitle": "Aimsigh leagan amach an méarchláir",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "Brúigh cheann de na heochracha se:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardHeader": "Roghnaigh leagan amach do mhéarchláir:",
+  "@keyboardHeader": {},
+  "keyboardTitle": "Leagan amach méarchláir",
+  "@keyboardTitle": {},
+  "keyboardKeyPresentLabel": "An bhfuil an eochair seo ann ar do mhéarchlár?",
+  "@keyboardKeyPresentLabel": {},
+  "keyboardTestHint": "Scríobh anseo chun do mhéarchlár a tástáil",
+  "@keyboardTestHint": {}
 }

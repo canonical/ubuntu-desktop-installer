@@ -88,28 +88,28 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Distribución del teclado';
+  String get keyboardTitle => 'Distribución del teclado';
 
   @override
-  String get chooseYourKeyboardLayout => 'Elija la distribución del teclado:';
+  String get keyboardHeader => 'Elija la distribución del teclado:';
 
   @override
-  String get typeToTest => 'Escriba aquí para probar el teclado';
+  String get keyboardTestHint => 'Escriba aquí para probar el teclado';
 
   @override
-  String get detectLayout => 'Detectar la distribución del teclado';
+  String get keyboardDetectTitle => 'Detectar la distribución del teclado';
 
   @override
-  String get detectButtonText => 'Detectar';
+  String get keyboardDetectButton => 'Detectar';
 
   @override
-  String get keyboardVariant => 'Variante del teclado:';
+  String get keyboardVariantLabel => 'Variante del teclado:';
 
   @override
-  String get pressOneKey => 'Pulse una de estas teclas:';
+  String get keyboardPressKeyLabel => 'Pulse una de estas teclas:';
 
   @override
-  String get isKeyPresent => '¿Está presente la siguiente tecla en su teclado?';
+  String get keyboardKeyPresentLabel => '¿Está presente la siguiente tecla en su teclado?';
 
   @override
   String get configureSecureBootTitle => 'Configurar Secure Boot';

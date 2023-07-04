@@ -30,12 +30,12 @@
   "@rstDescription": {},
   "rstInstructions": "Voor instructies, open de volgende website op uw telefoon of op een ander apparaat: <a href=\"https://{url}\">{url}</a>",
   "@rstInstructions": {},
-  "keyboardLayoutPageTitle": "Toetsenbordindeling",
-  "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "Kies uw toetsenbordindeling:",
-  "@chooseYourKeyboardLayout": {},
-  "typeToTest": "Type hieronder om het toetsenbord te testen",
-  "@typeToTest": {},
-  "detectLayout": "Toetsenbordindeling bepalen",
-  "@detectLayout": {}
+  "keyboardTitle": "Toetsenbordindeling",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Kies uw toetsenbordindeling:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Type hieronder om het toetsenbord te testen",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Toetsenbordindeling bepalen",
+  "@keyboardDetectTitle": {}
 }

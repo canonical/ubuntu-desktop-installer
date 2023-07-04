@@ -88,28 +88,28 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'キーボードレイアウト';
+  String get keyboardTitle => 'キーボードレイアウト';
 
   @override
-  String get chooseYourKeyboardLayout => 'キーボードレイアウトを選択してください。';
+  String get keyboardHeader => 'キーボードレイアウトを選択してください。';
 
   @override
-  String get typeToTest => 'ここに入力して、キーボードをテストできます';
+  String get keyboardTestHint => 'ここに入力して、キーボードをテストできます';
 
   @override
-  String get detectLayout => 'キーボードレイアウトを検出する';
+  String get keyboardDetectTitle => 'キーボードレイアウトを検出する';
 
   @override
-  String get detectButtonText => '検出';
+  String get keyboardDetectButton => '検出';
 
   @override
-  String get keyboardVariant => 'キーボードバリアント：';
+  String get keyboardVariantLabel => 'キーボードバリアント：';
 
   @override
-  String get pressOneKey => '以下のキーのうち 1 つを押してください。';
+  String get keyboardPressKeyLabel => '以下のキーのうち 1 つを押してください。';
 
   @override
-  String get isKeyPresent => '以下のキーはこのキーボードにありますか？';
+  String get keyboardKeyPresentLabel => '以下のキーはこのキーボードにありますか？';
 
   @override
   String get configureSecureBootTitle => 'セキュアブートの設定';

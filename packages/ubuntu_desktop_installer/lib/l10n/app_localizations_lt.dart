@@ -88,28 +88,28 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Klaviatūros išdėstymas';
+  String get keyboardTitle => 'Klaviatūros išdėstymas';
 
   @override
-  String get chooseYourKeyboardLayout => 'Pasirinkite klaviatūros išdėstymą:';
+  String get keyboardHeader => 'Pasirinkite klaviatūros išdėstymą:';
 
   @override
-  String get typeToTest => 'Rašykite čia, norėdami išbandyti klaviatūrą';
+  String get keyboardTestHint => 'Rašykite čia, norėdami išbandyti klaviatūrą';
 
   @override
-  String get detectLayout => 'Aptikti klaviatūros išdėstymą';
+  String get keyboardDetectTitle => 'Aptikti klaviatūros išdėstymą';
 
   @override
-  String get detectButtonText => 'Aptikti';
+  String get keyboardDetectButton => 'Aptikti';
 
   @override
-  String get keyboardVariant => 'Klaviatūros variantas:';
+  String get keyboardVariantLabel => 'Klaviatūros variantas:';
 
   @override
-  String get pressOneKey => 'Paspauskite vieną iš šių klavišų:';
+  String get keyboardPressKeyLabel => 'Paspauskite vieną iš šių klavišų:';
 
   @override
-  String get isKeyPresent => 'Ar šis klavišas yra jūsų klaviatūroje?';
+  String get keyboardKeyPresentLabel => 'Ar šis klavišas yra jūsų klaviatūroje?';
 
   @override
   String get configureSecureBootTitle => 'Konfigūruoti saugųjį paleidimą';

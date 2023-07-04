@@ -88,28 +88,28 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'تخطيط لوحة المفاتيح';
+  String get keyboardTitle => 'تخطيط لوحة المفاتيح';
 
   @override
-  String get chooseYourKeyboardLayout => 'اختر تخطيط لوحة المفاتيح:';
+  String get keyboardHeader => 'اختر تخطيط لوحة المفاتيح:';
 
   @override
-  String get typeToTest => 'اكتب هنا لتجربة لوحة المفاتيح';
+  String get keyboardTestHint => 'اكتب هنا لتجربة لوحة المفاتيح';
 
   @override
-  String get detectLayout => 'كشف تخطيط لوحة المفاتيح';
+  String get keyboardDetectTitle => 'كشف تخطيط لوحة المفاتيح';
 
   @override
-  String get detectButtonText => 'كشف';
+  String get keyboardDetectButton => 'كشف';
 
   @override
-  String get keyboardVariant => 'نوع لوحة المفاتيح:';
+  String get keyboardVariantLabel => 'نوع لوحة المفاتيح:';
 
   @override
-  String get pressOneKey => 'رجاء اضغط على أحد المفاتيح التالية:';
+  String get keyboardPressKeyLabel => 'رجاء اضغط على أحد المفاتيح التالية:';
 
   @override
-  String get isKeyPresent => 'هل هذا المفتاح موجود على لوحة مفاتيحك؟';
+  String get keyboardKeyPresentLabel => 'هل هذا المفتاح موجود على لوحة مفاتيحك؟';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

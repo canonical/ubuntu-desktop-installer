@@ -46,7 +46,7 @@ void main() {
     final model = buildKeyboardModel();
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    final textField = find.textField(tester.lang.typeToTest);
+    final textField = find.textField(tester.lang.keyboardTestHint);
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'foo bar');
     await tester.pump();
@@ -57,7 +57,7 @@ void main() {
     final model = buildKeyboardModel();
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    final detectButton = find.button(tester.lang.detectButtonText);
+    final detectButton = find.button(tester.lang.keyboardDetectButton);
     expect(detectButton, findsOneWidget);
     await tester.tap(detectButton);
     await tester.pumpAndSettle();
@@ -76,7 +76,7 @@ void main() {
     final model = buildKeyboardModel(canDetectLayout: false);
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    final detectButton = find.button(tester.lang.detectButtonText);
+    final detectButton = find.button(tester.lang.keyboardDetectButton);
     expect(detectButton, findsNothing);
   });
 
