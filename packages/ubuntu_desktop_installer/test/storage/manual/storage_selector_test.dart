@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_selector.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 void main() {
   testWidgets('initial selection', (tester) async {
     await tester.pumpWidget(MaterialApp(
+      localizationsDelegates: GlobalUbuntuLocalizations.delegates,
       home: Scaffold(
         body: Center(
           child: StorageSelector(
@@ -30,6 +32,7 @@ void main() {
     int? selected;
 
     await tester.pumpWidget(MaterialApp(
+      localizationsDelegates: GlobalUbuntuLocalizations.delegates,
       home: Scaffold(
         body: Center(
           child: StorageSelector(
@@ -59,6 +62,7 @@ void main() {
 
   testWidgets('disabled item', (tester) async {
     await tester.pumpWidget(MaterialApp(
+      localizationsDelegates: GlobalUbuntuLocalizations.delegates,
       home: Scaffold(
         body: Center(
           child: StorageSelector(

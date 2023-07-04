@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/storage_button.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/storage_icon.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 String assetPath(String assetName) => 'assets/install_alongside/$assetName';
@@ -10,6 +11,7 @@ void main() {
   testWidgets('Ubuntu without path', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
+        localizationsDelegates: GlobalUbuntuLocalizations.delegates,
         home: Scaffold(
           body: StorageButton(
             name: 'Ubuntu 22.04 LTS',
@@ -32,6 +34,7 @@ void main() {
   testWidgets('Windows with path and format', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
+        localizationsDelegates: GlobalUbuntuLocalizations.delegates,
         home: Scaffold(
           body: StorageButton(
             name: 'Windows 10',
@@ -55,6 +58,7 @@ void main() {
   testWidgets('Unknown without path and format', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
+        localizationsDelegates: GlobalUbuntuLocalizations.delegates,
         home: Scaffold(
           body: StorageButton(
             name: 'Unknown',
