@@ -1,4 +1,3 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:subiquity_client/subiquity_client.dart';
@@ -131,7 +130,7 @@ class StorageSizeColumn extends StorageColumn {
             return Text(lang.diskHeadersSize);
           },
           diskBuilder: (context, disk) {
-            return Text(filesize(disk.size));
+            return Text(context.formatByteSize(disk.size));
           },
           gapBuilder: (context, disk, gap) {
             final lang = AppLocalizations.of(context);
@@ -143,13 +142,13 @@ class StorageSizeColumn extends StorageColumn {
                   ? lang.tooManyPrimaryPartitions
                   : '',
               child: Text(
-                filesize(gap.size),
+                context.formatByteSize(gap.size),
                 style: TextStyle(color: color),
               ),
             );
           },
           partitionBuilder: (context, disk, partition) {
-            return Text(filesize(partition.size ?? 0));
+            return Text(context.formatByteSize(partition.size ?? 0));
           },
         );
 }

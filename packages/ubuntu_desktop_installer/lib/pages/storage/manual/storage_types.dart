@@ -1,4 +1,3 @@
-import 'package:filesize/filesize.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 
 export 'package:subiquity_client/subiquity_client.dart'
@@ -9,16 +8,11 @@ extension GapExtension on Gap {
       usable == GapUsable.TOO_MANY_PRIMARY_PARTS;
 }
 
-extension DiskExtension on Disk {
-  String get prettySize => filesize(size);
-}
-
 extension PartitionExtension on Partition {
   bool get canWipe => PartitionFormat.fromPartition(this)?.canWipe == true;
   bool get canEdit => format != 'BitLocker';
   bool get isEncrypted => format == 'BitLocker';
   bool get isWiped => wipe == 'superblock';
-  String get prettySize => filesize(size ?? 0);
   bool mustWipe(String? format) {
     // a preserved partition must be wiped if its format changed
     return preserve == true && format != null && this.format != format;

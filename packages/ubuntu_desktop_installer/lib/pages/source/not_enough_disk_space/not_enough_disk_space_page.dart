@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/installer.dart';
@@ -53,7 +52,7 @@ class NotEnoughDiskSpacePage extends ConsumerWidget {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          filesize(model.installMinimumSize),
+                          context.formatByteSize(model.installMinimumSize),
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge!
@@ -70,7 +69,7 @@ class NotEnoughDiskSpacePage extends ConsumerWidget {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          filesize(model.largestDiskSize),
+                          context.formatByteSize(model.largestDiskSize),
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge!

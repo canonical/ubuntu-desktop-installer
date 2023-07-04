@@ -1,4 +1,3 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -112,8 +111,8 @@ void main() {
         find.html(tester.lang.writeChangesPartitionMounted('sdb5', '/mnt/5')),
         findsOneWidget);
     expect(
-        find.html(tester.lang
-            .writeChangesPartitionResized('sdb6', filesize(123), filesize(66))),
+        find.html(
+            tester.lang.writeChangesPartitionResized('sdb6', '123 B', '66 B')),
         findsOneWidget);
     expect(find.html(tester.lang.writeChangesPartitionCreated('sdb7')),
         findsOneWidget);

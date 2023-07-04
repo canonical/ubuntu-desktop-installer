@@ -1,4 +1,3 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -9,6 +8,7 @@ import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_mod
 import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_page.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_selector.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_test/yaru_test.dart';
@@ -78,14 +78,16 @@ void main() {
     final model = buildManualStorageModel(disks: testDisks);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(ManualStoragePage));
     for (final disk in testDisks) {
       expect(find.text(disk.sysname), findsOneWidget);
-      expect(find.text(filesize(disk.size)), findsOneWidget);
+      expect(find.text(context.formatByteSize(disk.size)), findsOneWidget);
 
       for (final partition in disk.partitions.whereType<Partition>()) {
         expect(find.text(partition.format!), findsOneWidget);
         expect(find.text(partition.mount!), findsOneWidget);
-        expect(find.text(filesize(partition.size!)), findsOneWidget);
+        expect(
+            find.text(context.formatByteSize(partition.size!)), findsOneWidget);
       }
     }
   });
