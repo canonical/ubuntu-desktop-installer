@@ -630,7 +630,7 @@
   },
   "identityHostnameTooLong": "너무 긴 컴퓨터 이름입니다.",
   "@identityHostnameTooLong": {},
-  "preparingUbuntu": "{DISTRO} 준비 중...",
+  "preparingUbuntu": "{DISTRO} 준비 중…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {
