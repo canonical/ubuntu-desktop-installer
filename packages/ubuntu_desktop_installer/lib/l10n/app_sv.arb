@@ -632,7 +632,7 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Tyvärr, Active Directory kan inte ställas in just nu. när ditt system är igång, besök <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> för hjälp.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "Förbereder {DISTRO}...",
+  "preparingUbuntu": "Förbereder {DISTRO}…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {
