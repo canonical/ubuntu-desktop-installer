@@ -350,7 +350,7 @@ Future<void> testBitLockerPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, BitLockerPage, (lang) => lang.turnOffBitlockerTitle);
+  await expectPage(tester, BitLockerPage, (lang) => lang.bitlockerTitle);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);

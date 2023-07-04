@@ -684,18 +684,18 @@ class AppLocalizationsId extends AppLocalizations {
   String get continueTesting => 'Continue testing';
 
   @override
-  String get turnOffBitlockerTitle => 'Matikan BitLocker';
+  String get bitlockerTitle => 'Matikan BitLocker';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get bitlockerHeader => 'Turn off BitLocker to continue';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'Komputer ini menggunakan enkripsi Windows BitLocker.\nAnda perlu mematikan BitLocker di Windows sebelum memasang Ubuntu.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'Untuk petunjuk, buka halaman ini di ponsel atau perangkat lain: <a href=\"https://$url\">$url</a>';
   }
 

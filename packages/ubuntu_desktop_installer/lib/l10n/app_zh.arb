@@ -147,10 +147,10 @@
   },
   "shutdown": "关机",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "已启用 BitLocker",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerLinkInstructions": "有关说明，请在另一台设备上扫描QR码或访问该网址：<a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "已启用 BitLocker",
+  "@bitlockerTitle": {},
+  "bitlockerInstructions": "有关说明，请在另一台设备上扫描QR码或访问该网址：<a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -192,8 +192,8 @@
   "@installationTypeAlongsideInfo": {},
   "repairInstallationDescription": "修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。",
   "@repairInstallationDescription": {},
-  "turnOffBitlockerDescription": "这台电脑使用了 Windows BitLocker 进行加密。\n在安装 Ubuntu 之前，您需要关闭 Windows 的 BitLocker 功能。",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerDescription": "这台电脑使用了 Windows BitLocker 进行加密。\n在安装 Ubuntu 之前，您需要关闭 Windows 的 BitLocker 功能。",
+  "@bitlockerDescription": {},
   "chooseSecurityKeyTitle": "安全密钥",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHint": "选择一个安全密钥",
@@ -795,8 +795,8 @@
   },
   "rstHeader": "关闭 RST 以继续",
   "@rstHeader": {},
-  "turnOffBitlockerHeadline": "关闭 BitLocker 以继续",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "关闭 BitLocker 以继续",
+  "@bitlockerHeader": {},
   "restartIntoWindowsTitle": "重启到 Windows？",
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "您确定要重新启动计算机吗？您需要稍后重新启动 {DISTRO} 安装程序才能完成安装 {DISTRO}。",

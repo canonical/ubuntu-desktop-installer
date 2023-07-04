@@ -164,8 +164,8 @@
   "@identityHostnameInfo": {},
   "installationTypeLVMSelected": "LVM sélectionné",
   "@installationTypeLVMSelected": {},
-  "turnOffBitlockerTitle": "BitLocker est activé",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "BitLocker est activé",
+  "@bitlockerTitle": {},
   "chooseSecurityKeyHint": "Choisir un code de sécurité",
   "@chooseSecurityKeyHint": {},
   "chooseSecurityKeyConfirmHint": "Confirmer le code de sécurité",
@@ -246,15 +246,15 @@
   "@installationTypeEncrypt": {},
   "configureSecureBootDescription": "Vous avez choisi d’installer des pilotes logiciels tiers. Cela nécessite de désactiver Secure Boot.\nPour cela, vous devez choisir une clé de sécurité maintenant, et l’entrer quand le système démarrera.",
   "@configureSecureBootDescription": {},
-  "turnOffBitlockerLinkInstructions": "Pour obtenir des instructions, scannez le code QR sur un autre appareil ou visitez le site : <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "Pour obtenir des instructions, scannez le code QR sur un autre appareil ou visitez le site : <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "turnOffBitlockerDescription": "Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez utiliser Windows pour créer de l’espace libre ou choisir '{option}' pour continuer.",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerDescription": "Cet ordinateur utilise le chiffrement BitLocker de Windows.\nVous devez utiliser Windows pour créer de l’espace libre ou choisir '{option}' pour continuer.",
+  "@bitlockerDescription": {},
   "restartIntoWindows": "Redémarrer sous Windows",
   "@restartIntoWindows": {},
   "newPartitionTable": "Nouvelle table de partition",
@@ -722,8 +722,8 @@
   "@installationSlidesSupportResources": {},
   "rstHeader": "Désactivez RST pour continuer",
   "@rstHeader": {},
-  "turnOffBitlockerHeadline": "Désactivez BitLocker pour continuer",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Désactivez BitLocker pour continuer",
+  "@bitlockerHeader": {},
   "restartIntoWindowsTitle": "Redémarrer sous Windows ?",
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "Voulez-vous vraiment redémarrer votre ordinateur ? Vous devrez redémarrer l’installation d’{DISTRO} ultérieurement pour compléter l’installation d’{DISTRO}.",

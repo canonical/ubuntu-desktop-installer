@@ -1,7 +1,7 @@
 {
   "@@locale": "he",
-  "turnOffBitlockerLinkInstructions": "לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -44,8 +44,8 @@
   "@secureBootSecurityKeysDontMatch": {},
   "updatesOtherSoftwarePageDescription": "אילו יישומים להתקין בתור התחלה?",
   "@updatesOtherSoftwarePageDescription": {},
-  "turnOffBitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש להשתמש ב־Windows כדי לפנות מקום או לבחור ב‚{option}’ כדי להמשיך.",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerDescription": "המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש להשתמש ב־Windows כדי לפנות מקום או לבחור ב‚{option}’ כדי להמשיך.",
+  "@bitlockerDescription": {},
   "readyToUse": "המערכת **{system}** מותקנת ומוכנה לשימוש",
   "@readyToUse": {
     "type": "text",
@@ -108,8 +108,8 @@
   "@minimalInstallationSubtitle": {},
   "otherOptions": "אפשרויות נוספות",
   "@otherOptions": {},
-  "turnOffBitlockerTitle": "BitLocker פעיל",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "BitLocker פעיל",
+  "@bitlockerTitle": {},
   "installationCompleteTitle": "ההתקנה הושלמה",
   "@installationCompleteTitle": {},
   "restartInto": "הפעלה מחדש אל {system}",
@@ -742,8 +742,8 @@
   "@rstHeader": {},
   "restartIntoWindowsTitle": "לעלות מחדש ל־Windows?",
   "@restartIntoWindowsTitle": {},
-  "turnOffBitlockerHeadline": "יש לכבות את BitLocker",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "יש לכבות את BitLocker",
+  "@bitlockerHeader": {},
   "restartIntoWindowsDescription": "להפעיל את המחשב מחדש? יש להפעיל את ההתקנה של {DISTRO} מחדש בהמשך כדי לסיים את התקנת {DISTRO}.",
   "@restartIntoWindowsDescription": {
     "type": "text",

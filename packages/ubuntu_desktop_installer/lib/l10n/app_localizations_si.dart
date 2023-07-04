@@ -684,18 +684,18 @@ class AppLocalizationsSi extends AppLocalizations {
   String get continueTesting => 'අත්හදා බැලීම දිගටම';
 
   @override
-  String get turnOffBitlockerTitle => 'බිට්ලොකර් අක්‍රිය කරන්න';
+  String get bitlockerTitle => 'බිට්ලොකර් අක්‍රිය කරන්න';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get bitlockerHeader => 'Turn off BitLocker to continue';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'මෙම පරිගණකය වින්ඩෝස් බිට්ලොකර් සංකේතනය භාවිතා කරයි.\nඋබුන්ටු ස්ථාපනයට පෙර ඔබ වින්ඩෝස් හි බිට්ලොකර් අක්‍රිය කළ යුතුය.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'උපදෙස් සඳහා, දුරකථනයක හෝ වෙනත් උපාංගයක මෙම පිටුව අරින්න: <a href=\"https://$url\">$url</a>';
   }
 

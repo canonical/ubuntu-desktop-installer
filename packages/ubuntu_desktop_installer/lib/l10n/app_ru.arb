@@ -270,12 +270,12 @@
       "system": {}
     }
   },
-  "turnOffBitlockerTitle": "BitLocker включён",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо использовать Windows для создания свободного места или выбрать '{option}' для продолжения.",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Чтобы получить инструкции, отсканируйте QR-код на другом устройстве или посетите: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "BitLocker включён",
+  "@bitlockerTitle": {},
+  "bitlockerDescription": "Этот компьютер использует шифрование с помощью Windows BitLocker.\nВам необходимо использовать Windows для создания свободного места или выбрать '{option}' для продолжения.",
+  "@bitlockerDescription": {},
+  "bitlockerInstructions": "Чтобы получить инструкции, отсканируйте QR-код на другом устройстве или посетите: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -747,8 +747,8 @@
   "@rstHeader": {},
   "restartIntoWindowsTitle": "Перезагрузить в Windows?",
   "@restartIntoWindowsTitle": {},
-  "turnOffBitlockerHeadline": "Для продолжения отключите BitLocker",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Для продолжения отключите BitLocker",
+  "@bitlockerHeader": {},
   "restartIntoWindowsDescription": "Вы уверены, что хотите перезагрузить компьютер? Вам потребуется позже перезапустить установку {DISTRO}, чтобы завершить установку {DISTRO}.",
   "@restartIntoWindowsDescription": {
     "type": "text",

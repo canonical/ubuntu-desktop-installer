@@ -328,14 +328,14 @@
       "path": {}
     }
   },
-  "turnOffBitlockerDescription": "Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné pokračovat, je třeba pomocí Windows udělat volné místo nebo zvolit '{option}'.",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerTitle": "BitLocker je zapnutý",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerDescription": "Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné pokračovat, je třeba pomocí Windows udělat volné místo nebo zvolit '{option}'.",
+  "@bitlockerDescription": {},
+  "bitlockerTitle": "BitLocker je zapnutý",
+  "@bitlockerTitle": {},
   "restartIntoWindows": "Restartovat do Windows",
   "@restartIntoWindows": {},
-  "turnOffBitlockerLinkInstructions": "Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -804,8 +804,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffBitlockerHeadline": "Aby bylo možné pokračovat, vypněte BitLocker",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Aby bylo možné pokračovat, vypněte BitLocker",
+  "@bitlockerHeader": {},
   "allocateDiskSpaceInvalidMountPointSlash": "Je třeba, aby přípojné body začínaly na „/“ (dopředné lomítko)",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Přípojné body nemohou obsahovat mezery",

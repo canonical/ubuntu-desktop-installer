@@ -684,18 +684,18 @@ class AppLocalizationsUk extends AppLocalizations {
   String get continueTesting => 'Continue testing';
 
   @override
-  String get turnOffBitlockerTitle => 'Вимкнути BitLocker';
+  String get bitlockerTitle => 'Вимкнути BitLocker';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get bitlockerHeader => 'Turn off BitLocker to continue';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'На цьому комп\'ютері використовується шифрування Windows BitLocker.\nПеред встановленням Ubuntu потрібно вимкнути BitLocker у Windows.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'Для отримання інструкцій відкрийте цю сторінку на телефоні або іншому пристрої: <a href=\"https://$url\">$url</a>';
   }
 

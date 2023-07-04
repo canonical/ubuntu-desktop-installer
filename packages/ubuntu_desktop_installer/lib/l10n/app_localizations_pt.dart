@@ -684,18 +684,18 @@ class AppLocalizationsPt extends AppLocalizations {
   String get continueTesting => 'Continuar a testar';
 
   @override
-  String get turnOffBitlockerTitle => 'O BitLocker está ativo';
+  String get bitlockerTitle => 'O BitLocker está ativo';
 
   @override
-  String get turnOffBitlockerHeadline => 'Desligue o BitLocker para continuar';
+  String get bitlockerHeader => 'Desligue o BitLocker para continuar';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'Este computador usa encriptação BitLocker do Windows.\nPrecisa de usar o Windows para libertar espaço ou escolha \'$option\' para continuar.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'Para obter instruções, digitalize o código QR noutro dispositivo ou visite: <a href=\"https://$url\">$url</a>';
   }
 
@@ -1596,18 +1596,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get continueTesting => 'Continuar testando';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker está habilitado';
+  String get bitlockerTitle => 'BitLocker está habilitado';
 
   @override
-  String get turnOffBitlockerHeadline => 'Desligue o BitLocker para continuar';
+  String get bitlockerHeader => 'Desligue o BitLocker para continuar';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'Este computador usa criptografia BitLocker do Windows.\nVocê precisa usar o Windows para liberar espaço ou escolher \'$option\' para continuar .';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://$url\">$url</a>';
   }
 

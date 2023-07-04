@@ -274,8 +274,8 @@
   "@timezoneLocationLabel": {},
   "startInstallingButtonText": "Įdiegti",
   "@startInstallingButtonText": {},
-  "turnOffBitlockerTitle": "„BitLocker“ yra įjungta",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "„BitLocker“ yra įjungta",
+  "@bitlockerTitle": {},
   "installDriversTitle": "Įdiegti trečiųjų šalių programinę įrangą, skirtą grafikos ir belaidžio ryšio (Wi-Fi) aparatinei įrangai",
   "@installDriversTitle": {},
   "installDriversSubtitle": "Šios tvarkyklės yra platinamos pagal licencijas, nurodytas jų dokumentacijoje. Tvarkyklės yra nuosavybinės.",
@@ -325,8 +325,8 @@
       "RELEASE": {}
     }
   },
-  "turnOffBitlockerDescription": "Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nNorėdami tęsti, turite pasinaudoti „Windows“ ir sukurti laisvą vietą arba pasirinkti variantą '{option}'.",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerDescription": "Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nNorėdami tęsti, turite pasinaudoti „Windows“ ir sukurti laisvą vietą arba pasirinkti variantą '{option}'.",
+  "@bitlockerDescription": {},
   "newPartitionTableConfirmationMessage": "Sukūrus naują skaidinių lentelę visame įrenginyje, bus pašalinti visi jo dabartiniai skaidiniai. Jei reikia, šią operaciją galima atšaukti.",
   "@newPartitionTableConfirmationMessage": {},
   "installationTypeAlongsideInfo": "Dokumentai, muzika ir kiti asmeniniai failai bus išsaugoti. Kas kartą įjungę kompiuterį, galėsite pasirinkti, kurią operacinę sistemą paleisti.",
@@ -548,8 +548,8 @@
   },
   "themePageTitle": "Pasirinkite apipavidalinimą",
   "@themePageTitle": {},
-  "turnOffBitlockerLinkInstructions": "Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -795,8 +795,8 @@
   "@activeDirectoryErrorTitle": {},
   "rstHeader": "Norėdami tęsti, išjunkite RST",
   "@rstHeader": {},
-  "turnOffBitlockerHeadline": "Norėdami tęsti, išjunkite „BitLocker“",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Norėdami tęsti, išjunkite „BitLocker“",
+  "@bitlockerHeader": {},
   "restartIntoWindowsDescription": "Ar tikrai norite paleisti kompiuterį iš naujo? Vėliau jums teks pradėti {DISTRO} diegimą iš naujo, kad užbaigtumėte diegti {DISTRO}.",
   "@restartIntoWindowsDescription": {
     "type": "text",

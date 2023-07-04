@@ -684,18 +684,18 @@ class AppLocalizationsEo extends AppLocalizations {
   String get continueTesting => 'Daŭre elprovi';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker estas ŝaltita';
+  String get bitlockerTitle => 'BitLocker estas ŝaltita';
 
   @override
-  String get turnOffBitlockerHeadline => 'Malŝaltu BitLocker por daŭrigi';
+  String get bitlockerHeader => 'Malŝaltu BitLocker por daŭrigi';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'Ĉi tiun komputilon ĉifras Windows BitLocker.\nLiberigu diskospacon per Windows, aŭ elektu «$option» por daŭrigi.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://$url\">$url</a>';
   }
 

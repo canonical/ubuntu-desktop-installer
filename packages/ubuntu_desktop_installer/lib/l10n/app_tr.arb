@@ -322,8 +322,8 @@
   },
   "shutdown": "Kapat",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "BitLocker aktif",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "BitLocker aktif",
+  "@bitlockerTitle": {},
   "restartIntoWindows": "Windows'a yeniden başlat",
   "@restartIntoWindows": {},
   "chooseSecurityKeyHeader": "Disk şifreleme bilgisayarınızı kaybetme ihtimaline karşı dosyalarınızı korumaktadır. Bilgisayar her başladığında bir güvenlik anahtarı girmenizi gerektirmektedir.\n\n{RELEASE} haricindeki dosyalar şifrelenmeyecektir.",
@@ -356,8 +356,8 @@
   },
   "bootLoaderDevice": "Önyükleyici kurulumu yapılacak cihaz",
   "@bootLoaderDevice": {},
-  "turnOffBitlockerLinkInstructions": "Talimatlar için QR kodunu başka bir cihazda tarayın ya da <a href=\"https://{url}\">{url}</a> sayfasını ziyaret edin",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "Talimatlar için QR kodunu başka bir cihazda tarayın ya da <a href=\"https://{url}\">{url}</a> sayfasını ziyaret edin",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -528,8 +528,8 @@
       "mount": {}
     }
   },
-  "turnOffBitlockerDescription": "Bu bilgisayar Windows BitLocker şifreleme kullanmaktadır.\nBoş alan oluşturmak için Windows'u kullanmanız ya da devam etmek için '{option}'i seçmeniz gerekir.",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerDescription": "Bu bilgisayar Windows BitLocker şifreleme kullanmaktadır.\nBoş alan oluşturmak için Windows'u kullanmanız ya da devam etmek için '{option}'i seçmeniz gerekir.",
+  "@bitlockerDescription": {},
   "chooseSecurityKeyWarning": "<font color=\"{color}\">Uyarı:</font> Bu güvenlik anahtarını kaybederseniz tüm veriler kaybolur. Gerekirse, anahtarınızı bir yere yazın ve güvenli başka bir yerde saklayın.",
   "@chooseSecurityKeyWarning": {
     "type": "text",
@@ -669,8 +669,8 @@
   "@activeDirectoryDomainEndHyphen": {},
   "activeDirectoryAdminLabel": "Etki alanına katılma kullanıcısı",
   "@activeDirectoryAdminLabel": {},
-  "turnOffBitlockerHeadline": "Devam etmek için BitLocker'ı kapat",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Devam etmek için BitLocker'ı kapat",
+  "@bitlockerHeader": {},
   "restartIntoWindowsTitle": "Windows'a yeniden başlatılsın mı?",
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "Bilgisayarınızı yeniden başlatmak istediğinizden emin misiniz? {DISTRO} kurulumunu tamamlamak için {DISTRO} kurulumunu daha sonra yeniden başlatmanız gerekecektir.",

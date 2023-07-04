@@ -263,8 +263,8 @@
   "@themeDark": {},
   "shutdown": "වසා දමන්න",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "බිට්ලොකර් අක්‍රිය කරන්න",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "බිට්ලොකර් අක්‍රිය කරන්න",
+  "@bitlockerTitle": {},
   "themePageTitle": "ඔබගේ පෙනුම තෝරන්න",
   "@themePageTitle": {},
   "readyToUse": "**{system}** ස්ථාපිත බැවින් භාවිතයට සූදානම්.",
@@ -301,15 +301,15 @@
   "@notEnoughDiskSpaceTitle": {},
   "themePageHeader": "මෙය පසුව පෙනුම සැකසුම් හරහා වෙනස් කිරීමට හැකිය.",
   "@themePageHeader": {},
-  "turnOffBitlockerLinkInstructions": "උපදෙස් සඳහා, දුරකථනයක හෝ වෙනත් උපාංගයක මෙම පිටුව අරින්න: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "උපදෙස් සඳහා, දුරකථනයක හෝ වෙනත් උපාංගයක මෙම පිටුව අරින්න: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "turnOffBitlockerDescription": "මෙම පරිගණකය වින්ඩෝස් බිට්ලොකර් සංකේතනය භාවිතා කරයි.\nඋබුන්ටු ස්ථාපනයට පෙර ඔබ වින්ඩෝස් හි බිට්ලොකර් අක්‍රිය කළ යුතුය.",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerDescription": "මෙම පරිගණකය වින්ඩෝස් බිට්ලොකර් සංකේතනය භාවිතා කරයි.\nඋබුන්ටු ස්ථාපනයට පෙර ඔබ වින්ඩෝස් හි බිට්ලොකර් අක්‍රිය කළ යුතුය.",
+  "@bitlockerDescription": {},
   "configureSecureBootDescription": "ඔබ තෙවන පාර්ශ්ව ධාවක මෘදුකාංග ස්ථාපනයට තෝරාගෙන ඇත. මේ සඳහා ආරක්‍ෂිත ඇරඹුම අක්‍රිය කළ යුතුය.\nමෙය සිදු කිරීම සඳහා, ඔබ දැන් ආරක්‍ෂණ යතුරක් තෝරාගෙන පද්ධතිය යළි ආරම්භ වන විට එය ඇතුල් කරන්න.",
   "@configureSecureBootDescription": {},
   "identityPasswordShow": "පෙන්වන්න",

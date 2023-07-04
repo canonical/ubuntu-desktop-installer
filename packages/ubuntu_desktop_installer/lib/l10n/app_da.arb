@@ -207,8 +207,8 @@
       "RELEASE": {}
     }
   },
-  "turnOffBitlockerTitle": "BitLocker er aktiveret",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "BitLocker er aktiveret",
+  "@bitlockerTitle": {},
   "startInstallingButtonText": "Installér",
   "@startInstallingButtonText": {},
   "newPartitionTableConfirmationMessage": "Oprettelse af ny partitionstabel, på en hel enhed, vil fjerne alle dens nuværende partitioner. Denne operation kan fortrydes, hvis det er nødvendigt.",
@@ -269,8 +269,8 @@
   "@identityHostnameInfo": {},
   "identityUsernameLabel": "Vælg et brugernavn",
   "@identityUsernameLabel": {},
-  "turnOffBitlockerLinkInstructions": "For instruktioner, skan QR-koden, på en anden enhed eller besøg:<a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "For instruktioner, skan QR-koden, på en anden enhed eller besøg:<a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -665,8 +665,8 @@
   },
   "writeChangesDevicesTitle": "Enheder",
   "@writeChangesDevicesTitle": {},
-  "turnOffBitlockerHeadline": "Slå BitLocker fra, for at fortsætte",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Slå BitLocker fra, for at fortsætte",
+  "@bitlockerHeader": {},
   "installationSlidesTitle": "Velkommen til {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",
@@ -759,8 +759,8 @@
       "path": {}
     }
   },
-  "turnOffBitlockerDescription": "Denne computer benytter Windows BitLocker kryptering.\nDu bliver nødt til at bruge Windows til, at frigøre plads, eller vælge '{option}\", for at fortsætte.",
-  "@turnOffBitlockerDescription": {
+  "bitlockerDescription": "Denne computer benytter Windows BitLocker kryptering.\nDu bliver nødt til at bruge Windows til, at frigøre plads, eller vælge '{option}\", for at fortsætte.",
+  "@bitlockerDescription": {
     "type": "text",
     "placeholders": {
       "option": {}

@@ -169,12 +169,12 @@
   "@writeChangesToDisk": {},
   "writeChangesPartitionTablesHeader": "다음과 같은 장치의 파티션 테이블이 변경되었습니다:",
   "@writeChangesPartitionTablesHeader": {},
-  "turnOffBitlockerTitle": "BitLocker 활성화됨",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n계속하려면 Windows를 사용하여 여유 공간을 만들거나 '{option}'을 선택해야 합니다.",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "절차를 확인하려면, 다른 장치에서 QR코드를 스캔하거나 링크를 방문 하십시오: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "BitLocker 활성화됨",
+  "@bitlockerTitle": {},
+  "bitlockerDescription": "이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n계속하려면 Windows를 사용하여 여유 공간을 만들거나 '{option}'을 선택해야 합니다.",
+  "@bitlockerDescription": {},
+  "bitlockerInstructions": "절차를 확인하려면, 다른 장치에서 QR코드를 스캔하거나 링크를 방문 하십시오: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -732,8 +732,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffBitlockerHeadline": "계속하려면 BitLocker를 끄십시오",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "계속하려면 BitLocker를 끄십시오",
+  "@bitlockerHeader": {},
   "restartIntoWindowsTitle": "Windows로 다시 시작하시겠습니까?",
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "컴퓨터를 정말로 다시 시작하시겠습니까? {DISTRO} 설치를 완료 하려면 나중에 {DISTRO} 설치를 다시 시작 해야 합니다.",

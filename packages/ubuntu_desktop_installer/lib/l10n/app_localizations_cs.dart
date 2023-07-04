@@ -684,18 +684,18 @@ class AppLocalizationsCs extends AppLocalizations {
   String get continueTesting => 'Pokračovat ve zkoušení';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker je zapnutý';
+  String get bitlockerTitle => 'BitLocker je zapnutý';
 
   @override
-  String get turnOffBitlockerHeadline => 'Aby bylo možné pokračovat, vypněte BitLocker';
+  String get bitlockerHeader => 'Aby bylo možné pokračovat, vypněte BitLocker';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'Na tomto počítači je používáno šifrování nástrojem Windows BitLocker.\nAby bylo možné pokračovat, je třeba pomocí Windows udělat volné místo nebo zvolit \'$option\'.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://$url\">$url</a>';
   }
 

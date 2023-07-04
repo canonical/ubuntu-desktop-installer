@@ -401,8 +401,8 @@
   },
   "shutdown": "Slå av",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "Skru av BitLocker",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "Skru av BitLocker",
+  "@bitlockerTitle": {},
   "partitionCreateTitle": "Opprett partisjon",
   "@partitionCreateTitle": {},
   "installingSystem": "Installerer systemet …",
@@ -427,8 +427,8 @@
   "@writeChangesDescription": {},
   "writeChangesPartitionTablesHeader": "Partisjonstabellen for følgende enheter har blitt endret:",
   "@writeChangesPartitionTablesHeader": {},
-  "turnOffBitlockerDescription": "Maskinen bruker Windows BitLocker-kryptering.\nDu må skru dette av før du installerer Ubuntu.",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerDescription": "Maskinen bruker Windows BitLocker-kryptering.\nDu må skru dette av før du installerer Ubuntu.",
+  "@bitlockerDescription": {},
   "timezoneLocationLabel": "Sted",
   "@timezoneLocationLabel": {},
   "installationFailed": "Installasjonen mislyktes",
@@ -493,8 +493,8 @@
   },
   "identityUsernameSystemReserved": "Navnet er reservert for systembruk.",
   "@identityUsernameSystemReserved": {},
-  "turnOffBitlockerLinkInstructions": "Instruks er tilgjengelig hvis du åpner denne siden på en telefon eller en annen enhet: <a href=\"https://{url}\"></a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "Instruks er tilgjengelig hvis du åpner denne siden på en telefon eller en annen enhet: <a href=\"https://{url}\"></a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}

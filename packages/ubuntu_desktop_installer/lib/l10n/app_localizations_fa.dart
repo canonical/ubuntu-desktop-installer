@@ -684,18 +684,18 @@ class AppLocalizationsFa extends AppLocalizations {
   String get continueTesting => 'ادامهٔ آزمودن';
 
   @override
-  String get turnOffBitlockerTitle => 'بیت‌لاکر به کار افتاده';
+  String get bitlockerTitle => 'بیت‌لاکر به کار افتاده';
 
   @override
-  String get turnOffBitlockerHeadline => 'برای ادامه بیت‌لاکر را خاموش کنید';
+  String get bitlockerHeader => 'برای ادامه بیت‌لاکر را خاموش کنید';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose \'$option\' to continue.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'برای دستورالعمل‌ها، رمز پاس را روی افزاره‌ای دیگر پوییده یا ببینید: <a href=\"https://$url\">$url</a>';
   }
 

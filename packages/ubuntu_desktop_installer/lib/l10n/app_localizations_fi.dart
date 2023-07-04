@@ -684,18 +684,18 @@ class AppLocalizationsFi extends AppLocalizations {
   String get continueTesting => 'Jatka testaamista';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker on käytössä';
+  String get bitlockerTitle => 'BitLocker on käytössä';
 
   @override
-  String get turnOffBitlockerHeadline => 'Poista BitLocker käytöstä jatkaaksesi';
+  String get bitlockerHeader => 'Poista BitLocker käytöstä jatkaaksesi';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'Tämä tietokone käyttää Windowsin BitLocker-salausta.\nSinun tulee käyttää Windowsia luodaksesi vapaata tilaa tai valitse \'$option\' jatkaaksesi.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'Lue ohjeet skannaamalla QR-koodi tai käy jollain toisella laitteella: <a href=\"https://$url\">$url</a>';
   }
 

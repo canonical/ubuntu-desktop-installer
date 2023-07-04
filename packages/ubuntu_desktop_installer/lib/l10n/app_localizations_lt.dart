@@ -684,18 +684,18 @@ class AppLocalizationsLt extends AppLocalizations {
   String get continueTesting => 'Tęsti sistemos bandymą';
 
   @override
-  String get turnOffBitlockerTitle => '„BitLocker“ yra įjungta';
+  String get bitlockerTitle => '„BitLocker“ yra įjungta';
 
   @override
-  String get turnOffBitlockerHeadline => 'Norėdami tęsti, išjunkite „BitLocker“';
+  String get bitlockerHeader => 'Norėdami tęsti, išjunkite „BitLocker“';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nNorėdami tęsti, turite pasinaudoti „Windows“ ir sukurti laisvą vietą arba pasirinkti variantą \'$option\'.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://$url\">$url</a>';
   }
 

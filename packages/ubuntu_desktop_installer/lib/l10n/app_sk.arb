@@ -35,15 +35,15 @@
   "@writeChangesPartitionTablesHeader": {},
   "writeChangesPartitionsHeader": "Budú vykonané nasledujúce zmeny na oddieloch:",
   "@writeChangesPartitionsHeader": {},
-  "turnOffBitlockerDescription": "Na tomto počítači je používané šifrovanie nástrojom Windows BitLocker.\nAby bolo možné pokračovať, je potrebné pomocou Windows urobiť voľné miesto alebo zvoliť '{option}'.",
-  "@turnOffBitlockerDescription": {
+  "bitlockerDescription": "Na tomto počítači je používané šifrovanie nástrojom Windows BitLocker.\nAby bolo možné pokračovať, je potrebné pomocou Windows urobiť voľné miesto alebo zvoliť '{option}'.",
+  "@bitlockerDescription": {
     "type": "text",
     "placeholders": {
       "option": {}
     }
   },
-  "turnOffBitlockerHeadline": "Aby bolo možné pokračovať, vypnite BitLocker",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Aby bolo možné pokračovať, vypnite BitLocker",
+  "@bitlockerHeader": {},
   "restartIntoWindowsDescription": "Naozaj chcete váš počítač reštartovať? Ak potom budete chcieť dokončiť inštaláciu {DISTRO}, bude potrebné znova spustiť inštaláciu {DISTRO}.",
   "@restartIntoWindowsDescription": {
     "type": "text",
@@ -120,8 +120,8 @@
   "@themePageTitle": {},
   "timezonePageTitle": "Vyberte si svoje časové pásmo",
   "@timezonePageTitle": {},
-  "turnOffBitlockerLinkInstructions": "Ohľadne pokynov naskenujte QR kód na inom zariadení alebo choďte na: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "Ohľadne pokynov naskenujte QR kód na inom zariadení alebo choďte na: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -793,8 +793,8 @@
   },
   "restartNow": "Reštartovať teraz",
   "@restartNow": {},
-  "turnOffBitlockerTitle": "BitLocker je zapnutý",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "BitLocker je zapnutý",
+  "@bitlockerTitle": {},
   "installationSlidesSupportCommunity": "Web Ask Ubuntu pokrýva celú škálu otázok a odpovedí, ďalej na fóre Ubuntu Discourse sú k dispozícii návody a diskusie pre nových aj pokročilých používateľov.",
   "@installationSlidesSupportCommunity": {},
   "tooManyPrimaryPartitions": "Príliš veľa primárnych oddielov",

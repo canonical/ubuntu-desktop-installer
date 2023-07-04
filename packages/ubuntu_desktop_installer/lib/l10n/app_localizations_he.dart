@@ -684,18 +684,18 @@ class AppLocalizationsHe extends AppLocalizations {
   String get continueTesting => 'להמשיך לבחון';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker פעיל';
+  String get bitlockerTitle => 'BitLocker פעיל';
 
   @override
-  String get turnOffBitlockerHeadline => 'יש לכבות את BitLocker';
+  String get bitlockerHeader => 'יש לכבות את BitLocker';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'המחשב הזה משתמש בהצפנת BitLocker של Windows.\nיש להשתמש ב־Windows כדי לפנות מקום או לבחור ב‚$option’ כדי להמשיך.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://$url\">$url</a>';
   }
 

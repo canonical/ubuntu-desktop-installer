@@ -26,7 +26,7 @@ class BitLockerPage extends ConsumerWidget {
     final flavor = ref.watch(flavorProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(lang.turnOffBitlockerTitle),
+        title: Text(lang.bitlockerTitle),
       ),
       content: Center(
         child: Row(
@@ -50,15 +50,15 @@ class BitLockerPage extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(lang.turnOffBitlockerTitle,
+                  Text(lang.bitlockerTitle,
                       style: Theme.of(context).textTheme.headlineSmall),
                   const SizedBox(height: kWizardSpacing),
-                  Text(lang.turnOffBitlockerDescription(
+                  Text(lang.bitlockerDescription(
                       lang.installationTypeErase(flavor.name))),
                   const SizedBox(height: kWizardSpacing),
                   Html(
-                    data: lang.turnOffBitlockerLinkInstructions(
-                        'help.ubuntu.com/bitlocker'),
+                    data:
+                        lang.bitlockerInstructions('help.ubuntu.com/bitlocker'),
                     style: {
                       'body': Style(margin: Margins.zero),
                       'a': Style(color: Theme.of(context).colorScheme.link),
@@ -71,7 +71,7 @@ class BitLockerPage extends ConsumerWidget {
                       final window = YaruWindow.of(context);
                       final confirmed = await showConfirmationDialog(
                         context,
-                        title: lang.turnOffBitlockerTitle,
+                        title: lang.bitlockerTitle,
                         message:
                             lang.restartIntoWindowsDescription(flavor.name),
                         okLabel: lang.restartButtonText,

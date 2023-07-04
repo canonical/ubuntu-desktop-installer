@@ -168,8 +168,8 @@
   "@themePageHeader": {},
   "themeLight": "Світлий",
   "@themeLight": {},
-  "turnOffBitlockerDescription": "На цьому комп'ютері використовується шифрування Windows BitLocker.\nПеред встановленням Ubuntu потрібно вимкнути BitLocker у Windows.",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerDescription": "На цьому комп'ютері використовується шифрування Windows BitLocker.\nПеред встановленням Ubuntu потрібно вимкнути BitLocker у Windows.",
+  "@bitlockerDescription": {},
   "installingSystem": "Встановлення системи…",
   "@installingSystem": {},
   "configuringSystem": "Налаштування системи…",
@@ -432,10 +432,10 @@
   },
   "installationCompleteTitle": "Встановлення завершено",
   "@installationCompleteTitle": {},
-  "turnOffBitlockerTitle": "Вимкнути BitLocker",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerLinkInstructions": "Для отримання інструкцій відкрийте цю сторінку на телефоні або іншому пристрої: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "Вимкнути BitLocker",
+  "@bitlockerTitle": {},
+  "bitlockerInstructions": "Для отримання інструкцій відкрийте цю сторінку на телефоні або іншому пристрої: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
