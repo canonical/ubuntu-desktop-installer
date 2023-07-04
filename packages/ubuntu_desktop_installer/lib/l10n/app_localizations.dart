@@ -1443,29 +1443,29 @@ abstract class AppLocalizations {
   /// **'Continue testing'**
   String get continueTesting;
 
-  /// No description provided for @turnOffBitlockerTitle.
+  /// No description provided for @bitlockerTitle.
   ///
   /// In en, this message translates to:
   /// **'BitLocker is enabled'**
-  String get turnOffBitlockerTitle;
+  String get bitlockerTitle;
 
-  /// No description provided for @turnOffBitlockerHeadline.
+  /// No description provided for @bitlockerHeader.
   ///
   /// In en, this message translates to:
   /// **'Turn off BitLocker to continue'**
-  String get turnOffBitlockerHeadline;
+  String get bitlockerHeader;
 
-  /// No description provided for @turnOffBitlockerDescription.
+  /// No description provided for @bitlockerDescription.
   ///
   /// In en, this message translates to:
   /// **'This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose \'{option}\' to continue.'**
-  String turnOffBitlockerDescription(Object option);
+  String bitlockerDescription(Object option);
 
-  /// No description provided for @turnOffBitlockerLinkInstructions.
+  /// No description provided for @bitlockerInstructions.
   ///
   /// In en, this message translates to:
   /// **'For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>'**
-  String turnOffBitlockerLinkInstructions(Object url);
+  String bitlockerInstructions(Object url);
 
   /// No description provided for @restartIntoWindows.
   ///

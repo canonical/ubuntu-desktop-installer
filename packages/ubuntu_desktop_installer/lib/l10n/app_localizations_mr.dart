@@ -684,18 +684,18 @@ class AppLocalizationsMr extends AppLocalizations {
   String get continueTesting => 'Continue testing';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker is enabled';
+  String get bitlockerTitle => 'BitLocker is enabled';
 
   @override
-  String get turnOffBitlockerHeadline => 'Turn off BitLocker to continue';
+  String get bitlockerHeader => 'Turn off BitLocker to continue';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose \'$option\' to continue.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'For instructions, scan the QR code on another device or visit: <a href=\"https://$url\">$url</a>';
   }
 

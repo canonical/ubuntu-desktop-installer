@@ -77,8 +77,8 @@
   "@identityConfirmPasswordLabel": {},
   "chooseYourKeyboardLayout": "Elektu vian klavaranĝon:",
   "@chooseYourKeyboardLayout": {},
-  "turnOffBitlockerTitle": "BitLocker estas ŝaltita",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "BitLocker estas ŝaltita",
+  "@bitlockerTitle": {},
   "installationTypeReinstall": "Forviŝi {os} kaj reinstali",
   "@installationTypeReinstall": {
     "type": "text",
@@ -326,10 +326,10 @@
   "@shutdown": {},
   "restartIntoWindows": "Restartigi al Windows",
   "@restartIntoWindows": {},
-  "turnOffBitlockerDescription": "Ĉi tiun komputilon ĉifras Windows BitLocker.\nLiberigu diskospacon per Windows, aŭ elektu «{option}» por daŭrigi.",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerDescription": "Ĉi tiun komputilon ĉifras Windows BitLocker.\nLiberigu diskospacon per Windows, aŭ elektu «{option}» por daŭrigi.",
+  "@bitlockerDescription": {},
+  "bitlockerInstructions": "Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -740,8 +740,8 @@
   },
   "rstHeader": "Malŝaltu RST por daŭrigi",
   "@rstHeader": {},
-  "turnOffBitlockerHeadline": "Malŝaltu BitLocker por daŭrigi",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Malŝaltu BitLocker por daŭrigi",
+  "@bitlockerHeader": {},
   "restartIntoWindowsTitle": "Ĉu restartigi al Windows?",
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "Ĉu vi certas, ke vi volas restartigi vian komputilon? Vi devos rekomenci la instaladon de {DISTRO} poste por fini instali {DISTRO}.",

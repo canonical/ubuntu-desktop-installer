@@ -22,10 +22,10 @@
   "@installationCompleteTitle": {},
   "shutdown": "Stäng av",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "Bitlocker är aktiverat",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Den här datorn använder Windows BitLocker-kryptering.\nDu behöver använda Windows för att skapa fritt utrymme eller välja '{option}' för att fortsätta.",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerTitle": "Bitlocker är aktiverat",
+  "@bitlockerTitle": {},
+  "bitlockerDescription": "Den här datorn använder Windows BitLocker-kryptering.\nDu behöver använda Windows för att skapa fritt utrymme eller välja '{option}' för att fortsätta.",
+  "@bitlockerDescription": {},
   "noWiredConnection": "Ingen trådbunden anslutning upptäcktes",
   "@noWiredConnection": {},
   "newPartitionTableConfirmationTitle": "Skapa en ny tom partition",
@@ -319,8 +319,8 @@
   "@themePageHeader": {},
   "themeDark": "Mörk",
   "@themeDark": {},
-  "turnOffBitlockerLinkInstructions": "För instruktioner, scanna QR-koden på en annan enhet eller besök: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "För instruktioner, scanna QR-koden på en annan enhet eller besök: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -797,8 +797,8 @@
   "@rstHeader": {},
   "restartIntoWindowsTitle": "Starta om till Windows?",
   "@restartIntoWindowsTitle": {},
-  "turnOffBitlockerHeadline": "Slå av Bitlocker för att fortsätta",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Slå av Bitlocker för att fortsätta",
+  "@bitlockerHeader": {},
   "restartIntoWindowsDescription": "Är du säker på att du vill starta om din dator? Du kommer att behöva starta om {DISTRO} senare för att slutföra installationen av {DISTRO}.",
   "@restartIntoWindowsDescription": {
     "type": "text",

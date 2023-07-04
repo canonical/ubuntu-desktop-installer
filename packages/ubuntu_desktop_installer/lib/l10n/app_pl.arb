@@ -322,12 +322,12 @@
   },
   "shutdown": "Zamknij",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "Funkcja BitLocker jest włączona",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Ten komputer używa szyfrowania Windows BitLocker.\nNależy użyć systemu Windows do utworzenia wolnej przestrzeni lub wybrać '{option}', aby kontynuować.",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Aby uzyskać instrukcje, zeskanuj kod QR na innym urządzeniu lub odwiedź: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "Funkcja BitLocker jest włączona",
+  "@bitlockerTitle": {},
+  "bitlockerDescription": "Ten komputer używa szyfrowania Windows BitLocker.\nNależy użyć systemu Windows do utworzenia wolnej przestrzeni lub wybrać '{option}', aby kontynuować.",
+  "@bitlockerDescription": {},
+  "bitlockerInstructions": "Aby uzyskać instrukcje, zeskanuj kod QR na innym urządzeniu lub odwiedź: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -749,8 +749,8 @@
   },
   "restartIntoWindowsTitle": "Uruchomić ponownie do Windows?",
   "@restartIntoWindowsTitle": {},
-  "turnOffBitlockerHeadline": "Wyłącz funkcję BitLocker, aby kontynuować",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Wyłącz funkcję BitLocker, aby kontynuować",
+  "@bitlockerHeader": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Punkty montowania nie mogą zawierać spacji",
   "@allocateDiskSpaceInvalidMountPointSpace": {},
   "allocateDiskSpaceInvalidMountPointSlash": "Punkty montowania muszą zaczynać się od „/”",

@@ -380,12 +380,12 @@
   },
   "shutdown": "Leállítás",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "A BitLocker engedélyezve van",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Ez a számítógép Windows BitLocker titkosítást használ.\nWindowst kell használnia a szabad terület létrehozásához, vagy a(z) „{option}” választása szükséges a folytatáshoz.",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Az utasításokért olvassa le a QR-kódot egy másik eszközön vagy látogassa meg ezt az oldalt: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "A BitLocker engedélyezve van",
+  "@bitlockerTitle": {},
+  "bitlockerDescription": "Ez a számítógép Windows BitLocker titkosítást használ.\nWindowst kell használnia a szabad terület létrehozásához, vagy a(z) „{option}” választása szükséges a folytatáshoz.",
+  "@bitlockerDescription": {},
+  "bitlockerInstructions": "Az utasításokért olvassa le a QR-kódot egy másik eszközön vagy látogassa meg ezt az oldalt: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -708,8 +708,8 @@
   "@activeDirectoryPasswordLabel": {},
   "activeDirectoryPasswordEmpty": "Kötelező",
   "@activeDirectoryPasswordEmpty": {},
-  "turnOffBitlockerHeadline": "A BitLocker kikapcsolása a folytatáshoz",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "A BitLocker kikapcsolása a folytatáshoz",
+  "@bitlockerHeader": {},
   "restartIntoWindowsTitle": "Újraindítja a számítógépet Windows használatával?",
   "@restartIntoWindowsTitle": {},
   "installationSlidesWelcomeTitle": "Gyors, ingyenes és tele új funkciókkal",

@@ -303,12 +303,12 @@
   },
   "shutdown": "Desligar",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "BitLocker está habilitado",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Este computador usa criptografia BitLocker do Windows.\nVocê precisa usar o Windows para liberar espaço ou escolher '{option}' para continuar .",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "BitLocker está habilitado",
+  "@bitlockerTitle": {},
+  "bitlockerDescription": "Este computador usa criptografia BitLocker do Windows.\nVocê precisa usar o Windows para liberar espaço ou escolher '{option}' para continuar .",
+  "@bitlockerDescription": {},
+  "bitlockerInstructions": "Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -745,8 +745,8 @@
   },
   "rstHeader": "Desligue o RST para continuar",
   "@rstHeader": {},
-  "turnOffBitlockerHeadline": "Desligue o BitLocker para continuar",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Desligue o BitLocker para continuar",
+  "@bitlockerHeader": {},
   "restartIntoWindowsTitle": "Reiniciar para o Windows?",
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "Tem certeza de que deseja reiniciar o computador? Você precisará reiniciar a instalação do {DISTRO} mais tarde para concluí-la.",

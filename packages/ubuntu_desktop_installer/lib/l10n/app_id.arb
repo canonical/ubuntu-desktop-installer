@@ -322,12 +322,12 @@
   },
   "shutdown": "Matikan",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "Matikan BitLocker",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Komputer ini menggunakan enkripsi Windows BitLocker.\nAnda perlu mematikan BitLocker di Windows sebelum memasang Ubuntu.",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Untuk petunjuk, buka halaman ini di ponsel atau perangkat lain: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "Matikan BitLocker",
+  "@bitlockerTitle": {},
+  "bitlockerDescription": "Komputer ini menggunakan enkripsi Windows BitLocker.\nAnda perlu mematikan BitLocker di Windows sebelum memasang Ubuntu.",
+  "@bitlockerDescription": {},
+  "bitlockerInstructions": "Untuk petunjuk, buka halaman ini di ponsel atau perangkat lain: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}

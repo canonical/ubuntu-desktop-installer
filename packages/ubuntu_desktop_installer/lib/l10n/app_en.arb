@@ -607,19 +607,19 @@
   "@restartNow": {},
   "continueTesting": "Continue testing",
   "@continueTesting": {},
-  "turnOffBitlockerTitle": "BitLocker is enabled",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerHeadline": "Turn off BitLocker to continue",
-  "@turnOffBitlockerHeadline": {},
-  "turnOffBitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose '{option}' to continue.",
-  "@turnOffBitlockerDescription": {
+  "bitlockerTitle": "BitLocker is enabled",
+  "@bitlockerTitle": {},
+  "bitlockerHeader": "Turn off BitLocker to continue",
+  "@bitlockerHeader": {},
+  "bitlockerDescription": "This computer uses Windows BitLocker encryption.\nYou need to use Windows to create free space or choose '{option}' to continue.",
+  "@bitlockerDescription": {
     "type": "text",
     "placeholders": {
       "option": {}
     }
   },
-  "turnOffBitlockerLinkInstructions": "For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}

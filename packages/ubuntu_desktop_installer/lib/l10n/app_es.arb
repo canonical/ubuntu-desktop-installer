@@ -129,8 +129,8 @@
   },
   "shutdown": "Apagar",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "BitLocker está activado",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "BitLocker está activado",
+  "@bitlockerTitle": {},
   "restartIntoWindows": "Reiniciar en Windows",
   "@restartIntoWindows": {},
   "chooseSecurityKeyHeader": "El cifrado de disco protege sus archivos en caso de que pierda el equipo. Requiere que introduzca una clave de seguridad cada vez que se inicie el equipo.\n\nLos archivos que estén fuera de {RELEASE} no se cifrarán.",
@@ -151,8 +151,8 @@
   "@partitionSizeLabel": {},
   "partitionTypePrimary": "Primaria",
   "@partitionTypePrimary": {},
-  "turnOffBitlockerLinkInstructions": "Para obtener instrucciones, escanee el código QR en otro dispositivo o visite: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "Para obtener instrucciones, escanee el código QR en otro dispositivo o visite: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -386,8 +386,8 @@
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "La creación de una nueva tabla de particiones en un dispositivo completo eliminará todas sus particiones actuales. Esta operación puede deshacerse si es necesario.",
   "@newPartitionTableConfirmationMessage": {},
-  "turnOffBitlockerDescription": "Este ordenador utiliza el cifrado BitLocker de Windows.\nDebe utilizar Windows para crear espacio libre o elegir '{option}' para continuar.",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerDescription": "Este ordenador utiliza el cifrado BitLocker de Windows.\nDebe utilizar Windows para crear espacio libre o elegir '{option}' para continuar.",
+  "@bitlockerDescription": {},
   "wifiMustBeEnabled": "Para utilizar Wi-Fi en este equipo, la red inalámbrica debe estar activada",
   "@wifiMustBeEnabled": {},
   "noWifiDevicesDetected": "No se han detectado dispositivos Wi-Fi",
@@ -749,8 +749,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffBitlockerHeadline": "Desactive BitLocker para continuar",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Desactive BitLocker para continuar",
+  "@bitlockerHeader": {},
   "allocateDiskSpaceInvalidMountPointSlash": "Los puntos de montaje deben empezar por \"/\"",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Los puntos de montaje no pueden contener espacios",

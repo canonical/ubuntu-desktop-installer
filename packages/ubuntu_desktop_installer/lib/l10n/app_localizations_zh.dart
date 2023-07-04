@@ -684,18 +684,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get continueTesting => '继续试用';
 
   @override
-  String get turnOffBitlockerTitle => '已启用 BitLocker';
+  String get bitlockerTitle => '已启用 BitLocker';
 
   @override
-  String get turnOffBitlockerHeadline => '关闭 BitLocker 以继续';
+  String get bitlockerHeader => '关闭 BitLocker 以继续';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return '这台电脑使用了 Windows BitLocker 进行加密。\n在安装 Ubuntu 之前，您需要关闭 Windows 的 BitLocker 功能。';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return '有关说明，请在另一台设备上扫描QR码或访问该网址：<a href=\"https://$url\">$url</a>';
   }
 

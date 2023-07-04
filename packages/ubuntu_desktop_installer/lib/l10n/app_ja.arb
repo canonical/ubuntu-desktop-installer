@@ -308,8 +308,8 @@
   },
   "shutdown": "シャットダウン",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "BitLockerが有効になっています。",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "BitLockerが有効になっています。",
+  "@bitlockerTitle": {},
   "timezoneTimezoneLabel": "タイムゾーン",
   "@timezoneTimezoneLabel": {},
   "timezoneLocationLabel": "現在地",
@@ -355,10 +355,10 @@
   "@identityConfirmPasswordLabel": {},
   "writeChangesDescription": "続行すると、以下の変更がディスクに書き込まれます。さらに手動で変更を加えることもできます。",
   "@writeChangesDescription": {},
-  "turnOffBitlockerDescription": "このコンピューターはWindows BitLockerで暗号化されています。\nWindowsを使って空き領域を作るか、'{option}'を選択してください。",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "手順については、別のデバイスでこのQRコードを読み取るか、次のURLへアクセスしてください：<a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerDescription": "このコンピューターはWindows BitLockerで暗号化されています。\nWindowsを使って空き領域を作るか、'{option}'を選択してください。",
+  "@bitlockerDescription": {},
+  "bitlockerInstructions": "手順については、別のデバイスでこのQRコードを読み取るか、次のURLへアクセスしてください：<a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -717,8 +717,8 @@
   "@rstHeader": {},
   "restartIntoWindowsTitle": "Windowsに再起動しますか？",
   "@restartIntoWindowsTitle": {},
-  "turnOffBitlockerHeadline": "続行するにはBitLockerをオフにしてください。",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "続行するにはBitLockerをオフにしてください。",
+  "@bitlockerHeader": {},
   "detectButtonText": "検出",
   "@detectButtonText": {},
   "installationSlidesWelcomeHeader": "最新版の{DISTRO}では、これまで以上にコンピューティングが容易になります。",

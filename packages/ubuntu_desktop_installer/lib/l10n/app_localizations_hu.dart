@@ -684,18 +684,18 @@ class AppLocalizationsHu extends AppLocalizations {
   String get continueTesting => 'Kipróbálás folytatása';
 
   @override
-  String get turnOffBitlockerTitle => 'A BitLocker engedélyezve van';
+  String get bitlockerTitle => 'A BitLocker engedélyezve van';
 
   @override
-  String get turnOffBitlockerHeadline => 'A BitLocker kikapcsolása a folytatáshoz';
+  String get bitlockerHeader => 'A BitLocker kikapcsolása a folytatáshoz';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'Ez a számítógép Windows BitLocker titkosítást használ.\nWindowst kell használnia a szabad terület létrehozásához, vagy a(z) „$option” választása szükséges a folytatáshoz.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'Az utasításokért olvassa le a QR-kódot egy másik eszközön vagy látogassa meg ezt az oldalt: <a href=\"https://$url\">$url</a>';
   }
 

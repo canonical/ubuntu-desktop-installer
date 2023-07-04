@@ -295,10 +295,10 @@
   },
   "shutdown": "Desligar",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "O BitLocker está ativo",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerLinkInstructions": "Para obter instruções, digitalize o código QR noutro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "O BitLocker está ativo",
+  "@bitlockerTitle": {},
+  "bitlockerInstructions": "Para obter instruções, digitalize o código QR noutro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -343,8 +343,8 @@
   },
   "identityInvalidHostname": "O nome do computador não é válido",
   "@identityInvalidHostname": {},
-  "turnOffBitlockerDescription": "Este computador usa encriptação BitLocker do Windows.\nPrecisa de usar o Windows para libertar espaço ou escolha '{option}' para continuar.",
-  "@turnOffBitlockerDescription": {},
+  "bitlockerDescription": "Este computador usa encriptação BitLocker do Windows.\nPrecisa de usar o Windows para libertar espaço ou escolha '{option}' para continuar.",
+  "@bitlockerDescription": {},
   "welcomeHeader": "Escolha o seu idioma:",
   "@welcomeHeader": {},
   "hiddenWifiNetwork": "Ligar a uma rede Wi-Fi oculta",
@@ -750,8 +750,8 @@
   "@activeDirectoryErrorMessage": {},
   "rstHeader": "Desligue a RST para continuar",
   "@rstHeader": {},
-  "turnOffBitlockerHeadline": "Desligue o BitLocker para continuar",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Desligue o BitLocker para continuar",
+  "@bitlockerHeader": {},
   "restartIntoWindowsTitle": "Reiniciar no Windows?",
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "Tem a certeza de que deseja reiniciar o computador? Precisará de reiniciar a instalação do {DISTRO} mais tarde para concluir a instalação do {DISTRO}.",

@@ -684,18 +684,18 @@ class AppLocalizationsKo extends AppLocalizations {
   String get continueTesting => '체험 계속하기';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker 활성화됨';
+  String get bitlockerTitle => 'BitLocker 활성화됨';
 
   @override
-  String get turnOffBitlockerHeadline => '계속하려면 BitLocker를 끄십시오';
+  String get bitlockerHeader => '계속하려면 BitLocker를 끄십시오';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return '이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n계속하려면 Windows를 사용하여 여유 공간을 만들거나 \'$option\'을 선택해야 합니다.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return '절차를 확인하려면, 다른 장치에서 QR코드를 스캔하거나 링크를 방문 하십시오: <a href=\"https://$url\">$url</a>';
   }
 

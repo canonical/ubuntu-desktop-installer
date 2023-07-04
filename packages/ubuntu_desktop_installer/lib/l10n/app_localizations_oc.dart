@@ -684,18 +684,18 @@ class AppLocalizationsOc extends AppLocalizations {
   String get continueTesting => 'Contunhar d’ensajar';
 
   @override
-  String get turnOffBitlockerTitle => 'BitLocker es activat';
+  String get bitlockerTitle => 'BitLocker es activat';
 
   @override
-  String get turnOffBitlockerHeadline => 'Desactivatz BitLocker per contunhar';
+  String get bitlockerHeader => 'Desactivatz BitLocker per contunhar';
 
   @override
-  String turnOffBitlockerDescription(Object option) {
+  String bitlockerDescription(Object option) {
     return 'Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\nVos cal utilizar Windows per crear un espaci liure o causir « $option » per contunhar.';
   }
 
   @override
-  String turnOffBitlockerLinkInstructions(Object url) {
+  String bitlockerInstructions(Object url) {
     return 'Per las consignas, numerizatz aqueste còdi QR d’un autre aparelh estant o consultatz : <a href=\"https://$url\">$url</a>';
   }
 

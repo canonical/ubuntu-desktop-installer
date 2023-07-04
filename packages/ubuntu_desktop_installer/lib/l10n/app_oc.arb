@@ -210,12 +210,12 @@
   },
   "shutdown": "Atudar",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "BitLocker es activat",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\nVos cal utilizar Windows per crear un espaci liure o causir « {option} » per contunhar.",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Per las consignas, numerizatz aqueste còdi QR d’un autre aparelh estant o consultatz : <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "BitLocker es activat",
+  "@bitlockerTitle": {},
+  "bitlockerDescription": "Aqueste ordenador utiliza lo chiframent de Windows BitLocker.\nVos cal utilizar Windows per crear un espaci liure o causir « {option} » per contunhar.",
+  "@bitlockerDescription": {},
+  "bitlockerInstructions": "Per las consignas, numerizatz aqueste còdi QR d’un autre aparelh estant o consultatz : <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -740,8 +740,8 @@
   "@installationSlidesSupportEnterprise": {},
   "rstHeader": "Desactivatz lo RST per contunhar",
   "@rstHeader": {},
-  "turnOffBitlockerHeadline": "Desactivatz BitLocker per contunhar",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Desactivatz BitLocker per contunhar",
+  "@bitlockerHeader": {},
   "restartIntoWindowsTitle": "Reaviar jos Windows ?",
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "Volètz vertadièrament reaviar l’ordenador ? Deuretz relançar lo processús d’installacion de {DISTRO} mai tard per terminar l’installacion de {DISTRO}.",

@@ -322,12 +322,12 @@
   },
   "shutdown": "Herunterfahren",
   "@shutdown": {},
-  "turnOffBitlockerTitle": "BitLocker ist aktiviert",
-  "@turnOffBitlockerTitle": {},
-  "turnOffBitlockerDescription": "Dieser Computer verwendet die Windows-BitLocker-Verschlüsselung.\nSie müssen Windows verwenden, um freien Speicherplatz zu schaffen, oder wählen Sie '{option}', um fortzufahren.",
-  "@turnOffBitlockerDescription": {},
-  "turnOffBitlockerLinkInstructions": "Für Anweisungen scannen Sie den QR-Code mit einem anderen Gerät oder besuchen Sie: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerTitle": "BitLocker ist aktiviert",
+  "@bitlockerTitle": {},
+  "bitlockerDescription": "Dieser Computer verwendet die Windows-BitLocker-Verschlüsselung.\nSie müssen Windows verwenden, um freien Speicherplatz zu schaffen, oder wählen Sie '{option}', um fortzufahren.",
+  "@bitlockerDescription": {},
+  "bitlockerInstructions": "Für Anweisungen scannen Sie den QR-Code mit einem anderen Gerät oder besuchen Sie: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -742,8 +742,8 @@
   "@rstHeader": {},
   "restartIntoWindowsTitle": "Neustart in Windows hinein?",
   "@restartIntoWindowsTitle": {},
-  "turnOffBitlockerHeadline": "Schalten Sie BitLocker aus, um fortzufahren",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "Schalten Sie BitLocker aus, um fortzufahren",
+  "@bitlockerHeader": {},
   "restartIntoWindowsDescription": "Sind Sie sicher, dass Sie Ihren Computer neu starten möchten? Sie müssen die Installation von {DISTRO} später neu starten, um die Installation von {DISTRO} abzuschließen.",
   "@restartIntoWindowsDescription": {
     "type": "text",

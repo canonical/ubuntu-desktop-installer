@@ -335,8 +335,8 @@
   "@installationSlidesAccessibilityOrca": {},
   "installationSlidesSupportResources": "منبع‌های مفید:",
   "@installationSlidesSupportResources": {},
-  "turnOffBitlockerHeadline": "برای ادامه بیت‌لاکر را خاموش کنید",
-  "@turnOffBitlockerHeadline": {},
+  "bitlockerHeader": "برای ادامه بیت‌لاکر را خاموش کنید",
+  "@bitlockerHeader": {},
   "installationSlidesTitle": "به {RELEASE} خوش آمدید",
   "@installationSlidesTitle": {
     "type": "text",
@@ -591,8 +591,8 @@
   },
   "installDriversTitle": "نصب نرم‌افزارهای سوم‌شخص برای سخت‌افزارهای وای‌فای و گرافیک",
   "@installDriversTitle": {},
-  "turnOffBitlockerLinkInstructions": "برای دستورالعمل‌ها، رمز پاس را روی افزاره‌ای دیگر پوییده یا ببینید: <a href=\"https://{url}\">{url}</a>",
-  "@turnOffBitlockerLinkInstructions": {
+  "bitlockerInstructions": "برای دستورالعمل‌ها، رمز پاس را روی افزاره‌ای دیگر پوییده یا ببینید: <a href=\"https://{url}\">{url}</a>",
+  "@bitlockerInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -683,8 +683,8 @@
   },
   "writeChangesDevicesTitle": "افزاره‌ها",
   "@writeChangesDevicesTitle": {},
-  "turnOffBitlockerTitle": "بیت‌لاکر به کار افتاده",
-  "@turnOffBitlockerTitle": {},
+  "bitlockerTitle": "بیت‌لاکر به کار افتاده",
+  "@bitlockerTitle": {},
   "activeDirectoryInfo": "در گام بعدی دامنه و دیگر حزییات را وارد خواهید کرد.",
   "@activeDirectoryInfo": {},
   "activeDirectoryTitle": "پیکربندی شاخهٔ فعّال",
