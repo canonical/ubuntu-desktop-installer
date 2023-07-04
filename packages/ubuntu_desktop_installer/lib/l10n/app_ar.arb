@@ -169,8 +169,8 @@
   "@identityRequirePassword": {},
   "notEnoughDiskSpaceTitle": "مساحة غير كافية",
   "@notEnoughDiskSpaceTitle": {},
-  "turnOffRSTTitle": "قم بإيقاف RST للمتابعة",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "قم بإيقاف RST للمتابعة",
+  "@rstHeader": {},
   "preparingUbuntu": "يجري إعداد {DISTRO} ...",
   "@preparingUbuntu": {
     "type": "text",
@@ -178,10 +178,10 @@
       "DISTRO": {}
     }
   },
-  "turnOffRST": "تم تشغيل RST",
-  "@turnOffRST": {},
-  "instructionsForRST": "للحصول على إرشادات ، قم بمسح رمز الاستجابة السريعة ضوئيًا (QR code) على الهاتف أو أي جهاز آخر: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "تم تشغيل RST",
+  "@rstTitle": {},
+  "rstInstructions": "للحصول على إرشادات ، قم بمسح رمز الاستجابة السريعة ضوئيًا (QR code) على الهاتف أو أي جهاز آخر: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -205,6 +205,6 @@
       "url": {}
     }
   },
-  "turnOffRSTDescription": "يستخدم هذا الكمبيوتر Intel RST (تقنية التخزين السريع). تحتاج إلى إيقاف تشغيل RST في Windows قبل تثبيت Ubuntu.",
-  "@turnOffRSTDescription": {}
+  "rstDescription": "يستخدم هذا الكمبيوتر Intel RST (تقنية التخزين السريع). تحتاج إلى إيقاف تشغيل RST في Windows قبل تثبيت Ubuntu.",
+  "@rstDescription": {}
 }

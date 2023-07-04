@@ -33,12 +33,12 @@
       "url": {}
     }
   },
-  "turnOffRST": "O RST está habilitado",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Este computador usa Intel RST (Rapid Storage Technology). Você precisa desligar a RST no Windows antes de instalar o Ubuntu.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "O RST está habilitado",
+  "@rstTitle": {},
+  "rstDescription": "Este computador usa Intel RST (Rapid Storage Technology). Você precisa desligar a RST no Windows antes de instalar o Ubuntu.",
+  "@rstDescription": {},
+  "rstInstructions": "Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -743,8 +743,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffRSTTitle": "Desligue o RST para continuar",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Desligue o RST para continuar",
+  "@rstHeader": {},
   "turnOffBitlockerHeadline": "Desligue o BitLocker para continuar",
   "@turnOffBitlockerHeadline": {},
   "restartIntoWindowsTitle": "Reiniciar para o Windows?",

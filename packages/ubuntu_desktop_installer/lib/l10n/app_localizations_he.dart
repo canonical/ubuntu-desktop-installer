@@ -74,16 +74,16 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST פעיל';
+  String get rstTitle => 'RST פעיל';
 
   @override
-  String get turnOffRSTTitle => 'יש לכבות את ה־RST כדי להמשיך';
+  String get rstHeader => 'יש לכבות את ה־RST כדי להמשיך';
 
   @override
-  String get turnOffRSTDescription => 'המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.';
+  String get rstDescription => 'המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://$url\">$url</a>';
   }
 

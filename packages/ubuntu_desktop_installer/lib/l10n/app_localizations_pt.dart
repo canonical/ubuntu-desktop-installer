@@ -74,16 +74,16 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'A RST está ativa';
+  String get rstTitle => 'A RST está ativa';
 
   @override
-  String get turnOffRSTTitle => 'Desligue a RST para continuar';
+  String get rstHeader => 'Desligue a RST para continuar';
 
   @override
-  String get turnOffRSTDescription => 'Este computador usa Intel RST (Rapid Storage Technology). Precisa de desligar a RST no Windows antes de instalar o Ubuntu.';
+  String get rstDescription => 'Este computador usa Intel RST (Rapid Storage Technology). Precisa de desligar a RST no Windows antes de instalar o Ubuntu.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Para obter instruções, digitalize o código QR noutro dispositivo ou visite: <a href=\"https://$url\">$url</a>';
   }
 
@@ -997,16 +997,16 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get turnOffRST => 'O RST está habilitado';
+  String get rstTitle => 'O RST está habilitado';
 
   @override
-  String get turnOffRSTTitle => 'Desligue o RST para continuar';
+  String get rstHeader => 'Desligue o RST para continuar';
 
   @override
-  String get turnOffRSTDescription => 'Este computador usa Intel RST (Rapid Storage Technology). Você precisa desligar a RST no Windows antes de instalar o Ubuntu.';
+  String get rstDescription => 'Este computador usa Intel RST (Rapid Storage Technology). Você precisa desligar a RST no Windows antes de instalar o Ubuntu.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://$url\">$url</a>';
   }
 

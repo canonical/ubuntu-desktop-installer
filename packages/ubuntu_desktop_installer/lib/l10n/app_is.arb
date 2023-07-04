@@ -28,8 +28,8 @@
       "RELEASE": {}
     }
   },
-  "turnOffRST": "Slökkva á RST",
-  "@turnOffRST": {},
+  "rstTitle": "Slökkva á RST",
+  "@rstTitle": {},
   "keyboardLayoutPageTitle": "Lyklaborðsútfærsla",
   "@keyboardLayoutPageTitle": {},
   "chooseYourKeyboardLayout": "Veldu lyklaborðsútfærslu:",

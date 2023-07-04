@@ -51,12 +51,12 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST je zapnuté",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Na tomto počítači je zapnutá technologie Intel RST (Rapit Storage Technology). Aby bylo možné Ubuntu nainstalovat, je třeba ve Windows funkci RST vypnout.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "RST je zapnuté",
+  "@rstTitle": {},
+  "rstDescription": "Na tomto počítači je zapnutá technologie Intel RST (Rapit Storage Technology). Aby bylo možné Ubuntu nainstalovat, je třeba ve Windows funkci RST vypnout.",
+  "@rstDescription": {},
+  "rstInstructions": "Ohledně pokynů naskenujte QR kód na jiném zařízení (třeba telefonu) nebo jděte na: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -793,8 +793,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffRSTTitle": "Aby bylo možné pokračovat, vypněte RST",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Aby bylo možné pokračovat, vypněte RST",
+  "@rstHeader": {},
   "restartIntoWindowsTitle": "Restartovat do Windows?",
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "Opravdu chcete váš počítač restartovat? Pokud poté budete chtít dokončit instalaci {DISTRO}, bude třeba znovu spustit instalaci {DISTRO}.",

@@ -26,8 +26,8 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST बन्द गर्नुहोस्",
-  "@turnOffRST": {},
+  "rstTitle": "RST बन्द गर्नुहोस्",
+  "@rstTitle": {},
   "tryUbuntu": "{RELEASE} प्रयास गर्नुहोस्",
   "@tryUbuntu": {
     "type": "text",

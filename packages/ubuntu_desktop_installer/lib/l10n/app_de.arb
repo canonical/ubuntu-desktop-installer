@@ -35,12 +35,12 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST ist aktiviert",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Dieser Computer verwendet Intel RST (Rapid Storage Technology). Vor der Installation von Ubuntu muss RST in Windows ausgeschaltet werden.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Um Anweisungen zu erhalten, scannen Sie den QR-Code mit einem anderen Gerät oder besuchen Sie: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "RST ist aktiviert",
+  "@rstTitle": {},
+  "rstDescription": "Dieser Computer verwendet Intel RST (Rapid Storage Technology). Vor der Installation von Ubuntu muss RST in Windows ausgeschaltet werden.",
+  "@rstDescription": {},
+  "rstInstructions": "Um Anweisungen zu erhalten, scannen Sie den QR-Code mit einem anderen Gerät oder besuchen Sie: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -738,8 +738,8 @@
   "@installationSlidesDevelopmentTitle": {},
   "installationSlidesAccessibilityOrca": "Orca-Screenreader",
   "@installationSlidesAccessibilityOrca": {},
-  "turnOffRSTTitle": "Schalten Sie RST aus, um fortzufahren",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Schalten Sie RST aus, um fortzufahren",
+  "@rstHeader": {},
   "restartIntoWindowsTitle": "Neustart in Windows hinein?",
   "@restartIntoWindowsTitle": {},
   "turnOffBitlockerHeadline": "Schalten Sie BitLocker aus, um fortzufahren",

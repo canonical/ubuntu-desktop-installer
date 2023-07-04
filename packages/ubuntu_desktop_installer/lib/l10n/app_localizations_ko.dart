@@ -74,16 +74,16 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST가 활성화됨';
+  String get rstTitle => 'RST가 활성화됨';
 
   @override
-  String get turnOffRSTTitle => '계속하려면 RST를 끄십시오';
+  String get rstHeader => '계속하려면 RST를 끄십시오';
 
   @override
-  String get turnOffRSTDescription => '이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.';
+  String get rstDescription => '이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return '절차를 알아보려면, 다른 장치로 QR코드를 스캔 하거나 이 페이지를 방문하십시오: <a href=\"https://$url\">$url</a>';
   }
 

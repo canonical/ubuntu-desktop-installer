@@ -1,7 +1,7 @@
 {
   "@@locale": "id",
-  "instructionsForRST": "Untuk petunjuk, buka halaman ini di ponsel atau perangkat lain: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstInstructions": "Untuk petunjuk, buka halaman ini di ponsel atau perangkat lain: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -28,10 +28,10 @@
       "url": {}
     }
   },
-  "turnOffRSTDescription": "Komputer ini menggunakan Intel RST (Rapid Storage Technology). Anda harus mematikan RST di Windows sebelum memasang Ubuntu.",
-  "@turnOffRSTDescription": {},
-  "turnOffRST": "Matikan RST",
-  "@turnOffRST": {},
+  "rstDescription": "Komputer ini menggunakan Intel RST (Rapid Storage Technology). Anda harus mematikan RST di Windows sebelum memasang Ubuntu.",
+  "@rstDescription": {},
+  "rstTitle": "Matikan RST",
+  "@rstTitle": {},
   "partitionTypeLabel": "Tipe partisi baru:",
   "@partitionTypeLabel": {},
   "installationTypeEncrypt": "Enkripsi instalasi {RELEASE} baru untuk keamanan",

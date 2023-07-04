@@ -74,16 +74,16 @@ class AppLocalizationsEu extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Itzali RST';
+  String get rstTitle => 'Itzali RST';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get rstHeader => 'Turn off RST to continue';
 
   @override
-  String get turnOffRSTDescription => 'Ordenagailu honek Intel RST (Rapid Storage Technology) erabiltzen du. RST itzali behar duzu Windowsen Ubuntu instalatu baino lehenago.';
+  String get rstDescription => 'Ordenagailu honek Intel RST (Rapid Storage Technology) erabiltzen du. RST itzali behar duzu Windowsen Ubuntu instalatu baino lehenago.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Argibideetarako, ireki orri hau telefono edo beste gailu batean: <a href=\"https://$url\">$url</a>';
   }
 

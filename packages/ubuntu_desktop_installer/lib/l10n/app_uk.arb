@@ -58,10 +58,10 @@
       "url": {}
     }
   },
-  "turnOffRST": "Вимкнути RST",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Цей комп’ютер використовує технологію Intel RST (Rapid Storage Technology). Перед встановленням Ubuntu вам потрібно вимкнути RST у Windows.",
-  "@turnOffRSTDescription": {},
+  "rstTitle": "Вимкнути RST",
+  "@rstTitle": {},
+  "rstDescription": "Цей комп’ютер використовує технологію Intel RST (Rapid Storage Technology). Перед встановленням Ubuntu вам потрібно вимкнути RST у Windows.",
+  "@rstDescription": {},
   "welcomeHeader": "Оберіть мову:",
   "@welcomeHeader": {},
   "quitButtonText": "Скасувати встановлення",
@@ -90,8 +90,8 @@
   "@confirmSecurityKey": {},
   "dontInstallDriverSoftwareNow": "Наразі не встановлювати програмне забезпечення драйвера",
   "@dontInstallDriverSoftwareNow": {},
-  "instructionsForRST": "Для отримання інструкцій відкрийте цю сторінку на телефоні або іншому пристрої: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstInstructions": "Для отримання інструкцій відкрийте цю сторінку на телефоні або іншому пристрої: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}

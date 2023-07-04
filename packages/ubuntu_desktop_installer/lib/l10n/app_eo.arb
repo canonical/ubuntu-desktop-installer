@@ -98,8 +98,8 @@
   "@secureBootSecurityKeysDontMatch": {},
   "updatesOtherSoftwarePageTitle": "Programoj kaj ĝisdatigoj",
   "@updatesOtherSoftwarePageTitle": {},
-  "turnOffRST": "Rapid-Konserveja Tekniko (RST) estas ŝaltita",
-  "@turnOffRST": {},
+  "rstTitle": "Rapid-Konserveja Tekniko (RST) estas ŝaltita",
+  "@rstTitle": {},
   "releaseNotesLabel": "Vi eble volas legi la <a href=\"{url}\">liverajn notojn</a>.",
   "@releaseNotesLabel": {
     "type": "text",
@@ -155,10 +155,10 @@
   "@dontInstallDriverSoftwareNow": {},
   "dontInstallDriverSoftwareNowDescription": "Vi povas instali ilin poste per Programaroj kaj Ĝisdatigoj.",
   "@dontInstallDriverSoftwareNowDescription": {},
-  "turnOffRSTDescription": "Ĉi tiu komputilo uzas Intel RST (Rapid-Konservejan Teknikon). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstDescription": "Ĉi tiu komputilo uzas Intel RST (Rapid-Konservejan Teknikon). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.",
+  "@rstDescription": {},
+  "rstInstructions": "Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -738,8 +738,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffRSTTitle": "Malŝaltu RST por daŭrigi",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Malŝaltu RST por daŭrigi",
+  "@rstHeader": {},
   "turnOffBitlockerHeadline": "Malŝaltu BitLocker por daŭrigi",
   "@turnOffBitlockerHeadline": {},
   "restartIntoWindowsTitle": "Ĉu restartigi al Windows?",

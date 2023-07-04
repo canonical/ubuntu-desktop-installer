@@ -16,8 +16,8 @@
   "@changeButtonText": {},
   "tryUbuntu": "Wypróbuj {RELEASE}",
   "@tryUbuntu": {},
-  "instructionsForRST": "Aby uzyskać instrukcje, zeskanuj kod QR na innym urządzeniu lub odwiedź: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstInstructions": "Aby uzyskać instrukcje, zeskanuj kod QR na innym urządzeniu lub odwiedź: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -146,10 +146,10 @@
       "url": {}
     }
   },
-  "turnOffRST": "Funkcja RST jest włączona",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Ten komputer wykorzystuje funkcję Intel RST (Rapid Storage Technology). Musisz wyłączyć RST w systemie Windows przed instalacją Ubuntu.",
-  "@turnOffRSTDescription": {},
+  "rstTitle": "Funkcja RST jest włączona",
+  "@rstTitle": {},
+  "rstDescription": "Ten komputer wykorzystuje funkcję Intel RST (Rapid Storage Technology). Musisz wyłączyć RST w systemie Windows przed instalacją Ubuntu.",
+  "@rstDescription": {},
   "keyboardLayoutPageTitle": "Układ klawiatury",
   "@keyboardLayoutPageTitle": {},
   "chooseYourKeyboardLayout": "Wybierz układ klawiatury:",
@@ -738,8 +738,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffRSTTitle": "Wyłącz funkcję RST, aby kontynuować",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Wyłącz funkcję RST, aby kontynuować",
+  "@rstHeader": {},
   "restartIntoWindowsDescription": "Czy na pewno chcesz ponownie uruchomić komputer? Później będziesz musieć ponownie uruchomić instalację {DISTRO}, aby zakończyć instalowanie {DISTRO}.",
   "@restartIntoWindowsDescription": {
     "type": "text",

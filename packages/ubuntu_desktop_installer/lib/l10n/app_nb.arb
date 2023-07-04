@@ -185,12 +185,12 @@
   "@welcome": {},
   "tryOrInstallPageTitle": "Prøv eller Installere",
   "@tryOrInstallPageTitle": {},
-  "turnOffRST": "Slå av RST",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Denne datamaskinen bruker Intel RST (Rapid Storage Technology). Du må slå av RST i Windows før du installerer Ubuntu.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "For instruksjoner, åpne denne siden på en telefon eller annen enhet: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "Slå av RST",
+  "@rstTitle": {},
+  "rstDescription": "Denne datamaskinen bruker Intel RST (Rapid Storage Technology). Du må slå av RST i Windows før du installerer Ubuntu.",
+  "@rstDescription": {},
+  "rstInstructions": "For instruksjoner, åpne denne siden på en telefon eller annen enhet: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}

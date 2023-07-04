@@ -226,8 +226,8 @@
   "@repairInstallation": {},
   "chooseYourKeyboardLayout": "Valitse näppäimistön asettelu:",
   "@chooseYourKeyboardLayout": {},
-  "turnOffRST": "RST on käytössä",
-  "@turnOffRST": {},
+  "rstTitle": "RST on käytössä",
+  "@rstTitle": {},
   "releaseNotesLabel": "Voit halutessasi lukea <a href=\"{url}\">julkaisumuistion</a>.",
   "@releaseNotesLabel": {
     "type": "text",
@@ -245,10 +245,10 @@
   "@tryUbuntuDescription": {},
   "installUbuntuDescription": "Asenna {RELEASE} nykyisen käyttöjärjestelmäsi rinnalle tai tilalle. Asentaminen ei kestä kauan.",
   "@installUbuntuDescription": {},
-  "turnOffRSTDescription": "Tämä tietokone käyttää Intel RST:tä (Rapid Storage Technology). Sinun tulee sammuttaa RST, ennen kuin asennat Ubuntun.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Lue ohjeet skannaamalla QR-koodi tai käy toisella laitteella: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstDescription": "Tämä tietokone käyttää Intel RST:tä (Rapid Storage Technology). Sinun tulee sammuttaa RST, ennen kuin asennat Ubuntun.",
+  "@rstDescription": {},
+  "rstInstructions": "Lue ohjeet skannaamalla QR-koodi tai käy toisella laitteella: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -561,8 +561,8 @@
   "@activeDirectoryAdminInvalidChars": {},
   "activeDirectoryPasswordLabel": "Salasana",
   "@activeDirectoryPasswordLabel": {},
-  "turnOffRSTTitle": "Poista RST käytöstä jatkaaksesi",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Poista RST käytöstä jatkaaksesi",
+  "@rstHeader": {},
   "identityHostnameTooLong": "Tietokoneen nimi on liian pitkä.",
   "@identityHostnameTooLong": {},
   "installationSlidesSoftwareTitle": "Kaikki tarvitsemasi sovellukset",

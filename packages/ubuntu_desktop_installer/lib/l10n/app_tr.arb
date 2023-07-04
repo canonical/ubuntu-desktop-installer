@@ -50,12 +50,12 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST etkin",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu'yu kurmadan önce Windows'tan RST'yi kapatmalısınız.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Talimatlar için QR kodunu başka bir cihazda tarayın veya ziyaret edin: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "RST etkin",
+  "@rstTitle": {},
+  "rstDescription": "Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu'yu kurmadan önce Windows'tan RST'yi kapatmalısınız.",
+  "@rstDescription": {},
+  "rstInstructions": "Talimatlar için QR kodunu başka bir cihazda tarayın veya ziyaret edin: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -647,8 +647,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffRSTTitle": "Devam etmek için RST'yi kapatın",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Devam etmek için RST'yi kapatın",
+  "@rstHeader": {},
   "activeDirectoryOption": "Active Directory kullan",
   "@activeDirectoryOption": {},
   "activeDirectoryInfo": "Bir sonraki adımda alan adı ve diğer ayrıntıları gireceksiniz.",

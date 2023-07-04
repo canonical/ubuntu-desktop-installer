@@ -25,8 +25,8 @@
   "@typeToTest": {},
   "pressOneKey": "Παρακαλώ πιέστε ένα από τα ακόλουθα πλήκτρα:",
   "@pressOneKey": {},
-  "turnOffRST": "Απενεργοποίηση του RST",
-  "@turnOffRST": {},
+  "rstTitle": "Απενεργοποίηση του RST",
+  "@rstTitle": {},
   "releaseNotesLabel": "Ίσως θέλετε να διαβάσετε τις <a href=\"{url}\">σημειώσεις έκδοσης</a>.",
   "@releaseNotesLabel": {
     "type": "text",

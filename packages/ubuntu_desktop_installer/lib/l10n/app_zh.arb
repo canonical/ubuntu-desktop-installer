@@ -36,8 +36,8 @@
       "RELEASE": {}
     }
   },
-  "turnOffRST": "RST 已启用",
-  "@turnOffRST": {},
+  "rstTitle": "RST 已启用",
+  "@rstTitle": {},
   "keyboardLayoutPageTitle": "键盘布局",
   "@keyboardLayoutPageTitle": {},
   "typeToTest": "在此键入以测试您的键盘",
@@ -182,8 +182,8 @@
   },
   "configureSecureBootDescription": "您已选择安装第三方驱动。这需要关闭安全启动。\n为此，您需要立即选择一个安全密钥，并在系统重新启动时输入。",
   "@configureSecureBootDescription": {},
-  "turnOffRSTDescription": "这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，您需要在Windows中关闭RST。",
-  "@turnOffRSTDescription": {},
+  "rstDescription": "这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，您需要在Windows中关闭RST。",
+  "@rstDescription": {},
   "minimalInstallationTitle": "最小安装",
   "@minimalInstallationTitle": {},
   "normalInstallationTitle": "正常安装",
@@ -387,8 +387,8 @@
       "url": {}
     }
   },
-  "instructionsForRST": "有关说明，请在另一台设备上扫描QR码或访问：<a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstInstructions": "有关说明，请在另一台设备上扫描QR码或访问：<a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -793,8 +793,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffRSTTitle": "关闭 RST 以继续",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "关闭 RST 以继续",
+  "@rstHeader": {},
   "turnOffBitlockerHeadline": "关闭 BitLocker 以继续",
   "@turnOffBitlockerHeadline": {},
   "restartIntoWindowsTitle": "重启到 Windows？",

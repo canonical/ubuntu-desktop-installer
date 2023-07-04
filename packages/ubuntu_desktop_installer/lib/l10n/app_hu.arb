@@ -122,10 +122,10 @@
   "@appTitle": {},
   "changeButtonText": "Változtatás",
   "@changeButtonText": {},
-  "turnOffRSTDescription": "Ez a számítógép Intel RST (Rapid Storage Technology) technológiát használ. Az RST-t ki kell kapcsolnia a Windowsban az Ubuntu telepítése előtt.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Az utasításokért olvassa le a QR-kódot egy másik eszközön vagy látogassa meg ezt az oldalt: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstDescription": "Ez a számítógép Intel RST (Rapid Storage Technology) technológiát használ. Az RST-t ki kell kapcsolnia a Windowsban az Ubuntu telepítése előtt.",
+  "@rstDescription": {},
+  "rstInstructions": "Az utasításokért olvassa le a QR-kódot egy másik eszközön vagy látogassa meg ezt az oldalt: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -172,8 +172,8 @@
       "url": {}
     }
   },
-  "turnOffRST": "Az RST engedélyezve van",
-  "@turnOffRST": {},
+  "rstTitle": "Az RST engedélyezve van",
+  "@rstTitle": {},
   "chooseSecurityKeyTitle": "Biztonsági kulcs",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHint": "Biztonsági kulcs választása",
@@ -644,8 +644,8 @@
   "@activeDirectoryOption": {},
   "activeDirectoryDomainStartDot": "Ponttal (.) kezdődik",
   "@activeDirectoryDomainStartDot": {},
-  "turnOffRSTTitle": "Az RST kikapcsolása a folytatáshoz",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Az RST kikapcsolása a folytatáshoz",
+  "@rstHeader": {},
   "installCodecsTitle": "További médiaformátumok támogatásának letöltése és telepítése",
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Erre a szoftverre a dokumentációjában szereplő licencfeltételek vonatkoznak. Néhányuk kereskedelmi forgalomban kapható tulajdonosi szoftver.",

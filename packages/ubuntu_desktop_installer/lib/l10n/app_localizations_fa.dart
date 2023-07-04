@@ -74,16 +74,16 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST به کار افتاده';
+  String get rstTitle => 'RST به کار افتاده';
 
   @override
-  String get turnOffRSTTitle => 'برای ادامه RST را خاموش کنید';
+  String get rstHeader => 'برای ادامه RST را خاموش کنید';
 
   @override
-  String get turnOffRSTDescription => 'این کامپیوتر از Intel RST (فناوری ذخیره‌سازی سریع) استفاده می‌کند. قبل از نصب اوبونتو باید RST را در ویندوز خاموش کنید.';
+  String get rstDescription => 'این کامپیوتر از Intel RST (فناوری ذخیره‌سازی سریع) استفاده می‌کند. قبل از نصب اوبونتو باید RST را در ویندوز خاموش کنید.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'برای دستورالعمل‌ها، رمز پاس را روی افزاره‌ای دیگر پوییده یا ببینید: <a href=\"https://$url\">$url</a>';
   }
 

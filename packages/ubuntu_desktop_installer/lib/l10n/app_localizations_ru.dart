@@ -74,16 +74,16 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST включён';
+  String get rstTitle => 'RST включён';
 
   @override
-  String get turnOffRSTTitle => 'Для продолжения отключите RST';
+  String get rstHeader => 'Для продолжения отключите RST';
 
   @override
-  String get turnOffRSTDescription => 'Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.';
+  String get rstDescription => 'Двнный компьютер использует Intel RST (Rapid Storage Technology). Перед тем, как продолжить установку Ubuntu, необходимо отключить RST в Windows.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Для получения справки отсканируйте QR-код на другом устройстве или посетите: <a href=\"https://$url\">$url</a>';
   }
 

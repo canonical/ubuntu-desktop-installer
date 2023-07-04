@@ -21,14 +21,14 @@
       "RELEASE": {}
     }
   },
-  "turnOffRSTDescription": "این کامپیوتر از Intel RST (فناوری ذخیره‌سازی سریع) استفاده می‌کند. قبل از نصب اوبونتو باید RST را در ویندوز خاموش کنید.",
-  "@turnOffRSTDescription": {},
+  "rstDescription": "این کامپیوتر از Intel RST (فناوری ذخیره‌سازی سریع) استفاده می‌کند. قبل از نصب اوبونتو باید RST را در ویندوز خاموش کنید.",
+  "@rstDescription": {},
   "chooseYourKeyboardLayout": "گزینش چیدمان صفحه‌کلیدتان:",
   "@chooseYourKeyboardLayout": {},
   "typeToTest": "برای آزمایش صفحه‌کلیدتان، این‌جا بنویسید",
   "@typeToTest": {},
-  "instructionsForRST": "برای دستورالعمل‌ها، رمز پاس را روی افزاره‌ای دیگر پوییده یا ببینید: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstInstructions": "برای دستورالعمل‌ها، رمز پاس را روی افزاره‌ای دیگر پوییده یا ببینید: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -93,8 +93,8 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST به کار افتاده",
-  "@turnOffRST": {},
+  "rstTitle": "RST به کار افتاده",
+  "@rstTitle": {},
   "keyboardLayoutPageTitle": "چیدمان صفحه‌کلید",
   "@keyboardLayoutPageTitle": {},
   "hiddenWifiNetworkNameRequired": "یک نام برای شبکه مورد نیاز است",
@@ -222,8 +222,8 @@
   "@diskHeadersFormat": {},
   "diskHeadersMountPoint": "نقطهٔ سوار شدن",
   "@diskHeadersMountPoint": {},
-  "turnOffRSTTitle": "برای ادامه RST را خاموش کنید",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "برای ادامه RST را خاموش کنید",
+  "@rstHeader": {},
   "installationTypeLVMSelected": "استفاده از LVM گزیده شد",
   "@installationTypeLVMSelected": {},
   "installationTypeAlongside": "نصب {product} کنار {os}",
