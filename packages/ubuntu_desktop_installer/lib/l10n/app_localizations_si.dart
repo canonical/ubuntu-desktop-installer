@@ -475,18 +475,6 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionSizeLabel => 'ප්‍රමාණය:';
 
   @override
-  String get partitionUnitB => 'බ.';
-
-  @override
-  String get partitionUnitKB => 'කි.බ.';
-
-  @override
-  String get partitionUnitMB => 'මෙ.බ.';
-
-  @override
-  String get partitionUnitGB => 'ගි.බ.';
-
-  @override
   String get partitionTypeLabel => 'නව පංගුව සඳහා වර්ගය:';
 
   @override

@@ -475,18 +475,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get partitionSizeLabel => 'اندازه:';
 
   @override
-  String get partitionUnitB => 'ب';
-
-  @override
-  String get partitionUnitKB => 'ک‌ب';
-
-  @override
-  String get partitionUnitMB => 'م‌ب';
-
-  @override
-  String get partitionUnitGB => 'گ‌ب';
-
-  @override
   String get partitionTypeLabel => 'گونهٔ افراز جدید:';
 
   @override

@@ -475,18 +475,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get partitionSizeLabel => 'Tamaño:';
 
   @override
-  String get partitionUnitB => 'B';
-
-  @override
-  String get partitionUnitKB => 'kB';
-
-  @override
-  String get partitionUnitMB => 'MB';
-
-  @override
-  String get partitionUnitGB => 'GB';
-
-  @override
   String get partitionTypeLabel => 'Tipo de la partición nueva:';
 
   @override

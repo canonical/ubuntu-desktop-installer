@@ -475,18 +475,6 @@ class AppLocalizationsMl extends AppLocalizations {
   String get partitionSizeLabel => 'വലിപ്പം:';
 
   @override
-  String get partitionUnitB => 'B';
-
-  @override
-  String get partitionUnitKB => 'kB';
-
-  @override
-  String get partitionUnitMB => 'MB';
-
-  @override
-  String get partitionUnitGB => 'GB';
-
-  @override
   String get partitionTypeLabel => 'പുതിയ പാർട്ടീഷന്റെ തരം:';
 
   @override

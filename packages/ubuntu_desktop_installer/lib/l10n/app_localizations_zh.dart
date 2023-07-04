@@ -475,18 +475,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionSizeLabel => '大小：';
 
   @override
-  String get partitionUnitB => 'B';
-
-  @override
-  String get partitionUnitKB => 'kB';
-
-  @override
-  String get partitionUnitMB => 'MB';
-
-  @override
-  String get partitionUnitGB => 'GB';
-
-  @override
   String get partitionTypeLabel => '指定新分区的类型：';
 
   @override

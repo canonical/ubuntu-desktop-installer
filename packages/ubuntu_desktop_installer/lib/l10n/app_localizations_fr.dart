@@ -475,18 +475,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get partitionSizeLabel => 'Taille :';
 
   @override
-  String get partitionUnitB => 'o';
-
-  @override
-  String get partitionUnitKB => 'Ko';
-
-  @override
-  String get partitionUnitMB => 'Mo';
-
-  @override
-  String get partitionUnitGB => 'Go';
-
-  @override
   String get partitionTypeLabel => 'Type pour la nouvelle partition :';
 
   @override

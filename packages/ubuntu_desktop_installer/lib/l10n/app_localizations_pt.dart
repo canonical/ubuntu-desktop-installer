@@ -475,18 +475,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partitionSizeLabel => 'Tamanho:';
 
   @override
-  String get partitionUnitB => 'B';
-
-  @override
-  String get partitionUnitKB => 'kB';
-
-  @override
-  String get partitionUnitMB => 'MB';
-
-  @override
-  String get partitionUnitGB => 'GB';
-
-  @override
   String get partitionTypeLabel => 'Tipo para a nova partiçaõ:';
 
   @override
@@ -1390,18 +1378,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get partitionSizeLabel => 'Tamanho:';
-
-  @override
-  String get partitionUnitB => 'B';
-
-  @override
-  String get partitionUnitKB => 'kB';
-
-  @override
-  String get partitionUnitMB => 'MB';
-
-  @override
-  String get partitionUnitGB => 'GB';
 
   @override
   String get partitionTypeLabel => 'Tipo para a nova partição:';
