@@ -74,16 +74,16 @@ class AppLocalizationsMl extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST ഓഫ് ചെയ്യുക';
+  String get rstTitle => 'RST ഓഫ് ചെയ്യുക';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get rstHeader => 'Turn off RST to continue';
 
   @override
-  String get turnOffRSTDescription => 'ഈ കമ്പ്യൂട്ടർ ഇന്റൽ ആർഎസ്ടി (റാപ്പിഡ് സ്റ്റോറേജ് ടെക്നോളജി) ഉപയോഗിക്കുന്നു. ഉബുണ്ടു ഇൻസ്റ്റാൾ ചെയ്യുന്നതിന് മുമ്പ് നിങ്ങൾ വിൻഡോസിൽ ആർഎസ്ടി ഓഫ് ചെയ്യേണ്ടതുണ്ട്.';
+  String get rstDescription => 'ഈ കമ്പ്യൂട്ടർ ഇന്റൽ ആർഎസ്ടി (റാപ്പിഡ് സ്റ്റോറേജ് ടെക്നോളജി) ഉപയോഗിക്കുന്നു. ഉബുണ്ടു ഇൻസ്റ്റാൾ ചെയ്യുന്നതിന് മുമ്പ് നിങ്ങൾ വിൻഡോസിൽ ആർഎസ്ടി ഓഫ് ചെയ്യേണ്ടതുണ്ട്.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'നിർദ്ദേശങ്ങൾക്കായി, ഒരു ഫോണിലോ മറ്റ് ഉപകരണത്തിലോ ഈ പേജ് തുറക്കുക: <a href=\"https://$url\">$url</a>';
   }
 

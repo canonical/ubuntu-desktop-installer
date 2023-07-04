@@ -144,8 +144,8 @@
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "ස්ථාපනය අලුත්වැඩියාව",
   "@repairInstallation": {},
-  "turnOffRST": "RST අක්‍රිය කරන්න",
-  "@turnOffRST": {},
+  "rstTitle": "RST අක්‍රිය කරන්න",
+  "@rstTitle": {},
   "keyboardLayoutPageTitle": "යතුරුපුවරුවේ පිරිසැලසුම",
   "@keyboardLayoutPageTitle": {},
   "configureSecureBootOption": "ආරක්‍ෂිත ඇරඹුම හැඩගසන්න",
@@ -363,10 +363,10 @@
       "url": {}
     }
   },
-  "turnOffRSTDescription": "මෙම පරිගණකය ඉන්ටෙල් RST (ශ්‍රීඝ්‍ර ආචයන තාක්‍ෂණය) භාවිතා කරයි. උබුන්ටු ස්ථාපනයට පෙර වින්ඩෝස් හි RST අක්‍රිය කළ යුතුය.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "උපදෙස් සඳහා, දුරකථනයක හෝ වෙනත් උපාංගයක මෙම පිටුව අරින්න: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstDescription": "මෙම පරිගණකය ඉන්ටෙල් RST (ශ්‍රීඝ්‍ර ආචයන තාක්‍ෂණය) භාවිතා කරයි. උබුන්ටු ස්ථාපනයට පෙර වින්ඩෝස් හි RST අක්‍රිය කළ යුතුය.",
+  "@rstDescription": {},
+  "rstInstructions": "උපදෙස් සඳහා, දුරකථනයක හෝ වෙනත් උපාංගයක මෙම පිටුව අරින්න: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}

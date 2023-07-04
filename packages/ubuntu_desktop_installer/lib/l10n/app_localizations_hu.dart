@@ -74,16 +74,16 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Az RST engedélyezve van';
+  String get rstTitle => 'Az RST engedélyezve van';
 
   @override
-  String get turnOffRSTTitle => 'Az RST kikapcsolása a folytatáshoz';
+  String get rstHeader => 'Az RST kikapcsolása a folytatáshoz';
 
   @override
-  String get turnOffRSTDescription => 'Ez a számítógép Intel RST (Rapid Storage Technology) technológiát használ. Az RST-t ki kell kapcsolnia a Windowsban az Ubuntu telepítése előtt.';
+  String get rstDescription => 'Ez a számítógép Intel RST (Rapid Storage Technology) technológiát használ. Az RST-t ki kell kapcsolnia a Windowsban az Ubuntu telepítése előtt.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Az utasításokért olvassa le a QR-kódot egy másik eszközön vagy látogassa meg ezt az oldalt: <a href=\"https://$url\">$url</a>';
   }
 

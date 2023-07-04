@@ -373,7 +373,7 @@ Future<void> testRstPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, RstPage, (lang) => lang.turnOffRST);
+  await expectPage(tester, RstPage, (lang) => lang.rstTitle);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);

@@ -82,12 +82,12 @@
       "url": {}
     }
   },
-  "turnOffRST": "Itzali RST",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Ordenagailu honek Intel RST (Rapid Storage Technology) erabiltzen du. RST itzali behar duzu Windowsen Ubuntu instalatu baino lehenago.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Argibideetarako, ireki orri hau telefono edo beste gailu batean: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "Itzali RST",
+  "@rstTitle": {},
+  "rstDescription": "Ordenagailu honek Intel RST (Rapid Storage Technology) erabiltzen du. RST itzali behar duzu Windowsen Ubuntu instalatu baino lehenago.",
+  "@rstDescription": {},
+  "rstInstructions": "Argibideetarako, ireki orri hau telefono edo beste gailu batean: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}

@@ -339,29 +339,29 @@ abstract class AppLocalizations {
   /// **'You may wish to read the <a href=\"{url}\">release notes</a>.'**
   String releaseNotesLabel(Object url);
 
-  /// No description provided for @turnOffRST.
+  /// No description provided for @rstTitle.
   ///
   /// In en, this message translates to:
   /// **'RST is enabled'**
-  String get turnOffRST;
+  String get rstTitle;
 
-  /// No description provided for @turnOffRSTTitle.
+  /// No description provided for @rstHeader.
   ///
   /// In en, this message translates to:
   /// **'Turn off RST to continue'**
-  String get turnOffRSTTitle;
+  String get rstHeader;
 
-  /// No description provided for @turnOffRSTDescription.
+  /// No description provided for @rstDescription.
   ///
   /// In en, this message translates to:
   /// **'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.'**
-  String get turnOffRSTDescription;
+  String get rstDescription;
 
-  /// No description provided for @instructionsForRST.
+  /// No description provided for @rstInstructions.
   ///
   /// In en, this message translates to:
   /// **'For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>'**
-  String instructionsForRST(Object url);
+  String rstInstructions(Object url);
 
   /// No description provided for @keyboardLayoutPageTitle.
   ///

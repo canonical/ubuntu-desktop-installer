@@ -23,8 +23,8 @@
   "@minimalInstallationTitle": {},
   "minimalInstallationSubtitle": "Saityno naršyklė ir pagrindinės paslaugų programos.",
   "@minimalInstallationSubtitle": {},
-  "turnOffRST": "RST yra įjungta",
-  "@turnOffRST": {},
+  "rstTitle": "RST yra įjungta",
+  "@rstTitle": {},
   "keyboardLayoutPageTitle": "Klaviatūros išdėstymas",
   "@keyboardLayoutPageTitle": {},
   "chooseYourKeyboardLayout": "Pasirinkite klaviatūros išdėstymą:",
@@ -163,10 +163,10 @@
       "url": {}
     }
   },
-  "turnOffRSTDescription": "Šis kompiuteris naudoja Intel RST (Rapid Storage Technology). Prieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti RST.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstDescription": "Šis kompiuteris naudoja Intel RST (Rapid Storage Technology). Prieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti RST.",
+  "@rstDescription": {},
+  "rstInstructions": "Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -793,8 +793,8 @@
   "@activeDirectoryAdminInvalidChars": {},
   "activeDirectoryErrorTitle": "Klaida konfigūruojant ryšį su „Active Directory“",
   "@activeDirectoryErrorTitle": {},
-  "turnOffRSTTitle": "Norėdami tęsti, išjunkite RST",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Norėdami tęsti, išjunkite RST",
+  "@rstHeader": {},
   "turnOffBitlockerHeadline": "Norėdami tęsti, išjunkite „BitLocker“",
   "@turnOffBitlockerHeadline": {},
   "restartIntoWindowsDescription": "Ar tikrai norite paleisti kompiuterį iš naujo? Vėliau jums teks pradėti {DISTRO} diegimą iš naujo, kad užbaigtumėte diegti {DISTRO}.",

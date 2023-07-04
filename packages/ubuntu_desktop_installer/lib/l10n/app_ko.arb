@@ -12,8 +12,8 @@
   "@installUbuntu": {},
   "keyboardLayoutPageTitle": "키보드 레이아웃",
   "@keyboardLayoutPageTitle": {},
-  "instructionsForRST": "절차를 알아보려면, 다른 장치로 QR코드를 스캔 하거나 이 페이지를 방문하십시오: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstInstructions": "절차를 알아보려면, 다른 장치로 QR코드를 스캔 하거나 이 페이지를 방문하십시오: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -104,10 +104,10 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST가 활성화됨",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.",
-  "@turnOffRSTDescription": {},
+  "rstTitle": "RST가 활성화됨",
+  "@rstTitle": {},
+  "rstDescription": "이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.",
+  "@rstDescription": {},
   "dontInstallDriverSoftwareNow": "지금은 드라이버 소프트웨어 설치하지 않기",
   "@dontInstallDriverSoftwareNow": {},
   "dontInstallDriverSoftwareNowDescription": "소프트웨어 & 업데이트에서 나중에 설치하실 수 있습니다.",
@@ -723,8 +723,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffRSTTitle": "계속하려면 RST를 끄십시오",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "계속하려면 RST를 끄십시오",
+  "@rstHeader": {},
   "installationSlidesAccessibilityBody": "{DISTRO} 철학의 핵심은 컴퓨팅은 모두를 위한 것이라는 믿음입니다. 고급 접근성 도구와 언어, 색상 및 텍스트 크기를 변경할 수 있는 옵션을 통해 {DISTRO}는 언제 어디서나 쉽게 컴퓨팅을 할 수 있도록 지원합니다.",
   "@installationSlidesAccessibilityBody": {
     "type": "text",

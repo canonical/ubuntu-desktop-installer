@@ -29,12 +29,12 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST está activado",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Este equipo utiliza Intel RST (Rapid Storage Technology). Es necesario desactivar RST en Windows antes de instalar Ubuntu.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Para obtener instrucciones, escanee el código QR en otro dispositivo o visite: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "RST está activado",
+  "@rstTitle": {},
+  "rstDescription": "Este equipo utiliza Intel RST (Rapid Storage Technology). Es necesario desactivar RST en Windows antes de instalar Ubuntu.",
+  "@rstDescription": {},
+  "rstInstructions": "Para obtener instrucciones, escanee el código QR en otro dispositivo o visite: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -738,8 +738,8 @@
   "@installationSlidesProductivityTitle": {},
   "installationSlidesSupportEnterprise": "Para los usuarios de empresa, Canonical ofrece soporte comercial para facilitar la incorporación y gestión segura de Ubuntu en el lugar de trabajo.",
   "@installationSlidesSupportEnterprise": {},
-  "turnOffRSTTitle": "Desactive RST para continuar",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Desactive RST para continuar",
+  "@rstHeader": {},
   "restartIntoWindowsTitle": "¿Reiniciar en Windows?",
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "¿Está seguro de que quieres reiniciar tú ordenador? Necesitas reiniciar la instalación de {DISTRO} más tarde para finalizar la instalación de {DISTRO}.",

@@ -140,12 +140,12 @@
       "RELEASE": {}
     }
   },
-  "turnOffRST": "RST er aktiveret",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Denne computer bruger Intel RST (Rapid Storage Technology). Før installation af Ubuntu, skal du slå RST fra i Windows.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "For instruktioner, skan QR-koden på en anden enhed, eller besøg: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "RST er aktiveret",
+  "@rstTitle": {},
+  "rstDescription": "Denne computer bruger Intel RST (Rapid Storage Technology). Før installation af Ubuntu, skal du slå RST fra i Windows.",
+  "@rstDescription": {},
+  "rstInstructions": "For instruktioner, skan QR-koden på en anden enhed, eller besøg: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -296,8 +296,8 @@
   "@activeDirectoryPasswordLabel": {},
   "activeDirectoryPasswordEmpty": "Påkrævet",
   "@activeDirectoryPasswordEmpty": {},
-  "turnOffRSTTitle": "Slå RST fra, for at fortsætte",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Slå RST fra, for at fortsætte",
+  "@rstHeader": {},
   "installationTypeMultiOSDetected": "Denne computer har aktuelt flere forskellige operativsystemer installeret. Hvad kunne du tænke dig at gøre?",
   "@installationTypeMultiOSDetected": {},
   "installationTypeErase": "Udslet disk og installér {DISTRO}",

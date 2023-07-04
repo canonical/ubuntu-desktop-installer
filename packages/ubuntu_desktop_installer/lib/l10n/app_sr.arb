@@ -41,8 +41,8 @@
       "RELEASE": {}
     }
   },
-  "instructionsForRST": "За инструкције, отворите ову страницу на телефону или другом уређају: <a href=\"https://{url}\"></a>",
-  "@instructionsForRST": {
+  "rstInstructions": "За инструкције, отворите ову страницу на телефону или другом уређају: <a href=\"https://{url}\"></a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -58,8 +58,8 @@
   "@isKeyPresent": {},
   "pressOneKey": "Молимо притисните један од следећих тастера:",
   "@pressOneKey": {},
-  "turnOffRST": "Искључи RST",
-  "@turnOffRST": {},
+  "rstTitle": "Искључи RST",
+  "@rstTitle": {},
   "tryUbuntuDescription": "Можете испробати {RELEASE} без прављења измена на вашем рачунару.",
   "@tryUbuntuDescription": {
     "type": "text",

@@ -74,16 +74,16 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST 已启用';
+  String get rstTitle => 'RST 已启用';
 
   @override
-  String get turnOffRSTTitle => '关闭 RST 以继续';
+  String get rstHeader => '关闭 RST 以继续';
 
   @override
-  String get turnOffRSTDescription => '这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，您需要在Windows中关闭RST。';
+  String get rstDescription => '这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，您需要在Windows中关闭RST。';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return '有关说明，请在另一台设备上扫描QR码或访问：<a href=\"https://$url\">$url</a>';
   }
 

@@ -2,8 +2,8 @@
   "@@locale": "ca",
   "welcome": "Us donem la benvinguda",
   "@welcome": {},
-  "turnOffRST": "Desactiva la RST.",
-  "@turnOffRST": {},
+  "rstTitle": "Desactiva la RST.",
+  "@rstTitle": {},
   "keyboardLayoutPageTitle": "Disposició de teclat",
   "@keyboardLayoutPageTitle": {},
   "chooseYourKeyboardLayout": "Trieu la vostra distribució de teclat:",
@@ -232,10 +232,10 @@
       "url": {}
     }
   },
-  "turnOffRSTDescription": "Aquest ordinador utilitza Intel RST (Tecnologia d'emmagatzematge ràpid). Heu de desactivar RST a Windows abans d'instal·lar Ubuntu.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Per a obtenir instruccions, obriu aquesta pàgina en un telèfon o un altre dispositiu: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstDescription": "Aquest ordinador utilitza Intel RST (Tecnologia d'emmagatzematge ràpid). Heu de desactivar RST a Windows abans d'instal·lar Ubuntu.",
+  "@rstDescription": {},
+  "rstInstructions": "Per a obtenir instruccions, obriu aquesta pàgina en un telèfon o un altre dispositiu: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}

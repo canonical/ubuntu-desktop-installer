@@ -79,14 +79,14 @@
       "url": {}
     }
   },
-  "turnOffRST": "RST is enabled",
-  "@turnOffRST": {},
-  "turnOffRSTTitle": "Turn off RST to continue",
-  "@turnOffRSTTitle": {},
-  "turnOffRSTDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "RST is enabled",
+  "@rstTitle": {},
+  "rstHeader": "Turn off RST to continue",
+  "@rstHeader": {},
+  "rstDescription": "This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.",
+  "@rstDescription": {},
+  "rstInstructions": "For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}

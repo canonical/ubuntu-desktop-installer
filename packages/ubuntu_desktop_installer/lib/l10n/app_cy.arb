@@ -136,8 +136,8 @@
       "url": {}
     }
   },
-  "turnOffRST": "Diffoddwch RST",
-  "@turnOffRST": {},
+  "rstTitle": "Diffoddwch RST",
+  "@rstTitle": {},
   "keyboardLayoutPageTitle": "Cynllun bysellfwrdd",
   "@keyboardLayoutPageTitle": {},
   "chooseYourKeyboardLayout": "Dewiswch gynllun eich bysellfwrdd:",

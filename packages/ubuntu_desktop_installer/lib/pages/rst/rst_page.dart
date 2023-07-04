@@ -27,7 +27,7 @@ class RstPage extends ConsumerWidget {
     return Scaffold(
       body: WizardPage(
         title: YaruWindowTitleBar(
-          title: Text(lang.turnOffRST),
+          title: Text(lang.rstTitle),
         ),
         content: Center(
           child: Row(
@@ -51,13 +51,13 @@ class RstPage extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(lang.turnOffRSTTitle,
+                    Text(lang.rstHeader,
                         style: Theme.of(context).textTheme.headlineSmall),
                     const SizedBox(height: kWizardSpacing),
-                    Text(lang.turnOffRSTDescription),
+                    Text(lang.rstDescription),
                     const SizedBox(height: kWizardSpacing),
                     Html(
-                      data: lang.instructionsForRST('help.ubuntu.com/rst'),
+                      data: lang.rstInstructions('help.ubuntu.com/rst'),
                       style: {
                         'body': Style(margin: Margins.zero),
                         'a': Style(color: Theme.of(context).colorScheme.link),

@@ -74,16 +74,16 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Matikan RST';
+  String get rstTitle => 'Matikan RST';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get rstHeader => 'Turn off RST to continue';
 
   @override
-  String get turnOffRSTDescription => 'Komputer ini menggunakan Intel RST (Rapid Storage Technology). Anda harus mematikan RST di Windows sebelum memasang Ubuntu.';
+  String get rstDescription => 'Komputer ini menggunakan Intel RST (Rapid Storage Technology). Anda harus mematikan RST di Windows sebelum memasang Ubuntu.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Untuk petunjuk, buka halaman ini di ponsel atau perangkat lain: <a href=\"https://$url\">$url</a>';
   }
 

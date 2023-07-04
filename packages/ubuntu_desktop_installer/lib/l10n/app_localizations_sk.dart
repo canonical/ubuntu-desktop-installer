@@ -74,16 +74,16 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST je zapnuté';
+  String get rstTitle => 'RST je zapnuté';
 
   @override
-  String get turnOffRSTTitle => 'Aby bolo možné pokračovať, vypnite RST';
+  String get rstHeader => 'Aby bolo možné pokračovať, vypnite RST';
 
   @override
-  String get turnOffRSTDescription => 'Na tomto počítači je zapnutá technológia Intel RST (Rapid Storage Technology). Aby bolo možné Ubuntu nainštalovať, je potrebné vo Windows funkciu RST vypnúť.';
+  String get rstDescription => 'Na tomto počítači je zapnutá technológia Intel RST (Rapid Storage Technology). Aby bolo možné Ubuntu nainštalovať, je potrebné vo Windows funkciu RST vypnúť.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Ohľadne pokynov naskenujte QR kód na inom zariadení alebo choďte na: <a href=\"https://$url\">$url</a>';
   }
 

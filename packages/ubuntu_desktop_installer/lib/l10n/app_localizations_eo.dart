@@ -74,16 +74,16 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Rapid-Konserveja Tekniko (RST) estas ŝaltita';
+  String get rstTitle => 'Rapid-Konserveja Tekniko (RST) estas ŝaltita';
 
   @override
-  String get turnOffRSTTitle => 'Malŝaltu RST por daŭrigi';
+  String get rstHeader => 'Malŝaltu RST por daŭrigi';
 
   @override
-  String get turnOffRSTDescription => 'Ĉi tiu komputilo uzas Intel RST (Rapid-Konservejan Teknikon). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.';
+  String get rstDescription => 'Ĉi tiu komputilo uzas Intel RST (Rapid-Konservejan Teknikon). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Por instrukcioj, skanu la QR-kodon per alia aparato, aŭ vizitu la jenon: <a href=\"https://$url\">$url</a>';
   }
 

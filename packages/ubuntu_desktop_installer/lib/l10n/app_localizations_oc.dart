@@ -74,16 +74,16 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST es activat';
+  String get rstTitle => 'RST es activat';
 
   @override
-  String get turnOffRSTTitle => 'Desactivatz lo RST per contunhar';
+  String get rstHeader => 'Desactivatz lo RST per contunhar';
 
   @override
-  String get turnOffRSTDescription => 'Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.';
+  String get rstDescription => 'Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Per las consignas, numerizatz aqueste còdi QR sus un autre aparelh o consultatz : <a href=\"https://$url\">$url</a>';
   }
 

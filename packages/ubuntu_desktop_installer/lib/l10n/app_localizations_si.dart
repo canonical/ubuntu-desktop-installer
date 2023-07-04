@@ -74,16 +74,16 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST අක්‍රිය කරන්න';
+  String get rstTitle => 'RST අක්‍රිය කරන්න';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get rstHeader => 'Turn off RST to continue';
 
   @override
-  String get turnOffRSTDescription => 'මෙම පරිගණකය ඉන්ටෙල් RST (ශ්‍රීඝ්‍ර ආචයන තාක්‍ෂණය) භාවිතා කරයි. උබුන්ටු ස්ථාපනයට පෙර වින්ඩෝස් හි RST අක්‍රිය කළ යුතුය.';
+  String get rstDescription => 'මෙම පරිගණකය ඉන්ටෙල් RST (ශ්‍රීඝ්‍ර ආචයන තාක්‍ෂණය) භාවිතා කරයි. උබුන්ටු ස්ථාපනයට පෙර වින්ඩෝස් හි RST අක්‍රිය කළ යුතුය.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'උපදෙස් සඳහා, දුරකථනයක හෝ වෙනත් උපාංගයක මෙම පිටුව අරින්න: <a href=\"https://$url\">$url</a>';
   }
 

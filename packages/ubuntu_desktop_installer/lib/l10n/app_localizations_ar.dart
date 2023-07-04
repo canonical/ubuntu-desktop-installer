@@ -74,16 +74,16 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'تم تشغيل RST';
+  String get rstTitle => 'تم تشغيل RST';
 
   @override
-  String get turnOffRSTTitle => 'قم بإيقاف RST للمتابعة';
+  String get rstHeader => 'قم بإيقاف RST للمتابعة';
 
   @override
-  String get turnOffRSTDescription => 'يستخدم هذا الكمبيوتر Intel RST (تقنية التخزين السريع). تحتاج إلى إيقاف تشغيل RST في Windows قبل تثبيت Ubuntu.';
+  String get rstDescription => 'يستخدم هذا الكمبيوتر Intel RST (تقنية التخزين السريع). تحتاج إلى إيقاف تشغيل RST في Windows قبل تثبيت Ubuntu.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'للحصول على إرشادات ، قم بمسح رمز الاستجابة السريعة ضوئيًا (QR code) على الهاتف أو أي جهاز آخر: <a href=\"https://$url\">$url</a>';
   }
 

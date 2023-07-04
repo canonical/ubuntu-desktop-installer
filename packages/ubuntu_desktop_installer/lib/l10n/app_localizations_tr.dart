@@ -74,16 +74,16 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST etkin';
+  String get rstTitle => 'RST etkin';
 
   @override
-  String get turnOffRSTTitle => 'Devam etmek için RST\'yi kapatın';
+  String get rstHeader => 'Devam etmek için RST\'yi kapatın';
 
   @override
-  String get turnOffRSTDescription => 'Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu\'yu kurmadan önce Windows\'tan RST\'yi kapatmalısınız.';
+  String get rstDescription => 'Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu\'yu kurmadan önce Windows\'tan RST\'yi kapatmalısınız.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Talimatlar için QR kodunu başka bir cihazda tarayın veya ziyaret edin: <a href=\"https://$url\">$url</a>';
   }
 

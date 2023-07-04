@@ -12,8 +12,8 @@
   "@installThirdPartyTitle": {},
   "installThirdPartySubtitle": "Tento softvér je predmetom licenčných dojednaní, obsiahnutých v dokumentácii k nemu. Niektorý je proprietárny.",
   "@installThirdPartySubtitle": {},
-  "instructionsForRST": "Ohľadne pokynov naskenujte QR kód na inom zariadení alebo choďte na: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstInstructions": "Ohľadne pokynov naskenujte QR kód na inom zariadení alebo choďte na: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -161,8 +161,8 @@
   "@diskHeadersMountPoint": {},
   "newPartitionTable": "Nová tabuľka rozdelenia na oddiely",
   "@newPartitionTable": {},
-  "turnOffRSTTitle": "Aby bolo možné pokračovať, vypnite RST",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Aby bolo možné pokračovať, vypnite RST",
+  "@rstHeader": {},
   "showSecurityKey": "Zobraziť kľúč zabezpečenia",
   "@showSecurityKey": {},
   "connectToInternetPageTitle": "Pripojiť sa k sieti",
@@ -498,10 +498,10 @@
       "RELEASE": {}
     }
   },
-  "turnOffRST": "RST je zapnuté",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Na tomto počítači je zapnutá technológia Intel RST (Rapid Storage Technology). Aby bolo možné Ubuntu nainštalovať, je potrebné vo Windows funkciu RST vypnúť.",
-  "@turnOffRSTDescription": {},
+  "rstTitle": "RST je zapnuté",
+  "@rstTitle": {},
+  "rstDescription": "Na tomto počítači je zapnutá technológia Intel RST (Rapid Storage Technology). Aby bolo možné Ubuntu nainštalovať, je potrebné vo Windows funkciu RST vypnúť.",
+  "@rstDescription": {},
   "installUbuntuDescription": "Nainštalujte {RELEASE} spoločne z (alebo namiesto) vášho operačného systému. Nemalo by to trvať dlho.",
   "@installUbuntuDescription": {
     "type": "text",

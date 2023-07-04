@@ -34,8 +34,8 @@
   "@tryUbuntu": {},
   "installUbuntu": "להתקין את {RELEASE}",
   "@installUbuntu": {},
-  "turnOffRST": "RST פעיל",
-  "@turnOffRST": {},
+  "rstTitle": "RST פעיל",
+  "@rstTitle": {},
   "restartIntoWindows": "להפעיל מחדש אל Windows",
   "@restartIntoWindows": {},
   "confirmSecurityKey": "אישור מפתח האבטחה",
@@ -71,10 +71,10 @@
   "@repairInstallation": {},
   "repairInstallationDescription": "תיקון יתקין את כל התכניות המותקנות מחדש מבלי לגעת במסמכים או בהגדרות.",
   "@repairInstallationDescription": {},
-  "turnOffRSTDescription": "המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstDescription": "המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.",
+  "@rstDescription": {},
+  "rstInstructions": "לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -738,8 +738,8 @@
       "DISTRO": {}
     }
   },
-  "turnOffRSTTitle": "יש לכבות את ה־RST כדי להמשיך",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "יש לכבות את ה־RST כדי להמשיך",
+  "@rstHeader": {},
   "restartIntoWindowsTitle": "לעלות מחדש ל־Windows?",
   "@restartIntoWindowsTitle": {},
   "turnOffBitlockerHeadline": "יש לכבות את BitLocker",

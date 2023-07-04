@@ -74,16 +74,16 @@ class AppLocalizationsSr extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Искључи RST';
+  String get rstTitle => 'Искључи RST';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get rstHeader => 'Turn off RST to continue';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get rstDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'За инструкције, отворите ову страницу на телефону или другом уређају: <a href=\"https://$url\"></a>';
   }
 

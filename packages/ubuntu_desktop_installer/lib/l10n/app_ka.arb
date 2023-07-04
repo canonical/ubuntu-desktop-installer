@@ -39,8 +39,8 @@
       "RELEASE": {}
     }
   },
-  "turnOffRST": "RST ჩართულია",
-  "@turnOffRST": {},
+  "rstTitle": "RST ჩართულია",
+  "@rstTitle": {},
   "keyboardLayoutPageTitle": "კლავიატური განლაგება",
   "@keyboardLayoutPageTitle": {},
   "chooseYourKeyboardLayout": "აირჩიეთ თქვენი კლავიატურის განლაგება:",

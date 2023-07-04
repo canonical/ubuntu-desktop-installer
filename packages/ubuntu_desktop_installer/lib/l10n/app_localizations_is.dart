@@ -74,16 +74,16 @@ class AppLocalizationsIs extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'Slökkva á RST';
+  String get rstTitle => 'Slökkva á RST';
 
   @override
-  String get turnOffRSTTitle => 'Turn off RST to continue';
+  String get rstHeader => 'Turn off RST to continue';
 
   @override
-  String get turnOffRSTDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
+  String get rstDescription => 'This computer uses Intel RST (Rapid Storage Technology). You need to turn off RST in Windows before installing Ubuntu.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'For instructions, scan the QR code on another device or visit: <a href=\"https://$url\">$url</a>';
   }
 

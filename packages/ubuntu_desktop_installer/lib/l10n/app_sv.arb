@@ -134,12 +134,12 @@
   "@restartButtonText": {},
   "welcome": "Välkommen",
   "@welcome": {},
-  "turnOffRST": "RST är aktiverat",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Den här datorn använder Intel RST (Rapid Storage Technology). Du måste stänga av RST i Windows innan du installerar Ubuntu.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "För instruktioner, scanna QR-koden på en annan enhet eller besök:<a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "RST är aktiverat",
+  "@rstTitle": {},
+  "rstDescription": "Den här datorn använder Intel RST (Rapid Storage Technology). Du måste stänga av RST i Windows innan du installerar Ubuntu.",
+  "@rstDescription": {},
+  "rstInstructions": "För instruktioner, scanna QR-koden på en annan enhet eller besök:<a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -793,8 +793,8 @@
   "@installationSlidesAccessibilityOrca": {},
   "notEnoughDiskSpaceRequired": "Krävs:",
   "@notEnoughDiskSpaceRequired": {},
-  "turnOffRSTTitle": "Slå av RST för att fortsätta",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Slå av RST för att fortsätta",
+  "@rstHeader": {},
   "restartIntoWindowsTitle": "Starta om till Windows?",
   "@restartIntoWindowsTitle": {},
   "turnOffBitlockerHeadline": "Slå av Bitlocker för att fortsätta",

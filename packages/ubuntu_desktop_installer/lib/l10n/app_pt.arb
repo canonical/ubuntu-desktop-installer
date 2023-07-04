@@ -31,12 +31,12 @@
       "url": {}
     }
   },
-  "turnOffRST": "A RST está ativa",
-  "@turnOffRST": {},
-  "turnOffRSTDescription": "Este computador usa Intel RST (Rapid Storage Technology). Precisa de desligar a RST no Windows antes de instalar o Ubuntu.",
-  "@turnOffRSTDescription": {},
-  "instructionsForRST": "Para obter instruções, digitalize o código QR noutro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
-  "@instructionsForRST": {
+  "rstTitle": "A RST está ativa",
+  "@rstTitle": {},
+  "rstDescription": "Este computador usa Intel RST (Rapid Storage Technology). Precisa de desligar a RST no Windows antes de instalar o Ubuntu.",
+  "@rstDescription": {},
+  "rstInstructions": "Para obter instruções, digitalize o código QR noutro dispositivo ou visite: <a href=\"https://{url}\">{url}</a>",
+  "@rstInstructions": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -748,8 +748,8 @@
   "@notEnoughDiskSpaceRequired": {},
   "activeDirectoryErrorMessage": "Lamentamos, o Active Directory não pode ser criado neste momento. Assim que o seu sistema estiver instalado e a funcionar, visite o <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para ajuda.",
   "@activeDirectoryErrorMessage": {},
-  "turnOffRSTTitle": "Desligue a RST para continuar",
-  "@turnOffRSTTitle": {},
+  "rstHeader": "Desligue a RST para continuar",
+  "@rstHeader": {},
   "turnOffBitlockerHeadline": "Desligue o BitLocker para continuar",
   "@turnOffBitlockerHeadline": {},
   "restartIntoWindowsTitle": "Reiniciar no Windows?",

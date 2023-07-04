@@ -74,16 +74,16 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get turnOffRST => 'RST on käytössä';
+  String get rstTitle => 'RST on käytössä';
 
   @override
-  String get turnOffRSTTitle => 'Poista RST käytöstä jatkaaksesi';
+  String get rstHeader => 'Poista RST käytöstä jatkaaksesi';
 
   @override
-  String get turnOffRSTDescription => 'Tämä tietokone käyttää Intel RST:tä (Rapid Storage Technology). Sinun tulee sammuttaa RST, ennen kuin asennat Ubuntun.';
+  String get rstDescription => 'Tämä tietokone käyttää Intel RST:tä (Rapid Storage Technology). Sinun tulee sammuttaa RST, ennen kuin asennat Ubuntun.';
 
   @override
-  String instructionsForRST(Object url) {
+  String rstInstructions(Object url) {
     return 'Lue ohjeet skannaamalla QR-koodi tai käy toisella laitteella: <a href=\"https://$url\">$url</a>';
   }
 
