@@ -75,14 +75,6 @@
   "@installAlongsidePartition": {},
   "partitionSizeLabel": "Përmasa:",
   "@partitionSizeLabel": {},
-  "partitionUnitB": "B",
-  "@partitionUnitB": {},
-  "partitionUnitKB": "kB",
-  "@partitionUnitKB": {},
-  "partitionUnitMB": "MB",
-  "@partitionUnitMB": {},
-  "partitionUnitGB": "GB",
-  "@partitionUnitGB": {},
   "writeChangesFallbackSerial": "disku",
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"

@@ -26,8 +26,6 @@
   },
   "installationTypeAlongsideInfo": "പ്രമാണങ്ങളും സംഗീതവും മറ്റ് സ്വകാര്യ ഫയലുകളും സൂക്ഷിക്കും. ഓരോ തവണ കമ്പ്യൂട്ടർ ഓണാകുമ്പോഴും ഏത് ഓപ്പറേറ്റിംഗ് സിസ്റ്റം വേണമെന്ന് നിങ്ങൾക്ക് തിരഞ്ഞെടുക്കാം.",
   "@installationTypeAlongsideInfo": {},
-  "partitionUnitKB": "kB",
-  "@partitionUnitKB": {},
   "newPartitionTableConfirmationTitle": "ഈ ഉപകരണത്തിൽ ഒരു പുതിയ ശൂന്യമായ പാർട്ടീഷൻ ടേബിൾ സൃഷ്ടിക്കണോ?",
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "പാർട്ടീഷൻ ചെയ്യാൻ നിങ്ങൾ ഒരു മുഴുവൻ ഉപകരണവും തിരഞ്ഞെടുത്തിരിക്കുന്നു. നിങ്ങൾ ഉപകരണത്തിൽ ഒരു പുതിയ പാർട്ടീഷൻ ടേബിൾ തയ്യാറാക്കുന്നത് തുടരുകയാണെങ്കിൽ, നിലവിലുള്ള എല്ലാ പാർട്ടീഷനുകളും നീക്കം ചെയ്യപ്പെടും.\n\nനിങ്ങൾക്ക് വേണമെങ്കിൽ ഈ പ്രവർത്തനം പിന്നീട് പഴയപടിയാക്കാനാകുമെന്ന കാര്യം ശ്രദ്ധിക്കുക.",
@@ -55,10 +53,6 @@
       "DISTRO": {}
     }
   },
-  "partitionUnitMB": "MB",
-  "@partitionUnitMB": {},
-  "partitionUnitGB": "GB",
-  "@partitionUnitGB": {},
   "partitionTypeLabel": "പുതിയ പാർട്ടീഷന്റെ തരം:",
   "@partitionTypeLabel": {},
   "partitionTypePrimary": "പ്രാഥമികം",
@@ -317,8 +311,6 @@
   "@partitionEditTitle": {},
   "partitionSizeLabel": "വലിപ്പം:",
   "@partitionSizeLabel": {},
-  "partitionUnitB": "B",
-  "@partitionUnitB": {},
   "identityConfirmPasswordLabel": "നിങ്ങളുടെ പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക",
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല",

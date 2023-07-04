@@ -12,10 +12,6 @@
   "@startInstallingButtonText": {},
   "diskHeadersSize": "Grando",
   "@diskHeadersSize": {},
-  "partitionUnitKB": "kB",
-  "@partitionUnitKB": {},
-  "partitionUnitGB": "GB",
-  "@partitionUnitGB": {},
   "installationCompleteTitle": "Instalado finiĝis",
   "@installationCompleteTitle": {},
   "otherOptions": "Aliaj opcioj",
@@ -32,8 +28,6 @@
   "@changeButtonText": {},
   "themeDark": "Malhela",
   "@themeDark": {},
-  "partitionUnitMB": "MB",
-  "@partitionUnitMB": {},
   "partitionTypePrimary": "Unuagrada",
   "@partitionTypePrimary": {},
   "restartInto": "Restartigi al {system}",
@@ -231,8 +225,6 @@
       "color": {}
     }
   },
-  "partitionUnitB": "B",
-  "@partitionUnitB": {},
   "partitionFormatLabel": "Uzata kiel:",
   "@partitionFormatLabel": {},
   "partitionSizeLabel": "Grando:",

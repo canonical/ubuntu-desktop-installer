@@ -299,8 +299,6 @@
   "@partitionCreateTitle": {},
   "partitionSizeLabel": "Veľkosť:",
   "@partitionSizeLabel": {},
-  "partitionUnitB": "B",
-  "@partitionUnitB": {},
   "identityRealNameLabel": "Vaše meno",
   "@identityRealNameLabel": {},
   "identityRealNameTooLong": "Meno je príliš dlhé.",
@@ -456,12 +454,6 @@
       "RELEASE": {}
     }
   },
-  "partitionUnitGB": "GB",
-  "@partitionUnitGB": {},
-  "partitionUnitKB": "kB",
-  "@partitionUnitKB": {},
-  "partitionUnitMB": "MB",
-  "@partitionUnitMB": {},
   "partitionMountPointLabel": "Prípojný bod:",
   "@partitionMountPointLabel": {},
   "identityUsernameTooLong": "Také meno je príliš dlhé.",
