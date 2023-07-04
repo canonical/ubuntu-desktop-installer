@@ -540,7 +540,7 @@
   "@activeDirectoryAdminInvalidChars": {},
   "partitionFormatNone": "Оставить неформатированным",
   "@partitionFormatNone": {},
-  "preparingUbuntu": "Подготовка {DISTRO}...",
+  "preparingUbuntu": "Подготовка {DISTRO}…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {
