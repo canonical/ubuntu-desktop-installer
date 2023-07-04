@@ -4,20 +4,12 @@
   "@appTitle": {},
   "windowTitle": "Instalar {RELEASE}",
   "@windowTitle": {},
-  "cancelButtonText": "Cancelar",
-  "@cancelButtonText": {},
   "changeButtonText": "Alterar",
   "@changeButtonText": {},
-  "okButtonText": "Ok",
-  "@okButtonText": {},
-  "noButtonText": "Não",
-  "@noButtonText": {},
   "restartButtonText": "Reiniciar",
   "@restartButtonText": {},
   "revertButtonText": "Desfazer",
   "@revertButtonText": {},
-  "yesButtonText": "Sim",
-  "@yesButtonText": {},
   "welcome": "Bem-vindo",
   "@welcome": {},
   "tryOrInstallPageTitle": "Experimentar ou instalar o {DISTRO}",
@@ -285,23 +277,6 @@
   },
   "writeChangesPartitionsHeader": "As seguintes partições serão formatadas:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "partição #{sysname} como {format} usada para {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "Um registro de partição montada",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "partição #{sysname} como {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "Um registro de partição não montada",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "themePageTitle": "Escolha seu tema",
   "@themePageTitle": {},
   "themePageHeader": "Você pode sempre alterar isso depois nas configurações de aparência.",
@@ -394,81 +369,10 @@
   "@identityUsernameInUse": {},
   "identityUsernameInvalidChars": "Esse nome contém caracteres inválidos.",
   "@identityUsernameInvalidChars": {},
-  "welcomeSlideDescription": "Rápida e cheia de novas funcionalidades, a última versão do {RELEASE} torna a computação mais fácil, como nunca antes. Aqui estão apenas algumas novidades legais para levar em conta...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideDescription": "LibreOffice é um pacote de office gratuito com tudo o que você precisa para criar documentos, planilhas e apresentações. Compatível com os formatos de arquivos do Microsoft Office, que tem todas as funcionalidades que você precisa e sem custo.",
-  "@officeSlideDescription": {},
-  "softwareSlideDescription": "Diga adeus à busca de novos softwares na internet. Com acesso à Loja Snap e ao arquivos de software do {RELEASE}, você pode encontrar e instalar novos aplicativos com facilidade. Basta digitar o que você está procurando ou explorar nas categorias como Gráfica e Fotografia, Jogos e Produtividade, junto com avaliações úteis de outros usuários.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideDescription": "{RELEASE} inclui o Firefox, um navegador usado por milhões de pessoas em todo o mundo. E os aplicativos que você usa com frequência (como por exemplo Facebook ou Gmail) podem ser colocados na sua área de trabalho para acesso mais rápido, de mesma forma como os aplicativos no seu computador.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideTitle": "Acesso para todos",
-  "@accessSlideTitle": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideDescription": "No coração da filosofia do {RELEASE} está a crença de que a computação é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, esquema de cores e tamanho de letra, {RELEASE} torna a computação fácil — quem quer que você seja e onde quer que você esteja.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideDocumentation": "A documentação oficial cobre muitas áreas mais comuns sobre {RELEASE}. Está disponível tanto <a href=\"https://help.ubuntu.com\">online</a> como através do ícone de Ajuda no dock.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "No <a href=\"https://askubuntu.com\">Ask Ubuntu</a> você pode fazer perguntas e pesquisar numa coleção impressionante de perguntas já respondidas. O suporte em sua própria língua pode ser fornecido via <a href=\"https://loco.ubuntu.com/teams\">Equipe da comunidade local</a>.",
-  "@supportSlideQuestions": {},
-  "supportSlideResources": "Para obter dicas de outros recursos úteis, por favor, visite <a href=\"https://www.ubuntu.com/support/community-support\">Suporte da comunidade</a> ou <a href=\"https://www.ubuntu.com/support\">Suporte comercial</a>.",
-  "@supportSlideResources": {},
-  "supportedSoftware": "Software suportado",
-  "@supportedSoftware": {},
   "identityUsernameSystemReserved": "Esse nome é reservado para uso do sistema.",
   "@identityUsernameSystemReserved": {},
   "identityUsernameTooLong": "Esse nome é muito comprido.",
   "@identityUsernameTooLong": {},
-  "webSlideFirefox": "Navegador Firefox",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "officeSlideTitle": "Tudo o que você precisa para o escritório",
-  "@officeSlideTitle": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "accessSlideCustomizationOptions": "Opções de personalização",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "Aparência",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Tecnologias assistivas",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Suporte de idiomas",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Ajuda e suporte",
-  "@supportSlideTitle": {},
-  "includedSoftware": "Software incluído",
-  "@includedSoftware": {},
-  "availableSoftware": "Software disponível",
-  "@availableSoftware": {},
   "copyingFiles": "Copiando arquivos…",
   "@copyingFiles": {},
   "installationFailed": "Instalação falhou",
@@ -487,50 +391,12 @@
   "@newPartitionTableConfirmationTitle": {},
   "newPartitionTableConfirmationMessage": "Criar uma nova tabela de partição em um dispositivo inteiro removerá todas as suas partições atuais. Esta operação pode ser desfeita se necessário.",
   "@newPartitionTableConfirmationMessage": {},
-  "identityShowPassword": "Mostrar senha",
-  "@identityShowPassword": {},
   "timezonePageTitle": "Selecione seu fuso horário",
   "@timezonePageTitle": {},
   "timezoneLocationLabel": "Localização",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Fuso horário",
   "@timezoneTimezoneLabel": {},
-  "welcomeSlideTitle": "Bem-vindo ao {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "Encontre ainda mais software",
-  "@softwareSlideTitle": {},
-  "musicSlideTitle": "Leve sua música com você",
-  "@musicSlideTitle": {},
-  "musicSlideDescription": "{RELEASE} vem com o incrível reprodutor de música Rhythmbox. Com opções avançadas de reprodução, é modo simples de colocar na lista as músicas perfeitas. Funciona muito bem com CDs e dispositivos portáteis, para que você possa desfrutar de todas as suas músicas aonde você for.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideRhythmbox": "Reprodutor de música Rhythmbox",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideTitle": "Divirta-se com suas fotos",
-  "@photoSlideTitle": {},
-  "photoSlideDescription": "Shotwell é um prático gerenciador de fotos que é compatível com seus gadgets. Conecte uma câmera ou um celular para transferir suas fotos, compartilhá-las de forma fácil e mantê-las seguras. E se você sente-se criativo, pode encontrar muitos outros aplicativos da fotografia no Ubuntu Software.",
-  "@photoSlideDescription": {},
-  "photoSlideShotwell": "Gerenciador de fotos Shotwell",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "Editor de imagens GIMP",
-  "@photoSlideGimp": {},
-  "webSlideTitle": "Tire o máximo proveito da internet",
-  "@webSlideTitle": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
   "connectToInternetPageTitle": "Conecte-se a uma rede",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "Ao conectar este computador à internet você facilitará ao Ubuntu instalação de qualquer software extra necessário e ajudará a determinar seu fuso horário.\n\nConecte-se via cabo Ethernet ou escolha uma rede Wi-Fi",
@@ -549,8 +415,6 @@
   "@noWifiDevicesDetected": {},
   "wiredDisabled": "Conexão a cabo está desligada",
   "@wiredDisabled": {},
-  "photoSlideShotcut": "Editor de vídeo Shotcut",
-  "@photoSlideShotcut": {},
   "installationTypeAlongsideMulti": "Instale {product} junto com eles",
   "@installationTypeAlongsideMulti": {
     "type": "text",
@@ -643,32 +507,10 @@
   "@installDriversTitle": {},
   "installingSystem": "Instalando o sistema…",
   "@installingSystem": {},
-  "notEnoughDiskSpaceHeader": "Você precisa de {SIZE} de espaço no disco para instalar o {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "O maior disco neste computador é de apenas {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installDriversSubtitle": "Esses drivers estão sujeitos aos termos de licença incluídos em suas documentações. Eles são proprietários.",
   "@installDriversSubtitle": {},
   "notEnoughDiskSpaceTitle": "Espaço insuficiente",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHasOnly": "Esse computador tem apenas {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "configuringSystem": "Iniciando o sistema…",
   "@configuringSystem": {},
   "installAlongsideHiddenPartitions": "{num} partições menores estão ocultas, use a <a href=\"{url}\">ferramenta de particionamento avançada</a> para obter mais controle",

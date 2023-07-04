@@ -1,7 +1,5 @@
 {
   "@@locale": "tr",
-  "yesButtonText": "Evet",
-  "@yesButtonText": {},
   "changeButtonText": "Değiştir",
   "@changeButtonText": {},
   "restartButtonText": "Yeniden başlat",
@@ -12,12 +10,6 @@
   "@welcome": {},
   "appTitle": "Ubuntu Masaüstü Kurucu",
   "@appTitle": {},
-  "cancelButtonText": "İptal et",
-  "@cancelButtonText": {},
-  "okButtonText": "Tamam",
-  "@okButtonText": {},
-  "noButtonText": "Hayır",
-  "@noButtonText": {},
   "tryUbuntu": "{RELEASE} Dene",
   "@tryUbuntu": {},
   "tryUbuntuDescription": "Bilgisayarınızda hiç bir değişiklik yapmadan {RELEASE} deneyebilirsiniz.",
@@ -144,28 +136,6 @@
   "@partitionEditTitle": {},
   "identityHostnameInfo": "Bu ad, diğer bilgisayarlarla kurulan iletişim esnasında kullanılır.",
   "@identityHostnameInfo": {},
-  "musicSlideRhythmbox": "Rhythmbox Müzik Oynatıcısı",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideTitle": "Fotoğraflarınızla iyi eğlenceler",
-  "@photoSlideTitle": {},
-  "photoSlideShotwell": "Shotwell Fotoğraf Yöneticisi",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "GIMP Görüntü Düzenleyici",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Shotcut Video Düzenleyici",
-  "@photoSlideShotcut": {},
-  "accessSlideAssistiveTechnologies": "Yardımcı teknolojiler",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Dil desteği",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Yardım ve destek",
-  "@supportSlideTitle": {},
-  "accessSlideAppearance": "Görünüm",
-  "@accessSlideAppearance": {},
   "chooseSecurityKeyConfirmHint": "Güvenlik anahtarını onayla",
   "@chooseSecurityKeyConfirmHint": {},
   "installationTypeTitle": "Kurulum türü",
@@ -220,8 +190,6 @@
   "@identityInvalidUsername": {},
   "identityPasswordLabel": "Parola seç",
   "@identityPasswordLabel": {},
-  "identityShowPassword": "Parolayı göster",
-  "@identityShowPassword": {},
   "timezonePageTitle": "Saat diliminizi seçin",
   "@timezonePageTitle": {},
   "timezoneLocationLabel": "Konum",
@@ -230,29 +198,6 @@
   "@identityPasswordRequired": {},
   "timezoneTimezoneLabel": "Saat Dilimi",
   "@timezoneTimezoneLabel": {},
-  "welcomeSlideTitle": "{RELEASE} hoşgeldiniz",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "Daha fazla yazılım bul",
-  "@softwareSlideTitle": {},
-  "musicSlideTitle": "Müziğini yanında bulundur",
-  "@musicSlideTitle": {},
-  "webSlideFirefox": "Firefox web tarayıcısı",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideCustomizationOptions": "Özelleştirme seçenekleri",
-  "@accessSlideCustomizationOptions": {},
   "startInstallingButtonText": "Kur",
   "@startInstallingButtonText": {},
   "welcomeHeader": "Dil seçin:",
@@ -293,10 +238,6 @@
   "@noInternet": {},
   "wirelessNetworkingDisabled": "Kablosuz ağ kapatıldı",
   "@wirelessNetworkingDisabled": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Ofis için ihtiyacınız olan her şey",
-  "@officeSlideTitle": {},
   "updatesOtherSoftwarePageTitle": "Uygulamalar ve güncellemeler",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "Başlangıç olarak hangi uygulamaları kurmak istersiniz?",
@@ -415,10 +356,6 @@
   },
   "bootLoaderDevice": "Önyükleyici kurulumu yapılacak cihaz",
   "@bootLoaderDevice": {},
-  "availableSoftware": "Kullanılabilir yazılım",
-  "@availableSoftware": {},
-  "supportedSoftware": "Desteklenen yazılım",
-  "@supportedSoftware": {},
   "turnOffBitlockerLinkInstructions": "Talimatlar için QR kodunu başka bir cihazda tarayın ya da <a href=\"https://{url}\">{url}</a> sayfasını ziyaret edin",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
@@ -426,15 +363,6 @@
       "url": {}
     }
   },
-  "welcomeSlideDescription": "Hızlı ve yeni özelliklerle dolu {RELEASE} en son sürümü, bilgisayar kullanımını her zamankinden daha kolay hale getiriyor. İşte dikkatinici çekecek birkaç harika yenilik...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideTitle": "İnternetten en iyi şekilde yararlanın",
-  "@webSlideTitle": {},
   "installingSystem": "Sistem kuruluyor…",
   "@installingSystem": {},
   "configuringSystem": "Sistem yapılandırılıyor…",
@@ -443,26 +371,6 @@
   "@installationFailed": {},
   "newPartitionTableConfirmationMessage": "Cihazın tamamında yeni bir bölüm tablosu oluşturmak var olan bölümleri siler. Bu işlem gerekirse geri alınabilir.",
   "@newPartitionTableConfirmationMessage": {},
-  "webSlideDescription": "{RELEASE} dünya çapında milyonlarca kişi tarafından kullanılan web tarayıcısı Firefox ile geliyor. Ayrıca sık kullandığınız internet uygulamaları (örneğin Facebook veya Gmail gibi), tıpkı bilgisayarınızdaki uygulamalar gibi daha hızlı erişim için masaüstünüze sabitleyebilirsiniz.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideDescription": "LibreOffice belgeler, tablolar ve sunumlar oluşturmak için ihtiyacınız olan her şeyi içeren özgür bir ofis paketidir. Microsoft Office dosya biçimleriyle uyumlu olan bu paket, ihtiyacınız olan tüm özellikleri size sunar.",
-  "@officeSlideDescription": {},
-  "accessSlideTitle": "Herkes için erişim",
-  "@accessSlideTitle": {},
-  "accessSlideDescription": "{RELEASE} felsefesinin temelinde, bilgisayarın herkes için olduğu inancı yatmaktadır. Gelişmiş erişilebilirlik araçları ve dil, renk ve metin boyutunu değiştirme seçenekleriyle {RELEASE}, kim ve nerede olursanız olun bilgisayar kullanmayı kolaylaştırır.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "includedSoftware": "Birlikte gelen yazılımlar",
-  "@includedSoftware": {},
   "installAlongsideSpaceDivider": "Aşağıdaki ayırıcıyı sürükleyerek sürücü alanı ayır:",
   "@installAlongsideSpaceDivider": {},
   "installationTypeReinstallWarning": "<font color=\"{color}\">Uyarı:</font> Bu, tüm {os} programlarını, belgeleri, fotoğrafları, müzikleri ve diğer dosyaları siler.",
@@ -547,10 +455,6 @@
   },
   "writeChangesDescription": "Devam ederseniz, aşağıda listelenen değişiklikler disklere yazılacak. Daha fazla değişikliği elle yapabileceksiniz.",
   "@writeChangesDescription": {},
-  "supportSlideQuestions": "<a href=\"https://askubuntu.com\">Ask Ubuntu</a> adresinden sorularınızı sorabilir ve daha önce yanıtlanmış sorular arasında arama yapabilirsiniz. Kendi dilinizde destek <a href=\"https://loco.ubuntu.com/teams/ubuntu-tr/\">Yerel Topluluk Ekibi</a> adresinden sağlanabilir.",
-  "@supportSlideQuestions": {},
-  "supportSlideResources": "Diğer faydalı kaynaklara yönlendirmeler için lütfen <a href=\"https://www.ubuntu.com/support/community-support\">Topluluk desteği</a> ya da <a href=\"https://www.ubuntu.com/support\">Kurumsal destek</a> adreslerini ziyaret edin.",
-  "@supportSlideResources": {},
   "copyingFiles": "Dosyalar kopyalanıyor…",
   "@copyingFiles": {},
   "installAlongsideFiles": "Dosyalar",
@@ -633,53 +537,8 @@
       "color": {}
     }
   },
-  "supportSlideDocumentation": "Resmi belgeler {RELEASE} ile ilgili en yaygın konuları kapsar. Hem <a href=\"https://help.ubuntu.com\">çevrim içi</a> hem de rıhtımdaki Yardım simgesi aracılığıyla kullanılabilir.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideDescription": "Shotwell, cihazlarınız için kullanıma hazır olan kullanışlı bir fotoğraf yöneticisidir. Fotoğraflarınızı aktarmak için kamera veya telefon bağlayın, ardından onları paylaşmak ve saklamak çok kolay. Kendinizi üretken hissediyorsanız, Ubuntu Yazılımlar ile başka birçok fotoğraf uygulaması da bulabilirsiniz.",
-  "@photoSlideDescription": {},
-  "musicSlideDescription": "{RELEASE} muhteşem Rhythmbox müzik çalar ile birlikte geliyor. Gelişmiş çalma seçenekleri ile şarkıları sıraya koymak çok kolay. Ayrıca CD'ler ve taşınabilir müzik çalarlarla harika çalışır, böylece nereye giderseniz gidin tüm müziklerinizin keyfini çıkarabilirsiniz.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "notEnoughDiskSpaceTitle": "Yeterli alan yok",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "{RELEASE} kurmak için en az {SIZE} disk alanına ihtiyacınız var.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Bu bilgisayarda yalnızca {SIZE} alan var.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Bu bilgisayardaki en büyük disk yalnızca {SIZE} boyutunda.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "softwareSlideDescription": "İnternette yeni yazılım aramaya veda edin. Snap Store ve {RELEASE} yazılım arşivine erişim sayesinde yeni uygulamaları kolaylıkla bulup kurabilirsiniz. Sadece aradığınızı yazın ya da diğer kullanıcıların faydalı incelemelerini de içeren Grafik ve Fotoğraf, Oyunlar ve Üretkenlik gibi kategorileri keşfedin.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "showSecurityKey": "Güvenlik anahtarını göster",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM ve şifreleme seçildi",

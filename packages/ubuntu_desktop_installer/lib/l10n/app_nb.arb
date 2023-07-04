@@ -173,22 +173,14 @@
   "@selectGuidedStorageDropdownLabel": {},
   "appTitle": "Ubuntu Skrivebord Installering",
   "@appTitle": {},
-  "cancelButtonText": "Avbryt",
-  "@cancelButtonText": {},
   "repairInstallation": "Reparere installasjonen",
   "@repairInstallation": {},
   "repairInstallationDescription": "Reparasjon vil installere all installert programvare på nytt uten å berøre dokumenter eller innstillinger.",
   "@repairInstallationDescription": {},
   "changeButtonText": "Endre",
   "@changeButtonText": {},
-  "okButtonText": "OK",
-  "@okButtonText": {},
-  "noButtonText": "Nei",
-  "@noButtonText": {},
   "restartButtonText": "Start på nytt",
   "@restartButtonText": {},
-  "yesButtonText": "Ja",
-  "@yesButtonText": {},
   "welcome": "Velkommen",
   "@welcome": {},
   "tryOrInstallPageTitle": "Prøv eller Installere",
@@ -318,25 +310,8 @@
   },
   "freeDiskSpace": "Ledig plass",
   "@freeDiskSpace": {},
-  "identityShowPassword": "Vis passord",
-  "@identityShowPassword": {},
   "timezoneTimezoneLabel": "Tidssone",
   "@timezoneTimezoneLabel": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "welcomeSlideTitle": "Velkommen til {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "supportSlideTitle": "Hjelp og støtte",
-  "@supportSlideTitle": {},
-  "availableSoftware": "Tilgjengelig programvare",
-  "@availableSoftware": {},
   "diskHeadersSystem": "System",
   "@diskHeadersSystem": {},
   "diskHeadersFormat": "Format",
@@ -349,34 +324,6 @@
   "@partitionEditTitle": {},
   "timezonePageTitle": "Hvem er du?",
   "@timezonePageTitle": {},
-  "softwareSlideTitle": "Finn enda mer programvare",
-  "@softwareSlideTitle": {},
-  "musicSlideTitle": "Ta musikken din med deg",
-  "@musicSlideTitle": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Alt du trenger til kontoret",
-  "@officeSlideTitle": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideCustomizationOptions": "Tilpasningsinnstillinger",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "Utseende",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Hjelpeteknologier",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Språkstøtte",
-  "@accessSlideLanguageSupport": {},
-  "supportedSoftware": "Støttet programvare",
-  "@supportedSoftware": {},
-  "includedSoftware": "Inkludert programvare",
-  "@includedSoftware": {},
   "revertButtonText": "Tilbakefør",
   "@revertButtonText": {},
   "partitionSizeLabel": "Størrelse:",
@@ -460,17 +407,8 @@
   "@partitionCreateTitle": {},
   "installingSystem": "Installerer systemet …",
   "@installingSystem": {},
-  "webSlideDescription": "{RELEASE} kommer med Firefox, som er en nettleser noen millioner mennesker bruker. Med nett-programmer du ofte bruker (som f.eks. sosiale media eller e-post i nettleseren) kan du ha disse festet på skrivebordet for raskere tilgang, akkurat som programmer på datamaskinen.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "copyingFiles": "Kopierer filer …",
   "@copyingFiles": {},
-  "accessSlideTitle": "Tilgang for alle",
-  "@accessSlideTitle": {},
   "installDriversTitle": "Installer tredjepartsprogramvare for grafikk- og Wi-Fi-maskinvare",
   "@installDriversTitle": {},
   "installDriversSubtitle": "Disse driverrutinene har lisensvilkår som er å finne i dokumentasjonen av dem. De er ufrie.",
@@ -493,18 +431,6 @@
   "@turnOffBitlockerDescription": {},
   "timezoneLocationLabel": "Sted",
   "@timezoneLocationLabel": {},
-  "photoSlideTitle": "Kos deg med bildene dine",
-  "@photoSlideTitle": {},
-  "musicSlideRhythmbox": "Rythmbox-musikkspilleren",
-  "@musicSlideRhythmbox": {},
-  "photoSlideGimp": "GIMP-bilderedigerer",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Shortcut-videoredigerer",
-  "@photoSlideShotcut": {},
-  "webSlideTitle": "Få mer ut av nettet",
-  "@webSlideTitle": {},
-  "photoSlideShotwell": "Shotwell-bildeorganisereren",
-  "@photoSlideShotwell": {},
   "installationFailed": "Installasjonen mislyktes",
   "@installationFailed": {},
   "configuringSystem": "Setter opp systemet …",
@@ -567,13 +493,6 @@
   },
   "identityUsernameSystemReserved": "Navnet er reservert for systembruk.",
   "@identityUsernameSystemReserved": {},
-  "notEnoughDiskSpaceBiggestDisk": "Den største lagringsenheten på datamaskinen er kun {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "turnOffBitlockerLinkInstructions": "Instruks er tilgjengelig hvis du åpner denne siden på en telefon eller en annen enhet: <a href=\"https://{url}\"></a>",
   "@turnOffBitlockerLinkInstructions": {
     "type": "text",
@@ -589,13 +508,6 @@
     "placeholders": {
       "sysname": {},
       "mount": {}
-    }
-  },
-  "welcomeSlideDescription": "For rask og fullstendig oversikt over nye funksjoner, gjør {RELEASE} databruk enklere enn noensinne. Her er noen av de kule tingene å sjekke ut …",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
     }
   },
   "writeChangesPartitionResized": "endret størrelse fra {oldsize} til {newsize} for #{sysname}",
@@ -631,44 +543,8 @@
       "format": {}
     }
   },
-  "softwareSlideDescription": "Ta farvel med å søke på nettet etter ny programvare. Med tilgang til Snap-butikken og {RELEASE}-pakkebrønnen finner du nye programmer uten. Skriv inn det du leter etter, eller utforsk kategorier som f.eks. grafikk og fotografi, spill og produktivitet, sammen med nyttige vurderinger fra andre brukere.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideDescription": "{RELEASE} kommer med den fantastiske Rhythmbox-musikkspilleren. Med avanserte avspillingsvalg er det enkelt å lage en spilleliste av de perfekte sporene. Det fungerer flott med CD-er og portable musikkspillere, så du kan ta med deg musikken din uansett hvor du drar.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideDescription": "Shotwell er et hendig verktøy for organisering av bilder som er klar for enheten dine. Koble til et kamera eller en telefon for å overføre bildene dine, deretter er det enkelt å dele dem og holde dem trygge. Hvis du føler deg kreativ kan du finne mange andre bildeprogrammer i utvalget av Ubuntu-programvare.",
-  "@photoSlideDescription": {},
-  "supportSlideQuestions": "På <a href=\"https://askubuntu.com\">Ask Ubuntu</a> kan du stille spørsmål og søke i en imponerende samling allerede besvarte spørsmål. Støtte på ditt eget språk får du fra <a href=\"https://loco.ubuntu.com/teams\">ditt lokale gemenskapslag</a>.",
-  "@supportSlideQuestions": {},
-  "supportSlideResources": "For veiledning til andre nyttige ressurser kan du besøke <a href=\"https://www.ubuntu.com/support/community-support\">gemenskapsportalen</a> eller nytte <a href=\"https://www.ubuntu.com/support\">kommersiell støtte</a>.",
-  "@supportSlideResources": {},
   "newPartitionTableConfirmationMessage": "Du har valgt en hel enhet å partisjonere. Hvis du fortsetter med opprettelse av en ny partisjonstabell på enheten vil alle nåværende partisjoner på den fjernes.\n\nMerk at du også vil kunne angre operasjonen senere hvis du ønsker det.",
   "@newPartitionTableConfirmationMessage": {},
-  "officeSlideDescription": "LibreOffice er en fri kontorpakke med alt du trenger for å lage dokumenter, regneark, og presentasjoner. Det er kompatibelt med Microsoft Office-filformatene, og gir deg alle funksjonene du trenger.",
-  "@officeSlideDescription": {},
-  "accessSlideDescription": "Hjertet i {RELEASE}-filosofien er troen på at databruk er for alle. Med avanserte tilgjengelighetsverktøy og alternativer for endring av språk, fargedrakt, og tekststørrelse gjør {RELEASE} databruk enkelt for alle — uansett hvor og hvem de er.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideDocumentation": "Den offisielle dokumentasjonen dekker mange av de vanligste aspektene ved {RELEASE}. Den er tilgjengelig både <a href=\"https://help.ubuntu.com\">på nett</a> og via «Hjelp»-ikonet i dokken.{RELEASE}",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "showSecurityKey": "Vis sikkerhetsnøkkel",
   "@showSecurityKey": {},
   "installAlongsideSpaceDivider": "Tildel lagringsplass ved å dra inndeleren nedenfor:",
@@ -691,27 +567,10 @@
   "@themePageTitle": {},
   "themePageHeader": "Du kan alltid endre dette senere i utseende-innstillingene.",
   "@themePageHeader": {},
-  "webSlideFirefox": "Firefox-nettleseren",
-  "@webSlideFirefox": {},
   "quitButtonText": "Avslutt installasjon",
   "@quitButtonText": {},
   "notEnoughDiskSpaceTitle": "Beklager",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "Du trenger minst {SIZE} lagringsplass for å installere {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Denne datamaskinen har kun {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "activeDirectoryDomainMultipleDots": "Inneholder flere gjentagende punktum (..)",
   "@activeDirectoryDomainMultipleDots": {},
   "activeDirectoryPasswordLabel": "Passord",

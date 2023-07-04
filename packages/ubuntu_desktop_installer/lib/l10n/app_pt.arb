@@ -2,20 +2,12 @@
   "@@locale": "pt",
   "appTitle": "Instalador do Ubuntu Desktop",
   "@appTitle": {},
-  "cancelButtonText": "Cancelar",
-  "@cancelButtonText": {},
   "changeButtonText": "Alterar",
   "@changeButtonText": {},
-  "okButtonText": "Aceitar",
-  "@okButtonText": {},
-  "noButtonText": "Não",
-  "@noButtonText": {},
   "restartButtonText": "Reiniciar",
   "@restartButtonText": {},
   "revertButtonText": "Reverter",
   "@revertButtonText": {},
-  "yesButtonText": "Sim",
-  "@yesButtonText": {},
   "welcome": "Bem-vindo",
   "@welcome": {},
   "tryOrInstallPageTitle": "Experimentar ou instalar o {DISTRO}",
@@ -277,23 +269,6 @@
   },
   "writeChangesPartitionsHeader": "As seguintes alterações às partições serão aplicadas:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "partição #{sysname} como {format} usada para {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "partição #{sysname} como {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "themePageTitle": "Escolha o seu tema",
   "@themePageTitle": {},
   "themePageHeader": "Pode sempre alterar isso depois nas configurações de aparência.",
@@ -380,20 +355,6 @@
   "@identityUsernameSystemReserved": {},
   "identityUsernameInUse": "Esse nome de utilizador já existe.",
   "@identityUsernameInUse": {},
-  "welcomeSlideDescription": "Rápido e cheio de novas funcionalidades, a última versão {RELEASE} torna a computação mais fácil do que nunca. Aqui estão algumas novidades para dar uma vista de olhos...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideDescription": "Diga adeus à pesquisa na web por software. Com acesso à Snap Store e ao arquivo de software {RELEASE}, você pode encontrar e instalar novos aplicativos facilmente. Apenas escreva o que procura ou explore as categorias com comentários de outros utilizadores.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "installationTypeDualOSDetected": "Este computador tem o {os1} e o {os2}. O que pretende fazer?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -410,15 +371,6 @@
   "@connectToInternetPageTitle": {},
   "identityUsernameInvalidChars": "Esse nome contém caracteres inválidos.",
   "@identityUsernameInvalidChars": {},
-  "welcomeSlideTitle": "Bem-vindo ao {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "Encontrar ainda mais software",
-  "@softwareSlideTitle": {},
   "quitButtonText": "Sair da instalação",
   "@quitButtonText": {},
   "connectToInternetDescription": "Ao ligar este computador à Internet irá ajudar o Ubuntu a instalar qualquer software extra necessário e ajudá-lo com o seu fuso horário.\n\nLigar por cabo de rede, ou escolha uma rede Wi-Fi",
@@ -467,8 +419,6 @@
   "@newPartitionTableConfirmationTitle": {},
   "identityUsernameTooLong": "Esse nome é demasiado longo.",
   "@identityUsernameTooLong": {},
-  "identityShowPassword": "Mostrar palavra-passe",
-  "@identityShowPassword": {},
   "writeChangesPartitionResized": "partição <b>{sysname}</b> redimensionada de <b>{oldsize}</b> para <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
@@ -491,8 +441,6 @@
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Fuso horário",
   "@timezoneTimezoneLabel": {},
-  "musicSlideTitle": "Leve a sua música consigo",
-  "@musicSlideTitle": {},
   "installAlongsideFiles": "Ficheiros",
   "@installAlongsideFiles": {},
   "noWifiDevicesDetected": "Sem dispositivos Wi-Fi detetados",
@@ -556,34 +504,10 @@
       "mount": {}
     }
   },
-  "photoSlideShotwell": "Gerenciador de fotos Shotwell",
-  "@photoSlideShotwell": {},
   "showSecurityKey": "Mostrar chave de segurança",
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM e encriptação selecionado",
   "@installationTypeLVMEncryptionSelected": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideRhythmbox": "Player de música Rhythmbox",
-  "@musicSlideRhythmbox": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideTitle": "Divirta-se com as suas fotos",
-  "@photoSlideTitle": {},
-  "photoSlideGimp": "Editor de imagens GIMP",
-  "@photoSlideGimp": {},
-  "webSlideFirefox": "Navegador web Firefox",
-  "@webSlideFirefox": {},
-  "photoSlideShotcut": "Editor de vídeos Shotcut",
-  "@photoSlideShotcut": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "webSlideTitle": "Aproveite ao máximo a web",
-  "@webSlideTitle": {},
-  "officeSlideTitle": "Tudo que você precisa no seu escritório",
-  "@officeSlideTitle": {},
   "installDriversTitle": "Instalar software de terceiros para placas gráficas e Wi-Fi",
   "@installDriversTitle": {},
   "installDriversSubtitle": "Estes controladores estão sujeitos aos termos de licença incluídos com sua documentação. São proprietários.",
@@ -592,53 +516,8 @@
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Este software está sujeito aos termos de licença incluídos com a sua documentação. Alguns são proprietários.",
   "@installCodecsSubtitle": {},
-  "musicSlideDescription": "{RELEASE} vem com o incrível player de media Rhythmbox. com avançadas opções de reprodução de media, é simples de sequenciar os sons perfeitos. e funciona perfeitamente com CDs,tocadores de musica portáteis então você pode aproveitar todas as suas musicas aonde quiser.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideDescription": "Shotwell é um pratico gerenciador de fotos que está pronto para seus dispositivos. Conecte sua câmera ou celular para transferir suas fotos, então é fácil de compartilha-las e manter elas seguras. e se você está se sentindo criativo, você pode encontrar muitos outros aplicativos de fotos na Ubuntu Software.",
-  "@photoSlideDescription": {},
-  "webSlideDescription": "{RELEASE} incluí Firefox,o navegador web usado por milhões de pessoas pelo mundo.e aplicativos web que você usa frequentemente (como Facebook ou Gmail, por exemplo) podem ser fixados na sua área de trabalho para acessa-lo mais rápido,assim como aplicativos no seu computador.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideImpress": "Apresentação de diapositivos LibreOffice",
-  "@officeSlideImpress": {},
-  "accessSlideTitle": "Acesso para todos",
-  "@accessSlideTitle": {},
-  "officeSlideCalc": "Folha de cálculo LibreOffice",
-  "@officeSlideCalc": {},
-  "officeSlideWriter": "Processador de texto LibreOffice",
-  "@officeSlideWriter": {},
-  "accessSlideCustomizationOptions": "Opções de personalização",
-  "@accessSlideCustomizationOptions": {},
-  "supportSlideResources": "Para indicações de outros recursos úteis, visite o <a href=\"https://www.ubuntu.com/support/community-support\">Suporte da comunidade</a> ou o <a href=\"https://www.ubuntu.com/support\">Suporte comercial</a>.",
-  "@supportSlideResources": {},
-  "includedSoftware": "Software incluído",
-  "@includedSoftware": {},
-  "availableSoftware": "Software disponível",
-  "@availableSoftware": {},
-  "notEnoughDiskSpaceBiggestDisk": "O maior disco deste computador é de apenas {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installingSystem": "A instalar o sistema…",
   "@installingSystem": {},
-  "accessSlideAssistiveTechnologies": "Tecnologias de assistência",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Suporte de idioma",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Ajuda e suporte",
-  "@supportSlideTitle": {},
   "notEnoughDiskSpaceTitle": "Espaço insuficiente",
   "@notEnoughDiskSpaceTitle": {},
   "copyingFiles": "A copiar ficheiros…",
@@ -647,43 +526,6 @@
   "@configuringSystem": {},
   "installationFailed": "Falha ao instalar",
   "@installationFailed": {},
-  "officeSlideDescription": "O LibreOffice é uma suite de escritório livre com tudo o que precisa para criar documentos, folhas de cálculo e apresentações. Compatível com formatos de ficheiros Microsoft Office, dá-lhe todas as funcionalidades de que necessita.",
-  "@officeSlideDescription": {},
-  "supportedSoftware": "Software suportado",
-  "@supportedSoftware": {},
-  "accessSlideDescription": "No centro da filosofia {RELEASE} está a crença de que a informática é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, cores e tamanho do texto, o {RELEASE} torna a computação fácil - quem quer que seja e onde quer que esteja.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideAppearance": "Aparência",
-  "@accessSlideAppearance": {},
-  "supportSlideDocumentation": "A documentação oficial abrange muitos dos aspetos mais comuns do {RELEASE}. Está disponível <a href=\"https://help.ubuntu.com\">online</a> e por meio do ícone de Ajuda no doca.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "No <a href=\"https://askubuntu.com\">Ask Ubuntu</a> pode fazer perguntas e pesquisar uma coleção impressionante de perguntas já respondidas. O suporte no seu próprio idioma pode ser fornecido na sua <a href=\"https://loco.ubuntu.com/teams\">equipa da comunidade local</a>.",
-  "@supportSlideQuestions": {},
-  "notEnoughDiskSpaceHeader": "É necessário pelo menos {SIZE} de espaço em disco para instalar o {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Este computador tem apenas {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "restartWarning": "Pode continuar a testar o {RELEASE} agora, mas até reiniciar o computador, quaisquer alterações que faça ou documentos que guarde não serão preservados.",
   "@restartWarning": {
     "type": "text",

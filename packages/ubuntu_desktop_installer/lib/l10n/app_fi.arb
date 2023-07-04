@@ -196,23 +196,6 @@
   },
   "writeChangesPartitionsHeader": "Seuraavat osiomuutokset toteutetaan:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "osio #{sysname} tiedostojärjestelmänä {format} liitetty kohtaan {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "osio #{sysname} tiedostojärjestelmänä {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "installationCompleteTitle": "Asennus on valmis",
   "@installationCompleteTitle": {},
   "readyToUse": "**{system}** on asennettu ja on valmis käytettäväksi.",
@@ -233,14 +216,10 @@
   "@shutdown": {},
   "revertButtonText": "Kumoa",
   "@revertButtonText": {},
-  "yesButtonText": "Kyllä",
-  "@yesButtonText": {},
   "turnOffBitlockerTitle": "BitLocker on käytössä",
   "@turnOffBitlockerTitle": {},
   "turnOffBitlockerDescription": "Tämä tietokone käyttää Windowsin BitLocker-salausta.\nSinun tulee käyttää Windowsia luodaksesi vapaata tilaa tai valitse '{option}' jatkaaksesi.",
   "@turnOffBitlockerDescription": {},
-  "noButtonText": "Ei",
-  "@noButtonText": {},
   "restartButtonText": "Käynnistä uudelleen",
   "@restartButtonText": {},
   "repairInstallation": "Korjaa asennus",
@@ -260,12 +239,8 @@
   "@detectLayout": {},
   "typeToTest": "Kokeile näppäimistön asetuksia kirjoittamalla tähän",
   "@typeToTest": {},
-  "cancelButtonText": "Peru",
-  "@cancelButtonText": {},
   "changeButtonText": "Muuta",
   "@changeButtonText": {},
-  "okButtonText": "OK",
-  "@okButtonText": {},
   "tryUbuntuDescription": "Voit kokeilla {RELEASE}a tekemättä muutoksia tietokoneellesi.",
   "@tryUbuntuDescription": {},
   "installUbuntuDescription": "Asenna {RELEASE} nykyisen käyttöjärjestelmäsi rinnalle tai tilalle. Asentaminen ei kestä kauan.",
@@ -401,29 +376,8 @@
   },
   "hiddenWifiNetworkNameRequired": "Verkon nimi vaaditaan",
   "@hiddenWifiNetworkNameRequired": {},
-  "welcomeSlideTitle": "Tervetuloa, tämä on {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideRhythmbox": "Rytmilaatikko-musiikkisoitin",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "webSlideFirefox": "Firefox-selain",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
   "timezonePageTitle": "Valitse aikavyöhyke",
   "@timezonePageTitle": {},
-  "musicSlideTitle": "Ota musiikki mukaasi",
-  "@musicSlideTitle": {},
   "timezoneLocationLabel": "Sijainti",
   "@timezoneLocationLabel": {},
   "hiddenWifiNetwork": "Yhdistä piilotettuun wifi-verkkoon",
@@ -434,18 +388,6 @@
   "@timezoneTimezoneLabel": {},
   "welcomeHeader": "Valitse kieli:",
   "@welcomeHeader": {},
-  "accessSlideAppearance": "Ulkoasu",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Avustavat teknologiat",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Kielituki",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Ohjeet ja tuki",
-  "@supportSlideTitle": {},
-  "officeSlideTitle": "Kaikki mitä tarvitset toimistossa",
-  "@officeSlideTitle": {},
-  "photoSlideGimp": "GIMP-kuvankäsittely",
-  "@photoSlideGimp": {},
   "installationTypeDualOSDetected": "Tässä tietokoneessa on jo käyttöjärjestelmät {os1} ja {os2}. Mitä haluat tehdä?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -456,52 +398,12 @@
   },
   "installationTypeMultiOSDetected": "Tässä tietokoneessa on jo useita käyttöjärjestelmiä. Mitä haluat tehdä?",
   "@installationTypeMultiOSDetected": {},
-  "identityShowPassword": "Näytä salasana",
-  "@identityShowPassword": {},
-  "accessSlideDescription": "{RELEASE}n filosofian ytimessä on usko siihen, että tietokoneiden käyttö sopii kaikille. Tämän takia {RELEASE} tarjoaa erilaisia mukauttamismahdollisuuksia ollakseen helppokäyttöinen mahdollisimman monelle ihmiselle kaikkialla maailmassa. Tarjolla ovat muun muassa edistyneet esteettömyystoiminnot sekä lukuisat valinnaiset kirjasimet, väriteemat ja kielet.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "showSecurityKey": "Näytä salausavain",
   "@showSecurityKey": {},
-  "supportSlideQuestions": "<a href=\"https://askubuntu.com\">Ask Ubuntu</a> -palvelussa on mahdollista esittää kysymyksiä ja selata suurta määrää aiempia vastauksia kysymyksiin. Tukea omalla kielelläsi voi löytyä <a href=\"https://loco.ubuntu.com/teams\">Ubuntun paikallistiimin</a> kautta.",
-  "@supportSlideQuestions": {},
   "restartNow": "Käynnistä uudelleen nyt",
   "@restartNow": {},
   "continueTesting": "Jatka testaamista",
   "@continueTesting": {},
-  "softwareSlideTitle": "Löydä lisää sovelluksia",
-  "@softwareSlideTitle": {},
-  "welcomeSlideDescription": "{RELEASE}n uusimman version nopeus ja uudet ominaisuudet tekevät tietokoneen käyttämisestä helpompaa kuin koskaan ennen. Kiinnitä seuraaviin asioihin huomiota, kun tutustut uuteen käyttöjärjestelmääsi...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideShotcut": "Shotcut-videoeditori",
-  "@photoSlideShotcut": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideDescription": "LibreOffice on vapaa toimisto-ohjelmisto, joka sisältää kaiken tarvittavan asiakirjojen, taulukoiden ja esitysten luomiseen. LibreOffice on yhteensopiva Microsoft Office -tiedostomuotojen kanssa, ja sisältää kaikki tarvitsemasi ominaisuudet ilman hintalappua.",
-  "@officeSlideDescription": {},
-  "notEnoughDiskSpaceBiggestDisk": "Kapasiteetiltaan suurin levy tässä tietokoneessa on vain {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Tässä tietokoneessa on levytilaa vain {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "copyingFiles": "Kopioidaan tiedostoja…",
   "@copyingFiles": {},
   "installationTypeAlongsideUnknown": "Asenna {product} muiden osioiden rinnalle",
@@ -515,8 +417,6 @@
   "@installAlongsideSpaceDivider": {},
   "installAlongsideResizePartition": "Muuta osion kokoa",
   "@installAlongsideResizePartition": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
   "installationTypeAlongsideDual": "Asenna {product} käyttöjärjestelmien {os1} ja {os2} rinnalle",
   "@installationTypeAlongsideDual": {
     "type": "text",
@@ -526,17 +426,6 @@
       "os2": {}
     }
   },
-  "webSlideTitle": "Ota kaikki irti internetistä",
-  "@webSlideTitle": {},
-  "musicSlideDescription": "{RELEASE}ssa on upea Rytmilaatikko-musiikkisoitin. Edistyksellisten soittomahdollisuuksien ansiosta parhaiden kappaleiden löytäminen on helppoa. Se toimii loistavasti myös CD-levyjen ja kannettavien musiikkisoittimien kanssa. Musiikin kuunteleminen ei ole koskaan ollut näin nautinnollista.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
   "quitButtonText": "Lopeta asennus",
   "@quitButtonText": {},
   "installCodecsTitle": "Lataa ja asenna tuki eri mediamuotoja varten",
@@ -563,8 +452,6 @@
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "Saatavilla:",
   "@installAlongsideAvailable": {},
-  "photoSlideShotwell": "Shotwell - valokuvien hallinta",
-  "@photoSlideShotwell": {},
   "partitionFormatNone": "Jätä alustamatta",
   "@partitionFormatNone": {},
   "identityUsernameInUse": "Kyseinen käyttäjänimi on jo olemassa.",
@@ -582,43 +469,6 @@
       "RELEASE": {}
     }
   },
-  "softwareSlideDescription": "Ohjelmien etsiminen ja lataaminen epäilyttäviltä verkkosivuilta on historiaa. Pääsy Snap-kauppaan ja {RELEASE}n sovellusvalikoimaan mahdollistaa sovelluksien etsimisen sekä asentamisen vaivatta. Etsi suoraan sovelluksen nimellä tai avainsanalla tai selaa eri luokkia, kuten tiede, koulutus ja pelit. Muiden käyttäjien antamat arvostelut helpottavat valintaasi.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideTitle": "Leikittele valokuvillasi",
-  "@photoSlideTitle": {},
-  "photoSlideDescription": "Shotwell on kätevä sovellus kuvien hallintaan. Yhdistä kamera tai puhelin siirtääksesi valokuvasi talteen ja muille jaettavaksi. Jos haluat ryhtyä luovaksi, löydät paljon muita sovelluksia kuvien käsittelyä varten Ubuntu-kaupasta.",
-  "@photoSlideDescription": {},
-  "webSlideDescription": "{RELEASE} sisältää Firefoxin, miljoonien käyttämän verkkoselaimen. Useimmin käyttämäsi verkkosovellukset (kuten Facebook tai Gmail) on mahdollista kiinnittää työpöydälle, jolloin niiden käyttö sujuu vaivatta tavallisten sovellusten tapaan.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideTitle": "Esteetön kaikille",
-  "@accessSlideTitle": {},
-  "accessSlideCustomizationOptions": "Mukauttamisvalinnat",
-  "@accessSlideCustomizationOptions": {},
-  "supportSlideDocumentation": "Virallinen dokumentaatio kattaa useimmat yleisimmät {RELEASE}n osa-alueet. Dokumentaatio on saatavilla <a href=\"https://help.ubuntu.com\">verkossa</a> ja telakan Ohje-kuvaketta napsauttamalla.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideResources": "Vinkkejä ja muita hyödyllisiä resursseja tarjoaa <a href=\"https://www.ubuntu.com/support/community-support\">yhteisön tuki</a> sekä <a href=\"https://www.ubuntu.com/support\">kaupallinen tuki</a>.",
-  "@supportSlideResources": {},
-  "includedSoftware": "Sisältyvät ohjelmistot",
-  "@includedSoftware": {},
-  "availableSoftware": "Saatavilla olevat ohjelmistot",
-  "@availableSoftware": {},
-  "supportedSoftware": "Tuetut ohjelmistot",
-  "@supportedSoftware": {},
   "installingSystem": "Asennetaan järjestelmää…",
   "@installingSystem": {},
   "configuringSystem": "Määritetään järjestelmää…",
@@ -627,14 +477,6 @@
   "@installationFailed": {},
   "notEnoughDiskSpaceTitle": "Tilaa ei ole riittävästi",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "Tarvitse levytilaa vähintään {SIZE} asentaaksesi {RELEASE}n.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "installDriversTitle": "Asenna kolmannen osapuolen ohjelmistot näytönohjainta ja wifi-laitteistoa varten",
   "@installDriversTitle": {},
   "installDriversSubtitle": "Näihin ajureihin pätee niiden dokumentaation mukana tulevat lisenssiehdot. Nämä ajurit ovat omisteellisia.",

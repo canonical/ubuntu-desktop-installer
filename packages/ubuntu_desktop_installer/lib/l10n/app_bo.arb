@@ -1,9 +1,5 @@
 {
   "@@locale": "bo",
-  "okButtonText": "འགྲིག",
-  "@okButtonText": {},
-  "cancelButtonText": "ཕྱིར་འཐེན།",
-  "@cancelButtonText": {},
   "revertButtonText": "སླར་གསོ",
   "@revertButtonText": {},
   "windowTitle": "{RELEASE}་སྒྲིག་འཇུག་བྱེད་པ",

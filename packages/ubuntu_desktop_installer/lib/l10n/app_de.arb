@@ -4,20 +4,12 @@
   "@appTitle": {},
   "windowTitle": "{RELEASE} installieren",
   "@windowTitle": {},
-  "cancelButtonText": "Abbrechen",
-  "@cancelButtonText": {},
   "changeButtonText": "Ändern",
   "@changeButtonText": {},
-  "okButtonText": "OK",
-  "@okButtonText": {},
-  "noButtonText": "Nein",
-  "@noButtonText": {},
   "restartButtonText": "Neustart",
   "@restartButtonText": {},
   "revertButtonText": "Zurücksetzen",
   "@revertButtonText": {},
-  "yesButtonText": "Ja",
-  "@yesButtonText": {},
   "welcome": "Willkommen",
   "@welcome": {},
   "welcomeHeader": "Wählen Sie Ihre Sprache aus:",
@@ -280,8 +272,6 @@
   "@identityInvalidUsername": {},
   "identityPasswordLabel": "Ein Passwort auswählen",
   "@identityPasswordLabel": {},
-  "identityPassword\n\"Required": "Ein Passwort ist erforderlich",
-  "@identityPassword\n\"Required": {},
   "identityConfirmPasswordLabel": "Bestätigen Sie Ihr Passwort",
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Die Passwörter stimmen nicht überein",
@@ -306,23 +296,6 @@
   },
   "writeChangesPartitionsHeader": "Die folgenden Partitionsänderungen werden vorgenommen:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "Partition #{sysname} als {format} benutzt für {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "Ein Eintrag einer eingehängten Partition",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "Partition #{sysname} als {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "Ein Eintrag einer nicht eingehängten Partition",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "themePageTitle": "Wählen Sie Ihr Thema aus",
   "@themePageTitle": {},
   "themePageHeader": "Sie können dies später in den Einstellungen für das Erscheinungsbild jederzeit ändern.",
@@ -413,129 +386,18 @@
   },
   "installationTypeMultiOSDetected": "Auf diesem Computer sind aktuell mehrere Betriebssysteme installiert. Was möchten Sie tun?",
   "@installationTypeMultiOSDetected": {},
-  "identityShowPassword": "Passwort anzeigen",
-  "@identityShowPassword": {},
   "hiddenWifiNetworkNameLabel": "Netzwerkname",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Der Netzwerkname wird benötigt",
   "@hiddenWifiNetworkNameRequired": {},
   "enableWired": "Kabelgebundenes Ethernet aktivieren",
   "@enableWired": {},
-  "musicSlideRhythmbox": "Rhytmbox Musikspieler",
-  "@musicSlideRhythmbox": {},
-  "photoSlideShotwell": "Shotwell Bildermanager",
-  "@photoSlideShotwell": {},
-  "photoSlideShotcut": "Shotcut Videobearbeitung",
-  "@photoSlideShotcut": {},
-  "officeSlideImpress": "LibreOffice Präsentationen",
-  "@officeSlideImpress": {},
-  "accessSlideTitle": "Zugang für jede:n",
-  "@accessSlideTitle": {},
-  "musicSlideTitle": "Nimm deine Musik mit dir mit",
-  "@musicSlideTitle": {},
-  "supportSlideDocumentation": "Die offizielle Dokumentation umfasst viele der gängigsten Aspekte von {RELEASE}. Es ist sowohl <a href=\"https://help.ubuntu.com\">Online</a> als auch über das Hilfesymbol verfügbar.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "photoSlideGimp": "GIMP Bildbearbeitung",
-  "@photoSlideGimp": {},
-  "supportSlideTitle": "Hilfe und Unterstützung",
-  "@supportSlideTitle": {},
-  "officeSlideDescription": "LibreOffice ist ein kostenloses Office-Paket, das alles enthält, was Sie zum Erstellen von Dokumenten, Tabellenkalkulationen und Präsentationen benötigen. Es ist mit den Dateiformaten von Microsoft Office kompatibel und bietet Ihnen alle Funktionen, die Sie benötigen.",
-  "@officeSlideDescription": {},
-  "webSlideTitle": "Mache das beste aus dem Internet",
-  "@webSlideTitle": {},
-  "includedSoftware": "Enthaltene Software",
-  "@includedSoftware": {},
-  "availableSoftware": "Verfügbare Software",
-  "@availableSoftware": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideFirefox": "Firefox Internetbrowser",
-  "@webSlideFirefox": {},
-  "accessSlideAssistiveTechnologies": "Unterstützende Funktionen",
-  "@accessSlideAssistiveTechnologies": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "webSlideDescription": "{RELEASE} enthält Firefox, den Internetbrowser, der von Millionen von Menschen auf der ganzen Welt genutzt wird. Und Webanwendungen, die Sie häufig nutzen (z. B. Facebook oder Google Mail), können für einen schnelleren Zugriff an Ihren Desktop angeheftet werden, genau wie Anwendungen auf Ihrem Computer.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideDescription": "Im Mittelpunkt der {RELEASE}-Philosophie steht die Überzeugung, dass Computer für jeden da sind. Mit fortschrittlichen Werkzeugen für Barrierefreiheit und Optionen zum Ändern von Sprache, Farbe und Textgröße macht {RELEASE} die Computerarbeit einfach — egal wer und wo Sie sind.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideDescription": "Verabschiede dich von der Softwaresuche im Internet. Dank des Zugriffs auf den Snap Store und dem {RELEASE} Software-Archiv können Sie neue Anwendungen ganz einfach finden und installieren. Geben Sie einfach ein, was Sie suchen möchten, oder erkunden Sie Kategorien wie Grafik & Fotografie, Spiele und Produktivität sowie hilfreiche Bewertungen von anderen Nutzern.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideDescription": "{RELEASE} wird mit dem fantastischen Rhythmbox-Musikspieler geliefert. Mit den erweiterten Wiedergabeoptionen ist es ganz einfach, die perfekten Lieder in die Warteschlange hinzuzufügen. Und es funktioniert hervorragend mit CDs und tragbaren Musikspielern, so dass Sie Ihre Musik überall genießen können, wo auch immer Sie hingehen.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideDescription": "Shotwell ist ein praktischer Foto-Manager, der für Ihre Geräte bereit ist. Schließen Sie eine Kamera oder ein Telefon an, um Ihre Fotos zu übertragen, dann ist es einfach, sie zu teilen und sie sicher aufzubewahren. Und wenn Sie sich kreativ fühlen, finden Sie in der Ubuntu-Software viele weitere Foto-Apps.",
-  "@photoSlideDescription": {},
-  "supportSlideResources": "Hinweise auf andere nützliche Ressourcen finden Sie unter <a href=\"https://www.ubuntu.com/support/community-support\">Community support</a> oder <a href=\"https://www.ubuntu.com/support\">Commercial support</a>.",
-  "@supportSlideResources": {},
-  "supportSlideQuestions": "Auf <a href=\"https://askubuntu.com\">Ask Ubuntu</a> können Sie Fragen stellen und durch eine beeindruckende Sammlung von bereits beantworteten Fragen stöbern. Unterstützung in Ihrer Sprache können Sie in Ihrem <a href=\"https://loco.ubuntu.com/teams\">lokalen Team</a> finden.",
-  "@supportSlideQuestions": {},
   "timezonePageTitle": "Wählen Sie Ihre Zeitzone aus",
   "@timezonePageTitle": {},
   "timezoneLocationLabel": "Standort",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Zeitzone",
   "@timezoneTimezoneLabel": {},
-  "welcomeSlideTitle": "Willkommen zu {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "welcomeSlideDescription": "Schnell und voller neuer Funktionen, die neueste Version von {RELEASE} macht Computerarbeit noch einfacher. Hier sind nur ein paar der neuen klasse Sachen nach denen man gucken sollte...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "Find sogar mehr Software",
-  "@softwareSlideTitle": {},
-  "photoSlideTitle": "Hab Spaß mit deinen Bildern",
-  "@photoSlideTitle": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "officeSlideTitle": "Alles was du für das Büro brauchst",
-  "@officeSlideTitle": {},
-  "officeSlideWriter": "LibreOffice Textverarbeitung",
-  "@officeSlideWriter": {},
-  "accessSlideCustomizationOptions": "Personalisierungsoptionen",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "Aussehen",
-  "@accessSlideAppearance": {},
-  "accessSlideLanguageSupport": "Sprachunterstützung",
-  "@accessSlideLanguageSupport": {},
-  "officeSlideCalc": "LibreOffice Tabellenkalkulation",
-  "@officeSlideCalc": {},
-  "supportedSoftware": "Unterstützte Software",
-  "@supportedSoftware": {},
   "copyingFiles": "Dateien werden kopiert …",
   "@copyingFiles": {},
   "identityUsernameInUse": "Dieser Benutzername existiert bereits.",
@@ -611,20 +473,6 @@
       "sysname": {}
     }
   },
-  "notEnoughDiskSpaceHasOnly": "Dieser Computer hat nur {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Die größte Festplatte in diesem Computer hat nur {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "writeChangesPartitionFormatted": "Partition <b>{sysname}</b> formatiert als <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
@@ -652,14 +500,6 @@
   },
   "notEnoughDiskSpaceTitle": "Nicht genug Platz",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "Sie benötigen mindestens {SIZE} Festplattenspeicher für die Installation von {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "installingSystem": "System wird installiert …",
   "@installingSystem": {},
   "configuringSystem": "System wird eingerichtet …",

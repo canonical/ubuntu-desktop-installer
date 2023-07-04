@@ -7,8 +7,6 @@
       "url": {}
     }
   },
-  "okButtonText": "אישור",
-  "@okButtonText": {},
   "restartButtonText": "הפעלה מחדש",
   "@restartButtonText": {},
   "releaseNotesLabel": "ממליצים לך לקרוא את <a href=\"{url}\">הערות ההוצאה לאור</a>.",
@@ -24,8 +22,6 @@
   "@revertButtonText": {},
   "changeButtonText": "שינוי",
   "@changeButtonText": {},
-  "noButtonText": "לא",
-  "@noButtonText": {},
   "tryUbuntuDescription": "אפשר להתנסות ב־{RELEASE} מבלי לערוך שינויים במחשב שלך.",
   "@tryUbuntuDescription": {},
   "appTitle": "אשף התקנת אובונטו לשולחן עבודה",
@@ -67,10 +63,6 @@
   "@updatesOtherSoftwarePageTitle": {},
   "normalInstallationTitle": "התקנה רגילה",
   "@normalInstallationTitle": {},
-  "cancelButtonText": "ביטול",
-  "@cancelButtonText": {},
-  "yesButtonText": "כן",
-  "@yesButtonText": {},
   "welcome": "ברוך בואך",
   "@welcome": {},
   "tryOrInstallPageTitle": "להתנסות או להתקין את {DISTRO}",
@@ -135,23 +127,6 @@
   "@themePageTitle": {},
   "themePageHeader": "תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.",
   "@themePageHeader": {},
-  "writeChangesPartitionEntryMounted": "מחיצה מס׳ {sysname} בתור {format} משמשת עבור {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "מחיצה מס׳ {sysname} בתור {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "chooseSecurityKeyRequired": "נדרש מפתח אבטחה",
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "מפתחות האבטחה סותרים זה את זה",
@@ -407,125 +382,14 @@
   "@timezoneLocationLabel": {},
   "timezonePageTitle": "נא לבחור את אזור הזמן שלך",
   "@timezonePageTitle": {},
-  "welcomeSlideTitle": "ברוך בואך אל {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideTitle": "המוזיקה שלך הולכת איתך",
-  "@musicSlideTitle": {},
-  "photoSlideShotcut": "עורך הווידאו Shotcut",
-  "@photoSlideShotcut": {},
-  "photoSlideShotwell": "מנהל התמונות Shotwell",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "עורך התמונות GIMP",
-  "@photoSlideGimp": {},
-  "webSlideTitle": "להפיק את המיטב מהאינטרנט",
-  "@webSlideTitle": {},
-  "musicSlideRhythmbox": "נגן המוזיקה Rhythmbox",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "softwareSlideTitle": "מגוון רחב של תוכנות",
-  "@softwareSlideTitle": {},
-  "musicSlideDescription": "כחלק מההיצע של {RELEASE} ניתן למצוא את נגן המוזיקה Rhythmbox. אפשרויות הנגינה המתקדמות שלו מאפשרות לך להכין רשימות עם השירים הכי מושלמים שיש. הוא עובד נפלא עם תקליטורים ונגני מוזיקה ניידים, כך שכל המוזיקה שלך יכולה ללוות אותך לכל מקום.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideTitle": "להשתולל עם התמונות שלך",
-  "@photoSlideTitle": {},
-  "accessSlideAssistiveTechnologies": "טכנולוגיות מסייעות",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "תמיכה בשפות",
-  "@accessSlideLanguageSupport": {},
-  "accessSlideTitle": "גישה לכולם",
-  "@accessSlideTitle": {},
-  "officeSlideTitle": "כל מה שנחוץ למשרד",
-  "@officeSlideTitle": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "supportSlideTitle": "עזרה ותמיכה",
-  "@supportSlideTitle": {},
-  "availableSoftware": "תוכנות זמינות",
-  "@availableSoftware": {},
-  "supportSlideDocumentation": "התיעוד הרשמי נותן מענה נרחב למגוון תחומים בנושא {RELEASE}. הוא זמין גם באופן <a href=\"https://help.ubuntu.com\">מקוון</a> וגם דרך סמל העזרה במעגן.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "welcomeSlideDescription": "עם מהירות משופרת ומגוון יכולות, המהדורה העדכנית של {RELEASE} מקלה על השימוש במחשב יותר מאי פעם. בהמשך מופיעים מגוון דברים מרתקים ששווה לצפות להם…",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideAppearance": "מראה",
-  "@accessSlideAppearance": {},
-  "webSlideFirefox": "דפדפן האינטרנט Firefox",
-  "@webSlideFirefox": {},
-  "accessSlideCustomizationOptions": "אפשרויות התאמה",
-  "@accessSlideCustomizationOptions": {},
-  "supportedSoftware": "תוכנות נתמכות",
-  "@supportedSoftware": {},
-  "supportSlideResources": "לקבלת הכוונות למשאבים שימושיים נפוצים, מומלץ לפנות ל<a href=\"https://www.ubuntu.com/support/community-support\">תמיכה הקהילתית</a> או ל<a href=\"https://www.ubuntu.com/support\">תמיכה המסחרית</a>.",
-  "@supportSlideResources": {},
-  "includedSoftware": "תוכנות מצורפות",
-  "@includedSoftware": {},
-  "softwareSlideDescription": "חסל סדר חיפוש אחר תוכנות חדשות באינטרנט. עם גישה לחנות Snap ולארכיון התוכנה של {RELEASE}, ניתן למצוא ולהתקין יישומים חדשים בקלות. פשוט יש להקליד את מה שמעניין אותך או לעיין בקטגוריות כגון גרפיקה וצילום, משחקים וכלי משרד, לצד ביקורות מועילות מצד משתמשים אחרים.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "ב־<a href=\"https://askubuntu.com\">Ask Ubuntu</a> אפשר לשאול שאלות ולחפש במאגר מרשים של שאלות שנענו. יתכן ש<a href=\"https://loco.ubuntu.com/teams\">צוות הקהילה המקומית</a> שלך מספק תמיכה בשפה שנוחה לך.",
-  "@supportSlideQuestions": {},
-  "photoSlideDescription": "Shotwell הוא מנהל תמונות שימושי שמתנהל נהדר מול הגאדג׳טים שלך. אפשר לחבר מצלמה או טלפון כדי להעביר את התמונות שלך, לאחר מכן, אפשר לשתף או להגן עליהן בקלות. כשתוקפת אותך היצירתיות אפשר למצוא יישומי תמונות נוספים בחנות התוכנות של אובונטו.",
-  "@photoSlideDescription": {},
-  "officeSlideDescription": "LibreOffice היא חבילת כלים משרדיים שכוללת בתוכה את כל מה שדרוש כדי ליצור מסמכים, גיליונות נתונים ומצגות. תואם לתצורות הקבצים של Microsoft Office, היא נותנת לך את כל מה שנחוץ לך, בלי שורת המחיר.",
-  "@officeSlideDescription": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideDescription": "בלב הפילוסופיה שמאחורי {RELEASE} קיימת האמונה שמחשוב מיועד לכל אחד ואחת. עם כלי נגישות מתקדמים, אפשרויות להחלפת השפה, ערכות צבעים וגודלי כתב, קל יותר להשתמש במחשב עם {RELEASE} - ללא תלות בזהות או במיקום.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
   "hiddenWifiNetworkNameRequired": "שם הרשת נחוץ",
   "@hiddenWifiNetworkNameRequired": {},
   "hiddenWifiNetwork": "התחברות לרשת אלחוטית נסתרת",
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameLabel": "שם הרשת",
   "@hiddenWifiNetworkNameLabel": {},
-  "webSlideDescription": "למערכת {RELEASE} מצורף Firefox, הדפדפן שמשמש מיליונים ברחבי העולם. וניתן לנעוץ יישומים שמשמשים אותך באופן תדיר (כגון פייסבוק או Gmail, למשל) לשולחן העבודה לגישה מהירה יותר, כמו כל יישום אחר במחשב שלך.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "installationTypeMultiOSDetected": "במחשב זה מותקנות מספר מערכות הפעלה. מה לעשות?",
   "@installationTypeMultiOSDetected": {},
-  "identityShowPassword": "הצגת הסיסמה",
-  "@identityShowPassword": {},
   "installationTypeDualOSDetected": "במחשב זה מותקנות כרגע {os1} ו־{os2}. מה לעשות?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -602,14 +466,6 @@
   },
   "notEnoughDiskSpaceTitle": "אין מספיק מקום",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "נדרשים {SIZE} לפחות של מקום פנוי כדי להתקין את {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "writeChangesPartitionResized": "הגודל של מחיצה <b>{sysname}</b> ישתנה מ־<b>{oldsize}</b> ל־<b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
@@ -628,13 +484,6 @@
       "sysname": {}
     }
   },
-  "notEnoughDiskSpaceHasOnly": "במחשב זה יש רק {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "writeChangesPartitionFormatted": "מחיצה <b>{sysname}</b> פורמטה בתור <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
@@ -649,13 +498,6 @@
     "placeholders": {
       "sysname": {},
       "mount": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "גודל הכונן הגדול ביותר במחשב הזה הוא {SIZE} בלבד.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
     }
   },
   "installingSystem": "המערכת מותקנת…",

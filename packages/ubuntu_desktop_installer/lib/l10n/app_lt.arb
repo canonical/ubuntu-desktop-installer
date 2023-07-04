@@ -13,20 +13,12 @@
   },
   "changeButtonText": "Keisti",
   "@changeButtonText": {},
-  "okButtonText": "Gerai",
-  "@okButtonText": {},
-  "noButtonText": "Ne",
-  "@noButtonText": {},
   "restartButtonText": "Paleisti iš naujo",
   "@restartButtonText": {},
   "revertButtonText": "Sugrąžinti",
   "@revertButtonText": {},
-  "yesButtonText": "Taip",
-  "@yesButtonText": {},
   "welcome": "Sveiki,",
   "@welcome": {},
-  "cancelButtonText": "Atsisakyti",
-  "@cancelButtonText": {},
   "minimalInstallationTitle": "Minimalus programų paketas",
   "@minimalInstallationTitle": {},
   "minimalInstallationSubtitle": "Saityno naršyklė ir pagrindinės paslaugų programos.",
@@ -335,13 +327,6 @@
   },
   "turnOffBitlockerDescription": "Šis kompiuteris naudoja „Windows BitLocker“ šifravimą.\nNorėdami tęsti, turite pasinaudoti „Windows“ ir sukurti laisvą vietą arba pasirinkti variantą '{option}'.",
   "@turnOffBitlockerDescription": {},
-  "welcomeSlideDescription": "Greita ir pilna naujų ypatybių, naujausia {RELEASE} versija leidžia naudotis kompiuteriu dar lengviau nei bet kada anksčiau. Štai keli naudingi dalykai, į kuriuos verta atkreipti dėmesį...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "newPartitionTableConfirmationMessage": "Sukūrus naują skaidinių lentelę visame įrenginyje, bus pašalinti visi jo dabartiniai skaidiniai. Jei reikia, šią operaciją galima atšaukti.",
   "@newPartitionTableConfirmationMessage": {},
   "installationTypeAlongsideInfo": "Dokumentai, muzika ir kiti asmeniniai failai bus išsaugoti. Kas kartą įjungę kompiuterį, galėsite pasirinkti, kurią operacinę sistemą paleisti.",
@@ -393,15 +378,6 @@
   "@themeDark": {},
   "themeLight": "Šviesus",
   "@themeLight": {},
-  "welcomeSlideTitle": "Jus sveikina {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "Atraskite dar daugiau programinės įrangos",
-  "@softwareSlideTitle": {},
   "appTitle": "Ubuntu darbalaukio diegimo programa",
   "@appTitle": {},
   "diskHeadersType": "Tipas",

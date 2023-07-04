@@ -1,9 +1,5 @@
 {
   "@@locale": "ug",
-  "noButtonText": "ياق",
-  "@noButtonText": {},
-  "yesButtonText": "ھەئە",
-  "@yesButtonText": {},
   "tryUbuntu": "‏{RELEASE} نى سىناپ كۆرىمەن",
   "@tryUbuntu": {
     "type": "text",

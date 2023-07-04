@@ -1,13 +1,7 @@
 {
   "@@locale": "nn",
-  "cancelButtonText": "Avbryt",
-  "@cancelButtonText": {},
-  "noButtonText": "Nei",
-  "@noButtonText": {},
   "revertButtonText": "Tilbakestill",
   "@revertButtonText": {},
-  "yesButtonText": "Ja",
-  "@yesButtonText": {},
   "windowTitle": "Installer {RELEASE}",
   "@windowTitle": {
     "type": "text",

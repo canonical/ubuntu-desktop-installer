@@ -9,20 +9,12 @@
       "RELEASE": {}
     }
   },
-  "cancelButtonText": "Скасувати",
-  "@cancelButtonText": {},
   "changeButtonText": "Змінити",
   "@changeButtonText": {},
-  "okButtonText": "Гаразд",
-  "@okButtonText": {},
-  "noButtonText": "Ні",
-  "@noButtonText": {},
   "restartButtonText": "Перезавантажити",
   "@restartButtonText": {},
   "revertButtonText": "Відбій",
   "@revertButtonText": {},
-  "yesButtonText": "Так",
-  "@yesButtonText": {},
   "welcome": "Ласкаво просимо",
   "@welcome": {},
   "tryOrInstallPageTitle": "Спробувати або встановити",
@@ -178,29 +170,12 @@
   "@themeLight": {},
   "turnOffBitlockerDescription": "На цьому комп'ютері використовується шифрування Windows BitLocker.\nПеред встановленням Ubuntu потрібно вимкнути BitLocker у Windows.",
   "@turnOffBitlockerDescription": {},
-  "musicSlideDescription": "{RELEASE} поставляється з дивовижним музичним плеєром Rhythmbox. Завдяки розширеним функціям відтворення можна легко поставити в чергу чудові пісні. Він чудово працює з компакт-дисками та портативними музичними програвачами, тож ви можете насолоджуватися музикою, де б ви не були.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideShotwell": "Менеджер фотографій Shotwell",
-  "@photoSlideShotwell": {},
   "installingSystem": "Встановлення системи…",
   "@installingSystem": {},
   "configuringSystem": "Налаштування системи…",
   "@configuringSystem": {},
   "notEnoughDiskSpaceTitle": "Вибачте",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "Для встановлення {RELEASE} потрібно щонайменше {SIZE} дискового простору.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "installationTypeOSDetected": "На цьому комп'ютері зараз встановлено {os}. Що б ви хотіли зробити?",
   "@installationTypeOSDetected": {
     "type": "text",
@@ -227,53 +202,8 @@
   "@shutdown": {},
   "restartIntoWindows": "Перезавантажити в Windows",
   "@restartIntoWindows": {},
-  "welcomeSlideTitle": "Ласкаво просимо до {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "Знайти ще більше програм",
-  "@softwareSlideTitle": {},
-  "musicSlideRhythmbox": "Музичний програвач Rhythmbox",
-  "@musicSlideRhythmbox": {},
-  "photoSlideTitle": "Отримайте задоволення від своїх фотографій",
-  "@photoSlideTitle": {},
-  "photoSlideGimp": "Графічний редактор GIMP",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Відео-редактор Shotcut",
-  "@photoSlideShotcut": {},
-  "webSlideFirefox": "Веб-переглядач Firefox",
-  "@webSlideFirefox": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Все необхідне для офісу",
-  "@officeSlideTitle": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "photoSlideDescription": "Shotwell - це зручний фото-менеджер, який вже готовий для ваших гаджетів. Підключіть камеру або телефон, щоб перенести свої фотографії, а потім легко ділитися ними та зберігати їх у безпеці. А якщо ви відчуваєте себе творчою людиною, ви можете знайти багато інших програм для роботи з фотографіями в Ubuntu Software.",
-  "@photoSlideDescription": {},
   "timezonePageTitle": "Де ви знаходитесь?",
   "@timezonePageTitle": {},
-  "welcomeSlideDescription": "Швидка і повна нових можливостей, остання версія {RELEASE} робить роботу комп'ютера простішою, ніж будь-коли. Ось лише кілька цікавих нововведень, на які варто звернути увагу...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideDescription": "Попрощайтеся з пошуком нового програмного забезпечення в Інтернеті. Завдяки доступу до магазину Snap Store та архіву програм {RELEASE} ви можете легко знаходити та інсталювати нові програми. Просто введіть те, що ви шукаєте, або перегляньте такі категорії, як \"Графіка та фотографія\", \"Ігри\" та \"Продуктивність\", а також корисні відгуки інших користувачів.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "musicSlideTitle": "Візьміть музику з собою",
-  "@musicSlideTitle": {},
   "installDriversTitle": "Встановити стороннє програмне забезпечення для графіки та обладнання Wi-Fi",
   "@installDriversTitle": {},
   "installDriversSubtitle": "Ці драйвери підпадають під дію ліцензійних умов, включених до їх документації. Вони є пропрієтарними..",
@@ -356,44 +286,10 @@
   "@themePageTitle": {},
   "themeDark": "Темний",
   "@themeDark": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideTitle": "Доступ для кожного",
-  "@accessSlideTitle": {},
-  "accessSlideAppearance": "Зовнішній вигляд",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Особливі можливості",
-  "@accessSlideAssistiveTechnologies": {},
-  "includedSoftware": "Програмне забезпечення, що входить у комплект",
-  "@includedSoftware": {},
-  "availableSoftware": "Наявне програмне забезпечення",
-  "@availableSoftware": {},
-  "supportedSoftware": "Підтримуване програмне забезпечення",
-  "@supportedSoftware": {},
   "copyingFiles": "Копіювання файлів…",
   "@copyingFiles": {},
   "installationFailed": "Встановлення не вдалося",
   "@installationFailed": {},
-  "notEnoughDiskSpaceHasOnly": "На цьому комп'ютері є лише {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Найбільший диск на цьому комп'ютері лише {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "officeSlideDescription": "LibreOffice - це вільний офісний пакет, який містить все необхідне для створення документів, електронних таблиць та презентацій. Сумісний з форматами файлів Microsoft Office, він надає всі необхідні функції.",
-  "@officeSlideDescription": {},
-  "accessSlideLanguageSupport": "Мовна підтримка",
-  "@accessSlideLanguageSupport": {},
   "showSecurityKey": "Показати ключ безпеки",
   "@showSecurityKey": {},
   "connectToInternetPageTitle": "Підключитись до інтернету",
@@ -549,21 +445,6 @@
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Часовий пояс",
   "@timezoneTimezoneLabel": {},
-  "webSlideTitle": "Використовуйте можливості Інтернету на повну",
-  "@webSlideTitle": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "supportSlideDocumentation": "Офіційна документація охоплює багато найбільш поширених аспектів {RELEASE}. Вона доступна як <a href=\"https://help.ubuntu.com\">онлайн</a>, так і через іконку \"Довідка\" в панелі завдань.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideResources": "Посилання на інші корисні ресурси можна знайти за посиланням <a href=\"https://www.ubuntu.com/support/community-support\">Підтримка спільноти</a> або <a href=\"https://www.ubuntu.com/support\">Комерційна підтримка</a>.",
-  "@supportSlideResources": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
   "installationTypeEncryptInfo": "Ключ захисту можна буде вибрати на наступному кроці.",
   "@installationTypeEncryptInfo": {},
   "installationTypeZFS": "ЕКСПЕРИМЕНТАЛЬНО: Витерти диск і скористатися ZFS",
@@ -585,8 +466,6 @@
   "@diskHeadersSize": {},
   "diskHeadersUsed": "Використано",
   "@diskHeadersUsed": {},
-  "accessSlideCustomizationOptions": "Параметри налаштування",
-  "@accessSlideCustomizationOptions": {},
   "freeDiskSpace": "Вільний простір",
   "@freeDiskSpace": {},
   "newPartitionTable": "Нова таблиця розділів",
@@ -599,8 +478,6 @@
   "@identityUsernameInvalidChars": {},
   "identityPasswordMismatch": "Паролі не збігаються",
   "@identityPasswordMismatch": {},
-  "identityShowPassword": "Показати пароль",
-  "@identityShowPassword": {},
   "writeChangesPartitionResized": "розмір розділу #{sysname} змінено з {oldsize} на {newsize}",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
@@ -629,24 +506,6 @@
   "@noInternet": {},
   "newPartitionTableConfirmationMessage": "Ви вибрали весь пристрій для розбиття на розділи. Якщо ви продовжите створення нової таблиці розділів на ньому, всі поточні розділи будуть видалені.\n\nЗауважте, що ви зможете скасувати цю операцію пізніше, якщо захочете.",
   "@newPartitionTableConfirmationMessage": {},
-  "webSlideDescription": "{RELEASE} включає Firefox, веб-браузер, яким користуються мільйони людей по всьому світу. А веб-додатки, які ви часто використовуєте (наприклад, Facebook або Gmail), можна закріпити на робочому столі для швидшого доступу, так само як і програми на вашому комп'ютері.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "accessSlideDescription": "В основі філософії {RELEASE} лежить віра в те, що комп'ютерні технології доступні для всіх. Завдяки вдосконаленим інструментам доступності та опціям зміни мови, кольорів і розміру тексту, {RELEASE} робить роботу з комп'ютером легкою - ким би і де б ви не були.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideTitle": "Допомога та підтримка",
-  "@supportSlideTitle": {},
-  "supportSlideQuestions": "На сторінці <a href=\"https://askubuntu.com\">Ask Ubuntu</a> ви можете ставити запитання та шукати по значній колекції запитань, на які вже є відповіді. Підтримку вашою рідною мовою може надати ваша <a href=\"https://loco.ubuntu.com/teams\">команда місцевої спільноти</a>.",
-  "@supportSlideQuestions": {},
   "partitionUnitGB": "ГБ",
   "@partitionUnitGB": {},
   "configureSecureBootSecurityKeyRequired": "Потрібен ключ безпеки",

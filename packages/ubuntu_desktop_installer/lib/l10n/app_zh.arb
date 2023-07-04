@@ -23,14 +23,8 @@
   "@normalInstallationSubtitle": {},
   "changeButtonText": "更改",
   "@changeButtonText": {},
-  "okButtonText": "好",
-  "@okButtonText": {},
-  "noButtonText": "否",
-  "@noButtonText": {},
   "restartButtonText": "重启",
   "@restartButtonText": {},
-  "yesButtonText": "是",
-  "@yesButtonText": {},
   "welcome": "欢迎",
   "@welcome": {},
   "tryOrInstallPageTitle": "试用或安装{DISTRO}",
@@ -170,17 +164,6 @@
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "时区",
   "@timezoneTimezoneLabel": {},
-  "welcomeSlideTitle": "欢迎使用 {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "千万软件，一站搞定",
-  "@softwareSlideTitle": {},
-  "musicSlideTitle": "随时畅听，随地畅享",
-  "@musicSlideTitle": {},
   "repairInstallation": "修复安装",
   "@repairInstallation": {},
   "tryUbuntuDescription": "您可以在不对电脑做任何改动的情况下试用 {RELEASE}。",
@@ -207,41 +190,10 @@
   "@normalInstallationTitle": {},
   "installationTypeAlongsideInfo": "将保存文件、音乐和其他个人文件。每次启动时，您可以选择所需的操作系统。",
   "@installationTypeAlongsideInfo": {},
-  "writeChangesPartitionEntryMounted": "分区#{sysname}作为{format}用于{mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "repairInstallationDescription": "修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。",
   "@repairInstallationDescription": {},
-  "writeChangesPartitionEntryUnmounted": "分区#{sysname}作为{format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "turnOffBitlockerDescription": "这台电脑使用了 Windows BitLocker 进行加密。\n在安装 Ubuntu 之前，您需要关闭 Windows 的 BitLocker 功能。",
   "@turnOffBitlockerDescription": {},
-  "welcomeSlideDescription": "最新版本的 {RELEASE} 不仅快，功能也多，您从此使用电脑更加方便了！我们将介绍一些非常酷炫的新东西......",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideDescription": "无需在网上搜索新软件。通过访问Snap Store和{RELEASE}软件存档，只需输入你想要的内容，或探索图形与摄影、游戏和生产力等类别，您就可以轻松找到并安装新的应用程序，以及其他用户提供的有用评论。",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "chooseSecurityKeyTitle": "安全密钥",
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHint": "选择一个安全密钥",
@@ -412,8 +364,6 @@
   "@diskHeadersType": {},
   "diskHeadersMountPoint": "挂载点",
   "@diskHeadersMountPoint": {},
-  "cancelButtonText": "取消",
-  "@cancelButtonText": {},
   "revertButtonText": "撤销",
   "@revertButtonText": {},
   "tryUbuntu": "试用 {RELEASE}",
@@ -493,21 +443,8 @@
       "RELEASE": {}
     }
   },
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
   "installationTypeMultiOSDetected": "这台计算机已经安装了多个操作系统。您准备怎么做？",
   "@installationTypeMultiOSDetected": {},
-  "identityShowPassword": "显示密码",
-  "@identityShowPassword": {},
-  "photoSlideTitle": "记录瞬间，珍藏回忆",
-  "@photoSlideTitle": {},
-  "musicSlideDescription": "{RELEASE} 带有令人惊叹的 Rhythmbox 音乐播放器。通过高级播放选项，您可以轻松的为这些完美的歌曲排序。它与 CD 和便携式音乐播放器配合得很好，因此您可以随时随地欣赏所有音乐。",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "installationTypeDualOSDetected": "这台计算机已安装有{os1}与{os2}了。您准备怎么做？",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -516,70 +453,10 @@
       "os2": {}
     }
   },
-  "musicSlideRhythmbox": "Rhythmbox 音乐播放器",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "webSlideFirefox": "Firefox 浏览器",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium 浏览器",
-  "@webSlideChromium": {},
-  "photoSlideShotwell": "Shotwell 图片管理器",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "GIMP 图像处理程序",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Shotcut 视频编辑器",
-  "@photoSlideShotcut": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "supportSlideTitle": "获取支持，提供帮助",
-  "@supportSlideTitle": {},
-  "accessSlideLanguageSupport": "语言支持",
-  "@accessSlideLanguageSupport": {},
   "identityUsernameTooLong": "名字过长.",
   "@identityUsernameTooLong": {},
-  "supportSlideQuestions": "在<a href=\"https://askubuntu.com\">Ask Ubuntu</a>网站，您可以提问，或者查看已获答复的精选问题。您的<a href=\"https://loco.ubuntu.com/teams\">本地社区团队</a>可能会使用您使用的语言为您提供帮助。",
-  "@supportSlideQuestions": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
   "copyingFiles": "正在复制文件……",
   "@copyingFiles": {},
-  "supportedSoftware": "支持的软件",
-  "@supportedSoftware": {},
-  "accessSlideAssistiveTechnologies": "协助技术",
-  "@accessSlideAssistiveTechnologies": {},
-  "photoSlideDescription": "Shotwell 是一个精妙的照片管理器。 可通过连接相机或手机来传输图片， 以便于分享和安全地存储。 如果您想发挥更多的创造力， 您可以在 Ubuntu Software 中找到更多照片应用。",
-  "@photoSlideDescription": {},
-  "webSlideDescription": "{RELEASE} 包括了在世界上有数百万人使用的网络浏览器 Firefox 。为了便利访问，您可以像添加您本机上的应用程序一样，添加一些您经常使用的网站（例如 Facebook 或 Gmail）到您的桌面上。",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideTitle": "网络之旅，一路顺畅",
-  "@webSlideTitle": {},
-  "officeSlideDescription": "LibreOffice 是一个自由的办公套件，包含了创建文档、表格以及幻灯片所需的工具，并完全兼容 Microsoft Office 的文件格式。",
-  "@officeSlideDescription": {},
-  "accessSlideDescription": "{RELEASE} 哲学的核心是“计算为每个人服务”。无论您是谁，抑或是身在何处，{RELEASE} 都可凭先进的无障碍工具和更改语言、色彩、字体大小的选项，为您随时随地地轻松访问计算服务。",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "includedSoftware": "包含软件",
-  "@includedSoftware": {},
-  "availableSoftware": "可选软件",
-  "@availableSoftware": {},
-  "supportSlideResources": "要获取其它有用的信息，请访问 <a href=\"https://www.ubuntu.com/support/community-support\">社区支持</a> 或 <a href=\"https://www.ubuntu.com/support\">商业支持</a>.",
-  "@supportSlideResources": {},
-  "accessSlideCustomizationOptions": "个性化选项",
-  "@accessSlideCustomizationOptions": {},
   "installationTypeAlongsideMulti": "安装 {product} 并与它们共存",
   "@installationTypeAlongsideMulti": {
     "type": "text",
@@ -614,12 +491,6 @@
   "@identityUsernameSystemReserved": {},
   "identityUsernameInvalidChars": "这个名称包含无效字符。",
   "@identityUsernameInvalidChars": {},
-  "officeSlideTitle": "便捷工作，效率翻倍",
-  "@officeSlideTitle": {},
-  "accessSlideTitle": "轻松使用，体验无界",
-  "@accessSlideTitle": {},
-  "accessSlideAppearance": "外观",
-  "@accessSlideAppearance": {},
   "installationFailed": "安装失败",
   "@installationFailed": {},
   "installAlongsideAvailable": "可用：",
@@ -639,13 +510,6 @@
   "@installAlongsideResizePartition": {},
   "identityUsernameInUse": "这个用户名已经存在。",
   "@identityUsernameInUse": {},
-  "supportSlideDocumentation": "官方文档覆盖了 {RELEASE} 的常用问题，可通过 <a href=\"https://help.ubuntu.com\">官方网站</a> 和应用坞（dock）上的帮助图标访问。",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "quitButtonText": "退出安装",
   "@quitButtonText": {},
   "writeChangesPartitionFormatted": "分区<b>{sysname}</b> 格式化为<b>{format}</b>",
@@ -673,14 +537,6 @@
   },
   "notEnoughDiskSpaceTitle": "空间不足",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHeader": "你至少需要 {SIZE} 的磁盘空间来安装 {RELEASE}。",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "writeChangesPartitionResized": "分区<b>{sysname}</b> 从<b>{oldsize}</b> 调整为<b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
@@ -697,20 +553,6 @@
       "sysname": {},
       "format": {},
       "mount": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "本机只有 {SIZE} 空间。",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "本机上最大的硬盘只有 {SIZE} 空间。",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
     }
   },
   "configuringSystem": "正在设置系统……",

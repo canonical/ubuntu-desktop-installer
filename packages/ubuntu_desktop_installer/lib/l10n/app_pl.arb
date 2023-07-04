@@ -2,8 +2,6 @@
   "@@locale": "pl",
   "windowTitle": "Zainstaluj {RELEASE}",
   "@windowTitle": {},
-  "okButtonText": "OK",
-  "@okButtonText": {},
   "repairInstallation": "Napraw instalację",
   "@repairInstallation": {},
   "tryOrInstallPageTitle": "Wypróbuj lub zainstaluj {DISTRO}",
@@ -25,8 +23,6 @@
       "url": {}
     }
   },
-  "noButtonText": "Nie",
-  "@noButtonText": {},
   "tryUbuntuDescription": "Możesz wypróbować {RELEASE} bez wprowadzania jakichkolwiek zmian na swoim komputerze.",
   "@tryUbuntuDescription": {},
   "installUbuntuDescription": "Zainstaluj {RELEASE} obok (lub zamiast) obecnego systemu operacyjnego. Nie powinno to potrwać zbyt długo.",
@@ -135,22 +131,10 @@
   "@identityInvalidUsername": {},
   "writeChangesPartitionsHeader": "Zostaną zastosowane następujące zmiany partycji:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryUnmounted": "partycja #{sysname} jako {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
-  "cancelButtonText": "Anuluj",
-  "@cancelButtonText": {},
   "restartButtonText": "Uruchom ponownie",
   "@restartButtonText": {},
   "revertButtonText": "Przywróć",
   "@revertButtonText": {},
-  "yesButtonText": "Tak",
-  "@yesButtonText": {},
   "welcome": "Witamy",
   "@welcome": {},
   "installUbuntu": "Zainstaluj {RELEASE}",
@@ -312,15 +296,6 @@
       "path": {}
     }
   },
-  "writeChangesPartitionEntryMounted": "partycja #{sysname} jako {format} używana do {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "themePageTitle": "Wybierz swój motyw",
   "@themePageTitle": {},
   "themePageHeader": "Zawsze możesz zmienić to później w ustawieniach wyglądu.",
@@ -407,123 +382,12 @@
   "@timezonePageTitle": {},
   "welcomeHeader": "Wybierz swój język:",
   "@welcomeHeader": {},
-  "softwareSlideTitle": "Znajdź jeszcze więcej oprogramowania",
-  "@softwareSlideTitle": {},
-  "officeSlideDescription": "LibreOffice to wolny pakiet biurowy zawierający wszystko, czego potrzebujesz do tworzenia dokumentów, arkuszy kalkulacyjnych i prezentacji. Zgodny z formatami plików Microsoft Office, zapewnia wszystkie potrzebne funkcje.",
-  "@officeSlideDescription": {},
-  "musicSlideTitle": "Zabierz swoją muzykę ze sobą",
-  "@musicSlideTitle": {},
-  "musicSlideDescription": "{RELEASE} zawiera niesamowity odtwarzacz muzyki Rhythmbox. Dzięki zaawansowanym opcjom odtwarzania łatwo jest ustawić w kolejce idealne utwory. Ponadto świetnie współpracuje z płytami CD i przenośnymi odtwarzaczami muzycznymi, dzięki czemu możesz cieszyć się całą swoją muzyką, gdziekolwiek jesteś.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideTitle": "Baw się dobrze swoimi zdjęciami",
-  "@photoSlideTitle": {},
-  "photoSlideDescription": "Shotwell to poręczny menedżer zdjęć, który jest przygotowany na Twoje gadżety. Podłącz aparat lub telefon, aby przesyłać zdjęcia, a następnie łatwo je udostępniać i chronić. A jeśli czujesz się kreatywnie, możesz znaleźć wiele innych aplikacji do zdjęć w Ubuntu Software.",
-  "@photoSlideDescription": {},
-  "photoSlideShotwell": "Menedżer zdjęć Shotwell",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "Edytor obrazów GIMP",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Edytor wideo Shotcut",
-  "@photoSlideShotcut": {},
-  "webSlideTitle": "Wykorzystaj w pełni sieć",
-  "@webSlideTitle": {},
-  "webSlideFirefox": "Przeglądarka internetowa Firefox",
-  "@webSlideFirefox": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Wszystko, czego potrzebujesz do biura",
-  "@officeSlideTitle": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideTitle": "Dostęp dla wszystkich",
-  "@accessSlideTitle": {},
-  "accessSlideCustomizationOptions": "Opcje dostosowywania",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "Wygląd",
-  "@accessSlideAppearance": {},
-  "accessSlideLanguageSupport": "Obsługa języków",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Pomoc i wsparcie",
-  "@supportSlideTitle": {},
-  "supportSlideDocumentation": "Oficjalna dokumentacja obejmuje wiele najczęstszych aspektów dotyczących {RELEASE}. Jest dostępna zarówno <a href=\"https://help.ubuntu.com\">online</a>, jak i poprzez ikonę Pomoc w doku.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "availableSoftware": "Dostępne oprogramowanie",
-  "@availableSoftware": {},
-  "supportedSoftware": "Obsługiwane oprogramowanie",
-  "@supportedSoftware": {},
-  "supportSlideResources": "Aby uzyskać wskazówki dotyczące innych przydatnych zasobów, odwiedź stronę <a href=\"https://www.ubuntu.com/support/community-support\">Wsparcie społeczności</a> lub <a href=\"https://www.ubuntu.com/support\">Wsparcie komercyjne</a>.",
-  "@supportSlideResources": {},
-  "welcomeSlideTitle": "Witaj w {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "welcomeSlideDescription": "Najnowsza wersja {RELEASE}, szybka i pełna nowych funkcji, sprawia, że korzystanie z komputera jest łatwiejsze niż kiedykolwiek. Oto tylko kilka ciekawych rzeczy, na które warto zwrócić uwagę…",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideRhythmbox": "Odtwarzacz muzyki Rhythmbox",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "softwareSlideDescription": "Pożegnaj się z przeszukiwaniem sieci w poszukiwaniu nowego oprogramowania. Dzięki dostępowi do Snap Store i archiwum oprogramowania {RELEASE} możesz z łatwością znajdować i instalować nowe aplikacje. Po prostu wpisz, czego szukasz, lub przejrzyj kategorie, takie jak Grafika i fotografia, Gry i produktywność, a także pomocne recenzje od innych użytkowników.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideDescription": "{RELEASE} zawiera program Firefox, przeglądarkę internetową używaną przez miliony ludzi na całym świecie. Często używane aplikacje internetowe (na przykład Facebook lub Gmail) można przypiąć do pulpitu, aby uzyskać do nich szybszy dostęp, podobnie jak do aplikacji na komputerze.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "accessSlideAssistiveTechnologies": "Technologie wspomagające",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideDescription": "U podstaw filozofii {RELEASE} leży przekonanie, że komputery są dla wszystkich. Dzięki zaawansowanym narzędziom ułatwień dostępu i opcjom zmiany języka, kolorów i rozmiaru tekstu {RELEASE} ułatwia korzystanie z komputera — niezależnie od tego, kim i gdzie jesteś.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "W anglojęzycznym serwisie <a href=\"https://askubuntu.com\">Ask Ubuntu</a> można zadawać pytania i przeszukiwać imponującą kolekcję już udzielonych odpowiedzi. Wsparcie w Twoim języku może być zapewnione w wybranym <a href=\"https://loco.ubuntu.com/teams\">Zespole lokalnej społeczności</a>.",
-  "@supportSlideQuestions": {},
-  "includedSoftware": "Dołączone oprogramowanie",
-  "@includedSoftware": {},
   "hiddenWifiNetworkNameLabel": "Nazwa sieci",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetwork": "Połącz się z ukrytą siecią Wi-Fi",
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameRequired": "Wymagana jest nazwa sieci",
   "@hiddenWifiNetworkNameRequired": {},
-  "identityShowPassword": "Pokaż hasło",
-  "@identityShowPassword": {},
   "installationTypeDualOSDetected": "Na tym komputerze są obecnie zainstalowane systemy {os1} i {os2}. Co chcesz zrobić?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -634,28 +498,6 @@
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
-    }
-  },
-  "notEnoughDiskSpaceHeader": "Potrzebujesz co najmniej {SIZE} przestrzeni dyskowej, aby zainstalować {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Ten komputer ma tylko {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Największy dysk na tym komputerze ma tylko {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
     }
   },
   "configuringSystem": "Konfigurowanie systemu…",

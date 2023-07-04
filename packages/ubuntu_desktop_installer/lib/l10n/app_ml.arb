@@ -77,15 +77,6 @@
   "@writeChangesDescription": {},
   "writeChangesPartitionsHeader": "ഇനിപ്പറയുന്ന പാർട്ടീഷനുകൾ ഫോർമാറ്റ് ചെയ്യാൻ പോകുന്നു:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "പാർട്ടീഷൻ #{sysname} {format} ആയി {mount} ഉപയോഗിച്ചു",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "connectToInternetPageTitle": "ഇന്റർനെറ്റ് ആയിട്ട് ബന്ധിപ്പിക്കുക",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "ഈ കമ്പ്യൂട്ടർ ഇൻറർനെറ്റിലേക്ക് ബന്ധിപ്പിക്കുന്നത് ഉബുണ്ടുവിന് ആവശ്യമായ ഏതെങ്കിലും അധിക സോഫ്‌റ്റ്‌വെയർ ഇൻസ്റ്റാൾ ചെയ്യാൻ സഹായിക്കുകയും നിങ്ങളുടെ സമയ മേഖല തിരഞ്ഞെടുക്കാൻ സഹായിക്കുകയും ചെയ്യും.\n\nഇതർനെറ്റ് കേബിൾ വഴി ബന്ധിപ്പിക്കുക, അല്ലെങ്കിൽ ഒരു Wi-Fi നെറ്റ്‌വർക്ക് തിരഞ്ഞെടുക്കുക",
@@ -157,20 +148,12 @@
   "@connectButtonText": {},
   "appTitle": "ഉബുണ്ടു ഡെസ്ക്ടോപ്പ് ഇൻസ്റ്റാളർ",
   "@appTitle": {},
-  "cancelButtonText": "റദ്ദാക്കുക",
-  "@cancelButtonText": {},
   "changeButtonText": "മാറ്റുക",
   "@changeButtonText": {},
-  "okButtonText": "തുടരുക",
-  "@okButtonText": {},
-  "noButtonText": "ഇല്ല",
-  "@noButtonText": {},
   "restartButtonText": "പുനരാരംഭിക്കുക",
   "@restartButtonText": {},
   "revertButtonText": "തിരിച്ചെടുക്കുക",
   "@revertButtonText": {},
-  "yesButtonText": "അതെ",
-  "@yesButtonText": {},
   "welcome": "സ്വാഗതം",
   "@welcome": {},
   "tryOrInstallPageTitle": "ഉപയോഗിച്ച് നോക്കുക അല്ലെങ്കിൽ ഇൻസ്റ്റാൾ ചെയ്യുക",
@@ -372,14 +355,6 @@
   "@identityPasswordLabel": {},
   "identityPasswordRequired": "ഒരു പാസ്‌വേഡ് ആവശ്യമാണ്",
   "@identityPasswordRequired": {},
-  "writeChangesPartitionEntryUnmounted": "പാർട്ടീഷൻ #{sysname} {format} ആയി",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "themePageTitle": "നിങ്ങളുടെ രൂപം തിരഞ്ഞെടുക്കുക",
   "@themePageTitle": {},
   "themePageHeader": "രൂപഭാവ ക്രമീകരണങ്ങളിൽ നിങ്ങൾക്ക് ഇത് പിന്നീട് എപ്പോൾ വേണമെങ്കിലും മാറ്റാവുന്നതാണ്.",

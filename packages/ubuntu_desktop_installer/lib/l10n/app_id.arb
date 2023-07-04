@@ -19,8 +19,6 @@
   "@restartButtonText": {},
   "installUbuntu": "Pasang {RELEASE}",
   "@installUbuntu": {},
-  "noButtonText": "Tidak",
-  "@noButtonText": {},
   "tryUbuntuDescription": "Anda dapat mencoba {RELEASE} tanpa membuat perubahan apa pun pada komputer Anda.",
   "@tryUbuntuDescription": {},
   "releaseNotesLabel": "Anda mungkin ingin membaca <a href=\"{url}\">catatan rilis</a>.",
@@ -30,8 +28,6 @@
       "url": {}
     }
   },
-  "okButtonText": "Ok",
-  "@okButtonText": {},
   "turnOffRSTDescription": "Komputer ini menggunakan Intel RST (Rapid Storage Technology). Anda harus mematikan RST di Windows sebelum memasang Ubuntu.",
   "@turnOffRSTDescription": {},
   "turnOffRST": "Matikan RST",
@@ -109,14 +105,6 @@
   "@partitionUnitGB": {},
   "identityConfirmPasswordLabel": "Konfirmasikan kata sandi Anda",
   "@identityConfirmPasswordLabel": {},
-  "writeChangesPartitionEntryUnmounted": "partisi #{sysname} sebagai {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "themePageHeader": "Anda selalu dapat mengubahnya nanti di pengaturan tampilan.",
   "@themePageHeader": {},
   "partitionErase": "Format partisi",
@@ -169,14 +157,10 @@
   "@themeLight": {},
   "appTitle": "Penginstal Desktop Ubuntu",
   "@appTitle": {},
-  "cancelButtonText": "Batal",
-  "@cancelButtonText": {},
   "changeButtonText": "Ubah",
   "@changeButtonText": {},
   "revertButtonText": "Kembalikan",
   "@revertButtonText": {},
-  "yesButtonText": "Ya",
-  "@yesButtonText": {},
   "welcome": "Selamat Datang",
   "@welcome": {},
   "tryOrInstallPageTitle": "Coba atau pasang",
@@ -318,15 +302,6 @@
   "@identityPasswordMismatch": {},
   "writeChangesPartitionsHeader": "Partisi berikut akan diformat:",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryMounted": "partisi #{sysname} sebagai {format} dipakai untuk {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
   "themePageTitle": "Pilih penampilan Anda",
   "@themePageTitle": {},
   "installationCompleteTitle": "Instalasi selesai",
@@ -407,16 +382,6 @@
   "@timezoneTimezoneLabel": {},
   "timezonePageTitle": "Di manakah Anda?",
   "@timezonePageTitle": {},
-  "welcomeSlideTitle": "Selamat Datang ke {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "Temukan lebih banyak lagi perangkat lunak",
-  "@softwareSlideTitle": {},
-  "welcomeSlideDescription": "Cepat dan penuh dengan fitur baru, versi terakhir {RELEASE} membuat komputasi menjadi semakin mudah. Berikut adalah beberapa hal keren baru yang dapat diperhatikan...",
   "@welcomeSlideDescription": {
     "type": "text",
     "placeholders": {

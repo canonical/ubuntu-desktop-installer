@@ -9,8 +9,6 @@
   },
   "appTitle": "උබුන්ටු වැඩතල ස්ථාපකය",
   "@appTitle": {},
-  "cancelButtonText": "අවලංගු",
-  "@cancelButtonText": {},
   "welcome": "ආයුබෝවන්",
   "@welcome": {},
   "tryUbuntu": "{RELEASE} අත්හදා බලන්න",
@@ -78,16 +76,10 @@
   "@diskHeadersSystem": {},
   "changeButtonText": "වෙනස් කරන්න",
   "@changeButtonText": {},
-  "okButtonText": "හරි",
-  "@okButtonText": {},
-  "noButtonText": "නැහැ",
-  "@noButtonText": {},
   "restartButtonText": "යළි අරඹන්න",
   "@restartButtonText": {},
   "revertButtonText": "ප්‍රතිවර්තනය",
   "@revertButtonText": {},
-  "yesButtonText": "ඔව්",
-  "@yesButtonText": {},
   "chooseYourKeyboardLayout": "ඔබගේ යතුරුපුවරු පිරිසැලසුම තෝරන්න:",
   "@chooseYourKeyboardLayout": {},
   "typeToTest": "ඔබගේ යතුරුපුවරුව පරීක්‍ෂාවට මෙතැන ලියන්න",
@@ -229,8 +221,6 @@
   "@identityUsernameInUse": {},
   "identityPasswordMismatch": "මුරපද නොගැළපේ",
   "@identityPasswordMismatch": {},
-  "identityShowPassword": "මුරපදය පෙන්වන්න",
-  "@identityShowPassword": {},
   "writeChangesFallbackSerial": "තැටිය",
   "@writeChangesFallbackSerial": {
     "description": "Default display name for a disk without a serial (unlikely)"
@@ -263,18 +253,10 @@
   "@identityConfirmPasswordLabel": {},
   "writeChangesToDisk": "වෙනස්කම් තැටියට ලියන්න",
   "@writeChangesToDisk": {},
-  "accessSlideLanguageSupport": "භාෂා සහාය",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "උදව් හා සහාය",
-  "@supportSlideTitle": {},
   "installingSystem": "පද්ධතිය ස්ථාපනය වෙමින්…",
   "@installingSystem": {},
   "configuringSystem": "පද්ධතිය පිහිටුවමින්…",
   "@configuringSystem": {},
-  "availableSoftware": "තිබෙන මෘදුකාංග",
-  "@availableSoftware": {},
-  "supportedSoftware": "සහාය දක්වන මෘදුකාංග",
-  "@supportedSoftware": {},
   "themeLight": "දීප්ත",
   "@themeLight": {},
   "themeDark": "අඳුරු",
@@ -283,18 +265,8 @@
   "@shutdown": {},
   "turnOffBitlockerTitle": "බිට්ලොකර් අක්‍රිය කරන්න",
   "@turnOffBitlockerTitle": {},
-  "musicSlideRhythmbox": "රිදම්බොක්ස් සංගීත වාදකය",
-  "@musicSlideRhythmbox": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "webSlideFirefox": "ෆයර්ෆොක්ස් අතිරික්සුව",
-  "@webSlideFirefox": {},
-  "accessSlideCustomizationOptions": "අභිරුචිකරණ විකල්ප",
-  "@accessSlideCustomizationOptions": {},
   "themePageTitle": "ඔබගේ පෙනුම තෝරන්න",
   "@themePageTitle": {},
-  "photoSlideShotcut": "ෂොට්කට් දෘශ්‍යක සංස්කරකය",
-  "@photoSlideShotcut": {},
   "readyToUse": "**{system}** ස්ථාපිත බැවින් භාවිතයට සූදානම්.",
   "@readyToUse": {
     "type": "text",
@@ -302,8 +274,6 @@
       "system": {}
     }
   },
-  "officeSlideCalc": "ලිබ්රේඔෆිස් කැල්ක්",
-  "@officeSlideCalc": {},
   "installationCompleteTitle": "ස්ථාපනය සම්පූර්ණයි",
   "@installationCompleteTitle": {},
   "restartInto": "{system} වෙත යළි අරඹන්න",
@@ -323,27 +293,6 @@
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "වේලා කලාපය",
   "@timezoneTimezoneLabel": {},
-  "welcomeSlideTitle": "{RELEASE} වෙත පිළිගනිමු",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "තවත් මෘදුකාංග සොයාගන්න",
-  "@softwareSlideTitle": {},
-  "webSlideThunderbird": "තන්ඩර්බර්ඩ්",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "ක්‍රෝමියම්",
-  "@webSlideChromium": {},
-  "officeSlideWriter": "ලිබ්රේඔෆිස් රයිටර්",
-  "@officeSlideWriter": {},
-  "officeSlideImpress": "ලිබ්රේඔෆිස් ඉම්ප්‍රෙස්",
-  "@officeSlideImpress": {},
-  "accessSlideAppearance": "පෙනුම",
-  "@accessSlideAppearance": {},
-  "includedSoftware": "අඩංගු මෘදුකාංග",
-  "@includedSoftware": {},
   "copyingFiles": "ගොනු පිටපත් වෙමින්…",
   "@copyingFiles": {},
   "installationFailed": "ස්ථාපනයට අසමත් විය",
@@ -361,12 +310,6 @@
   },
   "turnOffBitlockerDescription": "මෙම පරිගණකය වින්ඩෝස් බිට්ලොකර් සංකේතනය භාවිතා කරයි.\nඋබුන්ටු ස්ථාපනයට පෙර ඔබ වින්ඩෝස් හි බිට්ලොකර් අක්‍රිය කළ යුතුය.",
   "@turnOffBitlockerDescription": {},
-  "photoSlideShotwell": "ෂොට්වෙල් ඡායාරූප කළමනාකරු",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "ගිම්ප් සළරූ සංස්කරකය",
-  "@photoSlideGimp": {},
-  "accessSlideTitle": "සැමට ප්‍රවේශය",
-  "@accessSlideTitle": {},
   "configureSecureBootDescription": "ඔබ තෙවන පාර්ශ්ව ධාවක මෘදුකාංග ස්ථාපනයට තෝරාගෙන ඇත. මේ සඳහා ආරක්‍ෂිත ඇරඹුම අක්‍රිය කළ යුතුය.\nමෙය සිදු කිරීම සඳහා, ඔබ දැන් ආරක්‍ෂණ යතුරක් තෝරාගෙන පද්ධතිය යළි ආරම්භ වන විට එය ඇතුල් කරන්න.",
   "@configureSecureBootDescription": {},
   "identityPasswordShow": "පෙන්වන්න",
@@ -494,13 +437,6 @@
   "@installationTypeZFS": {},
   "installationTypeAlongsideInfo": "ලේඛන, ගීත සහ අනෙකුත් පෞද්. ගොනු රඳවා ගැනෙයි. පරිගණකය ආරම්භ වන සැමවිට අවශ්‍ය මෙහෙයුම් පද්ධතිය තේරීමට හැකිය.",
   "@installationTypeAlongsideInfo": {},
-  "notEnoughDiskSpaceBiggestDisk": "මෙම පරිගණකයේ විශාලම තැටිය {SIZE} පමණි.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installationTypeOSDetected": "මෙම පරිගණකයෙහි දැනට {os} තිබේ. ඔබ කිරීමට කැමති කුමක්ද?",
   "@installationTypeOSDetected": {
     "type": "text",
@@ -561,47 +497,14 @@
       "RELEASE": {}
     }
   },
-  "musicSlideTitle": "ගීත ඔබ සමඟ ගෙන යන්න",
-  "@musicSlideTitle": {},
   "partitionMountPointLabel": "සවිවන ස්ථානය:",
   "@partitionMountPointLabel": {},
-  "accessSlideAssistiveTechnologies": "උපකාරක තාක්‍ෂණ",
-  "@accessSlideAssistiveTechnologies": {},
   "installAlongsideResizePartition": "පංගුව යළි ප්‍රමාණනය",
   "@installAlongsideResizePartition": {},
-  "musicSlideSpotify": "ස්පොටිෆයි",
-  "@musicSlideSpotify": {},
   "installAlongsidePartition": "පංගුව:",
   "@installAlongsidePartition": {},
-  "officeSlideTitle": "කාර්යාලයට අවශ්‍ය සියළු දෑ",
-  "@officeSlideTitle": {},
   "writeChangesDescription": "ඔබ ඉදිරියට ගියහොත්, පහත ලැයිස්තුගත වෙනස්කම් තැටියට ලියනු ඇත. ඔබට අතින් තවත් වෙනස්කම් සිදු කිරීමට හැකි වනු ඇත.",
   "@writeChangesDescription": {},
-  "softwareSlideDescription": "නව මෘදුකාංග සඳහා අන්තර්ජාලයේ සෙවීමට සමුදෙන්න. ස්නැප් ස්ටෝර් සහ {RELEASE} මෘදුකාංග සංරක්‍ෂිතය වෙත ප්‍රවේශයෙන් ඔබට පහසුවෙන් නව යෙදුම් සොයා ගැනීමට මෙන්ම ස්ථාපනයට හැකිය. ඔබ සොයන දේ ලියන්න, හෝ චිත්‍රක හා ඡායාරූපකරණය, ක්‍රීඩා හා ඵලදායිතාව වැනි ප්‍රවර්ග ගවේෂණය කරන්න. තවද, අනෙක් පරිශ්‍රීලකයින්ගේ ප්‍රයෝජනවත් සමාලෝචන ද ඇත.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideDescription": "විස්මිත රිදම්බොක්ස් සංගීත වාදකය සමඟ {RELEASE} පැමිණේ. සංකීර්ණ පිළිවැයීමේ විකල්ප මගින් ශ්‍රේෂ්ඨ ගීත පෝලිමට තැබීම සරලයි. තවද එය සුසංහිත තැටි සහ සුවහ සංගීත වාදක සමඟ හොඳින් වැඩ කරයි, එබැවින් ඔබ යන ඕනෑම තැනක දී ඔබගේ සියළුම ගීත රස විඳීමට හැකිය.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideTitle": "වියමනෙන් උපරිම ප්‍රයෝජනට",
-  "@webSlideTitle": {},
-  "officeSlideDescription": "ලිබ්රේඔෆිස් යනු ඔබට ලේඛන, පැතුරුම්පත් සහ සමර්පණ සෑදීමට අවශ්‍ය සියල්ල අසුරා තිබෙන නිදහස් කාර්යාල කට්ටලයකි. මයික්‍රොසොෆ්ට් ඔෆිස් ගොනු ආකෘති සඳහා අනුකූල වන අතර එය ඔබට අවශ්‍ය සියළුම විශේෂාංග ලබා දෙයි.",
-  "@officeSlideDescription": {},
-  "notEnoughDiskSpaceHasOnly": "මෙම පරිගණකය සතුව {SIZE} පමණක් ඇත.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installationTypeManualInfo": "ඔබටම පංගු සෑදීමට හෝ යළි ප්‍රමාණනයට, හෝ {DISTRO} සඳහා පංගු කිහිපයක් තේරීමට හැකිය",
   "@installationTypeManualInfo": {
     "type": "text",
@@ -668,52 +571,8 @@
       "sysname": {}
     }
   },
-  "welcomeSlideDescription": "වේගවත් සහ නව විශේෂාංග වලින් පිරුණු {RELEASE} හි නවතම අනුවාදය අන් කවරදාටත් වඩා පරිගණනය පහසු කරයි. මෙන්න බලන්න අළුත් දේවල් ටිකක්...",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "photoSlideTitle": "ඡායාරූප සමඟ විනෝද වන්න",
-  "@photoSlideTitle": {},
-  "webSlideDescription": "ලොව පුරා දශ ලක්‍ෂ ගණනක් භාවිතා කරන ෆයර්ෆොක්ස් අතිරික්සුව {RELEASE} හි ඇතුළත් වේ. තවද, ඔබ නිතර භාවිතා කරන යෙදුම් (ෆේස්බුක් හෝ ජීමේල් ආදී) වෙත ඉක්මනින් ප්‍රවේශය සඳහා ඔබගේ වැඩතලයට ඇමිණීමට හැකිය.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideDocumentation": "{RELEASE} හි වඩාත් සුලබ අංග බොහොමයක් නිල ප්‍රලේඛනය මගින් ආවරණය කෙරේ. එය <a href=\"https://help.ubuntu.com\">මාර්ගගතව</a> සහ තටාකයේ උදව් නිරූපකය හරහා කියවීමට හැකිය.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "<a href=\"https://askubuntu.com\">Ask Ubuntu</a> හි ඔබට ප්‍රශ්න ඇසීමට සහ දැනටමත් උත්තර දී ඇති ප්‍රශ්න සෙවීමට හැකිය. වඩාත් පහසුවෙන් ගැටළු සාකච්ඡා කිරීමට මෙන්ම ආකර්ෂණීය පැණ විසඳුම් එකතුවක් කියවීමට ඔබගේ භාෂාවෙන් සහාය ලබාදෙන <a href=\"https://loco.ubuntu.com/teams\">ප්‍රාදේශීය ප්‍රජා කණ්ඩායම</a> වෙත යන්න.",
-  "@supportSlideQuestions": {},
-  "supportSlideResources": "වෙනත් ප්‍රයෝජනවත් සම්පත් වෙත යොමු සඳහා, කරුණාකර <a href=\"https://www.ubuntu.com/support/community-support\">ප්‍රජා සහාය</a> හෝ <a href=\"https://www.ubuntu.com/support\">වාණිජ සහාය</a> වෙත ගොඩවදින්න.",
-  "@supportSlideResources": {},
   "partitionFormatNone": "පවිත්‍ර නොකර තබන්න",
   "@partitionFormatNone": {},
-  "photoSlideDescription": "ෂොට්වෙල් යනු ඔබගේ කුඩා උපාංග සඳහා උචිත පහසු ඡායාරූප කළමනාකරුවෙකි. ඔබගේ ඡායාරූප මාරු කිරීමට රූගතයක් හෝ දුරකථනයක් සම්බන්ධ කරන්න. ඉන්පසු ඒවා බෙදා ගැනීමට සහ ඒවා ආරක්‍ෂිතව තැබීමට පහසු වේ. ඔබට නිර්මාණශ්‍රීලී බවක් හැඟෙයි නම්, උබුන්ටු මෘදුකාංගය හරහා තවත් බොහෝ ඡායාරූප යෙදුම් සොයා ගැනීමට හැකිය.",
-  "@photoSlideDescription": {},
-  "accessSlideDescription": "{RELEASE} දැක්මෙහි හරය පරිගණනය සැමට යන විශ්වාසයයි. සංකීර්ණ ප්‍රවේශ්‍යතා මෙවලම් සහ භාෂාව, වර්ණ මෙන්ම පෙළ ප්‍රමාණය සැකසීමට විකල්ප සමඟින් කවුරුන් හෝ කොතැනක සිටියත් — {RELEASE} පරිගණනය පහසු කරයි.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "notEnoughDiskSpaceHeader": "{RELEASE} ස්ථාපනයට අවම වශයෙන් {SIZE} තැටි ඉඩක් අවශ්‍යයි.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "tooManyPrimaryPartitions": "ප්‍රාථමික පංගු බොහෝය",
   "@tooManyPrimaryPartitions": {},
   "partitionEditTitle": "පංගුව සංස්කරණය",

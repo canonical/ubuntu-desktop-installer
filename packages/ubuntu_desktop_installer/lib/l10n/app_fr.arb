@@ -86,12 +86,6 @@
   "@writeChangesPartitionTablesEntry": {},
   "writeChangesPartitionsHeader": "Les modification suivantes sur les partitions seront appliquées :",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryPrimaryFull": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) de type {fstype} en tant que {mountPath}",
-  "@writeChangesPartitionEntryPrimaryFull": {},
-  "writeChangesPartitionEntryPrimary": "partition n° {partitionNumber} de {diskSerial} ({diskPath}) en tant que",
-  "@writeChangesPartitionEntryPrimary": {},
-  "writeChangesPartitionEntrySecondary": "        partition n° de type {fstype} en tant que {mountPath}",
-  "@writeChangesPartitionEntrySecondary": {},
   "themePageTitle": "Choisissez l’apparence",
   "@themePageTitle": {},
   "themePageHeader": "Vous pourrez la changer ultérieurement dans les préférences d’apparence.",
@@ -102,18 +96,10 @@
   "@themeLight": {},
   "isKeyPresent": "Cette touche est-elle présente sur votre clavier ?",
   "@isKeyPresent": {},
-  "cancelButtonText": "Annuler",
-  "@cancelButtonText": {},
   "changeButtonText": "Changer",
   "@changeButtonText": {},
-  "okButtonText": "Ok",
-  "@okButtonText": {},
-  "noButtonText": "Non",
-  "@noButtonText": {},
   "revertButtonText": "Rétablir",
   "@revertButtonText": {},
-  "yesButtonText": "Oui",
-  "@yesButtonText": {},
   "pressOneKey": "Veuillez appuyer sur l’une des touches suivantes :",
   "@pressOneKey": {},
   "chooseSecurityKeyHeader": "Le chiffrement du disque protège vos fichiers au cas où vous perdriez votre ordinateur. Il exige que vous saisissiez une clef de sécurité à chaque fois que l’ordinateur démarre.\n\nTous les fichiers en dehors d’{RELEASE} ne seront pas chiffrés.",
@@ -311,23 +297,6 @@
   "@identityPasswordRequired": {},
   "identityConfirmPasswordLabel": "Confirmez votre mot de passe",
   "@identityConfirmPasswordLabel": {},
-  "writeChangesPartitionEntryMounted": "la partition #{sysname} en {format} est utilisée pour {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "partition #{sysname} en {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "readyToUse": "**{system}** est installé et prêt à être utilisé",
   "@readyToUse": {
     "type": "text",
@@ -389,129 +358,18 @@
   },
   "timezoneLocationLabel": "Localisation",
   "@timezoneLocationLabel": {},
-  "softwareSlideDescription": "Dites au revoir à la recherche de nouveaux logiciels sur le web. Avec l’accès au Snap Store et aux archives logicielles d’{RELEASE}, vous pouvez trouver et installer facilement de nouvelles applications. Saisissez juste ce que vous cherchez ou explorez les catégories comme Graphisme & photographie, Jeux ou Productivité accompagnées de commentaires d’autres utilisateurs.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "welcomeSlideTitle": "Bienvenue sur {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "softwareSlideTitle": "Obtenez davantage de logiciels",
-  "@softwareSlideTitle": {},
-  "musicSlideTitle": "Emportez votre musique avec vous",
-  "@musicSlideTitle": {},
-  "musicSlideDescription": "{RELEASE} est livré avec l’excellent lecteur de musique Rhythmbox. Grâce à ses options de lecture avancées, c’est un jeu d’enfant de préparer la liste de lecture parfaite. De plus, il gère parfaitement CD et baladeurs numériques, vous pouvez donc profiter de votre musique partout où vous allez.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "musicSlideRhythmbox": "Lecteur de musique Rhythmbox",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideTitle": "Profitez pleinement de vos photos",
-  "@photoSlideTitle": {},
-  "photoSlideShotwell": "Gestionnaire de photos Shotwell",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "Éditeur d’images GIMP",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Éditeur vidéo Shotcut",
-  "@photoSlideShotcut": {},
-  "webSlideTitle": "Tirez le meilleur parti du Web",
-  "@webSlideTitle": {},
-  "webSlideDescription": "{RELEASE} inclut Firefox, le navigateur Web utilisé par des millions de personnes dans le monde entier. Et, pour un accès plus rapide, vous pouvez épingler sur votre bureau les applications Web que vous utilisez le plus souvent (telles que Facebook ou Gmail), exactement comme des applications sur votre ordinateur.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Tout ce dont vous avez besoin pour le bureau",
-  "@officeSlideTitle": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideTitle": "Accès pour tous",
-  "@accessSlideTitle": {},
-  "accessSlideCustomizationOptions": "Options de personnalisation",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "Apparence",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Accessibilité",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Prise en charge des langues",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Aide et assistance",
-  "@supportSlideTitle": {},
-  "supportSlideDocumentation": "La documentation officielle couvre les principaux sujets concernant {RELEASE}. Elle est disponible à la fois <a href=\"https://help.ubuntu.com\">en ligne</a> et via l’icône Aide dans le lanceur.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "Sur <a href=\"http://forum.ubuntu-fr.org\">forum.ubuntu-fr.org</a>, vous pouvez poser des questions et rechercher dans une collection impressionnante de questions ayant déjà une réponse. Les <a href=\"http://loco.ubuntu.com/teams/\">équipes locales</a> peuvent également vous apporter de l’aide.",
-  "@supportSlideQuestions": {},
-  "includedSoftware": "Logiciels inclus",
-  "@includedSoftware": {},
-  "availableSoftware": "Logiciels disponibles",
-  "@availableSoftware": {},
-  "supportedSoftware": "Logiciels pris en charge",
-  "@supportedSoftware": {},
-  "supportSlideResources": "Pour des renseignements vers d’autres ressources utiles, veuillez vous référer à l’<a href=\"https://www.ubuntu.com/support/community-support\">assistance communautaire</a> ou à l’<a href=\"http://www.ubuntu.com/support\">assistance commerciale</a>.",
-  "@supportSlideResources": {},
   "timezonePageTitle": "Sélectionnez votre fuseau horaire",
   "@timezonePageTitle": {},
-  "welcomeSlideDescription": "Rapide et pleine de nouvelles fonctionnalités, la dernière version d’{RELEASE} rend l’informatique plus facile que jamais. Voici quelques nouveautés à découvrir…",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "timezoneTimezoneLabel": "Fuseau horaire",
   "@timezoneTimezoneLabel": {},
   "welcomeHeader": "Choisissez votre langue :",
   "@welcomeHeader": {},
-  "officeSlideDescription": "LibreOffice est une suite bureautique libre livrée avec tout ce dont vous aurez besoin pour créer des documents, feuilles de calcul et présentations. Compatible avec les formats de fichiers de Microsoft Office, elle vous offre toutes les fonctionnalités dont vous avez besoin.",
-  "@officeSlideDescription": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "photoSlideDescription": "Shotwell est un gestionnaire de photos pratique qui sait se connecter à vos périphériques. Connectez un appareil photo ou un téléphone pour transférer vos photos, et partagez-les et sauvegardez-les facilement. Et si vous vous sentez créatif, vous trouverez beaucoup d’autres applications de retouche de photos dans la logithèque Ubuntu.",
-  "@photoSlideDescription": {},
-  "webSlideFirefox": "Navigateur Web Firefox",
-  "@webSlideFirefox": {},
-  "accessSlideDescription": "Au cœur de la philosophie d’{RELEASE} se trouve la conviction que l’informatique doit être accessible à tous. Proposant des outils d’accessibilité avancés et des options telles que le choix de la langue, des couleurs, de la taille des polices, {RELEASE} vous rend l’informatique facile — qui que vous soyez, où que vous soyez.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "hiddenWifiNetworkNameLabel": "Nom du réseau",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Un nom de réseau est requis",
   "@hiddenWifiNetworkNameRequired": {},
   "hiddenWifiNetwork": "Se connecter à un réseau Wi-Fi caché",
   "@hiddenWifiNetwork": {},
-  "identityShowPassword": "Afficher le mot de passe",
-  "@identityShowPassword": {},
   "installationTypeDualOSDetected": "Cet ordinateur est installé avec {os1} et {os2}. Que voulez-vous faire ?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -587,33 +445,11 @@
       "format": {}
     }
   },
-  "notEnoughDiskSpaceBiggestDisk": "Le plus grand disque sur cet ordinateur n’a que {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceHeader": "Vous avec besoin d’au moins {SIZE} d’espace disque pour installer {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "writeChangesPartitionCreated": "la partition <b>{sysname}</b> créée",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
-    }
-  },
-  "notEnoughDiskSpaceHasOnly": "Cet ordinateur n’a que {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
     }
   },
   "quitButtonText": "Quitter l’installation",

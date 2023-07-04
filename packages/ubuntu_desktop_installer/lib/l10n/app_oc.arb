@@ -4,20 +4,12 @@
   "@appTitle": {},
   "windowTitle": "Installar {RELEASE}",
   "@windowTitle": {},
-  "cancelButtonText": "Anullar",
-  "@cancelButtonText": {},
   "changeButtonText": "Modificar",
   "@changeButtonText": {},
-  "okButtonText": "D’acòrdi",
-  "@okButtonText": {},
-  "noButtonText": "Non",
-  "@noButtonText": {},
   "restartButtonText": "Reaviar",
   "@restartButtonText": {},
   "revertButtonText": "Restablir",
   "@revertButtonText": {},
-  "yesButtonText": "Òc",
-  "@yesButtonText": {},
   "welcome": "La benvenguda",
   "@welcome": {},
   "tryOrInstallPageTitle": "Ensajar o installar {DISTRO}",
@@ -134,12 +126,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Utilizada coma :",
   "@partitionFormatLabel": {},
-  "partitionFormatBios": "zòna reservada a l’aviada del BIOS",
-  "@partitionFormatBios": {},
-  "partitionFormatEfi": "particion sistèma EFI",
-  "@partitionFormatEfi": {},
-  "partitionFormatPhysical": "volum fisic pel chiframent",
-  "@partitionFormatPhysical": {},
   "partitionFormatNone": "utilizar pas la particion",
   "@partitionFormatNone": {},
   "partitionErase": "Formatar la particion",
@@ -198,34 +184,6 @@
   },
   "writeChangesPartitionsHeader": "Las modificacions seguenta seràn aplicadas a las particions :",
   "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionEntryPrimaryFull": "particion n° {partitionNumber} de {diskSerial} ({diskPath}) de tipe {fstype} coma {mountPath}",
-  "@writeChangesPartitionEntryPrimaryFull": {
-    "description": "Una entrada per una particion primària sens particion segondària",
-    "placeholders": {
-      "partitionNumber": {},
-      "diskSerial": {},
-      "diskPath": {},
-      "fstype": {},
-      "mountPath": {}
-    }
-  },
-  "writeChangesPartitionEntryPrimary": "particion n° {partitionNumber} de {diskSerial} ({diskPath}) coma",
-  "@writeChangesPartitionEntryPrimary": {
-    "description": "Una entrada per una particion primària amb particions segondàrias",
-    "placeholders": {
-      "partitionNumber": {},
-      "diskSerial": {},
-      "diskPath": {}
-    }
-  },
-  "writeChangesPartitionEntrySecondary": "        particion n° de tipe {fstype} coma {mountPath}",
-  "@writeChangesPartitionEntrySecondary": {
-    "description": "Una entrada per una particion segondària",
-    "placeholders": {
-      "fstype": {},
-      "mountPath": {}
-    }
-  },
   "themePageTitle": "Causissètz vòstre tèma",
   "@themePageTitle": {},
   "themePageHeader": "La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.",
@@ -379,23 +337,6 @@
   "@chooseSecurityKeyRequired": {},
   "selectGuidedStorageDropdownLabel": "Seleccionatz lo disc :",
   "@selectGuidedStorageDropdownLabel": {},
-  "writeChangesPartitionEntryMounted": "la particion #{sysname} en {format} utilizada per {mount}",
-  "@writeChangesPartitionEntryMounted": {
-    "description": "A mounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {},
-      "mount": {}
-    }
-  },
-  "writeChangesPartitionEntryUnmounted": "particion #{sysname} en {format}",
-  "@writeChangesPartitionEntryUnmounted": {
-    "description": "An unmounted partition entry",
-    "placeholders": {
-      "sysname": {},
-      "format": {}
-    }
-  },
   "newPartitionTableConfirmationTitle": "Particion novèla voida",
   "@newPartitionTableConfirmationTitle": {},
   "wiredDisabled": "La connexion filara es desactivada",
@@ -435,73 +376,14 @@
       "color": {}
     }
   },
-  "welcomeSlideTitle": "La benvenguda a {RELEASE}",
-  "@welcomeSlideTitle": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "welcomeHeader": "Causissètz vòstra lenga :",
   "@welcomeHeader": {},
   "timezonePageTitle": "Seleccionatz vòstre fus orari",
   "@timezonePageTitle": {},
   "timezoneTimezoneLabel": "Fus orari",
   "@timezoneTimezoneLabel": {},
-  "musicSlideTitle": "Emportatz vòstra musica amb vos",
-  "@musicSlideTitle": {},
-  "officeSlideWriter": "LibreOffice Writer",
-  "@officeSlideWriter": {},
-  "officeSlideCalc": "LibreOffice Calc",
-  "@officeSlideCalc": {},
-  "photoSlideTitle": "Divertissètz vos amb vòstras fòtos",
-  "@photoSlideTitle": {},
-  "webSlideFirefox": "Navegador web Firefox",
-  "@webSlideFirefox": {},
   "timezoneLocationLabel": "Localizacion",
   "@timezoneLocationLabel": {},
-  "softwareSlideTitle": "Obtenètz mai de logicials",
-  "@softwareSlideTitle": {},
-  "musicSlideRhythmbox": "Lector de musica Rhythmbox",
-  "@musicSlideRhythmbox": {},
-  "musicSlideSpotify": "Spotify",
-  "@musicSlideSpotify": {},
-  "musicSlideVLC": "VLC",
-  "@musicSlideVLC": {},
-  "photoSlideShotwell": "Gestionari de fòto Shotwell",
-  "@photoSlideShotwell": {},
-  "photoSlideGimp": "Editor d’imatge GIMP",
-  "@photoSlideGimp": {},
-  "photoSlideShotcut": "Editor de vidèo Shotcut",
-  "@photoSlideShotcut": {},
-  "webSlideTitle": "Trapatz çò melhor del Web",
-  "@webSlideTitle": {},
-  "webSlideThunderbird": "Thunderbird",
-  "@webSlideThunderbird": {},
-  "webSlideChromium": "Chromium",
-  "@webSlideChromium": {},
-  "officeSlideTitle": "Tot çò que vos fa mestièr pel burèu",
-  "@officeSlideTitle": {},
-  "officeSlideImpress": "LibreOffice Impress",
-  "@officeSlideImpress": {},
-  "accessSlideTitle": "Accès per totes",
-  "@accessSlideTitle": {},
-  "accessSlideCustomizationOptions": "Opcions de personalizacion",
-  "@accessSlideCustomizationOptions": {},
-  "accessSlideAppearance": "Aparéncia",
-  "@accessSlideAppearance": {},
-  "accessSlideAssistiveTechnologies": "Accessibilitat",
-  "@accessSlideAssistiveTechnologies": {},
-  "accessSlideLanguageSupport": "Presa en carga de las lengas",
-  "@accessSlideLanguageSupport": {},
-  "supportSlideTitle": "Ajuda e assisténcia",
-  "@supportSlideTitle": {},
-  "includedSoftware": "Logicials incluses",
-  "@includedSoftware": {},
-  "availableSoftware": "Logicials disponibles",
-  "@availableSoftware": {},
-  "supportedSoftware": "Logicials preses en carga",
-  "@supportedSoftware": {},
   "hiddenWifiNetworkNameLabel": "Nom de la ret",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetwork": "Se connectar a una ret Wi-Fi amagada",
@@ -516,15 +398,6 @@
     "placeholders": {
       "os1": {},
       "os2": {}
-    }
-  },
-  "identityShowPassword": "Afichar lo senhal",
-  "@identityShowPassword": {},
-  "welcomeSlideDescription": "Rapida e plena de foncionalitats novèlas, la darrièra version d’{RELEASE} fa venir l’informatica mai faciala que jamai. Vaquí d’unas novetats de descobrir…",
-  "@welcomeSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
     }
   },
   "copyingFiles": "Còpia dels fichièrs…",
@@ -578,30 +451,8 @@
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "Disponible :",
   "@installAlongsideAvailable": {},
-  "notEnoughDiskSpaceHeader": "Vos cal almens {SIZE} d’espaci disc per installar {RELEASE}.",
-  "@notEnoughDiskSpaceHeader": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {},
-      "RELEASE": {}
-    }
-  },
   "notEnoughDiskSpaceTitle": "Pas pro d’espaci",
   "@notEnoughDiskSpaceTitle": {},
-  "notEnoughDiskSpaceHasOnly": "Aqueste ordenador a sonque {SIZE}.",
-  "@notEnoughDiskSpaceHasOnly": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
-  "notEnoughDiskSpaceBiggestDisk": "Lo disc mai grand d’aqueste ordenador a sonque {SIZE}.",
-  "@notEnoughDiskSpaceBiggestDisk": {
-    "type": "text",
-    "placeholders": {
-      "SIZE": {}
-    }
-  },
   "installingSystem": "Installacion del sistèma…",
   "@installingSystem": {},
   "configuringSystem": "Configuracion del sistèma…",
@@ -623,8 +474,6 @@
       "url": {}
     }
   },
-  "supportSlideResources": "Per mai d’entresenhas, visitatz las paginas <a href=\"https://www.ubuntu.com/support/community-support\">assisténcia de la comunautat</a> o <a href=\"https://www.ubuntu.com/support\">l’assiténcia comerciala</a>.",
-  "@supportSlideResources": {},
   "writeChangesPartitionCreated": "particion <b>{sysname}</b> creada",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
@@ -661,47 +510,6 @@
   "@showSecurityKey": {},
   "installationTypeLVMEncryptionSelected": "LVM e chiframent seleccionats",
   "@installationTypeLVMEncryptionSelected": {},
-  "photoSlideDescription": "Shotwell es un gestionari de fòtos practic que pòt connectar vòstres periferics. Connectatz un aparelh de fòto o un telefòn per transferir vòstras fòtos, partejatz-las e salvagardatz-las facilament. E se vos sentissètz creatiu, trobaretz un molon d’autras aplicacions per retocar de fòto dins la logitècas Ubuntu.",
-  "@photoSlideDescription": {},
-  "softwareSlideDescription": "Acabada la recèrca de novèls logicials sul Web. Amb las logitècas Snap Store e los archius logicials d’ {RELEASE} , podètz trobar e installar aisidament d'aplicacions novèlas. Picatz juste çò que cercatz o exploratz las categorias coma grafismes e fotografia, jòcs o productivitat, acompanhadas de comentaris utils d’autres utilizaires.",
-  "@softwareSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideDocumentation": "La documentacion oficiala cobrís los aspèctes màgers a prepaus de {RELEASE}. Es disponibla <a href=\"https://help.ubuntu.com\">sul site web</a> e via l’icòn d’ajuda de l’aviador.",
-  "@supportSlideDocumentation": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "supportSlideQuestions": "Sus <a href=\"https://askubuntu.com\">Ask Ubuntu</a>, podètz pausar de questions e recercar dins una colleccion impressionanta de questions qu'an ja una responsa. L'assisténcia dins vòstra pròpria lenga pòt èsser provesida per vòstra <a href=\"https://loco.ubuntu.com/teams/\">Equipa comunautària locala</a>.",
-  "@supportSlideQuestions": {},
-  "musicSlideDescription": "{RELEASE} es liurat amb l’excellent lector de musica Rhythmbox. Gràcias a sas opcions de lectura avançadas, es un jòc d'enfant de preparar la playlist perfièita. Amai, gerís perfèitament CD e lectors numerics portables, doncas, podètz profeitar de vòstra musica pertot ont anatz.",
-  "@musicSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "webSlideDescription": "{RELEASE} inclutz Firefox, lo navegador Web utilizat per de milions de personas dins lo monde entièr. E, per un accès mai rapid, podètz penjar sus vòstre burèu las aplicacions Web qu'utilizatz lo mai sovent (coma Facebook o Gmail per exemple), exactament coma d'aplicacions sus vòstre ordenador.",
-  "@webSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
-  "officeSlideDescription": "LibreOffice es una seguida burotica liura liurada amb tot çò que n'auretz besonh per crear de documents, fuèlhs de calcul e presentacions. Compatible amb los formats de fichièrs de Microsoft Office, vos ofrís totas las foncionalitats que n'avètz besonh.",
-  "@officeSlideDescription": {},
-  "accessSlideDescription": "Al còs de la filosofia d’ {RELEASE} se tròba la cresença que l’informatica es per cadun. Amb d’aisinas d’accessibilitat avançadas e d’opcions per modificar la lenga, las colors e la talha de tèxt, {RELEASE} fa venir l’informatica simpla, qual e ont que siatz.",
-  "@accessSlideDescription": {
-    "type": "text",
-    "placeholders": {
-      "RELEASE": {}
-    }
-  },
   "installDriversTitle": "Installar de logicials tèrces pel material grafic e Wi-Fi",
   "@installDriversTitle": {},
   "installCodecsTitle": "Telecargar e installar la presa en carga addicionala pels formats multimèdia",
