@@ -15,7 +15,7 @@ dependencies:
   meta: ^1.8.0
   path: ^1.8.0
   safe_change_notifier: ^0.3.0
-  ubuntu_localizations: ^0.2.0
+  ubuntu_localizations: ^0.3.3
   ubuntu_logger: ^0.0.3
   ubuntu_service: ^0.2.2
   url_launcher: ^6.1.0

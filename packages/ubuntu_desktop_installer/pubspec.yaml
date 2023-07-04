@@ -47,7 +47,7 @@ dependencies:
       path: packages/timezone_map
       ref: 5af6896c75b5ab8f78b93f7f358836a8c4c7857f
   ubuntu_flavor: ^0.2.0
-  ubuntu_localizations: ^0.2.0
+  ubuntu_localizations: ^0.3.3
   ubuntu_logger: ^0.0.3
   ubuntu_service: ^0.2.2
   ubuntu_session: ^0.0.4
