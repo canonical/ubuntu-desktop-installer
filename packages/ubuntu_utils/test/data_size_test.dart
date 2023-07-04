@@ -8,17 +8,17 @@ void main() {
   });
 
   test('kilobytes', () {
-    expect(toBytes(1, DataUnit.kilobytes), equals(1024));
-    expect(fromBytes(1024, DataUnit.kilobytes), equals(1));
+    expect(toBytes(1, DataUnit.kilobytes), equals(1000));
+    expect(fromBytes(1000, DataUnit.kilobytes), equals(1));
   });
 
   test('megabytes', () {
-    expect(toBytes(1, DataUnit.megabytes), equals(1024 * 1024));
-    expect(fromBytes(1024 * 1024, DataUnit.megabytes), equals(1));
+    expect(toBytes(1, DataUnit.megabytes), equals(1000 * 1000));
+    expect(fromBytes(1000 * 1000, DataUnit.megabytes), equals(1));
   });
 
   test('bytes', () {
-    expect(toBytes(1, DataUnit.gigabytes), equals(1024 * 1024 * 1024));
-    expect(fromBytes(1024 * 1024 * 1024, DataUnit.gigabytes), equals(1));
+    expect(toBytes(1, DataUnit.gigabytes), equals(1000 * 1000 * 1000));
+    expect(fromBytes(1000 * 1000 * 1000, DataUnit.gigabytes), equals(1));
   });
 }
