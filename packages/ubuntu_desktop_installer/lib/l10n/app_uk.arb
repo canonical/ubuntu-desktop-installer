@@ -506,8 +506,6 @@
   "@noInternet": {},
   "newPartitionTableConfirmationMessage": "Ви вибрали весь пристрій для розбиття на розділи. Якщо ви продовжите створення нової таблиці розділів на ньому, всі поточні розділи будуть видалені.\n\nЗауважте, що ви зможете скасувати цю операцію пізніше, якщо захочете.",
   "@newPartitionTableConfirmationMessage": {},
-  "partitionUnitGB": "ГБ",
-  "@partitionUnitGB": {},
   "configureSecureBootSecurityKeyRequired": "Потрібен ключ безпеки",
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "Не збігаються ключі захисту",
@@ -565,10 +563,5 @@
   "@partitionEditTitle": {},
   "partitionSizeLabel": "Розмір:",
   "@partitionSizeLabel": {},
-  "partitionUnitB": "Б",
-  "@partitionUnitB": {},
-  "partitionUnitKB": "КБ",
-  "@partitionUnitKB": {},
-  "partitionUnitMB": "МБ",
   "@partitionUnitMB": {}
 }

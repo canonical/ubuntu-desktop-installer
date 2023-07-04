@@ -89,8 +89,6 @@
   "@diskHeadersSize": {},
   "diskHeadersUsed": "مستخدم",
   "@diskHeadersUsed": {},
-  "partitionUnitMB": "م.ب",
-  "@partitionUnitMB": {},
   "partitionTypeLogical": "منطقي",
   "@partitionTypeLogical": {},
   "timezonePageTitle": "حدد منطقتك الزمنية",

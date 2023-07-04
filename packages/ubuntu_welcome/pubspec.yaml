@@ -31,7 +31,7 @@ dependencies:
   ubuntu_desktop_installer:
     path: ../ubuntu_desktop_installer
   ubuntu_flavor: ^0.2.0
-  ubuntu_localizations: ^0.2.0
+  ubuntu_localizations: ^0.3.3
   ubuntu_logger: ^0.0.3
   ubuntu_service: ^0.2.0
   ubuntu_session: ^0.0.4

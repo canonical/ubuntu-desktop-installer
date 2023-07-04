@@ -475,18 +475,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get partitionSizeLabel => 'Размер:';
 
   @override
-  String get partitionUnitB => 'Б';
-
-  @override
-  String get partitionUnitKB => 'КБ';
-
-  @override
-  String get partitionUnitMB => 'МБ';
-
-  @override
-  String get partitionUnitGB => 'ГБ';
-
-  @override
   String get partitionTypeLabel => 'Тип нового раздела:';
 
   @override

@@ -475,18 +475,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get partitionSizeLabel => 'גודל:';
 
   @override
-  String get partitionUnitB => 'ב׳';
-
-  @override
-  String get partitionUnitKB => 'ק״ב';
-
-  @override
-  String get partitionUnitMB => 'מ״ב';
-
-  @override
-  String get partitionUnitGB => 'ג״ב';
-
-  @override
   String get partitionTypeLabel => 'סוג המחיצה החדשה:';
 
   @override

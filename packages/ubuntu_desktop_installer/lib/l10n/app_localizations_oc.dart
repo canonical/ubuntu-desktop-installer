@@ -475,18 +475,6 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionSizeLabel => 'Talha :';
 
   @override
-  String get partitionUnitB => 'o';
-
-  @override
-  String get partitionUnitKB => 'kB';
-
-  @override
-  String get partitionUnitMB => 'Mo';
-
-  @override
-  String get partitionUnitGB => 'Go';
-
-  @override
   String get partitionTypeLabel => 'Tipe per la particion novèla :';
 
   @override

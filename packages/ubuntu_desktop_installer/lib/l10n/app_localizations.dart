@@ -1065,30 +1065,6 @@ abstract class AppLocalizations {
   /// **'Size:'**
   String get partitionSizeLabel;
 
-  /// No description provided for @partitionUnitB.
-  ///
-  /// In en, this message translates to:
-  /// **'B'**
-  String get partitionUnitB;
-
-  /// No description provided for @partitionUnitKB.
-  ///
-  /// In en, this message translates to:
-  /// **'kB'**
-  String get partitionUnitKB;
-
-  /// No description provided for @partitionUnitMB.
-  ///
-  /// In en, this message translates to:
-  /// **'MB'**
-  String get partitionUnitMB;
-
-  /// No description provided for @partitionUnitGB.
-  ///
-  /// In en, this message translates to:
-  /// **'GB'**
-  String get partitionUnitGB;
-
   /// No description provided for @partitionTypeLabel.
   ///
   /// In en, this message translates to:

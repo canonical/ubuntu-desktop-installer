@@ -475,18 +475,6 @@ class AppLocalizationsEo extends AppLocalizations {
   String get partitionSizeLabel => 'Grando:';
 
   @override
-  String get partitionUnitB => 'B';
-
-  @override
-  String get partitionUnitKB => 'kB';
-
-  @override
-  String get partitionUnitMB => 'MB';
-
-  @override
-  String get partitionUnitGB => 'GB';
-
-  @override
   String get partitionTypeLabel => 'Speco de nova subdisko:';
 
   @override

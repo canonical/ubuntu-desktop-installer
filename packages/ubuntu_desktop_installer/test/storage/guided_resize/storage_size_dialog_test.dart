@@ -29,7 +29,7 @@ void main() {
 
     expect(find.text('Test title'), findsOneWidget);
     expect(find.text('/dev/sda1 (Test storage)'), findsOneWidget);
-    expect(find.text('50-200 ${tester.lang.partitionUnitMB}'), findsOneWidget);
+    expect(find.text('50-200 ${tester.ulang.megabyte}'), findsOneWidget);
 
     expect(find.byType(StorageSizeBox), findsOneWidget);
     expect(find.byType(EditableText), findsOneWidget);
