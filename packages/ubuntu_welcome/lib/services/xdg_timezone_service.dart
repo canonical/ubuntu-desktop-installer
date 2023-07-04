@@ -1,6 +1,6 @@
 import 'package:dbus/dbus.dart';
 import 'package:meta/meta.dart';
-import 'package:ubuntu_desktop_installer/services/timezone_service.dart';
+import 'package:ubuntu_provision/timezone.dart';
 
 class XdgTimezoneService implements TimezoneService {
   XdgTimezoneService([@visibleForTesting DBusRemoteObject? object])

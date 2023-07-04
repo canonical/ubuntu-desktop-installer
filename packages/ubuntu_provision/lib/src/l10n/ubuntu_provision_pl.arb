@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Wybierz swoją strefę czasową",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Lokalizacja",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Strefa czasowa",
+  "@timezoneTimezoneLabel": {}
+}

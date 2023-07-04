@@ -49,6 +49,10 @@ dependencies:
   ubuntu_flavor: ^0.2.0
   ubuntu_localizations: ^0.3.3
   ubuntu_logger: ^0.0.3
+  ubuntu_provision:
+    git:
+      url: https://github.com/canonical/ubuntu-desktop-installer.git
+      path: packages/ubuntu_provision
   ubuntu_service: ^0.2.2
   ubuntu_session: ^0.0.4
   ubuntu_utils:

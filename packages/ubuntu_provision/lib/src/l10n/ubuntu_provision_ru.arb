@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Выберите свой часовой пояс",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Место нахождения",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Часовой пояс",
+  "@timezoneTimezoneLabel": {}
+}

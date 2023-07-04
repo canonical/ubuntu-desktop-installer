@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Vyberte si svoje časové pásmo",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Umiestnenie",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Časové pásmo",
+  "@timezoneTimezoneLabel": {}
+}

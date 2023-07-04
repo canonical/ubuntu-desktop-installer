@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Időzóna kiválasztása",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Hely",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Időzóna",
+  "@timezoneTimezoneLabel": {}
+}

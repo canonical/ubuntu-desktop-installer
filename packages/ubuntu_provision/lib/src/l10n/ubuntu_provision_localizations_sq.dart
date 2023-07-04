@@ -4,5 +4,12 @@ import 'ubuntu_provision_localizations.dart';
 class UbuntuProvisionLocalizationsSq extends UbuntuProvisionLocalizations {
   UbuntuProvisionLocalizationsSq([String locale = 'sq']) : super(locale);
 
+  @override
+  String get timezonePageTitle => 'Ku ndodheni?';
 
+  @override
+  String get timezoneLocationLabel => 'Vendndodhja';
+
+  @override
+  String get timezoneTimezoneLabel => 'Zona orare';
 }

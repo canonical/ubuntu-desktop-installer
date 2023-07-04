@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Selecione o seu fuso-horário",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Localização",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Fuso horário",
+  "@timezoneTimezoneLabel": {}
+}

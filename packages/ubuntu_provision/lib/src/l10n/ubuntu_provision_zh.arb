@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "选择您的时区",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "位置",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "时区",
+  "@timezoneTimezoneLabel": {}
+}

@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Di manakah Anda?",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Lokasi",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Zona waktu",
+  "@timezoneTimezoneLabel": {}
+}

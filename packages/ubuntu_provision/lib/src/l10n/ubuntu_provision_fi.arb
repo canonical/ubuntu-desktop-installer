@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Valitse aikavyöhyke",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Sijainti",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Aikavyöhyke",
+  "@timezoneTimezoneLabel": {}
+}

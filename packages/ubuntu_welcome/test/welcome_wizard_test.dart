@@ -6,7 +6,7 @@ import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
-import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
+import 'package:ubuntu_provision/ubuntu_provision.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_welcome/l10n.dart';
 import 'package:ubuntu_welcome/welcome_wizard.dart';
@@ -18,7 +18,7 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import '../../ubuntu_desktop_installer/test/identity/test_identity.dart';
 import '../../ubuntu_desktop_installer/test/keyboard/test_keyboard.dart';
 import '../../ubuntu_desktop_installer/test/locale/test_locale.dart';
-import '../../ubuntu_desktop_installer/test/timezone/test_timezone.dart';
+import '../../ubuntu_provision/test/timezone/test_timezone.dart';
 
 void main() {
   LiveTestWidgetsFlutterBinding.ensureInitialized();

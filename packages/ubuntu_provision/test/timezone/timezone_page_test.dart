@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:timezone_map/timezone_map.dart';
-import 'package:ubuntu_desktop_installer/pages/timezone/timezone_page.dart';
+import 'package:ubuntu_provision/timezone.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 
 import 'test_timezone.dart';
+
+Widget buildTimezonePage(TimezoneModel model) {
+  return ProviderScope(
+    overrides: [
+      timezoneModelProvider.overrideWith((_) => model),
+    ],
+    child: const TimezonePage(),
+  );
+}
 
 void main() {
   testWidgets('saves the location', (tester) async {

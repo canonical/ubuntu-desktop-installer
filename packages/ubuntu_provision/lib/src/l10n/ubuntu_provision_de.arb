@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Wählen Sie Ihre Zeitzone aus",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Standort",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Zeitzone",
+  "@timezoneTimezoneLabel": {}
+}

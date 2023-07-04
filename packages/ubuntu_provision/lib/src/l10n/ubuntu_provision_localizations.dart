@@ -237,6 +237,23 @@ abstract class UbuntuProvisionLocalizations {
     Locale('zh', 'TW')
   ];
 
+  /// No description provided for @timezonePageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Select your timezone'**
+  String get timezonePageTitle;
+
+  /// No description provided for @timezoneLocationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get timezoneLocationLabel;
+
+  /// No description provided for @timezoneTimezoneLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Timezone'**
+  String get timezoneTimezoneLabel;
 }
 
 class _UbuntuProvisionLocalizationsDelegate extends LocalizationsDelegate<UbuntuProvisionLocalizations> {

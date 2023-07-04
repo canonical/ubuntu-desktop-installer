@@ -33,9 +33,8 @@ import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i24;
 import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
     as _i25;
 import 'package:ubuntu_desktop_installer/services/theme_service.dart' as _i26;
-import 'package:ubuntu_desktop_installer/services/timezone_service.dart'
-    as _i28;
 import 'package:ubuntu_desktop_installer/services/udev_service.dart' as _i7;
+import 'package:ubuntu_provision/src/timezone/timezone_service.dart' as _i28;
 import 'package:ubuntu_utils/src/url_launcher.dart' as _i29;
 import 'package:upower/upower.dart' as _i5;
 

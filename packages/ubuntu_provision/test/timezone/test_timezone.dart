@@ -1,16 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:timezone_map/timezone_map.dart';
-import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
-import 'package:ubuntu_desktop_installer/pages/timezone/timezone_page.dart';
+import 'package:ubuntu_provision/timezone.dart';
 
 import 'test_timezone.mocks.dart';
 export '../test_utils.dart';
 export 'test_timezone.mocks.dart';
 
-@GenerateMocks([TimezoneModel])
+@GenerateMocks([GeoService, TimezoneModel, TimezoneService])
 MockTimezoneModel buildTimezoneModel({
   String? timezone,
   GeoLocation? selectedLocation,
@@ -26,13 +23,4 @@ MockTimezoneModel buildTimezoneModel({
   when(model.searchLocation('')).thenAnswer((_) async => const <GeoLocation>[]);
   when(model.searchTimezone('')).thenAnswer((_) async => const <GeoLocation>[]);
   return model;
-}
-
-Widget buildTimezonePage(TimezoneModel model) {
-  return ProviderScope(
-    overrides: [
-      timezoneModelProvider.overrideWith((_) => model),
-    ],
-    child: const TimezonePage(),
-  );
 }

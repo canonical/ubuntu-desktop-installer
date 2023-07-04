@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "タイムゾーンを選択してください。",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "現在地",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "タイムゾーン",
+  "@timezoneTimezoneLabel": {}
+}
