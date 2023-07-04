@@ -88,28 +88,28 @@ class AppLocalizationsCa extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Disposició de teclat';
+  String get keyboardTitle => 'Disposició de teclat';
 
   @override
-  String get chooseYourKeyboardLayout => 'Trieu la vostra distribució de teclat:';
+  String get keyboardHeader => 'Trieu la vostra distribució de teclat:';
 
   @override
-  String get typeToTest => 'Escriviu aquí per provar el vostre teclat';
+  String get keyboardTestHint => 'Escriviu aquí per provar el vostre teclat';
 
   @override
-  String get detectLayout => 'Detecta la disposició del teclat';
+  String get keyboardDetectTitle => 'Detecta la disposició del teclat';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Premeu una de les tecles següents:';
+  String get keyboardPressKeyLabel => 'Premeu una de les tecles següents:';
 
   @override
-  String get isKeyPresent => 'Teniu la tecla següent al vostre teclat?';
+  String get keyboardKeyPresentLabel => 'Teniu la tecla següent al vostre teclat?';
 
   @override
   String get configureSecureBootTitle => 'Configura l\'arrencada segura';

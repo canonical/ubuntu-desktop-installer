@@ -88,28 +88,28 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Розкладка клавіатури';
+  String get keyboardTitle => 'Розкладка клавіатури';
 
   @override
-  String get chooseYourKeyboardLayout => 'Оберіть розкладку клавіатури:';
+  String get keyboardHeader => 'Оберіть розкладку клавіатури:';
 
   @override
-  String get typeToTest => 'Введіть що-небудь, щоб перевірити клавіатуру';
+  String get keyboardTestHint => 'Введіть що-небудь, щоб перевірити клавіатуру';
 
   @override
-  String get detectLayout => 'Визначити розкладку клавіатури';
+  String get keyboardDetectTitle => 'Визначити розкладку клавіатури';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Будь ласка, натисніть одну з цих клавiш:';
+  String get keyboardPressKeyLabel => 'Будь ласка, натисніть одну з цих клавiш:';
 
   @override
-  String get isKeyPresent => 'Чи присутня ця клавіша на клавіатурі?';
+  String get keyboardKeyPresentLabel => 'Чи присутня ця клавіша на клавіатурі?';
 
   @override
   String get configureSecureBootTitle => 'Налаштувати безпечне завантаження';

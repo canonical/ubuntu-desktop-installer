@@ -88,28 +88,28 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Toetsenbordindeling';
+  String get keyboardTitle => 'Toetsenbordindeling';
 
   @override
-  String get chooseYourKeyboardLayout => 'Kies uw toetsenbordindeling:';
+  String get keyboardHeader => 'Kies uw toetsenbordindeling:';
 
   @override
-  String get typeToTest => 'Type hieronder om het toetsenbord te testen';
+  String get keyboardTestHint => 'Type hieronder om het toetsenbord te testen';
 
   @override
-  String get detectLayout => 'Toetsenbordindeling bepalen';
+  String get keyboardDetectTitle => 'Toetsenbordindeling bepalen';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get keyboardPressKeyLabel => 'Please press one of the following keys:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get keyboardKeyPresentLabel => 'Is the following key present on your keyboard?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

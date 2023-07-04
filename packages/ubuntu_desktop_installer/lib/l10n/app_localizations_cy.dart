@@ -88,28 +88,28 @@ class AppLocalizationsCy extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Cynllun bysellfwrdd';
+  String get keyboardTitle => 'Cynllun bysellfwrdd';
 
   @override
-  String get chooseYourKeyboardLayout => 'Dewiswch gynllun eich bysellfwrdd:';
+  String get keyboardHeader => 'Dewiswch gynllun eich bysellfwrdd:';
 
   @override
-  String get typeToTest => 'Teipiwch yma i brofi\'ch bysellfwrdd';
+  String get keyboardTestHint => 'Teipiwch yma i brofi\'ch bysellfwrdd';
 
   @override
-  String get detectLayout => 'Canfod Cynllun Bysellfwrdd';
+  String get keyboardDetectTitle => 'Canfod Cynllun Bysellfwrdd';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Pwyswch un o\'r bysellau canlynol:';
+  String get keyboardPressKeyLabel => 'Pwyswch un o\'r bysellau canlynol:';
 
   @override
-  String get isKeyPresent => 'Ydy\'r fysell ganlynol yn bresennol ar eich bysellfwrdd?';
+  String get keyboardKeyPresentLabel => 'Ydy\'r fysell ganlynol yn bresennol ar eich bysellfwrdd?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

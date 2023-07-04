@@ -8,8 +8,8 @@
   "@changeButtonText": {},
   "welcomeHeader": "Đã chọn ngôn ngữ:",
   "@welcomeHeader": {},
-  "keyboardLayoutPageTitle": "Kiểu bàn phím",
-  "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "Chọn kiểu bàn phím của bạn",
-  "@chooseYourKeyboardLayout": {}
+  "keyboardTitle": "Kiểu bàn phím",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Chọn kiểu bàn phím của bạn",
+  "@keyboardHeader": {}
 }

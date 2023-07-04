@@ -17,7 +17,7 @@ class PressKeyView extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        Text(lang.pressOneKey),
+        Text(lang.keyboardPressKeyLabel),
         const SizedBox(height: kWizardSpacing),
         DefaultTextStyle(
           style: Theme.of(context).textTheme.headlineSmall!,
@@ -46,7 +46,7 @@ class KeyPresentView extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        Text(lang.isKeyPresent),
+        Text(lang.keyboardKeyPresentLabel),
         const SizedBox(height: kWizardSpacing),
         DefaultTextStyle(
           style: Theme.of(context).textTheme.headlineSmall!,

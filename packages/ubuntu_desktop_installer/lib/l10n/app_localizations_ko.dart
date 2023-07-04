@@ -88,28 +88,28 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => '키보드 레이아웃';
+  String get keyboardTitle => '키보드 레이아웃';
 
   @override
-  String get chooseYourKeyboardLayout => '키보드 레이아웃을 선택하십시오:';
+  String get keyboardHeader => '키보드 레이아웃을 선택하십시오:';
 
   @override
-  String get typeToTest => '키보드를 테스트 해보려면 이 곳을 사용하십시오';
+  String get keyboardTestHint => '키보드를 테스트 해보려면 이 곳을 사용하십시오';
 
   @override
-  String get detectLayout => '키보드 레이아웃 감지';
+  String get keyboardDetectTitle => '키보드 레이아웃 감지';
 
   @override
-  String get detectButtonText => '감지';
+  String get keyboardDetectButton => '감지';
 
   @override
-  String get keyboardVariant => '키보드 유형:';
+  String get keyboardVariantLabel => '키보드 유형:';
 
   @override
-  String get pressOneKey => '다음 키 중 하나를 누르십시오:';
+  String get keyboardPressKeyLabel => '다음 키 중 하나를 누르십시오:';
 
   @override
-  String get isKeyPresent => '다음 키가 키보드에 존재합니까?';
+  String get keyboardKeyPresentLabel => '다음 키가 키보드에 존재합니까?';
 
   @override
   String get configureSecureBootTitle => 'Secure Boot 구성';

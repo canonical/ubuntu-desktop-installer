@@ -88,28 +88,28 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Kiểu bàn phím';
+  String get keyboardTitle => 'Kiểu bàn phím';
 
   @override
-  String get chooseYourKeyboardLayout => 'Chọn kiểu bàn phím của bạn';
+  String get keyboardHeader => 'Chọn kiểu bàn phím của bạn';
 
   @override
-  String get typeToTest => 'Type here to test your keyboard';
+  String get keyboardTestHint => 'Type here to test your keyboard';
 
   @override
-  String get detectLayout => 'Detect keyboard layout';
+  String get keyboardDetectTitle => 'Detect keyboard layout';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Please press one of the following keys:';
+  String get keyboardPressKeyLabel => 'Please press one of the following keys:';
 
   @override
-  String get isKeyPresent => 'Is the following key present on your keyboard?';
+  String get keyboardKeyPresentLabel => 'Is the following key present on your keyboard?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

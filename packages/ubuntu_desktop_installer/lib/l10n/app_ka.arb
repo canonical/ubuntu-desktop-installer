@@ -41,8 +41,8 @@
   },
   "rstTitle": "RST ჩართულია",
   "@rstTitle": {},
-  "keyboardLayoutPageTitle": "კლავიატური განლაგება",
-  "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "აირჩიეთ თქვენი კლავიატურის განლაგება:",
-  "@chooseYourKeyboardLayout": {}
+  "keyboardTitle": "კლავიატური განლაგება",
+  "@keyboardTitle": {},
+  "keyboardHeader": "აირჩიეთ თქვენი კლავიატურის განლაგება:",
+  "@keyboardHeader": {}
 }

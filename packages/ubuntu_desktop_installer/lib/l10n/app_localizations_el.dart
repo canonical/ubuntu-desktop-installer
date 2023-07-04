@@ -88,28 +88,28 @@ class AppLocalizationsEl extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Διάταξη πληκτρολογίου';
+  String get keyboardTitle => 'Διάταξη πληκτρολογίου';
 
   @override
-  String get chooseYourKeyboardLayout => 'Επιλογή διάταξης πληκτρολογίου:';
+  String get keyboardHeader => 'Επιλογή διάταξης πληκτρολογίου:';
 
   @override
-  String get typeToTest => 'Πληκτρολογήστε εδώ για να δοκιμάσετε το πληκτρολόγιό σας';
+  String get keyboardTestHint => 'Πληκτρολογήστε εδώ για να δοκιμάσετε το πληκτρολόγιό σας';
 
   @override
-  String get detectLayout => 'Εντοπισμός διάταξης πληκτρολογίου';
+  String get keyboardDetectTitle => 'Εντοπισμός διάταξης πληκτρολογίου';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Παρακαλώ πιέστε ένα από τα ακόλουθα πλήκτρα:';
+  String get keyboardPressKeyLabel => 'Παρακαλώ πιέστε ένα από τα ακόλουθα πλήκτρα:';
 
   @override
-  String get isKeyPresent => 'Υπάρχει στο πληκτρολόγιό σας το ακόλουθο πλήκτρο;';
+  String get keyboardKeyPresentLabel => 'Υπάρχει στο πληκτρολόγιό σας το ακόλουθο πλήκτρο;';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

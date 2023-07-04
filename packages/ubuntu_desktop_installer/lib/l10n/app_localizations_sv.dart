@@ -88,28 +88,28 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Tangentbordslayout';
+  String get keyboardTitle => 'Tangentbordslayout';
 
   @override
-  String get chooseYourKeyboardLayout => 'Välj din tangentbordslayout:';
+  String get keyboardHeader => 'Välj din tangentbordslayout:';
 
   @override
-  String get typeToTest => 'Skriv här för att testa ditt tangentbord';
+  String get keyboardTestHint => 'Skriv här för att testa ditt tangentbord';
 
   @override
-  String get detectLayout => 'Upptäck tangentbordslayout';
+  String get keyboardDetectTitle => 'Upptäck tangentbordslayout';
 
   @override
-  String get detectButtonText => 'Upptäck';
+  String get keyboardDetectButton => 'Upptäck';
 
   @override
-  String get keyboardVariant => 'Tangentbordsvariant:';
+  String get keyboardVariantLabel => 'Tangentbordsvariant:';
 
   @override
-  String get pressOneKey => 'Vänligen tryck på en av följande tangenter:';
+  String get keyboardPressKeyLabel => 'Vänligen tryck på en av följande tangenter:';
 
   @override
-  String get isKeyPresent => 'Finns följande tangent på ditt tangentbord?';
+  String get keyboardKeyPresentLabel => 'Finns följande tangent på ditt tangentbord?';
 
   @override
   String get configureSecureBootTitle => 'Konfigurera Säker start';

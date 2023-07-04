@@ -88,28 +88,28 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Układ klawiatury';
+  String get keyboardTitle => 'Układ klawiatury';
 
   @override
-  String get chooseYourKeyboardLayout => 'Wybierz układ klawiatury:';
+  String get keyboardHeader => 'Wybierz układ klawiatury:';
 
   @override
-  String get typeToTest => 'Tutaj można wpisywać znaki, aby przetestować klawiaturę';
+  String get keyboardTestHint => 'Tutaj można wpisywać znaki, aby przetestować klawiaturę';
 
   @override
-  String get detectLayout => 'Wykryj układ klawiatury';
+  String get keyboardDetectTitle => 'Wykryj układ klawiatury';
 
   @override
-  String get detectButtonText => 'Wykryj';
+  String get keyboardDetectButton => 'Wykryj';
 
   @override
-  String get keyboardVariant => 'Wariant klawiatury:';
+  String get keyboardVariantLabel => 'Wariant klawiatury:';
 
   @override
-  String get pressOneKey => 'Proszę wcisnąć jeden z następujących klawiszy:';
+  String get keyboardPressKeyLabel => 'Proszę wcisnąć jeden z następujących klawiszy:';
 
   @override
-  String get isKeyPresent => 'Czy ten klawisz występuje na klawiaturze?';
+  String get keyboardKeyPresentLabel => 'Czy ten klawisz występuje na klawiaturze?';
 
   @override
   String get configureSecureBootTitle => 'Skonfiguruj bezpieczny rozruch (Secure Boot)';

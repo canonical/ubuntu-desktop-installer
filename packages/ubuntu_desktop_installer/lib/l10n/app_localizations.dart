@@ -363,53 +363,53 @@ abstract class AppLocalizations {
   /// **'For instructions, scan the QR code on another device or visit: <a href=\"https://{url}\">{url}</a>'**
   String rstInstructions(Object url);
 
-  /// No description provided for @keyboardLayoutPageTitle.
+  /// No description provided for @keyboardTitle.
   ///
   /// In en, this message translates to:
   /// **'Keyboard layout'**
-  String get keyboardLayoutPageTitle;
+  String get keyboardTitle;
 
-  /// No description provided for @chooseYourKeyboardLayout.
+  /// No description provided for @keyboardHeader.
   ///
   /// In en, this message translates to:
   /// **'Choose your keyboard layout:'**
-  String get chooseYourKeyboardLayout;
+  String get keyboardHeader;
 
-  /// No description provided for @typeToTest.
+  /// No description provided for @keyboardTestHint.
   ///
   /// In en, this message translates to:
   /// **'Type here to test your keyboard'**
-  String get typeToTest;
+  String get keyboardTestHint;
 
-  /// No description provided for @detectLayout.
+  /// No description provided for @keyboardDetectTitle.
   ///
   /// In en, this message translates to:
   /// **'Detect keyboard layout'**
-  String get detectLayout;
+  String get keyboardDetectTitle;
 
-  /// No description provided for @detectButtonText.
+  /// No description provided for @keyboardDetectButton.
   ///
   /// In en, this message translates to:
   /// **'Detect'**
-  String get detectButtonText;
+  String get keyboardDetectButton;
 
-  /// No description provided for @keyboardVariant.
+  /// No description provided for @keyboardVariantLabel.
   ///
   /// In en, this message translates to:
   /// **'Keyboard variant:'**
-  String get keyboardVariant;
+  String get keyboardVariantLabel;
 
-  /// No description provided for @pressOneKey.
+  /// No description provided for @keyboardPressKeyLabel.
   ///
   /// In en, this message translates to:
   /// **'Please press one of the following keys:'**
-  String get pressOneKey;
+  String get keyboardPressKeyLabel;
 
-  /// No description provided for @isKeyPresent.
+  /// No description provided for @keyboardKeyPresentLabel.
   ///
   /// In en, this message translates to:
   /// **'Is the following key present on your keyboard?'**
-  String get isKeyPresent;
+  String get keyboardKeyPresentLabel;
 
   /// No description provided for @configureSecureBootTitle.
   ///

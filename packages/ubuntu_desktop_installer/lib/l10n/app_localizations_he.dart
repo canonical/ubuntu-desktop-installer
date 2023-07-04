@@ -88,28 +88,28 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'פריסת מקלדת';
+  String get keyboardTitle => 'פריסת מקלדת';
 
   @override
-  String get chooseYourKeyboardLayout => 'נא לבחור את פריסת המקלדת שלך:';
+  String get keyboardHeader => 'נא לבחור את פריסת המקלדת שלך:';
 
   @override
-  String get typeToTest => 'ניתן להקליד כאן כדי לבדוק את המקלדת שלך';
+  String get keyboardTestHint => 'ניתן להקליד כאן כדי לבדוק את המקלדת שלך';
 
   @override
-  String get detectLayout => 'איתור פריסת המקלדת';
+  String get keyboardDetectTitle => 'איתור פריסת המקלדת';
 
   @override
-  String get detectButtonText => 'זיהוי';
+  String get keyboardDetectButton => 'זיהוי';
 
   @override
-  String get keyboardVariant => 'הגוון מקלדת:';
+  String get keyboardVariantLabel => 'הגוון מקלדת:';
 
   @override
-  String get pressOneKey => 'נא ללחוץ על אחד מהתווים הבאים:';
+  String get keyboardPressKeyLabel => 'נא ללחוץ על אחד מהתווים הבאים:';
 
   @override
-  String get isKeyPresent => 'האם המקש הבא קיים במקלדת שלך?';
+  String get keyboardKeyPresentLabel => 'האם המקש הבא קיים במקלדת שלך?';
 
   @override
   String get configureSecureBootTitle => 'הגדרת טעינה מאובטחת (Secure Boot)';

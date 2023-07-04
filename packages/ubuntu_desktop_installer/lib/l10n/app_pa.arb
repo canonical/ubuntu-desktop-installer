@@ -23,16 +23,16 @@
       "url": {}
     }
   },
-  "keyboardLayoutPageTitle": "ਕੀ-ਬੋਰਡ ਲੇਆਉਟ",
-  "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "ਆਪਣਾ ਕੀਬੋਰਡ ਲੇਆਉਟ ਚੁਣੋ:",
-  "@chooseYourKeyboardLayout": {},
-  "typeToTest": "ਆਪਣੇ ਕੀਬੋਰਡ ਨੂੰ ਟੈਸਟ ਕਰਨ ਲਈ ਇੱਥੇ ਲਿਖੋ",
-  "@typeToTest": {},
-  "detectLayout": "ਕੀਬੋਰਡ ਲੇਆਉਟ ਖੋਜੋ",
-  "@detectLayout": {},
-  "pressOneKey": "ਅੱਗੇ ਦਿੱਤੀਆਂ ਸਵਿੱਚਾਂ ਦੱਬੋ:",
-  "@pressOneKey": {},
-  "isKeyPresent": "ਕੀ ਤੁਹਾਡੇ ਕੀਬੋਰਡ ਉੱਤੇ ਅੱਗੇ ਦਿੱਤੀ ਸਵਿੱਚ ਮੌਜੂਦ ਹੈ?",
-  "@isKeyPresent": {}
+  "keyboardTitle": "ਕੀ-ਬੋਰਡ ਲੇਆਉਟ",
+  "@keyboardTitle": {},
+  "keyboardHeader": "ਆਪਣਾ ਕੀਬੋਰਡ ਲੇਆਉਟ ਚੁਣੋ:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "ਆਪਣੇ ਕੀਬੋਰਡ ਨੂੰ ਟੈਸਟ ਕਰਨ ਲਈ ਇੱਥੇ ਲਿਖੋ",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "ਕੀਬੋਰਡ ਲੇਆਉਟ ਖੋਜੋ",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "ਅੱਗੇ ਦਿੱਤੀਆਂ ਸਵਿੱਚਾਂ ਦੱਬੋ:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "ਕੀ ਤੁਹਾਡੇ ਕੀਬੋਰਡ ਉੱਤੇ ਅੱਗੇ ਦਿੱਤੀ ਸਵਿੱਚ ਮੌਜੂਦ ਹੈ?",
+  "@keyboardKeyPresentLabel": {}
 }

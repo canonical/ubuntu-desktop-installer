@@ -88,28 +88,28 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Раскладка клавиатуры';
+  String get keyboardTitle => 'Раскладка клавиатуры';
 
   @override
-  String get chooseYourKeyboardLayout => 'Выберите раскладку клавиатуры:';
+  String get keyboardHeader => 'Выберите раскладку клавиатуры:';
 
   @override
-  String get typeToTest => 'Напечатайте здесь, чтобы проверить свою клавиатуру';
+  String get keyboardTestHint => 'Напечатайте здесь, чтобы проверить свою клавиатуру';
 
   @override
-  String get detectLayout => 'Определить раскладку клавиатуры';
+  String get keyboardDetectTitle => 'Определить раскладку клавиатуры';
 
   @override
-  String get detectButtonText => 'Определить';
+  String get keyboardDetectButton => 'Определить';
 
   @override
-  String get keyboardVariant => 'Вариант клавиатуры:';
+  String get keyboardVariantLabel => 'Вариант клавиатуры:';
 
   @override
-  String get pressOneKey => 'Нажмите одну из следующих клавиш:';
+  String get keyboardPressKeyLabel => 'Нажмите одну из следующих клавиш:';
 
   @override
-  String get isKeyPresent => 'Есть ли следующая клавиша на вашей клавиатуре?';
+  String get keyboardKeyPresentLabel => 'Есть ли следующая клавиша на вашей клавиатуре?';
 
   @override
   String get configureSecureBootTitle => 'Настроить Secure Boot';

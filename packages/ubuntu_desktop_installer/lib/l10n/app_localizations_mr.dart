@@ -88,28 +88,28 @@ class AppLocalizationsMr extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'कळफलक मांडणी';
+  String get keyboardTitle => 'कळफलक मांडणी';
 
   @override
-  String get chooseYourKeyboardLayout => 'आपल्या कळफलक(keyboard) मांडणीची निवड करा:';
+  String get keyboardHeader => 'आपल्या कळफलक(keyboard) मांडणीची निवड करा:';
 
   @override
-  String get typeToTest => 'आपले कळफलक चे परीक्षण साठी इथे टंकलेखन करा';
+  String get keyboardTestHint => 'आपले कळफलक चे परीक्षण साठी इथे टंकलेखन करा';
 
   @override
-  String get detectLayout => 'कळफलक मांडणीचा शोध';
+  String get keyboardDetectTitle => 'कळफलक मांडणीचा शोध';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'कृपया पुढे दिलेल्या कळापैकी कोणतीही एक कळ दाबून पहा.';
+  String get keyboardPressKeyLabel => 'कृपया पुढे दिलेल्या कळापैकी कोणतीही एक कळ दाबून पहा.';
 
   @override
-  String get isKeyPresent => 'पुढे दिलेली कळ तुमच्या कळफलकावर आहे का?';
+  String get keyboardKeyPresentLabel => 'पुढे दिलेली कळ तुमच्या कळफलकावर आहे का?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

@@ -88,28 +88,28 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Billentyűzetkiosztás';
+  String get keyboardTitle => 'Billentyűzetkiosztás';
 
   @override
-  String get chooseYourKeyboardLayout => 'Válasszon billentyűzetkiosztást:';
+  String get keyboardHeader => 'Válasszon billentyűzetkiosztást:';
 
   @override
-  String get typeToTest => 'Gépeljen itt a billentyűzet kipróbálásához';
+  String get keyboardTestHint => 'Gépeljen itt a billentyűzet kipróbálásához';
 
   @override
-  String get detectLayout => 'Billentyűzetkiosztás felismerése';
+  String get keyboardDetectTitle => 'Billentyűzetkiosztás felismerése';
 
   @override
-  String get detectButtonText => 'Felismerés';
+  String get keyboardDetectButton => 'Felismerés';
 
   @override
-  String get keyboardVariant => 'Billentyűzetváltozat:';
+  String get keyboardVariantLabel => 'Billentyűzetváltozat:';
 
   @override
-  String get pressOneKey => 'Nyomja meg a következő billentyűk egyikét:';
+  String get keyboardPressKeyLabel => 'Nyomja meg a következő billentyűk egyikét:';
 
   @override
-  String get isKeyPresent => 'A következő billentyű rajta van a billentyűzetén?';
+  String get keyboardKeyPresentLabel => 'A következő billentyű rajta van a billentyűzetén?';
 
   @override
   String get configureSecureBootTitle => 'Biztonságos rendszerindítás beállítása';

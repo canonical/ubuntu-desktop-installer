@@ -88,28 +88,28 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'ผังแป้นพิมพ์';
+  String get keyboardTitle => 'ผังแป้นพิมพ์';
 
   @override
-  String get chooseYourKeyboardLayout => 'เลือกผังแป้นพิมพ์ของคุณ:';
+  String get keyboardHeader => 'เลือกผังแป้นพิมพ์ของคุณ:';
 
   @override
-  String get typeToTest => 'พิมพ์ที่นี่ เพื่อทดสอบแป้นพิมพ์ของคุณ (กด Alt+Shift เพื่อสลับภาษา)';
+  String get keyboardTestHint => 'พิมพ์ที่นี่ เพื่อทดสอบแป้นพิมพ์ของคุณ (กด Alt+Shift เพื่อสลับภาษา)';
 
   @override
-  String get detectLayout => 'ตรวจหาผังแป้นพิมพ์';
+  String get keyboardDetectTitle => 'ตรวจหาผังแป้นพิมพ์';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'โปรดกดปุ่มใดปุ่มหนึ่งในรายการนี้:';
+  String get keyboardPressKeyLabel => 'โปรดกดปุ่มใดปุ่มหนึ่งในรายการนี้:';
 
   @override
-  String get isKeyPresent => 'ปุ่มดังกล่าวมีอยู่บนแป้นพิมพ์หรือไม่?';
+  String get keyboardKeyPresentLabel => 'ปุ่มดังกล่าวมีอยู่บนแป้นพิมพ์หรือไม่?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

@@ -88,28 +88,28 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'යතුරුපුවරුවේ පිරිසැලසුම';
+  String get keyboardTitle => 'යතුරුපුවරුවේ පිරිසැලසුම';
 
   @override
-  String get chooseYourKeyboardLayout => 'ඔබගේ යතුරුපුවරු පිරිසැලසුම තෝරන්න:';
+  String get keyboardHeader => 'ඔබගේ යතුරුපුවරු පිරිසැලසුම තෝරන්න:';
 
   @override
-  String get typeToTest => 'ඔබගේ යතුරුපුවරුව පරීක්‍ෂාවට මෙතැන ලියන්න';
+  String get keyboardTestHint => 'ඔබගේ යතුරුපුවරුව පරීක්‍ෂාවට මෙතැන ලියන්න';
 
   @override
-  String get detectLayout => 'යතුරුපුවරුවේ පිරිසැලසුම අනාවරණය';
+  String get keyboardDetectTitle => 'යතුරුපුවරුවේ පිරිසැලසුම අනාවරණය';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'පහත යතුරු වලින් එකක් ඔබන්න:';
+  String get keyboardPressKeyLabel => 'පහත යතුරු වලින් එකක් ඔබන්න:';
 
   @override
-  String get isKeyPresent => 'පහත යතුර ඔබගේ යතුරුපුවරුවේ තිබේද?';
+  String get keyboardKeyPresentLabel => 'පහත යතුර ඔබගේ යතුරුපුවරුවේ තිබේද?';
 
   @override
   String get configureSecureBootTitle => 'ආරක්‍ෂිත ඇරඹුම හැඩගසන්න';

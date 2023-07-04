@@ -88,28 +88,28 @@ class AppLocalizationsGa extends AppLocalizations {
   }
 
   @override
-  String get keyboardLayoutPageTitle => 'Leagan amach méarchláir';
+  String get keyboardTitle => 'Leagan amach méarchláir';
 
   @override
-  String get chooseYourKeyboardLayout => 'Roghnaigh leagan amach do mhéarchláir:';
+  String get keyboardHeader => 'Roghnaigh leagan amach do mhéarchláir:';
 
   @override
-  String get typeToTest => 'Scríobh anseo chun do mhéarchlár a tástáil';
+  String get keyboardTestHint => 'Scríobh anseo chun do mhéarchlár a tástáil';
 
   @override
-  String get detectLayout => 'Aimsigh leagan amach an méarchláir';
+  String get keyboardDetectTitle => 'Aimsigh leagan amach an méarchláir';
 
   @override
-  String get detectButtonText => 'Detect';
+  String get keyboardDetectButton => 'Detect';
 
   @override
-  String get keyboardVariant => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Keyboard variant:';
 
   @override
-  String get pressOneKey => 'Brúigh cheann de na heochracha se:';
+  String get keyboardPressKeyLabel => 'Brúigh cheann de na heochracha se:';
 
   @override
-  String get isKeyPresent => 'An bhfuil an eochair seo ann ar do mhéarchlár?';
+  String get keyboardKeyPresentLabel => 'An bhfuil an eochair seo ann ar do mhéarchlár?';
 
   @override
   String get configureSecureBootTitle => 'Configure Secure Boot';

@@ -21,10 +21,10 @@
       "RELEASE": {}
     }
   },
-  "typeToTest": "Πληκτρολογήστε εδώ για να δοκιμάσετε το πληκτρολόγιό σας",
-  "@typeToTest": {},
-  "pressOneKey": "Παρακαλώ πιέστε ένα από τα ακόλουθα πλήκτρα:",
-  "@pressOneKey": {},
+  "keyboardTestHint": "Πληκτρολογήστε εδώ για να δοκιμάσετε το πληκτρολόγιό σας",
+  "@keyboardTestHint": {},
+  "keyboardPressKeyLabel": "Παρακαλώ πιέστε ένα από τα ακόλουθα πλήκτρα:",
+  "@keyboardPressKeyLabel": {},
   "rstTitle": "Απενεργοποίηση του RST",
   "@rstTitle": {},
   "releaseNotesLabel": "Ίσως θέλετε να διαβάσετε τις <a href=\"{url}\">σημειώσεις έκδοσης</a>.",
@@ -34,14 +34,14 @@
       "url": {}
     }
   },
-  "isKeyPresent": "Υπάρχει στο πληκτρολόγιό σας το ακόλουθο πλήκτρο;",
-  "@isKeyPresent": {},
+  "keyboardKeyPresentLabel": "Υπάρχει στο πληκτρολόγιό σας το ακόλουθο πλήκτρο;",
+  "@keyboardKeyPresentLabel": {},
   "welcome": "Καλωσορίσατε",
   "@welcome": {},
-  "keyboardLayoutPageTitle": "Διάταξη πληκτρολογίου",
-  "@keyboardLayoutPageTitle": {},
-  "chooseYourKeyboardLayout": "Επιλογή διάταξης πληκτρολογίου:",
-  "@chooseYourKeyboardLayout": {},
-  "detectLayout": "Εντοπισμός διάταξης πληκτρολογίου",
-  "@detectLayout": {}
+  "keyboardTitle": "Διάταξη πληκτρολογίου",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Επιλογή διάταξης πληκτρολογίου:",
+  "@keyboardHeader": {},
+  "keyboardDetectTitle": "Εντοπισμός διάταξης πληκτρολογίου",
+  "@keyboardDetectTitle": {}
 }

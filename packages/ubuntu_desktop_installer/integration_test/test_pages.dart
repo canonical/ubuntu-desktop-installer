@@ -65,8 +65,7 @@ Future<void> testKeyboardPage(
   KeyboardSetting? keyboard,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, KeyboardPage, (lang) => lang.keyboardLayoutPageTitle);
+  await expectPage(tester, KeyboardPage, (lang) => lang.keyboardTitle);
 
   await tester.pumpAndSettle(); // auto-scroll
 
@@ -91,7 +90,7 @@ Future<void> testKeyboardPage(
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
 
-    await tester.tapButton(tester.lang.detectButtonText);
+    await tester.tapButton(tester.lang.keyboardDetectButton);
     await tester.pumpAndSettle();
 
     await takeScreenshot(tester, '$screenshot-detect');
