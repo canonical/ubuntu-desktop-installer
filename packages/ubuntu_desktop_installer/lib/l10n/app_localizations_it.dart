@@ -699,15 +699,6 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Select your timezone';
-
-  @override
-  String get timezoneLocationLabel => 'Location';
-
-  @override
-  String get timezoneTimezoneLabel => 'Fuso orario';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Welcome to $RELEASE';
   }

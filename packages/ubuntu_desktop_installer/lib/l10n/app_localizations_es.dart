@@ -699,15 +699,6 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Selecciona tu zona horaria';
-
-  @override
-  String get timezoneLocationLabel => 'Ubicación';
-
-  @override
-  String get timezoneTimezoneLabel => 'Huso horario';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Le damos la bienvenida a $RELEASE';
   }

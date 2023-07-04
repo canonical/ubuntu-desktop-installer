@@ -442,14 +442,15 @@ Future<void> testTimezonePage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(TimezonePage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.timezonePageTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(TimezonePage));
+  final l10n = TimezoneLocalizations.of(context);
+  expect(find.widgetWithText(YaruWindowTitleBar, l10n.timezonePageTitle),
+      findsOneWidget);
 
   if (location != null) {
     await tester.enterText(
-      find.textField(tester.lang.timezoneLocationLabel),
+      find.textField(l10n.timezoneLocationLabel),
       location,
     );
     await tester.pump();
@@ -459,7 +460,7 @@ Future<void> testTimezonePage(
 
   if (timezone != null) {
     await tester.enterText(
-      find.textField(tester.lang.timezoneTimezoneLabel),
+      find.textField(l10n.timezoneTimezoneLabel),
       timezone,
     );
     await tester.pump();

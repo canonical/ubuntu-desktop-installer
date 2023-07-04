@@ -699,15 +699,6 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Ku ndodheni?';
-
-  @override
-  String get timezoneLocationLabel => 'Vendndodhja';
-
-  @override
-  String get timezoneTimezoneLabel => 'Zona orare';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Welcome to $RELEASE';
   }

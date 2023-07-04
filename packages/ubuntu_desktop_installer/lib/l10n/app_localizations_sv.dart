@@ -699,15 +699,6 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Välj din tidszon';
-
-  @override
-  String get timezoneLocationLabel => 'Plats';
-
-  @override
-  String get timezoneTimezoneLabel => 'Tidszon';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Välkommen till $RELEASE';
   }

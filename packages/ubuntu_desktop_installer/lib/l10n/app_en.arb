@@ -628,12 +628,6 @@
       "DISTRO": {}
     }
   },
-  "timezonePageTitle": "Select your timezone",
-  "@timezonePageTitle": {},
-  "timezoneLocationLabel": "Location",
-  "@timezoneLocationLabel": {},
-  "timezoneTimezoneLabel": "Timezone",
-  "@timezoneTimezoneLabel": {},
   "installationSlidesTitle": "Welcome to {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",

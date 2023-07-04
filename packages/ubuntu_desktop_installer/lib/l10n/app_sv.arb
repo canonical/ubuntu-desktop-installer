@@ -412,12 +412,6 @@
       "RELEASE": {}
     }
   },
-  "timezonePageTitle": "Välj din tidszon",
-  "@timezonePageTitle": {},
-  "timezoneLocationLabel": "Plats",
-  "@timezoneLocationLabel": {},
-  "timezoneTimezoneLabel": "Tidszon",
-  "@timezoneTimezoneLabel": {},
   "welcomeHeader": "Välj ditt språk:",
   "@welcomeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nätverksnamn",

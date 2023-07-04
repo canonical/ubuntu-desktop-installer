@@ -699,15 +699,6 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'タイムゾーンを選択してください。';
-
-  @override
-  String get timezoneLocationLabel => '現在地';
-
-  @override
-  String get timezoneTimezoneLabel => 'タイムゾーン';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return '$RELEASEへようこそ';
   }

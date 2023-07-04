@@ -699,15 +699,6 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'حدد منطقتك الزمنية';
-
-  @override
-  String get timezoneLocationLabel => 'Location';
-
-  @override
-  String get timezoneTimezoneLabel => 'المنطقة الزمنية';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Welcome to $RELEASE';
   }

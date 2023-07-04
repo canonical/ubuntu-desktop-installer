@@ -699,15 +699,6 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Vyberte si svoje časové pásmo';
-
-  @override
-  String get timezoneLocationLabel => 'Umiestnenie';
-
-  @override
-  String get timezoneTimezoneLabel => 'Časové pásmo';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Vitajte v $RELEASE';
   }

@@ -699,15 +699,6 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Wybierz swoją strefę czasową';
-
-  @override
-  String get timezoneLocationLabel => 'Lokalizacja';
-
-  @override
-  String get timezoneTimezoneLabel => 'Strefa czasowa';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Witaj w $RELEASE';
   }

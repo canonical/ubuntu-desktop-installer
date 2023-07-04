@@ -366,12 +366,6 @@
       "color": {}
     }
   },
-  "timezoneTimezoneLabel": "Strefa czasowa",
-  "@timezoneTimezoneLabel": {},
-  "timezoneLocationLabel": "Lokalizacja",
-  "@timezoneLocationLabel": {},
-  "timezonePageTitle": "Wybierz swoją strefę czasową",
-  "@timezonePageTitle": {},
   "welcomeHeader": "Wybierz swój język:",
   "@welcomeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nazwa sieci",

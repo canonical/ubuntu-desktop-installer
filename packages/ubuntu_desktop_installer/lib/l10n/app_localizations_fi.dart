@@ -699,15 +699,6 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Valitse aikavyöhyke';
-
-  @override
-  String get timezoneLocationLabel => 'Sijainti';
-
-  @override
-  String get timezoneTimezoneLabel => 'Aikavyöhyke';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Tervetuloa, tämä on $RELEASE';
   }

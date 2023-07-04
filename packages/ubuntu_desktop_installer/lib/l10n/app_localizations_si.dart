@@ -699,15 +699,6 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'ඔබ කොහිද?';
-
-  @override
-  String get timezoneLocationLabel => 'ස්ථානය';
-
-  @override
-  String get timezoneTimezoneLabel => 'වේලා කලාපය';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Welcome to $RELEASE';
   }

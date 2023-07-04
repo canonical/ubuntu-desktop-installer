@@ -699,15 +699,6 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Di manakah Anda?';
-
-  @override
-  String get timezoneLocationLabel => 'Lokasi';
-
-  @override
-  String get timezoneTimezoneLabel => 'Zona waktu';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Welcome to $RELEASE';
   }

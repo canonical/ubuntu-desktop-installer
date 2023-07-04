@@ -118,8 +118,6 @@
   "@identityInvalidHostname": {},
   "themePageTitle": "Vyberte si motív vzhľadu",
   "@themePageTitle": {},
-  "timezonePageTitle": "Vyberte si svoje časové pásmo",
-  "@timezonePageTitle": {},
   "bitlockerInstructions": "Ohľadne pokynov naskenujte QR kód na inom zariadení alebo choďte na: <a href=\"https://{url}\">{url}</a>",
   "@bitlockerInstructions": {
     "type": "text",
@@ -127,8 +125,6 @@
       "url": {}
     }
   },
-  "timezoneLocationLabel": "Umiestnenie",
-  "@timezoneLocationLabel": {},
   "activeDirectoryDomainEndHyphen": "Končí na spojovník/pomlčku (-)",
   "@activeDirectoryDomainEndHyphen": {},
   "activeDirectoryDomainNotFound": "Doména nenájdená",
@@ -376,8 +372,6 @@
   "@installationSlidesProductivityTitle": {},
   "restartIntoWindowsTitle": "Reštartovať do Windows?",
   "@restartIntoWindowsTitle": {},
-  "timezoneTimezoneLabel": "Časové pásmo",
-  "@timezoneTimezoneLabel": {},
   "installationSlidesTitle": "Vitajte v {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",

@@ -699,15 +699,6 @@ class AppLocalizationsCy extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Select your timezone';
-
-  @override
-  String get timezoneLocationLabel => 'Lleoliad';
-
-  @override
-  String get timezoneTimezoneLabel => 'Cylchfa amser';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Welcome to $RELEASE';
   }

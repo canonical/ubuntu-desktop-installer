@@ -1461,24 +1461,6 @@ abstract class AppLocalizations {
   /// **'Are you sure you want to restart your computer? You will need to restart the {DISTRO} installation later to finish installing {DISTRO}.'**
   String restartIntoWindowsDescription(Object DISTRO);
 
-  /// No description provided for @timezonePageTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Select your timezone'**
-  String get timezonePageTitle;
-
-  /// No description provided for @timezoneLocationLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Location'**
-  String get timezoneLocationLabel;
-
-  /// No description provided for @timezoneTimezoneLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Timezone'**
-  String get timezoneTimezoneLabel;
-
   /// No description provided for @installationSlidesTitle.
   ///
   /// In en, this message translates to:
