@@ -687,7 +687,7 @@
   "@installationSlidesAccessibilityOrca": {},
   "installationSlidesAccessibilityLanguages": "Sprogunderstøttelse",
   "@installationSlidesAccessibilityLanguages": {},
-  "preparingUbuntu": "Forbereder {DISTRO}...",
+  "preparingUbuntu": "Forbereder {DISTRO}…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {
