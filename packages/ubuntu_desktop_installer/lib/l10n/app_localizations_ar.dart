@@ -31,7 +31,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'يجري إعداد $DISTRO ...';
+    return 'يجري إعداد $DISTRO …';
   }
 
   @override
@@ -799,7 +799,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get installationSlidesAccessibilityLanguages => 'Language support';
 
   @override
-  String get installationSlidesSupportTitle => 'Help & Support';
+  String get installationSlidesSupportTitle => 'Help and support';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {

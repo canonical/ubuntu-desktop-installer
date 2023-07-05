@@ -282,7 +282,7 @@ abstract class AppLocalizations {
   /// No description provided for @preparingUbuntu.
   ///
   /// In en, this message translates to:
-  /// **'Preparing {DISTRO}...'**
+  /// **'Preparing {DISTRO}…'**
   String preparingUbuntu(Object DISTRO);
 
   /// No description provided for @welcomeHeader.
@@ -1620,7 +1620,7 @@ abstract class AppLocalizations {
   /// No description provided for @installationSlidesSupportTitle.
   ///
   /// In en, this message translates to:
-  /// **'Help & Support'**
+  /// **'Help and support'**
   String get installationSlidesSupportTitle;
 
   /// No description provided for @installationSlidesSupportHeader.

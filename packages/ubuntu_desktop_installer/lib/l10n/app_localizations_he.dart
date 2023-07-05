@@ -803,7 +803,7 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
-    return 'התיעוד הרשמי של $DISTRO זמין גם דרך האינטרנט וגם דרך סמל העזרה במעגן.';
+    return 'התיעוד הרשמי של $DISTRO זמין גם באינטרנט וגם דרך סמל העזרה במעגן.';
   }
 
   @override
