@@ -18,10 +18,11 @@ Future<void> testLocalePage(
   String? language,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, LocalePage, (lang) => lang.welcomePageTitle('Ubuntu'));
-
-  await tester.pumpAndSettle(); // auto-scroll
+  await tester.pumpUntilPage(LocalePage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.welcomePageTitle('Ubuntu')),
+    findsOneWidget,
+  );
 
   if (language != null) {
     final tile = find.listTile(language, skipOffstage: false);
@@ -44,8 +45,11 @@ Future<void> testWelcomePage(
   Option? option,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, WelcomePage, (lang) => lang.tryOrInstallPageTitle('Ubuntu'));
+  await tester.pumpUntilPage(WelcomePage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.tryOrInstallPageTitle('Ubuntu')),
+    findsOneWidget,
+  );
 
   if (option != null) {
     await tester.tap(find.radio<Option>(option));
@@ -65,9 +69,11 @@ Future<void> testKeyboardPage(
   KeyboardSetting? keyboard,
   String? screenshot,
 }) async {
-  await expectPage(tester, KeyboardPage, (lang) => lang.keyboardTitle);
-
-  await tester.pumpAndSettle(); // auto-scroll
+  await tester.pumpUntilPage(KeyboardPage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.keyboardTitle),
+    findsOneWidget,
+  );
 
   if (keyboard != null) {
     if (keyboard.layout.isNotEmpty) {
@@ -109,8 +115,11 @@ Future<void> testNetworkPage(
   ConnectMode? mode,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, NetworkPage, (lang) => lang.connectToInternetPageTitle);
+  await tester.pumpUntilPage(NetworkPage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.connectToInternetPageTitle),
+    findsOneWidget,
+  );
 
   if (mode != null) {
     await tester.tapRadio<ConnectMode>(mode);
@@ -129,8 +138,11 @@ Future<void> testSourcePage(
   String? sourceId,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, SourcePage, (lang) => lang.updatesOtherSoftwarePageTitle);
+  await tester.pumpUntilPage(SourcePage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.updatesOtherSoftwarePageTitle),
+    findsOneWidget,
+  );
 
   if (sourceId != null) {
     await tester.tapRadio<String>(sourceId);
@@ -148,8 +160,11 @@ Future<void> testNotEnoughDiskSpacePage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, NotEnoughDiskSpacePage, (lang) => lang.notEnoughDiskSpaceTitle);
+  await tester.pumpUntilPage(NotEnoughDiskSpacePage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.notEnoughDiskSpaceTitle),
+    findsOneWidget,
+  );
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
@@ -167,7 +182,11 @@ Future<void> testStoragePage(
   bool? useEncryption,
   String? screenshot,
 }) async {
-  await expectPage(tester, StoragePage, (lang) => lang.installationTypeTitle);
+  await tester.pumpUntilPage(StoragePage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.installationTypeTitle),
+    findsOneWidget,
+  );
 
   if (type != null) {
     await tester.tapRadio<StorageType>(type);
@@ -210,8 +229,11 @@ Future<void> testSecurityKeyPage(
   required String securityKey,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, SecurityKeyPage, (lang) => lang.chooseSecurityKeyTitle);
+  await tester.pumpUntilPage(SecurityKeyPage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.chooseSecurityKeyTitle),
+    findsOneWidget,
+  );
 
   await tester.enterText(
     find.textField(tester.lang.chooseSecurityKey),
@@ -236,7 +258,11 @@ Future<void> testManualStoragePage(
   List<Disk>? storage,
   String? screenshot,
 }) async {
-  await expectPage(tester, ManualStoragePage, (lang) => lang.allocateDiskSpace);
+  await tester.pumpUntilPage(ManualStoragePage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.allocateDiskSpace),
+    findsOneWidget,
+  );
 
   await tester.tapButton(tester.lang.newPartitionTable);
   await tester.pumpAndSettle();
@@ -288,8 +314,12 @@ Future<void> testGuidedReformatPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, GuidedReformatPage,
-      (lang) => lang.selectGuidedStoragePageTitle('Ubuntu'));
+  await tester.pumpUntilPage(GuidedReformatPage);
+  expect(
+    find.title(
+        (AppLocalizations l10n) => l10n.selectGuidedStoragePageTitle('Ubuntu')),
+    findsOneWidget,
+  );
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
@@ -303,9 +333,13 @@ Future<void> testGuidedResizePage(
   Map<String, int> sizes = const {},
   String? screenshot,
 }) async {
+  await tester.pumpUntilPage(GuidedResizePage);
   final productInfo = getService<ProductService>().getProductInfo();
-  await expectPage(tester, GuidedResizePage,
-      (lang) => lang.installationTypeAlongsideUnknown(productInfo));
+  expect(
+    find.title((AppLocalizations l10n) =>
+        l10n.installationTypeAlongsideUnknown(productInfo)),
+    findsOneWidget,
+  );
 
   for (final entry in sizes.entries) {
     await tester.tap(find.ancestor(
@@ -336,7 +370,11 @@ Future<void> testConfirmPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, ConfirmPage, (lang) => lang.writeChangesToDisk);
+  await tester.pumpUntilPage(ConfirmPage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.writeChangesToDisk),
+    findsOneWidget,
+  );
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
@@ -349,7 +387,11 @@ Future<void> testBitLockerPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, BitLockerPage, (lang) => lang.bitlockerTitle);
+  await tester.pumpUntilPage(BitLockerPage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.bitlockerTitle),
+    findsOneWidget,
+  );
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
@@ -372,7 +414,8 @@ Future<void> testRstPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await expectPage(tester, RstPage, (lang) => lang.rstTitle);
+  await tester.pumpUntilPage(RstPage);
+  expect(find.title((AppLocalizations l10n) => l10n.rstTitle), findsOneWidget);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
@@ -397,9 +440,11 @@ Future<void> testTimezonePage(
   String? timezone,
   String? screenshot,
 }) async {
-  await expectPage(tester, TimezonePage, (lang) => lang.timezonePageTitle);
-
-  await tester.pumpAndSettle(); // progress indicator
+  await tester.pumpUntilPage(TimezonePage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.timezonePageTitle),
+    findsOneWidget,
+  );
 
   if (location != null) {
     await tester.enterText(
@@ -436,7 +481,11 @@ Future<void> testIdentityPage(
   String? password,
   String? screenshot,
 }) async {
-  await expectPage(tester, IdentityPage, (lang) => lang.identityPageTitle);
+  await tester.pumpUntilPage(IdentityPage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.identityPageTitle),
+    findsOneWidget,
+  );
 
   if (identity?.realname != null) {
     await tester.enterText(
@@ -482,8 +531,11 @@ Future<void> testActiveDirectoryPage(
   String? password,
   String? screenshot,
 }) async {
-  await expectPage(
-      tester, ActiveDirectoryPage, (lang) => lang.activeDirectoryTitle);
+  await tester.pumpUntilPage(ActiveDirectoryPage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.activeDirectoryTitle),
+    findsOneWidget,
+  );
 
   if (domainName != null) {
     await tester.enterText(
@@ -517,7 +569,11 @@ Future<void> testThemePage(
   Brightness? theme,
   String? screenshot,
 }) async {
-  await expectPage(tester, ThemePage, (lang) => lang.themePageTitle);
+  await tester.pumpUntilPage(ThemePage);
+  expect(
+    find.title((AppLocalizations l10n) => l10n.themePageTitle),
+    findsOneWidget,
+  );
 
   if (theme != null) {
     final asset = find.asset('assets/theme/${theme.name}-theme.png');
@@ -537,8 +593,7 @@ Future<void> testInstallPage(
   WidgetTester tester, {
   String? screenshot,
 }) async {
-  await tester.pumpUntil(find.byType(InstallPage));
-  expect(find.byType(InstallPage), findsOneWidget);
+  await tester.pumpUntilPage(InstallPage);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
@@ -551,16 +606,20 @@ Future<void> testInstallPage(
   await expectLater(windowClosed, completes);
 }
 
-Future<void> expectPage(
-  WidgetTester tester,
-  Type page,
-  String Function(AppLocalizations lang) title,
-) async {
-  await tester.pumpUntil(find.byType(page));
-  await tester.pumpAndSettle();
+extension on WidgetTester {
+  Future<void> pumpUntilPage(Type page) async {
+    await pumpUntil(find.byType(page));
+    await pumpAndSettle();
+  }
+}
 
-  expect(find.byType(page), findsOneWidget);
-  expect(find.widgetWithText(AppBar, title(tester.lang)), findsOneWidget);
+extension on CommonFinders {
+  Finder title<T>(LocalizationFunction<T> tr) {
+    return find.ancestor(
+      of: find.l10n<T>(tr),
+      matching: find.byType(YaruWindowTitleBar),
+    );
+  }
 }
 
 Future<void> takeScreenshot(WidgetTester tester, String screenshot) async {
