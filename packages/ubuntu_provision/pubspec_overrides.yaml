@@ -1,0 +1,5 @@
+dependency_overrides:
+  ubuntu_utils:
+    path: ../ubuntu_utils
+  ubuntu_wizard:
+    path: ../ubuntu_wizard
