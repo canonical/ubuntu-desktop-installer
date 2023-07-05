@@ -302,10 +302,6 @@
   "@shutdown": {},
   "bitlockerTitle": "BitLockerが有効になっています。",
   "@bitlockerTitle": {},
-  "timezoneTimezoneLabel": "タイムゾーン",
-  "@timezoneTimezoneLabel": {},
-  "timezoneLocationLabel": "現在地",
-  "@timezoneLocationLabel": {},
   "installationTypeMultiOSDetected": "コンピューターには複数の OS がインストールされています。インストール方法を選択してください。",
   "@installationTypeMultiOSDetected": {},
   "installationTypeEncryptInfo": "セキュリティキーは次のステップで選択します。",
@@ -356,8 +352,6 @@
       "url": {}
     }
   },
-  "timezonePageTitle": "タイムゾーンを選択してください。",
-  "@timezonePageTitle": {},
   "installationTypeErase": "ディスクを削除して {DISTRO} をインストールする",
   "@installationTypeErase": {
     "type": "text",

@@ -699,15 +699,6 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => '选择您的时区';
-
-  @override
-  String get timezoneLocationLabel => '位置';
-
-  @override
-  String get timezoneTimezoneLabel => '时区';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return '欢迎使用 $RELEASE';
   }

@@ -699,15 +699,6 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Selecione o seu fuso-horário';
-
-  @override
-  String get timezoneLocationLabel => 'Localização';
-
-  @override
-  String get timezoneTimezoneLabel => 'Fuso horário';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Bem-vindo ao $RELEASE';
   }
@@ -1597,15 +1588,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String restartIntoWindowsDescription(Object DISTRO) {
     return 'Tem certeza de que deseja reiniciar o computador? Você precisará reiniciar a instalação do $DISTRO mais tarde para concluí-la.';
   }
-
-  @override
-  String get timezonePageTitle => 'Selecione seu fuso horário';
-
-  @override
-  String get timezoneLocationLabel => 'Localização';
-
-  @override
-  String get timezoneTimezoneLabel => 'Fuso horário';
 
   @override
   String installationSlidesTitle(Object RELEASE) {

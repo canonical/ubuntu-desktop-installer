@@ -699,15 +699,6 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Saat diliminizi seçin';
-
-  @override
-  String get timezoneLocationLabel => 'Konum';
-
-  @override
-  String get timezoneTimezoneLabel => 'Saat Dilimi';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return '$RELEASE sürümüne hoş geldiniz';
   }

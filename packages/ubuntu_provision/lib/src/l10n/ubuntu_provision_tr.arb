@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Saat diliminizi seçin",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Konum",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Saat Dilimi",
+  "@timezoneTimezoneLabel": {}
+}

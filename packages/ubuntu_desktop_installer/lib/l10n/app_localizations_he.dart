@@ -699,15 +699,6 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'נא לבחור את אזור הזמן שלך';
-
-  @override
-  String get timezoneLocationLabel => 'מיקום';
-
-  @override
-  String get timezoneTimezoneLabel => 'אזור זמן';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'ברוך בואך אל $RELEASE';
   }

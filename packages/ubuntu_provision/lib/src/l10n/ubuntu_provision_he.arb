@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "נא לבחור את אזור הזמן שלך",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "מיקום",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "אזור זמן",
+  "@timezoneTimezoneLabel": {}
+}

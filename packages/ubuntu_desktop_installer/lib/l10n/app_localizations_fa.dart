@@ -699,15 +699,6 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'گزینش ناحیهٔ زمانیتان';
-
-  @override
-  String get timezoneLocationLabel => 'مکان';
-
-  @override
-  String get timezoneTimezoneLabel => 'ناحیهٔ زمانی';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'به $RELEASE خوش آمدید';
   }

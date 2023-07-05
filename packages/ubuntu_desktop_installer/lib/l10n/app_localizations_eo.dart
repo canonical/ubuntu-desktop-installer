@@ -699,15 +699,6 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Elektu vian horzonon';
-
-  @override
-  String get timezoneLocationLabel => 'Loko';
-
-  @override
-  String get timezoneTimezoneLabel => 'Horzono';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Bonvenon al $RELEASE';
   }

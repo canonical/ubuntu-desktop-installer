@@ -699,15 +699,6 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => '시간대를 선택하십시오';
-
-  @override
-  String get timezoneLocationLabel => '위치';
-
-  @override
-  String get timezoneTimezoneLabel => '시간대';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return '$RELEASE사용을 환영합니다';
   }

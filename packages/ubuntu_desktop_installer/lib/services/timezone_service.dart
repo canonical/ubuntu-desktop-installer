@@ -1,9 +1,5 @@
 import 'package:subiquity_client/subiquity_client.dart';
-
-abstract class TimezoneService {
-  Future<String> getTimezone();
-  Future<void> setTimezone(String timezone);
-}
+import 'package:ubuntu_provision/timezone.dart';
 
 class SubiquityTimezoneService implements TimezoneService {
   const SubiquityTimezoneService(this._subiquity);

@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Де ви знаходитесь?",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Місце розташування",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Часовий пояс",
+  "@timezoneTimezoneLabel": {}
+}

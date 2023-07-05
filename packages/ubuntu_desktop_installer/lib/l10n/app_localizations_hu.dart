@@ -699,15 +699,6 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Időzóna kiválasztása';
-
-  @override
-  String get timezoneLocationLabel => 'Hely';
-
-  @override
-  String get timezoneTimezoneLabel => 'Időzóna';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Üdvözli a(z) $RELEASE!';
   }

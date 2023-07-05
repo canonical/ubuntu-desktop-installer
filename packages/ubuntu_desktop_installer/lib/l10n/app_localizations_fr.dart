@@ -699,15 +699,6 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Sélectionnez votre fuseau horaire';
-
-  @override
-  String get timezoneLocationLabel => 'Localisation';
-
-  @override
-  String get timezoneTimezoneLabel => 'Fuseau horaire';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Bienvenue à $RELEASE';
   }

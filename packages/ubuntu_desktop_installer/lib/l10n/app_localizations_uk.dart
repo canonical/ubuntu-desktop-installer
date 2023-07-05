@@ -699,15 +699,6 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Де ви знаходитесь?';
-
-  @override
-  String get timezoneLocationLabel => 'Місце розташування';
-
-  @override
-  String get timezoneTimezoneLabel => 'Часовий пояс';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Welcome to $RELEASE';
   }

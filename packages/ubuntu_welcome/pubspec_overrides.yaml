@@ -6,6 +6,8 @@ dependency_overrides:
     path: ../subiquity_client/packages/subiquity_test
   ubuntu_desktop_installer:
     path: ../ubuntu_desktop_installer
+  ubuntu_provision:
+    path: ../ubuntu_provision
   ubuntu_utils:
     path: ../ubuntu_utils
   ubuntu_wizard:

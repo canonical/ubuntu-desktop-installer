@@ -368,12 +368,6 @@
   "@connectButtonText": {},
   "welcomeHeader": "Pilih bahasa Anda:",
   "@welcomeHeader": {},
-  "timezoneLocationLabel": "Lokasi",
-  "@timezoneLocationLabel": {},
-  "timezoneTimezoneLabel": "Zona waktu",
-  "@timezoneTimezoneLabel": {},
-  "timezonePageTitle": "Di manakah Anda?",
-  "@timezonePageTitle": {},
   "@welcomeSlideDescription": {
     "type": "text",
     "placeholders": {

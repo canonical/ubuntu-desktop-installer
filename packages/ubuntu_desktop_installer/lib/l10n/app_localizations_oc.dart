@@ -699,15 +699,6 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Seleccionatz vòstre fus orari';
-
-  @override
-  String get timezoneLocationLabel => 'Localizacion';
-
-  @override
-  String get timezoneTimezoneLabel => 'Fus orari';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'La benvenguda a $RELEASE';
   }

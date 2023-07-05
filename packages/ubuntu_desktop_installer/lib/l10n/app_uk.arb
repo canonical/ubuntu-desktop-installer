@@ -202,8 +202,6 @@
   "@shutdown": {},
   "restartIntoWindows": "Перезавантажити в Windows",
   "@restartIntoWindows": {},
-  "timezonePageTitle": "Де ви знаходитесь?",
-  "@timezonePageTitle": {},
   "installDriversTitle": "Встановити стороннє програмне забезпечення для графіки та обладнання Wi-Fi",
   "@installDriversTitle": {},
   "installDriversSubtitle": "Ці драйвери підпадають під дію ліцензійних умов, включених до їх документації. Вони є пропрієтарними..",
@@ -441,10 +439,6 @@
       "url": {}
     }
   },
-  "timezoneLocationLabel": "Місце розташування",
-  "@timezoneLocationLabel": {},
-  "timezoneTimezoneLabel": "Часовий пояс",
-  "@timezoneTimezoneLabel": {},
   "installationTypeEncryptInfo": "Ключ захисту можна буде вибрати на наступному кроці.",
   "@installationTypeEncryptInfo": {},
   "installationTypeZFS": "ЕКСПЕРИМЕНТАЛЬНО: Витерти диск і скористатися ZFS",

@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Seleccionatz vòstre fus orari",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Localizacion",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Fus orari",
+  "@timezoneTimezoneLabel": {}
+}

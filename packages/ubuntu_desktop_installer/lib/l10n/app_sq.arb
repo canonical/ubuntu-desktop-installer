@@ -1,9 +1,5 @@
 {
   "@@locale": "sq",
-  "timezoneLocationLabel": "Vendndodhja",
-  "@timezoneLocationLabel": {},
-  "timezoneTimezoneLabel": "Zona orare",
-  "@timezoneTimezoneLabel": {},
   "identityRealNameLabel": "Emri juaj",
   "@identityRealNameLabel": {},
   "configuringSystem": "Duke parametrizuar kompjuterin tënd…",
@@ -119,8 +115,6 @@
   "@continueTesting": {},
   "bitlockerTitle": "Fikeni Bitlocker",
   "@bitlockerTitle": {},
-  "timezonePageTitle": "Ku ndodheni?",
-  "@timezonePageTitle": {},
   "themePageTitle": "Zgjidh pamjen tënde",
   "@themePageTitle": {},
   "writeChangesPartitionTablesEntry": "{serial} ({path})",

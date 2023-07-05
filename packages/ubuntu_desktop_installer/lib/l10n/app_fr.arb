@@ -348,12 +348,6 @@
       "color": {}
     }
   },
-  "timezoneLocationLabel": "Localisation",
-  "@timezoneLocationLabel": {},
-  "timezonePageTitle": "Sélectionnez votre fuseau horaire",
-  "@timezonePageTitle": {},
-  "timezoneTimezoneLabel": "Fuseau horaire",
-  "@timezoneTimezoneLabel": {},
   "welcomeHeader": "Choisissez votre langue :",
   "@welcomeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nom du réseau",

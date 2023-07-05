@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "시간대를 선택하십시오",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "위치",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "시간대",
+  "@timezoneTimezoneLabel": {}
+}

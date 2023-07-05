@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:timezone_map/timezone_map.dart';
-import 'package:ubuntu_desktop_installer/pages/timezone/timezone_model.dart';
+import 'package:ubuntu_provision/timezone.dart';
 
 import 'test_timezone.dart';
 

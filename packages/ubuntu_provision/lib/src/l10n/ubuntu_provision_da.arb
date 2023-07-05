@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Vælg din tidszone",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Placering",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Tidszone",
+  "@timezoneTimezoneLabel": {}
+}

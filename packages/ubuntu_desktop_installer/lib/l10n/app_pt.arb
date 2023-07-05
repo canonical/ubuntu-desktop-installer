@@ -427,12 +427,6 @@
       "sysname": {}
     }
   },
-  "timezonePageTitle": "Selecione o seu fuso-horário",
-  "@timezonePageTitle": {},
-  "timezoneLocationLabel": "Localização",
-  "@timezoneLocationLabel": {},
-  "timezoneTimezoneLabel": "Fuso horário",
-  "@timezoneTimezoneLabel": {},
   "installAlongsideFiles": "Ficheiros",
   "@installAlongsideFiles": {},
   "noWifiDevicesDetected": "Sem dispositivos Wi-Fi detetados",

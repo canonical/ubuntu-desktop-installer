@@ -4,5 +4,12 @@ import 'ubuntu_provision_localizations.dart';
 class UbuntuProvisionLocalizationsSv extends UbuntuProvisionLocalizations {
   UbuntuProvisionLocalizationsSv([String locale = 'sv']) : super(locale);
 
+  @override
+  String get timezonePageTitle => 'Välj din tidszon';
 
+  @override
+  String get timezoneLocationLabel => 'Plats';
+
+  @override
+  String get timezoneTimezoneLabel => 'Tidszon';
 }

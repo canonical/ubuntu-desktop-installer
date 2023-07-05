@@ -264,14 +264,8 @@
       "RELEASE": {}
     }
   },
-  "timezoneTimezoneLabel": "Laiko juosta",
-  "@timezoneTimezoneLabel": {},
   "restartNow": "Paleisti iš naujo dabar",
   "@restartNow": {},
-  "timezonePageTitle": "Pasirinkite laiko juostą",
-  "@timezonePageTitle": {},
-  "timezoneLocationLabel": "Vieta",
-  "@timezoneLocationLabel": {},
   "startInstallingButtonText": "Įdiegti",
   "@startInstallingButtonText": {},
   "bitlockerTitle": "„BitLocker“ yra įjungta",

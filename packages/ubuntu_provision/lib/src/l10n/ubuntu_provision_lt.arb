@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Pasirinkite laiko juostą",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Vieta",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Laiko juosta",
+  "@timezoneTimezoneLabel": {}
+}

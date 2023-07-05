@@ -4,5 +4,12 @@ import 'ubuntu_provision_localizations.dart';
 class UbuntuProvisionLocalizationsRo extends UbuntuProvisionLocalizations {
   UbuntuProvisionLocalizationsRo([String locale = 'ro']) : super(locale);
 
+  @override
+  String get timezonePageTitle => 'Select your timezone';
 
+  @override
+  String get timezoneLocationLabel => 'Location';
+
+  @override
+  String get timezoneTimezoneLabel => 'Timezone';
 }

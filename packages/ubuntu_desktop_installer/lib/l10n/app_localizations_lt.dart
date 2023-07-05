@@ -699,15 +699,6 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Pasirinkite laiko juostą';
-
-  @override
-  String get timezoneLocationLabel => 'Vieta';
-
-  @override
-  String get timezoneTimezoneLabel => 'Laiko juosta';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Jus sveikina $RELEASE';
   }

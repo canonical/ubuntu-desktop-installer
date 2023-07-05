@@ -699,15 +699,6 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get timezonePageTitle => 'Hvem er du?';
-
-  @override
-  String get timezoneLocationLabel => 'Sted';
-
-  @override
-  String get timezoneTimezoneLabel => 'Tidssone';
-
-  @override
   String installationSlidesTitle(Object RELEASE) {
     return 'Welcome to $RELEASE';
   }

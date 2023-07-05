@@ -1,1 +1,8 @@
-{}
+{
+  "timezonePageTitle": "Välj din tidszon",
+  "@timezonePageTitle": {},
+  "timezoneLocationLabel": "Plats",
+  "@timezoneLocationLabel": {},
+  "timezoneTimezoneLabel": "Tidszon",
+  "@timezoneTimezoneLabel": {}
+}
