@@ -154,7 +154,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get noWiredConnection => 'Ligação por cabo de rede detetada';
 
   @override
-  String get wiredDisabled => 'Ligação por cabo de rede está desligada';
+  String get wiredDisabled => 'A ligação por cabo de rede está desligada';
 
   @override
   String get wiredMustBeEnabled => 'Para usar Ethernet neste computador, uma ligação por cabo de rede deve ser ativada';
@@ -237,7 +237,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get offlineWarning => 'De momento está off-line';
+  String get offlineWarning => 'De momento está offline';
 
   @override
   String get chooseSecurityKeyTitle => 'Chave de segurança';
@@ -377,7 +377,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get selectGuidedStorageDropdownLabel => 'Selecione o disco:';
+  String get selectGuidedStorageDropdownLabel => 'Selecione a unidade:';
 
   @override
   String get selectGuidedStorageInfoLabel => 'O disco inteiro será utilizado:';
@@ -463,7 +463,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partitionLimitReached => 'Limite atingido';
 
   @override
-  String get bootLoaderDevice => 'Aparelho para instalação do boot loader';
+  String get bootLoaderDevice => 'Dispositivo para instalação do carregador de arranque';
 
   @override
   String get partitionCreateTitle => 'Criar partição';
@@ -475,7 +475,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get partitionSizeLabel => 'Tamanho:';
 
   @override
-  String get partitionTypeLabel => 'Tipo para a nova partiçaõ:';
+  String get partitionTypeLabel => 'Tipo da nova partição:';
 
   @override
   String get partitionTypePrimary => 'Primária';
@@ -525,7 +525,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get identityRealNameRequired => 'O nome é obrigatório';
 
   @override
-  String get identityRealNameTooLong => 'Esse nome é demasiado longo.';
+  String get identityRealNameTooLong => 'Esse nome é demasiado comprido.';
 
   @override
   String get identityHostnameLabel => 'Nome do seu computador';
@@ -537,7 +537,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get identityHostnameRequired => 'O nome do computador é obrigatório';
 
   @override
-  String get identityHostnameTooLong => 'Esse nome de computador é demasiado longo.';
+  String get identityHostnameTooLong => 'Esse nome de computador é demasiado comprido.';
 
   @override
   String get identityInvalidHostname => 'O nome do computador não é válido';
@@ -546,10 +546,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get identityUsernameLabel => 'Escolha um nome de utilizador';
 
   @override
-  String get identityUsernameRequired => 'Nome de utilizador é obrigatório';
+  String get identityUsernameRequired => 'É obrigatório um nome de utilizador';
 
   @override
-  String get identityInvalidUsername => 'O nome de utilizador informado é inválido';
+  String get identityInvalidUsername => 'O nome de utilizador é inválido';
 
   @override
   String get identityUsernameInUse => 'Esse nome de utilizador já existe.';
@@ -558,7 +558,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get identityUsernameSystemReserved => 'Esse nome é reservado para utilização do sistema.';
 
   @override
-  String get identityUsernameTooLong => 'Esse nome é demasiado longo.';
+  String get identityUsernameTooLong => 'Esse nome é demasiado comprido.';
 
   @override
   String get identityUsernameInvalidChars => 'Esse nome contém caracteres inválidos.';
@@ -573,7 +573,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get identityConfirmPasswordLabel => 'Confirme a sua palavra-passe';
 
   @override
-  String get identityPasswordMismatch => 'As palavras-passe não correspondem';
+  String get identityPasswordMismatch => 'As palavras-passe não coincidem';
 
   @override
   String get identityPasswordShow => 'Mostrar';
@@ -582,13 +582,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get identityPasswordHide => 'Ocultar';
 
   @override
-  String get writeChangesToDisk => 'Pronto para instalar';
+  String get writeChangesToDisk => 'Pronto a instalar';
 
   @override
   String get writeChangesFallbackSerial => 'disco';
 
   @override
-  String get writeChangesDescription => 'Se prosseguir, as mudanças listadas abaixo serão escritas nos discos. Será capaz de realizar alterações posteriores manualmente.';
+  String get writeChangesDescription => 'Se continuar, as alterações listadas abaixo serão gravadas nos discos. Será capaz de realizar alterações posteriores manualmente.';
 
   @override
   String get writeChangesDevicesTitle => 'Dispositivos';
@@ -597,7 +597,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get writeChangesPartitionsTitle => 'Partições';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'As tabelas de partições dos seguintes aparelhos foram alteradas:';
+  String get writeChangesPartitionTablesHeader => 'As tabelas de partições dos seguintes dispositivos foram alteradas:';
 
   @override
   String writeChangesPartitionTablesEntry(Object serial, Object path) {
@@ -636,7 +636,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get themePageTitle => 'Escolha o seu tema';
 
   @override
-  String get themePageHeader => 'Pode sempre alterar isso depois nas configurações de aparência.';
+  String get themePageHeader => 'Pode sempre alterar isso depois nas definições de aparência.';
 
   @override
   String get themeDark => 'Escuro';
@@ -649,7 +649,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String readyToUse(Object system) {
-    return '**$system** está instalado e pronto para usar';
+    return '**$system** está instalado e pronto a usar';
   }
 
   @override
@@ -695,7 +695,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
-    return 'Tem a certeza de que deseja reiniciar o computador? Precisará de reiniciar a instalação do $DISTRO mais tarde para concluir a instalação do $DISTRO.';
+    return 'Quer reiniciar o computador? Precisará de reiniciar a instalação do $DISTRO mais tarde para concluir a instalação do $DISTRO.';
   }
 
   @override
@@ -780,7 +780,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String installationSlidesAccessibilityBody(Object DISTRO) {
-    return 'No centro da filosofia do $DISTRO está a crença de que a informática é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, cores e tamanho do texto, o $DISTRO torna a computação fácil - quem quer que seja e onde quer que esteja.';
+    return 'No centro da filosofia do $DISTRO está a crença de que a informática é para todos. Com ferramentas avançadas de acessibilidade e opções para mudar o idioma, cores e tamanho do texto, o $DISTRO torna a computação fácil, a quem quer que seja e onde quer que esteja.';
   }
 
   @override
@@ -790,7 +790,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get installationSlidesAccessibilityLanguages => 'Suporte de idioma';
 
   @override
-  String get installationSlidesSupportTitle => 'Ajuda e Suporte';
+  String get installationSlidesSupportTitle => 'Ajuda e suporte';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
@@ -899,7 +899,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get activeDirectoryErrorTitle => 'Erro ao configurando a ligação ao Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'Lamentamos, o Active Directory não pode ser criado neste momento. Assim que o seu sistema estiver instalado e a funcionar, visite o <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para ajuda.';
+  String get activeDirectoryErrorMessage => 'O Active Directory não pode ser criado neste momento. Assim que o seu sistema estiver instalado e a funcionar, visite o <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para mais ajuda.';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
