@@ -577,7 +577,7 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Lo sentimos, Active Directory no se puede configurar en este momento. Una vez que el sistema esté en funcionamiento, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para obtener ayuda.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "Preparando la {DISTRO}...",
+  "preparingUbuntu": "Preparando la {DISTRO}…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {

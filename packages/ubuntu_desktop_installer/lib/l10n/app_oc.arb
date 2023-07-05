@@ -584,7 +584,7 @@
       "RELEASE": {}
     }
   },
-  "preparingUbuntu": "Preparacion de {DISTRO}...",
+  "preparingUbuntu": "Preparacion de {DISTRO}…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {

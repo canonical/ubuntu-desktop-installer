@@ -586,7 +586,7 @@
       "DISTRO": {}
     }
   },
-  "preparingUbuntu": "{DISTRO} hazırlanıyor...",
+  "preparingUbuntu": "{DISTRO} hazırlanıyor…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {

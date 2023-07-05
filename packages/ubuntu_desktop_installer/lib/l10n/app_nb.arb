@@ -494,7 +494,7 @@
   },
   "bootLoaderDevice": "Enhet å installere oppstartslaster på",
   "@bootLoaderDevice": {},
-  "writeChangesPartitionMounted": "partisjon #{sysname} brukt til {mount}",
+  "writeChangesPartitionMounted": "partisjon <b>{sysname}</b> brukt til <b>{mount}</b>",
   "@writeChangesPartitionMounted": {
     "description": "A mounted partition entry",
     "placeholders": {
@@ -502,7 +502,7 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "endret størrelse fra {oldsize} til {newsize} for #{sysname}",
+  "writeChangesPartitionResized": "endret størrelse på partisjon <b>{sysname}</b> fra <b>{oldsize}</b> til <b>{newsize}</b>",
   "@writeChangesPartitionResized": {
     "description": "A resized partition entry",
     "placeholders": {
@@ -511,7 +511,7 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partisjon #{sysname} formatert som {format} og brukt til {mount}",
+  "writeChangesPartitionFormattedMounted": "partisjon <b>{sysname}</b> formatert som <b>{format}</b> og brukt som <b>{mount}</b>",
   "@writeChangesPartitionFormattedMounted": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
@@ -520,14 +520,14 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partisjon #{sysname} opprettet",
+  "writeChangesPartitionCreated": "partisjon <b>{sysname}</b> opprettet",
   "@writeChangesPartitionCreated": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionFormatted": "partisjon #{sysname} formatert som {format}",
+  "writeChangesPartitionFormatted": "partisjon <b>{sysname}</b> formatert som <b>{format}</b>",
   "@writeChangesPartitionFormatted": {
     "description": "A formatted partition entry",
     "placeholders": {
@@ -631,5 +631,62 @@
   "activeDirectoryErrorMessage": "Active Directory kan ikke settes opp for øyeblikket. Når systemet er oppe og går kan du besøke <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for hjelp.",
   "@activeDirectoryErrorMessage": {},
   "activeDirectoryErrorTitle": "Kunne ikke sette opp tilkobling til Active Directory",
-  "@activeDirectoryErrorTitle": {}
+  "@activeDirectoryErrorTitle": {},
+  "bitlockerHeader": "Skru av BitLocker for å fortsette",
+  "@bitlockerHeader": {},
+  "rstHeader": "Skru av RST for å fortsette",
+  "@rstHeader": {},
+  "partitionFormatKeep": "La stå formatert som {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  },
+  "keyboardDetectButton": "Oppdag",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Tastaturvariant:",
+  "@keyboardVariantLabel": {},
+  "installationSlidesSupportResources": "Nyttige ressurser:",
+  "@installationSlidesSupportResources": {},
+  "notEnoughDiskSpaceAvailable": "Tilgjengelig:",
+  "@notEnoughDiskSpaceAvailable": {},
+  "installationSlidesAccessibilityOrca": "Orca-skjermleser",
+  "@installationSlidesAccessibilityOrca": {},
+  "installationSlidesAccessibilityLanguages": "Språkstøtte",
+  "@installationSlidesAccessibilityLanguages": {},
+  "installationSlidesSupportTitle": "Hjelp og støtte",
+  "@installationSlidesSupportTitle": {},
+  "notEnoughDiskSpaceRequired": "Påkrevd:",
+  "@notEnoughDiskSpaceRequired": {},
+  "restartIntoWindowsTitle": "Utfør omstart inn i Windows?",
+  "@restartIntoWindowsTitle": {},
+  "installationSlidesSupportDocumentation": "Offisiell dokumentasjon",
+  "@installationSlidesSupportDocumentation": {},
+  "preparingUbuntu": "Forbereder {DISTRO} …",
+  "@preparingUbuntu": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "writeChangesDevicesTitle": "Enheter",
+  "@writeChangesDevicesTitle": {},
+  "writeChangesPartitionsTitle": "Partisjoner",
+  "@writeChangesPartitionsTitle": {},
+  "welcomePageTitle": "Velkommen til {DISTRO}",
+  "@welcomePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "allocateDiskSpaceInvalidMountPointSlash": "Monteringspunkter må starte med skråstrek «/»",
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "allocateDiskSpaceInvalidMountPointSpace": "Monteringspunkter kan ikke inneholde mellomrom",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "installationSlidesAvailable": "Tilgjengelig:",
+  "@installationSlidesAvailable": {},
+  "installationSlidesIncluded": "Inkludert:",
+  "@installationSlidesIncluded": {}
 }

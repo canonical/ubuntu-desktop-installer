@@ -632,7 +632,7 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Tyvärr, Active Directory kan inte ställas in just nu. när ditt system är igång, besök <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> för hjälp.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "Förbereder {DISTRO}...",
+  "preparingUbuntu": "Förbereder {DISTRO}…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {
@@ -712,7 +712,7 @@
   },
   "installationSlidesAccessibilityLanguages": "Språkstöd",
   "@installationSlidesAccessibilityLanguages": {},
-  "installationSlidesSupportTitle": "Hjälp & Support",
+  "installationSlidesSupportTitle": "Hjälp och support",
   "@installationSlidesSupportTitle": {},
   "installationSlidesSupportCommunity": "Ask Ubuntu täcker en rad frågor och svar och Ubuntu Discourse ger guider och diskussioner för nya och erfarna användare.",
   "@installationSlidesSupportCommunity": {},

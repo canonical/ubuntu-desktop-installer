@@ -589,7 +589,7 @@
   },
   "quitButtonText": "Baigti diegimą",
   "@quitButtonText": {},
-  "preparingUbuntu": "Ruošiama {DISTRO}...",
+  "preparingUbuntu": "Ruošiama {DISTRO}…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {

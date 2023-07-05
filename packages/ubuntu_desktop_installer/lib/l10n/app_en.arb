@@ -24,7 +24,7 @@
       "DISTRO": {}
     }
   },
-  "preparingUbuntu": "Preparing {DISTRO}...",
+  "preparingUbuntu": "Preparing {DISTRO}…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {
@@ -735,7 +735,7 @@
   "@installationSlidesAccessibilityOrca": {},
   "installationSlidesAccessibilityLanguages": "Language support",
   "@installationSlidesAccessibilityLanguages": {},
-  "installationSlidesSupportTitle": "Help & Support",
+  "installationSlidesSupportTitle": "Help and support",
   "@installationSlidesSupportTitle": {},
   "installationSlidesSupportHeader": "The official {DISTRO} documentation is available both online and via the Help icon in the dock.",
   "@installationSlidesSupportHeader": {

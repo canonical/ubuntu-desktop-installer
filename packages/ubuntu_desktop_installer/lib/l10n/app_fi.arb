@@ -664,7 +664,7 @@
   },
   "installationSlidesProductivityTitle": "Kiihdytä tuottavuuttasi",
   "@installationSlidesProductivityTitle": {},
-  "preparingUbuntu": "Valmistellaan {DISTRO}a...",
+  "preparingUbuntu": "Valmistellaan {DISTRO}a…",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {

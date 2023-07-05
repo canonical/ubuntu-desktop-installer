@@ -169,7 +169,7 @@
   "@notEnoughDiskSpaceTitle": {},
   "rstHeader": "قم بإيقاف RST للمتابعة",
   "@rstHeader": {},
-  "preparingUbuntu": "يجري إعداد {DISTRO} ...",
+  "preparingUbuntu": "يجري إعداد {DISTRO} …",
   "@preparingUbuntu": {
     "type": "text",
     "placeholders": {

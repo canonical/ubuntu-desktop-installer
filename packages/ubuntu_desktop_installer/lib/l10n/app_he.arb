@@ -628,7 +628,7 @@
   "@installationSlidesAccessibilityLanguages": {},
   "installationSlidesSupportTitle": "עזרה ותמיכה",
   "@installationSlidesSupportTitle": {},
-  "installationSlidesSupportHeader": "התיעוד הרשמי של {DISTRO} זמין גם דרך האינטרנט וגם דרך סמל העזרה במעגן.",
+  "installationSlidesSupportHeader": "התיעוד הרשמי של {DISTRO} זמין גם באינטרנט וגם דרך סמל העזרה במעגן.",
   "@installationSlidesSupportHeader": {
     "type": "text",
     "placeholders": {
