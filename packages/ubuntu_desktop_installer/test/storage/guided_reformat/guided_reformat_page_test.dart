@@ -1,4 +1,3 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -7,6 +6,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/guided_reformat/guided_reformat_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/guided_reformat/guided_reformat_page.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
@@ -80,7 +80,9 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
     expect(find.text(selectedDisk.sysname), findsOneWidget);
-    expect(find.text(filesize(selectedDisk.size)), findsOneWidget);
+    final context = tester.element(find.byType(GuidedReformatPage));
+    expect(
+        find.text(context.formatByteSize(selectedDisk.size)), findsOneWidget);
   });
 
   testWidgets('saves guided storage', (tester) async {

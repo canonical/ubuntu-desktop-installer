@@ -1,6 +1,6 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 class StorageSelector extends StatelessWidget {
@@ -26,7 +26,7 @@ class StorageSelector extends StatelessWidget {
         storage.model,
         storage.vendor,
       ].where((p) => p?.isNotEmpty == true).join(' ');
-      return '${storage.sysname} $fullName (${filesize(storage.size)})';
+      return '${storage.sysname} $fullName (${context.formatByteSize(storage.size)})';
     }
 
     return Column(

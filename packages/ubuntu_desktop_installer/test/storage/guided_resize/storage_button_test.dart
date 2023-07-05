@@ -3,20 +3,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/storage_button.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/storage_icon.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
-import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 String assetPath(String assetName) => 'assets/install_alongside/$assetName';
 
 void main() {
   testWidgets('Ubuntu without path', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         localizationsDelegates: GlobalUbuntuLocalizations.delegates,
         home: Scaffold(
           body: StorageButton(
             name: 'Ubuntu 22.04 LTS',
             format: 'ext4',
-            size: toBytes(12, DataUnit.gigabytes),
+            size: 12 * 1000 * 1000 * 1000,
           ),
         ),
       ),
@@ -33,14 +32,14 @@ void main() {
 
   testWidgets('Windows with path and format', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         localizationsDelegates: GlobalUbuntuLocalizations.delegates,
         home: Scaffold(
           body: StorageButton(
             name: 'Windows 10',
             sysname: 'sda1',
             format: 'ntfs',
-            size: toBytes(34, DataUnit.gigabytes),
+            size: 34 * 1000 * 1000 * 1000,
           ),
         ),
       ),
@@ -57,12 +56,12 @@ void main() {
 
   testWidgets('Unknown without path and format', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         localizationsDelegates: GlobalUbuntuLocalizations.delegates,
         home: Scaffold(
           body: StorageButton(
             name: 'Unknown',
-            size: toBytes(56, DataUnit.gigabytes),
+            size: 56 * 1000 * 1000 * 1000,
           ),
         ),
       ),

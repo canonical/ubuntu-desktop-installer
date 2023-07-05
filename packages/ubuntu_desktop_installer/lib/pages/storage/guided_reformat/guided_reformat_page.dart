@@ -1,4 +1,3 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -24,13 +23,13 @@ class GuidedReformatPage extends ConsumerWidget {
   }
 
   /// Formats a disk in a pretty way e.g. "sda ATA Maxtor (123 GB)"
-  String prettyFormatDisk(Disk disk) {
+  String prettyFormatDisk(BuildContext context, Disk disk) {
     final fullName = <String?>[
       disk.model,
       disk.vendor,
     ].where((p) => p?.isNotEmpty == true).join(' ');
 
-    final size = filesize(disk.size);
+    final size = context.formatByteSize(disk.size);
     return '${disk.sysname} - $size $fullName';
   }
 
@@ -58,7 +57,8 @@ class GuidedReformatPage extends ConsumerWidget {
                   itemBuilder: (context, index, child) {
                     final disk = model.getDisk(index);
                     return disk != null
-                        ? Text(prettyFormatDisk(disk), key: ValueKey(index))
+                        ? Text(prettyFormatDisk(context, disk),
+                            key: ValueKey(index))
                         : const SizedBox.shrink();
                   },
                 ),
@@ -88,7 +88,7 @@ class GuidedReformatPage extends ConsumerWidget {
                   Text(model.selectedDisk?.sysname ?? ''),
                   const SizedBox(height: kWizardSpacing / 2),
                   Text(
-                    filesize(model.selectedDisk?.size ?? 0),
+                    context.formatByteSize(model.selectedDisk?.size ?? 0),
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ],

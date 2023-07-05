@@ -1,4 +1,3 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -31,7 +30,7 @@ class StorageSelector extends ConsumerWidget {
     final parts = [
       partition?.sysname,
       if (os != null) os.long,
-      if (partition?.size != null) filesize(partition!.size),
+      if (partition?.size != null) context.formatByteSize(partition!.size!),
     ];
     return parts.join(' - ');
   }

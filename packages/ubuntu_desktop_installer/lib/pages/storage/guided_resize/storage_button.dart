@@ -1,5 +1,5 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import 'storage_icon.dart';
@@ -48,7 +48,7 @@ class StorageButton extends StatelessWidget {
           ),
           const SizedBox(height: kWizardSpacing / 2),
           Text(
-            filesize(size),
+            context.formatByteSize(size),
             style: Theme.of(context).textTheme.headlineSmall,
             overflow: TextOverflow.clip,
             softWrap: false,

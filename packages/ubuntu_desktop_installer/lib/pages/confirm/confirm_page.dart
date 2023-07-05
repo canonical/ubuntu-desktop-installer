@@ -1,4 +1,3 @@
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -138,12 +137,13 @@ class _PartitionLabel extends StatelessWidget {
   final Partition partition;
   final Partition? original;
 
-  String formatPartition(AppLocalizations lang) {
+  String formatPartition(BuildContext context) {
+    final lang = AppLocalizations.of(context);
     if (partition.resize == true) {
       return lang.writeChangesPartitionResized(
         partition.sysname,
-        filesize(original?.size ?? 0),
-        filesize(partition.size ?? 0),
+        context.formatByteSize(original?.size ?? 0),
+        context.formatByteSize(partition.size ?? 0),
       );
     } else if (partition.wipe != null && partition.mount?.isNotEmpty == true) {
       return lang.writeChangesPartitionFormattedMounted(
@@ -169,9 +169,8 @@ class _PartitionLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lang = AppLocalizations.of(context);
     return Html(
-      data: formatPartition(lang),
+      data: formatPartition(context),
       style: {'body': Style(margin: Margins.zero)},
     );
   }

@@ -1,5 +1,4 @@
 import 'package:collection/collection.dart';
-import 'package:filesize/filesize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -150,7 +149,10 @@ class _PartitionLabel extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(title, style: Theme.of(context).textTheme.titleSmall),
-            Text(filesize(size), style: Theme.of(context).textTheme.bodySmall),
+            Text(
+              context.formatByteSize(size),
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
           ],
         ),
       ],
