@@ -31,7 +31,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return '正在准备 $DISTRO...';
+    return '正在准备 $DISTRO…';
   }
 
   @override

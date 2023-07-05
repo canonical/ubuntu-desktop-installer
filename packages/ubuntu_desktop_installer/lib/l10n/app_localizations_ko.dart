@@ -31,7 +31,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return '$DISTRO 준비 중...';
+    return '$DISTRO 준비 중…';
   }
 
   @override

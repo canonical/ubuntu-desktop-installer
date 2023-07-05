@@ -31,7 +31,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return '$DISTRO hazırlanıyor...';
+    return '$DISTRO hazırlanıyor…';
   }
 
   @override

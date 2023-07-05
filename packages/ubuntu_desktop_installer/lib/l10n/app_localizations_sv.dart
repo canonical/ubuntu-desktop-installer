@@ -31,7 +31,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Förbereder $DISTRO...';
+    return 'Förbereder $DISTRO…';
   }
 
   @override
@@ -799,7 +799,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get installationSlidesAccessibilityLanguages => 'Språkstöd';
 
   @override
-  String get installationSlidesSupportTitle => 'Hjälp & Support';
+  String get installationSlidesSupportTitle => 'Hjälp och support';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {

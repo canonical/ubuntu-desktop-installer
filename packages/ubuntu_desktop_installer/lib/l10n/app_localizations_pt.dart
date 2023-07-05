@@ -31,7 +31,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'A preparar o $DISTRO...';
+    return 'A preparar o $DISTRO…';
   }
 
   @override
@@ -942,7 +942,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparando o $DISTRO...';
+    return 'Preparando o $DISTRO…';
   }
 
   @override

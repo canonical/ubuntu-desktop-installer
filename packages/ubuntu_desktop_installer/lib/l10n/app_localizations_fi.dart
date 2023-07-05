@@ -31,7 +31,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Valmistellaan ${DISTRO}a...';
+    return 'Valmistellaan ${DISTRO}a…';
   }
 
   @override

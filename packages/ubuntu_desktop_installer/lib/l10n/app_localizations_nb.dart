@@ -26,12 +26,12 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String welcomePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
+    return 'Velkommen til $DISTRO';
   }
 
   @override
   String preparingUbuntu(Object DISTRO) {
-    return 'Preparing $DISTRO...';
+    return 'Forbereder $DISTRO …';
   }
 
   @override
@@ -77,7 +77,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get rstTitle => 'Slå av RST';
 
   @override
-  String get rstHeader => 'Turn off RST to continue';
+  String get rstHeader => 'Skru av RST for å fortsette';
 
   @override
   String get rstDescription => 'Denne datamaskinen bruker Intel RST (Rapid Storage Technology). Du må slå av RST i Windows før du installerer Ubuntu.';
@@ -100,10 +100,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get keyboardDetectTitle => 'Finn tastaturoppsett';
 
   @override
-  String get keyboardDetectButton => 'Detect';
+  String get keyboardDetectButton => 'Oppdag';
 
   @override
-  String get keyboardVariantLabel => 'Keyboard variant:';
+  String get keyboardVariantLabel => 'Tastaturvariant:';
 
   @override
   String get keyboardPressKeyLabel => 'Trykk på en av følgende taster:';
@@ -415,10 +415,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get allocateDiskSpace => 'Tildel diskplass';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Monteringspunkter må starte med skråstrek «/»';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Monteringspunkter kan ikke inneholde mellomrom';
 
   @override
   String get startInstallingButtonText => 'Installer';
@@ -500,7 +500,7 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String partitionFormatKeep(Object format) {
-    return 'Leave formatted as $format';
+    return 'La stå formatert som $format';
   }
 
   @override
@@ -591,10 +591,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get writeChangesDescription => 'Hvis du fortsetter vil endringene nedenfor bli skrevet til diskene. Du vil kunne gjøre videre endringer manuelt.';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get writeChangesDevicesTitle => 'Enheter';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get writeChangesPartitionsTitle => 'Partisjoner';
 
   @override
   String get writeChangesPartitionTablesHeader => 'Partisjonstabellen for følgende enheter har blitt endret:';
@@ -609,27 +609,27 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
-    return 'endret størrelse fra $oldsize til $newsize for #$sysname';
+    return 'endret størrelse på partisjon <b>$sysname</b> fra <b>$oldsize</b> til <b>$newsize</b>';
   }
 
   @override
   String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
-    return 'partisjon #$sysname formatert som $format og brukt til $mount';
+    return 'partisjon <b>$sysname</b> formatert som <b>$format</b> og brukt som <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionFormatted(Object sysname, Object format) {
-    return 'partisjon #$sysname formatert som $format';
+    return 'partisjon <b>$sysname</b> formatert som <b>$format</b>';
   }
 
   @override
   String writeChangesPartitionMounted(Object sysname, Object mount) {
-    return 'partisjon #$sysname brukt til $mount';
+    return 'partisjon <b>$sysname</b> brukt til <b>$mount</b>';
   }
 
   @override
   String writeChangesPartitionCreated(Object sysname) {
-    return 'partisjon #$sysname opprettet';
+    return 'partisjon <b>$sysname</b> opprettet';
   }
 
   @override
@@ -675,7 +675,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get bitlockerTitle => 'Skru av BitLocker';
 
   @override
-  String get bitlockerHeader => 'Turn off BitLocker to continue';
+  String get bitlockerHeader => 'Skru av BitLocker for å fortsette';
 
   @override
   String bitlockerDescription(Object option) {
@@ -691,7 +691,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get restartIntoWindows => 'Omstart til Windows';
 
   @override
-  String get restartIntoWindowsTitle => 'Restart into Windows?';
+  String get restartIntoWindowsTitle => 'Utfør omstart inn i Windows?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
@@ -713,10 +713,10 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAvailable => 'Available:';
+  String get installationSlidesAvailable => 'Tilgjengelig:';
 
   @override
-  String get installationSlidesIncluded => 'Included:';
+  String get installationSlidesIncluded => 'Inkludert:';
 
   @override
   String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
@@ -793,13 +793,13 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesAccessibilityOrca => 'Orca Screen Reader';
+  String get installationSlidesAccessibilityOrca => 'Orca-skjermleser';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Language support';
+  String get installationSlidesAccessibilityLanguages => 'Språkstøtte';
 
   @override
-  String get installationSlidesSupportTitle => 'Help & Support';
+  String get installationSlidesSupportTitle => 'Hjelp og støtte';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
@@ -813,10 +813,10 @@ class AppLocalizationsNb extends AppLocalizations {
   String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
 
   @override
-  String get installationSlidesSupportResources => 'Helpful resources:';
+  String get installationSlidesSupportResources => 'Nyttige ressurser:';
 
   @override
-  String get installationSlidesSupportDocumentation => 'Official documentation';
+  String get installationSlidesSupportDocumentation => 'Offisiell dokumentasjon';
 
   @override
   String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
@@ -842,10 +842,10 @@ class AppLocalizationsNb extends AppLocalizations {
   }
 
   @override
-  String get notEnoughDiskSpaceAvailable => 'Available:';
+  String get notEnoughDiskSpaceAvailable => 'Tilgjengelig:';
 
   @override
-  String get notEnoughDiskSpaceRequired => 'Required:';
+  String get notEnoughDiskSpaceRequired => 'Påkrevd:';
 
   @override
   String get activeDirectoryOption => 'Bruk Active Directory';
