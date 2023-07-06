@@ -43,38 +43,38 @@ class AppLocalizationsLt extends AppLocalizations {
   String get localeHeader => 'Pasirinkite kalbą:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Išbandykite arba įsidiekite $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Taisyti diegimą';
+  String get welcomeRepairOption => 'Taisyti diegimą';
 
   @override
-  String get repairInstallationDescription => 'Taisymas iš naujo įdiegs visą įdiegtą programinę įrangą nepaveikdamas dokumentų ar nustatymų.';
+  String get welcomeRepairDescription => 'Taisymas iš naujo įdiegs visą įdiegtą programinę įrangą nepaveikdamas dokumentų ar nustatymų.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Išbandyti $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Galite išbandyti $RELEASE neatlikdami kompiuteryje jokių pakeitimų.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Įdiegti $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Įsidiekite $RELEASE šalia savo dabartinės operacinės sistemoje arba vietoje jos. Tai neturėtų ilgai užtrukti.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Galite pageidauti perskaityti <a href=\"$url\">laidos informaciją</a>.';
   }
 

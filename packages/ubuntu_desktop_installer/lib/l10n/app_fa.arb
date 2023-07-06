@@ -6,16 +6,16 @@
   "@confirmSecurityKey": {},
   "configureSecureBootOption": "پیکربندی راه‌اندازی ایمن",
   "@configureSecureBootOption": {},
-  "repairInstallation": "تعمیر نصب",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "تعمیر، همهٔ نرم افزارهای نصب شده را بدون دست زدن به اسناد یا تنظیمات، دوباره نصب می‌کند.",
-  "@repairInstallationDescription": {},
+  "welcomeRepairOption": "تعمیر نصب",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "تعمیر، همهٔ نرم افزارهای نصب شده را بدون دست زدن به اسناد یا تنظیمات، دوباره نصب می‌کند.",
+  "@welcomeRepairDescription": {},
   "quitButtonText": "خروج از نصب",
   "@quitButtonText": {},
   "keyboardDetectTitle": "تشخیص چیدمان صفحه‌کلید",
   "@keyboardDetectTitle": {},
-  "installUbuntu": "نصب {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "نصب {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -63,31 +63,31 @@
       "RELEASE": {}
     }
   },
-  "tryOrInstallPageTitle": "آزمودن یا نصب {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "tryUbuntuDescription": "شما می‌توانید {RELEASE} را بدون ایجاد هیچ تغییری در رایانه خود امتحان کنید.",
-  "@tryUbuntuDescription": {
+  "welcomePageTitle": "آزمودن یا نصب {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeTryDescription": "شما می‌توانید {RELEASE} را بدون ایجاد هیچ تغییری در رایانه خود امتحان کنید.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "{RELEASE} را در کنار (یا به جای) سیستم‌عامل کنونی شما نصب می‌کنید. این نباید خیلی طول بکشد.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "{RELEASE} را در کنار (یا به جای) سیستم‌عامل کنونی شما نصب می‌کنید. این نباید خیلی طول بکشد.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "آزمودن {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "آزمودن {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "ممکن است بخواهید <a href=\"{url}\">یادداشت‌های انتشار</a> را بخوانید.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "ممکن است بخواهید <a href=\"{url}\">یادداشت‌های انتشار</a> را بخوانید.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}

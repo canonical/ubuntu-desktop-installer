@@ -153,14 +153,14 @@
   "@revertButtonText": {},
   "welcome": "Üdvözöljük",
   "@welcome": {},
-  "tryOrInstallPageTitle": "A(z) {DISTRO} kipróbálása vagy telepítése",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Telepítés javítása",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "A javítás újratelepíti az összes telepített szoftvert, anélkül hogy a dokumentumokat vagy a beállításokat érintené.",
-  "@repairInstallationDescription": {},
-  "releaseNotesLabel": "Érdemes lehet elolvasni a <a href=\"{url}\">kiadási megjegyzéseket</a>.",
-  "@releaseNotesLabel": {
+  "welcomePageTitle": "A(z) {DISTRO} kipróbálása vagy telepítése",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Telepítés javítása",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "A javítás újratelepíti az összes telepített szoftvert, anélkül hogy a dokumentumokat vagy a beállításokat érintené.",
+  "@welcomeRepairDescription": {},
+  "welcomeReleaseNotesLabel": "Érdemes lehet elolvasni a <a href=\"{url}\">kiadási megjegyzéseket</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -411,29 +411,29 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "A(z) {RELEASE} kipróbálása",
-  "@tryUbuntu": {
+  "welcomeTryOption": "A(z) {RELEASE} kipróbálása",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "A(z) {RELEASE} kipróbálható anélkül, hogy bármilyen változtatást végezne a számítógépén.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "A(z) {RELEASE} kipróbálható anélkül, hogy bármilyen változtatást végezne a számítógépén.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "A(z) {RELEASE} telepítése",
-  "@installUbuntu": {
+  "welcomeInstallOption": "A(z) {RELEASE} telepítése",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "A(z) {RELEASE} telepítése a jelenlegi operációs rendszere mellé (vagy helyett). Ez nem fog túl sokáig tartani.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "A(z) {RELEASE} telepítése a jelenlegi operációs rendszere mellé (vagy helyett). Ez nem fog túl sokáig tartani.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

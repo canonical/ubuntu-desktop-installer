@@ -454,31 +454,31 @@
   "@identityUsernameTooLong": {},
   "quitButtonText": "Opustiť inštaláciu",
   "@quitButtonText": {},
-  "tryOrInstallPageTitle": "Vyskúšať alebo nainštalovať {DISTRO}",
-  "@tryOrInstallPageTitle": {
+  "welcomePageTitle": "Vyskúšať alebo nainštalovať {DISTRO}",
+  "@welcomePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "repairInstallation": "Opraviť inštaláciu",
-  "@repairInstallation": {},
-  "tryUbuntu": "Vyskúšať {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeRepairOption": "Opraviť inštaláciu",
+  "@welcomeRepairOption": {},
+  "welcomeTryOption": "Vyskúšať {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "Môžete vyskúšať {RELEASE} bez vykonania zmien vo vašom počítači.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "Môžete vyskúšať {RELEASE} bez vykonania zmien vo vašom počítači.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Nainštalovať {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Nainštalovať {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -488,22 +488,22 @@
   "@rstTitle": {},
   "rstDescription": "Na tomto počítači je zapnutá technológia Intel RST (Rapid Storage Technology). Aby bolo možné Ubuntu nainštalovať, je potrebné vo Windows funkciu RST vypnúť.",
   "@rstDescription": {},
-  "installUbuntuDescription": "Nainštalujte {RELEASE} spoločne z (alebo namiesto) vášho operačného systému. Nemalo by to trvať dlho.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Nainštalujte {RELEASE} spoločne z (alebo namiesto) vášho operačného systému. Nemalo by to trvať dlho.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "Mohli by ste mať záujem o prečítanie si <a href=\"{url}\">poznámok k vydaniu</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "Mohli by ste mať záujem o prečítanie si <a href=\"{url}\">poznámok k vydaniu</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "repairInstallationDescription": "Opravou preinštalujete všetok nainštalovaný softvér bez toho, aby sa to dotklo dokumentov alebo nastavení.",
-  "@repairInstallationDescription": {},
+  "welcomeRepairDescription": "Opravou preinštalujete všetok nainštalovaný softvér bez toho, aby sa to dotklo dokumentov alebo nastavení.",
+  "@welcomeRepairDescription": {},
   "dontInstallDriverSoftwareNow": "Zatiaľ neinštalujte softvér ovládača",
   "@dontInstallDriverSoftwareNow": {},
   "keyboardPressKeyLabel": "Stlačte niektorú z nasledujúcich kláves:",

@@ -43,38 +43,38 @@ class AppLocalizationsKa extends AppLocalizations {
   String get localeHeader => 'აირჩიეთ თქვენი ენა:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'სცადეთ ან დააყენეთ $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'დაყენებული ვერსიის შეკეთება';
+  String get welcomeRepairOption => 'დაყენებული ვერსიის შეკეთება';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get welcomeRepairDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return '$RELEASE-ის ცდა';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'You can try $RELEASE without making any changes to your computer.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return '$RELEASE-ის დაყენება';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Install $RELEASE alongside (or instead of) your current operating system. This shouldn\'t take too long.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'You may wish to read the <a href=\"$url\">release notes</a>.';
   }
 

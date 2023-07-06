@@ -8,8 +8,8 @@
   "@restartButtonText": {},
   "revertButtonText": "يرجع",
   "@revertButtonText": {},
-  "repairInstallation": "تصليح المثبت",
-  "@repairInstallation": {},
+  "welcomeRepairOption": "تصليح المثبت",
+  "@welcomeRepairOption": {},
   "windowTitle": "تثبيت {RELEASE}",
   "@windowTitle": {
     "type": "text",
@@ -21,33 +21,33 @@
   "@quitButtonText": {},
   "welcome": "مرحبا",
   "@welcome": {},
-  "tryOrInstallPageTitle": "جرب او ثبت {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallationDescription": "سيؤدي الإصلاح إلى إعادة تثبيت جميع البرامج المثبتة دون لمس المستندات أو الإعدادات.",
-  "@repairInstallationDescription": {},
-  "tryUbuntu": "جرب {RELEASE}",
-  "@tryUbuntu": {
+  "welcomePageTitle": "جرب او ثبت {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairDescription": "سيؤدي الإصلاح إلى إعادة تثبيت جميع البرامج المثبتة دون لمس المستندات أو الإعدادات.",
+  "@welcomeRepairDescription": {},
+  "welcomeTryOption": "جرب {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "يمكنك تجربة {RELEASE} بدون إجراء اي تغييرات لجهازك.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "يمكنك تجربة {RELEASE} بدون إجراء اي تغييرات لجهازك.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "ثبت {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "ثبت {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "ثبت {RELEASE} بجانب او بدلا من نظامك الحالي. لا ينبغي لهذا الإجراء اخذ الكثير من الوقت.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "ثبت {RELEASE} بجانب او بدلا من نظامك الحالي. لا ينبغي لهذا الإجراء اخذ الكثير من الوقت.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -192,8 +192,8 @@
       "DISTRO": {}
     }
   },
-  "releaseNotesLabel": "قد ترغب في قراءة </a> ملاحظات الإصدار <a href=\"{url}\">.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "قد ترغب في قراءة </a> ملاحظات الإصدار <a href=\"{url}\">.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}

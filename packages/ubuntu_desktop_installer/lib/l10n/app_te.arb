@@ -9,15 +9,15 @@
       "RELEASE": {}
     }
   },
-  "installUbuntu": "{RELEASE} స్థాపించు",
-  "@installUbuntu": {
+  "welcomeInstallOption": "{RELEASE} స్థాపించు",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "{RELEASE} ప్రయత్నించండి",
-  "@tryUbuntu": {
+  "welcomeTryOption": "{RELEASE} ప్రయత్నించండి",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

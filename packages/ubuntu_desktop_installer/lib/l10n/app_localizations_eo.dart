@@ -43,38 +43,38 @@ class AppLocalizationsEo extends AppLocalizations {
   String get localeHeader => 'Elektu vian lingvon:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Provi aŭ instali $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Ripari instalaĵon';
+  String get welcomeRepairOption => 'Ripari instalaĵon';
 
   @override
-  String get repairInstallationDescription => 'Riparado reinstalos ĉiujn instalitajn programojn sen modifi dokumentojn aŭ agordojn.';
+  String get welcomeRepairDescription => 'Riparado reinstalos ĉiujn instalitajn programojn sen modifi dokumentojn aŭ agordojn.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Provi $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Vi povas provi $RELEASE sen iel ajn ŝanĝi vian komputilon.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Instali $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Instali $RELEASE apud (aŭ anstataŭ) via aktuala mastruma sistemo. Tio ne daŭros tro longe.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Vi eble volas legi la <a href=\"$url\">liverajn notojn</a>.';
   }
 

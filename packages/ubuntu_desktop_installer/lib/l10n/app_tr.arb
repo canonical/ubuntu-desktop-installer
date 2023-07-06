@@ -4,24 +4,24 @@
   "@changeButtonText": {},
   "restartButtonText": "Yeniden başlat",
   "@restartButtonText": {},
-  "tryOrInstallPageTitle": "{DISTRO}'yu dene veya kur",
-  "@tryOrInstallPageTitle": {},
+  "welcomePageTitle": "{DISTRO}'yu dene veya kur",
+  "@welcomePageTitle": {},
   "welcome": "Hoş Geldiniz",
   "@welcome": {},
   "appTitle": "Ubuntu Masaüstü Kurucu",
   "@appTitle": {},
-  "tryUbuntu": "{RELEASE} Dene",
-  "@tryUbuntu": {},
-  "tryUbuntuDescription": "Bilgisayarınızda hiç bir değişiklik yapmadan {RELEASE} deneyebilirsiniz.",
-  "@tryUbuntuDescription": {},
-  "installUbuntu": "{RELEASE} Kur",
-  "@installUbuntu": {},
+  "welcomeTryOption": "{RELEASE} Dene",
+  "@welcomeTryOption": {},
+  "welcomeTryDescription": "Bilgisayarınızda hiç bir değişiklik yapmadan {RELEASE} deneyebilirsiniz.",
+  "@welcomeTryDescription": {},
+  "welcomeInstallOption": "{RELEASE} Kur",
+  "@welcomeInstallOption": {},
   "windowTitle": "{RELEASE} Kur",
   "@windowTitle": {},
   "revertButtonText": "Geri al",
   "@revertButtonText": {},
-  "repairInstallation": "Kurulumu tamir et",
-  "@repairInstallation": {},
+  "welcomeRepairOption": "Kurulumu tamir et",
+  "@welcomeRepairOption": {},
   "connectToInternetDescription": "Bu bilgisayarı internete bağlamak, Ubuntu'nun ihtiyacı olan ek yazılımları kurmasına ve zaman diliminizi seçmenize yardımcı olur.\n\nEthernet kablosuyla bağlan veya bir Wi-Fi ağı seç",
   "@connectToInternetDescription": {},
   "connectToInternetPageTitle": "Bir ağa bağlan",
@@ -34,17 +34,17 @@
   "@wiredDisabled": {},
   "wiredMustBeEnabled": "Bilgisayarda Etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir",
   "@wiredMustBeEnabled": {},
-  "repairInstallationDescription": "Tamir etme seçeneği, tüm yazılımlarınızı tekrardan kuracak ve belgeleriniz ile ayarlarınıza dokunmayacaktır.",
-  "@repairInstallationDescription": {},
-  "installUbuntuDescription": "Mevcut işletim sisteminizin yanına (ya da yerine) {RELEASE} kur. Çok uzun sürmeyecektir.",
-  "@installUbuntuDescription": {
+  "welcomeRepairDescription": "Tamir etme seçeneği, tüm yazılımlarınızı tekrardan kuracak ve belgeleriniz ile ayarlarınıza dokunmayacaktır.",
+  "@welcomeRepairDescription": {},
+  "welcomeInstallDescription": "Mevcut işletim sisteminizin yanına (ya da yerine) {RELEASE} kur. Çok uzun sürmeyecektir.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "<a href=\"{url}\">Sürüm notlarını</a> okumak isteyebilirsiniz.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "<a href=\"{url}\">Sürüm notlarını</a> okumak isteyebilirsiniz.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}

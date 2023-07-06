@@ -6,8 +6,8 @@
   "@quitButtonText": {},
   "localeHeader": "აირჩიეთ თქვენი ენა:",
   "@localeHeader": {},
-  "tryOrInstallPageTitle": "სცადეთ ან დააყენეთ {DISTRO}",
-  "@tryOrInstallPageTitle": {},
+  "welcomePageTitle": "სცადეთ ან დააყენეთ {DISTRO}",
+  "@welcomePageTitle": {},
   "windowTitle": "{RELEASE}-ის დაყენება",
   "@windowTitle": {
     "type": "text",
@@ -21,19 +21,19 @@
   "@changeButtonText": {},
   "revertButtonText": "აღდგენა",
   "@revertButtonText": {},
-  "repairInstallation": "დაყენებული ვერსიის შეკეთება",
-  "@repairInstallation": {},
+  "welcomeRepairOption": "დაყენებული ვერსიის შეკეთება",
+  "@welcomeRepairOption": {},
   "welcome": "მოგესალმებით",
   "@welcome": {},
-  "tryUbuntu": "{RELEASE}-ის ცდა",
-  "@tryUbuntu": {
+  "welcomeTryOption": "{RELEASE}-ის ცდა",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "{RELEASE}-ის დაყენება",
-  "@installUbuntu": {
+  "welcomeInstallOption": "{RELEASE}-ის დაყენება",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

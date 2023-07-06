@@ -43,38 +43,38 @@ class AppLocalizationsNe extends AppLocalizations {
   String get localeHeader => 'आफ्नो भाषा छान्नुहोस्:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'प्रयास गर्नुहोस् वा स्थापना गर्नुहोस्';
   }
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get welcomeRepairOption => 'Repair installation';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get welcomeRepairDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return '$RELEASE प्रयास गर्नुहोस्';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'तपाईंले आफ्नो कम्प्युटरमा कुनै परिवर्तन नगरी $RELEASE प्रयोग गर्न सक्नुहुन्छ।';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return '$RELEASE स्थापना गर्नुहोस्';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'आफ्नो अन्य अपरेटिङ सिस्टम संगै $RELEASE स्थापना गर्नुहोस्। यो छिटो हुनेछ।';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'तपाईंले <a href=\"$url\">रिलिज नोटहरू</a> पढ्न आवश्यक हुन सक्छ।';
   }
 

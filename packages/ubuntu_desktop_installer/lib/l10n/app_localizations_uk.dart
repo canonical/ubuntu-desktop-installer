@@ -43,38 +43,38 @@ class AppLocalizationsUk extends AppLocalizations {
   String get localeHeader => 'Оберіть мову:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Спробувати або встановити';
   }
 
   @override
-  String get repairInstallation => 'Виправити встановлення';
+  String get welcomeRepairOption => 'Виправити встановлення';
 
   @override
-  String get repairInstallationDescription => 'Під час виправлення буде перевстановлено все програмне забезпечення, не торкаючись документів чи налаштувань.';
+  String get welcomeRepairDescription => 'Під час виправлення буде перевстановлено все програмне забезпечення, не торкаючись документів чи налаштувань.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Спробувати $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Ви можете спробувати $RELEASE, не роблячи ніяких змін на вашому комп\'ютері.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Встановити $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Встановити $RELEASE поряд (або замість) вашої поточної операційної системи. Це не повинно зайняти занадто багато часу.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Можливо, ви захочете прочитати <a href=\"$url\">примітки до випуску</a>.';
   }
 

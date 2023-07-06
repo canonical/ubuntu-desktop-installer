@@ -297,53 +297,53 @@ abstract class AppLocalizations {
   /// **'Choose your language:'**
   String get localeHeader;
 
-  /// No description provided for @tryOrInstallPageTitle.
+  /// No description provided for @welcomePageTitle.
   ///
   /// In en, this message translates to:
   /// **'Try or install {DISTRO}'**
-  String tryOrInstallPageTitle(Object DISTRO);
+  String welcomePageTitle(Object DISTRO);
 
-  /// No description provided for @repairInstallation.
+  /// No description provided for @welcomeRepairOption.
   ///
   /// In en, this message translates to:
   /// **'Repair installation'**
-  String get repairInstallation;
+  String get welcomeRepairOption;
 
-  /// No description provided for @repairInstallationDescription.
+  /// No description provided for @welcomeRepairDescription.
   ///
   /// In en, this message translates to:
   /// **'Repairing will reinstall all installed software without touching documents or settings.'**
-  String get repairInstallationDescription;
+  String get welcomeRepairDescription;
 
-  /// No description provided for @tryUbuntu.
+  /// No description provided for @welcomeTryOption.
   ///
   /// In en, this message translates to:
   /// **'Try {RELEASE}'**
-  String tryUbuntu(Object RELEASE);
+  String welcomeTryOption(Object RELEASE);
 
-  /// No description provided for @tryUbuntuDescription.
+  /// No description provided for @welcomeTryDescription.
   ///
   /// In en, this message translates to:
   /// **'You can try {RELEASE} without making any changes to your computer.'**
-  String tryUbuntuDescription(Object RELEASE);
+  String welcomeTryDescription(Object RELEASE);
 
-  /// No description provided for @installUbuntu.
+  /// No description provided for @welcomeInstallOption.
   ///
   /// In en, this message translates to:
   /// **'Install {RELEASE}'**
-  String installUbuntu(Object RELEASE);
+  String welcomeInstallOption(Object RELEASE);
 
-  /// No description provided for @installUbuntuDescription.
+  /// No description provided for @welcomeInstallDescription.
   ///
   /// In en, this message translates to:
   /// **'Install {RELEASE} alongside (or instead of) your current operating system. This shouldn\'t take too long.'**
-  String installUbuntuDescription(Object RELEASE);
+  String welcomeInstallDescription(Object RELEASE);
 
-  /// No description provided for @releaseNotesLabel.
+  /// No description provided for @welcomeReleaseNotesLabel.
   ///
   /// In en, this message translates to:
   /// **'You may wish to read the <a href=\"{url}\">release notes</a>.'**
-  String releaseNotesLabel(Object url);
+  String welcomeReleaseNotesLabel(Object url);
 
   /// No description provided for @rstTitle.
   ///

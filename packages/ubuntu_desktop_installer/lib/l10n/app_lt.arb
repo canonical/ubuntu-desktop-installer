@@ -48,15 +48,15 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "Išbandyti {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "Išbandyti {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Įdiegti {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Įdiegti {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -150,14 +150,14 @@
       "os": {}
     }
   },
-  "tryOrInstallPageTitle": "Išbandykite arba įsidiekite {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Taisyti diegimą",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "Taisymas iš naujo įdiegs visą įdiegtą programinę įrangą nepaveikdamas dokumentų ar nustatymų.",
-  "@repairInstallationDescription": {},
-  "releaseNotesLabel": "Galite pageidauti perskaityti <a href=\"{url}\">laidos informaciją</a>.",
-  "@releaseNotesLabel": {
+  "welcomePageTitle": "Išbandykite arba įsidiekite {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Taisyti diegimą",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "Taisymas iš naujo įdiegs visą įdiegtą programinę įrangą nepaveikdamas dokumentų ar nustatymų.",
+  "@welcomeRepairDescription": {},
+  "welcomeReleaseNotesLabel": "Galite pageidauti perskaityti <a href=\"{url}\">laidos informaciją</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -236,15 +236,15 @@
       "os": {}
     }
   },
-  "tryUbuntuDescription": "Galite išbandyti {RELEASE} neatlikdami kompiuteryje jokių pakeitimų.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "Galite išbandyti {RELEASE} neatlikdami kompiuteryje jokių pakeitimų.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Įsidiekite {RELEASE} šalia savo dabartinės operacinės sistemoje arba vietoje jos. Tai neturėtų ilgai užtrukti.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Įsidiekite {RELEASE} šalia savo dabartinės operacinės sistemoje arba vietoje jos. Tai neturėtų ilgai užtrukti.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

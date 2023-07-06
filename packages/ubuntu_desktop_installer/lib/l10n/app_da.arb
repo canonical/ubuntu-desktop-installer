@@ -55,22 +55,22 @@
   "@chooseSecurityKeyTitle": {},
   "appTitle": "Ubuntu Skrivebordsinstallatør",
   "@appTitle": {},
-  "installUbuntu": "Installér {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Installér {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Installér {RELEASE}, ved siden af (eller i stedet for) dit nuværende operativsystem. Dette burde ikke tage lang tid.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Installér {RELEASE}, ved siden af (eller i stedet for) dit nuværende operativsystem. Dette burde ikke tage lang tid.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "Du kunne nok ønske at læse <a href=\"{url}\">udgivelsesnoter</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "Du kunne nok ønske at læse <a href=\"{url}\">udgivelsesnoter</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -80,10 +80,10 @@
   "@quitButtonText": {},
   "welcome": "Velkommen",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Prøv eller installér {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Reparér installation",
-  "@repairInstallation": {},
+  "welcomePageTitle": "Prøv eller installér {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Reparér installation",
+  "@welcomeRepairOption": {},
   "configureSecureBootSecurityKeyRequired": "Sikkerhedsnøgle er påkrævet",
   "@configureSecureBootSecurityKeyRequired": {},
   "confirmSecurityKey": "Bekræft sikkerhedsnøglen",
@@ -124,17 +124,17 @@
   "@keyboardTestHint": {},
   "revertButtonText": "Tilbagefør",
   "@revertButtonText": {},
-  "repairInstallationDescription": "Reparation vil geninstallere al installeret programvare, uden at røre dokumenter eller indstillinger.",
-  "@repairInstallationDescription": {},
-  "tryUbuntu": "Prøv {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeRepairDescription": "Reparation vil geninstallere al installeret programvare, uden at røre dokumenter eller indstillinger.",
+  "@welcomeRepairDescription": {},
+  "welcomeTryOption": "Prøv {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "Du kan prøve {RELEASE}, uden at foretage nogen ændringer, på din computer.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "Du kan prøve {RELEASE}, uden at foretage nogen ændringer, på din computer.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

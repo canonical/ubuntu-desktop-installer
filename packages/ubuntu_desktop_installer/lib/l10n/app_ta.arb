@@ -2,8 +2,8 @@
   "@@locale": "ta",
   "changeButtonText": "மாற்று",
   "@changeButtonText": {},
-  "repairInstallation": "நிறுவலை பழுதுபார்",
-  "@repairInstallation": {},
+  "welcomeRepairOption": "நிறுவலை பழுதுபார்",
+  "@welcomeRepairOption": {},
   "keyboardTestHint": "உங்கள் விசைப்பலகையை சோதிக்க இங்கு தட்டச்சு செய்யவும்",
   "@keyboardTestHint": {},
   "normalInstallationTitle": "இயல்பான நிறுவல்",
@@ -99,8 +99,8 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "உங்கள் கணினியில் எந்த மாற்றமும் செய்யாமல் {RELEASE}ஐ சோதிக்கலாம்.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "உங்கள் கணினியில் எந்த மாற்றமும் செய்யாமல் {RELEASE}ஐ சோதிக்கலாம்.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -110,17 +110,17 @@
   "@revertButtonText": {},
   "welcome": "நல்வரவு",
   "@welcome": {},
-  "tryOrInstallPageTitle": "சோதி அல்லது நிறுவு",
-  "@tryOrInstallPageTitle": {},
-  "tryUbuntu": "சோதி {RELEASE}",
-  "@tryUbuntu": {
+  "welcomePageTitle": "சோதி அல்லது நிறுவு",
+  "@welcomePageTitle": {},
+  "welcomeTryOption": "சோதி {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "நிறுவு{RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "நிறுவு{RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

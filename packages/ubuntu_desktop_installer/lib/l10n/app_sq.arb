@@ -125,19 +125,19 @@
       "path": {}
     }
   },
-  "tryOrInstallPageTitle": "Provo ose instalo",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Riparo instalimin",
-  "@repairInstallation": {},
-  "tryUbuntu": "Provo {RELEASE}",
-  "@tryUbuntu": {
+  "welcomePageTitle": "Provo ose instalo",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Riparo instalimin",
+  "@welcomeRepairOption": {},
+  "welcomeTryOption": "Provo {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Instalo {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Instalo {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

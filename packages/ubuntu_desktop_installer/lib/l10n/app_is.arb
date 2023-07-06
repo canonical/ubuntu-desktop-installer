@@ -17,12 +17,12 @@
   "@revertButtonText": {},
   "welcome": "Velkomin(n)",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Prófa eða uppsetja",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Viðgera uppsetningu",
-  "@repairInstallation": {},
-  "tryUbuntu": "Prófa {RELEASE}",
-  "@tryUbuntu": {
+  "welcomePageTitle": "Prófa eða uppsetja",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Viðgera uppsetningu",
+  "@welcomeRepairOption": {},
+  "welcomeTryOption": "Prófa {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -38,8 +38,8 @@
   "@keyboardTestHint": {},
   "keyboardDetectTitle": "Greina Sjálfvirkt Lyklaborðsútfærslu",
   "@keyboardDetectTitle": {},
-  "installUbuntu": "Uppsetja {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Uppsetja {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

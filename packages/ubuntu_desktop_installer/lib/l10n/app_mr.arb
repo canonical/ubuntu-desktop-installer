@@ -1,7 +1,7 @@
 {
   "@@locale": "mr",
-  "installUbuntu": "{RELEASE} प्रतिष्ठापीत करा",
-  "@installUbuntu": {
+  "welcomeInstallOption": "{RELEASE} प्रतिष्ठापीत करा",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -18,8 +18,8 @@
   },
   "welcome": "सुस्वागतम्",
   "@welcome": {},
-  "tryUbuntu": "{RELEASE} वापरुन पहा",
-  "@tryUbuntu": {
+  "welcomeTryOption": "{RELEASE} वापरुन पहा",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

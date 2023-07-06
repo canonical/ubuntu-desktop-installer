@@ -150,14 +150,14 @@
   "@revertButtonText": {},
   "welcome": "സ്വാഗതം",
   "@welcome": {},
-  "tryOrInstallPageTitle": "ഉപയോഗിച്ച് നോക്കുക അല്ലെങ്കിൽ ഇൻസ്റ്റാൾ ചെയ്യുക",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "ഇൻസ്റ്റാളേഷൻ നന്നാക്കുക",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "റിപ്പയർ ചെയ്യുന്നത് ഡോക്യുമെന്റുകളോ ക്രമീകരണങ്ങളോ സ്പർശിക്കാതെ ഇൻസ്റ്റാൾ ചെയ്ത എല്ലാ സോഫ്റ്റ്വെയറുകളും വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്യും.",
-  "@repairInstallationDescription": {},
-  "releaseNotesLabel": "നിങ്ങൾ <a href=\"{url}\">റിലീസ് കുറിപ്പുകൾ</a> വായിക്കാൻ ആഗ്രഹിച്ചേക്കാം.",
-  "@releaseNotesLabel": {
+  "welcomePageTitle": "ഉപയോഗിച്ച് നോക്കുക അല്ലെങ്കിൽ ഇൻസ്റ്റാൾ ചെയ്യുക",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "ഇൻസ്റ്റാളേഷൻ നന്നാക്കുക",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "റിപ്പയർ ചെയ്യുന്നത് ഡോക്യുമെന്റുകളോ ക്രമീകരണങ്ങളോ സ്പർശിക്കാതെ ഇൻസ്റ്റാൾ ചെയ്ത എല്ലാ സോഫ്റ്റ്വെയറുകളും വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്യും.",
+  "@welcomeRepairDescription": {},
+  "welcomeReleaseNotesLabel": "നിങ്ങൾ <a href=\"{url}\">റിലീസ് കുറിപ്പുകൾ</a> വായിക്കാൻ ആഗ്രഹിച്ചേക്കാം.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -393,29 +393,29 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "{RELEASE} ഉപയോഗിച്ച് നോക്കുക",
-  "@tryUbuntu": {
+  "welcomeTryOption": "{RELEASE} ഉപയോഗിച്ച് നോക്കുക",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "നിങ്ങളുടെ കമ്പ്യൂട്ടറിൽ മാറ്റങ്ങളൊന്നും വരുത്താതെ തന്നെ നിങ്ങൾക്ക് {RELEASE} പരീക്ഷിക്കാവുന്നതാണ്.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "നിങ്ങളുടെ കമ്പ്യൂട്ടറിൽ മാറ്റങ്ങളൊന്നും വരുത്താതെ തന്നെ നിങ്ങൾക്ക് {RELEASE} പരീക്ഷിക്കാവുന്നതാണ്.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "{RELEASE} ഇൻസ്റ്റാൾ ചെയ്യുക",
-  "@installUbuntu": {
+  "welcomeInstallOption": "{RELEASE} ഇൻസ്റ്റാൾ ചെയ്യുക",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "നിങ്ങളുടെ നിലവിലെ ഓപ്പറേറ്റിംഗ് സിസ്റ്റത്തിനൊപ്പം (അല്ലെങ്കിൽ പകരം) {RELEASE} ഇൻസ്റ്റാൾ ചെയ്യുക. ഇത് അധിക സമയം എടുക്കാൻ പാടില്ലാത്തതാണ്.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "നിങ്ങളുടെ നിലവിലെ ഓപ്പറേറ്റിംഗ് സിസ്റ്റത്തിനൊപ്പം (അല്ലെങ്കിൽ പകരം) {RELEASE} ഇൻസ്റ്റാൾ ചെയ്യുക. ഇത് അധിക സമയം എടുക്കാൻ പാടില്ലാത്തതാണ്.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

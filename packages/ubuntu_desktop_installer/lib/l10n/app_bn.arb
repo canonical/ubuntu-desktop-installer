@@ -13,15 +13,15 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "{RELEASE} ব্যবহার করে দেখুন",
-  "@tryUbuntu": {
+  "welcomeTryOption": "{RELEASE} ব্যবহার করে দেখুন",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "{RELEASE} ইনস্টল করুন",
-  "@installUbuntu": {
+  "welcomeInstallOption": "{RELEASE} ইনস্টল করুন",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

@@ -43,38 +43,38 @@ class AppLocalizationsPt extends AppLocalizations {
   String get localeHeader => 'Escolha o seu idioma:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Experimentar ou instalar o $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Reparar instalação';
+  String get welcomeRepairOption => 'Reparar instalação';
 
   @override
-  String get repairInstallationDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou definições.';
+  String get welcomeRepairDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou definições.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Experimentar o $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Pode experimentar o $RELEASE sem precisar de fazer qualquer alteração no seu computador.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Instalar o $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Instalar o $RELEASE ao lado do (ou em substituição ao) seu sistema operativo atual. Isto não deve demorar muito.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Talvez queira ler as <a href=\"$url\">notas de lançamento</a>.';
   }
 
@@ -950,38 +950,38 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get localeHeader => 'Escolha seu idioma:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Experimentar ou instalar o $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Reparar instalação';
+  String get welcomeRepairOption => 'Reparar instalação';
 
   @override
-  String get repairInstallationDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações.';
+  String get welcomeRepairDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Experimentar $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Você pode experimentar o $RELEASE sem precisar fazer qualquer alteração em seu computador.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Instalar $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Instalar o $RELEASE ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Talvez você queira ler as <a href=\"$url\">notas de lançamento</a>.';
   }
 

@@ -17,15 +17,15 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "ይሞክሩ {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "ይሞክሩ {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "መግጠም {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "መግጠም {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

@@ -23,10 +23,10 @@ enum Option {
   repairUbuntu,
 
   /// The user wants to try Ubuntu.
-  tryUbuntu,
+  welcomeTryOption,
 
   /// The user wants to install Ubuntu.
-  installUbuntu,
+  welcomeInstallOption,
 }
 
 /// Implements the business logic of the welcome page.
