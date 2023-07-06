@@ -692,7 +692,7 @@
   "@installationSlidesAccessibilityOrca": {},
   "installationSlidesAccessibilityLanguages": "Suporte a idioma",
   "@installationSlidesAccessibilityLanguages": {},
-  "installationSlidesSupportTitle": "Ajuda e Suporte",
+  "installationSlidesSupportTitle": "Ajuda e suporte",
   "@installationSlidesSupportTitle": {},
   "installationSlidesSupportHeader": "A documentação oficial do {DISTRO} está disponível on-line e por meio do ícone de Ajuda na doca de aplicativos.",
   "@installationSlidesSupportHeader": {
@@ -741,5 +741,16 @@
     "placeholders": {
       "DISTRO": {}
     }
-  }
+  },
+  "partitionFormatKeep": "Deixe formatado como {format}",
+  "@partitionFormatKeep": {
+    "type": "text",
+    "placeholders": {
+      "format": {}
+    }
+  },
+  "allocateDiskSpaceInvalidMountPointSpace": "Pontos de montagem não podem conter espaços",
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "allocateDiskSpaceInvalidMountPointSlash": "Pontos de montagem devem começar com \"/\"",
+  "@allocateDiskSpaceInvalidMountPointSlash": {}
 }
