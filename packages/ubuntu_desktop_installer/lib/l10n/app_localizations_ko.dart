@@ -25,51 +25,56 @@ class AppLocalizationsKo extends AppLocalizations {
   String get quitButtonText => '인스톨러 닫기';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return '$DISTRO사용을 환영합니다';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return '$DISTRO 준비 중…';
   }
 
   @override
-  String get welcomeHeader => '언어를 선택하십시오:';
+  String localePageTitle(Object DISTRO) {
+    return '$DISTRO사용을 환영합니다';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => '언어를 선택하십시오:';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return '$DISTRO 체험 또는 설치';
   }
 
   @override
-  String get repairInstallation => '설치 복구';
+  String get welcomeRepairOption => '설치 복구';
 
   @override
-  String get repairInstallationDescription => '복구하면 문서나 설정을 건드리지 않고 설치된 모든 소프트웨어가 다시 설치됩니다.';
+  String get welcomeRepairDescription => '복구하면 문서나 설정을 건드리지 않고 설치된 모든 소프트웨어가 다시 설치됩니다.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return '$RELEASE 체험하기';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return '컴퓨터에서 변경사항을 만들지 않고 $RELEASE를 체험하실 수 있습니다.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return '$RELEASE 설치';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return '$RELEASE를 현재 운영체제와 함께 (또는 대신) 설치합니다. 오래 걸리지 않습니다.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return '<a href=\"$url\">릴리즈 노트</a>를 읽어보십시오.';
   }
 
@@ -421,9 +426,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => '마운트 위치는 공백을 포함할 수 없습니다';
 
   @override
-  String get startInstallingButtonText => '설치';
-
-  @override
   String get diskHeadersDevice => '장치';
 
   @override
@@ -582,55 +584,55 @@ class AppLocalizationsKo extends AppLocalizations {
   String get identityPasswordHide => '숨기기';
 
   @override
-  String get writeChangesToDisk => '설치 준비 완료';
+  String get confirmPageTitle => '설치 준비 완료';
 
   @override
-  String get writeChangesFallbackSerial => '디스크';
+  String get confirmHeader => '계속 하시면 아래 나열된 변경사항을 디스크에 기록됩니다. 수동으로 추가적인 변경사항을 만드실 수 있습니다.';
 
   @override
-  String get writeChangesDescription => '계속 하시면 아래 나열된 변경사항을 디스크에 기록됩니다. 수동으로 추가적인 변경사항을 만드실 수 있습니다.';
+  String get confirmDevicesTitle => '장치';
 
   @override
-  String get writeChangesDevicesTitle => '장치';
+  String get confirmPartitionsTitle => '파티션';
 
   @override
-  String get writeChangesPartitionsTitle => '파티션';
+  String get confirmPartitionTables => '다음과 같은 장치의 파티션 테이블이 변경되었습니다:';
 
   @override
-  String get writeChangesPartitionTablesHeader => '다음과 같은 장치의 파티션 테이블이 변경되었습니다:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => '다음과 같은 파티션 변경사항이 적용됩니다:';
+  String get confirmPartitionChanges => '다음과 같은 파티션 변경사항이 적용됩니다:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return '파티션 <b>$sysname</b>의 크기를 <b>$oldsize</b>에서 <b>$newsize</b>로 조정';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return '파티션 <b>$sysname</b> 을(를) <b>$format</b>(으)로 포맷하고 <b>$mount</b>에 마운트';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return '파티션 <b>$sysname</b>을(를) <b>$format</b> (으)로 포맷함';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return '파티션 <b>$sysname</b>을(를) <b>$mount</b>에 사용';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return '파티션 <b>$sysname</b> 생성됨';
   }
+
+  @override
+  String get confirmInstallButton => '설치';
 
   @override
   String get themePageTitle => '테마를 선택하십시오';

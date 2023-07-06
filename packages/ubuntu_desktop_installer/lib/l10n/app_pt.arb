@@ -10,22 +10,22 @@
   "@revertButtonText": {},
   "welcome": "Bem-vindo",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Experimentar ou instalar o {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Reparar instalação",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "A reparação reinstalará todos os softwares instalados sem alterar documentos ou definições.",
-  "@repairInstallationDescription": {},
-  "tryUbuntu": "Experimentar o {RELEASE}",
-  "@tryUbuntu": {},
-  "tryUbuntuDescription": "Pode experimentar o {RELEASE} sem precisar de fazer qualquer alteração no seu computador.",
-  "@tryUbuntuDescription": {},
-  "installUbuntu": "Instalar o {RELEASE}",
-  "@installUbuntu": {},
-  "installUbuntuDescription": "Instalar o {RELEASE} ao lado do (ou em substituição ao) seu sistema operativo atual. Isto não deve demorar muito.",
-  "@installUbuntuDescription": {},
-  "releaseNotesLabel": "Talvez queira ler as <a href=\"{url}\">notas de lançamento</a>.",
-  "@releaseNotesLabel": {
+  "welcomePageTitle": "Experimentar ou instalar o {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Reparar instalação",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "A reparação reinstalará todos os softwares instalados sem alterar documentos ou definições.",
+  "@welcomeRepairDescription": {},
+  "welcomeTryOption": "Experimentar o {RELEASE}",
+  "@welcomeTryOption": {},
+  "welcomeTryDescription": "Pode experimentar o {RELEASE} sem precisar de fazer qualquer alteração no seu computador.",
+  "@welcomeTryDescription": {},
+  "welcomeInstallOption": "Instalar o {RELEASE}",
+  "@welcomeInstallOption": {},
+  "welcomeInstallDescription": "Instalar o {RELEASE} ao lado do (ou em substituição ao) seu sistema operativo atual. Isto não deve demorar muito.",
+  "@welcomeInstallDescription": {},
+  "welcomeReleaseNotesLabel": "Talvez queira ler as <a href=\"{url}\">notas de lançamento</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -167,8 +167,8 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Particionamento manual",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Instalar",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Instalar",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Dispositivo",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Tipo",
@@ -241,26 +241,22 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "As palavras-passe não coincidem",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "Pronto a instalar",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "disco",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesDescription": "Se continuar, as alterações listadas abaixo serão gravadas nos discos. Será capaz de realizar alterações posteriores manualmente.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "As tabelas de partições dos seguintes dispositivos foram alteradas:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Pronto a instalar",
+  "@confirmPageTitle": {},
+  "confirmHeader": "Se continuar, as alterações listadas abaixo serão gravadas nos discos. Será capaz de realizar alterações posteriores manualmente.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "As tabelas de partições dos seguintes dispositivos foram alteradas:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "As seguintes alterações às partições serão aplicadas:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "As seguintes alterações às partições serão aplicadas:",
+  "@confirmPartitionChanges": {},
   "themePageTitle": "Escolha o seu tema",
   "@themePageTitle": {},
   "themePageHeader": "Pode sempre alterar isso depois nas definições de aparência.",
@@ -337,8 +333,8 @@
   "@identityInvalidHostname": {},
   "bitlockerDescription": "Este computador usa encriptação BitLocker do Windows.\nPrecisa de usar o Windows para libertar espaço ou escolha '{option}' para continuar.",
   "@bitlockerDescription": {},
-  "welcomeHeader": "Escolha o seu idioma:",
-  "@welcomeHeader": {},
+  "localeHeader": "Escolha o seu idioma:",
+  "@localeHeader": {},
   "hiddenWifiNetwork": "Ligar a uma rede Wi-Fi oculta",
   "@hiddenWifiNetwork": {},
   "connectButtonText": "Ligar",
@@ -411,8 +407,8 @@
   "@newPartitionTableConfirmationTitle": {},
   "identityUsernameTooLong": "Esse nome é demasiado comprido.",
   "@identityUsernameTooLong": {},
-  "writeChangesPartitionResized": "partição <b>{sysname}</b> redimensionada de <b>{oldsize}</b> para <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "partição <b>{sysname}</b> redimensionada de <b>{oldsize}</b> para <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -420,8 +416,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionCreated": "partição <b>{sysname}</b> criada",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "partição <b>{sysname}</b> criada",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -465,8 +461,8 @@
       "url": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partição <b>{sysname}</b> formatada como <b>{format}</b> usada para <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "partição <b>{sysname}</b> formatada como <b>{format}</b> usada para <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -474,16 +470,16 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partição <b>{sysname}</b> formatada como <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "partição <b>{sysname}</b> formatada como <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partição <b>{sysname}</b> usada para <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "partição <b>{sysname}</b> usada para <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -579,8 +575,8 @@
   "@identityHostnameTooLong": {},
   "activeDirectoryErrorTitle": "Erro ao configurando a ligação ao Active Directory",
   "@activeDirectoryErrorTitle": {},
-  "preparingUbuntu": "A preparar o {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "A preparar o {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -590,10 +586,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Variante do teclado:",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Dispositivos",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partições",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Dispositivos",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partições",
+  "@confirmPartitionsTitle": {},
   "installationSlidesTitle": "Bem-vindo ao {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",
@@ -685,8 +681,8 @@
       "DISTRO": {}
     }
   },
-  "welcomePageTitle": "Bem-vindo ao {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Bem-vindo ao {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -756,6 +752,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Bem-vindo ao {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

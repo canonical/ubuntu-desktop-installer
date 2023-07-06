@@ -11,15 +11,15 @@
   "@appTitle": {},
   "welcome": "ආයුබෝවන්",
   "@welcome": {},
-  "tryUbuntu": "{RELEASE} අත්හදා බලන්න",
-  "@tryUbuntu": {
+  "welcomeTryOption": "{RELEASE} අත්හදා බලන්න",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "{RELEASE} ස්ථාපනය කරන්න",
-  "@installUbuntu": {
+  "welcomeInstallOption": "{RELEASE} ස්ථාපනය කරන්න",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -41,8 +41,8 @@
   "@diskHeadersType": {},
   "freeDiskSpace": "නිදහස් ඉඩ",
   "@freeDiskSpace": {},
-  "welcomeHeader": "ඔබගේ භාෂාව තෝරන්න:",
-  "@welcomeHeader": {},
+  "localeHeader": "ඔබගේ භාෂාව තෝරන්න:",
+  "@localeHeader": {},
   "wiredDisabled": "රැහැන් සම්බන්ධතාවය අක්‍රියයි",
   "@wiredDisabled": {},
   "noWiredConnection": "රැහැන් සම්බන්ධතාවයක් අනාවරණය නොවිණි",
@@ -66,8 +66,8 @@
   "@installAlongsideSize": {},
   "installAlongsideAvailable": "තිබේ:",
   "@installAlongsideAvailable": {},
-  "startInstallingButtonText": "ස්ථාපනය අරඹන්න",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "ස්ථාපනය අරඹන්න",
+  "@confirmInstallButton": {},
   "diskHeadersSize": "ප්‍රමාණය",
   "@diskHeadersSize": {},
   "diskHeadersSystem": "පද්ධතිය",
@@ -134,10 +134,10 @@
   "@identityInvalidHostname": {},
   "quitButtonText": "ස්ථාපනයෙන් ඉවතට",
   "@quitButtonText": {},
-  "tryOrInstallPageTitle": "බලන්න හෝ ස්ථාපනය කරන්න",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "ස්ථාපනය අලුත්වැඩියාව",
-  "@repairInstallation": {},
+  "welcomePageTitle": "බලන්න හෝ ස්ථාපනය කරන්න",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "ස්ථාපනය අලුත්වැඩියාව",
+  "@welcomeRepairOption": {},
   "rstTitle": "RST අක්‍රිය කරන්න",
   "@rstTitle": {},
   "keyboardTitle": "යතුරුපුවරුවේ පිරිසැලසුම",
@@ -215,10 +215,6 @@
   "@identityUsernameInUse": {},
   "identityPasswordMismatch": "මුරපද නොගැළපේ",
   "@identityPasswordMismatch": {},
-  "writeChangesFallbackSerial": "තැටිය",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "partitionLimitReached": "සීමාවට ළඟා විය",
   "@partitionLimitReached": {},
   "partitionSizeLabel": "ප්‍රමාණය:",
@@ -243,8 +239,8 @@
   "@identityUsernameTooLong": {},
   "identityConfirmPasswordLabel": "මුරපදය තහවුරු කරන්න",
   "@identityConfirmPasswordLabel": {},
-  "writeChangesToDisk": "වෙනස්කම් තැටියට ලියන්න",
-  "@writeChangesToDisk": {},
+  "confirmPageTitle": "වෙනස්කම් තැටියට ලියන්න",
+  "@confirmPageTitle": {},
   "installingSystem": "පද්ධතිය ස්ථාපනය වෙමින්…",
   "@installingSystem": {},
   "configuringSystem": "පද්ධතිය පිහිටුවමින්…",
@@ -302,8 +298,8 @@
   "@identityPasswordShow": {},
   "identityPasswordHide": "සඟවන්න",
   "@identityPasswordHide": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
@@ -326,24 +322,24 @@
   "@installationTypeTitle": {},
   "installationTypeManual": "වෙන යමක්",
   "@installationTypeManual": {},
-  "repairInstallationDescription": "ලේඛන හෝ සැකසුම් ස්පර්ශ නොකර ස්ථාපිත සියළුම මෘදුකාංග යළි ස්ථාපනය අළුත්වැඩියාව මගින් සිදුවේ.",
-  "@repairInstallationDescription": {},
-  "tryUbuntuDescription": "ඔබගේ පරිගණකයට කිසිදු වෙනසක් නොකර {RELEASE} බැලීමට හැකිය.",
-  "@tryUbuntuDescription": {
+  "welcomeRepairDescription": "ලේඛන හෝ සැකසුම් ස්පර්ශ නොකර ස්ථාපිත සියළුම මෘදුකාංග යළි ස්ථාපනය අළුත්වැඩියාව මගින් සිදුවේ.",
+  "@welcomeRepairDescription": {},
+  "welcomeTryDescription": "ඔබගේ පරිගණකයට කිසිදු වෙනසක් නොකර {RELEASE} බැලීමට හැකිය.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "ඔබගේ වත්මන් මෙහෙයුම් පද්ධතිය සමඟ (හෝ ඒ වෙනුවට) {RELEASE} ස්ථාපනය කරන්න. මෙයට එතරම් කාලයක් ගත නොවේ.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "ඔබගේ වත්මන් මෙහෙයුම් පද්ධතිය සමඟ (හෝ ඒ වෙනුවට) {RELEASE} ස්ථාපනය කරන්න. මෙයට එතරම් කාලයක් ගත නොවේ.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "මෙතැනින් <a href=\"{url}\">නිකුතු සටහන්</a> කියවීමට හැකිය.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "මෙතැනින් <a href=\"{url}\">නිකුතු සටහන්</a> කියවීමට හැකිය.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -489,8 +485,8 @@
   "@installAlongsideResizePartition": {},
   "installAlongsidePartition": "පංගුව:",
   "@installAlongsidePartition": {},
-  "writeChangesDescription": "ඔබ ඉදිරියට ගියහොත්, පහත ලැයිස්තුගත වෙනස්කම් තැටියට ලියනු ඇත. ඔබට අතින් තවත් වෙනස්කම් සිදු කිරීමට හැකි වනු ඇත.",
-  "@writeChangesDescription": {},
+  "confirmHeader": "ඔබ ඉදිරියට ගියහොත්, පහත ලැයිස්තුගත වෙනස්කම් තැටියට ලියනු ඇත. ඔබට අතින් තවත් වෙනස්කම් සිදු කිරීමට හැකි වනු ඇත.",
+  "@confirmHeader": {},
   "installationTypeManualInfo": "ඔබටම පංගු සෑදීමට හෝ යළි ප්‍රමාණනයට, හෝ {DISTRO} සඳහා පංගු කිහිපයක් තේරීමට හැකිය",
   "@installationTypeManualInfo": {
     "type": "text",
@@ -508,8 +504,8 @@
   },
   "newPartitionTableConfirmationMessage": "ඔබ පංගුකරණයට සමස්ත උපාංගයක් තෝරාගෙන ඇත. ඔබ එහි නව පංගු වගුවක් සෑදීමට ගියහොත්, පවතින සියළුම පංගු ඉවත් කෙරෙනු ඇත.\n\nඔබට අවශ්‍ය නම් මෙම මෙහෙයුම පසුව අහෝසි කිරීමට හැකිය.",
   "@newPartitionTableConfirmationMessage": {},
-  "writeChangesPartitionFormattedMounted": "#{sysname} පංගුව {mount} සඳහා භාවිතයට {format} ලෙස පවිත්‍රව ඇත",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "#{sysname} පංගුව {mount} සඳහා භාවිතයට {format} ලෙස පවිත්‍රව ඇත",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -517,8 +513,8 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "#{sysname} පංගුව {format} ලෙස පවිත්‍රව ඇත",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "#{sysname} පංගුව {format} ලෙස පවිත්‍රව ඇත",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -542,16 +538,16 @@
   "@newPartitionTableConfirmationTitle": {},
   "partitionCreateTitle": "පංගුව සාදන්න",
   "@partitionCreateTitle": {},
-  "writeChangesPartitionMounted": "#{sysname} පංගුව {mount} සඳහා භාවිතා වේ",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "#{sysname} පංගුව {mount} සඳහා භාවිතා වේ",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "#{sysname} පංගුව සෑදිණි",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "#{sysname} පංගුව සෑදිණි",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -567,12 +563,12 @@
   "@partitionLocationLabel": {},
   "partitionErase": "පංගුව පවිත්‍ර කරන්න",
   "@partitionErase": {},
-  "writeChangesPartitionTablesHeader": "පහත උපාංගවල පංගු වගු වෙනස් වේ:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionsHeader": "පහත පංගු වෙනස්කම් යෙදෙනු ඇත:",
-  "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionResized": "#{sysname} පංගුව {oldsize} සිට {newsize} දක්වා ප්‍රමාණනය කෙරිණි",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionTables": "පහත උපාංගවල පංගු වගු වෙනස් වේ:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionChanges": "පහත පංගු වෙනස්කම් යෙදෙනු ඇත:",
+  "@confirmPartitionChanges": {},
+  "confirmPartitionResize": "#{sysname} පංගුව {oldsize} සිට {newsize} දක්වා ප්‍රමාණනය කෙරිණි",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},

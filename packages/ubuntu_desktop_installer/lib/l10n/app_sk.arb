@@ -31,10 +31,10 @@
   "@partitionLocationBeginning": {},
   "partitionLocationLabel": "Umiestnenie nového oddielu:",
   "@partitionLocationLabel": {},
-  "writeChangesPartitionTablesHeader": "Budú zmenené tabuľky rozdelenia na oddiely nasledujúcich zariadení:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionsHeader": "Budú vykonané nasledujúce zmeny na oddieloch:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionTables": "Budú zmenené tabuľky rozdelenia na oddiely nasledujúcich zariadení:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionChanges": "Budú vykonané nasledujúce zmeny na oddieloch:",
+  "@confirmPartitionChanges": {},
   "bitlockerDescription": "Na tomto počítači je používané šifrovanie nástrojom Windows BitLocker.\nAby bolo možné pokračovať, je potrebné pomocou Windows urobiť voľné miesto alebo zvoliť '{option}'.",
   "@bitlockerDescription": {
     "type": "text",
@@ -137,8 +137,8 @@
   "@activeDirectoryPasswordLabel": {},
   "activeDirectoryPasswordEmpty": "Vyžadované",
   "@activeDirectoryPasswordEmpty": {},
-  "welcomeHeader": "Vyberte si svoj jazyk:",
-  "@welcomeHeader": {},
+  "localeHeader": "Vyberte si svoj jazyk:",
+  "@localeHeader": {},
   "wiredMustBeEnabled": "Aby na tomto počítači bolo možné použiť rozhranie Ethernet, je potrebné zapnúť káblové pripojenie",
   "@wiredMustBeEnabled": {},
   "enableWired": "Zapnúť káblové",
@@ -275,8 +275,8 @@
   "@installAlongsidePartition": {},
   "installAlongsideSize": "Veľkosť:",
   "@installAlongsideSize": {},
-  "startInstallingButtonText": "Inštalácia",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Inštalácia",
+  "@confirmInstallButton": {},
   "diskHeadersType": "Typ",
   "@diskHeadersType": {},
   "diskHeadersSize": "Veľkosť",
@@ -307,8 +307,8 @@
   "@identityUsernameLabel": {},
   "identityPasswordHide": "Skryť",
   "@identityPasswordHide": {},
-  "writeChangesDescription": "Ak budete pokračovať, nižšie uvedené zmeny budú zapísané na disky. Ďalšie zmeny potom môžete urobiť ručne.",
-  "@writeChangesDescription": {},
+  "confirmHeader": "Ak budete pokračovať, nižšie uvedené zmeny budú zapísané na disky. Ďalšie zmeny potom môžete urobiť ručne.",
+  "@confirmHeader": {},
   "themeDark": "Tmavý",
   "@themeDark": {},
   "installationCompleteTitle": "Inštalácia dokončená",
@@ -360,10 +360,6 @@
   "@configureSecureBootOption": {},
   "chooseSecurityKey": "Vyberte si bezpečnostný kľúč",
   "@chooseSecurityKey": {},
-  "writeChangesFallbackSerial": "disk",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "identityPasswordShow": "Zobraziť",
   "@identityPasswordShow": {},
   "copyingFiles": "Kopírovanie súborov…",
@@ -454,31 +450,31 @@
   "@identityUsernameTooLong": {},
   "quitButtonText": "Opustiť inštaláciu",
   "@quitButtonText": {},
-  "tryOrInstallPageTitle": "Vyskúšať alebo nainštalovať {DISTRO}",
-  "@tryOrInstallPageTitle": {
+  "welcomePageTitle": "Vyskúšať alebo nainštalovať {DISTRO}",
+  "@welcomePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "repairInstallation": "Opraviť inštaláciu",
-  "@repairInstallation": {},
-  "tryUbuntu": "Vyskúšať {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeRepairOption": "Opraviť inštaláciu",
+  "@welcomeRepairOption": {},
+  "welcomeTryOption": "Vyskúšať {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "Môžete vyskúšať {RELEASE} bez vykonania zmien vo vašom počítači.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "Môžete vyskúšať {RELEASE} bez vykonania zmien vo vašom počítači.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Nainštalovať {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Nainštalovať {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -488,22 +484,22 @@
   "@rstTitle": {},
   "rstDescription": "Na tomto počítači je zapnutá technológia Intel RST (Rapid Storage Technology). Aby bolo možné Ubuntu nainštalovať, je potrebné vo Windows funkciu RST vypnúť.",
   "@rstDescription": {},
-  "installUbuntuDescription": "Nainštalujte {RELEASE} spoločne z (alebo namiesto) vášho operačného systému. Nemalo by to trvať dlho.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Nainštalujte {RELEASE} spoločne z (alebo namiesto) vášho operačného systému. Nemalo by to trvať dlho.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "Mohli by ste mať záujem o prečítanie si <a href=\"{url}\">poznámok k vydaniu</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "Mohli by ste mať záujem o prečítanie si <a href=\"{url}\">poznámok k vydaniu</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "repairInstallationDescription": "Opravou preinštalujete všetok nainštalovaný softvér bez toho, aby sa to dotklo dokumentov alebo nastavení.",
-  "@repairInstallationDescription": {},
+  "welcomeRepairDescription": "Opravou preinštalujete všetok nainštalovaný softvér bez toho, aby sa to dotklo dokumentov alebo nastavení.",
+  "@welcomeRepairDescription": {},
   "dontInstallDriverSoftwareNow": "Zatiaľ neinštalujte softvér ovládača",
   "@dontInstallDriverSoftwareNow": {},
   "keyboardPressKeyLabel": "Stlačte niektorú z nasledujúcich kláves:",
@@ -520,8 +516,8 @@
   "@noInternet": {},
   "selectGuidedStorageInstallNow": "Nainštalovať teraz",
   "@selectGuidedStorageInstallNow": {},
-  "writeChangesPartitionFormattedMounted": "oddiel <b>{sysname}</b> naformátovaný ako <b>{format}</b> použitý pre <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "oddiel <b>{sysname}</b> naformátovaný ako <b>{format}</b> použitý pre <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -529,8 +525,8 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "veľkosť oddielu <b>{sysname}</b> zmenené z <b>{oldsize}</b> na <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "veľkosť oddielu <b>{sysname}</b> zmenené z <b>{oldsize}</b> na <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -538,16 +534,16 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionMounted": "oddiel <b>{sysname}</b> použitý pre <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "oddiel <b>{sysname}</b> použitý pre <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "oddiel <b>{sysname}</b> naformátovaný ako <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "oddiel <b>{sysname}</b> naformátovaný ako <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -695,10 +691,10 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Do každej z kolónok pre heslo ste napísali niečo iné",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "Pripravené na inštaláciu",
-  "@writeChangesToDisk": {},
-  "preparingUbuntu": "Pripravuje sa {DISTRO}…",
-  "@preparingUbuntu": {
+  "confirmPageTitle": "Pripravené na inštaláciu",
+  "@confirmPageTitle": {},
+  "loadingHeader": "Pripravuje sa {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -744,20 +740,20 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Je nám ľúto, v tejto chvíli sa nedarí nastaviť službu Active Directory. Po spustení systému navštívte stránku <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kde získate ďalšie informácie.",
   "@activeDirectoryErrorMessage": {},
-  "writeChangesDevicesTitle": "Zariadenia",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Oddiely",
-  "@writeChangesPartitionsTitle": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmDevicesTitle": "Zariadenia",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Oddiely",
+  "@confirmPartitionsTitle": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionCreated": "oddiel <b>{sysname}</b> vytvorený",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "oddiel <b>{sysname}</b> vytvorený",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -793,8 +789,8 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Použité ako:",
   "@partitionFormatLabel": {},
-  "welcomePageTitle": "Vitajte v {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Vitajte v {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -809,6 +805,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Vitajte v {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

@@ -21,18 +21,18 @@
   "@identityAutoLogin": {},
   "identityRequirePassword": "Vaadi salasana sisäänkirjautumiseen",
   "@identityRequirePassword": {},
-  "repairInstallationDescription": "Korjaus asentaa kaikki ohjelmat uudelleen, asiakirjat ja asetukset säilytetään.",
-  "@repairInstallationDescription": {},
+  "welcomeRepairDescription": "Korjaus asentaa kaikki ohjelmat uudelleen, asiakirjat ja asetukset säilytetään.",
+  "@welcomeRepairDescription": {},
   "configureSecureBootTitle": "Määritä Secure Boot",
   "@configureSecureBootTitle": {},
-  "tryOrInstallPageTitle": "Kokeile tai asenna {DISTRO}a",
-  "@tryOrInstallPageTitle": {},
-  "tryUbuntu": "Kokeile {RELEASE}a",
-  "@tryUbuntu": {},
+  "welcomePageTitle": "Kokeile tai asenna {DISTRO}a",
+  "@welcomePageTitle": {},
+  "welcomeTryOption": "Kokeile {RELEASE}a",
+  "@welcomeTryOption": {},
   "keyboardTitle": "Näppäimistön asettelu",
   "@keyboardTitle": {},
-  "installUbuntu": "Asenna {RELEASE}",
-  "@installUbuntu": {},
+  "welcomeInstallOption": "Asenna {RELEASE}",
+  "@welcomeInstallOption": {},
   "configureSecureBootDescription": "Valitsit kolmansien osapuolten ajurien asennuksen. Tämä vaatii että Secure Boot tulee määrittää.\nTämä vaatii, että valitset turva-avaimen nyt ja kirjoitat sen järjestelmän käynnistyessä uudelleen.",
   "@configureSecureBootDescription": {},
   "configureSecureBootOption": "Määritä Secure Boot",
@@ -170,24 +170,20 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Salasanat eivät täsmää",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "Valmis asennukseen",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "levy",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesPartitionTablesHeader": "Seuraavien laitteiden osiotauluja on muutettu:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Valmis asennukseen",
+  "@confirmPageTitle": {},
+  "confirmPartitionTables": "Seuraavien laitteiden osiotauluja on muutettu:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Seuraavat osiomuutokset toteutetaan:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "Seuraavat osiomuutokset toteutetaan:",
+  "@confirmPartitionChanges": {},
   "installationCompleteTitle": "Asennus on valmis",
   "@installationCompleteTitle": {},
   "readyToUse": "**{system}** on asennettu ja on valmis käytettäväksi.",
@@ -214,14 +210,14 @@
   "@bitlockerDescription": {},
   "restartButtonText": "Käynnistä uudelleen",
   "@restartButtonText": {},
-  "repairInstallation": "Korjaa asennus",
-  "@repairInstallation": {},
+  "welcomeRepairOption": "Korjaa asennus",
+  "@welcomeRepairOption": {},
   "keyboardHeader": "Valitse näppäimistön asettelu:",
   "@keyboardHeader": {},
   "rstTitle": "RST on käytössä",
   "@rstTitle": {},
-  "releaseNotesLabel": "Voit halutessasi lukea <a href=\"{url}\">julkaisumuistion</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "Voit halutessasi lukea <a href=\"{url}\">julkaisumuistion</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -233,10 +229,10 @@
   "@keyboardTestHint": {},
   "changeButtonText": "Muuta",
   "@changeButtonText": {},
-  "tryUbuntuDescription": "Voit kokeilla {RELEASE}a tekemättä muutoksia tietokoneellesi.",
-  "@tryUbuntuDescription": {},
-  "installUbuntuDescription": "Asenna {RELEASE} nykyisen käyttöjärjestelmäsi rinnalle tai tilalle. Asentaminen ei kestä kauan.",
-  "@installUbuntuDescription": {},
+  "welcomeTryDescription": "Voit kokeilla {RELEASE}a tekemättä muutoksia tietokoneellesi.",
+  "@welcomeTryDescription": {},
+  "welcomeInstallDescription": "Asenna {RELEASE} nykyisen käyttöjärjestelmäsi rinnalle tai tilalle. Asentaminen ei kestä kauan.",
+  "@welcomeInstallDescription": {},
   "rstDescription": "Tämä tietokone käyttää Intel RST:tä (Rapid Storage Technology). Sinun tulee sammuttaa RST, ennen kuin asennat Ubuntun.",
   "@rstDescription": {},
   "rstInstructions": "Lue ohjeet skannaamalla QR-koodi tai käy toisella laitteella: <a href=\"https://{url}\">{url}</a>",
@@ -300,8 +296,8 @@
   "@identityRealNameRequired": {},
   "identityHostnameLabel": "Tietokoneen nimi",
   "@identityHostnameLabel": {},
-  "writeChangesDescription": "Jos jatkat, alla luetellut muutokset kirjoitetaan levyille. Muussa tapauksessa voit tehdä itse lisää muutoksia.",
-  "@writeChangesDescription": {},
+  "confirmHeader": "Jos jatkat, alla luetellut muutokset kirjoitetaan levyille. Muussa tapauksessa voit tehdä itse lisää muutoksia.",
+  "@confirmHeader": {},
   "bitlockerInstructions": "Lue ohjeet skannaamalla QR-koodi tai käy jollain toisella laitteella: <a href=\"https://{url}\">{url}</a>",
   "@bitlockerInstructions": {
     "type": "text",
@@ -317,8 +313,8 @@
   "@partitionFormatLabel": {},
   "chooseSecurityKeyHeader": "Kiintolevyn salaus suojaa tiedostoja jos tietokone katoaa tai se varastetaan. Suojaus edellyttää salausavaimen syöttämistä jokaisella tietokoneen käynnistyskerralla.\n\n{RELEASE}-asennuksen ulkopuolisia tiedostoja ei salata.",
   "@chooseSecurityKeyHeader": {},
-  "startInstallingButtonText": "Asenna",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Asenna",
+  "@confirmInstallButton": {},
   "themePageTitle": "Valitse teema",
   "@themePageTitle": {},
   "themePageHeader": "Voit vaihtaa ulkoasua milloin tahansa asetusten kautta.",
@@ -372,8 +368,8 @@
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameLabel": "Verkon nimi",
   "@hiddenWifiNetworkNameLabel": {},
-  "welcomeHeader": "Valitse kieli:",
-  "@welcomeHeader": {},
+  "localeHeader": "Valitse kieli:",
+  "@localeHeader": {},
   "installationTypeDualOSDetected": "Tässä tietokoneessa on jo käyttöjärjestelmät {os1} ja {os2}. Mitä haluat tehdä?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -480,8 +476,8 @@
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "Raja saavutettu",
   "@partitionLimitReached": {},
-  "writeChangesPartitionResized": "osion <b>{sysname}</b> koko <b>{oldsize}</b> muutettu kokoon <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "osion <b>{sysname}</b> koko <b>{oldsize}</b> muutettu kokoon <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -489,8 +485,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "osio <b>{sysname}</b> alustettu muotoon <b>{format}</b> käytettäväksi liitospisteenä <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "osio <b>{sysname}</b> alustettu muotoon <b>{format}</b> käytettäväksi liitospisteenä <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -498,24 +494,24 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "osio <b>{sysname}</b> alustettu muotoon <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "osio <b>{sysname}</b> alustettu muotoon <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "osio <b>{sysname}</b> käytettäväksi liitospisteenä <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "osio <b>{sysname}</b> käytettäväksi liitospisteenä <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "osio <b>{sysname}</b> luotu",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "osio <b>{sysname}</b> luotu",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -658,8 +654,8 @@
   },
   "installationSlidesProductivityTitle": "Kiihdytä tuottavuuttasi",
   "@installationSlidesProductivityTitle": {},
-  "preparingUbuntu": "Valmistellaan {DISTRO}a…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Valmistellaan {DISTRO}a…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -671,10 +667,10 @@
   "@keyboardVariantLabel": {},
   "identityRealNameTooLong": "Nimi on liian pitkä.",
   "@identityRealNameTooLong": {},
-  "writeChangesDevicesTitle": "Laitteet",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Osiot",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Laitteet",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Osiot",
+  "@confirmPartitionsTitle": {},
   "activeDirectoryOption": "Käytä Active Directorya",
   "@activeDirectoryOption": {},
   "activeDirectoryInfo": "Kirjoitat domainin ja muut tiedot seuraavassa vaiheessa.",
@@ -730,8 +726,8 @@
   "@installationSlidesSupportUbuntuPro": {},
   "notEnoughDiskSpaceAvailable": "Saatavilla:",
   "@notEnoughDiskSpaceAvailable": {},
-  "welcomePageTitle": "Tervetuloa, tämä on {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Tervetuloa, tämä on {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -740,5 +736,12 @@
   "allocateDiskSpaceInvalidMountPointSlash": "Liitospisteiden tulee alkaa merkillä \"/\"",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Liitospisteet eivät voi sisältää välilyöntejä",
-  "@allocateDiskSpaceInvalidMountPointSpace": {}
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "loadingPageTitle": "Tervetuloa, tämä on {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

@@ -64,7 +64,7 @@ Future<void> main() async {
 
     await testWelcomePage(
       tester,
-      option: Option.installUbuntu,
+      option: Option.welcomeInstallOption,
       screenshot: '$currentThemeName/2.welcome',
     );
     await tester.pumpAndSettle();

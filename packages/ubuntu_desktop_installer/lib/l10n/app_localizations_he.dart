@@ -25,51 +25,56 @@ class AppLocalizationsHe extends AppLocalizations {
   String get quitButtonText => 'יציאה מההתקנה';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'ברוך בואך אל $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return '$DISTRO בהכנות…';
   }
 
   @override
-  String get welcomeHeader => 'נא לבחור שפה:';
+  String localePageTitle(Object DISTRO) {
+    return 'ברוך בואך אל $DISTRO';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => 'נא לבחור שפה:';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return 'להתנסות או להתקין את $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'תיקון התקנה';
+  String get welcomeRepairOption => 'תיקון התקנה';
 
   @override
-  String get repairInstallationDescription => 'תיקון יתקין את כל התכניות המותקנות מחדש מבלי לגעת במסמכים או בהגדרות.';
+  String get welcomeRepairDescription => 'תיקון יתקין את כל התכניות המותקנות מחדש מבלי לגעת במסמכים או בהגדרות.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'להתנסות ב־$RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'אפשר להתנסות ב־$RELEASE מבלי לערוך שינויים במחשב שלך.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'להתקין את $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'התקנת $RELEASE לצד (או במקום) מערכת ההפעלה הנוכחית שלך. אמור להיות תהליך קצר.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'ממליצים לך לקרוא את <a href=\"$url\">הערות ההוצאה לאור</a>.';
   }
 
@@ -421,9 +426,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'נקודות עיגון לא יכולות להכיל רווחים';
 
   @override
-  String get startInstallingButtonText => 'התקנה';
-
-  @override
   String get diskHeadersDevice => 'התקן';
 
   @override
@@ -582,55 +584,55 @@ class AppLocalizationsHe extends AppLocalizations {
   String get identityPasswordHide => 'הסתרה';
 
   @override
-  String get writeChangesToDisk => 'סיימנו להתכונן להתקנה';
+  String get confirmPageTitle => 'סיימנו להתכונן להתקנה';
 
   @override
-  String get writeChangesFallbackSerial => 'כונן';
+  String get confirmHeader => 'בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.';
 
   @override
-  String get writeChangesDescription => 'בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.';
+  String get confirmDevicesTitle => 'התקנים';
 
   @override
-  String get writeChangesDevicesTitle => 'התקנים';
+  String get confirmPartitionsTitle => 'מחיצות';
 
   @override
-  String get writeChangesPartitionsTitle => 'מחיצות';
+  String get confirmPartitionTables => 'טבלאות המחיצות של ההתקנים הבאים נערכו:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'טבלאות המחיצות של ההתקנים הבאים נערכו:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'השינויים הבאים יחולו על המחיצות:';
+  String get confirmPartitionChanges => 'השינויים הבאים יחולו על המחיצות:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'הגודל של מחיצה <b>$sysname</b> ישתנה מ־<b>$oldsize</b> ל־<b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'מחיצה <b>$sysname</b> פורמטה כ־<b>$format</b> ומשמשת עבור <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'מחיצה <b>$sysname</b> פורמטה בתור <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'מחיצה <b>$sysname</b> תשמש עבור <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'המחיצה <b>$sysname</b> נוצרה';
   }
+
+  @override
+  String get confirmInstallButton => 'התקנה';
 
   @override
   String get themePageTitle => 'נא לבחור את ערכת העיצוב שלך';

@@ -25,51 +25,56 @@ class AppLocalizationsTr extends AppLocalizations {
   String get quitButtonText => 'Kurulumdan Çık';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return '$DISTRO dağıtımına hoş geldiniz';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return '$DISTRO hazırlanıyor…';
   }
 
   @override
-  String get welcomeHeader => 'Dil seçin:';
+  String localePageTitle(Object DISTRO) {
+    return '$DISTRO dağıtımına hoş geldiniz';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => 'Dil seçin:';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return '$DISTRO\'yu dene veya kur';
   }
 
   @override
-  String get repairInstallation => 'Kurulumu tamir et';
+  String get welcomeRepairOption => 'Kurulumu tamir et';
 
   @override
-  String get repairInstallationDescription => 'Tamir etme seçeneği, tüm yazılımlarınızı tekrardan kuracak ve belgeleriniz ile ayarlarınıza dokunmayacaktır.';
+  String get welcomeRepairDescription => 'Tamir etme seçeneği, tüm yazılımlarınızı tekrardan kuracak ve belgeleriniz ile ayarlarınıza dokunmayacaktır.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return '$RELEASE Dene';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Bilgisayarınızda hiç bir değişiklik yapmadan $RELEASE deneyebilirsiniz.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return '$RELEASE Kur';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Mevcut işletim sisteminizin yanına (ya da yerine) $RELEASE kur. Çok uzun sürmeyecektir.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return '<a href=\"$url\">Sürüm notlarını</a> okumak isteyebilirsiniz.';
   }
 
@@ -421,9 +426,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Bağlama noktaları boşluk içeremez';
 
   @override
-  String get startInstallingButtonText => 'Kur';
-
-  @override
   String get diskHeadersDevice => 'Cihaz';
 
   @override
@@ -582,55 +584,55 @@ class AppLocalizationsTr extends AppLocalizations {
   String get identityPasswordHide => 'Gizle';
 
   @override
-  String get writeChangesToDisk => 'Kuruluma hazır';
+  String get confirmPageTitle => 'Kuruluma hazır';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get confirmHeader => 'Devam ederseniz, aşağıda listelenen değişiklikler disklere yazılacak. Daha fazla değişikliği elle yapabileceksiniz.';
 
   @override
-  String get writeChangesDescription => 'Devam ederseniz, aşağıda listelenen değişiklikler disklere yazılacak. Daha fazla değişikliği elle yapabileceksiniz.';
+  String get confirmDevicesTitle => 'Aygıtlar';
 
   @override
-  String get writeChangesDevicesTitle => 'Aygıtlar';
+  String get confirmPartitionsTitle => 'Disk bölümleri';
 
   @override
-  String get writeChangesPartitionsTitle => 'Disk bölümleri';
+  String get confirmPartitionTables => 'Aşağıdaki cihazların bölüm tabloları değiştirildi:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Aşağıdaki cihazların bölüm tabloları değiştirildi:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Aşağıdaki bölüm değişiklikleri uygulanacak:';
+  String get confirmPartitionChanges => 'Aşağıdaki bölüm değişiklikleri uygulanacak:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return '<b>$sysname</b> bölümü <b>$oldsize</b> boyutundan <b>$newsize</b> boyutuna yeniden boyutlandırıldı';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return '<b>$format </b> biçimindeki <b>$sysname</b> bölümü <b>$mount</b> için kullanıldı';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return '<b>$sysname</b> bölümü <b>$format</b> olarak biçimlendirildi';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return '<b>$sysname</b> bölümü <b>$mount</b> için kullanıldı';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return '<b>$sysname</b> bölümü oluşturuldu';
   }
+
+  @override
+  String get confirmInstallButton => 'Kur';
 
   @override
   String get themePageTitle => 'Temanızı seçin';

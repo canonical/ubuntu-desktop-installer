@@ -251,8 +251,8 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Manuell partitionering",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Installera",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Installera",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Enhet",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Typ",
@@ -287,24 +287,20 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Lösenorden stämmer inte överens",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "Redo att installera",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "disk",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesDescription": "Om du fortsätter kommer ändringarna nedan att skrivas till diskarna. Du kommer att kunna göra ytterligare ändringar manuellt.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Redo att installera",
+  "@confirmPageTitle": {},
+  "confirmHeader": "Om du fortsätter kommer ändringarna nedan att skrivas till diskarna. Du kommer att kunna göra ytterligare ändringar manuellt.",
+  "@confirmHeader": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Följande partitionsändringar kommer att tillämpas:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "Följande partitionsändringar kommer att tillämpas:",
+  "@confirmPartitionChanges": {},
   "themePageTitle": "Välj ditt tema",
   "@themePageTitle": {},
   "themePageHeader": "Du kan alltid ändra detta senare i utseendeinställningarna.",
@@ -325,8 +321,8 @@
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Installera {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Installera {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -373,14 +369,14 @@
   "@appTitle": {},
   "revertButtonText": "Återställ",
   "@revertButtonText": {},
-  "tryOrInstallPageTitle": "Prova eller installera {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Reparera installation",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "Reparation kommer att installera om all installerad programvara utan att röra dokument eller inställningar.",
-  "@repairInstallationDescription": {},
-  "tryUbuntu": "Prova {RELEASE}",
-  "@tryUbuntu": {
+  "welcomePageTitle": "Prova eller installera {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Reparera installation",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "Reparation kommer att installera om all installerad programvara utan att röra dokument eller inställningar.",
+  "@welcomeRepairDescription": {},
+  "welcomeTryOption": "Prova {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -398,22 +394,22 @@
   "@diskHeadersUsed": {},
   "restartIntoWindows": "Starta om till Windows",
   "@restartIntoWindows": {},
-  "tryUbuntuDescription": "Du kan prova {RELEASE} utan att göra några ändringar till din dator.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "Du kan prova {RELEASE} utan att göra några ändringar till din dator.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Installera {RELEASE} bredvid (eller istället för) ditt nuvarande operativsystem. Det här ska inte ta för lång tid.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Installera {RELEASE} bredvid (eller istället för) ditt nuvarande operativsystem. Det här ska inte ta för lång tid.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "welcomeHeader": "Välj ditt språk:",
-  "@welcomeHeader": {},
+  "localeHeader": "Välj ditt språk:",
+  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nätverksnamn",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Ett nätverksnamn krävs",
@@ -430,8 +426,8 @@
       "os2": {}
     }
   },
-  "releaseNotesLabel": "Du kanske vill läsa <a href=\"{url}\">kommentarer till utgåvan</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "Du kanske vill läsa <a href=\"{url}\">kommentarer till utgåvan</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -449,8 +445,8 @@
   "@identityUsernameInvalidChars": {},
   "installationFailed": "Installationen misslyckades",
   "@installationFailed": {},
-  "writeChangesPartitionTablesHeader": "Följande enheters partitionstabeller är ändrade:",
-  "@writeChangesPartitionTablesHeader": {},
+  "confirmPartitionTables": "Följande enheters partitionstabeller är ändrade:",
+  "@confirmPartitionTables": {},
   "installAlongsideFiles": "Filer",
   "@installAlongsideFiles": {},
   "installAlongsideAllocateSpace": "Tilldela utrymme",
@@ -494,24 +490,24 @@
   "@installAlongsidePartition": {},
   "installAlongsideSize": "Storlek:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionFormatted": "partition <b>{sysname}</b> formaterad som <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "partition <b>{sysname}</b> formaterad som <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partition <b>{sysname}</b> används för <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "partition <b>{sysname}</b> används för <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partition <b>{sysname}</b> skapad",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "partition <b>{sysname}</b> skapad",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -521,8 +517,8 @@
   "@notEnoughDiskSpaceTitle": {},
   "quitButtonText": "Avbryt installation",
   "@quitButtonText": {},
-  "writeChangesPartitionFormattedMounted": "partition <b>{sysname}</b> formaterad som <b>{format}</b> används för <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "partition <b>{sysname}</b> formaterad som <b>{format}</b> används för <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -530,8 +526,8 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "partition <b>{sysname}</b> storleksändrad från <b>{oldsize}</b> till <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "partition <b>{sysname}</b> storleksändrad från <b>{oldsize}</b> till <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -626,8 +622,8 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Tyvärr, Active Directory kan inte ställas in just nu. när ditt system är igång, besök <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> för hjälp.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "Förbereder {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Förbereder {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -637,10 +633,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Tangentbordsvariant:",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Enheter",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partitioner",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Enheter",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partitioner",
+  "@confirmPartitionsTitle": {},
   "installationSlidesTitle": "Välkommen till {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",
@@ -727,8 +723,8 @@
   },
   "notEnoughDiskSpaceAvailable": "Tillgängligt:",
   "@notEnoughDiskSpaceAvailable": {},
-  "welcomePageTitle": "Välkommen till {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Välkommen till {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -801,6 +797,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Välkommen till {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

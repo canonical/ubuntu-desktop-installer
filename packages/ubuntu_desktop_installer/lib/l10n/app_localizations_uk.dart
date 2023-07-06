@@ -25,51 +25,56 @@ class AppLocalizationsUk extends AppLocalizations {
   String get quitButtonText => 'Скасувати встановлення';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Welcome to $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Preparing $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Оберіть мову:';
+  String localePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => 'Оберіть мову:';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return 'Спробувати або встановити';
   }
 
   @override
-  String get repairInstallation => 'Виправити встановлення';
+  String get welcomeRepairOption => 'Виправити встановлення';
 
   @override
-  String get repairInstallationDescription => 'Під час виправлення буде перевстановлено все програмне забезпечення, не торкаючись документів чи налаштувань.';
+  String get welcomeRepairDescription => 'Під час виправлення буде перевстановлено все програмне забезпечення, не торкаючись документів чи налаштувань.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Спробувати $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Ви можете спробувати $RELEASE, не роблячи ніяких змін на вашому комп\'ютері.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Встановити $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Встановити $RELEASE поряд (або замість) вашої поточної операційної системи. Це не повинно зайняти занадто багато часу.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Можливо, ви захочете прочитати <a href=\"$url\">примітки до випуску</a>.';
   }
 
@@ -421,9 +426,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
 
   @override
-  String get startInstallingButtonText => 'Почати встановлення';
-
-  @override
   String get diskHeadersDevice => 'Пристрій';
 
   @override
@@ -582,55 +584,55 @@ class AppLocalizationsUk extends AppLocalizations {
   String get identityPasswordHide => 'Hide';
 
   @override
-  String get writeChangesToDisk => 'Записати зміни на диск';
+  String get confirmPageTitle => 'Записати зміни на диск';
 
   @override
-  String get writeChangesFallbackSerial => 'диск';
+  String get confirmHeader => 'Якщо ви продовжите, перелічені нижче зміни будуть записані на диски. Ви зможете внести подальші зміни вручну.';
 
   @override
-  String get writeChangesDescription => 'Якщо ви продовжите, перелічені нижче зміни будуть записані на диски. Ви зможете внести подальші зміни вручну.';
+  String get confirmDevicesTitle => 'Devices';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get confirmPartitionsTitle => 'Partitions';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get confirmPartitionTables => 'Змінено таблиці розділів наступних пристроїв:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Змінено таблиці розділів наступних пристроїв:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Будуть застосовані наступні зміни розділів:';
+  String get confirmPartitionChanges => 'Будуть застосовані наступні зміни розділів:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'розмір розділу #$sysname змінено з $oldsize на $newsize';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'розділ #$sysname, відформатований як $format, використано для $mount';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'розділ #$sysname відформатовано як $format';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'розділ #$sysname використано для $mount';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'створено розділ #$sysname';
   }
+
+  @override
+  String get confirmInstallButton => 'Почати встановлення';
 
   @override
   String get themePageTitle => 'Оберіть зовнішній вигляд';

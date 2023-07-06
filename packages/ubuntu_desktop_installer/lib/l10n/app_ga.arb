@@ -11,22 +11,22 @@
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Suiteáil {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Suiteáil {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "B'fhéidir gur mhaith leat na <a href=\"{url}\">nótaí eisithe a léamh</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "B'fhéidir gur mhaith leat na <a href=\"{url}\">nótaí eisithe a léamh</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
     }
   },
-  "tryUbuntu": "Bain triail as {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "Bain triail as {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

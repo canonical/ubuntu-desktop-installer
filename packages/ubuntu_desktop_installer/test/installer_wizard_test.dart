@@ -62,7 +62,7 @@ void main() {
   testWidgets('try ubuntu', (tester) async {
     final loadingModel = buildLoadingModel(delay: const Duration(seconds: 1));
     final localeModel = buildLocaleModel();
-    final welcomeModel = buildWelcomeModel(option: Option.tryUbuntu);
+    final welcomeModel = buildWelcomeModel(option: Option.welcomeTryOption);
 
     registerMockService<TelemetryService>(MockTelemetryService());
 
@@ -99,7 +99,7 @@ void main() {
   testWidgets('guided reformat', (tester) async {
     final loadingModel = buildLoadingModel();
     final localeModel = buildLocaleModel();
-    final welcomeModel = buildWelcomeModel(option: Option.installUbuntu);
+    final welcomeModel = buildWelcomeModel(option: Option.welcomeInstallOption);
     final rstModel = buildRstModel();
     final keyboardModel = buildKeyboardModel();
     final networkModel = buildNetworkModel();
@@ -193,7 +193,7 @@ void main() {
     verify(securityKeyModel.init()).called(1); // skipped
     verify(confirmModel.init()).called(1);
 
-    await tester.tapButton(tester.lang.startInstallingButtonText);
+    await tester.tapButton(tester.lang.confirmInstallButton);
     await tester.pumpAndSettle();
     expect(find.byType(TimezonePage), findsOneWidget);
     verify(timezoneModel.init()).called(1);
@@ -362,7 +362,7 @@ void main() {
     expect(find.byType(ConfirmPage), findsOneWidget);
     verify(confirmModel.init()).called(1);
 
-    await tester.tapButton(tester.lang.startInstallingButtonText);
+    await tester.tapButton(tester.lang.confirmInstallButton);
     await tester.pumpAndSettle();
     expect(find.byType(IdentityPage), findsOneWidget);
     verify(identityModel.init()).called(1);

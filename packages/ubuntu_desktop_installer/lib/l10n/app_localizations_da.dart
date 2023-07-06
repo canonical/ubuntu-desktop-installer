@@ -25,51 +25,56 @@ class AppLocalizationsDa extends AppLocalizations {
   String get quitButtonText => 'Forlad installation';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Velkommen til $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Forbereder $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Vælg dit sprog:';
+  String localePageTitle(Object DISTRO) {
+    return 'Velkommen til $DISTRO';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => 'Vælg dit sprog:';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return 'Prøv eller installér $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Reparér installation';
+  String get welcomeRepairOption => 'Reparér installation';
 
   @override
-  String get repairInstallationDescription => 'Reparation vil geninstallere al installeret programvare, uden at røre dokumenter eller indstillinger.';
+  String get welcomeRepairDescription => 'Reparation vil geninstallere al installeret programvare, uden at røre dokumenter eller indstillinger.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Prøv $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Du kan prøve $RELEASE, uden at foretage nogen ændringer, på din computer.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Installér $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Installér $RELEASE, ved siden af (eller i stedet for) dit nuværende operativsystem. Dette burde ikke tage lang tid.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Du kunne nok ønske at læse <a href=\"$url\">udgivelsesnoter</a>.';
   }
 
@@ -421,9 +426,6 @@ class AppLocalizationsDa extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Monteringspunkter må ikke indeholde mellemrum';
 
   @override
-  String get startInstallingButtonText => 'Installér';
-
-  @override
   String get diskHeadersDevice => 'Enhed';
 
   @override
@@ -582,55 +584,55 @@ class AppLocalizationsDa extends AppLocalizations {
   String get identityPasswordHide => 'Skjul';
 
   @override
-  String get writeChangesToDisk => 'Klar til at installere';
+  String get confirmPageTitle => 'Klar til at installere';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get confirmHeader => 'Hvis du fortsætter, vil ændringerne på listen nedenfor blive skrevet til disken(e). Du vil kunne foretage yderligere ændringer manuelt.';
 
   @override
-  String get writeChangesDescription => 'Hvis du fortsætter, vil ændringerne på listen nedenfor blive skrevet til disken(e). Du vil kunne foretage yderligere ændringer manuelt.';
+  String get confirmDevicesTitle => 'Enheder';
 
   @override
-  String get writeChangesDevicesTitle => 'Enheder';
+  String get confirmPartitionsTitle => 'Partitioner';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitioner';
+  String get confirmPartitionTables => 'Partitionstabellen på de følgende enheder er ændret:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Partitionstabellen på de følgende enheder er ændret:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'De følgende partitionsændringer vil træde i kraft:';
+  String get confirmPartitionChanges => 'De følgende partitionsændringer vil træde i kraft:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'partition <b>$sysname</b> ændres fra <b>$oldsize</b> til <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'partition <b>$sysname</b> formateret som <b>$format</b> brugt til <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'partition <b>$sysname</b> formateret som <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'partition <b>$sysname</b> brugt til <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'partition <b>$sysname</b> oprettet';
   }
+
+  @override
+  String get confirmInstallButton => 'Installér';
 
   @override
   String get themePageTitle => 'Vælg til tema';

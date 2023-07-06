@@ -1,11 +1,11 @@
 {
   "@@locale": "sr",
-  "tryOrInstallPageTitle": "Испробајте или инсталирајте",
-  "@tryOrInstallPageTitle": {},
-  "welcomeHeader": "Изаберите ваш језик:",
-  "@welcomeHeader": {},
-  "repairInstallation": "Поправи инсталацију",
-  "@repairInstallation": {},
+  "welcomePageTitle": "Испробајте или инсталирајте",
+  "@welcomePageTitle": {},
+  "localeHeader": "Изаберите ваш језик:",
+  "@localeHeader": {},
+  "welcomeRepairOption": "Поправи инсталацију",
+  "@welcomeRepairOption": {},
   "appTitle": "Убунту Десктоп Инсталација",
   "@appTitle": {},
   "changeButtonText": "Измени",
@@ -16,8 +16,8 @@
   "@revertButtonText": {},
   "welcome": "Добродошли",
   "@welcome": {},
-  "repairInstallationDescription": "Поправка ће поново инсталирати све програме без дирања докумената или подешавања.",
-  "@repairInstallationDescription": {},
+  "welcomeRepairDescription": "Поправка ће поново инсталирати све програме без дирања докумената или подешавања.",
+  "@welcomeRepairDescription": {},
   "windowTitle": "Инсталирај {RELEASE}",
   "@windowTitle": {
     "type": "text",
@@ -27,15 +27,15 @@
   },
   "quitButtonText": "Напусти инсталацију",
   "@quitButtonText": {},
-  "tryUbuntu": "Испробај {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "Испробај {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Инсталирај {RELEASE} поред (или уместо) вашег тренутног оперативног система. За ово неће требати пуно времена.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Инсталирај {RELEASE} поред (или уместо) вашег тренутног оперативног система. За ово неће требати пуно времена.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -60,15 +60,15 @@
   "@keyboardPressKeyLabel": {},
   "rstTitle": "Искључи RST",
   "@rstTitle": {},
-  "tryUbuntuDescription": "Можете испробати {RELEASE} без прављења измена на вашем рачунару.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "Можете испробати {RELEASE} без прављења измена на вашем рачунару.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Инсталирај {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Инсталирај {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

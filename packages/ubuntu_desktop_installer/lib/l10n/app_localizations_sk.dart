@@ -25,51 +25,56 @@ class AppLocalizationsSk extends AppLocalizations {
   String get quitButtonText => 'Opustiť inštaláciu';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Vitajte v $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Pripravuje sa $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Vyberte si svoj jazyk:';
+  String localePageTitle(Object DISTRO) {
+    return 'Vitajte v $DISTRO';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => 'Vyberte si svoj jazyk:';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return 'Vyskúšať alebo nainštalovať $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Opraviť inštaláciu';
+  String get welcomeRepairOption => 'Opraviť inštaláciu';
 
   @override
-  String get repairInstallationDescription => 'Opravou preinštalujete všetok nainštalovaný softvér bez toho, aby sa to dotklo dokumentov alebo nastavení.';
+  String get welcomeRepairDescription => 'Opravou preinštalujete všetok nainštalovaný softvér bez toho, aby sa to dotklo dokumentov alebo nastavení.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Vyskúšať $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Môžete vyskúšať $RELEASE bez vykonania zmien vo vašom počítači.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Nainštalovať $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Nainštalujte $RELEASE spoločne z (alebo namiesto) vášho operačného systému. Nemalo by to trvať dlho.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Mohli by ste mať záujem o prečítanie si <a href=\"$url\">poznámok k vydaniu</a>.';
   }
 
@@ -421,9 +426,6 @@ class AppLocalizationsSk extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Prípojné body nemôžu obsahovať medzery';
 
   @override
-  String get startInstallingButtonText => 'Inštalácia';
-
-  @override
   String get diskHeadersDevice => 'Zariadenie';
 
   @override
@@ -582,55 +584,55 @@ class AppLocalizationsSk extends AppLocalizations {
   String get identityPasswordHide => 'Skryť';
 
   @override
-  String get writeChangesToDisk => 'Pripravené na inštaláciu';
+  String get confirmPageTitle => 'Pripravené na inštaláciu';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get confirmHeader => 'Ak budete pokračovať, nižšie uvedené zmeny budú zapísané na disky. Ďalšie zmeny potom môžete urobiť ručne.';
 
   @override
-  String get writeChangesDescription => 'Ak budete pokračovať, nižšie uvedené zmeny budú zapísané na disky. Ďalšie zmeny potom môžete urobiť ručne.';
+  String get confirmDevicesTitle => 'Zariadenia';
 
   @override
-  String get writeChangesDevicesTitle => 'Zariadenia';
+  String get confirmPartitionsTitle => 'Oddiely';
 
   @override
-  String get writeChangesPartitionsTitle => 'Oddiely';
+  String get confirmPartitionTables => 'Budú zmenené tabuľky rozdelenia na oddiely nasledujúcich zariadení:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Budú zmenené tabuľky rozdelenia na oddiely nasledujúcich zariadení:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Budú vykonané nasledujúce zmeny na oddieloch:';
+  String get confirmPartitionChanges => 'Budú vykonané nasledujúce zmeny na oddieloch:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'veľkosť oddielu <b>$sysname</b> zmenené z <b>$oldsize</b> na <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'oddiel <b>$sysname</b> naformátovaný ako <b>$format</b> použitý pre <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'oddiel <b>$sysname</b> naformátovaný ako <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'oddiel <b>$sysname</b> použitý pre <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'oddiel <b>$sysname</b> vytvorený';
   }
+
+  @override
+  String get confirmInstallButton => 'Inštalácia';
 
   @override
   String get themePageTitle => 'Vyberte si motív vzhľadu';

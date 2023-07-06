@@ -25,51 +25,56 @@ class AppLocalizationsFa extends AppLocalizations {
   String get quitButtonText => 'خروج از نصب';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'به $DISTRO خوش آمدید';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'آماده‌سازی $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'زبانتان را برگزینید:';
+  String localePageTitle(Object DISTRO) {
+    return 'به $DISTRO خوش آمدید';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => 'زبانتان را برگزینید:';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return 'آزمودن یا نصب $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'تعمیر نصب';
+  String get welcomeRepairOption => 'تعمیر نصب';
 
   @override
-  String get repairInstallationDescription => 'تعمیر، همهٔ نرم افزارهای نصب شده را بدون دست زدن به اسناد یا تنظیمات، دوباره نصب می‌کند.';
+  String get welcomeRepairDescription => 'تعمیر، همهٔ نرم افزارهای نصب شده را بدون دست زدن به اسناد یا تنظیمات، دوباره نصب می‌کند.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'آزمودن $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'شما می‌توانید $RELEASE را بدون ایجاد هیچ تغییری در رایانه خود امتحان کنید.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'نصب $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return '$RELEASE را در کنار (یا به جای) سیستم‌عامل کنونی شما نصب می‌کنید. این نباید خیلی طول بکشد.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'ممکن است بخواهید <a href=\"$url\">یادداشت‌های انتشار</a> را بخوانید.';
   }
 
@@ -421,9 +426,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
 
   @override
-  String get startInstallingButtonText => 'نصب';
-
-  @override
   String get diskHeadersDevice => 'افزاره';
 
   @override
@@ -582,55 +584,55 @@ class AppLocalizationsFa extends AppLocalizations {
   String get identityPasswordHide => 'نهفتن';
 
   @override
-  String get writeChangesToDisk => 'آمادهٔ نصب';
+  String get confirmPageTitle => 'آمادهٔ نصب';
 
   @override
-  String get writeChangesFallbackSerial => 'دیسک';
+  String get confirmHeader => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get confirmDevicesTitle => 'افزاره‌ها';
 
   @override
-  String get writeChangesDevicesTitle => 'افزاره‌ها';
+  String get confirmPartitionsTitle => 'افزارها';
 
   @override
-  String get writeChangesPartitionsTitle => 'افزارها';
+  String get confirmPartitionTables => 'جدول افرازهای افزاره‌های زیر تغییر کرده‌اند:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'جدول افرازهای افزاره‌های زیر تغییر کرده‌اند:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'تغییرهای افراز زیرمی‌خواهند اعمال شوند:';
+  String get confirmPartitionChanges => 'تغییرهای افراز زیرمی‌خواهند اعمال شوند:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'اندازهٔ افراز <b>$sysname</b> از <b>$oldsize</b> به <b>$newsize</b> تغییر کرد';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'افراز <b>$sysname</b> به صورت <b>$format</b> برای <b>$mount</b> قالب‌بندی شد';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'افراز <b>$sysname</b> به صورت <b>$format</b> قالب‌بندی شد';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'افراز <b>$sysname</b> برای <b>$mount</b> استفاده شد';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'افراز <b>$sysname</b> ایجاد شد';
   }
+
+  @override
+  String get confirmInstallButton => 'نصب';
 
   @override
   String get themePageTitle => 'گزینش زمینه‌تان';

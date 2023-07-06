@@ -1,14 +1,14 @@
 {
   "@@locale": "cs",
-  "installUbuntuDescription": "Nainstalovat {RELEASE} vedle (nebo namísto) stávajícího operačního systému. Mělo by být hned hotové.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Nainstalovat {RELEASE} vedle (nebo namísto) stávajícího operačního systému. Mělo by být hned hotové.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Nainstalovat {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Nainstalovat {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -38,14 +38,14 @@
   "@revertButtonText": {},
   "welcome": "Vítejte",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Vyzkoušet nebo nainstalovat {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Opravit instalaci",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "Oprava přeinstaluje veškerý doposud nainstalovaný software, ale zachová data a nastavení uživatele.",
-  "@repairInstallationDescription": {},
-  "releaseNotesLabel": "Nejspíš si budete chtít přečíst <a href=\"{url}\">poznámky k vydání</a>.",
-  "@releaseNotesLabel": {
+  "welcomePageTitle": "Vyzkoušet nebo nainstalovat {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Opravit instalaci",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "Oprava přeinstaluje veškerý doposud nainstalovaný software, ale zachová data a nastavení uživatele.",
+  "@welcomeRepairDescription": {},
+  "welcomeReleaseNotesLabel": "Nejspíš si budete chtít přečíst <a href=\"{url}\">poznámky k vydání</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -196,8 +196,8 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Ruční rozdělení",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Instalace",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Instalace",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Zařízení",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Typ",
@@ -280,18 +280,14 @@
   "@themePageHeader": {},
   "themePageTitle": "Zvolte si motiv vzhledu",
   "@themePageTitle": {},
-  "writeChangesPartitionsHeader": "Budou provedeny následující změny na oddílech:",
-  "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionTablesHeader": "Budou změněny tabulky rozdělení na oddíly následujících zařízení:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesDescription": "Pokud budete pokračovat, níže uvedené změny budou zapsány na disky. Další změny pak můžete udělat ručně.",
-  "@writeChangesDescription": {},
-  "writeChangesFallbackSerial": "disk",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesToDisk": "Připraveno k instalaci",
-  "@writeChangesToDisk": {},
+  "confirmPartitionChanges": "Budou provedeny následující změny na oddílech:",
+  "@confirmPartitionChanges": {},
+  "confirmPartitionTables": "Budou změněny tabulky rozdělení na oddíly následujících zařízení:",
+  "@confirmPartitionTables": {},
+  "confirmHeader": "Pokud budete pokračovat, níže uvedené změny budou zapsány na disky. Další změny pak můžete udělat ručně.",
+  "@confirmHeader": {},
+  "confirmPageTitle": "Připraveno k instalaci",
+  "@confirmPageTitle": {},
   "identityPasswordMismatch": "Do každé z kolonek pro heslo jste napsali něco jiného",
   "@identityPasswordMismatch": {},
   "identityConfirmPasswordLabel": "Zopakujte zadání hesla (prevence překlepu)",
@@ -312,8 +308,8 @@
   "@identityHostnameRequired": {},
   "identityHostnameInfo": "Tento název slouží při komunikaci s ostatními počítači.",
   "@identityHostnameInfo": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
@@ -333,15 +329,15 @@
       "url": {}
     }
   },
-  "tryUbuntu": "Vyzkoušet {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "Vyzkoušet {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "Můžete si vyzkoušet {RELEASE} aniž by se v počítači cokoli měnilo.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "Můžete si vyzkoušet {RELEASE} aniž by se v počítači cokoli měnilo.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -421,8 +417,8 @@
       "color": {}
     }
   },
-  "welcomeHeader": "Zvolte svůj jazyk:",
-  "@welcomeHeader": {},
+  "localeHeader": "Zvolte svůj jazyk:",
+  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Název sítě",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Je vyžadován název sítě",
@@ -482,8 +478,8 @@
       "url": {}
     }
   },
-  "writeChangesPartitionResized": "velikost oddílu <b>{sysname}</b> změněna z <b>{oldsize}</b> na <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "velikost oddílu <b>{sysname}</b> změněna z <b>{oldsize}</b> na <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -493,15 +489,15 @@
   },
   "installAlongsideResizePartition": "Změnit velikost oddílu",
   "@installAlongsideResizePartition": {},
-  "writeChangesPartitionCreated": "oddíl <b>{sysname}</b> vytvořen",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "oddíl <b>{sysname}</b> vytvořen",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionMounted": "oddíl <b>{sysname}</b> použit pro <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "oddíl <b>{sysname}</b> použit pro <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -532,8 +528,8 @@
   "@installAlongsidePartition": {},
   "installAlongsideSize": "Velikost:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionFormattedMounted": "oddíl <b>{sysname}</b> naformátovaný jako <b>{format}</b> použit pro <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "oddíl <b>{sysname}</b> naformátovaný jako <b>{format}</b> použit pro <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -541,8 +537,8 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "oddíl <b>{sysname}</b> naformátován jako <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "oddíl <b>{sysname}</b> naformátován jako <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -626,8 +622,8 @@
   "@activeDirectoryErrorMessage": {},
   "activeDirectoryErrorTitle": "Chyba při nastavování pro Active Directory",
   "@activeDirectoryErrorTitle": {},
-  "preparingUbuntu": "Připravuje se {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Připravuje se {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -637,10 +633,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Varianta klávesnice:",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Zařízení",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Oddíly",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Zařízení",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Oddíly",
+  "@confirmPartitionsTitle": {},
   "installationSlidesAvailable": "K dispozici:",
   "@installationSlidesAvailable": {},
   "installationSlidesWelcomeBody": "Ať už jste vývojáři, tvůrci, hráči či správci, naleznete zde nové nástroje zvyšující vaši produktivitu a vylepšující váš dojem z používání {RELEASE}.",
@@ -711,8 +707,8 @@
   "@installationSlidesSupportUbuntuPro": {},
   "notEnoughDiskSpaceRequired": "Vyžadováno:",
   "@notEnoughDiskSpaceRequired": {},
-  "welcomePageTitle": "Vítejte v {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Vítejte v {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -801,6 +797,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Vítejte v {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

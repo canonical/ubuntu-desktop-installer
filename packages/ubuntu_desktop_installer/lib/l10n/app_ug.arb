@@ -1,14 +1,14 @@
 {
   "@@locale": "ug",
-  "tryUbuntu": "‏{RELEASE} نى سىناپ كۆرىمەن",
-  "@tryUbuntu": {
+  "welcomeTryOption": "‏{RELEASE} نى سىناپ كۆرىمەن",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "‏{RELEASE} نى ئورنىتىمەن",
-  "@installUbuntu": {
+  "welcomeInstallOption": "‏{RELEASE} نى ئورنىتىمەن",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

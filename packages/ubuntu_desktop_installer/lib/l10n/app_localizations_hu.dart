@@ -25,51 +25,56 @@ class AppLocalizationsHu extends AppLocalizations {
   String get quitButtonText => 'Kilépés a telepítésből';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Üdvözli a(z) $DISTRO!';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'A(z) $DISTRO előkészítése…';
   }
 
   @override
-  String get welcomeHeader => 'Válasszon nyelvet:';
+  String localePageTitle(Object DISTRO) {
+    return 'Üdvözli a(z) $DISTRO!';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => 'Válasszon nyelvet:';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return 'A(z) $DISTRO kipróbálása vagy telepítése';
   }
 
   @override
-  String get repairInstallation => 'Telepítés javítása';
+  String get welcomeRepairOption => 'Telepítés javítása';
 
   @override
-  String get repairInstallationDescription => 'A javítás újratelepíti az összes telepített szoftvert, anélkül hogy a dokumentumokat vagy a beállításokat érintené.';
+  String get welcomeRepairDescription => 'A javítás újratelepíti az összes telepített szoftvert, anélkül hogy a dokumentumokat vagy a beállításokat érintené.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'A(z) $RELEASE kipróbálása';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'A(z) $RELEASE kipróbálható anélkül, hogy bármilyen változtatást végezne a számítógépén.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'A(z) $RELEASE telepítése';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'A(z) $RELEASE telepítése a jelenlegi operációs rendszere mellé (vagy helyett). Ez nem fog túl sokáig tartani.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Érdemes lehet elolvasni a <a href=\"$url\">kiadási megjegyzéseket</a>.';
   }
 
@@ -421,9 +426,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'A csatolási pontok nem tartalmazhatnak szóközöket';
 
   @override
-  String get startInstallingButtonText => 'Telepítés';
-
-  @override
   String get diskHeadersDevice => 'Eszköz';
 
   @override
@@ -582,55 +584,55 @@ class AppLocalizationsHu extends AppLocalizations {
   String get identityPasswordHide => 'Elrejtés';
 
   @override
-  String get writeChangesToDisk => 'Telepítésre kész';
+  String get confirmPageTitle => 'Telepítésre kész';
 
   @override
-  String get writeChangesFallbackSerial => 'lemez';
+  String get confirmHeader => 'Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.';
 
   @override
-  String get writeChangesDescription => 'Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.';
+  String get confirmDevicesTitle => 'Eszközök';
 
   @override
-  String get writeChangesDevicesTitle => 'Eszközök';
+  String get confirmPartitionsTitle => 'Partíciók';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partíciók';
+  String get confirmPartitionTables => 'A következő eszközök partíciós táblái változnak meg:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'A következő eszközök partíciós táblái változnak meg:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'A következő partícióváltoztatások kerülnek alkalmazásra:';
+  String get confirmPartitionChanges => 'A következő partícióváltoztatások kerülnek alkalmazásra:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return '<b>$sysname</b> partíció átméretezve <b>$oldsize</b> méretről <b>$newsize</b> méretre';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return '<b>$sysname</b> partíció <b>$format</b> formátumra formázva, <b>$mount</b> helyre csatolva';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return '<b>$sysname</b> partíció <b>$format</b> formátumra formázva';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return '<b>$sysname</b> partíció <b>$mount</b> helyre csatolva';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return '<b>$sysname</b> partíció létrehozva';
   }
+
+  @override
+  String get confirmInstallButton => 'Telepítés';
 
   @override
   String get themePageTitle => 'Téma kiválasztása';

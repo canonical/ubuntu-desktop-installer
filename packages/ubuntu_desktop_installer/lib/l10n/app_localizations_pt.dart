@@ -25,51 +25,56 @@ class AppLocalizationsPt extends AppLocalizations {
   String get quitButtonText => 'Sair da instalação';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Bem-vindo ao $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'A preparar o $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Escolha o seu idioma:';
+  String localePageTitle(Object DISTRO) {
+    return 'Bem-vindo ao $DISTRO';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => 'Escolha o seu idioma:';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return 'Experimentar ou instalar o $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Reparar instalação';
+  String get welcomeRepairOption => 'Reparar instalação';
 
   @override
-  String get repairInstallationDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou definições.';
+  String get welcomeRepairDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou definições.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Experimentar o $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Pode experimentar o $RELEASE sem precisar de fazer qualquer alteração no seu computador.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Instalar o $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Instalar o $RELEASE ao lado do (ou em substituição ao) seu sistema operativo atual. Isto não deve demorar muito.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Talvez queira ler as <a href=\"$url\">notas de lançamento</a>.';
   }
 
@@ -421,9 +426,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Os pontos de montagem não podem conter espaços';
 
   @override
-  String get startInstallingButtonText => 'Instalar';
-
-  @override
   String get diskHeadersDevice => 'Dispositivo';
 
   @override
@@ -582,55 +584,55 @@ class AppLocalizationsPt extends AppLocalizations {
   String get identityPasswordHide => 'Ocultar';
 
   @override
-  String get writeChangesToDisk => 'Pronto a instalar';
+  String get confirmPageTitle => 'Pronto a instalar';
 
   @override
-  String get writeChangesFallbackSerial => 'disco';
+  String get confirmHeader => 'Se continuar, as alterações listadas abaixo serão gravadas nos discos. Será capaz de realizar alterações posteriores manualmente.';
 
   @override
-  String get writeChangesDescription => 'Se continuar, as alterações listadas abaixo serão gravadas nos discos. Será capaz de realizar alterações posteriores manualmente.';
+  String get confirmDevicesTitle => 'Dispositivos';
 
   @override
-  String get writeChangesDevicesTitle => 'Dispositivos';
+  String get confirmPartitionsTitle => 'Partições';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partições';
+  String get confirmPartitionTables => 'As tabelas de partições dos seguintes dispositivos foram alteradas:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'As tabelas de partições dos seguintes dispositivos foram alteradas:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'As seguintes alterações às partições serão aplicadas:';
+  String get confirmPartitionChanges => 'As seguintes alterações às partições serão aplicadas:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'partição <b>$sysname</b> redimensionada de <b>$oldsize</b> para <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'partição <b>$sysname</b> formatada como <b>$format</b> usada para <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'partição <b>$sysname</b> formatada como <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'partição <b>$sysname</b> usada para <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'partição <b>$sysname</b> criada';
   }
+
+  @override
+  String get confirmInstallButton => 'Instalar';
 
   @override
   String get themePageTitle => 'Escolha o seu tema';
@@ -927,51 +929,56 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get quitButtonText => 'Sair da instalação';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Boas-vindas ao $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Preparando o $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Escolha seu idioma:';
+  String localePageTitle(Object DISTRO) {
+    return 'Boas-vindas ao $DISTRO';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => 'Escolha seu idioma:';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return 'Experimentar ou instalar o $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Reparar instalação';
+  String get welcomeRepairOption => 'Reparar instalação';
 
   @override
-  String get repairInstallationDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações.';
+  String get welcomeRepairDescription => 'A reparação reinstalará todos os softwares instalados sem alterar documentos ou configurações.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Experimentar $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Você pode experimentar o $RELEASE sem precisar fazer qualquer alteração em seu computador.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Instalar $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Instalar o $RELEASE ao lado do (ou em substituição ao) seu sistema operacional atual. Isto não deve demorar muito.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Talvez você queira ler as <a href=\"$url\">notas de lançamento</a>.';
   }
 
@@ -1323,9 +1330,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Pontos de montagem não podem conter espaços';
 
   @override
-  String get startInstallingButtonText => 'Instalar';
-
-  @override
   String get diskHeadersDevice => 'Dispositivo';
 
   @override
@@ -1484,55 +1488,55 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get identityPasswordHide => 'Ocultar';
 
   @override
-  String get writeChangesToDisk => 'Pronto para instalar';
+  String get confirmPageTitle => 'Pronto para instalar';
 
   @override
-  String get writeChangesFallbackSerial => 'disco';
+  String get confirmHeader => 'Se você continuar, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.';
 
   @override
-  String get writeChangesDescription => 'Se você continuar, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.';
+  String get confirmDevicesTitle => 'Dispositivos';
 
   @override
-  String get writeChangesDevicesTitle => 'Dispositivos';
+  String get confirmPartitionsTitle => 'Partições';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partições';
+  String get confirmPartitionTables => 'As tabelas de partições dos seguintes dispositivos foram alteradas:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'As tabelas de partições dos seguintes dispositivos foram alteradas:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'As seguintes partições serão formatadas:';
+  String get confirmPartitionChanges => 'As seguintes partições serão formatadas:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'partição <b>$sysname</b> alterada de <b>$oldsize</b> para <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'partição <b>$sysname</b> formatada como <b>$format</b> usada para <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'partição <b>$sysname</b> formatada como <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'partição <b>$sysname</b> usada para <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'partição <b>$sysname</b> criada';
   }
+
+  @override
+  String get confirmInstallButton => 'Instalar';
 
   @override
   String get themePageTitle => 'Escolha seu tema';

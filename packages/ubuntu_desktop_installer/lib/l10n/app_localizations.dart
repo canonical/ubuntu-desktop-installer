@@ -273,71 +273,77 @@ abstract class AppLocalizations {
   /// **'Quit installation'**
   String get quitButtonText;
 
-  /// No description provided for @welcomePageTitle.
+  /// No description provided for @loadingPageTitle.
   ///
   /// In en, this message translates to:
   /// **'Welcome to {DISTRO}'**
-  String welcomePageTitle(Object DISTRO);
+  String loadingPageTitle(Object DISTRO);
 
-  /// No description provided for @preparingUbuntu.
+  /// No description provided for @loadingHeader.
   ///
   /// In en, this message translates to:
   /// **'Preparing {DISTRO}…'**
-  String preparingUbuntu(Object DISTRO);
+  String loadingHeader(Object DISTRO);
 
-  /// No description provided for @welcomeHeader.
+  /// No description provided for @localePageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to {DISTRO}'**
+  String localePageTitle(Object DISTRO);
+
+  /// No description provided for @localeHeader.
   ///
   /// In en, this message translates to:
   /// **'Choose your language:'**
-  String get welcomeHeader;
+  String get localeHeader;
 
-  /// No description provided for @tryOrInstallPageTitle.
+  /// No description provided for @welcomePageTitle.
   ///
   /// In en, this message translates to:
   /// **'Try or install {DISTRO}'**
-  String tryOrInstallPageTitle(Object DISTRO);
+  String welcomePageTitle(Object DISTRO);
 
-  /// No description provided for @repairInstallation.
+  /// No description provided for @welcomeRepairOption.
   ///
   /// In en, this message translates to:
   /// **'Repair installation'**
-  String get repairInstallation;
+  String get welcomeRepairOption;
 
-  /// No description provided for @repairInstallationDescription.
+  /// No description provided for @welcomeRepairDescription.
   ///
   /// In en, this message translates to:
   /// **'Repairing will reinstall all installed software without touching documents or settings.'**
-  String get repairInstallationDescription;
+  String get welcomeRepairDescription;
 
-  /// No description provided for @tryUbuntu.
+  /// No description provided for @welcomeTryOption.
   ///
   /// In en, this message translates to:
   /// **'Try {RELEASE}'**
-  String tryUbuntu(Object RELEASE);
+  String welcomeTryOption(Object RELEASE);
 
-  /// No description provided for @tryUbuntuDescription.
+  /// No description provided for @welcomeTryDescription.
   ///
   /// In en, this message translates to:
   /// **'You can try {RELEASE} without making any changes to your computer.'**
-  String tryUbuntuDescription(Object RELEASE);
+  String welcomeTryDescription(Object RELEASE);
 
-  /// No description provided for @installUbuntu.
+  /// No description provided for @welcomeInstallOption.
   ///
   /// In en, this message translates to:
   /// **'Install {RELEASE}'**
-  String installUbuntu(Object RELEASE);
+  String welcomeInstallOption(Object RELEASE);
 
-  /// No description provided for @installUbuntuDescription.
+  /// No description provided for @welcomeInstallDescription.
   ///
   /// In en, this message translates to:
   /// **'Install {RELEASE} alongside (or instead of) your current operating system. This shouldn\'t take too long.'**
-  String installUbuntuDescription(Object RELEASE);
+  String welcomeInstallDescription(Object RELEASE);
 
-  /// No description provided for @releaseNotesLabel.
+  /// No description provided for @welcomeReleaseNotesLabel.
   ///
   /// In en, this message translates to:
   /// **'You may wish to read the <a href=\"{url}\">release notes</a>.'**
-  String releaseNotesLabel(Object url);
+  String welcomeReleaseNotesLabel(Object url);
 
   /// No description provided for @rstTitle.
   ///
@@ -957,12 +963,6 @@ abstract class AppLocalizations {
   /// **'Mount points cannot contain spaces'**
   String get allocateDiskSpaceInvalidMountPointSpace;
 
-  /// No description provided for @startInstallingButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'Install'**
-  String get startInstallingButtonText;
-
   /// No description provided for @diskHeadersDevice.
   ///
   /// In en, this message translates to:
@@ -1275,83 +1275,83 @@ abstract class AppLocalizations {
   /// **'Hide'**
   String get identityPasswordHide;
 
-  /// No description provided for @writeChangesToDisk.
+  /// No description provided for @confirmPageTitle.
   ///
   /// In en, this message translates to:
   /// **'Ready to install'**
-  String get writeChangesToDisk;
+  String get confirmPageTitle;
 
-  /// Default display name for a disk without a serial (unlikely)
-  ///
-  /// In en, this message translates to:
-  /// **'disk'**
-  String get writeChangesFallbackSerial;
-
-  /// No description provided for @writeChangesDescription.
+  /// No description provided for @confirmHeader.
   ///
   /// In en, this message translates to:
   /// **'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.'**
-  String get writeChangesDescription;
+  String get confirmHeader;
 
-  /// No description provided for @writeChangesDevicesTitle.
+  /// No description provided for @confirmDevicesTitle.
   ///
   /// In en, this message translates to:
   /// **'Devices'**
-  String get writeChangesDevicesTitle;
+  String get confirmDevicesTitle;
 
-  /// No description provided for @writeChangesPartitionsTitle.
+  /// No description provided for @confirmPartitionsTitle.
   ///
   /// In en, this message translates to:
   /// **'Partitions'**
-  String get writeChangesPartitionsTitle;
+  String get confirmPartitionsTitle;
 
-  /// No description provided for @writeChangesPartitionTablesHeader.
+  /// No description provided for @confirmPartitionTables.
   ///
   /// In en, this message translates to:
   /// **'The partition tables of the following devices are changed:'**
-  String get writeChangesPartitionTablesHeader;
+  String get confirmPartitionTables;
 
   /// An entry for a disk whose partition table is being changed
   ///
   /// In en, this message translates to:
   /// **'{serial} ({path})'**
-  String writeChangesPartitionTablesEntry(Object serial, Object path);
+  String confirmPartitionTable(Object serial, Object path);
 
-  /// No description provided for @writeChangesPartitionsHeader.
+  /// No description provided for @confirmPartitionChanges.
   ///
   /// In en, this message translates to:
   /// **'The following partition changes are going to be applied:'**
-  String get writeChangesPartitionsHeader;
+  String get confirmPartitionChanges;
 
   /// A resized partition entry
   ///
   /// In en, this message translates to:
   /// **'partition <b>{sysname}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>'**
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize);
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize);
 
   /// A formatted and mounted partition entry
   ///
   /// In en, this message translates to:
   /// **'partition <b>{sysname}</b> formatted as <b>{format}</b> used for <b>{mount}</b>'**
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount);
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount);
 
   /// A formatted partition entry
   ///
   /// In en, this message translates to:
   /// **'partition <b>{sysname}</b> formatted as <b>{format}</b>'**
-  String writeChangesPartitionFormatted(Object sysname, Object format);
+  String confirmPartitionFormat(Object sysname, Object format);
 
   /// A mounted partition entry
   ///
   /// In en, this message translates to:
   /// **'partition <b>{sysname}</b> used for <b>{mount}</b>'**
-  String writeChangesPartitionMounted(Object sysname, Object mount);
+  String confirmPartitionMount(Object sysname, Object mount);
 
   /// A created partition entry
   ///
   /// In en, this message translates to:
   /// **'partition <b>{sysname}</b> created'**
-  String writeChangesPartitionCreated(Object sysname);
+  String confirmPartitionCreate(Object sysname);
+
+  /// No description provided for @confirmInstallButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Install'**
+  String get confirmInstallButton;
 
   /// No description provided for @themePageTitle.
   ///

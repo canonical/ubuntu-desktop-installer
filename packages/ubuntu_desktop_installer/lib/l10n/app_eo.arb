@@ -8,8 +8,8 @@
   "@themeLight": {},
   "windowTitle": "Instali {RELEASE}",
   "@windowTitle": {},
-  "startInstallingButtonText": "Instali",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Instali",
+  "@confirmInstallButton": {},
   "diskHeadersSize": "Grando",
   "@diskHeadersSize": {},
   "installationCompleteTitle": "Instalado finiĝis",
@@ -94,8 +94,8 @@
   "@updatesOtherSoftwarePageTitle": {},
   "rstTitle": "Rapid-Konserveja Tekniko (RST) estas ŝaltita",
   "@rstTitle": {},
-  "releaseNotesLabel": "Vi eble volas legi la <a href=\"{url}\">liverajn notojn</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "Vi eble volas legi la <a href=\"{url}\">liverajn notojn</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -111,22 +111,22 @@
   "@chooseSecurityKeyHeader": {},
   "welcome": "Bonvenon",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Provi aŭ instali {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Ripari instalaĵon",
-  "@repairInstallation": {},
-  "tryUbuntu": "Provi {RELEASE}",
-  "@tryUbuntu": {},
-  "installUbuntu": "Instali {RELEASE}",
-  "@installUbuntu": {},
+  "welcomePageTitle": "Provi aŭ instali {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Ripari instalaĵon",
+  "@welcomeRepairOption": {},
+  "welcomeTryOption": "Provi {RELEASE}",
+  "@welcomeTryOption": {},
+  "welcomeInstallOption": "Instali {RELEASE}",
+  "@welcomeInstallOption": {},
   "appTitle": "Instalilo de Ubuntu Desktop",
   "@appTitle": {},
-  "tryUbuntuDescription": "Vi povas provi {RELEASE} sen iel ajn ŝanĝi vian komputilon.",
-  "@tryUbuntuDescription": {},
-  "installUbuntuDescription": "Instali {RELEASE} apud (aŭ anstataŭ) via aktuala mastruma sistemo. Tio ne daŭros tro longe.",
-  "@installUbuntuDescription": {},
-  "repairInstallationDescription": "Riparado reinstalos ĉiujn instalitajn programojn sen modifi dokumentojn aŭ agordojn.",
-  "@repairInstallationDescription": {},
+  "welcomeTryDescription": "Vi povas provi {RELEASE} sen iel ajn ŝanĝi vian komputilon.",
+  "@welcomeTryDescription": {},
+  "welcomeInstallDescription": "Instali {RELEASE} apud (aŭ anstataŭ) via aktuala mastruma sistemo. Tio ne daŭros tro longe.",
+  "@welcomeInstallDescription": {},
+  "welcomeRepairDescription": "Riparado reinstalos ĉiujn instalitajn programojn sen modifi dokumentojn aŭ agordojn.",
+  "@welcomeRepairDescription": {},
   "keyboardDetectTitle": "Rekoni klavaranĝon",
   "@keyboardDetectTitle": {},
   "keyboardTitle": "Klavaranĝo",
@@ -277,32 +277,28 @@
   "@identityHostnameRequired": {},
   "identityInvalidHostname": "La nomo de komputilo ne validas",
   "@identityInvalidHostname": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesFallbackSerial": "disko",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "partitionMountPointLabel": "Surmetingo:",
   "@partitionMountPointLabel": {},
-  "writeChangesToDisk": "Preta por instalado",
-  "@writeChangesToDisk": {},
-  "writeChangesPartitionsHeader": "La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPageTitle": "Preta por instalado",
+  "@confirmPageTitle": {},
+  "confirmPartitionChanges": "La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:",
+  "@confirmPartitionChanges": {},
   "identityHostnameInfo": "La nomo, kiun ĝi uzas por alparoli aliajn komputilojn.",
   "@identityHostnameInfo": {},
   "partitionErase": "Restrukturi la subdiskon",
   "@partitionErase": {},
-  "writeChangesPartitionTablesHeader": "La subdiskotabeloj de la jenaj aparatoj estas ŝanĝotaj:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesDescription": "Se vi daŭrigos, la ĉi-subaj ŝanĝoj estos skribitaj sur la diskojn. Vi povos permane fari pliajn ŝanĝojn.",
-  "@writeChangesDescription": {},
+  "confirmPartitionTables": "La subdiskotabeloj de la jenaj aparatoj estas ŝanĝotaj:",
+  "@confirmPartitionTables": {},
+  "confirmHeader": "Se vi daŭrigos, la ĉi-subaj ŝanĝoj estos skribitaj sur la diskojn. Vi povos permane fari pliajn ŝanĝojn.",
+  "@confirmHeader": {},
   "themePageTitle": "Elektu vian etoson",
   "@themePageTitle": {},
   "themePageHeader": "Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.",
@@ -372,8 +368,8 @@
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Nomo de reto estas postulata",
   "@hiddenWifiNetworkNameRequired": {},
-  "welcomeHeader": "Elektu vian lingvon:",
-  "@welcomeHeader": {},
+  "localeHeader": "Elektu vian lingvon:",
+  "@localeHeader": {},
   "installationTypeDualOSDetected": "Ĉi tiu komputilo aktuale portas instalaĵojn de {os1} kaj {os2}. Kion vi volas?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -447,15 +443,15 @@
   "@configuringSystem": {},
   "quitButtonText": "Ĉesi instaladon",
   "@quitButtonText": {},
-  "writeChangesPartitionCreated": "krei la subdiskon <b>{sysname}</b>",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "krei la subdiskon <b>{sysname}</b>",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b> kaj uzota por <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b> kaj uzota por <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -465,8 +461,8 @@
   },
   "notEnoughDiskSpaceTitle": "Ne sufiĉas spaco",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "ŝanĝi la grandon de la subdisko <b>{sysname}</b> de <b>{oldsize}</b> al <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "ŝanĝi la grandon de la subdisko <b>{sysname}</b> de <b>{oldsize}</b> al <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -474,16 +470,16 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionMounted": "la subdisko <b>{sysname}</b> uzota por <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "la subdisko <b>{sysname}</b> uzota por <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -571,8 +567,8 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Pardonu, Aktiva Dosierujo ne estas agordebla nuntempe. Post kiam via sistemo funkcias, vizitu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> por helpo.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "Preparante {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Preparante {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -582,10 +578,10 @@
   "@keyboardVariantLabel": {},
   "keyboardDetectButton": "Identigi",
   "@keyboardDetectButton": {},
-  "writeChangesDevicesTitle": "Aparatoj",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Subdiskoj",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Aparatoj",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Subdiskoj",
+  "@confirmPartitionsTitle": {},
   "installationSlidesDevelopmentTitle": "Programu helpate de malfermitaj kodoj",
   "@installationSlidesDevelopmentTitle": {},
   "installationSlidesWelcomeHeader": "La nova versio de {DISTRO} igas komputadon pli facila ol iam ajn.",
@@ -654,8 +650,8 @@
   "@installationSlidesSupportEnterprise": {},
   "installationSlidesSupportCommunity": "Ĉe Ask Ubuntu troviĝas gamo da demandoj kaj respondoj, kaj ĉe Ubuntu Discourse estas gvidiloj kaj diskutejoj por kaj novaj kaj spertaj uzantoj.",
   "@installationSlidesSupportCommunity": {},
-  "welcomePageTitle": "Bonvenon al {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Bonvenon al {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -746,6 +742,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Bonvenon al {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

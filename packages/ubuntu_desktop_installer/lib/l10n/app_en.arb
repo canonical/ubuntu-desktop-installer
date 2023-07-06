@@ -17,63 +17,70 @@
   "@revertButtonText": {},
   "quitButtonText": "Quit installation",
   "@quitButtonText": {},
-  "welcomePageTitle": "Welcome to {DISTRO}",
+  "loadingPageTitle": "Welcome to {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "loadingHeader": "Preparing {DISTRO}…",
+  "@loadingHeader": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localePageTitle": "Welcome to {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Choose your language:",
+  "@localeHeader": {},
+  "welcomePageTitle": "Try or install {DISTRO}",
   "@welcomePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "preparingUbuntu": "Preparing {DISTRO}…",
-  "@preparingUbuntu": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
-  "welcomeHeader": "Choose your language:",
-  "@welcomeHeader": {},
-  "tryOrInstallPageTitle": "Try or install {DISTRO}",
-  "@tryOrInstallPageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
-  "repairInstallation": "Repair installation",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",
-  "@repairInstallationDescription": {},
-  "tryUbuntu": "Try {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeRepairOption": "Repair installation",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "Repairing will reinstall all installed software without touching documents or settings.",
+  "@welcomeRepairDescription": {},
+  "welcomeTryOption": "Try {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "You can try {RELEASE} without making any changes to your computer.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "You can try {RELEASE} without making any changes to your computer.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Install {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Install {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Install {RELEASE} alongside (or instead of) your current operating system. This shouldn't take too long.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Install {RELEASE} alongside (or instead of) your current operating system. This shouldn't take too long.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "You may wish to read the <a href=\"{url}\">release notes</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "You may wish to read the <a href=\"{url}\">release notes</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -386,8 +393,6 @@
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Mount points cannot contain spaces",
   "@allocateDiskSpaceInvalidMountPointSpace": {},
-  "startInstallingButtonText": "Install",
-  "@startInstallingButtonText": {},
   "diskHeadersDevice": "Device",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Type",
@@ -497,32 +502,28 @@
   "@identityPasswordShow": {},
   "identityPasswordHide": "Hide",
   "@identityPasswordHide": {},
-  "writeChangesToDisk": "Ready to install",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "disk",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesDescription": "If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.",
-  "@writeChangesDescription": {},
-  "writeChangesDevicesTitle": "Devices",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partitions",
-  "@writeChangesPartitionsTitle": {},
-  "writeChangesPartitionTablesHeader": "The partition tables of the following devices are changed:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Ready to install",
+  "@confirmPageTitle": {},
+  "confirmHeader": "If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.",
+  "@confirmHeader": {},
+  "confirmDevicesTitle": "Devices",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partitions",
+  "@confirmPartitionsTitle": {},
+  "confirmPartitionTables": "The partition tables of the following devices are changed:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "The following partition changes are going to be applied:",
-  "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionResized": "partition <b>{sysname}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionChanges": "The following partition changes are going to be applied:",
+  "@confirmPartitionChanges": {},
+  "confirmPartitionResize": "partition <b>{sysname}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -530,8 +531,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partition <b>{sysname}</b> formatted as <b>{format}</b> used for <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "partition <b>{sysname}</b> formatted as <b>{format}</b> used for <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -539,29 +540,31 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partition <b>{sysname}</b> formatted as <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "partition <b>{sysname}</b> formatted as <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partition <b>{sysname}</b> used for <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "partition <b>{sysname}</b> used for <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partition <b>{sysname}</b> created",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "partition <b>{sysname}</b> created",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
+  "confirmInstallButton": "Install",
+  "@confirmInstallButton": {},
   "themePageTitle": "Choose your theme",
   "@themePageTitle": {},
   "themePageHeader": "You can always change this later in the appearance settings.",

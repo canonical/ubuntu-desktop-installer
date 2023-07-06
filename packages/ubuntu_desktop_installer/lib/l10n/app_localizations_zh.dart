@@ -25,51 +25,56 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quitButtonText => '退出安装';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return '欢迎来到 $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return '正在准备 $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => '选择您的语言：';
+  String localePageTitle(Object DISTRO) {
+    return '欢迎来到 $DISTRO';
+  }
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String get localeHeader => '选择您的语言：';
+
+  @override
+  String welcomePageTitle(Object DISTRO) {
     return '试用或安装$DISTRO';
   }
 
   @override
-  String get repairInstallation => '修复安装';
+  String get welcomeRepairOption => '修复安装';
 
   @override
-  String get repairInstallationDescription => '修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。';
+  String get welcomeRepairDescription => '修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return '试用 $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return '您可以在不对电脑做任何改动的情况下试用 $RELEASE。';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return '安装 $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return '安装 $RELEASE，并可选择保留或替换您当前的操作系统。这个过程应该不会花费太长时间。';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return '您可能想阅读<a href=\"$url\"> 发行注记</a>。';
   }
 
@@ -421,9 +426,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
 
   @override
-  String get startInstallingButtonText => '安装';
-
-  @override
   String get diskHeadersDevice => '设备';
 
   @override
@@ -582,55 +584,55 @@ class AppLocalizationsZh extends AppLocalizations {
   String get identityPasswordHide => '隐藏';
 
   @override
-  String get writeChangesToDisk => '准备安装';
+  String get confirmPageTitle => '准备安装';
 
   @override
-  String get writeChangesFallbackSerial => '磁盘';
+  String get confirmHeader => '如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。';
 
   @override
-  String get writeChangesDescription => '如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。';
+  String get confirmDevicesTitle => '设备';
 
   @override
-  String get writeChangesDevicesTitle => '设备';
+  String get confirmPartitionsTitle => '分区';
 
   @override
-  String get writeChangesPartitionsTitle => '分区';
+  String get confirmPartitionTables => '已更改以下设备的分区表：';
 
   @override
-  String get writeChangesPartitionTablesHeader => '已更改以下设备的分区表：';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => '将应用以下分区更改：';
+  String get confirmPartitionChanges => '将应用以下分区更改：';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return '分区<b>$sysname</b> 从<b>$oldsize</b> 调整为<b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return '分区<b>$sysname</b> 格式化为<b>$format</b> 并挂载到<b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return '分区<b>$sysname</b> 格式化为<b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return '分区 <b>$sysname</b> 挂载到 <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return '分区 <b>$sysname</b> 已创建';
   }
+
+  @override
+  String get confirmInstallButton => '安装';
 
   @override
   String get themePageTitle => '选择您的主题';

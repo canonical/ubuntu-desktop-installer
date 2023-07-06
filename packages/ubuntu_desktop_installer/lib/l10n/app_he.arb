@@ -9,8 +9,8 @@
   },
   "restartButtonText": "הפעלה מחדש",
   "@restartButtonText": {},
-  "releaseNotesLabel": "ממליצים לך לקרוא את <a href=\"{url}\">הערות ההוצאה לאור</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "ממליצים לך לקרוא את <a href=\"{url}\">הערות ההוצאה לאור</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -22,18 +22,18 @@
   "@revertButtonText": {},
   "changeButtonText": "שינוי",
   "@changeButtonText": {},
-  "tryUbuntuDescription": "אפשר להתנסות ב־{RELEASE} מבלי לערוך שינויים במחשב שלך.",
-  "@tryUbuntuDescription": {},
+  "welcomeTryDescription": "אפשר להתנסות ב־{RELEASE} מבלי לערוך שינויים במחשב שלך.",
+  "@welcomeTryDescription": {},
   "appTitle": "אשף התקנת אובונטו לשולחן עבודה",
   "@appTitle": {},
   "windowTitle": "להתקין את {RELEASE}",
   "@windowTitle": {},
-  "installUbuntuDescription": "התקנת {RELEASE} לצד (או במקום) מערכת ההפעלה הנוכחית שלך. אמור להיות תהליך קצר.",
-  "@installUbuntuDescription": {},
-  "tryUbuntu": "להתנסות ב־{RELEASE}",
-  "@tryUbuntu": {},
-  "installUbuntu": "להתקין את {RELEASE}",
-  "@installUbuntu": {},
+  "welcomeInstallDescription": "התקנת {RELEASE} לצד (או במקום) מערכת ההפעלה הנוכחית שלך. אמור להיות תהליך קצר.",
+  "@welcomeInstallDescription": {},
+  "welcomeTryOption": "להתנסות ב־{RELEASE}",
+  "@welcomeTryOption": {},
+  "welcomeInstallOption": "להתקין את {RELEASE}",
+  "@welcomeInstallOption": {},
   "rstTitle": "RST פעיל",
   "@rstTitle": {},
   "restartIntoWindows": "להפעיל מחדש אל Windows",
@@ -65,12 +65,12 @@
   "@normalInstallationTitle": {},
   "welcome": "ברוך בואך",
   "@welcome": {},
-  "tryOrInstallPageTitle": "להתנסות או להתקין את {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "תיקון התקנה",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "תיקון יתקין את כל התכניות המותקנות מחדש מבלי לגעת במסמכים או בהגדרות.",
-  "@repairInstallationDescription": {},
+  "welcomePageTitle": "להתנסות או להתקין את {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "תיקון התקנה",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "תיקון יתקין את כל התכניות המותקנות מחדש מבלי לגעת במסמכים או בהגדרות.",
+  "@welcomeRepairDescription": {},
   "rstDescription": "המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.",
   "@rstDescription": {},
   "rstInstructions": "לקבלת הנחיות, יש לסרוק את קוד ה־QR הזה במכשיר אחר או לבקר באתר: <a href=\"https://{url}\">{url}</a>",
@@ -239,8 +239,8 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "חלוקת מחיצות ידנית",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "התקנה",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "התקנה",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "התקן",
   "@diskHeadersDevice": {},
   "diskHeadersType": "סוג",
@@ -307,26 +307,22 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "הסיסמאות סותרות זו את זו",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "סיימנו להתכונן להתקנה",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "כונן",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesDescription": "בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "טבלאות המחיצות של ההתקנים הבאים נערכו:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "סיימנו להתכונן להתקנה",
+  "@confirmPageTitle": {},
+  "confirmHeader": "בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "טבלאות המחיצות של ההתקנים הבאים נערכו:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "השינויים הבאים יחולו על המחיצות:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "השינויים הבאים יחולו על המחיצות:",
+  "@confirmPartitionChanges": {},
   "connectToInternetPageTitle": "התחברות לרשת",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "חיבור המחשב הזה לאינטרנט יסייע לאובונטו להתקין תכניות נוספות חיוניות ויסייע בבחירת אזור הזמן שלך.\n\nאפשר להתחבר בכבל רשת או לבחור רשת אלחוטית",
@@ -366,8 +362,8 @@
       "color": {}
     }
   },
-  "welcomeHeader": "נא לבחור שפה:",
-  "@welcomeHeader": {},
+  "localeHeader": "נא לבחור שפה:",
+  "@localeHeader": {},
   "hiddenWifiNetworkNameRequired": "שם הרשת נחוץ",
   "@hiddenWifiNetworkNameRequired": {},
   "hiddenWifiNetwork": "התחברות לרשת אלחוטית נסתרת",
@@ -441,8 +437,8 @@
   },
   "installAlongsideAvailable": "זמין:",
   "@installAlongsideAvailable": {},
-  "writeChangesPartitionFormattedMounted": "מחיצה <b>{sysname}</b> פורמטה כ־<b>{format}</b> ומשמשת עבור <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "מחיצה <b>{sysname}</b> פורמטה כ־<b>{format}</b> ומשמשת עבור <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -452,8 +448,8 @@
   },
   "notEnoughDiskSpaceTitle": "אין מספיק מקום",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "הגודל של מחיצה <b>{sysname}</b> ישתנה מ־<b>{oldsize}</b> ל־<b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "הגודל של מחיצה <b>{sysname}</b> ישתנה מ־<b>{oldsize}</b> ל־<b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -463,23 +459,23 @@
   },
   "quitButtonText": "יציאה מההתקנה",
   "@quitButtonText": {},
-  "writeChangesPartitionCreated": "המחיצה <b>{sysname}</b> נוצרה",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "המחיצה <b>{sysname}</b> נוצרה",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionFormatted": "מחיצה <b>{sysname}</b> פורמטה בתור <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "מחיצה <b>{sysname}</b> פורמטה בתור <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "מחיצה <b>{sysname}</b> תשמש עבור <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "מחיצה <b>{sysname}</b> תשמש עבור <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -571,8 +567,8 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "אי אפשר להגדיר חיבור ל־Active Directory כרגע, עמך הסליחה. לאחר סיום התקנת המערכת, יש לבקר בכתובת <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> לקבלת עזרה.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "{DISTRO} בהכנות…",
-  "@preparingUbuntu": {
+  "loadingHeader": "{DISTRO} בהכנות…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -582,8 +578,8 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "הגוון מקלדת:",
   "@keyboardVariantLabel": {},
-  "writeChangesPartitionsTitle": "מחיצות",
-  "@writeChangesPartitionsTitle": {},
+  "confirmPartitionsTitle": "מחיצות",
+  "@confirmPartitionsTitle": {},
   "notEnoughDiskSpaceUbuntu": "אין מספיק מקום להתקין את {DISTRO}",
   "@notEnoughDiskSpaceUbuntu": {
     "type": "text",
@@ -595,8 +591,8 @@
   "@notEnoughDiskSpaceAvailable": {},
   "notEnoughDiskSpaceRequired": "נחוץ:",
   "@notEnoughDiskSpaceRequired": {},
-  "writeChangesDevicesTitle": "התקנים",
-  "@writeChangesDevicesTitle": {},
+  "confirmDevicesTitle": "התקנים",
+  "@confirmDevicesTitle": {},
   "installationSlidesSoftwareTitle": "כל היישומים שדרושים לך",
   "@installationSlidesSoftwareTitle": {},
   "installationSlidesDevelopmentTitle": "כלי פיתוח קוד פתוח מהשורה הראשונה",
@@ -636,8 +632,8 @@
       "DISTRO": {}
     }
   },
-  "welcomePageTitle": "ברוך בואך אל {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "ברוך בואך אל {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -746,6 +742,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "ברוך בואך אל {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

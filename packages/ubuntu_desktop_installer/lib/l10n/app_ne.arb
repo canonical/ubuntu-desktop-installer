@@ -9,18 +9,18 @@
       "RELEASE": {}
     }
   },
-  "welcomeHeader": "आफ्नो भाषा छान्नुहोस्:",
-  "@welcomeHeader": {},
+  "localeHeader": "आफ्नो भाषा छान्नुहोस्:",
+  "@localeHeader": {},
   "restartButtonText": "फेरि सुरु गर्नुहोस्",
   "@restartButtonText": {},
   "revertButtonText": "फिर्ता गर्नुहोस्",
   "@revertButtonText": {},
   "welcome": "स्वागत छ",
   "@welcome": {},
-  "tryOrInstallPageTitle": "प्रयास गर्नुहोस् वा स्थापना गर्नुहोस्",
-  "@tryOrInstallPageTitle": {},
-  "releaseNotesLabel": "तपाईंले <a href=\"{url}\">रिलिज नोटहरू</a> पढ्न आवश्यक हुन सक्छ।",
-  "@releaseNotesLabel": {
+  "welcomePageTitle": "प्रयास गर्नुहोस् वा स्थापना गर्नुहोस्",
+  "@welcomePageTitle": {},
+  "welcomeReleaseNotesLabel": "तपाईंले <a href=\"{url}\">रिलिज नोटहरू</a> पढ्न आवश्यक हुन सक्छ।",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -28,29 +28,29 @@
   },
   "rstTitle": "RST बन्द गर्नुहोस्",
   "@rstTitle": {},
-  "tryUbuntu": "{RELEASE} प्रयास गर्नुहोस्",
-  "@tryUbuntu": {
+  "welcomeTryOption": "{RELEASE} प्रयास गर्नुहोस्",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "तपाईंले आफ्नो कम्प्युटरमा कुनै परिवर्तन नगरी {RELEASE} प्रयोग गर्न सक्नुहुन्छ।",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "तपाईंले आफ्नो कम्प्युटरमा कुनै परिवर्तन नगरी {RELEASE} प्रयोग गर्न सक्नुहुन्छ।",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "{RELEASE} स्थापना गर्नुहोस्",
-  "@installUbuntu": {
+  "welcomeInstallOption": "{RELEASE} स्थापना गर्नुहोस्",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "आफ्नो अन्य अपरेटिङ सिस्टम संगै {RELEASE} स्थापना गर्नुहोस्। यो छिटो हुनेछ।",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "आफ्नो अन्य अपरेटिङ सिस्टम संगै {RELEASE} स्थापना गर्नुहोस्। यो छिटो हुनेछ।",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

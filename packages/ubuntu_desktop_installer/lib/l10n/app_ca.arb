@@ -94,8 +94,8 @@
   "@changeButtonText": {},
   "restartButtonText": "Reinicia",
   "@restartButtonText": {},
-  "tryOrInstallPageTitle": "Prova o instal·la",
-  "@tryOrInstallPageTitle": {},
+  "welcomePageTitle": "Prova o instal·la",
+  "@welcomePageTitle": {},
   "chooseSecurityKey": "Trieu una clau de seguretat",
   "@chooseSecurityKey": {},
   "confirmSecurityKey": "Confirmeu la clau de seguretat",
@@ -112,8 +112,8 @@
   "@installationTypeAdvancedTitle": {},
   "selectGuidedStorageInstallNow": "Instal·la ara",
   "@selectGuidedStorageInstallNow": {},
-  "startInstallingButtonText": "Comença a instal·lar",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Comença a instal·lar",
+  "@confirmInstallButton": {},
   "newPartitionTable": "Taula de particions nova",
   "@newPartitionTable": {},
   "partitionTypeLabel": "Tipus de partició nova:",
@@ -140,10 +140,6 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Les contrasenyes no coincideixen",
   "@identityPasswordMismatch": {},
-  "writeChangesFallbackSerial": "disc",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "shutdown": "Atura",
   "@shutdown": {},
   "installationCompleteTitle": "S'ha completat la instal·lació",
@@ -176,8 +172,8 @@
   "@identityUsernameRequired": {},
   "identityPasswordRequired": "Cal una contrasenya",
   "@identityPasswordRequired": {},
-  "welcomeHeader": "Trieu la vostra llengua:",
-  "@welcomeHeader": {},
+  "localeHeader": "Trieu la vostra llengua:",
+  "@localeHeader": {},
   "windowTitle": "Instal·lació del sistema {RELEASE}",
   "@windowTitle": {
     "type": "text",
@@ -185,40 +181,40 @@
       "RELEASE": {}
     }
   },
-  "repairInstallation": "Repara la instal·lació",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "La reparació reinstal·larà tot el programari instal·lat sense tocar els documents ni la configuració.",
-  "@repairInstallationDescription": {},
-  "tryUbuntu": "Prova el sistema {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeRepairOption": "Repara la instal·lació",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "La reparació reinstal·larà tot el programari instal·lat sense tocar els documents ni la configuració.",
+  "@welcomeRepairDescription": {},
+  "welcomeTryOption": "Prova el sistema {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "Podeu provar {RELEASE} sense fer cap canvi al vostre ordinador.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "Podeu provar {RELEASE} sense fer cap canvi al vostre ordinador.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Instal·la el sistema {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Instal·la el sistema {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Instal·lar {RELEASE} al costat (o en lloc de) del vostre sistema operatiu actual. Això no hauria de trigar massa.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Instal·lar {RELEASE} al costat (o en lloc de) del vostre sistema operatiu actual. Això no hauria de trigar massa.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "És possible que vulgueu llegir la <a href=\"{url}\"> nota de llançament</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "És possible que vulgueu llegir la <a href=\"{url}\"> nota de llançament</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -265,8 +261,8 @@
   "@installAlongsideAvailable": {},
   "themePageTitle": "Trieu l’aspecte",
   "@themePageTitle": {},
-  "writeChangesPartitionsHeader": "S’aplicaran els canvis següents a les particions:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "S’aplicaran els canvis següents a les particions:",
+  "@confirmPartitionChanges": {},
   "installationTypeDualOSDetected": "L’ordinador actualment duu els sistemes {os1} i {os2}. Què voleu fer?",
   "@installationTypeDualOSDetected": {
     "type": "text",

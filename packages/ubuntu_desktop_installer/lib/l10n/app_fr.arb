@@ -8,22 +8,22 @@
   "@restartButtonText": {},
   "welcome": "Bienvenue",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Essayer ou installer {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Réparer l’installation",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "La réparation réinstallera tous les logiciels installés en conservant les documents et les paramètres.",
-  "@repairInstallationDescription": {},
-  "tryUbuntu": "Essayer {RELEASE}",
-  "@tryUbuntu": {},
-  "tryUbuntuDescription": "Vous pouvez essayer {RELEASE} sans appliquer aucun changement à votre ordinateur.",
-  "@tryUbuntuDescription": {},
-  "installUbuntu": "Installer {RELEASE}",
-  "@installUbuntu": {},
-  "installUbuntuDescription": "Installer {RELEASE} à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps.",
-  "@installUbuntuDescription": {},
-  "releaseNotesLabel": "Vous pouvez éventuellement lire les <a href=\"{url}\">notes de publication</a>.",
-  "@releaseNotesLabel": {},
+  "welcomePageTitle": "Essayer ou installer {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Réparer l’installation",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "La réparation réinstallera tous les logiciels installés en conservant les documents et les paramètres.",
+  "@welcomeRepairDescription": {},
+  "welcomeTryOption": "Essayer {RELEASE}",
+  "@welcomeTryOption": {},
+  "welcomeTryDescription": "Vous pouvez essayer {RELEASE} sans appliquer aucun changement à votre ordinateur.",
+  "@welcomeTryDescription": {},
+  "welcomeInstallOption": "Installer {RELEASE}",
+  "@welcomeInstallOption": {},
+  "welcomeInstallDescription": "Installer {RELEASE} à côté (ou en remplacement) de votre système d’exploitation actuel. Ceci ne devrait pas prendre trop longtemps.",
+  "@welcomeInstallDescription": {},
+  "welcomeReleaseNotesLabel": "Vous pouvez éventuellement lire les <a href=\"{url}\">notes de publication</a>.",
+  "@welcomeReleaseNotesLabel": {},
   "rstTitle": "RST est activé",
   "@rstTitle": {},
   "rstDescription": "Cet ordinateur utilise la technologie RST (Rapid Storage Technology) d’Intel. Il est nécessaire de désactiver RST sous Windows avant d’installer Ubuntu.",
@@ -58,8 +58,8 @@
   "@installThirdPartySubtitle": {},
   "allocateDiskSpace": "Partitionnement manuel",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Installer",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Installer",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Périphérique",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Type",
@@ -74,18 +74,16 @@
   "@diskHeadersSystem": {},
   "diskHeadersFormat": "Formatter",
   "@diskHeadersFormat": {},
-  "writeChangesToDisk": "Prêt à installer",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "disque",
-  "@writeChangesFallbackSerial": {},
-  "writeChangesDescription": "Si vous continuez, les changements ci-dessous seront écrits sur les disques. Vous pourrez faire des changements ultérieurs manuellement.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "Les tables de partitions des périphériques suivants seront modifiées :",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {},
-  "writeChangesPartitionsHeader": "Les modification suivantes sur les partitions seront appliquées :",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPageTitle": "Prêt à installer",
+  "@confirmPageTitle": {},
+  "confirmHeader": "Si vous continuez, les changements ci-dessous seront écrits sur les disques. Vous pourrez faire des changements ultérieurs manuellement.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "Les tables de partitions des périphériques suivants seront modifiées :",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {},
+  "confirmPartitionChanges": "Les modification suivantes sur les partitions seront appliquées :",
+  "@confirmPartitionChanges": {},
   "themePageTitle": "Choisissez l’apparence",
   "@themePageTitle": {},
   "themePageHeader": "Vous pourrez la changer ultérieurement dans les préférences d’apparence.",
@@ -348,8 +346,8 @@
       "color": {}
     }
   },
-  "welcomeHeader": "Choisissez votre langue :",
-  "@welcomeHeader": {},
+  "localeHeader": "Choisissez votre langue :",
+  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nom du réseau",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Un nom de réseau est requis",
@@ -423,16 +421,16 @@
       "url": {}
     }
   },
-  "writeChangesPartitionFormatted": "la partition <b>{sysname}</b> formatée en <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "la partition <b>{sysname}</b> formatée en <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionCreated": "la partition <b>{sysname}</b> créée",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "la partition <b>{sysname}</b> créée",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -442,8 +440,8 @@
   "@quitButtonText": {},
   "notEnoughDiskSpaceTitle": "Pas assez d’espace",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "la partition <b>{sysname}</b> redimensionnée de <b>{oldsize}</b> à <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "la partition <b>{sysname}</b> redimensionnée de <b>{oldsize}</b> à <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -451,8 +449,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la partition <b>{sysname}</b> formatée en <b>{format}</b> utilisée pour <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "la partition <b>{sysname}</b> formatée en <b>{format}</b> utilisée pour <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -460,8 +458,8 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "la partition <b>{sysname}</b> utilisée pour <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "la partition <b>{sysname}</b> utilisée pour <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -588,8 +586,8 @@
       "DISTRO": {}
     }
   },
-  "preparingUbuntu": "Préparation d’{DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Préparation d’{DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -599,10 +597,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Variante du clavier :",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Disques",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partitions",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Disques",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partitions",
+  "@confirmPartitionsTitle": {},
   "installationSlidesWelcomeTitle": "Rapide, gratuit et plein de nouvelles fonctionnalités",
   "@installationSlidesWelcomeTitle": {},
   "installationSlidesWelcomeHeader": "La dernière version d’{DISTRO} rend l’informatique plus facile que jamais.",
@@ -676,8 +674,8 @@
   "@installationSlidesSupportEnterprise": {},
   "installationSlidesSupportCommunity": "Ask Ubuntu couvre une gamme de questions et de réponses. Discours Ubuntu fournit des guides et des discussions pour les nouveaux utilisateurs et les utilisateurs expérimentés.",
   "@installationSlidesSupportCommunity": {},
-  "welcomePageTitle": "Bienvenue à {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Bienvenue à {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -728,6 +726,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Bienvenue à {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

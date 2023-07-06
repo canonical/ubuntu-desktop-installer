@@ -24,8 +24,8 @@
   },
   "partitionFormatLabel": "Használva mint:",
   "@partitionFormatLabel": {},
-  "writeChangesDescription": "Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.",
-  "@writeChangesDescription": {},
+  "confirmHeader": "Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.",
+  "@confirmHeader": {},
   "installationTypeDualOSDetected": "Ezen a számítógépen jelenleg {os1} és {os2} van. Mit szeretne tenni?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -72,26 +72,22 @@
   "@newPartitionTableConfirmationMessage": {},
   "partitionLocationEnd": "A hely vége",
   "@partitionLocationEnd": {},
-  "writeChangesToDisk": "Telepítésre kész",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "lemez",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Telepítésre kész",
+  "@confirmPageTitle": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "A következő partícióváltoztatások kerülnek alkalmazásra:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "A következő partícióváltoztatások kerülnek alkalmazásra:",
+  "@confirmPartitionChanges": {},
   "identityPasswordMismatch": "A jelszavak nem egyeznek",
   "@identityPasswordMismatch": {},
-  "writeChangesPartitionTablesHeader": "A következő eszközök partíciós táblái változnak meg:",
-  "@writeChangesPartitionTablesHeader": {},
+  "confirmPartitionTables": "A következő eszközök partíciós táblái változnak meg:",
+  "@confirmPartitionTables": {},
   "useWiredConnection": "Vezetékes kapcsolat használata",
   "@useWiredConnection": {},
   "noWiredConnection": "Nincs vezetékes kapcsolat felismerve",
@@ -153,14 +149,14 @@
   "@revertButtonText": {},
   "welcome": "Üdvözöljük",
   "@welcome": {},
-  "tryOrInstallPageTitle": "A(z) {DISTRO} kipróbálása vagy telepítése",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Telepítés javítása",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "A javítás újratelepíti az összes telepített szoftvert, anélkül hogy a dokumentumokat vagy a beállításokat érintené.",
-  "@repairInstallationDescription": {},
-  "releaseNotesLabel": "Érdemes lehet elolvasni a <a href=\"{url}\">kiadási megjegyzéseket</a>.",
-  "@releaseNotesLabel": {
+  "welcomePageTitle": "A(z) {DISTRO} kipróbálása vagy telepítése",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Telepítés javítása",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "A javítás újratelepíti az összes telepített szoftvert, anélkül hogy a dokumentumokat vagy a beállításokat érintené.",
+  "@welcomeRepairDescription": {},
+  "welcomeReleaseNotesLabel": "Érdemes lehet elolvasni a <a href=\"{url}\">kiadási megjegyzéseket</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -268,8 +264,8 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Kézi particionálás",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Telepítés",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Telepítés",
+  "@confirmInstallButton": {},
   "partitionTypePrimary": "Elsődleges",
   "@partitionTypePrimary": {},
   "partitionTypeLogical": "Logikai",
@@ -379,8 +375,8 @@
   },
   "restartIntoWindows": "Újraindítás és Windows használata",
   "@restartIntoWindows": {},
-  "welcomeHeader": "Válasszon nyelvet:",
-  "@welcomeHeader": {},
+  "localeHeader": "Válasszon nyelvet:",
+  "@localeHeader": {},
   "connectToInternetPageTitle": "Kapcsolódás hálózathoz",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "A számítógép internethez való kapcsolódása segít az Ubuntunak telepíteni a szükséges további szoftvereket, és segít kiválasztani az időzónát.\n\nKapcsolódás Ethernet-kábellel vagy Wi-Fi-hálózat kiválasztása",
@@ -411,29 +407,29 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "A(z) {RELEASE} kipróbálása",
-  "@tryUbuntu": {
+  "welcomeTryOption": "A(z) {RELEASE} kipróbálása",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "A(z) {RELEASE} kipróbálható anélkül, hogy bármilyen változtatást végezne a számítógépén.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "A(z) {RELEASE} kipróbálható anélkül, hogy bármilyen változtatást végezne a számítógépén.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "A(z) {RELEASE} telepítése",
-  "@installUbuntu": {
+  "welcomeInstallOption": "A(z) {RELEASE} telepítése",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "A(z) {RELEASE} telepítése a jelenlegi operációs rendszere mellé (vagy helyett). Ez nem fog túl sokáig tartani.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "A(z) {RELEASE} telepítése a jelenlegi operációs rendszere mellé (vagy helyett). Ez nem fog túl sokáig tartani.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -504,8 +500,8 @@
   "@notEnoughDiskSpaceTitle": {},
   "showSecurityKey": "Biztonsági kulcs megjelenítése",
   "@showSecurityKey": {},
-  "writeChangesPartitionCreated": "<b>{sysname}</b> partíció létrehozva",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "<b>{sysname}</b> partíció létrehozva",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -513,8 +509,8 @@
   },
   "installationTypeLVMEncryptionSelected": "LVM és titkosítás kiválasztva",
   "@installationTypeLVMEncryptionSelected": {},
-  "writeChangesPartitionResized": "<b>{sysname}</b> partíció átméretezve <b>{oldsize}</b> méretről <b>{newsize}</b> méretre",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "<b>{sysname}</b> partíció átméretezve <b>{oldsize}</b> méretről <b>{newsize}</b> méretre",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -522,16 +518,16 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "<b>{sysname}</b> partíció <b>{format}</b> formátumra formázva",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "<b>{sysname}</b> partíció <b>{format}</b> formátumra formázva",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "<b>{sysname}</b> partíció <b>{format}</b> formátumra formázva, <b>{mount}</b> helyre csatolva",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "<b>{sysname}</b> partíció <b>{format}</b> formátumra formázva, <b>{mount}</b> helyre csatolva",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -539,8 +535,8 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "<b>{sysname}</b> partíció <b>{mount}</b> helyre csatolva",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "<b>{sysname}</b> partíció <b>{mount}</b> helyre csatolva",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -750,8 +746,8 @@
   "@continueTesting": {},
   "partitionFormatNone": "Formázatlanul hagyás",
   "@partitionFormatNone": {},
-  "preparingUbuntu": "A(z) {DISTRO} előkészítése…",
-  "@preparingUbuntu": {
+  "loadingHeader": "A(z) {DISTRO} előkészítése…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -761,10 +757,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Billentyűzetváltozat:",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Eszközök",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partíciók",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Eszközök",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partíciók",
+  "@confirmPartitionsTitle": {},
   "partitionLimitReached": "Korlát elérve",
   "@partitionLimitReached": {},
   "tooManyPrimaryPartitions": "Túl sok elsődleges partíció",
@@ -785,8 +781,8 @@
       "DISTRO": {}
     }
   },
-  "welcomePageTitle": "Üdvözli a(z) {DISTRO}!",
-  "@welcomePageTitle": {
+  "localePageTitle": "Üdvözli a(z) {DISTRO}!",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -795,5 +791,12 @@
   "allocateDiskSpaceInvalidMountPointSpace": "A csatolási pontok nem tartalmazhatnak szóközöket",
   "@allocateDiskSpaceInvalidMountPointSpace": {},
   "allocateDiskSpaceInvalidMountPointSlash": "A csatolási pontoknak „/” karakterrel kell kezdődniük",
-  "@allocateDiskSpaceInvalidMountPointSlash": {}
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "loadingPageTitle": "Üdvözli a(z) {DISTRO}!",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

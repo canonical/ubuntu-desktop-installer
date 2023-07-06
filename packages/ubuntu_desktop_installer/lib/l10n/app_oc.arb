@@ -12,22 +12,22 @@
   "@revertButtonText": {},
   "welcome": "La benvenguda",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Ensajar o installar {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Reparar l’installacion",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.",
-  "@repairInstallationDescription": {},
-  "tryUbuntu": "Ensajar {RELEASE}",
-  "@tryUbuntu": {},
-  "tryUbuntuDescription": "Podètz ensajar {RELEASE} sens aplicar cap de modificacion a vòstre ordenador.",
-  "@tryUbuntuDescription": {},
-  "installUbuntu": "Installar {RELEASE}",
-  "@installUbuntu": {},
-  "installUbuntuDescription": "Installar {RELEASE} a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.",
-  "@installUbuntuDescription": {},
-  "releaseNotesLabel": "Podètz tanben legir las <a href=\"{url}\">nòtas de version</a>.",
-  "@releaseNotesLabel": {
+  "welcomePageTitle": "Ensajar o installar {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Reparar l’installacion",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.",
+  "@welcomeRepairDescription": {},
+  "welcomeTryOption": "Ensajar {RELEASE}",
+  "@welcomeTryOption": {},
+  "welcomeTryDescription": "Podètz ensajar {RELEASE} sens aplicar cap de modificacion a vòstre ordenador.",
+  "@welcomeTryDescription": {},
+  "welcomeInstallOption": "Installar {RELEASE}",
+  "@welcomeInstallOption": {},
+  "welcomeInstallDescription": "Installar {RELEASE} a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.",
+  "@welcomeInstallDescription": {},
+  "welcomeReleaseNotesLabel": "Podètz tanben legir las <a href=\"{url}\">nòtas de version</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -76,8 +76,8 @@
   "@installThirdPartySubtitle": {},
   "allocateDiskSpace": "Particionament manual",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Installar",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Installar",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Disc",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Tipe",
@@ -156,26 +156,22 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Los senhals correspondon pas",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "Lèst per installacion",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "disc",
-  "@writeChangesFallbackSerial": {
-    "description": "Nom d’afichatge per defaut per un disc sens numèro de seria (pauc probable)"
-  },
-  "writeChangesDescription": "Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "Las taulas de particions dels periferics seguents seràn modificadas :",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Lèst per installacion",
+  "@confirmPageTitle": {},
+  "confirmHeader": "Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "Las taulas de particions dels periferics seguents seràn modificadas :",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "Una entrada per un disc que sa particion es a èsser modificada",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Las modificacions seguenta seràn aplicadas a las particions :",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "Las modificacions seguenta seràn aplicadas a las particions :",
+  "@confirmPartitionChanges": {},
   "themePageTitle": "Causissètz vòstre tèma",
   "@themePageTitle": {},
   "themePageHeader": "La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.",
@@ -368,8 +364,8 @@
       "color": {}
     }
   },
-  "welcomeHeader": "Causissètz vòstra lenga :",
-  "@welcomeHeader": {},
+  "localeHeader": "Causissètz vòstra lenga :",
+  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nom de la ret",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetwork": "Se connectar a una ret Wi-Fi amagada",
@@ -443,8 +439,8 @@
   "@installingSystem": {},
   "configuringSystem": "Configuracion del sistèma…",
   "@configuringSystem": {},
-  "writeChangesPartitionResized": "la particion <b>{sysname}</b> redimensionada de <b>{oldsize}</b> a <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "la particion <b>{sysname}</b> redimensionada de <b>{oldsize}</b> a <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -460,23 +456,23 @@
       "url": {}
     }
   },
-  "writeChangesPartitionCreated": "particion <b>{sysname}</b> creada",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "particion <b>{sysname}</b> creada",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionMounted": "la particion <b>{sysname}</b> utilizada per <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "la particion <b>{sysname}</b> utilizada per <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la particion <b>{sysname}</b> formatada en <b>{format}</b> utilizada per <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "la particion <b>{sysname}</b> formatada en <b>{format}</b> utilizada per <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -484,8 +480,8 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "la particion <b>{sysname}</b> formatada en <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "la particion <b>{sysname}</b> formatada en <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -578,8 +574,8 @@
       "RELEASE": {}
     }
   },
-  "preparingUbuntu": "Preparacion de {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Preparacion de {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -589,10 +585,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Varianta del clavièr :",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Periferics",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Particions",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Periferics",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Particions",
+  "@confirmPartitionsTitle": {},
   "installationSlidesAvailable": "Disponible :",
   "@installationSlidesAvailable": {},
   "installationSlidesIncluded": "Inclús :",
@@ -643,8 +639,8 @@
   "@installationSlidesSupportResources": {},
   "installationSlidesSupportDocumentation": "Documentacion oficiala",
   "@installationSlidesSupportDocumentation": {},
-  "welcomePageTitle": "La benvenguda a {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "La benvenguda a {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -746,6 +742,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "La benvenguda a {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

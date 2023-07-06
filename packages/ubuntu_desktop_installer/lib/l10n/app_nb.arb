@@ -29,8 +29,8 @@
   },
   "allocateDiskSpace": "Tildel diskplass",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Installer",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Installer",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Enhet",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Type",
@@ -77,8 +77,8 @@
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "Installere nå",
   "@selectGuidedStorageInstallNow": {},
-  "welcomeHeader": "Velg ditt språk:",
-  "@welcomeHeader": {},
+  "localeHeader": "Velg ditt språk:",
+  "@localeHeader": {},
   "useWiredConnection": "Bruk kablet nettverktilkobling",
   "@useWiredConnection": {},
   "noWiredConnection": "Ingen kablet tilkobling er oppdaget",
@@ -173,18 +173,18 @@
   "@selectGuidedStorageDropdownLabel": {},
   "appTitle": "Ubuntu Skrivebord Installering",
   "@appTitle": {},
-  "repairInstallation": "Reparere installasjonen",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "Reparasjon vil installere all installert programvare på nytt uten å berøre dokumenter eller innstillinger.",
-  "@repairInstallationDescription": {},
+  "welcomeRepairOption": "Reparere installasjonen",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "Reparasjon vil installere all installert programvare på nytt uten å berøre dokumenter eller innstillinger.",
+  "@welcomeRepairDescription": {},
   "changeButtonText": "Endre",
   "@changeButtonText": {},
   "restartButtonText": "Start på nytt",
   "@restartButtonText": {},
   "welcome": "Velkommen",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Prøv eller Installere",
-  "@tryOrInstallPageTitle": {},
+  "welcomePageTitle": "Prøv eller Installere",
+  "@welcomePageTitle": {},
   "rstTitle": "Slå av RST",
   "@rstTitle": {},
   "rstDescription": "Denne datamaskinen bruker Intel RST (Rapid Storage Technology). Du må slå av RST i Windows før du installerer Ubuntu.",
@@ -220,8 +220,8 @@
   "@dontInstallDriverSoftwareNowDescription": {},
   "configureSecureBootSecurityKeyRequired": "Sikkerhetsnøkkel er krevet",
   "@configureSecureBootSecurityKeyRequired": {},
-  "releaseNotesLabel": "Det kan være lurt å lese <a href=\"{url}\">versjonsnotatene</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "Det kan være lurt å lese <a href=\"{url}\">versjonsnotatene</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -280,29 +280,29 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "Prøv {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "Prøv {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "Du kan prøve {RELEASE} uten å gjøre noen endringer på datamaskinen.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "Du kan prøve {RELEASE} uten å gjøre noen endringer på datamaskinen.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Installere {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Installere {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Installer {RELEASE} ved siden av (eller i stedet for) ditt nåværende operativsystem. Dette bør ikke ta for lang tid.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Installer {RELEASE} ved siden av (eller i stedet for) ditt nåværende operativsystem. Dette bør ikke ta for lang tid.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -368,12 +368,8 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Passordene samsvarer ikke",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "Skriv endringer til disk",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "disk",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
+  "confirmPageTitle": "Skriv endringer til disk",
+  "@confirmPageTitle": {},
   "identityInvalidHostname": "Datamaskinsnavnet er ugyldig",
   "@identityInvalidHostname": {},
   "identityUsernameLabel": "Velg et brukernavn",
@@ -415,10 +411,10 @@
   "@installAlongsideResizePartition": {},
   "identityUsernameInUse": "Brukernavnet finnes allerede.",
   "@identityUsernameInUse": {},
-  "writeChangesDescription": "Hvis du fortsetter vil endringene nedenfor bli skrevet til diskene. Du vil kunne gjøre videre endringer manuelt.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "Partisjonstabellen for følgende enheter har blitt endret:",
-  "@writeChangesPartitionTablesHeader": {},
+  "confirmHeader": "Hvis du fortsetter vil endringene nedenfor bli skrevet til diskene. Du vil kunne gjøre videre endringer manuelt.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "Partisjonstabellen for følgende enheter har blitt endret:",
+  "@confirmPartitionTables": {},
   "bitlockerDescription": "Maskinen bruker Windows BitLocker-kryptering.\nDu må skru dette av før du installerer Ubuntu.",
   "@bitlockerDescription": {},
   "installationFailed": "Installasjonen mislyktes",
@@ -452,8 +448,8 @@
   },
   "identityUsernameTooLong": "Navnet er for langt.",
   "@identityUsernameTooLong": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
@@ -468,8 +464,8 @@
   "@installAlongsideFiles": {},
   "installAlongsideSize": "Størrelse:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionsHeader": "Følgende partisjonsendringer vil bli utført:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "Følgende partisjonsendringer vil bli utført:",
+  "@confirmPartitionChanges": {},
   "restartInto": "Start om igjen til {system}",
   "@restartInto": {
     "type": "text",
@@ -488,16 +484,16 @@
   },
   "bootLoaderDevice": "Enhet å installere oppstartslaster på",
   "@bootLoaderDevice": {},
-  "writeChangesPartitionMounted": "partisjon <b>{sysname}</b> brukt til <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "partisjon <b>{sysname}</b> brukt til <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "endret størrelse på partisjon <b>{sysname}</b> fra <b>{oldsize}</b> til <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "endret størrelse på partisjon <b>{sysname}</b> fra <b>{oldsize}</b> til <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -505,8 +501,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partisjon <b>{sysname}</b> formatert som <b>{format}</b> og brukt som <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "partisjon <b>{sysname}</b> formatert som <b>{format}</b> og brukt som <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -514,15 +510,15 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partisjon <b>{sysname}</b> opprettet",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "partisjon <b>{sysname}</b> opprettet",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionFormatted": "partisjon <b>{sysname}</b> formatert som <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "partisjon <b>{sysname}</b> formatert som <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -657,19 +653,19 @@
   "@restartIntoWindowsTitle": {},
   "installationSlidesSupportDocumentation": "Offisiell dokumentasjon",
   "@installationSlidesSupportDocumentation": {},
-  "preparingUbuntu": "Forbereder {DISTRO} …",
-  "@preparingUbuntu": {
+  "loadingHeader": "Forbereder {DISTRO} …",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "writeChangesDevicesTitle": "Enheter",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partisjoner",
-  "@writeChangesPartitionsTitle": {},
-  "welcomePageTitle": "Velkommen til {DISTRO}",
-  "@welcomePageTitle": {
+  "confirmDevicesTitle": "Enheter",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partisjoner",
+  "@confirmPartitionsTitle": {},
+  "localePageTitle": "Velkommen til {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -682,5 +678,12 @@
   "installationSlidesAvailable": "Tilgjengelig:",
   "@installationSlidesAvailable": {},
   "installationSlidesIncluded": "Inkludert:",
-  "@installationSlidesIncluded": {}
+  "@installationSlidesIncluded": {},
+  "loadingPageTitle": "Velkommen til {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

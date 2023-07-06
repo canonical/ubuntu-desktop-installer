@@ -1,14 +1,14 @@
 {
   "@@locale": "th",
-  "tryUbuntu": "ทดลอง {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "ทดลอง {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "ติดตั้ง {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "ติดตั้ง {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -29,8 +29,8 @@
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "คุณอาจต้องการอ่าน <a href=\"{url}\">บันทึกการออกรุ่น</a>",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "คุณอาจต้องการอ่าน <a href=\"{url}\">บันทึกการออกรุ่น</a>",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}

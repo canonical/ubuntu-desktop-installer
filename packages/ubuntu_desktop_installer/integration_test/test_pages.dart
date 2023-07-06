@@ -21,7 +21,7 @@ Future<void> testLocalePage(
 }) async {
   await tester.pumpUntilPage(LocalePage);
   expect(
-    find.title((AppLocalizations l10n) => l10n.welcomePageTitle('Ubuntu')),
+    find.title((AppLocalizations l10n) => l10n.localePageTitle('Ubuntu')),
     findsOneWidget,
   );
 
@@ -48,7 +48,7 @@ Future<void> testWelcomePage(
 }) async {
   await tester.pumpUntilPage(WelcomePage);
   expect(
-    find.title((AppLocalizations l10n) => l10n.tryOrInstallPageTitle('Ubuntu')),
+    find.title((AppLocalizations l10n) => l10n.welcomePageTitle('Ubuntu')),
     findsOneWidget,
   );
 
@@ -373,7 +373,7 @@ Future<void> testConfirmPage(
 }) async {
   await tester.pumpUntilPage(ConfirmPage);
   expect(
-    find.title((AppLocalizations l10n) => l10n.writeChangesToDisk),
+    find.title((AppLocalizations l10n) => l10n.confirmPageTitle),
     findsOneWidget,
   );
 
@@ -381,7 +381,7 @@ Future<void> testConfirmPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.startInstallingButtonText);
+  await tester.tapButton(tester.lang.confirmInstallButton);
 }
 
 Future<void> testBitLockerPage(
