@@ -137,8 +137,8 @@
   "@activeDirectoryPasswordLabel": {},
   "activeDirectoryPasswordEmpty": "Vyžadované",
   "@activeDirectoryPasswordEmpty": {},
-  "welcomeHeader": "Vyberte si svoj jazyk:",
-  "@welcomeHeader": {},
+  "localeHeader": "Vyberte si svoj jazyk:",
+  "@localeHeader": {},
   "wiredMustBeEnabled": "Aby na tomto počítači bolo možné použiť rozhranie Ethernet, je potrebné zapnúť káblové pripojenie",
   "@wiredMustBeEnabled": {},
   "enableWired": "Zapnúť káblové",
@@ -697,8 +697,8 @@
   "@identityPasswordMismatch": {},
   "writeChangesToDisk": "Pripravené na inštaláciu",
   "@writeChangesToDisk": {},
-  "preparingUbuntu": "Pripravuje sa {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Pripravuje sa {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -793,8 +793,8 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Použité ako:",
   "@partitionFormatLabel": {},
-  "welcomePageTitle": "Vitajte v {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Vitajte v {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -809,6 +809,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Vitajte v {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

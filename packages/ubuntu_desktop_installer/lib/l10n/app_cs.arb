@@ -421,8 +421,8 @@
       "color": {}
     }
   },
-  "welcomeHeader": "Zvolte svůj jazyk:",
-  "@welcomeHeader": {},
+  "localeHeader": "Zvolte svůj jazyk:",
+  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Název sítě",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Je vyžadován název sítě",
@@ -626,8 +626,8 @@
   "@activeDirectoryErrorMessage": {},
   "activeDirectoryErrorTitle": "Chyba při nastavování pro Active Directory",
   "@activeDirectoryErrorTitle": {},
-  "preparingUbuntu": "Připravuje se {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Připravuje se {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -711,8 +711,8 @@
   "@installationSlidesSupportUbuntuPro": {},
   "notEnoughDiskSpaceRequired": "Vyžadováno:",
   "@notEnoughDiskSpaceRequired": {},
-  "welcomePageTitle": "Vítejte v {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Vítejte v {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -801,6 +801,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Vítejte v {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

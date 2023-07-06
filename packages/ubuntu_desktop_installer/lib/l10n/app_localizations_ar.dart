@@ -25,17 +25,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get quitButtonText => 'قم بإنهاء التثبيت';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'مرحبا بك في $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'يجري إعداد $DISTRO …';
   }
 
   @override
-  String get welcomeHeader => 'اختر لغتك language:';
+  String localePageTitle(Object DISTRO) {
+    return 'مرحبا بك في $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'اختر لغتك language:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

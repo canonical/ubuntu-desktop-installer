@@ -337,8 +337,8 @@
   "@identityInvalidHostname": {},
   "bitlockerDescription": "Este computador usa encriptação BitLocker do Windows.\nPrecisa de usar o Windows para libertar espaço ou escolha '{option}' para continuar.",
   "@bitlockerDescription": {},
-  "welcomeHeader": "Escolha o seu idioma:",
-  "@welcomeHeader": {},
+  "localeHeader": "Escolha o seu idioma:",
+  "@localeHeader": {},
   "hiddenWifiNetwork": "Ligar a uma rede Wi-Fi oculta",
   "@hiddenWifiNetwork": {},
   "connectButtonText": "Ligar",
@@ -579,8 +579,8 @@
   "@identityHostnameTooLong": {},
   "activeDirectoryErrorTitle": "Erro ao configurando a ligação ao Active Directory",
   "@activeDirectoryErrorTitle": {},
-  "preparingUbuntu": "A preparar o {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "A preparar o {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -685,8 +685,8 @@
       "DISTRO": {}
     }
   },
-  "welcomePageTitle": "Bem-vindo ao {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Bem-vindo ao {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -756,6 +756,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Bem-vindo ao {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

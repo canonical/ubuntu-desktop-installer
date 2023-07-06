@@ -25,17 +25,22 @@ class AppLocalizationsSv extends AppLocalizations {
   String get quitButtonText => 'Avbryt installation';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Välkommen till $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Förbereder $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Välj ditt språk:';
+  String localePageTitle(Object DISTRO) {
+    return 'Välkommen till $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Välj ditt språk:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

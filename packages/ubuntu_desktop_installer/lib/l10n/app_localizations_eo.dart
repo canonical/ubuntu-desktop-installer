@@ -25,17 +25,22 @@ class AppLocalizationsEo extends AppLocalizations {
   String get quitButtonText => 'Ĉesi instaladon';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Bonvenon al $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Preparante $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Elektu vian lingvon:';
+  String localePageTitle(Object DISTRO) {
+    return 'Bonvenon al $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Elektu vian lingvon:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

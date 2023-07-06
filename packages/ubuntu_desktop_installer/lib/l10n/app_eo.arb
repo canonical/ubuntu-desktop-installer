@@ -372,8 +372,8 @@
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Nomo de reto estas postulata",
   "@hiddenWifiNetworkNameRequired": {},
-  "welcomeHeader": "Elektu vian lingvon:",
-  "@welcomeHeader": {},
+  "localeHeader": "Elektu vian lingvon:",
+  "@localeHeader": {},
   "installationTypeDualOSDetected": "Ĉi tiu komputilo aktuale portas instalaĵojn de {os1} kaj {os2}. Kion vi volas?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -571,8 +571,8 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Pardonu, Aktiva Dosierujo ne estas agordebla nuntempe. Post kiam via sistemo funkcias, vizitu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> por helpo.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "Preparante {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Preparante {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -654,8 +654,8 @@
   "@installationSlidesSupportEnterprise": {},
   "installationSlidesSupportCommunity": "Ĉe Ask Ubuntu troviĝas gamo da demandoj kaj respondoj, kaj ĉe Ubuntu Discourse estas gvidiloj kaj diskutejoj por kaj novaj kaj spertaj uzantoj.",
   "@installationSlidesSupportCommunity": {},
-  "welcomePageTitle": "Bonvenon al {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Bonvenon al {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -746,6 +746,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Bonvenon al {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

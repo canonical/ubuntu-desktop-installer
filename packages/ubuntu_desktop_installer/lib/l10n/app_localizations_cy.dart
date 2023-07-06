@@ -25,17 +25,22 @@ class AppLocalizationsCy extends AppLocalizations {
   String get quitButtonText => 'Quit installation';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Welcome to $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Preparing $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Dewiswch eich iaith:';
+  String localePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Dewiswch eich iaith:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

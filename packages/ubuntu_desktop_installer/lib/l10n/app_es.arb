@@ -335,8 +335,8 @@
   "@connectToInternetDescription": {},
   "hiddenWifiNetworkNameLabel": "Nombre de la red",
   "@hiddenWifiNetworkNameLabel": {},
-  "welcomeHeader": "Elija su idioma:",
-  "@welcomeHeader": {},
+  "localeHeader": "Elija su idioma:",
+  "@localeHeader": {},
   "useWiredConnection": "Utilizar conexión por cable",
   "@useWiredConnection": {},
   "noWiredConnection": "No se ha detectado una conexión por cable",
@@ -571,8 +571,8 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Lo sentimos, Active Directory no se puede configurar en este momento. Una vez que el sistema esté en funcionamiento, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para obtener ayuda.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "Preparando la {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Preparando la {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -642,8 +642,8 @@
   "@installationSlidesAccessibilityTitle": {},
   "installationSlidesSupportResources": "Recursos útiles:",
   "@installationSlidesSupportResources": {},
-  "welcomePageTitle": "Bienvenido a {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Bienvenido a {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -746,6 +746,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Bienvenido a {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

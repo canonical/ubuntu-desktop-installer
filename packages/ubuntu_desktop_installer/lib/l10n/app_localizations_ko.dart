@@ -25,17 +25,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get quitButtonText => '인스톨러 닫기';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return '$DISTRO사용을 환영합니다';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return '$DISTRO 준비 중…';
   }
 
   @override
-  String get welcomeHeader => '언어를 선택하십시오:';
+  String localePageTitle(Object DISTRO) {
+    return '$DISTRO사용을 환영합니다';
+  }
+
+  @override
+  String get localeHeader => '언어를 선택하십시오:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

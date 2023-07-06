@@ -368,8 +368,8 @@
       "color": {}
     }
   },
-  "welcomeHeader": "Causissètz vòstra lenga :",
-  "@welcomeHeader": {},
+  "localeHeader": "Causissètz vòstra lenga :",
+  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nom de la ret",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetwork": "Se connectar a una ret Wi-Fi amagada",
@@ -578,8 +578,8 @@
       "RELEASE": {}
     }
   },
-  "preparingUbuntu": "Preparacion de {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Preparacion de {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -643,8 +643,8 @@
   "@installationSlidesSupportResources": {},
   "installationSlidesSupportDocumentation": "Documentacion oficiala",
   "@installationSlidesSupportDocumentation": {},
-  "welcomePageTitle": "La benvenguda a {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "La benvenguda a {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -746,6 +746,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "La benvenguda a {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

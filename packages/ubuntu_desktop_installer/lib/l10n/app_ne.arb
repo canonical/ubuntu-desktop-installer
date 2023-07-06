@@ -9,8 +9,8 @@
       "RELEASE": {}
     }
   },
-  "welcomeHeader": "आफ्नो भाषा छान्नुहोस्:",
-  "@welcomeHeader": {},
+  "localeHeader": "आफ्नो भाषा छान्नुहोस्:",
+  "@localeHeader": {},
   "restartButtonText": "फेरि सुरु गर्नुहोस्",
   "@restartButtonText": {},
   "revertButtonText": "फिर्ता गर्नुहोस्",

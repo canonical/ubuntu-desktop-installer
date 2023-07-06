@@ -194,8 +194,8 @@
   "@identityPasswordRequired": {},
   "startInstallingButtonText": "Kur",
   "@startInstallingButtonText": {},
-  "welcomeHeader": "Dil seçin:",
-  "@welcomeHeader": {},
+  "localeHeader": "Dil seçin:",
+  "@localeHeader": {},
   "diskHeadersSystem": "Sistem",
   "@diskHeadersSystem": {},
   "identityAutoLogin": "Otomatik giriş yap",
@@ -580,8 +580,8 @@
       "DISTRO": {}
     }
   },
-  "preparingUbuntu": "{DISTRO} hazırlanıyor…",
-  "@preparingUbuntu": {
+  "loadingHeader": "{DISTRO} hazırlanıyor…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -626,8 +626,8 @@
   },
   "installationSlidesCreativityTitle": "Yaratıcılığınızı zenginleştirin",
   "@installationSlidesCreativityTitle": {},
-  "welcomePageTitle": "{DISTRO} dağıtımına hoş geldiniz",
-  "@welcomePageTitle": {
+  "localePageTitle": "{DISTRO} dağıtımına hoş geldiniz",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -775,5 +775,12 @@
   "allocateDiskSpaceInvalidMountPointSlash": "Bağlama noktaları \"/\" ile başlamalıdır",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Bağlama noktaları boşluk içeremez",
-  "@allocateDiskSpaceInvalidMountPointSpace": {}
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "loadingPageTitle": "{DISTRO} dağıtımına hoş geldiniz",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

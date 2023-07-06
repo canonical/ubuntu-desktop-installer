@@ -154,8 +154,8 @@
   "@chooseSecurityKey": {},
   "installThirdPartySubtitle": "Mae'r feddalwedd hwn yn destun amodau trwyddedu sydd ynghlwm yn y ddogfennaeth. Mae peth yn fasnachol.",
   "@installThirdPartySubtitle": {},
-  "welcomeHeader": "Dewiswch eich iaith:",
-  "@welcomeHeader": {},
+  "localeHeader": "Dewiswch eich iaith:",
+  "@localeHeader": {},
   "installUbuntuDescription": "Gosod {RELEASE} ochr yn ochr â (neu yn lle) eich system weithredu gyfredol. Fydd hyn ddim yn cymryd yn rhy hir.",
   "@installUbuntuDescription": {
     "type": "text",

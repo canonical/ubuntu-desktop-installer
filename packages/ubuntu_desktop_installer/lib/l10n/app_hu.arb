@@ -379,8 +379,8 @@
   },
   "restartIntoWindows": "Újraindítás és Windows használata",
   "@restartIntoWindows": {},
-  "welcomeHeader": "Válasszon nyelvet:",
-  "@welcomeHeader": {},
+  "localeHeader": "Válasszon nyelvet:",
+  "@localeHeader": {},
   "connectToInternetPageTitle": "Kapcsolódás hálózathoz",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "A számítógép internethez való kapcsolódása segít az Ubuntunak telepíteni a szükséges további szoftvereket, és segít kiválasztani az időzónát.\n\nKapcsolódás Ethernet-kábellel vagy Wi-Fi-hálózat kiválasztása",
@@ -750,8 +750,8 @@
   "@continueTesting": {},
   "partitionFormatNone": "Formázatlanul hagyás",
   "@partitionFormatNone": {},
-  "preparingUbuntu": "A(z) {DISTRO} előkészítése…",
-  "@preparingUbuntu": {
+  "loadingHeader": "A(z) {DISTRO} előkészítése…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -785,8 +785,8 @@
       "DISTRO": {}
     }
   },
-  "welcomePageTitle": "Üdvözli a(z) {DISTRO}!",
-  "@welcomePageTitle": {
+  "localePageTitle": "Üdvözli a(z) {DISTRO}!",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -795,5 +795,12 @@
   "allocateDiskSpaceInvalidMountPointSpace": "A csatolási pontok nem tartalmazhatnak szóközöket",
   "@allocateDiskSpaceInvalidMountPointSpace": {},
   "allocateDiskSpaceInvalidMountPointSlash": "A csatolási pontoknak „/” karakterrel kell kezdődniük",
-  "@allocateDiskSpaceInvalidMountPointSlash": {}
+  "@allocateDiskSpaceInvalidMountPointSlash": {},
+  "loadingPageTitle": "Üdvözli a(z) {DISTRO}!",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

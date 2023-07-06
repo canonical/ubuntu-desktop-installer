@@ -348,8 +348,8 @@
       "color": {}
     }
   },
-  "welcomeHeader": "Choisissez votre langue :",
-  "@welcomeHeader": {},
+  "localeHeader": "Choisissez votre langue :",
+  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nom du réseau",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Un nom de réseau est requis",
@@ -588,8 +588,8 @@
       "DISTRO": {}
     }
   },
-  "preparingUbuntu": "Préparation d’{DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Préparation d’{DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -676,8 +676,8 @@
   "@installationSlidesSupportEnterprise": {},
   "installationSlidesSupportCommunity": "Ask Ubuntu couvre une gamme de questions et de réponses. Discours Ubuntu fournit des guides et des discussions pour les nouveaux utilisateurs et les utilisateurs expérimentés.",
   "@installationSlidesSupportCommunity": {},
-  "welcomePageTitle": "Bienvenue à {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Bienvenue à {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -728,6 +728,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Bienvenue à {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

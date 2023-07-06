@@ -25,7 +25,7 @@ class LocalePage extends ConsumerWidget {
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(lang.welcomePageTitle(flavor.name)),
+        title: Text(lang.localePageTitle(flavor.name)),
       ),
       content: FractionallySizedBox(
         widthFactor: 0.5,
@@ -34,7 +34,7 @@ class LocalePage extends ConsumerWidget {
             const SizedBox(height: kWizardSpacing / 2),
             const MascotAvatar(),
             const SizedBox(height: kWizardSpacing),
-            Text(lang.welcomeHeader),
+            Text(lang.localeHeader),
             const SizedBox(height: kWizardSpacing / 2),
             Expanded(
               child: ListWidget.builder(

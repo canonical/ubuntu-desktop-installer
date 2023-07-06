@@ -24,8 +24,8 @@
   "@installThirdPartySubtitle": {},
   "chooseSecurityKeyTitle": "セキュリティキー",
   "@chooseSecurityKeyTitle": {},
-  "welcomeHeader": "使用する言語を選択してください。",
-  "@welcomeHeader": {},
+  "localeHeader": "使用する言語を選択してください。",
+  "@localeHeader": {},
   "releaseNotesLabel": "<a href=\"{url}\">リリースノート</a> もご覧いただくとよいかもしれません。",
   "@releaseNotesLabel": {
     "type": "text",
@@ -637,8 +637,8 @@
   },
   "installationSlidesAccessibilityLanguages": "言語サポート",
   "@installationSlidesAccessibilityLanguages": {},
-  "preparingUbuntu": "{DISTRO}を準備しています…",
-  "@preparingUbuntu": {
+  "loadingHeader": "{DISTRO}を準備しています…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -661,8 +661,8 @@
       "RELEASE": {}
     }
   },
-  "welcomePageTitle": "{DISTRO}へ、ようこそ。",
-  "@welcomePageTitle": {
+  "localePageTitle": "{DISTRO}へ、ようこそ。",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -791,5 +791,12 @@
   "installationSlidesSupportCommunity": "Ask Ubuntuでは様々な質問と回答をカバーし、Ubuntu Discourseは新規ユーザーと経験豊富なユーザーのためのガイドと議論の場を提供します。",
   "@installationSlidesSupportCommunity": {},
   "installationSlidesSupportEnterprise": "Canonicalは、企業ユーザー向けに職場でUbuntuを安全に導入・管理するための商用サポートを提供しています。",
-  "@installationSlidesSupportEnterprise": {}
+  "@installationSlidesSupportEnterprise": {},
+  "loadingPageTitle": "{DISTRO}へ、ようこそ。",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

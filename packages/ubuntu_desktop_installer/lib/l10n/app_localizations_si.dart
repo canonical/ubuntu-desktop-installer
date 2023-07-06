@@ -25,17 +25,22 @@ class AppLocalizationsSi extends AppLocalizations {
   String get quitButtonText => 'ස්ථාපනයෙන් ඉවතට';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Welcome to $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Preparing $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'ඔබගේ භාෂාව තෝරන්න:';
+  String localePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'ඔබගේ භාෂාව තෝරන්න:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

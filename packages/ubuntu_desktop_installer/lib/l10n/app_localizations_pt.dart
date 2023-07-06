@@ -25,17 +25,22 @@ class AppLocalizationsPt extends AppLocalizations {
   String get quitButtonText => 'Sair da instalação';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Bem-vindo ao $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'A preparar o $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Escolha o seu idioma:';
+  String localePageTitle(Object DISTRO) {
+    return 'Bem-vindo ao $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Escolha o seu idioma:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
@@ -927,17 +932,22 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get quitButtonText => 'Sair da instalação';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Boas-vindas ao $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Preparando o $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Escolha seu idioma:';
+  String localePageTitle(Object DISTRO) {
+    return 'Boas-vindas ao $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Escolha seu idioma:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

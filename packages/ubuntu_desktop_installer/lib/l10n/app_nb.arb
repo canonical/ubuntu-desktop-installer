@@ -77,8 +77,8 @@
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "Installere nå",
   "@selectGuidedStorageInstallNow": {},
-  "welcomeHeader": "Velg ditt språk:",
-  "@welcomeHeader": {},
+  "localeHeader": "Velg ditt språk:",
+  "@localeHeader": {},
   "useWiredConnection": "Bruk kablet nettverktilkobling",
   "@useWiredConnection": {},
   "noWiredConnection": "Ingen kablet tilkobling er oppdaget",
@@ -657,8 +657,8 @@
   "@restartIntoWindowsTitle": {},
   "installationSlidesSupportDocumentation": "Offisiell dokumentasjon",
   "@installationSlidesSupportDocumentation": {},
-  "preparingUbuntu": "Forbereder {DISTRO} …",
-  "@preparingUbuntu": {
+  "loadingHeader": "Forbereder {DISTRO} …",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -668,8 +668,8 @@
   "@writeChangesDevicesTitle": {},
   "writeChangesPartitionsTitle": "Partisjoner",
   "@writeChangesPartitionsTitle": {},
-  "welcomePageTitle": "Velkommen til {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Velkommen til {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -682,5 +682,12 @@
   "installationSlidesAvailable": "Tilgjengelig:",
   "@installationSlidesAvailable": {},
   "installationSlidesIncluded": "Inkludert:",
-  "@installationSlidesIncluded": {}
+  "@installationSlidesIncluded": {},
+  "loadingPageTitle": "Velkommen til {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

@@ -25,17 +25,22 @@ class AppLocalizationsLt extends AppLocalizations {
   String get quitButtonText => 'Baigti diegimą';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Jus sveikina $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Ruošiama $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'Pasirinkite kalbą:';
+  String localePageTitle(Object DISTRO) {
+    return 'Jus sveikina $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Pasirinkite kalbą:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

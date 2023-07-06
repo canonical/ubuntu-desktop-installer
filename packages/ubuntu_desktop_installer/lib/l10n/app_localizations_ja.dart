@@ -25,17 +25,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String get quitButtonText => 'インストールを終了';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return '$DISTROへ、ようこそ。';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return '$DISTROを準備しています…';
   }
 
   @override
-  String get welcomeHeader => '使用する言語を選択してください。';
+  String localePageTitle(Object DISTRO) {
+    return '$DISTROへ、ようこそ。';
+  }
+
+  @override
+  String get localeHeader => '使用する言語を選択してください。';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

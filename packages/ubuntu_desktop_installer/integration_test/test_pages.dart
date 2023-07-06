@@ -21,7 +21,7 @@ Future<void> testLocalePage(
 }) async {
   await tester.pumpUntilPage(LocalePage);
   expect(
-    find.title((AppLocalizations l10n) => l10n.welcomePageTitle('Ubuntu')),
+    find.title((AppLocalizations l10n) => l10n.localePageTitle('Ubuntu')),
     findsOneWidget,
   );
 

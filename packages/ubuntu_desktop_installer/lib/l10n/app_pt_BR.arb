@@ -342,8 +342,8 @@
   "@enableWifi": {},
   "connectButtonText": "Conectar",
   "@connectButtonText": {},
-  "welcomeHeader": "Escolha seu idioma:",
-  "@welcomeHeader": {},
+  "localeHeader": "Escolha seu idioma:",
+  "@localeHeader": {},
   "wifiMustBeEnabled": "Para utilizar WiFi neste computador, a rede WiFi deve ser habilitada",
   "@wifiMustBeEnabled": {},
   "hiddenWifiNetwork": "Conectar-se a uma rede Wi-Fi oculta",
@@ -606,8 +606,8 @@
       "DISTRO": {}
     }
   },
-  "preparingUbuntu": "Preparando o {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Preparando o {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -722,8 +722,8 @@
   "@notEnoughDiskSpaceAvailable": {},
   "notEnoughDiskSpaceRequired": "Necessário:",
   "@notEnoughDiskSpaceRequired": {},
-  "welcomePageTitle": "Boas-vindas ao {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Boas-vindas ao {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -737,6 +737,13 @@
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "Tem certeza de que deseja reiniciar o computador? Você precisará reiniciar a instalação do {DISTRO} mais tarde para concluí-la.",
   "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "loadingPageTitle": "Boas-vindas ao {DISTRO}",
+  "@loadingPageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}

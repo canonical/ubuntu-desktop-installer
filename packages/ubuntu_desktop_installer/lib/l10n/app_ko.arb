@@ -402,8 +402,8 @@
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameRequired": "네트워크 이름이 필요합니다",
   "@hiddenWifiNetworkNameRequired": {},
-  "welcomeHeader": "언어를 선택하십시오:",
-  "@welcomeHeader": {},
+  "localeHeader": "언어를 선택하십시오:",
+  "@localeHeader": {},
   "installationTypeMultiOSDetected": "이 컴퓨터에는 여러 운영체제가 설치되어 있습니다. 어떻게 하시겠습니까?",
   "@installationTypeMultiOSDetected": {},
   "installationTypeDualOSDetected": "이 컴퓨터에 이미 {os1} 및 {os2}이(가) 설치되어 있습니다. 어떻게 하시겠습니까?",
@@ -624,8 +624,8 @@
   },
   "identityHostnameTooLong": "너무 긴 컴퓨터 이름입니다.",
   "@identityHostnameTooLong": {},
-  "preparingUbuntu": "{DISTRO} 준비 중…",
-  "@preparingUbuntu": {
+  "loadingHeader": "{DISTRO} 준비 중…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -643,8 +643,8 @@
   "@writeChangesPartitionsTitle": {},
   "installationSlidesAvailable": "이용가능:",
   "@installationSlidesAvailable": {},
-  "welcomePageTitle": "{DISTRO}사용을 환영합니다",
-  "@welcomePageTitle": {
+  "localePageTitle": "{DISTRO}사용을 환영합니다",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -770,5 +770,12 @@
   "allocateDiskSpaceInvalidMountPointSlash": "마운트 위치는 \"/\"로 시작해야 합니다",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "마운트 위치는 공백을 포함할 수 없습니다",
-  "@allocateDiskSpaceInvalidMountPointSpace": {}
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "loadingPageTitle": "{DISTRO}사용을 환영합니다",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

@@ -1,7 +1,7 @@
 {
   "@@locale": "ar",
-  "welcomeHeader": "اختر لغتك language:",
-  "@welcomeHeader": {},
+  "localeHeader": "اختر لغتك language:",
+  "@localeHeader": {},
   "changeButtonText": "تغيير",
   "@changeButtonText": {},
   "restartButtonText": "إعادة تشغيل",
@@ -165,8 +165,8 @@
   "@notEnoughDiskSpaceTitle": {},
   "rstHeader": "قم بإيقاف RST للمتابعة",
   "@rstHeader": {},
-  "preparingUbuntu": "يجري إعداد {DISTRO} …",
-  "@preparingUbuntu": {
+  "loadingHeader": "يجري إعداد {DISTRO} …",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -185,8 +185,8 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "نوع لوحة المفاتيح:",
   "@keyboardVariantLabel": {},
-  "welcomePageTitle": "مرحبا بك في {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "مرحبا بك في {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -200,5 +200,12 @@
     }
   },
   "rstDescription": "يستخدم هذا الكمبيوتر Intel RST (تقنية التخزين السريع). تحتاج إلى إيقاف تشغيل RST في Windows قبل تثبيت Ubuntu.",
-  "@rstDescription": {}
+  "@rstDescription": {},
+  "loadingPageTitle": "مرحبا بك في {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }
