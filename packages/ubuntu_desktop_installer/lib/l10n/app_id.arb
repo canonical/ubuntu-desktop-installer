@@ -51,8 +51,8 @@
       "color": {}
     }
   },
-  "startInstallingButtonText": "Mulai Memasang",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Mulai Memasang",
+  "@confirmInstallButton": {},
   "diskHeadersMountPoint": "Titik kait",
   "@diskHeadersMountPoint": {},
   "partitionCreateTitle": "Buat partisi",
@@ -115,12 +115,8 @@
   "@identityPasswordLabel": {},
   "identityPasswordRequired": "Kata sandi diperlukan",
   "@identityPasswordRequired": {},
-  "writeChangesToDisk": "Tulis perubahan ke disk",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "diska",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
+  "confirmPageTitle": "Tulis perubahan ke disk",
+  "@confirmPageTitle": {},
   "identityRealNameRequired": "Sebuah nama diperlukan",
   "@identityRealNameRequired": {},
   "identityHostnameInfo": "Nama yang digunakannya saat berbicara dengan komputer lain.",
@@ -131,12 +127,12 @@
   "@identityInvalidUsername": {},
   "identityUsernameLabel": "Pilih nama pengguna",
   "@identityUsernameLabel": {},
-  "writeChangesDescription": "Jika Anda melanjutkan, perubahan yang tercantum di bawah ini akan ditulis ke disk. Anda akan dapat membuat perubahan lebih lanjut secara manual.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "Tabel partisi perangkat berikut diubah:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmHeader": "Jika Anda melanjutkan, perubahan yang tercantum di bawah ini akan ditulis ke disk. Anda akan dapat membuat perubahan lebih lanjut secara manual.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "Tabel partisi perangkat berikut diubah:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
@@ -292,8 +288,8 @@
   "@partitionFormatLabel": {},
   "identityPasswordMismatch": "Kata sandi tidak cocok",
   "@identityPasswordMismatch": {},
-  "writeChangesPartitionsHeader": "Partisi berikut akan diformat:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "Partisi berikut akan diformat:",
+  "@confirmPartitionChanges": {},
   "themePageTitle": "Pilih penampilan Anda",
   "@themePageTitle": {},
   "installationCompleteTitle": "Instalasi selesai",

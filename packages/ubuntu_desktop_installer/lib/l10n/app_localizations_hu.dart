@@ -51,7 +51,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get welcomeRepairOption => 'Telepítés javítása';
 
   @override
-  String get welcomeRepairDescription => 'A javítás újratelepíti az összes telepített szoftvert, anélkül hogy a dokumentumokat vagy a beállításokat érintené.';
+  String get welcomeRepairDescription =>
+      'A javítás újratelepíti az összes telepített szoftvert, anélkül hogy a dokumentumokat vagy a beállításokat érintené.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get rstHeader => 'Az RST kikapcsolása a folytatáshoz';
 
   @override
-  String get rstDescription => 'Ez a számítógép Intel RST (Rapid Storage Technology) technológiát használ. Az RST-t ki kell kapcsolnia a Windowsban az Ubuntu telepítése előtt.';
+  String get rstDescription =>
+      'Ez a számítógép Intel RST (Rapid Storage Technology) technológiát használ. Az RST-t ki kell kapcsolnia a Windowsban az Ubuntu telepítése előtt.';
 
   @override
   String rstInstructions(Object url) {
@@ -111,19 +113,24 @@ class AppLocalizationsHu extends AppLocalizations {
   String get keyboardVariantLabel => 'Billentyűzetváltozat:';
 
   @override
-  String get keyboardPressKeyLabel => 'Nyomja meg a következő billentyűk egyikét:';
+  String get keyboardPressKeyLabel =>
+      'Nyomja meg a következő billentyűk egyikét:';
 
   @override
-  String get keyboardKeyPresentLabel => 'A következő billentyű rajta van a billentyűzetén?';
+  String get keyboardKeyPresentLabel =>
+      'A következő billentyű rajta van a billentyűzetén?';
 
   @override
-  String get configureSecureBootTitle => 'Biztonságos rendszerindítás beállítása';
+  String get configureSecureBootTitle =>
+      'Biztonságos rendszerindítás beállítása';
 
   @override
-  String get configureSecureBootDescription => 'Úgy döntött, hogy harmadik féltől származó illesztőprogramot telepít. Ez a biztonságos rendszerindítás kikapcsolását igényli.\nEhhez most választania kell egy biztonsági kulcsot, és a rendszer újraindításakor meg kell adnia azt.';
+  String get configureSecureBootDescription =>
+      'Úgy döntött, hogy harmadik féltől származó illesztőprogramot telepít. Ez a biztonságos rendszerindítás kikapcsolását igényli.\nEhhez most választania kell egy biztonsági kulcsot, és a rendszer újraindításakor meg kell adnia azt.';
 
   @override
-  String get configureSecureBootOption => 'Biztonságos rendszerindítás beállítása';
+  String get configureSecureBootOption =>
+      'Biztonságos rendszerindítás beállítása';
 
   @override
   String get chooseSecurityKey => 'Biztonsági kulcs választása';
@@ -132,16 +139,20 @@ class AppLocalizationsHu extends AppLocalizations {
   String get confirmSecurityKey => 'A biztonsági kulcs megerősítése';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Egyelőre ne telepítse az illesztőprogramot';
+  String get dontInstallDriverSoftwareNow =>
+      'Egyelőre ne telepítse az illesztőprogramot';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Később a Szoftver és frissítések menüpontból telepítheti.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'Később a Szoftver és frissítések menüpontból telepítheti.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Biztonsági kulcs szükséges';
+  String get configureSecureBootSecurityKeyRequired =>
+      'Biztonsági kulcs szükséges';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'A biztonsági kulcsok nem egyeznek';
+  String get secureBootSecurityKeysDontMatch =>
+      'A biztonsági kulcsok nem egyeznek';
 
   @override
   String get showSecurityKey => 'Biztonsági kulcs megjelenítése';
@@ -150,7 +161,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get connectToInternetPageTitle => 'Kapcsolódás hálózathoz';
 
   @override
-  String get connectToInternetDescription => 'A számítógép internethez való kapcsolódása segít az Ubuntunak telepíteni a szükséges további szoftvereket, és segít kiválasztani az időzónát.\n\nKapcsolódás Ethernet-kábellel vagy Wi-Fi-hálózat kiválasztása';
+  String get connectToInternetDescription =>
+      'A számítógép internethez való kapcsolódása segít az Ubuntunak telepíteni a szükséges további szoftvereket, és segít kiválasztani az időzónát.\n\nKapcsolódás Ethernet-kábellel vagy Wi-Fi-hálózat kiválasztása';
 
   @override
   String get useWiredConnection => 'Vezetékes kapcsolat használata';
@@ -162,7 +174,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get wiredDisabled => 'A vezetékes kapcsolat ki van kapcsolva';
 
   @override
-  String get wiredMustBeEnabled => 'Az ezen a számítógépen történő Ethernet használatához egy vezetékes kapcsolatnak engedélyezve kell lennie';
+  String get wiredMustBeEnabled =>
+      'Az ezen a számítógépen történő Ethernet használatához egy vezetékes kapcsolatnak engedélyezve kell lennie';
 
   @override
   String get enableWired => 'Vezetékes engedélyezése';
@@ -183,13 +196,15 @@ class AppLocalizationsHu extends AppLocalizations {
   String get noInternet => 'Most nem szeretnék kapcsolódni az internethez';
 
   @override
-  String get wirelessNetworkingDisabled => 'A vezeték nélküli hálózatkezelés letiltva';
+  String get wirelessNetworkingDisabled =>
+      'A vezeték nélküli hálózatkezelés letiltva';
 
   @override
   String get noWifiDevicesDetected => 'Nincsenek felismert Wi-Fi-eszközök';
 
   @override
-  String get wifiMustBeEnabled => 'Az ezen a számítógépen történő Wi-Fi használatához a vezeték nélküli hálózatkezelésnek engedélyezve kell lennie';
+  String get wifiMustBeEnabled =>
+      'Az ezen a számítógépen történő Wi-Fi használatához a vezeték nélküli hálózatkezelésnek engedélyezve kell lennie';
 
   @override
   String get enableWifi => 'Wi-Fi engedélyezése';
@@ -201,40 +216,49 @@ class AppLocalizationsHu extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Alkalmazások és frissítések';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'Milyen alkalmazásokat szeretne telepíteni a kezdéshez?';
+  String get updatesOtherSoftwarePageDescription =>
+      'Milyen alkalmazásokat szeretne telepíteni a kezdéshez?';
 
   @override
   String get normalInstallationTitle => 'Normál telepítés';
 
   @override
-  String get normalInstallationSubtitle => 'Webböngésző, segédprogramok, irodai szoftverek, játékok és médialejátszók.';
+  String get normalInstallationSubtitle =>
+      'Webböngésző, segédprogramok, irodai szoftverek, játékok és médialejátszók.';
 
   @override
   String get minimalInstallationTitle => 'Minimális telepítés';
 
   @override
-  String get minimalInstallationSubtitle => 'Webböngésző és alapvető segédprogramok.';
+  String get minimalInstallationSubtitle =>
+      'Webböngésző és alapvető segédprogramok.';
 
   @override
   String get otherOptions => 'Egyéb lehetőségek';
 
   @override
-  String get installThirdPartyTitle => 'Harmadik féltől származó szoftverek grafikus és Wi-Fi-hardverekhez, valamint további médiaformátumok telepítése';
+  String get installThirdPartyTitle =>
+      'Harmadik féltől származó szoftverek grafikus és Wi-Fi-hardverekhez, valamint további médiaformátumok telepítése';
 
   @override
-  String get installThirdPartySubtitle => 'Erre a szoftverre a dokumentációjában szereplő licencfeltételek vonatkoznak. Néhányuk kereskedelmi forgalomban kapható tulajdonosi szoftver.';
+  String get installThirdPartySubtitle =>
+      'Erre a szoftverre a dokumentációjában szereplő licencfeltételek vonatkoznak. Néhányuk kereskedelmi forgalomban kapható tulajdonosi szoftver.';
 
   @override
-  String get installDriversTitle => 'Harmadik féltől származó szoftverek telepítése grafikus és Wi-Fi-hardverekhez';
+  String get installDriversTitle =>
+      'Harmadik féltől származó szoftverek telepítése grafikus és Wi-Fi-hardverekhez';
 
   @override
-  String get installDriversSubtitle => 'Ezekre az illesztőprogramokra a dokumentációjukban szereplő licencfeltételek vonatkoznak. Kereskedelmi forgalomban kapható tulajdonosi szoftverek.';
+  String get installDriversSubtitle =>
+      'Ezekre az illesztőprogramokra a dokumentációjukban szereplő licencfeltételek vonatkoznak. Kereskedelmi forgalomban kapható tulajdonosi szoftverek.';
 
   @override
-  String get installCodecsTitle => 'További médiaformátumok támogatásának letöltése és telepítése';
+  String get installCodecsTitle =>
+      'További médiaformátumok támogatásának letöltése és telepítése';
 
   @override
-  String get installCodecsSubtitle => 'Erre a szoftverre a dokumentációjában szereplő licencfeltételek vonatkoznak. Néhányuk kereskedelmi forgalomban kapható tulajdonosi szoftver.';
+  String get installCodecsSubtitle =>
+      'Erre a szoftverre a dokumentációjában szereplő licencfeltételek vonatkoznak. Néhányuk kereskedelmi forgalomban kapható tulajdonosi szoftver.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +307,12 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'Ezen a számítógépen jelenleg több operációs rendszer van. Mit szeretne tenni?';
+  String get installationTypeMultiOSDetected =>
+      'Ezen a számítógépen jelenleg több operációs rendszer van. Mit szeretne tenni?';
 
   @override
-  String get installationTypeNoOSDetected => 'Ezen a számítógépen jelenleg nincs felismert operációs rendszer. Mit szeretne tenni?';
+  String get installationTypeNoOSDetected =>
+      'Ezen a számítógépen jelenleg nincs felismert operációs rendszer. Mit szeretne tenni?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -319,7 +345,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM kiválasztva';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM és titkosítás kiválasztva';
+  String get installationTypeLVMEncryptionSelected =>
+      'LVM és titkosítás kiválasztva';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -327,10 +354,12 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'Biztonsági kulcsot a következő lépésben fog választani.';
+  String get installationTypeEncryptInfo =>
+      'Biztonsági kulcsot a következő lépésben fog választani.';
 
   @override
-  String get installationTypeZFS => 'KÍSÉRLETI: lemez törlése és ZFS használata';
+  String get installationTypeZFS =>
+      'KÍSÉRLETI: lemez törlése és ZFS használata';
 
   @override
   String get installationTypeZFSSelected => 'ZFS kiválasztva';
@@ -366,7 +395,8 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'A dokumentumok, zenék és egyéb személyes fájlok megőrzésre kerülnek. A számítógép minden egyes indításakor kiválaszthatja, hogy melyik operációs rendszert szeretné használni.';
+  String get installationTypeAlongsideInfo =>
+      'A dokumentumok, zenék és egyéb személyes fájlok megőrzésre kerülnek. A számítógép minden egyes indításakor kiválaszthatja, hogy melyik operációs rendszert szeretné használni.';
 
   @override
   String get installationTypeManual => 'Kézi particionálás';
@@ -385,13 +415,15 @@ class AppLocalizationsHu extends AppLocalizations {
   String get selectGuidedStorageDropdownLabel => 'Meghajtó kiválasztása:';
 
   @override
-  String get selectGuidedStorageInfoLabel => 'A teljes lemez felhasználásra kerül:';
+  String get selectGuidedStorageInfoLabel =>
+      'A teljes lemez felhasználásra kerül:';
 
   @override
   String get selectGuidedStorageInstallNow => 'Telepítés most';
 
   @override
-  String get installAlongsideSpaceDivider => 'Meghajtóterület lefoglalása az alábbi osztóvonal húzásával:';
+  String get installAlongsideSpaceDivider =>
+      'Meghajtóterület lefoglalása az alábbi osztóvonal húzásával:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +452,15 @@ class AppLocalizationsHu extends AppLocalizations {
   String get allocateDiskSpace => 'Kézi particionálás';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'A csatolási pontoknak „/” karakterrel kell kezdődniük';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'A csatolási pontoknak „/” karakterrel kell kezdődniük';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'A csatolási pontok nem tartalmazhatnak szóközöket';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'A csatolási pontok nem tartalmazhatnak szóközöket';
 
   @override
-  String get startInstallingButtonText => 'Telepítés';
+  String get confirmInstallButton => 'Telepítés';
 
   @override
   String get diskHeadersDevice => 'Eszköz';
@@ -459,7 +493,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Új üres partíció';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Egy új partíciós tábla létrehozása egy teljes eszközön eltávolítja az összes jelenlegi partíciót. Ez a művelet visszavonható, ha szükséges.';
+  String get newPartitionTableConfirmationMessage =>
+      'Egy új partíciós tábla létrehozása egy teljes eszközön eltávolítja az összes jelenlegi partíciót. Ez a művelet visszavonható, ha szükséges.';
 
   @override
   String get tooManyPrimaryPartitions => 'Túl sok elsődleges partíció';
@@ -536,7 +571,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get identityHostnameLabel => 'Az Ön számítógépének neve';
 
   @override
-  String get identityHostnameInfo => 'A más számítógépekkel való kommunikáció során használt név.';
+  String get identityHostnameInfo =>
+      'A más számítógépekkel való kommunikáció során használt név.';
 
   @override
   String get identityHostnameRequired => 'A számítógépnév megadása kötelező';
@@ -560,13 +596,15 @@ class AppLocalizationsHu extends AppLocalizations {
   String get identityUsernameInUse => 'Ez a felhasználónév már létezik.';
 
   @override
-  String get identityUsernameSystemReserved => 'Ez a név a rendszer számára van fenntartva.';
+  String get identityUsernameSystemReserved =>
+      'Ez a név a rendszer számára van fenntartva.';
 
   @override
   String get identityUsernameTooLong => 'Ez a név túl hosszú.';
 
   @override
-  String get identityUsernameInvalidChars => 'Ez a név érvénytelen karaktereket tartalmaz.';
+  String get identityUsernameInvalidChars =>
+      'Ez a név érvénytelen karaktereket tartalmaz.';
 
   @override
   String get identityPasswordLabel => 'Jelszó választása';
@@ -587,53 +625,55 @@ class AppLocalizationsHu extends AppLocalizations {
   String get identityPasswordHide => 'Elrejtés';
 
   @override
-  String get writeChangesToDisk => 'Telepítésre kész';
+  String get confirmPageTitle => 'Telepítésre kész';
 
   @override
-  String get writeChangesFallbackSerial => 'lemez';
+  String get confirmHeader =>
+      'Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.';
 
   @override
-  String get writeChangesDescription => 'Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.';
+  String get confirmDevicesTitle => 'Eszközök';
 
   @override
-  String get writeChangesDevicesTitle => 'Eszközök';
+  String get confirmPartitionsTitle => 'Partíciók';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partíciók';
+  String get confirmPartitionTables =>
+      'A következő eszközök partíciós táblái változnak meg:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'A következő eszközök partíciós táblái változnak meg:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'A következő partícióváltoztatások kerülnek alkalmazásra:';
+  String get confirmPartitionChanges =>
+      'A következő partícióváltoztatások kerülnek alkalmazásra:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return '<b>$sysname</b> partíció átméretezve <b>$oldsize</b> méretről <b>$newsize</b> méretre';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return '<b>$sysname</b> partíció <b>$format</b> formátumra formázva, <b>$mount</b> helyre csatolva';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return '<b>$sysname</b> partíció <b>$format</b> formátumra formázva';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return '<b>$sysname</b> partíció <b>$mount</b> helyre csatolva';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return '<b>$sysname</b> partíció létrehozva';
   }
 
@@ -641,7 +681,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get themePageTitle => 'Téma kiválasztása';
 
   @override
-  String get themePageHeader => 'Ezt később bármikor megváltoztathatja a megjelenési beállításokban.';
+  String get themePageHeader =>
+      'Ezt később bármikor megváltoztathatja a megjelenési beállításokban.';
 
   @override
   String get themeDark => 'Sötét';
@@ -696,7 +737,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get restartIntoWindows => 'Újraindítás és Windows használata';
 
   @override
-  String get restartIntoWindowsTitle => 'Újraindítja a számítógépet Windows használatával?';
+  String get restartIntoWindowsTitle =>
+      'Újraindítja a számítógépet Windows használatával?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
@@ -715,7 +757,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get installationSlidesIncluded => 'Tartalmazott:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Gyors, ingyenes és tele új funkciókkal';
+  String get installationSlidesWelcomeTitle =>
+      'Gyors, ingyenes és tele új funkciókkal';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -728,7 +771,8 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'Minden alkalmazás, amire szüksége van';
+  String get installationSlidesSoftwareTitle =>
+      'Minden alkalmazás, amire szüksége van';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -736,7 +780,8 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Fejlesszen a nyílt forráskód legjobbjaival';
+  String get installationSlidesDevelopmentTitle =>
+      'Fejlesszen a nyílt forráskód legjobbjaival';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -773,7 +818,8 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Növelje a termelékenységét';
+  String get installationSlidesProductivityTitle =>
+      'Növelje a termelékenységét';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
@@ -803,10 +849,12 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Az Ask Ubuntu a kérdések és válaszok széles skáláját lefedi, az Ubuntu Discourse pedig útmutatókat és beszélgetési lehetőségeket nyújt új és tapasztalt felhasználók számára.';
+  String get installationSlidesSupportCommunity =>
+      'Az Ask Ubuntu a kérdések és válaszok széles skáláját lefedi, az Ubuntu Discourse pedig útmutatókat és beszélgetési lehetőségeket nyújt új és tapasztalt felhasználók számára.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'Vállalati felhasználóknak a Canonical kereskedelmi támogatást nyújt, hogy megkönnyítse az Ubuntu bevezetését és biztonságos kezelését a munkahelyen.';
+  String get installationSlidesSupportEnterprise =>
+      'Vállalati felhasználóknak a Canonical kereskedelmi támogatást nyújt, hogy megkönnyítse az Ubuntu bevezetését és biztonságos kezelését a munkahelyen.';
 
   @override
   String get installationSlidesSupportResources => 'Hasznos erőforrások:';
@@ -815,7 +863,8 @@ class AppLocalizationsHu extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'Hivatalos dokumentáció';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Vállalati szintű 24/7 támogatás Ubuntu Pro előfizetéssel';
+  String get installationSlidesSupportUbuntuPro =>
+      'Vállalati szintű 24/7 támogatás Ubuntu Pro előfizetéssel';
 
   @override
   String get copyingFiles => 'Fájlok másolása…';
@@ -847,13 +896,15 @@ class AppLocalizationsHu extends AppLocalizations {
   String get activeDirectoryOption => 'Active Directory használata';
 
   @override
-  String get activeDirectoryInfo => 'A tartományt és egyéb részleteket a következő lépésben fogja megadni.';
+  String get activeDirectoryInfo =>
+      'A tartományt és egyéb részleteket a következő lépésben fogja megadni.';
 
   @override
   String get activeDirectoryTitle => 'Active Directory beállítása';
 
   @override
-  String get activeDirectoryTestConnection => 'Tartomány összekapcsolhatóságának kipróbálása';
+  String get activeDirectoryTestConnection =>
+      'Tartomány összekapcsolhatóságának kipróbálása';
 
   @override
   String get activeDirectoryDomainLabel => 'Tartomány';
@@ -880,13 +931,15 @@ class AppLocalizationsHu extends AppLocalizations {
   String get activeDirectoryDomainEndHyphen => 'Kötőjellel (-) végződik';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Több egymás utáni pontot (..) tartalmaz';
+  String get activeDirectoryDomainMultipleDots =>
+      'Több egymás utáni pontot (..) tartalmaz';
 
   @override
   String get activeDirectoryDomainNotFound => 'A tartomány nem található';
 
   @override
-  String get activeDirectoryAdminLabel => 'A tartomány csatlakozási felhasználója';
+  String get activeDirectoryAdminLabel =>
+      'A tartomány csatlakozási felhasználója';
 
   @override
   String get activeDirectoryAdminEmpty => 'Kötelező';
@@ -901,8 +954,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Kötelező';
 
   @override
-  String get activeDirectoryErrorTitle => 'Hiba az Active Directory kapcsolatának beállításakor';
+  String get activeDirectoryErrorTitle =>
+      'Hiba az Active Directory kapcsolatának beállításakor';
 
   @override
-  String get activeDirectoryErrorMessage => 'Elnézést, az Active Directory jelenleg nem állítható be. Amint a rendszere elkészült és működik, látogasson el a <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> oldalra a segítségért.';
+  String get activeDirectoryErrorMessage =>
+      'Elnézést, az Active Directory jelenleg nem állítható be. Amint a rendszere elkészült és működik, látogasson el a <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> oldalra a segítségért.';
 }

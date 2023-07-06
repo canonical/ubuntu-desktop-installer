@@ -127,8 +127,8 @@
   "@partitionEditTitle": {},
   "partitionSizeLabel": "Размер:",
   "@partitionSizeLabel": {},
-  "startInstallingButtonText": "Установить",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Установить",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Устройство",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Тип",
@@ -157,20 +157,20 @@
   "@partitionMountPointLabel": {},
   "identityPageTitle": "Создание своей учётной записи",
   "@identityPageTitle": {},
-  "writeChangesPartitionTablesHeader": "Изменены таблицы разделов на следующих устройствах:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTables": "Изменены таблицы разделов на следующих устройствах:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Будут применены следующие изменения разделов:",
-  "@writeChangesPartitionsHeader": {},
-  "writeChangesToDisk": "Готово к установке",
-  "@writeChangesToDisk": {},
+  "confirmPartitionChanges": "Будут применены следующие изменения разделов:",
+  "@confirmPartitionChanges": {},
+  "confirmPageTitle": "Готово к установке",
+  "@confirmPageTitle": {},
   "identityPasswordMismatch": "Пароли не совпадают",
   "@identityPasswordMismatch": {},
   "identityConfirmPasswordLabel": "Подтвердите пароль",
@@ -249,10 +249,6 @@
   "@identityUsernameTooLong": {},
   "identityUsernameInvalidChars": "Это имя содержит недопустимые символы.",
   "@identityUsernameInvalidChars": {},
-  "writeChangesFallbackSerial": "диск",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "themePageTitle": "Выберите свою тему",
   "@themePageTitle": {},
   "restartInto": "Перезагрузка в {system}",
@@ -299,8 +295,8 @@
   "@identityUsernameInUse": {},
   "identityUsernameSystemReserved": "Это имя зарезервировано для использования системой.",
   "@identityUsernameSystemReserved": {},
-  "writeChangesDescription": "Если вы продолжите, перечисленные ниже изменения будут записаны на диски. Дальнейшие изменения вы сможете внести вручную.",
-  "@writeChangesDescription": {},
+  "confirmHeader": "Если вы продолжите, перечисленные ниже изменения будут записаны на диски. Дальнейшие изменения вы сможете внести вручную.",
+  "@confirmHeader": {},
   "installationTypeMultiOSDetected": "На этом компьютере установлено несколько операционных систем. Что вы хотите сделать?",
   "@installationTypeMultiOSDetected": {},
   "installationTypeDualOSDetected": "На этом компьютере установлены {os1} и {os2}. Что вы хотите сделать?",
@@ -439,8 +435,8 @@
   },
   "installAlongsideAvailable": "Доступно:",
   "@installAlongsideAvailable": {},
-  "writeChangesPartitionMounted": "раздел <b>{sysname}</b> использован для <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "раздел <b>{sysname}</b> использован для <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -449,8 +445,8 @@
   },
   "quitButtonText": "Отменить установку",
   "@quitButtonText": {},
-  "writeChangesPartitionResized": "размер раздела <b>{sysname}</b> изменён с <b>{oldsize}</b> на <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "размер раздела <b>{sysname}</b> изменён с <b>{oldsize}</b> на <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -471,8 +467,8 @@
   "@configuringSystem": {},
   "notEnoughDiskSpaceTitle": "Недостаточно места",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionFormattedMounted": "раздел <b>{sysname}</b> отформатирован как <b>{format}</b> и использован для <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "раздел <b>{sysname}</b> отформатирован как <b>{format}</b> и использован для <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -480,16 +476,16 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "раздел <b>{sysname}</b> отформатирован как <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "раздел <b>{sysname}</b> отформатирован как <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionCreated": "раздел <b>{sysname}</b> создан",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "раздел <b>{sysname}</b> создан",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -545,10 +541,10 @@
   "@activeDirectoryTitle": {},
   "identityPasswordShow": "Показать",
   "@identityPasswordShow": {},
-  "writeChangesPartitionsTitle": "Разделы",
-  "@writeChangesPartitionsTitle": {},
-  "writeChangesDevicesTitle": "Устройства",
-  "@writeChangesDevicesTitle": {},
+  "confirmPartitionsTitle": "Разделы",
+  "@confirmPartitionsTitle": {},
+  "confirmDevicesTitle": "Устройства",
+  "@confirmDevicesTitle": {},
   "activeDirectoryDomainLabel": "Домен",
   "@activeDirectoryDomainLabel": {},
   "activeDirectoryTestConnection": "Проверка подключения к домену",

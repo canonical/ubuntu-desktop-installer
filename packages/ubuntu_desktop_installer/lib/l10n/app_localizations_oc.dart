@@ -51,7 +51,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get welcomeRepairOption => 'Reparar l’installacion';
 
   @override
-  String get welcomeRepairDescription => 'La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.';
+  String get welcomeRepairDescription =>
+      'La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get rstHeader => 'Desactivatz lo RST per contunhar';
 
   @override
-  String get rstDescription => 'Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.';
+  String get rstDescription =>
+      'Aqueste ordenador utiliza la tecnologia RST (Rapid Storage Technology) d’Intel. Cal desactivar RST jos Windows abans d’installar Ubuntu.';
 
   @override
   String rstInstructions(Object url) {
@@ -111,16 +113,19 @@ class AppLocalizationsOc extends AppLocalizations {
   String get keyboardVariantLabel => 'Varianta del clavièr :';
 
   @override
-  String get keyboardPressKeyLabel => 'Mercés de quichar una de las tòcas seguentas :';
+  String get keyboardPressKeyLabel =>
+      'Mercés de quichar una de las tòcas seguentas :';
 
   @override
-  String get keyboardKeyPresentLabel => 'La tòca seguenta es presenta sul clavièr ?';
+  String get keyboardKeyPresentLabel =>
+      'La tòca seguenta es presenta sul clavièr ?';
 
   @override
   String get configureSecureBootTitle => 'Configurar l’amorçatge segur';
 
   @override
-  String get configureSecureBootDescription => 'Avètz causit d’installar de pilòts tèrces. Aquò requerís la desactivacion de l’amorçatge segur.\nPer aquò far, devètz causir una clau de seguretat ara, e la picar quand lo sistèma avia.';
+  String get configureSecureBootDescription =>
+      'Avètz causit d’installar de pilòts tèrces. Aquò requerís la desactivacion de l’amorçatge segur.\nPer aquò far, devètz causir una clau de seguretat ara, e la picar quand lo sistèma avia.';
 
   @override
   String get configureSecureBootOption => 'Configurar l’amorçatge segur';
@@ -132,16 +137,20 @@ class AppLocalizationsOc extends AppLocalizations {
   String get confirmSecurityKey => 'Confirmat la clau de seguretat';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Installar pas lo logicial pilòt pel moment';
+  String get dontInstallDriverSoftwareNow =>
+      'Installar pas lo logicial pilòt pel moment';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Lo podètz installar mai tard de Logicials e Mesas a jorn estant.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'Lo podètz installar mai tard de Logicials e Mesas a jorn estant.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'La clau de seguretat es requerida';
+  String get configureSecureBootSecurityKeyRequired =>
+      'La clau de seguretat es requerida';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Las claus de seguretat correspondon pas';
+  String get secureBootSecurityKeysDontMatch =>
+      'Las claus de seguretat correspondon pas';
 
   @override
   String get showSecurityKey => 'Mostrar la clau de seguretat';
@@ -150,7 +159,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get connectToInternetPageTitle => 'Se connectar a un ret';
 
   @override
-  String get connectToInternetDescription => 'Connectar aqueste ordenador a internet permetrà a Ubuntu d’installar de logicials suplementaris e de definir vòstre fus orari.\n\nConnectatz un cable Ethernet, o causissètz un ret Wifi';
+  String get connectToInternetDescription =>
+      'Connectar aqueste ordenador a internet permetrà a Ubuntu d’installar de logicials suplementaris e de definir vòstre fus orari.\n\nConnectatz un cable Ethernet, o causissètz un ret Wifi';
 
   @override
   String get useWiredConnection => 'Utilizar una connexion filara';
@@ -162,7 +172,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get wiredDisabled => 'La connexion filara es desactivada';
 
   @override
-  String get wiredMustBeEnabled => 'Per utilizar l’Ethernet sus aqueste ordenador, una connexion filara deu èsser activada';
+  String get wiredMustBeEnabled =>
+      'Per utilizar l’Ethernet sus aqueste ordenador, una connexion filara deu èsser activada';
 
   @override
   String get enableWired => 'Activar la connexion filara';
@@ -189,7 +200,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get noWifiDevicesDetected => 'Cap de periferic Wifi pas detectat';
 
   @override
-  String get wifiMustBeEnabled => 'Per utilizar lo Wifi sus aqueste ordenador, lo ret sens fial deu èsser activat';
+  String get wifiMustBeEnabled =>
+      'Per utilizar lo Wifi sus aqueste ordenador, lo ret sens fial deu èsser activat';
 
   @override
   String get enableWifi => 'Activar lo Wifi';
@@ -201,40 +213,49 @@ class AppLocalizationsOc extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Aplicacions e mesas a jorn';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'Quinas aplicacions volètz installar per començar ?';
+  String get updatesOtherSoftwarePageDescription =>
+      'Quinas aplicacions volètz installar per començar ?';
 
   @override
   String get normalInstallationTitle => 'Installacion normala';
 
   @override
-  String get normalInstallationSubtitle => 'Navegador internet, utilitaris, logicials de burèu, jòcs e lector multimèdia.';
+  String get normalInstallationSubtitle =>
+      'Navegador internet, utilitaris, logicials de burèu, jòcs e lector multimèdia.';
 
   @override
   String get minimalInstallationTitle => 'Installacion minimala';
 
   @override
-  String get minimalInstallationSubtitle => 'Navegador internet e utilitari de basa.';
+  String get minimalInstallationSubtitle =>
+      'Navegador internet e utilitari de basa.';
 
   @override
   String get otherOptions => 'Autras opcions';
 
   @override
-  String get installThirdPartyTitle => 'Installar de logicials tèrces pel material grafic e Wi-Fi e dels formats de mèdia suplementaris';
+  String get installThirdPartyTitle =>
+      'Installar de logicials tèrces pel material grafic e Wi-Fi e dels formats de mèdia suplementaris';
 
   @override
-  String get installThirdPartySubtitle => 'Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.';
+  String get installThirdPartySubtitle =>
+      'Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.';
 
   @override
-  String get installDriversTitle => 'Installar de logicials tèrces pel material grafic e Wi-Fi';
+  String get installDriversTitle =>
+      'Installar de logicials tèrces pel material grafic e Wi-Fi';
 
   @override
-  String get installDriversSubtitle => 'Aquestes pilòts son someses a de licéncias que son inclusas dins lor documentacion. Son proprietaris.';
+  String get installDriversSubtitle =>
+      'Aquestes pilòts son someses a de licéncias que son inclusas dins lor documentacion. Son proprietaris.';
 
   @override
-  String get installCodecsTitle => 'Telecargar e installar la presa en carga addicionala pels formats multimèdia';
+  String get installCodecsTitle =>
+      'Telecargar e installar la presa en carga addicionala pels formats multimèdia';
 
   @override
-  String get installCodecsSubtitle => 'Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.';
+  String get installCodecsSubtitle =>
+      'Aqueste logicial es somés a de tèrmes de licéncia incluses dins sa documentacion. Certans son proprietaris.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +304,12 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'Aqueste ordenador es installat amb mantun sistèma operatiu. De qué volètz far ?';
+  String get installationTypeMultiOSDetected =>
+      'Aqueste ordenador es installat amb mantun sistèma operatiu. De qué volètz far ?';
 
   @override
-  String get installationTypeNoOSDetected => 'Aqueste ordenador possedís pas cap de sistèma operatiu detectat actualament. De qué volètz far ?';
+  String get installationTypeNoOSDetected =>
+      'Aqueste ordenador possedís pas cap de sistèma operatiu detectat actualament. De qué volètz far ?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -319,7 +342,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM seleccionat';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM e chiframent seleccionats';
+  String get installationTypeLVMEncryptionSelected =>
+      'LVM e chiframent seleccionats';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -327,10 +351,12 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'Causiretz una clau de seguretat a l’etapa seguenta.';
+  String get installationTypeEncryptInfo =>
+      'Causiretz una clau de seguretat a l’etapa seguenta.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTAL : escafar lo disc e utilizar ZFS';
+  String get installationTypeZFS =>
+      'EXPERIMENTAL : escafar lo disc e utilizar ZFS';
 
   @override
   String get installationTypeZFSSelected => 'ZFS seleccionat';
@@ -366,7 +392,8 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Los documents, la musica e los autres fichièrs personals seràn gardats. Podètz causir quin sistèma operatiu volètz cada que l’ordenador s’aluca.';
+  String get installationTypeAlongsideInfo =>
+      'Los documents, la musica e los autres fichièrs personals seràn gardats. Podètz causir quin sistèma operatiu volètz cada que l’ordenador s’aluca.';
 
   @override
   String get installationTypeManual => 'Particionament manual';
@@ -391,7 +418,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Installar ara';
 
   @override
-  String get installAlongsideSpaceDivider => 'Alogatz l’espaci disc en desplaçant lo separador çai-jos :';
+  String get installAlongsideSpaceDivider =>
+      'Alogatz l’espaci disc en desplaçant lo separador çai-jos :';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +448,15 @@ class AppLocalizationsOc extends AppLocalizations {
   String get allocateDiskSpace => 'Particionament manual';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Los ponches de montatge devon començar per « / »';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Los ponches de montatge devon començar per « / »';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Los ponches de montatge pòdon pas conténer cap d’espaci';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Los ponches de montatge pòdon pas conténer cap d’espaci';
 
   @override
-  String get startInstallingButtonText => 'Installar';
+  String get confirmInstallButton => 'Installar';
 
   @override
   String get diskHeadersDevice => 'Disc';
@@ -459,7 +489,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Particion novèla voida';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'La creacion d’una taula de particions novèla sus un periferic entièr suprimirà totas sas particions actualas. Poiretz anullar aquesta operacion mai tard s\'o volètz.';
+  String get newPartitionTableConfirmationMessage =>
+      'La creacion d’una taula de particions novèla sus un periferic entièr suprimirà totas sas particions actualas. Poiretz anullar aquesta operacion mai tard s\'o volètz.';
 
   @override
   String get tooManyPrimaryPartitions => 'Tròp de particions primàrias';
@@ -468,7 +499,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionLimitReached => 'Limit atenh';
 
   @override
-  String get bootLoaderDevice => 'Periferic per l’installacion del gestionari d’aviada';
+  String get bootLoaderDevice =>
+      'Periferic per l’installacion del gestionari d’aviada';
 
   @override
   String get partitionCreateTitle => 'Crear una particion';
@@ -521,7 +553,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get identityAutoLogin => 'Se connectar automaticament';
 
   @override
-  String get identityRequirePassword => 'Demandar mon senhal per dobrir una session';
+  String get identityRequirePassword =>
+      'Demandar mon senhal per dobrir una session';
 
   @override
   String get identityRealNameLabel => 'Vòstre prenom';
@@ -536,7 +569,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get identityHostnameLabel => 'Lo nom de l’ordenador';
 
   @override
-  String get identityHostnameInfo => 'Lo nom qu’utiliza per comunicar amb d’autres ordenadors.';
+  String get identityHostnameInfo =>
+      'Lo nom qu’utiliza per comunicar amb d’autres ordenadors.';
 
   @override
   String get identityHostnameRequired => 'Un nom d’ordenador es requerit';
@@ -560,13 +594,15 @@ class AppLocalizationsOc extends AppLocalizations {
   String get identityUsernameInUse => 'Aqueste nom d’utilizaire existís ja.';
 
   @override
-  String get identityUsernameSystemReserved => 'Aqueste nom es reservat per l’usatge del sistèma.';
+  String get identityUsernameSystemReserved =>
+      'Aqueste nom es reservat per l’usatge del sistèma.';
 
   @override
   String get identityUsernameTooLong => 'Aqueste nom es tròp long.';
 
   @override
-  String get identityUsernameInvalidChars => 'Aqueste nom conten de caractèrs invalids.';
+  String get identityUsernameInvalidChars =>
+      'Aqueste nom conten de caractèrs invalids.';
 
   @override
   String get identityPasswordLabel => 'Causissètz un senhal';
@@ -587,53 +623,55 @@ class AppLocalizationsOc extends AppLocalizations {
   String get identityPasswordHide => 'Rescondre';
 
   @override
-  String get writeChangesToDisk => 'Lèst per installacion';
+  String get confirmPageTitle => 'Lèst per installacion';
 
   @override
-  String get writeChangesFallbackSerial => 'disc';
+  String get confirmHeader =>
+      'Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.';
 
   @override
-  String get writeChangesDescription => 'Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.';
+  String get confirmDevicesTitle => 'Periferics';
 
   @override
-  String get writeChangesDevicesTitle => 'Periferics';
+  String get confirmPartitionsTitle => 'Particions';
 
   @override
-  String get writeChangesPartitionsTitle => 'Particions';
+  String get confirmPartitionTables =>
+      'Las taulas de particions dels periferics seguents seràn modificadas :';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Las taulas de particions dels periferics seguents seràn modificadas :';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Las modificacions seguenta seràn aplicadas a las particions :';
+  String get confirmPartitionChanges =>
+      'Las modificacions seguenta seràn aplicadas a las particions :';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return 'la particion <b>$sysname</b> redimensionada de <b>$oldsize</b> a <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return 'la particion <b>$sysname</b> formatada en <b>$format</b> utilizada per <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'la particion <b>$sysname</b> formatada en <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'la particion <b>$sysname</b> utilizada per <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'particion <b>$sysname</b> creada';
   }
 
@@ -641,7 +679,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get themePageTitle => 'Causissètz vòstre tèma';
 
   @override
-  String get themePageHeader => 'La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.';
+  String get themePageHeader =>
+      'La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.';
 
   @override
   String get themeDark => 'Fosc';
@@ -715,7 +754,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationSlidesIncluded => 'Inclús :';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Rapid, gratuit e plen de foncionalitats novèlas';
+  String get installationSlidesWelcomeTitle =>
+      'Rapid, gratuit e plen de foncionalitats novèlas';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -728,7 +768,8 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'Totas las aplicacions que vos fan mestièr';
+  String get installationSlidesSoftwareTitle =>
+      'Totas las aplicacions que vos fan mestièr';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -736,7 +777,8 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Desvolopatz amb çò melhor del monde liure';
+  String get installationSlidesDevelopmentTitle =>
+      'Desvolopatz amb çò melhor del monde liure';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -744,7 +786,8 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesCreativityTitle => 'Melhoratz vòstra creativitat';
+  String get installationSlidesCreativityTitle =>
+      'Melhoratz vòstra creativitat';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
@@ -773,7 +816,8 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Aumentatz vòstra productivitat';
+  String get installationSlidesProductivityTitle =>
+      'Aumentatz vòstra productivitat';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
@@ -792,7 +836,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationSlidesAccessibilityOrca => 'Lector d’ecran Orca';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Presa en carga lingüistica';
+  String get installationSlidesAccessibilityLanguages =>
+      'Presa en carga lingüistica';
 
   @override
   String get installationSlidesSupportTitle => 'Ajuda e assisténcia';
@@ -803,10 +848,12 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu cobrís una larga plaja de questions e responsas e lo Discourse d’Ubuntu provesís de guidas e de discussions pels nòuvenguts e los utilizaires experimentats.';
+  String get installationSlidesSupportCommunity =>
+      'Ask Ubuntu cobrís una larga plaja de questions e responsas e lo Discourse d’Ubuntu provesís de guidas e de discussions pels nòuvenguts e los utilizaires experimentats.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'Per las entrepresas Canonical fornís una assisténcia comerciala per facilitar l’integracion e la gestion d’Ubuntu en tota seguretat al lòc de trabalh.';
+  String get installationSlidesSupportEnterprise =>
+      'Per las entrepresas Canonical fornís una assisténcia comerciala per facilitar l’integracion e la gestion d’Ubuntu en tota seguretat al lòc de trabalh.';
 
   @override
   String get installationSlidesSupportResources => 'Ressorsas utilas :';
@@ -815,7 +862,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'Documentacion oficiala';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Assisténcia professionala disponibla 24h de 24h e 7 jorns de 7 amb Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro =>
+      'Assisténcia professionala disponibla 24h de 24h e 7 jorns de 7 amb Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Còpia dels fichièrs…';
@@ -847,7 +895,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get activeDirectoryOption => 'Utilizar Active Directory';
 
   @override
-  String get activeDirectoryInfo => 'Picaretz lo domeni e los autres detalhs a l’etapa que ven.';
+  String get activeDirectoryInfo =>
+      'Picaretz lo domeni e los autres detalhs a l’etapa que ven.';
 
   @override
   String get activeDirectoryTitle => 'Configurar Active Directory';
@@ -886,7 +935,8 @@ class AppLocalizationsOc extends AppLocalizations {
   String get activeDirectoryDomainNotFound => 'Domeni introbable';
 
   @override
-  String get activeDirectoryAdminLabel => 'Nom d’utilizaire per rejónher lo domeni';
+  String get activeDirectoryAdminLabel =>
+      'Nom d’utilizaire per rejónher lo domeni';
 
   @override
   String get activeDirectoryAdminEmpty => 'Obligatòri';
@@ -901,8 +951,10 @@ class AppLocalizationsOc extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Obligatòri';
 
   @override
-  String get activeDirectoryErrorTitle => 'Error en configurant la connexion a l’Active Directory';
+  String get activeDirectoryErrorTitle =>
+      'Error en configurant la connexion a l’Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'O planhèm, se pòt pas configurar Active Directory pel moment. Un còp lo sistèma operacional, consultatz <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> per d’ajuda.';
+  String get activeDirectoryErrorMessage =>
+      'O planhèm, se pòt pas configurar Active Directory pel moment. Un còp lo sistèma operacional, consultatz <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> per d’ajuda.';
 }

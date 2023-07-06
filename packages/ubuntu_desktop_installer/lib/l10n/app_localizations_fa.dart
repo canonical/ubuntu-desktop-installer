@@ -51,7 +51,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get welcomeRepairOption => 'تعمیر نصب';
 
   @override
-  String get welcomeRepairDescription => 'تعمیر، همهٔ نرم افزارهای نصب شده را بدون دست زدن به اسناد یا تنظیمات، دوباره نصب می‌کند.';
+  String get welcomeRepairDescription =>
+      'تعمیر، همهٔ نرم افزارهای نصب شده را بدون دست زدن به اسناد یا تنظیمات، دوباره نصب می‌کند.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get rstHeader => 'برای ادامه RST را خاموش کنید';
 
   @override
-  String get rstDescription => 'این کامپیوتر از Intel RST (فناوری ذخیره‌سازی سریع) استفاده می‌کند. قبل از نصب اوبونتو باید RST را در ویندوز خاموش کنید.';
+  String get rstDescription =>
+      'این کامپیوتر از Intel RST (فناوری ذخیره‌سازی سریع) استفاده می‌کند. قبل از نصب اوبونتو باید RST را در ویندوز خاموش کنید.';
 
   @override
   String rstInstructions(Object url) {
@@ -114,13 +116,15 @@ class AppLocalizationsFa extends AppLocalizations {
   String get keyboardPressKeyLabel => 'لطفاً یکی از کلیدهای زیر را فشار دهید:';
 
   @override
-  String get keyboardKeyPresentLabel => 'آیا این کلید در صفحه‌کلیدتان وجود دارد؟';
+  String get keyboardKeyPresentLabel =>
+      'آیا این کلید در صفحه‌کلیدتان وجود دارد؟';
 
   @override
   String get configureSecureBootTitle => 'پیکربندی راه‌اندازی ایمن';
 
   @override
-  String get configureSecureBootDescription => 'شما نصب نرم‌افزار درایور شخص ثالث را انتخاب کرده‌اید. برای این کار باید راه‌اندازی ایمن را خاموش کنید.\nبرای انجام این کار، اکنون باید یک کلید امنیتی را انتخاب کنید و پس از راه اندازی دوبارهٔ سامانه، آن را وارد کنید.';
+  String get configureSecureBootDescription =>
+      'شما نصب نرم‌افزار درایور شخص ثالث را انتخاب کرده‌اید. برای این کار باید راه‌اندازی ایمن را خاموش کنید.\nبرای انجام این کار، اکنون باید یک کلید امنیتی را انتخاب کنید و پس از راه اندازی دوبارهٔ سامانه، آن را وارد کنید.';
 
   @override
   String get configureSecureBootOption => 'پیکربندی راه‌اندازی ایمن';
@@ -132,13 +136,16 @@ class AppLocalizationsFa extends AppLocalizations {
   String get confirmSecurityKey => 'تأیید کلید امنیتی';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'فعلاً نرم‌افزار درایور را نصب نکن';
+  String get dontInstallDriverSoftwareNow =>
+      'فعلاً نرم‌افزار درایور را نصب نکن';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'شما می‌توانید آن را بعداً از نرم‌افزارها و به‌روز رسانی‌ها نصب کنید.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'شما می‌توانید آن را بعداً از نرم‌افزارها و به‌روز رسانی‌ها نصب کنید.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'کلید امنیتی مورد نیاز است';
+  String get configureSecureBootSecurityKeyRequired =>
+      'کلید امنیتی مورد نیاز است';
 
   @override
   String get secureBootSecurityKeysDontMatch => 'کلیدهای امنیتی مطابقت ندارند';
@@ -150,7 +157,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get connectToInternetPageTitle => 'وصل شدن به شبکه';
 
   @override
-  String get connectToInternetDescription => 'وصل کردن این رایانه به اینترنت می‌گذارد اوبونتو هر نرم‌افزار اضافی مورد نیازی را نصب کرده و به گزینش ناحیهٔ زمانیتان کمک می‌کند.\n\nبا کابل اترنت وصل شده یا شبکهٔ وای‌فای‌ای را برگزینید';
+  String get connectToInternetDescription =>
+      'وصل کردن این رایانه به اینترنت می‌گذارد اوبونتو هر نرم‌افزار اضافی مورد نیازی را نصب کرده و به گزینش ناحیهٔ زمانیتان کمک می‌کند.\n\nبا کابل اترنت وصل شده یا شبکهٔ وای‌فای‌ای را برگزینید';
 
   @override
   String get useWiredConnection => 'استفاده از اتّصال سیمی';
@@ -162,7 +170,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get wiredDisabled => 'اتّصال سیمی خاموش است';
 
   @override
-  String get wiredMustBeEnabled => 'برای استفاده از اترنت روی این رایانه، باید یک اتّصال سیمی به کار افتد';
+  String get wiredMustBeEnabled =>
+      'برای استفاده از اترنت روی این رایانه، باید یک اتّصال سیمی به کار افتد';
 
   @override
   String get enableWired => 'به کار انداختن اتّصال سیمی';
@@ -189,7 +198,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get noWifiDevicesDetected => 'هیچ افزارهٔ وای‌فای شناسایی نشد';
 
   @override
-  String get wifiMustBeEnabled => 'برای استفاده از وای‌فای در این رایانه، شبکهٔ بی‌سیم باید به کار انداخته شود';
+  String get wifiMustBeEnabled =>
+      'برای استفاده از وای‌فای در این رایانه، شبکهٔ بی‌سیم باید به کار انداخته شود';
 
   @override
   String get enableWifi => 'به کار انداختن وای‌فای';
@@ -201,13 +211,15 @@ class AppLocalizationsFa extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'برنامه‌ها و به‌روز رسانی‌ها';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'برای شروع چه برنامه‌هایی را می‌خواهید نصب کنید؟';
+  String get updatesOtherSoftwarePageDescription =>
+      'برای شروع چه برنامه‌هایی را می‌خواهید نصب کنید؟';
 
   @override
   String get normalInstallationTitle => 'نصب معمولی';
 
   @override
-  String get normalInstallationSubtitle => 'مرورگر وب، برنامه‌های کاربردی، نرم‌افزار آفیس، بازی‌ها و پخش‌کننده‌های رسانه‌ای.';
+  String get normalInstallationSubtitle =>
+      'مرورگر وب، برنامه‌های کاربردی، نرم‌افزار آفیس، بازی‌ها و پخش‌کننده‌های رسانه‌ای.';
 
   @override
   String get minimalInstallationTitle => 'نصب کمینه';
@@ -219,22 +231,28 @@ class AppLocalizationsFa extends AppLocalizations {
   String get otherOptions => 'دیگر گزینه‌ها';
 
   @override
-  String get installThirdPartyTitle => 'نرم‌افزارهای شخص ثالث را برای سخت‌افزارهای گرافیکی و وای‌فای و همچنین قالب‌های رسانه‌ای اضافی نصب کنید';
+  String get installThirdPartyTitle =>
+      'نرم‌افزارهای شخص ثالث را برای سخت‌افزارهای گرافیکی و وای‌فای و همچنین قالب‌های رسانه‌ای اضافی نصب کنید';
 
   @override
-  String get installThirdPartySubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installThirdPartySubtitle =>
+      'This software is subject to license terms included with its documentation. Some are proprietary.';
 
   @override
-  String get installDriversTitle => 'نصب نرم‌افزارهای سوم‌شخص برای سخت‌افزارهای وای‌فای و گرافیک';
+  String get installDriversTitle =>
+      'نصب نرم‌افزارهای سوم‌شخص برای سخت‌افزارهای وای‌فای و گرافیک';
 
   @override
-  String get installDriversSubtitle => 'These drivers are subject to license terms included with their documentation. They are proprietary.';
+  String get installDriversSubtitle =>
+      'These drivers are subject to license terms included with their documentation. They are proprietary.';
 
   @override
-  String get installCodecsTitle => 'بارگیری و نصب پشتیبانی برای قالب‌های رسانه‌ای بیش‌تر';
+  String get installCodecsTitle =>
+      'بارگیری و نصب پشتیبانی برای قالب‌های رسانه‌ای بیش‌تر';
 
   @override
-  String get installCodecsSubtitle => 'This software is subject to license terms included with its documentation. Some are proprietary.';
+  String get installCodecsSubtitle =>
+      'This software is subject to license terms included with its documentation. Some are proprietary.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +301,12 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'این رایانه هم‌اکنون دارای چندین سیستم‌عامل است. می‌خواهید چه کنید؟';
+  String get installationTypeMultiOSDetected =>
+      'این رایانه هم‌اکنون دارای چندین سیستم‌عامل است. می‌خواهید چه کنید؟';
 
   @override
-  String get installationTypeNoOSDetected => 'این رایانه هم‌اکنون دارای هیچ سیستم‌عامل شناخته‌شده‌ای نیست. می‌خواهید چه کنید؟';
+  String get installationTypeNoOSDetected =>
+      'این رایانه هم‌اکنون دارای هیچ سیستم‌عامل شناخته‌شده‌ای نیست. می‌خواهید چه کنید؟';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -319,7 +339,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get installationTypeLVMSelected => 'استفاده از LVM گزیده شد';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'استفاده از LVM و رمزنگاری گزیده شد';
+  String get installationTypeLVMEncryptionSelected =>
+      'استفاده از LVM و رمزنگاری گزیده شد';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -327,7 +348,8 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'در گام بعدی، کلید امنیتی‌ای خواهید گزید.';
+  String get installationTypeEncryptInfo =>
+      'در گام بعدی، کلید امنیتی‌ای خواهید گزید.';
 
   @override
   String get installationTypeZFS => 'آزمایشی: پاک کردن دیسک و استفاده از ZFS';
@@ -366,7 +388,8 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'سندها، آهنگ‌ها و دیگرپرونده‌های شخصی حفظ خواهند شد. هر بار که رایانه روشن می‌شود می‌توانید بگزینید که کدام سیستم‌عامل را می‌خواهید.';
+  String get installationTypeAlongsideInfo =>
+      'سندها، آهنگ‌ها و دیگرپرونده‌های شخصی حفظ خواهند شد. هر بار که رایانه روشن می‌شود می‌توانید بگزینید که کدام سیستم‌عامل را می‌خواهید.';
 
   @override
   String get installationTypeManual => 'افرازش دستی';
@@ -391,7 +414,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'اکنون نصب شود';
 
   @override
-  String get installAlongsideSpaceDivider => 'با کشیدن تقسیم‌کنندهٔ زیر، فضای گرداننده را تخصیص دهید:';
+  String get installAlongsideSpaceDivider =>
+      'با کشیدن تقسیم‌کنندهٔ زیر، فضای گرداننده را تخصیص دهید:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +444,15 @@ class AppLocalizationsFa extends AppLocalizations {
   String get allocateDiskSpace => 'افرازش دستی';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Mount points must start with \"/\"';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Mount points cannot contain spaces';
 
   @override
-  String get startInstallingButtonText => 'نصب';
+  String get confirmInstallButton => 'نصب';
 
   @override
   String get diskHeadersDevice => 'افزاره';
@@ -459,7 +485,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'افراز خالی جدید';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Creating a new partition table on an entire device will remove all of its current partitions. This operation can be undone if needed.';
+  String get newPartitionTableConfirmationMessage =>
+      'Creating a new partition table on an entire device will remove all of its current partitions. This operation can be undone if needed.';
 
   @override
   String get tooManyPrimaryPartitions => 'افرازهای اصلی بیش از حد';
@@ -536,7 +563,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get identityHostnameLabel => 'نام رایانه‌تان';
 
   @override
-  String get identityHostnameInfo => 'نامی که هنگام صحبت با دیگر رایانه‌ها استفاده می‌کند.';
+  String get identityHostnameInfo =>
+      'نامی که هنگام صحبت با دیگر رایانه‌ها استفاده می‌کند.';
 
   @override
   String get identityHostnameRequired => 'نام رایانه‌ای لازم است';
@@ -560,7 +588,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get identityUsernameInUse => 'این نام کاربری از پیش وجود دارد.';
 
   @override
-  String get identityUsernameSystemReserved => 'این نام برای استفادهٔ سامانه کنار گذاشته شده.';
+  String get identityUsernameSystemReserved =>
+      'این نام برای استفادهٔ سامانه کنار گذاشته شده.';
 
   @override
   String get identityUsernameTooLong => 'نام بیش از حد طولانی است.';
@@ -587,53 +616,55 @@ class AppLocalizationsFa extends AppLocalizations {
   String get identityPasswordHide => 'نهفتن';
 
   @override
-  String get writeChangesToDisk => 'آمادهٔ نصب';
+  String get confirmPageTitle => 'آمادهٔ نصب';
 
   @override
-  String get writeChangesFallbackSerial => 'دیسک';
+  String get confirmHeader =>
+      'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
 
   @override
-  String get writeChangesDescription => 'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.';
+  String get confirmDevicesTitle => 'افزاره‌ها';
 
   @override
-  String get writeChangesDevicesTitle => 'افزاره‌ها';
+  String get confirmPartitionsTitle => 'افزارها';
 
   @override
-  String get writeChangesPartitionsTitle => 'افزارها';
+  String get confirmPartitionTables =>
+      'جدول افرازهای افزاره‌های زیر تغییر کرده‌اند:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'جدول افرازهای افزاره‌های زیر تغییر کرده‌اند:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'تغییرهای افراز زیرمی‌خواهند اعمال شوند:';
+  String get confirmPartitionChanges =>
+      'تغییرهای افراز زیرمی‌خواهند اعمال شوند:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return 'اندازهٔ افراز <b>$sysname</b> از <b>$oldsize</b> به <b>$newsize</b> تغییر کرد';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return 'افراز <b>$sysname</b> به صورت <b>$format</b> برای <b>$mount</b> قالب‌بندی شد';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'افراز <b>$sysname</b> به صورت <b>$format</b> قالب‌بندی شد';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'افراز <b>$sysname</b> برای <b>$mount</b> استفاده شد';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'افراز <b>$sysname</b> ایجاد شد';
   }
 
@@ -641,7 +672,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get themePageTitle => 'گزینش زمینه‌تان';
 
   @override
-  String get themePageHeader => 'بعدها همواره می‌توانید این مورد را در تنظیمات ظاهر تغییر دهید.';
+  String get themePageHeader =>
+      'بعدها همواره می‌توانید این مورد را در تنظیمات ظاهر تغییر دهید.';
 
   @override
   String get themeDark => 'تیره';
@@ -715,7 +747,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get installationSlidesIncluded => 'دارای:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'سریع، آزاد و پر از ویژگی‌های جدید';
+  String get installationSlidesWelcomeTitle =>
+      'سریع، آزاد و پر از ویژگی‌های جدید';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -728,7 +761,8 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'تمامی برنامه‌هایی که نیاز دارید';
+  String get installationSlidesSoftwareTitle =>
+      'تمامی برنامه‌هایی که نیاز دارید';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -736,7 +770,8 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'توسعه با بهترین‌های نرم‌افزار آزاد';
+  String get installationSlidesDevelopmentTitle =>
+      'توسعه با بهترین‌های نرم‌افزار آزاد';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -803,10 +838,12 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+  String get installationSlidesSupportCommunity =>
+      'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+  String get installationSlidesSupportEnterprise =>
+      'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
 
   @override
   String get installationSlidesSupportResources => 'منبع‌های مفید:';
@@ -815,7 +852,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'مستندات رسمی';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'پشتیبانی ردهٔ تجاری ۲۴/۷ با Pro اوبونتو';
+  String get installationSlidesSupportUbuntuPro =>
+      'پشتیبانی ردهٔ تجاری ۲۴/۷ با Pro اوبونتو';
 
   @override
   String get copyingFiles => 'رونوشت کردن پرونده‌ها…';
@@ -847,7 +885,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get activeDirectoryOption => 'استفاده از شاخهٔ فعّال';
 
   @override
-  String get activeDirectoryInfo => 'در گام بعدی دامنه و دیگر حزییات را وارد خواهید کرد.';
+  String get activeDirectoryInfo =>
+      'در گام بعدی دامنه و دیگر حزییات را وارد خواهید کرد.';
 
   @override
   String get activeDirectoryTitle => 'پیکربندی شاخهٔ فعّال';
@@ -880,7 +919,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get activeDirectoryDomainEndHyphen => 'با خط تیره(-) پایان می‌پذیرد';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'دارای جندین دنباله از نقطه‌هاست (..)';
+  String get activeDirectoryDomainMultipleDots =>
+      'دارای جندین دنباله از نقطه‌هاست (..)';
 
   @override
   String get activeDirectoryDomainNotFound => 'دامنه پیدا نشد';
@@ -901,8 +941,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'لازم';
 
   @override
-  String get activeDirectoryErrorTitle => 'خطا در پیکربندی وصل شدن به شاخهٔ فعّال';
+  String get activeDirectoryErrorTitle =>
+      'خطا در پیکربندی وصل شدن به شاخهٔ فعّال';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage =>
+      'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
 }

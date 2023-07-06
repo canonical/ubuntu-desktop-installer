@@ -51,7 +51,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get welcomeRepairOption => 'ස්ථාපනය අලුත්වැඩියාව';
 
   @override
-  String get welcomeRepairDescription => 'ලේඛන හෝ සැකසුම් ස්පර්ශ නොකර ස්ථාපිත සියළුම මෘදුකාංග යළි ස්ථාපනය අළුත්වැඩියාව මගින් සිදුවේ.';
+  String get welcomeRepairDescription =>
+      'ලේඛන හෝ සැකසුම් ස්පර්ශ නොකර ස්ථාපිත සියළුම මෘදුකාංග යළි ස්ථාපනය අළුත්වැඩියාව මගින් සිදුවේ.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get rstHeader => 'Turn off RST to continue';
 
   @override
-  String get rstDescription => 'මෙම පරිගණකය ඉන්ටෙල් RST (ශ්‍රීඝ්‍ර ආචයන තාක්‍ෂණය) භාවිතා කරයි. උබුන්ටු ස්ථාපනයට පෙර වින්ඩෝස් හි RST අක්‍රිය කළ යුතුය.';
+  String get rstDescription =>
+      'මෙම පරිගණකය ඉන්ටෙල් RST (ශ්‍රීඝ්‍ර ආචයන තාක්‍ෂණය) භාවිතා කරයි. උබුන්ටු ස්ථාපනයට පෙර වින්ඩෝස් හි RST අක්‍රිය කළ යුතුය.';
 
   @override
   String rstInstructions(Object url) {
@@ -120,7 +122,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get configureSecureBootTitle => 'ආරක්‍ෂිත ඇරඹුම හැඩගසන්න';
 
   @override
-  String get configureSecureBootDescription => 'ඔබ තෙවන පාර්ශ්ව ධාවක මෘදුකාංග ස්ථාපනයට තෝරාගෙන ඇත. මේ සඳහා ආරක්‍ෂිත ඇරඹුම අක්‍රිය කළ යුතුය.\nමෙය සිදු කිරීම සඳහා, ඔබ දැන් ආරක්‍ෂණ යතුරක් තෝරාගෙන පද්ධතිය යළි ආරම්භ වන විට එය ඇතුල් කරන්න.';
+  String get configureSecureBootDescription =>
+      'ඔබ තෙවන පාර්ශ්ව ධාවක මෘදුකාංග ස්ථාපනයට තෝරාගෙන ඇත. මේ සඳහා ආරක්‍ෂිත ඇරඹුම අක්‍රිය කළ යුතුය.\nමෙය සිදු කිරීම සඳහා, ඔබ දැන් ආරක්‍ෂණ යතුරක් තෝරාගෙන පද්ධතිය යළි ආරම්භ වන විට එය ඇතුල් කරන්න.';
 
   @override
   String get configureSecureBootOption => 'ආරක්‍ෂිත ඇරඹුම හැඩගසන්න';
@@ -132,10 +135,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get confirmSecurityKey => 'ආරක්‍ෂණ යතුර තහවුරු කරන්න';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'දැනට ධාවක මෘදුකාංගය ස්ථාපනය නොකරන්න';
+  String get dontInstallDriverSoftwareNow =>
+      'දැනට ධාවක මෘදුකාංගය ස්ථාපනය නොකරන්න';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'එය පසුව මෘදුකාංග හා යාවත්කාල හරහා ස්ථාපනය කිරීමට හැකිය.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'එය පසුව මෘදුකාංග හා යාවත්කාල හරහා ස්ථාපනය කිරීමට හැකිය.';
 
   @override
   String get configureSecureBootSecurityKeyRequired => 'ආරක්‍ෂණ යතුර වුවමනාය';
@@ -150,7 +155,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get connectToInternetPageTitle => 'අන්තර්ජාලයට සබඳින්න';
 
   @override
-  String get connectToInternetDescription => 'මෙම පරිගණකය අන්තර්ජාලයට සම්බන්ධ කිරීමෙන් උබුන්ටු සඳහා අවශ්‍ය ඕනෑම අමතර මෘදුකාංගයක් ස්ථාපනයට මෙන්ම ඔබගේ වේලා කලාපය තෝරා ගැනීමට හැකිය.\n\nඊතර්නෙට් රැහැන සම්බන්ධ කරන්න හෝ වයි-ෆයි ජාලයක් තෝරන්න';
+  String get connectToInternetDescription =>
+      'මෙම පරිගණකය අන්තර්ජාලයට සම්බන්ධ කිරීමෙන් උබුන්ටු සඳහා අවශ්‍ය ඕනෑම අමතර මෘදුකාංගයක් ස්ථාපනයට මෙන්ම ඔබගේ වේලා කලාපය තෝරා ගැනීමට හැකිය.\n\nඊතර්නෙට් රැහැන සම්බන්ධ කරන්න හෝ වයි-ෆයි ජාලයක් තෝරන්න';
 
   @override
   String get useWiredConnection => 'රැහැන් සම්බන්ධතාවය යොදාගන්න';
@@ -162,7 +168,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get wiredDisabled => 'රැහැන් සම්බන්ධතාවය අක්‍රියයි';
 
   @override
-  String get wiredMustBeEnabled => 'මෙම පරිගණකයේ ඊතර්නෙට් භාවිතයට, රැහැන්ගත සම්බන්ධතාවයක් සබල කළ යුතුය';
+  String get wiredMustBeEnabled =>
+      'මෙම පරිගණකයේ ඊතර්නෙට් භාවිතයට, රැහැන්ගත සම්බන්ධතාවයක් සබල කළ යුතුය';
 
   @override
   String get enableWired => 'රැහැන්ගත සබල කරන්න';
@@ -189,7 +196,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get noWifiDevicesDetected => 'කිසිදු වයි-ෆයි උපාංගයක් අනාවරණය වී නැත';
 
   @override
-  String get wifiMustBeEnabled => 'මෙම පරිගණකයේ වයි-ෆයි භාවිතයට, රැහැන් රහිත ජාලකරණය සබල කළ යුතුය';
+  String get wifiMustBeEnabled =>
+      'මෙම පරිගණකයේ වයි-ෆයි භාවිතයට, රැහැන් රහිත ජාලකරණය සබල කළ යුතුය';
 
   @override
   String get enableWifi => 'වයි-ෆයි සබල කරන්න';
@@ -201,13 +209,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'යාවත්කාල හා වෙනත් මෘදුකාංග';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'ස්ථාපනයට කැමති යෙදුම් මොනවාද?';
+  String get updatesOtherSoftwarePageDescription =>
+      'ස්ථාපනයට කැමති යෙදුම් මොනවාද?';
 
   @override
   String get normalInstallationTitle => 'සාමාන්‍ය ස්ථාපනය';
 
   @override
-  String get normalInstallationSubtitle => 'වියමන අතිරික්සුව, උපයෝග, කාර්යාල මෘදුකාංග, ක්‍රීඩා සහ මාධ්‍ය වාදක.';
+  String get normalInstallationSubtitle =>
+      'වියමන අතිරික්සුව, උපයෝග, කාර්යාල මෘදුකාංග, ක්‍රීඩා සහ මාධ්‍ය වාදක.';
 
   @override
   String get minimalInstallationTitle => 'අවම ස්ථාපනය';
@@ -219,22 +229,28 @@ class AppLocalizationsSi extends AppLocalizations {
   String get otherOptions => 'වෙනත් විකල්ප';
 
   @override
-  String get installThirdPartyTitle => 'චිත්‍රක හා වයි-ෆයි දෘඪාංග සඳහා තෙවන පාර්ශ්ව මෘදුකාංග මෙන්ම අතිරේක මාධ්‍ය ආකෘති ස්ථාපනය කරන්න';
+  String get installThirdPartyTitle =>
+      'චිත්‍රක හා වයි-ෆයි දෘඪාංග සඳහා තෙවන පාර්ශ්ව මෘදුකාංග මෙන්ම අතිරේක මාධ්‍ය ආකෘති ස්ථාපනය කරන්න';
 
   @override
-  String get installThirdPartySubtitle => 'මෙම මෘදුකාංගය එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඇතැම් දෑ ස්වාම්‍යයි.';
+  String get installThirdPartySubtitle =>
+      'මෙම මෘදුකාංගය එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඇතැම් දෑ ස්වාම්‍යයි.';
 
   @override
-  String get installDriversTitle => 'චිත්‍රක හා වයි-ෆයි දෘඪාංග සඳහා තෙවන පාර්ශ්ව මෘදුකාංග ස්ථාපනය කරන්න';
+  String get installDriversTitle =>
+      'චිත්‍රක හා වයි-ෆයි දෘඪාංග සඳහා තෙවන පාර්ශ්ව මෘදුකාංග ස්ථාපනය කරන්න';
 
   @override
-  String get installDriversSubtitle => 'මෙම ධාවක එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඒවා ස්වාම්‍යයි.';
+  String get installDriversSubtitle =>
+      'මෙම ධාවක එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඒවා ස්වාම්‍යයි.';
 
   @override
-  String get installCodecsTitle => 'අතිරේක මාධ්‍ය ආකෘති සඳහා සහාය බාගෙන ස්ථාපනය කරන්න';
+  String get installCodecsTitle =>
+      'අතිරේක මාධ්‍ය ආකෘති සඳහා සහාය බාගෙන ස්ථාපනය කරන්න';
 
   @override
-  String get installCodecsSubtitle => 'මෙම මෘදුකාංගය එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඇතැම් දෑ ස්වාම්‍යයි.';
+  String get installCodecsSubtitle =>
+      'මෙම මෘදුකාංගය එහි ප්‍රලේඛනයෙහි ඇතුළත් බලපත්‍ර නියම වලට යටත් වේ. ඇතැම් දෑ ස්වාම්‍යයි.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +299,12 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'මෙම පරිගණකයෙහි දැනට මෙහෙයුම් පද්ධති කිහිපයක් තිබේ. ඔබ කිරීමට කැමති කුමක්ද?';
+  String get installationTypeMultiOSDetected =>
+      'මෙම පරිගණකයෙහි දැනට මෙහෙයුම් පද්ධති කිහිපයක් තිබේ. ඔබ කිරීමට කැමති කුමක්ද?';
 
   @override
-  String get installationTypeNoOSDetected => 'මෙම පරිගණකයෙහි කිසිදු මෙහෙයුම් පද්ධතියක් අනාවරණය වී නැත. ඔබ කිරීමට කැමති කුමක්ද?';
+  String get installationTypeNoOSDetected =>
+      'මෙම පරිගණකයෙහි කිසිදු මෙහෙයුම් පද්ධතියක් අනාවරණය වී නැත. ඔබ කිරීමට කැමති කුමක්ද?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -327,10 +345,12 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'ඔබ ඊළඟ පියවරේදී ආරක්‍ෂණ යතුරක් තෝරා ගනු ඇත.';
+  String get installationTypeEncryptInfo =>
+      'ඔබ ඊළඟ පියවරේදී ආරක්‍ෂණ යතුරක් තෝරා ගනු ඇත.';
 
   @override
-  String get installationTypeZFS => 'පරීක්‍ෂාත්මක: තැටිය මකාදමා ZFS භාවිතා කරන්න';
+  String get installationTypeZFS =>
+      'පරීක්‍ෂාත්මක: තැටිය මකාදමා ZFS භාවිතා කරන්න';
 
   @override
   String get installationTypeZFSSelected => 'ZFS තෝරා ඇත';
@@ -366,7 +386,8 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'ලේඛන, ගීත සහ අනෙකුත් පෞද්. ගොනු රඳවා ගැනෙයි. පරිගණකය ආරම්භ වන සැමවිට අවශ්‍ය මෙහෙයුම් පද්ධතිය තේරීමට හැකිය.';
+  String get installationTypeAlongsideInfo =>
+      'ලේඛන, ගීත සහ අනෙකුත් පෞද්. ගොනු රඳවා ගැනෙයි. පරිගණකය ආරම්භ වන සැමවිට අවශ්‍ය මෙහෙයුම් පද්ධතිය තේරීමට හැකිය.';
 
   @override
   String get installationTypeManual => 'වෙන යමක්';
@@ -391,7 +412,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'ස්ථාපනය කරන්න';
 
   @override
-  String get installAlongsideSpaceDivider => 'පහත වෙන්කුරුව ඇදීමෙන් ධාවකයේ ඉඩ වෙන් කරන්න:';
+  String get installAlongsideSpaceDivider =>
+      'පහත වෙන්කුරුව ඇදීමෙන් ධාවකයේ ඉඩ වෙන් කරන්න:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +442,15 @@ class AppLocalizationsSi extends AppLocalizations {
   String get allocateDiskSpace => 'තැටියේ ඉඩ වෙන් කරන්න';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Mount points must start with \"/\"';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Mount points cannot contain spaces';
 
   @override
-  String get startInstallingButtonText => 'ස්ථාපනය අරඹන්න';
+  String get confirmInstallButton => 'ස්ථාපනය අරඹන්න';
 
   @override
   String get diskHeadersDevice => 'උපාංගය';
@@ -456,10 +480,12 @@ class AppLocalizationsSi extends AppLocalizations {
   String get newPartitionTable => 'නව පංගු වගුවක්';
 
   @override
-  String get newPartitionTableConfirmationTitle => 'මෙම උපාංගයෙහි නව හිස් පංගු වගුවක් සාදන්නද?';
+  String get newPartitionTableConfirmationTitle =>
+      'මෙම උපාංගයෙහි නව හිස් පංගු වගුවක් සාදන්නද?';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'ඔබ පංගුකරණයට සමස්ත උපාංගයක් තෝරාගෙන ඇත. ඔබ එහි නව පංගු වගුවක් සෑදීමට ගියහොත්, පවතින සියළුම පංගු ඉවත් කෙරෙනු ඇත.\n\nඔබට අවශ්‍ය නම් මෙම මෙහෙයුම පසුව අහෝසි කිරීමට හැකිය.';
+  String get newPartitionTableConfirmationMessage =>
+      'ඔබ පංගුකරණයට සමස්ත උපාංගයක් තෝරාගෙන ඇත. ඔබ එහි නව පංගු වගුවක් සෑදීමට ගියහොත්, පවතින සියළුම පංගු ඉවත් කෙරෙනු ඇත.\n\nඔබට අවශ්‍ය නම් මෙම මෙහෙයුම පසුව අහෝසි කිරීමට හැකිය.';
 
   @override
   String get tooManyPrimaryPartitions => 'ප්‍රාථමික පංගු බොහෝය';
@@ -560,7 +586,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get identityUsernameInUse => 'පරිශ්‍රීලක නාමය දැනටමත් පවතී.';
 
   @override
-  String get identityUsernameSystemReserved => 'එම නම පද්ධතියේ භාවිතයට වෙන් කර ඇත.';
+  String get identityUsernameSystemReserved =>
+      'එම නම පද්ධතියේ භාවිතයට වෙන් කර ඇත.';
 
   @override
   String get identityUsernameTooLong => 'නම ඉතා දිගයි.';
@@ -587,53 +614,53 @@ class AppLocalizationsSi extends AppLocalizations {
   String get identityPasswordHide => 'සඟවන්න';
 
   @override
-  String get writeChangesToDisk => 'වෙනස්කම් තැටියට ලියන්න';
+  String get confirmPageTitle => 'වෙනස්කම් තැටියට ලියන්න';
 
   @override
-  String get writeChangesFallbackSerial => 'තැටිය';
+  String get confirmHeader =>
+      'ඔබ ඉදිරියට ගියහොත්, පහත ලැයිස්තුගත වෙනස්කම් තැටියට ලියනු ඇත. ඔබට අතින් තවත් වෙනස්කම් සිදු කිරීමට හැකි වනු ඇත.';
 
   @override
-  String get writeChangesDescription => 'ඔබ ඉදිරියට ගියහොත්, පහත ලැයිස්තුගත වෙනස්කම් තැටියට ලියනු ඇත. ඔබට අතින් තවත් වෙනස්කම් සිදු කිරීමට හැකි වනු ඇත.';
+  String get confirmDevicesTitle => 'Devices';
 
   @override
-  String get writeChangesDevicesTitle => 'Devices';
+  String get confirmPartitionsTitle => 'Partitions';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitions';
+  String get confirmPartitionTables => 'පහත උපාංගවල පංගු වගු වෙනස් වේ:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'පහත උපාංගවල පංගු වගු වෙනස් වේ:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'පහත පංගු වෙනස්කම් යෙදෙනු ඇත:';
+  String get confirmPartitionChanges => 'පහත පංගු වෙනස්කම් යෙදෙනු ඇත:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return '#$sysname පංගුව $oldsize සිට $newsize දක්වා ප්‍රමාණනය කෙරිණි';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return '#$sysname පංගුව $mount සඳහා භාවිතයට $format ලෙස පවිත්‍රව ඇත';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return '#$sysname පංගුව $format ලෙස පවිත්‍රව ඇත';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return '#$sysname පංගුව $mount සඳහා භාවිතා වේ';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return '#$sysname පංගුව සෑදිණි';
   }
 
@@ -641,7 +668,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get themePageTitle => 'ඔබගේ පෙනුම තෝරන්න';
 
   @override
-  String get themePageHeader => 'මෙය පසුව පෙනුම සැකසුම් හරහා වෙනස් කිරීමට හැකිය.';
+  String get themePageHeader =>
+      'මෙය පසුව පෙනුම සැකසුම් හරහා වෙනස් කිරීමට හැකිය.';
 
   @override
   String get themeDark => 'අඳුරු';
@@ -715,7 +743,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get installationSlidesIncluded => 'Included:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Fast, free and full of new features';
+  String get installationSlidesWelcomeTitle =>
+      'Fast, free and full of new features';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -736,7 +765,8 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Develop with the best of open source';
+  String get installationSlidesDevelopmentTitle =>
+      'Develop with the best of open source';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -773,7 +803,8 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Power up your productivity';
+  String get installationSlidesProductivityTitle =>
+      'Power up your productivity';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
@@ -803,10 +834,12 @@ class AppLocalizationsSi extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
+  String get installationSlidesSupportCommunity =>
+      'Ask Ubuntu covers a range of questions and responses and the Ubuntu Discourse provides guides and discussions for new and experienced users.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
+  String get installationSlidesSupportEnterprise =>
+      'For enterprise users Canonical provides commercial support to make it easy to onboard and manage Ubuntu securely in the workplace.';
 
   @override
   String get installationSlidesSupportResources => 'Helpful resources:';
@@ -815,7 +848,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'Official documentation';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Enterprise-grade 24/7 support with Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro =>
+      'Enterprise-grade 24/7 support with Ubuntu Pro';
 
   @override
   String get copyingFiles => 'ගොනු පිටපත් වෙමින්…';
@@ -847,7 +881,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get activeDirectoryOption => 'Use Active Directory';
 
   @override
-  String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
+  String get activeDirectoryInfo =>
+      'You\'ll enter domain and other details in the next step.';
 
   @override
   String get activeDirectoryTitle => 'Configure Active Directory';
@@ -880,7 +915,8 @@ class AppLocalizationsSi extends AppLocalizations {
   String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+  String get activeDirectoryDomainMultipleDots =>
+      'Contains multiple sequenced dots (..)';
 
   @override
   String get activeDirectoryDomainNotFound => 'Domain not found';
@@ -901,8 +937,10 @@ class AppLocalizationsSi extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Required';
 
   @override
-  String get activeDirectoryErrorTitle => 'Error configuring connection to Active Directory';
+  String get activeDirectoryErrorTitle =>
+      'Error configuring connection to Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+  String get activeDirectoryErrorMessage =>
+      'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
 }

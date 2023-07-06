@@ -51,7 +51,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get welcomeRepairOption => 'Reparér installation';
 
   @override
-  String get welcomeRepairDescription => 'Reparation vil geninstallere al installeret programvare, uden at røre dokumenter eller indstillinger.';
+  String get welcomeRepairDescription =>
+      'Reparation vil geninstallere al installeret programvare, uden at røre dokumenter eller indstillinger.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get rstHeader => 'Slå RST fra, for at fortsætte';
 
   @override
-  String get rstDescription => 'Denne computer bruger Intel RST (Rapid Storage Technology). Før installation af Ubuntu, skal du slå RST fra i Windows.';
+  String get rstDescription =>
+      'Denne computer bruger Intel RST (Rapid Storage Technology). Før installation af Ubuntu, skal du slå RST fra i Windows.';
 
   @override
   String rstInstructions(Object url) {
@@ -114,13 +116,15 @@ class AppLocalizationsDa extends AppLocalizations {
   String get keyboardPressKeyLabel => 'Tryk venligst på en af følgende taster:';
 
   @override
-  String get keyboardKeyPresentLabel => 'Er følgende tast tilstede på dit tastatur?';
+  String get keyboardKeyPresentLabel =>
+      'Er følgende tast tilstede på dit tastatur?';
 
   @override
   String get configureSecureBootTitle => 'Konfigurér Sikret Start';
 
   @override
-  String get configureSecureBootDescription => 'Du har valgt at installere tredjeparts driver-programvare. Dette kræver at man slår Sikret Start fra.\nFor at gøre dette, skal du nu vælge en sikkerhedsnøgle og indtaste den, når systemet genstarter.';
+  String get configureSecureBootDescription =>
+      'Du har valgt at installere tredjeparts driver-programvare. Dette kræver at man slår Sikret Start fra.\nFor at gøre dette, skal du nu vælge en sikkerhedsnøgle og indtaste den, når systemet genstarter.';
 
   @override
   String get configureSecureBootOption => 'Konfigurér Sikret Start';
@@ -132,16 +136,20 @@ class AppLocalizationsDa extends AppLocalizations {
   String get confirmSecurityKey => 'Bekræft sikkerhedsnøglen';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Installér ikke driver-programvaren lige nu';
+  String get dontInstallDriverSoftwareNow =>
+      'Installér ikke driver-programvaren lige nu';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Du kan installere det senere fra Programvare & Opdateringer.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'Du kan installere det senere fra Programvare & Opdateringer.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Sikkerhedsnøgle er påkrævet';
+  String get configureSecureBootSecurityKeyRequired =>
+      'Sikkerhedsnøgle er påkrævet';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Sikkerhedsnøgler stemmer ikke overens';
+  String get secureBootSecurityKeysDontMatch =>
+      'Sikkerhedsnøgler stemmer ikke overens';
 
   @override
   String get showSecurityKey => 'Vis sikkerhedsnøgle';
@@ -150,7 +158,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get connectToInternetPageTitle => 'Opret forbindelse til et netværk';
 
   @override
-  String get connectToInternetDescription => 'Tilslutning af denne computer til internettet, vil hjælpe Ubuntu, med at installere enhver ekstra nødvendig programvare og vælge din tidszone.\n\nOpret forbindelse via Ethernet-kabel, eller vælg et WiFi-netværk';
+  String get connectToInternetDescription =>
+      'Tilslutning af denne computer til internettet, vil hjælpe Ubuntu, med at installere enhver ekstra nødvendig programvare og vælge din tidszone.\n\nOpret forbindelse via Ethernet-kabel, eller vælg et WiFi-netværk';
 
   @override
   String get useWiredConnection => 'Brug kablet forbindelse';
@@ -162,7 +171,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get wiredDisabled => 'Kablet forbindelse er slået fra';
 
   @override
-  String get wiredMustBeEnabled => 'En kablet forbindelse skal være aktiveret, for at bruge Ethernet på denne computer';
+  String get wiredMustBeEnabled =>
+      'En kablet forbindelse skal være aktiveret, for at bruge Ethernet på denne computer';
 
   @override
   String get enableWired => 'Aktivér kablet';
@@ -171,7 +181,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get selectWifiNetwork => 'Opret forbindelse til et WiFi-netværk';
 
   @override
-  String get hiddenWifiNetwork => 'Opret forbindelse til et skjult WiFi-netværk';
+  String get hiddenWifiNetwork =>
+      'Opret forbindelse til et skjult WiFi-netværk';
 
   @override
   String get hiddenWifiNetworkNameLabel => 'Netværksnavn';
@@ -180,7 +191,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get hiddenWifiNetworkNameRequired => 'Et netværksnavn er påkrævet';
 
   @override
-  String get noInternet => 'Jeg vil ikke oprette forbindelse til internettet lige nu';
+  String get noInternet =>
+      'Jeg vil ikke oprette forbindelse til internettet lige nu';
 
   @override
   String get wirelessNetworkingDisabled => 'Trådløst netværk deaktiveret';
@@ -189,7 +201,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get noWifiDevicesDetected => 'Ingen WiFi-enheder opfanget';
 
   @override
-  String get wifiMustBeEnabled => 'For at bruge WiFi på denne computer skal trådløst netværk være aktiveret';
+  String get wifiMustBeEnabled =>
+      'For at bruge WiFi på denne computer skal trådløst netværk være aktiveret';
 
   @override
   String get enableWifi => 'Aktivér WiFi';
@@ -201,13 +214,15 @@ class AppLocalizationsDa extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Applikationer og opdateringer';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'Hvilke apps vil du installere, til at starte med?';
+  String get updatesOtherSoftwarePageDescription =>
+      'Hvilke apps vil du installere, til at starte med?';
 
   @override
   String get normalInstallationTitle => 'Normal installation';
 
   @override
-  String get normalInstallationSubtitle => 'Netlæsere, værktøjer, kontorpakker, spil og medieafspillere.';
+  String get normalInstallationSubtitle =>
+      'Netlæsere, værktøjer, kontorpakker, spil og medieafspillere.';
 
   @override
   String get minimalInstallationTitle => 'Minimal installation';
@@ -219,22 +234,28 @@ class AppLocalizationsDa extends AppLocalizations {
   String get otherOptions => 'Andre muligheder';
 
   @override
-  String get installThirdPartyTitle => 'Installér tredjeparts programvare til grafik og Wi-Fi maskinel, så vel som yderligere medieformater';
+  String get installThirdPartyTitle =>
+      'Installér tredjeparts programvare til grafik og Wi-Fi maskinel, så vel som yderligere medieformater';
 
   @override
-  String get installThirdPartySubtitle => 'Denne programvare er underlagt de licensvilkår, som er inkluderet i dens dokumentation. Nogle er proprietære.';
+  String get installThirdPartySubtitle =>
+      'Denne programvare er underlagt de licensvilkår, som er inkluderet i dens dokumentation. Nogle er proprietære.';
 
   @override
-  String get installDriversTitle => 'Installér tredjeparts programvare til grafik og Wi-Fi maskinel';
+  String get installDriversTitle =>
+      'Installér tredjeparts programvare til grafik og Wi-Fi maskinel';
 
   @override
-  String get installDriversSubtitle => 'Disse chauffører er underlagt de licensvilkår, som er inkluderet i deres dokumentation. De er proprietære.';
+  String get installDriversSubtitle =>
+      'Disse chauffører er underlagt de licensvilkår, som er inkluderet i deres dokumentation. De er proprietære.';
 
   @override
-  String get installCodecsTitle => 'Hent og installér understøttelse af yderligere medieformater';
+  String get installCodecsTitle =>
+      'Hent og installér understøttelse af yderligere medieformater';
 
   @override
-  String get installCodecsSubtitle => 'Denne programvare er underlagt licensbetingelserne, som er inkluderet i dens dokumentation. Nogle er proprietære.';
+  String get installCodecsSubtitle =>
+      'Denne programvare er underlagt licensbetingelserne, som er inkluderet i dens dokumentation. Nogle er proprietære.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -262,7 +283,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get chooseSecurityKeyRequired => 'En sikkerhedsnøgle er påkrævet';
 
   @override
-  String get chooseSecurityKeyMismatch => 'Sikkerhedsnøglerne stemmer ikke overens';
+  String get chooseSecurityKeyMismatch =>
+      'Sikkerhedsnøglerne stemmer ikke overens';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
@@ -283,10 +305,12 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'Denne computer har aktuelt flere forskellige operativsystemer installeret. Hvad kunne du tænke dig at gøre?';
+  String get installationTypeMultiOSDetected =>
+      'Denne computer har aktuelt flere forskellige operativsystemer installeret. Hvad kunne du tænke dig at gøre?';
 
   @override
-  String get installationTypeNoOSDetected => 'Denne computer har aktuelt ingen opfangede operativsystemer. Hvad kunne du tænke dig at gøre?';
+  String get installationTypeNoOSDetected =>
+      'Denne computer har aktuelt ingen opfangede operativsystemer. Hvad kunne du tænke dig at gøre?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -327,7 +351,8 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'Du vil vælge en sikkerhedsnøgle, i næste trin.';
+  String get installationTypeEncryptInfo =>
+      'Du vil vælge en sikkerhedsnøgle, i næste trin.';
 
   @override
   String get installationTypeZFS => 'EKSPERIMENTEL: Udslet disk og benyt ZFS';
@@ -366,7 +391,8 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Dokumenter, musik, og andre personlige filer vil blive bevaret. Du kan vælge hvilket operativsystem du vil bruge, hver gang computeren starter op.';
+  String get installationTypeAlongsideInfo =>
+      'Dokumenter, musik, og andre personlige filer vil blive bevaret. Du kan vælge hvilket operativsystem du vil bruge, hver gang computeren starter op.';
 
   @override
   String get installationTypeManual => 'Manuel partitionering';
@@ -391,7 +417,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Installér nu';
 
   @override
-  String get installAlongsideSpaceDivider => 'Allokér drevplads, ved at trække skellet herunder:';
+  String get installAlongsideSpaceDivider =>
+      'Allokér drevplads, ved at trække skellet herunder:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +447,15 @@ class AppLocalizationsDa extends AppLocalizations {
   String get allocateDiskSpace => 'Manuel partitionering';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Monteringspunkter skal starte med \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Monteringspunkter skal starte med \"/\"';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Monteringspunkter må ikke indeholde mellemrum';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Monteringspunkter må ikke indeholde mellemrum';
 
   @override
-  String get startInstallingButtonText => 'Installér';
+  String get confirmInstallButton => 'Installér';
 
   @override
   String get diskHeadersDevice => 'Enhed';
@@ -459,7 +488,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Ny tom partition';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Oprettelse af ny partitionstabel, på en hel enhed, vil fjerne alle dens nuværende partitioner. Denne operation kan fortrydes, hvis det er nødvendigt.';
+  String get newPartitionTableConfirmationMessage =>
+      'Oprettelse af ny partitionstabel, på en hel enhed, vil fjerne alle dens nuværende partitioner. Denne operation kan fortrydes, hvis det er nødvendigt.';
 
   @override
   String get tooManyPrimaryPartitions => 'For mange primære partitioner';
@@ -521,7 +551,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get identityAutoLogin => 'Log ind automatisk';
 
   @override
-  String get identityRequirePassword => 'Kræv min adgangskode, for at logge ind';
+  String get identityRequirePassword =>
+      'Kræv min adgangskode, for at logge ind';
 
   @override
   String get identityRealNameLabel => 'Dit navn';
@@ -536,7 +567,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get identityHostnameLabel => 'Din computers navn';
 
   @override
-  String get identityHostnameInfo => 'Det navn den bruger, når den snakker med andre computere.';
+  String get identityHostnameInfo =>
+      'Det navn den bruger, når den snakker med andre computere.';
 
   @override
   String get identityHostnameRequired => 'Et computernavn er påkrævet';
@@ -560,13 +592,15 @@ class AppLocalizationsDa extends AppLocalizations {
   String get identityUsernameInUse => 'Det brugernavn findes allerede.';
 
   @override
-  String get identityUsernameSystemReserved => 'Det navn er reserveret til systembrug.';
+  String get identityUsernameSystemReserved =>
+      'Det navn er reserveret til systembrug.';
 
   @override
   String get identityUsernameTooLong => 'Det navn er for langt.';
 
   @override
-  String get identityUsernameInvalidChars => 'Det navn indeholder ugyldige tegn.';
+  String get identityUsernameInvalidChars =>
+      'Det navn indeholder ugyldige tegn.';
 
   @override
   String get identityPasswordLabel => 'Vælg en adgangskode';
@@ -587,53 +621,55 @@ class AppLocalizationsDa extends AppLocalizations {
   String get identityPasswordHide => 'Skjul';
 
   @override
-  String get writeChangesToDisk => 'Klar til at installere';
+  String get confirmPageTitle => 'Klar til at installere';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get confirmHeader =>
+      'Hvis du fortsætter, vil ændringerne på listen nedenfor blive skrevet til disken(e). Du vil kunne foretage yderligere ændringer manuelt.';
 
   @override
-  String get writeChangesDescription => 'Hvis du fortsætter, vil ændringerne på listen nedenfor blive skrevet til disken(e). Du vil kunne foretage yderligere ændringer manuelt.';
+  String get confirmDevicesTitle => 'Enheder';
 
   @override
-  String get writeChangesDevicesTitle => 'Enheder';
+  String get confirmPartitionsTitle => 'Partitioner';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitioner';
+  String get confirmPartitionTables =>
+      'Partitionstabellen på de følgende enheder er ændret:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Partitionstabellen på de følgende enheder er ændret:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'De følgende partitionsændringer vil træde i kraft:';
+  String get confirmPartitionChanges =>
+      'De følgende partitionsændringer vil træde i kraft:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return 'partition <b>$sysname</b> ændres fra <b>$oldsize</b> til <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return 'partition <b>$sysname</b> formateret som <b>$format</b> brugt til <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'partition <b>$sysname</b> formateret som <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'partition <b>$sysname</b> brugt til <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'partition <b>$sysname</b> oprettet';
   }
 
@@ -641,7 +677,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get themePageTitle => 'Vælg til tema';
 
   @override
-  String get themePageHeader => 'Du kan altid ændre dette senere, i indstillinger for udseende.';
+  String get themePageHeader =>
+      'Du kan altid ændre dette senere, i indstillinger for udseende.';
 
   @override
   String get themeDark => 'Mørkt';
@@ -715,7 +752,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get installationSlidesIncluded => 'Inkluderet:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Hurtigt, gratis og fyldt med nye funktioner';
+  String get installationSlidesWelcomeTitle =>
+      'Hurtigt, gratis og fyldt med nye funktioner';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -728,7 +766,8 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'Alle de applikationer du har brug for';
+  String get installationSlidesSoftwareTitle =>
+      'Alle de applikationer du har brug for';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -736,7 +775,8 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Udvikl det bedste indenfor åben kilde';
+  String get installationSlidesDevelopmentTitle =>
+      'Udvikl det bedste indenfor åben kilde';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -773,7 +813,8 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Send din produktivitet til himmels';
+  String get installationSlidesProductivityTitle =>
+      'Send din produktivitet til himmels';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
@@ -803,10 +844,12 @@ class AppLocalizationsDa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Spørg Ubuntu dækker en bred vifte af spørgsmål og svar, og Ubuntu Discourse tilbyder vejledninger og diskussioner, for nye og erfarne brugere.';
+  String get installationSlidesSupportCommunity =>
+      'Spørg Ubuntu dækker en bred vifte af spørgsmål og svar, og Ubuntu Discourse tilbyder vejledninger og diskussioner, for nye og erfarne brugere.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'For entreprise-brugere tilbyder Canonical kommerciel støtte, for at gøre det nemt at onboarde og administrere Ubuntu sikkert på arbejdspladsen.';
+  String get installationSlidesSupportEnterprise =>
+      'For entreprise-brugere tilbyder Canonical kommerciel støtte, for at gøre det nemt at onboarde og administrere Ubuntu sikkert på arbejdspladsen.';
 
   @override
   String get installationSlidesSupportResources => 'Nyttige ressourcer:';
@@ -815,7 +858,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'Officiel dokumentation';
 
   @override
-  String get installationSlidesSupportUbuntuPro => '24/7 støtte på entreprise-niveau, med Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro =>
+      '24/7 støtte på entreprise-niveau, med Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Kopierer filer…';
@@ -847,7 +891,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get activeDirectoryOption => 'Brug Aktiv Sti';
 
   @override
-  String get activeDirectoryInfo => 'Du kan indtaste domæne og andre oplysninger i næste trin.';
+  String get activeDirectoryInfo =>
+      'Du kan indtaste domæne og andre oplysninger i næste trin.';
 
   @override
   String get activeDirectoryTitle => 'Konfigurér Aktiv Sti';
@@ -880,7 +925,8 @@ class AppLocalizationsDa extends AppLocalizations {
   String get activeDirectoryDomainEndHyphen => 'Slutter med bindestreg (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Indeholder flere punktummer (.) i streg';
+  String get activeDirectoryDomainMultipleDots =>
+      'Indeholder flere punktummer (.) i streg';
 
   @override
   String get activeDirectoryDomainNotFound => 'Domæne ikke fundet';
@@ -901,8 +947,10 @@ class AppLocalizationsDa extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Påkrævet';
 
   @override
-  String get activeDirectoryErrorTitle => 'Fejl ved konfiguration af forbindelse til Aktiv Sti';
+  String get activeDirectoryErrorTitle =>
+      'Fejl ved konfiguration af forbindelse til Aktiv Sti';
 
   @override
-  String get activeDirectoryErrorMessage => 'Beklager, Aktiv Sti kan ikke indstilles i øjeblikket. Når først dit system er oppe at køre, så besøg <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for hjælp.';
+  String get activeDirectoryErrorMessage =>
+      'Beklager, Aktiv Sti kan ikke indstilles i øjeblikket. Når først dit system er oppe at køre, så besøg <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for hjælp.';
 }

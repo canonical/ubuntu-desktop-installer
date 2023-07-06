@@ -103,8 +103,8 @@
   },
   "selectGuidedStorageInstallNow": "Zainstaluj teraz",
   "@selectGuidedStorageInstallNow": {},
-  "startInstallingButtonText": "Instaluj",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Instaluj",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Urządzenie",
   "@diskHeadersDevice": {},
   "diskHeadersMountPoint": "Punkt montowania",
@@ -129,8 +129,8 @@
   "@identityUsernameRequired": {},
   "identityInvalidUsername": "Nazwa użytkownika jest nieprawidłowa",
   "@identityInvalidUsername": {},
-  "writeChangesPartitionsHeader": "Zostaną zastosowane następujące zmiany partycji:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "Zostaną zastosowane następujące zmiany partycji:",
+  "@confirmPartitionChanges": {},
   "restartButtonText": "Uruchom ponownie",
   "@restartButtonText": {},
   "revertButtonText": "Przywróć",
@@ -270,18 +270,14 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Hasła nie są zgodne",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "Gotów do instalacji",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "dysk",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesDescription": "Jeśli będziesz kontynuować, zmiany wymienione poniżej zostaną zapisane na dyskach. Będzie można wprowadzać dalsze zmiany ręcznie.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "Zmieniane są tablice partycji następujących urządzeń:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Gotów do instalacji",
+  "@confirmPageTitle": {},
+  "confirmHeader": "Jeśli będziesz kontynuować, zmiany wymienione poniżej zostaną zapisane na dyskach. Będzie można wprowadzać dalsze zmiany ręcznie.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "Zmieniane są tablice partycji następujących urządzeń:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
@@ -441,8 +437,8 @@
   },
   "installAlongsideSize": "Rozmiar:",
   "@installAlongsideSize": {},
-  "writeChangesPartitionFormattedMounted": "partycja <b>{sysname}</b> sformatowana jako <b>{format}</b> używana do <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "partycja <b>{sysname}</b> sformatowana jako <b>{format}</b> używana do <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -454,16 +450,16 @@
   "@notEnoughDiskSpaceTitle": {},
   "quitButtonText": "Zakończ instalację",
   "@quitButtonText": {},
-  "writeChangesPartitionMounted": "partycja <b>{sysname}</b> używana do <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "partycja <b>{sysname}</b> używana do <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "partycja <b>{sysname}</b> zmieniła rozmiar z <b>{oldsize}</b> na <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "partycja <b>{sysname}</b> zmieniła rozmiar z <b>{oldsize}</b> na <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -471,16 +467,16 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "partycja <b>{sysname}</b> sformatowana jako <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "partycja <b>{sysname}</b> sformatowana jako <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionCreated": "utworzona partycja <b>{sysname}</b>",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "utworzona partycja <b>{sysname}</b>",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -582,10 +578,10 @@
   "@keyboardVariantLabel": {},
   "keyboardDetectButton": "Wykryj",
   "@keyboardDetectButton": {},
-  "writeChangesDevicesTitle": "Urządzenia",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partycje",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Urządzenia",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partycje",
+  "@confirmPartitionsTitle": {},
   "installationSlidesTitle": "Witaj w {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",

@@ -51,7 +51,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get welcomeRepairOption => 'Opravit instalaci';
 
   @override
-  String get welcomeRepairDescription => 'Oprava přeinstaluje veškerý doposud nainstalovaný software, ale zachová data a nastavení uživatele.';
+  String get welcomeRepairDescription =>
+      'Oprava přeinstaluje veškerý doposud nainstalovaný software, ale zachová data a nastavení uživatele.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get rstHeader => 'Aby bylo možné pokračovat, vypněte RST';
 
   @override
-  String get rstDescription => 'Na tomto počítači je zapnutá technologie Intel RST (Rapit Storage Technology). Aby bylo možné Ubuntu nainstalovat, je třeba ve Windows funkci RST vypnout.';
+  String get rstDescription =>
+      'Na tomto počítači je zapnutá technologie Intel RST (Rapit Storage Technology). Aby bylo možné Ubuntu nainstalovat, je třeba ve Windows funkci RST vypnout.';
 
   @override
   String rstInstructions(Object url) {
@@ -99,7 +101,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get keyboardHeader => 'Zvolte si rozvržení klávesnice:';
 
   @override
-  String get keyboardTestHint => 'Správné fungování rozvržení si můžete vyzkoušet zde';
+  String get keyboardTestHint =>
+      'Správné fungování rozvržení si můžete vyzkoušet zde';
 
   @override
   String get keyboardDetectTitle => 'Zjistit rozvržení klávesnice';
@@ -111,16 +114,19 @@ class AppLocalizationsCs extends AppLocalizations {
   String get keyboardVariantLabel => 'Varianta klávesnice:';
 
   @override
-  String get keyboardPressKeyLabel => 'Stiskněte některou z následujících kláves:';
+  String get keyboardPressKeyLabel =>
+      'Stiskněte některou z následujících kláves:';
 
   @override
-  String get keyboardKeyPresentLabel => 'Máte na klávesnici následující klávesu?';
+  String get keyboardKeyPresentLabel =>
+      'Máte na klávesnici následující klávesu?';
 
   @override
   String get configureSecureBootTitle => 'Nastavit Secure Boot';
 
   @override
-  String get configureSecureBootDescription => 'Zvolili jste nainstalovat ovladač hardware, pocházející od třetí strany. Aby to bylo možné,\nje zapotřebí vypnout Secure Boot. To uděláte vytvořením klíče zabezpečení a jeho\nnásledným zadáním po restartu systému.';
+  String get configureSecureBootDescription =>
+      'Zvolili jste nainstalovat ovladač hardware, pocházející od třetí strany. Aby to bylo možné,\nje zapotřebí vypnout Secure Boot. To uděláte vytvořením klíče zabezpečení a jeho\nnásledným zadáním po restartu systému.';
 
   @override
   String get configureSecureBootOption => 'Nastavit Secure Boot';
@@ -129,19 +135,23 @@ class AppLocalizationsCs extends AppLocalizations {
   String get chooseSecurityKey => 'Zvolte si klíč zabezpečení';
 
   @override
-  String get confirmSecurityKey => 'Zopakujte zadání klíče zabezpečení (prevence překlepu)';
+  String get confirmSecurityKey =>
+      'Zopakujte zadání klíče zabezpečení (prevence překlepu)';
 
   @override
   String get dontInstallDriverSoftwareNow => 'Nyní ovladač ještě neinstalovat';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Je možné ho nainstalovat kdykoli později pomocí nástroje „Software a aktualizace“.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'Je možné ho nainstalovat kdykoli později pomocí nástroje „Software a aktualizace“.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Je třeba zadat klíč zabezpečení';
+  String get configureSecureBootSecurityKeyRequired =>
+      'Je třeba zadat klíč zabezpečení';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Do každé z kolonek pro klíč zabezpečení jste napsali něco jiného';
+  String get secureBootSecurityKeysDontMatch =>
+      'Do každé z kolonek pro klíč zabezpečení jste napsali něco jiného';
 
   @override
   String get showSecurityKey => 'Zobrazit klíč zabezpečení';
@@ -150,7 +160,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get connectToInternetPageTitle => 'Připojit k síti';
 
   @override
-  String get connectToInternetDescription => 'Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se Ethernetovým kabelem, nebo zvolte Wi-Fi síť';
+  String get connectToInternetDescription =>
+      'Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se Ethernetovým kabelem, nebo zvolte Wi-Fi síť';
 
   @override
   String get useWiredConnection => 'Použít drátové připojení';
@@ -162,7 +173,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get wiredDisabled => 'Drátové připojení je vypnuto';
 
   @override
-  String get wiredMustBeEnabled => 'Aby na tomto počítači bylo možné použít rozhraní Ethernet, je třeba zapnout drátové připojení';
+  String get wiredMustBeEnabled =>
+      'Aby na tomto počítači bylo možné použít rozhraní Ethernet, je třeba zapnout drátové připojení';
 
   @override
   String get enableWired => 'Zapnout drátové';
@@ -189,7 +201,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get noWifiDevicesDetected => 'Nevybrána žádná Wi-Fi zařízení';
 
   @override
-  String get wifiMustBeEnabled => 'Aby na tomto počítači bylo možné použít rozhraní Wi-Fi, je třeba zapnout bezdrátové připojení';
+  String get wifiMustBeEnabled =>
+      'Aby na tomto počítači bylo možné použít rozhraní Wi-Fi, je třeba zapnout bezdrátové připojení';
 
   @override
   String get enableWifi => 'Zapnout Wi-Fi';
@@ -201,40 +214,49 @@ class AppLocalizationsCs extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Aplikace a aktualizace';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'Které aplikace chcete mít hned od začátku nainstalované?';
+  String get updatesOtherSoftwarePageDescription =>
+      'Které aplikace chcete mít hned od začátku nainstalované?';
 
   @override
   String get normalInstallationTitle => 'Normální instalace';
 
   @override
-  String get normalInstallationSubtitle => 'Webový prohlížeč, nástroje, kancelářský software a přehrávače multimédií.';
+  String get normalInstallationSubtitle =>
+      'Webový prohlížeč, nástroje, kancelářský software a přehrávače multimédií.';
 
   @override
   String get minimalInstallationTitle => 'Minimální instalace';
 
   @override
-  String get minimalInstallationSubtitle => 'Webový prohlížeč a základní nástroje.';
+  String get minimalInstallationSubtitle =>
+      'Webový prohlížeč a základní nástroje.';
 
   @override
   String get otherOptions => 'Další možnosti';
 
   @override
-  String get installThirdPartyTitle => 'Nainstalovat ovladače třetích stran pro grafické čipy a adaptéry bezdrátových (Wi-Fi) sítí, stejně tak dodatečné kodeky multimédií';
+  String get installThirdPartyTitle =>
+      'Nainstalovat ovladače třetích stran pro grafické čipy a adaptéry bezdrátových (Wi-Fi) sítí, stejně tak dodatečné kodeky multimédií';
 
   @override
-  String get installThirdPartySubtitle => 'Tento software je předmětem licenčních ujednání, obsažených v dokumentaci k němu. Některý je proprietární.';
+  String get installThirdPartySubtitle =>
+      'Tento software je předmětem licenčních ujednání, obsažených v dokumentaci k němu. Některý je proprietární.';
 
   @override
-  String get installDriversTitle => 'Nainstalovat ovladače od třetích stran pro grafické čipy a Wi-Fi síťová rozhraní';
+  String get installDriversTitle =>
+      'Nainstalovat ovladače od třetích stran pro grafické čipy a Wi-Fi síťová rozhraní';
 
   @override
-  String get installDriversSubtitle => 'Tyto ovladače jsou předmětem licenčních ujednání obsažených v dokumentaci k nim. Jsou proprietárními.';
+  String get installDriversSubtitle =>
+      'Tyto ovladače jsou předmětem licenčních ujednání obsažených v dokumentaci k nim. Jsou proprietárními.';
 
   @override
-  String get installCodecsTitle => 'Stáhnout a nainstalovat podporu pro další formáty médií';
+  String get installCodecsTitle =>
+      'Stáhnout a nainstalovat podporu pro další formáty médií';
 
   @override
-  String get installCodecsSubtitle => 'Tento software je předmětem licenčních ujednání obsažených v dokumentaci k němu. Některé jsou proprietární.';
+  String get installCodecsSubtitle =>
+      'Tento software je předmětem licenčních ujednání obsažených v dokumentaci k němu. Některé jsou proprietární.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -256,13 +278,15 @@ class AppLocalizationsCs extends AppLocalizations {
   String get chooseSecurityKeyHint => 'Zvolte si šifrovací klíč';
 
   @override
-  String get chooseSecurityKeyConfirmHint => 'Zopakujte zadání šifrovacího klíče (prevence překlepu)';
+  String get chooseSecurityKeyConfirmHint =>
+      'Zopakujte zadání šifrovacího klíče (prevence překlepu)';
 
   @override
   String get chooseSecurityKeyRequired => 'Je třeba zadat šifrovací klíč';
 
   @override
-  String get chooseSecurityKeyMismatch => 'Do každé z kolonek pro šifrovací klíč jste napsali něco jiného';
+  String get chooseSecurityKeyMismatch =>
+      'Do každé z kolonek pro šifrovací klíč jste napsali něco jiného';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
@@ -283,10 +307,12 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'Na tomto počítači se v současnosti nachází vícero operačních systémů. Co si přejete udělat?';
+  String get installationTypeMultiOSDetected =>
+      'Na tomto počítači se v současnosti nachází vícero operačních systémů. Co si přejete udělat?';
 
   @override
-  String get installationTypeNoOSDetected => 'Na tomto počítači nyní nebyl zjištěn žádný operační systém. Co si přejete udělat?';
+  String get installationTypeNoOSDetected =>
+      'Na tomto počítači nyní nebyl zjištěn žádný operační systém. Co si přejete udělat?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -327,10 +353,12 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'V následujícím kroku si zvolíte šifrovací klíč.';
+  String get installationTypeEncryptInfo =>
+      'V následujícím kroku si zvolíte šifrovací klíč.';
 
   @override
-  String get installationTypeZFS => 'EXPERIMENTÁLNÍ: Vymazat disk a použít souborový systém ZFS';
+  String get installationTypeZFS =>
+      'EXPERIMENTÁLNÍ: Vymazat disk a použít souborový systém ZFS';
 
   @override
   String get installationTypeZFSSelected => 'Vybráno ZFS';
@@ -366,7 +394,8 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Dokumenty, hudba a ostatní osobní soubory zůstanou zachovány. Pokaždé, když počítač spustíte z vypnutého stavu (tedy nikoli uspání), budete si moci zvolit který operační systém spustit.';
+  String get installationTypeAlongsideInfo =>
+      'Dokumenty, hudba a ostatní osobní soubory zůstanou zachovány. Pokaždé, když počítač spustíte z vypnutého stavu (tedy nikoli uspání), budete si moci zvolit který operační systém spustit.';
 
   @override
   String get installationTypeManual => 'Ruční rozdělení na oddíly';
@@ -391,7 +420,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Nainstalovat nyní';
 
   @override
-  String get installAlongsideSpaceDivider => 'Přidělte prostor na jednotce posunutím dělítka níže:';
+  String get installAlongsideSpaceDivider =>
+      'Přidělte prostor na jednotce posunutím dělítka níže:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +450,15 @@ class AppLocalizationsCs extends AppLocalizations {
   String get allocateDiskSpace => 'Ruční rozdělení';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Je třeba, aby přípojné body začínaly na „/“ (dopředné lomítko)';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Je třeba, aby přípojné body začínaly na „/“ (dopředné lomítko)';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Přípojné body nemohou obsahovat mezery';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Přípojné body nemohou obsahovat mezery';
 
   @override
-  String get startInstallingButtonText => 'Instalace';
+  String get confirmInstallButton => 'Instalace';
 
   @override
   String get diskHeadersDevice => 'Zařízení';
@@ -459,7 +491,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Nový prázdný oddíl';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Vytvoření nové tabulky oddílů na celém zařízení z něj odebere veškeré stávající oddíly. V případě potřeby lze v tomto kroku ještě tuto operaci vzít zpět (ovšem po zapsání změn už pak ne).';
+  String get newPartitionTableConfirmationMessage =>
+      'Vytvoření nové tabulky oddílů na celém zařízení z něj odebere veškeré stávající oddíly. V případě potřeby lze v tomto kroku ještě tuto operaci vzít zpět (ovšem po zapsání změn už pak ne).';
 
   @override
   String get tooManyPrimaryPartitions => 'Příliš mnoho primárních oddílů';
@@ -468,7 +501,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get partitionLimitReached => 'Dosaženo limitu';
 
   @override
-  String get bootLoaderDevice => 'Zařízení na které nainstalovat zavaděč systému';
+  String get bootLoaderDevice =>
+      'Zařízení na které nainstalovat zavaděč systému';
 
   @override
   String get partitionCreateTitle => 'Vytvořit oddíl';
@@ -536,16 +570,19 @@ class AppLocalizationsCs extends AppLocalizations {
   String get identityHostnameLabel => 'Název pro váš počítač';
 
   @override
-  String get identityHostnameInfo => 'Tento název slouží při komunikaci s ostatními počítači.';
+  String get identityHostnameInfo =>
+      'Tento název slouží při komunikaci s ostatními počítači.';
 
   @override
   String get identityHostnameRequired => 'Je třeba zadat název pro počítač';
 
   @override
-  String get identityHostnameTooLong => 'Takový název počítače je příliš dlouhý.';
+  String get identityHostnameTooLong =>
+      'Takový název počítače je příliš dlouhý.';
 
   @override
-  String get identityInvalidHostname => 'Daný název pro počítač nelze použít (neplatný znak)';
+  String get identityInvalidHostname =>
+      'Daný název pro počítač nelze použít (neplatný znak)';
 
   @override
   String get identityUsernameLabel => 'Zvolte si uživatelské jméno';
@@ -554,19 +591,22 @@ class AppLocalizationsCs extends AppLocalizations {
   String get identityUsernameRequired => 'Je třeba zadat uživatelské jméno';
 
   @override
-  String get identityInvalidUsername => 'Dané uživatelské jméno nelze použít (neplatný znak)';
+  String get identityInvalidUsername =>
+      'Dané uživatelské jméno nelze použít (neplatný znak)';
 
   @override
   String get identityUsernameInUse => 'Takové uživatelské jméno už existuje.';
 
   @override
-  String get identityUsernameSystemReserved => 'Takové jméno je rezervováno pro využití systémem.';
+  String get identityUsernameSystemReserved =>
+      'Takové jméno je rezervováno pro využití systémem.';
 
   @override
   String get identityUsernameTooLong => 'Takové jméno je příliš dlouhé.';
 
   @override
-  String get identityUsernameInvalidChars => 'Takové jméno obsahuje neplatné znaky.';
+  String get identityUsernameInvalidChars =>
+      'Takové jméno obsahuje neplatné znaky.';
 
   @override
   String get identityPasswordLabel => 'Zvolte si heslo';
@@ -575,10 +615,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get identityPasswordRequired => 'Je třeba zadat heslo';
 
   @override
-  String get identityConfirmPasswordLabel => 'Zopakujte zadání hesla (prevence překlepu)';
+  String get identityConfirmPasswordLabel =>
+      'Zopakujte zadání hesla (prevence překlepu)';
 
   @override
-  String get identityPasswordMismatch => 'Do každé z kolonek pro heslo jste napsali něco jiného';
+  String get identityPasswordMismatch =>
+      'Do každé z kolonek pro heslo jste napsali něco jiného';
 
   @override
   String get identityPasswordShow => 'Zobrazit';
@@ -587,53 +629,55 @@ class AppLocalizationsCs extends AppLocalizations {
   String get identityPasswordHide => 'Skrýt';
 
   @override
-  String get writeChangesToDisk => 'Připraveno k instalaci';
+  String get confirmPageTitle => 'Připraveno k instalaci';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get confirmHeader =>
+      'Pokud budete pokračovat, níže uvedené změny budou zapsány na disky. Další změny pak můžete udělat ručně.';
 
   @override
-  String get writeChangesDescription => 'Pokud budete pokračovat, níže uvedené změny budou zapsány na disky. Další změny pak můžete udělat ručně.';
+  String get confirmDevicesTitle => 'Zařízení';
 
   @override
-  String get writeChangesDevicesTitle => 'Zařízení';
+  String get confirmPartitionsTitle => 'Oddíly';
 
   @override
-  String get writeChangesPartitionsTitle => 'Oddíly';
+  String get confirmPartitionTables =>
+      'Budou změněny tabulky rozdělení na oddíly následujících zařízení:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Budou změněny tabulky rozdělení na oddíly následujících zařízení:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Budou provedeny následující změny na oddílech:';
+  String get confirmPartitionChanges =>
+      'Budou provedeny následující změny na oddílech:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return 'velikost oddílu <b>$sysname</b> změněna z <b>$oldsize</b> na <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return 'oddíl <b>$sysname</b> naformátovaný jako <b>$format</b> použit pro <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'oddíl <b>$sysname</b> naformátován jako <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'oddíl <b>$sysname</b> použit pro <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'oddíl <b>$sysname</b> vytvořen';
   }
 
@@ -641,7 +685,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get themePageTitle => 'Zvolte si motiv vzhledu';
 
   @override
-  String get themePageHeader => 'Toto je možné později kdykoli změnit v nastavení vzhledu.';
+  String get themePageHeader =>
+      'Toto je možné později kdykoli změnit v nastavení vzhledu.';
 
   @override
   String get themeDark => 'Tmavý';
@@ -715,7 +760,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installationSlidesIncluded => 'Obsaženo:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Rychlé, svobodné a plné nových funkcí';
+  String get installationSlidesWelcomeTitle =>
+      'Rychlé, svobodné a plné nových funkcí';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -728,7 +774,8 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'Všechny aplikace které potřebujete';
+  String get installationSlidesSoftwareTitle =>
+      'Všechny aplikace které potřebujete';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -736,7 +783,8 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Vyvíjejte s nejlepším open source';
+  String get installationSlidesDevelopmentTitle =>
+      'Vyvíjejte s nejlepším open source';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -803,10 +851,12 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Web Ask Ubuntu pokrývá celou škálu otázek a odpovědí, dále na fóru Ubuntu Discourse jsou k dispozici návody a diskuze pro nové i pokročilé uživatele.';
+  String get installationSlidesSupportCommunity =>
+      'Web Ask Ubuntu pokrývá celou škálu otázek a odpovědí, dále na fóru Ubuntu Discourse jsou k dispozici návody a diskuze pro nové i pokročilé uživatele.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'Pro firemní uživatele Canonical poskytuje komerční podporu, díky které je snadné zavést a spravovat Ubuntu na pracovišti.';
+  String get installationSlidesSupportEnterprise =>
+      'Pro firemní uživatele Canonical poskytuje komerční podporu, díky které je snadné zavést a spravovat Ubuntu na pracovišti.';
 
   @override
   String get installationSlidesSupportResources => 'Užitečné zdroje:';
@@ -815,7 +865,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'Oficiální dokumentace';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Podpora 24/7 na podnikové úrovni s Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro =>
+      'Podpora 24/7 na podnikové úrovni s Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Kopírování souborů…';
@@ -847,7 +898,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get activeDirectoryOption => 'Použít Active Directory';
 
   @override
-  String get activeDirectoryInfo => 'V dalším kroku zadáte doménu a další podrobnosti.';
+  String get activeDirectoryInfo =>
+      'V dalším kroku zadáte doménu a další podrobnosti.';
 
   @override
   String get activeDirectoryTitle => 'Nastavit pro Active Directory';
@@ -874,19 +926,22 @@ class AppLocalizationsCs extends AppLocalizations {
   String get activeDirectoryDomainEndDot => 'Končí na tečku (.)';
 
   @override
-  String get activeDirectoryDomainStartHyphen => 'Začíná na spojovník/pomlčku (-)';
+  String get activeDirectoryDomainStartHyphen =>
+      'Začíná na spojovník/pomlčku (-)';
 
   @override
   String get activeDirectoryDomainEndHyphen => 'Končí na spojovník/pomlčku (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Obsahuje několik teček za sebou (..)';
+  String get activeDirectoryDomainMultipleDots =>
+      'Obsahuje několik teček za sebou (..)';
 
   @override
   String get activeDirectoryDomainNotFound => 'Doména nenalezena';
 
   @override
-  String get activeDirectoryAdminLabel => 'Uživatel s oprávněním pro přidání do domény';
+  String get activeDirectoryAdminLabel =>
+      'Uživatel s oprávněním pro přidání do domény';
 
   @override
   String get activeDirectoryAdminEmpty => 'Vyžadováno';
@@ -901,8 +956,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Vyžadováno';
 
   @override
-  String get activeDirectoryErrorTitle => 'Chyba při nastavování pro Active Directory';
+  String get activeDirectoryErrorTitle =>
+      'Chyba při nastavování pro Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'Je nám líto, v tuto chvíli se nedaří nastavit pro Active Directory. Po nastartování nového systému pak navštivte <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kde získáte další informace.';
+  String get activeDirectoryErrorMessage =>
+      'Je nám líto, v tuto chvíli se nedaří nastavit pro Active Directory. Po nastartování nového systému pak navštivte <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kde získáte další informace.';
 }

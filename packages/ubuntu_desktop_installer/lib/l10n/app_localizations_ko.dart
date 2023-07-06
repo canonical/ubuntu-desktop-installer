@@ -51,7 +51,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get welcomeRepairOption => '설치 복구';
 
   @override
-  String get welcomeRepairDescription => '복구하면 문서나 설정을 건드리지 않고 설치된 모든 소프트웨어가 다시 설치됩니다.';
+  String get welcomeRepairDescription =>
+      '복구하면 문서나 설정을 건드리지 않고 설치된 모든 소프트웨어가 다시 설치됩니다.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get rstHeader => '계속하려면 RST를 끄십시오';
 
   @override
-  String get rstDescription => '이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.';
+  String get rstDescription =>
+      '이 컴퓨터는 Intel RST (Rapid Storage Technology)를 사용합니다. 우분투를 설치하기 전에 Windows 에서 종료해야 합니다.';
 
   @override
   String rstInstructions(Object url) {
@@ -120,7 +122,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configureSecureBootTitle => 'Secure Boot 구성';
 
   @override
-  String get configureSecureBootDescription => '서드파티 드라이버 소프트웨어 설치를 선택 하시려면, Secure Boot를 꺼야 합니다.\n이를 위해 지금 보안 키를 지정하고, 시스템 다시 시작 시 입력해야 합니다.';
+  String get configureSecureBootDescription =>
+      '서드파티 드라이버 소프트웨어 설치를 선택 하시려면, Secure Boot를 꺼야 합니다.\n이를 위해 지금 보안 키를 지정하고, 시스템 다시 시작 시 입력해야 합니다.';
 
   @override
   String get configureSecureBootOption => 'Secure Boot 구성';
@@ -135,7 +138,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dontInstallDriverSoftwareNow => '지금은 드라이버 소프트웨어 설치하지 않기';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => '소프트웨어 & 업데이트에서 나중에 설치하실 수 있습니다.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      '소프트웨어 & 업데이트에서 나중에 설치하실 수 있습니다.';
 
   @override
   String get configureSecureBootSecurityKeyRequired => '보안 키가 필요합니다';
@@ -150,7 +154,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get connectToInternetPageTitle => '네트워크에 연결하기';
 
   @override
-  String get connectToInternetDescription => '이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블이나, Wi-Fi 네트워크를 선택하여 연결하십시오';
+  String get connectToInternetDescription =>
+      '이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블이나, Wi-Fi 네트워크를 선택하여 연결하십시오';
 
   @override
   String get useWiredConnection => '유선 연결 사용';
@@ -162,7 +167,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get wiredDisabled => '유선 연결이 꺼져 있음';
 
   @override
-  String get wiredMustBeEnabled => '이 컴퓨터에서 이더넷 연결을 사용하려면, 유선 연결이 반드시 활성화 되어야 합니다';
+  String get wiredMustBeEnabled =>
+      '이 컴퓨터에서 이더넷 연결을 사용하려면, 유선 연결이 반드시 활성화 되어야 합니다';
 
   @override
   String get enableWired => '유선 연결 활성화';
@@ -189,7 +195,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get noWifiDevicesDetected => '감지된 Wi-Fi 장치가 없음';
 
   @override
-  String get wifiMustBeEnabled => '이 컴퓨터에서 Wi-Fi를 사용하려면, 무선 네트워킹이 반드시 활성화 되어야 합니다';
+  String get wifiMustBeEnabled =>
+      '이 컴퓨터에서 Wi-Fi를 사용하려면, 무선 네트워킹이 반드시 활성화 되어야 합니다';
 
   @override
   String get enableWifi => 'Wi-Fi 활성화';
@@ -207,7 +214,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get normalInstallationTitle => '일반 설치';
 
   @override
-  String get normalInstallationSubtitle => '웹 브라우저, 유틸리티, 오피스 소프트웨어, 게임 및 미디어 플레이어.';
+  String get normalInstallationSubtitle =>
+      '웹 브라우저, 유틸리티, 오피스 소프트웨어, 게임 및 미디어 플레이어.';
 
   @override
   String get minimalInstallationTitle => '최소 설치';
@@ -219,22 +227,26 @@ class AppLocalizationsKo extends AppLocalizations {
   String get otherOptions => '기타 설정';
 
   @override
-  String get installThirdPartyTitle => '그래픽 및 Wi-Fi 하드웨어를 위한 서드파티 소프트웨어와, 부가적인 미디어 포맷 설치';
+  String get installThirdPartyTitle =>
+      '그래픽 및 Wi-Fi 하드웨어를 위한 서드파티 소프트웨어와, 부가적인 미디어 포맷 설치';
 
   @override
-  String get installThirdPartySubtitle => '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
+  String get installThirdPartySubtitle =>
+      '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
 
   @override
   String get installDriversTitle => '그래픽과 Wi-Fi 하드웨어를 위한 서드파티 소프트웨어 설치';
 
   @override
-  String get installDriversSubtitle => '이러한 드라이버는 문서에 포함된 라이선스 조건의 적용을 받습니다. 또한 독점 소프트웨어 입니다.';
+  String get installDriversSubtitle =>
+      '이러한 드라이버는 문서에 포함된 라이선스 조건의 적용을 받습니다. 또한 독점 소프트웨어 입니다.';
 
   @override
   String get installCodecsTitle => '추가 미디어 포맷 지원을 내려받아 설치';
 
   @override
-  String get installCodecsSubtitle => '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
+  String get installCodecsSubtitle =>
+      '이 소프트웨어는 문서에 포함된 라이선스 조건의 적용을 받습니다. 일부는 독점입니다.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +295,12 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => '이 컴퓨터에는 여러 운영체제가 설치되어 있습니다. 어떻게 하시겠습니까?';
+  String get installationTypeMultiOSDetected =>
+      '이 컴퓨터에는 여러 운영체제가 설치되어 있습니다. 어떻게 하시겠습니까?';
 
   @override
-  String get installationTypeNoOSDetected => '현재 이 컴퓨터에서 발견된 운영체제가 없습니다. 어떻게 하시겠습니까?';
+  String get installationTypeNoOSDetected =>
+      '현재 이 컴퓨터에서 발견된 운영체제가 없습니다. 어떻게 하시겠습니까?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -366,7 +380,8 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => '문서, 음악, 및 다른 개인 파일이 그대로 유지됩니다. 컴퓨터를 시작할 때 마다 원하는 운영체제를 선택하실 수 있습니다.';
+  String get installationTypeAlongsideInfo =>
+      '문서, 음악, 및 다른 개인 파일이 그대로 유지됩니다. 컴퓨터를 시작할 때 마다 원하는 운영체제를 선택하실 수 있습니다.';
 
   @override
   String get installationTypeManual => '수동 파티셔닝';
@@ -420,13 +435,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get allocateDiskSpace => '수동 파티셔닝';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => '마운트 위치는 \"/\"로 시작해야 합니다';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      '마운트 위치는 \"/\"로 시작해야 합니다';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => '마운트 위치는 공백을 포함할 수 없습니다';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      '마운트 위치는 공백을 포함할 수 없습니다';
 
   @override
-  String get startInstallingButtonText => '설치';
+  String get confirmInstallButton => '설치';
 
   @override
   String get diskHeadersDevice => '장치';
@@ -459,7 +476,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => '새로운 빈 파티션';
 
   @override
-  String get newPartitionTableConfirmationMessage => '장치 전체에 새 파티션을 생성하면, 기존 파티션은 모두 삭제됩니다. 필요하신 경우 작업을 되돌리실 수 있습니다.';
+  String get newPartitionTableConfirmationMessage =>
+      '장치 전체에 새 파티션을 생성하면, 기존 파티션은 모두 삭제됩니다. 필요하신 경우 작업을 되돌리실 수 있습니다.';
 
   @override
   String get tooManyPrimaryPartitions => '주 파티션이 너무 많음';
@@ -587,53 +605,53 @@ class AppLocalizationsKo extends AppLocalizations {
   String get identityPasswordHide => '숨기기';
 
   @override
-  String get writeChangesToDisk => '설치 준비 완료';
+  String get confirmPageTitle => '설치 준비 완료';
 
   @override
-  String get writeChangesFallbackSerial => '디스크';
+  String get confirmHeader =>
+      '계속 하시면 아래 나열된 변경사항을 디스크에 기록됩니다. 수동으로 추가적인 변경사항을 만드실 수 있습니다.';
 
   @override
-  String get writeChangesDescription => '계속 하시면 아래 나열된 변경사항을 디스크에 기록됩니다. 수동으로 추가적인 변경사항을 만드실 수 있습니다.';
+  String get confirmDevicesTitle => '장치';
 
   @override
-  String get writeChangesDevicesTitle => '장치';
+  String get confirmPartitionsTitle => '파티션';
 
   @override
-  String get writeChangesPartitionsTitle => '파티션';
+  String get confirmPartitionTables => '다음과 같은 장치의 파티션 테이블이 변경되었습니다:';
 
   @override
-  String get writeChangesPartitionTablesHeader => '다음과 같은 장치의 파티션 테이블이 변경되었습니다:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => '다음과 같은 파티션 변경사항이 적용됩니다:';
+  String get confirmPartitionChanges => '다음과 같은 파티션 변경사항이 적용됩니다:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return '파티션 <b>$sysname</b>의 크기를 <b>$oldsize</b>에서 <b>$newsize</b>로 조정';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return '파티션 <b>$sysname</b> 을(를) <b>$format</b>(으)로 포맷하고 <b>$mount</b>에 마운트';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return '파티션 <b>$sysname</b>을(를) <b>$format</b> (으)로 포맷함';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return '파티션 <b>$sysname</b>을(를) <b>$mount</b>에 사용';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return '파티션 <b>$sysname</b> 생성됨';
   }
 
@@ -803,10 +821,12 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu에는 넒은 범위의 질문과 답변이 있으며 Ubuntu Discourse 에서는 신규 사용자와 숙련된 사용자를 위한 가이드와 토론이 제공됩니다.';
+  String get installationSlidesSupportCommunity =>
+      'Ask Ubuntu에는 넒은 범위의 질문과 답변이 있으며 Ubuntu Discourse 에서는 신규 사용자와 숙련된 사용자를 위한 가이드와 토론이 제공됩니다.';
 
   @override
-  String get installationSlidesSupportEnterprise => '엔터프라이즈 사용자를 위해 Canonical에서는 직장에서 우분투를 쉽게 온보딩하고 안전하게 관리할 수 있도록 상용 지원을 제공합니다.';
+  String get installationSlidesSupportEnterprise =>
+      '엔터프라이즈 사용자를 위해 Canonical에서는 직장에서 우분투를 쉽게 온보딩하고 안전하게 관리할 수 있도록 상용 지원을 제공합니다.';
 
   @override
   String get installationSlidesSupportResources => '유용한 지원:';
@@ -815,7 +835,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get installationSlidesSupportDocumentation => '공식 문서';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Ubuntu Pro 의 엔터프라이즈 급 24/7 지원';
+  String get installationSlidesSupportUbuntuPro =>
+      'Ubuntu Pro 의 엔터프라이즈 급 24/7 지원';
 
   @override
   String get copyingFiles => '파일 복사 중…';
@@ -904,5 +925,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get activeDirectoryErrorTitle => 'Active Directory 연결 구성 오류';
 
   @override
-  String get activeDirectoryErrorMessage => '죄송합니다, 현재 Active Directory를 설정할 수 없습니다. 시스템이 준비되면, <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>에 방문하셔서 도움을 받으시기 바랍니다.';
+  String get activeDirectoryErrorMessage =>
+      '죄송합니다, 현재 Active Directory를 설정할 수 없습니다. 시스템이 준비되면, <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>에 방문하셔서 도움을 받으시기 바랍니다.';
 }

@@ -85,7 +85,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get rstHeader => '关闭 RST 以继续';
 
   @override
-  String get rstDescription => '这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，您需要在Windows中关闭RST。';
+  String get rstDescription =>
+      '这台电脑使用了英特尔RST（快速存储技术）。在安装Ubuntu之前，您需要在Windows中关闭RST。';
 
   @override
   String rstInstructions(Object url) {
@@ -120,7 +121,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get configureSecureBootTitle => '配置安全启动';
 
   @override
-  String get configureSecureBootDescription => '您已选择安装第三方驱动。这需要关闭安全启动。\n为此，您需要立即选择一个安全密钥，并在系统重新启动时输入。';
+  String get configureSecureBootDescription =>
+      '您已选择安装第三方驱动。这需要关闭安全启动。\n为此，您需要立即选择一个安全密钥，并在系统重新启动时输入。';
 
   @override
   String get configureSecureBootOption => '配置安全启动';
@@ -150,7 +152,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get connectToInternetPageTitle => '连接到互联网';
 
   @override
-  String get connectToInternetDescription => '将这台电脑连接到互联网有助于 Ubuntu 安装所需的任何额外软件并选择您的时区。\n\n通过以太网电缆连接，或选择 Wi-Fi 网络';
+  String get connectToInternetDescription =>
+      '将这台电脑连接到互联网有助于 Ubuntu 安装所需的任何额外软件并选择您的时区。\n\n通过以太网电缆连接，或选择 Wi-Fi 网络';
 
   @override
   String get useWiredConnection => '使用有线连接';
@@ -366,7 +369,8 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => '将保存文件、音乐和其他个人文件。每次启动时，您可以选择所需的操作系统。';
+  String get installationTypeAlongsideInfo =>
+      '将保存文件、音乐和其他个人文件。每次启动时，您可以选择所需的操作系统。';
 
   @override
   String get installationTypeManual => '手动分区';
@@ -420,13 +424,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get allocateDiskSpace => '手动分区';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Mount points must start with \"/\"';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Mount points cannot contain spaces';
 
   @override
-  String get startInstallingButtonText => '安装';
+  String get confirmInstallButton => '安装';
 
   @override
   String get diskHeadersDevice => '设备';
@@ -459,7 +465,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => '新建空分区';
 
   @override
-  String get newPartitionTableConfirmationMessage => '在整个设备上创建一个新的分区表，将删除其当前所有的分区。如果需要的话，这个操作可以被撤销。';
+  String get newPartitionTableConfirmationMessage =>
+      '在整个设备上创建一个新的分区表，将删除其当前所有的分区。如果需要的话，这个操作可以被撤销。';
 
   @override
   String get tooManyPrimaryPartitions => '主分区过多';
@@ -587,53 +594,52 @@ class AppLocalizationsZh extends AppLocalizations {
   String get identityPasswordHide => '隐藏';
 
   @override
-  String get writeChangesToDisk => '准备安装';
+  String get confirmPageTitle => '准备安装';
 
   @override
-  String get writeChangesFallbackSerial => '磁盘';
+  String get confirmHeader => '如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。';
 
   @override
-  String get writeChangesDescription => '如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。';
+  String get confirmDevicesTitle => '设备';
 
   @override
-  String get writeChangesDevicesTitle => '设备';
+  String get confirmPartitionsTitle => '分区';
 
   @override
-  String get writeChangesPartitionsTitle => '分区';
+  String get confirmPartitionTables => '已更改以下设备的分区表：';
 
   @override
-  String get writeChangesPartitionTablesHeader => '已更改以下设备的分区表：';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => '将应用以下分区更改：';
+  String get confirmPartitionChanges => '将应用以下分区更改：';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return '分区<b>$sysname</b> 从<b>$oldsize</b> 调整为<b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return '分区<b>$sysname</b> 格式化为<b>$format</b> 并挂载到<b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return '分区<b>$sysname</b> 格式化为<b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return '分区 <b>$sysname</b> 挂载到 <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return '分区 <b>$sysname</b> 已创建';
   }
 
@@ -803,10 +809,12 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu 覆盖了各种问题和回答，而 Ubuntu Discourse 为新手和有经验的用户提供指南和讨论。';
+  String get installationSlidesSupportCommunity =>
+      'Ask Ubuntu 覆盖了各种问题和回答，而 Ubuntu Discourse 为新手和有经验的用户提供指南和讨论。';
 
   @override
-  String get installationSlidesSupportEnterprise => '对于企业用户，Canonical 提供商业支持，以便在工作场所轻松安全地使用和管理 Ubuntu。';
+  String get installationSlidesSupportEnterprise =>
+      '对于企业用户，Canonical 提供商业支持，以便在工作场所轻松安全地使用和管理 Ubuntu。';
 
   @override
   String get installationSlidesSupportResources => '有用的资源：';
@@ -815,7 +823,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get installationSlidesSupportDocumentation => '官方文档';
 
   @override
-  String get installationSlidesSupportUbuntuPro => '使用 Ubuntu Pro 可享受企业级 7*24 支持服务';
+  String get installationSlidesSupportUbuntuPro =>
+      '使用 Ubuntu Pro 可享受企业级 7*24 支持服务';
 
   @override
   String get copyingFiles => '正在复制文件……';
@@ -904,12 +913,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get activeDirectoryErrorTitle => '配置活动目录时出错';
 
   @override
-  String get activeDirectoryErrorMessage => '抱歉，活动目录目前无法设置。系统启动并运行后，请访问 <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> 寻求帮助。';
+  String get activeDirectoryErrorMessage =>
+      '抱歉，活动目录目前无法设置。系统启动并运行后，请访问 <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> 寻求帮助。';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
 class AppLocalizationsZhTw extends AppLocalizationsZh {
-  AppLocalizationsZhTw(): super('zh_TW');
+  AppLocalizationsZhTw() : super('zh_TW');
 
   @override
   String get appTitle => 'Traditional Chinese';

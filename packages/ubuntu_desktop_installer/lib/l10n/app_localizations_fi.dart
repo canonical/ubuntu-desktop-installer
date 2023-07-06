@@ -51,7 +51,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get welcomeRepairOption => 'Korjaa asennus';
 
   @override
-  String get welcomeRepairDescription => 'Korjaus asentaa kaikki ohjelmat uudelleen, asiakirjat ja asetukset säilytetään.';
+  String get welcomeRepairDescription =>
+      'Korjaus asentaa kaikki ohjelmat uudelleen, asiakirjat ja asetukset säilytetään.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get rstHeader => 'Poista RST käytöstä jatkaaksesi';
 
   @override
-  String get rstDescription => 'Tämä tietokone käyttää Intel RST:tä (Rapid Storage Technology). Sinun tulee sammuttaa RST, ennen kuin asennat Ubuntun.';
+  String get rstDescription =>
+      'Tämä tietokone käyttää Intel RST:tä (Rapid Storage Technology). Sinun tulee sammuttaa RST, ennen kuin asennat Ubuntun.';
 
   @override
   String rstInstructions(Object url) {
@@ -99,7 +101,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get keyboardHeader => 'Valitse näppäimistön asettelu:';
 
   @override
-  String get keyboardTestHint => 'Kokeile näppäimistön asetuksia kirjoittamalla tähän';
+  String get keyboardTestHint =>
+      'Kokeile näppäimistön asetuksia kirjoittamalla tähän';
 
   @override
   String get keyboardDetectTitle => 'Tunnista näppäimistön asettelu';
@@ -114,13 +117,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get keyboardPressKeyLabel => 'Paina yhtä seuraavista näppäimistä:';
 
   @override
-  String get keyboardKeyPresentLabel => 'Löytyykö seuraava näppäin näppäimistöstäsi?';
+  String get keyboardKeyPresentLabel =>
+      'Löytyykö seuraava näppäin näppäimistöstäsi?';
 
   @override
   String get configureSecureBootTitle => 'Määritä Secure Boot';
 
   @override
-  String get configureSecureBootDescription => 'Valitsit kolmansien osapuolten ajurien asennuksen. Tämä vaatii että Secure Boot tulee määrittää.\nTämä vaatii, että valitset turva-avaimen nyt ja kirjoitat sen järjestelmän käynnistyessä uudelleen.';
+  String get configureSecureBootDescription =>
+      'Valitsit kolmansien osapuolten ajurien asennuksen. Tämä vaatii että Secure Boot tulee määrittää.\nTämä vaatii, että valitset turva-avaimen nyt ja kirjoitat sen järjestelmän käynnistyessä uudelleen.';
 
   @override
   String get configureSecureBootOption => 'Määritä Secure Boot';
@@ -135,7 +140,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get dontInstallDriverSoftwareNow => 'Älä asenna ajureita toistaiseksi';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Voit asentaa ne myöhemmin Päivitykset ja muut ohjelmistot -ohjelmassa.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'Voit asentaa ne myöhemmin Päivitykset ja muut ohjelmistot -ohjelmassa.';
 
   @override
   String get configureSecureBootSecurityKeyRequired => 'Salausavain vaaditaan';
@@ -150,7 +156,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get connectToInternetPageTitle => 'Yhdistä verkkoon';
 
   @override
-  String get connectToInternetDescription => 'Tietokoneen liittäminen internetiin auttaa Ubuntua asentamaan tarvittavat lisäohjelmistot ja valitsemaan aikavyöhykkeen.\n\nYhdistä Ethernet-kaapelilla tai valitse Wi-Fi-verkko';
+  String get connectToInternetDescription =>
+      'Tietokoneen liittäminen internetiin auttaa Ubuntua asentamaan tarvittavat lisäohjelmistot ja valitsemaan aikavyöhykkeen.\n\nYhdistä Ethernet-kaapelilla tai valitse Wi-Fi-verkko';
 
   @override
   String get useWiredConnection => 'Käytä langallista yhteyttä';
@@ -162,7 +169,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get wiredDisabled => 'Langallinen yhteys on kytketty pois päältä';
 
   @override
-  String get wiredMustBeEnabled => 'Jos haluat käyttää Ethernet-yhteyttä tässä tietokoneessa, langallinen yhteys on otettava käyttöön';
+  String get wiredMustBeEnabled =>
+      'Jos haluat käyttää Ethernet-yhteyttä tässä tietokoneessa, langallinen yhteys on otettava käyttöön';
 
   @override
   String get enableWired => 'Ota langallinen yhteys käyttöön';
@@ -189,7 +197,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get noWifiDevicesDetected => 'Wi-Fi-laitteita ei havaittu';
 
   @override
-  String get wifiMustBeEnabled => 'Jos haluat käyttää Wi-Fi-yhteyttä tällä tietokoneella, langaton verkko on otettava käyttöön';
+  String get wifiMustBeEnabled =>
+      'Jos haluat käyttää Wi-Fi-yhteyttä tällä tietokoneella, langaton verkko on otettava käyttöön';
 
   @override
   String get enableWifi => 'Ota Wi-Fi käyttöön';
@@ -201,13 +210,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Sovellukset ja päivitykset';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'Millä sovelluksin haluat aloittaa?';
+  String get updatesOtherSoftwarePageDescription =>
+      'Millä sovelluksin haluat aloittaa?';
 
   @override
   String get normalInstallationTitle => 'Tavallinen asennus';
 
   @override
-  String get normalInstallationSubtitle => 'Verkkoselain, apuohjelmat, toimisto-ohjelmisto, pelit ja multimediasoittimet.';
+  String get normalInstallationSubtitle =>
+      'Verkkoselain, apuohjelmat, toimisto-ohjelmisto, pelit ja multimediasoittimet.';
 
   @override
   String get minimalInstallationTitle => 'Vähimmäisasennus';
@@ -219,22 +230,28 @@ class AppLocalizationsFi extends AppLocalizations {
   String get otherOptions => 'Muut valinnat';
 
   @override
-  String get installThirdPartyTitle => 'Asenna kolmannen osapuolen ohjelmistot näytönohjainta ja wifi-laitteistoa sekä eri mediamuotoja varten';
+  String get installThirdPartyTitle =>
+      'Asenna kolmannen osapuolen ohjelmistot näytönohjainta ja wifi-laitteistoa sekä eri mediamuotoja varten';
 
   @override
-  String get installThirdPartySubtitle => 'Näihin ohjelmistoihin kohdistuvat dokumentaation mukana olevat lisenssiehdot. Jotkin voivat olla suljetun lähdekoodin ohjelmistoja.';
+  String get installThirdPartySubtitle =>
+      'Näihin ohjelmistoihin kohdistuvat dokumentaation mukana olevat lisenssiehdot. Jotkin voivat olla suljetun lähdekoodin ohjelmistoja.';
 
   @override
-  String get installDriversTitle => 'Asenna kolmannen osapuolen ohjelmistot näytönohjainta ja wifi-laitteistoa varten';
+  String get installDriversTitle =>
+      'Asenna kolmannen osapuolen ohjelmistot näytönohjainta ja wifi-laitteistoa varten';
 
   @override
-  String get installDriversSubtitle => 'Näihin ajureihin pätee niiden dokumentaation mukana tulevat lisenssiehdot. Nämä ajurit ovat omisteellisia.';
+  String get installDriversSubtitle =>
+      'Näihin ajureihin pätee niiden dokumentaation mukana tulevat lisenssiehdot. Nämä ajurit ovat omisteellisia.';
 
   @override
-  String get installCodecsTitle => 'Lataa ja asenna tuki eri mediamuotoja varten';
+  String get installCodecsTitle =>
+      'Lataa ja asenna tuki eri mediamuotoja varten';
 
   @override
-  String get installCodecsSubtitle => 'Tähän ohjelmistoon pätee sen dokumentaation mukana tulevat lisenssiehdot. Jotkin ohjelmistot ovat omisteellisia.';
+  String get installCodecsSubtitle =>
+      'Tähän ohjelmistoon pätee sen dokumentaation mukana tulevat lisenssiehdot. Jotkin ohjelmistot ovat omisteellisia.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +300,12 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'Tässä tietokoneessa on jo useita käyttöjärjestelmiä. Mitä haluat tehdä?';
+  String get installationTypeMultiOSDetected =>
+      'Tässä tietokoneessa on jo useita käyttöjärjestelmiä. Mitä haluat tehdä?';
 
   @override
-  String get installationTypeNoOSDetected => 'Tässä tietokoneessa ei havaittu asennettuja käyttöjärjestelmiä. Mitä haluat tehdä?';
+  String get installationTypeNoOSDetected =>
+      'Tässä tietokoneessa ei havaittu asennettuja käyttöjärjestelmiä. Mitä haluat tehdä?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -327,10 +346,12 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'Salausavain valitaan seuraavassa vaiheessa.';
+  String get installationTypeEncryptInfo =>
+      'Salausavain valitaan seuraavassa vaiheessa.';
 
   @override
-  String get installationTypeZFS => 'KOKEELLINEN: Tyhjennä levy ja käytä ZFS:ää';
+  String get installationTypeZFS =>
+      'KOKEELLINEN: Tyhjennä levy ja käytä ZFS:ää';
 
   @override
   String get installationTypeZFSSelected => 'ZFS valittu';
@@ -366,7 +387,8 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Asiakirjat, musiikki ja muut henkilökohtaiset tiedostot säilytetään. Jokaisella tietokoneen käynnistyskerralla voit valita, mikä käyttöjärjestelmä käynnistetään.';
+  String get installationTypeAlongsideInfo =>
+      'Asiakirjat, musiikki ja muut henkilökohtaiset tiedostot säilytetään. Jokaisella tietokoneen käynnistyskerralla voit valita, mikä käyttöjärjestelmä käynnistetään.';
 
   @override
   String get installationTypeManual => 'Manuaalinen osiointi';
@@ -391,7 +413,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Asenna nyt';
 
   @override
-  String get installAlongsideSpaceDivider => 'Varaa levytilaa raahaamalla alla olevaa erotinta:';
+  String get installAlongsideSpaceDivider =>
+      'Varaa levytilaa raahaamalla alla olevaa erotinta:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +443,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get allocateDiskSpace => 'Manuaalinen osiointi';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Liitospisteiden tulee alkaa merkillä \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Liitospisteiden tulee alkaa merkillä \"/\"';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Liitospisteet eivät voi sisältää välilyöntejä';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Liitospisteet eivät voi sisältää välilyöntejä';
 
   @override
-  String get startInstallingButtonText => 'Asenna';
+  String get confirmInstallButton => 'Asenna';
 
   @override
   String get diskHeadersDevice => 'Laite';
@@ -459,7 +484,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Uusi tyhjä osio';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Uuden osiotaulun luominen koko laitteelle poistaa kaikki laitteen nykyiset levyosiot. Voit perua tämän toimenpiteen, jos haluat.';
+  String get newPartitionTableConfirmationMessage =>
+      'Uuden osiotaulun luominen koko laitteelle poistaa kaikki laitteen nykyiset levyosiot. Voit perua tämän toimenpiteen, jos haluat.';
 
   @override
   String get tooManyPrimaryPartitions => 'Liian monta ensisijaista osiota';
@@ -536,7 +562,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get identityHostnameLabel => 'Tietokoneen nimi';
 
   @override
-  String get identityHostnameInfo => 'Nimi, jolla tietokone tunnistautuu toisille tietokoneille.';
+  String get identityHostnameInfo =>
+      'Nimi, jolla tietokone tunnistautuu toisille tietokoneille.';
 
   @override
   String get identityHostnameRequired => 'Tietokoneen nimi vaaditaan';
@@ -560,13 +587,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get identityUsernameInUse => 'Kyseinen käyttäjänimi on jo olemassa.';
 
   @override
-  String get identityUsernameSystemReserved => 'Kyseinen nimi on varattu järjestelmän käytettäväksi.';
+  String get identityUsernameSystemReserved =>
+      'Kyseinen nimi on varattu järjestelmän käytettäväksi.';
 
   @override
   String get identityUsernameTooLong => 'Kyseinen nimi on liian pitkä.';
 
   @override
-  String get identityUsernameInvalidChars => 'Kyseinen nimi sisältää virheellisiä merkkejä.';
+  String get identityUsernameInvalidChars =>
+      'Kyseinen nimi sisältää virheellisiä merkkejä.';
 
   @override
   String get identityPasswordLabel => 'Valitse salasana';
@@ -587,53 +616,54 @@ class AppLocalizationsFi extends AppLocalizations {
   String get identityPasswordHide => 'Piilota';
 
   @override
-  String get writeChangesToDisk => 'Valmis asennukseen';
+  String get confirmPageTitle => 'Valmis asennukseen';
 
   @override
-  String get writeChangesFallbackSerial => 'levy';
+  String get confirmHeader =>
+      'Jos jatkat, alla luetellut muutokset kirjoitetaan levyille. Muussa tapauksessa voit tehdä itse lisää muutoksia.';
 
   @override
-  String get writeChangesDescription => 'Jos jatkat, alla luetellut muutokset kirjoitetaan levyille. Muussa tapauksessa voit tehdä itse lisää muutoksia.';
+  String get confirmDevicesTitle => 'Laitteet';
 
   @override
-  String get writeChangesDevicesTitle => 'Laitteet';
+  String get confirmPartitionsTitle => 'Osiot';
 
   @override
-  String get writeChangesPartitionsTitle => 'Osiot';
+  String get confirmPartitionTables =>
+      'Seuraavien laitteiden osiotauluja on muutettu:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Seuraavien laitteiden osiotauluja on muutettu:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Seuraavat osiomuutokset toteutetaan:';
+  String get confirmPartitionChanges => 'Seuraavat osiomuutokset toteutetaan:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return 'osion <b>$sysname</b> koko <b>$oldsize</b> muutettu kokoon <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return 'osio <b>$sysname</b> alustettu muotoon <b>$format</b> käytettäväksi liitospisteenä <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'osio <b>$sysname</b> alustettu muotoon <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'osio <b>$sysname</b> käytettäväksi liitospisteenä <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'osio <b>$sysname</b> luotu';
   }
 
@@ -641,7 +671,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get themePageTitle => 'Valitse teema';
 
   @override
-  String get themePageHeader => 'Voit vaihtaa ulkoasua milloin tahansa asetusten kautta.';
+  String get themePageHeader =>
+      'Voit vaihtaa ulkoasua milloin tahansa asetusten kautta.';
 
   @override
   String get themeDark => 'Tumma';
@@ -715,7 +746,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get installationSlidesIncluded => 'Sisältyy:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Nopea, ilmainen ja täynnä uusia ominaisuuksia';
+  String get installationSlidesWelcomeTitle =>
+      'Nopea, ilmainen ja täynnä uusia ominaisuuksia';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -728,7 +760,8 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'Kaikki tarvitsemasi sovellukset';
+  String get installationSlidesSoftwareTitle =>
+      'Kaikki tarvitsemasi sovellukset';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -736,7 +769,8 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Kehitä avoimen lähdekoodin parhailla välineillä';
+  String get installationSlidesDevelopmentTitle =>
+      'Kehitä avoimen lähdekoodin parhailla välineillä';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -803,19 +837,23 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu -palvelu sisältää lukuisia kysymyksiä sekä vastauksia, ja Ubuntu Discourse tarjoaa ohjeita sekä keskusteluja niin uusille kuin vanhoillekin käyttäjille.';
+  String get installationSlidesSupportCommunity =>
+      'Ask Ubuntu -palvelu sisältää lukuisia kysymyksiä sekä vastauksia, ja Ubuntu Discourse tarjoaa ohjeita sekä keskusteluja niin uusille kuin vanhoillekin käyttäjille.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'Yrityskäyttäjille Canonical tarjoaa kaupallista tukea, jotta Ubuntu pysyy hallittavissa ja turvallisena työympäristössä.';
+  String get installationSlidesSupportEnterprise =>
+      'Yrityskäyttäjille Canonical tarjoaa kaupallista tukea, jotta Ubuntu pysyy hallittavissa ja turvallisena työympäristössä.';
 
   @override
   String get installationSlidesSupportResources => 'Hyödyllisiä resursseja:';
 
   @override
-  String get installationSlidesSupportDocumentation => 'Virallinen dokumentaatio';
+  String get installationSlidesSupportDocumentation =>
+      'Virallinen dokumentaatio';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Yritystason 24/7-tuki Ubuntu Pro -tilauksella';
+  String get installationSlidesSupportUbuntuPro =>
+      'Yritystason 24/7-tuki Ubuntu Pro -tilauksella';
 
   @override
   String get copyingFiles => 'Kopioidaan tiedostoja…';
@@ -847,7 +885,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get activeDirectoryOption => 'Käytä Active Directorya';
 
   @override
-  String get activeDirectoryInfo => 'Kirjoitat domainin ja muut tiedot seuraavassa vaiheessa.';
+  String get activeDirectoryInfo =>
+      'Kirjoitat domainin ja muut tiedot seuraavassa vaiheessa.';
 
   @override
   String get activeDirectoryTitle => 'Määritä Active Directory';
@@ -880,7 +919,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get activeDirectoryDomainEndHyphen => 'Päättyy tavuviivaan (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Sisältää lukuisia peräkkäisiä pisteitä (..)';
+  String get activeDirectoryDomainMultipleDots =>
+      'Sisältää lukuisia peräkkäisiä pisteitä (..)';
 
   @override
   String get activeDirectoryDomainNotFound => 'Domainia ei löydy';
@@ -901,8 +941,10 @@ class AppLocalizationsFi extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Vaadittu';
 
   @override
-  String get activeDirectoryErrorTitle => 'Virhe määrittäessä yhteyttä Active Directoryyn';
+  String get activeDirectoryErrorTitle =>
+      'Virhe määrittäessä yhteyttä Active Directoryyn';
 
   @override
-  String get activeDirectoryErrorMessage => 'Valitettavasti Active Directorya ei voi määrittää tällä hetkellä. Kun tietokoneesi on valmis ja käynnissä, käy osoitteessa <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> saadaksesi ohjeita.';
+  String get activeDirectoryErrorMessage =>
+      'Valitettavasti Active Directorya ei voi määrittää tällä hetkellä. Kun tietokoneesi on valmis ja käynnissä, käy osoitteessa <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> saadaksesi ohjeita.';
 }

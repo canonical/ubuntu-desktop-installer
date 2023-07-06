@@ -24,8 +24,8 @@
   },
   "partitionFormatLabel": "Használva mint:",
   "@partitionFormatLabel": {},
-  "writeChangesDescription": "Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.",
-  "@writeChangesDescription": {},
+  "confirmHeader": "Ha folytatja, akkor az alább felsorolt változtatások a lemezekre lesznek írva. A további változtatásokat kézzel végezheti el.",
+  "@confirmHeader": {},
   "installationTypeDualOSDetected": "Ezen a számítógépen jelenleg {os1} és {os2} van. Mit szeretne tenni?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -72,26 +72,22 @@
   "@newPartitionTableConfirmationMessage": {},
   "partitionLocationEnd": "A hely vége",
   "@partitionLocationEnd": {},
-  "writeChangesToDisk": "Telepítésre kész",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "lemez",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Telepítésre kész",
+  "@confirmPageTitle": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "A következő partícióváltoztatások kerülnek alkalmazásra:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "A következő partícióváltoztatások kerülnek alkalmazásra:",
+  "@confirmPartitionChanges": {},
   "identityPasswordMismatch": "A jelszavak nem egyeznek",
   "@identityPasswordMismatch": {},
-  "writeChangesPartitionTablesHeader": "A következő eszközök partíciós táblái változnak meg:",
-  "@writeChangesPartitionTablesHeader": {},
+  "confirmPartitionTables": "A következő eszközök partíciós táblái változnak meg:",
+  "@confirmPartitionTables": {},
   "useWiredConnection": "Vezetékes kapcsolat használata",
   "@useWiredConnection": {},
   "noWiredConnection": "Nincs vezetékes kapcsolat felismerve",
@@ -268,8 +264,8 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Kézi particionálás",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Telepítés",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Telepítés",
+  "@confirmInstallButton": {},
   "partitionTypePrimary": "Elsődleges",
   "@partitionTypePrimary": {},
   "partitionTypeLogical": "Logikai",
@@ -504,8 +500,8 @@
   "@notEnoughDiskSpaceTitle": {},
   "showSecurityKey": "Biztonsági kulcs megjelenítése",
   "@showSecurityKey": {},
-  "writeChangesPartitionCreated": "<b>{sysname}</b> partíció létrehozva",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "<b>{sysname}</b> partíció létrehozva",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -513,8 +509,8 @@
   },
   "installationTypeLVMEncryptionSelected": "LVM és titkosítás kiválasztva",
   "@installationTypeLVMEncryptionSelected": {},
-  "writeChangesPartitionResized": "<b>{sysname}</b> partíció átméretezve <b>{oldsize}</b> méretről <b>{newsize}</b> méretre",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "<b>{sysname}</b> partíció átméretezve <b>{oldsize}</b> méretről <b>{newsize}</b> méretre",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -522,16 +518,16 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormatted": "<b>{sysname}</b> partíció <b>{format}</b> formátumra formázva",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "<b>{sysname}</b> partíció <b>{format}</b> formátumra formázva",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "<b>{sysname}</b> partíció <b>{format}</b> formátumra formázva, <b>{mount}</b> helyre csatolva",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "<b>{sysname}</b> partíció <b>{format}</b> formátumra formázva, <b>{mount}</b> helyre csatolva",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -539,8 +535,8 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "<b>{sysname}</b> partíció <b>{mount}</b> helyre csatolva",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "<b>{sysname}</b> partíció <b>{mount}</b> helyre csatolva",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -761,10 +757,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Billentyűzetváltozat:",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Eszközök",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partíciók",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Eszközök",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partíciók",
+  "@confirmPartitionsTitle": {},
   "partitionLimitReached": "Korlát elérve",
   "@partitionLimitReached": {},
   "tooManyPrimaryPartitions": "Túl sok elsődleges partíció",

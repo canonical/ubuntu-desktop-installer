@@ -209,8 +209,8 @@
   },
   "bitlockerTitle": "BitLocker er aktiveret",
   "@bitlockerTitle": {},
-  "startInstallingButtonText": "Installér",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Installér",
+  "@confirmInstallButton": {},
   "newPartitionTableConfirmationMessage": "Oprettelse af ny partitionstabel, på en hel enhed, vil fjerne alle dens nuværende partitioner. Denne operation kan fortrydes, hvis det er nødvendigt.",
   "@newPartitionTableConfirmationMessage": {},
   "installationTypeDualOSDetected": "Denne computer har aktuelt {os1} og {os2} installeret. Hvad kunne du tænke dig at gøre?",
@@ -459,14 +459,14 @@
   "@identityInvalidUsername": {},
   "identityUsernameInUse": "Det brugernavn findes allerede.",
   "@identityUsernameInUse": {},
-  "writeChangesToDisk": "Klar til at installere",
-  "@writeChangesToDisk": {},
+  "confirmPageTitle": "Klar til at installere",
+  "@confirmPageTitle": {},
   "installAlongsideResizePartition": "Ændr størrelse på partition",
   "@installAlongsideResizePartition": {},
   "partitionFormatNone": "Efterlad uformateret",
   "@partitionFormatNone": {},
-  "writeChangesPartitionResized": "partition <b>{sysname}</b> ændres fra <b>{oldsize}</b> til <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "partition <b>{sysname}</b> ændres fra <b>{oldsize}</b> til <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -474,8 +474,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partition <b>{sysname}</b> formateret som <b>{format}</b> brugt til <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "partition <b>{sysname}</b> formateret som <b>{format}</b> brugt til <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -483,16 +483,16 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partition <b>{sysname}</b> formateret som <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "partition <b>{sysname}</b> formateret som <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partition <b>{sysname}</b> brugt til <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "partition <b>{sysname}</b> brugt til <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -526,8 +526,8 @@
   "@partitionSizeLabel": {},
   "partitionLocationLabel": "Placering for ny partition:",
   "@partitionLocationLabel": {},
-  "writeChangesPartitionsTitle": "Partitioner",
-  "@writeChangesPartitionsTitle": {},
+  "confirmPartitionsTitle": "Partitioner",
+  "@confirmPartitionsTitle": {},
   "themePageTitle": "Vælg til tema",
   "@themePageTitle": {},
   "themePageHeader": "Du kan altid ændre dette senere, i indstillinger for udseende.",
@@ -572,10 +572,10 @@
   "@identityPasswordShow": {},
   "identityPasswordHide": "Skjul",
   "@identityPasswordHide": {},
-  "writeChangesPartitionTablesHeader": "Partitionstabellen på de følgende enheder er ændret:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionCreated": "partition <b>{sysname}</b> oprettet",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionTables": "Partitionstabellen på de følgende enheder er ændret:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionCreate": "partition <b>{sysname}</b> oprettet",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -651,12 +651,8 @@
   },
   "activeDirectoryTitle": "Konfigurér Aktiv Sti",
   "@activeDirectoryTitle": {},
-  "writeChangesFallbackSerial": "disk",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesDevicesTitle": "Enheder",
-  "@writeChangesDevicesTitle": {},
+  "confirmDevicesTitle": "Enheder",
+  "@confirmDevicesTitle": {},
   "bitlockerHeader": "Slå BitLocker fra, for at fortsætte",
   "@bitlockerHeader": {},
   "installationSlidesTitle": "Velkommen til {RELEASE}",
@@ -696,8 +692,8 @@
   "@selectGuidedStorageInstallNow": {},
   "shutdown": "Luk Ned",
   "@shutdown": {},
-  "writeChangesPartitionsHeader": "De følgende partitionsændringer vil træde i kraft:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "De følgende partitionsændringer vil træde i kraft:",
+  "@confirmPartitionChanges": {},
   "keyboardDetectButton": "Opfang",
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Tastaturvariant:",
@@ -741,10 +737,10 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Adgangskoderne stemmer ikke overens",
   "@identityPasswordMismatch": {},
-  "writeChangesDescription": "Hvis du fortsætter, vil ændringerne på listen nedenfor blive skrevet til disken(e). Du vil kunne foretage yderligere ændringer manuelt.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmHeader": "Hvis du fortsætter, vil ændringerne på listen nedenfor blive skrevet til disken(e). Du vil kunne foretage yderligere ændringer manuelt.",
+  "@confirmHeader": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},

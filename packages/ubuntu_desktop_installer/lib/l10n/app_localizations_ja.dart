@@ -51,7 +51,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get welcomeRepairOption => '修復インストール';
 
   @override
-  String get welcomeRepairDescription => '修復すると、ドキュメントや設定はそのままにして、インストールされているすべてのソフトウェアを再インストールします。';
+  String get welcomeRepairDescription =>
+      '修復すると、ドキュメントや設定はそのままにして、インストールされているすべてのソフトウェアを再インストールします。';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get rstHeader => '続行するにはRSTをオフにしてください。';
 
   @override
-  String get rstDescription => 'このコンピューターは Intel RST (Rapid Storage Technology) を使用しています。Ubuntu をインストールする前に Windows で RST を無効にする必要があります。';
+  String get rstDescription =>
+      'このコンピューターは Intel RST (Rapid Storage Technology) を使用しています。Ubuntu をインストールする前に Windows で RST を無効にする必要があります。';
 
   @override
   String rstInstructions(Object url) {
@@ -120,7 +122,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get configureSecureBootTitle => 'セキュアブートの設定';
 
   @override
-  String get configureSecureBootDescription => 'サードパーティのドライバーソフトウェアのインストールを選択しました。セキュアブートの無効化が必要です。\nここでセキュリティキーを設定し、システム再起動時にそのキーを入力してください。';
+  String get configureSecureBootDescription =>
+      'サードパーティのドライバーソフトウェアのインストールを選択しました。セキュアブートの無効化が必要です。\nここでセキュリティキーを設定し、システム再起動時にそのキーを入力してください。';
 
   @override
   String get configureSecureBootOption => 'セキュアブートを設定';
@@ -135,7 +138,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get dontInstallDriverSoftwareNow => '今はドライバーソフトウェアをインストールしない';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => '「ソフトウェアとアップデート」で後でインストールできます。';
+  String get dontInstallDriverSoftwareNowDescription =>
+      '「ソフトウェアとアップデート」で後でインストールできます。';
 
   @override
   String get configureSecureBootSecurityKeyRequired => 'セキュリティキーが必要です';
@@ -150,7 +154,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get connectToInternetPageTitle => 'ネットワークに接続';
 
   @override
-  String get connectToInternetDescription => 'このコンピューターをインターネットに接続すると、必要な追加ソフトウェアのインストールし、タイムゾーンを選択するのを手助けします。\n\nイーサネットケーブルを接続するか、Wi-Fi ネットワークを選択してください';
+  String get connectToInternetDescription =>
+      'このコンピューターをインターネットに接続すると、必要な追加ソフトウェアのインストールし、タイムゾーンを選択するのを手助けします。\n\nイーサネットケーブルを接続するか、Wi-Fi ネットワークを選択してください';
 
   @override
   String get useWiredConnection => '有線接続を使用';
@@ -189,7 +194,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get noWifiDevicesDetected => 'Wi-Fi デバイスが見つかりません';
 
   @override
-  String get wifiMustBeEnabled => 'このコンピューターで Wi-Fi を使用するには。無線ネットワークを有効にする必要があります';
+  String get wifiMustBeEnabled =>
+      'このコンピューターで Wi-Fi を使用するには。無線ネットワークを有効にする必要があります';
 
   @override
   String get enableWifi => 'Wi-Fi を有効にする';
@@ -201,13 +207,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'アプリケーションとアップデート';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'あらかじめいくつかのアプリケーションをインストールします。選択してください。';
+  String get updatesOtherSoftwarePageDescription =>
+      'あらかじめいくつかのアプリケーションをインストールします。選択してください。';
 
   @override
   String get normalInstallationTitle => 'おすすめのアプリもインストールする';
 
   @override
-  String get normalInstallationSubtitle => 'Webブラウザ、ユーティリティ、オフィスソフトウェア、ゲーム、メディアプレイヤー。';
+  String get normalInstallationSubtitle =>
+      'Webブラウザ、ユーティリティ、オフィスソフトウェア、ゲーム、メディアプレイヤー。';
 
   @override
   String get minimalInstallationTitle => '最小限のアプリだけをインストールする';
@@ -219,22 +227,26 @@ class AppLocalizationsJa extends AppLocalizations {
   String get otherOptions => 'その他のオプション';
 
   @override
-  String get installThirdPartyTitle => 'グラフィックスや Wi-Fi 機器のためのサードパーティ製ソフトウェア、および追加メディアフォーマットをインストールする';
+  String get installThirdPartyTitle =>
+      'グラフィックスや Wi-Fi 機器のためのサードパーティ製ソフトウェア、および追加メディアフォーマットをインストールする';
 
   @override
-  String get installThirdPartySubtitle => 'このソフトウェアの使用には、それぞれのドキュメントに記載されているライセンス規約が適用されます。一部のソフトウェアはプロプライエタリです。';
+  String get installThirdPartySubtitle =>
+      'このソフトウェアの使用には、それぞれのドキュメントに記載されているライセンス規約が適用されます。一部のソフトウェアはプロプライエタリです。';
 
   @override
   String get installDriversTitle => 'グラフィックスとWi-Fi 機器用のサードパーティ製ソフトウェアをインストールする';
 
   @override
-  String get installDriversSubtitle => 'これらのドライバーは自身のドキュメントに含まれるライセンス条項に従い、プロプライエタリです。';
+  String get installDriversSubtitle =>
+      'これらのドライバーは自身のドキュメントに含まれるライセンス条項に従い、プロプライエタリです。';
 
   @override
   String get installCodecsTitle => '追加のメディアフォーマット用のサポートをダウンロードしてインストールする';
 
   @override
-  String get installCodecsSubtitle => 'このソフトウェアはそのドキュメントに含まれるライセンス条項に従います。いくつかはプロプライエタリです。';
+  String get installCodecsSubtitle =>
+      'このソフトウェアはそのドキュメントに含まれるライセンス条項に従います。いくつかはプロプライエタリです。';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +295,12 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'コンピューターには複数の OS がインストールされています。インストール方法を選択してください。';
+  String get installationTypeMultiOSDetected =>
+      'コンピューターには複数の OS がインストールされています。インストール方法を選択してください。';
 
   @override
-  String get installationTypeNoOSDetected => 'コンピューターにインストールされた OS は見つかりませんでした。インストール方法を選択してください。';
+  String get installationTypeNoOSDetected =>
+      'コンピューターにインストールされた OS は見つかりませんでした。インストール方法を選択してください。';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -366,7 +380,8 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'ファイルは削除されません。コンピュータを起動する際に、どのOSで起動するか選択できます。';
+  String get installationTypeAlongsideInfo =>
+      'ファイルは削除されません。コンピュータを起動する際に、どのOSで起動するか選択できます。';
 
   @override
   String get installationTypeManual => '手動パーティショニング';
@@ -420,13 +435,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get allocateDiskSpace => '手動パーティショニング';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Mount points must start with \"/\"';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Mount points cannot contain spaces';
 
   @override
-  String get startInstallingButtonText => 'インストール';
+  String get confirmInstallButton => 'インストール';
 
   @override
   String get diskHeadersDevice => 'デバイス';
@@ -459,7 +476,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => '新しい空のパーティション';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'デバイスに対して新しいパーティションを作成すると、現在のパーティションがすべて削除されます。この操作は必要に応じて戻すことができます。';
+  String get newPartitionTableConfirmationMessage =>
+      'デバイスに対して新しいパーティションを作成すると、現在のパーティションがすべて削除されます。この操作は必要に応じて戻すことができます。';
 
   @override
   String get tooManyPrimaryPartitions => '基本パーティションが多すぎます';
@@ -587,53 +605,52 @@ class AppLocalizationsJa extends AppLocalizations {
   String get identityPasswordHide => '非表示';
 
   @override
-  String get writeChangesToDisk => 'インストールの準備完了';
+  String get confirmPageTitle => 'インストールの準備完了';
 
   @override
-  String get writeChangesFallbackSerial => 'ディスク';
+  String get confirmHeader => '続行すると、以下の変更がディスクに書き込まれます。さらに手動で変更を加えることもできます。';
 
   @override
-  String get writeChangesDescription => '続行すると、以下の変更がディスクに書き込まれます。さらに手動で変更を加えることもできます。';
+  String get confirmDevicesTitle => 'デバイス';
 
   @override
-  String get writeChangesDevicesTitle => 'デバイス';
+  String get confirmPartitionsTitle => 'パーティション';
 
   @override
-  String get writeChangesPartitionsTitle => 'パーティション';
+  String get confirmPartitionTables => '以下のデバイスのパーティションテーブルが変更されます。';
 
   @override
-  String get writeChangesPartitionTablesHeader => '以下のデバイスのパーティションテーブルが変更されます。';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => '以下のパーティション変更が適用されます：';
+  String get confirmPartitionChanges => '以下のパーティション変更が適用されます：';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return 'パーティション<b>$sysname</b>のサイズが<b>$oldsize</b>から<b>$newsize</b>に変更されます。';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return 'パーティション<b>$sysname</b>は<b>$format</b>としてフォーマットされ、<b>$mount</b>として使用されます。';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'パーティション<b>$sysname</b>は<b>$format</b>としてフォーマットされます。';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'パーティション<b>$sysname</b>は<b>$mount</b>として使用されます。';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'パーティション<b>$sysname</b>が作成されました。';
   }
 
@@ -803,10 +820,12 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntuでは様々な質問と回答をカバーし、Ubuntu Discourseは新規ユーザーと経験豊富なユーザーのためのガイドと議論の場を提供します。';
+  String get installationSlidesSupportCommunity =>
+      'Ask Ubuntuでは様々な質問と回答をカバーし、Ubuntu Discourseは新規ユーザーと経験豊富なユーザーのためのガイドと議論の場を提供します。';
 
   @override
-  String get installationSlidesSupportEnterprise => 'Canonicalは、企業ユーザー向けに職場でUbuntuを安全に導入・管理するための商用サポートを提供しています。';
+  String get installationSlidesSupportEnterprise =>
+      'Canonicalは、企業ユーザー向けに職場でUbuntuを安全に導入・管理するための商用サポートを提供しています。';
 
   @override
   String get installationSlidesSupportResources => '役に立つ情報：';
@@ -904,5 +923,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get activeDirectoryErrorTitle => 'アクティブディレクトリへの接続設定エラー';
 
   @override
-  String get activeDirectoryErrorMessage => '申し訳ありませんが、Active Directoryは現在セットアップできません。システムが稼働したら、<a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> にアクセスしてサポートを受けてください。';
+  String get activeDirectoryErrorMessage =>
+      '申し訳ありませんが、Active Directoryは現在セットアップできません。システムが稼働したら、<a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> にアクセスしてサポートを受けてください。';
 }

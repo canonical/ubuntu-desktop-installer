@@ -165,8 +165,8 @@
   },
   "installCodecsSubtitle": "Mae'r feddalwedd hwn yn destun amodau trwyddedu sydd ynghlwm yn y ddogfennaeth. Mae peth yn fasnachol.",
   "@installCodecsSubtitle": {},
-  "startInstallingButtonText": "Dechrau Gosod",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Dechrau Gosod",
+  "@confirmInstallButton": {},
   "installationTypeAlongsideInfo": "Caiff dogfennau, cerddoriaeth, a ffeiliau personol eriall eu cadw. Gallwch ddewis pa system weithredu i'w defnyddio bob tro mae'r cyfrifiadur yn cychwyn.",
   "@installationTypeAlongsideInfo": {},
   "diskHeadersSize": "Maint",
@@ -205,10 +205,6 @@
   "@partitionSizeLabel": {},
   "identityPasswordMismatch": "Nid yw'r cyfrineiriau yn cyd-fynd",
   "@identityPasswordMismatch": {},
-  "writeChangesFallbackSerial": "disg",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "identityConfirmPasswordLabel": "Cadarnhewch eich cyfrinair",
   "@identityConfirmPasswordLabel": {},
   "partitionMountPointLabel": "Pwynt clymu:",
@@ -233,8 +229,8 @@
   "@identityUsernameLabel": {},
   "identityPasswordLabel": "Dewiswch gyfrinair",
   "@identityPasswordLabel": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},

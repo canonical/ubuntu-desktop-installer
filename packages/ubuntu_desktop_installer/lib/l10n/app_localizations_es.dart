@@ -51,7 +51,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get welcomeRepairOption => 'Reparar instalación';
 
   @override
-  String get welcomeRepairDescription => 'Al reparar se reinstalarán todos los programas instalados sin tocar los documentos ni la configuración.';
+  String get welcomeRepairDescription =>
+      'Al reparar se reinstalarán todos los programas instalados sin tocar los documentos ni la configuración.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get rstHeader => 'Desactive RST para continuar';
 
   @override
-  String get rstDescription => 'Este equipo utiliza Intel RST (Rapid Storage Technology). Es necesario desactivar RST en Windows antes de instalar Ubuntu.';
+  String get rstDescription =>
+      'Este equipo utiliza Intel RST (Rapid Storage Technology). Es necesario desactivar RST en Windows antes de instalar Ubuntu.';
 
   @override
   String rstInstructions(Object url) {
@@ -114,13 +116,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get keyboardPressKeyLabel => 'Pulse una de estas teclas:';
 
   @override
-  String get keyboardKeyPresentLabel => '¿Está presente la siguiente tecla en su teclado?';
+  String get keyboardKeyPresentLabel =>
+      '¿Está presente la siguiente tecla en su teclado?';
 
   @override
   String get configureSecureBootTitle => 'Configurar Secure Boot';
 
   @override
-  String get configureSecureBootDescription => 'Ha elegido instalar software de controladores de terceros. Esto requiere desactivar Secure Boot.\nPara ello, debe elegir una clave de seguridad ahora, e introducirla cuando se reinicie el sistema.';
+  String get configureSecureBootDescription =>
+      'Ha elegido instalar software de controladores de terceros. Esto requiere desactivar Secure Boot.\nPara ello, debe elegir una clave de seguridad ahora, e introducirla cuando se reinicie el sistema.';
 
   @override
   String get configureSecureBootOption => 'Configurar Secure Boot';
@@ -132,16 +136,20 @@ class AppLocalizationsEs extends AppLocalizations {
   String get confirmSecurityKey => 'Confirme la clave de seguridad';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'No instalar el software de controladores por ahora';
+  String get dontInstallDriverSoftwareNow =>
+      'No instalar el software de controladores por ahora';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Puede instalarlo más tarde desde Software y Actualizaciones.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'Puede instalarlo más tarde desde Software y Actualizaciones.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Se necesita una clave de seguridad';
+  String get configureSecureBootSecurityKeyRequired =>
+      'Se necesita una clave de seguridad';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Las claves de seguridad no coinciden';
+  String get secureBootSecurityKeysDontMatch =>
+      'Las claves de seguridad no coinciden';
 
   @override
   String get showSecurityKey => 'Mostrar la clave de seguridad';
@@ -150,7 +158,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get connectToInternetPageTitle => 'Conectarse a una red';
 
   @override
-  String get connectToInternetDescription => 'Conectar este equipo a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y ayudará a elegir su zona horaria.\n\nConectar por cable Ethernet, o elegir una red Wi-Fi';
+  String get connectToInternetDescription =>
+      'Conectar este equipo a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y ayudará a elegir su zona horaria.\n\nConectar por cable Ethernet, o elegir una red Wi-Fi';
 
   @override
   String get useWiredConnection => 'Utilizar conexión por cable';
@@ -162,7 +171,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get wiredDisabled => 'La conexión por cable está desactivada';
 
   @override
-  String get wiredMustBeEnabled => 'Para utilizar Ethernet en este ordenador, debe activarse una conexión por cable';
+  String get wiredMustBeEnabled =>
+      'Para utilizar Ethernet en este ordenador, debe activarse una conexión por cable';
 
   @override
   String get enableWired => 'Activar por cable';
@@ -189,7 +199,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get noWifiDevicesDetected => 'No se han detectado dispositivos Wi-Fi';
 
   @override
-  String get wifiMustBeEnabled => 'Para utilizar Wi-Fi en este equipo, la red inalámbrica debe estar activada';
+  String get wifiMustBeEnabled =>
+      'Para utilizar Wi-Fi en este equipo, la red inalámbrica debe estar activada';
 
   @override
   String get enableWifi => 'Activar Wi-Fi';
@@ -201,40 +212,49 @@ class AppLocalizationsEs extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Aplicaciones y actualizaciones';
 
   @override
-  String get updatesOtherSoftwarePageDescription => '¿Qué aplicaciones le gustaría instalar para comenzar?';
+  String get updatesOtherSoftwarePageDescription =>
+      '¿Qué aplicaciones le gustaría instalar para comenzar?';
 
   @override
   String get normalInstallationTitle => 'Instalación normal';
 
   @override
-  String get normalInstallationSubtitle => 'Navegador web, utilidades, aplicaciones de oficina, juegos y reproductores de contenido.';
+  String get normalInstallationSubtitle =>
+      'Navegador web, utilidades, aplicaciones de oficina, juegos y reproductores de contenido.';
 
   @override
   String get minimalInstallationTitle => 'Instalación mínima';
 
   @override
-  String get minimalInstallationSubtitle => 'Navegador web y utilidades básicas.';
+  String get minimalInstallationSubtitle =>
+      'Navegador web y utilidades básicas.';
 
   @override
   String get otherOptions => 'Otras opciones';
 
   @override
-  String get installThirdPartyTitle => 'Instalar controladores de terceros para gráficos y dispositivos de Wi-Fi, así como formatos multimedia adicionales';
+  String get installThirdPartyTitle =>
+      'Instalar controladores de terceros para gráficos y dispositivos de Wi-Fi, así como formatos multimedia adicionales';
 
   @override
-  String get installThirdPartySubtitle => 'Este software está sujeto a los términos de licencia incluidos en su documentación. Algunos son privativos.';
+  String get installThirdPartySubtitle =>
+      'Este software está sujeto a los términos de licencia incluidos en su documentación. Algunos son privativos.';
 
   @override
-  String get installDriversTitle => 'Instalar software de terceros para gráficos y dispositivos de Wi-Fi';
+  String get installDriversTitle =>
+      'Instalar software de terceros para gráficos y dispositivos de Wi-Fi';
 
   @override
-  String get installDriversSubtitle => 'Estos controladores están sujetos a los términos de licencia incluidos en su documentación. Son privativos.';
+  String get installDriversSubtitle =>
+      'Estos controladores están sujetos a los términos de licencia incluidos en su documentación. Son privativos.';
 
   @override
-  String get installCodecsTitle => 'Descarga e instala un soporte para formatos multimedia adicionales';
+  String get installCodecsTitle =>
+      'Descarga e instala un soporte para formatos multimedia adicionales';
 
   @override
-  String get installCodecsSubtitle => 'Este software está sujeto a los términos de licencia incluidos en su documentación. Algunos son privativos.';
+  String get installCodecsSubtitle =>
+      'Este software está sujeto a los términos de licencia incluidos en su documentación. Algunos son privativos.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -262,7 +282,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get chooseSecurityKeyRequired => 'Se necesita una clave de seguridad';
 
   @override
-  String get chooseSecurityKeyMismatch => 'Las claves de seguridad no coinciden';
+  String get chooseSecurityKeyMismatch =>
+      'Las claves de seguridad no coinciden';
 
   @override
   String chooseSecurityKeyWarning(Object color) {
@@ -283,10 +304,12 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'Actualmente este equipo tiene varios sistemas operativos instalados. ¿Qué le gustaría hacer?';
+  String get installationTypeMultiOSDetected =>
+      'Actualmente este equipo tiene varios sistemas operativos instalados. ¿Qué le gustaría hacer?';
 
   @override
-  String get installationTypeNoOSDetected => 'Actualmente este equipo no tiene ningún sistema operativo detectado. ¿Qué le gustaría hacer?';
+  String get installationTypeNoOSDetected =>
+      'Actualmente este equipo no tiene ningún sistema operativo detectado. ¿Qué le gustaría hacer?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -319,7 +342,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM seleccionado';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM y cifrado seleccionado';
+  String get installationTypeLVMEncryptionSelected =>
+      'LVM y cifrado seleccionado';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -327,7 +351,8 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'Elegirá una clave de seguridad en el siguiente paso.';
+  String get installationTypeEncryptInfo =>
+      'Elegirá una clave de seguridad en el siguiente paso.';
 
   @override
   String get installationTypeZFS => 'EXPERIMENTAL: Borrar disco y usar ZFS';
@@ -366,7 +391,8 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Se conservarán los documentos, la música y otros archivos personales. Puede elegir qué sistema operativo quiere iniciar cada vez que arranque el equipo.';
+  String get installationTypeAlongsideInfo =>
+      'Se conservarán los documentos, la música y otros archivos personales. Puede elegir qué sistema operativo quiere iniciar cada vez que arranque el equipo.';
 
   @override
   String get installationTypeManual => 'Partición manual';
@@ -391,7 +417,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Instalar ahora';
 
   @override
-  String get installAlongsideSpaceDivider => 'Asignar el espacio de la unidad arrastrando el divisor de abajo:';
+  String get installAlongsideSpaceDivider =>
+      'Asignar el espacio de la unidad arrastrando el divisor de abajo:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +447,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get allocateDiskSpace => 'Particionamiento manual';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Los puntos de montaje deben empezar por \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Los puntos de montaje deben empezar por \"/\"';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Los puntos de montaje no pueden contener espacios';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Los puntos de montaje no pueden contener espacios';
 
   @override
-  String get startInstallingButtonText => 'Instalar';
+  String get confirmInstallButton => 'Instalar';
 
   @override
   String get diskHeadersDevice => 'Dispositivo';
@@ -459,7 +488,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Nueva partición vacía';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'La creación de una nueva tabla de particiones en un dispositivo completo eliminará todas sus particiones actuales. Esta operación puede deshacerse si es necesario.';
+  String get newPartitionTableConfirmationMessage =>
+      'La creación de una nueva tabla de particiones en un dispositivo completo eliminará todas sus particiones actuales. Esta operación puede deshacerse si es necesario.';
 
   @override
   String get tooManyPrimaryPartitions => 'Demasiadas particiones primarias';
@@ -468,7 +498,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get partitionLimitReached => 'Límite alcanzado';
 
   @override
-  String get bootLoaderDevice => 'Dispositivo donde instalar el cargador de arranque';
+  String get bootLoaderDevice =>
+      'Dispositivo donde instalar el cargador de arranque';
 
   @override
   String get partitionCreateTitle => 'Crear partición';
@@ -536,13 +567,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get identityHostnameLabel => 'El nombre del equipo';
 
   @override
-  String get identityHostnameInfo => 'El nombre que utiliza al comunicarse con otros equipos.';
+  String get identityHostnameInfo =>
+      'El nombre que utiliza al comunicarse con otros equipos.';
 
   @override
   String get identityHostnameRequired => 'Se necesita un nombre de equipo';
 
   @override
-  String get identityHostnameTooLong => 'El nombre del ordenador es demasiado largo.';
+  String get identityHostnameTooLong =>
+      'El nombre del ordenador es demasiado largo.';
 
   @override
   String get identityInvalidHostname => 'El nombre del equipo no es válido';
@@ -560,13 +593,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get identityUsernameInUse => 'Ese nombre de usuario ya existe.';
 
   @override
-  String get identityUsernameSystemReserved => 'Ese nombre está reservado para uso del sistema.';
+  String get identityUsernameSystemReserved =>
+      'Ese nombre está reservado para uso del sistema.';
 
   @override
   String get identityUsernameTooLong => 'Ese nombre es demasiado extenso.';
 
   @override
-  String get identityUsernameInvalidChars => 'Ese nombre contiene caracteres no válidos.';
+  String get identityUsernameInvalidChars =>
+      'Ese nombre contiene caracteres no válidos.';
 
   @override
   String get identityPasswordLabel => 'Elija una contraseña';
@@ -587,53 +622,55 @@ class AppLocalizationsEs extends AppLocalizations {
   String get identityPasswordHide => 'Ocultar';
 
   @override
-  String get writeChangesToDisk => 'Listo para instalar';
+  String get confirmPageTitle => 'Listo para instalar';
 
   @override
-  String get writeChangesFallbackSerial => 'disco';
+  String get confirmHeader =>
+      'Si continúa, los cambios enumerados más abajo se escribirán en los discos. Podrá efectuar más cambios manualmente.';
 
   @override
-  String get writeChangesDescription => 'Si continúa, los cambios enumerados más abajo se escribirán en los discos. Podrá efectuar más cambios manualmente.';
+  String get confirmDevicesTitle => 'Dispositivos';
 
   @override
-  String get writeChangesDevicesTitle => 'Dispositivos';
+  String get confirmPartitionsTitle => 'Particiones';
 
   @override
-  String get writeChangesPartitionsTitle => 'Particiones';
+  String get confirmPartitionTables =>
+      'Las tablas de partición de los siguientes dispositivos se modifican:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Las tablas de partición de los siguientes dispositivos se modifican:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Se aplicarán los cambios siguientes a las particiones:';
+  String get confirmPartitionChanges =>
+      'Se aplicarán los cambios siguientes a las particiones:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return 'partición <b>$sysname</b> redimensionada de <b>$oldsize</b> a <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return 'partición <b>$sysname</b> formateada como <b>$format</b> utilizada para <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'partición <b>$sysname</b> formateada como <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'partición <b>$sysname</b> utilizada para <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'partición <b>$sysname</b> creada';
   }
 
@@ -641,7 +678,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get themePageTitle => 'Elige tu tema';
 
   @override
-  String get themePageHeader => 'Puede cambiarlo después en la configuración de apariencia.';
+  String get themePageHeader =>
+      'Puede cambiarlo después en la configuración de apariencia.';
 
   @override
   String get themeDark => 'Oscuro';
@@ -715,7 +753,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationSlidesIncluded => 'Incluido:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Rápido, gratuito y lleno de nuevas funciones';
+  String get installationSlidesWelcomeTitle =>
+      'Rápido, gratuito y lleno de nuevas funciones';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -728,7 +767,8 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'Todas las aplicaciones que necesitas';
+  String get installationSlidesSoftwareTitle =>
+      'Todas las aplicaciones que necesitas';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -736,7 +776,8 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Desarrolla con lo mejor del código abierto';
+  String get installationSlidesDevelopmentTitle =>
+      'Desarrolla con lo mejor del código abierto';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -792,7 +833,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationSlidesAccessibilityOrca => 'Lector de pantalla Orca';
 
   @override
-  String get installationSlidesAccessibilityLanguages => 'Compatibilidad lingüística';
+  String get installationSlidesAccessibilityLanguages =>
+      'Compatibilidad lingüística';
 
   @override
   String get installationSlidesSupportTitle => 'Ayuda y asistencia';
@@ -803,10 +845,12 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ask Ubuntu cubre una gama de preguntas y respuestas. Ubuntu Discourse proporciona guías y discusiones para usuarios nuevos y experimentados.';
+  String get installationSlidesSupportCommunity =>
+      'Ask Ubuntu cubre una gama de preguntas y respuestas. Ubuntu Discourse proporciona guías y discusiones para usuarios nuevos y experimentados.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'Para los usuarios de empresa, Canonical ofrece soporte comercial para facilitar la incorporación y gestión segura de Ubuntu en el lugar de trabajo.';
+  String get installationSlidesSupportEnterprise =>
+      'Para los usuarios de empresa, Canonical ofrece soporte comercial para facilitar la incorporación y gestión segura de Ubuntu en el lugar de trabajo.';
 
   @override
   String get installationSlidesSupportResources => 'Recursos útiles:';
@@ -815,7 +859,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'Documentación oficial';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Soporte 24/7 de nivel empresarial con Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro =>
+      'Soporte 24/7 de nivel empresarial con Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Copiando archivos…';
@@ -847,7 +892,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get activeDirectoryOption => 'Utilizar el directorio activo';
 
   @override
-  String get activeDirectoryInfo => 'En el siguiente paso introducirá el dominio y otros datos.';
+  String get activeDirectoryInfo =>
+      'En el siguiente paso introducirá el dominio y otros datos.';
 
   @override
   String get activeDirectoryTitle => 'Configurar el directorio activo';
@@ -880,7 +926,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get activeDirectoryDomainEndHyphen => 'Termina en guión (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Contiene múltiples puntos (..)';
+  String get activeDirectoryDomainMultipleDots =>
+      'Contiene múltiples puntos (..)';
 
   @override
   String get activeDirectoryDomainNotFound => 'Dominio no encontrado';
@@ -901,8 +948,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Obligatorio';
 
   @override
-  String get activeDirectoryErrorTitle => 'Error al configurar la conexión con Active Directory';
+  String get activeDirectoryErrorTitle =>
+      'Error al configurar la conexión con Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'Lo sentimos, Active Directory no se puede configurar en este momento. Una vez que el sistema esté en funcionamiento, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para obtener ayuda.';
+  String get activeDirectoryErrorMessage =>
+      'Lo sentimos, Active Directory no se puede configurar en este momento. Una vez que el sistema esté en funcionamiento, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para obtener ayuda.';
 }

@@ -204,8 +204,8 @@
   "@installationTypeZFSSelected": {},
   "selectGuidedStorageDropdownLabel": "ドライブを選択してください。",
   "@selectGuidedStorageDropdownLabel": {},
-  "startInstallingButtonText": "インストール",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "インストール",
+  "@confirmInstallButton": {},
   "diskHeadersSize": "サイズ",
   "@diskHeadersSize": {},
   "diskHeadersMountPoint": "マウントポイント",
@@ -258,26 +258,22 @@
   "@identityPasswordMismatch": {},
   "restartIntoWindows": "再起動して Windows を使用",
   "@restartIntoWindows": {},
-  "writeChangesFallbackSerial": "ディスク",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesToDisk": "インストールの準備完了",
-  "@writeChangesToDisk": {},
-  "writeChangesPartitionTablesHeader": "以下のデバイスのパーティションテーブルが変更されます。",
-  "@writeChangesPartitionTablesHeader": {},
+  "confirmPageTitle": "インストールの準備完了",
+  "@confirmPageTitle": {},
+  "confirmPartitionTables": "以下のデバイスのパーティションテーブルが変更されます。",
+  "@confirmPartitionTables": {},
   "themeLight": "明るい",
   "@themeLight": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "以下のパーティション変更が適用されます：",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "以下のパーティション変更が適用されます：",
+  "@confirmPartitionChanges": {},
   "themePageTitle": "テーマを選択してください。",
   "@themePageTitle": {},
   "themePageHeader": "これは、外観設定でいつでも変更できます。",
@@ -341,8 +337,8 @@
   "@identityPasswordLabel": {},
   "identityConfirmPasswordLabel": "パスワードをもう一度入力",
   "@identityConfirmPasswordLabel": {},
-  "writeChangesDescription": "続行すると、以下の変更がディスクに書き込まれます。さらに手動で変更を加えることもできます。",
-  "@writeChangesDescription": {},
+  "confirmHeader": "続行すると、以下の変更がディスクに書き込まれます。さらに手動で変更を加えることもできます。",
+  "@confirmHeader": {},
   "bitlockerDescription": "このコンピューターはWindows BitLockerで暗号化されています。\nWindowsを使って空き領域を作るか、'{option}'を選択してください。",
   "@bitlockerDescription": {},
   "bitlockerInstructions": "手順については、別のデバイスでこのQRコードを読み取るか、次のURLへアクセスしてください：<a href=\"https://{url}\">{url}</a>",
@@ -520,24 +516,24 @@
   "@continueTesting": {},
   "restartNow": "今すぐ再起動する",
   "@restartNow": {},
-  "writeChangesPartitionFormatted": "パーティション<b>{sysname}</b>は<b>{format}</b>としてフォーマットされます。",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "パーティション<b>{sysname}</b>は<b>{format}</b>としてフォーマットされます。",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "パーティション<b>{sysname}</b>は<b>{mount}</b>として使用されます。",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "パーティション<b>{sysname}</b>は<b>{mount}</b>として使用されます。",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "パーティション<b>{sysname}</b>は<b>{format}</b>としてフォーマットされ、<b>{mount}</b>として使用されます。",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "パーティション<b>{sysname}</b>は<b>{format}</b>としてフォーマットされ、<b>{mount}</b>として使用されます。",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -552,8 +548,8 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "パーティション<b>{sysname}</b>のサイズが<b>{oldsize}</b>から<b>{newsize}</b>に変更されます。",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "パーティション<b>{sysname}</b>のサイズが<b>{oldsize}</b>から<b>{newsize}</b>に変更されます。",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -561,8 +557,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionCreated": "パーティション<b>{sysname}</b>が作成されました。",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "パーティション<b>{sysname}</b>が作成されました。",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -644,10 +640,10 @@
       "DISTRO": {}
     }
   },
-  "writeChangesDevicesTitle": "デバイス",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "パーティション",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "デバイス",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "パーティション",
+  "@confirmPartitionsTitle": {},
   "installationSlidesAccessibilityTitle": "すべての人へ",
   "@installationSlidesAccessibilityTitle": {},
   "installationSlidesAccessibilityOrca": "Orcaスクリーンリーダー",

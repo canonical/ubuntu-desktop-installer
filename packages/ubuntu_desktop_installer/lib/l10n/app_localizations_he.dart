@@ -51,7 +51,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get welcomeRepairOption => 'תיקון התקנה';
 
   @override
-  String get welcomeRepairDescription => 'תיקון יתקין את כל התכניות המותקנות מחדש מבלי לגעת במסמכים או בהגדרות.';
+  String get welcomeRepairDescription =>
+      'תיקון יתקין את כל התכניות המותקנות מחדש מבלי לגעת במסמכים או בהגדרות.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get rstHeader => 'יש לכבות את ה־RST כדי להמשיך';
 
   @override
-  String get rstDescription => 'המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.';
+  String get rstDescription =>
+      'המחשב הזה משתמש ב־RST‏ (Rapid Storage Technology) מבית אינטל. יש לכבות את RST דרך Windows בטרם התקנת אובונטו.';
 
   @override
   String rstInstructions(Object url) {
@@ -120,7 +122,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get configureSecureBootTitle => 'הגדרת טעינה מאובטחת (Secure Boot)';
 
   @override
-  String get configureSecureBootDescription => 'בחרת להתקין תכנית מנהל התקן מגורם צד־שלישי. פעולה שכזאת דורשת את כיבוי הטעינה המאובטחת (Secure Boot).\nכדי לעשות זאת, עליך לבחור מפתח אבטחה כעת ולהקליד אותו לאחר שהמערכת תופעל מחדש.';
+  String get configureSecureBootDescription =>
+      'בחרת להתקין תכנית מנהל התקן מגורם צד־שלישי. פעולה שכזאת דורשת את כיבוי הטעינה המאובטחת (Secure Boot).\nכדי לעשות זאת, עליך לבחור מפתח אבטחה כעת ולהקליד אותו לאחר שהמערכת תופעל מחדש.';
 
   @override
   String get configureSecureBootOption => 'הגדרת טעינה מאובטחת (Secure Boot)';
@@ -132,10 +135,12 @@ class AppLocalizationsHe extends AppLocalizations {
   String get confirmSecurityKey => 'אישור מפתח האבטחה';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'לא להתקין את תכנית מנהל ההתקן לבינתיים';
+  String get dontInstallDriverSoftwareNow =>
+      'לא להתקין את תכנית מנהל ההתקן לבינתיים';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'אפשר להתקין מאוחר יותר דרך תכנה ועדכונים.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'אפשר להתקין מאוחר יותר דרך תכנה ועדכונים.';
 
   @override
   String get configureSecureBootSecurityKeyRequired => 'נדרש מפתח אבטחה';
@@ -150,7 +155,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get connectToInternetPageTitle => 'התחברות לרשת';
 
   @override
-  String get connectToInternetDescription => 'חיבור המחשב הזה לאינטרנט יסייע לאובונטו להתקין תכניות נוספות חיוניות ויסייע בבחירת אזור הזמן שלך.\n\nאפשר להתחבר בכבל רשת או לבחור רשת אלחוטית';
+  String get connectToInternetDescription =>
+      'חיבור המחשב הזה לאינטרנט יסייע לאובונטו להתקין תכניות נוספות חיוניות ויסייע בבחירת אזור הזמן שלך.\n\nאפשר להתחבר בכבל רשת או לבחור רשת אלחוטית';
 
   @override
   String get useWiredConnection => 'להשתמש בחיבור קווי';
@@ -162,7 +168,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get wiredDisabled => 'החיבור הקווי מושבת';
 
   @override
-  String get wiredMustBeEnabled => 'כדי להשתמש בכבל רשת במחשב הזה יש להפעיל את החיבור הקווי';
+  String get wiredMustBeEnabled =>
+      'כדי להשתמש בכבל רשת במחשב הזה יש להפעיל את החיבור הקווי';
 
   @override
   String get enableWired => 'להפעיל חיבור קווי';
@@ -189,7 +196,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get noWifiDevicesDetected => 'לא זוהו התקני רשת אלחוטית';
 
   @override
-  String get wifiMustBeEnabled => 'כדי להשתמש ברשת אלחוטית במחשב הזה, יש להפעיל את התקשורת האלחוטית';
+  String get wifiMustBeEnabled =>
+      'כדי להשתמש ברשת אלחוטית במחשב הזה, יש להפעיל את התקשורת האלחוטית';
 
   @override
   String get enableWifi => 'הפעלת רשת אלחוטית';
@@ -201,13 +209,15 @@ class AppLocalizationsHe extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'יישומים ועדכונים';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'אילו יישומים להתקין בתור התחלה?';
+  String get updatesOtherSoftwarePageDescription =>
+      'אילו יישומים להתקין בתור התחלה?';
 
   @override
   String get normalInstallationTitle => 'התקנה רגילה';
 
   @override
-  String get normalInstallationSubtitle => 'דפדפן, עזרים, חבילת תכניות משרדיות, משחקים ונגני מדיה.';
+  String get normalInstallationSubtitle =>
+      'דפדפן, עזרים, חבילת תכניות משרדיות, משחקים ונגני מדיה.';
 
   @override
   String get minimalInstallationTitle => 'התקנה מצומצמת';
@@ -219,22 +229,27 @@ class AppLocalizationsHe extends AppLocalizations {
   String get otherOptions => 'אפשרויות נוספות';
 
   @override
-  String get installThirdPartyTitle => 'התקנת תכניות צד־שלישי לחומרה גרפית ואלחוטית, לרבות תצורות מדיה נוספות';
+  String get installThirdPartyTitle =>
+      'התקנת תכניות צד־שלישי לחומרה גרפית ואלחוטית, לרבות תצורות מדיה נוספות';
 
   @override
-  String get installThirdPartySubtitle => 'התכניות האלו כפופות לתנאי אישוי שנכללים בתיעוד שלהן. חלקן קנייניות.';
+  String get installThirdPartySubtitle =>
+      'התכניות האלו כפופות לתנאי אישוי שנכללים בתיעוד שלהן. חלקן קנייניות.';
 
   @override
-  String get installDriversTitle => 'התקנת תוכנת צד־שלישי לחומרת גרפיקה ותקשורת אלחוטית';
+  String get installDriversTitle =>
+      'התקנת תוכנת צד־שלישי לחומרת גרפיקה ותקשורת אלחוטית';
 
   @override
-  String get installDriversSubtitle => 'מנהלי התקנים אלה כפופים לתנאי הרישיון שנכללים בתיעוד שלהם. הם קנייניים.';
+  String get installDriversSubtitle =>
+      'מנהלי התקנים אלה כפופים לתנאי הרישיון שנכללים בתיעוד שלהם. הם קנייניים.';
 
   @override
   String get installCodecsTitle => 'הורדה והתקנה של תמיכה בתצורות מדיה נוספות';
 
   @override
-  String get installCodecsSubtitle => 'תוכנה זו כפופה לתנאי הרישיון שנכללים בתיעוד שלה. חלקם קנייניים.';
+  String get installCodecsSubtitle =>
+      'תוכנה זו כפופה לתנאי הרישיון שנכללים בתיעוד שלה. חלקם קנייניים.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +298,12 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'במחשב זה מותקנות מספר מערכות הפעלה. מה לעשות?';
+  String get installationTypeMultiOSDetected =>
+      'במחשב זה מותקנות מספר מערכות הפעלה. מה לעשות?';
 
   @override
-  String get installationTypeNoOSDetected => 'לא זוהו מערכות הפעלה כלשהן במחשב זה. מה לעשות?';
+  String get installationTypeNoOSDetected =>
+      'לא זוהו מערכות הפעלה כלשהן במחשב זה. מה לעשות?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -366,7 +383,8 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'המסמכים, המוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.';
+  String get installationTypeAlongsideInfo =>
+      'המסמכים, המוזיקה וקבצים אישיים נוספים יישמרו. אפשר לבחור איזו מערכת הפעלה תיטען עם כל הפעלה של המחשב.';
 
   @override
   String get installationTypeManual => 'חלוקה ידנית למחיצות';
@@ -391,7 +409,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'להתקין כעת';
 
   @override
-  String get installAlongsideSpaceDivider => 'גרירת החוצץ שלהלן תגדיר את הקצאת המקום בכונן:';
+  String get installAlongsideSpaceDivider =>
+      'גרירת החוצץ שלהלן תגדיר את הקצאת המקום בכונן:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +439,15 @@ class AppLocalizationsHe extends AppLocalizations {
   String get allocateDiskSpace => 'חלוקת מחיצות ידנית';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'נקודות עיגון חייבות להתחיל ב־„/”';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'נקודות עיגון חייבות להתחיל ב־„/”';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'נקודות עיגון לא יכולות להכיל רווחים';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'נקודות עיגון לא יכולות להכיל רווחים';
 
   @override
-  String get startInstallingButtonText => 'התקנה';
+  String get confirmInstallButton => 'התקנה';
 
   @override
   String get diskHeadersDevice => 'התקן';
@@ -459,7 +480,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'מחיצה ריקה חדשה';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'יצירת טבלת מחיצות חדשה על כל הכונן תסיר את כל המחיצות הנוכחיות שלו. אי אפשר להשתקם מהפעולה הזאת במקרה הצורך.';
+  String get newPartitionTableConfirmationMessage =>
+      'יצירת טבלת מחיצות חדשה על כל הכונן תסיר את כל המחיצות הנוכחיות שלו. אי אפשר להשתקם מהפעולה הזאת במקרה הצורך.';
 
   @override
   String get tooManyPrimaryPartitions => 'יותר מדי מחיצות ראשיות';
@@ -536,7 +558,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get identityHostnameLabel => 'שם המחשב שלך';
 
   @override
-  String get identityHostnameInfo => 'השם שישמש את המחשב בעת תקשורת מול מחשבים אחרים.';
+  String get identityHostnameInfo =>
+      'השם שישמש את המחשב בעת תקשורת מול מחשבים אחרים.';
 
   @override
   String get identityHostnameRequired => 'דרוש שם מחשב';
@@ -587,53 +610,53 @@ class AppLocalizationsHe extends AppLocalizations {
   String get identityPasswordHide => 'הסתרה';
 
   @override
-  String get writeChangesToDisk => 'סיימנו להתכונן להתקנה';
+  String get confirmPageTitle => 'סיימנו להתכונן להתקנה';
 
   @override
-  String get writeChangesFallbackSerial => 'כונן';
+  String get confirmHeader =>
+      'בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.';
 
   @override
-  String get writeChangesDescription => 'בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.';
+  String get confirmDevicesTitle => 'התקנים';
 
   @override
-  String get writeChangesDevicesTitle => 'התקנים';
+  String get confirmPartitionsTitle => 'מחיצות';
 
   @override
-  String get writeChangesPartitionsTitle => 'מחיצות';
+  String get confirmPartitionTables => 'טבלאות המחיצות של ההתקנים הבאים נערכו:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'טבלאות המחיצות של ההתקנים הבאים נערכו:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'השינויים הבאים יחולו על המחיצות:';
+  String get confirmPartitionChanges => 'השינויים הבאים יחולו על המחיצות:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return 'הגודל של מחיצה <b>$sysname</b> ישתנה מ־<b>$oldsize</b> ל־<b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return 'מחיצה <b>$sysname</b> פורמטה כ־<b>$format</b> ומשמשת עבור <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'מחיצה <b>$sysname</b> פורמטה בתור <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'מחיצה <b>$sysname</b> תשמש עבור <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'המחיצה <b>$sysname</b> נוצרה';
   }
 
@@ -641,7 +664,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get themePageTitle => 'נא לבחור את ערכת העיצוב שלך';
 
   @override
-  String get themePageHeader => 'תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.';
+  String get themePageHeader =>
+      'תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.';
 
   @override
   String get themeDark => 'כהה';
@@ -715,7 +739,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installationSlidesIncluded => 'כחלק:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'מהיר, חינמי ומפוצץ ביכולות חדשות';
+  String get installationSlidesWelcomeTitle =>
+      'מהיר, חינמי ומפוצץ ביכולות חדשות';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -736,7 +761,8 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'כלי פיתוח קוד פתוח מהשורה הראשונה';
+  String get installationSlidesDevelopmentTitle =>
+      'כלי פיתוח קוד פתוח מהשורה הראשונה';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -803,10 +829,12 @@ class AppLocalizationsHe extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'האתר Ask Ubuntu חולש על פני מגוון רחב של שאלות ותשובות ו־Ubuntu Discourse מספק מדריכים ודיונים למשתמשים חדשים ומנוסים.';
+  String get installationSlidesSupportCommunity =>
+      'האתר Ask Ubuntu חולש על פני מגוון רחב של שאלות ותשובות ו־Ubuntu Discourse מספק מדריכים ודיונים למשתמשים חדשים ומנוסים.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'למשתמשים תאגידיים מספקת Canonical תמיכה מסחרית כדי להקל על ההגירה והניהול של אובונטו בצורה מאובטחת בסביבת העבודה.';
+  String get installationSlidesSupportEnterprise =>
+      'למשתמשים תאגידיים מספקת Canonical תמיכה מסחרית כדי להקל על ההגירה והניהול של אובונטו בצורה מאובטחת בסביבת העבודה.';
 
   @override
   String get installationSlidesSupportResources => 'משאבים חיוניים:';
@@ -815,7 +843,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'תיעוד רשמי';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'תמיכה 24/7 ברמה תעשייתית עם אובונטו פרו';
+  String get installationSlidesSupportUbuntuPro =>
+      'תמיכה 24/7 ברמה תעשייתית עם אובונטו פרו';
 
   @override
   String get copyingFiles => 'קבצים מועתקים…';
@@ -847,7 +876,8 @@ class AppLocalizationsHe extends AppLocalizations {
   String get activeDirectoryOption => 'להשתמש ב־Active Directory';
 
   @override
-  String get activeDirectoryInfo => 'אפשר למלא את פרטי שם התחום (דומיין) ופרטים נוספים בצעד הבא.';
+  String get activeDirectoryInfo =>
+      'אפשר למלא את פרטי שם התחום (דומיין) ופרטים נוספים בצעד הבא.';
 
   @override
   String get activeDirectoryTitle => 'הגדרת Active Directory';
@@ -901,8 +931,10 @@ class AppLocalizationsHe extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'חובה';
 
   @override
-  String get activeDirectoryErrorTitle => 'שגיאה בהגדרת החיבור ל־Active Directory';
+  String get activeDirectoryErrorTitle =>
+      'שגיאה בהגדרת החיבור ל־Active Directory';
 
   @override
-  String get activeDirectoryErrorMessage => 'אי אפשר להגדיר חיבור ל־Active Directory כרגע, עמך הסליחה. לאחר סיום התקנת המערכת, יש לבקר בכתובת <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> לקבלת עזרה.';
+  String get activeDirectoryErrorMessage =>
+      'אי אפשר להגדיר חיבור ל־Active Directory כרגע, עמך הסליחה. לאחר סיום התקנת המערכת, יש לבקר בכתובת <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> לקבלת עזרה.';
 }

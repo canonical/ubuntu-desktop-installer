@@ -51,7 +51,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get welcomeRepairOption => 'Taisyti diegimą';
 
   @override
-  String get welcomeRepairDescription => 'Taisymas iš naujo įdiegs visą įdiegtą programinę įrangą nepaveikdamas dokumentų ar nustatymų.';
+  String get welcomeRepairDescription =>
+      'Taisymas iš naujo įdiegs visą įdiegtą programinę įrangą nepaveikdamas dokumentų ar nustatymų.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get rstHeader => 'Norėdami tęsti, išjunkite RST';
 
   @override
-  String get rstDescription => 'Šis kompiuteris naudoja Intel RST (Rapid Storage Technology). Prieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti RST.';
+  String get rstDescription =>
+      'Šis kompiuteris naudoja Intel RST (Rapid Storage Technology). Prieš įdiegdami Ubuntu, turite „Windows“ sistemoje išjungti RST.';
 
   @override
   String rstInstructions(Object url) {
@@ -114,13 +116,15 @@ class AppLocalizationsLt extends AppLocalizations {
   String get keyboardPressKeyLabel => 'Paspauskite vieną iš šių klavišų:';
 
   @override
-  String get keyboardKeyPresentLabel => 'Ar šis klavišas yra jūsų klaviatūroje?';
+  String get keyboardKeyPresentLabel =>
+      'Ar šis klavišas yra jūsų klaviatūroje?';
 
   @override
   String get configureSecureBootTitle => 'Konfigūruoti saugųjį paleidimą';
 
   @override
-  String get configureSecureBootDescription => 'Pasirinkote įdiegti trečiųjų šalių tvarkyklės programinę įrangą. Tai reikalauja, kad būtų išjungtas saugusis paleidimashis.\nNorėdami tai atlikti, dabar turite pasirinkti saugumo raktą, o kai sistema bus paleista iš naujo, turėsite jį įvesti.';
+  String get configureSecureBootDescription =>
+      'Pasirinkote įdiegti trečiųjų šalių tvarkyklės programinę įrangą. Tai reikalauja, kad būtų išjungtas saugusis paleidimashis.\nNorėdami tai atlikti, dabar turite pasirinkti saugumo raktą, o kai sistema bus paleista iš naujo, turėsite jį įvesti.';
 
   @override
   String get configureSecureBootOption => 'Konfigūruoti saugųjį paleidimą';
@@ -132,13 +136,16 @@ class AppLocalizationsLt extends AppLocalizations {
   String get confirmSecurityKey => 'Patvirtinkite saugumo raktą';
 
   @override
-  String get dontInstallDriverSoftwareNow => 'Kol kas neįdiegti tvarkyklės programinės įrangos';
+  String get dontInstallDriverSoftwareNow =>
+      'Kol kas neįdiegti tvarkyklės programinės įrangos';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Vėliau galėsite ją įdiegti, atvėrę Programinę įrangą ir atnaujinimus.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'Vėliau galėsite ją įdiegti, atvėrę Programinę įrangą ir atnaujinimus.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Reikia nurodyti saugumo raktą';
+  String get configureSecureBootSecurityKeyRequired =>
+      'Reikia nurodyti saugumo raktą';
 
   @override
   String get secureBootSecurityKeysDontMatch => 'Saugumo raktai nesutampa';
@@ -150,7 +157,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get connectToInternetPageTitle => 'Prisijunkite prie interneto';
 
   @override
-  String get connectToInternetDescription => 'Prijungus šį kompiuterį prie interneto Ubuntu galės įdiegti reikalingą papildomą programinę įrangą ir galės padėti pasirinkti laiko juostą.\n\nPrisijunkite naudodami interneto laidą arba pasirinkite belaidį (Wi-Fi) tinklą';
+  String get connectToInternetDescription =>
+      'Prijungus šį kompiuterį prie interneto Ubuntu galės įdiegti reikalingą papildomą programinę įrangą ir galės padėti pasirinkti laiko juostą.\n\nPrisijunkite naudodami interneto laidą arba pasirinkite belaidį (Wi-Fi) tinklą';
 
   @override
   String get useWiredConnection => 'Naudoti laidinį ryšį';
@@ -162,7 +170,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get wiredDisabled => 'Laidinis ryšys yra išjungtas';
 
   @override
-  String get wiredMustBeEnabled => 'Norint šiame kompiuteryje naudoti laidinį tinklą, privalo būti įjungtas laidinis ryšys';
+  String get wiredMustBeEnabled =>
+      'Norint šiame kompiuteryje naudoti laidinį tinklą, privalo būti įjungtas laidinis ryšys';
 
   @override
   String get enableWired => 'Įjungti laidinį ryšį';
@@ -171,13 +180,15 @@ class AppLocalizationsLt extends AppLocalizations {
   String get selectWifiNetwork => 'Prisijungti prie belaidžio (Wi-Fi) tinklo';
 
   @override
-  String get hiddenWifiNetwork => 'Prisijungti prie paslėpto belaidžio (Wi-Fi) tinklo';
+  String get hiddenWifiNetwork =>
+      'Prisijungti prie paslėpto belaidžio (Wi-Fi) tinklo';
 
   @override
   String get hiddenWifiNetworkNameLabel => 'Tinklo pavadinimas';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Reikia nurodyti tinklo pavadinimą';
+  String get hiddenWifiNetworkNameRequired =>
+      'Reikia nurodyti tinklo pavadinimą';
 
   @override
   String get noInternet => 'Aš kol kas nenoriu jungtis prie interneto';
@@ -186,10 +197,12 @@ class AppLocalizationsLt extends AppLocalizations {
   String get wirelessNetworkingDisabled => 'Belaidis darbas tinkle išjungtas';
 
   @override
-  String get noWifiDevicesDetected => 'Neaptikta jokių belaidžių (Wi-Fi) įrenginių';
+  String get noWifiDevicesDetected =>
+      'Neaptikta jokių belaidžių (Wi-Fi) įrenginių';
 
   @override
-  String get wifiMustBeEnabled => 'Norint šiame kompiuteryje naudoti belaidį (Wi-Fi) tinklą, privalo būti įjungtas belaidis darbas tinkle';
+  String get wifiMustBeEnabled =>
+      'Norint šiame kompiuteryje naudoti belaidį (Wi-Fi) tinklą, privalo būti įjungtas belaidis darbas tinkle';
 
   @override
   String get enableWifi => 'Įjungti belaidį (Wi-Fi)';
@@ -201,40 +214,49 @@ class AppLocalizationsLt extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Programos ir atnaujinimai';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'Kokias programas pradžiai norėtumėte įdiegti?';
+  String get updatesOtherSoftwarePageDescription =>
+      'Kokias programas pradžiai norėtumėte įdiegti?';
 
   @override
   String get normalInstallationTitle => 'Įprastas programų paketas';
 
   @override
-  String get normalInstallationSubtitle => 'Saityno naršyklė, paslaugų programos, raštinės programinė įranga, žaidimai ir medijos leistuvės.';
+  String get normalInstallationSubtitle =>
+      'Saityno naršyklė, paslaugų programos, raštinės programinė įranga, žaidimai ir medijos leistuvės.';
 
   @override
   String get minimalInstallationTitle => 'Minimalus programų paketas';
 
   @override
-  String get minimalInstallationSubtitle => 'Saityno naršyklė ir pagrindinės paslaugų programos.';
+  String get minimalInstallationSubtitle =>
+      'Saityno naršyklė ir pagrindinės paslaugų programos.';
 
   @override
   String get otherOptions => 'Kitos parinktys';
 
   @override
-  String get installThirdPartyTitle => 'Įdiegti trečiųjų šalių programinę įrangą, skirtą grafikos ir belaidžio (Wi-Fi) ryšio aparatinei įrangai, o taip pat papildomus medijos formatus';
+  String get installThirdPartyTitle =>
+      'Įdiegti trečiųjų šalių programinę įrangą, skirtą grafikos ir belaidžio (Wi-Fi) ryšio aparatinei įrangai, o taip pat papildomus medijos formatus';
 
   @override
-  String get installThirdPartySubtitle => 'Šiai programinei įrangai taikomos licencijos sąlygos, kurias rasite jos dokumentacijoje. Kai kuri programinė įranga yra nuosavybinė.';
+  String get installThirdPartySubtitle =>
+      'Šiai programinei įrangai taikomos licencijos sąlygos, kurias rasite jos dokumentacijoje. Kai kuri programinė įranga yra nuosavybinė.';
 
   @override
-  String get installDriversTitle => 'Įdiegti trečiųjų šalių programinę įrangą, skirtą grafikos ir belaidžio ryšio (Wi-Fi) aparatinei įrangai';
+  String get installDriversTitle =>
+      'Įdiegti trečiųjų šalių programinę įrangą, skirtą grafikos ir belaidžio ryšio (Wi-Fi) aparatinei įrangai';
 
   @override
-  String get installDriversSubtitle => 'Šios tvarkyklės yra platinamos pagal licencijas, nurodytas jų dokumentacijoje. Tvarkyklės yra nuosavybinės.';
+  String get installDriversSubtitle =>
+      'Šios tvarkyklės yra platinamos pagal licencijas, nurodytas jų dokumentacijoje. Tvarkyklės yra nuosavybinės.';
 
   @override
-  String get installCodecsTitle => 'Atsisiųsti ir įdiegti papildomų medijos formatų palaikymą';
+  String get installCodecsTitle =>
+      'Atsisiųsti ir įdiegti papildomų medijos formatų palaikymą';
 
   @override
-  String get installCodecsSubtitle => 'Ši programinė įranga yra platinama pagal licencijas, nurodytas jos dokumentacijoje. Kai kuri programinė įranga yra nuosavybinė.';
+  String get installCodecsSubtitle =>
+      'Ši programinė įranga yra platinama pagal licencijas, nurodytas jos dokumentacijoje. Kai kuri programinė įranga yra nuosavybinė.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +305,12 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'Šiuo metu šiame kompiuteryje yra įdiegtos kelios operacinės sistemos. Ką norėtumėte daryti?';
+  String get installationTypeMultiOSDetected =>
+      'Šiuo metu šiame kompiuteryje yra įdiegtos kelios operacinės sistemos. Ką norėtumėte daryti?';
 
   @override
-  String get installationTypeNoOSDetected => 'Šiuo metu šiame kompiuteryje nėra įdiegtų operacinių sistemų. Ką norėtumėte daryti?';
+  String get installationTypeNoOSDetected =>
+      'Šiuo metu šiame kompiuteryje nėra įdiegtų operacinių sistemų. Ką norėtumėte daryti?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -319,7 +343,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM pasirinkta';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'Pasirinkta LVM ir šifravimas';
+  String get installationTypeLVMEncryptionSelected =>
+      'Pasirinkta LVM ir šifravimas';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -327,10 +352,12 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'Kitame žingsnyje pasirinksite saugumo raktą.';
+  String get installationTypeEncryptInfo =>
+      'Kitame žingsnyje pasirinksite saugumo raktą.';
 
   @override
-  String get installationTypeZFS => 'EKSPERIMENTINIS: Ištrinti diską ir naudoti ZFS';
+  String get installationTypeZFS =>
+      'EKSPERIMENTINIS: Ištrinti diską ir naudoti ZFS';
 
   @override
   String get installationTypeZFSSelected => 'ZFS pasirinkta';
@@ -366,7 +393,8 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Dokumentai, muzika ir kiti asmeniniai failai bus išsaugoti. Kas kartą įjungę kompiuterį, galėsite pasirinkti, kurią operacinę sistemą paleisti.';
+  String get installationTypeAlongsideInfo =>
+      'Dokumentai, muzika ir kiti asmeniniai failai bus išsaugoti. Kas kartą įjungę kompiuterį, galėsite pasirinkti, kurią operacinę sistemą paleisti.';
 
   @override
   String get installationTypeManual => 'Rankinis skaidymas';
@@ -391,7 +419,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Įdiegti dabar';
 
   @override
-  String get installAlongsideSpaceDivider => 'Paskirstykite vietą diske, tempdami žemiau esantį dalytuvą:';
+  String get installAlongsideSpaceDivider =>
+      'Paskirstykite vietą diske, tempdami žemiau esantį dalytuvą:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +449,15 @@ class AppLocalizationsLt extends AppLocalizations {
   String get allocateDiskSpace => 'Rankinis skaidymas';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Mount points must start with \"/\"';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Mount points must start with \"/\"';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Mount points cannot contain spaces';
 
   @override
-  String get startInstallingButtonText => 'Įdiegti';
+  String get confirmInstallButton => 'Įdiegti';
 
   @override
   String get diskHeadersDevice => 'Įrenginys';
@@ -459,7 +490,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Naujas tuščias skaidinys';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Sukūrus naują skaidinių lentelę visame įrenginyje, bus pašalinti visi jo dabartiniai skaidiniai. Jei reikia, šią operaciją galima atšaukti.';
+  String get newPartitionTableConfirmationMessage =>
+      'Sukūrus naują skaidinių lentelę visame įrenginyje, bus pašalinti visi jo dabartiniai skaidiniai. Jei reikia, šią operaciją galima atšaukti.';
 
   @override
   String get tooManyPrimaryPartitions => 'Per daug pirminių skaidinių';
@@ -468,7 +500,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionLimitReached => 'Pasiekta riba';
 
   @override
-  String get bootLoaderDevice => 'Įrenginys, skirtas pradinio įkėliklio diegimui';
+  String get bootLoaderDevice =>
+      'Įrenginys, skirtas pradinio įkėliklio diegimui';
 
   @override
   String get partitionCreateTitle => 'Kurti skaidinį';
@@ -521,7 +554,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get identityAutoLogin => 'Automatiškai prisijungti prie paskyros';
 
   @override
-  String get identityRequirePassword => 'Prisijungiant prie paskyros reikalauti slaptažodžio';
+  String get identityRequirePassword =>
+      'Prisijungiant prie paskyros reikalauti slaptažodžio';
 
   @override
   String get identityRealNameLabel => 'Jūsų vardas';
@@ -536,16 +570,20 @@ class AppLocalizationsLt extends AppLocalizations {
   String get identityHostnameLabel => 'Jūsų kompiuterio pavadinimas';
 
   @override
-  String get identityHostnameInfo => 'Pavadinimas yra naudojamas bendraujant su kitais kompiuteriais.';
+  String get identityHostnameInfo =>
+      'Pavadinimas yra naudojamas bendraujant su kitais kompiuteriais.';
 
   @override
-  String get identityHostnameRequired => 'Reikia nurodyti kompiuterio pavadinimą';
+  String get identityHostnameRequired =>
+      'Reikia nurodyti kompiuterio pavadinimą';
 
   @override
-  String get identityHostnameTooLong => 'Šis kompiuterio pavadinimas per ilgas.';
+  String get identityHostnameTooLong =>
+      'Šis kompiuterio pavadinimas per ilgas.';
 
   @override
-  String get identityInvalidHostname => 'Kompiuterio pavadinimas yra netinkamas';
+  String get identityInvalidHostname =>
+      'Kompiuterio pavadinimas yra netinkamas';
 
   @override
   String get identityUsernameLabel => 'Pasirinkite naudotojo vardą';
@@ -560,13 +598,15 @@ class AppLocalizationsLt extends AppLocalizations {
   String get identityUsernameInUse => 'Šis naudotojo vardas jau yra.';
 
   @override
-  String get identityUsernameSystemReserved => 'Šis vardas yra rezervuotas sisteminiam naudojimui.';
+  String get identityUsernameSystemReserved =>
+      'Šis vardas yra rezervuotas sisteminiam naudojimui.';
 
   @override
   String get identityUsernameTooLong => 'Šis vardas per ilgas.';
 
   @override
-  String get identityUsernameInvalidChars => 'Šiame varde yra netinkamų simbolių.';
+  String get identityUsernameInvalidChars =>
+      'Šiame varde yra netinkamų simbolių.';
 
   @override
   String get identityPasswordLabel => 'Pasirinkite slaptažodį';
@@ -587,53 +627,55 @@ class AppLocalizationsLt extends AppLocalizations {
   String get identityPasswordHide => 'Slėpti';
 
   @override
-  String get writeChangesToDisk => 'Pasiruošę įdiegti';
+  String get confirmPageTitle => 'Pasiruošę įdiegti';
 
   @override
-  String get writeChangesFallbackSerial => 'diskas';
+  String get confirmHeader =>
+      'Jei tęsite, žemiau išvardyti pakeitimai bus įrašyti į diskus. Tolimesnius pakeitimus galėsite atlikti rankiniu būdu.';
 
   @override
-  String get writeChangesDescription => 'Jei tęsite, žemiau išvardyti pakeitimai bus įrašyti į diskus. Tolimesnius pakeitimus galėsite atlikti rankiniu būdu.';
+  String get confirmDevicesTitle => 'Įrenginiai';
 
   @override
-  String get writeChangesDevicesTitle => 'Įrenginiai';
+  String get confirmPartitionsTitle => 'Skaidiniai';
 
   @override
-  String get writeChangesPartitionsTitle => 'Skaidiniai';
+  String get confirmPartitionTables =>
+      'Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Bus pritaikyti šie skaidinių pakeitimai:';
+  String get confirmPartitionChanges =>
+      'Bus pritaikyti šie skaidinių pakeitimai:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return 'skaidinio <b>$sysname</b> dydis pakeistas iš <b>$oldsize</b> į <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return 'skaidinys <b>$sysname</b> formatuotas kaip <b>$format</b> ir panaudotas kaip <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'skaidinys <b>$sysname</b> formatuotas kaip <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'skaidinys <b>$sysname</b> panaudotas kaip <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'sukurtas skaidinys <b>$sysname</b>';
   }
 
@@ -641,7 +683,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get themePageTitle => 'Pasirinkite apipavidalinimą';
 
   @override
-  String get themePageHeader => 'Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.';
+  String get themePageHeader =>
+      'Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.';
 
   @override
   String get themeDark => 'Tamsus';
@@ -696,7 +739,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get restartIntoWindows => 'Paleisti iš naujo į „Windows“';
 
   @override
-  String get restartIntoWindowsTitle => 'Paleisti iš naujo į „Windows“ sistemą?';
+  String get restartIntoWindowsTitle =>
+      'Paleisti iš naujo į „Windows“ sistemą?';
 
   @override
   String restartIntoWindowsDescription(Object DISTRO) {
@@ -715,7 +759,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get installationSlidesIncluded => 'Įtraukta:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Greita, nemokama ir pilna naujų ypatybių';
+  String get installationSlidesWelcomeTitle =>
+      'Greita, nemokama ir pilna naujų ypatybių';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -736,7 +781,8 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Plėtokite naudodami geriausią, ką siūlo atvirasis kodas';
+  String get installationSlidesDevelopmentTitle =>
+      'Plėtokite naudodami geriausią, ką siūlo atvirasis kodas';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -773,7 +819,8 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesProductivityTitle => 'Padidinkite savo produktyvumą';
+  String get installationSlidesProductivityTitle =>
+      'Padidinkite savo produktyvumą';
 
   @override
   String installationSlidesProductivityBody(Object DISTRO) {
@@ -803,10 +850,12 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => '„Ask Ubuntu“ apima didelį klausimų ir atsakymų spektrą, o „Ubuntu Discourse“ teikia žinyną bei patarimus tiek naujiems, tiek pažengusiems naudotojams.';
+  String get installationSlidesSupportCommunity =>
+      '„Ask Ubuntu“ apima didelį klausimų ir atsakymų spektrą, o „Ubuntu Discourse“ teikia žinyną bei patarimus tiek naujiems, tiek pažengusiems naudotojams.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'Naudotojams iš įmonių Canonical teikia komercinį palaikymą, padėdama darbo vietoje lengvai pritaikyti ir saugiai valdyti Ubuntu.';
+  String get installationSlidesSupportEnterprise =>
+      'Naudotojams iš įmonių Canonical teikia komercinį palaikymą, padėdama darbo vietoje lengvai pritaikyti ir saugiai valdyti Ubuntu.';
 
   @override
   String get installationSlidesSupportResources => 'Naudingi ištekliai:';
@@ -815,7 +864,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'Oficiali dokumentacija';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Naudotojų iš įmonių palaikymas 24/7 naudojant „Ubuntu Pro“';
+  String get installationSlidesSupportUbuntuPro =>
+      'Naudotojų iš įmonių palaikymas 24/7 naudojant „Ubuntu Pro“';
 
   @override
   String get copyingFiles => 'Kopijuojami failai…';
@@ -847,7 +897,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get activeDirectoryOption => 'Naudoti „Active Directory“';
 
   @override
-  String get activeDirectoryInfo => 'Kitame žingsnyje įvesite domeną bei kitą išsamesnę informaciją.';
+  String get activeDirectoryInfo =>
+      'Kitame žingsnyje įvesite domeną bei kitą išsamesnę informaciją.';
 
   @override
   String get activeDirectoryTitle => 'Konfigūruoti „Active Directory“';
@@ -880,7 +931,8 @@ class AppLocalizationsLt extends AppLocalizations {
   String get activeDirectoryDomainEndHyphen => 'Pasibaigia brūkšneliu (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Turi kelis taškus iš eilės (..)';
+  String get activeDirectoryDomainMultipleDots =>
+      'Turi kelis taškus iš eilės (..)';
 
   @override
   String get activeDirectoryDomainNotFound => 'Domenas nerastas';
@@ -901,8 +953,10 @@ class AppLocalizationsLt extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Būtina';
 
   @override
-  String get activeDirectoryErrorTitle => 'Klaida konfigūruojant ryšį su „Active Directory“';
+  String get activeDirectoryErrorTitle =>
+      'Klaida konfigūruojant ryšį su „Active Directory“';
 
   @override
-  String get activeDirectoryErrorMessage => 'Atleiskite, šiuo metu „Active Directory“ negali būti nustatyta. Kai tik jūsų sistema bus paleista, apsilankykite adresu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kad gautumėte išsamesnės informacijos.';
+  String get activeDirectoryErrorMessage =>
+      'Atleiskite, šiuo metu „Active Directory“ negali būti nustatyta. Kai tik jūsų sistema bus paleista, apsilankykite adresu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kad gautumėte išsamesnės informacijos.';
 }

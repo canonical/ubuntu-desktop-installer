@@ -192,8 +192,8 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Manuelle Partitionierung",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Installieren",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Installieren",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Laufwerk",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Verwendung",
@@ -268,26 +268,22 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Die Passwörter stimmen nicht überein",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "Bereit zur Installation",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "Festplatte",
-  "@writeChangesFallbackSerial": {
-    "description": "Standard-Anzeigename für eine Festplatte ohne Seriennummer (unwahrscheinlich)"
-  },
-  "writeChangesDescription": "Wenn Sie fortfahren, werden die unten aufgeführten Änderungen auf die Festplatten geschrieben. Sie haben die Möglichkeit, weitere Änderungen manuell vorzunehmen.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "Die Partitionstabellen der folgenden Laufwerke werden geändert:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Bereit zur Installation",
+  "@confirmPageTitle": {},
+  "confirmHeader": "Wenn Sie fortfahren, werden die unten aufgeführten Änderungen auf die Festplatten geschrieben. Sie haben die Möglichkeit, weitere Änderungen manuell vorzunehmen.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "Die Partitionstabellen der folgenden Laufwerke werden geändert:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "Ein Eintrag für eine Festplatte, deren Partitionstabelle geändert wird",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Die folgenden Partitionsänderungen werden vorgenommen:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "Die folgenden Partitionsänderungen werden vorgenommen:",
+  "@confirmPartitionChanges": {},
   "themePageTitle": "Wählen Sie Ihr Thema aus",
   "@themePageTitle": {},
   "themePageHeader": "Sie können dies später in den Einstellungen für das Erscheinungsbild jederzeit ändern.",
@@ -443,8 +439,8 @@
   "@installAlongsideAvailable": {},
   "quitButtonText": "Installation beenden",
   "@quitButtonText": {},
-  "writeChangesPartitionFormattedMounted": "Partition <b>{sysname}</b> formatiert als <b>{format}</b> verwendet für <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "Partition <b>{sysname}</b> formatiert als <b>{format}</b> verwendet für <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -452,23 +448,23 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "Partition <b>{sysname}</b> erstellt",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "Partition <b>{sysname}</b> erstellt",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionFormatted": "Partition <b>{sysname}</b> formatiert als <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "Partition <b>{sysname}</b> formatiert als <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionResized": "Größe der Partition <b>{sysname}</b> von <b>{oldsize}</b> auf <b>{newsize}</b> geändert",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "Größe der Partition <b>{sysname}</b> von <b>{oldsize}</b> auf <b>{newsize}</b> geändert",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -476,8 +472,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionMounted": "Partition <b>{sysname}</b> verwendet für <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "Partition <b>{sysname}</b> verwendet für <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -582,10 +578,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Tastaturvariante:",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Geräte",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partitionen",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Geräte",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partitionen",
+  "@confirmPartitionsTitle": {},
   "installationSlidesIncluded": "Einschließlich:",
   "@installationSlidesIncluded": {},
   "installationSlidesWelcomeTitle": "Schnell, kostenlos und mit vielen neuen Funktionen",

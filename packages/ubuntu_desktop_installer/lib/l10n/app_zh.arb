@@ -235,8 +235,8 @@
   "@diskHeadersSize": {},
   "diskHeadersSystem": "系统",
   "@diskHeadersSystem": {},
-  "startInstallingButtonText": "安装",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "安装",
+  "@confirmInstallButton": {},
   "diskHeadersFormat": "格式化",
   "@diskHeadersFormat": {},
   "freeDiskSpace": "剩余空间",
@@ -281,20 +281,16 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "密码不匹配",
   "@identityPasswordMismatch": {},
-  "writeChangesFallbackSerial": "磁盘",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesToDisk": "准备安装",
-  "@writeChangesToDisk": {},
-  "writeChangesDescription": "如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "已更改以下设备的分区表：",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionsHeader": "将应用以下分区更改：",
-  "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "准备安装",
+  "@confirmPageTitle": {},
+  "confirmHeader": "如果继续，下面列出的更改将会写入磁盘。您可以手动进行进一步的更改。",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "已更改以下设备的分区表：",
+  "@confirmPartitionTables": {},
+  "confirmPartitionChanges": "将应用以下分区更改：",
+  "@confirmPartitionChanges": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
@@ -498,24 +494,24 @@
   "@identityUsernameInUse": {},
   "quitButtonText": "退出安装",
   "@quitButtonText": {},
-  "writeChangesPartitionFormatted": "分区<b>{sysname}</b> 格式化为<b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "分区<b>{sysname}</b> 格式化为<b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "分区 <b>{sysname}</b> 挂载到 <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "分区 <b>{sysname}</b> 挂载到 <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "分区 <b>{sysname}</b> 已创建",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "分区 <b>{sysname}</b> 已创建",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -523,8 +519,8 @@
   },
   "notEnoughDiskSpaceTitle": "空间不足",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "分区<b>{sysname}</b> 从<b>{oldsize}</b> 调整为<b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "分区<b>{sysname}</b> 从<b>{oldsize}</b> 调整为<b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -532,8 +528,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "分区<b>{sysname}</b> 格式化为<b>{format}</b> 并挂载到<b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "分区<b>{sysname}</b> 格式化为<b>{format}</b> 并挂载到<b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -637,10 +633,10 @@
   "@keyboardVariantLabel": {},
   "keyboardDetectButton": "检测",
   "@keyboardDetectButton": {},
-  "writeChangesDevicesTitle": "设备",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "分区",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "设备",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "分区",
+  "@confirmPartitionsTitle": {},
   "notEnoughDiskSpaceUbuntu": "磁盘空间不足，无法安装 {DISTRO}",
   "@notEnoughDiskSpaceUbuntu": {
     "type": "text",

@@ -51,7 +51,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get welcomeRepairOption => 'Kurulumu tamir et';
 
   @override
-  String get welcomeRepairDescription => 'Tamir etme seçeneği, tüm yazılımlarınızı tekrardan kuracak ve belgeleriniz ile ayarlarınıza dokunmayacaktır.';
+  String get welcomeRepairDescription =>
+      'Tamir etme seçeneği, tüm yazılımlarınızı tekrardan kuracak ve belgeleriniz ile ayarlarınıza dokunmayacaktır.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get rstHeader => 'Devam etmek için RST\'yi kapatın';
 
   @override
-  String get rstDescription => 'Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu\'yu kurmadan önce Windows\'tan RST\'yi kapatmalısınız.';
+  String get rstDescription =>
+      'Bu bilgisayar Intel RST (Rapid Storage Technology) kullanmaktadır. Ubuntu\'yu kurmadan önce Windows\'tan RST\'yi kapatmalısınız.';
 
   @override
   String rstInstructions(Object url) {
@@ -111,16 +113,19 @@ class AppLocalizationsTr extends AppLocalizations {
   String get keyboardVariantLabel => 'Klavye yerleşimi:';
 
   @override
-  String get keyboardPressKeyLabel => 'Lütfen aşağıdaki tuşlardan birine basın:';
+  String get keyboardPressKeyLabel =>
+      'Lütfen aşağıdaki tuşlardan birine basın:';
 
   @override
-  String get keyboardKeyPresentLabel => 'Aşağıdaki tuş klavyenizde bulunuyor mu?';
+  String get keyboardKeyPresentLabel =>
+      'Aşağıdaki tuş klavyenizde bulunuyor mu?';
 
   @override
   String get configureSecureBootTitle => 'Güvenli Önyüklemeyi Yapılandır';
 
   @override
-  String get configureSecureBootDescription => 'Üçüncü parti sürücüleri kurmayı seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir.\nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.';
+  String get configureSecureBootDescription =>
+      'Üçüncü parti sürücüleri kurmayı seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir.\nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.';
 
   @override
   String get configureSecureBootOption => 'Güvenli Önyüklemeyi Yapılandır';
@@ -135,13 +140,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get dontInstallDriverSoftwareNow => 'Şimdilik sürücü yazılımını kurma';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Daha sonra Yazılımlar ve Güncellemeler uygulamasından kurabilirsiniz.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'Daha sonra Yazılımlar ve Güncellemeler uygulamasından kurabilirsiniz.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Güvenlik anahtarı gereklidir';
+  String get configureSecureBootSecurityKeyRequired =>
+      'Güvenlik anahtarı gereklidir';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'Güvenlik anahtarları uyuşmamaktadır';
+  String get secureBootSecurityKeysDontMatch =>
+      'Güvenlik anahtarları uyuşmamaktadır';
 
   @override
   String get showSecurityKey => 'Güvenlik anahtarını göster';
@@ -150,7 +158,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get connectToInternetPageTitle => 'Bir ağa bağlan';
 
   @override
-  String get connectToInternetDescription => 'Bu bilgisayarı internete bağlamak, Ubuntu\'nun ihtiyacı olan ek yazılımları kurmasına ve zaman diliminizi seçmenize yardımcı olur.\n\nEthernet kablosuyla bağlan veya bir Wi-Fi ağı seç';
+  String get connectToInternetDescription =>
+      'Bu bilgisayarı internete bağlamak, Ubuntu\'nun ihtiyacı olan ek yazılımları kurmasına ve zaman diliminizi seçmenize yardımcı olur.\n\nEthernet kablosuyla bağlan veya bir Wi-Fi ağı seç';
 
   @override
   String get useWiredConnection => 'Kablolu bağlantı kullan';
@@ -162,7 +171,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get wiredDisabled => 'Kablolu bağlantı kapalı';
 
   @override
-  String get wiredMustBeEnabled => 'Bilgisayarda Etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir';
+  String get wiredMustBeEnabled =>
+      'Bilgisayarda Etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir';
 
   @override
   String get enableWired => 'Kablolu bağlantıyı etkinleştir';
@@ -189,7 +199,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get noWifiDevicesDetected => 'Wi-Fi cihazı algılanmadı';
 
   @override
-  String get wifiMustBeEnabled => 'Bu bilgisayarda Wi-Fi kullanmak için, kablosuz ağın etkinleştirilmiş olması gerekir';
+  String get wifiMustBeEnabled =>
+      'Bu bilgisayarda Wi-Fi kullanmak için, kablosuz ağın etkinleştirilmiş olması gerekir';
 
   @override
   String get enableWifi => 'Wi-Fi\'yi etkinleştir';
@@ -201,13 +212,15 @@ class AppLocalizationsTr extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Uygulamalar ve güncellemeler';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'Başlangıç olarak hangi uygulamaları kurmak istersiniz?';
+  String get updatesOtherSoftwarePageDescription =>
+      'Başlangıç olarak hangi uygulamaları kurmak istersiniz?';
 
   @override
   String get normalInstallationTitle => 'Normal kurulum';
 
   @override
-  String get normalInstallationSubtitle => 'Web tarayıcısı, yardımcı programlar, ofis yazılımı, oyunlar ve medya oynatıcılar.';
+  String get normalInstallationSubtitle =>
+      'Web tarayıcısı, yardımcı programlar, ofis yazılımı, oyunlar ve medya oynatıcılar.';
 
   @override
   String get minimalInstallationTitle => 'Asgari kurulum';
@@ -219,22 +232,27 @@ class AppLocalizationsTr extends AppLocalizations {
   String get otherOptions => 'Diğer seçenekler';
 
   @override
-  String get installThirdPartyTitle => 'Grafikler ve Wi-Fi donanımı için üçüncü taraf yazılımların yanı sıra ek medya biçimlerini de kur';
+  String get installThirdPartyTitle =>
+      'Grafikler ve Wi-Fi donanımı için üçüncü taraf yazılımların yanı sıra ek medya biçimlerini de kur';
 
   @override
-  String get installThirdPartySubtitle => 'Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları tescillidir.';
+  String get installThirdPartySubtitle =>
+      'Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları tescillidir.';
 
   @override
-  String get installDriversTitle => 'Grafik ve Wi-Fi donanımı için üçüncü taraf yazılımları kur';
+  String get installDriversTitle =>
+      'Grafik ve Wi-Fi donanımı için üçüncü taraf yazılımları kur';
 
   @override
-  String get installDriversSubtitle => 'Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.';
+  String get installDriversSubtitle =>
+      'Bu sürücüler, belgeleriyle birlikte verilen lisans koşullarına tabidir. Sahipli ürünlerdir.';
 
   @override
   String get installCodecsTitle => 'Ek ortam biçimleri desteğini indir ve kur';
 
   @override
-  String get installCodecsSubtitle => 'Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.';
+  String get installCodecsSubtitle =>
+      'Bu yazılım, belgeleriyle birlikte verilen lisans koşullarına tabidir. Bazıları sahiplidir.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +301,12 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'Bu bilgisayar şu an birden fazla işletim sistemi var. Ne yapmak istersiniz?';
+  String get installationTypeMultiOSDetected =>
+      'Bu bilgisayar şu an birden fazla işletim sistemi var. Ne yapmak istersiniz?';
 
   @override
-  String get installationTypeNoOSDetected => 'Bu bilgisayarda herhangi bir işletim sistemi tespit edilmedi. Ne yapmak istersiniz?';
+  String get installationTypeNoOSDetected =>
+      'Bu bilgisayarda herhangi bir işletim sistemi tespit edilmedi. Ne yapmak istersiniz?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -319,7 +339,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM seçildi';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM ve şifreleme seçildi';
+  String get installationTypeLVMEncryptionSelected =>
+      'LVM ve şifreleme seçildi';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -327,7 +348,8 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'Bir sonraki adımda güvenlik anahtarı seçeceksiniz.';
+  String get installationTypeEncryptInfo =>
+      'Bir sonraki adımda güvenlik anahtarı seçeceksiniz.';
 
   @override
   String get installationTypeZFS => 'DENEYSEL: Diski sil ve ZFS kullan';
@@ -366,7 +388,8 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Belgeler, müzik ve diğer kişisel dosyalar korunacak. Bilgisayar her başlatıldığında hangi işletim sistemini istediğinizi seçebilirsiniz.';
+  String get installationTypeAlongsideInfo =>
+      'Belgeler, müzik ve diğer kişisel dosyalar korunacak. Bilgisayar her başlatıldığında hangi işletim sistemini istediğinizi seçebilirsiniz.';
 
   @override
   String get installationTypeManual => 'Elle bölümlendirme';
@@ -391,7 +414,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Şimdi kur';
 
   @override
-  String get installAlongsideSpaceDivider => 'Aşağıdaki ayırıcıyı sürükleyerek sürücü alanı ayır:';
+  String get installAlongsideSpaceDivider =>
+      'Aşağıdaki ayırıcıyı sürükleyerek sürücü alanı ayır:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +444,15 @@ class AppLocalizationsTr extends AppLocalizations {
   String get allocateDiskSpace => 'Elle biçimlendirme';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Bağlama noktaları \"/\" ile başlamalıdır';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Bağlama noktaları \"/\" ile başlamalıdır';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Bağlama noktaları boşluk içeremez';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Bağlama noktaları boşluk içeremez';
 
   @override
-  String get startInstallingButtonText => 'Kur';
+  String get confirmInstallButton => 'Kur';
 
   @override
   String get diskHeadersDevice => 'Cihaz';
@@ -459,7 +485,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Yeni boş bölüm';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Cihazın tamamında yeni bir bölüm tablosu oluşturmak var olan bölümleri siler. Bu işlem gerekirse geri alınabilir.';
+  String get newPartitionTableConfirmationMessage =>
+      'Cihazın tamamında yeni bir bölüm tablosu oluşturmak var olan bölümleri siler. Bu işlem gerekirse geri alınabilir.';
 
   @override
   String get tooManyPrimaryPartitions => 'Çok fazla birincil bölüm';
@@ -536,7 +563,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get identityHostnameLabel => 'Bilgisayar adı';
 
   @override
-  String get identityHostnameInfo => 'Bu ad, diğer bilgisayarlarla kurulan iletişim esnasında kullanılır.';
+  String get identityHostnameInfo =>
+      'Bu ad, diğer bilgisayarlarla kurulan iletişim esnasında kullanılır.';
 
   @override
   String get identityHostnameRequired => 'Bilgisayar adı gereklidir';
@@ -560,13 +588,15 @@ class AppLocalizationsTr extends AppLocalizations {
   String get identityUsernameInUse => 'Bu kullanıcı adı zaten var.';
 
   @override
-  String get identityUsernameSystemReserved => 'Bu ad sistem kullanımı için ayrılmış.';
+  String get identityUsernameSystemReserved =>
+      'Bu ad sistem kullanımı için ayrılmış.';
 
   @override
   String get identityUsernameTooLong => 'Bu ad çok uzun.';
 
   @override
-  String get identityUsernameInvalidChars => 'Bu ad geçersiz karakter içeriyor.';
+  String get identityUsernameInvalidChars =>
+      'Bu ad geçersiz karakter içeriyor.';
 
   @override
   String get identityPasswordLabel => 'Parola seç';
@@ -587,53 +617,55 @@ class AppLocalizationsTr extends AppLocalizations {
   String get identityPasswordHide => 'Gizle';
 
   @override
-  String get writeChangesToDisk => 'Kuruluma hazır';
+  String get confirmPageTitle => 'Kuruluma hazır';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get confirmHeader =>
+      'Devam ederseniz, aşağıda listelenen değişiklikler disklere yazılacak. Daha fazla değişikliği elle yapabileceksiniz.';
 
   @override
-  String get writeChangesDescription => 'Devam ederseniz, aşağıda listelenen değişiklikler disklere yazılacak. Daha fazla değişikliği elle yapabileceksiniz.';
+  String get confirmDevicesTitle => 'Aygıtlar';
 
   @override
-  String get writeChangesDevicesTitle => 'Aygıtlar';
+  String get confirmPartitionsTitle => 'Disk bölümleri';
 
   @override
-  String get writeChangesPartitionsTitle => 'Disk bölümleri';
+  String get confirmPartitionTables =>
+      'Aşağıdaki cihazların bölüm tabloları değiştirildi:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Aşağıdaki cihazların bölüm tabloları değiştirildi:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Aşağıdaki bölüm değişiklikleri uygulanacak:';
+  String get confirmPartitionChanges =>
+      'Aşağıdaki bölüm değişiklikleri uygulanacak:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return '<b>$sysname</b> bölümü <b>$oldsize</b> boyutundan <b>$newsize</b> boyutuna yeniden boyutlandırıldı';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return '<b>$format </b> biçimindeki <b>$sysname</b> bölümü <b>$mount</b> için kullanıldı';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return '<b>$sysname</b> bölümü <b>$format</b> olarak biçimlendirildi';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return '<b>$sysname</b> bölümü <b>$mount</b> için kullanıldı';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return '<b>$sysname</b> bölümü oluşturuldu';
   }
 
@@ -641,7 +673,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get themePageTitle => 'Temanızı seçin';
 
   @override
-  String get themePageHeader => 'Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.';
+  String get themePageHeader =>
+      'Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.';
 
   @override
   String get themeDark => 'Koyu';
@@ -715,7 +748,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installationSlidesIncluded => 'Dahil:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Hızlı, ücretsiz ve yeni özelliklerle dolu';
+  String get installationSlidesWelcomeTitle =>
+      'Hızlı, ücretsiz ve yeni özelliklerle dolu';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -728,7 +762,8 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'İhtiyacınız olan tüm uygulamalar';
+  String get installationSlidesSoftwareTitle =>
+      'İhtiyacınız olan tüm uygulamalar';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -736,7 +771,8 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Açık kaynağın en iyisi ile geliştir';
+  String get installationSlidesDevelopmentTitle =>
+      'Açık kaynağın en iyisi ile geliştir';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -744,7 +780,8 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesCreativityTitle => 'Yaratıcılığınızı zenginleştirin';
+  String get installationSlidesCreativityTitle =>
+      'Yaratıcılığınızı zenginleştirin';
 
   @override
   String installationSlidesCreativityBody(Object DISTRO) {
@@ -803,10 +840,12 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ubuntu\'ya Sor çeşitli soru ve yanıtlarını kapsar. Ubuntu Discourse yeni ve deneyimli kullanıcılar için kılavuzlar ve tartışmalar sunar.';
+  String get installationSlidesSupportCommunity =>
+      'Ubuntu\'ya Sor çeşitli soru ve yanıtlarını kapsar. Ubuntu Discourse yeni ve deneyimli kullanıcılar için kılavuzlar ve tartışmalar sunar.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'Kurumsal kullanıcılar için Canonical, Ubuntu\'nun işyerinde güvenli bir şekilde kurulmasını ve yönetilmesini kolaylaştırmak için ticari destek sağlar.';
+  String get installationSlidesSupportEnterprise =>
+      'Kurumsal kullanıcılar için Canonical, Ubuntu\'nun işyerinde güvenli bir şekilde kurulmasını ve yönetilmesini kolaylaştırmak için ticari destek sağlar.';
 
   @override
   String get installationSlidesSupportResources => 'Yararlı kaynaklar:';
@@ -815,7 +854,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'Resmi belgelendirme';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Ubuntu Pro ile kurumsal sınıf 7/24 destek';
+  String get installationSlidesSupportUbuntuPro =>
+      'Ubuntu Pro ile kurumsal sınıf 7/24 destek';
 
   @override
   String get copyingFiles => 'Dosyalar kopyalanıyor…';
@@ -847,7 +887,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get activeDirectoryOption => 'Active Directory kullan';
 
   @override
-  String get activeDirectoryInfo => 'Bir sonraki adımda alan adı ve diğer ayrıntıları gireceksiniz.';
+  String get activeDirectoryInfo =>
+      'Bir sonraki adımda alan adı ve diğer ayrıntıları gireceksiniz.';
 
   @override
   String get activeDirectoryTitle => 'Active Directory\'yi Yapılandır';
@@ -880,7 +921,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get activeDirectoryDomainEndHyphen => 'Kısa çizgi (-) ile biter';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Birden fazla sıralı nokta içerir (...)';
+  String get activeDirectoryDomainMultipleDots =>
+      'Birden fazla sıralı nokta içerir (...)';
 
   @override
   String get activeDirectoryDomainNotFound => 'Etki alanı bulunamadı';
@@ -901,8 +943,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Gerekli';
 
   @override
-  String get activeDirectoryErrorTitle => 'Active Directory bağlantısı yapılandırılamadı';
+  String get activeDirectoryErrorTitle =>
+      'Active Directory bağlantısı yapılandırılamadı';
 
   @override
-  String get activeDirectoryErrorMessage => 'Üzgünüz, Active Directory şu anda kurulamıyor. Sisteminiz kurulup çalışmaya başladığında, yardım için <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> adresini ziyaret edin.';
+  String get activeDirectoryErrorMessage =>
+      'Üzgünüz, Active Directory şu anda kurulamıyor. Sisteminiz kurulup çalışmaya başladığında, yardım için <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> adresini ziyaret edin.';
 }

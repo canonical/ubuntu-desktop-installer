@@ -128,8 +128,8 @@
   },
   "partitionLocationEnd": "Кінець цього простору",
   "@partitionLocationEnd": {},
-  "writeChangesPartitionFormatted": "розділ #{sysname} відформатовано як {format}",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "розділ #{sysname} відформатовано як {format}",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -145,12 +145,8 @@
   },
   "partitionLocationBeginning": "Початок цього простору",
   "@partitionLocationBeginning": {},
-  "writeChangesFallbackSerial": "диск",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesPartitionFormattedMounted": "розділ #{sysname}, відформатований як {format}, використано для {mount}",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "розділ #{sysname}, відформатований як {format}, використано для {mount}",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -160,8 +156,8 @@
   },
   "partitionErase": "Відформатувати розділ",
   "@partitionErase": {},
-  "writeChangesDescription": "Якщо ви продовжите, перелічені нижче зміни будуть записані на диски. Ви зможете внести подальші зміни вручну.",
-  "@writeChangesDescription": {},
+  "confirmHeader": "Якщо ви продовжите, перелічені нижче зміни будуть записані на диски. Ви зможете внести подальші зміни вручну.",
+  "@confirmHeader": {},
   "partitionMountPointLabel": "Точка монтування:",
   "@partitionMountPointLabel": {},
   "themePageHeader": "Ви завжди можете змінити це пізніше в налаштуваннях зовнішнього вигляду.",
@@ -196,8 +192,8 @@
       "color": {}
     }
   },
-  "writeChangesToDisk": "Записати зміни на диск",
-  "@writeChangesToDisk": {},
+  "confirmPageTitle": "Записати зміни на диск",
+  "@confirmPageTitle": {},
   "shutdown": "Вимкнути",
   "@shutdown": {},
   "restartIntoWindows": "Перезавантажити в Windows",
@@ -270,10 +266,10 @@
   "@identityUsernameRequired": {},
   "identityPasswordRequired": "Потрібно ввести пароль",
   "@identityPasswordRequired": {},
-  "writeChangesPartitionTablesHeader": "Змінено таблиці розділів наступних пристроїв:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTables": "Змінено таблиці розділів наступних пристроїв:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
@@ -383,8 +379,8 @@
   "@installAlongsideSize": {},
   "allocateDiskSpace": "Виділити дисковий простір",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Почати встановлення",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Почати встановлення",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Пристрій",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Тип",
@@ -413,16 +409,16 @@
   "@identityUsernameInUse": {},
   "identityPasswordLabel": "Оберіть пароль",
   "@identityPasswordLabel": {},
-  "writeChangesPartitionMounted": "розділ #{sysname} використано для {mount}",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "розділ #{sysname} використано для {mount}",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "створено розділ #{sysname}",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "створено розділ #{sysname}",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -472,8 +468,8 @@
   "@identityUsernameInvalidChars": {},
   "identityPasswordMismatch": "Паролі не збігаються",
   "@identityPasswordMismatch": {},
-  "writeChangesPartitionResized": "розмір розділу #{sysname} змінено з {oldsize} на {newsize}",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "розмір розділу #{sysname} змінено з {oldsize} на {newsize}",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -481,8 +477,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionsHeader": "Будуть застосовані наступні зміни розділів:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "Будуть застосовані наступні зміни розділів:",
+  "@confirmPartitionChanges": {},
   "installationTypeLVM": "Скористатися LVM для нової інсталяції {RELEASE}",
   "@installationTypeLVM": {
     "type": "text",

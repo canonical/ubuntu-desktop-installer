@@ -33,9 +33,9 @@ class ConfirmPage extends ConsumerWidget {
     final model = ref.watch(confirmModelProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(lang.writeChangesToDisk),
+        title: Text(lang.confirmPageTitle),
       ),
-      header: Text(lang.writeChangesDescription),
+      header: Text(lang.confirmHeader),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -43,11 +43,11 @@ class ConfirmPage extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                lang.writeChangesDevicesTitle,
+                lang.confirmDevicesTitle,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: kWizardSpacing / 2),
-              Text(lang.writeChangesPartitionTablesHeader)
+              Text(lang.confirmPartitionTables)
             ],
           ),
           const SizedBox(height: kWizardSpacing / 2),
@@ -76,11 +76,11 @@ class ConfirmPage extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                lang.writeChangesPartitionsTitle,
+                lang.confirmPartitionsTitle,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: kWizardSpacing / 2),
-              Text(lang.writeChangesPartitionsHeader),
+              Text(lang.confirmPartitionChanges),
             ],
           ),
           const SizedBox(height: 10),
@@ -115,7 +115,7 @@ class ConfirmPage extends ConsumerWidget {
           WizardButton.next(
             context,
             highlighted: true,
-            label: lang.startInstallingButtonText,
+            label: lang.confirmInstallButton,
             onNext: () {
               // start installation after the page transition (#1393)
               Future.delayed(kThemeAnimationDuration).then((_) {
@@ -140,30 +140,30 @@ class _PartitionLabel extends StatelessWidget {
   String formatPartition(BuildContext context) {
     final lang = AppLocalizations.of(context);
     if (partition.resize == true) {
-      return lang.writeChangesPartitionResized(
+      return lang.confirmPartitionResize(
         partition.sysname,
         context.formatByteSize(original?.size ?? 0),
         context.formatByteSize(partition.size ?? 0),
       );
     } else if (partition.wipe != null && partition.mount?.isNotEmpty == true) {
-      return lang.writeChangesPartitionFormattedMounted(
+      return lang.confirmPartitionFormatMount(
         partition.sysname,
         partition.format ?? '',
         partition.mount ?? '',
       );
     } else if (partition.wipe != null && partition.format?.isNotEmpty == true) {
-      return lang.writeChangesPartitionFormatted(
+      return lang.confirmPartitionFormat(
         partition.sysname,
         partition.format ?? '',
       );
     } else if (partition.mount?.isNotEmpty == true) {
-      return lang.writeChangesPartitionMounted(
+      return lang.confirmPartitionMount(
         partition.sysname,
         partition.mount ?? '',
       );
     } else {
       assert(partition.preserve == false);
-      return lang.writeChangesPartitionCreated(partition.sysname);
+      return lang.confirmPartitionCreate(partition.sysname);
     }
   }
 

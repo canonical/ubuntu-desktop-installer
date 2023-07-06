@@ -51,7 +51,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get welcomeRepairOption => 'Ripari instalaĵon';
 
   @override
-  String get welcomeRepairDescription => 'Riparado reinstalos ĉiujn instalitajn programojn sen modifi dokumentojn aŭ agordojn.';
+  String get welcomeRepairDescription =>
+      'Riparado reinstalos ĉiujn instalitajn programojn sen modifi dokumentojn aŭ agordojn.';
 
   @override
   String welcomeTryOption(Object RELEASE) {
@@ -85,7 +86,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get rstHeader => 'Malŝaltu RST por daŭrigi';
 
   @override
-  String get rstDescription => 'Ĉi tiu komputilo uzas Intel RST (Rapid-Konservejan Teknikon). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.';
+  String get rstDescription =>
+      'Ĉi tiu komputilo uzas Intel RST (Rapid-Konservejan Teknikon). Vi devas malŝalti RST en Windows antaŭ ol instali Ubuntu.';
 
   @override
   String rstInstructions(Object url) {
@@ -114,13 +116,15 @@ class AppLocalizationsEo extends AppLocalizations {
   String get keyboardPressKeyLabel => 'Bonvolu premi unu el la jenaj klavoj:';
 
   @override
-  String get keyboardKeyPresentLabel => 'Ĉu la jena klavo troviĝas en via klavaro?';
+  String get keyboardKeyPresentLabel =>
+      'Ĉu la jena klavo troviĝas en via klavaro?';
 
   @override
   String get configureSecureBootTitle => 'Agordi Sekuran Praŝargon';
 
   @override
-  String get configureSecureBootDescription => 'Vi elektis instali triapartiajn zorgilojn. Tio postulas malŝalti Sekuran Praŝargon.\nPor tio, vi devas elekti sekurigan ŝlosilon nun kaj tajpu ĝin, kiam la sistemo restartas.';
+  String get configureSecureBootDescription =>
+      'Vi elektis instali triapartiajn zorgilojn. Tio postulas malŝalti Sekuran Praŝargon.\nPor tio, vi devas elekti sekurigan ŝlosilon nun kaj tajpu ĝin, kiam la sistemo restartas.';
 
   @override
   String get configureSecureBootOption => 'Agordi Sekuran Praŝargon';
@@ -135,13 +139,16 @@ class AppLocalizationsEo extends AppLocalizations {
   String get dontInstallDriverSoftwareNow => 'Ne instali zorgilojn nun';
 
   @override
-  String get dontInstallDriverSoftwareNowDescription => 'Vi povas instali ilin poste per Programaroj kaj Ĝisdatigoj.';
+  String get dontInstallDriverSoftwareNowDescription =>
+      'Vi povas instali ilin poste per Programaroj kaj Ĝisdatigoj.';
 
   @override
-  String get configureSecureBootSecurityKeyRequired => 'Sekuriga ŝlosilo bezoniĝas';
+  String get configureSecureBootSecurityKeyRequired =>
+      'Sekuriga ŝlosilo bezoniĝas';
 
   @override
-  String get secureBootSecurityKeysDontMatch => 'La sekurigaj ŝlosiloj ne kongruas';
+  String get secureBootSecurityKeysDontMatch =>
+      'La sekurigaj ŝlosiloj ne kongruas';
 
   @override
   String get showSecurityKey => 'Montri sekurecŝlosilon';
@@ -150,7 +157,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get connectToInternetPageTitle => 'Konekti al reto';
 
   @override
-  String get connectToInternetDescription => 'Konektado de ĉi tiu komputilo al Interreto helpos Ubuntu instali ajnajn kromajn programojn bezonatajn kaj helpos vin elekti vian horzonon.\n\nKonektu per Eterreta kablo, aŭ elektu sendratan reton.';
+  String get connectToInternetDescription =>
+      'Konektado de ĉi tiu komputilo al Interreto helpos Ubuntu instali ajnajn kromajn programojn bezonatajn kaj helpos vin elekti vian horzonon.\n\nKonektu per Eterreta kablo, aŭ elektu sendratan reton.';
 
   @override
   String get useWiredConnection => 'Uzi dratan konekton';
@@ -162,7 +170,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get wiredDisabled => 'Drataj retoj estas malŝaltitaj';
 
   @override
-  String get wiredMustBeEnabled => 'Por uzi Eterreton kun ĉi tiu komputilo, vi devas ebligi dratajn retojn';
+  String get wiredMustBeEnabled =>
+      'Por uzi Eterreton kun ĉi tiu komputilo, vi devas ebligi dratajn retojn';
 
   @override
   String get enableWired => 'Ebligi dratajn retojn';
@@ -189,7 +198,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get noWifiDevicesDetected => 'Neniu sendratreta aparato troviĝis';
 
   @override
-  String get wifiMustBeEnabled => 'Por uzi sendratajn retojn kun ĉi tiu komputilo, vi devas ebligi sendratajn retojn';
+  String get wifiMustBeEnabled =>
+      'Por uzi sendratajn retojn kun ĉi tiu komputilo, vi devas ebligi sendratajn retojn';
 
   @override
   String get enableWifi => 'Ebligi sendratajn retojn';
@@ -201,13 +211,15 @@ class AppLocalizationsEo extends AppLocalizations {
   String get updatesOtherSoftwarePageTitle => 'Programoj kaj ĝisdatigoj';
 
   @override
-  String get updatesOtherSoftwarePageDescription => 'Kiajn programojn vi volas instali por komenci?';
+  String get updatesOtherSoftwarePageDescription =>
+      'Kiajn programojn vi volas instali por komenci?';
 
   @override
   String get normalInstallationTitle => 'Ordinara instalado';
 
   @override
-  String get normalInstallationSubtitle => 'TTT-legilo, ilaĵoj, oficejaj programoj, ludoj kaj spektiloj.';
+  String get normalInstallationSubtitle =>
+      'TTT-legilo, ilaĵoj, oficejaj programoj, ludoj kaj spektiloj.';
 
   @override
   String get minimalInstallationTitle => 'Minimuma instalado';
@@ -219,22 +231,28 @@ class AppLocalizationsEo extends AppLocalizations {
   String get otherOptions => 'Aliaj opcioj';
 
   @override
-  String get installThirdPartyTitle => 'Instali triapartiajn programojn por grafiko kaj sendrataj retaj aparatoj, kune kun kromajn videaj dosierformoj';
+  String get installThirdPartyTitle =>
+      'Instali triapartiajn programojn por grafiko kaj sendrataj retaj aparatoj, kune kun kromajn videaj dosierformoj';
 
   @override
-  String get installThirdPartySubtitle => 'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.';
+  String get installThirdPartySubtitle =>
+      'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.';
 
   @override
-  String get installDriversTitle => 'Instali triapartiajn programojn por grafiko kaj sendrataj retaj aparatoj';
+  String get installDriversTitle =>
+      'Instali triapartiajn programojn por grafiko kaj sendrataj retaj aparatoj';
 
   @override
-  String get installDriversSubtitle => 'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Ili estas neliberaj.';
+  String get installDriversSubtitle =>
+      'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Ili estas neliberaj.';
 
   @override
-  String get installCodecsTitle => 'Elŝuti kaj instali programojn por kromaj videaj dosierformoj';
+  String get installCodecsTitle =>
+      'Elŝuti kaj instali programojn por kromaj videaj dosierformoj';
 
   @override
-  String get installCodecsSubtitle => 'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.';
+  String get installCodecsSubtitle =>
+      'Tiuj programoj estas disponeblaj laŭ permesiloj inkluzivitaj en siaj dokumentaroj. Kelkaj el ili estas neliberaj.';
 
   @override
   String onBatteryWarning(Object color) {
@@ -283,10 +301,12 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get installationTypeMultiOSDetected => 'Ĉi tiu komputilo aktuale portas instalaĵojn de pluraj mastrumaj sistemoj. Kion vi volas?';
+  String get installationTypeMultiOSDetected =>
+      'Ĉi tiu komputilo aktuale portas instalaĵojn de pluraj mastrumaj sistemoj. Kion vi volas?';
 
   @override
-  String get installationTypeNoOSDetected => 'Ĉi tiu komputilo aktuale portas neniun troveblan instalaĵon de mastruma sistemo. Kion vi volas?';
+  String get installationTypeNoOSDetected =>
+      'Ĉi tiu komputilo aktuale portas neniun troveblan instalaĵon de mastruma sistemo. Kion vi volas?';
 
   @override
   String installationTypeErase(Object DISTRO) {
@@ -319,7 +339,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get installationTypeLVMSelected => 'LVM elektita';
 
   @override
-  String get installationTypeLVMEncryptionSelected => 'LVM kaj ĉifrado elektitaj';
+  String get installationTypeLVMEncryptionSelected =>
+      'LVM kaj ĉifrado elektitaj';
 
   @override
   String installationTypeEncrypt(Object RELEASE) {
@@ -327,10 +348,12 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get installationTypeEncryptInfo => 'Vi elektos sekurigan ŝlosilon dum la sekva paŝo.';
+  String get installationTypeEncryptInfo =>
+      'Vi elektos sekurigan ŝlosilon dum la sekva paŝo.';
 
   @override
-  String get installationTypeZFS => 'EKSPERIMENTE: Forviŝi la diskon kaj uzi la dosiersistemon ZFS';
+  String get installationTypeZFS =>
+      'EKSPERIMENTE: Forviŝi la diskon kaj uzi la dosiersistemon ZFS';
 
   @override
   String get installationTypeZFSSelected => 'ZFS elektita';
@@ -366,7 +389,8 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get installationTypeAlongsideInfo => 'Dokumentoj, muziko kaj aliaj personaj dosieroj estas konservotaj. Vi povos elekti tiun mastruman sistemon, kiun vi volas, kiam la komputilo startas.';
+  String get installationTypeAlongsideInfo =>
+      'Dokumentoj, muziko kaj aliaj personaj dosieroj estas konservotaj. Vi povos elekti tiun mastruman sistemon, kiun vi volas, kiam la komputilo startas.';
 
   @override
   String get installationTypeManual => 'Neaŭtomata dispartigo';
@@ -391,7 +415,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get selectGuidedStorageInstallNow => 'Ekinstali';
 
   @override
-  String get installAlongsideSpaceDivider => 'Asignu diskospacon ŝovante la jenan dividilon:';
+  String get installAlongsideSpaceDivider =>
+      'Asignu diskospacon ŝovante la jenan dividilon:';
 
   @override
   String installAlongsideHiddenPartitions(Object num, Object url) {
@@ -420,13 +445,15 @@ class AppLocalizationsEo extends AppLocalizations {
   String get allocateDiskSpace => 'Neaŭtomata dispartigo';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSlash => 'Surmetingo devas komenciĝi per «/»';
+  String get allocateDiskSpaceInvalidMountPointSlash =>
+      'Surmetingo devas komenciĝi per «/»';
 
   @override
-  String get allocateDiskSpaceInvalidMountPointSpace => 'Surmetingo devas ne enhavi spaceton';
+  String get allocateDiskSpaceInvalidMountPointSpace =>
+      'Surmetingo devas ne enhavi spaceton';
 
   @override
-  String get startInstallingButtonText => 'Instali';
+  String get confirmInstallButton => 'Instali';
 
   @override
   String get diskHeadersDevice => 'Aparato';
@@ -459,7 +486,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get newPartitionTableConfirmationTitle => 'Nova malplena subdisko';
 
   @override
-  String get newPartitionTableConfirmationMessage => 'Kreado de nova subdiskotabelo sur la tuta aparato forviŝos ĉiujn ekzistantajn subdiskojn. Vi povos laŭvole malfari ĉi tiun operacion poste.';
+  String get newPartitionTableConfirmationMessage =>
+      'Kreado de nova subdiskotabelo sur la tuta aparato forviŝos ĉiujn ekzistantajn subdiskojn. Vi povos laŭvole malfari ĉi tiun operacion poste.';
 
   @override
   String get tooManyPrimaryPartitions => 'Tro da unuagradaj subdiskoj';
@@ -536,7 +564,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get identityHostnameLabel => 'Nomo de via komputilo';
 
   @override
-  String get identityHostnameInfo => 'La nomo, kiun ĝi uzas por alparoli aliajn komputilojn.';
+  String get identityHostnameInfo =>
+      'La nomo, kiun ĝi uzas por alparoli aliajn komputilojn.';
 
   @override
   String get identityHostnameRequired => 'Nomo de komputilo bezoniĝas';
@@ -560,13 +589,15 @@ class AppLocalizationsEo extends AppLocalizations {
   String get identityUsernameInUse => 'Tiu salutnomo jam ekzistas.';
 
   @override
-  String get identityUsernameSystemReserved => 'Tiu salutnomo estas rezervita por sistema uzado.';
+  String get identityUsernameSystemReserved =>
+      'Tiu salutnomo estas rezervita por sistema uzado.';
 
   @override
   String get identityUsernameTooLong => 'Tiu salutnomo estas tro longa.';
 
   @override
-  String get identityUsernameInvalidChars => 'Tiu salutnomo enhavas nevalidajn signojn.';
+  String get identityUsernameInvalidChars =>
+      'Tiu salutnomo enhavas nevalidajn signojn.';
 
   @override
   String get identityPasswordLabel => 'Elektu pasvorton';
@@ -587,53 +618,55 @@ class AppLocalizationsEo extends AppLocalizations {
   String get identityPasswordHide => 'Kaŝi';
 
   @override
-  String get writeChangesToDisk => 'Preta por instalado';
+  String get confirmPageTitle => 'Preta por instalado';
 
   @override
-  String get writeChangesFallbackSerial => 'disko';
+  String get confirmHeader =>
+      'Se vi daŭrigos, la ĉi-subaj ŝanĝoj estos skribitaj sur la diskojn. Vi povos permane fari pliajn ŝanĝojn.';
 
   @override
-  String get writeChangesDescription => 'Se vi daŭrigos, la ĉi-subaj ŝanĝoj estos skribitaj sur la diskojn. Vi povos permane fari pliajn ŝanĝojn.';
+  String get confirmDevicesTitle => 'Aparatoj';
 
   @override
-  String get writeChangesDevicesTitle => 'Aparatoj';
+  String get confirmPartitionsTitle => 'Subdiskoj';
 
   @override
-  String get writeChangesPartitionsTitle => 'Subdiskoj';
+  String get confirmPartitionTables =>
+      'La subdiskotabeloj de la jenaj aparatoj estas ŝanĝotaj:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'La subdiskotabeloj de la jenaj aparatoj estas ŝanĝotaj:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:';
+  String get confirmPartitionChanges =>
+      'La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(
+      Object sysname, Object oldsize, Object newsize) {
     return 'ŝanĝi la grandon de la subdisko <b>$sysname</b> de <b>$oldsize</b> al <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(
+      Object sysname, Object format, Object mount) {
     return 'la subdisko <b>$sysname</b> strukturota laŭ <b>$format</b> kaj uzota por <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'la subdisko <b>$sysname</b> strukturota laŭ <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'la subdisko <b>$sysname</b> uzota por <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'krei la subdiskon <b>$sysname</b>';
   }
 
@@ -641,7 +674,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get themePageTitle => 'Elektu vian etoson';
 
   @override
-  String get themePageHeader => 'Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.';
+  String get themePageHeader =>
+      'Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.';
 
   @override
   String get themeDark => 'Malhela';
@@ -715,7 +749,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get installationSlidesIncluded => 'Inkluzivitaj:';
 
   @override
-  String get installationSlidesWelcomeTitle => 'Rapida, senpaga, plena de novaj funkcioj';
+  String get installationSlidesWelcomeTitle =>
+      'Rapida, senpaga, plena de novaj funkcioj';
 
   @override
   String installationSlidesWelcomeHeader(Object DISTRO) {
@@ -728,7 +763,8 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSoftwareTitle => 'Ĉiom da programoj, kiom vi bezonas';
+  String get installationSlidesSoftwareTitle =>
+      'Ĉiom da programoj, kiom vi bezonas';
 
   @override
   String installationSlidesSoftwareBody(Object DISTRO) {
@@ -736,7 +772,8 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesDevelopmentTitle => 'Programu helpate de malfermitaj kodoj';
+  String get installationSlidesDevelopmentTitle =>
+      'Programu helpate de malfermitaj kodoj';
 
   @override
   String installationSlidesDevelopmentBody(Object DISTRO) {
@@ -803,10 +840,12 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String get installationSlidesSupportCommunity => 'Ĉe Ask Ubuntu troviĝas gamo da demandoj kaj respondoj, kaj ĉe Ubuntu Discourse estas gvidiloj kaj diskutejoj por kaj novaj kaj spertaj uzantoj.';
+  String get installationSlidesSupportCommunity =>
+      'Ĉe Ask Ubuntu troviĝas gamo da demandoj kaj respondoj, kaj ĉe Ubuntu Discourse estas gvidiloj kaj diskutejoj por kaj novaj kaj spertaj uzantoj.';
 
   @override
-  String get installationSlidesSupportEnterprise => 'Al entreprenoj, Canonical ofertas komercan subtenon por facile enkonduki kaj sekure administri Ubuntu.';
+  String get installationSlidesSupportEnterprise =>
+      'Al entreprenoj, Canonical ofertas komercan subtenon por facile enkonduki kaj sekure administri Ubuntu.';
 
   @override
   String get installationSlidesSupportResources => 'Utilaj rimedoj:';
@@ -815,7 +854,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get installationSlidesSupportDocumentation => 'Oficiala dokumentaro';
 
   @override
-  String get installationSlidesSupportUbuntuPro => 'Entreprene taŭga subteno ĉiutage ĉiuhore per Ubuntu Pro';
+  String get installationSlidesSupportUbuntuPro =>
+      'Entreprene taŭga subteno ĉiutage ĉiuhore per Ubuntu Pro';
 
   @override
   String get copyingFiles => 'Kopiante dosierojn…';
@@ -847,7 +887,8 @@ class AppLocalizationsEo extends AppLocalizations {
   String get activeDirectoryOption => 'Uzi Aktivan Dosierujon';
 
   @override
-  String get activeDirectoryInfo => 'Vi tajpos la domanion kaj aliajn detalojn dum la sekva paŝo.';
+  String get activeDirectoryInfo =>
+      'Vi tajpos la domanion kaj aliajn detalojn dum la sekva paŝo.';
 
   @override
   String get activeDirectoryTitle => 'Agordi Aktivan Dosierujon';
@@ -874,13 +915,15 @@ class AppLocalizationsEo extends AppLocalizations {
   String get activeDirectoryDomainEndDot => 'Finiĝas per punkto (.)';
 
   @override
-  String get activeDirectoryDomainStartHyphen => 'Komenciĝas per dividstreko (-)';
+  String get activeDirectoryDomainStartHyphen =>
+      'Komenciĝas per dividstreko (-)';
 
   @override
   String get activeDirectoryDomainEndHyphen => 'Finiĝas per dividstreko (-)';
 
   @override
-  String get activeDirectoryDomainMultipleDots => 'Enhavas plurajn sinsekvajn punktojn (..)';
+  String get activeDirectoryDomainMultipleDots =>
+      'Enhavas plurajn sinsekvajn punktojn (..)';
 
   @override
   String get activeDirectoryDomainNotFound => 'Domanio ne troviĝis';
@@ -901,8 +944,10 @@ class AppLocalizationsEo extends AppLocalizations {
   String get activeDirectoryPasswordEmpty => 'Deviga';
 
   @override
-  String get activeDirectoryErrorTitle => 'Eraro agordante konekton al Aktiva Dosierujo';
+  String get activeDirectoryErrorTitle =>
+      'Eraro agordante konekton al Aktiva Dosierujo';
 
   @override
-  String get activeDirectoryErrorMessage => 'Pardonu, Aktiva Dosierujo ne estas agordebla nuntempe. Post kiam via sistemo funkcias, vizitu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> por helpo.';
+  String get activeDirectoryErrorMessage =>
+      'Pardonu, Aktiva Dosierujo ne estas agordebla nuntempe. Post kiam via sistemo funkcias, vizitu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> por helpo.';
 }
