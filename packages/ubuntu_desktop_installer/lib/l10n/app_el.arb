@@ -7,15 +7,15 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "Δοκιμάστε το {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "Δοκιμάστε το {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Εγκατάσταση του {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Εγκατάσταση του {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -27,8 +27,8 @@
   "@keyboardPressKeyLabel": {},
   "rstTitle": "Απενεργοποίηση του RST",
   "@rstTitle": {},
-  "releaseNotesLabel": "Ίσως θέλετε να διαβάσετε τις <a href=\"{url}\">σημειώσεις έκδοσης</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "Ίσως θέλετε να διαβάσετε τις <a href=\"{url}\">σημειώσεις έκδοσης</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}

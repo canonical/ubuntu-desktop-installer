@@ -43,38 +43,38 @@ class AppLocalizationsNl extends AppLocalizations {
   String get localeHeader => 'Choose your language:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Uitproberen of installeren';
   }
 
   @override
-  String get repairInstallation => 'Repareer de installatie';
+  String get welcomeRepairOption => 'Repareer de installatie';
 
   @override
-  String get repairInstallationDescription => 'Reparatie zal opnieuw alles installeren, zonder de bestaande documenten of instellingen aan te passen.';
+  String get welcomeRepairDescription => 'Reparatie zal opnieuw alles installeren, zonder de bestaande documenten of instellingen aan te passen.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return '$RELEASE uitproberen';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'U kunt $RELEASE uitproberen, zonder dat er aanpassingen op de bestaande installatie wordt gemaakt.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return '$RELEASE installeren';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Installeer $RELEASE naast (of in plaats van) het huidige besturingssysteem, dit zal niet lang duren.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'De wijzigingen in deze uitgave kunt U <a href=\"$url\">hier, in het Engels, lezen</a>.';
   }
 

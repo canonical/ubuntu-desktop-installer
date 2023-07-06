@@ -26,8 +26,8 @@
   "@chooseSecurityKeyTitle": {},
   "localeHeader": "使用する言語を選択してください。",
   "@localeHeader": {},
-  "releaseNotesLabel": "<a href=\"{url}\">リリースノート</a> もご覧いただくとよいかもしれません。",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "<a href=\"{url}\">リリースノート</a> もご覧いただくとよいかもしれません。",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -63,8 +63,8 @@
       "color": {}
     }
   },
-  "repairInstallationDescription": "修復すると、ドキュメントや設定はそのままにして、インストールされているすべてのソフトウェアを再インストールします。",
-  "@repairInstallationDescription": {},
+  "welcomeRepairDescription": "修復すると、ドキュメントや設定はそのままにして、インストールされているすべてのソフトウェアを再インストールします。",
+  "@welcomeRepairDescription": {},
   "configureSecureBootSecurityKeyRequired": "セキュリティキーが必要です",
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "セキュリティキーが一致しません",
@@ -104,16 +104,16 @@
   "@appTitle": {},
   "changeButtonText": "変更",
   "@changeButtonText": {},
-  "repairInstallation": "修復インストール",
-  "@repairInstallation": {},
+  "welcomeRepairOption": "修復インストール",
+  "@welcomeRepairOption": {},
   "restartButtonText": "再起動",
   "@restartButtonText": {},
   "revertButtonText": "元に戻す",
   "@revertButtonText": {},
   "welcome": "ようこそ",
   "@welcome": {},
-  "tryOrInstallPageTitle": "{DISTRO}を試してみるか、インストールします",
-  "@tryOrInstallPageTitle": {},
+  "welcomePageTitle": "{DISTRO}を試してみるか、インストールします",
+  "@welcomePageTitle": {},
   "rstInstructions": "手順は、別のデバイスでQRコードをスキャンするか、<a href=\"https://{url}\">{url}</a>をご確認ください。",
   "@rstInstructions": {
     "type": "text",
@@ -158,29 +158,29 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "{RELEASE} を試してみる",
-  "@tryUbuntu": {
+  "welcomeTryOption": "{RELEASE} を試してみる",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "コンピュータに何の変更も加えることなく、{RELEASE} を試すことができます。",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "コンピュータに何の変更も加えることなく、{RELEASE} を試すことができます。",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "{RELEASE} をインストール",
-  "@installUbuntu": {
+  "welcomeInstallOption": "{RELEASE} をインストール",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "現在の OS と一緒に (または代わりに) {RELEASE} をインストールします。これはあまり時間がかからないはずです。",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "現在の OS と一緒に (または代わりに) {RELEASE} をインストールします。これはあまり時間がかからないはずです。",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

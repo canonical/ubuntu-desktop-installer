@@ -27,10 +27,10 @@
   "@restartButtonText": {},
   "welcome": "欢迎",
   "@welcome": {},
-  "tryOrInstallPageTitle": "试用或安装{DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "installUbuntu": "安装 {RELEASE}",
-  "@installUbuntu": {
+  "welcomePageTitle": "试用或安装{DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeInstallOption": "安装 {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -154,10 +154,10 @@
   },
   "restartIntoWindows": "重启进入 Windows",
   "@restartIntoWindows": {},
-  "repairInstallation": "修复安装",
-  "@repairInstallation": {},
-  "tryUbuntuDescription": "您可以在不对电脑做任何改动的情况下试用 {RELEASE}。",
-  "@tryUbuntuDescription": {
+  "welcomeRepairOption": "修复安装",
+  "@welcomeRepairOption": {},
+  "welcomeTryDescription": "您可以在不对电脑做任何改动的情况下试用 {RELEASE}。",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -180,8 +180,8 @@
   "@normalInstallationTitle": {},
   "installationTypeAlongsideInfo": "将保存文件、音乐和其他个人文件。每次启动时，您可以选择所需的操作系统。",
   "@installationTypeAlongsideInfo": {},
-  "repairInstallationDescription": "修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。",
-  "@repairInstallationDescription": {},
+  "welcomeRepairDescription": "修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。",
+  "@welcomeRepairDescription": {},
   "bitlockerDescription": "这台电脑使用了 Windows BitLocker 进行加密。\n在安装 Ubuntu 之前，您需要关闭 Windows 的 BitLocker 功能。",
   "@bitlockerDescription": {},
   "chooseSecurityKeyTitle": "安全密钥",
@@ -352,22 +352,22 @@
   "@diskHeadersMountPoint": {},
   "revertButtonText": "撤销",
   "@revertButtonText": {},
-  "tryUbuntu": "试用 {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "试用 {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "安装 {RELEASE}，并可选择保留或替换您当前的操作系统。这个过程应该不会花费太长时间。",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "安装 {RELEASE}，并可选择保留或替换您当前的操作系统。这个过程应该不会花费太长时间。",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "您可能想阅读<a href=\"{url}\"> 发行注记</a>。",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "您可能想阅读<a href=\"{url}\"> 发行注记</a>。",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}

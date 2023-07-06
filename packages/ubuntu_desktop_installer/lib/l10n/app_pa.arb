@@ -7,8 +7,8 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "{RELEASE}ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
-  "@tryUbuntu": {
+  "welcomeTryOption": "{RELEASE}ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -16,8 +16,8 @@
   },
   "welcome": "ਜੀ ਆਇਆਂ ਨੂੰ",
   "@welcome": {},
-  "releaseNotesLabel": "ਤੁਸੀਂ <a href=\"{url}\">ਰੀਲਿਜ਼ ਨੋਟਿਸ</a> ਪੜ੍ਹਨਾ ਚਾਹੋਗੇ।",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "ਤੁਸੀਂ <a href=\"{url}\">ਰੀਲਿਜ਼ ਨੋਟਿਸ</a> ਪੜ੍ਹਨਾ ਚਾਹੋਗੇ।",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}

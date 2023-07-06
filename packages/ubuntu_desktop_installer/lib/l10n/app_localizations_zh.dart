@@ -43,38 +43,38 @@ class AppLocalizationsZh extends AppLocalizations {
   String get localeHeader => '选择您的语言：';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return '试用或安装$DISTRO';
   }
 
   @override
-  String get repairInstallation => '修复安装';
+  String get welcomeRepairOption => '修复安装';
 
   @override
-  String get repairInstallationDescription => '修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。';
+  String get welcomeRepairDescription => '修复选项将在保留个人数据和设置的情况下重新安装所有已安装的软件。';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return '试用 $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return '您可以在不对电脑做任何改动的情况下试用 $RELEASE。';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return '安装 $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return '安装 $RELEASE，并可选择保留或替换您当前的操作系统。这个过程应该不会花费太长时间。';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return '您可能想阅读<a href=\"$url\"> 发行注记</a>。';
   }
 

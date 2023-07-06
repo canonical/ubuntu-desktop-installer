@@ -41,8 +41,8 @@ void main() {
     expect(model.option, equals(Option.none));
     expect(wasNotified, isFalse);
 
-    model.selectOption(Option.installUbuntu);
-    expect(model.option, equals(Option.installUbuntu));
+    model.selectOption(Option.welcomeInstallOption);
+    expect(model.option, equals(Option.welcomeInstallOption));
     expect(wasNotified, isTrue);
   });
 

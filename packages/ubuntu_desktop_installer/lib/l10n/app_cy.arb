@@ -115,22 +115,22 @@
   },
   "welcome": "Croeso",
   "@welcome": {},
-  "tryUbuntu": "Rhoi cynnig ar {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "Rhoi cynnig ar {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Gosod {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Gosod {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "Efallai hoffech ddarllen <a href=\"{url}\">nodiadau'r fersiwn</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "Efallai hoffech ddarllen <a href=\"{url}\">nodiadau'r fersiwn</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -156,8 +156,8 @@
   "@installThirdPartySubtitle": {},
   "localeHeader": "Dewiswch eich iaith:",
   "@localeHeader": {},
-  "installUbuntuDescription": "Gosod {RELEASE} ochr yn ochr â (neu yn lle) eich system weithredu gyfredol. Fydd hyn ddim yn cymryd yn rhy hir.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Gosod {RELEASE} ochr yn ochr â (neu yn lle) eich system weithredu gyfredol. Fydd hyn ddim yn cymryd yn rhy hir.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

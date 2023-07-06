@@ -43,38 +43,38 @@ class AppLocalizationsEu extends AppLocalizations {
   String get localeHeader => 'Aukeratu zure hizkuntza:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Probatu edo instalatu';
   }
 
   @override
-  String get repairInstallation => 'Konpondu instalazioa';
+  String get welcomeRepairOption => 'Konpondu instalazioa';
 
   @override
-  String get repairInstallationDescription => 'Konponketak instalatutako software guztia berrinstalatuko du dokumentuak edo ezarpenak ukitu gabe.';
+  String get welcomeRepairDescription => 'Konponketak instalatutako software guztia berrinstalatuko du dokumentuak edo ezarpenak ukitu gabe.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return '$RELEASE probatu';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return '$RELEASE probatu dezakezu zure ordenagailuan aldaketarik egin gabe.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return '$RELEASE instalatu';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return '$RELEASE instalatu zure sistemaren ondoan (edo ordez). Ez du asko iraungo.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return '<a href=\"$url\">kaleratze oharrak</a> irakurri ditzakezu.';
   }
 

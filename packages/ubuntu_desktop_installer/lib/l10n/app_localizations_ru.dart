@@ -43,38 +43,38 @@ class AppLocalizationsRu extends AppLocalizations {
   String get localeHeader => 'Выберите язык:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Попробовать или установить $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Исправить установку';
+  String get welcomeRepairOption => 'Исправить установку';
 
   @override
-  String get repairInstallationDescription => 'Исправление повторно устанавливает все установленные программы, не трогая документы и настройки.';
+  String get welcomeRepairDescription => 'Исправление повторно устанавливает все установленные программы, не трогая документы и настройки.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Попробовать $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Вы можете попробовать $RELEASE без каких-либо изменений на вашем компьютере.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Установить $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Установить $RELEASE рядом (или вместо) вашей текущей операционной системы. Это не займёт много времени.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Вы также можете прочитать <a href=\"$url\">заметки о выпуске</a>.';
   }
 

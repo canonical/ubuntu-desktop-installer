@@ -62,7 +62,7 @@ void main() {
   testWidgets('try ubuntu', (tester) async {
     final loadingModel = buildLoadingModel(delay: const Duration(seconds: 1));
     final localeModel = buildLocaleModel();
-    final welcomeModel = buildWelcomeModel(option: Option.tryUbuntu);
+    final welcomeModel = buildWelcomeModel(option: Option.welcomeTryOption);
 
     registerMockService<TelemetryService>(MockTelemetryService());
 
@@ -99,7 +99,7 @@ void main() {
   testWidgets('guided reformat', (tester) async {
     final loadingModel = buildLoadingModel();
     final localeModel = buildLocaleModel();
-    final welcomeModel = buildWelcomeModel(option: Option.installUbuntu);
+    final welcomeModel = buildWelcomeModel(option: Option.welcomeInstallOption);
     final rstModel = buildRstModel();
     final keyboardModel = buildKeyboardModel();
     final networkModel = buildNetworkModel();

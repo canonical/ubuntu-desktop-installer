@@ -35,7 +35,7 @@ class WelcomePage extends ConsumerWidget {
 
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(lang.tryOrInstallPageTitle(flavor.name)),
+        title: Text(lang.welcomePageTitle(flavor.name)),
       ),
       content: Column(
         children: [
@@ -43,26 +43,26 @@ class WelcomePage extends ConsumerWidget {
           SvgPicture.asset('assets/welcome/logo-${brightness.name}.svg'),
           const Spacer(),
           OptionButton(
-            value: Option.installUbuntu,
+            value: Option.welcomeInstallOption,
             groupValue: model.option,
-            title: Text(lang.installUbuntu(flavor.name)),
-            subtitle: Text(lang.installUbuntuDescription(flavor.name)),
+            title: Text(lang.welcomeInstallOption(flavor.name)),
+            subtitle: Text(lang.welcomeInstallDescription(flavor.name)),
             onChanged: (value) => model.selectOption(value!),
           ),
           const SizedBox(height: kWizardSpacing / 2),
           OptionButton(
-            value: Option.tryUbuntu,
+            value: Option.welcomeTryOption,
             groupValue: model.option,
-            title: Text(lang.tryUbuntu(flavor.name)),
-            subtitle: Text(lang.tryUbuntuDescription(flavor.name)),
+            title: Text(lang.welcomeTryOption(flavor.name)),
+            subtitle: Text(lang.welcomeTryDescription(flavor.name)),
             onChanged: (value) => model.selectOption(value!),
           ),
           // const SizedBox(height: kContentSpacing / 2),
           // OptionButton(
           //   value: Option.repairUbuntu,
           //   groupValue: model.option,
-          //   title: Text(lang.repairInstallation),
-          //   subtitle: Text(lang.repairInstallationDescription),
+          //   title: Text(lang.welcomeRepairOption),
+          //   subtitle: Text(lang.welcomeRepairDescription),
           //   onChanged: (value) => model.selectOption(value!),
           // ),
           const Spacer(flex: 3),
@@ -73,7 +73,8 @@ class WelcomePage extends ConsumerWidget {
             maintainState: true,
             child: Html(
               shrinkWrap: true,
-              data: lang.releaseNotesLabel(model.releaseNotesURL(locale)),
+              data:
+                  lang.welcomeReleaseNotesLabel(model.releaseNotesURL(locale)),
               style: {
                 'body': Style(margin: Margins.zero),
                 'a': Style(color: Theme.of(context).colorScheme.link),
@@ -88,12 +89,12 @@ class WelcomePage extends ConsumerWidget {
         trailing: [
           WizardButton(
             label: UbuntuLocalizations.of(context).nextLabel,
-            visible: model.option == Option.tryUbuntu,
+            visible: model.option == Option.welcomeTryOption,
             execute: YaruWindow.of(context).close,
           ),
           WizardButton.next(
             context,
-            visible: model.option != Option.tryUbuntu,
+            visible: model.option != Option.welcomeTryOption,
             enabled: model.option != Option.none,
             arguments: model.option,
           ),

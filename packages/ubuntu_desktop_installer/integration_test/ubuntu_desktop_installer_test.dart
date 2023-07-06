@@ -284,7 +284,7 @@ void main() {
     await testLocalePage(tester);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester, option: Option.installUbuntu);
+    await testWelcomePage(tester, option: Option.welcomeInstallOption);
     await tester.pumpAndSettle();
 
     await testKeyboardPage(tester);

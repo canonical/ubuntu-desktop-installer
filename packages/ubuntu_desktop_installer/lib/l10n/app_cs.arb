@@ -1,14 +1,14 @@
 {
   "@@locale": "cs",
-  "installUbuntuDescription": "Nainstalovat {RELEASE} vedle (nebo namísto) stávajícího operačního systému. Mělo by být hned hotové.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Nainstalovat {RELEASE} vedle (nebo namísto) stávajícího operačního systému. Mělo by být hned hotové.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Nainstalovat {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Nainstalovat {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
@@ -38,14 +38,14 @@
   "@revertButtonText": {},
   "welcome": "Vítejte",
   "@welcome": {},
-  "tryOrInstallPageTitle": "Vyzkoušet nebo nainstalovat {DISTRO}",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "Opravit instalaci",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "Oprava přeinstaluje veškerý doposud nainstalovaný software, ale zachová data a nastavení uživatele.",
-  "@repairInstallationDescription": {},
-  "releaseNotesLabel": "Nejspíš si budete chtít přečíst <a href=\"{url}\">poznámky k vydání</a>.",
-  "@releaseNotesLabel": {
+  "welcomePageTitle": "Vyzkoušet nebo nainstalovat {DISTRO}",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "Opravit instalaci",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "Oprava přeinstaluje veškerý doposud nainstalovaný software, ale zachová data a nastavení uživatele.",
+  "@welcomeRepairDescription": {},
+  "welcomeReleaseNotesLabel": "Nejspíš si budete chtít přečíst <a href=\"{url}\">poznámky k vydání</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
@@ -333,15 +333,15 @@
       "url": {}
     }
   },
-  "tryUbuntu": "Vyzkoušet {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "Vyzkoušet {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "Můžete si vyzkoušet {RELEASE} aniž by se v počítači cokoli měnilo.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "Můžete si vyzkoušet {RELEASE} aniž by se v počítači cokoli měnilo.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}

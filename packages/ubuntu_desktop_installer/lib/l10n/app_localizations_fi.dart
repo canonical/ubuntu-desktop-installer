@@ -43,38 +43,38 @@ class AppLocalizationsFi extends AppLocalizations {
   String get localeHeader => 'Valitse kieli:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Kokeile tai asenna ${DISTRO}a';
   }
 
   @override
-  String get repairInstallation => 'Korjaa asennus';
+  String get welcomeRepairOption => 'Korjaa asennus';
 
   @override
-  String get repairInstallationDescription => 'Korjaus asentaa kaikki ohjelmat uudelleen, asiakirjat ja asetukset säilytetään.';
+  String get welcomeRepairDescription => 'Korjaus asentaa kaikki ohjelmat uudelleen, asiakirjat ja asetukset säilytetään.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Kokeile ${RELEASE}a';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Voit kokeilla ${RELEASE}a tekemättä muutoksia tietokoneellesi.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Asenna $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Asenna $RELEASE nykyisen käyttöjärjestelmäsi rinnalle tai tilalle. Asentaminen ei kestä kauan.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Voit halutessasi lukea <a href=\"$url\">julkaisumuistion</a>.';
   }
 

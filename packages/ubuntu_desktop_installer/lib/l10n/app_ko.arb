@@ -4,12 +4,12 @@
   "@appTitle": {},
   "windowTitle": "{RELEASE} 설치",
   "@windowTitle": {},
-  "tryOrInstallPageTitle": "{DISTRO} 체험 또는 설치",
-  "@tryOrInstallPageTitle": {},
-  "repairInstallation": "설치 복구",
-  "@repairInstallation": {},
-  "installUbuntu": "{RELEASE} 설치",
-  "@installUbuntu": {},
+  "welcomePageTitle": "{DISTRO} 체험 또는 설치",
+  "@welcomePageTitle": {},
+  "welcomeRepairOption": "설치 복구",
+  "@welcomeRepairOption": {},
+  "welcomeInstallOption": "{RELEASE} 설치",
+  "@welcomeInstallOption": {},
   "keyboardTitle": "키보드 레이아웃",
   "@keyboardTitle": {},
   "rstInstructions": "절차를 알아보려면, 다른 장치로 QR코드를 스캔 하거나 이 페이지를 방문하십시오: <a href=\"https://{url}\">{url}</a>",
@@ -39,14 +39,14 @@
   "@selectGuidedStorageInstallNow": {},
   "revertButtonText": "되돌리기",
   "@revertButtonText": {},
-  "tryUbuntu": "{RELEASE} 체험하기",
-  "@tryUbuntu": {},
+  "welcomeTryOption": "{RELEASE} 체험하기",
+  "@welcomeTryOption": {},
   "installationTypeLVM": "새 {RELEASE} 설치에 LVM 사용",
   "@installationTypeLVM": {},
-  "repairInstallationDescription": "복구하면 문서나 설정을 건드리지 않고 설치된 모든 소프트웨어가 다시 설치됩니다.",
-  "@repairInstallationDescription": {},
-  "installUbuntuDescription": "{RELEASE}를 현재 운영체제와 함께 (또는 대신) 설치합니다. 오래 걸리지 않습니다.",
-  "@installUbuntuDescription": {},
+  "welcomeRepairDescription": "복구하면 문서나 설정을 건드리지 않고 설치된 모든 소프트웨어가 다시 설치됩니다.",
+  "@welcomeRepairDescription": {},
+  "welcomeInstallDescription": "{RELEASE}를 현재 운영체제와 함께 (또는 대신) 설치합니다. 오래 걸리지 않습니다.",
+  "@welcomeInstallDescription": {},
   "installationTypeAdvancedLabel": "고급 기능...",
   "@installationTypeAdvancedLabel": {},
   "installationTypeAdvancedTitle": "고급 기능",
@@ -90,15 +90,15 @@
   "@identityPasswordLabel": {},
   "identityConfirmPasswordLabel": "암호 확인",
   "@identityConfirmPasswordLabel": {},
-  "tryUbuntuDescription": "컴퓨터에서 변경사항을 만들지 않고 {RELEASE}를 체험하실 수 있습니다.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "컴퓨터에서 변경사항을 만들지 않고 {RELEASE}를 체험하실 수 있습니다.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "<a href=\"{url}\">릴리즈 노트</a>를 읽어보십시오.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "<a href=\"{url}\">릴리즈 노트</a>를 읽어보십시오.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}

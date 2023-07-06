@@ -43,38 +43,38 @@ class AppLocalizationsCs extends AppLocalizations {
   String get localeHeader => 'Zvolte svůj jazyk:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Vyzkoušet nebo nainstalovat $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Opravit instalaci';
+  String get welcomeRepairOption => 'Opravit instalaci';
 
   @override
-  String get repairInstallationDescription => 'Oprava přeinstaluje veškerý doposud nainstalovaný software, ale zachová data a nastavení uživatele.';
+  String get welcomeRepairDescription => 'Oprava přeinstaluje veškerý doposud nainstalovaný software, ale zachová data a nastavení uživatele.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Vyzkoušet $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Můžete si vyzkoušet $RELEASE aniž by se v počítači cokoli měnilo.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Nainstalovat $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Nainstalovat $RELEASE vedle (nebo namísto) stávajícího operačního systému. Mělo by být hned hotové.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Nejspíš si budete chtít přečíst <a href=\"$url\">poznámky k vydání</a>.';
   }
 

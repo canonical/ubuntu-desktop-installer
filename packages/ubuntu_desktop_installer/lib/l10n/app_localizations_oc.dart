@@ -43,38 +43,38 @@ class AppLocalizationsOc extends AppLocalizations {
   String get localeHeader => 'Causissètz vòstra lenga :';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Ensajar o installar $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Reparar l’installacion';
+  String get welcomeRepairOption => 'Reparar l’installacion';
 
   @override
-  String get repairInstallationDescription => 'La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.';
+  String get welcomeRepairDescription => 'La reparacion tornarà installar totes los logicials installats en servant los documents e los paramètres.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Ensajar $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Podètz ensajar $RELEASE sens aplicar cap de modificacion a vòstre ordenador.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Installar $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Installar $RELEASE a costat (o a la plaça) de vòstre sistèma operatiu actual. Aquò deuriá pas trigar.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Podètz tanben legir las <a href=\"$url\">nòtas de version</a>.';
   }
 

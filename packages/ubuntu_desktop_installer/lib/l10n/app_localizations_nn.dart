@@ -43,38 +43,38 @@ class AppLocalizationsNn extends AppLocalizations {
   String get localeHeader => 'Choose your language:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Try or install $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get welcomeRepairOption => 'Repair installation';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get welcomeRepairDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Prøv $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'You can try $RELEASE without making any changes to your computer.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Installer $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Installer \$$RELEASE ved sida av (eller i staden for) systemet du har no. Dette tek som regel ikkje lang tid.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Du kan ha nytte av å lesa <a href=\"$url\">utgjevingsmerknadane</a>.';
   }
 

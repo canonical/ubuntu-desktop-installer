@@ -48,7 +48,7 @@ Future<void> testWelcomePage(
 }) async {
   await tester.pumpUntilPage(WelcomePage);
   expect(
-    find.title((AppLocalizations l10n) => l10n.tryOrInstallPageTitle('Ubuntu')),
+    find.title((AppLocalizations l10n) => l10n.welcomePageTitle('Ubuntu')),
     findsOneWidget,
   );
 

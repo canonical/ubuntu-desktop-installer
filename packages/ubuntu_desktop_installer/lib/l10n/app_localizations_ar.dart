@@ -43,38 +43,38 @@ class AppLocalizationsAr extends AppLocalizations {
   String get localeHeader => 'اختر لغتك language:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'جرب او ثبت $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'تصليح المثبت';
+  String get welcomeRepairOption => 'تصليح المثبت';
 
   @override
-  String get repairInstallationDescription => 'سيؤدي الإصلاح إلى إعادة تثبيت جميع البرامج المثبتة دون لمس المستندات أو الإعدادات.';
+  String get welcomeRepairDescription => 'سيؤدي الإصلاح إلى إعادة تثبيت جميع البرامج المثبتة دون لمس المستندات أو الإعدادات.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'جرب $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'يمكنك تجربة $RELEASE بدون إجراء اي تغييرات لجهازك.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'ثبت $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'ثبت $RELEASE بجانب او بدلا من نظامك الحالي. لا ينبغي لهذا الإجراء اخذ الكثير من الوقت.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'قد ترغب في قراءة </a> ملاحظات الإصدار <a href=\"$url\">.';
   }
 

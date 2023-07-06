@@ -43,38 +43,38 @@ class AppLocalizationsCy extends AppLocalizations {
   String get localeHeader => 'Dewiswch eich iaith:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Try or install $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Repair installation';
+  String get welcomeRepairOption => 'Repair installation';
 
   @override
-  String get repairInstallationDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
+  String get welcomeRepairDescription => 'Repairing will reinstall all installed software without touching documents or settings.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Rhoi cynnig ar $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'You can try $RELEASE without making any changes to your computer.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Gosod $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Gosod $RELEASE ochr yn ochr â (neu yn lle) eich system weithredu gyfredol. Fydd hyn ddim yn cymryd yn rhy hir.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Efallai hoffech ddarllen <a href=\"$url\">nodiadau\'r fersiwn</a>.';
   }
 

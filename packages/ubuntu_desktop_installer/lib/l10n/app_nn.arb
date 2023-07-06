@@ -9,29 +9,29 @@
       "RELEASE": {}
     }
   },
-  "tryUbuntu": "Prøv {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeTryOption": "Prøv {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Installer {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Installer {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Installer ${RELEASE} ved sida av (eller i staden for) systemet du har no. Dette tek som regel ikkje lang tid.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Installer ${RELEASE} ved sida av (eller i staden for) systemet du har no. Dette tek som regel ikkje lang tid.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "Du kan ha nytte av å lesa <a href=\"{url}\">utgjevingsmerknadane</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "Du kan ha nytte av å lesa <a href=\"{url}\">utgjevingsmerknadane</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}

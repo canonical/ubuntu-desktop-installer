@@ -41,22 +41,22 @@ void main() {
 
     expect(find.button(tester.ulang.nextLabel), isDisabled);
 
-    await tester.tap(find.radio(Option.installUbuntu));
-    verify(model.selectOption(Option.installUbuntu)).called(1);
+    await tester.tap(find.radio(Option.welcomeInstallOption));
+    verify(model.selectOption(Option.welcomeInstallOption)).called(1);
 
-    await tester.tap(find.radio(Option.tryUbuntu));
-    verify(model.selectOption(Option.tryUbuntu)).called(1);
+    await tester.tap(find.radio(Option.welcomeTryOption));
+    verify(model.selectOption(Option.welcomeTryOption)).called(1);
   });
 
   testWidgets('install ubuntu', (tester) async {
-    final model = buildWelcomeModel(option: Option.installUbuntu);
+    final model = buildWelcomeModel(option: Option.welcomeInstallOption);
     await tester.pumpWidget(tester.buildApp((_) => buildWelcomePage(model)));
 
     expect(find.button(tester.ulang.nextLabel), isEnabled);
   });
 
   testWidgets('try ubuntu', (tester) async {
-    final model = buildWelcomeModel(option: Option.tryUbuntu);
+    final model = buildWelcomeModel(option: Option.welcomeTryOption);
     await tester.pumpWidget(tester.buildApp((_) => buildWelcomePage(model)));
 
     expect(find.button(tester.ulang.nextLabel), isEnabled);

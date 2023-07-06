@@ -43,38 +43,38 @@ class AppLocalizationsDa extends AppLocalizations {
   String get localeHeader => 'Vælg dit sprog:';
 
   @override
-  String tryOrInstallPageTitle(Object DISTRO) {
+  String welcomePageTitle(Object DISTRO) {
     return 'Prøv eller installér $DISTRO';
   }
 
   @override
-  String get repairInstallation => 'Reparér installation';
+  String get welcomeRepairOption => 'Reparér installation';
 
   @override
-  String get repairInstallationDescription => 'Reparation vil geninstallere al installeret programvare, uden at røre dokumenter eller indstillinger.';
+  String get welcomeRepairDescription => 'Reparation vil geninstallere al installeret programvare, uden at røre dokumenter eller indstillinger.';
 
   @override
-  String tryUbuntu(Object RELEASE) {
+  String welcomeTryOption(Object RELEASE) {
     return 'Prøv $RELEASE';
   }
 
   @override
-  String tryUbuntuDescription(Object RELEASE) {
+  String welcomeTryDescription(Object RELEASE) {
     return 'Du kan prøve $RELEASE, uden at foretage nogen ændringer, på din computer.';
   }
 
   @override
-  String installUbuntu(Object RELEASE) {
+  String welcomeInstallOption(Object RELEASE) {
     return 'Installér $RELEASE';
   }
 
   @override
-  String installUbuntuDescription(Object RELEASE) {
+  String welcomeInstallDescription(Object RELEASE) {
     return 'Installér $RELEASE, ved siden af (eller i stedet for) dit nuværende operativsystem. Dette burde ikke tage lang tid.';
   }
 
   @override
-  String releaseNotesLabel(Object url) {
+  String welcomeReleaseNotesLabel(Object url) {
     return 'Du kunne nok ønske at læse <a href=\"$url\">udgivelsesnoter</a>.';
   }
 

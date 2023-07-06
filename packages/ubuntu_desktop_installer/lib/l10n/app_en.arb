@@ -40,47 +40,47 @@
   },
   "localeHeader": "Choose your language:",
   "@localeHeader": {},
-  "tryOrInstallPageTitle": "Try or install {DISTRO}",
-  "@tryOrInstallPageTitle": {
+  "welcomePageTitle": "Try or install {DISTRO}",
+  "@welcomePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "repairInstallation": "Repair installation",
-  "@repairInstallation": {},
-  "repairInstallationDescription": "Repairing will reinstall all installed software without touching documents or settings.",
-  "@repairInstallationDescription": {},
-  "tryUbuntu": "Try {RELEASE}",
-  "@tryUbuntu": {
+  "welcomeRepairOption": "Repair installation",
+  "@welcomeRepairOption": {},
+  "welcomeRepairDescription": "Repairing will reinstall all installed software without touching documents or settings.",
+  "@welcomeRepairDescription": {},
+  "welcomeTryOption": "Try {RELEASE}",
+  "@welcomeTryOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "tryUbuntuDescription": "You can try {RELEASE} without making any changes to your computer.",
-  "@tryUbuntuDescription": {
+  "welcomeTryDescription": "You can try {RELEASE} without making any changes to your computer.",
+  "@welcomeTryDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntu": "Install {RELEASE}",
-  "@installUbuntu": {
+  "welcomeInstallOption": "Install {RELEASE}",
+  "@welcomeInstallOption": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "installUbuntuDescription": "Install {RELEASE} alongside (or instead of) your current operating system. This shouldn't take too long.",
-  "@installUbuntuDescription": {
+  "welcomeInstallDescription": "Install {RELEASE} alongside (or instead of) your current operating system. This shouldn't take too long.",
+  "@welcomeInstallDescription": {
     "type": "text",
     "placeholders": {
       "RELEASE": {}
     }
   },
-  "releaseNotesLabel": "You may wish to read the <a href=\"{url}\">release notes</a>.",
-  "@releaseNotesLabel": {
+  "welcomeReleaseNotesLabel": "You may wish to read the <a href=\"{url}\">release notes</a>.",
+  "@welcomeReleaseNotesLabel": {
     "type": "text",
     "placeholders": {
       "url": {}
