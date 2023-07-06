@@ -193,7 +193,7 @@ void main() {
     verify(securityKeyModel.init()).called(1); // skipped
     verify(confirmModel.init()).called(1);
 
-    await tester.tapButton(tester.lang.startInstallingButtonText);
+    await tester.tapButton(tester.lang.confirmInstallButton);
     await tester.pumpAndSettle();
     expect(find.byType(TimezonePage), findsOneWidget);
     verify(timezoneModel.init()).called(1);
@@ -362,7 +362,7 @@ void main() {
     expect(find.byType(ConfirmPage), findsOneWidget);
     verify(confirmModel.init()).called(1);
 
-    await tester.tapButton(tester.lang.startInstallingButtonText);
+    await tester.tapButton(tester.lang.confirmInstallButton);
     await tester.pumpAndSettle();
     expect(find.byType(IdentityPage), findsOneWidget);
     verify(identityModel.init()).called(1);

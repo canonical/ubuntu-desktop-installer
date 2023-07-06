@@ -426,9 +426,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Os pontos de montagem não podem conter espaços';
 
   @override
-  String get startInstallingButtonText => 'Instalar';
-
-  @override
   String get diskHeadersDevice => 'Dispositivo';
 
   @override
@@ -587,55 +584,55 @@ class AppLocalizationsPt extends AppLocalizations {
   String get identityPasswordHide => 'Ocultar';
 
   @override
-  String get writeChangesToDisk => 'Pronto a instalar';
+  String get confirmPageTitle => 'Pronto a instalar';
 
   @override
-  String get writeChangesFallbackSerial => 'disco';
+  String get confirmHeader => 'Se continuar, as alterações listadas abaixo serão gravadas nos discos. Será capaz de realizar alterações posteriores manualmente.';
 
   @override
-  String get writeChangesDescription => 'Se continuar, as alterações listadas abaixo serão gravadas nos discos. Será capaz de realizar alterações posteriores manualmente.';
+  String get confirmDevicesTitle => 'Dispositivos';
 
   @override
-  String get writeChangesDevicesTitle => 'Dispositivos';
+  String get confirmPartitionsTitle => 'Partições';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partições';
+  String get confirmPartitionTables => 'As tabelas de partições dos seguintes dispositivos foram alteradas:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'As tabelas de partições dos seguintes dispositivos foram alteradas:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'As seguintes alterações às partições serão aplicadas:';
+  String get confirmPartitionChanges => 'As seguintes alterações às partições serão aplicadas:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'partição <b>$sysname</b> redimensionada de <b>$oldsize</b> para <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'partição <b>$sysname</b> formatada como <b>$format</b> usada para <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'partição <b>$sysname</b> formatada como <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'partição <b>$sysname</b> usada para <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'partição <b>$sysname</b> criada';
   }
+
+  @override
+  String get confirmInstallButton => 'Instalar';
 
   @override
   String get themePageTitle => 'Escolha o seu tema';
@@ -1333,9 +1330,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Pontos de montagem não podem conter espaços';
 
   @override
-  String get startInstallingButtonText => 'Instalar';
-
-  @override
   String get diskHeadersDevice => 'Dispositivo';
 
   @override
@@ -1494,55 +1488,55 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get identityPasswordHide => 'Ocultar';
 
   @override
-  String get writeChangesToDisk => 'Pronto para instalar';
+  String get confirmPageTitle => 'Pronto para instalar';
 
   @override
-  String get writeChangesFallbackSerial => 'disco';
+  String get confirmHeader => 'Se você continuar, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.';
 
   @override
-  String get writeChangesDescription => 'Se você continuar, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.';
+  String get confirmDevicesTitle => 'Dispositivos';
 
   @override
-  String get writeChangesDevicesTitle => 'Dispositivos';
+  String get confirmPartitionsTitle => 'Partições';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partições';
+  String get confirmPartitionTables => 'As tabelas de partições dos seguintes dispositivos foram alteradas:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'As tabelas de partições dos seguintes dispositivos foram alteradas:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'As seguintes partições serão formatadas:';
+  String get confirmPartitionChanges => 'As seguintes partições serão formatadas:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'partição <b>$sysname</b> alterada de <b>$oldsize</b> para <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'partição <b>$sysname</b> formatada como <b>$format</b> usada para <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'partição <b>$sysname</b> formatada como <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'partição <b>$sysname</b> usada para <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'partição <b>$sysname</b> criada';
   }
+
+  @override
+  String get confirmInstallButton => 'Instalar';
 
   @override
   String get themePageTitle => 'Escolha seu tema';

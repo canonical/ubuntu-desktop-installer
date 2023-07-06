@@ -230,8 +230,8 @@
   },
   "installAlongsideFiles": "پرونده‌ها",
   "@installAlongsideFiles": {},
-  "startInstallingButtonText": "نصب",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "نصب",
+  "@confirmInstallButton": {},
   "freeDiskSpace": "فضای آزاد",
   "@freeDiskSpace": {},
   "partitionMountPointLabel": "نقطهٔ سوار کردن:",
@@ -242,24 +242,24 @@
   "@identityUsernameSystemReserved": {},
   "identityUsernameTooLong": "نام بیش از حد طولانی است.",
   "@identityUsernameTooLong": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionMounted": "افراز <b>{sysname}</b> برای <b>{mount}</b> استفاده شد",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "افراز <b>{sysname}</b> برای <b>{mount}</b> استفاده شد",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "افراز <b>{sysname}</b> ایجاد شد",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "افراز <b>{sysname}</b> ایجاد شد",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -362,8 +362,8 @@
   "@diskHeadersUsed": {},
   "identityPasswordMismatch": "گذرواژه‌ها یکسان نیستند",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "آمادهٔ نصب",
-  "@writeChangesToDisk": {},
+  "confirmPageTitle": "آمادهٔ نصب",
+  "@confirmPageTitle": {},
   "themePageTitle": "گزینش زمینه‌تان",
   "@themePageTitle": {},
   "chooseSecurityKeyTitle": "کلید امنیتی",
@@ -386,26 +386,22 @@
   "@identityRealNameRequired": {},
   "identityInvalidHostname": "نام رایانه نامعتبر است",
   "@identityInvalidHostname": {},
-  "writeChangesFallbackSerial": "دیسک",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesPartitionTablesHeader": "جدول افرازهای افزاره‌های زیر تغییر کرده‌اند:",
-  "@writeChangesPartitionTablesHeader": {},
+  "confirmPartitionTables": "جدول افرازهای افزاره‌های زیر تغییر کرده‌اند:",
+  "@confirmPartitionTables": {},
   "identityPasswordLabel": "گزینش گذرواژه",
   "@identityPasswordLabel": {},
   "identityPasswordRequired": "گذرواژه‌ای لازم است",
   "@identityPasswordRequired": {},
   "identityUsernameInvalidChars": "نام دارای نویسه‌های نامعتبر است.",
   "@identityUsernameInvalidChars": {},
-  "writeChangesPartitionsHeader": "تغییرهای افراز زیرمی‌خواهند اعمال شوند:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "تغییرهای افراز زیرمی‌خواهند اعمال شوند:",
+  "@confirmPartitionChanges": {},
   "identityConfirmPasswordLabel": "تأیید گذرواژه‌تان",
   "@identityConfirmPasswordLabel": {},
-  "writeChangesPartitionsTitle": "افزارها",
-  "@writeChangesPartitionsTitle": {},
-  "writeChangesPartitionFormatted": "افراز <b>{sysname}</b> به صورت <b>{format}</b> قالب‌بندی شد",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionsTitle": "افزارها",
+  "@confirmPartitionsTitle": {},
+  "confirmPartitionFormat": "افراز <b>{sysname}</b> به صورت <b>{format}</b> قالب‌بندی شد",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -416,8 +412,8 @@
   "@continueTesting": {},
   "installationCompleteTitle": "نصب کامل شد",
   "@installationCompleteTitle": {},
-  "writeChangesPartitionFormattedMounted": "افراز <b>{sysname}</b> به صورت <b>{format}</b> برای <b>{mount}</b> قالب‌بندی شد",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "افراز <b>{sysname}</b> به صورت <b>{format}</b> برای <b>{mount}</b> قالب‌بندی شد",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -662,8 +658,8 @@
   "@selectGuidedStorageInfoLabel": {},
   "installAlongsideSpaceDivider": "با کشیدن تقسیم‌کنندهٔ زیر، فضای گرداننده را تخصیص دهید:",
   "@installAlongsideSpaceDivider": {},
-  "writeChangesPartitionResized": "اندازهٔ افراز <b>{sysname}</b> از <b>{oldsize}</b> به <b>{newsize}</b> تغییر کرد",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "اندازهٔ افراز <b>{sysname}</b> از <b>{oldsize}</b> به <b>{newsize}</b> تغییر کرد",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -671,8 +667,8 @@
       "newsize": {}
     }
   },
-  "writeChangesDevicesTitle": "افزاره‌ها",
-  "@writeChangesDevicesTitle": {},
+  "confirmDevicesTitle": "افزاره‌ها",
+  "@confirmDevicesTitle": {},
   "bitlockerTitle": "بیت‌لاکر به کار افتاده",
   "@bitlockerTitle": {},
   "activeDirectoryInfo": "در گام بعدی دامنه و دیگر حزییات را وارد خواهید کرد.",

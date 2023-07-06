@@ -71,10 +71,6 @@
   "@installAlongsidePartition": {},
   "partitionSizeLabel": "Përmasa:",
   "@partitionSizeLabel": {},
-  "writeChangesFallbackSerial": "disku",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "installationTypeTitle": "Lloji i instalimit",
   "@installationTypeTitle": {},
   "installationTypeAdvancedLabel": "Opsionet e perpapruara...",
@@ -117,8 +113,8 @@
   "@bitlockerTitle": {},
   "themePageTitle": "Zgjidh pamjen tënde",
   "@themePageTitle": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},

@@ -426,9 +426,6 @@ class AppLocalizationsOc extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Los ponches de montatge pòdon pas conténer cap d’espaci';
 
   @override
-  String get startInstallingButtonText => 'Installar';
-
-  @override
   String get diskHeadersDevice => 'Disc';
 
   @override
@@ -587,55 +584,55 @@ class AppLocalizationsOc extends AppLocalizations {
   String get identityPasswordHide => 'Rescondre';
 
   @override
-  String get writeChangesToDisk => 'Lèst per installacion';
+  String get confirmPageTitle => 'Lèst per installacion';
 
   @override
-  String get writeChangesFallbackSerial => 'disc';
+  String get confirmHeader => 'Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.';
 
   @override
-  String get writeChangesDescription => 'Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.';
+  String get confirmDevicesTitle => 'Periferics';
 
   @override
-  String get writeChangesDevicesTitle => 'Periferics';
+  String get confirmPartitionsTitle => 'Particions';
 
   @override
-  String get writeChangesPartitionsTitle => 'Particions';
+  String get confirmPartitionTables => 'Las taulas de particions dels periferics seguents seràn modificadas :';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Las taulas de particions dels periferics seguents seràn modificadas :';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Las modificacions seguenta seràn aplicadas a las particions :';
+  String get confirmPartitionChanges => 'Las modificacions seguenta seràn aplicadas a las particions :';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'la particion <b>$sysname</b> redimensionada de <b>$oldsize</b> a <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'la particion <b>$sysname</b> formatada en <b>$format</b> utilizada per <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'la particion <b>$sysname</b> formatada en <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'la particion <b>$sysname</b> utilizada per <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'particion <b>$sysname</b> creada';
   }
+
+  @override
+  String get confirmInstallButton => 'Installar';
 
   @override
   String get themePageTitle => 'Causissètz vòstre tèma';

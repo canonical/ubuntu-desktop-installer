@@ -373,7 +373,7 @@ Future<void> testConfirmPage(
 }) async {
   await tester.pumpUntilPage(ConfirmPage);
   expect(
-    find.title((AppLocalizations l10n) => l10n.writeChangesToDisk),
+    find.title((AppLocalizations l10n) => l10n.confirmPageTitle),
     findsOneWidget,
   );
 
@@ -381,7 +381,7 @@ Future<void> testConfirmPage(
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.startInstallingButtonText);
+  await tester.tapButton(tester.lang.confirmInstallButton);
 }
 
 Future<void> testBitLockerPage(

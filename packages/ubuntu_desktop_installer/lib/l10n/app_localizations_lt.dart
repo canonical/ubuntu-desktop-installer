@@ -426,9 +426,6 @@ class AppLocalizationsLt extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Mount points cannot contain spaces';
 
   @override
-  String get startInstallingButtonText => 'Įdiegti';
-
-  @override
   String get diskHeadersDevice => 'Įrenginys';
 
   @override
@@ -587,55 +584,55 @@ class AppLocalizationsLt extends AppLocalizations {
   String get identityPasswordHide => 'Slėpti';
 
   @override
-  String get writeChangesToDisk => 'Pasiruošę įdiegti';
+  String get confirmPageTitle => 'Pasiruošę įdiegti';
 
   @override
-  String get writeChangesFallbackSerial => 'diskas';
+  String get confirmHeader => 'Jei tęsite, žemiau išvardyti pakeitimai bus įrašyti į diskus. Tolimesnius pakeitimus galėsite atlikti rankiniu būdu.';
 
   @override
-  String get writeChangesDescription => 'Jei tęsite, žemiau išvardyti pakeitimai bus įrašyti į diskus. Tolimesnius pakeitimus galėsite atlikti rankiniu būdu.';
+  String get confirmDevicesTitle => 'Įrenginiai';
 
   @override
-  String get writeChangesDevicesTitle => 'Įrenginiai';
+  String get confirmPartitionsTitle => 'Skaidiniai';
 
   @override
-  String get writeChangesPartitionsTitle => 'Skaidiniai';
+  String get confirmPartitionTables => 'Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Bus pritaikyti šie skaidinių pakeitimai:';
+  String get confirmPartitionChanges => 'Bus pritaikyti šie skaidinių pakeitimai:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'skaidinio <b>$sysname</b> dydis pakeistas iš <b>$oldsize</b> į <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'skaidinys <b>$sysname</b> formatuotas kaip <b>$format</b> ir panaudotas kaip <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'skaidinys <b>$sysname</b> formatuotas kaip <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'skaidinys <b>$sysname</b> panaudotas kaip <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'sukurtas skaidinys <b>$sysname</b>';
   }
+
+  @override
+  String get confirmInstallButton => 'Įdiegti';
 
   @override
   String get themePageTitle => 'Pasirinkite apipavidalinimą';

@@ -963,12 +963,6 @@ abstract class AppLocalizations {
   /// **'Mount points cannot contain spaces'**
   String get allocateDiskSpaceInvalidMountPointSpace;
 
-  /// No description provided for @startInstallingButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'Install'**
-  String get startInstallingButtonText;
-
   /// No description provided for @diskHeadersDevice.
   ///
   /// In en, this message translates to:
@@ -1281,83 +1275,83 @@ abstract class AppLocalizations {
   /// **'Hide'**
   String get identityPasswordHide;
 
-  /// No description provided for @writeChangesToDisk.
+  /// No description provided for @confirmPageTitle.
   ///
   /// In en, this message translates to:
   /// **'Ready to install'**
-  String get writeChangesToDisk;
+  String get confirmPageTitle;
 
-  /// Default display name for a disk without a serial (unlikely)
-  ///
-  /// In en, this message translates to:
-  /// **'disk'**
-  String get writeChangesFallbackSerial;
-
-  /// No description provided for @writeChangesDescription.
+  /// No description provided for @confirmHeader.
   ///
   /// In en, this message translates to:
   /// **'If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.'**
-  String get writeChangesDescription;
+  String get confirmHeader;
 
-  /// No description provided for @writeChangesDevicesTitle.
+  /// No description provided for @confirmDevicesTitle.
   ///
   /// In en, this message translates to:
   /// **'Devices'**
-  String get writeChangesDevicesTitle;
+  String get confirmDevicesTitle;
 
-  /// No description provided for @writeChangesPartitionsTitle.
+  /// No description provided for @confirmPartitionsTitle.
   ///
   /// In en, this message translates to:
   /// **'Partitions'**
-  String get writeChangesPartitionsTitle;
+  String get confirmPartitionsTitle;
 
-  /// No description provided for @writeChangesPartitionTablesHeader.
+  /// No description provided for @confirmPartitionTables.
   ///
   /// In en, this message translates to:
   /// **'The partition tables of the following devices are changed:'**
-  String get writeChangesPartitionTablesHeader;
+  String get confirmPartitionTables;
 
   /// An entry for a disk whose partition table is being changed
   ///
   /// In en, this message translates to:
   /// **'{serial} ({path})'**
-  String writeChangesPartitionTablesEntry(Object serial, Object path);
+  String confirmPartitionTable(Object serial, Object path);
 
-  /// No description provided for @writeChangesPartitionsHeader.
+  /// No description provided for @confirmPartitionChanges.
   ///
   /// In en, this message translates to:
   /// **'The following partition changes are going to be applied:'**
-  String get writeChangesPartitionsHeader;
+  String get confirmPartitionChanges;
 
   /// A resized partition entry
   ///
   /// In en, this message translates to:
   /// **'partition <b>{sysname}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>'**
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize);
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize);
 
   /// A formatted and mounted partition entry
   ///
   /// In en, this message translates to:
   /// **'partition <b>{sysname}</b> formatted as <b>{format}</b> used for <b>{mount}</b>'**
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount);
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount);
 
   /// A formatted partition entry
   ///
   /// In en, this message translates to:
   /// **'partition <b>{sysname}</b> formatted as <b>{format}</b>'**
-  String writeChangesPartitionFormatted(Object sysname, Object format);
+  String confirmPartitionFormat(Object sysname, Object format);
 
   /// A mounted partition entry
   ///
   /// In en, this message translates to:
   /// **'partition <b>{sysname}</b> used for <b>{mount}</b>'**
-  String writeChangesPartitionMounted(Object sysname, Object mount);
+  String confirmPartitionMount(Object sysname, Object mount);
 
   /// A created partition entry
   ///
   /// In en, this message translates to:
   /// **'partition <b>{sysname}</b> created'**
-  String writeChangesPartitionCreated(Object sysname);
+  String confirmPartitionCreate(Object sysname);
+
+  /// No description provided for @confirmInstallButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Install'**
+  String get confirmInstallButton;
 
   /// No description provided for @themePageTitle.
   ///

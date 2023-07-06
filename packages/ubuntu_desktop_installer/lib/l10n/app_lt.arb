@@ -266,8 +266,8 @@
   },
   "restartNow": "Paleisti iš naujo dabar",
   "@restartNow": {},
-  "startInstallingButtonText": "Įdiegti",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Įdiegti",
+  "@confirmInstallButton": {},
   "bitlockerTitle": "„BitLocker“ yra įjungta",
   "@bitlockerTitle": {},
   "installDriversTitle": "Įdiegti trečiųjų šalių programinę įrangą, skirtą grafikos ir belaidžio ryšio (Wi-Fi) aparatinei įrangai",
@@ -286,18 +286,18 @@
   "@identityPasswordShow": {},
   "identityPasswordHide": "Slėpti",
   "@identityPasswordHide": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Bus pritaikyti šie skaidinių pakeitimai:",
-  "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionResized": "skaidinio <b>{sysname}</b> dydis pakeistas iš <b>{oldsize}</b> į <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionChanges": "Bus pritaikyti šie skaidinių pakeitimai:",
+  "@confirmPartitionChanges": {},
+  "confirmPartitionResize": "skaidinio <b>{sysname}</b> dydis pakeistas iš <b>{oldsize}</b> į <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -357,10 +357,10 @@
   "@partitionLocationBeginning": {},
   "identityPasswordMismatch": "Slaptažodžiai nesutampa",
   "@identityPasswordMismatch": {},
-  "writeChangesPartitionTablesHeader": "Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionCreated": "sukurtas skaidinys <b>{sysname}</b>",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionTables": "Šių įrenginių skaidinių lentelėms yra atlikti pakeitimai:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionCreate": "sukurtas skaidinys <b>{sysname}</b>",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -417,10 +417,10 @@
   "@diskHeadersFormat": {},
   "newPartitionTableConfirmationTitle": "Naujas tuščias skaidinys",
   "@newPartitionTableConfirmationTitle": {},
-  "writeChangesToDisk": "Pasiruošę įdiegti",
-  "@writeChangesToDisk": {},
-  "writeChangesPartitionFormattedMounted": "skaidinys <b>{sysname}</b> formatuotas kaip <b>{format}</b> ir panaudotas kaip <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPageTitle": "Pasiruošę įdiegti",
+  "@confirmPageTitle": {},
+  "confirmPartitionFormatMount": "skaidinys <b>{sysname}</b> formatuotas kaip <b>{format}</b> ir panaudotas kaip <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -482,10 +482,6 @@
   "@partitionLimitReached": {},
   "partitionTypeLogical": "Loginis",
   "@partitionTypeLogical": {},
-  "writeChangesFallbackSerial": "diskas",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "partitionSizeLabel": "Dydis:",
   "@partitionSizeLabel": {},
   "partitionErase": "Formatuoti skaidinį",
@@ -508,24 +504,24 @@
   "@identityUsernameInvalidChars": {},
   "identityPasswordLabel": "Pasirinkite slaptažodį",
   "@identityPasswordLabel": {},
-  "writeChangesDescription": "Jei tęsite, žemiau išvardyti pakeitimai bus įrašyti į diskus. Tolimesnius pakeitimus galėsite atlikti rankiniu būdu.",
-  "@writeChangesDescription": {},
+  "confirmHeader": "Jei tęsite, žemiau išvardyti pakeitimai bus įrašyti į diskus. Tolimesnius pakeitimus galėsite atlikti rankiniu būdu.",
+  "@confirmHeader": {},
   "identityUsernameSystemReserved": "Šis vardas yra rezervuotas sisteminiam naudojimui.",
   "@identityUsernameSystemReserved": {},
   "identityUsernameInUse": "Šis naudotojo vardas jau yra.",
   "@identityUsernameInUse": {},
   "installationCompleteTitle": "Įdiegimas baigtas",
   "@installationCompleteTitle": {},
-  "writeChangesPartitionMounted": "skaidinys <b>{sysname}</b> panaudotas kaip <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "skaidinys <b>{sysname}</b> panaudotas kaip <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "skaidinys <b>{sysname}</b> formatuotas kaip <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "skaidinys <b>{sysname}</b> formatuotas kaip <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -594,10 +590,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Klaviatūros variantas:",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Įrenginiai",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Skaidiniai",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Įrenginiai",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Skaidiniai",
+  "@confirmPartitionsTitle": {},
   "installationSlidesTitle": "Jus sveikina {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",

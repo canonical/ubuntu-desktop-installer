@@ -426,9 +426,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Liitospisteet eivät voi sisältää välilyöntejä';
 
   @override
-  String get startInstallingButtonText => 'Asenna';
-
-  @override
   String get diskHeadersDevice => 'Laite';
 
   @override
@@ -587,55 +584,55 @@ class AppLocalizationsFi extends AppLocalizations {
   String get identityPasswordHide => 'Piilota';
 
   @override
-  String get writeChangesToDisk => 'Valmis asennukseen';
+  String get confirmPageTitle => 'Valmis asennukseen';
 
   @override
-  String get writeChangesFallbackSerial => 'levy';
+  String get confirmHeader => 'Jos jatkat, alla luetellut muutokset kirjoitetaan levyille. Muussa tapauksessa voit tehdä itse lisää muutoksia.';
 
   @override
-  String get writeChangesDescription => 'Jos jatkat, alla luetellut muutokset kirjoitetaan levyille. Muussa tapauksessa voit tehdä itse lisää muutoksia.';
+  String get confirmDevicesTitle => 'Laitteet';
 
   @override
-  String get writeChangesDevicesTitle => 'Laitteet';
+  String get confirmPartitionsTitle => 'Osiot';
 
   @override
-  String get writeChangesPartitionsTitle => 'Osiot';
+  String get confirmPartitionTables => 'Seuraavien laitteiden osiotauluja on muutettu:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Seuraavien laitteiden osiotauluja on muutettu:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Seuraavat osiomuutokset toteutetaan:';
+  String get confirmPartitionChanges => 'Seuraavat osiomuutokset toteutetaan:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'osion <b>$sysname</b> koko <b>$oldsize</b> muutettu kokoon <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'osio <b>$sysname</b> alustettu muotoon <b>$format</b> käytettäväksi liitospisteenä <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'osio <b>$sysname</b> alustettu muotoon <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'osio <b>$sysname</b> käytettäväksi liitospisteenä <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'osio <b>$sysname</b> luotu';
   }
+
+  @override
+  String get confirmInstallButton => 'Asenna';
 
   @override
   String get themePageTitle => 'Valitse teema';

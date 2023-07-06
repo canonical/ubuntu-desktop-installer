@@ -112,8 +112,8 @@
   "@installationTypeAdvancedTitle": {},
   "selectGuidedStorageInstallNow": "Instal·la ara",
   "@selectGuidedStorageInstallNow": {},
-  "startInstallingButtonText": "Comença a instal·lar",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Comença a instal·lar",
+  "@confirmInstallButton": {},
   "newPartitionTable": "Taula de particions nova",
   "@newPartitionTable": {},
   "partitionTypeLabel": "Tipus de partició nova:",
@@ -140,10 +140,6 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Les contrasenyes no coincideixen",
   "@identityPasswordMismatch": {},
-  "writeChangesFallbackSerial": "disc",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "shutdown": "Atura",
   "@shutdown": {},
   "installationCompleteTitle": "S'ha completat la instal·lació",
@@ -265,8 +261,8 @@
   "@installAlongsideAvailable": {},
   "themePageTitle": "Trieu l’aspecte",
   "@themePageTitle": {},
-  "writeChangesPartitionsHeader": "S’aplicaran els canvis següents a les particions:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "S’aplicaran els canvis següents a les particions:",
+  "@confirmPartitionChanges": {},
   "installationTypeDualOSDetected": "L’ordinador actualment duu els sistemes {os1} i {os2}. Què voleu fer?",
   "@installationTypeDualOSDetected": {
     "type": "text",

@@ -426,9 +426,6 @@ class AppLocalizationsSk extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Prípojné body nemôžu obsahovať medzery';
 
   @override
-  String get startInstallingButtonText => 'Inštalácia';
-
-  @override
   String get diskHeadersDevice => 'Zariadenie';
 
   @override
@@ -587,55 +584,55 @@ class AppLocalizationsSk extends AppLocalizations {
   String get identityPasswordHide => 'Skryť';
 
   @override
-  String get writeChangesToDisk => 'Pripravené na inštaláciu';
+  String get confirmPageTitle => 'Pripravené na inštaláciu';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get confirmHeader => 'Ak budete pokračovať, nižšie uvedené zmeny budú zapísané na disky. Ďalšie zmeny potom môžete urobiť ručne.';
 
   @override
-  String get writeChangesDescription => 'Ak budete pokračovať, nižšie uvedené zmeny budú zapísané na disky. Ďalšie zmeny potom môžete urobiť ručne.';
+  String get confirmDevicesTitle => 'Zariadenia';
 
   @override
-  String get writeChangesDevicesTitle => 'Zariadenia';
+  String get confirmPartitionsTitle => 'Oddiely';
 
   @override
-  String get writeChangesPartitionsTitle => 'Oddiely';
+  String get confirmPartitionTables => 'Budú zmenené tabuľky rozdelenia na oddiely nasledujúcich zariadení:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Budú zmenené tabuľky rozdelenia na oddiely nasledujúcich zariadení:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Budú vykonané nasledujúce zmeny na oddieloch:';
+  String get confirmPartitionChanges => 'Budú vykonané nasledujúce zmeny na oddieloch:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'veľkosť oddielu <b>$sysname</b> zmenené z <b>$oldsize</b> na <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'oddiel <b>$sysname</b> naformátovaný ako <b>$format</b> použitý pre <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'oddiel <b>$sysname</b> naformátovaný ako <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'oddiel <b>$sysname</b> použitý pre <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'oddiel <b>$sysname</b> vytvorený';
   }
+
+  @override
+  String get confirmInstallButton => 'Inštalácia';
 
   @override
   String get themePageTitle => 'Vyberte si motív vzhľadu';

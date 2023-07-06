@@ -426,9 +426,6 @@ class AppLocalizationsEo extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Surmetingo devas ne enhavi spaceton';
 
   @override
-  String get startInstallingButtonText => 'Instali';
-
-  @override
   String get diskHeadersDevice => 'Aparato';
 
   @override
@@ -587,55 +584,55 @@ class AppLocalizationsEo extends AppLocalizations {
   String get identityPasswordHide => 'Kaŝi';
 
   @override
-  String get writeChangesToDisk => 'Preta por instalado';
+  String get confirmPageTitle => 'Preta por instalado';
 
   @override
-  String get writeChangesFallbackSerial => 'disko';
+  String get confirmHeader => 'Se vi daŭrigos, la ĉi-subaj ŝanĝoj estos skribitaj sur la diskojn. Vi povos permane fari pliajn ŝanĝojn.';
 
   @override
-  String get writeChangesDescription => 'Se vi daŭrigos, la ĉi-subaj ŝanĝoj estos skribitaj sur la diskojn. Vi povos permane fari pliajn ŝanĝojn.';
+  String get confirmDevicesTitle => 'Aparatoj';
 
   @override
-  String get writeChangesDevicesTitle => 'Aparatoj';
+  String get confirmPartitionsTitle => 'Subdiskoj';
 
   @override
-  String get writeChangesPartitionsTitle => 'Subdiskoj';
+  String get confirmPartitionTables => 'La subdiskotabeloj de la jenaj aparatoj estas ŝanĝotaj:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'La subdiskotabeloj de la jenaj aparatoj estas ŝanĝotaj:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:';
+  String get confirmPartitionChanges => 'La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'ŝanĝi la grandon de la subdisko <b>$sysname</b> de <b>$oldsize</b> al <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'la subdisko <b>$sysname</b> strukturota laŭ <b>$format</b> kaj uzota por <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'la subdisko <b>$sysname</b> strukturota laŭ <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'la subdisko <b>$sysname</b> uzota por <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'krei la subdiskon <b>$sysname</b>';
   }
+
+  @override
+  String get confirmInstallButton => 'Instali';
 
   @override
   String get themePageTitle => 'Elektu vian etoson';

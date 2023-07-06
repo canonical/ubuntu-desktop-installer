@@ -153,8 +153,8 @@
   "@identityInvalidHostname": {},
   "partitionErase": "파티션 포맷",
   "@partitionErase": {},
-  "writeChangesPartitionsHeader": "다음과 같은 파티션 변경사항이 적용됩니다:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "다음과 같은 파티션 변경사항이 적용됩니다:",
+  "@confirmPartitionChanges": {},
   "identityPasswordRequired": "암호가 필요합니다",
   "@identityPasswordRequired": {},
   "identityUsernameLabel": "사용자 이름 선택",
@@ -165,10 +165,10 @@
   "@identityInvalidUsername": {},
   "identityPasswordMismatch": "암호가 일치하지 않습니다",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "설치 준비 완료",
-  "@writeChangesToDisk": {},
-  "writeChangesPartitionTablesHeader": "다음과 같은 장치의 파티션 테이블이 변경되었습니다:",
-  "@writeChangesPartitionTablesHeader": {},
+  "confirmPageTitle": "설치 준비 완료",
+  "@confirmPageTitle": {},
+  "confirmPartitionTables": "다음과 같은 장치의 파티션 테이블이 변경되었습니다:",
+  "@confirmPartitionTables": {},
   "bitlockerTitle": "BitLocker 활성화됨",
   "@bitlockerTitle": {},
   "bitlockerDescription": "이 컴퓨터는 Windows BitLocker 암호화를 사용합니다.\n계속하려면 Windows를 사용하여 여유 공간을 만들거나 '{option}'을 선택해야 합니다.",
@@ -295,8 +295,8 @@
   "@enableWifi": {},
   "connectButtonText": "연결하기",
   "@connectButtonText": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
@@ -311,8 +311,8 @@
   "@installationTypeManual": {},
   "selectGuidedStorageDropdownLabel": "드라이브 선택:",
   "@selectGuidedStorageDropdownLabel": {},
-  "startInstallingButtonText": "설치",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "설치",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "장치",
   "@diskHeadersDevice": {},
   "diskHeadersType": "형식",
@@ -345,8 +345,8 @@
   "@partitionLocationEnd": {},
   "partitionMountPointLabel": "마운트 위치:",
   "@partitionMountPointLabel": {},
-  "writeChangesDescription": "계속 하시면 아래 나열된 변경사항을 디스크에 기록됩니다. 수동으로 추가적인 변경사항을 만드실 수 있습니다.",
-  "@writeChangesDescription": {},
+  "confirmHeader": "계속 하시면 아래 나열된 변경사항을 디스크에 기록됩니다. 수동으로 추가적인 변경사항을 만드실 수 있습니다.",
+  "@confirmHeader": {},
   "identityRealNameRequired": "이름이 필요합니다",
   "@identityRealNameRequired": {},
   "shutdown": "시스템 종료",
@@ -385,10 +385,6 @@
   "@diskHeadersFormat": {},
   "partitionFormatLabel": "용도:",
   "@partitionFormatLabel": {},
-  "writeChangesFallbackSerial": "디스크",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "onBatteryWarning": "<font color=\"{color}\">경고:</font> 컴퓨터에 전원이 연결되어 있지 않습니다.",
   "@onBatteryWarning": {
     "type": "text",
@@ -489,8 +485,8 @@
   "@configuringSystem": {},
   "installingSystem": "시스템 설치 중…",
   "@installingSystem": {},
-  "writeChangesPartitionCreated": "파티션 <b>{sysname}</b> 생성됨",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "파티션 <b>{sysname}</b> 생성됨",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -498,8 +494,8 @@
   },
   "notEnoughDiskSpaceTitle": "공간이 부족합니다",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionFormatted": "파티션 <b>{sysname}</b>을(를) <b>{format}</b> (으)로 포맷함",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "파티션 <b>{sysname}</b>을(를) <b>{format}</b> (으)로 포맷함",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -510,8 +506,8 @@
   "@restartNow": {},
   "continueTesting": "체험 계속하기",
   "@continueTesting": {},
-  "writeChangesPartitionFormattedMounted": "파티션 <b>{sysname}</b> 을(를) <b>{format}</b>(으)로 포맷하고 <b>{mount}</b>에 마운트",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "파티션 <b>{sysname}</b> 을(를) <b>{format}</b>(으)로 포맷하고 <b>{mount}</b>에 마운트",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -519,8 +515,8 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionMounted": "파티션 <b>{sysname}</b>을(를) <b>{mount}</b>에 사용",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "파티션 <b>{sysname}</b>을(를) <b>{mount}</b>에 사용",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -542,8 +538,8 @@
       "RELEASE": {}
     }
   },
-  "writeChangesPartitionResized": "파티션 <b>{sysname}</b>의 크기를 <b>{oldsize}</b>에서 <b>{newsize}</b>로 조정",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "파티션 <b>{sysname}</b>의 크기를 <b>{oldsize}</b>에서 <b>{newsize}</b>로 조정",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -637,10 +633,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "키보드 유형:",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "장치",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "파티션",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "장치",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "파티션",
+  "@confirmPartitionsTitle": {},
   "installationSlidesAvailable": "이용가능:",
   "@installationSlidesAvailable": {},
   "localePageTitle": "{DISTRO}사용을 환영합니다",

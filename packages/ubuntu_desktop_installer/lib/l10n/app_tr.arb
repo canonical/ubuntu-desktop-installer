@@ -192,8 +192,8 @@
   "@identityPasswordLabel": {},
   "identityPasswordRequired": "Parola gereklidir",
   "@identityPasswordRequired": {},
-  "startInstallingButtonText": "Kur",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Kur",
+  "@confirmInstallButton": {},
   "localeHeader": "Dil seçin:",
   "@localeHeader": {},
   "diskHeadersSystem": "Sistem",
@@ -273,22 +273,18 @@
   "@partitionLocationBeginning": {},
   "partitionLocationEnd": "Bu alanın sonu",
   "@partitionLocationEnd": {},
-  "writeChangesToDisk": "Kuruluma hazır",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "disk",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Kuruluma hazır",
+  "@confirmPageTitle": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Aşağıdaki bölüm değişiklikleri uygulanacak:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "Aşağıdaki bölüm değişiklikleri uygulanacak:",
+  "@confirmPartitionChanges": {},
   "themePageTitle": "Temanızı seçin",
   "@themePageTitle": {},
   "themePageHeader": "Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.",
@@ -420,18 +416,18 @@
   },
   "partitionFormatLabel": "Kullanılan:",
   "@partitionFormatLabel": {},
-  "writeChangesPartitionMounted": "<b>{sysname}</b> bölümü <b>{mount}</b> için kullanıldı",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "<b>{sysname}</b> bölümü <b>{mount}</b> için kullanıldı",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionTablesHeader": "Aşağıdaki cihazların bölüm tabloları değiştirildi:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionResized": "<b>{sysname}</b> bölümü <b>{oldsize}</b> boyutundan <b>{newsize}</b> boyutuna yeniden boyutlandırıldı",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionTables": "Aşağıdaki cihazların bölüm tabloları değiştirildi:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionResize": "<b>{sysname}</b> bölümü <b>{oldsize}</b> boyutundan <b>{newsize}</b> boyutuna yeniden boyutlandırıldı",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -439,8 +435,8 @@
       "newsize": {}
     }
   },
-  "writeChangesDescription": "Devam ederseniz, aşağıda listelenen değişiklikler disklere yazılacak. Daha fazla değişikliği elle yapabileceksiniz.",
-  "@writeChangesDescription": {},
+  "confirmHeader": "Devam ederseniz, aşağıda listelenen değişiklikler disklere yazılacak. Daha fazla değişikliği elle yapabileceksiniz.",
+  "@confirmHeader": {},
   "copyingFiles": "Dosyalar kopyalanıyor…",
   "@copyingFiles": {},
   "installAlongsideFiles": "Dosyalar",
@@ -449,8 +445,8 @@
   "@installAlongsideAvailable": {},
   "identityUsernameTooLong": "Bu ad çok uzun.",
   "@identityUsernameTooLong": {},
-  "writeChangesPartitionFormatted": "<b>{sysname}</b> bölümü <b>{format}</b> olarak biçimlendirildi",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "<b>{sysname}</b> bölümü <b>{format}</b> olarak biçimlendirildi",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -475,8 +471,8 @@
       "product": {}
     }
   },
-  "writeChangesPartitionCreated": "<b>{sysname}</b> bölümü oluşturuldu",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "<b>{sysname}</b> bölümü oluşturuldu",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
@@ -505,8 +501,8 @@
       "os2": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "<b>{format} </b> biçimindeki <b>{sysname}</b> bölümü <b>{mount}</b> için kullanıldı",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "<b>{format} </b> biçimindeki <b>{sysname}</b> bölümü <b>{mount}</b> için kullanıldı",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -593,10 +589,10 @@
   "@keyboardVariantLabel": {},
   "identityHostnameTooLong": "Bu bilgisayar ismi çok uzun.",
   "@identityHostnameTooLong": {},
-  "writeChangesDevicesTitle": "Aygıtlar",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Disk bölümleri",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Aygıtlar",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Disk bölümleri",
+  "@confirmPartitionsTitle": {},
   "installationSlidesAvailable": "Mevcut:",
   "@installationSlidesAvailable": {},
   "installationSlidesWelcomeBody": "Geliştirici, içerik üreticisi, sanatçı, oyuncu ya da sistem yöneticisi olun fark etmez, {RELEASE} sürümünde verimliliğinizi arttıracak ve deneyiminizi iyileştirecek yeni araçlar bulacaksınız.",

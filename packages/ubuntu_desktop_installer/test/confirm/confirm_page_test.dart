@@ -101,28 +101,25 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildConfirmPage(model)));
 
     expect(
-        find.html(tester.lang
-            .writeChangesPartitionFormattedMounted('sdb3', 'ext3', '/mnt/3')),
-        findsOneWidget);
-    expect(
-        find.html(tester.lang.writeChangesPartitionFormatted('sdb4', 'ext4')),
-        findsOneWidget);
-    expect(
-        find.html(tester.lang.writeChangesPartitionMounted('sdb5', '/mnt/5')),
-        findsOneWidget);
-    expect(
         find.html(
-            tester.lang.writeChangesPartitionResized('sdb6', '123 B', '66 B')),
+            tester.lang.confirmPartitionFormatMount('sdb3', 'ext3', '/mnt/3')),
         findsOneWidget);
-    expect(find.html(tester.lang.writeChangesPartitionCreated('sdb7')),
+    expect(find.html(tester.lang.confirmPartitionFormat('sdb4', 'ext4')),
         findsOneWidget);
+    expect(find.html(tester.lang.confirmPartitionMount('sdb5', '/mnt/5')),
+        findsOneWidget);
+    expect(
+        find.html(tester.lang.confirmPartitionResize('sdb6', '123 B', '66 B')),
+        findsOneWidget);
+    expect(
+        find.html(tester.lang.confirmPartitionCreate('sdb7')), findsOneWidget);
   });
 
   testWidgets('starts installation', (tester) async {
     final model = buildConfirmModel();
     await tester.pumpWidget(tester.buildApp((_) => buildConfirmPage(model)));
 
-    final installButton = find.button(tester.lang.startInstallingButtonText);
+    final installButton = find.button(tester.lang.confirmInstallButton);
     expect(installButton, findsOneWidget);
 
     await tester.tap(installButton);

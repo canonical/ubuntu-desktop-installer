@@ -171,8 +171,8 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "Particionamento manual",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Instalar",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Instalar",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Dispositivo",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Tipo",
@@ -249,26 +249,22 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "As senhas não correspondem",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "Pronto para instalar",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "disco",
-  "@writeChangesFallbackSerial": {
-    "description": "Nome de exibição padrão para um disco sem o serial (improvável)"
-  },
-  "writeChangesDescription": "Se você continuar, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "As tabelas de partições dos seguintes dispositivos foram alteradas:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Pronto para instalar",
+  "@confirmPageTitle": {},
+  "confirmHeader": "Se você continuar, as mudanças listadas abaixo serão escritas nos discos. Você será capaz de realizar alterações posteriores manualmente.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "As tabelas de partições dos seguintes dispositivos foram alteradas:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "Um registro para um disco cuja tabela de partição está sendo alterada",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "As seguintes partições serão formatadas:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "As seguintes partições serão formatadas:",
+  "@confirmPartitionChanges": {},
   "themePageTitle": "Escolha seu tema",
   "@themePageTitle": {},
   "themePageHeader": "Você pode sempre alterar isso depois nas configurações de aparência.",
@@ -448,15 +444,15 @@
   "@installCodecsTitle": {},
   "installCodecsSubtitle": "Este software está sujeito aos termos de licença incluídos em sua documentação. Alguns são proprietários.",
   "@installCodecsSubtitle": {},
-  "writeChangesPartitionCreated": "partição <b>{sysname}</b> criada",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "partição <b>{sysname}</b> criada",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partição <b>{sysname}</b> formatada como <b>{format}</b> usada para <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "partição <b>{sysname}</b> formatada como <b>{format}</b> usada para <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -464,24 +460,24 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partição <b>{sysname}</b> formatada como <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "partição <b>{sysname}</b> formatada como <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partição <b>{sysname}</b> usada para <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "partição <b>{sysname}</b> usada para <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionResized": "partição <b>{sysname}</b> alterada de <b>{oldsize}</b> para <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "partição <b>{sysname}</b> alterada de <b>{oldsize}</b> para <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -617,10 +613,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Disposição de teclado:",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Dispositivos",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partições",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Dispositivos",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partições",
+  "@confirmPartitionsTitle": {},
   "installationSlidesTitle": "Boas-vindas ao {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",

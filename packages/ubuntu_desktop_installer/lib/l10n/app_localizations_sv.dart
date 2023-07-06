@@ -426,9 +426,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Monteringspunkter kan inte innehålla mellanslag';
 
   @override
-  String get startInstallingButtonText => 'Installera';
-
-  @override
   String get diskHeadersDevice => 'Enhet';
 
   @override
@@ -587,55 +584,55 @@ class AppLocalizationsSv extends AppLocalizations {
   String get identityPasswordHide => 'Dölj';
 
   @override
-  String get writeChangesToDisk => 'Redo att installera';
+  String get confirmPageTitle => 'Redo att installera';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get confirmHeader => 'Om du fortsätter kommer ändringarna nedan att skrivas till diskarna. Du kommer att kunna göra ytterligare ändringar manuellt.';
 
   @override
-  String get writeChangesDescription => 'Om du fortsätter kommer ändringarna nedan att skrivas till diskarna. Du kommer att kunna göra ytterligare ändringar manuellt.';
+  String get confirmDevicesTitle => 'Enheter';
 
   @override
-  String get writeChangesDevicesTitle => 'Enheter';
+  String get confirmPartitionsTitle => 'Partitioner';
 
   @override
-  String get writeChangesPartitionsTitle => 'Partitioner';
+  String get confirmPartitionTables => 'Följande enheters partitionstabeller är ändrade:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Följande enheters partitionstabeller är ändrade:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Följande partitionsändringar kommer att tillämpas:';
+  String get confirmPartitionChanges => 'Följande partitionsändringar kommer att tillämpas:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'partition <b>$sysname</b> storleksändrad från <b>$oldsize</b> till <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'partition <b>$sysname</b> formaterad som <b>$format</b> används för <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'partition <b>$sysname</b> formaterad som <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'partition <b>$sysname</b> används för <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'partition <b>$sysname</b> skapad';
   }
+
+  @override
+  String get confirmInstallButton => 'Installera';
 
   @override
   String get themePageTitle => 'Välj ditt tema';

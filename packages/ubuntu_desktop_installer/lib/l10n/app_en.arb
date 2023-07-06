@@ -393,8 +393,6 @@
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Mount points cannot contain spaces",
   "@allocateDiskSpaceInvalidMountPointSpace": {},
-  "startInstallingButtonText": "Install",
-  "@startInstallingButtonText": {},
   "diskHeadersDevice": "Device",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Type",
@@ -504,32 +502,28 @@
   "@identityPasswordShow": {},
   "identityPasswordHide": "Hide",
   "@identityPasswordHide": {},
-  "writeChangesToDisk": "Ready to install",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "disk",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesDescription": "If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.",
-  "@writeChangesDescription": {},
-  "writeChangesDevicesTitle": "Devices",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Partitions",
-  "@writeChangesPartitionsTitle": {},
-  "writeChangesPartitionTablesHeader": "The partition tables of the following devices are changed:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Ready to install",
+  "@confirmPageTitle": {},
+  "confirmHeader": "If you continue, the changes listed below will be written to the disks. You will be able to make further changes manually.",
+  "@confirmHeader": {},
+  "confirmDevicesTitle": "Devices",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Partitions",
+  "@confirmPartitionsTitle": {},
+  "confirmPartitionTables": "The partition tables of the following devices are changed:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "The following partition changes are going to be applied:",
-  "@writeChangesPartitionsHeader": {},
-  "writeChangesPartitionResized": "partition <b>{sysname}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionChanges": "The following partition changes are going to be applied:",
+  "@confirmPartitionChanges": {},
+  "confirmPartitionResize": "partition <b>{sysname}</b> resized from <b>{oldsize}</b> to <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -537,8 +531,8 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "partition <b>{sysname}</b> formatted as <b>{format}</b> used for <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "partition <b>{sysname}</b> formatted as <b>{format}</b> used for <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -546,29 +540,31 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "partition <b>{sysname}</b> formatted as <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "partition <b>{sysname}</b> formatted as <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "partition <b>{sysname}</b> used for <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "partition <b>{sysname}</b> used for <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionCreated": "partition <b>{sysname}</b> created",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "partition <b>{sysname}</b> created",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
+  "confirmInstallButton": "Install",
+  "@confirmInstallButton": {},
   "themePageTitle": "Choose your theme",
   "@themePageTitle": {},
   "themePageHeader": "You can always change this later in the appearance settings.",

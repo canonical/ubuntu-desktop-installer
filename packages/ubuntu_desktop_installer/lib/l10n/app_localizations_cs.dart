@@ -426,9 +426,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get allocateDiskSpaceInvalidMountPointSpace => 'Přípojné body nemohou obsahovat mezery';
 
   @override
-  String get startInstallingButtonText => 'Instalace';
-
-  @override
   String get diskHeadersDevice => 'Zařízení';
 
   @override
@@ -587,55 +584,55 @@ class AppLocalizationsCs extends AppLocalizations {
   String get identityPasswordHide => 'Skrýt';
 
   @override
-  String get writeChangesToDisk => 'Připraveno k instalaci';
+  String get confirmPageTitle => 'Připraveno k instalaci';
 
   @override
-  String get writeChangesFallbackSerial => 'disk';
+  String get confirmHeader => 'Pokud budete pokračovat, níže uvedené změny budou zapsány na disky. Další změny pak můžete udělat ručně.';
 
   @override
-  String get writeChangesDescription => 'Pokud budete pokračovat, níže uvedené změny budou zapsány na disky. Další změny pak můžete udělat ručně.';
+  String get confirmDevicesTitle => 'Zařízení';
 
   @override
-  String get writeChangesDevicesTitle => 'Zařízení';
+  String get confirmPartitionsTitle => 'Oddíly';
 
   @override
-  String get writeChangesPartitionsTitle => 'Oddíly';
+  String get confirmPartitionTables => 'Budou změněny tabulky rozdělení na oddíly následujících zařízení:';
 
   @override
-  String get writeChangesPartitionTablesHeader => 'Budou změněny tabulky rozdělení na oddíly následujících zařízení:';
-
-  @override
-  String writeChangesPartitionTablesEntry(Object serial, Object path) {
+  String confirmPartitionTable(Object serial, Object path) {
     return '$serial ($path)';
   }
 
   @override
-  String get writeChangesPartitionsHeader => 'Budou provedeny následující změny na oddílech:';
+  String get confirmPartitionChanges => 'Budou provedeny následující změny na oddílech:';
 
   @override
-  String writeChangesPartitionResized(Object sysname, Object oldsize, Object newsize) {
+  String confirmPartitionResize(Object sysname, Object oldsize, Object newsize) {
     return 'velikost oddílu <b>$sysname</b> změněna z <b>$oldsize</b> na <b>$newsize</b>';
   }
 
   @override
-  String writeChangesPartitionFormattedMounted(Object sysname, Object format, Object mount) {
+  String confirmPartitionFormatMount(Object sysname, Object format, Object mount) {
     return 'oddíl <b>$sysname</b> naformátovaný jako <b>$format</b> použit pro <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionFormatted(Object sysname, Object format) {
+  String confirmPartitionFormat(Object sysname, Object format) {
     return 'oddíl <b>$sysname</b> naformátován jako <b>$format</b>';
   }
 
   @override
-  String writeChangesPartitionMounted(Object sysname, Object mount) {
+  String confirmPartitionMount(Object sysname, Object mount) {
     return 'oddíl <b>$sysname</b> použit pro <b>$mount</b>';
   }
 
   @override
-  String writeChangesPartitionCreated(Object sysname) {
+  String confirmPartitionCreate(Object sysname) {
     return 'oddíl <b>$sysname</b> vytvořen';
   }
+
+  @override
+  String get confirmInstallButton => 'Instalace';
 
   @override
   String get themePageTitle => 'Zvolte si motiv vzhledu';

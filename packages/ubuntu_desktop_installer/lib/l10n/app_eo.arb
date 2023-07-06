@@ -8,8 +8,8 @@
   "@themeLight": {},
   "windowTitle": "Instali {RELEASE}",
   "@windowTitle": {},
-  "startInstallingButtonText": "Instali",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Instali",
+  "@confirmInstallButton": {},
   "diskHeadersSize": "Grando",
   "@diskHeadersSize": {},
   "installationCompleteTitle": "Instalado finiĝis",
@@ -277,32 +277,28 @@
   "@identityHostnameRequired": {},
   "identityInvalidHostname": "La nomo de komputilo ne validas",
   "@identityInvalidHostname": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesFallbackSerial": "disko",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
   "partitionMountPointLabel": "Surmetingo:",
   "@partitionMountPointLabel": {},
-  "writeChangesToDisk": "Preta por instalado",
-  "@writeChangesToDisk": {},
-  "writeChangesPartitionsHeader": "La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPageTitle": "Preta por instalado",
+  "@confirmPageTitle": {},
+  "confirmPartitionChanges": "La jenaj ŝanĝoj pri subdiskoj estas efektivigotaj:",
+  "@confirmPartitionChanges": {},
   "identityHostnameInfo": "La nomo, kiun ĝi uzas por alparoli aliajn komputilojn.",
   "@identityHostnameInfo": {},
   "partitionErase": "Restrukturi la subdiskon",
   "@partitionErase": {},
-  "writeChangesPartitionTablesHeader": "La subdiskotabeloj de la jenaj aparatoj estas ŝanĝotaj:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesDescription": "Se vi daŭrigos, la ĉi-subaj ŝanĝoj estos skribitaj sur la diskojn. Vi povos permane fari pliajn ŝanĝojn.",
-  "@writeChangesDescription": {},
+  "confirmPartitionTables": "La subdiskotabeloj de la jenaj aparatoj estas ŝanĝotaj:",
+  "@confirmPartitionTables": {},
+  "confirmHeader": "Se vi daŭrigos, la ĉi-subaj ŝanĝoj estos skribitaj sur la diskojn. Vi povos permane fari pliajn ŝanĝojn.",
+  "@confirmHeader": {},
   "themePageTitle": "Elektu vian etoson",
   "@themePageTitle": {},
   "themePageHeader": "Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.",
@@ -447,15 +443,15 @@
   "@configuringSystem": {},
   "quitButtonText": "Ĉesi instaladon",
   "@quitButtonText": {},
-  "writeChangesPartitionCreated": "krei la subdiskon <b>{sysname}</b>",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "krei la subdiskon <b>{sysname}</b>",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b> kaj uzota por <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b> kaj uzota por <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -465,8 +461,8 @@
   },
   "notEnoughDiskSpaceTitle": "Ne sufiĉas spaco",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "ŝanĝi la grandon de la subdisko <b>{sysname}</b> de <b>{oldsize}</b> al <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "ŝanĝi la grandon de la subdisko <b>{sysname}</b> de <b>{oldsize}</b> al <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -474,16 +470,16 @@
       "newsize": {}
     }
   },
-  "writeChangesPartitionMounted": "la subdisko <b>{sysname}</b> uzota por <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "la subdisko <b>{sysname}</b> uzota por <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "la subdisko <b>{sysname}</b> strukturota laŭ <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -582,10 +578,10 @@
   "@keyboardVariantLabel": {},
   "keyboardDetectButton": "Identigi",
   "@keyboardDetectButton": {},
-  "writeChangesDevicesTitle": "Aparatoj",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Subdiskoj",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Aparatoj",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Subdiskoj",
+  "@confirmPartitionsTitle": {},
   "installationSlidesDevelopmentTitle": "Programu helpate de malfermitaj kodoj",
   "@installationSlidesDevelopmentTitle": {},
   "installationSlidesWelcomeHeader": "La nova versio de {DISTRO} igas komputadon pli facila ol iam ajn.",

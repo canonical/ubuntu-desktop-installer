@@ -76,8 +76,8 @@
   "@installThirdPartySubtitle": {},
   "allocateDiskSpace": "Particionament manual",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "Installar",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "Installar",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "Disc",
   "@diskHeadersDevice": {},
   "diskHeadersType": "Tipe",
@@ -156,26 +156,22 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Los senhals correspondon pas",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "Lèst per installacion",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "disc",
-  "@writeChangesFallbackSerial": {
-    "description": "Nom d’afichatge per defaut per un disc sens numèro de seria (pauc probable)"
-  },
-  "writeChangesDescription": "Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "Las taulas de particions dels periferics seguents seràn modificadas :",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "Lèst per installacion",
+  "@confirmPageTitle": {},
+  "confirmHeader": "Se contunhatz, las modificacions çai-jos seràn escritas suls disques. Poiretz realizar de cambiaments mai tard a la man.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "Las taulas de particions dels periferics seguents seràn modificadas :",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "Una entrada per un disc que sa particion es a èsser modificada",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "Las modificacions seguenta seràn aplicadas a las particions :",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "Las modificacions seguenta seràn aplicadas a las particions :",
+  "@confirmPartitionChanges": {},
   "themePageTitle": "Causissètz vòstre tèma",
   "@themePageTitle": {},
   "themePageHeader": "La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.",
@@ -443,8 +439,8 @@
   "@installingSystem": {},
   "configuringSystem": "Configuracion del sistèma…",
   "@configuringSystem": {},
-  "writeChangesPartitionResized": "la particion <b>{sysname}</b> redimensionada de <b>{oldsize}</b> a <b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "la particion <b>{sysname}</b> redimensionada de <b>{oldsize}</b> a <b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -460,23 +456,23 @@
       "url": {}
     }
   },
-  "writeChangesPartitionCreated": "particion <b>{sysname}</b> creada",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "particion <b>{sysname}</b> creada",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionMounted": "la particion <b>{sysname}</b> utilizada per <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "la particion <b>{sysname}</b> utilizada per <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
       "mount": {}
     }
   },
-  "writeChangesPartitionFormattedMounted": "la particion <b>{sysname}</b> formatada en <b>{format}</b> utilizada per <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "la particion <b>{sysname}</b> formatada en <b>{format}</b> utilizada per <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -484,8 +480,8 @@
       "mount": {}
     }
   },
-  "writeChangesPartitionFormatted": "la particion <b>{sysname}</b> formatada en <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "la particion <b>{sysname}</b> formatada en <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
@@ -589,10 +585,10 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "Varianta del clavièr :",
   "@keyboardVariantLabel": {},
-  "writeChangesDevicesTitle": "Periferics",
-  "@writeChangesDevicesTitle": {},
-  "writeChangesPartitionsTitle": "Particions",
-  "@writeChangesPartitionsTitle": {},
+  "confirmDevicesTitle": "Periferics",
+  "@confirmDevicesTitle": {},
+  "confirmPartitionsTitle": "Particions",
+  "@confirmPartitionsTitle": {},
   "installationSlidesAvailable": "Disponible :",
   "@installationSlidesAvailable": {},
   "installationSlidesIncluded": "Inclús :",

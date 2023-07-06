@@ -239,8 +239,8 @@
   "@selectGuidedStorageInstallNow": {},
   "allocateDiskSpace": "חלוקת מחיצות ידנית",
   "@allocateDiskSpace": {},
-  "startInstallingButtonText": "התקנה",
-  "@startInstallingButtonText": {},
+  "confirmInstallButton": "התקנה",
+  "@confirmInstallButton": {},
   "diskHeadersDevice": "התקן",
   "@diskHeadersDevice": {},
   "diskHeadersType": "סוג",
@@ -307,26 +307,22 @@
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "הסיסמאות סותרות זו את זו",
   "@identityPasswordMismatch": {},
-  "writeChangesToDisk": "סיימנו להתכונן להתקנה",
-  "@writeChangesToDisk": {},
-  "writeChangesFallbackSerial": "כונן",
-  "@writeChangesFallbackSerial": {
-    "description": "Default display name for a disk without a serial (unlikely)"
-  },
-  "writeChangesDescription": "בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.",
-  "@writeChangesDescription": {},
-  "writeChangesPartitionTablesHeader": "טבלאות המחיצות של ההתקנים הבאים נערכו:",
-  "@writeChangesPartitionTablesHeader": {},
-  "writeChangesPartitionTablesEntry": "{serial} ({path})",
-  "@writeChangesPartitionTablesEntry": {
+  "confirmPageTitle": "סיימנו להתכונן להתקנה",
+  "@confirmPageTitle": {},
+  "confirmHeader": "בחירה להמשיך בתהליך תוביל לכך שהשינויים שמופיעים להלן ייכתבו לכונן. אפשר לערוך שינויים נוספים ידנית בהמשך.",
+  "@confirmHeader": {},
+  "confirmPartitionTables": "טבלאות המחיצות של ההתקנים הבאים נערכו:",
+  "@confirmPartitionTables": {},
+  "confirmPartitionTable": "{serial} ({path})",
+  "@confirmPartitionTable": {
     "description": "An entry for a disk whose partition table is being changed",
     "placeholders": {
       "serial": {},
       "path": {}
     }
   },
-  "writeChangesPartitionsHeader": "השינויים הבאים יחולו על המחיצות:",
-  "@writeChangesPartitionsHeader": {},
+  "confirmPartitionChanges": "השינויים הבאים יחולו על המחיצות:",
+  "@confirmPartitionChanges": {},
   "connectToInternetPageTitle": "התחברות לרשת",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "חיבור המחשב הזה לאינטרנט יסייע לאובונטו להתקין תכניות נוספות חיוניות ויסייע בבחירת אזור הזמן שלך.\n\nאפשר להתחבר בכבל רשת או לבחור רשת אלחוטית",
@@ -441,8 +437,8 @@
   },
   "installAlongsideAvailable": "זמין:",
   "@installAlongsideAvailable": {},
-  "writeChangesPartitionFormattedMounted": "מחיצה <b>{sysname}</b> פורמטה כ־<b>{format}</b> ומשמשת עבור <b>{mount}</b>",
-  "@writeChangesPartitionFormattedMounted": {
+  "confirmPartitionFormatMount": "מחיצה <b>{sysname}</b> פורמטה כ־<b>{format}</b> ומשמשת עבור <b>{mount}</b>",
+  "@confirmPartitionFormatMount": {
     "description": "A formatted and mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -452,8 +448,8 @@
   },
   "notEnoughDiskSpaceTitle": "אין מספיק מקום",
   "@notEnoughDiskSpaceTitle": {},
-  "writeChangesPartitionResized": "הגודל של מחיצה <b>{sysname}</b> ישתנה מ־<b>{oldsize}</b> ל־<b>{newsize}</b>",
-  "@writeChangesPartitionResized": {
+  "confirmPartitionResize": "הגודל של מחיצה <b>{sysname}</b> ישתנה מ־<b>{oldsize}</b> ל־<b>{newsize}</b>",
+  "@confirmPartitionResize": {
     "description": "A resized partition entry",
     "placeholders": {
       "sysname": {},
@@ -463,23 +459,23 @@
   },
   "quitButtonText": "יציאה מההתקנה",
   "@quitButtonText": {},
-  "writeChangesPartitionCreated": "המחיצה <b>{sysname}</b> נוצרה",
-  "@writeChangesPartitionCreated": {
+  "confirmPartitionCreate": "המחיצה <b>{sysname}</b> נוצרה",
+  "@confirmPartitionCreate": {
     "description": "A created partition entry",
     "placeholders": {
       "sysname": {}
     }
   },
-  "writeChangesPartitionFormatted": "מחיצה <b>{sysname}</b> פורמטה בתור <b>{format}</b>",
-  "@writeChangesPartitionFormatted": {
+  "confirmPartitionFormat": "מחיצה <b>{sysname}</b> פורמטה בתור <b>{format}</b>",
+  "@confirmPartitionFormat": {
     "description": "A formatted partition entry",
     "placeholders": {
       "sysname": {},
       "format": {}
     }
   },
-  "writeChangesPartitionMounted": "מחיצה <b>{sysname}</b> תשמש עבור <b>{mount}</b>",
-  "@writeChangesPartitionMounted": {
+  "confirmPartitionMount": "מחיצה <b>{sysname}</b> תשמש עבור <b>{mount}</b>",
+  "@confirmPartitionMount": {
     "description": "A mounted partition entry",
     "placeholders": {
       "sysname": {},
@@ -582,8 +578,8 @@
   "@keyboardDetectButton": {},
   "keyboardVariantLabel": "הגוון מקלדת:",
   "@keyboardVariantLabel": {},
-  "writeChangesPartitionsTitle": "מחיצות",
-  "@writeChangesPartitionsTitle": {},
+  "confirmPartitionsTitle": "מחיצות",
+  "@confirmPartitionsTitle": {},
   "notEnoughDiskSpaceUbuntu": "אין מספיק מקום להתקין את {DISTRO}",
   "@notEnoughDiskSpaceUbuntu": {
     "type": "text",
@@ -595,8 +591,8 @@
   "@notEnoughDiskSpaceAvailable": {},
   "notEnoughDiskSpaceRequired": "נחוץ:",
   "@notEnoughDiskSpaceRequired": {},
-  "writeChangesDevicesTitle": "התקנים",
-  "@writeChangesDevicesTitle": {},
+  "confirmDevicesTitle": "התקנים",
+  "@confirmDevicesTitle": {},
   "installationSlidesSoftwareTitle": "כל היישומים שדרושים לך",
   "@installationSlidesSoftwareTitle": {},
   "installationSlidesDevelopmentTitle": "כלי פיתוח קוד פתוח מהשורה הראשונה",
