@@ -1317,6 +1317,12 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get allocateDiskSpace => 'Particionamento manual';
 
   @override
+  String get allocateDiskSpaceInvalidMountPointSlash => 'Pontos de montagem devem começar com \"/\"';
+
+  @override
+  String get allocateDiskSpaceInvalidMountPointSpace => 'Pontos de montagem não podem conter espaços';
+
+  @override
   String get startInstallingButtonText => 'Instalar';
 
   @override
@@ -1393,6 +1399,11 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get partitionFormatNone => 'Deixar sem formatação';
+
+  @override
+  String partitionFormatKeep(Object format) {
+    return 'Deixe formatado como $format';
+  }
 
   @override
   String get partitionErase => 'Formatar a partição';
@@ -1681,7 +1692,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get installationSlidesAccessibilityLanguages => 'Suporte a idioma';
 
   @override
-  String get installationSlidesSupportTitle => 'Ajuda e Suporte';
+  String get installationSlidesSupportTitle => 'Ajuda e suporte';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {

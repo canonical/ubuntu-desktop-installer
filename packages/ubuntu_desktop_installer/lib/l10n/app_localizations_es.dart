@@ -790,7 +790,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get installationSlidesAccessibilityLanguages => 'Compatibilidad lingüística';
 
   @override
-  String get installationSlidesSupportTitle => 'Ayuda y asistencia';
+  String get installationSlidesSupportTitle => 'Ayuda y soporte';
 
   @override
   String installationSlidesSupportHeader(Object DISTRO) {
