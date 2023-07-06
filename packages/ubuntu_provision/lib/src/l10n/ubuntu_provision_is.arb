@@ -1,1 +1,10 @@
-{}
+{
+  "keyboardTitle": "Lyklaborðsútfærsla",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Veldu lyklaborðsútfærslu:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Innsláðu hér til að prófa lyklaborðið þitt",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Greina Sjálfvirkt Lyklaborðsútfærslu",
+  "@keyboardDetectTitle": {}
+}

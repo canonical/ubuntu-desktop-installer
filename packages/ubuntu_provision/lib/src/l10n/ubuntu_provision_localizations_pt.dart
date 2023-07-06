@@ -12,6 +12,30 @@ class UbuntuProvisionLocalizationsPt extends UbuntuProvisionLocalizations {
 
   @override
   String get timezoneTimezoneLabel => 'Fuso horário';
+
+  @override
+  String get keyboardTitle => 'Disposição do teclado';
+
+  @override
+  String get keyboardHeader => 'Escolha a disposição do seu teclado:';
+
+  @override
+  String get keyboardTestHint => 'Digite aqui para testar o seu teclado';
+
+  @override
+  String get keyboardDetectTitle => 'Detetar a disposição do teclado';
+
+  @override
+  String get keyboardDetectButton => 'Detetar';
+
+  @override
+  String get keyboardVariantLabel => 'Variante do teclado:';
+
+  @override
+  String get keyboardPressKeyLabel => 'Prima uma das seguintes teclas:';
+
+  @override
+  String get keyboardKeyPresentLabel => 'A seguinte tecla está presente no seu teclado?';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -26,4 +50,28 @@ class UbuntuProvisionLocalizationsPtBr extends UbuntuProvisionLocalizationsPt {
 
   @override
   String get timezoneTimezoneLabel => 'Fuso horário';
+
+  @override
+  String get keyboardTitle => 'Layout do teclado';
+
+  @override
+  String get keyboardHeader => 'Escolha o layout do seu teclado:';
+
+  @override
+  String get keyboardTestHint => 'Digite aqui para testar seu teclado';
+
+  @override
+  String get keyboardDetectTitle => 'Detectar o layout do teclado';
+
+  @override
+  String get keyboardDetectButton => 'Detectar';
+
+  @override
+  String get keyboardVariantLabel => 'Disposição de teclado:';
+
+  @override
+  String get keyboardPressKeyLabel => 'Por favor pressione uma das seguintes teclas:';
+
+  @override
+  String get keyboardKeyPresentLabel => 'A seguinte tecla está presente no seu teclado?';
 }

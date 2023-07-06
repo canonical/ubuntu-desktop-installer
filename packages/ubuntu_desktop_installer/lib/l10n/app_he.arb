@@ -80,18 +80,6 @@
       "url": {}
     }
   },
-  "keyboardTitle": "פריסת מקלדת",
-  "@keyboardTitle": {},
-  "keyboardHeader": "נא לבחור את פריסת המקלדת שלך:",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "ניתן להקליד כאן כדי לבדוק את המקלדת שלך",
-  "@keyboardTestHint": {},
-  "keyboardDetectTitle": "איתור פריסת המקלדת",
-  "@keyboardDetectTitle": {},
-  "keyboardPressKeyLabel": "נא ללחוץ על אחד מהתווים הבאים:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "האם המקש הבא קיים במקלדת שלך?",
-  "@keyboardKeyPresentLabel": {},
   "configureSecureBootTitle": "הגדרת טעינה מאובטחת (Secure Boot)",
   "@configureSecureBootTitle": {},
   "configureSecureBootDescription": "בחרת להתקין תכנית מנהל התקן מגורם צד־שלישי. פעולה שכזאת דורשת את כיבוי הטעינה המאובטחת (Secure Boot).\nכדי לעשות זאת, עליך לבחור מפתח אבטחה כעת ולהקליד אותו לאחר שהמערכת תופעל מחדש.",
@@ -574,10 +562,6 @@
       "DISTRO": {}
     }
   },
-  "keyboardDetectButton": "זיהוי",
-  "@keyboardDetectButton": {},
-  "keyboardVariantLabel": "הגוון מקלדת:",
-  "@keyboardVariantLabel": {},
   "confirmPartitionsTitle": "מחיצות",
   "@confirmPartitionsTitle": {},
   "notEnoughDiskSpaceUbuntu": "אין מספיק מקום להתקין את {DISTRO}",

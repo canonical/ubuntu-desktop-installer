@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/services/keyboard_service.dart';
+import 'package:ubuntu_provision/keyboard.dart';
 import 'package:ubuntu_welcome/services/xdg_keyboard_service.dart';
 import 'package:xdg_locale/xdg_locale.dart';
 

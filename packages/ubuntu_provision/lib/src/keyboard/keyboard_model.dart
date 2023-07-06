@@ -1,14 +1,16 @@
 import 'dart:async';
 
-import 'package:dartx/dartx.dart';
+import 'package:collection/collection.dart';
 import 'package:diacritic/diacritic.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meta/meta.dart';
 import 'package:platform/platform.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+
+import 'keyboard_service.dart';
 
 /// @internal
 final log = Logger('keyboard');
@@ -95,8 +97,9 @@ class KeyboardModel extends SafeChangeNotifier {
   int get selectedVariantIndex => _selectedVariantIndex;
   int _selectedVariantIndex = -1;
 
-  KeyboardVariant? get _selectedVariant =>
-      _selectedLayout?.variants.elementAtOrNull(_selectedVariantIndex);
+  KeyboardVariant? get _selectedVariant => _selectedVariantIndex >= 0
+      ? _selectedLayout?.variants.elementAtOrNull(_selectedVariantIndex)
+      : null;
 
   /// Selects the keyboard layout variant at [index].
   Future<void> selectVariant(int index) async {

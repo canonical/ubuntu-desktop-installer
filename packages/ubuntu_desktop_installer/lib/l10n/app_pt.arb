@@ -42,18 +42,6 @@
       "url": {}
     }
   },
-  "keyboardTitle": "Disposição do teclado",
-  "@keyboardTitle": {},
-  "keyboardHeader": "Escolha a disposição do seu teclado:",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "Digite aqui para testar o seu teclado",
-  "@keyboardTestHint": {},
-  "keyboardDetectTitle": "Detetar a disposição do teclado",
-  "@keyboardDetectTitle": {},
-  "keyboardPressKeyLabel": "Prima uma das seguintes teclas:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "A seguinte tecla está presente no seu teclado?",
-  "@keyboardKeyPresentLabel": {},
   "configureSecureBootTitle": "Configurar o Arranque Seguro",
   "@configureSecureBootTitle": {},
   "configureSecureBootDescription": "Optou por instalar controladores de terceiros. Isto requer desativar o Arranque Seguro.\nPara isso, é preciso escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.",
@@ -582,10 +570,6 @@
       "DISTRO": {}
     }
   },
-  "keyboardDetectButton": "Detetar",
-  "@keyboardDetectButton": {},
-  "keyboardVariantLabel": "Variante do teclado:",
-  "@keyboardVariantLabel": {},
   "confirmDevicesTitle": "Dispositivos",
   "@confirmDevicesTitle": {},
   "confirmPartitionsTitle": "Partições",

@@ -93,30 +93,6 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get keyboardTitle => 'Disposição do teclado';
-
-  @override
-  String get keyboardHeader => 'Escolha a disposição do seu teclado:';
-
-  @override
-  String get keyboardTestHint => 'Digite aqui para testar o seu teclado';
-
-  @override
-  String get keyboardDetectTitle => 'Detetar a disposição do teclado';
-
-  @override
-  String get keyboardDetectButton => 'Detetar';
-
-  @override
-  String get keyboardVariantLabel => 'Variante do teclado:';
-
-  @override
-  String get keyboardPressKeyLabel => 'Prima uma das seguintes teclas:';
-
-  @override
-  String get keyboardKeyPresentLabel => 'A seguinte tecla está presente no seu teclado?';
-
-  @override
   String get configureSecureBootTitle => 'Configurar o Arranque Seguro';
 
   @override
@@ -995,30 +971,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String rstInstructions(Object url) {
     return 'Para instruções, escaneie o código QR em outro dispositivo ou visite: <a href=\"https://$url\">$url</a>';
   }
-
-  @override
-  String get keyboardTitle => 'Layout do teclado';
-
-  @override
-  String get keyboardHeader => 'Escolha o layout do seu teclado:';
-
-  @override
-  String get keyboardTestHint => 'Digite aqui para testar seu teclado';
-
-  @override
-  String get keyboardDetectTitle => 'Detectar o layout do teclado';
-
-  @override
-  String get keyboardDetectButton => 'Detectar';
-
-  @override
-  String get keyboardVariantLabel => 'Disposição de teclado:';
-
-  @override
-  String get keyboardPressKeyLabel => 'Por favor pressione uma das seguintes teclas:';
-
-  @override
-  String get keyboardKeyPresentLabel => 'A seguinte tecla está presente no seu teclado?';
 
   @override
   String get configureSecureBootTitle => 'Configurar Secure Boot';

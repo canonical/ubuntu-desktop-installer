@@ -73,7 +73,7 @@ Future<void> testKeyboardPage(
   await tester.pumpUntilPage(KeyboardPage);
 
   final context = tester.element(find.byType(KeyboardPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = KeyboardLocalizations.of(context);
 
   expect(find.title(l10n.keyboardTitle), findsOneWidget);
 

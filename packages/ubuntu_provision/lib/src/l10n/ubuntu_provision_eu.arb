@@ -1,1 +1,14 @@
-{}
+{
+  "keyboardTitle": "Teklatuaren diseinua",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Aukeratu zure teklatuaren diseinua:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Idatzi hemen zure teklatua probatzeko",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Detektatu teklatuaren diseinua",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "Mesedez, sakatu hurrengo tekletariko bat:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Hurrengo tekla zure teklatuan al dago?",
+  "@keyboardKeyPresentLabel": {}
+}

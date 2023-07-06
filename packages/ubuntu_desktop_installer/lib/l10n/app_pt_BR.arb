@@ -44,18 +44,6 @@
       "url": {}
     }
   },
-  "keyboardTitle": "Layout do teclado",
-  "@keyboardTitle": {},
-  "keyboardHeader": "Escolha o layout do seu teclado:",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "Digite aqui para testar seu teclado",
-  "@keyboardTestHint": {},
-  "keyboardDetectTitle": "Detectar o layout do teclado",
-  "@keyboardDetectTitle": {},
-  "keyboardPressKeyLabel": "Por favor pressione uma das seguintes teclas:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "A seguinte tecla está presente no seu teclado?",
-  "@keyboardKeyPresentLabel": {},
   "configureSecureBootTitle": "Configurar Secure Boot",
   "@configureSecureBootTitle": {},
   "configureSecureBootDescription": "Você optou por instalar drivers de terceiros. Isso requer desabilitar o Secure Boot.\nPara isso, você precisa escolher uma chave de segurança agora e entrar com ela quando o sistema reiniciar.",
@@ -609,10 +597,6 @@
       "DISTRO": {}
     }
   },
-  "keyboardDetectButton": "Detectar",
-  "@keyboardDetectButton": {},
-  "keyboardVariantLabel": "Disposição de teclado:",
-  "@keyboardVariantLabel": {},
   "confirmDevicesTitle": "Dispositivos",
   "@confirmDevicesTitle": {},
   "confirmPartitionsTitle": "Partições",

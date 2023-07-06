@@ -1,4 +1,16 @@
 {
   "timezoneTimezoneLabel": "Fuso orario",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Disposizione della tastiera",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Scegliere la disposizione della tastiera:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Digitare qui per provare la tastiera",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Rileva disposizione tastiera",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "Prego premere uno dei seguenti tasti:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Il seguente tasto è presente sulla propria tastiera?",
+  "@keyboardKeyPresentLabel": {}
 }

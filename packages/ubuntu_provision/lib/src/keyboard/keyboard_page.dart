@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'keyboard_dialogs.dart';
+import 'keyboard_l10n.dart';
 import 'keyboard_model.dart';
 
 class KeyboardPage extends ConsumerWidget {
@@ -22,7 +22,7 @@ class KeyboardPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(keyboardModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = KeyboardLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.keyboardTitle),

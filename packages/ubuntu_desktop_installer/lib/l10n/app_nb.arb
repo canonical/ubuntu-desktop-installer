@@ -196,18 +196,6 @@
       "url": {}
     }
   },
-  "keyboardTitle": "Tastaturoppsett",
-  "@keyboardTitle": {},
-  "keyboardHeader": "Velg tastaturoppsettet ditt:",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "Skriv her for å teste tastaturet",
-  "@keyboardTestHint": {},
-  "keyboardDetectTitle": "Finn tastaturoppsett",
-  "@keyboardDetectTitle": {},
-  "keyboardPressKeyLabel": "Trykk på en av følgende taster:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "Finnes følgende tast på tastaturet ditt?",
-  "@keyboardKeyPresentLabel": {},
   "configureSecureBootOption": "Tilpass sikkeroppstart",
   "@configureSecureBootOption": {},
   "chooseSecurityKey": "Velg en sikkerhetnøkkel",
@@ -633,10 +621,6 @@
       "format": {}
     }
   },
-  "keyboardDetectButton": "Oppdag",
-  "@keyboardDetectButton": {},
-  "keyboardVariantLabel": "Tastaturvariant:",
-  "@keyboardVariantLabel": {},
   "installationSlidesSupportResources": "Nyttige ressurser:",
   "@installationSlidesSupportResources": {},
   "notEnoughDiskSpaceAvailable": "Tilgjengelig:",

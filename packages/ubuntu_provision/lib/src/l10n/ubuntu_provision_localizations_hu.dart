@@ -12,4 +12,28 @@ class UbuntuProvisionLocalizationsHu extends UbuntuProvisionLocalizations {
 
   @override
   String get timezoneTimezoneLabel => 'Időzóna';
+
+  @override
+  String get keyboardTitle => 'Billentyűzetkiosztás';
+
+  @override
+  String get keyboardHeader => 'Válasszon billentyűzetkiosztást:';
+
+  @override
+  String get keyboardTestHint => 'Gépeljen itt a billentyűzet kipróbálásához';
+
+  @override
+  String get keyboardDetectTitle => 'Billentyűzetkiosztás felismerése';
+
+  @override
+  String get keyboardDetectButton => 'Felismerés';
+
+  @override
+  String get keyboardVariantLabel => 'Billentyűzetváltozat:';
+
+  @override
+  String get keyboardPressKeyLabel => 'Nyomja meg a következő billentyűk egyikét:';
+
+  @override
+  String get keyboardKeyPresentLabel => 'A következő billentyű rajta van a billentyűzetén?';
 }

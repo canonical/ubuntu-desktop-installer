@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Loko",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Horzono",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Klavaranĝo",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Elektu vian klavaranĝon:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Tajpu ĉi tie por provi vian klavaron",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Rekoni klavaranĝon",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Identigi",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Klavara varianto:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Bonvolu premi unu el la jenaj klavoj:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Ĉu la jena klavo troviĝas en via klavaro?",
+  "@keyboardKeyPresentLabel": {}
 }

@@ -4,7 +4,7 @@ import 'package:dbus/dbus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gsettings/gsettings.dart';
-import 'package:ubuntu_desktop_installer/services/keyboard_service.dart';
+import 'package:ubuntu_provision/keyboard.dart';
 import 'package:xdg_locale/xdg_locale.dart';
 
 class XdgKeyboardService implements KeyboardService {

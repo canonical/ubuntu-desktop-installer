@@ -44,18 +44,6 @@
       "url": {}
     }
   },
-  "keyboardTitle": "Agençament del clavièr",
-  "@keyboardTitle": {},
-  "keyboardHeader": "Indicatz l’agençament del clavièr :",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "Picatz de tèxt aquí per ensajar lo clavièr",
-  "@keyboardTestHint": {},
-  "keyboardDetectTitle": "Detectar l’agençament del clavièr",
-  "@keyboardDetectTitle": {},
-  "keyboardPressKeyLabel": "Mercés de quichar una de las tòcas seguentas :",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "La tòca seguenta es presenta sul clavièr ?",
-  "@keyboardKeyPresentLabel": {},
   "updatesOtherSoftwarePageTitle": "Aplicacions e mesas a jorn",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "Quinas aplicacions volètz installar per començar ?",
@@ -581,10 +569,6 @@
       "DISTRO": {}
     }
   },
-  "keyboardDetectButton": "Detectar",
-  "@keyboardDetectButton": {},
-  "keyboardVariantLabel": "Varianta del clavièr :",
-  "@keyboardVariantLabel": {},
   "confirmDevicesTitle": "Periferics",
   "@confirmDevicesTitle": {},
   "confirmPartitionsTitle": "Particions",

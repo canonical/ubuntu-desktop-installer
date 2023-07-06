@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Hely",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Időzóna",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Billentyűzetkiosztás",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Válasszon billentyűzetkiosztást:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Gépeljen itt a billentyűzet kipróbálásához",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Billentyűzetkiosztás felismerése",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Felismerés",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Billentyűzetváltozat:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Nyomja meg a következő billentyűk egyikét:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "A következő billentyű rajta van a billentyűzetén?",
+  "@keyboardKeyPresentLabel": {}
 }

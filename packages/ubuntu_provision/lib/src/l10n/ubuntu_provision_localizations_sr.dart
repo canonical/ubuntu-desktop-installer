@@ -12,4 +12,28 @@ class UbuntuProvisionLocalizationsSr extends UbuntuProvisionLocalizations {
 
   @override
   String get timezoneTimezoneLabel => 'Timezone';
+
+  @override
+  String get keyboardTitle => 'Распоред тастатуре';
+
+  @override
+  String get keyboardHeader => 'Изаберите ваш распоред тастатуре:';
+
+  @override
+  String get keyboardTestHint => 'Куцајте овде како би испробали вашу тастатуру';
+
+  @override
+  String get keyboardDetectTitle => 'Откриј распоред тастатуре';
+
+  @override
+  String get keyboardDetectButton => 'Detect';
+
+  @override
+  String get keyboardVariantLabel => 'Keyboard variant:';
+
+  @override
+  String get keyboardPressKeyLabel => 'Молимо притисните један од следећих тастера:';
+
+  @override
+  String get keyboardKeyPresentLabel => 'Да ли следећи тастер постоји на вашој тастатури?';
 }

@@ -4,5 +4,17 @@
   "timezoneLocationLabel": "ස්ථානය",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "වේලා කලාපය",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "යතුරුපුවරුවේ පිරිසැලසුම",
+  "@keyboardTitle": {},
+  "keyboardHeader": "ඔබගේ යතුරුපුවරු පිරිසැලසුම තෝරන්න:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "ඔබගේ යතුරුපුවරුව පරීක්‍ෂාවට මෙතැන ලියන්න",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "යතුරුපුවරුවේ පිරිසැලසුම අනාවරණය",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "පහත යතුරු වලින් එකක් ඔබන්න:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "පහත යතුර ඔබගේ යතුරුපුවරුවේ තිබේද?",
+  "@keyboardKeyPresentLabel": {}
 }

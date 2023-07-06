@@ -93,30 +93,6 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get keyboardTitle => 'Rozloženie klávesnice';
-
-  @override
-  String get keyboardHeader => 'Vyberte si rozloženie klávesnice:';
-
-  @override
-  String get keyboardTestHint => 'Správne fungovanie rozloženia si môžete vyskúšať tu';
-
-  @override
-  String get keyboardDetectTitle => 'Zistiť rozloženie klávesnice';
-
-  @override
-  String get keyboardDetectButton => 'Zistiť';
-
-  @override
-  String get keyboardVariantLabel => 'Variant klávesnice:';
-
-  @override
-  String get keyboardPressKeyLabel => 'Stlačte niektorú z nasledujúcich kláves:';
-
-  @override
-  String get keyboardKeyPresentLabel => 'Máte na klávesnici nasledujúci kláves?';
-
-  @override
   String get configureSecureBootTitle => 'Nastaviť Secure Boot';
 
   @override

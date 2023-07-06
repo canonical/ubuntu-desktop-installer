@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "現在地",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "タイムゾーン",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "キーボードレイアウト",
+  "@keyboardTitle": {},
+  "keyboardHeader": "キーボードレイアウトを選択してください。",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "ここに入力して、キーボードをテストできます",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "キーボードレイアウトを検出する",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "検出",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "キーボードバリアント：",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "以下のキーのうち 1 つを押してください。",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "以下のキーはこのキーボードにありますか？",
+  "@keyboardKeyPresentLabel": {}
 }

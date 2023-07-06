@@ -12,4 +12,28 @@ class UbuntuProvisionLocalizationsPa extends UbuntuProvisionLocalizations {
 
   @override
   String get timezoneTimezoneLabel => 'Timezone';
+
+  @override
+  String get keyboardTitle => 'ਕੀ-ਬੋਰਡ ਲੇਆਉਟ';
+
+  @override
+  String get keyboardHeader => 'ਆਪਣਾ ਕੀਬੋਰਡ ਲੇਆਉਟ ਚੁਣੋ:';
+
+  @override
+  String get keyboardTestHint => 'ਆਪਣੇ ਕੀਬੋਰਡ ਨੂੰ ਟੈਸਟ ਕਰਨ ਲਈ ਇੱਥੇ ਲਿਖੋ';
+
+  @override
+  String get keyboardDetectTitle => 'ਕੀਬੋਰਡ ਲੇਆਉਟ ਖੋਜੋ';
+
+  @override
+  String get keyboardDetectButton => 'Detect';
+
+  @override
+  String get keyboardVariantLabel => 'Keyboard variant:';
+
+  @override
+  String get keyboardPressKeyLabel => 'ਅੱਗੇ ਦਿੱਤੀਆਂ ਸਵਿੱਚਾਂ ਦੱਬੋ:';
+
+  @override
+  String get keyboardKeyPresentLabel => 'ਕੀ ਤੁਹਾਡੇ ਕੀਬੋਰਡ ਉੱਤੇ ਅੱਗੇ ਦਿੱਤੀ ਸਵਿੱਚ ਮੌਜੂਦ ਹੈ?';
 }

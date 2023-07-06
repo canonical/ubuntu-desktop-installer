@@ -12,4 +12,28 @@ class UbuntuProvisionLocalizationsEs extends UbuntuProvisionLocalizations {
 
   @override
   String get timezoneTimezoneLabel => 'Huso horario';
+
+  @override
+  String get keyboardTitle => 'Distribución del teclado';
+
+  @override
+  String get keyboardHeader => 'Elija la distribución del teclado:';
+
+  @override
+  String get keyboardTestHint => 'Escriba aquí para probar el teclado';
+
+  @override
+  String get keyboardDetectTitle => 'Detectar la distribución del teclado';
+
+  @override
+  String get keyboardDetectButton => 'Detectar';
+
+  @override
+  String get keyboardVariantLabel => 'Variante del teclado:';
+
+  @override
+  String get keyboardPressKeyLabel => 'Pulse una de estas teclas:';
+
+  @override
+  String get keyboardKeyPresentLabel => '¿Está presente la siguiente tecla en su teclado?';
 }

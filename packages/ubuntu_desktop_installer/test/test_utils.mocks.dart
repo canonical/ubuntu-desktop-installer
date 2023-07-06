@@ -21,8 +21,6 @@ import 'package:ubuntu_desktop_installer/services/identity_service.dart' as _i3;
 import 'package:ubuntu_desktop_installer/services/installer_service.dart'
     as _i15;
 import 'package:ubuntu_desktop_installer/services/journal_service.dart' as _i16;
-import 'package:ubuntu_desktop_installer/services/keyboard_service.dart'
-    as _i17;
 import 'package:ubuntu_desktop_installer/services/locale_service.dart' as _i18;
 import 'package:ubuntu_desktop_installer/services/network_service.dart' as _i19;
 import 'package:ubuntu_desktop_installer/services/power_service.dart' as _i21;
@@ -34,6 +32,7 @@ import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
     as _i25;
 import 'package:ubuntu_desktop_installer/services/theme_service.dart' as _i26;
 import 'package:ubuntu_desktop_installer/services/udev_service.dart' as _i7;
+import 'package:ubuntu_provision/src/keyboard/keyboard_service.dart' as _i17;
 import 'package:ubuntu_provision/src/timezone/timezone_service.dart' as _i28;
 import 'package:ubuntu_utils/src/url_launcher.dart' as _i29;
 import 'package:upower/upower.dart' as _i5;

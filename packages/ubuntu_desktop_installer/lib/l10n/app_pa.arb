@@ -23,16 +23,5 @@
       "url": {}
     }
   },
-  "keyboardTitle": "ਕੀ-ਬੋਰਡ ਲੇਆਉਟ",
-  "@keyboardTitle": {},
-  "keyboardHeader": "ਆਪਣਾ ਕੀਬੋਰਡ ਲੇਆਉਟ ਚੁਣੋ:",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "ਆਪਣੇ ਕੀਬੋਰਡ ਨੂੰ ਟੈਸਟ ਕਰਨ ਲਈ ਇੱਥੇ ਲਿਖੋ",
-  "@keyboardTestHint": {},
-  "keyboardDetectTitle": "ਕੀਬੋਰਡ ਲੇਆਉਟ ਖੋਜੋ",
-  "@keyboardDetectTitle": {},
-  "keyboardPressKeyLabel": "ਅੱਗੇ ਦਿੱਤੀਆਂ ਸਵਿੱਚਾਂ ਦੱਬੋ:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "ਕੀ ਤੁਹਾਡੇ ਕੀਬੋਰਡ ਉੱਤੇ ਅੱਗੇ ਦਿੱਤੀ ਸਵਿੱਚ ਮੌਜੂਦ ਹੈ?",
   "@keyboardKeyPresentLabel": {}
 }

@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "מיקום",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "אזור זמן",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "פריסת מקלדת",
+  "@keyboardTitle": {},
+  "keyboardHeader": "נא לבחור את פריסת המקלדת שלך:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "ניתן להקליד כאן כדי לבדוק את המקלדת שלך",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "איתור פריסת המקלדת",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "זיהוי",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "הגוון מקלדת:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "נא ללחוץ על אחד מהתווים הבאים:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "האם המקש הבא קיים במקלדת שלך?",
+  "@keyboardKeyPresentLabel": {}
 }

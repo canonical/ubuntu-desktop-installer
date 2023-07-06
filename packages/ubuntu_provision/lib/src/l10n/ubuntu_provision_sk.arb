@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Umiestnenie",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Časové pásmo",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Rozloženie klávesnice",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Vyberte si rozloženie klávesnice:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Správne fungovanie rozloženia si môžete vyskúšať tu",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Zistiť rozloženie klávesnice",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Zistiť",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Variant klávesnice:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Stlačte niektorú z nasledujúcich kláves:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Máte na klávesnici nasledujúci kláves?",
+  "@keyboardKeyPresentLabel": {}
 }

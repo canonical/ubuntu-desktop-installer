@@ -93,30 +93,6 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get keyboardTitle => 'Rozvržení klávesnice';
-
-  @override
-  String get keyboardHeader => 'Zvolte si rozvržení klávesnice:';
-
-  @override
-  String get keyboardTestHint => 'Správné fungování rozvržení si můžete vyzkoušet zde';
-
-  @override
-  String get keyboardDetectTitle => 'Zjistit rozvržení klávesnice';
-
-  @override
-  String get keyboardDetectButton => 'Zjistit';
-
-  @override
-  String get keyboardVariantLabel => 'Varianta klávesnice:';
-
-  @override
-  String get keyboardPressKeyLabel => 'Stiskněte některou z následujících kláves:';
-
-  @override
-  String get keyboardKeyPresentLabel => 'Máte na klávesnici následující klávesu?';
-
-  @override
   String get configureSecureBootTitle => 'Nastavit Secure Boot';
 
   @override

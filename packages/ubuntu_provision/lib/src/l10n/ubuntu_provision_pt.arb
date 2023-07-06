@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Localização",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Fuso horário",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Disposição do teclado",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Escolha a disposição do seu teclado:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Digite aqui para testar o seu teclado",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Detetar a disposição do teclado",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Detetar",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Variante do teclado:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Prima uma das seguintes teclas:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "A seguinte tecla está presente no seu teclado?",
+  "@keyboardKeyPresentLabel": {}
 }

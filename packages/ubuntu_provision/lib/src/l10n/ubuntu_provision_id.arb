@@ -4,5 +4,17 @@
   "timezoneLocationLabel": "Lokasi",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Zona waktu",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Tata letak papan ketik",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Pilih tata letak papan ketik Anda:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Ketik di sini untuk menguji papan ketik Anda",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Deteksi Tata Letak Papan Ketik",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "Silakan tekan salah satu tombol berikut:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Apakah tombol berikut ada di papan ketik Anda?",
+  "@keyboardKeyPresentLabel": {}
 }

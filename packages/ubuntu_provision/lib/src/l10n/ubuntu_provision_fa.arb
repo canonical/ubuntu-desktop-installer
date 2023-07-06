@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "مکان",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "ناحیهٔ زمانی",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "چیدمان صفحه‌کلید",
+  "@keyboardTitle": {},
+  "keyboardHeader": "گزینش چیدمان صفحه‌کلیدتان:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "برای آزمایش صفحه‌کلیدتان، این‌جا بنویسید",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "تشخیص چیدمان صفحه‌کلید",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "تشخیص",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "دگرگونهٔ صفحه‌کلید:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "لطفاً یکی از کلیدهای زیر را فشار دهید:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "آیا این کلید در صفحه‌کلیدتان وجود دارد؟",
+  "@keyboardKeyPresentLabel": {}
 }

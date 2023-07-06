@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+
+import 'keyboard_service.dart';
 
 /// @internal
 final log = Logger('keyboard');

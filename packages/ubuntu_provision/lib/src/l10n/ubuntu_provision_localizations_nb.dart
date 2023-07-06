@@ -12,4 +12,28 @@ class UbuntuProvisionLocalizationsNb extends UbuntuProvisionLocalizations {
 
   @override
   String get timezoneTimezoneLabel => 'Tidssone';
+
+  @override
+  String get keyboardTitle => 'Tastaturoppsett';
+
+  @override
+  String get keyboardHeader => 'Velg tastaturoppsettet ditt:';
+
+  @override
+  String get keyboardTestHint => 'Skriv her for å teste tastaturet';
+
+  @override
+  String get keyboardDetectTitle => 'Finn tastaturoppsett';
+
+  @override
+  String get keyboardDetectButton => 'Oppdag';
+
+  @override
+  String get keyboardVariantLabel => 'Tastaturvariant:';
+
+  @override
+  String get keyboardPressKeyLabel => 'Trykk på en av følgende taster:';
+
+  @override
+  String get keyboardKeyPresentLabel => 'Finnes følgende tast på tastaturet ditt?';
 }

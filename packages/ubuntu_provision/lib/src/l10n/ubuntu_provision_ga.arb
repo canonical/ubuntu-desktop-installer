@@ -1,1 +1,14 @@
-{}
+{
+  "keyboardTitle": "Leagan amach méarchláir",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Roghnaigh leagan amach do mhéarchláir:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Scríobh anseo chun do mhéarchlár a tástáil",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Aimsigh leagan amach an méarchláir",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "Brúigh cheann de na heochracha se:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "An bhfuil an eochair seo ann ar do mhéarchlár?",
+  "@keyboardKeyPresentLabel": {}
+}

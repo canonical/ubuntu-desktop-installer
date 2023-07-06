@@ -21,10 +21,6 @@
       "RELEASE": {}
     }
   },
-  "keyboardTestHint": "Πληκτρολογήστε εδώ για να δοκιμάσετε το πληκτρολόγιό σας",
-  "@keyboardTestHint": {},
-  "keyboardPressKeyLabel": "Παρακαλώ πιέστε ένα από τα ακόλουθα πλήκτρα:",
-  "@keyboardPressKeyLabel": {},
   "rstTitle": "Απενεργοποίηση του RST",
   "@rstTitle": {},
   "welcomeReleaseNotesLabel": "Ίσως θέλετε να διαβάσετε τις <a href=\"{url}\">σημειώσεις έκδοσης</a>.",
@@ -34,14 +30,7 @@
       "url": {}
     }
   },
-  "keyboardKeyPresentLabel": "Υπάρχει στο πληκτρολόγιό σας το ακόλουθο πλήκτρο;",
-  "@keyboardKeyPresentLabel": {},
   "welcome": "Καλωσορίσατε",
   "@welcome": {},
-  "keyboardTitle": "Διάταξη πληκτρολογίου",
-  "@keyboardTitle": {},
-  "keyboardHeader": "Επιλογή διάταξης πληκτρολογίου:",
-  "@keyboardHeader": {},
-  "keyboardDetectTitle": "Εντοπισμός διάταξης πληκτρολογίου",
   "@keyboardDetectTitle": {}
 }

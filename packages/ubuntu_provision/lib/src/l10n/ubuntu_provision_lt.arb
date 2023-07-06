@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Vieta",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Laiko juosta",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Klaviatūros išdėstymas",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Pasirinkite klaviatūros išdėstymą:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Rašykite čia, norėdami išbandyti klaviatūrą",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Aptikti klaviatūros išdėstymą",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Aptikti",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Klaviatūros variantas:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Paspauskite vieną iš šių klavišų:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Ar šis klavišas yra jūsų klaviatūroje?",
+  "@keyboardKeyPresentLabel": {}
 }

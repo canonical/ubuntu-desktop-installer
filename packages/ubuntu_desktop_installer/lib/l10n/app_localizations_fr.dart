@@ -93,30 +93,6 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get keyboardTitle => 'Disposition du clavier';
-
-  @override
-  String get keyboardHeader => 'Indiquez la disposition de votre clavier :';
-
-  @override
-  String get keyboardTestHint => 'Saisissez du texte ici pour tester votre clavier';
-
-  @override
-  String get keyboardDetectTitle => 'Détecter la disposition du clavier';
-
-  @override
-  String get keyboardDetectButton => 'Détecter';
-
-  @override
-  String get keyboardVariantLabel => 'Variante du clavier :';
-
-  @override
-  String get keyboardPressKeyLabel => 'Veuillez appuyer sur l’une des touches suivantes :';
-
-  @override
-  String get keyboardKeyPresentLabel => 'Cette touche est-elle présente sur votre clavier ?';
-
-  @override
   String get configureSecureBootTitle => 'Configurer Secure Boot';
 
   @override

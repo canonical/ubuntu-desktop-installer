@@ -46,18 +46,6 @@
       "url": {}
     }
   },
-  "keyboardTitle": "Tastaturbelegung",
-  "@keyboardTitle": {},
-  "keyboardHeader": "Wählen Sie Ihre Tastaturbelegung aus:",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "Geben Sie hier etwas ein, um Ihre Tastaturbelegung zu überprüfen",
-  "@keyboardTestHint": {},
-  "keyboardDetectTitle": "Tastaturbelegung erkennen",
-  "@keyboardDetectTitle": {},
-  "keyboardPressKeyLabel": "Bitte drücken Sie eine der folgenden Tasten:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "Ist die folgende Taste auf Ihrer Tastatur vorhanden?",
-  "@keyboardKeyPresentLabel": {},
   "configureSecureBootTitle": "Secure Boot konfigurieren",
   "@configureSecureBootTitle": {},
   "configureSecureBootDescription": "Sie haben sich für die Installation von Treibersoftware von Drittanbietern entschieden. Dazu muss Secure Boot ausgeschaltet werden.\nDazu müssen Sie jetzt einen Sicherheitsschlüssel auswählen und ihn beim Neustart des Systems eingeben.",
@@ -574,10 +562,6 @@
       "DISTRO": {}
     }
   },
-  "keyboardDetectButton": "Erkennen",
-  "@keyboardDetectButton": {},
-  "keyboardVariantLabel": "Tastaturvariante:",
-  "@keyboardVariantLabel": {},
   "confirmDevicesTitle": "Geräte",
   "@confirmDevicesTitle": {},
   "confirmPartitionsTitle": "Partitionen",

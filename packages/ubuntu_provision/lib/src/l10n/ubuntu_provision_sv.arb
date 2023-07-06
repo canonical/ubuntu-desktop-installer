@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Plats",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Tidszon",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Tangentbordslayout",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Välj din tangentbordslayout:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Skriv här för att testa ditt tangentbord",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Upptäck tangentbordslayout",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Upptäck",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Tangentbordsvariant:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Vänligen tryck på en av följande tangenter:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Finns följande tangent på ditt tangentbord?",
+  "@keyboardKeyPresentLabel": {}
 }

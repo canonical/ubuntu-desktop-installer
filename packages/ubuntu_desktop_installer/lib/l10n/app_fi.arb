@@ -29,8 +29,6 @@
   "@welcomePageTitle": {},
   "welcomeTryOption": "Kokeile {RELEASE}a",
   "@welcomeTryOption": {},
-  "keyboardTitle": "Näppäimistön asettelu",
-  "@keyboardTitle": {},
   "welcomeInstallOption": "Asenna {RELEASE}",
   "@welcomeInstallOption": {},
   "configureSecureBootDescription": "Valitsit kolmansien osapuolten ajurien asennuksen. Tämä vaatii että Secure Boot tulee määrittää.\nTämä vaatii, että valitset turva-avaimen nyt ja kirjoitat sen järjestelmän käynnistyessä uudelleen.",
@@ -212,8 +210,6 @@
   "@restartButtonText": {},
   "welcomeRepairOption": "Korjaa asennus",
   "@welcomeRepairOption": {},
-  "keyboardHeader": "Valitse näppäimistön asettelu:",
-  "@keyboardHeader": {},
   "rstTitle": "RST on käytössä",
   "@rstTitle": {},
   "welcomeReleaseNotesLabel": "Voit halutessasi lukea <a href=\"{url}\">julkaisumuistion</a>.",
@@ -223,10 +219,6 @@
       "url": {}
     }
   },
-  "keyboardDetectTitle": "Tunnista näppäimistön asettelu",
-  "@keyboardDetectTitle": {},
-  "keyboardTestHint": "Kokeile näppäimistön asetuksia kirjoittamalla tähän",
-  "@keyboardTestHint": {},
   "changeButtonText": "Muuta",
   "@changeButtonText": {},
   "welcomeTryDescription": "Voit kokeilla {RELEASE}a tekemättä muutoksia tietokoneellesi.",
@@ -242,10 +234,6 @@
       "url": {}
     }
   },
-  "keyboardPressKeyLabel": "Paina yhtä seuraavista näppäimistä:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "Löytyykö seuraava näppäin näppäimistöstäsi?",
-  "@keyboardKeyPresentLabel": {},
   "configureSecureBootSecurityKeyRequired": "Salausavain vaaditaan",
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "Salausavaimet eivät täsmää",
@@ -661,10 +649,6 @@
       "DISTRO": {}
     }
   },
-  "keyboardDetectButton": "Tunnista",
-  "@keyboardDetectButton": {},
-  "keyboardVariantLabel": "Näppäimistömuunnelma:",
-  "@keyboardVariantLabel": {},
   "identityRealNameTooLong": "Nimi on liian pitkä.",
   "@identityRealNameTooLong": {},
   "confirmDevicesTitle": "Laitteet",
