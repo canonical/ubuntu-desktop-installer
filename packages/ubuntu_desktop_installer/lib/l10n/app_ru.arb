@@ -198,8 +198,8 @@
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHint": "Выберите ключ безопасности",
   "@chooseSecurityKeyHint": {},
-  "welcomeHeader": "Выберите язык:",
-  "@welcomeHeader": {},
+  "localeHeader": "Выберите язык:",
+  "@localeHeader": {},
   "wifiMustBeEnabled": "Чтобы использовать на этом компьютере Wi-Fi, необходимо включить беспроводную сеть",
   "@wifiMustBeEnabled": {},
   "enableWifi": "Включить Wi-Fi",
@@ -534,8 +534,8 @@
   "@activeDirectoryAdminInvalidChars": {},
   "partitionFormatNone": "Оставить неформатированным",
   "@partitionFormatNone": {},
-  "preparingUbuntu": "Подготовка {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Подготовка {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -577,8 +577,8 @@
   },
   "installationSlidesAccessibilityTitle": "Доступно для каждого",
   "@installationSlidesAccessibilityTitle": {},
-  "welcomePageTitle": "Добро пожаловать в {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Добро пожаловать в {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -745,5 +745,12 @@
   "allocateDiskSpaceInvalidMountPointSlash": "Точки монтирования должны начинаться с «/»",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Точки монтирования не могут содержать пробелы",
-  "@allocateDiskSpaceInvalidMountPointSpace": {}
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "loadingPageTitle": "Добро пожаловать в {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

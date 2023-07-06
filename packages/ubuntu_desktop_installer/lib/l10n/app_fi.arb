@@ -372,8 +372,8 @@
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameLabel": "Verkon nimi",
   "@hiddenWifiNetworkNameLabel": {},
-  "welcomeHeader": "Valitse kieli:",
-  "@welcomeHeader": {},
+  "localeHeader": "Valitse kieli:",
+  "@localeHeader": {},
   "installationTypeDualOSDetected": "Tässä tietokoneessa on jo käyttöjärjestelmät {os1} ja {os2}. Mitä haluat tehdä?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -658,8 +658,8 @@
   },
   "installationSlidesProductivityTitle": "Kiihdytä tuottavuuttasi",
   "@installationSlidesProductivityTitle": {},
-  "preparingUbuntu": "Valmistellaan {DISTRO}a…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Valmistellaan {DISTRO}a…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -730,8 +730,8 @@
   "@installationSlidesSupportUbuntuPro": {},
   "notEnoughDiskSpaceAvailable": "Saatavilla:",
   "@notEnoughDiskSpaceAvailable": {},
-  "welcomePageTitle": "Tervetuloa, tämä on {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Tervetuloa, tämä on {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -740,5 +740,12 @@
   "allocateDiskSpaceInvalidMountPointSlash": "Liitospisteiden tulee alkaa merkillä \"/\"",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Liitospisteet eivät voi sisältää välilyöntejä",
-  "@allocateDiskSpaceInvalidMountPointSpace": {}
+  "@allocateDiskSpaceInvalidMountPointSpace": {},
+  "loadingPageTitle": "Tervetuloa, tämä on {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

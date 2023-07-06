@@ -27,8 +27,8 @@
   "@chooseSecurityKeyHint": {},
   "chooseSecurityKeyConfirmHint": "Bekræft sikkerhedsnøglen",
   "@chooseSecurityKeyConfirmHint": {},
-  "welcomeHeader": "Vælg dit sprog:",
-  "@welcomeHeader": {},
+  "localeHeader": "Vælg dit sprog:",
+  "@localeHeader": {},
   "selectWifiNetwork": "Opret forbindelse til et WiFi-netværk",
   "@selectWifiNetwork": {},
   "wiredDisabled": "Kablet forbindelse er slået fra",
@@ -681,8 +681,8 @@
   "@installationSlidesAccessibilityOrca": {},
   "installationSlidesAccessibilityLanguages": "Sprogunderstøttelse",
   "@installationSlidesAccessibilityLanguages": {},
-  "preparingUbuntu": "Forbereder {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Forbereder {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -794,8 +794,15 @@
       "DISTRO": {}
     }
   },
-  "welcomePageTitle": "Velkommen til {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Velkommen til {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "loadingPageTitle": "Velkommen til {DISTRO}",
+  "@loadingPageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}

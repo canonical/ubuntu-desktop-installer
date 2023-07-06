@@ -25,17 +25,22 @@ class AppLocalizationsTr extends AppLocalizations {
   String get quitButtonText => 'Kurulumdan Çık';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return '$DISTRO dağıtımına hoş geldiniz';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return '$DISTRO hazırlanıyor…';
   }
 
   @override
-  String get welcomeHeader => 'Dil seçin:';
+  String localePageTitle(Object DISTRO) {
+    return '$DISTRO dağıtımına hoş geldiniz';
+  }
+
+  @override
+  String get localeHeader => 'Dil seçin:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

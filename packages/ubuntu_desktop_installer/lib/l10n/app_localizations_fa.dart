@@ -25,17 +25,22 @@ class AppLocalizationsFa extends AppLocalizations {
   String get quitButtonText => 'خروج از نصب';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'به $DISTRO خوش آمدید';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'آماده‌سازی $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'زبانتان را برگزینید:';
+  String localePageTitle(Object DISTRO) {
+    return 'به $DISTRO خوش آمدید';
+  }
+
+  @override
+  String get localeHeader => 'زبانتان را برگزینید:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

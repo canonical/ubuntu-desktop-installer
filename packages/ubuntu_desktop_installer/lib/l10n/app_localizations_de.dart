@@ -25,17 +25,22 @@ class AppLocalizationsDe extends AppLocalizations {
   String get quitButtonText => 'Installation beenden';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Willkommen bei $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return '$DISTRO wird vorbereitet …';
   }
 
   @override
-  String get welcomeHeader => 'Wählen Sie Ihre Sprache aus:';
+  String localePageTitle(Object DISTRO) {
+    return 'Willkommen bei $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Wählen Sie Ihre Sprache aus:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

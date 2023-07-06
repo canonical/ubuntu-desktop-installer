@@ -273,23 +273,29 @@ abstract class AppLocalizations {
   /// **'Quit installation'**
   String get quitButtonText;
 
-  /// No description provided for @welcomePageTitle.
+  /// No description provided for @loadingPageTitle.
   ///
   /// In en, this message translates to:
   /// **'Welcome to {DISTRO}'**
-  String welcomePageTitle(Object DISTRO);
+  String loadingPageTitle(Object DISTRO);
 
-  /// No description provided for @preparingUbuntu.
+  /// No description provided for @loadingHeader.
   ///
   /// In en, this message translates to:
   /// **'Preparing {DISTRO}…'**
-  String preparingUbuntu(Object DISTRO);
+  String loadingHeader(Object DISTRO);
 
-  /// No description provided for @welcomeHeader.
+  /// No description provided for @localePageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to {DISTRO}'**
+  String localePageTitle(Object DISTRO);
+
+  /// No description provided for @localeHeader.
   ///
   /// In en, this message translates to:
   /// **'Choose your language:'**
-  String get welcomeHeader;
+  String get localeHeader;
 
   /// No description provided for @tryOrInstallPageTitle.
   ///

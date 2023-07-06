@@ -412,8 +412,8 @@
       "RELEASE": {}
     }
   },
-  "welcomeHeader": "Välj ditt språk:",
-  "@welcomeHeader": {},
+  "localeHeader": "Välj ditt språk:",
+  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nätverksnamn",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Ett nätverksnamn krävs",
@@ -626,8 +626,8 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Tyvärr, Active Directory kan inte ställas in just nu. när ditt system är igång, besök <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> för hjälp.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "Förbereder {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Förbereder {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -727,8 +727,8 @@
   },
   "notEnoughDiskSpaceAvailable": "Tillgängligt:",
   "@notEnoughDiskSpaceAvailable": {},
-  "welcomePageTitle": "Välkommen till {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Välkommen till {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -801,6 +801,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Välkommen till {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

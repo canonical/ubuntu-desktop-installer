@@ -25,17 +25,22 @@ class AppLocalizationsFi extends AppLocalizations {
   String get quitButtonText => 'Lopeta asennus';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Tervetuloa, tämä on $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Valmistellaan ${DISTRO}a…';
   }
 
   @override
-  String get welcomeHeader => 'Valitse kieli:';
+  String localePageTitle(Object DISTRO) {
+    return 'Tervetuloa, tämä on $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Valitse kieli:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

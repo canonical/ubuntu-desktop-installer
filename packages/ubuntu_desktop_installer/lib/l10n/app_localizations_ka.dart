@@ -25,17 +25,22 @@ class AppLocalizationsKa extends AppLocalizations {
   String get quitButtonText => 'დაყენებიდან გასვლა';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return 'Welcome to $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return 'Preparing $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => 'აირჩიეთ თქვენი ენა:';
+  String localePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'აირჩიეთ თქვენი ენა:';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {

@@ -301,8 +301,8 @@
       "path": {}
     }
   },
-  "welcomeHeader": "选择您的语言：",
-  "@welcomeHeader": {},
+  "localeHeader": "选择您的语言：",
+  "@localeHeader": {},
   "connectToInternetDescription": "将这台电脑连接到互联网有助于 Ubuntu 安装所需的任何额外软件并选择您的时区。\n\n通过以太网电缆连接，或选择 Wi-Fi 网络",
   "@connectToInternetDescription": {},
   "connectToInternetPageTitle": "连接到互联网",
@@ -626,8 +626,8 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "抱歉，活动目录目前无法设置。系统启动并运行后，请访问 <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> 寻求帮助。",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "正在准备 {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "正在准备 {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -772,8 +772,8 @@
       "DISTRO": {}
     }
   },
-  "welcomePageTitle": "欢迎来到 {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "欢迎来到 {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -787,6 +787,13 @@
   "@restartIntoWindowsTitle": {},
   "restartIntoWindowsDescription": "您确定要重新启动计算机吗？您需要稍后重新启动 {DISTRO} 安装程序才能完成安装 {DISTRO}。",
   "@restartIntoWindowsDescription": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "loadingPageTitle": "欢迎来到 {DISTRO}",
+  "@loadingPageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}

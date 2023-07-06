@@ -17,22 +17,29 @@
   "@revertButtonText": {},
   "quitButtonText": "Quit installation",
   "@quitButtonText": {},
-  "welcomePageTitle": "Welcome to {DISTRO}",
-  "@welcomePageTitle": {
+  "loadingPageTitle": "Welcome to {DISTRO}",
+  "@loadingPageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "preparingUbuntu": "Preparing {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Preparing {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
     }
   },
-  "welcomeHeader": "Choose your language:",
-  "@welcomeHeader": {},
+  "localePageTitle": "Welcome to {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Choose your language:",
+  "@localeHeader": {},
   "tryOrInstallPageTitle": "Try or install {DISTRO}",
   "@tryOrInstallPageTitle": {
     "type": "text",

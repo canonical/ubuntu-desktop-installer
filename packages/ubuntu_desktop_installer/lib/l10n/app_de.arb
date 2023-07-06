@@ -12,8 +12,8 @@
   "@revertButtonText": {},
   "welcome": "Willkommen",
   "@welcome": {},
-  "welcomeHeader": "Wählen Sie Ihre Sprache aus:",
-  "@welcomeHeader": {},
+  "localeHeader": "Wählen Sie Ihre Sprache aus:",
+  "@localeHeader": {},
   "tryOrInstallPageTitle": "{DISTRO} ausprobieren oder installieren",
   "@tryOrInstallPageTitle": {},
   "repairInstallation": "Installation reparieren",
@@ -571,8 +571,8 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "Entschuldigung, Active Directory kann im Moment nicht eingerichtet werden. Besuchen Sie für Hilfe <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, sobald Ihr System hochgefahren und in Betrieb ist.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "{DISTRO} wird vorbereitet …",
-  "@preparingUbuntu": {
+  "loadingHeader": "{DISTRO} wird vorbereitet …",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -609,8 +609,8 @@
   "@notEnoughDiskSpaceAvailable": {},
   "notEnoughDiskSpaceRequired": "Erforderlich:",
   "@notEnoughDiskSpaceRequired": {},
-  "welcomePageTitle": "Willkommen bei {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Willkommen bei {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -746,6 +746,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "Willkommen bei {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

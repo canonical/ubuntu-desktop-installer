@@ -366,8 +366,8 @@
       "color": {}
     }
   },
-  "welcomeHeader": "נא לבחור שפה:",
-  "@welcomeHeader": {},
+  "localeHeader": "נא לבחור שפה:",
+  "@localeHeader": {},
   "hiddenWifiNetworkNameRequired": "שם הרשת נחוץ",
   "@hiddenWifiNetworkNameRequired": {},
   "hiddenWifiNetwork": "התחברות לרשת אלחוטית נסתרת",
@@ -571,8 +571,8 @@
   "@activeDirectoryErrorTitle": {},
   "activeDirectoryErrorMessage": "אי אפשר להגדיר חיבור ל־Active Directory כרגע, עמך הסליחה. לאחר סיום התקנת המערכת, יש לבקר בכתובת <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> לקבלת עזרה.",
   "@activeDirectoryErrorMessage": {},
-  "preparingUbuntu": "{DISTRO} בהכנות…",
-  "@preparingUbuntu": {
+  "loadingHeader": "{DISTRO} בהכנות…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -636,8 +636,8 @@
       "DISTRO": {}
     }
   },
-  "welcomePageTitle": "ברוך בואך אל {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "ברוך בואך אל {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -746,6 +746,13 @@
     "type": "text",
     "placeholders": {
       "format": {}
+    }
+  },
+  "loadingPageTitle": "ברוך בואך אל {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
     }
   }
 }

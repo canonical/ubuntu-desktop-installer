@@ -114,8 +114,8 @@
   },
   "installationTypeMultiOSDetected": "Šiuo metu šiame kompiuteryje yra įdiegtos kelios operacinės sistemos. Ką norėtumėte daryti?",
   "@installationTypeMultiOSDetected": {},
-  "welcomeHeader": "Pasirinkite kalbą:",
-  "@welcomeHeader": {},
+  "localeHeader": "Pasirinkite kalbą:",
+  "@localeHeader": {},
   "configureSecureBootDescription": "Pasirinkote įdiegti trečiųjų šalių tvarkyklės programinę įrangą. Tai reikalauja, kad būtų išjungtas saugusis paleidimashis.\nNorėdami tai atlikti, dabar turite pasirinkti saugumo raktą, o kai sistema bus paleista iš naujo, turėsite jį įvesti.",
   "@configureSecureBootDescription": {},
   "configureSecureBootOption": "Konfigūruoti saugųjį paleidimą",
@@ -583,8 +583,8 @@
   },
   "quitButtonText": "Baigti diegimą",
   "@quitButtonText": {},
-  "preparingUbuntu": "Ruošiama {DISTRO}…",
-  "@preparingUbuntu": {
+  "loadingHeader": "Ruošiama {DISTRO}…",
+  "@loadingHeader": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -636,8 +636,8 @@
   },
   "installationSlidesCreativityTitle": "Vystykite savo kūrybingumą",
   "@installationSlidesCreativityTitle": {},
-  "welcomePageTitle": "Jus sveikina {DISTRO}",
-  "@welcomePageTitle": {
+  "localePageTitle": "Jus sveikina {DISTRO}",
+  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}
@@ -791,5 +791,12 @@
     }
   },
   "restartIntoWindowsTitle": "Paleisti iš naujo į „Windows“ sistemą?",
-  "@restartIntoWindowsTitle": {}
+  "@restartIntoWindowsTitle": {},
+  "loadingPageTitle": "Jus sveikina {DISTRO}",
+  "@loadingPageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  }
 }

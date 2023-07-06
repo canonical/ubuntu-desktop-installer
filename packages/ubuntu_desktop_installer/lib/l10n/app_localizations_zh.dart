@@ -25,17 +25,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String get quitButtonText => '退出安装';
 
   @override
-  String welcomePageTitle(Object DISTRO) {
+  String loadingPageTitle(Object DISTRO) {
     return '欢迎来到 $DISTRO';
   }
 
   @override
-  String preparingUbuntu(Object DISTRO) {
+  String loadingHeader(Object DISTRO) {
     return '正在准备 $DISTRO…';
   }
 
   @override
-  String get welcomeHeader => '选择您的语言：';
+  String localePageTitle(Object DISTRO) {
+    return '欢迎来到 $DISTRO';
+  }
+
+  @override
+  String get localeHeader => '选择您的语言：';
 
   @override
   String tryOrInstallPageTitle(Object DISTRO) {
