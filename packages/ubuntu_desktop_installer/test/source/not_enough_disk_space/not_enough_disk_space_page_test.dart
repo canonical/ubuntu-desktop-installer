@@ -26,8 +26,9 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(NotEnoughDiskSpacePage));
-    expect(find.text(tester.lang.notEnoughDiskSpaceUbuntu('Ubuntu')),
-        findsOneWidget);
+    final l10n = AppLocalizations.of(context);
+
+    expect(find.text(l10n.notEnoughDiskSpaceUbuntu('Ubuntu')), findsOneWidget);
     expect(find.text(context.formatByteSize(123456)), findsOneWidget);
     expect(find.text(context.formatByteSize(654321)), findsOneWidget);
   });
@@ -36,7 +37,10 @@ void main() {
     final model = buildNotEnoughDiskSpaceModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final button = find.button(tester.lang.quitButtonText);
+    final context = tester.element(find.byType(NotEnoughDiskSpacePage));
+    final l10n = AppLocalizations.of(context);
+
+    final button = find.button(l10n.quitButtonText);
     expect(button, findsOneWidget);
 
     final windowClosed = YaruTestWindow.waitForClosed();

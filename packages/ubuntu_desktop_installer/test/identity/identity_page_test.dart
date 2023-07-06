@@ -93,12 +93,12 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final lang = UbuntuLocalizations.of(context);
+    final l10n = UbuntuLocalizations.of(context);
 
-    expect(find.text(lang.weakPassword), findsNothing);
-    expect(find.text(lang.fairPassword), findsNothing);
-    expect(find.text(lang.goodPassword), findsNothing);
-    expect(find.text(lang.strongPassword), findsNothing);
+    expect(find.text(l10n.weakPassword), findsNothing);
+    expect(find.text(l10n.fairPassword), findsNothing);
+    expect(find.text(l10n.goodPassword), findsNothing);
+    expect(find.text(l10n.strongPassword), findsNothing);
   });
 
   testWidgets('weak password', (tester) async {
@@ -109,9 +109,9 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final lang = UbuntuLocalizations.of(context);
+    final l10n = UbuntuLocalizations.of(context);
 
-    expect(find.text(lang.weakPassword), findsOneWidget);
+    expect(find.text(l10n.weakPassword), findsOneWidget);
   });
 
   testWidgets('fair password', (tester) async {
@@ -122,9 +122,9 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final lang = UbuntuLocalizations.of(context);
+    final l10n = UbuntuLocalizations.of(context);
 
-    expect(find.text(lang.fairPassword), findsOneWidget);
+    expect(find.text(l10n.fairPassword), findsOneWidget);
   });
 
   testWidgets('good password', (tester) async {
@@ -135,9 +135,9 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final lang = UbuntuLocalizations.of(context);
+    final l10n = UbuntuLocalizations.of(context);
 
-    expect(find.text(lang.goodPassword), findsOneWidget);
+    expect(find.text(l10n.goodPassword), findsOneWidget);
   });
 
   testWidgets('strong password', (tester) async {
@@ -148,31 +148,34 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final lang = UbuntuLocalizations.of(context);
+    final l10n = UbuntuLocalizations.of(context);
 
-    expect(find.text(lang.strongPassword), findsOneWidget);
+    expect(find.text(l10n.strongPassword), findsOneWidget);
   });
 
   testWidgets('valid input', (tester) async {
     final model = buildIdentityModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildIdentityModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
   });
 
   testWidgets('auto-login', (tester) async {
     final model = buildIdentityModel(autoLogin: true);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
+    final context = tester.element(find.byType(IdentityPage));
+    final l10n = AppLocalizations.of(context);
+
     final requiredPasswordSwitch = find.switchButton(
-      tester.lang.identityRequirePassword,
+      l10n.identityRequirePassword,
     );
     expect(requiredPasswordSwitch, findsOneWidget);
     expect(requiredPasswordSwitch, isNotChecked);
@@ -185,7 +188,10 @@ void main() {
     final model = buildIdentityModel(showPassword: false);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
-    final showPasswordButton = find.button(tester.lang.identityPasswordShow);
+    final context = tester.element(find.byType(IdentityPage));
+    final l10n = AppLocalizations.of(context);
+
+    final showPasswordButton = find.button(l10n.identityPasswordShow);
     expect(showPasswordButton, findsOneWidget);
 
     await tester.tap(showPasswordButton);
@@ -196,7 +202,10 @@ void main() {
     final model = buildIdentityModel(showPassword: true);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
-    final hidePasswordButton = find.button(tester.lang.identityPasswordHide);
+    final context = tester.element(find.byType(IdentityPage));
+    final l10n = AppLocalizations.of(context);
+
+    final hidePasswordButton = find.button(l10n.identityPasswordHide);
     expect(hidePasswordButton, findsOneWidget);
 
     await tester.tap(hidePasswordButton);
@@ -216,7 +225,10 @@ void main() {
         buildIdentityModel(isConnected: true, hasActiveDirectorySupport: true);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
-    final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
+    final context = tester.element(find.byType(IdentityPage));
+    final l10n = AppLocalizations.of(context);
+
+    final checkbox = find.checkButton(l10n.activeDirectoryOption);
     expect(checkbox, findsOneWidget);
     expect(checkbox, isNotChecked);
     expect(checkbox, isEnabled);
@@ -230,7 +242,10 @@ void main() {
         buildIdentityModel(isConnected: true, hasActiveDirectorySupport: false);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
-    final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
+    final context = tester.element(find.byType(IdentityPage));
+    final l10n = AppLocalizations.of(context);
+
+    final checkbox = find.checkButton(l10n.activeDirectoryOption);
     expect(checkbox, findsNothing);
   });
 
@@ -239,7 +254,10 @@ void main() {
         buildIdentityModel(isConnected: false, hasActiveDirectorySupport: true);
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
-    final checkbox = find.checkButton(tester.lang.activeDirectoryOption);
+    final context = tester.element(find.byType(IdentityPage));
+    final l10n = AppLocalizations.of(context);
+
+    final checkbox = find.checkButton(l10n.activeDirectoryOption);
     expect(checkbox, findsOneWidget);
     expect(checkbox, isNotChecked);
     expect(checkbox, isDisabled);

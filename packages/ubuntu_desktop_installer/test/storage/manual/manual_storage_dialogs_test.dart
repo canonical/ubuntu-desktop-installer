@@ -18,8 +18,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'test_manual_storage.dart';
 
 void main() {
-  setUpAll(() => InstallerTester.context = AlertDialog);
-
   testWidgets('create partition', (tester) async {
     final disk = fakeDisk();
     const gap = Gap(offset: 0, size: 1000000, usable: GapUsable.YES);
@@ -89,7 +87,7 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), '/tst foo');
     await tester.pump();
 
-    expect(find.button(tester.ulang.okLabel), isDisabled);
+    expect(find.button(find.okLabel), isDisabled);
   });
 
   testWidgets('edit partition', (tester) async {
@@ -196,6 +194,6 @@ void main() {
     await tester.enterText(find.byType(YaruAutocomplete<String>), 'tst');
     await tester.pump();
 
-    expect(find.button(tester.ulang.okLabel), isDisabled);
+    expect(find.button(find.okLabel), isDisabled);
   });
 }

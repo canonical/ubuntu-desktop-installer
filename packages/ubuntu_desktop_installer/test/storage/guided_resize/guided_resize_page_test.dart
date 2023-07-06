@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:split_view/split_view.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/guided_resize_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/guided_resize/guided_resize_page.dart';
 import 'package:ubuntu_desktop_installer/services/product_service.dart';
@@ -38,7 +39,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(
-      find.text('sda1 - Ubuntu 22.04 LTS - 123 ${tester.ulang.byte}'),
+      find.text('sda1 - Ubuntu 22.04 LTS - 123 B'),
       findsOneWidget,
     );
   });
@@ -97,8 +98,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(GuidedResizePage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-      find.html(tester.lang.installAlongsideHiddenPartitions(4, '')),
+      find.html(l10n.installAlongsideHiddenPartitions(4, '')),
       findsOneWidget,
     );
   });
@@ -110,8 +114,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(GuidedResizePage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-      find.text(tester.lang.installationTypeAlongsideUnknown('Ubuntu 22.10')),
+      find.text(l10n.installationTypeAlongsideUnknown('Ubuntu 22.10')),
       findsOneWidget,
     );
   });
@@ -123,9 +130,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(GuidedResizePage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-      find.text(
-          tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 10')),
+      find.text(l10n.installationTypeAlongside('Ubuntu 22.10', 'Windows 10')),
       findsOneWidget,
     );
   });
@@ -137,8 +146,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(GuidedResizePage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-      find.text(tester.lang.installationTypeAlongsideDual(
+      find.text(l10n.installationTypeAlongsideDual(
           'Ubuntu 22.10', 'Ubuntu 21.10', 'Ubuntu 22.04 LTS')),
       findsOneWidget,
     );
@@ -151,8 +163,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(GuidedResizePage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-      find.text(tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10')),
+      find.text(l10n.installationTypeAlongsideMulti('Ubuntu 22.10')),
       findsOneWidget,
     );
   });

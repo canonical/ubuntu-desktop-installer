@@ -11,49 +11,7 @@ import 'package:yaru/yaru.dart';
 
 export 'test_utils.mocks.dart';
 
-/// An extension on [WidgetTester] for building test apps.
-///
-/// The additional [lang] property returns the [AppLocalizations] instance
-/// associated with the current [WizardPage], for easy access to the
-/// application's translated strings.
-///
-/// Use like so when writing tests:
-/// ```dart
-/// import 'widget_tester_extensions.dart';
-///
-/// void main() {
-///   Widget buildPage(WidgetTester tester) { [...] }
-///
-///   testWidgets('test description', (tester) async {
-///     await tester.pumpWidget(tester.buildApp((_) => buildPage(tester)));
-///
-///     expect(find.text(tester.lang.someTranslatableString), findsOneWidget);
-///   });
-/// }
-/// ```
-///
-/// If the tested widget is not in a [WizardPage], you can use the static
-/// [InstallerTester.context] property to specify the appropriate context to use.
-///
-/// For example:
-/// ```dart
-/// void main() {
-///   setUpAll(() => LangTester.context = MyWidget);
-/// }
-/// ```
 extension InstallerTester on WidgetTester {
-  static Type context = WizardPage;
-
-  AppLocalizations get lang {
-    final widget = element(find.byType(context).first);
-    return AppLocalizations.of(widget);
-  }
-
-  UbuntuLocalizations get ulang {
-    final widget = element(find.byType(context).first);
-    return UbuntuLocalizations.of(widget);
-  }
-
   Widget buildApp(WidgetBuilder builder) {
     view.devicePixelRatio = 1;
     view.physicalSize = const Size(960, 680);

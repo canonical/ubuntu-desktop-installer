@@ -155,6 +155,9 @@ void main() {
       ),
     );
 
+    final context = tester.element(find.byType(Wizard));
+    final l10n = AppLocalizations.of(context);
+
     await tester.pumpAndSettle();
     expect(find.byType(LocalePage), findsOneWidget);
     // localeModel is not a mock
@@ -193,7 +196,7 @@ void main() {
     verify(securityKeyModel.init()).called(1); // skipped
     verify(confirmModel.init()).called(1);
 
-    await tester.tapButton(tester.lang.confirmInstallButton);
+    await tester.tapButton(l10n.confirmInstallButton);
     await tester.pumpAndSettle();
     expect(find.byType(TimezonePage), findsOneWidget);
     verify(timezoneModel.init()).called(1);
@@ -353,6 +356,10 @@ void main() {
         ]),
       ),
     );
+
+    final context = tester.element(find.byType(Wizard));
+    final l10n = AppLocalizations.of(context);
+
     await tester.pumpAndSettle();
     expect(find.byType(KeyboardPage), findsOneWidget);
     verify(keyboardModel.init()).called(1);
@@ -362,7 +369,7 @@ void main() {
     expect(find.byType(ConfirmPage), findsOneWidget);
     verify(confirmModel.init()).called(1);
 
-    await tester.tapButton(tester.lang.confirmInstallButton);
+    await tester.tapButton(l10n.confirmInstallButton);
     await tester.pumpAndSettle();
     expect(find.byType(IdentityPage), findsOneWidget);
     verify(identityModel.init()).called(1);

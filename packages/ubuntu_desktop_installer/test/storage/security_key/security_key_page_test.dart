@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/security_key/security_key_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
@@ -44,21 +45,24 @@ void main() {
     final model = buildSecurityKeyModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildSecurityKeyModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
   });
 
   testWidgets('show security key', (tester) async {
     final model = buildSecurityKeyModel(showSecurityKey: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final showSecurityKeyButton = find.checkButton(tester.lang.showSecurityKey);
+    final context = tester.element(find.byType(SecurityKeyPage));
+    final l10n = AppLocalizations.of(context);
+
+    final showSecurityKeyButton = find.checkButton(l10n.showSecurityKey);
     expect(showSecurityKeyButton, findsOneWidget);
 
     await tester.tap(showSecurityKeyButton);

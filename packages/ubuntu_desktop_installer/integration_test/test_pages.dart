@@ -12,18 +12,17 @@ import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import '../test/test_utils.dart';
-
 Future<void> testLocalePage(
   WidgetTester tester, {
   String? language,
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(LocalePage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.localePageTitle('Ubuntu')),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(LocalePage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.localePageTitle('Ubuntu')), findsOneWidget);
 
   if (language != null) {
     final tile = find.listTile(language, skipOffstage: false);
@@ -47,10 +46,11 @@ Future<void> testWelcomePage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(WelcomePage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.welcomePageTitle('Ubuntu')),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(WelcomePage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.welcomePageTitle('Ubuntu')), findsOneWidget);
 
   if (option != null) {
     await tester.tap(find.radio<Option>(option));
@@ -71,10 +71,11 @@ Future<void> testKeyboardPage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(KeyboardPage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.keyboardTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(KeyboardPage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.keyboardTitle), findsOneWidget);
 
   if (keyboard != null) {
     if (keyboard.layout.isNotEmpty) {
@@ -97,7 +98,7 @@ Future<void> testKeyboardPage(
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
 
-    await tester.tapButton(tester.lang.keyboardDetectButton);
+    await tester.tapButton(l10n.keyboardDetectButton);
     await tester.pumpAndSettle();
 
     await takeScreenshot(tester, '$screenshot-detect');
@@ -117,10 +118,11 @@ Future<void> testNetworkPage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(NetworkPage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.connectToInternetPageTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(NetworkPage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.connectToInternetPageTitle), findsOneWidget);
 
   if (mode != null) {
     await tester.tapRadio<ConnectMode>(mode);
@@ -140,10 +142,11 @@ Future<void> testSourcePage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(SourcePage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.updatesOtherSoftwarePageTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(SourcePage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.updatesOtherSoftwarePageTitle), findsOneWidget);
 
   if (sourceId != null) {
     await tester.tapRadio<String>(sourceId);
@@ -162,17 +165,18 @@ Future<void> testNotEnoughDiskSpacePage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(NotEnoughDiskSpacePage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.notEnoughDiskSpaceTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(NotEnoughDiskSpacePage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.notEnoughDiskSpaceTitle), findsOneWidget);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.quitButtonText);
+  await tester.tapButton(l10n.quitButtonText);
   await expectLater(windowClosed, completes);
 }
 
@@ -184,17 +188,18 @@ Future<void> testStoragePage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(StoragePage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.installationTypeTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(StoragePage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.installationTypeTitle), findsOneWidget);
 
   if (type != null) {
     await tester.tapRadio<StorageType>(type);
     await tester.pump();
   }
   if (advancedFeature != null) {
-    await tester.tapButton(tester.lang.installationTypeAdvancedLabel);
+    await tester.tapButton(l10n.installationTypeAdvancedLabel);
     await tester.pumpAndSettle();
 
     await tester.tapRadio<AdvancedFeature>(advancedFeature);
@@ -202,7 +207,7 @@ Future<void> testStoragePage(
 
     if (useEncryption != null) {
       await tester.toggleButton(
-        tester.lang.installationTypeEncrypt('Ubuntu'),
+        l10n.installationTypeEncrypt('Ubuntu'),
         true,
       );
     }
@@ -231,17 +236,18 @@ Future<void> testSecurityKeyPage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(SecurityKeyPage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.chooseSecurityKeyTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(SecurityKeyPage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.chooseSecurityKeyTitle), findsOneWidget);
 
   await tester.enterText(
-    find.textField(tester.lang.chooseSecurityKey),
+    find.textField(l10n.chooseSecurityKey),
     securityKey,
   );
   await tester.enterText(
-    find.textField(tester.lang.confirmSecurityKey),
+    find.textField(l10n.confirmSecurityKey),
     securityKey,
   );
 
@@ -260,18 +266,19 @@ Future<void> testManualStoragePage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(ManualStoragePage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.allocateDiskSpace),
-    findsOneWidget,
-  );
 
-  await tester.tapButton(tester.lang.newPartitionTable);
+  final context = tester.element(find.byType(ManualStoragePage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.allocateDiskSpace), findsOneWidget);
+
+  await tester.tapButton(l10n.newPartitionTable);
   await tester.pumpAndSettle();
 
   for (final disk in storage ?? const <Disk>[]) {
     for (final partition in disk.partitions.whereType<Partition>()) {
       // TODO: find the correct "free space" slot when there are multiple disks
-      await tester.tap(find.text(tester.lang.freeDiskSpace).last);
+      await tester.tap(find.text(l10n.freeDiskSpace).last);
       await tester.pump();
 
       await tester.tap(find.byIcon(Icons.add));
@@ -316,9 +323,12 @@ Future<void> testGuidedReformatPage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(GuidedReformatPage);
+
+  final context = tester.element(find.byType(GuidedReformatPage));
+  final l10n = AppLocalizations.of(context);
+
   expect(
-    find.title(
-        (AppLocalizations l10n) => l10n.selectGuidedStoragePageTitle('Ubuntu')),
+    find.title(l10n.selectGuidedStoragePageTitle('Ubuntu')),
     findsOneWidget,
   );
 
@@ -335,10 +345,13 @@ Future<void> testGuidedResizePage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(GuidedResizePage);
+
+  final context = tester.element(find.byType(GuidedResizePage));
+  final l10n = AppLocalizations.of(context);
+
   final productInfo = getService<ProductService>().getProductInfo();
   expect(
-    find.title((AppLocalizations l10n) =>
-        l10n.installationTypeAlongsideUnknown(productInfo)),
+    find.title(l10n.installationTypeAlongsideUnknown(productInfo)),
     findsOneWidget,
   );
 
@@ -372,16 +385,17 @@ Future<void> testConfirmPage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(ConfirmPage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.confirmPageTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(ConfirmPage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.confirmPageTitle), findsOneWidget);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.confirmInstallButton);
+  await tester.tapButton(l10n.confirmInstallButton);
 }
 
 Future<void> testBitLockerPage(
@@ -389,16 +403,17 @@ Future<void> testBitLockerPage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(BitLockerPage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.bitlockerTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(BitLockerPage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.bitlockerTitle), findsOneWidget);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.restartIntoWindows);
+  await tester.tapButton(l10n.restartIntoWindows);
   await tester.pumpAndSettle();
   expect(find.byType(AlertDialog), findsOneWidget);
 
@@ -407,7 +422,7 @@ Future<void> testBitLockerPage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.restartButtonText);
+  await tester.tapButton(l10n.restartButtonText);
   await expectLater(windowClosed, completes);
 }
 
@@ -416,13 +431,17 @@ Future<void> testRstPage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(RstPage);
-  expect(find.title((AppLocalizations l10n) => l10n.rstTitle), findsOneWidget);
+
+  final context = tester.element(find.byType(RstPage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.rstTitle), findsOneWidget);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.tapButton(tester.lang.restartIntoWindows);
+  await tester.tapButton(l10n.restartIntoWindows);
   await tester.pumpAndSettle();
   expect(find.byType(AlertDialog), findsOneWidget);
 
@@ -431,7 +450,7 @@ Future<void> testRstPage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.restartButtonText);
+  await tester.tapButton(l10n.restartButtonText);
   await expectLater(windowClosed, completes);
 }
 
@@ -445,8 +464,8 @@ Future<void> testTimezonePage(
 
   final context = tester.element(find.byType(TimezonePage));
   final l10n = TimezoneLocalizations.of(context);
-  expect(find.widgetWithText(YaruWindowTitleBar, l10n.timezonePageTitle),
-      findsOneWidget);
+
+  expect(find.title(l10n.timezonePageTitle), findsOneWidget);
 
   if (location != null) {
     await tester.enterText(
@@ -484,36 +503,37 @@ Future<void> testIdentityPage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(IdentityPage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.identityPageTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(IdentityPage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.identityPageTitle), findsOneWidget);
 
   if (identity?.realname != null) {
     await tester.enterText(
-      find.textField(tester.lang.identityRealNameLabel),
+      find.textField(l10n.identityRealNameLabel),
       identity!.realname,
     );
   }
   if (identity?.hostname != null) {
     await tester.enterText(
-      find.textField(tester.lang.identityHostnameLabel),
+      find.textField(l10n.identityHostnameLabel),
       identity!.hostname,
     );
   }
   if (identity?.username != null) {
     await tester.enterText(
-      find.textField(tester.lang.identityUsernameLabel),
+      find.textField(l10n.identityUsernameLabel),
       identity!.username,
     );
   }
   if (password != null) {
     await tester.enterText(
-      find.textField(tester.lang.identityPasswordLabel),
+      find.textField(l10n.identityPasswordLabel),
       password,
     );
     await tester.enterText(
-      find.textField(tester.lang.identityConfirmPasswordLabel),
+      find.textField(l10n.identityConfirmPasswordLabel),
       password,
     );
   }
@@ -534,26 +554,27 @@ Future<void> testActiveDirectoryPage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(ActiveDirectoryPage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.activeDirectoryTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(ActiveDirectoryPage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.activeDirectoryTitle), findsOneWidget);
 
   if (domainName != null) {
     await tester.enterText(
-      find.textField(tester.lang.activeDirectoryDomainLabel),
+      find.textField(l10n.activeDirectoryDomainLabel),
       domainName,
     );
   }
   if (adminName != null) {
     await tester.enterText(
-      find.textField(tester.lang.activeDirectoryAdminLabel),
+      find.textField(l10n.activeDirectoryAdminLabel),
       adminName,
     );
   }
   if (password != null) {
     await tester.enterText(
-      find.textField(tester.lang.activeDirectoryPasswordLabel),
+      find.textField(l10n.activeDirectoryPasswordLabel),
       password,
     );
   }
@@ -572,10 +593,11 @@ Future<void> testThemePage(
   String? screenshot,
 }) async {
   await tester.pumpUntilPage(ThemePage);
-  expect(
-    find.title((AppLocalizations l10n) => l10n.themePageTitle),
-    findsOneWidget,
-  );
+
+  final context = tester.element(find.byType(ThemePage));
+  final l10n = AppLocalizations.of(context);
+
+  expect(find.title(l10n.themePageTitle), findsOneWidget);
 
   if (theme != null) {
     final asset = find.asset('assets/theme/${theme.name}-theme.png');
@@ -597,14 +619,17 @@ Future<void> testInstallPage(
 }) async {
   await tester.pumpUntilPage(InstallPage);
 
+  final context = tester.element(find.byType(InstallPage));
+  final l10n = AppLocalizations.of(context);
+
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);
   }
 
-  await tester.pumpUntil(find.button(tester.lang.continueTesting));
+  await tester.pumpUntil(find.button(l10n.continueTesting));
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(tester.lang.continueTesting);
+  await tester.tapButton(l10n.continueTesting);
   await expectLater(windowClosed, completes);
 }
 
@@ -616,9 +641,9 @@ extension on WidgetTester {
 }
 
 extension on CommonFinders {
-  Finder title<T>(LocalizationFunction<T> tr) {
+  Finder title(String title) {
     return find.ancestor(
-      of: find.l10n<T>(tr),
+      of: find.text(title),
       matching: find.byType(YaruWindowTitleBar),
     );
   }

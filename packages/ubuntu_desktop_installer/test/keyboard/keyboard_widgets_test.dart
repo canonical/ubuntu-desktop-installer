@@ -1,12 +1,11 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 
 import '../test_utils.dart';
 
 void main() {
-  setUpAll(() => InstallerTester.context = DetectKeyboardView);
-
   testWidgets('press key', (tester) async {
     int? keyPress;
 
@@ -19,11 +18,14 @@ void main() {
       ),
     );
 
+    final context = tester.element(find.byType(DetectKeyboardView));
+    final l10n = AppLocalizations.of(context);
+
     expect(find.byType(PressKeyView), findsOneWidget);
     expect(find.text('x'), findsOneWidget);
     expect(find.text('y'), findsOneWidget);
     expect(find.text('z'), findsOneWidget);
-    expect(find.text(tester.lang.keyboardPressKeyLabel), findsOneWidget);
+    expect(find.text(l10n.keyboardPressKeyLabel), findsOneWidget);
 
     await tester.sendKeyEvent(LogicalKeyboardKey.keyW, platform: 'linux');
     expect(keyPress, equals(25 - 8));
@@ -37,8 +39,11 @@ void main() {
       tester.buildApp((_) => const DetectKeyboardView(keyPresent: 'x')),
     );
 
+    final context = tester.element(find.byType(DetectKeyboardView));
+    final l10n = AppLocalizations.of(context);
+
     expect(find.byType(KeyPresentView), findsOneWidget);
     expect(find.text('x'), findsOneWidget);
-    expect(find.text(tester.lang.keyboardKeyPresentLabel), findsOneWidget);
+    expect(find.text(l10n.keyboardKeyPresentLabel), findsOneWidget);
   });
 }

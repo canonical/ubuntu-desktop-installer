@@ -10,8 +10,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'test_network.dart';
 
 void main() {
-  setUpAll(() => InstallerTester.context = NoConnectView);
-
   testWidgets('disabled when no ethernet nor wifi', (tester) async {
     final ethernet = buildEthernetModel(isEnabled: false);
     final wifi = buildWifiModel(isEnabled: true);

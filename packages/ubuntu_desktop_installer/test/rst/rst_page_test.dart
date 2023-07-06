@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/pages/rst/rst_page.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
@@ -15,7 +17,10 @@ void main() {
     final model = buildRstModel();
     await tester.pumpWidget(tester.buildApp((_) => buildRstPage(model)));
 
-    final restartButton = find.button(tester.lang.restartIntoWindows);
+    final context = tester.element(find.byType(RstPage));
+    final l10n = AppLocalizations.of(context);
+
+    final restartButton = find.button(l10n.restartIntoWindows);
     expect(restartButton, findsOneWidget);
 
     final windowClosed = YaruTestWindow.waitForClosed();
@@ -28,7 +33,7 @@ void main() {
 
     final dialogButton = find.descendant(
         of: find.byType(AlertDialog),
-        matching: find.text(tester.lang.restartButtonText));
+        matching: find.text(l10n.restartButtonText));
 
     await tester.tap(dialogButton);
     await tester.pumpAndSettle();

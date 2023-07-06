@@ -1,5 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/pages.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -41,7 +43,9 @@ void main() {
 
     await tester
         .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
-    final error = validation.localize(tester.lang);
+    final context = tester.element(find.byType(ActiveDirectoryPage));
+    final lang = AppLocalizations.of(context);
+    final error = validation.localize(lang);
     if (error.isNotEmpty) {
       expect(find.text(error), findsNothing);
     }
@@ -65,9 +69,11 @@ void main() {
 
     await tester
         .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
-    final error = validation.localize(tester.lang);
+    final context = tester.element(find.byType(ActiveDirectoryPage));
+    final lang = AppLocalizations.of(context);
+    final error = validation.localize(lang);
     if (error.isNotEmpty) {
-      expect(find.text(validation.localize(tester.lang)), findsNothing);
+      expect(find.text(validation.localize(lang)), findsNothing);
     }
 
     final textField = find.textField('admin');
@@ -88,7 +94,9 @@ void main() {
 
     await tester
         .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
-    final error = validation.localize(tester.lang);
+    final context = tester.element(find.byType(ActiveDirectoryPage));
+    final lang = AppLocalizations.of(context);
+    final error = validation.localize(lang);
     if (error.isNotEmpty) {
       expect(find.text(error), findsNothing);
     }
@@ -107,7 +115,7 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
@@ -115,7 +123,7 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
   });
 
   testWidgets('save AD connection info', (tester) async {

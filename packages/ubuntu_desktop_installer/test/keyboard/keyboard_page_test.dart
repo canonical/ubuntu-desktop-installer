@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_page.dart';
 import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
@@ -46,7 +48,10 @@ void main() {
     final model = buildKeyboardModel();
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    final textField = find.textField(tester.lang.keyboardTestHint);
+    final context = tester.element(find.byType(KeyboardPage));
+    final l10n = AppLocalizations.of(context);
+
+    final textField = find.textField(l10n.keyboardTestHint);
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'foo bar');
     await tester.pump();
@@ -57,7 +62,10 @@ void main() {
     final model = buildKeyboardModel();
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    final detectButton = find.button(tester.lang.keyboardDetectButton);
+    final context = tester.element(find.byType(KeyboardPage));
+    final l10n = AppLocalizations.of(context);
+
+    final detectButton = find.button(l10n.keyboardDetectButton);
     expect(detectButton, findsOneWidget);
     await tester.tap(detectButton);
     await tester.pumpAndSettle();
@@ -65,8 +73,7 @@ void main() {
     expect(find.byType(AlertDialog), findsOneWidget);
     expect(find.byType(DetectKeyboardView), findsOneWidget);
 
-    final context = tester.element(find.byType(DetectKeyboardView));
-    Navigator.of(context)
+    Navigator.of(tester.element(find.byType(DetectKeyboardView)))
         .pop(const AnyStep.stepResult(layout: 'layout', variant: 'variant'));
     await tester.pumpAndSettle();
     verify(model.trySelectLayoutVariant('layout', 'variant'));
@@ -76,7 +83,10 @@ void main() {
     final model = buildKeyboardModel(canDetectLayout: false);
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    final detectButton = find.button(tester.lang.keyboardDetectButton);
+    final context = tester.element(find.byType(KeyboardPage));
+    final l10n = AppLocalizations.of(context);
+
+    final detectButton = find.button(l10n.keyboardDetectButton);
     expect(detectButton, findsNothing);
   });
 
@@ -84,14 +94,14 @@ void main() {
     final model = buildKeyboardModel(isValid: true);
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildKeyboardModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
   });
 
   testWidgets('key search', (tester) async {

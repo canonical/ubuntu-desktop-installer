@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/bitlocker/bitlocker_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/bitlocker/bitlocker_page.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
@@ -24,7 +25,10 @@ void main() {
       ),
     );
 
-    final restartButton = find.button(tester.lang.restartIntoWindows);
+    final context = tester.element(find.byType(BitLockerPage));
+    final l10n = AppLocalizations.of(context);
+
+    final restartButton = find.button(l10n.restartIntoWindows);
     expect(restartButton, findsOneWidget);
 
     final windowClosed = YaruTestWindow.waitForClosed();
@@ -35,7 +39,7 @@ void main() {
 
     final dialogButton = find.descendant(
         of: find.byType(AlertDialog),
-        matching: find.text(tester.lang.restartButtonText));
+        matching: find.text(l10n.restartButtonText));
 
     await tester.tap(dialogButton);
     await tester.pumpAndSettle();

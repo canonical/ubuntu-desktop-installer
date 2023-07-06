@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_desktop_installer/slides/default_slides.dart';
 import 'package:ubuntu_desktop_installer/slides/slide_widgets.dart';
@@ -11,8 +12,6 @@ import 'package:ubuntu_utils/ubuntu_utils.dart';
 import '../test_utils.dart';
 
 void main() {
-  setUpAll(() => InstallerTester.context = Scaffold);
-
   testWidgets('inherited slides', (tester) async {
     slide1(_) => const Text('slide1');
     slide2(_) => const Text('slide2');
@@ -62,14 +61,17 @@ void main() {
       verify(urlLauncher.launchUrl(url)).called(1);
     }
 
+    final context = tester.element(find.byType(Scaffold));
+    final l10n = AppLocalizations.of(context);
+
     expectLaunchUrl(
-      tester.lang.installationSlidesSupportDocumentation,
+      l10n.installationSlidesSupportDocumentation,
       'https://help.ubuntu.com',
     );
     expectLaunchUrl('Ask Ubuntu', 'https://askubuntu.com');
     expectLaunchUrl('Ubuntu Discourse', 'https://discourse.ubuntu.com');
     expectLaunchUrl(
-      tester.lang.installationSlidesSupportUbuntuPro,
+      l10n.installationSlidesSupportUbuntuPro,
       'https://ubuntu.com/pro',
     );
   });

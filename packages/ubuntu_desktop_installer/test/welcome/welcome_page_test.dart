@@ -1,7 +1,6 @@
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
@@ -39,7 +38,7 @@ void main() {
     final model = buildWelcomeModel(option: Option.none);
     await tester.pumpWidget(tester.buildApp((_) => buildWelcomePage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
 
     await tester.tap(find.radio(Option.welcomeInstallOption));
     verify(model.selectOption(Option.welcomeInstallOption)).called(1);
@@ -52,14 +51,14 @@ void main() {
     final model = buildWelcomeModel(option: Option.welcomeInstallOption);
     await tester.pumpWidget(tester.buildApp((_) => buildWelcomePage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
   });
 
   testWidgets('try ubuntu', (tester) async {
     final model = buildWelcomeModel(option: Option.welcomeTryOption);
     await tester.pumpWidget(tester.buildApp((_) => buildWelcomePage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isEnabled);
+    expect(find.button(find.nextLabel), isEnabled);
 
     final windowClosed = YaruTestWindow.waitForClosed();
 

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/storage_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -23,8 +24,11 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildPage(buildStorageModel())));
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-      find.text(tester.lang.installationTypeNoOSDetected),
+      find.text(l10n.installationTypeNoOSDetected),
       findsOneWidget,
     );
   });
@@ -35,8 +39,11 @@ void main() {
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-      find.text(tester.lang.installationTypeOSDetected('Ubuntu 18.04 LTS')),
+      find.text(l10n.installationTypeOSDetected('Ubuntu 18.04 LTS')),
       findsOneWidget,
     );
   });
@@ -48,8 +55,11 @@ void main() {
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-      find.text(tester.lang.installationTypeDualOSDetected(
+      find.text(l10n.installationTypeDualOSDetected(
           'Ubuntu 18.04 LTS', 'Ubuntu 20.04 LTS')),
       findsOneWidget,
     );
@@ -63,8 +73,11 @@ void main() {
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-      find.text(tester.lang.installationTypeMultiOSDetected),
+      find.text(l10n.installationTypeMultiOSDetected),
       findsOneWidget,
     );
   });
@@ -76,8 +89,11 @@ void main() {
     ]);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-      find.text(tester.lang.installationTypeMultiOSDetected),
+      find.text(l10n.installationTypeMultiOSDetected),
       findsOneWidget,
     );
   });
@@ -97,8 +113,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     final radio = find.radioButton<StorageType>(
-        tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 10'));
+        l10n.installationTypeAlongside('Ubuntu 22.10', 'Windows 10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.type = StorageType.alongside).called(1);
@@ -120,8 +139,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     final radio = find.radioButton<StorageType>(
-        tester.lang.installationTypeAlongside('Ubuntu 22.10', 'Windows 11'));
+        l10n.installationTypeAlongside('Ubuntu 22.10', 'Windows 11'));
     expect(radio, findsOneWidget);
 
     await tester.tap(radio);
@@ -143,8 +165,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.radioButton<StorageType>(tester.lang
-        .installationTypeAlongside('Ubuntu 22.10', 'Ubuntu 18.04 LTS'));
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
+    final radio = find.radioButton<StorageType>(
+        l10n.installationTypeAlongside('Ubuntu 22.10', 'Ubuntu 18.04 LTS'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.type = StorageType.alongside).called(1);
@@ -157,8 +182,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     final radio = find.radioButton<StorageType>(
-        tester.lang.installationTypeAlongsideUnknown('Ubuntu 22.10'));
+        l10n.installationTypeAlongsideUnknown('Ubuntu 22.10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.type = StorageType.alongside).called(1);
@@ -185,8 +213,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find.radioButton<StorageType>(tester.lang
-        .installationTypeAlongsideDual(
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
+    final radio = find.radioButton<StorageType>(
+        l10n.installationTypeAlongsideDual(
             'Ubuntu 22.10', 'Windows 10', 'Ubuntu 20.04 LTS'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
@@ -214,8 +245,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     final radio = find.radioButton<StorageType>(
-        tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
+        l10n.installationTypeAlongsideMulti('Ubuntu 22.10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.type = StorageType.alongside).called(1);
@@ -248,8 +282,11 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     final radio = find.radioButton<StorageType>(
-        tester.lang.installationTypeAlongsideMulti('Ubuntu 22.10'));
+        l10n.installationTypeAlongsideMulti('Ubuntu 22.10'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.type = StorageType.alongside).called(1);
@@ -259,8 +296,11 @@ void main() {
     final model = buildStorageModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio = find
-        .radioButton<StorageType>(tester.lang.installationTypeErase('Ubuntu'));
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
+    final radio =
+        find.radioButton<StorageType>(l10n.installationTypeErase('Ubuntu'));
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.type = StorageType.erase).called(1);
@@ -270,13 +310,15 @@ void main() {
     final model = buildStorageModel(type: StorageType.manual);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final radio =
-        find.radioButton<StorageType>(tester.lang.installationTypeManual);
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
+    final radio = find.radioButton<StorageType>(l10n.installationTypeManual);
     expect(radio, findsOneWidget);
     await tester.tap(radio);
     verify(model.type = StorageType.manual).called(1);
 
-    expect(find.button(tester.lang.installationTypeAdvancedLabel), isDisabled);
+    expect(find.button(l10n.installationTypeAdvancedLabel), isDisabled);
   });
 
   group('advanced features', () {
@@ -285,7 +327,10 @@ void main() {
       await tester.pumpWidget(
           ProviderScope(child: tester.buildApp((_) => buildPage(model))));
 
-      final button = find.button(tester.lang.installationTypeAdvancedLabel);
+      final context = tester.element(find.byType(StoragePage));
+      final l10n = AppLocalizations.of(context);
+
+      final button = find.button(l10n.installationTypeAdvancedLabel);
       expect(button, findsOneWidget);
       await tester.tap(button);
       await tester.pumpAndSettle();
@@ -297,16 +342,20 @@ void main() {
       final model = buildStorageModel(advancedFeature: AdvancedFeature.none);
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-      expect(
-          find.text(tester.lang.installationTypeNoneSelected), findsOneWidget);
+      final context = tester.element(find.byType(StoragePage));
+      final l10n = AppLocalizations.of(context);
+
+      expect(find.text(l10n.installationTypeNoneSelected), findsOneWidget);
     });
 
     testWidgets('lvm selected', (tester) async {
       final model = buildStorageModel(advancedFeature: AdvancedFeature.lvm);
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-      expect(
-          find.text(tester.lang.installationTypeLVMSelected), findsOneWidget);
+      final context = tester.element(find.byType(StoragePage));
+      final l10n = AppLocalizations.of(context);
+
+      expect(find.text(l10n.installationTypeLVMSelected), findsOneWidget);
     });
 
     testWidgets('encrypted lvm selected', (tester) async {
@@ -314,7 +363,10 @@ void main() {
           advancedFeature: AdvancedFeature.lvm, encryption: true);
       await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-      expect(find.text(tester.lang.installationTypeLVMEncryptionSelected),
+      final context = tester.element(find.byType(StoragePage));
+      final l10n = AppLocalizations.of(context);
+
+      expect(find.text(l10n.installationTypeLVMEncryptionSelected),
           findsOneWidget);
     });
   });
@@ -323,7 +375,7 @@ void main() {
     final model = buildStorageModel(hasStorage: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
 
     await tester.tapNext();
     verifyNever(model.save());
