@@ -4,11 +4,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_page.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_selector.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_test/yaru_test.dart';
@@ -122,11 +122,14 @@ void main() {
         canReformatDisk: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(ManualStoragePage));
+    final l10n = AppLocalizations.of(context);
+
     final addButton = find.iconButton(Icons.add);
     expect(addButton, findsOneWidget);
     expect(addButton, isDisabled);
 
-    final editButton = find.button(tester.lang.changeButtonText);
+    final editButton = find.button(l10n.changeButtonText);
     expect(editButton, findsOneWidget);
     expect(editButton, isDisabled);
 
@@ -134,7 +137,7 @@ void main() {
     expect(removeButton, findsOneWidget);
     expect(removeButton, isDisabled);
 
-    final reformatButton = find.button(tester.lang.newPartitionTable);
+    final reformatButton = find.button(l10n.newPartitionTable);
     expect(reformatButton, findsOneWidget);
     expect(reformatButton, isDisabled);
   });
@@ -154,7 +157,10 @@ void main() {
         buildManualStorageModel(disks: testDisks, canEditPartition: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final editButton = find.button(tester.lang.changeButtonText);
+    final context = tester.element(find.byType(ManualStoragePage));
+    final l10n = AppLocalizations.of(context);
+
+    final editButton = find.button(l10n.changeButtonText);
     expect(editButton, findsOneWidget);
     expect(editButton, isEnabled);
   });
@@ -195,7 +201,10 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final resetButton = find.button(tester.lang.newPartitionTable);
+    final context = tester.element(find.byType(ManualStoragePage));
+    final l10n = AppLocalizations.of(context);
+
+    final resetButton = find.button(l10n.newPartitionTable);
     expect(resetButton, findsOneWidget);
     expect(resetButton, isEnabled);
 
@@ -212,7 +221,10 @@ void main() {
     );
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final resetButton = find.button(tester.lang.newPartitionTable);
+    final context = tester.element(find.byType(ManualStoragePage));
+    final l10n = AppLocalizations.of(context);
+
+    final resetButton = find.button(l10n.newPartitionTable);
     expect(resetButton, findsOneWidget);
     expect(resetButton, isEnabled);
 
@@ -233,7 +245,10 @@ void main() {
     final model = buildManualStorageModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final revertButton = find.button(tester.lang.revertButtonText);
+    final context = tester.element(find.byType(ManualStoragePage));
+    final l10n = AppLocalizations.of(context);
+
+    final revertButton = find.button(l10n.revertButtonText);
     expect(revertButton, findsOneWidget);
     expect(revertButton, isEnabled);
 
@@ -278,7 +293,7 @@ void main() {
     final model = buildManualStorageModel(isValid: false);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    expect(find.button(tester.ulang.nextLabel), isDisabled);
+    expect(find.button(find.nextLabel), isDisabled);
   });
 
   testWidgets('too many primary partitions', (tester) async {
@@ -290,6 +305,9 @@ void main() {
     final model = buildManualStorageModel(selectedGap: unusableGap);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
+    final context = tester.element(find.byType(ManualStoragePage));
+    final l10n = AppLocalizations.of(context);
+
     final addButton = find.iconButton(Icons.add);
     expect(addButton, isDisabled);
     expect(
@@ -297,7 +315,7 @@ void main() {
         of: addButton,
         matching: find.byWidgetPredicate((widget) =>
             widget is Tooltip &&
-            widget.message == tester.lang.tooManyPrimaryPartitions),
+            widget.message == l10n.tooManyPrimaryPartitions),
       ),
       findsOneWidget,
     );

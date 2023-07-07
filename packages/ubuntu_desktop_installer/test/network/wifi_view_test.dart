@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
@@ -11,8 +12,6 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 import 'test_network.dart';
 
 void main() {
-  setUpAll(() => InstallerTester.context = WifiView);
-
   testWidgets('device and access point tiles', (tester) async {
     final device1 = MockWifiDevice();
     when(device1.model).thenReturn('model1');
@@ -141,13 +140,16 @@ void main() {
       ),
     );
 
+    final context = tester.element(find.byType(WifiView));
+    final l10n = AppLocalizations.of(context);
+
     expect(find.byType(WifiListView), findsNothing);
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
 
-    expect(find.text(tester.lang.wirelessNetworkingDisabled), findsOneWidget);
-    expect(find.text(tester.lang.wifiMustBeEnabled), findsOneWidget);
+    expect(find.text(l10n.wirelessNetworkingDisabled), findsOneWidget);
+    expect(find.text(l10n.wifiMustBeEnabled), findsOneWidget);
 
-    final button = find.button(tester.lang.enableWifi);
+    final button = find.button(l10n.enableWifi);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(wasEnabled, isTrue);
@@ -179,9 +181,12 @@ void main() {
       ),
     );
 
+    final context = tester.element(find.byType(WifiView));
+    final l10n = AppLocalizations.of(context);
+
     expect(find.byType(WifiListView), findsNothing);
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
-    expect(find.text(tester.lang.noWifiDevicesDetected), findsOneWidget);
+    expect(find.text(l10n.noWifiDevicesDetected), findsOneWidget);
   });
 
   testWidgets('starts periodic scanning', (tester) async {

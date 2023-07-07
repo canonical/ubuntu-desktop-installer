@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/storage_dialogs.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/storage_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/storage_page.dart';
@@ -11,8 +11,6 @@ import 'package:yaru_test/yaru_test.dart';
 import 'test_storage.dart';
 
 void main() {
-  setUpAll(() => InstallerTester.context = AlertDialog);
-
   testWidgets('select zfs', (tester) async {
     final model = MockStorageModel();
     when(model.existingOS).thenReturn(null);
@@ -27,16 +25,18 @@ void main() {
       ),
     );
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     final result = showAdvancedFeaturesDialog(
         tester.element(find.byType(StoragePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(
-        find.radioButton<AdvancedFeature>(tester.lang.installationTypeZFS));
+    await tester
+        .tap(find.radioButton<AdvancedFeature>(l10n.installationTypeZFS));
     await tester.pump();
 
-    await tester
-        .tap(find.checkButton(tester.lang.installationTypeEncrypt('Ubuntu')));
+    await tester.tap(find.checkButton(l10n.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
     await tester.tapOk();
@@ -63,12 +63,15 @@ void main() {
       ),
     );
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     final result = showAdvancedFeaturesDialog(
         tester.element(find.byType(StoragePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.radioButton<AdvancedFeature>(
-        tester.lang.installationTypeLVM('Ubuntu')));
+    await tester.tap(
+        find.radioButton<AdvancedFeature>(l10n.installationTypeLVM('Ubuntu')));
     await tester.pump();
 
     await tester.tapOk();
@@ -95,16 +98,18 @@ void main() {
       ),
     );
 
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
     final result = showAdvancedFeaturesDialog(
         tester.element(find.byType(StoragePage)), model);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.radioButton<AdvancedFeature>(
-        tester.lang.installationTypeLVM('Ubuntu')));
+    await tester.tap(
+        find.radioButton<AdvancedFeature>(l10n.installationTypeLVM('Ubuntu')));
     await tester.pump();
 
-    await tester
-        .tap(find.checkButton(tester.lang.installationTypeEncrypt('Ubuntu')));
+    await tester.tap(find.checkButton(l10n.installationTypeEncrypt('Ubuntu')));
     await tester.pump();
 
     await tester.tapOk();

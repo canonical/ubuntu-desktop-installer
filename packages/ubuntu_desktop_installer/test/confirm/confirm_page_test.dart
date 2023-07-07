@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_desktop_installer/pages/confirm/confirm_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_test/yaru_test.dart';
 
@@ -100,26 +102,29 @@ void main() {
     });
     await tester.pumpWidget(tester.buildApp((_) => buildConfirmPage(model)));
 
+    final context = tester.element(find.byType(ConfirmPage));
+    final l10n = AppLocalizations.of(context);
+
     expect(
-        find.html(
-            tester.lang.confirmPartitionFormatMount('sdb3', 'ext3', '/mnt/3')),
-        findsOneWidget);
-    expect(find.html(tester.lang.confirmPartitionFormat('sdb4', 'ext4')),
-        findsOneWidget);
-    expect(find.html(tester.lang.confirmPartitionMount('sdb5', '/mnt/5')),
+        find.html(l10n.confirmPartitionFormatMount('sdb3', 'ext3', '/mnt/3')),
         findsOneWidget);
     expect(
-        find.html(tester.lang.confirmPartitionResize('sdb6', '123 B', '66 B')),
+        find.html(l10n.confirmPartitionFormat('sdb4', 'ext4')), findsOneWidget);
+    expect(find.html(l10n.confirmPartitionMount('sdb5', '/mnt/5')),
         findsOneWidget);
-    expect(
-        find.html(tester.lang.confirmPartitionCreate('sdb7')), findsOneWidget);
+    expect(find.html(l10n.confirmPartitionResize('sdb6', '123 B', '66 B')),
+        findsOneWidget);
+    expect(find.html(l10n.confirmPartitionCreate('sdb7')), findsOneWidget);
   });
 
   testWidgets('starts installation', (tester) async {
     final model = buildConfirmModel();
     await tester.pumpWidget(tester.buildApp((_) => buildConfirmPage(model)));
 
-    final installButton = find.button(tester.lang.confirmInstallButton);
+    final context = tester.element(find.byType(ConfirmPage));
+    final l10n = AppLocalizations.of(context);
+
+    final installButton = find.button(l10n.confirmInstallButton);
     expect(installButton, findsOneWidget);
 
     await tester.tap(installButton);

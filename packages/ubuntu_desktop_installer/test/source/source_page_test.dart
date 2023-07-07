@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru/yaru.dart';
@@ -30,7 +30,10 @@ void main() {
     final model = buildSourceModel(installDrivers: true);
     await tester.pumpWidget(tester.buildApp((_) => buildSourcePage(model)));
 
-    final checkbox = find.checkButton(tester.lang.installDriversTitle);
+    final context = tester.element(find.byType(SourcePage));
+    final l10n = AppLocalizations.of(context);
+
+    final checkbox = find.checkButton(l10n.installDriversTitle);
     expect(checkbox, findsOneWidget);
     expect(checkbox, isChecked);
 
@@ -45,7 +48,10 @@ void main() {
     final model = buildSourceModel(installCodecs: true);
     await tester.pumpWidget(tester.buildApp((_) => buildSourcePage(model)));
 
-    final checkbox = find.checkButton(tester.lang.installCodecsTitle);
+    final context = tester.element(find.byType(SourcePage));
+    final l10n = AppLocalizations.of(context);
+
+    final checkbox = find.checkButton(l10n.installCodecsTitle);
     expect(checkbox, findsOneWidget);
     expect(checkbox, isChecked);
 
@@ -61,12 +67,15 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildSourcePage(model)));
     await tester.pumpAndSettle();
 
+    final context = tester.element(find.byType(SourcePage));
+    final l10n = AppLocalizations.of(context);
+
     final warning = find.byType(Html);
     final theme = Theme.of(tester.element(find.byType(Scaffold)));
     expect(warning, findsOneWidget);
     expect(
       tester.widget<Html>(warning).data,
-      equals(tester.lang.onBatteryWarning(theme.colorScheme.error.toHex())),
+      equals(l10n.onBatteryWarning(theme.colorScheme.error.toHex())),
     );
   });
 
@@ -81,9 +90,12 @@ void main() {
     final model = buildSourceModel(isOnline: false);
     await tester.pumpWidget(tester.buildApp((_) => buildSourcePage(model)));
 
-    expect(find.text(tester.lang.offlineWarning), findsNothing);
+    final context = tester.element(find.byType(SourcePage));
+    final l10n = AppLocalizations.of(context);
 
-    final checkbox = find.checkButton(tester.lang.installCodecsTitle);
+    expect(find.text(l10n.offlineWarning), findsNothing);
+
+    final checkbox = find.checkButton(l10n.installCodecsTitle);
     expect(checkbox, findsOneWidget);
     expect(checkbox, isDisabled);
 
@@ -94,7 +106,7 @@ void main() {
     await tester.pump();
 
     await tester.pumpAndSettle(const Duration(milliseconds: 500));
-    expect(find.text(tester.lang.offlineWarning), findsOneWidget);
+    expect(find.text(l10n.offlineWarning), findsOneWidget);
   });
 
   testWidgets('continue on the next page', (tester) async {

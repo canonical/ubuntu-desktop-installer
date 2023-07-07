@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
+import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_view.dart';
 import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_view.dart';
 import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
@@ -49,7 +49,10 @@ void main() {
         .buildApp((_) => buildNetworkPage(model: model, ethernet: false)));
     await tester.pumpAndSettle();
 
-    final button = find.button(tester.lang.enableWired);
+    final context = tester.element(find.byType(NetworkPage));
+    final l10n = AppLocalizations.of(context);
+
+    final button = find.button(l10n.enableWired);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(model.connectMode, ConnectMode.ethernet);
@@ -61,7 +64,10 @@ void main() {
         tester.buildApp((_) => buildNetworkPage(model: model, wifi: false)));
     await tester.pumpAndSettle();
 
-    final button = find.button(tester.lang.enableWifi);
+    final context = tester.element(find.byType(NetworkPage));
+    final l10n = AppLocalizations.of(context);
+
+    final button = find.button(l10n.enableWifi);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(model.connectMode, ConnectMode.wifi);
