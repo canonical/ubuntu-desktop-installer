@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Proszę wcisnąć jeden z następujących klawiszy:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Czy ten klawisz występuje na klawiaturze?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Wybierz swój motyw",
+  "@themePageTitle": {},
+  "themePageHeader": "Zawsze możesz zmienić to później w ustawieniach wyglądu.",
+  "@themePageHeader": {},
+  "themeDark": "Ciemny",
+  "@themeDark": {},
+  "themeLight": "Jasny",
+  "@themeLight": {}
 }

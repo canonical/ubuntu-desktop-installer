@@ -611,18 +611,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get confirmInstallButton => 'Installera';
 
   @override
-  String get themePageTitle => 'Välj ditt tema';
-
-  @override
-  String get themePageHeader => 'Du kan alltid ändra detta senare i utseendeinställningarna.';
-
-  @override
-  String get themeDark => 'Mörk';
-
-  @override
-  String get themeLight => 'Ljus';
-
-  @override
   String get installationCompleteTitle => 'Installationen är klar';
 
   @override

@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsCs extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Máte na klávesnici následující klávesu?';
+
+  @override
+  String get themePageTitle => 'Zvolte si motiv vzhledu';
+
+  @override
+  String get themePageHeader => 'Toto je možné později kdykoli změnit v nastavení vzhledu.';
+
+  @override
+  String get themeDark => 'Tmavý';
+
+  @override
+  String get themeLight => 'Světlý';
 }

@@ -53,8 +53,6 @@
       "system": {}
     }
   },
-  "themeLight": "בהיר",
-  "@themeLight": {},
   "chooseSecurityKey": "נא לבחור מפתח אבטחה",
   "@chooseSecurityKey": {},
   "dontInstallDriverSoftwareNow": "לא להתקין את תכנית מנהל ההתקן לבינתיים",
@@ -107,14 +105,8 @@
       "system": {}
     }
   },
-  "themeDark": "כהה",
-  "@themeDark": {},
   "shutdown": "כיבוי",
   "@shutdown": {},
-  "themePageTitle": "נא לבחור את ערכת העיצוב שלך",
-  "@themePageTitle": {},
-  "themePageHeader": "תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.",
-  "@themePageHeader": {},
   "chooseSecurityKeyRequired": "נדרש מפתח אבטחה",
   "@chooseSecurityKeyRequired": {},
   "chooseSecurityKeyMismatch": "מפתחות האבטחה סותרים זה את זה",

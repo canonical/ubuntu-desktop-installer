@@ -611,18 +611,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get confirmInstallButton => 'Kur';
 
   @override
-  String get themePageTitle => 'Temanızı seçin';
-
-  @override
-  String get themePageHeader => 'Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.';
-
-  @override
-  String get themeDark => 'Koyu';
-
-  @override
-  String get themeLight => 'Açık';
-
-  @override
   String get installationCompleteTitle => 'Kurulum tamamlandı';
 
   @override

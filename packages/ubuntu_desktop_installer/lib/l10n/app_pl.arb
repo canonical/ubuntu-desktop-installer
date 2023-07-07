@@ -272,14 +272,6 @@
       "path": {}
     }
   },
-  "themePageTitle": "Wybierz swój motyw",
-  "@themePageTitle": {},
-  "themePageHeader": "Zawsze możesz zmienić to później w ustawieniach wyglądu.",
-  "@themePageHeader": {},
-  "themeDark": "Ciemny",
-  "@themeDark": {},
-  "themeLight": "Jasny",
-  "@themeLight": {},
   "installationCompleteTitle": "Instalacja zakończona",
   "@installationCompleteTitle": {},
   "readyToUse": "**{system}** został zainstalowany i jest gotowy do użycia",

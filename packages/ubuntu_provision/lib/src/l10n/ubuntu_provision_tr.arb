@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Lütfen aşağıdaki tuşlardan birine basın:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Aşağıdaki tuş klavyenizde bulunuyor mu?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Temanızı seçin",
+  "@themePageTitle": {},
+  "themePageHeader": "Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.",
+  "@themePageHeader": {},
+  "themeDark": "Koyu",
+  "@themeDark": {},
+  "themeLight": "Açık",
+  "@themeLight": {}
 }

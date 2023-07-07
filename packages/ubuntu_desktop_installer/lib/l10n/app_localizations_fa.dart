@@ -611,18 +611,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get confirmInstallButton => 'نصب';
 
   @override
-  String get themePageTitle => 'گزینش زمینه‌تان';
-
-  @override
-  String get themePageHeader => 'بعدها همواره می‌توانید این مورد را در تنظیمات ظاهر تغییر دهید.';
-
-  @override
-  String get themeDark => 'تیره';
-
-  @override
-  String get themeLight => 'روشن';
-
-  @override
   String get installationCompleteTitle => 'نصب کامل شد';
 
   @override

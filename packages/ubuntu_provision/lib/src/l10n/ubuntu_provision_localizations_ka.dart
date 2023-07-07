@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsKa extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Is the following key present on your keyboard?';
+
+  @override
+  String get themePageTitle => 'Choose your theme';
+
+  @override
+  String get themePageHeader => 'You can always change this later in the appearance settings.';
+
+  @override
+  String get themeDark => 'Dark';
+
+  @override
+  String get themeLight => 'Light';
 }

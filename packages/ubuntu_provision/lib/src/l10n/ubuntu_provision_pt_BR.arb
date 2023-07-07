@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Por favor pressione uma das seguintes teclas:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "A seguinte tecla está presente no seu teclado?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Escolha seu tema",
+  "@themePageTitle": {},
+  "themePageHeader": "Você pode sempre alterar isso depois nas configurações de aparência.",
+  "@themePageHeader": {},
+  "themeDark": "Escuro",
+  "@themeDark": {},
+  "themeLight": "Claro",
+  "@themeLight": {}
 }

@@ -611,18 +611,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get confirmInstallButton => 'Instalace';
 
   @override
-  String get themePageTitle => 'Zvolte si motiv vzhledu';
-
-  @override
-  String get themePageHeader => 'Toto je možné později kdykoli změnit v nastavení vzhledu.';
-
-  @override
-  String get themeDark => 'Tmavý';
-
-  @override
-  String get themeLight => 'Světlý';
-
-  @override
   String get installationCompleteTitle => 'Instalace dokončena';
 
   @override

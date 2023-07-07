@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsCy extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Ydy\'r fysell ganlynol yn bresennol ar eich bysellfwrdd?';
+
+  @override
+  String get themePageTitle => 'Choose your theme';
+
+  @override
+  String get themePageHeader => 'You can always change this later in the appearance settings.';
+
+  @override
+  String get themeDark => 'Tywyll';
+
+  @override
+  String get themeLight => 'Golau';
 }

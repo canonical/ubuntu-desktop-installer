@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsId extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Apakah tombol berikut ada di papan ketik Anda?';
+
+  @override
+  String get themePageTitle => 'Pilih penampilan Anda';
+
+  @override
+  String get themePageHeader => 'Anda selalu dapat mengubahnya nanti di pengaturan tampilan.';
+
+  @override
+  String get themeDark => 'Gelap';
+
+  @override
+  String get themeLight => 'Terang';
 }

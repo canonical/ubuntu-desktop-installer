@@ -25,7 +25,6 @@ import 'package:ubuntu_desktop_installer/pages/storage/bitlocker/bitlocker_model
 import 'package:ubuntu_desktop_installer/pages/storage/guided_reformat/guided_reformat_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/security_key/security_key_model.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/storage_model.dart';
-import 'package:ubuntu_desktop_installer/pages/theme/theme_model.dart';
 import 'package:ubuntu_desktop_installer/pages/welcome/welcome_model.dart';
 import 'package:ubuntu_desktop_installer/routes.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
@@ -37,6 +36,7 @@ import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../ubuntu_provision/test/keyboard/test_keyboard.dart';
+import '../../ubuntu_provision/test/theme/test_theme.dart';
 import '../../ubuntu_provision/test/timezone/test_timezone.dart';
 import 'active_directory/test_active_directory.dart';
 import 'confirm/test_confirm.dart';
@@ -50,7 +50,6 @@ import 'secure_boot/test_secure_boot.dart';
 import 'source/not_enough_disk_space/test_not_enough_disk_space.dart';
 import 'source/test_source.dart';
 import 'storage/test_storage.dart';
-import 'theme/test_theme.dart';
 import 'welcome/test_welcome.dart';
 
 void main() {

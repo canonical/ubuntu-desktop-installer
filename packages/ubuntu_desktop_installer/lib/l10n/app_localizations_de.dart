@@ -611,18 +611,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get confirmInstallButton => 'Installieren';
 
   @override
-  String get themePageTitle => 'Wählen Sie Ihr Thema aus';
-
-  @override
-  String get themePageHeader => 'Sie können dies später in den Einstellungen für das Erscheinungsbild jederzeit ändern.';
-
-  @override
-  String get themeDark => 'Dunkel';
-
-  @override
-  String get themeLight => 'Hell';
-
-  @override
   String get installationCompleteTitle => 'Installation abgeschlossen';
 
   @override

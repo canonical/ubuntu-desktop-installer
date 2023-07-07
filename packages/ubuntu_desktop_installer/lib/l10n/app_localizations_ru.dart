@@ -611,18 +611,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get confirmInstallButton => 'Установить';
 
   @override
-  String get themePageTitle => 'Выберите свою тему';
-
-  @override
-  String get themePageHeader => 'Вы всегда можете изменить это позже в настройках внешнего вида.';
-
-  @override
-  String get themeDark => 'Тёмный';
-
-  @override
-  String get themeLight => 'Светлый';
-
-  @override
   String get installationCompleteTitle => 'Установка завершена';
 
   @override

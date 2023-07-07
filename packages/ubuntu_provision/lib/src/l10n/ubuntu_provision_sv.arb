@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Vänligen tryck på en av följande tangenter:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Finns följande tangent på ditt tangentbord?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Välj ditt tema",
+  "@themePageTitle": {},
+  "themePageHeader": "Du kan alltid ändra detta senare i utseendeinställningarna.",
+  "@themePageHeader": {},
+  "themeDark": "Mörk",
+  "@themeDark": {},
+  "themeLight": "Ljus",
+  "@themeLight": {}
 }

@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsNb extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Finnes følgende tast på tastaturet ditt?';
+
+  @override
+  String get themePageTitle => 'Velg utseende';
+
+  @override
+  String get themePageHeader => 'Du kan alltid endre dette senere i utseende-innstillingene.';
+
+  @override
+  String get themeDark => 'Mørk';
+
+  @override
+  String get themeLight => 'Lys';
 }

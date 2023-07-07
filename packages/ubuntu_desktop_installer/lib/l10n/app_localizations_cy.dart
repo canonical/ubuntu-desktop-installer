@@ -611,18 +611,6 @@ class AppLocalizationsCy extends AppLocalizations {
   String get confirmInstallButton => 'Dechrau Gosod';
 
   @override
-  String get themePageTitle => 'Choose your theme';
-
-  @override
-  String get themePageHeader => 'You can always change this later in the appearance settings.';
-
-  @override
-  String get themeDark => 'Tywyll';
-
-  @override
-  String get themeLight => 'Golau';
-
-  @override
   String get installationCompleteTitle => 'Gosodi wedi cwblhau';
 
   @override

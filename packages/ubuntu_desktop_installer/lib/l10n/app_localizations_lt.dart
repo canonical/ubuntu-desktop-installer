@@ -611,18 +611,6 @@ class AppLocalizationsLt extends AppLocalizations {
   String get confirmInstallButton => 'Įdiegti';
 
   @override
-  String get themePageTitle => 'Pasirinkite apipavidalinimą';
-
-  @override
-  String get themePageHeader => 'Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.';
-
-  @override
-  String get themeDark => 'Tamsus';
-
-  @override
-  String get themeLight => 'Šviesus';
-
-  @override
   String get installationCompleteTitle => 'Įdiegimas baigtas';
 
   @override

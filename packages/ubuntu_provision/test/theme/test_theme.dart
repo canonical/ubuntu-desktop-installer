@@ -1,6 +1,6 @@
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/theme/theme_model.dart';
+import 'package:ubuntu_provision/src/theme/theme_model.dart';
 
 import 'test_theme.mocks.dart';
 export '../test_utils.dart';

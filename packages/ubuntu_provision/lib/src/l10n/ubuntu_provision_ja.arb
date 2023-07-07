@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "以下のキーのうち 1 つを押してください。",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "以下のキーはこのキーボードにありますか？",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "テーマを選択してください。",
+  "@themePageTitle": {},
+  "themePageHeader": "これは、外観設定でいつでも変更できます。",
+  "@themePageHeader": {},
+  "themeDark": "暗い",
+  "@themeDark": {},
+  "themeLight": "明るい",
+  "@themeLight": {}
 }

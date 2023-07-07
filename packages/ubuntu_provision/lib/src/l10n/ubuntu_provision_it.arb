@@ -12,5 +12,7 @@
   "keyboardPressKeyLabel": "Prego premere uno dei seguenti tasti:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Il seguente tasto è presente sulla propria tastiera?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Scegli il aspetto",
+  "@themePageTitle": {}
 }

@@ -187,8 +187,6 @@
   "@installAlongsidePartition": {},
   "identityAutoLogin": "Accedere automaticamente",
   "@identityAutoLogin": {},
-  "themePageTitle": "Scegli il aspetto",
-  "@themePageTitle": {},
   "installationTypeTitle": "Tipo d'installazione",
   "@installationTypeTitle": {},
   "installationTypeAdvancedLabel": "Caratteristiche avanzate…",

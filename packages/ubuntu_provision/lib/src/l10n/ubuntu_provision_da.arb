@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Tryk venligst på en af følgende taster:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Er følgende tast tilstede på dit tastatur?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Vælg til tema",
+  "@themePageTitle": {},
+  "themePageHeader": "Du kan altid ændre dette senere, i indstillinger for udseende.",
+  "@themePageHeader": {},
+  "themeDark": "Mørkt",
+  "@themeDark": {},
+  "themeLight": "Lyst",
+  "@themeLight": {}
 }

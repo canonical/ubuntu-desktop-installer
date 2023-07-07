@@ -611,18 +611,6 @@ class AppLocalizationsSq extends AppLocalizations {
   String get confirmInstallButton => 'Install';
 
   @override
-  String get themePageTitle => 'Zgjidh pamjen tënde';
-
-  @override
-  String get themePageHeader => 'You can always change this later in the appearance settings.';
-
-  @override
-  String get themeDark => 'E errët';
-
-  @override
-  String get themeLight => 'E çelur';
-
-  @override
   String get installationCompleteTitle => 'Instalimi u Kompletua';
 
   @override

@@ -611,18 +611,6 @@ class AppLocalizationsOc extends AppLocalizations {
   String get confirmInstallButton => 'Installar';
 
   @override
-  String get themePageTitle => 'Causissètz vòstre tèma';
-
-  @override
-  String get themePageHeader => 'La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.';
-
-  @override
-  String get themeDark => 'Fosc';
-
-  @override
-  String get themeLight => 'Clar';
-
-  @override
   String get installationCompleteTitle => 'Installacion acabada';
 
   @override

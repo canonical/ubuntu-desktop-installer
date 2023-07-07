@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "请按下以下按键中的任意一个：",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "您的键盘上是否有以下键？",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "选择您的主题",
+  "@themePageTitle": {},
+  "themePageHeader": "稍后您可以在“外观设置”中进行更改。",
+  "@themePageHeader": {},
+  "themeDark": "深色",
+  "@themeDark": {},
+  "themeLight": "浅色",
+  "@themeLight": {}
 }

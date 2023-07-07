@@ -16,5 +16,11 @@
   "keyboardPressKeyLabel": "Premeu una de les tecles següents:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Teniu la tecla següent al vostre teclat?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Trieu l’aspecte",
+  "@themePageTitle": {},
+  "themeDark": "Fosc",
+  "@themeDark": {},
+  "themeLight": "Clar",
+  "@themeLight": {}
 }

@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "لطفاً یکی از کلیدهای زیر را فشار دهید:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "آیا این کلید در صفحه‌کلیدتان وجود دارد؟",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "گزینش زمینه‌تان",
+  "@themePageTitle": {},
+  "themePageHeader": "بعدها همواره می‌توانید این مورد را در تنظیمات ظاهر تغییر دهید.",
+  "@themePageHeader": {},
+  "themeDark": "تیره",
+  "@themeDark": {},
+  "themeLight": "روشن",
+  "@themeLight": {}
 }

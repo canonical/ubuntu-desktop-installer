@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Veuillez appuyer sur l’une des touches suivantes :",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Cette touche est-elle présente sur votre clavier ?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Choisissez l’apparence",
+  "@themePageTitle": {},
+  "themePageHeader": "Vous pourrez la changer ultérieurement dans les préférences d’apparence.",
+  "@themePageHeader": {},
+  "themeDark": "Sombre",
+  "@themeDark": {},
+  "themeLight": "Clair",
+  "@themeLight": {}
 }

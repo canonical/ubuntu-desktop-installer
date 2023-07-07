@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Nyomja meg a következő billentyűk egyikét:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "A következő billentyű rajta van a billentyűzetén?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Téma kiválasztása",
+  "@themePageTitle": {},
+  "themePageHeader": "Ezt később bármikor megváltoztathatja a megjelenési beállításokban.",
+  "@themePageHeader": {},
+  "themeDark": "Sötét",
+  "@themeDark": {},
+  "themeLight": "Világos",
+  "@themeLight": {}
 }

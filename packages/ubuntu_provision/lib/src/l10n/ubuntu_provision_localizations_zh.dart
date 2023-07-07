@@ -36,6 +36,18 @@ class UbuntuProvisionLocalizationsZh extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => '您的键盘上是否有以下键？';
+
+  @override
+  String get themePageTitle => '选择您的主题';
+
+  @override
+  String get themePageHeader => '稍后您可以在“外观设置”中进行更改。';
+
+  @override
+  String get themeDark => '深色';
+
+  @override
+  String get themeLight => '浅色';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).

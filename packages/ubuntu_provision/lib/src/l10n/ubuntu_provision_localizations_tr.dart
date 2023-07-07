@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsTr extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Aşağıdaki tuş klavyenizde bulunuyor mu?';
+
+  @override
+  String get themePageTitle => 'Temanızı seçin';
+
+  @override
+  String get themePageHeader => 'Görünüm ayarlarında bunu daha sonra değiştirebilirsiniz.';
+
+  @override
+  String get themeDark => 'Koyu';
+
+  @override
+  String get themeLight => 'Açık';
 }

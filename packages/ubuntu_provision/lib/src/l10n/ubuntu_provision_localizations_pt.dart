@@ -36,6 +36,18 @@ class UbuntuProvisionLocalizationsPt extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'A seguinte tecla está presente no seu teclado?';
+
+  @override
+  String get themePageTitle => 'Escolha o seu tema';
+
+  @override
+  String get themePageHeader => 'Pode sempre alterar isso depois nas definições de aparência.';
+
+  @override
+  String get themeDark => 'Escuro';
+
+  @override
+  String get themeLight => 'Claro';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -74,4 +86,16 @@ class UbuntuProvisionLocalizationsPtBr extends UbuntuProvisionLocalizationsPt {
 
   @override
   String get keyboardKeyPresentLabel => 'A seguinte tecla está presente no seu teclado?';
+
+  @override
+  String get themePageTitle => 'Escolha seu tema';
+
+  @override
+  String get themePageHeader => 'Você pode sempre alterar isso depois nas configurações de aparência.';
+
+  @override
+  String get themeDark => 'Escuro';
+
+  @override
+  String get themeLight => 'Claro';
 }

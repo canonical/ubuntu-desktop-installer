@@ -354,12 +354,6 @@
       "sysname": {}
     }
   },
-  "themePageHeader": "Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.",
-  "@themePageHeader": {},
-  "themeDark": "Tamsus",
-  "@themeDark": {},
-  "themeLight": "Šviesus",
-  "@themeLight": {},
   "appTitle": "Ubuntu darbalaukio diegimo programa",
   "@appTitle": {},
   "diskHeadersType": "Tipas",
@@ -516,8 +510,6 @@
       "format": {}
     }
   },
-  "themePageTitle": "Pasirinkite apipavidalinimą",
-  "@themePageTitle": {},
   "bitlockerInstructions": "Norėdami skaityti instrukcijas, nuskenuokite kitu įrenginiu QR kodą arba apsilankykite adresu: <a href=\"https://{url}\">{url}</a>",
   "@bitlockerInstructions": {
     "type": "text",

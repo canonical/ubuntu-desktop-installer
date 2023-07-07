@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsUk extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Чи присутня ця клавіша на клавіатурі?';
+
+  @override
+  String get themePageTitle => 'Оберіть зовнішній вигляд';
+
+  @override
+  String get themePageHeader => 'Ви завжди можете змінити це пізніше в налаштуваннях зовнішнього вигляду.';
+
+  @override
+  String get themeDark => 'Темний';
+
+  @override
+  String get themeLight => 'Світлий';
 }

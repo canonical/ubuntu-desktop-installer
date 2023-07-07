@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsSv extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Finns följande tangent på ditt tangentbord?';
+
+  @override
+  String get themePageTitle => 'Välj ditt tema';
+
+  @override
+  String get themePageHeader => 'Du kan alltid ändra detta senare i utseendeinställningarna.';
+
+  @override
+  String get themeDark => 'Mörk';
+
+  @override
+  String get themeLight => 'Ljus';
 }

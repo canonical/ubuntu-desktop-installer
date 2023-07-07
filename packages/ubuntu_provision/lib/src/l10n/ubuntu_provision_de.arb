@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Bitte drücken Sie eine der folgenden Tasten:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Ist die folgende Taste auf Ihrer Tastatur vorhanden?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Wählen Sie Ihr Thema aus",
+  "@themePageTitle": {},
+  "themePageHeader": "Sie können dies später in den Einstellungen für das Erscheinungsbild jederzeit ändern.",
+  "@themePageHeader": {},
+  "themeDark": "Dunkel",
+  "@themeDark": {},
+  "themeLight": "Hell",
+  "@themeLight": {}
 }

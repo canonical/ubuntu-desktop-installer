@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsSk extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Máte na klávesnici nasledujúci kláves?';
+
+  @override
+  String get themePageTitle => 'Vyberte si motív vzhľadu';
+
+  @override
+  String get themePageHeader => 'Môžete ho neskôr kedykoľvek zmeniť v nastaveniach vzhľadu.';
+
+  @override
+  String get themeDark => 'Tmavý';
+
+  @override
+  String get themeLight => 'Svetlý';
 }

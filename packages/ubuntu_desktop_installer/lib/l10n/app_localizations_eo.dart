@@ -611,18 +611,6 @@ class AppLocalizationsEo extends AppLocalizations {
   String get confirmInstallButton => 'Instali';
 
   @override
-  String get themePageTitle => 'Elektu vian etoson';
-
-  @override
-  String get themePageHeader => 'Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.';
-
-  @override
-  String get themeDark => 'Malhela';
-
-  @override
-  String get themeLight => 'Hela';
-
-  @override
   String get installationCompleteTitle => 'Instalado finiĝis';
 
   @override

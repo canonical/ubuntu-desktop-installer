@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsTa extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'பின்வரும் விசை உங்களுடைய தட்டச்சு பலகையில் இருக்கிறதா?';
+
+  @override
+  String get themePageTitle => 'உங்கள் தோற்றத்தை தேர்வு செய்யவும்';
+
+  @override
+  String get themePageHeader => 'தோற்ற அமைப்புகளில் இதை எப்போது வேண்டுமானாலும் மாற்றலாம்.';
+
+  @override
+  String get themeDark => 'கருமை';
+
+  @override
+  String get themeLight => 'Light';
 }

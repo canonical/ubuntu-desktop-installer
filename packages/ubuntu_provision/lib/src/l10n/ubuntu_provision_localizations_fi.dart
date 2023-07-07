@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsFi extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Löytyykö seuraava näppäin näppäimistöstäsi?';
+
+  @override
+  String get themePageTitle => 'Valitse teema';
+
+  @override
+  String get themePageHeader => 'Voit vaihtaa ulkoasua milloin tahansa asetusten kautta.';
+
+  @override
+  String get themeDark => 'Tumma';
+
+  @override
+  String get themeLight => 'Vaalea';
 }
