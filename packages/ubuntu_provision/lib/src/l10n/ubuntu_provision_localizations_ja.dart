@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsJa extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => '以下のキーはこのキーボードにありますか？';
+
+  @override
+  String get themePageTitle => 'テーマを選択してください。';
+
+  @override
+  String get themePageHeader => 'これは、外観設定でいつでも変更できます。';
+
+  @override
+  String get themeDark => '暗い';
+
+  @override
+  String get themeLight => '明るい';
 }

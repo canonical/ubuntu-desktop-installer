@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Pulse una de estas teclas:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "¿Está presente la siguiente tecla en su teclado?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Elige tu tema",
+  "@themePageTitle": {},
+  "themePageHeader": "Puede cambiarlo después en la configuración de apariencia.",
+  "@themePageHeader": {},
+  "themeDark": "Oscuro",
+  "@themeDark": {},
+  "themeLight": "Claro",
+  "@themeLight": {}
 }

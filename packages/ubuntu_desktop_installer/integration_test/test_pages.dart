@@ -595,7 +595,7 @@ Future<void> testThemePage(
   await tester.pumpUntilPage(ThemePage);
 
   final context = tester.element(find.byType(ThemePage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = ThemeLocalizations.of(context);
 
   expect(find.title(l10n.themePageTitle), findsOneWidget);
 

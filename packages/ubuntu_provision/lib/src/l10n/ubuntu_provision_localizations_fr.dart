@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsFr extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Cette touche est-elle présente sur votre clavier ?';
+
+  @override
+  String get themePageTitle => 'Choisissez l’apparence';
+
+  @override
+  String get themePageHeader => 'Vous pourrez la changer ultérieurement dans les préférences d’apparence.';
+
+  @override
+  String get themeDark => 'Sombre';
+
+  @override
+  String get themeLight => 'Clair';
 }

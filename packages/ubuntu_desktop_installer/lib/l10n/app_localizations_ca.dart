@@ -611,18 +611,6 @@ class AppLocalizationsCa extends AppLocalizations {
   String get confirmInstallButton => 'Comença a instal·lar';
 
   @override
-  String get themePageTitle => 'Trieu l’aspecte';
-
-  @override
-  String get themePageHeader => 'You can always change this later in the appearance settings.';
-
-  @override
-  String get themeDark => 'Fosc';
-
-  @override
-  String get themeLight => 'Clar';
-
-  @override
   String get installationCompleteTitle => 'S\'ha completat la instal·lació';
 
   @override

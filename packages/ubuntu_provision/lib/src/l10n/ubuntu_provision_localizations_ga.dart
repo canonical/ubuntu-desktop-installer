@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsGa extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'An bhfuil an eochair seo ann ar do mhéarchlár?';
+
+  @override
+  String get themePageTitle => 'Choose your theme';
+
+  @override
+  String get themePageHeader => 'You can always change this later in the appearance settings.';
+
+  @override
+  String get themeDark => 'Dark';
+
+  @override
+  String get themeLight => 'Light';
 }

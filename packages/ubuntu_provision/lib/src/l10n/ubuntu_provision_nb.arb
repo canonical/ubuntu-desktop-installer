@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Trykk på en av følgende taster:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Finnes følgende tast på tastaturet ditt?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Velg utseende",
+  "@themePageTitle": {},
+  "themePageHeader": "Du kan alltid endre dette senere i utseende-innstillingene.",
+  "@themePageHeader": {},
+  "themeDark": "Mørk",
+  "@themeDark": {},
+  "themeLight": "Lys",
+  "@themeLight": {}
 }

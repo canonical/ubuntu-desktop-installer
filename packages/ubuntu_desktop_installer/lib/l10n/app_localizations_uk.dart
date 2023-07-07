@@ -611,18 +611,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get confirmInstallButton => 'Почати встановлення';
 
   @override
-  String get themePageTitle => 'Оберіть зовнішній вигляд';
-
-  @override
-  String get themePageHeader => 'Ви завжди можете змінити це пізніше в налаштуваннях зовнішнього вигляду.';
-
-  @override
-  String get themeDark => 'Темний';
-
-  @override
-  String get themeLight => 'Світлий';
-
-  @override
   String get installationCompleteTitle => 'Встановлення завершено';
 
   @override

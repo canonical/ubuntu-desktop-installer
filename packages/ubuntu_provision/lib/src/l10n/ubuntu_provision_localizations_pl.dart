@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsPl extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Czy ten klawisz występuje na klawiaturze?';
+
+  @override
+  String get themePageTitle => 'Wybierz swój motyw';
+
+  @override
+  String get themePageHeader => 'Zawsze możesz zmienić to później w ustawieniach wyglądu.';
+
+  @override
+  String get themeDark => 'Ciemny';
+
+  @override
+  String get themeLight => 'Jasny';
 }

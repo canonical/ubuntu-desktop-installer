@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsHe extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'האם המקש הבא קיים במקלדת שלך?';
+
+  @override
+  String get themePageTitle => 'נא לבחור את ערכת העיצוב שלך';
+
+  @override
+  String get themePageHeader => 'תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.';
+
+  @override
+  String get themeDark => 'כהה';
+
+  @override
+  String get themeLight => 'בהיר';
 }

@@ -97,8 +97,6 @@
   "@partitionEditTitle": {},
   "identityConfirmPasswordLabel": "Konfirmasikan kata sandi Anda",
   "@identityConfirmPasswordLabel": {},
-  "themePageHeader": "Anda selalu dapat mengubahnya nanti di pengaturan tampilan.",
-  "@themePageHeader": {},
   "partitionErase": "Format partisi",
   "@partitionErase": {},
   "partitionMountPointLabel": "Titik kait:",
@@ -139,10 +137,6 @@
       "path": {}
     }
   },
-  "themeDark": "Gelap",
-  "@themeDark": {},
-  "themeLight": "Terang",
-  "@themeLight": {},
   "appTitle": "Penginstal Desktop Ubuntu",
   "@appTitle": {},
   "changeButtonText": "Ubah",
@@ -278,8 +272,6 @@
   "@identityPasswordMismatch": {},
   "confirmPartitionChanges": "Partisi berikut akan diformat:",
   "@confirmPartitionChanges": {},
-  "themePageTitle": "Pilih penampilan Anda",
-  "@themePageTitle": {},
   "installationCompleteTitle": "Instalasi selesai",
   "@installationCompleteTitle": {},
   "readyToUse": "**{system}** telah terpasang dan siap digunakan.",

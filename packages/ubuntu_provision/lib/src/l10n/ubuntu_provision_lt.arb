@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Paspauskite vieną iš šių klavišų:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Ar šis klavišas yra jūsų klaviatūroje?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Pasirinkite apipavidalinimą",
+  "@themePageTitle": {},
+  "themePageHeader": "Vėliau išvaizdos nustatymuose bet kada galėsite tai pakeisti.",
+  "@themePageHeader": {},
+  "themeDark": "Tamsus",
+  "@themeDark": {},
+  "themeLight": "Šviesus",
+  "@themeLight": {}
 }

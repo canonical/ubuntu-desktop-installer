@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
+import 'theme_l10n.dart';
 import 'theme_model.dart';
 
 class ThemePage extends ConsumerWidget {
@@ -16,7 +16,7 @@ class ThemePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = ThemeLocalizations.of(context);
     final width = MediaQuery.of(context).size.width;
     final model = ref.watch(themeModelProvider);
     final yaru = YaruTheme.maybeOf(context);
@@ -112,7 +112,7 @@ class _ThemeOptionCard extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  child: Image.asset(assetName),
+                  child: Image.asset(assetName, package: 'ubuntu_provision'),
                 ),
               ),
             ),

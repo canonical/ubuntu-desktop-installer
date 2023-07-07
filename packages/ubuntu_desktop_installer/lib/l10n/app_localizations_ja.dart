@@ -611,18 +611,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get confirmInstallButton => 'インストール';
 
   @override
-  String get themePageTitle => 'テーマを選択してください。';
-
-  @override
-  String get themePageHeader => 'これは、外観設定でいつでも変更できます。';
-
-  @override
-  String get themeDark => '暗い';
-
-  @override
-  String get themeLight => '明るい';
-
-  @override
   String get installationCompleteTitle => 'インストールが完了しました';
 
   @override

@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsMl extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'നിങ്ങളുടെ കീബോർഡിൽ ഈ കീ നിലവിലുണ്ടോ?';
+
+  @override
+  String get themePageTitle => 'നിങ്ങളുടെ രൂപം തിരഞ്ഞെടുക്കുക';
+
+  @override
+  String get themePageHeader => 'രൂപഭാവ ക്രമീകരണങ്ങളിൽ നിങ്ങൾക്ക് ഇത് പിന്നീട് എപ്പോൾ വേണമെങ്കിലും മാറ്റാവുന്നതാണ്.';
+
+  @override
+  String get themeDark => 'ഇരുട്ട്';
+
+  @override
+  String get themeLight => 'വെളിച്ചം';
 }

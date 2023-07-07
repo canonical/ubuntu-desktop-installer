@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsAm extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'ይህ የሚቀጥለው ቁልፍ በእርስዎ የፊደል ገብታው ውስጥ አለ?';
+
+  @override
+  String get themePageTitle => 'Choose your theme';
+
+  @override
+  String get themePageHeader => 'You can always change this later in the appearance settings.';
+
+  @override
+  String get themeDark => 'Dark';
+
+  @override
+  String get themeLight => 'Light';
 }

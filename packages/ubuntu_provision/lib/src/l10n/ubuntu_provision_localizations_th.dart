@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsTh extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'ปุ่มดังกล่าวมีอยู่บนแป้นพิมพ์หรือไม่?';
+
+  @override
+  String get themePageTitle => 'Choose your theme';
+
+  @override
+  String get themePageHeader => 'You can always change this later in the appearance settings.';
+
+  @override
+  String get themeDark => 'Dark';
+
+  @override
+  String get themeLight => 'Light';
 }

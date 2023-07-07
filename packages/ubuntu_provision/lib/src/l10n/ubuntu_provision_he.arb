@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "נא ללחוץ על אחד מהתווים הבאים:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "האם המקש הבא קיים במקלדת שלך?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "נא לבחור את ערכת העיצוב שלך",
+  "@themePageTitle": {},
+  "themePageHeader": "תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.",
+  "@themePageHeader": {},
+  "themeDark": "כהה",
+  "@themeDark": {},
+  "themeLight": "בהיר",
+  "@themeLight": {}
 }

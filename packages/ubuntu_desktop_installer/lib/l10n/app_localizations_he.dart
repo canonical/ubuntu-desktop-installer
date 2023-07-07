@@ -611,18 +611,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get confirmInstallButton => 'התקנה';
 
   @override
-  String get themePageTitle => 'נא לבחור את ערכת העיצוב שלך';
-
-  @override
-  String get themePageHeader => 'תמיד ניתן לשנות את זה מאוחר יותר בהגדרות המראה.';
-
-  @override
-  String get themeDark => 'כהה';
-
-  @override
-  String get themeLight => 'בהיר';
-
-  @override
   String get installationCompleteTitle => 'ההתקנה הושלמה';
 
   @override

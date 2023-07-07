@@ -10,5 +10,11 @@
   "keyboardPressKeyLabel": "பின்வரும் விசைகளில் ஒன்றை அழுத்துங்கள்:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "பின்வரும் விசை உங்களுடைய தட்டச்சு பலகையில் இருக்கிறதா?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "உங்கள் தோற்றத்தை தேர்வு செய்யவும்",
+  "@themePageTitle": {},
+  "themePageHeader": "தோற்ற அமைப்புகளில் இதை எப்போது வேண்டுமானாலும் மாற்றலாம்.",
+  "@themePageHeader": {},
+  "themeDark": "கருமை",
+  "@themeDark": {}
 }

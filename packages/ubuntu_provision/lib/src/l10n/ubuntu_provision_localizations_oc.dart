@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsOc extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'La tòca seguenta es presenta sul clavièr ?';
+
+  @override
+  String get themePageTitle => 'Causissètz vòstre tèma';
+
+  @override
+  String get themePageHeader => 'La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.';
+
+  @override
+  String get themeDark => 'Fosc';
+
+  @override
+  String get themeLight => 'Clar';
 }

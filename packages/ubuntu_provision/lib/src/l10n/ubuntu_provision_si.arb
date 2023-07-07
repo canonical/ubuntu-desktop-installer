@@ -16,5 +16,13 @@
   "keyboardPressKeyLabel": "පහත යතුරු වලින් එකක් ඔබන්න:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "පහත යතුර ඔබගේ යතුරුපුවරුවේ තිබේද?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "ඔබගේ පෙනුම තෝරන්න",
+  "@themePageTitle": {},
+  "themePageHeader": "මෙය පසුව පෙනුම සැකසුම් හරහා වෙනස් කිරීමට හැකිය.",
+  "@themePageHeader": {},
+  "themeDark": "අඳුරු",
+  "@themeDark": {},
+  "themeLight": "දීප්ත",
+  "@themeLight": {}
 }

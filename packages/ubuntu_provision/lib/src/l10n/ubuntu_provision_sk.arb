@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Stlačte niektorú z nasledujúcich kláves:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Máte na klávesnici nasledujúci kláves?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Vyberte si motív vzhľadu",
+  "@themePageTitle": {},
+  "themePageHeader": "Môžete ho neskôr kedykoľvek zmeniť v nastaveniach vzhľadu.",
+  "@themePageHeader": {},
+  "themeDark": "Tmavý",
+  "@themeDark": {},
+  "themeLight": "Svetlý",
+  "@themeLight": {}
 }

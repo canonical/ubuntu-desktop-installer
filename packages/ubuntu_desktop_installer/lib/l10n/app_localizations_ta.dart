@@ -611,18 +611,6 @@ class AppLocalizationsTa extends AppLocalizations {
   String get confirmInstallButton => 'Install';
 
   @override
-  String get themePageTitle => 'உங்கள் தோற்றத்தை தேர்வு செய்யவும்';
-
-  @override
-  String get themePageHeader => 'தோற்ற அமைப்புகளில் இதை எப்போது வேண்டுமானாலும் மாற்றலாம்.';
-
-  @override
-  String get themeDark => 'கருமை';
-
-  @override
-  String get themeLight => 'Light';
-
-  @override
   String get installationCompleteTitle => 'நிறுவல் முடிவுற்றது';
 
   @override

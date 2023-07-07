@@ -16,5 +16,13 @@
   "keyboardPressKeyLabel": "Silakan tekan salah satu tombol berikut:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Apakah tombol berikut ada di papan ketik Anda?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Pilih penampilan Anda",
+  "@themePageTitle": {},
+  "themePageHeader": "Anda selalu dapat mengubahnya nanti di pengaturan tampilan.",
+  "@themePageHeader": {},
+  "themeDark": "Gelap",
+  "@themeDark": {},
+  "themeLight": "Terang",
+  "@themeLight": {}
 }

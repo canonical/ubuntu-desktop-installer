@@ -14,5 +14,9 @@
   "keyboardPressKeyLabel": "Pwyswch un o'r bysellau canlynol:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Ydy'r fysell ganlynol yn bresennol ar eich bysellfwrdd?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themeDark": "Tywyll",
+  "@themeDark": {},
+  "themeLight": "Golau",
+  "@themeLight": {}
 }

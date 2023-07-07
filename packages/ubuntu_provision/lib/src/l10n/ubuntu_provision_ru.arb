@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Нажмите одну из следующих клавиш:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Есть ли следующая клавиша на вашей клавиатуре?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Выберите свою тему",
+  "@themePageTitle": {},
+  "themePageHeader": "Вы всегда можете изменить это позже в настройках внешнего вида.",
+  "@themePageHeader": {},
+  "themeDark": "Тёмный",
+  "@themeDark": {},
+  "themeLight": "Светлый",
+  "@themeLight": {}
 }

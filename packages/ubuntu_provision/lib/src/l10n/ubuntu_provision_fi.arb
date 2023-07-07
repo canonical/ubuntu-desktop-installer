@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Paina yhtä seuraavista näppäimistä:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Löytyykö seuraava näppäin näppäimistöstäsi?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Valitse teema",
+  "@themePageTitle": {},
+  "themePageHeader": "Voit vaihtaa ulkoasua milloin tahansa asetusten kautta.",
+  "@themePageHeader": {},
+  "themeDark": "Tumma",
+  "@themeDark": {},
+  "themeLight": "Vaalea",
+  "@themeLight": {}
 }

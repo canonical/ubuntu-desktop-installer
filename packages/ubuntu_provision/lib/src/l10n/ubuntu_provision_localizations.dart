@@ -302,6 +302,30 @@ abstract class UbuntuProvisionLocalizations {
   /// In en, this message translates to:
   /// **'Is the following key present on your keyboard?'**
   String get keyboardKeyPresentLabel;
+
+  /// No description provided for @themePageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your theme'**
+  String get themePageTitle;
+
+  /// No description provided for @themePageHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'You can always change this later in the appearance settings.'**
+  String get themePageHeader;
+
+  /// No description provided for @themeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get themeDark;
+
+  /// No description provided for @themeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get themeLight;
 }
 
 class _UbuntuProvisionLocalizationsDelegate extends LocalizationsDelegate<UbuntuProvisionLocalizations> {

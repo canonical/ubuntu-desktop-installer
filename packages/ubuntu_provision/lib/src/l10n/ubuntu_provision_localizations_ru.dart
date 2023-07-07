@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsRu extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Есть ли следующая клавиша на вашей клавиатуре?';
+
+  @override
+  String get themePageTitle => 'Выберите свою тему';
+
+  @override
+  String get themePageHeader => 'Вы всегда можете изменить это позже в настройках внешнего вида.';
+
+  @override
+  String get themeDark => 'Тёмный';
+
+  @override
+  String get themeLight => 'Светлый';
 }

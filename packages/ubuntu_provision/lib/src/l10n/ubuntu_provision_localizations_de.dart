@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsDe extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Ist die folgende Taste auf Ihrer Tastatur vorhanden?';
+
+  @override
+  String get themePageTitle => 'Wählen Sie Ihr Thema aus';
+
+  @override
+  String get themePageHeader => 'Sie können dies später in den Einstellungen für das Erscheinungsbild jederzeit ändern.';
+
+  @override
+  String get themeDark => 'Dunkel';
+
+  @override
+  String get themeLight => 'Hell';
 }

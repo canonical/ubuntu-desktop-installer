@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsKo extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => '다음 키가 키보드에 존재합니까?';
+
+  @override
+  String get themePageTitle => '테마를 선택하십시오';
+
+  @override
+  String get themePageHeader => '모양 설정에서 언제든 변경하실 수 있습니다.';
+
+  @override
+  String get themeDark => '어두움';
+
+  @override
+  String get themeLight => '밝음';
 }

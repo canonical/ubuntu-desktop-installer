@@ -16,5 +16,13 @@
   "keyboardPressKeyLabel": "Будь ласка, натисніть одну з цих клавiш:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Чи присутня ця клавіша на клавіатурі?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Оберіть зовнішній вигляд",
+  "@themePageTitle": {},
+  "themePageHeader": "Ви завжди можете змінити це пізніше в налаштуваннях зовнішнього вигляду.",
+  "@themePageHeader": {},
+  "themeDark": "Темний",
+  "@themeDark": {},
+  "themeLight": "Світлий",
+  "@themeLight": {}
 }

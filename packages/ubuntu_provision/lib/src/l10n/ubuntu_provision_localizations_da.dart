@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsDa extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Er følgende tast tilstede på dit tastatur?';
+
+  @override
+  String get themePageTitle => 'Vælg til tema';
+
+  @override
+  String get themePageHeader => 'Du kan altid ændre dette senere, i indstillinger for udseende.';
+
+  @override
+  String get themeDark => 'Mørkt';
+
+  @override
+  String get themeLight => 'Lyst';
 }

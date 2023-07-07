@@ -611,18 +611,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get confirmInstallButton => 'Asenna';
 
   @override
-  String get themePageTitle => 'Valitse teema';
-
-  @override
-  String get themePageHeader => 'Voit vaihtaa ulkoasua milloin tahansa asetusten kautta.';
-
-  @override
-  String get themeDark => 'Tumma';
-
-  @override
-  String get themeLight => 'Vaalea';
-
-  @override
   String get installationCompleteTitle => 'Asennus on valmis';
 
   @override

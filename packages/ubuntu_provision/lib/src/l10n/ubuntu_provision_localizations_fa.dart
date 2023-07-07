@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsFa extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'آیا این کلید در صفحه‌کلیدتان وجود دارد؟';
+
+  @override
+  String get themePageTitle => 'گزینش زمینه‌تان';
+
+  @override
+  String get themePageHeader => 'بعدها همواره می‌توانید این مورد را در تنظیمات ظاهر تغییر دهید.';
+
+  @override
+  String get themeDark => 'تیره';
+
+  @override
+  String get themeLight => 'روشن';
 }

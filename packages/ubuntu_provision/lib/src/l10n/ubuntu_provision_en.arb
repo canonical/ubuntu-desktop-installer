@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Please press one of the following keys:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Is the following key present on your keyboard?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Choose your theme",
+  "@themePageTitle": {},
+  "themePageHeader": "You can always change this later in the appearance settings.",
+  "@themePageHeader": {},
+  "themeDark": "Dark",
+  "@themeDark": {},
+  "themeLight": "Light",
+  "@themeLight": {}
 }

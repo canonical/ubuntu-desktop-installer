@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsCa extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Teniu la tecla següent al vostre teclat?';
+
+  @override
+  String get themePageTitle => 'Trieu l’aspecte';
+
+  @override
+  String get themePageHeader => 'You can always change this later in the appearance settings.';
+
+  @override
+  String get themeDark => 'Fosc';
+
+  @override
+  String get themeLight => 'Clar';
 }

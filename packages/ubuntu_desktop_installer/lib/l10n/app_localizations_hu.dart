@@ -611,18 +611,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get confirmInstallButton => 'Telepítés';
 
   @override
-  String get themePageTitle => 'Téma kiválasztása';
-
-  @override
-  String get themePageHeader => 'Ezt később bármikor megváltoztathatja a megjelenési beállításokban.';
-
-  @override
-  String get themeDark => 'Sötét';
-
-  @override
-  String get themeLight => 'Világos';
-
-  @override
   String get installationCompleteTitle => 'A telepítés befejeződött';
 
   @override

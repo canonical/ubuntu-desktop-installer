@@ -148,10 +148,6 @@
   "@confirmHeader": {},
   "partitionMountPointLabel": "Точка монтування:",
   "@partitionMountPointLabel": {},
-  "themePageHeader": "Ви завжди можете змінити це пізніше в налаштуваннях зовнішнього вигляду.",
-  "@themePageHeader": {},
-  "themeLight": "Світлий",
-  "@themeLight": {},
   "bitlockerDescription": "На цьому комп'ютері використовується шифрування Windows BitLocker.\nПеред встановленням Ubuntu потрібно вимкнути BitLocker у Windows.",
   "@bitlockerDescription": {},
   "installingSystem": "Встановлення системи…",
@@ -264,10 +260,6 @@
       "path": {}
     }
   },
-  "themePageTitle": "Оберіть зовнішній вигляд",
-  "@themePageTitle": {},
-  "themeDark": "Темний",
-  "@themeDark": {},
   "copyingFiles": "Копіювання файлів…",
   "@copyingFiles": {},
   "installationFailed": "Встановлення не вдалося",

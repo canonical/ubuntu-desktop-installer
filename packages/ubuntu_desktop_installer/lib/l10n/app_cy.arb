@@ -169,8 +169,6 @@
   "@partitionCreateTitle": {},
   "identityRequirePassword": "Gofyn am fy nghyfrinair i fewngofnodi",
   "@identityRequirePassword": {},
-  "themeLight": "Golau",
-  "@themeLight": {},
   "bitlockerTitle": "Diffoddwch BitLocker",
   "@bitlockerTitle": {},
   "notEnoughDiskSpaceTitle": "Ymddiheuriad",
@@ -225,8 +223,6 @@
       "path": {}
     }
   },
-  "themeDark": "Tywyll",
-  "@themeDark": {},
   "installationCompleteTitle": "Gosodi wedi cwblhau",
   "@installationCompleteTitle": {}
 }

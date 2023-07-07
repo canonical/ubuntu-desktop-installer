@@ -4,5 +4,11 @@
   "timezoneLocationLabel": "Vendndodhja",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Zona orare",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "themePageTitle": "Zgjidh pamjen tënde",
+  "@themePageTitle": {},
+  "themeDark": "E errët",
+  "@themeDark": {},
+  "themeLight": "E çelur",
+  "@themeLight": {}
 }

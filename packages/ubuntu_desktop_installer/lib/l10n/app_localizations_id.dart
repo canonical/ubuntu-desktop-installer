@@ -611,18 +611,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get confirmInstallButton => 'Mulai Memasang';
 
   @override
-  String get themePageTitle => 'Pilih penampilan Anda';
-
-  @override
-  String get themePageHeader => 'Anda selalu dapat mengubahnya nanti di pengaturan tampilan.';
-
-  @override
-  String get themeDark => 'Gelap';
-
-  @override
-  String get themeLight => 'Terang';
-
-  @override
   String get installationCompleteTitle => 'Instalasi selesai';
 
   @override

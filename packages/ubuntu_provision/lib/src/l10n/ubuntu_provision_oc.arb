@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Mercés de quichar una de las tòcas seguentas :",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "La tòca seguenta es presenta sul clavièr ?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Causissètz vòstre tèma",
+  "@themePageTitle": {},
+  "themePageHeader": "La poiretz cambiar mai tard en anant a las preferéncias d’aparéncia.",
+  "@themePageHeader": {},
+  "themeDark": "Fosc",
+  "@themeDark": {},
+  "themeLight": "Clar",
+  "@themeLight": {}
 }

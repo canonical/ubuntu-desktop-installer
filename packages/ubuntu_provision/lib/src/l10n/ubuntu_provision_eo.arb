@@ -20,5 +20,13 @@
   "keyboardPressKeyLabel": "Bonvolu premi unu el la jenaj klavoj:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Ĉu la jena klavo troviĝas en via klavaro?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "Elektu vian etoson",
+  "@themePageTitle": {},
+  "themePageHeader": "Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.",
+  "@themePageHeader": {},
+  "themeDark": "Malhela",
+  "@themeDark": {},
+  "themeLight": "Hela",
+  "@themeLight": {}
 }

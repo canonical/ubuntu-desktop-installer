@@ -10,5 +10,13 @@
   "keyboardPressKeyLabel": "ഈ കീകളിൽ ഒന്ന് അമർത്തുക:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "നിങ്ങളുടെ കീബോർഡിൽ ഈ കീ നിലവിലുണ്ടോ?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "themePageTitle": "നിങ്ങളുടെ രൂപം തിരഞ്ഞെടുക്കുക",
+  "@themePageTitle": {},
+  "themePageHeader": "രൂപഭാവ ക്രമീകരണങ്ങളിൽ നിങ്ങൾക്ക് ഇത് പിന്നീട് എപ്പോൾ വേണമെങ്കിലും മാറ്റാവുന്നതാണ്.",
+  "@themePageHeader": {},
+  "themeDark": "ഇരുട്ട്",
+  "@themeDark": {},
+  "themeLight": "വെളിച്ചം",
+  "@themeLight": {}
 }

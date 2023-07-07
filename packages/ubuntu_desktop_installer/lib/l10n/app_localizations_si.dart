@@ -611,18 +611,6 @@ class AppLocalizationsSi extends AppLocalizations {
   String get confirmInstallButton => 'ස්ථාපනය අරඹන්න';
 
   @override
-  String get themePageTitle => 'ඔබගේ පෙනුම තෝරන්න';
-
-  @override
-  String get themePageHeader => 'මෙය පසුව පෙනුම සැකසුම් හරහා වෙනස් කිරීමට හැකිය.';
-
-  @override
-  String get themeDark => 'අඳුරු';
-
-  @override
-  String get themeLight => 'දීප්ත';
-
-  @override
   String get installationCompleteTitle => 'ස්ථාපනය සම්පූර්ණයි';
 
   @override

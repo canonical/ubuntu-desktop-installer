@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsSi extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'පහත යතුර ඔබගේ යතුරුපුවරුවේ තිබේද?';
+
+  @override
+  String get themePageTitle => 'ඔබගේ පෙනුම තෝරන්න';
+
+  @override
+  String get themePageHeader => 'මෙය පසුව පෙනුම සැකසුම් හරහා වෙනස් කිරීමට හැකිය.';
+
+  @override
+  String get themeDark => 'අඳුරු';
+
+  @override
+  String get themeLight => 'දීප්ත';
 }

@@ -611,18 +611,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get confirmInstallButton => '安装';
 
   @override
-  String get themePageTitle => '选择您的主题';
-
-  @override
-  String get themePageHeader => '稍后您可以在“外观设置”中进行更改。';
-
-  @override
-  String get themeDark => '深色';
-
-  @override
-  String get themeLight => '浅色';
-
-  @override
   String get installationCompleteTitle => '安装完成';
 
   @override

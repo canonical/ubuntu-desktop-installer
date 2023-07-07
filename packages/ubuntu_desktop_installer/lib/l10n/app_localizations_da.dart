@@ -611,18 +611,6 @@ class AppLocalizationsDa extends AppLocalizations {
   String get confirmInstallButton => 'Installér';
 
   @override
-  String get themePageTitle => 'Vælg til tema';
-
-  @override
-  String get themePageHeader => 'Du kan altid ændre dette senere, i indstillinger for udseende.';
-
-  @override
-  String get themeDark => 'Mørkt';
-
-  @override
-  String get themeLight => 'Lyst';
-
-  @override
   String get installationCompleteTitle => 'Installation gennemført';
 
   @override

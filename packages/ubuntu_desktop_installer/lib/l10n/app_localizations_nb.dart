@@ -611,18 +611,6 @@ class AppLocalizationsNb extends AppLocalizations {
   String get confirmInstallButton => 'Installer';
 
   @override
-  String get themePageTitle => 'Velg utseende';
-
-  @override
-  String get themePageHeader => 'Du kan alltid endre dette senere i utseende-innstillingene.';
-
-  @override
-  String get themeDark => 'Mørk';
-
-  @override
-  String get themeLight => 'Lys';
-
-  @override
   String get installationCompleteTitle => 'Installasjon fullført';
 
   @override

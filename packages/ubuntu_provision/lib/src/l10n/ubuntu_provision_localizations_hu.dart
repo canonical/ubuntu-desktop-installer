@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsHu extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'A következő billentyű rajta van a billentyűzetén?';
+
+  @override
+  String get themePageTitle => 'Téma kiválasztása';
+
+  @override
+  String get themePageHeader => 'Ezt később bármikor megváltoztathatja a megjelenési beállításokban.';
+
+  @override
+  String get themeDark => 'Sötét';
+
+  @override
+  String get themeLight => 'Világos';
 }

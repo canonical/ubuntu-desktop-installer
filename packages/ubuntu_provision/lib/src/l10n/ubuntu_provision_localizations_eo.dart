@@ -36,4 +36,16 @@ class UbuntuProvisionLocalizationsEo extends UbuntuProvisionLocalizations {
 
   @override
   String get keyboardKeyPresentLabel => 'Ĉu la jena klavo troviĝas en via klavaro?';
+
+  @override
+  String get themePageTitle => 'Elektu vian etoson';
+
+  @override
+  String get themePageHeader => 'Vi povas ŝanĝi tion poste per la agordoj pri Aspekto.';
+
+  @override
+  String get themeDark => 'Malhela';
+
+  @override
+  String get themeLight => 'Hela';
 }

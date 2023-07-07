@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/theme/theme_model.dart';
-import 'package:ubuntu_desktop_installer/pages/theme/theme_page.dart';
+import 'package:ubuntu_provision/src/theme/theme_model.dart';
+import 'package:ubuntu_provision/src/theme/theme_page.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -25,7 +25,10 @@ void main() {
 
     final lightOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
-      const AssetImage('assets/theme/light-theme.png'),
+      const AssetImage(
+        'assets/theme/light-theme.png',
+        package: 'ubuntu_provision',
+      ),
     );
     expect(lightOptionCard, findsOneWidget);
     await tester.tap(lightOptionCard);
@@ -33,7 +36,10 @@ void main() {
 
     final darkOptionCard = find.widgetWithImage(
       YaruSelectableContainer,
-      const AssetImage('assets/theme/dark-theme.png'),
+      const AssetImage(
+        'assets/theme/dark-theme.png',
+        package: 'ubuntu_provision',
+      ),
     );
     expect(darkOptionCard, findsOneWidget);
     await tester.tap(darkOptionCard);
