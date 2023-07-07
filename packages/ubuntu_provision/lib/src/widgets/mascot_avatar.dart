@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-const _kMascotAsset = AssetImage('assets/mascot.png');
+const _kMascotAsset = AssetImage(
+  'assets/mascot.png',
+  package: 'ubuntu_provision',
+);
 
 class MascotAvatar extends StatelessWidget {
   const MascotAvatar({
