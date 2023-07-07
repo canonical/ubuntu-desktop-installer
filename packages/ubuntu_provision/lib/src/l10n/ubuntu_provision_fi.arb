@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Sijainti",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Aikavyöhyke",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Näppäimistön asettelu",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Valitse näppäimistön asettelu:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Kokeile näppäimistön asetuksia kirjoittamalla tähän",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Tunnista näppäimistön asettelu",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Tunnista",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Näppäimistömuunnelma:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Paina yhtä seuraavista näppäimistä:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Löytyykö seuraava näppäin näppäimistöstäsi?",
+  "@keyboardKeyPresentLabel": {}
 }

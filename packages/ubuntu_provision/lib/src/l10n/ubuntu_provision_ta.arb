@@ -1,1 +1,14 @@
-{}
+{
+  "keyboardTitle": "விசைப்பலகை அமைப்பு",
+  "@keyboardTitle": {},
+  "keyboardHeader": "உங்களின் விசைப்பலகை அமைப்பைத் தேர்வு செய்யவும்:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "உங்கள் விசைப்பலகையை சோதிக்க இங்கு தட்டச்சு செய்யவும்",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "விசைப்பலகையின் அமைப்பைக் கண்டறியவும்",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "பின்வரும் விசைகளில் ஒன்றை அழுத்துங்கள்:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "பின்வரும் விசை உங்களுடைய தட்டச்சு பலகையில் இருக்கிறதா?",
+  "@keyboardKeyPresentLabel": {}
+}

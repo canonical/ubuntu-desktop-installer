@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Localizacion",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Fus orari",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Agençament del clavièr",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Indicatz l’agençament del clavièr :",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Picatz de tèxt aquí per ensajar lo clavièr",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Detectar l’agençament del clavièr",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Detectar",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Varianta del clavièr :",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Mercés de quichar una de las tòcas seguentas :",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "La tòca seguenta es presenta sul clavièr ?",
+  "@keyboardKeyPresentLabel": {}
 }

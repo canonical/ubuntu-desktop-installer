@@ -12,4 +12,28 @@ class UbuntuProvisionLocalizationsLt extends UbuntuProvisionLocalizations {
 
   @override
   String get timezoneTimezoneLabel => 'Laiko juosta';
+
+  @override
+  String get keyboardTitle => 'Klaviatūros išdėstymas';
+
+  @override
+  String get keyboardHeader => 'Pasirinkite klaviatūros išdėstymą:';
+
+  @override
+  String get keyboardTestHint => 'Rašykite čia, norėdami išbandyti klaviatūrą';
+
+  @override
+  String get keyboardDetectTitle => 'Aptikti klaviatūros išdėstymą';
+
+  @override
+  String get keyboardDetectButton => 'Aptikti';
+
+  @override
+  String get keyboardVariantLabel => 'Klaviatūros variantas:';
+
+  @override
+  String get keyboardPressKeyLabel => 'Paspauskite vieną iš šių klavišų:';
+
+  @override
+  String get keyboardKeyPresentLabel => 'Ar šis klavišas yra jūsų klaviatūroje?';
 }

@@ -9,8 +9,6 @@
       "RELEASE": {}
     }
   },
-  "keyboardTitle": "કીબોર્ડ લેઆઉટ",
-  "@keyboardTitle": {},
   "windowTitle": "{RELEASE} ને સ્થાપિત કરો",
   "@windowTitle": {
     "type": "text",

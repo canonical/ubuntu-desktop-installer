@@ -93,30 +93,6 @@ class AppLocalizationsOc extends AppLocalizations {
   }
 
   @override
-  String get keyboardTitle => 'Agençament del clavièr';
-
-  @override
-  String get keyboardHeader => 'Indicatz l’agençament del clavièr :';
-
-  @override
-  String get keyboardTestHint => 'Picatz de tèxt aquí per ensajar lo clavièr';
-
-  @override
-  String get keyboardDetectTitle => 'Detectar l’agençament del clavièr';
-
-  @override
-  String get keyboardDetectButton => 'Detectar';
-
-  @override
-  String get keyboardVariantLabel => 'Varianta del clavièr :';
-
-  @override
-  String get keyboardPressKeyLabel => 'Mercés de quichar una de las tòcas seguentas :';
-
-  @override
-  String get keyboardKeyPresentLabel => 'La tòca seguenta es presenta sul clavièr ?';
-
-  @override
   String get configureSecureBootTitle => 'Configurar l’amorçatge segur';
 
   @override

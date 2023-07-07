@@ -61,20 +61,8 @@
       "url": {}
     }
   },
-  "keyboardTitle": "Klavye düzeni",
-  "@keyboardTitle": {},
-  "keyboardHeader": "Klavye düzeninizi seçin:",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "Klavyenizi test etmek için buraya yazın",
-  "@keyboardTestHint": {},
   "chooseSecurityKey": "Güvenlik anahtarı seçin",
   "@chooseSecurityKey": {},
-  "keyboardDetectTitle": "Klavye düzenini algıla",
-  "@keyboardDetectTitle": {},
-  "keyboardPressKeyLabel": "Lütfen aşağıdaki tuşlardan birine basın:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "Aşağıdaki tuş klavyenizde bulunuyor mu?",
-  "@keyboardKeyPresentLabel": {},
   "configureSecureBootTitle": "Güvenli Önyüklemeyi Yapılandır",
   "@configureSecureBootTitle": {},
   "configureSecureBootDescription": "Üçüncü parti sürücüleri kurmayı seçtiniz. Bu, Güvenli Önyüklemeyi kapatmanızı gerektirir.\nBunu yapabilmek için, şimdi bir güvenlik anahtarı seçmeli ve sistem yeniden başlatıldığında bu anahtarı girmelisiniz.",
@@ -583,10 +571,6 @@
       "DISTRO": {}
     }
   },
-  "keyboardDetectButton": "Algıla",
-  "@keyboardDetectButton": {},
-  "keyboardVariantLabel": "Klavye yerleşimi:",
-  "@keyboardVariantLabel": {},
   "identityHostnameTooLong": "Bu bilgisayar ismi çok uzun.",
   "@identityHostnameTooLong": {},
   "confirmDevicesTitle": "Aygıtlar",

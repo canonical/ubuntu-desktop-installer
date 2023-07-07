@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Место нахождения",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Часовой пояс",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Раскладка клавиатуры",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Выберите раскладку клавиатуры:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Напечатайте здесь, чтобы проверить свою клавиатуру",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Определить раскладку клавиатуры",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Определить",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Вариант клавиатуры:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Нажмите одну из следующих клавиш:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Есть ли следующая клавиша на вашей клавиатуре?",
+  "@keyboardKeyPresentLabel": {}
 }

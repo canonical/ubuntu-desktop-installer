@@ -8,6 +8,16 @@ import 'package:yaru/yaru.dart';
 extension UbuntuProvisionTester on WidgetTester {
   static Type context = WizardPage;
 
+  UbuntuProvisionLocalizations get lang {
+    final widget = element(find.byType(context).first);
+    return UbuntuProvisionLocalizations.of(widget);
+  }
+
+  UbuntuLocalizations get ulang {
+    final widget = element(find.byType(context).first);
+    return UbuntuLocalizations.of(widget);
+  }
+
   Widget buildApp(WidgetBuilder builder) {
     view.devicePixelRatio = 1;
     view.physicalSize = const Size(960, 680);

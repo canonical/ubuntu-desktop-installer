@@ -2,7 +2,6 @@ export 'pages/active_directory/active_directory_page.dart';
 export 'pages/confirm/confirm_page.dart';
 export 'pages/identity/identity_page.dart';
 export 'pages/install/install_page.dart';
-export 'pages/keyboard/keyboard_page.dart';
 export 'pages/loading/loading_page.dart';
 export 'pages/locale/locale_page.dart';
 export 'pages/network/network_page.dart';

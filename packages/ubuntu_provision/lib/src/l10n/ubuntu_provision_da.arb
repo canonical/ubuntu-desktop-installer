@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Placering",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Tidszone",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Tastaturopsætning",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Vælg din tastaturopsætning:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Tast her, for at afprøve dit tastatur",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Opfang tastaturopsætning",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Opfang",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Tastaturvariant:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Tryk venligst på en af følgende taster:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Er følgende tast tilstede på dit tastatur?",
+  "@keyboardKeyPresentLabel": {}
 }

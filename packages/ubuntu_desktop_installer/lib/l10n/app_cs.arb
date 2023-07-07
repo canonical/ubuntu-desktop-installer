@@ -62,18 +62,6 @@
       "url": {}
     }
   },
-  "keyboardTitle": "Rozvržení klávesnice",
-  "@keyboardTitle": {},
-  "keyboardHeader": "Zvolte si rozvržení klávesnice:",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "Správné fungování rozvržení si můžete vyzkoušet zde",
-  "@keyboardTestHint": {},
-  "keyboardDetectTitle": "Zjistit rozvržení klávesnice",
-  "@keyboardDetectTitle": {},
-  "keyboardPressKeyLabel": "Stiskněte některou z následujících kláves:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "Máte na klávesnici následující klávesu?",
-  "@keyboardKeyPresentLabel": {},
   "configureSecureBootTitle": "Nastavit Secure Boot",
   "@configureSecureBootTitle": {},
   "configureSecureBootDescription": "Zvolili jste nainstalovat ovladač hardware, pocházející od třetí strany. Aby to bylo možné,\nje zapotřebí vypnout Secure Boot. To uděláte vytvořením klíče zabezpečení a jeho\nnásledným zadáním po restartu systému.",
@@ -629,10 +617,6 @@
       "DISTRO": {}
     }
   },
-  "keyboardDetectButton": "Zjistit",
-  "@keyboardDetectButton": {},
-  "keyboardVariantLabel": "Varianta klávesnice:",
-  "@keyboardVariantLabel": {},
   "confirmDevicesTitle": "Zařízení",
   "@confirmDevicesTitle": {},
   "confirmPartitionsTitle": "Oddíly",

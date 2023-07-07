@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_page.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_l10n.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_model.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_page.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_service.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_widgets.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
 import 'test_keyboard.dart';
+
+Widget buildKeyboardPage(KeyboardModel model) {
+  final service = MockKeyboardService();
+  when(service.getKeyboardStep(any)).thenAnswer(
+      (_) async => const AnyStep.stepPressKey(keycodes: {}, symbols: []));
+  registerMockService<KeyboardService>(service);
+
+  return ProviderScope(
+    overrides: [keyboardModelProvider.overrideWith((_) => model)],
+    child: const KeyboardPage(),
+  );
+}
 
 void main() {
   testWidgets('select keyboard layout', (tester) async {
@@ -49,7 +64,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     final context = tester.element(find.byType(KeyboardPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = KeyboardLocalizations.of(context);
 
     final textField = find.textField(l10n.keyboardTestHint);
     expect(textField, findsOneWidget);
@@ -63,7 +78,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     final context = tester.element(find.byType(KeyboardPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = KeyboardLocalizations.of(context);
 
     final detectButton = find.button(l10n.keyboardDetectButton);
     expect(detectButton, findsOneWidget);
@@ -84,7 +99,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildKeyboardPage(model)));
 
     final context = tester.element(find.byType(KeyboardPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = KeyboardLocalizations.of(context);
 
     final detectButton = find.button(l10n.keyboardDetectButton);
     expect(detectButton, findsNothing);

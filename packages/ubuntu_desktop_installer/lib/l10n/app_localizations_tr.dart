@@ -93,30 +93,6 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get keyboardTitle => 'Klavye düzeni';
-
-  @override
-  String get keyboardHeader => 'Klavye düzeninizi seçin:';
-
-  @override
-  String get keyboardTestHint => 'Klavyenizi test etmek için buraya yazın';
-
-  @override
-  String get keyboardDetectTitle => 'Klavye düzenini algıla';
-
-  @override
-  String get keyboardDetectButton => 'Algıla';
-
-  @override
-  String get keyboardVariantLabel => 'Klavye yerleşimi:';
-
-  @override
-  String get keyboardPressKeyLabel => 'Lütfen aşağıdaki tuşlardan birine basın:';
-
-  @override
-  String get keyboardKeyPresentLabel => 'Aşağıdaki tuş klavyenizde bulunuyor mu?';
-
-  @override
   String get configureSecureBootTitle => 'Güvenli Önyüklemeyi Yapılandır';
 
   @override

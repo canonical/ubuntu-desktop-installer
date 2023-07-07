@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_detector.dart';
-import 'package:ubuntu_desktop_installer/services/keyboard_service.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_detector.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_service.dart';
 
 import 'test_keyboard.dart';
 

@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Standort",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Zeitzone",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Tastaturbelegung",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Wählen Sie Ihre Tastaturbelegung aus:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Geben Sie hier etwas ein, um Ihre Tastaturbelegung zu überprüfen",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Tastaturbelegung erkennen",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Erkennen",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Tastaturvariante:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Bitte drücken Sie eine der folgenden Tasten:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Ist die folgende Taste auf Ihrer Tastatur vorhanden?",
+  "@keyboardKeyPresentLabel": {}
 }

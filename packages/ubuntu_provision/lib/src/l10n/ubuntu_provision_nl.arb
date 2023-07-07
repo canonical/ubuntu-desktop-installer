@@ -1,1 +1,10 @@
-{}
+{
+  "keyboardTitle": "Toetsenbordindeling",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Kies uw toetsenbordindeling:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Type hieronder om het toetsenbord te testen",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Toetsenbordindeling bepalen",
+  "@keyboardDetectTitle": {}
+}

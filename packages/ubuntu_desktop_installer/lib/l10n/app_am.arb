@@ -2,14 +2,6 @@
   "@@locale": "am",
   "welcome": "እንኳን ደህና መጡ",
   "@welcome": {},
-  "keyboardTitle": "የፊደል ገበታ አቀማመጥ",
-  "@keyboardTitle": {},
-  "keyboardHeader": "የፊደል ገበታ ማዘጋጃ ይምረጡ :",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "የፊደል ገበታውን ለመሞከር እዚህ ይጻፉ",
-  "@keyboardTestHint": {},
-  "keyboardPressKeyLabel": "እባክዎን ከእነዚህ ቁልፎች አንዱን ይጫኑ :",
-  "@keyboardPressKeyLabel": {},
   "windowTitle": "መግጠም {RELEASE}",
   "@windowTitle": {
     "type": "text",
@@ -31,10 +23,6 @@
       "RELEASE": {}
     }
   },
-  "keyboardDetectTitle": "የፊደል ገበታ አዘገጃጀቱን በመፈለግ ላይ",
-  "@keyboardDetectTitle": {},
-  "keyboardKeyPresentLabel": "ይህ የሚቀጥለው ቁልፍ በእርስዎ የፊደል ገብታው ውስጥ አለ?",
-  "@keyboardKeyPresentLabel": {},
   "changeButtonText": "ለውጥ",
   "@changeButtonText": {},
   "restartButtonText": "እንደገና ጀምር",

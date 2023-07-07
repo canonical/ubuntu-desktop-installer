@@ -11,7 +11,6 @@ import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory
 import 'package:ubuntu_desktop_installer/pages/confirm/confirm_model.dart';
 import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_desktop_installer/pages/install/install_model.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_model.dart';
 import 'package:ubuntu_desktop_installer/pages/loading/loading_model.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
@@ -37,12 +36,12 @@ import 'package:yaru/yaru.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
+import '../../ubuntu_provision/test/keyboard/test_keyboard.dart';
 import '../../ubuntu_provision/test/timezone/test_timezone.dart';
 import 'active_directory/test_active_directory.dart';
 import 'confirm/test_confirm.dart';
 import 'identity/test_identity.dart';
 import 'install/test_install.dart';
-import 'keyboard/test_keyboard.dart';
 import 'loading/test_loading.dart';
 import 'locale/test_locale.dart';
 import 'network/test_network.dart';

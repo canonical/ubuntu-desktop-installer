@@ -8,9 +8,16 @@ environment:
 
 dependencies:
   collection: ^1.17.0
+  diacritic: ^0.1.4
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.3.6
+  meta: ^1.8.0
+  platform: ^3.1.0
+  safe_change_notifier: ^0.3.0
+  subiquity_client:
+    git:
+      url: https://github.com/canonical/subiquity_client.dart.git
   timezone_map:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
@@ -24,6 +31,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git
       path: packages/ubuntu_utils
+  ubuntu_widgets: ^0.1.0
   ubuntu_wizard:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git

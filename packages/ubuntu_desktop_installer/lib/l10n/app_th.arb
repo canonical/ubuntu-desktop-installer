@@ -14,12 +14,6 @@
       "RELEASE": {}
     }
   },
-  "keyboardTestHint": "พิมพ์ที่นี่ เพื่อทดสอบแป้นพิมพ์ของคุณ (กด Alt+Shift เพื่อสลับภาษา)",
-  "@keyboardTestHint": {},
-  "keyboardPressKeyLabel": "โปรดกดปุ่มใดปุ่มหนึ่งในรายการนี้:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardKeyPresentLabel": "ปุ่มดังกล่าวมีอยู่บนแป้นพิมพ์หรือไม่?",
-  "@keyboardKeyPresentLabel": {},
   "welcome": "ยินดีต้อนรับ",
   "@welcome": {},
   "windowTitle": "ติดตั้ง {RELEASE}",
@@ -36,10 +30,5 @@
       "url": {}
     }
   },
-  "keyboardTitle": "ผังแป้นพิมพ์",
-  "@keyboardTitle": {},
-  "keyboardHeader": "เลือกผังแป้นพิมพ์ของคุณ:",
-  "@keyboardHeader": {},
-  "keyboardDetectTitle": "ตรวจหาผังแป้นพิมพ์",
   "@keyboardDetectTitle": {}
 }

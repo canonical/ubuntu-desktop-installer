@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "位置",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "时区",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "键盘布局",
+  "@keyboardTitle": {},
+  "keyboardHeader": "选择您的键盘布局：",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "在此键入以测试您的键盘",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "检测键盘布局",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "检测",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "键盘变体：",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "请按下以下按键中的任意一个：",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "您的键盘上是否有以下键？",
+  "@keyboardKeyPresentLabel": {}
 }

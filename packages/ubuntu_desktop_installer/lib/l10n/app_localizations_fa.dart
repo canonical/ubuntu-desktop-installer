@@ -93,30 +93,6 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get keyboardTitle => 'چیدمان صفحه‌کلید';
-
-  @override
-  String get keyboardHeader => 'گزینش چیدمان صفحه‌کلیدتان:';
-
-  @override
-  String get keyboardTestHint => 'برای آزمایش صفحه‌کلیدتان، این‌جا بنویسید';
-
-  @override
-  String get keyboardDetectTitle => 'تشخیص چیدمان صفحه‌کلید';
-
-  @override
-  String get keyboardDetectButton => 'تشخیص';
-
-  @override
-  String get keyboardVariantLabel => 'دگرگونهٔ صفحه‌کلید:';
-
-  @override
-  String get keyboardPressKeyLabel => 'لطفاً یکی از کلیدهای زیر را فشار دهید:';
-
-  @override
-  String get keyboardKeyPresentLabel => 'آیا این کلید در صفحه‌کلیدتان وجود دارد؟';
-
-  @override
   String get configureSecureBootTitle => 'پیکربندی راه‌اندازی ایمن';
 
   @override

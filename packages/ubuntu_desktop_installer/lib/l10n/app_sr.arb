@@ -48,16 +48,6 @@
       "url": {}
     }
   },
-  "keyboardHeader": "Изаберите ваш распоред тастатуре:",
-  "@keyboardHeader": {},
-  "keyboardTestHint": "Куцајте овде како би испробали вашу тастатуру",
-  "@keyboardTestHint": {},
-  "keyboardDetectTitle": "Откриј распоред тастатуре",
-  "@keyboardDetectTitle": {},
-  "keyboardKeyPresentLabel": "Да ли следећи тастер постоји на вашој тастатури?",
-  "@keyboardKeyPresentLabel": {},
-  "keyboardPressKeyLabel": "Молимо притисните један од следећих тастера:",
-  "@keyboardPressKeyLabel": {},
   "rstTitle": "Искључи RST",
   "@rstTitle": {},
   "welcomeTryDescription": "Можете испробати {RELEASE} без прављења измена на вашем рачунару.",
@@ -74,6 +64,5 @@
       "RELEASE": {}
     }
   },
-  "keyboardTitle": "Распоред тастатуре",
   "@keyboardTitle": {}
 }

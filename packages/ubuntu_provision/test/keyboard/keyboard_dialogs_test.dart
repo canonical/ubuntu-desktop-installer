@@ -1,9 +1,10 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_dialogs.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_dialogs.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_service.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_widgets.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 
 import 'test_keyboard.dart';

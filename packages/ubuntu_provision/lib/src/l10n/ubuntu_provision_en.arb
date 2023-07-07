@@ -4,5 +4,21 @@
   "timezoneLocationLabel": "Location",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Timezone",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Keyboard layout",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Choose your keyboard layout:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Type here to test your keyboard",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Detect keyboard layout",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "Detect",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "Keyboard variant:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "Please press one of the following keys:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Is the following key present on your keyboard?",
+  "@keyboardKeyPresentLabel": {}
 }

@@ -4,5 +4,17 @@
   "timezoneLocationLabel": "Місце розташування",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Часовий пояс",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Розкладка клавіатури",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Оберіть розкладку клавіатури:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Введіть що-небудь, щоб перевірити клавіатуру",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Визначити розкладку клавіатури",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "Будь ласка, натисніть одну з цих клавiш:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Чи присутня ця клавіша на клавіатурі?",
+  "@keyboardKeyPresentLabel": {}
 }

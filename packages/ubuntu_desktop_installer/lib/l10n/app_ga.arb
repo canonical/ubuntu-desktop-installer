@@ -32,16 +32,5 @@
       "RELEASE": {}
     }
   },
-  "keyboardDetectTitle": "Aimsigh leagan amach an méarchláir",
-  "@keyboardDetectTitle": {},
-  "keyboardPressKeyLabel": "Brúigh cheann de na heochracha se:",
-  "@keyboardPressKeyLabel": {},
-  "keyboardHeader": "Roghnaigh leagan amach do mhéarchláir:",
-  "@keyboardHeader": {},
-  "keyboardTitle": "Leagan amach méarchláir",
-  "@keyboardTitle": {},
-  "keyboardKeyPresentLabel": "An bhfuil an eochair seo ann ar do mhéarchlár?",
-  "@keyboardKeyPresentLabel": {},
-  "keyboardTestHint": "Scríobh anseo chun do mhéarchlár a tástáil",
   "@keyboardTestHint": {}
 }

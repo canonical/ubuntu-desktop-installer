@@ -2,5 +2,17 @@
   "timezoneLocationLabel": "Lleoliad",
   "@timezoneLocationLabel": {},
   "timezoneTimezoneLabel": "Cylchfa amser",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "Cynllun bysellfwrdd",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Dewiswch gynllun eich bysellfwrdd:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Teipiwch yma i brofi'ch bysellfwrdd",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Canfod Cynllun Bysellfwrdd",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "Pwyswch un o'r bysellau canlynol:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Ydy'r fysell ganlynol yn bresennol ar eich bysellfwrdd?",
+  "@keyboardKeyPresentLabel": {}
 }

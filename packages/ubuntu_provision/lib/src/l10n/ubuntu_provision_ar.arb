@@ -2,5 +2,21 @@
   "timezonePageTitle": "حدد منطقتك الزمنية",
   "@timezonePageTitle": {},
   "timezoneTimezoneLabel": "المنطقة الزمنية",
-  "@timezoneTimezoneLabel": {}
+  "@timezoneTimezoneLabel": {},
+  "keyboardTitle": "تخطيط لوحة المفاتيح",
+  "@keyboardTitle": {},
+  "keyboardHeader": "اختر تخطيط لوحة المفاتيح:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "اكتب هنا لتجربة لوحة المفاتيح",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "كشف تخطيط لوحة المفاتيح",
+  "@keyboardDetectTitle": {},
+  "keyboardDetectButton": "كشف",
+  "@keyboardDetectButton": {},
+  "keyboardVariantLabel": "نوع لوحة المفاتيح:",
+  "@keyboardVariantLabel": {},
+  "keyboardPressKeyLabel": "رجاء اضغط على أحد المفاتيح التالية:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "هل هذا المفتاح موجود على لوحة مفاتيحك؟",
+  "@keyboardKeyPresentLabel": {}
 }

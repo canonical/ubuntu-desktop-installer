@@ -254,6 +254,54 @@ abstract class UbuntuProvisionLocalizations {
   /// In en, this message translates to:
   /// **'Timezone'**
   String get timezoneTimezoneLabel;
+
+  /// No description provided for @keyboardTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Keyboard layout'**
+  String get keyboardTitle;
+
+  /// No description provided for @keyboardHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your keyboard layout:'**
+  String get keyboardHeader;
+
+  /// No description provided for @keyboardTestHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type here to test your keyboard'**
+  String get keyboardTestHint;
+
+  /// No description provided for @keyboardDetectTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Detect keyboard layout'**
+  String get keyboardDetectTitle;
+
+  /// No description provided for @keyboardDetectButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Detect'**
+  String get keyboardDetectButton;
+
+  /// No description provided for @keyboardVariantLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Keyboard variant:'**
+  String get keyboardVariantLabel;
+
+  /// No description provided for @keyboardPressKeyLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Please press one of the following keys:'**
+  String get keyboardPressKeyLabel;
+
+  /// No description provided for @keyboardKeyPresentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Is the following key present on your keyboard?'**
+  String get keyboardKeyPresentLabel;
 }
 
 class _UbuntuProvisionLocalizationsDelegate extends LocalizationsDelegate<UbuntuProvisionLocalizations> {

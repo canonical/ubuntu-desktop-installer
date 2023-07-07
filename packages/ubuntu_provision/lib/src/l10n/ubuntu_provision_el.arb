@@ -1,1 +1,14 @@
-{}
+{
+  "keyboardTitle": "Διάταξη πληκτρολογίου",
+  "@keyboardTitle": {},
+  "keyboardHeader": "Επιλογή διάταξης πληκτρολογίου:",
+  "@keyboardHeader": {},
+  "keyboardTestHint": "Πληκτρολογήστε εδώ για να δοκιμάσετε το πληκτρολόγιό σας",
+  "@keyboardTestHint": {},
+  "keyboardDetectTitle": "Εντοπισμός διάταξης πληκτρολογίου",
+  "@keyboardDetectTitle": {},
+  "keyboardPressKeyLabel": "Παρακαλώ πιέστε ένα από τα ακόλουθα πλήκτρα:",
+  "@keyboardPressKeyLabel": {},
+  "keyboardKeyPresentLabel": "Υπάρχει στο πληκτρολόγιό σας το ακόλουθο πλήκτρο;",
+  "@keyboardKeyPresentLabel": {}
+}

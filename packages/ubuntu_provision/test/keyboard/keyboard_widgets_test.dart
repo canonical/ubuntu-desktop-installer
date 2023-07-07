@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/keyboard/keyboard_widgets.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_l10n.dart';
+import 'package:ubuntu_provision/src/keyboard/keyboard_widgets.dart';
 
 import '../test_utils.dart';
 
@@ -19,7 +19,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(DetectKeyboardView));
-    final l10n = AppLocalizations.of(context);
+    final l10n = KeyboardLocalizations.of(context);
 
     expect(find.byType(PressKeyView), findsOneWidget);
     expect(find.text('x'), findsOneWidget);
@@ -40,7 +40,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(DetectKeyboardView));
-    final l10n = AppLocalizations.of(context);
+    final l10n = KeyboardLocalizations.of(context);
 
     expect(find.byType(KeyPresentView), findsOneWidget);
     expect(find.text('x'), findsOneWidget);
