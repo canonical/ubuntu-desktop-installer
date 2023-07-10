@@ -43,6 +43,7 @@ dependencies:
     git:
       url: https://github.com/canonical/ubuntu-desktop-installer.git
       path: packages/ubuntu_wizard
+  udev: ^0.0.3
   upower: ^0.7.0
   yaru: ^0.9.0
   yaru_icons: ^1.0.0

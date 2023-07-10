@@ -19,7 +19,6 @@ import 'package:ubuntu_desktop_installer/services/installer_service.dart'
 import 'package:ubuntu_desktop_installer/services/journal_service.dart' as _i16;
 import 'package:ubuntu_desktop_installer/services/product_service.dart' as _i6;
 import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i24;
-import 'package:ubuntu_desktop_installer/services/udev_service.dart' as _i7;
 import 'package:ubuntu_provision/src/services/active_directory_service.dart'
     as _i8;
 import 'package:ubuntu_provision/src/services/desktop_service.dart' as _i11;
@@ -32,6 +31,7 @@ import 'package:ubuntu_provision/src/services/session_service.dart' as _i22;
 import 'package:ubuntu_provision/src/services/sound_service.dart' as _i23;
 import 'package:ubuntu_provision/src/services/telemetry_service.dart' as _i25;
 import 'package:ubuntu_provision/src/services/timezone_service.dart' as _i28;
+import 'package:ubuntu_provision/src/services/udev_service.dart' as _i7;
 import 'package:ubuntu_provision/src/theme/theme_service.dart' as _i26;
 import 'package:ubuntu_utils/src/url_launcher.dart' as _i29;
 import 'package:upower/upower.dart' as _i5;
