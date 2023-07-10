@@ -48,6 +48,14 @@ class UbuntuProvisionLocalizationsZh extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => '浅色';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return '欢迎来到 $DISTRO';
+  }
+
+  @override
+  String get localeHeader => '选择您的语言：';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).

@@ -24,5 +24,7 @@
   "themeDark": "අඳුරු",
   "@themeDark": {},
   "themeLight": "දීප්ත",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localeHeader": "ඔබගේ භාෂාව තෝරන්න:",
+  "@localeHeader": {}
 }

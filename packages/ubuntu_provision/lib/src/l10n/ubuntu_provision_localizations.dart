@@ -326,6 +326,18 @@ abstract class UbuntuProvisionLocalizations {
   /// In en, this message translates to:
   /// **'Light'**
   String get themeLight;
+
+  /// No description provided for @localePageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to {DISTRO}'**
+  String localePageTitle(Object DISTRO);
+
+  /// No description provided for @localeHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your language:'**
+  String get localeHeader;
 }
 
 class _UbuntuProvisionLocalizationsDelegate extends LocalizationsDelegate<UbuntuProvisionLocalizations> {

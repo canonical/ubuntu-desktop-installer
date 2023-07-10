@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsHu extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Világos';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Üdvözli a(z) $DISTRO!';
+  }
+
+  @override
+  String get localeHeader => 'Válasszon nyelvet:';
 }

@@ -35,14 +35,6 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return '欢迎来到 $DISTRO';
-  }
-
-  @override
-  String get localeHeader => '选择您的语言：';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return '试用或安装$DISTRO';
   }

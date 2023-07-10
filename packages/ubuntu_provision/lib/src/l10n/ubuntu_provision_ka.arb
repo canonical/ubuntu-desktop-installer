@@ -2,5 +2,7 @@
   "keyboardTitle": "კლავიატური განლაგება",
   "@keyboardTitle": {},
   "keyboardHeader": "აირჩიეთ თქვენი კლავიატურის განლაგება:",
-  "@keyboardHeader": {}
+  "@keyboardHeader": {},
+  "localeHeader": "აირჩიეთ თქვენი ენა:",
+  "@localeHeader": {}
 }

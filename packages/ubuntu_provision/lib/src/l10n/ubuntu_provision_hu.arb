@@ -28,5 +28,14 @@
   "themeDark": "Sötét",
   "@themeDark": {},
   "themeLight": "Világos",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "Üdvözli a(z) {DISTRO}!",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Válasszon nyelvet:",
+  "@localeHeader": {}
 }

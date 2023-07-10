@@ -35,14 +35,6 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Bem-vindo ao $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'Escolha o seu idioma:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'Experimentar ou instalar o $DISTRO';
   }
@@ -901,14 +893,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String loadingHeader(Object DISTRO) {
     return 'Preparando o $DISTRO…';
   }
-
-  @override
-  String localePageTitle(Object DISTRO) {
-    return 'Boas-vindas ao $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'Escolha seu idioma:';
 
   @override
   String welcomePageTitle(Object DISTRO) {

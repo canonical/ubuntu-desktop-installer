@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsDe extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Hell';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Willkommen bei $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Wählen Sie Ihre Sprache aus:';
 }

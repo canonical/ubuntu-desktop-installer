@@ -28,5 +28,14 @@
   "themeDark": "Fosc",
   "@themeDark": {},
   "themeLight": "Clar",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "La benvenguda a {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Causissètz vòstra lenga :",
+  "@localeHeader": {}
 }

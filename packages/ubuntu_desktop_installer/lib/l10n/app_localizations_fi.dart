@@ -35,14 +35,6 @@ class AppLocalizationsFi extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Tervetuloa, tämä on $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'Valitse kieli:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'Kokeile tai asenna ${DISTRO}a';
   }

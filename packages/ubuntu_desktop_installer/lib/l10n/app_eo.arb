@@ -348,8 +348,6 @@
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Nomo de reto estas postulata",
   "@hiddenWifiNetworkNameRequired": {},
-  "localeHeader": "Elektu vian lingvon:",
-  "@localeHeader": {},
   "installationTypeDualOSDetected": "Ĉi tiu komputilo aktuale portas instalaĵojn de {os1} kaj {os2}. Kion vi volas?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -626,13 +624,6 @@
   "@installationSlidesSupportEnterprise": {},
   "installationSlidesSupportCommunity": "Ĉe Ask Ubuntu troviĝas gamo da demandoj kaj respondoj, kaj ĉe Ubuntu Discourse estas gvidiloj kaj diskutejoj por kaj novaj kaj spertaj uzantoj.",
   "@installationSlidesSupportCommunity": {},
-  "localePageTitle": "Bonvenon al {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "installationSlidesTitle": "Bonvenon al {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",

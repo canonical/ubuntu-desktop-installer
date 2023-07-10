@@ -35,14 +35,6 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return '$DISTRO dağıtımına hoş geldiniz';
-  }
-
-  @override
-  String get localeHeader => 'Dil seçin:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return '$DISTRO\'yu dene veya kur';
   }

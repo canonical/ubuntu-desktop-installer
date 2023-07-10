@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsEo extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Hela';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Bonvenon al $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Elektu vian lingvon:';
 }

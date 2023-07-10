@@ -17,12 +17,10 @@ import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'installer/installer_wizard.dart';
 import 'l10n.dart';
-import 'providers.dart';
 import 'services.dart';
 import 'slides.dart';
 
 export 'installer/installer_wizard.dart';
-export 'providers.dart';
 export 'slides.dart';
 
 Future<void> runInstallerApp(

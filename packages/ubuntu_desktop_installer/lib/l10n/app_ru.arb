@@ -186,8 +186,6 @@
   "@chooseSecurityKeyTitle": {},
   "chooseSecurityKeyHint": "Выберите ключ безопасности",
   "@chooseSecurityKeyHint": {},
-  "localeHeader": "Выберите язык:",
-  "@localeHeader": {},
   "wifiMustBeEnabled": "Чтобы использовать на этом компьютере Wi-Fi, необходимо включить беспроводную сеть",
   "@wifiMustBeEnabled": {},
   "enableWifi": "Включить Wi-Fi",
@@ -553,13 +551,6 @@
   },
   "installationSlidesAccessibilityTitle": "Доступно для каждого",
   "@installationSlidesAccessibilityTitle": {},
-  "localePageTitle": "Добро пожаловать в {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "activeDirectoryErrorTitle": "Ошибка настройки подключения к Active Directory",
   "@activeDirectoryErrorTitle": {},
   "notEnoughDiskSpaceUbuntu": "Недостаточно места на диске для установки {DISTRO}",

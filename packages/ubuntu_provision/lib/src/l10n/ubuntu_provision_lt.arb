@@ -28,5 +28,14 @@
   "themeDark": "Tamsus",
   "@themeDark": {},
   "themeLight": "Šviesus",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "Jus sveikina {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Pasirinkite kalbą:",
+  "@localeHeader": {}
 }

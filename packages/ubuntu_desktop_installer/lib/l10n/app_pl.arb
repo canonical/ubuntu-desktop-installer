@@ -342,8 +342,6 @@
       "color": {}
     }
   },
-  "localeHeader": "Wybierz swój język:",
-  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nazwa sieci",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetwork": "Połącz się z ukrytą siecią Wi-Fi",
@@ -689,13 +687,6 @@
   "@notEnoughDiskSpaceAvailable": {},
   "notEnoughDiskSpaceRequired": "Wymagana:",
   "@notEnoughDiskSpaceRequired": {},
-  "localePageTitle": "Witaj w {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "rstHeader": "Wyłącz funkcję RST, aby kontynuować",
   "@rstHeader": {},
   "restartIntoWindowsDescription": "Czy na pewno chcesz ponownie uruchomić komputer? Później będziesz musieć ponownie uruchomić instalację {DISTRO}, aby zakończyć instalowanie {DISTRO}.",

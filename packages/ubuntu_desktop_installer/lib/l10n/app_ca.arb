@@ -160,8 +160,6 @@
   "@identityUsernameRequired": {},
   "identityPasswordRequired": "Cal una contrasenya",
   "@identityPasswordRequired": {},
-  "localeHeader": "Trieu la vostra llengua:",
-  "@localeHeader": {},
   "windowTitle": "Instal·lació del sistema {RELEASE}",
   "@windowTitle": {
     "type": "text",

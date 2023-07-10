@@ -34,8 +34,6 @@
   "@dontInstallDriverSoftwareNow": {},
   "configureSecureBootDescription": "شما نصب نرم‌افزار درایور شخص ثالث را انتخاب کرده‌اید. برای این کار باید راه‌اندازی ایمن را خاموش کنید.\nبرای انجام این کار، اکنون باید یک کلید امنیتی را انتخاب کنید و پس از راه اندازی دوبارهٔ سامانه، آن را وارد کنید.",
   "@configureSecureBootDescription": {},
-  "localeHeader": "زبانتان را برگزینید:",
-  "@localeHeader": {},
   "appTitle": "نصب کنندهٔ میزکار اوبونتو",
   "@appTitle": {},
   "changeButtonText": "تغییر",
@@ -673,13 +671,6 @@
   "@tooManyPrimaryPartitions": {},
   "partitionFormatLabel": "استفاده شده برای:",
   "@partitionFormatLabel": {},
-  "localePageTitle": "به {DISTRO} خوش آمدید",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "loadingPageTitle": "به {DISTRO} خوش آمدید",
   "@loadingPageTitle": {
     "type": "text",

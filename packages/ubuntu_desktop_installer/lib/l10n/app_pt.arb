@@ -313,8 +313,6 @@
   "@identityInvalidHostname": {},
   "bitlockerDescription": "Este computador usa encriptação BitLocker do Windows.\nPrecisa de usar o Windows para libertar espaço ou escolha '{option}' para continuar.",
   "@bitlockerDescription": {},
-  "localeHeader": "Escolha o seu idioma:",
-  "@localeHeader": {},
   "hiddenWifiNetwork": "Ligar a uma rede Wi-Fi oculta",
   "@hiddenWifiNetwork": {},
   "connectButtonText": "Ligar",
@@ -652,13 +650,6 @@
   "@installationSlidesSupportUbuntuPro": {},
   "notEnoughDiskSpaceUbuntu": "Não há espaço suficiente em disco para instalar o {DISTRO}",
   "@notEnoughDiskSpaceUbuntu": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
-  "localePageTitle": "Bem-vindo ao {DISTRO}",
-  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}

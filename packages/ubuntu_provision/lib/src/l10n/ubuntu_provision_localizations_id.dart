@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsId extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Terang';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Pilih bahasa Anda:';
 }

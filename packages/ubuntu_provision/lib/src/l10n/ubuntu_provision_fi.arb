@@ -28,5 +28,14 @@
   "themeDark": "Tumma",
   "@themeDark": {},
   "themeLight": "Vaalea",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "Tervetuloa, tämä on {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Valitse kieli:",
+  "@localeHeader": {}
 }

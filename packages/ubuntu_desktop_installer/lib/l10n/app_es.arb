@@ -311,8 +311,6 @@
   "@connectToInternetDescription": {},
   "hiddenWifiNetworkNameLabel": "Nombre de la red",
   "@hiddenWifiNetworkNameLabel": {},
-  "localeHeader": "Elija su idioma:",
-  "@localeHeader": {},
   "useWiredConnection": "Utilizar conexión por cable",
   "@useWiredConnection": {},
   "noWiredConnection": "No se ha detectado una conexión por cable",
@@ -614,13 +612,6 @@
   "@installationSlidesAccessibilityTitle": {},
   "installationSlidesSupportResources": "Recursos útiles:",
   "@installationSlidesSupportResources": {},
-  "localePageTitle": "Bienvenido a {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "installationSlidesSecurityBody": "{DISTRO} proporciona todas las herramientas que necesitas para mantenerte privado y seguro en Internet. Con firewall y VPN incorporados y una serie de aplicaciones centradas en la privacidad para garantizar el control total de sus datos.",
   "@installationSlidesSecurityBody": {
     "type": "text",

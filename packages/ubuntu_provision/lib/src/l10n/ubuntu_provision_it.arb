@@ -14,5 +14,7 @@
   "keyboardKeyPresentLabel": "Il seguente tasto è presente sulla propria tastiera?",
   "@keyboardKeyPresentLabel": {},
   "themePageTitle": "Scegli il aspetto",
-  "@themePageTitle": {}
+  "@themePageTitle": {},
+  "localeHeader": "Scegli la tua lingua:",
+  "@localeHeader": {}
 }

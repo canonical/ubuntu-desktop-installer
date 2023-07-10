@@ -28,5 +28,14 @@
   "themeDark": "Tmavý",
   "@themeDark": {},
   "themeLight": "Světlý",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "Vítejte v {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Zvolte svůj jazyk:",
+  "@localeHeader": {}
 }

@@ -182,8 +182,6 @@
   "@identityPasswordRequired": {},
   "confirmInstallButton": "Kur",
   "@confirmInstallButton": {},
-  "localeHeader": "Dil seçin:",
-  "@localeHeader": {},
   "diskHeadersSystem": "Sistem",
   "@diskHeadersSystem": {},
   "identityAutoLogin": "Otomatik giriş yap",
@@ -598,13 +596,6 @@
   },
   "installationSlidesCreativityTitle": "Yaratıcılığınızı zenginleştirin",
   "@installationSlidesCreativityTitle": {},
-  "localePageTitle": "{DISTRO} dağıtımına hoş geldiniz",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "rstHeader": "Devam etmek için RST'yi kapatın",
   "@rstHeader": {},
   "activeDirectoryOption": "Active Directory kullan",

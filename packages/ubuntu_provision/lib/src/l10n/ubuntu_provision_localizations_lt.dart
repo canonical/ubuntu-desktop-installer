@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsLt extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Šviesus';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Jus sveikina $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Pasirinkite kalbą:';
 }

@@ -35,14 +35,6 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'Đã chọn ngôn ngữ:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'Try or install $DISTRO';
   }

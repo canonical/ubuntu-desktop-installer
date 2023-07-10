@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsMl extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'വെളിച്ചം';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Choose your language:';
 }

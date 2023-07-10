@@ -135,8 +135,6 @@
   "@activeDirectoryPasswordLabel": {},
   "activeDirectoryPasswordEmpty": "Vyžadované",
   "@activeDirectoryPasswordEmpty": {},
-  "localeHeader": "Vyberte si svoj jazyk:",
-  "@localeHeader": {},
   "wiredMustBeEnabled": "Aby na tomto počítači bolo možné použiť rozhranie Ethernet, je potrebné zapnúť káblové pripojenie",
   "@wiredMustBeEnabled": {},
   "enableWired": "Zapnúť káblové",
@@ -765,13 +763,6 @@
   "@partitionLocationEnd": {},
   "partitionFormatLabel": "Použité ako:",
   "@partitionFormatLabel": {},
-  "localePageTitle": "Vitajte v {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "allocateDiskSpaceInvalidMountPointSpace": "Prípojné body nemôžu obsahovať medzery",
   "@allocateDiskSpaceInvalidMountPointSpace": {},
   "allocateDiskSpaceInvalidMountPointSlash": "Prípojné body musia začínať znakom „/“",

@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsFa extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'روشن';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'به $DISTRO خوش آمدید';
+  }
+
+  @override
+  String get localeHeader => 'زبانتان را برگزینید:';
 }

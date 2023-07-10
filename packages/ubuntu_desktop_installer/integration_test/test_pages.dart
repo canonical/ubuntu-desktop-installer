@@ -20,7 +20,7 @@ Future<void> testLocalePage(
   await tester.pumpUntilPage(LocalePage);
 
   final context = tester.element(find.byType(LocalePage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = LocaleLocalizations.of(context);
 
   expect(find.title(l10n.localePageTitle('Ubuntu')), findsOneWidget);
 

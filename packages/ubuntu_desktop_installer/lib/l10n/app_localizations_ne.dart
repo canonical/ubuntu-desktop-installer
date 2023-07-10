@@ -35,14 +35,6 @@ class AppLocalizationsNe extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'आफ्नो भाषा छान्नुहोस्:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'प्रयास गर्नुहोस् वा स्थापना गर्नुहोस्';
   }

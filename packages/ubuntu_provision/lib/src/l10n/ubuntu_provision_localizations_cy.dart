@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsCy extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Golau';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Dewiswch eich iaith:';
 }

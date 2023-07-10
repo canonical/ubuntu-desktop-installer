@@ -28,5 +28,14 @@
   "themeDark": "כהה",
   "@themeDark": {},
   "themeLight": "בהיר",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "ברוך בואך אל {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "נא לבחור שפה:",
+  "@localeHeader": {}
 }

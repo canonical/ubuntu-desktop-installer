@@ -28,5 +28,14 @@
   "themeDark": "Malhela",
   "@themeDark": {},
   "themeLight": "Hela",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "Bonvenon al {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Elektu vian lingvon:",
+  "@localeHeader": {}
 }

@@ -355,8 +355,6 @@
   },
   "restartIntoWindows": "Újraindítás és Windows használata",
   "@restartIntoWindows": {},
-  "localeHeader": "Válasszon nyelvet:",
-  "@localeHeader": {},
   "connectToInternetPageTitle": "Kapcsolódás hálózathoz",
   "@connectToInternetPageTitle": {},
   "connectToInternetDescription": "A számítógép internethez való kapcsolódása segít az Ubuntunak telepíteni a szükséges további szoftvereket, és segít kiválasztani az időzónát.\n\nKapcsolódás Ethernet-kábellel vagy Wi-Fi-hálózat kiválasztása",
@@ -752,13 +750,6 @@
   "@installationSlidesCreativityTitle": {},
   "installationSlidesCreativityBody": "Ha Ön animátor, tervező, videókészítő vagy játékfejlesztő, akkor könnyedén áthozhatja a munkafolyamatait a nyílt forráskódú és az iparági szabványokat használó szoftverek és alkalmazások támogatásával rendelkező {DISTRO} rendszerbe.",
   "@installationSlidesCreativityBody": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
-  "localePageTitle": "Üdvözli a(z) {DISTRO}!",
-  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}

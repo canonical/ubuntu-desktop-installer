@@ -35,14 +35,6 @@ class AppLocalizationsLt extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Jus sveikina $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'Pasirinkite kalbą:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'Išbandykite arba įsidiekite $DISTRO';
   }

@@ -28,5 +28,14 @@
   "themeDark": "تیره",
   "@themeDark": {},
   "themeLight": "روشن",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "به {DISTRO} خوش آمدید",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "زبانتان را برگزینید:",
+  "@localeHeader": {}
 }

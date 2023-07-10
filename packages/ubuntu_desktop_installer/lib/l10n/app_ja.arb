@@ -24,8 +24,6 @@
   "@installThirdPartySubtitle": {},
   "chooseSecurityKeyTitle": "セキュリティキー",
   "@chooseSecurityKeyTitle": {},
-  "localeHeader": "使用する言語を選択してください。",
-  "@localeHeader": {},
   "welcomeReleaseNotesLabel": "<a href=\"{url}\">リリースノート</a> もご覧いただくとよいかもしれません。",
   "@welcomeReleaseNotesLabel": {
     "type": "text",
@@ -635,13 +633,6 @@
     "type": "text",
     "placeholders": {
       "RELEASE": {}
-    }
-  },
-  "localePageTitle": "{DISTRO}へ、ようこそ。",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
     }
   },
   "installationSlidesAvailable": "インストール可能：",

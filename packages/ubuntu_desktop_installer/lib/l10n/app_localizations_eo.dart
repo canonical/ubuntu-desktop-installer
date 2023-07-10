@@ -35,14 +35,6 @@ class AppLocalizationsEo extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Bonvenon al $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'Elektu vian lingvon:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'Provi aŭ instali $DISTRO';
   }

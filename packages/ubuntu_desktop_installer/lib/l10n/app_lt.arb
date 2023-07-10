@@ -102,8 +102,6 @@
   },
   "installationTypeMultiOSDetected": "Šiuo metu šiame kompiuteryje yra įdiegtos kelios operacinės sistemos. Ką norėtumėte daryti?",
   "@installationTypeMultiOSDetected": {},
-  "localeHeader": "Pasirinkite kalbą:",
-  "@localeHeader": {},
   "configureSecureBootDescription": "Pasirinkote įdiegti trečiųjų šalių tvarkyklės programinę įrangą. Tai reikalauja, kad būtų išjungtas saugusis paleidimashis.\nNorėdami tai atlikti, dabar turite pasirinkti saugumo raktą, o kai sistema bus paleista iš naujo, turėsite jį įvesti.",
   "@configureSecureBootDescription": {},
   "configureSecureBootOption": "Konfigūruoti saugųjį paleidimą",
@@ -608,13 +606,6 @@
   },
   "installationSlidesCreativityTitle": "Vystykite savo kūrybingumą",
   "@installationSlidesCreativityTitle": {},
-  "localePageTitle": "Jus sveikina {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "installingSystem": "Įdiegiama sistema…",
   "@installingSystem": {},
   "configuringSystem": "Nustatoma sistema…",

@@ -31,15 +31,6 @@
       "DISTRO": {}
     }
   },
-  "localePageTitle": "Welcome to {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
-  "localeHeader": "Choose your language:",
-  "@localeHeader": {},
   "welcomePageTitle": "Try or install {DISTRO}",
   "@welcomePageTitle": {
     "type": "text",

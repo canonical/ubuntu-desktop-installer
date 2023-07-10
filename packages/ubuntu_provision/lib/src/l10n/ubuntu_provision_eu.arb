@@ -10,5 +10,7 @@
   "keyboardPressKeyLabel": "Mesedez, sakatu hurrengo tekletariko bat:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Hurrengo tekla zure teklatuan al dago?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "localeHeader": "Aukeratu zure hizkuntza:",
+  "@localeHeader": {}
 }

@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsSi extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'දීප්ත';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'ඔබගේ භාෂාව තෝරන්න:';
 }

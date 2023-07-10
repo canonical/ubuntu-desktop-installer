@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsSv extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Ljus';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Välkommen till $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Välj ditt språk:';
 }
