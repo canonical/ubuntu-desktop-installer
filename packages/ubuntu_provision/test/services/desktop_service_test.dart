@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/services/desktop_service.dart';
+import 'package:ubuntu_provision/src/services/desktop_service.dart';
 import 'package:ubuntu_session/ubuntu_session.dart';
 
 import 'desktop_service_test.mocks.dart';

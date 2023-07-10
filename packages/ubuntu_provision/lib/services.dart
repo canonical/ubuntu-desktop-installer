@@ -1,4 +1,5 @@
 export 'src/services/active_directory_service.dart';
+export 'src/services/desktop_service.dart' hide log;
 export 'src/services/identity_service.dart';
 export 'src/services/keyboard_service.dart';
 export 'src/services/locale_service.dart';
