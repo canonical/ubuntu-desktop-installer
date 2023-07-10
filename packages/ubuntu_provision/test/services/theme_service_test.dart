@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_provision/src/theme/theme_service.dart';
+import 'package:ubuntu_provision/src/services/theme_service.dart';
 
 import 'theme_service_test.mocks.dart';
 

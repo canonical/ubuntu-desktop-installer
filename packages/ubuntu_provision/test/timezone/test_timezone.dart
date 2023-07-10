@@ -1,14 +1,13 @@
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:timezone_map/timezone_map.dart';
-import 'package:ubuntu_provision/services.dart';
 import 'package:ubuntu_provision/timezone.dart';
 
 import 'test_timezone.mocks.dart';
 export '../test_utils.dart';
 export 'test_timezone.mocks.dart';
 
-@GenerateMocks([GeoService, TimezoneModel, TimezoneService])
+@GenerateMocks([TimezoneModel])
 MockTimezoneModel buildTimezoneModel({
   String? timezone,
   GeoLocation? selectedLocation,
