@@ -2,7 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_provision/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 import 'active_directory_l10n.dart';
