@@ -27,26 +27,19 @@ dependencies:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/timezone_map
       ref: 5af6896c75b5ab8f78b93f7f358836a8c4c7857f
-  # TODO: move shared pages to a separate package
   ubuntu_desktop_installer:
     path: ../ubuntu_desktop_installer
   ubuntu_localizations: ^0.3.3
   ubuntu_logger: ^0.0.3
   ubuntu_provision:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/ubuntu_provision
+    path: ../ubuntu_provision
   ubuntu_service: ^0.2.0
   ubuntu_session: ^0.0.4
   ubuntu_utils:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/ubuntu_utils
+    path: ../ubuntu_utils
   ubuntu_widgets: ^0.1.0
   ubuntu_wizard:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/ubuntu_wizard
+    path: ../ubuntu_wizard
   xdg_locale: ^0.0.1
   yaru: ^0.9.0
   yaru_icons: ^1.0.0

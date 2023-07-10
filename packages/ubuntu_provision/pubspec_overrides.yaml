@@ -1,7 +1,0 @@
-dependency_overrides:
-  subiquity_client:
-    path: ../subiquity_client
-  ubuntu_utils:
-    path: ../ubuntu_utils
-  ubuntu_wizard:
-    path: ../ubuntu_wizard

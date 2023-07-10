@@ -21,21 +21,15 @@ dependencies:
   safe_change_notifier: ^0.3.0
   scroll_to_index: ^3.0.0
   subiquity_client:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/subiquity_client
+    path: ../subiquity_client
   ubuntu_localizations: ^0.3.3
   ubuntu_logger: ^0.0.3
   ubuntu_service: ^0.2.0
   ubuntu_utils:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/ubuntu_utils
+    path: ../ubuntu_utils
   ubuntu_widgets: ^0.1.0
   ubuntu_wizard:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/ubuntu_wizard
+    path: ../ubuntu_wizard
   yaru: ^0.9.0
   yaru_icons: ^1.0.0
   yaru_widgets: ^2.5.0
@@ -50,9 +44,7 @@ dev_dependencies:
     sdk: flutter
   mockito: 5.4.2
   subiquity_test:
-    git:
-      url: https://github.com/canonical/subiquity_client.dart.git
-      path: packages/subiquity_test
+    path: ../subiquity_client/packages/subiquity_test
   ubuntu_test: ^0.1.0-0
   yaru_test: ^0.1.0
 
