@@ -1,13 +1,12 @@
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_provision/keyboard.dart';
-import 'package:ubuntu_provision/services.dart';
 
 import 'test_keyboard.mocks.dart';
 export '../test_utils.dart';
 export 'test_keyboard.mocks.dart';
 
-@GenerateMocks([KeyboardModel, KeyboardService])
+@GenerateMocks([KeyboardModel])
 MockKeyboardModel buildKeyboardModel({
   bool? isValid,
   List<String>? layouts,

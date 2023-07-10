@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_provision/l10n.dart';
+import 'package:ubuntu_provision/services.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru/yaru.dart';
+
+export 'test_utils.mocks.dart';
 
 extension UbuntuProvisionTester on WidgetTester {
   static Type context = WizardPage;
@@ -41,3 +47,25 @@ extension UbuntuProvisionTester on WidgetTester {
     );
   }
 }
+
+@GenerateMocks([
+  ActiveDirectoryService,
+  ConfigService,
+  DesktopService,
+  GeoService,
+  IdentityService,
+  JournalService,
+  KeyboardService,
+  LocaleService,
+  NetworkService,
+  PowerService,
+  SessionService,
+  SoundService,
+  TelemetryService,
+  ThemeService,
+  TimezoneService,
+  UdevDeviceInfo,
+  UdevService,
+  UrlLauncher,
+])
+class _Dummy {} // ignore: unused_element

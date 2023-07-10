@@ -16,7 +16,7 @@ import 'package:yaru_test/yaru_test.dart';
 import 'install/test_install.dart';
 import 'loading/test_loading.dart';
 import 'locale/test_locale.dart';
-import 'test_utils.mocks.dart';
+import 'test_utils.dart';
 
 void main() {
   setUpAll(YaruTestWindow.ensureInitialized);

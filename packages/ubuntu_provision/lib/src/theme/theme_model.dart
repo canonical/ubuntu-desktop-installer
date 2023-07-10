@@ -2,9 +2,8 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ubuntu_provision/services.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-
-import 'theme_service.dart';
 
 final themeModelProvider = Provider(
   (ref) => ThemeModel(getService<ThemeService>()),
