@@ -15,7 +15,6 @@ import 'package:timezone_map/src/service.dart' as _i12;
 import 'package:timezone_map/src/source.dart' as _i13;
 import 'package:ubuntu_desktop_installer/services/installer_service.dart'
     as _i15;
-import 'package:ubuntu_desktop_installer/services/journal_service.dart' as _i16;
 import 'package:ubuntu_desktop_installer/services/product_service.dart' as _i6;
 import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i24;
 import 'package:ubuntu_provision/src/services/active_directory_service.dart'
@@ -23,6 +22,7 @@ import 'package:ubuntu_provision/src/services/active_directory_service.dart'
 import 'package:ubuntu_provision/src/services/config_service.dart' as _i10;
 import 'package:ubuntu_provision/src/services/desktop_service.dart' as _i11;
 import 'package:ubuntu_provision/src/services/identity_service.dart' as _i3;
+import 'package:ubuntu_provision/src/services/journal_service.dart' as _i16;
 import 'package:ubuntu_provision/src/services/keyboard_service.dart' as _i17;
 import 'package:ubuntu_provision/src/services/locale_service.dart' as _i18;
 import 'package:ubuntu_provision/src/services/network_service.dart' as _i19;
