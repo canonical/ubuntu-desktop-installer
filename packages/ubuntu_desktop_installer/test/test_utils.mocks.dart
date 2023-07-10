@@ -13,27 +13,26 @@ import 'package:subiquity_client/subiquity_client.dart' as _i2;
 import 'package:timezone_map/src/location.dart' as _i14;
 import 'package:timezone_map/src/service.dart' as _i12;
 import 'package:timezone_map/src/source.dart' as _i13;
-import 'package:ubuntu_desktop_installer/services/active_directory_service.dart'
-    as _i8;
-import 'package:ubuntu_desktop_installer/services/config_service.dart' as _i10;
-import 'package:ubuntu_desktop_installer/services/desktop_service.dart' as _i11;
-import 'package:ubuntu_desktop_installer/services/identity_service.dart' as _i3;
 import 'package:ubuntu_desktop_installer/services/installer_service.dart'
     as _i15;
-import 'package:ubuntu_desktop_installer/services/journal_service.dart' as _i16;
-import 'package:ubuntu_desktop_installer/services/locale_service.dart' as _i18;
-import 'package:ubuntu_desktop_installer/services/network_service.dart' as _i19;
-import 'package:ubuntu_desktop_installer/services/power_service.dart' as _i21;
 import 'package:ubuntu_desktop_installer/services/product_service.dart' as _i6;
-import 'package:ubuntu_desktop_installer/services/session_service.dart' as _i22;
-import 'package:ubuntu_desktop_installer/services/sound_service.dart' as _i23;
 import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i24;
-import 'package:ubuntu_desktop_installer/services/telemetry_service.dart'
-    as _i25;
-import 'package:ubuntu_desktop_installer/services/udev_service.dart' as _i7;
-import 'package:ubuntu_provision/src/keyboard/keyboard_service.dart' as _i17;
+import 'package:ubuntu_provision/src/services/active_directory_service.dart'
+    as _i8;
+import 'package:ubuntu_provision/src/services/config_service.dart' as _i10;
+import 'package:ubuntu_provision/src/services/desktop_service.dart' as _i11;
+import 'package:ubuntu_provision/src/services/identity_service.dart' as _i3;
+import 'package:ubuntu_provision/src/services/journal_service.dart' as _i16;
+import 'package:ubuntu_provision/src/services/keyboard_service.dart' as _i17;
+import 'package:ubuntu_provision/src/services/locale_service.dart' as _i18;
+import 'package:ubuntu_provision/src/services/network_service.dart' as _i19;
+import 'package:ubuntu_provision/src/services/power_service.dart' as _i21;
+import 'package:ubuntu_provision/src/services/session_service.dart' as _i22;
+import 'package:ubuntu_provision/src/services/sound_service.dart' as _i23;
+import 'package:ubuntu_provision/src/services/telemetry_service.dart' as _i25;
+import 'package:ubuntu_provision/src/services/timezone_service.dart' as _i28;
+import 'package:ubuntu_provision/src/services/udev_service.dart' as _i7;
 import 'package:ubuntu_provision/src/theme/theme_service.dart' as _i26;
-import 'package:ubuntu_provision/src/timezone/timezone_service.dart' as _i28;
 import 'package:ubuntu_utils/src/url_launcher.dart' as _i29;
 import 'package:upower/upower.dart' as _i5;
 
@@ -1365,6 +1364,11 @@ class MockTelemetryService extends _i1.Mock implements _i25.TelemetryService {
     _i1.throwOnMissingStub(this);
   }
 
+  @override
+  String get path => (super.noSuchMethod(
+        Invocation.getter(#path),
+        returnValue: '',
+      ) as String);
   @override
   _i9.Future<void> init([Map<String, dynamic>? metrics = const {}]) =>
       (super.noSuchMethod(

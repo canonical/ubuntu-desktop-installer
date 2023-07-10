@@ -7,10 +7,9 @@ import 'package:meta/meta.dart';
 import 'package:platform/platform.dart';
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
+import 'package:ubuntu_provision/services.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-
-import 'keyboard_service.dart';
 
 /// @internal
 final log = Logger('keyboard');

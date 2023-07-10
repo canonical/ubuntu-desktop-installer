@@ -1,5 +1,5 @@
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_provision/keyboard.dart';
+import 'package:ubuntu_provision/services.dart';
 
 class SubiquityKeyboardService implements KeyboardService {
   const SubiquityKeyboardService(this._subiquity);

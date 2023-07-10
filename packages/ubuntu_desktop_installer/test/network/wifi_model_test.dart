@@ -7,8 +7,9 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
-import 'package:ubuntu_desktop_installer/services/network_service.dart';
+import 'package:ubuntu_provision/services.dart';
 
+import 'test_network.dart';
 import 'wifi_model_test.mocks.dart';
 
 const kTestSsid = [0x55, 0x62, 0x75, 0x6e, 0x74, 0x75];
@@ -19,7 +20,6 @@ const kTestSsid = [0x55, 0x62, 0x75, 0x6e, 0x74, 0x75];
   NetworkManagerDevice,
   NetworkManagerDeviceWireless,
   NetworkManagerSettingsConnection,
-  NetworkService,
 ])
 void main() {
   late WifiModel model;

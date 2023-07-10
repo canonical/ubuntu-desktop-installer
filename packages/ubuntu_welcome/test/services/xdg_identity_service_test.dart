@@ -2,7 +2,7 @@ import 'package:dbus/dbus.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/services/identity_service.dart';
+import 'package:ubuntu_provision/ubuntu_provision.dart';
 import 'package:ubuntu_welcome/services/xdg_identity_service.dart';
 
 import 'xdg_identity_service_test.mocks.dart';

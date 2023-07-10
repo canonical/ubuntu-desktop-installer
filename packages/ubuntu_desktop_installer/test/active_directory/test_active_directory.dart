@@ -4,7 +4,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';
 import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_page.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_provision/services.dart';
 
 import 'test_active_directory.mocks.dart';
 export '../test_utils.dart';

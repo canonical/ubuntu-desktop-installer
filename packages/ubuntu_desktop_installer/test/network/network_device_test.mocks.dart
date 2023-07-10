@@ -3,12 +3,11 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i3;
 
-import 'package:dbus/dbus.dart' as _i5;
+import 'package:dbus/dbus.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:nm/src/network_manager_client.dart' as _i2;
-import 'package:ubuntu_desktop_installer/services/udev_service.dart' as _i3;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -32,17 +31,6 @@ class _FakeNetworkManagerDeviceStateAndReason_0 extends _i1.SmartFake
         );
 }
 
-class _FakeUdevDeviceInfo_1 extends _i1.SmartFake
-    implements _i3.UdevDeviceInfo {
-  _FakeUdevDeviceInfo_1(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
 /// A class which mocks [NetworkManagerActiveConnection].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -53,10 +41,10 @@ class MockNetworkManagerActiveConnection extends _i1.Mock
   }
 
   @override
-  _i4.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
         Invocation.getter(#propertiesChanged),
-        returnValue: _i4.Stream<List<String>>.empty(),
-      ) as _i4.Stream<List<String>>);
+        returnValue: _i3.Stream<List<String>>.empty(),
+      ) as _i3.Stream<List<String>>);
   @override
   String get id => (super.noSuchMethod(
         Invocation.getter(#id),
@@ -115,10 +103,10 @@ class MockNetworkManagerDevice extends _i1.Mock
   }
 
   @override
-  _i4.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
         Invocation.getter(#propertiesChanged),
-        returnValue: _i4.Stream<List<String>>.empty(),
-      ) as _i4.Stream<List<String>>);
+        returnValue: _i3.Stream<List<String>>.empty(),
+      ) as _i3.Stream<List<String>>);
   @override
   String get udi => (super.noSuchMethod(
         Invocation.getter(#udi),
@@ -248,41 +236,41 @@ class MockNetworkManagerDevice extends _i1.Mock
         returnValue: '',
       ) as String);
   @override
-  _i4.Future<void> disconnect() => (super.noSuchMethod(
+  _i3.Future<void> disconnect() => (super.noSuchMethod(
         Invocation.method(
           #disconnect,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> delete() => (super.noSuchMethod(
+  _i3.Future<void> delete() => (super.noSuchMethod(
         Invocation.method(
           #delete,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> setManaged(bool? value) => (super.noSuchMethod(
+  _i3.Future<void> setManaged(bool? value) => (super.noSuchMethod(
         Invocation.method(
           #setManaged,
           [value],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> setAutoconnect(bool? value) => (super.noSuchMethod(
+  _i3.Future<void> setAutoconnect(bool? value) => (super.noSuchMethod(
         Invocation.method(
           #setAutoconnect,
           [value],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }
 
 /// A class which mocks [NetworkManagerSettingsConnection].
@@ -295,10 +283,10 @@ class MockNetworkManagerSettingsConnection extends _i1.Mock
   }
 
   @override
-  _i4.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
+  _i3.Stream<List<String>> get propertiesChanged => (super.noSuchMethod(
         Invocation.getter(#propertiesChanged),
-        returnValue: _i4.Stream<List<String>>.empty(),
-      ) as _i4.Stream<List<String>>);
+        returnValue: _i3.Stream<List<String>>.empty(),
+      ) as _i3.Stream<List<String>>);
   @override
   bool get unsaved => (super.noSuchMethod(
         Invocation.getter(#unsaved),
@@ -315,126 +303,73 @@ class MockNetworkManagerSettingsConnection extends _i1.Mock
         returnValue: '',
       ) as String);
   @override
-  _i4.Future<void> update(
-          Map<String, Map<String, _i5.DBusValue>>? properties) =>
+  _i3.Future<void> update(
+          Map<String, Map<String, _i4.DBusValue>>? properties) =>
       (super.noSuchMethod(
         Invocation.method(
           #update,
           [properties],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> updateUnsaved(
-          Map<String, Map<String, _i5.DBusValue>>? properties) =>
+  _i3.Future<void> updateUnsaved(
+          Map<String, Map<String, _i4.DBusValue>>? properties) =>
       (super.noSuchMethod(
         Invocation.method(
           #updateUnsaved,
           [properties],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> delete() => (super.noSuchMethod(
+  _i3.Future<void> delete() => (super.noSuchMethod(
         Invocation.method(
           #delete,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<Map<String, Map<String, _i5.DBusValue>>> getSettings() =>
+  _i3.Future<Map<String, Map<String, _i4.DBusValue>>> getSettings() =>
       (super.noSuchMethod(
         Invocation.method(
           #getSettings,
           [],
         ),
-        returnValue: _i4.Future<Map<String, Map<String, _i5.DBusValue>>>.value(
-            <String, Map<String, _i5.DBusValue>>{}),
-      ) as _i4.Future<Map<String, Map<String, _i5.DBusValue>>>);
+        returnValue: _i3.Future<Map<String, Map<String, _i4.DBusValue>>>.value(
+            <String, Map<String, _i4.DBusValue>>{}),
+      ) as _i3.Future<Map<String, Map<String, _i4.DBusValue>>>);
   @override
-  _i4.Future<Map<String, Map<String, _i5.DBusValue>>> getSecrets(
+  _i3.Future<Map<String, Map<String, _i4.DBusValue>>> getSecrets(
           [String? settingName = r'']) =>
       (super.noSuchMethod(
         Invocation.method(
           #getSecrets,
           [settingName],
         ),
-        returnValue: _i4.Future<Map<String, Map<String, _i5.DBusValue>>>.value(
-            <String, Map<String, _i5.DBusValue>>{}),
-      ) as _i4.Future<Map<String, Map<String, _i5.DBusValue>>>);
+        returnValue: _i3.Future<Map<String, Map<String, _i4.DBusValue>>>.value(
+            <String, Map<String, _i4.DBusValue>>{}),
+      ) as _i3.Future<Map<String, Map<String, _i4.DBusValue>>>);
   @override
-  _i4.Future<void> clearSecrets() => (super.noSuchMethod(
+  _i3.Future<void> clearSecrets() => (super.noSuchMethod(
         Invocation.method(
           #clearSecrets,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
   @override
-  _i4.Future<void> save() => (super.noSuchMethod(
+  _i3.Future<void> save() => (super.noSuchMethod(
         Invocation.method(
           #save,
           [],
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
-}
-
-/// A class which mocks [UdevDeviceInfo].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockUdevDeviceInfo extends _i1.Mock implements _i3.UdevDeviceInfo {
-  MockUdevDeviceInfo() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  String get fullName => (super.noSuchMethod(
-        Invocation.getter(#fullName),
-        returnValue: '',
-      ) as String);
-}
-
-/// A class which mocks [UdevService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockUdevService extends _i1.Mock implements _i3.UdevService {
-  MockUdevService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i3.UdevDeviceInfo bySysname(String? sysname) => (super.noSuchMethod(
-        Invocation.method(
-          #bySysname,
-          [sysname],
-        ),
-        returnValue: _FakeUdevDeviceInfo_1(
-          this,
-          Invocation.method(
-            #bySysname,
-            [sysname],
-          ),
-        ),
-      ) as _i3.UdevDeviceInfo);
-  @override
-  _i3.UdevDeviceInfo bySyspath(String? syspath) => (super.noSuchMethod(
-        Invocation.method(
-          #bySyspath,
-          [syspath],
-        ),
-        returnValue: _FakeUdevDeviceInfo_1(
-          this,
-          Invocation.method(
-            #bySyspath,
-            [syspath],
-          ),
-        ),
-      ) as _i3.UdevDeviceInfo);
+        returnValue: _i3.Future<void>.value(),
+        returnValueForMissingStub: _i3.Future<void>.value(),
+      ) as _i3.Future<void>);
 }

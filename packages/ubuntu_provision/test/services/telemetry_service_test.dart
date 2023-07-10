@@ -2,13 +2,13 @@ import 'dart:convert';
 
 import 'package:file/memory.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/services/telemetry_service.dart';
+import 'package:ubuntu_provision/src/services/telemetry_service.dart';
 
 void main() {
   test('report is created on disk when initialized', () async {
     final fs = MemoryFileSystem.test();
-    final telemetry = TelemetryService(fs: fs);
-    final report = fs.file(TelemetryService.reportLocation);
+    final telemetry = TelemetryService('foo.json', fs: fs);
+    final report = fs.file('foo.json');
     expect(report.existsSync(), isFalse);
     await telemetry.init({'foo': 'bar'});
     expect(report.existsSync(), isTrue);
@@ -18,12 +18,12 @@ void main() {
 
   test('add stages', () async {
     final fs = MemoryFileSystem.test();
-    final telemetry = TelemetryService(fs: fs);
+    final telemetry = TelemetryService('/tmp/telemetry.json', fs: fs);
 
     await telemetry.init({'foo': 'bar'});
     await telemetry.addStage('qux');
 
-    final report = fs.file(TelemetryService.reportLocation);
+    final report = fs.file('/tmp/telemetry.json');
     expect(report.existsSync(), isTrue);
 
     final data = json.decode(report.readAsStringSync());
@@ -37,9 +37,9 @@ void main() {
 
   test('add metrics', () async {
     final fs = MemoryFileSystem.test();
-    final report = fs.file(TelemetryService.reportLocation);
+    final report = fs.file('foo.json');
 
-    final telemetry = TelemetryService(fs: fs);
+    final telemetry = TelemetryService('foo.json', fs: fs);
     await telemetry.init({'baz': 'qux'});
 
     await telemetry.addMetric('Language', 'fr');

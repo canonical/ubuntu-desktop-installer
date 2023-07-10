@@ -5,15 +5,15 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
-import 'package:ubuntu_desktop_installer/services/network_service.dart';
+import 'package:ubuntu_provision/services.dart';
 
 import 'ethernet_model_test.mocks.dart';
+import 'test_network.dart';
 
 @GenerateMocks([
   NetworkManagerActiveConnection,
   NetworkManagerDevice,
   NetworkManagerSettingsConnection,
-  NetworkService,
 ])
 void main() {
   late EthernetModel model;

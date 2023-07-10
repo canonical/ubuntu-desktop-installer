@@ -1,28 +1,8 @@
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
-
-export 'package:subiquity_client/subiquity_client.dart'
-    show
-        AdConnectionInfo,
-        AdAdminNameValidation,
-        AdPasswordValidation,
-        AdDomainNameValidation,
-        AdJoinResult;
+import 'package:ubuntu_provision/services.dart';
 
 final log = Logger('ad');
-
-abstract class ActiveDirectoryService {
-  Future<bool> hasSupport();
-  Future<bool> isUsed();
-  Future<void> setUsed(bool used);
-  Future<AdConnectionInfo> getConnectionInfo();
-  Future<void> setConnectionInfo(AdConnectionInfo info);
-  Future<List<AdDomainNameValidation>> checkDomainName(String domain);
-  Future<AdAdminNameValidation> checkAdminName(String admin);
-  Future<AdPasswordValidation> checkPassword(String password);
-  Future<AdDomainNameValidation> pingDomainController(String domain);
-  Future<AdJoinResult> getJoinResult({bool wait = true});
-}
 
 class SubiquityActiveDirectoryService implements ActiveDirectoryService {
   SubiquityActiveDirectoryService(this._subiquity);
@@ -90,34 +70,4 @@ class SubiquityActiveDirectoryService implements ActiveDirectoryService {
       return AdJoinResult.UNKNOWN;
     }
   }
-}
-
-// TODO: implement realmd-based ActiveDirectoryService
-class RealmdActiveDirectoryService implements ActiveDirectoryService {
-  @override
-  Future<bool> hasSupport() async => false;
-  @override
-  Future<bool> isUsed() async => false;
-  @override
-  Future<void> setUsed(bool used) async {}
-  @override
-  Future<AdConnectionInfo> getConnectionInfo() async =>
-      const AdConnectionInfo();
-  @override
-  Future<void> setConnectionInfo(AdConnectionInfo info) async {}
-  @override
-  Future<List<AdDomainNameValidation>> checkDomainName(String domain) async =>
-      [];
-  @override
-  Future<AdAdminNameValidation> checkAdminName(String admin) async =>
-      AdAdminNameValidation.OK;
-  @override
-  Future<AdPasswordValidation> checkPassword(String password) async =>
-      AdPasswordValidation.OK;
-  @override
-  Future<AdDomainNameValidation> pingDomainController(String domain) async =>
-      AdDomainNameValidation.OK;
-  @override
-  Future<AdJoinResult> getJoinResult({bool wait = true}) async =>
-      AdJoinResult.UNKNOWN;
 }

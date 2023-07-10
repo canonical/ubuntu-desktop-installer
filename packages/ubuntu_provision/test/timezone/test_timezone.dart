@@ -1,6 +1,7 @@
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:timezone_map/timezone_map.dart';
+import 'package:ubuntu_provision/services.dart';
 import 'package:ubuntu_provision/timezone.dart';
 
 import 'test_timezone.mocks.dart';

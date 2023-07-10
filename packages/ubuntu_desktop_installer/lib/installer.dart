@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -93,7 +94,14 @@ Future<void> runInstallerApp(
   tryRegisterService(SubiquityClient.new);
   tryRegisterService(
       () => SubiquityServer(process: process, endpoint: endpoint));
-  tryRegisterService(TelemetryService.new);
+  tryRegisterService<TelemetryService>(() {
+    var path = '/var/log/installer/telemetry';
+    if (kDebugMode) {
+      final exe = Platform.resolvedExecutable;
+      path = '${p.dirname(exe)}/.${p.basename(exe)}/telemetry';
+    }
+    return TelemetryService(path);
+  });
   tryRegisterService<ThemeService>(GtkThemeService.new);
   tryRegisterService<TimezoneService>(
       () => SubiquityTimezoneService(getService<SubiquityClient>()));

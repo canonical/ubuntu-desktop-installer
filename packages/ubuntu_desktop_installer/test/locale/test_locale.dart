@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_model.dart';
 import 'package:ubuntu_desktop_installer/pages/locale/locale_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_provision/ubuntu_provision.dart';
 
 import '../test_utils.dart';
 export '../test_utils.dart';

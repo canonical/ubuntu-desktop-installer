@@ -1,9 +1,5 @@
 import 'package:subiquity_client/subiquity_client.dart';
-
-abstract class LocaleService {
-  Future<String> getLocale();
-  Future<void> setLocale(String locale);
-}
+import 'package:ubuntu_provision/services.dart';
 
 class SubiquityLocaleService implements LocaleService {
   const SubiquityLocaleService(this._subiquity);

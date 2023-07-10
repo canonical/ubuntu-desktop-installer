@@ -6,9 +6,10 @@ import 'package:mockito/mockito.dart';
 import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_model.dart';
 import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
-import 'package:ubuntu_desktop_installer/services/network_service.dart';
+import 'package:ubuntu_provision/services.dart';
 
 import 'hidden_wifi_model_test.mocks.dart';
+import 'test_network.dart';
 
 @GenerateMocks([
   NetworkManagerAccessPoint,
@@ -16,7 +17,6 @@ import 'hidden_wifi_model_test.mocks.dart';
   NetworkManagerDevice,
   NetworkManagerDeviceWireless,
   NetworkManagerSettingsConnection,
-  NetworkService,
 ])
 void main() {
   late HiddenWifiModel model;

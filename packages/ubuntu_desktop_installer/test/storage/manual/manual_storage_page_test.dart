@@ -9,6 +9,7 @@ import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_mod
 import 'package:ubuntu_desktop_installer/pages/storage/manual/manual_storage_page.dart';
 import 'package:ubuntu_desktop_installer/pages/storage/manual/storage_selector.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_provision/services.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_test/yaru_test.dart';
