@@ -7,6 +7,7 @@ import 'package:path/path.dart' as p;
 import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_provision/ubuntu_provision.dart';
 
 export 'package:subiquity_client/subiquity_client.dart' show ApplicationState;
 

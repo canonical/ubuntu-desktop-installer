@@ -1,9 +1,5 @@
 import 'package:subiquity_client/subiquity_client.dart';
-
-abstract class SessionService {
-  Future<void> reboot({bool immediate = false});
-  Future<void> shutdown({bool immediate = false});
-}
+import 'package:ubuntu_provision/services.dart';
 
 class SubiquitySessionService implements SessionService {
   const SubiquitySessionService(this._subiquity);
