@@ -24,5 +24,7 @@
   "themeDark": "Gelap",
   "@themeDark": {},
   "themeLight": "Terang",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localeHeader": "Pilih bahasa Anda:",
+  "@localeHeader": {}
 }

@@ -326,8 +326,6 @@
       "color": {}
     }
   },
-  "localeHeader": "Choisissez votre langue :",
-  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nom du réseau",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Un nom de réseau est requis",
@@ -650,13 +648,6 @@
   "@installationSlidesSupportEnterprise": {},
   "installationSlidesSupportCommunity": "Ask Ubuntu couvre une gamme de questions et de réponses. Discours Ubuntu fournit des guides et des discussions pour les nouveaux utilisateurs et les utilisateurs expérimentés.",
   "@installationSlidesSupportCommunity": {},
-  "localePageTitle": "Bienvenue à {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "notEnoughDiskSpaceRequired": "Requis :",
   "@notEnoughDiskSpaceRequired": {},
   "installationSlidesAvailable": "Disponible :",

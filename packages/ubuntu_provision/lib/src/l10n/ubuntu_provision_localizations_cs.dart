@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsCs extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Světlý';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Vítejte v $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Zvolte svůj jazyk:';
 }

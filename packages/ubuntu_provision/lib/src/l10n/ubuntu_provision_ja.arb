@@ -28,5 +28,14 @@
   "themeDark": "暗い",
   "@themeDark": {},
   "themeLight": "明るい",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "{DISTRO}へ、ようこそ。",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "使用する言語を選択してください。",
+  "@localeHeader": {}
 }

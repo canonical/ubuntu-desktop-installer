@@ -35,14 +35,6 @@ class AppLocalizationsKn extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'Choose your language:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'Try or install $DISTRO';
   }

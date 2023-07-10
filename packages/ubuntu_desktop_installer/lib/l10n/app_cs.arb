@@ -397,8 +397,6 @@
       "color": {}
     }
   },
-  "localeHeader": "Zvolte svůj jazyk:",
-  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Název sítě",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Je vyžadován název sítě",
@@ -683,13 +681,6 @@
   "@installationSlidesSupportUbuntuPro": {},
   "notEnoughDiskSpaceRequired": "Vyžadováno:",
   "@notEnoughDiskSpaceRequired": {},
-  "localePageTitle": "Vítejte v {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "installationSlidesTitle": "Vítejte v {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",

@@ -28,5 +28,14 @@
   "themeDark": "Koyu",
   "@themeDark": {},
   "themeLight": "Açık",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "{DISTRO} dağıtımına hoş geldiniz",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Dil seçin:",
+  "@localeHeader": {}
 }

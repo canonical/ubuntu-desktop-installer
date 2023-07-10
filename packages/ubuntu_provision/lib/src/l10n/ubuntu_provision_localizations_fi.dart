@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsFi extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Vaalea';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Tervetuloa, tämä on $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Valitse kieli:';
 }

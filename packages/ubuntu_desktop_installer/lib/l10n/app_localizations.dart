@@ -285,18 +285,6 @@ abstract class AppLocalizations {
   /// **'Preparing {DISTRO}…'**
   String loadingHeader(Object DISTRO);
 
-  /// No description provided for @localePageTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Welcome to {DISTRO}'**
-  String localePageTitle(Object DISTRO);
-
-  /// No description provided for @localeHeader.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose your language:'**
-  String get localeHeader;
-
   /// No description provided for @welcomePageTitle.
   ///
   /// In en, this message translates to:

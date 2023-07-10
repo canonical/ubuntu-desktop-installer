@@ -35,14 +35,6 @@ class AppLocalizationsKa extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'აირჩიეთ თქვენი ენა:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'სცადეთ ან დააყენეთ $DISTRO';
   }

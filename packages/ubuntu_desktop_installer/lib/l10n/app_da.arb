@@ -27,8 +27,6 @@
   "@chooseSecurityKeyHint": {},
   "chooseSecurityKeyConfirmHint": "Bekræft sikkerhedsnøglen",
   "@chooseSecurityKeyConfirmHint": {},
-  "localeHeader": "Vælg dit sprog:",
-  "@localeHeader": {},
   "selectWifiNetwork": "Opret forbindelse til et WiFi-netværk",
   "@selectWifiNetwork": {},
   "wiredDisabled": "Kablet forbindelse er slået fra",
@@ -761,13 +759,6 @@
   "@installationSlidesSupportUbuntuPro": {},
   "notEnoughDiskSpaceUbuntu": "Ikke nok diskplads, til at installere {DISTRO}",
   "@notEnoughDiskSpaceUbuntu": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
-  "localePageTitle": "Velkommen til {DISTRO}",
-  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}

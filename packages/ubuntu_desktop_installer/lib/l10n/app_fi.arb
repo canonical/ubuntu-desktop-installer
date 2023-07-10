@@ -348,8 +348,6 @@
   "@hiddenWifiNetwork": {},
   "hiddenWifiNetworkNameLabel": "Verkon nimi",
   "@hiddenWifiNetworkNameLabel": {},
-  "localeHeader": "Valitse kieli:",
-  "@localeHeader": {},
   "installationTypeDualOSDetected": "Tässä tietokoneessa on jo käyttöjärjestelmät {os1} ja {os2}. Mitä haluat tehdä?",
   "@installationTypeDualOSDetected": {
     "type": "text",
@@ -702,13 +700,6 @@
   "@installationSlidesSupportUbuntuPro": {},
   "notEnoughDiskSpaceAvailable": "Saatavilla:",
   "@notEnoughDiskSpaceAvailable": {},
-  "localePageTitle": "Tervetuloa, tämä on {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "allocateDiskSpaceInvalidMountPointSlash": "Liitospisteiden tulee alkaa merkillä \"/\"",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Liitospisteet eivät voi sisältää välilyöntejä",

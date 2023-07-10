@@ -28,5 +28,14 @@
   "themeDark": "深色",
   "@themeDark": {},
   "themeLight": "浅色",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "欢迎来到 {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "选择您的语言：",
+  "@localeHeader": {}
 }

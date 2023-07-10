@@ -388,8 +388,6 @@
       "RELEASE": {}
     }
   },
-  "localeHeader": "Välj ditt språk:",
-  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nätverksnamn",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetworkNameRequired": "Ett nätverksnamn krävs",
@@ -699,13 +697,6 @@
   },
   "notEnoughDiskSpaceAvailable": "Tillgängligt:",
   "@notEnoughDiskSpaceAvailable": {},
-  "localePageTitle": "Välkommen till {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "installationSlidesCreativityBody": "Om du är en animatör, designer, videoskapare eller spelutvecklare är det enkelt att ta med dina arbetsflöden till {DISTRO} med stöd för industristandard programvara och applikationer med öppen källkod.",
   "@installationSlidesCreativityBody": {
     "type": "text",

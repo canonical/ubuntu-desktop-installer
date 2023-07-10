@@ -35,14 +35,6 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Üdvözli a(z) $DISTRO!';
-  }
-
-  @override
-  String get localeHeader => 'Válasszon nyelvet:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'A(z) $DISTRO kipróbálása vagy telepítése';
   }

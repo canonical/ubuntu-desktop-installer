@@ -62,8 +62,6 @@
   "@rstTitle": {},
   "rstDescription": "Цей комп’ютер використовує технологію Intel RST (Rapid Storage Technology). Перед встановленням Ubuntu вам потрібно вимкнути RST у Windows.",
   "@rstDescription": {},
-  "localeHeader": "Оберіть мову:",
-  "@localeHeader": {},
   "quitButtonText": "Скасувати встановлення",
   "@quitButtonText": {},
   "configureSecureBootTitle": "Налаштувати безпечне завантаження",

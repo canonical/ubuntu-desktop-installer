@@ -342,8 +342,6 @@
       "color": {}
     }
   },
-  "localeHeader": "נא לבחור שפה:",
-  "@localeHeader": {},
   "hiddenWifiNetworkNameRequired": "שם הרשת נחוץ",
   "@hiddenWifiNetworkNameRequired": {},
   "hiddenWifiNetwork": "התחברות לרשת אלחוטית נסתרת",
@@ -603,13 +601,6 @@
   },
   "installationSlidesAccessibilityBody": "במרכז הפילוסופיה של {DISTRO} קיימת האמונה שמחשוב מיועד לכולם. עם כלי נגישות מתקדמים ואפשרויות להחלפת השפה, הצבעים וגודל הכתב, {DISTRO} מקל על השימוש במחשב - בכל אופן ואזור גאוגרפי.",
   "@installationSlidesAccessibilityBody": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
-  "localePageTitle": "ברוך בואך אל {DISTRO}",
-  "@localePageTitle": {
     "type": "text",
     "placeholders": {
       "DISTRO": {}

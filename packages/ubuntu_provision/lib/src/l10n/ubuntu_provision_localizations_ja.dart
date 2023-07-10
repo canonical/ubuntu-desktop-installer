@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsJa extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => '明るい';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return '$DISTROへ、ようこそ。';
+  }
+
+  @override
+  String get localeHeader => '使用する言語を選択してください。';
 }

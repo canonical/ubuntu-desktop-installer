@@ -121,8 +121,6 @@
   "@changeButtonText": {},
   "showSecurityKey": "Erakutsi segurtasun gakoa",
   "@showSecurityKey": {},
-  "localeHeader": "Aukeratu zure hizkuntza:",
-  "@localeHeader": {},
   "noWiredConnection": "Ez da kable bidezko konexiorik hauteman",
   "@noWiredConnection": {},
   "wiredDisabled": "Kable bidezko konexioa desaktibatuta dago",

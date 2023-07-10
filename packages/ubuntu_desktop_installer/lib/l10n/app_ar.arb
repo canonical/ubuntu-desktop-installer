@@ -1,7 +1,5 @@
 {
   "@@locale": "ar",
-  "localeHeader": "اختر لغتك language:",
-  "@localeHeader": {},
   "changeButtonText": "تغيير",
   "@changeButtonText": {},
   "restartButtonText": "إعادة تشغيل",
@@ -167,13 +165,6 @@
     "type": "text",
     "placeholders": {
       "url": {}
-    }
-  },
-  "localePageTitle": "مرحبا بك في {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
     }
   },
   "welcomeReleaseNotesLabel": "قد ترغب في قراءة </a> ملاحظات الإصدار <a href=\"{url}\">.",

@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsUk extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Світлий';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Оберіть мову:';
 }

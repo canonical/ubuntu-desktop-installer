@@ -318,8 +318,6 @@
   "@enableWifi": {},
   "connectButtonText": "Conectar",
   "@connectButtonText": {},
-  "localeHeader": "Escolha seu idioma:",
-  "@localeHeader": {},
   "wifiMustBeEnabled": "Para utilizar WiFi neste computador, a rede WiFi deve ser habilitada",
   "@wifiMustBeEnabled": {},
   "hiddenWifiNetwork": "Conectar-se a uma rede Wi-Fi oculta",
@@ -694,13 +692,6 @@
   "@notEnoughDiskSpaceAvailable": {},
   "notEnoughDiskSpaceRequired": "Necessário:",
   "@notEnoughDiskSpaceRequired": {},
-  "localePageTitle": "Boas-vindas ao {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "rstHeader": "Desligue o RST para continuar",
   "@rstHeader": {},
   "bitlockerHeader": "Desligue o BitLocker para continuar",

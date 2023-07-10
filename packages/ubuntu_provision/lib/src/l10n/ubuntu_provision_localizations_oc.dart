@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsOc extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Clar';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'La benvenguda a $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Causissètz vòstra lenga :';
 }

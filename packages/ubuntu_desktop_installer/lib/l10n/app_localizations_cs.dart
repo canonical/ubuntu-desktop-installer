@@ -35,14 +35,6 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Vítejte v $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'Zvolte svůj jazyk:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'Vyzkoušet nebo nainstalovat $DISTRO';
   }

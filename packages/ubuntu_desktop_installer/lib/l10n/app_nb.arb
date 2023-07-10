@@ -77,8 +77,6 @@
   "@selectGuidedStorageInfoLabel": {},
   "selectGuidedStorageInstallNow": "Installere nå",
   "@selectGuidedStorageInstallNow": {},
-  "localeHeader": "Velg ditt språk:",
-  "@localeHeader": {},
   "useWiredConnection": "Bruk kablet nettverktilkobling",
   "@useWiredConnection": {},
   "noWiredConnection": "Ingen kablet tilkobling er oppdaget",
@@ -640,13 +638,6 @@
   "@confirmDevicesTitle": {},
   "confirmPartitionsTitle": "Partisjoner",
   "@confirmPartitionsTitle": {},
-  "localePageTitle": "Velkommen til {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "allocateDiskSpaceInvalidMountPointSlash": "Monteringspunkter må starte med skråstrek «/»",
   "@allocateDiskSpaceInvalidMountPointSlash": {},
   "allocateDiskSpaceInvalidMountPointSpace": "Monteringspunkter kan ikke inneholde mellomrom",

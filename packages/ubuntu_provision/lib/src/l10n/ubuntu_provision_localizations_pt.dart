@@ -48,6 +48,14 @@ class UbuntuProvisionLocalizationsPt extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Claro';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Bem-vindo ao $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Escolha o seu idioma:';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -98,4 +106,12 @@ class UbuntuProvisionLocalizationsPtBr extends UbuntuProvisionLocalizationsPt {
 
   @override
   String get themeLight => 'Claro';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Boas-vindas ao $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Escolha seu idioma:';
 }

@@ -18,5 +18,14 @@
   "keyboardPressKeyLabel": "رجاء اضغط على أحد المفاتيح التالية:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "هل هذا المفتاح موجود على لوحة مفاتيحك؟",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "localePageTitle": "مرحبا بك في {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "اختر لغتك language:",
+  "@localeHeader": {}
 }

@@ -28,5 +28,14 @@
   "themeDark": "Mørkt",
   "@themeDark": {},
   "themeLight": "Lyst",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "Velkommen til {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Vælg dit sprog:",
+  "@localeHeader": {}
 }

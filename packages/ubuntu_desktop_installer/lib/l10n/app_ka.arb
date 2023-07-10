@@ -4,8 +4,6 @@
   "@appTitle": {},
   "quitButtonText": "დაყენებიდან გასვლა",
   "@quitButtonText": {},
-  "localeHeader": "აირჩიეთ თქვენი ენა:",
-  "@localeHeader": {},
   "welcomePageTitle": "სცადეთ ან დააყენეთ {DISTRO}",
   "@welcomePageTitle": {},
   "windowTitle": "{RELEASE}-ის დაყენება",

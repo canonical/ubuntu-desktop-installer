@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsTr extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Açık';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return '$DISTRO dağıtımına hoş geldiniz';
+  }
+
+  @override
+  String get localeHeader => 'Dil seçin:';
 }

@@ -12,8 +12,6 @@
   "@revertButtonText": {},
   "welcome": "Willkommen",
   "@welcome": {},
-  "localeHeader": "Wählen Sie Ihre Sprache aus:",
-  "@localeHeader": {},
   "welcomePageTitle": "{DISTRO} ausprobieren oder installieren",
   "@welcomePageTitle": {},
   "welcomeRepairOption": "Installation reparieren",
@@ -581,13 +579,6 @@
   "@notEnoughDiskSpaceAvailable": {},
   "notEnoughDiskSpaceRequired": "Erforderlich:",
   "@notEnoughDiskSpaceRequired": {},
-  "localePageTitle": "Willkommen bei {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "installationSlidesTitle": "Willkommen bei {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",

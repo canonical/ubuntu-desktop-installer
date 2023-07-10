@@ -18,5 +18,7 @@
   "themeDark": "Tywyll",
   "@themeDark": {},
   "themeLight": "Golau",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localeHeader": "Dewiswch eich iaith:",
+  "@localeHeader": {}
 }

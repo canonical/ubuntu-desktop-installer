@@ -344,8 +344,6 @@
       "color": {}
     }
   },
-  "localeHeader": "Causissètz vòstra lenga :",
-  "@localeHeader": {},
   "hiddenWifiNetworkNameLabel": "Nom de la ret",
   "@hiddenWifiNetworkNameLabel": {},
   "hiddenWifiNetwork": "Se connectar a una ret Wi-Fi amagada",
@@ -615,13 +613,6 @@
   "@installationSlidesSupportResources": {},
   "installationSlidesSupportDocumentation": "Documentacion oficiala",
   "@installationSlidesSupportDocumentation": {},
-  "localePageTitle": "La benvenguda a {DISTRO}",
-  "@localePageTitle": {
-    "type": "text",
-    "placeholders": {
-      "DISTRO": {}
-    }
-  },
   "notEnoughDiskSpaceRequired": "Requesit :",
   "@notEnoughDiskSpaceRequired": {},
   "installationSlidesTitle": "La benvenguda a {RELEASE}",

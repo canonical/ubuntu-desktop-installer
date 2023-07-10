@@ -35,14 +35,6 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Welcome to $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'Оберіть мову:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'Спробувати або встановити';
   }

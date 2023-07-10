@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsAr extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Light';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'مرحبا بك في $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'اختر لغتك language:';
 }

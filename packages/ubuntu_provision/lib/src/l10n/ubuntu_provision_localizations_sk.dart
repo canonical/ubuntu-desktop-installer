@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsSk extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Svetlý';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Vitajte v $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Vyberte si svoj jazyk:';
 }

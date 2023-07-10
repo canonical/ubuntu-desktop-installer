@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsHe extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'בהיר';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'ברוך בואך אל $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'נא לבחור שפה:';
 }

@@ -35,14 +35,6 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return '$DISTRO사용을 환영합니다';
-  }
-
-  @override
-  String get localeHeader => '언어를 선택하십시오:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return '$DISTRO 체험 또는 설치';
   }

@@ -2,5 +2,7 @@
   "keyboardTitle": "Kiểu bàn phím",
   "@keyboardTitle": {},
   "keyboardHeader": "Chọn kiểu bàn phím của bạn",
-  "@keyboardHeader": {}
+  "@keyboardHeader": {},
+  "localeHeader": "Đã chọn ngôn ngữ:",
+  "@localeHeader": {}
 }

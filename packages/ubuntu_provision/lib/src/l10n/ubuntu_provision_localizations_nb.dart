@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsNb extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Lys';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Velkommen til $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Velg ditt språk:';
 }

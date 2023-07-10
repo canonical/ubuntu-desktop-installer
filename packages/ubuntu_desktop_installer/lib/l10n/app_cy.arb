@@ -142,8 +142,6 @@
   "@chooseSecurityKey": {},
   "installThirdPartySubtitle": "Mae'r feddalwedd hwn yn destun amodau trwyddedu sydd ynghlwm yn y ddogfennaeth. Mae peth yn fasnachol.",
   "@installThirdPartySubtitle": {},
-  "localeHeader": "Dewiswch eich iaith:",
-  "@localeHeader": {},
   "welcomeInstallDescription": "Gosod {RELEASE} ochr yn ochr â (neu yn lle) eich system weithredu gyfredol. Fydd hyn ddim yn cymryd yn rhy hir.",
   "@welcomeInstallDescription": {
     "type": "text",

@@ -35,14 +35,6 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String localePageTitle(Object DISTRO) {
-    return 'Bienvenido a $DISTRO';
-  }
-
-  @override
-  String get localeHeader => 'Elija su idioma:';
-
-  @override
   String welcomePageTitle(Object DISTRO) {
     return 'Probar o instalar $DISTRO';
   }

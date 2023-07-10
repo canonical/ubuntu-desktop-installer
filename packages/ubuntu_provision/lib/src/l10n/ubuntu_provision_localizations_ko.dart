@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsKo extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => '밝음';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return '$DISTRO사용을 환영합니다';
+  }
+
+  @override
+  String get localeHeader => '언어를 선택하십시오:';
 }

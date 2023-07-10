@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsSq extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'E çelur';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Welcome to $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Choose your language:';
 }

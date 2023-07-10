@@ -24,5 +24,7 @@
   "themeDark": "Темний",
   "@themeDark": {},
   "themeLight": "Світлий",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localeHeader": "Оберіть мову:",
+  "@localeHeader": {}
 }

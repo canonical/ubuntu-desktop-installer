@@ -10,5 +10,7 @@
   "keyboardPressKeyLabel": "Молимо притисните један од следећих тастера:",
   "@keyboardPressKeyLabel": {},
   "keyboardKeyPresentLabel": "Да ли следећи тастер постоји на вашој тастатури?",
-  "@keyboardKeyPresentLabel": {}
+  "@keyboardKeyPresentLabel": {},
+  "localeHeader": "Изаберите ваш језик:",
+  "@localeHeader": {}
 }

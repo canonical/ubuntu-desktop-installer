@@ -342,8 +342,6 @@
   "@enableWifi": {},
   "connectButtonText": "Sambungkan",
   "@connectButtonText": {},
-  "localeHeader": "Pilih bahasa Anda:",
-  "@localeHeader": {},
   "@welcomeSlideDescription": {
     "type": "text",
     "placeholders": {

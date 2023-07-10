@@ -30,8 +30,6 @@
   "@rstDescription": {},
   "rstInstructions": "Per istruzioni, apri questa pagina da un telefono o un altro dispositivo: <a href=\"https://{url}\">{url}</a>",
   "@rstInstructions": {},
-  "localeHeader": "Scegli la tua lingua:",
-  "@localeHeader": {},
   "changeButtonText": "Modifica",
   "@changeButtonText": {},
   "revertButtonText": "Ripristina",

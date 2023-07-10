@@ -28,5 +28,14 @@
   "themeDark": "Тёмный",
   "@themeDark": {},
   "themeLight": "Светлый",
-  "@themeLight": {}
+  "@themeLight": {},
+  "localePageTitle": "Добро пожаловать в {DISTRO}",
+  "@localePageTitle": {
+    "type": "text",
+    "placeholders": {
+      "DISTRO": {}
+    }
+  },
+  "localeHeader": "Выберите язык:",
+  "@localeHeader": {}
 }

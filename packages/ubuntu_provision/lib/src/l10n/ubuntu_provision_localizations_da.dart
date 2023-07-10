@@ -48,4 +48,12 @@ class UbuntuProvisionLocalizationsDa extends UbuntuProvisionLocalizations {
 
   @override
   String get themeLight => 'Lyst';
+
+  @override
+  String localePageTitle(Object DISTRO) {
+    return 'Velkommen til $DISTRO';
+  }
+
+  @override
+  String get localeHeader => 'Vælg dit sprog:';
 }
