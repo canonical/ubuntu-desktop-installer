@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsFr extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'Vous saisirez le domaine et d’autres détails à l’étape suivante.';
+
+  @override
+  String get activeDirectoryTitle => 'Configurer Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Tester la connectivité au domaine';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domaine';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Obligatoire';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Trop long';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Caractères non valides';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Commence par un point (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Se termine par un point (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Commence par un trait d’union (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Se termine par un trait d’union (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Contient deux points adjacents (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domaine introuvable';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Nom d’utilisateur pour rejoindre le domaine';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Obligatoire';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Caractères non valides';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Mot de passe';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Obligatoire';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Erreur lors de la configuration de la connexion à Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Désolé, Active Directory ne peut pas être configuré pour le moment. Une fois que votre système est opérationnel, consultez <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> pour obtenir de l’aide.';
 }

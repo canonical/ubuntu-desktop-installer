@@ -1,11 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_dialogs.dart';
-import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_l10n.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
-import 'package:ubuntu_provision/ubuntu_provision.dart';
+import 'package:ubuntu_provision/services.dart';
+import 'package:ubuntu_provision/src/active_directory/active_directory_dialogs.dart';
+import 'package:ubuntu_provision/src/active_directory/active_directory_l10n.dart';
+import 'package:ubuntu_provision/src/active_directory/active_directory_page.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:yaru_test/yaru_test.dart';
@@ -45,8 +44,7 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
     final context = tester.element(find.byType(ActiveDirectoryPage));
-    final lang = AppLocalizations.of(context);
-    final error = validation.localize(lang);
+    final error = validation.localize(context);
     if (error.isNotEmpty) {
       expect(find.text(error), findsNothing);
     }
@@ -71,10 +69,9 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
     final context = tester.element(find.byType(ActiveDirectoryPage));
-    final lang = AppLocalizations.of(context);
-    final error = validation.localize(lang);
+    final error = validation.localize(context);
     if (error.isNotEmpty) {
-      expect(find.text(validation.localize(lang)), findsNothing);
+      expect(find.text(validation.localize(context)), findsNothing);
     }
 
     final textField = find.textField('admin');
@@ -96,8 +93,7 @@ void main() {
     await tester
         .pumpWidget(tester.buildApp((_) => buildActiveDirectoryPage(model)));
     final context = tester.element(find.byType(ActiveDirectoryPage));
-    final lang = AppLocalizations.of(context);
-    final error = validation.localize(lang);
+    final error = validation.localize(context);
     if (error.isNotEmpty) {
       expect(find.text(error), findsNothing);
     }

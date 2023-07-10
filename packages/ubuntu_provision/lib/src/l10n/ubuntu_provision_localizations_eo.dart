@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsEo extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'Vi tajpos la domanion kaj aliajn detalojn dum la sekva paŝo.';
+
+  @override
+  String get activeDirectoryTitle => 'Agordi Aktivan Dosierujon';
+
+  @override
+  String get activeDirectoryTestConnection => 'Provi konekton al la domanio';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domanio';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Deviga';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Tro longa';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Nevalidaj signoj';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Komenciĝas per punkto (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Finiĝas per punkto (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Komenciĝas per dividstreko (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Finiĝas per dividstreko (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Enhavas plurajn sinsekvajn punktojn (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domanio ne troviĝis';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Uzanto por aliĝi al la domanio';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Deviga';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Nevalidaj signoj';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Pasvorto';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Deviga';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Eraro agordante konekton al Aktiva Dosierujo';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Pardonu, Aktiva Dosierujo ne estas agordebla nuntempe. Post kiam via sistemo funkcias, vizitu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> por helpo.';
 }

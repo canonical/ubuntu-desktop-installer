@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsRu extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'Вы введёте домен и другие данные на следующем шаге.';
+
+  @override
+  String get activeDirectoryTitle => 'Настроить Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Проверка подключения к домену';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Домен';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Требуется';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Слишком длинный';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Недопустимые символы';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Начинается с точки (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Заканчивается точкой (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Начинается со знака дефиса (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Заканчивается знаком дефиса (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Содержит несколько последовательных точек (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Домен не найден';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Пользователь, присоединившийся к домену';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Требуется';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Недопустимые символы';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Пароль';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Требуется';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Ошибка настройки подключения к Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Извините, Active Directory не может быть настроен в данный момент. Как только ваша система будет запущена, посетите <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> для получения помощи.';
 }

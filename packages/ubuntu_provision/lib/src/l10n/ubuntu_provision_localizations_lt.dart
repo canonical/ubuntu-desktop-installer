@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsLt extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'Kitame žingsnyje įvesite domeną bei kitą išsamesnę informaciją.';
+
+  @override
+  String get activeDirectoryTitle => 'Konfigūruoti „Active Directory“';
+
+  @override
+  String get activeDirectoryTestConnection => 'Išbandyti jungiamumą su domenu';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domenas';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Būtina';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Per ilgas';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Netinkami simboliai';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Prasideda tašku (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Pasibaigia tašku (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Prasideda brūkšneliu (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Pasibaigia brūkšneliu (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Turi kelis taškus iš eilės (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domenas nerastas';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Prisijungimo prie domeno naudotojas';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Būtina';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Netinkami simboliai';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Slaptažodis';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Būtina';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Klaida konfigūruojant ryšį su „Active Directory“';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Atleiskite, šiuo metu „Active Directory“ negali būti nustatyta. Kai tik jūsų sistema bus paleista, apsilankykite adresu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kad gautumėte išsamesnės informacijos.';
 }

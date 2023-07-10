@@ -456,12 +456,6 @@
   "@tooManyPrimaryPartitions": {},
   "partitionLimitReached": "Достигнут предел",
   "@partitionLimitReached": {},
-  "activeDirectoryDomainInvalidChars": "Недопустимые символы",
-  "@activeDirectoryDomainInvalidChars": {},
-  "activeDirectoryPasswordLabel": "Пароль",
-  "@activeDirectoryPasswordLabel": {},
-  "activeDirectoryAdminInvalidChars": "Недопустимые символы",
-  "@activeDirectoryAdminInvalidChars": {},
   "partitionFormatNone": "Оставить неформатированным",
   "@partitionFormatNone": {},
   "loadingHeader": "Подготовка {DISTRO}…",
@@ -471,16 +465,10 @@
       "DISTRO": {}
     }
   },
-  "activeDirectoryTitle": "Настроить Active Directory",
-  "@activeDirectoryTitle": {},
   "confirmPartitionsTitle": "Разделы",
   "@confirmPartitionsTitle": {},
   "confirmDevicesTitle": "Устройства",
   "@confirmDevicesTitle": {},
-  "activeDirectoryDomainLabel": "Домен",
-  "@activeDirectoryDomainLabel": {},
-  "activeDirectoryTestConnection": "Проверка подключения к домену",
-  "@activeDirectoryTestConnection": {},
   "installationSlidesTitle": "Добро пожаловать в {RELEASE}",
   "@installationSlidesTitle": {
     "type": "text",
@@ -488,8 +476,6 @@
       "RELEASE": {}
     }
   },
-  "activeDirectoryDomainNotFound": "Домен не найден",
-  "@activeDirectoryDomainNotFound": {},
   "installationSlidesSupportResources": "Полезные ресурсы:",
   "@installationSlidesSupportResources": {},
   "installationSlidesAccessibilityOrca": "Программа чтения с экрана Orca",
@@ -505,8 +491,6 @@
   },
   "installationSlidesAccessibilityTitle": "Доступно для каждого",
   "@installationSlidesAccessibilityTitle": {},
-  "activeDirectoryErrorTitle": "Ошибка настройки подключения к Active Directory",
-  "@activeDirectoryErrorTitle": {},
   "notEnoughDiskSpaceUbuntu": "Недостаточно места на диске для установки {DISTRO}",
   "@notEnoughDiskSpaceUbuntu": {
     "type": "text",
@@ -556,14 +540,6 @@
       "DISTRO": {}
     }
   },
-  "activeDirectoryDomainStartDot": "Начинается с точки (.)",
-  "@activeDirectoryDomainStartDot": {},
-  "activeDirectoryDomainEmpty": "Требуется",
-  "@activeDirectoryDomainEmpty": {},
-  "activeDirectoryAdminEmpty": "Требуется",
-  "@activeDirectoryAdminEmpty": {},
-  "activeDirectoryPasswordEmpty": "Требуется",
-  "@activeDirectoryPasswordEmpty": {},
   "notEnoughDiskSpaceAvailable": "Доступно:",
   "@notEnoughDiskSpaceAvailable": {},
   "installationSlidesSecurityBody": "{DISTRO} предоставляет все инструменты, необходимые для обеспечения конфиденциальности и безопасности в Интернете. Благодаря встроенному брандмауэру и поддержке VPN, а также множеству приложений, ориентированных на конфиденциальность, вы полностью контролируете свои данные.",
@@ -575,14 +551,6 @@
   },
   "installationSlidesSecurityTitle": "Конфиденциальность и безопасность",
   "@installationSlidesSecurityTitle": {},
-  "activeDirectoryDomainEndHyphen": "Заканчивается знаком дефиса (-)",
-  "@activeDirectoryDomainEndHyphen": {},
-  "activeDirectoryDomainStartHyphen": "Начинается со знака дефиса (-)",
-  "@activeDirectoryDomainStartHyphen": {},
-  "activeDirectoryDomainEndDot": "Заканчивается точкой (.)",
-  "@activeDirectoryDomainEndDot": {},
-  "activeDirectoryDomainMultipleDots": "Содержит несколько последовательных точек (..)",
-  "@activeDirectoryDomainMultipleDots": {},
   "notEnoughDiskSpaceRequired": "Требуется:",
   "@notEnoughDiskSpaceRequired": {},
   "installationSlidesDevelopmentBody": "{DISTRO} - это идеальная рабочая станция для разработки приложений и веб-приложений, data science и AI/ML, а также devops и администрирования. Каждый выпуск {DISTRO} включает новейшие инструментальные цепочки и поддерживает все основные IDE.",
@@ -608,8 +576,6 @@
       "DISTRO": {}
     }
   },
-  "activeDirectoryErrorMessage": "Извините, Active Directory не может быть настроен в данный момент. Как только ваша система будет запущена, посетите <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> для получения помощи.",
-  "@activeDirectoryErrorMessage": {},
   "installationSlidesProductivityBody": "{DISTRO} Рабочий стол включает LibreOffice, набор совместимых с Microsoft Office приложений с открытым исходным кодом для работы с документами, электронными таблицами и презентациями. Также доступны популярные инструменты для совместной работы.",
   "@installationSlidesProductivityBody": {
     "type": "text",
@@ -623,8 +589,6 @@
   "@installationSlidesProductivityTitle": {},
   "installationSlidesSupportEnterprise": "Для корпоративных пользователей Canonical предоставляет коммерческую поддержку, чтобы упростить внедрение и безопасное управление Ubuntu на рабочем месте.",
   "@installationSlidesSupportEnterprise": {},
-  "activeDirectoryDomainTooLong": "Слишком длинный",
-  "@activeDirectoryDomainTooLong": {},
   "installationSlidesWelcomeTitle": "Быстрый, бесплатный и полный новых возможностей",
   "@installationSlidesWelcomeTitle": {},
   "installationSlidesDevelopmentTitle": "Разрабатывайте с использованием лучшего из открытого исходного кода",
@@ -638,8 +602,6 @@
       "DISTRO": {}
     }
   },
-  "activeDirectoryAdminLabel": "Пользователь, присоединившийся к домену",
-  "@activeDirectoryAdminLabel": {},
   "rstHeader": "Для продолжения отключите RST",
   "@rstHeader": {},
   "restartIntoWindowsTitle": "Перезагрузить в Windows?",

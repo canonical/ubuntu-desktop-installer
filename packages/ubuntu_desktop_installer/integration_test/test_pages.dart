@@ -556,7 +556,7 @@ Future<void> testActiveDirectoryPage(
   await tester.pumpUntilPage(ActiveDirectoryPage);
 
   final context = tester.element(find.byType(ActiveDirectoryPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = ActiveDirectoryLocalizations.of(context);
 
   expect(find.title(l10n.activeDirectoryTitle), findsOneWidget);
 

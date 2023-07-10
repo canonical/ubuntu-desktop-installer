@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/active_directory/active_directory_model.dart';
+import 'package:ubuntu_provision/src/active_directory/active_directory_model.dart';
 import 'package:ubuntu_provision/src/services/active_directory_service.dart';
 
 import 'test_active_directory.dart';

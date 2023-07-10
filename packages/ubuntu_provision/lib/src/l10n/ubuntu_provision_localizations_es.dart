@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsEs extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'En el siguiente paso introducirá el dominio y otros datos.';
+
+  @override
+  String get activeDirectoryTitle => 'Configurar el directorio activo';
+
+  @override
+  String get activeDirectoryTestConnection => 'Probar la conexión del dominio';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Dominio';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Obligatorio';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Demasiado largo';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Caracteres incorrectos';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Empieza por punto (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Termina en punto (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Empieza por guión (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Termina en guión (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Contiene múltiples puntos (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Dominio no encontrado';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Usuario uniendose al dominio';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Obligatorio';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Caracteres incorrectos';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Contraseña';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Obligatorio';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Error al configurar la conexión con Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Lo sentimos, Active Directory no se puede configurar en este momento. Una vez que el sistema esté en funcionamiento, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para obtener ayuda.';
 }

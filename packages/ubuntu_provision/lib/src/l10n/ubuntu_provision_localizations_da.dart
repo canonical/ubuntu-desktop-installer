@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsDa extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'Du kan indtaste domæne og andre oplysninger i næste trin.';
+
+  @override
+  String get activeDirectoryTitle => 'Konfigurér Aktiv Sti';
+
+  @override
+  String get activeDirectoryTestConnection => 'Afprøv domæneforbindelse';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domæne';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Påkrævet';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'For langt';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Ugyldige tegn';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Starter med et punktum (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Slutter med et punktum (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Starter med bindestreg (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Slutter med bindestreg (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Indeholder flere punktummer (.) i streg';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domæne ikke fundet';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Domæne tilslut bruger';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Påkrævet';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Ugyldige tegn';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Adgangskode';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Påkrævet';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Fejl ved konfiguration af forbindelse til Aktiv Sti';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Beklager, Aktiv Sti kan ikke indstilles i øjeblikket. Når først dit system er oppe at køre, så besøg <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for hjælp.';
 }

@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsJa extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => '次のステップでドメインやその他の詳細を入力します。';
+
+  @override
+  String get activeDirectoryTitle => 'アクティブディレクトリの設定';
+
+  @override
+  String get activeDirectoryTestConnection => 'ドメイン接続テスト';
+
+  @override
+  String get activeDirectoryDomainLabel => 'ドメイン';
+
+  @override
+  String get activeDirectoryDomainEmpty => '必須';
+
+  @override
+  String get activeDirectoryDomainTooLong => '長すぎます';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => '無効な文字が含まれています。';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'ピリオド「.」で始まります。';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'ピリオド「.」で終わります。';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'ハイフン「-」で始まります。';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'ハイフン「-」で終わります。';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => '二つのピリオド「..」を含んでいます。';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'ドメインが見つかりません';
+
+  @override
+  String get activeDirectoryAdminLabel => 'ドメイン接続用のユーザー名';
+
+  @override
+  String get activeDirectoryAdminEmpty => '必須';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => '無効な文字が含まれています。';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'パスワード';
+
+  @override
+  String get activeDirectoryPasswordEmpty => '必須';
+
+  @override
+  String get activeDirectoryErrorTitle => 'アクティブディレクトリへの接続設定エラー';
+
+  @override
+  String get activeDirectoryErrorMessage => '申し訳ありませんが、Active Directoryは現在セットアップできません。システムが稼働したら、<a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> にアクセスしてサポートを受けてください。';
 }

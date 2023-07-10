@@ -14,6 +14,7 @@ dependencies:
   file: ^6.1.0
   flutter:
     sdk: flutter
+  flutter_html: 3.0.0-beta.1
   flutter_riverpod: ^2.3.6
   form_field_validator: ^1.1.0
   gsettings: ^0.2.5

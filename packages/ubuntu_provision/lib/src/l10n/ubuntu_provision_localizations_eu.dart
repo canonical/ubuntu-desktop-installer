@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsEu extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
+
+  @override
+  String get activeDirectoryTitle => 'Configure Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Test domain connectivity';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domain';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Required';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Too long';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Invalid characters';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Starts with a dot (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Ends with a dot (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Starts with a hyphen (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Ends with a hyphen (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Contains multiple sequenced dots (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domain not found';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Domain join user';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Required';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Invalid characters';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Password';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Required';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Error configuring connection to Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
 }
