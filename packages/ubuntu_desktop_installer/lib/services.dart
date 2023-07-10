@@ -12,7 +12,6 @@ export 'services/network_service.dart';
 export 'services/power_service.dart';
 export 'services/product_service.dart';
 export 'services/session_service.dart';
-export 'services/sound_service.dart';
 export 'services/storage_service.dart' hide log;
 export 'services/timezone_service.dart';
 export 'services/udev_service.dart';
