@@ -1,7 +1,7 @@
 import 'package:dbus/dbus.dart';
 import 'package:meta/meta.dart';
 import 'package:stdlibc/stdlibc.dart';
-import 'package:ubuntu_desktop_installer/services/identity_service.dart';
+import 'package:ubuntu_provision/services.dart';
 
 class XdgIdentityService implements IdentityService {
   XdgIdentityService([

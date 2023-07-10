@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/services/identity_service.dart';
+import 'package:ubuntu_provision/ubuntu_provision.dart';
 
 import '../identity/test_identity.dart';
 
