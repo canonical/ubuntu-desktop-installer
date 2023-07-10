@@ -16,6 +16,7 @@ dependencies:
   flutter_riverpod: ^2.3.6
   gsettings: ^0.2.5
   meta: ^1.8.0
+  nm: ^0.5.0
   path: ^1.8.0
   platform: ^3.1.0
   safe_change_notifier: ^0.3.0
