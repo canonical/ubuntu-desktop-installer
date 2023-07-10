@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:ubuntu_desktop_installer/services/locale_service.dart';
+import 'package:ubuntu_provision/services.dart';
 import 'package:xdg_locale/xdg_locale.dart';
 
 class XdgLocaleService implements LocaleService {

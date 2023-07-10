@@ -10,7 +10,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:timezone_map/src/location.dart' as _i5;
 import 'package:timezone_map/src/source.dart' as _i3;
 import 'package:timezone_map/timezone_map.dart' as _i2;
-import 'package:ubuntu_provision/src/services/timezone_service.dart' as _i8;
+import 'package:ubuntu_provision/services.dart' as _i8;
 import 'package:ubuntu_provision/src/timezone/timezone_model.dart' as _i6;
 
 // ignore_for_file: type=lint

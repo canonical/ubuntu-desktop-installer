@@ -21,7 +21,6 @@ import 'package:ubuntu_desktop_installer/services/identity_service.dart' as _i3;
 import 'package:ubuntu_desktop_installer/services/installer_service.dart'
     as _i15;
 import 'package:ubuntu_desktop_installer/services/journal_service.dart' as _i16;
-import 'package:ubuntu_desktop_installer/services/locale_service.dart' as _i18;
 import 'package:ubuntu_desktop_installer/services/network_service.dart' as _i19;
 import 'package:ubuntu_desktop_installer/services/power_service.dart' as _i21;
 import 'package:ubuntu_desktop_installer/services/product_service.dart' as _i6;
@@ -30,6 +29,7 @@ import 'package:ubuntu_desktop_installer/services/sound_service.dart' as _i23;
 import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i24;
 import 'package:ubuntu_desktop_installer/services/udev_service.dart' as _i7;
 import 'package:ubuntu_provision/src/services/keyboard_service.dart' as _i17;
+import 'package:ubuntu_provision/src/services/locale_service.dart' as _i18;
 import 'package:ubuntu_provision/src/services/telemetry_service.dart' as _i25;
 import 'package:ubuntu_provision/src/services/timezone_service.dart' as _i28;
 import 'package:ubuntu_provision/src/theme/theme_service.dart' as _i26;
@@ -1364,6 +1364,11 @@ class MockTelemetryService extends _i1.Mock implements _i25.TelemetryService {
     _i1.throwOnMissingStub(this);
   }
 
+  @override
+  String get path => (super.noSuchMethod(
+        Invocation.getter(#path),
+        returnValue: '',
+      ) as String);
   @override
   _i9.Future<void> init([Map<String, dynamic>? metrics = const {}]) =>
       (super.noSuchMethod(
