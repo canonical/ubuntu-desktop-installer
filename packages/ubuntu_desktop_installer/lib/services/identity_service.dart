@@ -3,8 +3,6 @@ import 'package:meta/meta.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_provision/services.dart';
 
-import 'config_service.dart';
-
 class SubiquityIdentityService implements IdentityService {
   const SubiquityIdentityService(this._subiquity, this._config);
 

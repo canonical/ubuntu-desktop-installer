@@ -13,7 +13,6 @@ import 'package:subiquity_client/subiquity_client.dart' as _i2;
 import 'package:timezone_map/src/location.dart' as _i14;
 import 'package:timezone_map/src/service.dart' as _i12;
 import 'package:timezone_map/src/source.dart' as _i13;
-import 'package:ubuntu_desktop_installer/services/config_service.dart' as _i10;
 import 'package:ubuntu_desktop_installer/services/installer_service.dart'
     as _i15;
 import 'package:ubuntu_desktop_installer/services/journal_service.dart' as _i16;
@@ -21,6 +20,7 @@ import 'package:ubuntu_desktop_installer/services/product_service.dart' as _i6;
 import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i24;
 import 'package:ubuntu_provision/src/services/active_directory_service.dart'
     as _i8;
+import 'package:ubuntu_provision/src/services/config_service.dart' as _i10;
 import 'package:ubuntu_provision/src/services/desktop_service.dart' as _i11;
 import 'package:ubuntu_provision/src/services/identity_service.dart' as _i3;
 import 'package:ubuntu_provision/src/services/keyboard_service.dart' as _i17;

@@ -1,7 +1,6 @@
 export 'package:ubuntu_service/ubuntu_service.dart';
 
 export 'services/active_directory_service.dart' hide log;
-export 'services/config_service.dart' hide log;
 export 'services/identity_service.dart';
 export 'services/installer_service.dart';
 export 'services/journal_service.dart';

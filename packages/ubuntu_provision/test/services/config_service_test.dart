@@ -1,6 +1,6 @@
 import 'package:file/memory.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_provision/services.dart';
 
 void main() {
   test('load existing config', () async {
