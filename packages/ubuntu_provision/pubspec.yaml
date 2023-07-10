@@ -10,13 +10,16 @@ dependencies:
   collection: ^1.17.0
   dbus: ^0.7.3
   diacritic: ^0.1.4
+  file: ^6.1.0
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.3.6
   gsettings: ^0.2.5
   meta: ^1.8.0
+  path: ^1.8.0
   platform: ^3.1.0
   safe_change_notifier: ^0.3.0
+  stdlibc: ^0.1.0
   subiquity_client:
     git:
       url: https://github.com/canonical/subiquity_client.dart.git

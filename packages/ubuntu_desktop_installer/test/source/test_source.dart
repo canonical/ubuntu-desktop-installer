@@ -7,6 +7,7 @@ import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_model.dart';
 import 'package:ubuntu_desktop_installer/pages/source/source_page.dart';
 import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_provision/ubuntu_provision.dart';
 
 import '../test_utils.dart';
 import 'test_source.mocks.dart';
