@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_field_validator/form_field_validator.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_provision/ubuntu_provision.dart';
+import 'package:ubuntu_provision/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
+import 'identity_l10n.dart';
 import 'identity_model.dart';
 
 class RealNameFormField extends ConsumerWidget {
@@ -17,7 +17,7 @@ class RealNameFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = IdentityLocalizations.of(context);
     final realName =
         ref.watch(identityModelProvider.select((model) => model.realName));
 
@@ -52,7 +52,7 @@ class HostnameFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = IdentityLocalizations.of(context);
     final hostname =
         ref.watch(identityModelProvider.select((model) => model.hostname));
 
@@ -84,7 +84,8 @@ class HostnameFormField extends ConsumerWidget {
 }
 
 extension UsernameValidationL10n on UsernameValidation {
-  String localize(AppLocalizations lang) {
+  String localize(BuildContext context) {
+    final lang = IdentityLocalizations.of(context);
     switch (this) {
       case UsernameValidation.OK:
         return '';
@@ -109,7 +110,7 @@ class UsernameFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = IdentityLocalizations.of(context);
     final username =
         ref.watch(identityModelProvider.select((model) => model.username));
     final validation = ref.watch(
@@ -131,7 +132,7 @@ class UsernameFormField extends ConsumerWidget {
         ),
         CallbackValidator(
           (_) => model.usernameOk,
-          errorText: validation.localize(lang),
+          errorText: validation.localize(context),
         ),
       ]),
       onChanged: (value) async {
@@ -150,7 +151,7 @@ class PasswordFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = IdentityLocalizations.of(context);
     final password =
         ref.watch(identityModelProvider.select((model) => model.password));
     final passwordStrength = ref
@@ -187,7 +188,7 @@ class ConfirmPasswordFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = IdentityLocalizations.of(context);
     final password =
         ref.watch(identityModelProvider.select((model) => model.password));
     final confirmedPassword = ref.watch(
@@ -226,7 +227,7 @@ class ShowPasswordButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lang = AppLocalizations.of(context);
+    final lang = IdentityLocalizations.of(context);
     final inputTheme = Theme.of(context).inputDecorationTheme;
     final borderSide = inputTheme.border?.borderSide ?? BorderSide.none;
     final rtl = Directionality.of(context) == TextDirection.rtl;
@@ -273,7 +274,7 @@ class UseActiveDirectoryCheckButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = IdentityLocalizations.of(context);
     final hasActiveDirectorySupport = ref.watch(identityModelProvider
         .select((model) => model.hasActiveDirectorySupport));
     final useActiveDirectory = ref.watch(
@@ -285,12 +286,12 @@ class UseActiveDirectoryCheckButton extends ConsumerWidget {
       visible: hasActiveDirectorySupport != false,
       child: YaruCheckButton(
         value: useActiveDirectory,
-        title: Text(lang.activeDirectoryOption),
+        title: Text(lang.identityActiveDirectoryOption),
         onChanged: isConnected && hasActiveDirectorySupport == true
             ? (v) => ref.read(identityModelProvider).useActiveDirectory = v!
             : null,
         subtitle: Text(
-          lang.activeDirectoryInfo,
+          lang.identityActiveDirectoryInfo,
           style: Theme.of(context)
               .textTheme
               .bodySmall!
@@ -306,7 +307,7 @@ class AutoLoginSwitch extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = IdentityLocalizations.of(context);
     final autoLogin =
         ref.watch(identityModelProvider.select((model) => model.autoLogin));
 

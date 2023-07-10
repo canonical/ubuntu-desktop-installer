@@ -480,78 +480,6 @@ class AppLocalizationsEo extends AppLocalizations {
   String get partitionMountPointLabel => 'Surmetingo:';
 
   @override
-  String get identityPageTitle => 'Agordu vian konton';
-
-  @override
-  String get identityAutoLogin => 'Aŭtomate saluti';
-
-  @override
-  String get identityRequirePassword => 'Postuli mian pasvorton por salutado';
-
-  @override
-  String get identityRealNameLabel => 'Via nomo';
-
-  @override
-  String get identityRealNameRequired => 'Nomo bezoniĝas';
-
-  @override
-  String get identityRealNameTooLong => 'Tiu nomo estas tro longa.';
-
-  @override
-  String get identityHostnameLabel => 'Nomo de via komputilo';
-
-  @override
-  String get identityHostnameInfo => 'La nomo, kiun ĝi uzas por alparoli aliajn komputilojn.';
-
-  @override
-  String get identityHostnameRequired => 'Nomo de komputilo bezoniĝas';
-
-  @override
-  String get identityHostnameTooLong => 'Tiu nomo estas tro longa.';
-
-  @override
-  String get identityInvalidHostname => 'La nomo de komputilo ne validas';
-
-  @override
-  String get identityUsernameLabel => 'Elektu salutnomon';
-
-  @override
-  String get identityUsernameRequired => 'Salutnomo bezoniĝas';
-
-  @override
-  String get identityInvalidUsername => 'La salutnomo ne validas';
-
-  @override
-  String get identityUsernameInUse => 'Tiu salutnomo jam ekzistas.';
-
-  @override
-  String get identityUsernameSystemReserved => 'Tiu salutnomo estas rezervita por sistema uzado.';
-
-  @override
-  String get identityUsernameTooLong => 'Tiu salutnomo estas tro longa.';
-
-  @override
-  String get identityUsernameInvalidChars => 'Tiu salutnomo enhavas nevalidajn signojn.';
-
-  @override
-  String get identityPasswordLabel => 'Elektu pasvorton';
-
-  @override
-  String get identityPasswordRequired => 'Pasvorto bezoniĝas';
-
-  @override
-  String get identityConfirmPasswordLabel => 'Konfirmu vian pasvorton';
-
-  @override
-  String get identityPasswordMismatch => 'La pasvortoj ne kongruas';
-
-  @override
-  String get identityPasswordShow => 'Malkaŝi';
-
-  @override
-  String get identityPasswordHide => 'Kaŝi';
-
-  @override
   String get confirmPageTitle => 'Preta por instalado';
 
   @override
@@ -795,12 +723,6 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get notEnoughDiskSpaceRequired => 'Bezonata:';
-
-  @override
-  String get activeDirectoryOption => 'Uzi Aktivan Dosierujon';
-
-  @override
-  String get activeDirectoryInfo => 'Vi tajpos la domanion kaj aliajn detalojn dum la sekva paŝo.';
 
   @override
   String get activeDirectoryTitle => 'Agordi Aktivan Dosierujon';

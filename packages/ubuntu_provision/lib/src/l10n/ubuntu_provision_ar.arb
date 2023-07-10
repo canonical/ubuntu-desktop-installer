@@ -27,5 +27,13 @@
     }
   },
   "localeHeader": "اختر لغتك language:",
-  "@localeHeader": {}
+  "@localeHeader": {},
+  "identityPageTitle": "إعداد حسابك",
+  "@identityPageTitle": {},
+  "identityAutoLogin": "ولوج تلقائي",
+  "@identityAutoLogin": {},
+  "identityRequirePassword": "طلب كلمة السر للولوج",
+  "@identityRequirePassword": {},
+  "identityHostnameInfo": "يستخدم هذا الاسم للتواصل مع الحواسيب الأخرى.",
+  "@identityHostnameInfo": {}
 }

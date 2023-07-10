@@ -505,7 +505,7 @@ Future<void> testIdentityPage(
   await tester.pumpUntilPage(IdentityPage);
 
   final context = tester.element(find.byType(IdentityPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = IdentityLocalizations.of(context);
 
   expect(find.title(l10n.identityPageTitle), findsOneWidget);
 

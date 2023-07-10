@@ -1,6 +1,7 @@
 library ubuntu_provision;
 
 export 'flavor.dart';
+export 'identity.dart';
 export 'keyboard.dart';
 export 'l10n.dart';
 export 'locale.dart';

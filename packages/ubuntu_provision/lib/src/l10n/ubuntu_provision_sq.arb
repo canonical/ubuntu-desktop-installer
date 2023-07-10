@@ -10,5 +10,17 @@
   "themeDark": "E errët",
   "@themeDark": {},
   "themeLight": "E çelur",
-  "@themeLight": {}
+  "@themeLight": {},
+  "identityPageTitle": "Kush jeni ju?",
+  "@identityPageTitle": {},
+  "identityAutoLogin": "Hyr automatikisht",
+  "@identityAutoLogin": {},
+  "identityRequirePassword": "Kërko fjalëkalimin tim për të hyrë",
+  "@identityRequirePassword": {},
+  "identityRealNameLabel": "Emri juaj",
+  "@identityRealNameLabel": {},
+  "identityHostnameInfo": "Emri që ai përdor kur flet me kompjuterat e tjerë.",
+  "@identityHostnameInfo": {},
+  "identityPasswordLabel": "Zgjidh një fjalëkalim",
+  "@identityPasswordLabel": {}
 }

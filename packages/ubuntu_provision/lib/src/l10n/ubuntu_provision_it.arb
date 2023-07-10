@@ -16,5 +16,21 @@
   "themePageTitle": "Scegli il aspetto",
   "@themePageTitle": {},
   "localeHeader": "Scegli la tua lingua:",
-  "@localeHeader": {}
+  "@localeHeader": {},
+  "identityPageTitle": "Informazioni personali",
+  "@identityPageTitle": {},
+  "identityAutoLogin": "Accedere automaticamente",
+  "@identityAutoLogin": {},
+  "identityHostnameLabel": "Il nome del computer",
+  "@identityHostnameLabel": {},
+  "identityUsernameLabel": "Scegli uno username",
+  "@identityUsernameLabel": {},
+  "identityPasswordLabel": "Scegli una password",
+  "@identityPasswordLabel": {},
+  "identityConfirmPasswordLabel": "Conferma la password",
+  "@identityConfirmPasswordLabel": {},
+  "identityPasswordShow": "Mostra",
+  "@identityPasswordShow": {},
+  "identityPasswordHide": "Nascondi",
+  "@identityPasswordHide": {}
 }

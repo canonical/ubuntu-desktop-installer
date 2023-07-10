@@ -480,78 +480,6 @@ class AppLocalizationsOc extends AppLocalizations {
   String get partitionMountPointLabel => 'Punt de montatge :';
 
   @override
-  String get identityPageTitle => 'Configuratz vòstre compte';
-
-  @override
-  String get identityAutoLogin => 'Se connectar automaticament';
-
-  @override
-  String get identityRequirePassword => 'Demandar mon senhal per dobrir una session';
-
-  @override
-  String get identityRealNameLabel => 'Vòstre prenom';
-
-  @override
-  String get identityRealNameRequired => 'Cal un prenom';
-
-  @override
-  String get identityRealNameTooLong => 'Aqueste nom es tròp long.';
-
-  @override
-  String get identityHostnameLabel => 'Lo nom de l’ordenador';
-
-  @override
-  String get identityHostnameInfo => 'Lo nom qu’utiliza per comunicar amb d’autres ordenadors.';
-
-  @override
-  String get identityHostnameRequired => 'Un nom d’ordenador es requerit';
-
-  @override
-  String get identityHostnameTooLong => 'Aqueste nom d’ordenador es tròp long.';
-
-  @override
-  String get identityInvalidHostname => 'Lo nom de l’ordenador es invalid';
-
-  @override
-  String get identityUsernameLabel => 'Causissètz un nom d’utilizaire';
-
-  @override
-  String get identityUsernameRequired => 'Un nom d’utilizaire es requerit';
-
-  @override
-  String get identityInvalidUsername => 'Lo nom d’utilizaire es requerit';
-
-  @override
-  String get identityUsernameInUse => 'Aqueste nom d’utilizaire existís ja.';
-
-  @override
-  String get identityUsernameSystemReserved => 'Aqueste nom es reservat per l’usatge del sistèma.';
-
-  @override
-  String get identityUsernameTooLong => 'Aqueste nom es tròp long.';
-
-  @override
-  String get identityUsernameInvalidChars => 'Aqueste nom conten de caractèrs invalids.';
-
-  @override
-  String get identityPasswordLabel => 'Causissètz un senhal';
-
-  @override
-  String get identityPasswordRequired => 'Un senhal es requerit';
-
-  @override
-  String get identityConfirmPasswordLabel => 'Confirmar lo senhal';
-
-  @override
-  String get identityPasswordMismatch => 'Los senhals correspondon pas';
-
-  @override
-  String get identityPasswordShow => 'Mostrar';
-
-  @override
-  String get identityPasswordHide => 'Rescondre';
-
-  @override
   String get confirmPageTitle => 'Lèst per installacion';
 
   @override
@@ -795,12 +723,6 @@ class AppLocalizationsOc extends AppLocalizations {
 
   @override
   String get notEnoughDiskSpaceRequired => 'Requesit :';
-
-  @override
-  String get activeDirectoryOption => 'Utilizar Active Directory';
-
-  @override
-  String get activeDirectoryInfo => 'Picaretz lo domeni e los autres detalhs a l’etapa que ven.';
 
   @override
   String get activeDirectoryTitle => 'Configurar Active Directory';

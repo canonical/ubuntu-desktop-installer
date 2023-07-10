@@ -480,78 +480,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get partitionMountPointLabel => '挂载点：';
 
   @override
-  String get identityPageTitle => '设置您的帐户';
-
-  @override
-  String get identityAutoLogin => '自动登录';
-
-  @override
-  String get identityRequirePassword => '登录时需要密码';
-
-  @override
-  String get identityRealNameLabel => '您的姓名';
-
-  @override
-  String get identityRealNameRequired => '需要名字';
-
-  @override
-  String get identityRealNameTooLong => '名字过长。';
-
-  @override
-  String get identityHostnameLabel => '您的电脑主机名';
-
-  @override
-  String get identityHostnameInfo => '与其他计算机联络时使用的名称。';
-
-  @override
-  String get identityHostnameRequired => '需要计算机名称';
-
-  @override
-  String get identityHostnameTooLong => '电脑名称太长了。';
-
-  @override
-  String get identityInvalidHostname => '计算机主机名无效';
-
-  @override
-  String get identityUsernameLabel => '键入一个用户名';
-
-  @override
-  String get identityUsernameRequired => '需要用户名';
-
-  @override
-  String get identityInvalidUsername => '用户名无效';
-
-  @override
-  String get identityUsernameInUse => '这个用户名已经存在。';
-
-  @override
-  String get identityUsernameSystemReserved => '这个名称保留给系统使用。';
-
-  @override
-  String get identityUsernameTooLong => '名字过长.';
-
-  @override
-  String get identityUsernameInvalidChars => '这个名称包含无效字符。';
-
-  @override
-  String get identityPasswordLabel => '选择一个密码';
-
-  @override
-  String get identityPasswordRequired => '需要密码';
-
-  @override
-  String get identityConfirmPasswordLabel => '确认您的密码';
-
-  @override
-  String get identityPasswordMismatch => '密码不匹配';
-
-  @override
-  String get identityPasswordShow => '显示';
-
-  @override
-  String get identityPasswordHide => '隐藏';
-
-  @override
   String get confirmPageTitle => '准备安装';
 
   @override
@@ -795,12 +723,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get notEnoughDiskSpaceRequired => '必填：';
-
-  @override
-  String get activeDirectoryOption => '使用活动目录';
-
-  @override
-  String get activeDirectoryInfo => '您将在下一步中输入域和其他详细信息。';
 
   @override
   String get activeDirectoryTitle => '配置活动目录';

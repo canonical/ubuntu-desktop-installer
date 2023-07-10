@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/pages/identity/identity_model.dart';
 import 'package:ubuntu_provision/ubuntu_provision.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_welcome/l10n.dart';
@@ -13,7 +11,7 @@ import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 // TODO: move to shared packages
-import '../../ubuntu_desktop_installer/test/identity/test_identity.dart';
+import '../../ubuntu_provision/test/identity/test_identity.dart';
 import '../../ubuntu_provision/test/keyboard/test_keyboard.dart';
 import '../../ubuntu_provision/test/locale/test_locale.dart';
 import '../../ubuntu_provision/test/timezone/test_timezone.dart';

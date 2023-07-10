@@ -56,4 +56,82 @@ class UbuntuProvisionLocalizationsRu extends UbuntuProvisionLocalizations {
 
   @override
   String get localeHeader => 'Выберите язык:';
+
+  @override
+  String get identityPageTitle => 'Создание своей учётной записи';
+
+  @override
+  String get identityAutoLogin => 'Входить в систему автоматически';
+
+  @override
+  String get identityRequirePassword => 'Требовать пароль для входа в систему';
+
+  @override
+  String get identityRealNameLabel => 'Ваше имя';
+
+  @override
+  String get identityRealNameRequired => 'Укажите имя';
+
+  @override
+  String get identityRealNameTooLong => 'Слишком длинное имя.';
+
+  @override
+  String get identityHostnameLabel => 'Имя компьютера';
+
+  @override
+  String get identityHostnameInfo => 'Имя, используемое при общении с другими компьютерами.';
+
+  @override
+  String get identityHostnameRequired => 'Требуется имя компьютера';
+
+  @override
+  String get identityHostnameTooLong => 'Слишком длинное имя компьютера.';
+
+  @override
+  String get identityInvalidHostname => 'Недопустимое имя компьютера';
+
+  @override
+  String get identityUsernameLabel => 'Выберите имя пользователя';
+
+  @override
+  String get identityUsernameRequired => 'Необходимо имя пользователя';
+
+  @override
+  String get identityInvalidUsername => 'Недопустимое имя пользователя';
+
+  @override
+  String get identityUsernameInUse => 'Это имя пользователя уже существует.';
+
+  @override
+  String get identityUsernameSystemReserved => 'Это имя зарезервировано для использования системой.';
+
+  @override
+  String get identityUsernameTooLong => 'Это имя слишком длинное.';
+
+  @override
+  String get identityUsernameInvalidChars => 'Это имя содержит недопустимые символы.';
+
+  @override
+  String get identityPasswordLabel => 'Выберите пароль';
+
+  @override
+  String get identityPasswordRequired => 'Требуется пароль';
+
+  @override
+  String get identityConfirmPasswordLabel => 'Подтвердите пароль';
+
+  @override
+  String get identityPasswordMismatch => 'Пароли не совпадают';
+
+  @override
+  String get identityPasswordShow => 'Показать';
+
+  @override
+  String get identityPasswordHide => 'Скрыть';
+
+  @override
+  String get identityActiveDirectoryOption => 'Использовать Active Directory';
+
+  @override
+  String get identityActiveDirectoryInfo => 'Вы введёте домен и другие данные на следующем шаге.';
 }
