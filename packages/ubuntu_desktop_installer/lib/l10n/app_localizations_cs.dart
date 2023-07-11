@@ -109,52 +109,52 @@ class AppLocalizationsCs extends AppLocalizations {
   String get showSecurityKey => 'Zobrazit klíč zabezpečení';
 
   @override
-  String get connectToInternetPageTitle => 'Připojit k síti';
+  String get networkPageTitle => 'Připojit k síti';
 
   @override
-  String get connectToInternetDescription => 'Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se Ethernetovým kabelem, nebo zvolte Wi-Fi síť';
+  String get networkPageHeader => 'Připojení tohoto počítač k Internetu pomůže Ubuntu nainstalovat jakýkoli potřebný dodatečný software a pomůže zvolit vaše časové pásmo.\n\nPřipojte se Ethernetovým kabelem, nebo zvolte Wi-Fi síť';
 
   @override
-  String get useWiredConnection => 'Použít drátové připojení';
+  String get networkWiredOption => 'Použít drátové připojení';
 
   @override
-  String get noWiredConnection => 'Nezjištěno žádné drátové připojení';
+  String get networkWiredNone => 'Nezjištěno žádné drátové připojení';
 
   @override
-  String get wiredDisabled => 'Drátové připojení je vypnuto';
+  String get networkWiredOff => 'Drátové připojení je vypnuto';
 
   @override
-  String get wiredMustBeEnabled => 'Aby na tomto počítači bylo možné použít rozhraní Ethernet, je třeba zapnout drátové připojení';
+  String get networkWiredDisabled => 'Aby na tomto počítači bylo možné použít rozhraní Ethernet, je třeba zapnout drátové připojení';
 
   @override
-  String get enableWired => 'Zapnout drátové';
+  String get networkWiredEnable => 'Zapnout drátové';
 
   @override
-  String get selectWifiNetwork => 'Připojit k Wi-Fi síti';
+  String get networkWifiOption => 'Připojit k Wi-Fi síti';
 
   @override
-  String get hiddenWifiNetwork => 'Připojit ke skryté Wi-Fi síti';
+  String get networkWifiOff => 'Bezdrátové připojení je vypnuté';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Název sítě';
+  String get networkWifiNone => 'Nevybrána žádná Wi-Fi zařízení';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Je vyžadován název sítě';
+  String get networkWifiDisabled => 'Aby na tomto počítači bylo možné použít rozhraní Wi-Fi, je třeba zapnout bezdrátové připojení';
 
   @override
-  String get noInternet => 'V tuto chvíli se nechci připojovat k Internetu';
+  String get networkWifiEnable => 'Zapnout Wi-Fi';
 
   @override
-  String get wirelessNetworkingDisabled => 'Bezdrátové připojení je vypnuté';
+  String get networkHiddenWifiOption => 'Připojit ke skryté Wi-Fi síti';
 
   @override
-  String get noWifiDevicesDetected => 'Nevybrána žádná Wi-Fi zařízení';
+  String get networkHiddenWifiNameLabel => 'Název sítě';
 
   @override
-  String get wifiMustBeEnabled => 'Aby na tomto počítači bylo možné použít rozhraní Wi-Fi, je třeba zapnout bezdrátové připojení';
+  String get networkHiddenWifiNameRequired => 'Je vyžadován název sítě';
 
   @override
-  String get enableWifi => 'Zapnout Wi-Fi';
+  String get networkNoneOption => 'V tuto chvíli se nechci připojovat k Internetu';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Aplikace a aktualizace';

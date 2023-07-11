@@ -52,7 +52,7 @@ void main() {
     final context = tester.element(find.byType(NetworkPage));
     final l10n = AppLocalizations.of(context);
 
-    final button = find.button(l10n.enableWired);
+    final button = find.button(l10n.networkWiredEnable);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(model.connectMode, ConnectMode.ethernet);
@@ -67,7 +67,7 @@ void main() {
     final context = tester.element(find.byType(NetworkPage));
     final l10n = AppLocalizations.of(context);
 
-    final button = find.button(l10n.enableWifi);
+    final button = find.button(l10n.networkWifiEnable);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(model.connectMode, ConnectMode.wifi);

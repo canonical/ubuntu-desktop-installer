@@ -36,11 +36,11 @@ class WifiRadioButton extends ConsumerWidget {
               leading: Icon(YaruIcons.window_close,
                   color: Theme.of(context).colorScheme.error),
               title: !model.isEnabled
-                  ? Text(lang.wirelessNetworkingDisabled)
-                  : Text(lang.noWifiDevicesDetected),
+                  ? Text(lang.networkWifiOff)
+                  : Text(lang.networkWifiNone),
             )
           : YaruRadioButton<ConnectMode>(
-              title: Text(lang.selectWifiNetwork),
+              title: Text(lang.networkWifiOption),
               value: ConnectMode.wifi,
               groupValue: value,
               onChanged: onChanged,
@@ -83,14 +83,14 @@ class _WifiViewState extends ConsumerState<WifiView> {
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(lang.wifiMustBeEnabled),
+            Text(lang.networkWifiDisabled),
             const SizedBox(height: 16),
             OutlinedButton(
               onPressed: () {
                 model.enable();
                 widget.onEnabled();
               },
-              child: Text(lang.enableWifi),
+              child: Text(lang.networkWifiEnable),
             ),
           ],
         ),

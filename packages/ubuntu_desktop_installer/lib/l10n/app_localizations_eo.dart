@@ -109,52 +109,52 @@ class AppLocalizationsEo extends AppLocalizations {
   String get showSecurityKey => 'Montri sekurecŝlosilon';
 
   @override
-  String get connectToInternetPageTitle => 'Konekti al reto';
+  String get networkPageTitle => 'Konekti al reto';
 
   @override
-  String get connectToInternetDescription => 'Konektado de ĉi tiu komputilo al Interreto helpos Ubuntu instali ajnajn kromajn programojn bezonatajn kaj helpos vin elekti vian horzonon.\n\nKonektu per Eterreta kablo, aŭ elektu sendratan reton.';
+  String get networkPageHeader => 'Konektado de ĉi tiu komputilo al Interreto helpos Ubuntu instali ajnajn kromajn programojn bezonatajn kaj helpos vin elekti vian horzonon.\n\nKonektu per Eterreta kablo, aŭ elektu sendratan reton.';
 
   @override
-  String get useWiredConnection => 'Uzi dratan konekton';
+  String get networkWiredOption => 'Uzi dratan konekton';
 
   @override
-  String get noWiredConnection => 'Neniu drata konekto troviĝis';
+  String get networkWiredNone => 'Neniu drata konekto troviĝis';
 
   @override
-  String get wiredDisabled => 'Drataj retoj estas malŝaltitaj';
+  String get networkWiredOff => 'Drataj retoj estas malŝaltitaj';
 
   @override
-  String get wiredMustBeEnabled => 'Por uzi Eterreton kun ĉi tiu komputilo, vi devas ebligi dratajn retojn';
+  String get networkWiredDisabled => 'Por uzi Eterreton kun ĉi tiu komputilo, vi devas ebligi dratajn retojn';
 
   @override
-  String get enableWired => 'Ebligi dratajn retojn';
+  String get networkWiredEnable => 'Ebligi dratajn retojn';
 
   @override
-  String get selectWifiNetwork => 'Konekti al sendrata reto';
+  String get networkWifiOption => 'Konekti al sendrata reto';
 
   @override
-  String get hiddenWifiNetwork => 'Konekti al kaŝita sendrata reto';
+  String get networkWifiOff => 'Sendrataj retoj estas malŝaltitaj';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Nomo de reto';
+  String get networkWifiNone => 'Neniu sendratreta aparato troviĝis';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Nomo de reto estas postulata';
+  String get networkWifiDisabled => 'Por uzi sendratajn retojn kun ĉi tiu komputilo, vi devas ebligi sendratajn retojn';
 
   @override
-  String get noInternet => 'Mi ne volas konekti al Interreto nun';
+  String get networkWifiEnable => 'Ebligi sendratajn retojn';
 
   @override
-  String get wirelessNetworkingDisabled => 'Sendrataj retoj estas malŝaltitaj';
+  String get networkHiddenWifiOption => 'Konekti al kaŝita sendrata reto';
 
   @override
-  String get noWifiDevicesDetected => 'Neniu sendratreta aparato troviĝis';
+  String get networkHiddenWifiNameLabel => 'Nomo de reto';
 
   @override
-  String get wifiMustBeEnabled => 'Por uzi sendratajn retojn kun ĉi tiu komputilo, vi devas ebligi sendratajn retojn';
+  String get networkHiddenWifiNameRequired => 'Nomo de reto estas postulata';
 
   @override
-  String get enableWifi => 'Ebligi sendratajn retojn';
+  String get networkNoneOption => 'Mi ne volas konekti al Interreto nun';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Programoj kaj ĝisdatigoj';

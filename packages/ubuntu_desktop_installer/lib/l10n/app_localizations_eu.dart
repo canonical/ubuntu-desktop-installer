@@ -109,52 +109,52 @@ class AppLocalizationsEu extends AppLocalizations {
   String get showSecurityKey => 'Erakutsi segurtasun gakoa';
 
   @override
-  String get connectToInternetPageTitle => 'Konektatu internetera';
+  String get networkPageTitle => 'Konektatu internetera';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network';
+  String get networkPageHeader => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network';
 
   @override
-  String get useWiredConnection => 'Erabili kable bidezko konexioa';
+  String get networkWiredOption => 'Erabili kable bidezko konexioa';
 
   @override
-  String get noWiredConnection => 'Ez da kable bidezko konexiorik hauteman';
+  String get networkWiredNone => 'Ez da kable bidezko konexiorik hauteman';
 
   @override
-  String get wiredDisabled => 'Kable bidezko konexioa desaktibatuta dago';
+  String get networkWiredOff => 'Kable bidezko konexioa desaktibatuta dago';
 
   @override
-  String get wiredMustBeEnabled => 'Ordenagailu honetan Ethernet erabiltzeko, kable bidezko konexioa gaitu behar da';
+  String get networkWiredDisabled => 'Ordenagailu honetan Ethernet erabiltzeko, kable bidezko konexioa gaitu behar da';
 
   @override
-  String get enableWired => 'Gaitu kable bidezko konexioa';
+  String get networkWiredEnable => 'Gaitu kable bidezko konexioa';
 
   @override
-  String get selectWifiNetwork => 'Konektatu Wi-Fi sare batera';
+  String get networkWifiOption => 'Konektatu Wi-Fi sare batera';
 
   @override
-  String get hiddenWifiNetwork => 'Konektatu ezkutuko Wi-Fi sare batera';
+  String get networkWifiOff => 'Haririk habeko sarea desgaituta dago';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Sarearen izena';
+  String get networkWifiNone => 'Ez da Wi-Fi gailurik hauteman';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Sare-izena behar da';
+  String get networkWifiDisabled => 'Ordenagailu honetan Wi-Fia erabiltzeko, haririk gabeko sareak gaitu behar dira';
 
   @override
-  String get noInternet => 'Ez dut internetera konektatu nahi oraingoz';
+  String get networkWifiEnable => 'Gaitu Wi-Fia';
 
   @override
-  String get wirelessNetworkingDisabled => 'Haririk habeko sarea desgaituta dago';
+  String get networkHiddenWifiOption => 'Konektatu ezkutuko Wi-Fi sare batera';
 
   @override
-  String get noWifiDevicesDetected => 'Ez da Wi-Fi gailurik hauteman';
+  String get networkHiddenWifiNameLabel => 'Sarearen izena';
 
   @override
-  String get wifiMustBeEnabled => 'Ordenagailu honetan Wi-Fia erabiltzeko, haririk gabeko sareak gaitu behar dira';
+  String get networkHiddenWifiNameRequired => 'Sare-izena behar da';
 
   @override
-  String get enableWifi => 'Gaitu Wi-Fia';
+  String get networkNoneOption => 'Ez dut internetera konektatu nahi oraingoz';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Eguneraketak eta beste softwarea';

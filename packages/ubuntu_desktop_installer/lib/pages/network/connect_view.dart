@@ -26,7 +26,7 @@ class NoConnectView extends ConsumerWidget {
         .select((WifiModel m) => m.isEnabled && m.devices.isNotEmpty));
 
     return YaruRadioButton<ConnectMode>(
-      title: Text(lang.noInternet),
+      title: Text(lang.networkNoneOption),
       value: ConnectMode.none,
       contentPadding: const EdgeInsets.only(top: 8),
       groupValue: value,

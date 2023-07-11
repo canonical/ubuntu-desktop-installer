@@ -109,52 +109,52 @@ class AppLocalizationsJa extends AppLocalizations {
   String get showSecurityKey => 'セキュリティキーを表示します';
 
   @override
-  String get connectToInternetPageTitle => 'ネットワークに接続';
+  String get networkPageTitle => 'ネットワークに接続';
 
   @override
-  String get connectToInternetDescription => 'このコンピューターをインターネットに接続すると、必要な追加ソフトウェアのインストールし、タイムゾーンを選択するのを手助けします。\n\nイーサネットケーブルを接続するか、Wi-Fi ネットワークを選択してください';
+  String get networkPageHeader => 'このコンピューターをインターネットに接続すると、必要な追加ソフトウェアのインストールし、タイムゾーンを選択するのを手助けします。\n\nイーサネットケーブルを接続するか、Wi-Fi ネットワークを選択してください';
 
   @override
-  String get useWiredConnection => '有線接続を使用';
+  String get networkWiredOption => '有線接続を使用';
 
   @override
-  String get noWiredConnection => '有線接続が見つかりません';
+  String get networkWiredNone => '有線接続が見つかりません';
 
   @override
-  String get wiredDisabled => '有線接続がオフになっています';
+  String get networkWiredOff => '有線接続がオフになっています';
 
   @override
-  String get wiredMustBeEnabled => 'このコンピューターでイーサネットを使用するには、有線接続を有効にする必要があります';
+  String get networkWiredDisabled => 'このコンピューターでイーサネットを使用するには、有線接続を有効にする必要があります';
 
   @override
-  String get enableWired => '有線接続を有効にする';
+  String get networkWiredEnable => '有線接続を有効にする';
 
   @override
-  String get selectWifiNetwork => 'Wi-Fi ネットワークに接続する';
+  String get networkWifiOption => 'Wi-Fi ネットワークに接続する';
 
   @override
-  String get hiddenWifiNetwork => '非表示の Wi-Fi ネットワークに接続する';
+  String get networkWifiOff => '無線ネットワークが無効になっています';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'ネットワーク名';
+  String get networkWifiNone => 'Wi-Fi デバイスが見つかりません';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'ネットワーク名が必要です';
+  String get networkWifiDisabled => 'このコンピューターで Wi-Fi を使用するには。無線ネットワークを有効にする必要があります';
 
   @override
-  String get noInternet => '今はインターネットに接続しない';
+  String get networkWifiEnable => 'Wi-Fi を有効にする';
 
   @override
-  String get wirelessNetworkingDisabled => '無線ネットワークが無効になっています';
+  String get networkHiddenWifiOption => '非表示の Wi-Fi ネットワークに接続する';
 
   @override
-  String get noWifiDevicesDetected => 'Wi-Fi デバイスが見つかりません';
+  String get networkHiddenWifiNameLabel => 'ネットワーク名';
 
   @override
-  String get wifiMustBeEnabled => 'このコンピューターで Wi-Fi を使用するには。無線ネットワークを有効にする必要があります';
+  String get networkHiddenWifiNameRequired => 'ネットワーク名が必要です';
 
   @override
-  String get enableWifi => 'Wi-Fi を有効にする';
+  String get networkNoneOption => '今はインターネットに接続しない';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'アプリケーションとアップデート';

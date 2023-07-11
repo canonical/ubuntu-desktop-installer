@@ -109,52 +109,52 @@ class AppLocalizationsDe extends AppLocalizations {
   String get showSecurityKey => 'Sicherheitsschlüssel anzeigen';
 
   @override
-  String get connectToInternetPageTitle => 'Mit einem Netzwerk verbinden';
+  String get networkPageTitle => 'Mit einem Netzwerk verbinden';
 
   @override
-  String get connectToInternetDescription => 'Die Verbindung des Computers mit dem Internet hilft Ubuntu bei der Installation zusätzlicher Software und bei der Auswahl der Zeitzone.\n\nPer Ethernet-Kabel verbinden oder ein WLAN-Netzwerk auswählen';
+  String get networkPageHeader => 'Die Verbindung des Computers mit dem Internet hilft Ubuntu bei der Installation zusätzlicher Software und bei der Auswahl der Zeitzone.\n\nPer Ethernet-Kabel verbinden oder ein WLAN-Netzwerk auswählen';
 
   @override
-  String get useWiredConnection => 'Kabelgebundene Verbindung verwenden';
+  String get networkWiredOption => 'Kabelgebundene Verbindung verwenden';
 
   @override
-  String get noWiredConnection => 'Keine kabelgebundene Verbindung erkannt';
+  String get networkWiredNone => 'Keine kabelgebundene Verbindung erkannt';
 
   @override
-  String get wiredDisabled => 'Kabelgebundene Verbindung ist ausgeschaltet';
+  String get networkWiredOff => 'Kabelgebundene Verbindung ist ausgeschaltet';
 
   @override
-  String get wiredMustBeEnabled => 'Für die Verwendung von Ethernet auf diesem Computer muss eine kabelgebundene Verbindung aktiviert sein';
+  String get networkWiredDisabled => 'Für die Verwendung von Ethernet auf diesem Computer muss eine kabelgebundene Verbindung aktiviert sein';
 
   @override
-  String get enableWired => 'Kabelgebundenes Ethernet aktivieren';
+  String get networkWiredEnable => 'Kabelgebundenes Ethernet aktivieren';
 
   @override
-  String get selectWifiNetwork => 'Mit einem WLAN-Netzwerk verbinden';
+  String get networkWifiOption => 'Mit einem WLAN-Netzwerk verbinden';
 
   @override
-  String get hiddenWifiNetwork => 'Mit einem versteckten WLAN-Netzwerk verbinden';
+  String get networkWifiOff => 'Drahtloses Netzwerk deaktiviert';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Netzwerkname';
+  String get networkWifiNone => 'Keine WLAN-Geräte erkannt';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Der Netzwerkname wird benötigt';
+  String get networkWifiDisabled => 'Für die Verwendung von WLAN auf diesem Computer muss das drahtlose Netzwerk aktiviert sein';
 
   @override
-  String get noInternet => 'Ich will gerade keine Verbindung zum Internet herstellen';
+  String get networkWifiEnable => 'WLAN aktivieren';
 
   @override
-  String get wirelessNetworkingDisabled => 'Drahtloses Netzwerk deaktiviert';
+  String get networkHiddenWifiOption => 'Mit einem versteckten WLAN-Netzwerk verbinden';
 
   @override
-  String get noWifiDevicesDetected => 'Keine WLAN-Geräte erkannt';
+  String get networkHiddenWifiNameLabel => 'Netzwerkname';
 
   @override
-  String get wifiMustBeEnabled => 'Für die Verwendung von WLAN auf diesem Computer muss das drahtlose Netzwerk aktiviert sein';
+  String get networkHiddenWifiNameRequired => 'Der Netzwerkname wird benötigt';
 
   @override
-  String get enableWifi => 'WLAN aktivieren';
+  String get networkNoneOption => 'Ich will gerade keine Verbindung zum Internet herstellen';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Anwendungen und Aktualisierungen';

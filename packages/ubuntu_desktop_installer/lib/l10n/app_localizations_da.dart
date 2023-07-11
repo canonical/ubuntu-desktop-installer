@@ -109,52 +109,52 @@ class AppLocalizationsDa extends AppLocalizations {
   String get showSecurityKey => 'Vis sikkerhedsnøgle';
 
   @override
-  String get connectToInternetPageTitle => 'Opret forbindelse til et netværk';
+  String get networkPageTitle => 'Opret forbindelse til et netværk';
 
   @override
-  String get connectToInternetDescription => 'Tilslutning af denne computer til internettet, vil hjælpe Ubuntu, med at installere enhver ekstra nødvendig programvare og vælge din tidszone.\n\nOpret forbindelse via Ethernet-kabel, eller vælg et WiFi-netværk';
+  String get networkPageHeader => 'Tilslutning af denne computer til internettet, vil hjælpe Ubuntu, med at installere enhver ekstra nødvendig programvare og vælge din tidszone.\n\nOpret forbindelse via Ethernet-kabel, eller vælg et WiFi-netværk';
 
   @override
-  String get useWiredConnection => 'Brug kablet forbindelse';
+  String get networkWiredOption => 'Brug kablet forbindelse';
 
   @override
-  String get noWiredConnection => 'Ingen kablet forbindelse opfanget';
+  String get networkWiredNone => 'Ingen kablet forbindelse opfanget';
 
   @override
-  String get wiredDisabled => 'Kablet forbindelse er slået fra';
+  String get networkWiredOff => 'Kablet forbindelse er slået fra';
 
   @override
-  String get wiredMustBeEnabled => 'En kablet forbindelse skal være aktiveret, for at bruge Ethernet på denne computer';
+  String get networkWiredDisabled => 'En kablet forbindelse skal være aktiveret, for at bruge Ethernet på denne computer';
 
   @override
-  String get enableWired => 'Aktivér kablet';
+  String get networkWiredEnable => 'Aktivér kablet';
 
   @override
-  String get selectWifiNetwork => 'Opret forbindelse til et WiFi-netværk';
+  String get networkWifiOption => 'Opret forbindelse til et WiFi-netværk';
 
   @override
-  String get hiddenWifiNetwork => 'Opret forbindelse til et skjult WiFi-netværk';
+  String get networkWifiOff => 'Trådløst netværk deaktiveret';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Netværksnavn';
+  String get networkWifiNone => 'Ingen WiFi-enheder opfanget';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Et netværksnavn er påkrævet';
+  String get networkWifiDisabled => 'For at bruge WiFi på denne computer skal trådløst netværk være aktiveret';
 
   @override
-  String get noInternet => 'Jeg vil ikke oprette forbindelse til internettet lige nu';
+  String get networkWifiEnable => 'Aktivér WiFi';
 
   @override
-  String get wirelessNetworkingDisabled => 'Trådløst netværk deaktiveret';
+  String get networkHiddenWifiOption => 'Opret forbindelse til et skjult WiFi-netværk';
 
   @override
-  String get noWifiDevicesDetected => 'Ingen WiFi-enheder opfanget';
+  String get networkHiddenWifiNameLabel => 'Netværksnavn';
 
   @override
-  String get wifiMustBeEnabled => 'For at bruge WiFi på denne computer skal trådløst netværk være aktiveret';
+  String get networkHiddenWifiNameRequired => 'Et netværksnavn er påkrævet';
 
   @override
-  String get enableWifi => 'Aktivér WiFi';
+  String get networkNoneOption => 'Jeg vil ikke oprette forbindelse til internettet lige nu';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Applikationer og opdateringer';

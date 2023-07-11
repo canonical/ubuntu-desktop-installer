@@ -71,10 +71,10 @@ void main() {
 
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
 
-    expect(find.text(l10n.wiredDisabled), findsOneWidget);
-    expect(find.text(l10n.wiredMustBeEnabled), findsOneWidget);
+    expect(find.text(l10n.networkWiredOff), findsOneWidget);
+    expect(find.text(l10n.networkWiredDisabled), findsOneWidget);
 
-    final button = find.button(l10n.enableWired);
+    final button = find.button(l10n.networkWiredEnable);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(wasEnabled, isTrue);
@@ -110,6 +110,6 @@ void main() {
 
     expect(find.byType(OutlinedButton), findsNothing);
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
-    expect(find.text(l10n.noWiredConnection), findsOneWidget);
+    expect(find.text(l10n.networkWiredNone), findsOneWidget);
   });
 }

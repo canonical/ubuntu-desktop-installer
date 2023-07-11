@@ -109,52 +109,52 @@ class AppLocalizationsPl extends AppLocalizations {
   String get showSecurityKey => 'Pokaż klucz bezpieczeństwa';
 
   @override
-  String get connectToInternetPageTitle => 'Połącz się z siecią';
+  String get networkPageTitle => 'Połącz się z siecią';
 
   @override
-  String get connectToInternetDescription => 'Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla Ethernetowego lub wybierz sieć Wi-Fi';
+  String get networkPageHeader => 'Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla Ethernetowego lub wybierz sieć Wi-Fi';
 
   @override
-  String get useWiredConnection => 'Użyj połączenia przewodowego';
+  String get networkWiredOption => 'Użyj połączenia przewodowego';
 
   @override
-  String get noWiredConnection => 'Nie wykryto połączenia przewodowego';
+  String get networkWiredNone => 'Nie wykryto połączenia przewodowego';
 
   @override
-  String get wiredDisabled => 'Połączenie przewodowe jest wyłączone';
+  String get networkWiredOff => 'Połączenie przewodowe jest wyłączone';
 
   @override
-  String get wiredMustBeEnabled => 'Aby korzystać z sieci Ethernet na tym komputerze, musi być włączone połączenie przewodowe';
+  String get networkWiredDisabled => 'Aby korzystać z sieci Ethernet na tym komputerze, musi być włączone połączenie przewodowe';
 
   @override
-  String get enableWired => 'Włącz przewodowe';
+  String get networkWiredEnable => 'Włącz przewodowe';
 
   @override
-  String get selectWifiNetwork => 'Połącz się z siecią Wi-Fi';
+  String get networkWifiOption => 'Połącz się z siecią Wi-Fi';
 
   @override
-  String get hiddenWifiNetwork => 'Połącz się z ukrytą siecią Wi-Fi';
+  String get networkWifiOff => 'Sieć bezprzewodowa wyłączona';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Nazwa sieci';
+  String get networkWifiNone => 'Nie wykryto urządzeń Wi-Fi';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Wymagana jest nazwa sieci';
+  String get networkWifiDisabled => 'Aby korzystać z sieci Wi-Fi na tym komputerze, musi być włączona sieć bezprzewodowa';
 
   @override
-  String get noInternet => 'Nie chcę teraz łączyć się z Internetem';
+  String get networkWifiEnable => 'Włącz Wi-Fi';
 
   @override
-  String get wirelessNetworkingDisabled => 'Sieć bezprzewodowa wyłączona';
+  String get networkHiddenWifiOption => 'Połącz się z ukrytą siecią Wi-Fi';
 
   @override
-  String get noWifiDevicesDetected => 'Nie wykryto urządzeń Wi-Fi';
+  String get networkHiddenWifiNameLabel => 'Nazwa sieci';
 
   @override
-  String get wifiMustBeEnabled => 'Aby korzystać z sieci Wi-Fi na tym komputerze, musi być włączona sieć bezprzewodowa';
+  String get networkHiddenWifiNameRequired => 'Wymagana jest nazwa sieci';
 
   @override
-  String get enableWifi => 'Włącz Wi-Fi';
+  String get networkNoneOption => 'Nie chcę teraz łączyć się z Internetem';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Aplikacje i aktualizacje';

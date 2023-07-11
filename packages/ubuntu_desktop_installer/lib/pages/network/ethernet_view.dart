@@ -27,13 +27,13 @@ class EthernetRadioButton extends ConsumerWidget {
         leading: Icon(YaruIcons.window_close,
             color: Theme.of(context).colorScheme.error),
         title: model.devices.isEmpty
-            ? Text(lang.noWiredConnection)
-            : Text(lang.wiredDisabled),
+            ? Text(lang.networkWiredNone)
+            : Text(lang.networkWiredOff),
       );
     }
 
     return YaruRadioButton<ConnectMode>(
-      title: Text(lang.useWiredConnection),
+      title: Text(lang.networkWiredOption),
       value: ConnectMode.ethernet,
       groupValue: value,
       onChanged: onChanged,
@@ -60,14 +60,14 @@ class EthernetView extends ConsumerWidget {
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(lang.wiredMustBeEnabled),
+            Text(lang.networkWiredDisabled),
             const SizedBox(height: 16),
             OutlinedButton(
               onPressed: () {
                 model.enable();
                 onEnabled();
               },
-              child: Text(lang.enableWired),
+              child: Text(lang.networkWiredEnable),
             ),
           ],
         ),

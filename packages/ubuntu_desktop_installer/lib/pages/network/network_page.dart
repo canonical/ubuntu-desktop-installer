@@ -38,9 +38,9 @@ class NetworkPage extends ConsumerWidget {
     final lang = AppLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
-        title: Text(lang.connectToInternetPageTitle),
+        title: Text(lang.networkPageTitle),
       ),
-      header: Text(lang.connectToInternetDescription),
+      header: Text(lang.networkPageHeader),
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

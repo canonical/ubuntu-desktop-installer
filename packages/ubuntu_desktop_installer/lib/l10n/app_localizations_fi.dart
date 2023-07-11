@@ -109,52 +109,52 @@ class AppLocalizationsFi extends AppLocalizations {
   String get showSecurityKey => 'Näytä salausavain';
 
   @override
-  String get connectToInternetPageTitle => 'Yhdistä verkkoon';
+  String get networkPageTitle => 'Yhdistä verkkoon';
 
   @override
-  String get connectToInternetDescription => 'Tietokoneen liittäminen internetiin auttaa Ubuntua asentamaan tarvittavat lisäohjelmistot ja valitsemaan aikavyöhykkeen.\n\nYhdistä Ethernet-kaapelilla tai valitse Wi-Fi-verkko';
+  String get networkPageHeader => 'Tietokoneen liittäminen internetiin auttaa Ubuntua asentamaan tarvittavat lisäohjelmistot ja valitsemaan aikavyöhykkeen.\n\nYhdistä Ethernet-kaapelilla tai valitse Wi-Fi-verkko';
 
   @override
-  String get useWiredConnection => 'Käytä langallista yhteyttä';
+  String get networkWiredOption => 'Käytä langallista yhteyttä';
 
   @override
-  String get noWiredConnection => 'Langallista yhteyttä ei havaittu';
+  String get networkWiredNone => 'Langallista yhteyttä ei havaittu';
 
   @override
-  String get wiredDisabled => 'Langallinen yhteys on kytketty pois päältä';
+  String get networkWiredOff => 'Langallinen yhteys on kytketty pois päältä';
 
   @override
-  String get wiredMustBeEnabled => 'Jos haluat käyttää Ethernet-yhteyttä tässä tietokoneessa, langallinen yhteys on otettava käyttöön';
+  String get networkWiredDisabled => 'Jos haluat käyttää Ethernet-yhteyttä tässä tietokoneessa, langallinen yhteys on otettava käyttöön';
 
   @override
-  String get enableWired => 'Ota langallinen yhteys käyttöön';
+  String get networkWiredEnable => 'Ota langallinen yhteys käyttöön';
 
   @override
-  String get selectWifiNetwork => 'Yhdistä Wi-Fi-verkkoon';
+  String get networkWifiOption => 'Yhdistä Wi-Fi-verkkoon';
 
   @override
-  String get hiddenWifiNetwork => 'Yhdistä piilotettuun wifi-verkkoon';
+  String get networkWifiOff => 'Langaton verkko ei käytössä';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Verkon nimi';
+  String get networkWifiNone => 'Wi-Fi-laitteita ei havaittu';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Verkon nimi vaaditaan';
+  String get networkWifiDisabled => 'Jos haluat käyttää Wi-Fi-yhteyttä tällä tietokoneella, langaton verkko on otettava käyttöön';
 
   @override
-  String get noInternet => 'En halua muodostaa yhteyttä internetiin juuri nyt';
+  String get networkWifiEnable => 'Ota Wi-Fi käyttöön';
 
   @override
-  String get wirelessNetworkingDisabled => 'Langaton verkko ei käytössä';
+  String get networkHiddenWifiOption => 'Yhdistä piilotettuun wifi-verkkoon';
 
   @override
-  String get noWifiDevicesDetected => 'Wi-Fi-laitteita ei havaittu';
+  String get networkHiddenWifiNameLabel => 'Verkon nimi';
 
   @override
-  String get wifiMustBeEnabled => 'Jos haluat käyttää Wi-Fi-yhteyttä tällä tietokoneella, langaton verkko on otettava käyttöön';
+  String get networkHiddenWifiNameRequired => 'Verkon nimi vaaditaan';
 
   @override
-  String get enableWifi => 'Ota Wi-Fi käyttöön';
+  String get networkNoneOption => 'En halua muodostaa yhteyttä internetiin juuri nyt';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Sovellukset ja päivitykset';

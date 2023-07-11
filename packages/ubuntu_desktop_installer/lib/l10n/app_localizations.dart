@@ -405,101 +405,101 @@ abstract class AppLocalizations {
   /// **'Show security key'**
   String get showSecurityKey;
 
-  /// No description provided for @connectToInternetPageTitle.
+  /// No description provided for @networkPageTitle.
   ///
   /// In en, this message translates to:
   /// **'Connect to a network'**
-  String get connectToInternetPageTitle;
+  String get networkPageTitle;
 
-  /// No description provided for @connectToInternetDescription.
+  /// No description provided for @networkPageHeader.
   ///
   /// In en, this message translates to:
   /// **'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network'**
-  String get connectToInternetDescription;
+  String get networkPageHeader;
 
-  /// No description provided for @useWiredConnection.
+  /// No description provided for @networkWiredOption.
   ///
   /// In en, this message translates to:
   /// **'Use wired connection'**
-  String get useWiredConnection;
+  String get networkWiredOption;
 
-  /// No description provided for @noWiredConnection.
+  /// No description provided for @networkWiredNone.
   ///
   /// In en, this message translates to:
   /// **'No wired connection detected'**
-  String get noWiredConnection;
+  String get networkWiredNone;
 
-  /// No description provided for @wiredDisabled.
+  /// No description provided for @networkWiredOff.
   ///
   /// In en, this message translates to:
   /// **'Wired connection is turned off'**
-  String get wiredDisabled;
+  String get networkWiredOff;
 
-  /// No description provided for @wiredMustBeEnabled.
+  /// No description provided for @networkWiredDisabled.
   ///
   /// In en, this message translates to:
   /// **'To use Ethernet on this computer, a wired connection must be enabled'**
-  String get wiredMustBeEnabled;
+  String get networkWiredDisabled;
 
-  /// No description provided for @enableWired.
+  /// No description provided for @networkWiredEnable.
   ///
   /// In en, this message translates to:
   /// **'Enable wired'**
-  String get enableWired;
+  String get networkWiredEnable;
 
-  /// No description provided for @selectWifiNetwork.
+  /// No description provided for @networkWifiOption.
   ///
   /// In en, this message translates to:
   /// **'Connect to a Wi-Fi network'**
-  String get selectWifiNetwork;
+  String get networkWifiOption;
 
-  /// No description provided for @hiddenWifiNetwork.
-  ///
-  /// In en, this message translates to:
-  /// **'Connect to a hidden Wi-Fi network'**
-  String get hiddenWifiNetwork;
-
-  /// No description provided for @hiddenWifiNetworkNameLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Network name'**
-  String get hiddenWifiNetworkNameLabel;
-
-  /// No description provided for @hiddenWifiNetworkNameRequired.
-  ///
-  /// In en, this message translates to:
-  /// **'A network name is required'**
-  String get hiddenWifiNetworkNameRequired;
-
-  /// No description provided for @noInternet.
-  ///
-  /// In en, this message translates to:
-  /// **'I don\'t want to connect to the internet just now'**
-  String get noInternet;
-
-  /// No description provided for @wirelessNetworkingDisabled.
+  /// No description provided for @networkWifiOff.
   ///
   /// In en, this message translates to:
   /// **'Wireless networking disabled'**
-  String get wirelessNetworkingDisabled;
+  String get networkWifiOff;
 
-  /// No description provided for @noWifiDevicesDetected.
+  /// No description provided for @networkWifiNone.
   ///
   /// In en, this message translates to:
   /// **'No Wi-Fi devices detected'**
-  String get noWifiDevicesDetected;
+  String get networkWifiNone;
 
-  /// No description provided for @wifiMustBeEnabled.
+  /// No description provided for @networkWifiDisabled.
   ///
   /// In en, this message translates to:
   /// **'To use Wi-Fi on this computer, wireless networking must be enabled'**
-  String get wifiMustBeEnabled;
+  String get networkWifiDisabled;
 
-  /// No description provided for @enableWifi.
+  /// No description provided for @networkWifiEnable.
   ///
   /// In en, this message translates to:
   /// **'Enable Wi-Fi'**
-  String get enableWifi;
+  String get networkWifiEnable;
+
+  /// No description provided for @networkHiddenWifiOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect to a hidden Wi-Fi network'**
+  String get networkHiddenWifiOption;
+
+  /// No description provided for @networkHiddenWifiNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Network name'**
+  String get networkHiddenWifiNameLabel;
+
+  /// No description provided for @networkHiddenWifiNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'A network name is required'**
+  String get networkHiddenWifiNameRequired;
+
+  /// No description provided for @networkNoneOption.
+  ///
+  /// In en, this message translates to:
+  /// **'I don\'t want to connect to the internet just now'**
+  String get networkNoneOption;
 
   /// No description provided for @updatesOtherSoftwarePageTitle.
   ///

@@ -146,10 +146,10 @@ void main() {
     expect(find.byType(WifiListView), findsNothing);
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
 
-    expect(find.text(l10n.wirelessNetworkingDisabled), findsOneWidget);
-    expect(find.text(l10n.wifiMustBeEnabled), findsOneWidget);
+    expect(find.text(l10n.networkWifiOff), findsOneWidget);
+    expect(find.text(l10n.networkWifiDisabled), findsOneWidget);
 
-    final button = find.button(l10n.enableWifi);
+    final button = find.button(l10n.networkWifiEnable);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(wasEnabled, isTrue);
@@ -186,7 +186,7 @@ void main() {
 
     expect(find.byType(WifiListView), findsNothing);
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
-    expect(find.text(l10n.noWifiDevicesDetected), findsOneWidget);
+    expect(find.text(l10n.networkWifiNone), findsOneWidget);
   });
 
   testWidgets('starts periodic scanning', (tester) async {

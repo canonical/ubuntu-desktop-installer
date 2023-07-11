@@ -109,52 +109,52 @@ class AppLocalizationsZh extends AppLocalizations {
   String get showSecurityKey => '显示安全密钥';
 
   @override
-  String get connectToInternetPageTitle => '连接到互联网';
+  String get networkPageTitle => '连接到互联网';
 
   @override
-  String get connectToInternetDescription => '将这台电脑连接到互联网有助于 Ubuntu 安装所需的任何额外软件并选择您的时区。\n\n通过以太网电缆连接，或选择 Wi-Fi 网络';
+  String get networkPageHeader => '将这台电脑连接到互联网有助于 Ubuntu 安装所需的任何额外软件并选择您的时区。\n\n通过以太网电缆连接，或选择 Wi-Fi 网络';
 
   @override
-  String get useWiredConnection => '使用有线连接';
+  String get networkWiredOption => '使用有线连接';
 
   @override
-  String get noWiredConnection => '未检测到有线连接';
+  String get networkWiredNone => '未检测到有线连接';
 
   @override
-  String get wiredDisabled => '有线连接已关闭';
+  String get networkWiredOff => '有线连接已关闭';
 
   @override
-  String get wiredMustBeEnabled => '要在此电脑上使用网络，必须启用有线连接';
+  String get networkWiredDisabled => '要在此电脑上使用网络，必须启用有线连接';
 
   @override
-  String get enableWired => '启用有线连接';
+  String get networkWiredEnable => '启用有线连接';
 
   @override
-  String get selectWifiNetwork => '连接到 Wi-Fi 网络';
+  String get networkWifiOption => '连接到 Wi-Fi 网络';
 
   @override
-  String get hiddenWifiNetwork => '连接到隐藏的 Wi-Fi 网络';
+  String get networkWifiOff => '无线网络已禁用';
 
   @override
-  String get hiddenWifiNetworkNameLabel => '网络名称';
+  String get networkWifiNone => '找不到 Wi-Fi 设备';
 
   @override
-  String get hiddenWifiNetworkNameRequired => '需要网络名称';
+  String get networkWifiDisabled => '要在此电脑上使用Wi-Fi，必须启用无线网络';
 
   @override
-  String get noInternet => '我现在不想连接到互联网';
+  String get networkWifiEnable => '启用 Wi-Fi';
 
   @override
-  String get wirelessNetworkingDisabled => '无线网络已禁用';
+  String get networkHiddenWifiOption => '连接到隐藏的 Wi-Fi 网络';
 
   @override
-  String get noWifiDevicesDetected => '找不到 Wi-Fi 设备';
+  String get networkHiddenWifiNameLabel => '网络名称';
 
   @override
-  String get wifiMustBeEnabled => '要在此电脑上使用Wi-Fi，必须启用无线网络';
+  String get networkHiddenWifiNameRequired => '需要网络名称';
 
   @override
-  String get enableWifi => '启用 Wi-Fi';
+  String get networkNoneOption => '我现在不想连接到互联网';
 
   @override
   String get updatesOtherSoftwarePageTitle => '应用程序和更新';

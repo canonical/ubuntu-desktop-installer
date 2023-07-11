@@ -109,52 +109,52 @@ class AppLocalizationsId extends AppLocalizations {
   String get showSecurityKey => 'Show security key';
 
   @override
-  String get connectToInternetPageTitle => 'Menyambung ke internet';
+  String get networkPageTitle => 'Menyambung ke internet';
 
   @override
-  String get connectToInternetDescription => 'Menyambungkan komputer ini ke internet akan membantu Ubuntu memasang perangkat lunak tambahan yang diperlukan dan membantu memilih zona waktu Anda.\n\nSambungkan memakai kabel Ethernet, atau pilih suatu jaringan Wi-Fi';
+  String get networkPageHeader => 'Menyambungkan komputer ini ke internet akan membantu Ubuntu memasang perangkat lunak tambahan yang diperlukan dan membantu memilih zona waktu Anda.\n\nSambungkan memakai kabel Ethernet, atau pilih suatu jaringan Wi-Fi';
 
   @override
-  String get useWiredConnection => 'Gunakan sambungan kabel';
+  String get networkWiredOption => 'Gunakan sambungan kabel';
 
   @override
-  String get noWiredConnection => 'Tidak ada sambungan kabel yang terdeteksi';
+  String get networkWiredNone => 'Tidak ada sambungan kabel yang terdeteksi';
 
   @override
-  String get wiredDisabled => 'Koneksi lewat kabel dimatikan';
+  String get networkWiredOff => 'Koneksi lewat kabel dimatikan';
 
   @override
-  String get wiredMustBeEnabled => 'Untuk memakai Ethernet pada komputer ini, suatu koneksi lewat kabel mesti difungsikan';
+  String get networkWiredDisabled => 'Untuk memakai Ethernet pada komputer ini, suatu koneksi lewat kabel mesti difungsikan';
 
   @override
-  String get enableWired => 'Fungsikan lewat kabel';
+  String get networkWiredEnable => 'Fungsikan lewat kabel';
 
   @override
-  String get selectWifiNetwork => 'Menyambung ke suatu jaringan Wi-Fi';
+  String get networkWifiOption => 'Menyambung ke suatu jaringan Wi-Fi';
 
   @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
+  String get networkWifiOff => 'Jaringan nirkabel dinonaktifkan';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
+  String get networkWifiNone => 'Tidak ada peranti Wi-Fi yang terdeteksi';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
+  String get networkWifiDisabled => 'Untuk memakai Wi-Fi pada komputer ini, jaringan nirkabel mesti difungsikan';
 
   @override
-  String get noInternet => 'Saya tidak ingin tersambung ke internet saat ini';
+  String get networkWifiEnable => 'Fungsikan Wi-Fi';
 
   @override
-  String get wirelessNetworkingDisabled => 'Jaringan nirkabel dinonaktifkan';
+  String get networkHiddenWifiOption => 'Connect to a hidden Wi-Fi network';
 
   @override
-  String get noWifiDevicesDetected => 'Tidak ada peranti Wi-Fi yang terdeteksi';
+  String get networkHiddenWifiNameLabel => 'Network name';
 
   @override
-  String get wifiMustBeEnabled => 'Untuk memakai Wi-Fi pada komputer ini, jaringan nirkabel mesti difungsikan';
+  String get networkHiddenWifiNameRequired => 'A network name is required';
 
   @override
-  String get enableWifi => 'Fungsikan Wi-Fi';
+  String get networkNoneOption => 'Saya tidak ingin tersambung ke internet saat ini';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Pembaruan dan perangkat lunak lainnya';

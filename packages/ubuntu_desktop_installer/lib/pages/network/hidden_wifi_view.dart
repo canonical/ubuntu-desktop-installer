@@ -29,7 +29,7 @@ class HiddenWifiRadioButton extends ConsumerWidget {
 
     final lang = AppLocalizations.of(context);
     return YaruRadioButton<ConnectMode>(
-      title: Text(lang.hiddenWifiNetwork),
+      title: Text(lang.networkHiddenWifiOption),
       contentPadding: const EdgeInsets.only(top: 8),
       value: ConnectMode.hiddenWifi,
       groupValue: value,
@@ -108,9 +108,9 @@ class _HiddenWifiViewState extends ConsumerState<HiddenWifiView> {
                   initialValue: model.ssid,
                   onChanged: model.setSsid,
                   validator: RequiredValidator(
-                    errorText: lang.hiddenWifiNetworkNameRequired,
+                    errorText: lang.networkHiddenWifiNameRequired,
                   ),
-                  labelText: lang.hiddenWifiNetworkNameLabel,
+                  labelText: lang.networkHiddenWifiNameLabel,
                 ),
               ],
             ),

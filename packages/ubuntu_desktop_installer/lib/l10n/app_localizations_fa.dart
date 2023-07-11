@@ -109,52 +109,52 @@ class AppLocalizationsFa extends AppLocalizations {
   String get showSecurityKey => 'نمایش کلید امنیتی';
 
   @override
-  String get connectToInternetPageTitle => 'وصل شدن به شبکه';
+  String get networkPageTitle => 'وصل شدن به شبکه';
 
   @override
-  String get connectToInternetDescription => 'وصل کردن این رایانه به اینترنت می‌گذارد اوبونتو هر نرم‌افزار اضافی مورد نیازی را نصب کرده و به گزینش ناحیهٔ زمانیتان کمک می‌کند.\n\nبا کابل اترنت وصل شده یا شبکهٔ وای‌فای‌ای را برگزینید';
+  String get networkPageHeader => 'وصل کردن این رایانه به اینترنت می‌گذارد اوبونتو هر نرم‌افزار اضافی مورد نیازی را نصب کرده و به گزینش ناحیهٔ زمانیتان کمک می‌کند.\n\nبا کابل اترنت وصل شده یا شبکهٔ وای‌فای‌ای را برگزینید';
 
   @override
-  String get useWiredConnection => 'استفاده از اتّصال سیمی';
+  String get networkWiredOption => 'استفاده از اتّصال سیمی';
 
   @override
-  String get noWiredConnection => 'اتّصال سیمی شناسایی نشد';
+  String get networkWiredNone => 'اتّصال سیمی شناسایی نشد';
 
   @override
-  String get wiredDisabled => 'اتّصال سیمی خاموش است';
+  String get networkWiredOff => 'اتّصال سیمی خاموش است';
 
   @override
-  String get wiredMustBeEnabled => 'برای استفاده از اترنت روی این رایانه، باید یک اتّصال سیمی به کار افتد';
+  String get networkWiredDisabled => 'برای استفاده از اترنت روی این رایانه، باید یک اتّصال سیمی به کار افتد';
 
   @override
-  String get enableWired => 'به کار انداختن اتّصال سیمی';
+  String get networkWiredEnable => 'به کار انداختن اتّصال سیمی';
 
   @override
-  String get selectWifiNetwork => 'اتّصال به یک شبکهٔ وای‌فای';
+  String get networkWifiOption => 'اتّصال به یک شبکهٔ وای‌فای';
 
   @override
-  String get hiddenWifiNetwork => 'اتّصال به یک شبکهٔ وای‌فای مخفی';
+  String get networkWifiOff => 'شبکهٔ بی‌سیم از کار افتاده است';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'نام شبکه';
+  String get networkWifiNone => 'هیچ افزارهٔ وای‌فای شناسایی نشد';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'یک نام برای شبکه مورد نیاز است';
+  String get networkWifiDisabled => 'برای استفاده از وای‌فای در این رایانه، شبکهٔ بی‌سیم باید به کار انداخته شود';
 
   @override
-  String get noInternet => 'من نمی‌خواهم همین حالا به اینترنت متّصل شوم';
+  String get networkWifiEnable => 'به کار انداختن وای‌فای';
 
   @override
-  String get wirelessNetworkingDisabled => 'شبکهٔ بی‌سیم از کار افتاده است';
+  String get networkHiddenWifiOption => 'اتّصال به یک شبکهٔ وای‌فای مخفی';
 
   @override
-  String get noWifiDevicesDetected => 'هیچ افزارهٔ وای‌فای شناسایی نشد';
+  String get networkHiddenWifiNameLabel => 'نام شبکه';
 
   @override
-  String get wifiMustBeEnabled => 'برای استفاده از وای‌فای در این رایانه، شبکهٔ بی‌سیم باید به کار انداخته شود';
+  String get networkHiddenWifiNameRequired => 'یک نام برای شبکه مورد نیاز است';
 
   @override
-  String get enableWifi => 'به کار انداختن وای‌فای';
+  String get networkNoneOption => 'من نمی‌خواهم همین حالا به اینترنت متّصل شوم';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'برنامه‌ها و به‌روز رسانی‌ها';

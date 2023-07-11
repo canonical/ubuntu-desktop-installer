@@ -109,52 +109,52 @@ class AppLocalizationsLt extends AppLocalizations {
   String get showSecurityKey => 'Rodyti saugumo raktą';
 
   @override
-  String get connectToInternetPageTitle => 'Prisijunkite prie interneto';
+  String get networkPageTitle => 'Prisijunkite prie interneto';
 
   @override
-  String get connectToInternetDescription => 'Prijungus šį kompiuterį prie interneto Ubuntu galės įdiegti reikalingą papildomą programinę įrangą ir galės padėti pasirinkti laiko juostą.\n\nPrisijunkite naudodami interneto laidą arba pasirinkite belaidį (Wi-Fi) tinklą';
+  String get networkPageHeader => 'Prijungus šį kompiuterį prie interneto Ubuntu galės įdiegti reikalingą papildomą programinę įrangą ir galės padėti pasirinkti laiko juostą.\n\nPrisijunkite naudodami interneto laidą arba pasirinkite belaidį (Wi-Fi) tinklą';
 
   @override
-  String get useWiredConnection => 'Naudoti laidinį ryšį';
+  String get networkWiredOption => 'Naudoti laidinį ryšį';
 
   @override
-  String get noWiredConnection => 'Neaptikta jokio laidinio ryšio';
+  String get networkWiredNone => 'Neaptikta jokio laidinio ryšio';
 
   @override
-  String get wiredDisabled => 'Laidinis ryšys yra išjungtas';
+  String get networkWiredOff => 'Laidinis ryšys yra išjungtas';
 
   @override
-  String get wiredMustBeEnabled => 'Norint šiame kompiuteryje naudoti laidinį tinklą, privalo būti įjungtas laidinis ryšys';
+  String get networkWiredDisabled => 'Norint šiame kompiuteryje naudoti laidinį tinklą, privalo būti įjungtas laidinis ryšys';
 
   @override
-  String get enableWired => 'Įjungti laidinį ryšį';
+  String get networkWiredEnable => 'Įjungti laidinį ryšį';
 
   @override
-  String get selectWifiNetwork => 'Prisijungti prie belaidžio (Wi-Fi) tinklo';
+  String get networkWifiOption => 'Prisijungti prie belaidžio (Wi-Fi) tinklo';
 
   @override
-  String get hiddenWifiNetwork => 'Prisijungti prie paslėpto belaidžio (Wi-Fi) tinklo';
+  String get networkWifiOff => 'Belaidis darbas tinkle išjungtas';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Tinklo pavadinimas';
+  String get networkWifiNone => 'Neaptikta jokių belaidžių (Wi-Fi) įrenginių';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Reikia nurodyti tinklo pavadinimą';
+  String get networkWifiDisabled => 'Norint šiame kompiuteryje naudoti belaidį (Wi-Fi) tinklą, privalo būti įjungtas belaidis darbas tinkle';
 
   @override
-  String get noInternet => 'Aš kol kas nenoriu jungtis prie interneto';
+  String get networkWifiEnable => 'Įjungti belaidį (Wi-Fi)';
 
   @override
-  String get wirelessNetworkingDisabled => 'Belaidis darbas tinkle išjungtas';
+  String get networkHiddenWifiOption => 'Prisijungti prie paslėpto belaidžio (Wi-Fi) tinklo';
 
   @override
-  String get noWifiDevicesDetected => 'Neaptikta jokių belaidžių (Wi-Fi) įrenginių';
+  String get networkHiddenWifiNameLabel => 'Tinklo pavadinimas';
 
   @override
-  String get wifiMustBeEnabled => 'Norint šiame kompiuteryje naudoti belaidį (Wi-Fi) tinklą, privalo būti įjungtas belaidis darbas tinkle';
+  String get networkHiddenWifiNameRequired => 'Reikia nurodyti tinklo pavadinimą';
 
   @override
-  String get enableWifi => 'Įjungti belaidį (Wi-Fi)';
+  String get networkNoneOption => 'Aš kol kas nenoriu jungtis prie interneto';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Programos ir atnaujinimai';

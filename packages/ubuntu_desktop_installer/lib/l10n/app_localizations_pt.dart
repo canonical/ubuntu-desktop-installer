@@ -109,52 +109,52 @@ class AppLocalizationsPt extends AppLocalizations {
   String get showSecurityKey => 'Mostrar chave de segurança';
 
   @override
-  String get connectToInternetPageTitle => 'Ligar a uma rede';
+  String get networkPageTitle => 'Ligar a uma rede';
 
   @override
-  String get connectToInternetDescription => 'Ao ligar este computador à Internet irá ajudar o Ubuntu a instalar qualquer software extra necessário e ajudá-lo com o seu fuso horário.\n\nLigar por cabo de rede, ou escolha uma rede Wi-Fi';
+  String get networkPageHeader => 'Ao ligar este computador à Internet irá ajudar o Ubuntu a instalar qualquer software extra necessário e ajudá-lo com o seu fuso horário.\n\nLigar por cabo de rede, ou escolha uma rede Wi-Fi';
 
   @override
-  String get useWiredConnection => 'Usar uma ligação por cabo de rede';
+  String get networkWiredOption => 'Usar uma ligação por cabo de rede';
 
   @override
-  String get noWiredConnection => 'Ligação por cabo de rede detetada';
+  String get networkWiredNone => 'Ligação por cabo de rede detetada';
 
   @override
-  String get wiredDisabled => 'A ligação por cabo de rede está desligada';
+  String get networkWiredOff => 'A ligação por cabo de rede está desligada';
 
   @override
-  String get wiredMustBeEnabled => 'Para usar Ethernet neste computador, uma ligação por cabo de rede deve ser ativada';
+  String get networkWiredDisabled => 'Para usar Ethernet neste computador, uma ligação por cabo de rede deve ser ativada';
 
   @override
-  String get enableWired => 'Ligação por cabo de rede ativada';
+  String get networkWiredEnable => 'Ligação por cabo de rede ativada';
 
   @override
-  String get selectWifiNetwork => 'Ligar a uma rede Wi-Fi';
+  String get networkWifiOption => 'Ligar a uma rede Wi-Fi';
 
   @override
-  String get hiddenWifiNetwork => 'Ligar a uma rede Wi-Fi oculta';
+  String get networkWifiOff => 'Rede sem fios desativada';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Nome da rede';
+  String get networkWifiNone => 'Sem dispositivos Wi-Fi detetados';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Um nome de rede é necessário';
+  String get networkWifiDisabled => 'Para usar Wi-Fi neste computador, uma rede sem fios deve ser ativada';
 
   @override
-  String get noInternet => 'Não pretendo ligar à Internet por agora';
+  String get networkWifiEnable => 'Ativar Wi-Fi';
 
   @override
-  String get wirelessNetworkingDisabled => 'Rede sem fios desativada';
+  String get networkHiddenWifiOption => 'Ligar a uma rede Wi-Fi oculta';
 
   @override
-  String get noWifiDevicesDetected => 'Sem dispositivos Wi-Fi detetados';
+  String get networkHiddenWifiNameLabel => 'Nome da rede';
 
   @override
-  String get wifiMustBeEnabled => 'Para usar Wi-Fi neste computador, uma rede sem fios deve ser ativada';
+  String get networkHiddenWifiNameRequired => 'Um nome de rede é necessário';
 
   @override
-  String get enableWifi => 'Ativar Wi-Fi';
+  String get networkNoneOption => 'Não pretendo ligar à Internet por agora';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Aplicações e atualizações';
@@ -825,52 +825,52 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get showSecurityKey => 'Mostrar chave de segurança';
 
   @override
-  String get connectToInternetPageTitle => 'Conecte-se a uma rede';
+  String get networkPageTitle => 'Conecte-se a uma rede';
 
   @override
-  String get connectToInternetDescription => 'Ao conectar este computador à internet você facilitará ao Ubuntu instalação de qualquer software extra necessário e ajudará a determinar seu fuso horário.\n\nConecte-se via cabo Ethernet ou escolha uma rede Wi-Fi';
+  String get networkPageHeader => 'Ao conectar este computador à internet você facilitará ao Ubuntu instalação de qualquer software extra necessário e ajudará a determinar seu fuso horário.\n\nConecte-se via cabo Ethernet ou escolha uma rede Wi-Fi';
 
   @override
-  String get useWiredConnection => 'Usar conexão via cabo';
+  String get networkWiredOption => 'Usar conexão via cabo';
 
   @override
-  String get noWiredConnection => 'Nenhuma conexão a cabo detectada';
+  String get networkWiredNone => 'Nenhuma conexão a cabo detectada';
 
   @override
-  String get wiredDisabled => 'Conexão a cabo está desligada';
+  String get networkWiredOff => 'Conexão a cabo está desligada';
 
   @override
-  String get wiredMustBeEnabled => 'Para utilizar a Ethernet neste computador, uma conexão a cabo deve ser habilitada';
+  String get networkWiredDisabled => 'Para utilizar a Ethernet neste computador, uma conexão a cabo deve ser habilitada';
 
   @override
-  String get enableWired => 'Habilitar conexão a cabo';
+  String get networkWiredEnable => 'Habilitar conexão a cabo';
 
   @override
-  String get selectWifiNetwork => 'Conectar-se a uma rede Wi-Fi';
+  String get networkWifiOption => 'Conectar-se a uma rede Wi-Fi';
 
   @override
-  String get hiddenWifiNetwork => 'Conectar-se a uma rede Wi-Fi oculta';
+  String get networkWifiOff => 'Rede WiFi está desabilitada';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Nome da rede';
+  String get networkWifiNone => 'Nenhum dispositivo WiFi detectado';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'É necessário um nome de rede';
+  String get networkWifiDisabled => 'Para utilizar WiFi neste computador, a rede WiFi deve ser habilitada';
 
   @override
-  String get noInternet => 'Não quero conectar à internet neste momento';
+  String get networkWifiEnable => 'Habilitar WiFi';
 
   @override
-  String get wirelessNetworkingDisabled => 'Rede WiFi está desabilitada';
+  String get networkHiddenWifiOption => 'Conectar-se a uma rede Wi-Fi oculta';
 
   @override
-  String get noWifiDevicesDetected => 'Nenhum dispositivo WiFi detectado';
+  String get networkHiddenWifiNameLabel => 'Nome da rede';
 
   @override
-  String get wifiMustBeEnabled => 'Para utilizar WiFi neste computador, a rede WiFi deve ser habilitada';
+  String get networkHiddenWifiNameRequired => 'É necessário um nome de rede';
 
   @override
-  String get enableWifi => 'Habilitar WiFi';
+  String get networkNoneOption => 'Não quero conectar à internet neste momento';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Aplicativos e atualizações';

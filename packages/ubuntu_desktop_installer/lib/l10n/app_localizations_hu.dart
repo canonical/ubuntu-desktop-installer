@@ -109,52 +109,52 @@ class AppLocalizationsHu extends AppLocalizations {
   String get showSecurityKey => 'Biztonsági kulcs megjelenítése';
 
   @override
-  String get connectToInternetPageTitle => 'Kapcsolódás hálózathoz';
+  String get networkPageTitle => 'Kapcsolódás hálózathoz';
 
   @override
-  String get connectToInternetDescription => 'A számítógép internethez való kapcsolódása segít az Ubuntunak telepíteni a szükséges további szoftvereket, és segít kiválasztani az időzónát.\n\nKapcsolódás Ethernet-kábellel vagy Wi-Fi-hálózat kiválasztása';
+  String get networkPageHeader => 'A számítógép internethez való kapcsolódása segít az Ubuntunak telepíteni a szükséges további szoftvereket, és segít kiválasztani az időzónát.\n\nKapcsolódás Ethernet-kábellel vagy Wi-Fi-hálózat kiválasztása';
 
   @override
-  String get useWiredConnection => 'Vezetékes kapcsolat használata';
+  String get networkWiredOption => 'Vezetékes kapcsolat használata';
 
   @override
-  String get noWiredConnection => 'Nincs vezetékes kapcsolat felismerve';
+  String get networkWiredNone => 'Nincs vezetékes kapcsolat felismerve';
 
   @override
-  String get wiredDisabled => 'A vezetékes kapcsolat ki van kapcsolva';
+  String get networkWiredOff => 'A vezetékes kapcsolat ki van kapcsolva';
 
   @override
-  String get wiredMustBeEnabled => 'Az ezen a számítógépen történő Ethernet használatához egy vezetékes kapcsolatnak engedélyezve kell lennie';
+  String get networkWiredDisabled => 'Az ezen a számítógépen történő Ethernet használatához egy vezetékes kapcsolatnak engedélyezve kell lennie';
 
   @override
-  String get enableWired => 'Vezetékes engedélyezése';
+  String get networkWiredEnable => 'Vezetékes engedélyezése';
 
   @override
-  String get selectWifiNetwork => 'Kapcsolódás Wi-Fi-hálózathoz';
+  String get networkWifiOption => 'Kapcsolódás Wi-Fi-hálózathoz';
 
   @override
-  String get hiddenWifiNetwork => 'Kapcsolódás rejtett Wi-Fi-hálózathoz';
+  String get networkWifiOff => 'A vezeték nélküli hálózatkezelés letiltva';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Hálózat neve';
+  String get networkWifiNone => 'Nincsenek felismert Wi-Fi-eszközök';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'A hálózat neve szükséges';
+  String get networkWifiDisabled => 'Az ezen a számítógépen történő Wi-Fi használatához a vezeték nélküli hálózatkezelésnek engedélyezve kell lennie';
 
   @override
-  String get noInternet => 'Most nem szeretnék kapcsolódni az internethez';
+  String get networkWifiEnable => 'Wi-Fi engedélyezése';
 
   @override
-  String get wirelessNetworkingDisabled => 'A vezeték nélküli hálózatkezelés letiltva';
+  String get networkHiddenWifiOption => 'Kapcsolódás rejtett Wi-Fi-hálózathoz';
 
   @override
-  String get noWifiDevicesDetected => 'Nincsenek felismert Wi-Fi-eszközök';
+  String get networkHiddenWifiNameLabel => 'Hálózat neve';
 
   @override
-  String get wifiMustBeEnabled => 'Az ezen a számítógépen történő Wi-Fi használatához a vezeték nélküli hálózatkezelésnek engedélyezve kell lennie';
+  String get networkHiddenWifiNameRequired => 'A hálózat neve szükséges';
 
   @override
-  String get enableWifi => 'Wi-Fi engedélyezése';
+  String get networkNoneOption => 'Most nem szeretnék kapcsolódni az internethez';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Alkalmazások és frissítések';

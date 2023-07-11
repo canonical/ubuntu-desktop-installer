@@ -109,52 +109,52 @@ class AppLocalizationsCa extends AppLocalizations {
   String get showSecurityKey => 'Show security key';
 
   @override
-  String get connectToInternetPageTitle => 'Connecta a internet';
+  String get networkPageTitle => 'Connecta a internet';
 
   @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network';
+  String get networkPageHeader => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network';
 
   @override
-  String get useWiredConnection => 'Use wired connection';
+  String get networkWiredOption => 'Use wired connection';
 
   @override
-  String get noWiredConnection => 'No wired connection detected';
+  String get networkWiredNone => 'No wired connection detected';
 
   @override
-  String get wiredDisabled => 'Wired connection is turned off';
+  String get networkWiredOff => 'Wired connection is turned off';
 
   @override
-  String get wiredMustBeEnabled => 'Per poder fer servir Ethernet a aquest ordinador, la connexió cablejada ha d\'estar habilitada';
+  String get networkWiredDisabled => 'Per poder fer servir Ethernet a aquest ordinador, la connexió cablejada ha d\'estar habilitada';
 
   @override
-  String get enableWired => 'Enable wired';
+  String get networkWiredEnable => 'Enable wired';
 
   @override
-  String get selectWifiNetwork => 'Connectar a una xarxa Wi-Fi';
+  String get networkWifiOption => 'Connectar a una xarxa Wi-Fi';
 
   @override
-  String get hiddenWifiNetwork => 'Connecta a una xarxa Wi-Fi oculta';
+  String get networkWifiOff => 'Xarxa sense fils deshabilitada';
 
   @override
-  String get hiddenWifiNetworkNameLabel => 'Nom a la xarxa';
+  String get networkWifiNone => 'No Wi-Fi devices detected';
 
   @override
-  String get hiddenWifiNetworkNameRequired => 'Cal un nom de xarxa';
+  String get networkWifiDisabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
 
   @override
-  String get noInternet => 'Ara mateix no vull connectar-me a Internet';
+  String get networkWifiEnable => 'Enable Wi-Fi';
 
   @override
-  String get wirelessNetworkingDisabled => 'Xarxa sense fils deshabilitada';
+  String get networkHiddenWifiOption => 'Connecta a una xarxa Wi-Fi oculta';
 
   @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
+  String get networkHiddenWifiNameLabel => 'Nom a la xarxa';
 
   @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
+  String get networkHiddenWifiNameRequired => 'Cal un nom de xarxa';
 
   @override
-  String get enableWifi => 'Enable Wi-Fi';
+  String get networkNoneOption => 'Ara mateix no vull connectar-me a Internet';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Actualitzacions i altre programari';
