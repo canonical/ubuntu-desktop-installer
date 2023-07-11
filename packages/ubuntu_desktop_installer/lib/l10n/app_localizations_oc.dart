@@ -109,54 +109,6 @@ class AppLocalizationsOc extends AppLocalizations {
   String get showSecurityKey => 'Mostrar la clau de seguretat';
 
   @override
-  String get networkPageTitle => 'Se connectar a un ret';
-
-  @override
-  String get networkPageHeader => 'Connectar aqueste ordenador a internet permetrà a Ubuntu d’installar de logicials suplementaris e de definir vòstre fus orari.\n\nConnectatz un cable Ethernet, o causissètz un ret Wifi';
-
-  @override
-  String get networkWiredOption => 'Utilizar una connexion filara';
-
-  @override
-  String get networkWiredNone => 'Cap de connexion filara pas detectada';
-
-  @override
-  String get networkWiredOff => 'La connexion filara es desactivada';
-
-  @override
-  String get networkWiredDisabled => 'Per utilizar l’Ethernet sus aqueste ordenador, una connexion filara deu èsser activada';
-
-  @override
-  String get networkWiredEnable => 'Activar la connexion filara';
-
-  @override
-  String get networkWifiOption => 'Se connectar a un ret Wifi';
-
-  @override
-  String get networkWifiOff => 'Lo ret sens fial es desactivat';
-
-  @override
-  String get networkWifiNone => 'Cap de periferic Wifi pas detectat';
-
-  @override
-  String get networkWifiDisabled => 'Per utilizar lo Wifi sus aqueste ordenador, lo ret sens fial deu èsser activat';
-
-  @override
-  String get networkWifiEnable => 'Activar lo Wifi';
-
-  @override
-  String get networkHiddenWifiOption => 'Se connectar a una ret Wi-Fi amagada';
-
-  @override
-  String get networkHiddenWifiNameLabel => 'Nom de la ret';
-
-  @override
-  String get networkHiddenWifiNameRequired => 'Un nom de ret es requerit';
-
-  @override
-  String get networkNoneOption => 'Vòli pas me connectar a internet pel moment';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Aplicacions e mesas a jorn';
 
   @override

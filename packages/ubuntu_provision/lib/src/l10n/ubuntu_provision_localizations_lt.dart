@@ -191,4 +191,52 @@ class UbuntuProvisionLocalizationsLt extends UbuntuProvisionLocalizations {
 
   @override
   String get activeDirectoryErrorMessage => 'Atleiskite, šiuo metu „Active Directory“ negali būti nustatyta. Kai tik jūsų sistema bus paleista, apsilankykite adresu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kad gautumėte išsamesnės informacijos.';
+
+  @override
+  String get networkPageTitle => 'Prisijunkite prie interneto';
+
+  @override
+  String get networkPageHeader => 'Prijungus šį kompiuterį prie interneto Ubuntu galės įdiegti reikalingą papildomą programinę įrangą ir galės padėti pasirinkti laiko juostą.\n\nPrisijunkite naudodami interneto laidą arba pasirinkite belaidį (Wi-Fi) tinklą';
+
+  @override
+  String get networkWiredOption => 'Naudoti laidinį ryšį';
+
+  @override
+  String get networkWiredNone => 'Neaptikta jokio laidinio ryšio';
+
+  @override
+  String get networkWiredOff => 'Laidinis ryšys yra išjungtas';
+
+  @override
+  String get networkWiredDisabled => 'Norint šiame kompiuteryje naudoti laidinį tinklą, privalo būti įjungtas laidinis ryšys';
+
+  @override
+  String get networkWiredEnable => 'Įjungti laidinį ryšį';
+
+  @override
+  String get networkWifiOption => 'Prisijungti prie belaidžio (Wi-Fi) tinklo';
+
+  @override
+  String get networkWifiOff => 'Belaidis darbas tinkle išjungtas';
+
+  @override
+  String get networkWifiNone => 'Neaptikta jokių belaidžių (Wi-Fi) įrenginių';
+
+  @override
+  String get networkWifiDisabled => 'Norint šiame kompiuteryje naudoti belaidį (Wi-Fi) tinklą, privalo būti įjungtas belaidis darbas tinkle';
+
+  @override
+  String get networkWifiEnable => 'Įjungti belaidį (Wi-Fi)';
+
+  @override
+  String get networkHiddenWifiOption => 'Prisijungti prie paslėpto belaidžio (Wi-Fi) tinklo';
+
+  @override
+  String get networkHiddenWifiNameLabel => 'Tinklo pavadinimas';
+
+  @override
+  String get networkHiddenWifiNameRequired => 'Reikia nurodyti tinklo pavadinimą';
+
+  @override
+  String get networkNoneOption => 'Aš kol kas nenoriu jungtis prie interneto';
 }

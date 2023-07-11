@@ -109,54 +109,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get showSecurityKey => '보안 키 보이기';
 
   @override
-  String get networkPageTitle => '네트워크에 연결하기';
-
-  @override
-  String get networkPageHeader => '이 컴퓨터를 인터넷에 연결하면 우분투에 필요한 추가 소프트웨어 설치나 시간대 선택에 도움이 됩니다.\n\n이더넷 케이블이나, Wi-Fi 네트워크를 선택하여 연결하십시오';
-
-  @override
-  String get networkWiredOption => '유선 연결 사용';
-
-  @override
-  String get networkWiredNone => '유선 연결 감지 안됨';
-
-  @override
-  String get networkWiredOff => '유선 연결이 꺼져 있음';
-
-  @override
-  String get networkWiredDisabled => '이 컴퓨터에서 이더넷 연결을 사용하려면, 유선 연결이 반드시 활성화 되어야 합니다';
-
-  @override
-  String get networkWiredEnable => '유선 연결 활성화';
-
-  @override
-  String get networkWifiOption => 'Wi-Fi 네트워크에 연결';
-
-  @override
-  String get networkWifiOff => '무선 네트워킹 비활성화됨';
-
-  @override
-  String get networkWifiNone => '감지된 Wi-Fi 장치가 없음';
-
-  @override
-  String get networkWifiDisabled => '이 컴퓨터에서 Wi-Fi를 사용하려면, 무선 네트워킹이 반드시 활성화 되어야 합니다';
-
-  @override
-  String get networkWifiEnable => 'Wi-Fi 활성화';
-
-  @override
-  String get networkHiddenWifiOption => '숨겨진 Wi-Fi 네트워크에 연결';
-
-  @override
-  String get networkHiddenWifiNameLabel => '네트워크 이름';
-
-  @override
-  String get networkHiddenWifiNameRequired => '네트워크 이름이 필요합니다';
-
-  @override
-  String get networkNoneOption => '지금은 인터넷에 연결하지 않기';
-
-  @override
   String get updatesOtherSoftwarePageTitle => '애플리케이션 및 업데이트';
 
   @override

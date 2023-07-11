@@ -125,8 +125,6 @@
       "RELEASE": {}
     }
   },
-  "networkWifiEnable": "Aktivizo Wi-Fi",
-  "@networkWifiEnable": {},
   "installationTypeLVMEncryptionSelected": "LMV dhe kodimi i selektuare",
   "@installationTypeLVMEncryptionSelected": {},
   "installAlongsideSpaceDivider": "Krijo hapësirë duke zvarritur ndarësin këtu poshtë:",

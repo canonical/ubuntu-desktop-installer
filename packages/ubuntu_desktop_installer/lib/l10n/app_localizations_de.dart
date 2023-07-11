@@ -109,54 +109,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get showSecurityKey => 'Sicherheitsschlüssel anzeigen';
 
   @override
-  String get networkPageTitle => 'Mit einem Netzwerk verbinden';
-
-  @override
-  String get networkPageHeader => 'Die Verbindung des Computers mit dem Internet hilft Ubuntu bei der Installation zusätzlicher Software und bei der Auswahl der Zeitzone.\n\nPer Ethernet-Kabel verbinden oder ein WLAN-Netzwerk auswählen';
-
-  @override
-  String get networkWiredOption => 'Kabelgebundene Verbindung verwenden';
-
-  @override
-  String get networkWiredNone => 'Keine kabelgebundene Verbindung erkannt';
-
-  @override
-  String get networkWiredOff => 'Kabelgebundene Verbindung ist ausgeschaltet';
-
-  @override
-  String get networkWiredDisabled => 'Für die Verwendung von Ethernet auf diesem Computer muss eine kabelgebundene Verbindung aktiviert sein';
-
-  @override
-  String get networkWiredEnable => 'Kabelgebundenes Ethernet aktivieren';
-
-  @override
-  String get networkWifiOption => 'Mit einem WLAN-Netzwerk verbinden';
-
-  @override
-  String get networkWifiOff => 'Drahtloses Netzwerk deaktiviert';
-
-  @override
-  String get networkWifiNone => 'Keine WLAN-Geräte erkannt';
-
-  @override
-  String get networkWifiDisabled => 'Für die Verwendung von WLAN auf diesem Computer muss das drahtlose Netzwerk aktiviert sein';
-
-  @override
-  String get networkWifiEnable => 'WLAN aktivieren';
-
-  @override
-  String get networkHiddenWifiOption => 'Mit einem versteckten WLAN-Netzwerk verbinden';
-
-  @override
-  String get networkHiddenWifiNameLabel => 'Netzwerkname';
-
-  @override
-  String get networkHiddenWifiNameRequired => 'Der Netzwerkname wird benötigt';
-
-  @override
-  String get networkNoneOption => 'Ich will gerade keine Verbindung zum Internet herstellen';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Anwendungen und Aktualisierungen';
 
   @override

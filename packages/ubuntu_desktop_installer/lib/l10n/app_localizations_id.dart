@@ -109,54 +109,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get showSecurityKey => 'Show security key';
 
   @override
-  String get networkPageTitle => 'Menyambung ke internet';
-
-  @override
-  String get networkPageHeader => 'Menyambungkan komputer ini ke internet akan membantu Ubuntu memasang perangkat lunak tambahan yang diperlukan dan membantu memilih zona waktu Anda.\n\nSambungkan memakai kabel Ethernet, atau pilih suatu jaringan Wi-Fi';
-
-  @override
-  String get networkWiredOption => 'Gunakan sambungan kabel';
-
-  @override
-  String get networkWiredNone => 'Tidak ada sambungan kabel yang terdeteksi';
-
-  @override
-  String get networkWiredOff => 'Koneksi lewat kabel dimatikan';
-
-  @override
-  String get networkWiredDisabled => 'Untuk memakai Ethernet pada komputer ini, suatu koneksi lewat kabel mesti difungsikan';
-
-  @override
-  String get networkWiredEnable => 'Fungsikan lewat kabel';
-
-  @override
-  String get networkWifiOption => 'Menyambung ke suatu jaringan Wi-Fi';
-
-  @override
-  String get networkWifiOff => 'Jaringan nirkabel dinonaktifkan';
-
-  @override
-  String get networkWifiNone => 'Tidak ada peranti Wi-Fi yang terdeteksi';
-
-  @override
-  String get networkWifiDisabled => 'Untuk memakai Wi-Fi pada komputer ini, jaringan nirkabel mesti difungsikan';
-
-  @override
-  String get networkWifiEnable => 'Fungsikan Wi-Fi';
-
-  @override
-  String get networkHiddenWifiOption => 'Connect to a hidden Wi-Fi network';
-
-  @override
-  String get networkHiddenWifiNameLabel => 'Network name';
-
-  @override
-  String get networkHiddenWifiNameRequired => 'A network name is required';
-
-  @override
-  String get networkNoneOption => 'Saya tidak ingin tersambung ke internet saat ini';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Pembaruan dan perangkat lunak lainnya';
 
   @override

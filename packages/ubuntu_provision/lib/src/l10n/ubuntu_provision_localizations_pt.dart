@@ -191,6 +191,54 @@ class UbuntuProvisionLocalizationsPt extends UbuntuProvisionLocalizations {
 
   @override
   String get activeDirectoryErrorMessage => 'O Active Directory não pode ser criado neste momento. Assim que o seu sistema estiver instalado e a funcionar, visite o <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para mais ajuda.';
+
+  @override
+  String get networkPageTitle => 'Ligar a uma rede';
+
+  @override
+  String get networkPageHeader => 'Ao ligar este computador à Internet irá ajudar o Ubuntu a instalar qualquer software extra necessário e ajudá-lo com o seu fuso horário.\n\nLigar por cabo de rede, ou escolha uma rede Wi-Fi';
+
+  @override
+  String get networkWiredOption => 'Usar uma ligação por cabo de rede';
+
+  @override
+  String get networkWiredNone => 'Ligação por cabo de rede detetada';
+
+  @override
+  String get networkWiredOff => 'A ligação por cabo de rede está desligada';
+
+  @override
+  String get networkWiredDisabled => 'Para usar Ethernet neste computador, uma ligação por cabo de rede deve ser ativada';
+
+  @override
+  String get networkWiredEnable => 'Ligação por cabo de rede ativada';
+
+  @override
+  String get networkWifiOption => 'Ligar a uma rede Wi-Fi';
+
+  @override
+  String get networkWifiOff => 'Rede sem fios desativada';
+
+  @override
+  String get networkWifiNone => 'Sem dispositivos Wi-Fi detetados';
+
+  @override
+  String get networkWifiDisabled => 'Para usar Wi-Fi neste computador, uma rede sem fios deve ser ativada';
+
+  @override
+  String get networkWifiEnable => 'Ativar Wi-Fi';
+
+  @override
+  String get networkHiddenWifiOption => 'Ligar a uma rede Wi-Fi oculta';
+
+  @override
+  String get networkHiddenWifiNameLabel => 'Nome da rede';
+
+  @override
+  String get networkHiddenWifiNameRequired => 'Um nome de rede é necessário';
+
+  @override
+  String get networkNoneOption => 'Não pretendo ligar à Internet por agora';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -384,4 +432,52 @@ class UbuntuProvisionLocalizationsPtBr extends UbuntuProvisionLocalizationsPt {
 
   @override
   String get activeDirectoryErrorMessage => 'Desculpe, o Active Directory não pôde ser configurado no momento. Assim que seu sistema esteja instalado e funcionando, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para ajuda.';
+
+  @override
+  String get networkPageTitle => 'Conecte-se a uma rede';
+
+  @override
+  String get networkPageHeader => 'Ao conectar este computador à internet você facilitará ao Ubuntu instalação de qualquer software extra necessário e ajudará a determinar seu fuso horário.\n\nConecte-se via cabo Ethernet ou escolha uma rede Wi-Fi';
+
+  @override
+  String get networkWiredOption => 'Usar conexão via cabo';
+
+  @override
+  String get networkWiredNone => 'Nenhuma conexão a cabo detectada';
+
+  @override
+  String get networkWiredOff => 'Conexão a cabo está desligada';
+
+  @override
+  String get networkWiredDisabled => 'Para utilizar a Ethernet neste computador, uma conexão a cabo deve ser habilitada';
+
+  @override
+  String get networkWiredEnable => 'Habilitar conexão a cabo';
+
+  @override
+  String get networkWifiOption => 'Conectar-se a uma rede Wi-Fi';
+
+  @override
+  String get networkWifiOff => 'Rede WiFi está desabilitada';
+
+  @override
+  String get networkWifiNone => 'Nenhum dispositivo WiFi detectado';
+
+  @override
+  String get networkWifiDisabled => 'Para utilizar WiFi neste computador, a rede WiFi deve ser habilitada';
+
+  @override
+  String get networkWifiEnable => 'Habilitar WiFi';
+
+  @override
+  String get networkHiddenWifiOption => 'Conectar-se a uma rede Wi-Fi oculta';
+
+  @override
+  String get networkHiddenWifiNameLabel => 'Nome da rede';
+
+  @override
+  String get networkHiddenWifiNameRequired => 'É necessário um nome de rede';
+
+  @override
+  String get networkNoneOption => 'Não quero conectar à internet neste momento';
 }

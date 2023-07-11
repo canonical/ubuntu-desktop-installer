@@ -191,4 +191,52 @@ class UbuntuProvisionLocalizationsNb extends UbuntuProvisionLocalizations {
 
   @override
   String get activeDirectoryErrorMessage => 'Active Directory kan ikke settes opp for øyeblikket. Når systemet er oppe og går kan du besøke <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for hjelp.';
+
+  @override
+  String get networkPageTitle => 'Koble til internett';
+
+  @override
+  String get networkPageHeader => 'Å koble denne datamaskinen til internett vil hjelpe Ubuntu med å installere all ekstra programvare som trengs og hjelpe deg med å velge tidssone.\n\nKoble til med Ethernet-kabel, eller velg et Wi-Fi-nettverk';
+
+  @override
+  String get networkWiredOption => 'Bruk kablet nettverktilkobling';
+
+  @override
+  String get networkWiredNone => 'Ingen kablet tilkobling er oppdaget';
+
+  @override
+  String get networkWiredOff => 'Kablet tilkobling er slått av';
+
+  @override
+  String get networkWiredDisabled => 'For å bruke nettverkkabel på denne pcen, må kablet tilkobling være aktivert';
+
+  @override
+  String get networkWiredEnable => 'Aktivere kablet tilkobling';
+
+  @override
+  String get networkWifiOption => 'Koble til et trådløs nettverk';
+
+  @override
+  String get networkWifiOff => 'Trådløs nettverk er deaktivert';
+
+  @override
+  String get networkWifiNone => 'Ingen trådløs enheter er oppdaget';
+
+  @override
+  String get networkWifiDisabled => 'For å bruke Wi-Fi på denne datamaskinen, må trådløst nettverk være aktivert';
+
+  @override
+  String get networkWifiEnable => 'Aktivere trådløs';
+
+  @override
+  String get networkHiddenWifiOption => 'Koble til et skjult trådløs nett';
+
+  @override
+  String get networkHiddenWifiNameLabel => 'Nettverknavn';
+
+  @override
+  String get networkHiddenWifiNameRequired => 'En nettverksnavn er påkrevd';
+
+  @override
+  String get networkNoneOption => 'Jeg ønsker ikke å koble til internett nå';
 }

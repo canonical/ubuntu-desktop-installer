@@ -1,9 +1,5 @@
 {
   "@@locale": "lt",
-  "networkWiredNone": "Neaptikta jokio laidinio ryšio",
-  "@networkWiredNone": {},
-  "networkWiredOff": "Laidinis ryšys yra išjungtas",
-  "@networkWiredOff": {},
   "onBatteryWarning": "<font color=\"{color}\">Įspėjimas:</font> Šis kompiuteris daugiau nebėra prijungtas prie elektros maitinimo šaltinio.",
   "@onBatteryWarning": {
     "type": "text",
@@ -46,16 +42,6 @@
       "RELEASE": {}
     }
   },
-  "networkHiddenWifiOption": "Prisijungti prie paslėpto belaidžio (Wi-Fi) tinklo",
-  "@networkHiddenWifiOption": {},
-  "networkHiddenWifiNameRequired": "Reikia nurodyti tinklo pavadinimą",
-  "@networkHiddenWifiNameRequired": {},
-  "networkNoneOption": "Aš kol kas nenoriu jungtis prie interneto",
-  "@networkNoneOption": {},
-  "networkWifiDisabled": "Norint šiame kompiuteryje naudoti belaidį (Wi-Fi) tinklą, privalo būti įjungtas belaidis darbas tinkle",
-  "@networkWifiDisabled": {},
-  "networkWifiEnable": "Įjungti belaidį (Wi-Fi)",
-  "@networkWifiEnable": {},
   "updatesOtherSoftwarePageTitle": "Programos ir atnaujinimai",
   "@updatesOtherSoftwarePageTitle": {},
   "otherOptions": "Kitos parinktys",
@@ -71,12 +57,6 @@
       "DISTRO": {}
     }
   },
-  "networkHiddenWifiNameLabel": "Tinklo pavadinimas",
-  "@networkHiddenWifiNameLabel": {},
-  "networkWifiNone": "Neaptikta jokių belaidžių (Wi-Fi) įrenginių",
-  "@networkWifiNone": {},
-  "networkWifiOff": "Belaidis darbas tinkle išjungtas",
-  "@networkWifiOff": {},
   "chooseSecurityKeyHeader": "Diskų šifravimas apsaugo failus tuo atveju, jei prarasite savo kompiuterį. Tai reikalauja įvesti saugumo raktą kiekvieną kartą paleidus kompiuterį.\n\nVisi failai už {RELEASE} ribų nebus šifruoti.",
   "@chooseSecurityKeyHeader": {
     "type": "text",
@@ -110,18 +90,6 @@
   "@configureSecureBootSecurityKeyRequired": {},
   "secureBootSecurityKeysDontMatch": "Saugumo raktai nesutampa",
   "@secureBootSecurityKeysDontMatch": {},
-  "networkPageHeader": "Prijungus šį kompiuterį prie interneto Ubuntu galės įdiegti reikalingą papildomą programinę įrangą ir galės padėti pasirinkti laiko juostą.\n\nPrisijunkite naudodami interneto laidą arba pasirinkite belaidį (Wi-Fi) tinklą",
-  "@networkPageHeader": {},
-  "networkWiredDisabled": "Norint šiame kompiuteryje naudoti laidinį tinklą, privalo būti įjungtas laidinis ryšys",
-  "@networkWiredDisabled": {},
-  "networkWiredEnable": "Įjungti laidinį ryšį",
-  "@networkWiredEnable": {},
-  "networkWifiOption": "Prisijungti prie belaidžio (Wi-Fi) tinklo",
-  "@networkWifiOption": {},
-  "networkPageTitle": "Prisijunkite prie interneto",
-  "@networkPageTitle": {},
-  "networkWiredOption": "Naudoti laidinį ryšį",
-  "@networkWiredOption": {},
   "installationTypeReinstallWarning": "<font color=\"{color}\">Įspėjimas:</font> Tai ištrins visas {os} programas, dokumentus, nuotraukas, muziką ir visus kitus failus.",
   "@installationTypeReinstallWarning": {
     "type": "text",

@@ -109,54 +109,6 @@ class AppLocalizationsEu extends AppLocalizations {
   String get showSecurityKey => 'Erakutsi segurtasun gakoa';
 
   @override
-  String get networkPageTitle => 'Konektatu internetera';
-
-  @override
-  String get networkPageHeader => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network';
-
-  @override
-  String get networkWiredOption => 'Erabili kable bidezko konexioa';
-
-  @override
-  String get networkWiredNone => 'Ez da kable bidezko konexiorik hauteman';
-
-  @override
-  String get networkWiredOff => 'Kable bidezko konexioa desaktibatuta dago';
-
-  @override
-  String get networkWiredDisabled => 'Ordenagailu honetan Ethernet erabiltzeko, kable bidezko konexioa gaitu behar da';
-
-  @override
-  String get networkWiredEnable => 'Gaitu kable bidezko konexioa';
-
-  @override
-  String get networkWifiOption => 'Konektatu Wi-Fi sare batera';
-
-  @override
-  String get networkWifiOff => 'Haririk habeko sarea desgaituta dago';
-
-  @override
-  String get networkWifiNone => 'Ez da Wi-Fi gailurik hauteman';
-
-  @override
-  String get networkWifiDisabled => 'Ordenagailu honetan Wi-Fia erabiltzeko, haririk gabeko sareak gaitu behar dira';
-
-  @override
-  String get networkWifiEnable => 'Gaitu Wi-Fia';
-
-  @override
-  String get networkHiddenWifiOption => 'Konektatu ezkutuko Wi-Fi sare batera';
-
-  @override
-  String get networkHiddenWifiNameLabel => 'Sarearen izena';
-
-  @override
-  String get networkHiddenWifiNameRequired => 'Sare-izena behar da';
-
-  @override
-  String get networkNoneOption => 'Ez dut internetera konektatu nahi oraingoz';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Eguneraketak eta beste softwarea';
 
   @override

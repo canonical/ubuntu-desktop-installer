@@ -109,54 +109,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get showSecurityKey => 'Visa säkerhetsnyckel';
 
   @override
-  String get networkPageTitle => 'Anslut till ett nätverk';
-
-  @override
-  String get networkPageHeader => 'Att ansluta den här datorn till internet hjälper Ubuntu att installera all extra programvara som behövs och hjälpa dig att välja din tidszon.\n\nAnslut med Ethernet-kabel eller välj ett Wi-Fi-nätverk';
-
-  @override
-  String get networkWiredOption => 'Använd trådbunden anslutning';
-
-  @override
-  String get networkWiredNone => 'Ingen trådbunden anslutning upptäcktes';
-
-  @override
-  String get networkWiredOff => 'Den trådbundna anslutningen är avstängd';
-
-  @override
-  String get networkWiredDisabled => 'För att använda Ethernet på den här datorn måste en trådbunden anslutning vara aktiverad';
-
-  @override
-  String get networkWiredEnable => 'Aktivera trådbunden';
-
-  @override
-  String get networkWifiOption => 'Anslut till ett Wi-Fi nätverk';
-
-  @override
-  String get networkWifiOff => 'Trådlöst nätverk inaktiverat';
-
-  @override
-  String get networkWifiNone => 'Inga Wi-Fi-enheter upptäcktes';
-
-  @override
-  String get networkWifiDisabled => 'För att kunna använda Wi-Fi på den här datorn måste trådlöst nätverk vara aktiverat';
-
-  @override
-  String get networkWifiEnable => 'Aktivera Wi-Fi';
-
-  @override
-  String get networkHiddenWifiOption => 'Anslut till ett dolt Wi-Fi-nätverk';
-
-  @override
-  String get networkHiddenWifiNameLabel => 'Nätverksnamn';
-
-  @override
-  String get networkHiddenWifiNameRequired => 'Ett nätverksnamn krävs';
-
-  @override
-  String get networkNoneOption => 'Jag vill inte ansluta till internet just nu';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Program och uppdateringar';
 
   @override

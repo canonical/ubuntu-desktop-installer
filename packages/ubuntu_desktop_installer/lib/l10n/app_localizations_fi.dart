@@ -109,54 +109,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get showSecurityKey => 'Näytä salausavain';
 
   @override
-  String get networkPageTitle => 'Yhdistä verkkoon';
-
-  @override
-  String get networkPageHeader => 'Tietokoneen liittäminen internetiin auttaa Ubuntua asentamaan tarvittavat lisäohjelmistot ja valitsemaan aikavyöhykkeen.\n\nYhdistä Ethernet-kaapelilla tai valitse Wi-Fi-verkko';
-
-  @override
-  String get networkWiredOption => 'Käytä langallista yhteyttä';
-
-  @override
-  String get networkWiredNone => 'Langallista yhteyttä ei havaittu';
-
-  @override
-  String get networkWiredOff => 'Langallinen yhteys on kytketty pois päältä';
-
-  @override
-  String get networkWiredDisabled => 'Jos haluat käyttää Ethernet-yhteyttä tässä tietokoneessa, langallinen yhteys on otettava käyttöön';
-
-  @override
-  String get networkWiredEnable => 'Ota langallinen yhteys käyttöön';
-
-  @override
-  String get networkWifiOption => 'Yhdistä Wi-Fi-verkkoon';
-
-  @override
-  String get networkWifiOff => 'Langaton verkko ei käytössä';
-
-  @override
-  String get networkWifiNone => 'Wi-Fi-laitteita ei havaittu';
-
-  @override
-  String get networkWifiDisabled => 'Jos haluat käyttää Wi-Fi-yhteyttä tällä tietokoneella, langaton verkko on otettava käyttöön';
-
-  @override
-  String get networkWifiEnable => 'Ota Wi-Fi käyttöön';
-
-  @override
-  String get networkHiddenWifiOption => 'Yhdistä piilotettuun wifi-verkkoon';
-
-  @override
-  String get networkHiddenWifiNameLabel => 'Verkon nimi';
-
-  @override
-  String get networkHiddenWifiNameRequired => 'Verkon nimi vaaditaan';
-
-  @override
-  String get networkNoneOption => 'En halua muodostaa yhteyttä internetiin juuri nyt';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Sovellukset ja päivitykset';
 
   @override

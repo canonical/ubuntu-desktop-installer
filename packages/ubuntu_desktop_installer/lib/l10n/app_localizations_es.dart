@@ -109,54 +109,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get showSecurityKey => 'Mostrar la clave de seguridad';
 
   @override
-  String get networkPageTitle => 'Conectarse a una red';
-
-  @override
-  String get networkPageHeader => 'Conectar este equipo a Internet ayudará a Ubuntu a instalar cualquier software adicional necesario y ayudará a elegir su zona horaria.\n\nConectar por cable Ethernet, o elegir una red Wi-Fi';
-
-  @override
-  String get networkWiredOption => 'Utilizar conexión por cable';
-
-  @override
-  String get networkWiredNone => 'No se ha detectado una conexión por cable';
-
-  @override
-  String get networkWiredOff => 'La conexión por cable está desactivada';
-
-  @override
-  String get networkWiredDisabled => 'Para utilizar Ethernet en este ordenador, debe activarse una conexión por cable';
-
-  @override
-  String get networkWiredEnable => 'Activar por cable';
-
-  @override
-  String get networkWifiOption => 'Conectarse a una red Wi-Fi';
-
-  @override
-  String get networkWifiOff => 'Red inalámbrica desactivada';
-
-  @override
-  String get networkWifiNone => 'No se han detectado dispositivos Wi-Fi';
-
-  @override
-  String get networkWifiDisabled => 'Para utilizar Wi-Fi en este equipo, la red inalámbrica debe estar activada';
-
-  @override
-  String get networkWifiEnable => 'Activar Wi-Fi';
-
-  @override
-  String get networkHiddenWifiOption => 'Conectarse a una red Wi-Fi oculta';
-
-  @override
-  String get networkHiddenWifiNameLabel => 'Nombre de la red';
-
-  @override
-  String get networkHiddenWifiNameRequired => 'Se requiere un nombre de red';
-
-  @override
-  String get networkNoneOption => 'No quiero conectarme a internet ahora mismo';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Aplicaciones y actualizaciones';
 
   @override

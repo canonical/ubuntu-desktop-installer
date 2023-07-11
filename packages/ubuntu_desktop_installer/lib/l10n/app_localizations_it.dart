@@ -109,54 +109,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get showSecurityKey => 'Mostra chiave di sicurezza';
 
   @override
-  String get networkPageTitle => 'Connetti alla rete';
-
-  @override
-  String get networkPageHeader => 'Connettere questo computer alla rete permetterà a Ubuntu l\'installazione di software aggiuntivo necessario e a scegliere il tuo fuso orario.\n\nConnetti il computer via cavo Ethernet, o scegli una Rete Wi-Fi';
-
-  @override
-  String get networkWiredOption => 'Usa connessione cablata';
-
-  @override
-  String get networkWiredNone => 'Nessuna connessione cablata rilevata';
-
-  @override
-  String get networkWiredOff => 'La connessione cablata è disattivata';
-
-  @override
-  String get networkWiredDisabled => 'Per usufruire della connessione Ethernet in questo computer, una connessione cablata deve essere attiva';
-
-  @override
-  String get networkWiredEnable => 'Enable wired';
-
-  @override
-  String get networkWifiOption => 'Connetti a una rete Wi-Fi';
-
-  @override
-  String get networkWifiOff => 'Connessione senza fili disattivata';
-
-  @override
-  String get networkWifiNone => 'Nessun dispositivo Wi-Fi rilevato';
-
-  @override
-  String get networkWifiDisabled => 'Per usufruire della Wi-Fi in questo computer, la rete wireless deve essere abilitata';
-
-  @override
-  String get networkWifiEnable => 'Abilita Wi-Fi';
-
-  @override
-  String get networkHiddenWifiOption => 'Connetti a una rete Wi-Fi nascosta';
-
-  @override
-  String get networkHiddenWifiNameLabel => 'Nome della Rete';
-
-  @override
-  String get networkHiddenWifiNameRequired => 'È richiesto il nome della rete';
-
-  @override
-  String get networkNoneOption => 'Non voglio connettermi alla rete in questo momento';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Aggiornamenti e altro software';
 
   @override

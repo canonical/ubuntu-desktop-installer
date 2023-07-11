@@ -109,54 +109,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get showSecurityKey => 'Показати ключ безпеки';
 
   @override
-  String get networkPageTitle => 'Підключитись до інтернету';
-
-  @override
-  String get networkPageHeader => 'Підключення цього комп\'ютера до Інтернету допоможе Ubuntu встановити необхідне додаткове програмне забезпечення та вибрати часовий пояс.\n\nПідключіться за допомогою кабелю Ethernet або виберіть Wi-Fi мережу';
-
-  @override
-  String get networkWiredOption => 'Використовувати дротове підключення';
-
-  @override
-  String get networkWiredNone => 'Дротового підключення не виявлено';
-
-  @override
-  String get networkWiredOff => 'Дротове підключення вимкнено';
-
-  @override
-  String get networkWiredDisabled => 'Для використання Ethernet на цьому комп\'ютері повинно бути включено дротове підключення';
-
-  @override
-  String get networkWiredEnable => 'Увімкнути дротове підключення';
-
-  @override
-  String get networkWifiOption => 'Підключитися до Wi-Fi мережі';
-
-  @override
-  String get networkWifiOff => 'Бездротове підключення вимкнено';
-
-  @override
-  String get networkWifiNone => 'Не знайдено жодного Wi-Fi пристрою';
-
-  @override
-  String get networkWifiDisabled => 'Для використання Wi-Fi на цьому комп\'ютері має бути ввімкнений бездротовий зв’язок';
-
-  @override
-  String get networkWifiEnable => 'Ввімкнути Wi-Fi';
-
-  @override
-  String get networkHiddenWifiOption => 'Підключитися до прихованої Wi-Fi мережі';
-
-  @override
-  String get networkHiddenWifiNameLabel => 'Назва мережі';
-
-  @override
-  String get networkHiddenWifiNameRequired => 'Необхідно вказати назву мережі';
-
-  @override
-  String get networkNoneOption => 'Я не хочу зараз підключатися до Інтернету';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Оновлення та інше програмне забезпечення';
 
   @override

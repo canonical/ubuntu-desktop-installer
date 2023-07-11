@@ -191,6 +191,54 @@ class UbuntuProvisionLocalizationsZh extends UbuntuProvisionLocalizations {
 
   @override
   String get activeDirectoryErrorMessage => '抱歉，活动目录目前无法设置。系统启动并运行后，请访问 <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> 寻求帮助。';
+
+  @override
+  String get networkPageTitle => '连接到互联网';
+
+  @override
+  String get networkPageHeader => '将这台电脑连接到互联网有助于 Ubuntu 安装所需的任何额外软件并选择您的时区。\n\n通过以太网电缆连接，或选择 Wi-Fi 网络';
+
+  @override
+  String get networkWiredOption => '使用有线连接';
+
+  @override
+  String get networkWiredNone => '未检测到有线连接';
+
+  @override
+  String get networkWiredOff => '有线连接已关闭';
+
+  @override
+  String get networkWiredDisabled => '要在此电脑上使用网络，必须启用有线连接';
+
+  @override
+  String get networkWiredEnable => '启用有线连接';
+
+  @override
+  String get networkWifiOption => '连接到 Wi-Fi 网络';
+
+  @override
+  String get networkWifiOff => '无线网络已禁用';
+
+  @override
+  String get networkWifiNone => '找不到 Wi-Fi 设备';
+
+  @override
+  String get networkWifiDisabled => '要在此电脑上使用Wi-Fi，必须启用无线网络';
+
+  @override
+  String get networkWifiEnable => '启用 Wi-Fi';
+
+  @override
+  String get networkHiddenWifiOption => '连接到隐藏的 Wi-Fi 网络';
+
+  @override
+  String get networkHiddenWifiNameLabel => '网络名称';
+
+  @override
+  String get networkHiddenWifiNameRequired => '需要网络名称';
+
+  @override
+  String get networkNoneOption => '我现在不想连接到互联网';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).

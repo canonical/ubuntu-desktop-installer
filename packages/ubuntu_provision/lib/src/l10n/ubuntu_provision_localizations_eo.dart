@@ -191,4 +191,52 @@ class UbuntuProvisionLocalizationsEo extends UbuntuProvisionLocalizations {
 
   @override
   String get activeDirectoryErrorMessage => 'Pardonu, Aktiva Dosierujo ne estas agordebla nuntempe. Post kiam via sistemo funkcias, vizitu <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> por helpo.';
+
+  @override
+  String get networkPageTitle => 'Konekti al reto';
+
+  @override
+  String get networkPageHeader => 'Konektado de ĉi tiu komputilo al Interreto helpos Ubuntu instali ajnajn kromajn programojn bezonatajn kaj helpos vin elekti vian horzonon.\n\nKonektu per Eterreta kablo, aŭ elektu sendratan reton.';
+
+  @override
+  String get networkWiredOption => 'Uzi dratan konekton';
+
+  @override
+  String get networkWiredNone => 'Neniu drata konekto troviĝis';
+
+  @override
+  String get networkWiredOff => 'Drataj retoj estas malŝaltitaj';
+
+  @override
+  String get networkWiredDisabled => 'Por uzi Eterreton kun ĉi tiu komputilo, vi devas ebligi dratajn retojn';
+
+  @override
+  String get networkWiredEnable => 'Ebligi dratajn retojn';
+
+  @override
+  String get networkWifiOption => 'Konekti al sendrata reto';
+
+  @override
+  String get networkWifiOff => 'Sendrataj retoj estas malŝaltitaj';
+
+  @override
+  String get networkWifiNone => 'Neniu sendratreta aparato troviĝis';
+
+  @override
+  String get networkWifiDisabled => 'Por uzi sendratajn retojn kun ĉi tiu komputilo, vi devas ebligi sendratajn retojn';
+
+  @override
+  String get networkWifiEnable => 'Ebligi sendratajn retojn';
+
+  @override
+  String get networkHiddenWifiOption => 'Konekti al kaŝita sendrata reto';
+
+  @override
+  String get networkHiddenWifiNameLabel => 'Nomo de reto';
+
+  @override
+  String get networkHiddenWifiNameRequired => 'Nomo de reto estas postulata';
+
+  @override
+  String get networkNoneOption => 'Mi ne volas konekti al Interreto nun';
 }

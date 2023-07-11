@@ -191,4 +191,52 @@ class UbuntuProvisionLocalizationsPl extends UbuntuProvisionLocalizations {
 
   @override
   String get activeDirectoryErrorMessage => 'Przepraszamy, w tej chwili nie można skonfigurować usługi Active Directory. Gdy system będzie gotowy do pracy, odwiedź <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, aby uzyskać pomoc.';
+
+  @override
+  String get networkPageTitle => 'Połącz się z siecią';
+
+  @override
+  String get networkPageHeader => 'Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla Ethernetowego lub wybierz sieć Wi-Fi';
+
+  @override
+  String get networkWiredOption => 'Użyj połączenia przewodowego';
+
+  @override
+  String get networkWiredNone => 'Nie wykryto połączenia przewodowego';
+
+  @override
+  String get networkWiredOff => 'Połączenie przewodowe jest wyłączone';
+
+  @override
+  String get networkWiredDisabled => 'Aby korzystać z sieci Ethernet na tym komputerze, musi być włączone połączenie przewodowe';
+
+  @override
+  String get networkWiredEnable => 'Włącz przewodowe';
+
+  @override
+  String get networkWifiOption => 'Połącz się z siecią Wi-Fi';
+
+  @override
+  String get networkWifiOff => 'Sieć bezprzewodowa wyłączona';
+
+  @override
+  String get networkWifiNone => 'Nie wykryto urządzeń Wi-Fi';
+
+  @override
+  String get networkWifiDisabled => 'Aby korzystać z sieci Wi-Fi na tym komputerze, musi być włączona sieć bezprzewodowa';
+
+  @override
+  String get networkWifiEnable => 'Włącz Wi-Fi';
+
+  @override
+  String get networkHiddenWifiOption => 'Połącz się z ukrytą siecią Wi-Fi';
+
+  @override
+  String get networkHiddenWifiNameLabel => 'Nazwa sieci';
+
+  @override
+  String get networkHiddenWifiNameRequired => 'Wymagana jest nazwa sieci';
+
+  @override
+  String get networkNoneOption => 'Nie chcę teraz łączyć się z Internetem';
 }

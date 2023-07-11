@@ -191,4 +191,52 @@ class UbuntuProvisionLocalizationsSk extends UbuntuProvisionLocalizations {
 
   @override
   String get activeDirectoryErrorMessage => 'Je nám ľúto, v tejto chvíli sa nedarí nastaviť službu Active Directory. Po spustení systému navštívte stránku <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kde získate ďalšie informácie.';
+
+  @override
+  String get networkPageTitle => 'Pripojiť sa k sieti';
+
+  @override
+  String get networkPageHeader => 'Pripojenie počítača na Internet pomôže Ubuntu nainštalovať akýkoľvek potrebný dodatočný softvér a pomôže vybrať vaše časové pásmo.\n\nPripojte sa Ethernetovým káblom, alebo si vyberte Wi-Fi sieť';
+
+  @override
+  String get networkWiredOption => 'Použiť káblové pripojenie';
+
+  @override
+  String get networkWiredNone => 'Nezistilo sa žiadne káblové pripojenie';
+
+  @override
+  String get networkWiredOff => 'Káblové pripojenie je vypnuté';
+
+  @override
+  String get networkWiredDisabled => 'Aby na tomto počítači bolo možné použiť rozhranie Ethernet, je potrebné zapnúť káblové pripojenie';
+
+  @override
+  String get networkWiredEnable => 'Zapnúť káblové';
+
+  @override
+  String get networkWifiOption => 'Pripojiť sa k Wi-Fi sieti';
+
+  @override
+  String get networkWifiOff => 'Bezdrôtové pripojenie je vypnuté';
+
+  @override
+  String get networkWifiNone => 'Nezistili sa žiadne zariadenia Wi-Fi';
+
+  @override
+  String get networkWifiDisabled => 'Aby na tomto počítači bolo možné použiť rozhranie Wi-Fi, je potrebné zapnúť bezdrôtové pripojenie';
+
+  @override
+  String get networkWifiEnable => 'Zapnúť Wi-Fi';
+
+  @override
+  String get networkHiddenWifiOption => 'Pripojiť sa k skrytej Wi-Fi sieti';
+
+  @override
+  String get networkHiddenWifiNameLabel => 'Názov siete';
+
+  @override
+  String get networkHiddenWifiNameRequired => 'Vyžaduje sa názov siete';
+
+  @override
+  String get networkNoneOption => 'V tejto chvíli sa nechcem pripájať na Internet';
 }
