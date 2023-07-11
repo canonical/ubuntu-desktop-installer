@@ -1,7 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_provision/services.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
@@ -15,7 +14,7 @@ class DomainNameFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = ActiveDirectoryLocalizations.of(context);
     final domainName =
         ref.watch(activeDirectoryModelProvider.select((m) => m.domainName));
     final validation = ref.watch(
@@ -31,7 +30,7 @@ class DomainNameFormField extends ConsumerWidget {
         (_) =>
             validation == null ||
             validation.singleOrNull == AdDomainNameValidation.OK,
-        errorText: validation?.firstOrNull?.localize(lang) ?? '',
+        errorText: validation?.firstOrNull?.localize(context) ?? '',
       ),
       onChanged: ref.read(activeDirectoryModelProvider).setDomainName,
       onEditingComplete:
@@ -47,7 +46,7 @@ class AdminNameFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = ActiveDirectoryLocalizations.of(context);
     final adminName =
         ref.read(activeDirectoryModelProvider.select((m) => m.adminName));
     final validation = ref.watch(
@@ -60,7 +59,7 @@ class AdminNameFormField extends ConsumerWidget {
       successWidget: const SuccessIcon(),
       validator: CallbackValidator(
         (_) => validation == AdAdminNameValidation.OK,
-        errorText: validation?.localize(lang) ?? '',
+        errorText: validation?.localize(context) ?? '',
       ),
       onChanged: ref.read(activeDirectoryModelProvider).setAdminName,
     );
@@ -74,7 +73,7 @@ class PasswordFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = ActiveDirectoryLocalizations.of(context);
     final password =
         ref.watch(activeDirectoryModelProvider.select((m) => m.password));
     final validation = ref.watch(
@@ -87,7 +86,7 @@ class PasswordFormField extends ConsumerWidget {
       initialValue: password,
       validator: CallbackValidator(
         (_) => validation == AdPasswordValidation.OK,
-        errorText: validation?.localize(lang) ?? '',
+        errorText: validation?.localize(context) ?? '',
       ),
       onChanged: ref.read(activeDirectoryModelProvider).setPassword,
     );

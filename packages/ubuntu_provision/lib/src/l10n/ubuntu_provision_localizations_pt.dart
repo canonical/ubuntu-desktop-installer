@@ -134,6 +134,63 @@ class UbuntuProvisionLocalizationsPt extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'Irá introduzir o domínio e outros detalhes no próximo passo.';
+
+  @override
+  String get activeDirectoryTitle => 'Configurar o Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Testar ligação de domínio';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domínio';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Obrigatório';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Demasiado comprido';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Caracteres inválidos';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Começa com um ponto (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Termina com um ponto (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Começa com um hífen (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Termina com um hífen (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Contém vários pontos sequenciados (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domínio não encontrado';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Domínio juntar-se ao utilizador';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Obrigatório';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Caracteres inválidos';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Palavra-passe';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Obrigatório';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Erro ao configurando a ligação ao Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'O Active Directory não pode ser criado neste momento. Assim que o seu sistema estiver instalado e a funcionar, visite o <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para mais ajuda.';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -270,4 +327,61 @@ class UbuntuProvisionLocalizationsPtBr extends UbuntuProvisionLocalizationsPt {
 
   @override
   String get identityActiveDirectoryInfo => 'Você inserirá o domínio e outros detalhes na próxima etapa.';
+
+  @override
+  String get activeDirectoryTitle => 'Configurar o Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Testar conectividade ao domínio';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domínio';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Necessário';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Longo demais';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Caracteres inválidos';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Começa com um ponto (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Termina com um ponto (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Começa com um hífen (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Termina com um hífen (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Contém vários pontos sequenciados (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domínio não encontrado';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Usuário de ingresso no domínio';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Necessário';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Caracteres inválidos';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Senha';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Necessário';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Erro ao configurar a conexão com o Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Desculpe, o Active Directory não pôde ser configurado no momento. Assim que seu sistema esteja instalado e funcionando, visite <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> para ajuda.';
 }

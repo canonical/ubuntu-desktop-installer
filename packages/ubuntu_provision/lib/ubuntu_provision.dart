@@ -1,5 +1,6 @@
 library ubuntu_provision;
 
+export 'active_directory.dart';
 export 'flavor.dart';
 export 'identity.dart';
 export 'keyboard.dart';

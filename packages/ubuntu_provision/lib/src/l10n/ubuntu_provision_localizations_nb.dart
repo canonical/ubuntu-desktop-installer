@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsNb extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'Du skriver inn domene og andre detaljer i neste steg.';
+
+  @override
+  String get activeDirectoryTitle => 'Sett opp Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Test tilknytning';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domene';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Påkrevd';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'For langt';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Ugyldige tegn';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Starter med punktum (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Slutter med punktum (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Starter med bindestrek (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Slutter med bindestrek (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Inneholder flere gjentagende punktum (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Fant ikke domenet';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Domeneadministrator';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Påkrevd';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Ugyldige tegn';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Passord';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Påkrevd';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Kunne ikke sette opp tilkobling til Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Active Directory kan ikke settes opp for øyeblikket. Når systemet er oppe og går kan du besøke <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for hjelp.';
 }

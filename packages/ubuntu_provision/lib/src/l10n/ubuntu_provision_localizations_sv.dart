@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsSv extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'Du anger domän och andra detaljer i nästa steg.';
+
+  @override
+  String get activeDirectoryTitle => 'Konfigurera Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Testa domänanslutning';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Domän';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Krävs';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'För lång';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Ogiltiga tecken';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Börjar med en punkt (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Slutar med en punkt (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Börjar med ett bindestreck (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Slutar med ett bindestreck (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Innehåller flera sekvenserade punkter (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Domän hittades inte';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Domän gå med användare';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Krävs';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Ogiltiga tecken';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Lösenord';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Krävs';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Fel vid konfiguration av anslutning till Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Tyvärr, Active Directory kan inte ställas in just nu. när ditt system är igång, besök <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> för hjälp.';
 }

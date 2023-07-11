@@ -134,4 +134,61 @@ class UbuntuProvisionLocalizationsSk extends UbuntuProvisionLocalizations {
 
   @override
   String get identityActiveDirectoryInfo => 'V ďalšom kroku zadáte doménu a ďalšie podrobnosti.';
+
+  @override
+  String get activeDirectoryTitle => 'Konfigurácia služby Active Directory';
+
+  @override
+  String get activeDirectoryTestConnection => 'Vyskúšať spojenie s doménou';
+
+  @override
+  String get activeDirectoryDomainLabel => 'Doména';
+
+  @override
+  String get activeDirectoryDomainEmpty => 'Vyžadované';
+
+  @override
+  String get activeDirectoryDomainTooLong => 'Príliš dlhé';
+
+  @override
+  String get activeDirectoryDomainInvalidChars => 'Neplatné znaky';
+
+  @override
+  String get activeDirectoryDomainStartDot => 'Začína na bodku (.)';
+
+  @override
+  String get activeDirectoryDomainEndDot => 'Končí na bodku (.)';
+
+  @override
+  String get activeDirectoryDomainStartHyphen => 'Začína na spojovník/pomlčku (-)';
+
+  @override
+  String get activeDirectoryDomainEndHyphen => 'Končí na spojovník/pomlčku (-)';
+
+  @override
+  String get activeDirectoryDomainMultipleDots => 'Obsahuje niekoľko bodiek za sebou (..)';
+
+  @override
+  String get activeDirectoryDomainNotFound => 'Doména nenájdená';
+
+  @override
+  String get activeDirectoryAdminLabel => 'Používateľ s oprávnením pre pridanie do domény';
+
+  @override
+  String get activeDirectoryAdminEmpty => 'Vyžadované';
+
+  @override
+  String get activeDirectoryAdminInvalidChars => 'Neplatné znaky';
+
+  @override
+  String get activeDirectoryPasswordLabel => 'Heslo';
+
+  @override
+  String get activeDirectoryPasswordEmpty => 'Vyžadované';
+
+  @override
+  String get activeDirectoryErrorTitle => 'Chyba pri konfigurácii pripojenia k Active Directory';
+
+  @override
+  String get activeDirectoryErrorMessage => 'Je nám ľúto, v tejto chvíli sa nedarí nastaviť službu Active Directory. Po spustení systému navštívte stránku <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a>, kde získate ďalšie informácie.';
 }

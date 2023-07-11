@@ -723,63 +723,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get notEnoughDiskSpaceRequired => '必填：';
-
-  @override
-  String get activeDirectoryTitle => '配置活动目录';
-
-  @override
-  String get activeDirectoryTestConnection => '测试域连接';
-
-  @override
-  String get activeDirectoryDomainLabel => '域';
-
-  @override
-  String get activeDirectoryDomainEmpty => '必填';
-
-  @override
-  String get activeDirectoryDomainTooLong => '太长了';
-
-  @override
-  String get activeDirectoryDomainInvalidChars => '无效字符';
-
-  @override
-  String get activeDirectoryDomainStartDot => '以点（.）开头';
-
-  @override
-  String get activeDirectoryDomainEndDot => '以点（.）结尾';
-
-  @override
-  String get activeDirectoryDomainStartHyphen => '以连字符 （-） 开头';
-
-  @override
-  String get activeDirectoryDomainEndHyphen => '以连字符 （-） 结尾';
-
-  @override
-  String get activeDirectoryDomainMultipleDots => '包含多个有序点 (..)';
-
-  @override
-  String get activeDirectoryDomainNotFound => '未找到域';
-
-  @override
-  String get activeDirectoryAdminLabel => '域管理员';
-
-  @override
-  String get activeDirectoryAdminEmpty => '必填';
-
-  @override
-  String get activeDirectoryAdminInvalidChars => '无效字符';
-
-  @override
-  String get activeDirectoryPasswordLabel => '密码';
-
-  @override
-  String get activeDirectoryPasswordEmpty => '必填';
-
-  @override
-  String get activeDirectoryErrorTitle => '配置活动目录时出错';
-
-  @override
-  String get activeDirectoryErrorMessage => '抱歉，活动目录目前无法设置。系统启动并运行后，请访问 <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> 寻求帮助。';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
