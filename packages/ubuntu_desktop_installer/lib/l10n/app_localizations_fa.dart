@@ -109,54 +109,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get showSecurityKey => 'نمایش کلید امنیتی';
 
   @override
-  String get connectToInternetPageTitle => 'وصل شدن به شبکه';
-
-  @override
-  String get connectToInternetDescription => 'وصل کردن این رایانه به اینترنت می‌گذارد اوبونتو هر نرم‌افزار اضافی مورد نیازی را نصب کرده و به گزینش ناحیهٔ زمانیتان کمک می‌کند.\n\nبا کابل اترنت وصل شده یا شبکهٔ وای‌فای‌ای را برگزینید';
-
-  @override
-  String get useWiredConnection => 'استفاده از اتّصال سیمی';
-
-  @override
-  String get noWiredConnection => 'اتّصال سیمی شناسایی نشد';
-
-  @override
-  String get wiredDisabled => 'اتّصال سیمی خاموش است';
-
-  @override
-  String get wiredMustBeEnabled => 'برای استفاده از اترنت روی این رایانه، باید یک اتّصال سیمی به کار افتد';
-
-  @override
-  String get enableWired => 'به کار انداختن اتّصال سیمی';
-
-  @override
-  String get selectWifiNetwork => 'اتّصال به یک شبکهٔ وای‌فای';
-
-  @override
-  String get hiddenWifiNetwork => 'اتّصال به یک شبکهٔ وای‌فای مخفی';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'نام شبکه';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'یک نام برای شبکه مورد نیاز است';
-
-  @override
-  String get noInternet => 'من نمی‌خواهم همین حالا به اینترنت متّصل شوم';
-
-  @override
-  String get wirelessNetworkingDisabled => 'شبکهٔ بی‌سیم از کار افتاده است';
-
-  @override
-  String get noWifiDevicesDetected => 'هیچ افزارهٔ وای‌فای شناسایی نشد';
-
-  @override
-  String get wifiMustBeEnabled => 'برای استفاده از وای‌فای در این رایانه، شبکهٔ بی‌سیم باید به کار انداخته شود';
-
-  @override
-  String get enableWifi => 'به کار انداختن وای‌فای';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'برنامه‌ها و به‌روز رسانی‌ها';
 
   @override

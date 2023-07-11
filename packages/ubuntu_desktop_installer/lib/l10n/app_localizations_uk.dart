@@ -109,54 +109,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get showSecurityKey => 'Показати ключ безпеки';
 
   @override
-  String get connectToInternetPageTitle => 'Підключитись до інтернету';
-
-  @override
-  String get connectToInternetDescription => 'Підключення цього комп\'ютера до Інтернету допоможе Ubuntu встановити необхідне додаткове програмне забезпечення та вибрати часовий пояс.\n\nПідключіться за допомогою кабелю Ethernet або виберіть Wi-Fi мережу';
-
-  @override
-  String get useWiredConnection => 'Використовувати дротове підключення';
-
-  @override
-  String get noWiredConnection => 'Дротового підключення не виявлено';
-
-  @override
-  String get wiredDisabled => 'Дротове підключення вимкнено';
-
-  @override
-  String get wiredMustBeEnabled => 'Для використання Ethernet на цьому комп\'ютері повинно бути включено дротове підключення';
-
-  @override
-  String get enableWired => 'Увімкнути дротове підключення';
-
-  @override
-  String get selectWifiNetwork => 'Підключитися до Wi-Fi мережі';
-
-  @override
-  String get hiddenWifiNetwork => 'Підключитися до прихованої Wi-Fi мережі';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'Назва мережі';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'Необхідно вказати назву мережі';
-
-  @override
-  String get noInternet => 'Я не хочу зараз підключатися до Інтернету';
-
-  @override
-  String get wirelessNetworkingDisabled => 'Бездротове підключення вимкнено';
-
-  @override
-  String get noWifiDevicesDetected => 'Не знайдено жодного Wi-Fi пристрою';
-
-  @override
-  String get wifiMustBeEnabled => 'Для використання Wi-Fi на цьому комп\'ютері має бути ввімкнений бездротовий зв’язок';
-
-  @override
-  String get enableWifi => 'Ввімкнути Wi-Fi';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Оновлення та інше програмне забезпечення';
 
   @override

@@ -109,54 +109,6 @@ class AppLocalizationsHr extends AppLocalizations {
   String get showSecurityKey => 'Show security key';
 
   @override
-  String get connectToInternetPageTitle => 'Connect to a network';
-
-  @override
-  String get connectToInternetDescription => 'Connecting this computer to the internet will help Ubuntu install any extra software needed and help choose your time zone.\n\nConnect by Ethernet cable, or choose a Wi-Fi network';
-
-  @override
-  String get useWiredConnection => 'Use wired connection';
-
-  @override
-  String get noWiredConnection => 'No wired connection detected';
-
-  @override
-  String get wiredDisabled => 'Wired connection is turned off';
-
-  @override
-  String get wiredMustBeEnabled => 'To use Ethernet on this computer, a wired connection must be enabled';
-
-  @override
-  String get enableWired => 'Enable wired';
-
-  @override
-  String get selectWifiNetwork => 'Connect to a Wi-Fi network';
-
-  @override
-  String get hiddenWifiNetwork => 'Connect to a hidden Wi-Fi network';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'Network name';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'A network name is required';
-
-  @override
-  String get noInternet => 'I don\'t want to connect to the internet just now';
-
-  @override
-  String get wirelessNetworkingDisabled => 'Wireless networking disabled';
-
-  @override
-  String get noWifiDevicesDetected => 'No Wi-Fi devices detected';
-
-  @override
-  String get wifiMustBeEnabled => 'To use Wi-Fi on this computer, wireless networking must be enabled';
-
-  @override
-  String get enableWifi => 'Enable Wi-Fi';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Applications and updates';
 
   @override

@@ -109,54 +109,6 @@ class AppLocalizationsNb extends AppLocalizations {
   String get showSecurityKey => 'Vis sikkerhetsnøkkel';
 
   @override
-  String get connectToInternetPageTitle => 'Koble til internett';
-
-  @override
-  String get connectToInternetDescription => 'Å koble denne datamaskinen til internett vil hjelpe Ubuntu med å installere all ekstra programvare som trengs og hjelpe deg med å velge tidssone.\n\nKoble til med Ethernet-kabel, eller velg et Wi-Fi-nettverk';
-
-  @override
-  String get useWiredConnection => 'Bruk kablet nettverktilkobling';
-
-  @override
-  String get noWiredConnection => 'Ingen kablet tilkobling er oppdaget';
-
-  @override
-  String get wiredDisabled => 'Kablet tilkobling er slått av';
-
-  @override
-  String get wiredMustBeEnabled => 'For å bruke nettverkkabel på denne pcen, må kablet tilkobling være aktivert';
-
-  @override
-  String get enableWired => 'Aktivere kablet tilkobling';
-
-  @override
-  String get selectWifiNetwork => 'Koble til et trådløs nettverk';
-
-  @override
-  String get hiddenWifiNetwork => 'Koble til et skjult trådløs nett';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'Nettverknavn';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'En nettverksnavn er påkrevd';
-
-  @override
-  String get noInternet => 'Jeg ønsker ikke å koble til internett nå';
-
-  @override
-  String get wirelessNetworkingDisabled => 'Trådløs nettverk er deaktivert';
-
-  @override
-  String get noWifiDevicesDetected => 'Ingen trådløs enheter er oppdaget';
-
-  @override
-  String get wifiMustBeEnabled => 'For å bruke Wi-Fi på denne datamaskinen, må trådløst nettverk være aktivert';
-
-  @override
-  String get enableWifi => 'Aktivere trådløs';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Oppdateringer og annet programvare';
 
   @override

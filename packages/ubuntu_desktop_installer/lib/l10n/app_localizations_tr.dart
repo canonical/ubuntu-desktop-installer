@@ -109,54 +109,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get showSecurityKey => 'Güvenlik anahtarını göster';
 
   @override
-  String get connectToInternetPageTitle => 'Bir ağa bağlan';
-
-  @override
-  String get connectToInternetDescription => 'Bu bilgisayarı internete bağlamak, Ubuntu\'nun ihtiyacı olan ek yazılımları kurmasına ve zaman diliminizi seçmenize yardımcı olur.\n\nEthernet kablosuyla bağlan veya bir Wi-Fi ağı seç';
-
-  @override
-  String get useWiredConnection => 'Kablolu bağlantı kullan';
-
-  @override
-  String get noWiredConnection => 'Kablolu bağlantı saptanamadı';
-
-  @override
-  String get wiredDisabled => 'Kablolu bağlantı kapalı';
-
-  @override
-  String get wiredMustBeEnabled => 'Bilgisayarda Etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir';
-
-  @override
-  String get enableWired => 'Kablolu bağlantıyı etkinleştir';
-
-  @override
-  String get selectWifiNetwork => 'Wi-Fi ağına bağlan';
-
-  @override
-  String get hiddenWifiNetwork => 'Gizli Wi-Fi ağına bağlan';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'Ağ adı';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'Ağ adı gereklidir';
-
-  @override
-  String get noInternet => 'Şu anda internete bağlanmak istemiyorum';
-
-  @override
-  String get wirelessNetworkingDisabled => 'Kablosuz ağ kapatıldı';
-
-  @override
-  String get noWifiDevicesDetected => 'Wi-Fi cihazı algılanmadı';
-
-  @override
-  String get wifiMustBeEnabled => 'Bu bilgisayarda Wi-Fi kullanmak için, kablosuz ağın etkinleştirilmiş olması gerekir';
-
-  @override
-  String get enableWifi => 'Wi-Fi\'yi etkinleştir';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Uygulamalar ve güncellemeler';
 
   @override

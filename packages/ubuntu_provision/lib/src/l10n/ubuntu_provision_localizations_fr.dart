@@ -191,4 +191,52 @@ class UbuntuProvisionLocalizationsFr extends UbuntuProvisionLocalizations {
 
   @override
   String get activeDirectoryErrorMessage => 'Désolé, Active Directory ne peut pas être configuré pour le moment. Une fois que votre système est opérationnel, consultez <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> pour obtenir de l’aide.';
+
+  @override
+  String get networkPageTitle => 'Se connecter à un réseau';
+
+  @override
+  String get networkPageHeader => 'Connecter cet ordinateur à internet aidera Ubuntu à installer des logiciels supplémentaires et à déterminer votre fuseau horaire.\n\nConnectez un câble Ethernet, ou choisissez un réseau Wi-Fi';
+
+  @override
+  String get networkWiredOption => 'Utiliser une connexion câblée';
+
+  @override
+  String get networkWiredNone => 'Aucune connexion câblée détectée';
+
+  @override
+  String get networkWiredOff => 'La connexion câblée est désactivée';
+
+  @override
+  String get networkWiredDisabled => 'Pour utiliser Ethernet sur cet ordinateur, une connexion câblée doit être activée';
+
+  @override
+  String get networkWiredEnable => 'Activer une connexion câblée';
+
+  @override
+  String get networkWifiOption => 'Se connecter à un réseau Wi-Fi';
+
+  @override
+  String get networkWifiOff => 'Le réseau sans fil est désactivé';
+
+  @override
+  String get networkWifiNone => 'Aucun périphérique Wi-Fi détecté';
+
+  @override
+  String get networkWifiDisabled => 'Pour utiliser le Wi-Fi sur cet ordinateur, cette fonctionnalité doit être activée';
+
+  @override
+  String get networkWifiEnable => 'Activer le Wi-Fi';
+
+  @override
+  String get networkHiddenWifiOption => 'Se connecter à un réseau Wi-Fi caché';
+
+  @override
+  String get networkHiddenWifiNameLabel => 'Nom du réseau';
+
+  @override
+  String get networkHiddenWifiNameRequired => 'Un nom de réseau est requis';
+
+  @override
+  String get networkNoneOption => 'Je ne souhaite pas me connecter à internet pour l’instant';
 }

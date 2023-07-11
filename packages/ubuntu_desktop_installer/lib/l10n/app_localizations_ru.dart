@@ -109,54 +109,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get showSecurityKey => 'Показать ключ безопасности';
 
   @override
-  String get connectToInternetPageTitle => 'Подключение к сети';
-
-  @override
-  String get connectToInternetDescription => 'Соединение данного компьютера с интернетом позволит Ubuntu установить дополнительное программное обеспечение и поможет выбрать ваш часовой пояс.\n\nПрисоедините кабель сети интернет или выберите сеть Wi-Fi';
-
-  @override
-  String get useWiredConnection => 'Использовать проводное подключение';
-
-  @override
-  String get noWiredConnection => 'Проводное подключение не обнаружено';
-
-  @override
-  String get wiredDisabled => 'Проводное подключение отключено';
-
-  @override
-  String get wiredMustBeEnabled => 'Чтобы воспользоваться сетью интернет на этом компьютере, должно быть включено проводное соединение';
-
-  @override
-  String get enableWired => 'Включить проводное подключение';
-
-  @override
-  String get selectWifiNetwork => 'Подключиться к сети Wi-Fi';
-
-  @override
-  String get hiddenWifiNetwork => 'Подключиться к скрытой сети Wi-Fi';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'Название сети';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'Укажите название сети';
-
-  @override
-  String get noInternet => 'Прямо сейчас я не хочу подключаться к Интернету';
-
-  @override
-  String get wirelessNetworkingDisabled => 'Беспроводная сеть отключена';
-
-  @override
-  String get noWifiDevicesDetected => 'Устройства Wi-Fi не обнаружены';
-
-  @override
-  String get wifiMustBeEnabled => 'Чтобы использовать на этом компьютере Wi-Fi, необходимо включить беспроводную сеть';
-
-  @override
-  String get enableWifi => 'Включить Wi-Fi';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Приложения и обновления';
 
   @override

@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/network/ethernet_view.dart';
-import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_view.dart';
-import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
-import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
+import 'package:ubuntu_provision/src/network/ethernet_view.dart';
+import 'package:ubuntu_provision/src/network/hidden_wifi_view.dart';
+import 'package:ubuntu_provision/src/network/network_l10n.dart';
+import 'package:ubuntu_provision/src/network/network_model.dart';
+import 'package:ubuntu_provision/src/network/network_page.dart';
+import 'package:ubuntu_provision/src/network/wifi_view.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_test/yaru_test.dart';
@@ -50,9 +50,9 @@ void main() {
     await tester.pumpAndSettle();
 
     final context = tester.element(find.byType(NetworkPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = NetworkLocalizations.of(context);
 
-    final button = find.button(l10n.enableWired);
+    final button = find.button(l10n.networkWiredEnable);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(model.connectMode, ConnectMode.ethernet);
@@ -65,9 +65,9 @@ void main() {
     await tester.pumpAndSettle();
 
     final context = tester.element(find.byType(NetworkPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = NetworkLocalizations.of(context);
 
-    final button = find.button(l10n.enableWifi);
+    final button = find.button(l10n.networkWifiEnable);
     expect(button, findsOneWidget);
     await tester.tap(button);
     expect(model.connectMode, ConnectMode.wifi);

@@ -22,5 +22,7 @@
   "identityHostnameInfo": "Emri që ai përdor kur flet me kompjuterat e tjerë.",
   "@identityHostnameInfo": {},
   "identityPasswordLabel": "Zgjidh një fjalëkalim",
-  "@identityPasswordLabel": {}
+  "@identityPasswordLabel": {},
+  "networkWifiEnable": "Aktivizo Wi-Fi",
+  "@networkWifiEnable": {}
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'connect_model.dart';
+import 'network_l10n.dart';
 import 'network_tile.dart';
 import 'wifi_model.dart';
 
@@ -28,7 +28,7 @@ class WifiRadioButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(wifiModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = NetworkLocalizations.of(context);
     return Padding(
       padding: const EdgeInsets.only(top: 8),
       child: !model.isEnabled || model.devices.isEmpty
@@ -36,11 +36,11 @@ class WifiRadioButton extends ConsumerWidget {
               leading: Icon(YaruIcons.window_close,
                   color: Theme.of(context).colorScheme.error),
               title: !model.isEnabled
-                  ? Text(lang.wirelessNetworkingDisabled)
-                  : Text(lang.noWifiDevicesDetected),
+                  ? Text(lang.networkWifiOff)
+                  : Text(lang.networkWifiNone),
             )
           : YaruRadioButton<ConnectMode>(
-              title: Text(lang.selectWifiNetwork),
+              title: Text(lang.networkWifiOption),
               value: ConnectMode.wifi,
               groupValue: value,
               onChanged: onChanged,
@@ -76,21 +76,21 @@ class _WifiViewState extends ConsumerState<WifiView> {
 
   @override
   Widget build(BuildContext context) {
-    final lang = AppLocalizations.of(context);
+    final lang = NetworkLocalizations.of(context);
     final model = ref.watch(wifiModelProvider);
     if (!model.isEnabled) {
       return NetworkTile(
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(lang.wifiMustBeEnabled),
+            Text(lang.networkWifiDisabled),
             const SizedBox(height: 16),
             OutlinedButton(
               onPressed: () {
                 model.enable();
                 widget.onEnabled();
               },
-              child: Text(lang.enableWifi),
+              child: Text(lang.networkWifiEnable),
             ),
           ],
         ),

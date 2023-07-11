@@ -109,54 +109,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get showSecurityKey => 'Montrer la clé de sécurité';
 
   @override
-  String get connectToInternetPageTitle => 'Se connecter à un réseau';
-
-  @override
-  String get connectToInternetDescription => 'Connecter cet ordinateur à internet aidera Ubuntu à installer des logiciels supplémentaires et à déterminer votre fuseau horaire.\n\nConnectez un câble Ethernet, ou choisissez un réseau Wi-Fi';
-
-  @override
-  String get useWiredConnection => 'Utiliser une connexion câblée';
-
-  @override
-  String get noWiredConnection => 'Aucune connexion câblée détectée';
-
-  @override
-  String get wiredDisabled => 'La connexion câblée est désactivée';
-
-  @override
-  String get wiredMustBeEnabled => 'Pour utiliser Ethernet sur cet ordinateur, une connexion câblée doit être activée';
-
-  @override
-  String get enableWired => 'Activer une connexion câblée';
-
-  @override
-  String get selectWifiNetwork => 'Se connecter à un réseau Wi-Fi';
-
-  @override
-  String get hiddenWifiNetwork => 'Se connecter à un réseau Wi-Fi caché';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'Nom du réseau';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'Un nom de réseau est requis';
-
-  @override
-  String get noInternet => 'Je ne souhaite pas me connecter à internet pour l’instant';
-
-  @override
-  String get wirelessNetworkingDisabled => 'Le réseau sans fil est désactivé';
-
-  @override
-  String get noWifiDevicesDetected => 'Aucun périphérique Wi-Fi détecté';
-
-  @override
-  String get wifiMustBeEnabled => 'Pour utiliser le Wi-Fi sur cet ordinateur, cette fonctionnalité doit être activée';
-
-  @override
-  String get enableWifi => 'Activer le Wi-Fi';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Applications et mises à jour';
 
   @override

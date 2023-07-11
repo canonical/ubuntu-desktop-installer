@@ -191,4 +191,52 @@ class UbuntuProvisionLocalizationsTr extends UbuntuProvisionLocalizations {
 
   @override
   String get activeDirectoryErrorMessage => 'Üzgünüz, Active Directory şu anda kurulamıyor. Sisteminiz kurulup çalışmaya başladığında, yardım için <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> adresini ziyaret edin.';
+
+  @override
+  String get networkPageTitle => 'Bir ağa bağlan';
+
+  @override
+  String get networkPageHeader => 'Bu bilgisayarı internete bağlamak, Ubuntu\'nun ihtiyacı olan ek yazılımları kurmasına ve zaman diliminizi seçmenize yardımcı olur.\n\nEthernet kablosuyla bağlan veya bir Wi-Fi ağı seç';
+
+  @override
+  String get networkWiredOption => 'Kablolu bağlantı kullan';
+
+  @override
+  String get networkWiredNone => 'Kablolu bağlantı saptanamadı';
+
+  @override
+  String get networkWiredOff => 'Kablolu bağlantı kapalı';
+
+  @override
+  String get networkWiredDisabled => 'Bilgisayarda Etherneti kullanabilrmek için kablolu bağlantı aktif hale getirilmelidir';
+
+  @override
+  String get networkWiredEnable => 'Kablolu bağlantıyı etkinleştir';
+
+  @override
+  String get networkWifiOption => 'Wi-Fi ağına bağlan';
+
+  @override
+  String get networkWifiOff => 'Kablosuz ağ kapatıldı';
+
+  @override
+  String get networkWifiNone => 'Wi-Fi cihazı algılanmadı';
+
+  @override
+  String get networkWifiDisabled => 'Bu bilgisayarda Wi-Fi kullanmak için, kablosuz ağın etkinleştirilmiş olması gerekir';
+
+  @override
+  String get networkWifiEnable => 'Wi-Fi\'yi etkinleştir';
+
+  @override
+  String get networkHiddenWifiOption => 'Gizli Wi-Fi ağına bağlan';
+
+  @override
+  String get networkHiddenWifiNameLabel => 'Ağ adı';
+
+  @override
+  String get networkHiddenWifiNameRequired => 'Ağ adı gereklidir';
+
+  @override
+  String get networkNoneOption => 'Şu anda internete bağlanmak istemiyorum';
 }

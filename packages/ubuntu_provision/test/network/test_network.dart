@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
-import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
+import 'package:ubuntu_provision/src/network/connect_model.dart';
+import 'package:ubuntu_provision/src/network/ethernet_model.dart';
+import 'package:ubuntu_provision/src/network/hidden_wifi_model.dart';
+import 'package:ubuntu_provision/src/network/network_model.dart';
+import 'package:ubuntu_provision/src/network/network_page.dart';
+import 'package:ubuntu_provision/src/network/wifi_model.dart';
 
 import 'test_network.mocks.dart';
 export '../test_utils.dart';

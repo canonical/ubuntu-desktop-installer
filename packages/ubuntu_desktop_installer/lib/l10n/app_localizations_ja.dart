@@ -109,54 +109,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get showSecurityKey => 'セキュリティキーを表示します';
 
   @override
-  String get connectToInternetPageTitle => 'ネットワークに接続';
-
-  @override
-  String get connectToInternetDescription => 'このコンピューターをインターネットに接続すると、必要な追加ソフトウェアのインストールし、タイムゾーンを選択するのを手助けします。\n\nイーサネットケーブルを接続するか、Wi-Fi ネットワークを選択してください';
-
-  @override
-  String get useWiredConnection => '有線接続を使用';
-
-  @override
-  String get noWiredConnection => '有線接続が見つかりません';
-
-  @override
-  String get wiredDisabled => '有線接続がオフになっています';
-
-  @override
-  String get wiredMustBeEnabled => 'このコンピューターでイーサネットを使用するには、有線接続を有効にする必要があります';
-
-  @override
-  String get enableWired => '有線接続を有効にする';
-
-  @override
-  String get selectWifiNetwork => 'Wi-Fi ネットワークに接続する';
-
-  @override
-  String get hiddenWifiNetwork => '非表示の Wi-Fi ネットワークに接続する';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'ネットワーク名';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'ネットワーク名が必要です';
-
-  @override
-  String get noInternet => '今はインターネットに接続しない';
-
-  @override
-  String get wirelessNetworkingDisabled => '無線ネットワークが無効になっています';
-
-  @override
-  String get noWifiDevicesDetected => 'Wi-Fi デバイスが見つかりません';
-
-  @override
-  String get wifiMustBeEnabled => 'このコンピューターで Wi-Fi を使用するには。無線ネットワークを有効にする必要があります';
-
-  @override
-  String get enableWifi => 'Wi-Fi を有効にする';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'アプリケーションとアップデート';
 
   @override

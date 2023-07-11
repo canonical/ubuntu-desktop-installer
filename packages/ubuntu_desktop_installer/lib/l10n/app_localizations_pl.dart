@@ -109,54 +109,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get showSecurityKey => 'Pokaż klucz bezpieczeństwa';
 
   @override
-  String get connectToInternetPageTitle => 'Połącz się z siecią';
-
-  @override
-  String get connectToInternetDescription => 'Podłączenie tego komputera do Internetu pomoże systemowi Ubuntu zainstalować dodatkowe potrzebne oprogramowanie i pomoże wybrać strefę czasową.\n\nPołącz się za pomocą kabla Ethernetowego lub wybierz sieć Wi-Fi';
-
-  @override
-  String get useWiredConnection => 'Użyj połączenia przewodowego';
-
-  @override
-  String get noWiredConnection => 'Nie wykryto połączenia przewodowego';
-
-  @override
-  String get wiredDisabled => 'Połączenie przewodowe jest wyłączone';
-
-  @override
-  String get wiredMustBeEnabled => 'Aby korzystać z sieci Ethernet na tym komputerze, musi być włączone połączenie przewodowe';
-
-  @override
-  String get enableWired => 'Włącz przewodowe';
-
-  @override
-  String get selectWifiNetwork => 'Połącz się z siecią Wi-Fi';
-
-  @override
-  String get hiddenWifiNetwork => 'Połącz się z ukrytą siecią Wi-Fi';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'Nazwa sieci';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'Wymagana jest nazwa sieci';
-
-  @override
-  String get noInternet => 'Nie chcę teraz łączyć się z Internetem';
-
-  @override
-  String get wirelessNetworkingDisabled => 'Sieć bezprzewodowa wyłączona';
-
-  @override
-  String get noWifiDevicesDetected => 'Nie wykryto urządzeń Wi-Fi';
-
-  @override
-  String get wifiMustBeEnabled => 'Aby korzystać z sieci Wi-Fi na tym komputerze, musi być włączona sieć bezprzewodowa';
-
-  @override
-  String get enableWifi => 'Włącz Wi-Fi';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Aplikacje i aktualizacje';
 
   @override

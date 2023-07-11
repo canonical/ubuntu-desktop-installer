@@ -109,54 +109,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get showSecurityKey => 'הצגת מפתח אבטחה';
 
   @override
-  String get connectToInternetPageTitle => 'התחברות לרשת';
-
-  @override
-  String get connectToInternetDescription => 'חיבור המחשב הזה לאינטרנט יסייע לאובונטו להתקין תכניות נוספות חיוניות ויסייע בבחירת אזור הזמן שלך.\n\nאפשר להתחבר בכבל רשת או לבחור רשת אלחוטית';
-
-  @override
-  String get useWiredConnection => 'להשתמש בחיבור קווי';
-
-  @override
-  String get noWiredConnection => 'לא זוהה חיבור קווי';
-
-  @override
-  String get wiredDisabled => 'החיבור הקווי מושבת';
-
-  @override
-  String get wiredMustBeEnabled => 'כדי להשתמש בכבל רשת במחשב הזה יש להפעיל את החיבור הקווי';
-
-  @override
-  String get enableWired => 'להפעיל חיבור קווי';
-
-  @override
-  String get selectWifiNetwork => 'התחברות לרשת אלחוטית';
-
-  @override
-  String get hiddenWifiNetwork => 'התחברות לרשת אלחוטית נסתרת';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'שם הרשת';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'שם הרשת נחוץ';
-
-  @override
-  String get noInternet => 'לא רוצה להתחבר לאינטרנט כרגע';
-
-  @override
-  String get wirelessNetworkingDisabled => 'רשת אלחוטית מושבתת';
-
-  @override
-  String get noWifiDevicesDetected => 'לא זוהו התקני רשת אלחוטית';
-
-  @override
-  String get wifiMustBeEnabled => 'כדי להשתמש ברשת אלחוטית במחשב הזה, יש להפעיל את התקשורת האלחוטית';
-
-  @override
-  String get enableWifi => 'הפעלת רשת אלחוטית';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'יישומים ועדכונים';
 
   @override

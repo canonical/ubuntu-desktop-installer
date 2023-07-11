@@ -191,4 +191,52 @@ class UbuntuProvisionLocalizationsSi extends UbuntuProvisionLocalizations {
 
   @override
   String get activeDirectoryErrorMessage => 'Sorry, Active Directory can\'t be set up at the moment. Once your system is up and running, visit <a href=\"https://help.ubuntu.com/activedirectory\">help.ubuntu.com/activedirectory</a> for help.';
+
+  @override
+  String get networkPageTitle => 'අන්තර්ජාලයට සබඳින්න';
+
+  @override
+  String get networkPageHeader => 'මෙම පරිගණකය අන්තර්ජාලයට සම්බන්ධ කිරීමෙන් උබුන්ටු සඳහා අවශ්‍ය ඕනෑම අමතර මෘදුකාංගයක් ස්ථාපනයට මෙන්ම ඔබගේ වේලා කලාපය තෝරා ගැනීමට හැකිය.\n\nඊතර්නෙට් රැහැන සම්බන්ධ කරන්න හෝ වයි-ෆයි ජාලයක් තෝරන්න';
+
+  @override
+  String get networkWiredOption => 'රැහැන් සම්බන්ධතාවය යොදාගන්න';
+
+  @override
+  String get networkWiredNone => 'රැහැන් සම්බන්ධතාවයක් අනාවරණය නොවිණි';
+
+  @override
+  String get networkWiredOff => 'රැහැන් සම්බන්ධතාවය අක්‍රියයි';
+
+  @override
+  String get networkWiredDisabled => 'මෙම පරිගණකයේ ඊතර්නෙට් භාවිතයට, රැහැන්ගත සම්බන්ධතාවයක් සබල කළ යුතුය';
+
+  @override
+  String get networkWiredEnable => 'රැහැන්ගත සබල කරන්න';
+
+  @override
+  String get networkWifiOption => 'වයි-ෆයි ජාලයකට සබඳින්න';
+
+  @override
+  String get networkWifiOff => 'රැහැන් රහිත ජාලකරණය අබලයි';
+
+  @override
+  String get networkWifiNone => 'කිසිදු වයි-ෆයි උපාංගයක් අනාවරණය වී නැත';
+
+  @override
+  String get networkWifiDisabled => 'මෙම පරිගණකයේ වයි-ෆයි භාවිතයට, රැහැන් රහිත ජාලකරණය සබල කළ යුතුය';
+
+  @override
+  String get networkWifiEnable => 'වයි-ෆයි සබල කරන්න';
+
+  @override
+  String get networkHiddenWifiOption => 'සැඟවුණු වයි-ෆයි ජාලයකට සබඳින්න';
+
+  @override
+  String get networkHiddenWifiNameLabel => 'ජාලයේ නම';
+
+  @override
+  String get networkHiddenWifiNameRequired => 'ජාල නාමයක් වුවමනාය';
+
+  @override
+  String get networkNoneOption => 'දැන් අන්තර්ජාලයට සම්බන්ධ වීමට අවශ්‍ය නැත';
 }

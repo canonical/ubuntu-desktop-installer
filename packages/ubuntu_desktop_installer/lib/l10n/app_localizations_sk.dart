@@ -109,54 +109,6 @@ class AppLocalizationsSk extends AppLocalizations {
   String get showSecurityKey => 'Zobraziť kľúč zabezpečenia';
 
   @override
-  String get connectToInternetPageTitle => 'Pripojiť sa k sieti';
-
-  @override
-  String get connectToInternetDescription => 'Pripojenie počítača na Internet pomôže Ubuntu nainštalovať akýkoľvek potrebný dodatočný softvér a pomôže vybrať vaše časové pásmo.\n\nPripojte sa Ethernetovým káblom, alebo si vyberte Wi-Fi sieť';
-
-  @override
-  String get useWiredConnection => 'Použiť káblové pripojenie';
-
-  @override
-  String get noWiredConnection => 'Nezistilo sa žiadne káblové pripojenie';
-
-  @override
-  String get wiredDisabled => 'Káblové pripojenie je vypnuté';
-
-  @override
-  String get wiredMustBeEnabled => 'Aby na tomto počítači bolo možné použiť rozhranie Ethernet, je potrebné zapnúť káblové pripojenie';
-
-  @override
-  String get enableWired => 'Zapnúť káblové';
-
-  @override
-  String get selectWifiNetwork => 'Pripojiť sa k Wi-Fi sieti';
-
-  @override
-  String get hiddenWifiNetwork => 'Pripojiť sa k skrytej Wi-Fi sieti';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'Názov siete';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'Vyžaduje sa názov siete';
-
-  @override
-  String get noInternet => 'V tejto chvíli sa nechcem pripájať na Internet';
-
-  @override
-  String get wirelessNetworkingDisabled => 'Bezdrôtové pripojenie je vypnuté';
-
-  @override
-  String get noWifiDevicesDetected => 'Nezistili sa žiadne zariadenia Wi-Fi';
-
-  @override
-  String get wifiMustBeEnabled => 'Aby na tomto počítači bolo možné použiť rozhranie Wi-Fi, je potrebné zapnúť bezdrôtové pripojenie';
-
-  @override
-  String get enableWifi => 'Zapnúť Wi-Fi';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Aplikácie a aktualizácie';
 
   @override

@@ -120,9 +120,9 @@ Future<void> testNetworkPage(
   await tester.pumpUntilPage(NetworkPage);
 
   final context = tester.element(find.byType(NetworkPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = NetworkLocalizations.of(context);
 
-  expect(find.title(l10n.connectToInternetPageTitle), findsOneWidget);
+  expect(find.title(l10n.networkPageTitle), findsOneWidget);
 
   if (mode != null) {
     await tester.tapRadio<ConnectMode>(mode);

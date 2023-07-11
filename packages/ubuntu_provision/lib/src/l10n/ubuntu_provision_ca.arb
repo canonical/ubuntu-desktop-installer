@@ -58,5 +58,21 @@
   "identityConfirmPasswordLabel": "Confirmeu la contrasenya",
   "@identityConfirmPasswordLabel": {},
   "identityPasswordMismatch": "Les contrasenyes no coincideixen",
-  "@identityPasswordMismatch": {}
+  "@identityPasswordMismatch": {},
+  "networkPageTitle": "Connecta a internet",
+  "@networkPageTitle": {},
+  "networkWiredDisabled": "Per poder fer servir Ethernet a aquest ordinador, la connexió cablejada ha d'estar habilitada",
+  "@networkWiredDisabled": {},
+  "networkWifiOption": "Connectar a una xarxa Wi-Fi",
+  "@networkWifiOption": {},
+  "networkWifiOff": "Xarxa sense fils deshabilitada",
+  "@networkWifiOff": {},
+  "networkHiddenWifiOption": "Connecta a una xarxa Wi-Fi oculta",
+  "@networkHiddenWifiOption": {},
+  "networkHiddenWifiNameLabel": "Nom a la xarxa",
+  "@networkHiddenWifiNameLabel": {},
+  "networkHiddenWifiNameRequired": "Cal un nom de xarxa",
+  "@networkHiddenWifiNameRequired": {},
+  "networkNoneOption": "Ara mateix no vull connectar-me a Internet",
+  "@networkNoneOption": {}
 }

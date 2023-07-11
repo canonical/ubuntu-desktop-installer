@@ -109,54 +109,6 @@ class AppLocalizationsDa extends AppLocalizations {
   String get showSecurityKey => 'Vis sikkerhedsnøgle';
 
   @override
-  String get connectToInternetPageTitle => 'Opret forbindelse til et netværk';
-
-  @override
-  String get connectToInternetDescription => 'Tilslutning af denne computer til internettet, vil hjælpe Ubuntu, med at installere enhver ekstra nødvendig programvare og vælge din tidszone.\n\nOpret forbindelse via Ethernet-kabel, eller vælg et WiFi-netværk';
-
-  @override
-  String get useWiredConnection => 'Brug kablet forbindelse';
-
-  @override
-  String get noWiredConnection => 'Ingen kablet forbindelse opfanget';
-
-  @override
-  String get wiredDisabled => 'Kablet forbindelse er slået fra';
-
-  @override
-  String get wiredMustBeEnabled => 'En kablet forbindelse skal være aktiveret, for at bruge Ethernet på denne computer';
-
-  @override
-  String get enableWired => 'Aktivér kablet';
-
-  @override
-  String get selectWifiNetwork => 'Opret forbindelse til et WiFi-netværk';
-
-  @override
-  String get hiddenWifiNetwork => 'Opret forbindelse til et skjult WiFi-netværk';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'Netværksnavn';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'Et netværksnavn er påkrævet';
-
-  @override
-  String get noInternet => 'Jeg vil ikke oprette forbindelse til internettet lige nu';
-
-  @override
-  String get wirelessNetworkingDisabled => 'Trådløst netværk deaktiveret';
-
-  @override
-  String get noWifiDevicesDetected => 'Ingen WiFi-enheder opfanget';
-
-  @override
-  String get wifiMustBeEnabled => 'For at bruge WiFi på denne computer skal trådløst netværk være aktiveret';
-
-  @override
-  String get enableWifi => 'Aktivér WiFi';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'Applikationer og opdateringer';
 
   @override

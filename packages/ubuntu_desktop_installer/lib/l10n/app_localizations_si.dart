@@ -109,54 +109,6 @@ class AppLocalizationsSi extends AppLocalizations {
   String get showSecurityKey => 'ආරක්‍ෂණ යතුර පෙන්වන්න';
 
   @override
-  String get connectToInternetPageTitle => 'අන්තර්ජාලයට සබඳින්න';
-
-  @override
-  String get connectToInternetDescription => 'මෙම පරිගණකය අන්තර්ජාලයට සම්බන්ධ කිරීමෙන් උබුන්ටු සඳහා අවශ්‍ය ඕනෑම අමතර මෘදුකාංගයක් ස්ථාපනයට මෙන්ම ඔබගේ වේලා කලාපය තෝරා ගැනීමට හැකිය.\n\nඊතර්නෙට් රැහැන සම්බන්ධ කරන්න හෝ වයි-ෆයි ජාලයක් තෝරන්න';
-
-  @override
-  String get useWiredConnection => 'රැහැන් සම්බන්ධතාවය යොදාගන්න';
-
-  @override
-  String get noWiredConnection => 'රැහැන් සම්බන්ධතාවයක් අනාවරණය නොවිණි';
-
-  @override
-  String get wiredDisabled => 'රැහැන් සම්බන්ධතාවය අක්‍රියයි';
-
-  @override
-  String get wiredMustBeEnabled => 'මෙම පරිගණකයේ ඊතර්නෙට් භාවිතයට, රැහැන්ගත සම්බන්ධතාවයක් සබල කළ යුතුය';
-
-  @override
-  String get enableWired => 'රැහැන්ගත සබල කරන්න';
-
-  @override
-  String get selectWifiNetwork => 'වයි-ෆයි ජාලයකට සබඳින්න';
-
-  @override
-  String get hiddenWifiNetwork => 'සැඟවුණු වයි-ෆයි ජාලයකට සබඳින්න';
-
-  @override
-  String get hiddenWifiNetworkNameLabel => 'ජාලයේ නම';
-
-  @override
-  String get hiddenWifiNetworkNameRequired => 'ජාල නාමයක් වුවමනාය';
-
-  @override
-  String get noInternet => 'දැන් අන්තර්ජාලයට සම්බන්ධ වීමට අවශ්‍ය නැත';
-
-  @override
-  String get wirelessNetworkingDisabled => 'රැහැන් රහිත ජාලකරණය අබලයි';
-
-  @override
-  String get noWifiDevicesDetected => 'කිසිදු වයි-ෆයි උපාංගයක් අනාවරණය වී නැත';
-
-  @override
-  String get wifiMustBeEnabled => 'මෙම පරිගණකයේ වයි-ෆයි භාවිතයට, රැහැන් රහිත ජාලකරණය සබල කළ යුතුය';
-
-  @override
-  String get enableWifi => 'වයි-ෆයි සබල කරන්න';
-
-  @override
   String get updatesOtherSoftwarePageTitle => 'යාවත්කාල හා වෙනත් මෘදුකාංග';
 
   @override
