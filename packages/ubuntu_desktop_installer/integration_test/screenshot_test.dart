@@ -182,7 +182,7 @@ Future<void> main() async {
 
   testWidgets('6.alongside-windows', (tester) async {
     await tester.runApp(() => runInstallerApp([
-          '--machine-config=examples/win10.json',
+          '--machine-config=examples/machines/win10.json',
         ], theme: currentTheme));
     await tester.pumpAndSettle();
 
@@ -232,7 +232,7 @@ Future<void> main() async {
 
   testWidgets('7.guided-resize', (tester) async {
     await tester.runApp(() => runInstallerApp([
-          '--machine-config=examples/win10-along-ubuntu.json',
+          '--machine-config=examples/machines/win10-along-ubuntu.json',
           '--',
           '--bootloader=uefi',
         ], theme: currentTheme));
@@ -255,7 +255,7 @@ Future<void> main() async {
 
   testWidgets('7.guided-reformat', (tester) async {
     await tester.runApp(() => runInstallerApp([
-          '--machine-config=examples/imsm.json',
+          '--machine-config=examples/machines/imsm.json',
         ], theme: currentTheme));
     await tester.pumpAndSettle();
 
@@ -275,7 +275,7 @@ Future<void> main() async {
 
   testWidgets('7.bitlocker', (tester) async {
     await tester.runApp(() => runInstallerApp([
-          '--machine-config=examples/win10.json',
+          '--machine-config=examples/machines/win10.json',
         ], theme: currentTheme));
     await tester.pumpAndSettle();
 
@@ -293,7 +293,7 @@ Future<void> main() async {
 
   testWidgets('8.security-key', (tester) async {
     await tester.runApp(() => runInstallerApp([
-          '--machine-config=examples/win10-along-ubuntu.json',
+          '--machine-config=examples/machines/win10-along-ubuntu.json',
         ], theme: currentTheme));
     await tester.pumpAndSettle();
 
