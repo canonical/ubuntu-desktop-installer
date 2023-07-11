@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/connect_view.dart';
-import 'package:ubuntu_desktop_installer/pages/network/ethernet_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
+import 'package:ubuntu_provision/src/network/connect_model.dart';
+import 'package:ubuntu_provision/src/network/connect_view.dart';
+import 'package:ubuntu_provision/src/network/ethernet_model.dart';
+import 'package:ubuntu_provision/src/network/wifi_model.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 

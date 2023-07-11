@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/network/network_device.dart';
 import 'package:ubuntu_provision/services.dart';
+import 'package:ubuntu_provision/src/network/network_device.dart';
 
 import 'network_device_test.mocks.dart';
 import 'test_network.dart';

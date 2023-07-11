@@ -120,7 +120,7 @@ Future<void> testNetworkPage(
   await tester.pumpUntilPage(NetworkPage);
 
   final context = tester.element(find.byType(NetworkPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = NetworkLocalizations.of(context);
 
   expect(find.title(l10n.networkPageTitle), findsOneWidget);
 

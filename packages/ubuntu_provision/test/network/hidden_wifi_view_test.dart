@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/hidden_wifi_view.dart';
-import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
+import 'package:ubuntu_provision/l10n.dart';
+import 'package:ubuntu_provision/src/network/hidden_wifi_model.dart';
+import 'package:ubuntu_provision/src/network/hidden_wifi_view.dart';
+import 'package:ubuntu_provision/src/network/wifi_model.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
 
@@ -19,7 +20,10 @@ void main() {
   }) {
     return tester.pumpWidget(
       MaterialApp(
-        localizationsDelegates: localizationsDelegates,
+        localizationsDelegates: const [
+          UbuntuProvisionLocalizations.delegate,
+          ...GlobalUbuntuLocalizations.delegates,
+        ],
         home: ProviderScope(
           overrides: [
             hiddenWifiModelProvider.overrideWith((_) => model),

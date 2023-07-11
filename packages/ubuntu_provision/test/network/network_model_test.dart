@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/pages/network/connect_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/network_model.dart';
+import 'package:ubuntu_provision/src/network/connect_model.dart';
+import 'package:ubuntu_provision/src/network/network_model.dart';
 
 import 'test_network.dart';
 

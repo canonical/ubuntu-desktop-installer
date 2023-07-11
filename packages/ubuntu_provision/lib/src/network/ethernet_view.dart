@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'connect_model.dart';
 import 'ethernet_model.dart';
+import 'network_l10n.dart';
 import 'network_tile.dart';
 
 class EthernetRadioButton extends ConsumerWidget {
@@ -21,7 +21,7 @@ class EthernetRadioButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(ethernetModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = NetworkLocalizations.of(context);
     if (!model.isEnabled || model.devices.isEmpty) {
       return NetworkTile(
         leading: Icon(YaruIcons.window_close,
@@ -53,7 +53,7 @@ class EthernetView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = NetworkLocalizations.of(context);
     final model = ref.watch(ethernetModelProvider);
     if (model.devices.isNotEmpty && !model.isEnabled) {
       return NetworkTile(

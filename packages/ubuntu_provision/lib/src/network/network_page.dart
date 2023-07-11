@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -10,6 +10,7 @@ import 'ethernet_model.dart';
 import 'ethernet_view.dart';
 import 'hidden_wifi_model.dart';
 import 'hidden_wifi_view.dart';
+import 'network_l10n.dart';
 import 'network_model.dart';
 import 'wifi_model.dart';
 import 'wifi_view.dart';
@@ -35,7 +36,7 @@ class NetworkPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(networkModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = NetworkLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.networkPageTitle),

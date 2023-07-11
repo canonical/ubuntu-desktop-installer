@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/network/network_page.dart';
-import 'package:ubuntu_desktop_installer/pages/network/wifi_model.dart';
-import 'package:ubuntu_desktop_installer/pages/network/wifi_view.dart';
+import 'package:ubuntu_provision/src/network/network_l10n.dart';
+import 'package:ubuntu_provision/src/network/network_page.dart';
+import 'package:ubuntu_provision/src/network/wifi_model.dart';
+import 'package:ubuntu_provision/src/network/wifi_view.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
@@ -141,7 +141,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(WifiView));
-    final l10n = AppLocalizations.of(context);
+    final l10n = NetworkLocalizations.of(context);
 
     expect(find.byType(WifiListView), findsNothing);
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
@@ -182,7 +182,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(WifiView));
-    final l10n = AppLocalizations.of(context);
+    final l10n = NetworkLocalizations.of(context);
 
     expect(find.byType(WifiListView), findsNothing);
     expect(find.byType(YaruRadioButton<ConnectMode>), findsNothing);
