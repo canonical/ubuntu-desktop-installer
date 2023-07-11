@@ -38,8 +38,7 @@ dependencies:
   split_view: ^3.2.1
   stdlibc: ^0.1.0
   subiquity_client:
-    git:
-      url: https://github.com/canonical/subiquity_client.dart.git
+    path: ../subiquity_client
   timezone_map:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
@@ -48,20 +47,14 @@ dependencies:
   ubuntu_localizations: ^0.3.3
   ubuntu_logger: ^0.0.3
   ubuntu_provision:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/ubuntu_provision
+    path: ../ubuntu_provision
   ubuntu_service: ^0.2.2
   ubuntu_session: ^0.0.4
   ubuntu_utils:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/ubuntu_utils
+    path: ../ubuntu_utils
   ubuntu_widgets: ^0.1.0
   ubuntu_wizard:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/ubuntu_wizard
+    path: ../ubuntu_wizard
   udev: ^0.0.3
   yaru: ^0.9.0
   yaru_icons: ^1.0.0
@@ -78,9 +71,7 @@ dev_dependencies:
     sdk: flutter
   mockito: 5.4.2
   subiquity_test:
-    git:
-      url: https://github.com/canonical/subiquity_client.dart.git
-      path: packages/subiquity_test
+    path: ../subiquity_client/packages/subiquity_test
   ubuntu_test: ^0.1.0-0
   yaml: ^3.1.0
   yaru_test: ^0.1.0

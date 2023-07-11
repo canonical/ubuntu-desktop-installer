@@ -25,8 +25,7 @@ dependencies:
   safe_change_notifier: ^0.3.0
   stdlibc: ^0.1.0
   subiquity_client:
-    git:
-      url: https://github.com/canonical/subiquity_client.dart.git
+    path: ../subiquity_client
   timezone_map:
     git:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
@@ -38,14 +37,10 @@ dependencies:
   ubuntu_service: ^0.2.2
   ubuntu_session: ^0.0.4
   ubuntu_utils:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/ubuntu_utils
+    path: ../ubuntu_utils
   ubuntu_widgets: ^0.1.0
   ubuntu_wizard:
-    git:
-      url: https://github.com/canonical/ubuntu-desktop-installer.git
-      path: packages/ubuntu_wizard
+    path: ../ubuntu_wizard
   udev: ^0.0.3
   upower: ^0.7.0
   yaru: ^0.9.0
