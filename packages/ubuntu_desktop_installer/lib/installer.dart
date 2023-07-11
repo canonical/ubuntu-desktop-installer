@@ -36,11 +36,11 @@ Future<void> runInstallerApp(
         help: 'Run Subiquity server in dry-run mode');
     parser.addOption('machine-config',
         valueHelp: 'path',
-        defaultsTo: 'examples/simple.json',
+        defaultsTo: 'examples/machines/simple.json',
         help: 'Path of the machine config (dry-run only)');
     parser.addOption('source-catalog',
         valueHelp: 'path',
-        defaultsTo: 'examples/desktop-sources.yaml',
+        defaultsTo: 'examples/sources/desktop.yaml',
         help: 'Path of the source catalog (dry-run only)');
     parser.addFlag('welcome', aliases: ['try-or-install'], hide: true);
     parser.addOption('routes',

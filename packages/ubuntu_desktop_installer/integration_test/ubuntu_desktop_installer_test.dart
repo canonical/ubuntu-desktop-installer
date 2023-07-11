@@ -198,7 +198,7 @@ void main() {
 
   testWidgets('alongside windows', (tester) async {
     await tester.runApp(() => app.main(<String>[
-          '--machine-config=examples/win10-along-ubuntu.json',
+          '--machine-config=examples/machines/win10-along-ubuntu.json',
           '--',
           '--bootloader=uefi',
         ]));
@@ -254,8 +254,7 @@ void main() {
 
   testWidgets('turn off bitlocker', (tester) async {
     await tester.runApp(() => app.main(<String>[
-          '--machine-config',
-          'examples/win10.json',
+          '--machine-config=examples/machines/win10.json',
         ]));
     await tester.pumpAndSettle();
 
@@ -295,7 +294,7 @@ void main() {
   testWidgets('semi-automated autoinstall', (tester) async {
     await tester.runApp(() => app.main(<String>[
           '--',
-          '--autoinstall=examples/autoinstall-interactive.yaml',
+          '--autoinstall=examples/autoinstall/interactive.yaml',
         ]));
     await tester.pumpAndSettle();
 
