@@ -16,12 +16,6 @@ class AppLocalizationsNb extends AppLocalizations {
   String get changeButtonText => 'Endre';
 
   @override
-  String get restartButtonText => 'Start på nytt';
-
-  @override
-  String get revertButtonText => 'Tilbakefør';
-
-  @override
   String get quitButtonText => 'Avslutt installasjon';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get enableWifi => 'Aktivere trådløs';
-
-  @override
-  String get connectButtonText => 'Tilkoble';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Oppdateringer og annet programvare';

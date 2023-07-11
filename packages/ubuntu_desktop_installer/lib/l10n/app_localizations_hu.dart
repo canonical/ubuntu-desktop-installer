@@ -16,12 +16,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get changeButtonText => 'Változtatás';
 
   @override
-  String get restartButtonText => 'Újraindítás';
-
-  @override
-  String get revertButtonText => 'Visszaállítás';
-
-  @override
   String get quitButtonText => 'Kilépés a telepítésből';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get enableWifi => 'Wi-Fi engedélyezése';
-
-  @override
-  String get connectButtonText => 'Kapcsolódás';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Alkalmazások és frissítések';

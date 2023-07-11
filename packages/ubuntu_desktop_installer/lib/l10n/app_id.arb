@@ -15,8 +15,6 @@
   "@secureBootSecurityKeysDontMatch": {},
   "windowTitle": "Pasang {RELEASE}",
   "@windowTitle": {},
-  "restartButtonText": "Jalankan Ulang",
-  "@restartButtonText": {},
   "welcomeInstallOption": "Pasang {RELEASE}",
   "@welcomeInstallOption": {},
   "welcomeTryDescription": "Anda dapat mencoba {RELEASE} tanpa membuat perubahan apa pun pada komputer Anda.",
@@ -111,8 +109,6 @@
   "@appTitle": {},
   "changeButtonText": "Ubah",
   "@changeButtonText": {},
-  "revertButtonText": "Kembalikan",
-  "@revertButtonText": {},
   "welcome": "Selamat Datang",
   "@welcome": {},
   "welcomePageTitle": "Coba atau pasang",
@@ -308,8 +304,6 @@
   "@wifiMustBeEnabled": {},
   "enableWifi": "Fungsikan Wi-Fi",
   "@enableWifi": {},
-  "connectButtonText": "Sambungkan",
-  "@connectButtonText": {},
   "@welcomeSlideDescription": {
     "type": "text",
     "placeholders": {

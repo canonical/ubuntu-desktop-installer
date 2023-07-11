@@ -16,12 +16,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get changeButtonText => 'Изменить';
 
   @override
-  String get restartButtonText => 'Перезагрузить';
-
-  @override
-  String get revertButtonText => 'Вернуть';
-
-  @override
   String get quitButtonText => 'Отменить установку';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get enableWifi => 'Включить Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Соединение';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Приложения и обновления';

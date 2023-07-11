@@ -16,12 +16,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get changeButtonText => '変更';
 
   @override
-  String get restartButtonText => '再起動';
-
-  @override
-  String get revertButtonText => '元に戻す';
-
-  @override
   String get quitButtonText => 'インストールを終了';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get enableWifi => 'Wi-Fi を有効にする';
-
-  @override
-  String get connectButtonText => '接続';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'アプリケーションとアップデート';

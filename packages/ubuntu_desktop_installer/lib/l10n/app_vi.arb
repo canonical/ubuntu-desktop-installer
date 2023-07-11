@@ -2,8 +2,6 @@
   "@@locale": "vi",
   "welcome": "Chào mừng",
   "@welcome": {},
-  "restartButtonText": "Khởi động lại",
-  "@restartButtonText": {},
   "changeButtonText": "Thay đổi",
   "@changeButtonText": {},
   "@keyboardHeader": {}

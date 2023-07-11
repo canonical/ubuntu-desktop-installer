@@ -16,12 +16,6 @@ class AppLocalizationsSi extends AppLocalizations {
   String get changeButtonText => 'වෙනස් කරන්න';
 
   @override
-  String get restartButtonText => 'යළි අරඹන්න';
-
-  @override
-  String get revertButtonText => 'ප්‍රතිවර්තනය';
-
-  @override
   String get quitButtonText => 'ස්ථාපනයෙන් ඉවතට';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get enableWifi => 'වයි-ෆයි සබල කරන්න';
-
-  @override
-  String get connectButtonText => 'සබඳින්න';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'යාවත්කාල හා වෙනත් මෘදුකාංග';

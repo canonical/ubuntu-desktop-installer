@@ -1,7 +1,5 @@
 {
   "@@locale": "ga",
-  "revertButtonText": "Fill",
-  "@revertButtonText": {},
   "welcome": "Fáilte",
   "@welcome": {},
   "windowTitle": "Suiteáil {RELEASE}",

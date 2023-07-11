@@ -16,12 +16,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get changeButtonText => '바꾸기';
 
   @override
-  String get restartButtonText => '다시 시작';
-
-  @override
-  String get revertButtonText => '되돌리기';
-
-  @override
   String get quitButtonText => '인스톨러 닫기';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get enableWifi => 'Wi-Fi 활성화';
-
-  @override
-  String get connectButtonText => '연결하기';
 
   @override
   String get updatesOtherSoftwarePageTitle => '애플리케이션 및 업데이트';

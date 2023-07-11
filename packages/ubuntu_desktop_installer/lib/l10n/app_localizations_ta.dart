@@ -16,12 +16,6 @@ class AppLocalizationsTa extends AppLocalizations {
   String get changeButtonText => 'மாற்று';
 
   @override
-  String get restartButtonText => 'மீண்டும் இயக்கு';
-
-  @override
-  String get revertButtonText => 'மீட்டல்';
-
-  @override
   String get quitButtonText => 'Quit installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get enableWifi => 'Enable Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Applications and updates';

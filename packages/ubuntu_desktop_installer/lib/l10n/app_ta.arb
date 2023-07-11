@@ -66,8 +66,6 @@
       "RELEASE": {}
     }
   },
-  "revertButtonText": "மீட்டல்",
-  "@revertButtonText": {},
   "welcome": "நல்வரவு",
   "@welcome": {},
   "welcomePageTitle": "சோதி அல்லது நிறுவு",
@@ -86,8 +84,6 @@
       "RELEASE": {}
     }
   },
-  "restartButtonText": "மீண்டும் இயக்கு",
-  "@restartButtonText": {},
   "rstTitle": "RSTயை முடக்கு",
   "@rstTitle": {},
   "@keyboardKeyPresentLabel": {}

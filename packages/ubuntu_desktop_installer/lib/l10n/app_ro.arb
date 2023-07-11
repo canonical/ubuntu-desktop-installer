@@ -1,7 +1,5 @@
 {
   "@@locale": "ro",
   "changeButtonText": "Schimbă",
-  "@changeButtonText": {},
-  "restartButtonText": "Repornește",
-  "@restartButtonText": {}
+  "@changeButtonText": {}
 }

@@ -16,12 +16,6 @@ class AppLocalizationsMl extends AppLocalizations {
   String get changeButtonText => 'മാറ്റുക';
 
   @override
-  String get restartButtonText => 'പുനരാരംഭിക്കുക';
-
-  @override
-  String get revertButtonText => 'തിരിച്ചെടുക്കുക';
-
-  @override
   String get quitButtonText => 'Quit installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get enableWifi => 'Wi-Fi പ്രവർത്തനക്ഷമമാക്കുക';
-
-  @override
-  String get connectButtonText => 'ബന്ധിപ്പിക്കുക';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'അപ്ഡേറ്റുകളും മറ്റ് സോഫ്റ്റ്വെയറുകളും';

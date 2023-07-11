@@ -246,10 +246,7 @@ void main() {
     final model = buildManualStorageModel();
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
-    final context = tester.element(find.byType(ManualStoragePage));
-    final l10n = AppLocalizations.of(context);
-
-    final revertButton = find.button(l10n.revertButtonText);
+    final revertButton = find.button(find.ul10n((l10n) => l10n.revertLabel));
     expect(revertButton, findsOneWidget);
     expect(revertButton, isEnabled);
 

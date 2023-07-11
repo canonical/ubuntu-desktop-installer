@@ -16,12 +16,6 @@ class AppLocalizationsNe extends AppLocalizations {
   String get changeButtonText => 'बदल्नुहोस्';
 
   @override
-  String get restartButtonText => 'फेरि सुरु गर्नुहोस्';
-
-  @override
-  String get revertButtonText => 'फिर्ता गर्नुहोस्';
-
-  @override
   String get quitButtonText => 'Quit installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsNe extends AppLocalizations {
 
   @override
   String get enableWifi => 'Enable Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Applications and updates';

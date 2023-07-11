@@ -16,12 +16,6 @@ class AppLocalizationsSr extends AppLocalizations {
   String get changeButtonText => 'Измени';
 
   @override
-  String get restartButtonText => 'Рестартуј';
-
-  @override
-  String get revertButtonText => 'Поврати';
-
-  @override
   String get quitButtonText => 'Напусти инсталацију';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsSr extends AppLocalizations {
 
   @override
   String get enableWifi => 'Enable Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Applications and updates';

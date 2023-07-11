@@ -9,8 +9,6 @@
       "RELEASE": {}
     }
   },
-  "connectButtonText": "连接",
-  "@connectButtonText": {},
   "selectWifiNetwork": "连接到 Wi-Fi 网络",
   "@selectWifiNetwork": {},
   "noInternet": "我现在不想连接到互联网",
@@ -23,8 +21,6 @@
   "@normalInstallationSubtitle": {},
   "changeButtonText": "更改",
   "@changeButtonText": {},
-  "restartButtonText": "重启",
-  "@restartButtonText": {},
   "welcome": "欢迎",
   "@welcome": {},
   "welcomePageTitle": "试用或安装{DISTRO}",
@@ -300,8 +296,6 @@
   "@diskHeadersType": {},
   "diskHeadersMountPoint": "挂载点",
   "@diskHeadersMountPoint": {},
-  "revertButtonText": "撤销",
-  "@revertButtonText": {},
   "welcomeTryOption": "试用 {RELEASE}",
   "@welcomeTryOption": {
     "type": "text",

@@ -24,9 +24,5 @@
     }
   },
   "changeButtonText": "ለውጥ",
-  "@changeButtonText": {},
-  "restartButtonText": "እንደገና ጀምር",
-  "@restartButtonText": {},
-  "revertButtonText": "ወደ ነበረበት መመለስ",
-  "@revertButtonText": {}
+  "@changeButtonText": {}
 }

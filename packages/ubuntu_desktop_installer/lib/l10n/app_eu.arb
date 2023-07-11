@@ -20,8 +20,6 @@
   "@wifiMustBeEnabled": {},
   "enableWifi": "Gaitu Wi-Fia",
   "@enableWifi": {},
-  "connectButtonText": "Konektatu",
-  "@connectButtonText": {},
   "updatesOtherSoftwarePageTitle": "Eguneraketak eta beste softwarea",
   "@updatesOtherSoftwarePageTitle": {},
   "updatesOtherSoftwarePageDescription": "Zeintzuk aplikazio instalatu nahi zenituzke hasteko?",
@@ -125,8 +123,6 @@
   "@noWiredConnection": {},
   "wiredDisabled": "Kable bidezko konexioa desaktibatuta dago",
   "@wiredDisabled": {},
-  "restartButtonText": "Berrabiarazi",
-  "@restartButtonText": {},
   "wiredMustBeEnabled": "Ordenagailu honetan Ethernet erabiltzeko, kable bidezko konexioa gaitu behar da",
   "@wiredMustBeEnabled": {},
   "hiddenWifiNetwork": "Konektatu ezkutuko Wi-Fi sare batera",
@@ -134,7 +130,5 @@
   "welcome": "Ongi etorri",
   "@welcome": {},
   "normalInstallationSubtitle": "Web nabigatzailea, utilitateak, bulegotika softwarea, jokoak eta multimedia-erreproduzitzaileak.",
-  "@normalInstallationSubtitle": {},
-  "revertButtonText": "Berrezarri",
-  "@revertButtonText": {}
+  "@normalInstallationSubtitle": {}
 }

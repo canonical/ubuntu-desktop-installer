@@ -16,12 +16,6 @@ class AppLocalizationsDa extends AppLocalizations {
   String get changeButtonText => 'Skift';
 
   @override
-  String get restartButtonText => 'Genstart';
-
-  @override
-  String get revertButtonText => 'Tilbagefør';
-
-  @override
   String get quitButtonText => 'Forlad installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get enableWifi => 'Aktivér WiFi';
-
-  @override
-  String get connectButtonText => 'Opret forbindelse';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Applikationer og opdateringer';

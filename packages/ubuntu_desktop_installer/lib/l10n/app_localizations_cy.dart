@@ -16,12 +16,6 @@ class AppLocalizationsCy extends AppLocalizations {
   String get changeButtonText => 'Newid';
 
   @override
-  String get restartButtonText => 'Ailgychwyn';
-
-  @override
-  String get revertButtonText => 'Dychwelyd';
-
-  @override
   String get quitButtonText => 'Quit installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsCy extends AppLocalizations {
 
   @override
   String get enableWifi => 'Enable Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Cysylltu';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Diweddariadau a meddalwedd eraill';

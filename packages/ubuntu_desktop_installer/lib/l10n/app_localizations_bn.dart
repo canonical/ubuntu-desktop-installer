@@ -16,12 +16,6 @@ class AppLocalizationsBn extends AppLocalizations {
   String get changeButtonText => 'পরিবর্তন';
 
   @override
-  String get restartButtonText => 'Restart';
-
-  @override
-  String get revertButtonText => 'পূর্বাবস্থায় প্রত্যাবর্তন';
-
-  @override
   String get quitButtonText => 'Quit installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get enableWifi => 'Enable Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Applications and updates';

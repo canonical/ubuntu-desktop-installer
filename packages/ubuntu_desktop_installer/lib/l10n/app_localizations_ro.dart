@@ -16,12 +16,6 @@ class AppLocalizationsRo extends AppLocalizations {
   String get changeButtonText => 'Schimbă';
 
   @override
-  String get restartButtonText => 'Repornește';
-
-  @override
-  String get revertButtonText => 'Revert';
-
-  @override
   String get quitButtonText => 'Quit installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get enableWifi => 'Enable Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Applications and updates';

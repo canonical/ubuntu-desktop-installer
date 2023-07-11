@@ -9,10 +9,6 @@
       "RELEASE": {}
     }
   },
-  "restartButtonText": "फेरि सुरु गर्नुहोस्",
-  "@restartButtonText": {},
-  "revertButtonText": "फिर्ता गर्नुहोस्",
-  "@revertButtonText": {},
   "welcome": "स्वागत छ",
   "@welcome": {},
   "welcomePageTitle": "प्रयास गर्नुहोस् वा स्थापना गर्नुहोस्",

@@ -16,12 +16,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get changeButtonText => 'Změnit';
 
   @override
-  String get restartButtonText => 'Restartovat';
-
-  @override
-  String get revertButtonText => 'Vrátit zpět';
-
-  @override
   String get quitButtonText => 'Opustit instalaci';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get enableWifi => 'Zapnout Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Připojit';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Aplikace a aktualizace';

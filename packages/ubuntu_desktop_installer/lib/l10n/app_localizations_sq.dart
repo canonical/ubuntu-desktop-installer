@@ -16,12 +16,6 @@ class AppLocalizationsSq extends AppLocalizations {
   String get changeButtonText => 'Ndrysho';
 
   @override
-  String get restartButtonText => 'Rinis';
-
-  @override
-  String get revertButtonText => 'Rikthe';
-
-  @override
   String get quitButtonText => 'Dil nga instalimi';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get enableWifi => 'Aktivizo Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Lidhu';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Përditësime dhe programe të tjera';

@@ -7,8 +7,6 @@
       "url": {}
     }
   },
-  "restartButtonText": "הפעלה מחדש",
-  "@restartButtonText": {},
   "welcomeReleaseNotesLabel": "ממליצים לך לקרוא את <a href=\"{url}\">הערות ההוצאה לאור</a>.",
   "@welcomeReleaseNotesLabel": {
     "type": "text",
@@ -18,8 +16,6 @@
   },
   "dontInstallDriverSoftwareNowDescription": "אפשר להתקין מאוחר יותר דרך תכנה ועדכונים.",
   "@dontInstallDriverSoftwareNowDescription": {},
-  "revertButtonText": "החזרה",
-  "@revertButtonText": {},
   "changeButtonText": "שינוי",
   "@changeButtonText": {},
   "welcomeTryDescription": "אפשר להתנסות ב־{RELEASE} מבלי לערוך שינויים במחשב שלך.",
@@ -297,8 +293,6 @@
   "@wirelessNetworkingDisabled": {},
   "enableWifi": "הפעלת רשת אלחוטית",
   "@enableWifi": {},
-  "connectButtonText": "התחברות",
-  "@connectButtonText": {},
   "newPartitionTableConfirmationMessage": "יצירת טבלת מחיצות חדשה על כל הכונן תסיר את כל המחיצות הנוכחיות שלו. אי אפשר להשתקם מהפעולה הזאת במקרה הצורך.",
   "@newPartitionTableConfirmationMessage": {},
   "newPartitionTableConfirmationTitle": "מחיצה ריקה חדשה",

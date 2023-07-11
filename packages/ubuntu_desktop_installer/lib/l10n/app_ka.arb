@@ -13,12 +13,8 @@
       "RELEASE": {}
     }
   },
-  "restartButtonText": "გადატვირთვა",
-  "@restartButtonText": {},
   "changeButtonText": "შეცვლა",
   "@changeButtonText": {},
-  "revertButtonText": "აღდგენა",
-  "@revertButtonText": {},
   "welcomeRepairOption": "დაყენებული ვერსიის შეკეთება",
   "@welcomeRepairOption": {},
   "welcome": "მოგესალმებით",

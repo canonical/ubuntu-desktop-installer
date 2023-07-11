@@ -16,12 +16,6 @@ class AppLocalizationsSk extends AppLocalizations {
   String get changeButtonText => 'Zmeniť';
 
   @override
-  String get restartButtonText => 'Reštartovať';
-
-  @override
-  String get revertButtonText => 'Vrátiť späť';
-
-  @override
   String get quitButtonText => 'Opustiť inštaláciu';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get enableWifi => 'Zapnúť Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Pripojiť';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Aplikácie a aktualizácie';

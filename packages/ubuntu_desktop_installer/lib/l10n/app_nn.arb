@@ -1,7 +1,5 @@
 {
   "@@locale": "nn",
-  "revertButtonText": "Tilbakestill",
-  "@revertButtonText": {},
   "windowTitle": "Installer {RELEASE}",
   "@windowTitle": {
     "type": "text",
