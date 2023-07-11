@@ -480,78 +480,6 @@ class AppLocalizationsSi extends AppLocalizations {
   String get partitionMountPointLabel => 'සවිවන ස්ථානය:';
 
   @override
-  String get identityPageTitle => 'ඔබ කවුද?';
-
-  @override
-  String get identityAutoLogin => 'ස්වයංක්‍රීයව පිවිසෙන්න';
-
-  @override
-  String get identityRequirePassword => 'ප්‍රවේශය සඳහා මාගේ මුරපදය වුවමනාය';
-
-  @override
-  String get identityRealNameLabel => 'ඔබගේ නම';
-
-  @override
-  String get identityRealNameRequired => 'නමක් වුවමනාය';
-
-  @override
-  String get identityRealNameTooLong => 'That name is too long.';
-
-  @override
-  String get identityHostnameLabel => 'ඔබගේ පරිගණකයේ නම';
-
-  @override
-  String get identityHostnameInfo => 'වෙනත් පරිගණක වෙත අමතන විට නම භාවිතා වේ.';
-
-  @override
-  String get identityHostnameRequired => 'පරිගණකයට නමක් වුවමනාය';
-
-  @override
-  String get identityHostnameTooLong => 'That computer name is too long.';
-
-  @override
-  String get identityInvalidHostname => 'පරිගණකයේ නම වැරදිය';
-
-  @override
-  String get identityUsernameLabel => 'පරිශ්‍රීලක නාමයක් තෝරන්න';
-
-  @override
-  String get identityUsernameRequired => 'පරිශ්‍රීලක නාමයක් වුවමනාය';
-
-  @override
-  String get identityInvalidUsername => 'පරිශ්‍රීලක නාමය වැරදිය';
-
-  @override
-  String get identityUsernameInUse => 'පරිශ්‍රීලක නාමය දැනටමත් පවතී.';
-
-  @override
-  String get identityUsernameSystemReserved => 'එම නම පද්ධතියේ භාවිතයට වෙන් කර ඇත.';
-
-  @override
-  String get identityUsernameTooLong => 'නම ඉතා දිගයි.';
-
-  @override
-  String get identityUsernameInvalidChars => 'නමෙහි වලංගු නොවන අකුරු අඩංගුය.';
-
-  @override
-  String get identityPasswordLabel => 'මුරපදයක් තෝරන්න';
-
-  @override
-  String get identityPasswordRequired => 'මුරපදයක් වුවමනාය';
-
-  @override
-  String get identityConfirmPasswordLabel => 'මුරපදය තහවුරු කරන්න';
-
-  @override
-  String get identityPasswordMismatch => 'මුරපද නොගැළපේ';
-
-  @override
-  String get identityPasswordShow => 'පෙන්වන්න';
-
-  @override
-  String get identityPasswordHide => 'සඟවන්න';
-
-  @override
   String get confirmPageTitle => 'වෙනස්කම් තැටියට ලියන්න';
 
   @override
@@ -795,12 +723,6 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get notEnoughDiskSpaceRequired => 'Required:';
-
-  @override
-  String get activeDirectoryOption => 'Use Active Directory';
-
-  @override
-  String get activeDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
 
   @override
   String get activeDirectoryTitle => 'Configure Active Directory';

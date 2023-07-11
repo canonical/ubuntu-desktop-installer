@@ -56,4 +56,82 @@ class UbuntuProvisionLocalizationsJa extends UbuntuProvisionLocalizations {
 
   @override
   String get localeHeader => '使用する言語を選択してください。';
+
+  @override
+  String get identityPageTitle => 'アカウントの設定';
+
+  @override
+  String get identityAutoLogin => '自動的にログインする';
+
+  @override
+  String get identityRequirePassword => 'ログイン時にパスワードを要求する';
+
+  @override
+  String get identityRealNameLabel => 'あなたの名前';
+
+  @override
+  String get identityRealNameRequired => '名前を入力してください';
+
+  @override
+  String get identityRealNameTooLong => 'その名前は長すぎます。';
+
+  @override
+  String get identityHostnameLabel => 'コンピューターの名前';
+
+  @override
+  String get identityHostnameInfo => '他のコンピューターと通信するときに使用する名前です。';
+
+  @override
+  String get identityHostnameRequired => 'コンピューターの名前を入力してください';
+
+  @override
+  String get identityHostnameTooLong => 'その名前は長すぎます。';
+
+  @override
+  String get identityInvalidHostname => 'このコンピューターの名前は使用できません';
+
+  @override
+  String get identityUsernameLabel => 'ユーザー名を入力';
+
+  @override
+  String get identityUsernameRequired => 'ユーザー名を入力してください';
+
+  @override
+  String get identityInvalidUsername => 'このユーザー名は使用できません';
+
+  @override
+  String get identityUsernameInUse => 'そのユーザー名は既に存在します。';
+
+  @override
+  String get identityUsernameSystemReserved => 'その名前はシステムが使用するため、予約されています。';
+
+  @override
+  String get identityUsernameTooLong => 'その名前は長すぎます。';
+
+  @override
+  String get identityUsernameInvalidChars => 'その名前には無効な文字が含まれています。';
+
+  @override
+  String get identityPasswordLabel => 'パスワードを決めてください。';
+
+  @override
+  String get identityPasswordRequired => 'パスワードを入力してください';
+
+  @override
+  String get identityConfirmPasswordLabel => 'パスワードをもう一度入力';
+
+  @override
+  String get identityPasswordMismatch => 'パスワードが一致しません';
+
+  @override
+  String get identityPasswordShow => '表示';
+
+  @override
+  String get identityPasswordHide => '非表示';
+
+  @override
+  String get identityActiveDirectoryOption => 'アクティブディレクトリを使用する';
+
+  @override
+  String get identityActiveDirectoryInfo => '次のステップでドメインやその他の詳細を入力します。';
 }

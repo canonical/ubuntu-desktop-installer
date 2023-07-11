@@ -1,7 +1,5 @@
 {
   "@@locale": "sq",
-  "identityRealNameLabel": "Emri juaj",
-  "@identityRealNameLabel": {},
   "configuringSystem": "Duke parametrizuar kompjuterin tënd…",
   "@configuringSystem": {},
   "installationFailed": "Instalimi dështoi",
@@ -97,8 +95,6 @@
   "@partitionMountPointLabel": {},
   "shutdown": "Ndalo punën",
   "@shutdown": {},
-  "identityPageTitle": "Kush jeni ju?",
-  "@identityPageTitle": {},
   "installationCompleteTitle": "Instalimi u Kompletua",
   "@installationCompleteTitle": {},
   "restartNow": "Rindize Tani",
@@ -149,16 +145,8 @@
   "@selectGuidedStorageInfoLabel": {},
   "diskHeadersDevice": "Pajisja",
   "@diskHeadersDevice": {},
-  "identityRequirePassword": "Kërko fjalëkalimin tim për të hyrë",
-  "@identityRequirePassword": {},
   "installAlongsideAvailable": "Në dispozicion:",
   "@installAlongsideAvailable": {},
-  "identityAutoLogin": "Hyr automatikisht",
-  "@identityAutoLogin": {},
-  "identityHostnameInfo": "Emri që ai përdor kur flet me kompjuterat e tjerë.",
-  "@identityHostnameInfo": {},
-  "identityPasswordLabel": "Zgjidh një fjalëkalim",
-  "@identityPasswordLabel": {},
   "installationTypeLVMSelected": "LVM e selektuare",
   "@installationTypeLVMSelected": {}
 }

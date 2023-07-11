@@ -480,78 +480,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get partitionMountPointLabel => 'نقطهٔ سوار کردن:';
 
   @override
-  String get identityPageTitle => 'برپایی حسابتان';
-
-  @override
-  String get identityAutoLogin => 'ورود خودکار';
-
-  @override
-  String get identityRequirePassword => 'برای ورود گذر‌واژه لازم است';
-
-  @override
-  String get identityRealNameLabel => 'نامتان';
-
-  @override
-  String get identityRealNameRequired => 'نامی لازم است';
-
-  @override
-  String get identityRealNameTooLong => 'نام بیش از حد طولانی است.';
-
-  @override
-  String get identityHostnameLabel => 'نام رایانه‌تان';
-
-  @override
-  String get identityHostnameInfo => 'نامی که هنگام صحبت با دیگر رایانه‌ها استفاده می‌کند.';
-
-  @override
-  String get identityHostnameRequired => 'نام رایانه‌ای لازم است';
-
-  @override
-  String get identityHostnameTooLong => 'نام رایانه بیش از حد طولانی است.';
-
-  @override
-  String get identityInvalidHostname => 'نام رایانه نامعتبر است';
-
-  @override
-  String get identityUsernameLabel => 'گزینش نام کاربری';
-
-  @override
-  String get identityUsernameRequired => 'نام کاربری‌ای لازم است';
-
-  @override
-  String get identityInvalidUsername => 'نام کاربری نامعتبر است';
-
-  @override
-  String get identityUsernameInUse => 'این نام کاربری از پیش وجود دارد.';
-
-  @override
-  String get identityUsernameSystemReserved => 'این نام برای استفادهٔ سامانه کنار گذاشته شده.';
-
-  @override
-  String get identityUsernameTooLong => 'نام بیش از حد طولانی است.';
-
-  @override
-  String get identityUsernameInvalidChars => 'نام دارای نویسه‌های نامعتبر است.';
-
-  @override
-  String get identityPasswordLabel => 'گزینش گذرواژه';
-
-  @override
-  String get identityPasswordRequired => 'گذرواژه‌ای لازم است';
-
-  @override
-  String get identityConfirmPasswordLabel => 'تأیید گذرواژه‌تان';
-
-  @override
-  String get identityPasswordMismatch => 'گذرواژه‌ها یکسان نیستند';
-
-  @override
-  String get identityPasswordShow => 'نمایش';
-
-  @override
-  String get identityPasswordHide => 'نهفتن';
-
-  @override
   String get confirmPageTitle => 'آمادهٔ نصب';
 
   @override
@@ -795,12 +723,6 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get notEnoughDiskSpaceRequired => 'لازم:';
-
-  @override
-  String get activeDirectoryOption => 'استفاده از شاخهٔ فعّال';
-
-  @override
-  String get activeDirectoryInfo => 'در گام بعدی دامنه و دیگر حزییات را وارد خواهید کرد.';
 
   @override
   String get activeDirectoryTitle => 'پیکربندی شاخهٔ فعّال';

@@ -1,8 +1,9 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_desktop_installer/l10n.dart';
-import 'package:ubuntu_desktop_installer/pages/identity/identity_page.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
+import 'package:ubuntu_provision/src/identity/identity_l10n.dart';
+import 'package:ubuntu_provision/src/identity/identity_page.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 import 'package:yaru_test/yaru_test.dart';
@@ -172,7 +173,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = IdentityLocalizations.of(context);
 
     final requiredPasswordSwitch = find.switchButton(
       l10n.identityRequirePassword,
@@ -189,7 +190,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = IdentityLocalizations.of(context);
 
     final showPasswordButton = find.button(l10n.identityPasswordShow);
     expect(showPasswordButton, findsOneWidget);
@@ -203,7 +204,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = IdentityLocalizations.of(context);
 
     final hidePasswordButton = find.button(l10n.identityPasswordHide);
     expect(hidePasswordButton, findsOneWidget);
@@ -226,9 +227,9 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = IdentityLocalizations.of(context);
 
-    final checkbox = find.checkButton(l10n.activeDirectoryOption);
+    final checkbox = find.checkButton(l10n.identityActiveDirectoryOption);
     expect(checkbox, findsOneWidget);
     expect(checkbox, isNotChecked);
     expect(checkbox, isEnabled);
@@ -243,9 +244,9 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = IdentityLocalizations.of(context);
 
-    final checkbox = find.checkButton(l10n.activeDirectoryOption);
+    final checkbox = find.checkButton(l10n.identityActiveDirectoryOption);
     expect(checkbox, findsNothing);
   });
 
@@ -255,9 +256,9 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildIdentityPage(model)));
 
     final context = tester.element(find.byType(IdentityPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = IdentityLocalizations.of(context);
 
-    final checkbox = find.checkButton(l10n.activeDirectoryOption);
+    final checkbox = find.checkButton(l10n.identityActiveDirectoryOption);
     expect(checkbox, findsOneWidget);
     expect(checkbox, isNotChecked);
     expect(checkbox, isDisabled);

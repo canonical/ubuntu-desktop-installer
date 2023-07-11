@@ -56,4 +56,82 @@ class UbuntuProvisionLocalizationsIt extends UbuntuProvisionLocalizations {
 
   @override
   String get localeHeader => 'Scegli la tua lingua:';
+
+  @override
+  String get identityPageTitle => 'Informazioni personali';
+
+  @override
+  String get identityAutoLogin => 'Accedere automaticamente';
+
+  @override
+  String get identityRequirePassword => 'Require my password to log in';
+
+  @override
+  String get identityRealNameLabel => 'Your name';
+
+  @override
+  String get identityRealNameRequired => 'A name is required';
+
+  @override
+  String get identityRealNameTooLong => 'That name is too long.';
+
+  @override
+  String get identityHostnameLabel => 'Il nome del computer';
+
+  @override
+  String get identityHostnameInfo => 'The name it uses when it talks to other computers.';
+
+  @override
+  String get identityHostnameRequired => 'A computer name is required';
+
+  @override
+  String get identityHostnameTooLong => 'That computer name is too long.';
+
+  @override
+  String get identityInvalidHostname => 'The computer name is invalid';
+
+  @override
+  String get identityUsernameLabel => 'Scegli uno username';
+
+  @override
+  String get identityUsernameRequired => 'A username is required';
+
+  @override
+  String get identityInvalidUsername => 'The username is invalid';
+
+  @override
+  String get identityUsernameInUse => 'That user name already exists.';
+
+  @override
+  String get identityUsernameSystemReserved => 'That name is reserved for system usage.';
+
+  @override
+  String get identityUsernameTooLong => 'That name is too long.';
+
+  @override
+  String get identityUsernameInvalidChars => 'That name contains invalid characters.';
+
+  @override
+  String get identityPasswordLabel => 'Scegli una password';
+
+  @override
+  String get identityPasswordRequired => 'A password is required';
+
+  @override
+  String get identityConfirmPasswordLabel => 'Conferma la password';
+
+  @override
+  String get identityPasswordMismatch => 'The passwords do not match';
+
+  @override
+  String get identityPasswordShow => 'Mostra';
+
+  @override
+  String get identityPasswordHide => 'Nascondi';
+
+  @override
+  String get identityActiveDirectoryOption => 'Use Active Directory';
+
+  @override
+  String get identityActiveDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
 }

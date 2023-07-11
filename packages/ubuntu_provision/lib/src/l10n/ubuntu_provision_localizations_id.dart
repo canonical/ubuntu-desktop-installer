@@ -56,4 +56,82 @@ class UbuntuProvisionLocalizationsId extends UbuntuProvisionLocalizations {
 
   @override
   String get localeHeader => 'Pilih bahasa Anda:';
+
+  @override
+  String get identityPageTitle => 'Siapa kamu?';
+
+  @override
+  String get identityAutoLogin => 'Masuk secara otomatis';
+
+  @override
+  String get identityRequirePassword => 'Perlu kata sandi saya untuk masuk';
+
+  @override
+  String get identityRealNameLabel => 'Namamu';
+
+  @override
+  String get identityRealNameRequired => 'Sebuah nama diperlukan';
+
+  @override
+  String get identityRealNameTooLong => 'That name is too long.';
+
+  @override
+  String get identityHostnameLabel => 'Nama komputer Anda';
+
+  @override
+  String get identityHostnameInfo => 'Nama yang digunakannya saat berbicara dengan komputer lain.';
+
+  @override
+  String get identityHostnameRequired => 'Sebuah nama komputer diperlukan';
+
+  @override
+  String get identityHostnameTooLong => 'That computer name is too long.';
+
+  @override
+  String get identityInvalidHostname => 'Nama komputer tidak valid';
+
+  @override
+  String get identityUsernameLabel => 'Pilih nama pengguna';
+
+  @override
+  String get identityUsernameRequired => 'Nama pengguna diperlukan';
+
+  @override
+  String get identityInvalidUsername => 'Nama pengguna tidak valid';
+
+  @override
+  String get identityUsernameInUse => 'That user name already exists.';
+
+  @override
+  String get identityUsernameSystemReserved => 'That name is reserved for system usage.';
+
+  @override
+  String get identityUsernameTooLong => 'That name is too long.';
+
+  @override
+  String get identityUsernameInvalidChars => 'That name contains invalid characters.';
+
+  @override
+  String get identityPasswordLabel => 'Pilih sebuah kata sandi';
+
+  @override
+  String get identityPasswordRequired => 'Kata sandi diperlukan';
+
+  @override
+  String get identityConfirmPasswordLabel => 'Konfirmasikan kata sandi Anda';
+
+  @override
+  String get identityPasswordMismatch => 'Kata sandi tidak cocok';
+
+  @override
+  String get identityPasswordShow => 'Show';
+
+  @override
+  String get identityPasswordHide => 'Hide';
+
+  @override
+  String get identityActiveDirectoryOption => 'Use Active Directory';
+
+  @override
+  String get identityActiveDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
 }

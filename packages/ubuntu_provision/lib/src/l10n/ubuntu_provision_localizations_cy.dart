@@ -56,4 +56,82 @@ class UbuntuProvisionLocalizationsCy extends UbuntuProvisionLocalizations {
 
   @override
   String get localeHeader => 'Dewiswch eich iaith:';
+
+  @override
+  String get identityPageTitle => 'Pwy ydych chi?';
+
+  @override
+  String get identityAutoLogin => 'Mewngofnodi\'n awtomatig';
+
+  @override
+  String get identityRequirePassword => 'Gofyn am fy nghyfrinair i fewngofnodi';
+
+  @override
+  String get identityRealNameLabel => 'Eich enw';
+
+  @override
+  String get identityRealNameRequired => 'A name is required';
+
+  @override
+  String get identityRealNameTooLong => 'That name is too long.';
+
+  @override
+  String get identityHostnameLabel => 'Enw eich cyfrifiadur';
+
+  @override
+  String get identityHostnameInfo => 'Yr enw a ddefnydir pan yn cyfathrebu a chyfrifiaduron eraill.';
+
+  @override
+  String get identityHostnameRequired => 'A computer name is required';
+
+  @override
+  String get identityHostnameTooLong => 'That computer name is too long.';
+
+  @override
+  String get identityInvalidHostname => 'The computer name is invalid';
+
+  @override
+  String get identityUsernameLabel => 'Dewiswch enw defnyddiwr';
+
+  @override
+  String get identityUsernameRequired => 'A username is required';
+
+  @override
+  String get identityInvalidUsername => 'The username is invalid';
+
+  @override
+  String get identityUsernameInUse => 'That user name already exists.';
+
+  @override
+  String get identityUsernameSystemReserved => 'That name is reserved for system usage.';
+
+  @override
+  String get identityUsernameTooLong => 'That name is too long.';
+
+  @override
+  String get identityUsernameInvalidChars => 'That name contains invalid characters.';
+
+  @override
+  String get identityPasswordLabel => 'Dewiswch gyfrinair';
+
+  @override
+  String get identityPasswordRequired => 'A password is required';
+
+  @override
+  String get identityConfirmPasswordLabel => 'Cadarnhewch eich cyfrinair';
+
+  @override
+  String get identityPasswordMismatch => 'Nid yw\'r cyfrineiriau yn cyd-fynd';
+
+  @override
+  String get identityPasswordShow => 'Show';
+
+  @override
+  String get identityPasswordHide => 'Hide';
+
+  @override
+  String get identityActiveDirectoryOption => 'Use Active Directory';
+
+  @override
+  String get identityActiveDirectoryInfo => 'You\'ll enter domain and other details in the next step.';
 }

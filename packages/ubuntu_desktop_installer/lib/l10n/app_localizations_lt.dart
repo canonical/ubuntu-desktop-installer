@@ -480,78 +480,6 @@ class AppLocalizationsLt extends AppLocalizations {
   String get partitionMountPointLabel => 'Prijungimo taškas:';
 
   @override
-  String get identityPageTitle => 'Nusistatykite paskyrą';
-
-  @override
-  String get identityAutoLogin => 'Automatiškai prisijungti prie paskyros';
-
-  @override
-  String get identityRequirePassword => 'Prisijungiant prie paskyros reikalauti slaptažodžio';
-
-  @override
-  String get identityRealNameLabel => 'Jūsų vardas';
-
-  @override
-  String get identityRealNameRequired => 'Reikia nurodyti vardą';
-
-  @override
-  String get identityRealNameTooLong => 'Šis vardas per ilgas.';
-
-  @override
-  String get identityHostnameLabel => 'Jūsų kompiuterio pavadinimas';
-
-  @override
-  String get identityHostnameInfo => 'Pavadinimas yra naudojamas bendraujant su kitais kompiuteriais.';
-
-  @override
-  String get identityHostnameRequired => 'Reikia nurodyti kompiuterio pavadinimą';
-
-  @override
-  String get identityHostnameTooLong => 'Šis kompiuterio pavadinimas per ilgas.';
-
-  @override
-  String get identityInvalidHostname => 'Kompiuterio pavadinimas yra netinkamas';
-
-  @override
-  String get identityUsernameLabel => 'Pasirinkite naudotojo vardą';
-
-  @override
-  String get identityUsernameRequired => 'Reikia nurodyti naudotojo vardą';
-
-  @override
-  String get identityInvalidUsername => 'Netinkamas naudotojo vardas';
-
-  @override
-  String get identityUsernameInUse => 'Šis naudotojo vardas jau yra.';
-
-  @override
-  String get identityUsernameSystemReserved => 'Šis vardas yra rezervuotas sisteminiam naudojimui.';
-
-  @override
-  String get identityUsernameTooLong => 'Šis vardas per ilgas.';
-
-  @override
-  String get identityUsernameInvalidChars => 'Šiame varde yra netinkamų simbolių.';
-
-  @override
-  String get identityPasswordLabel => 'Pasirinkite slaptažodį';
-
-  @override
-  String get identityPasswordRequired => 'Reikia nurodyti slaptažodį';
-
-  @override
-  String get identityConfirmPasswordLabel => 'Pakartokite slaptažodį';
-
-  @override
-  String get identityPasswordMismatch => 'Slaptažodžiai nesutampa';
-
-  @override
-  String get identityPasswordShow => 'Rodyti';
-
-  @override
-  String get identityPasswordHide => 'Slėpti';
-
-  @override
   String get confirmPageTitle => 'Pasiruošę įdiegti';
 
   @override
@@ -795,12 +723,6 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get notEnoughDiskSpaceRequired => 'Reikia:';
-
-  @override
-  String get activeDirectoryOption => 'Naudoti „Active Directory“';
-
-  @override
-  String get activeDirectoryInfo => 'Kitame žingsnyje įvesite domeną bei kitą išsamesnę informaciją.';
 
   @override
   String get activeDirectoryTitle => 'Konfigūruoti „Active Directory“';

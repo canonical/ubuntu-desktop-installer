@@ -56,4 +56,82 @@ class UbuntuProvisionLocalizationsDe extends UbuntuProvisionLocalizations {
 
   @override
   String get localeHeader => 'Wählen Sie Ihre Sprache aus:';
+
+  @override
+  String get identityPageTitle => 'Ihr Konto einrichten';
+
+  @override
+  String get identityAutoLogin => 'Automatisch anmelden';
+
+  @override
+  String get identityRequirePassword => 'Mein Passwort zum Anmelden abfragen';
+
+  @override
+  String get identityRealNameLabel => 'Ihr Name';
+
+  @override
+  String get identityRealNameRequired => 'Ein Name ist erforderlich';
+
+  @override
+  String get identityRealNameTooLong => 'Dieser Name ist zu lang.';
+
+  @override
+  String get identityHostnameLabel => 'Name Ihres Computers';
+
+  @override
+  String get identityHostnameInfo => 'Der Name, der bei der Kommunikation mit anderen Computern verwendet wird.';
+
+  @override
+  String get identityHostnameRequired => 'Ein Computername ist erforderlich';
+
+  @override
+  String get identityHostnameTooLong => 'Dieser Computername ist zu lang.';
+
+  @override
+  String get identityInvalidHostname => 'Der Computername ist ungültig';
+
+  @override
+  String get identityUsernameLabel => 'Einen Benutzernamen auswählen';
+
+  @override
+  String get identityUsernameRequired => 'Ein Benutzername ist erforderlich';
+
+  @override
+  String get identityInvalidUsername => 'Der Benutzername ist ungültig';
+
+  @override
+  String get identityUsernameInUse => 'Dieser Benutzername existiert bereits.';
+
+  @override
+  String get identityUsernameSystemReserved => 'Dieser Name ist für die Systemnutzung reserviert.';
+
+  @override
+  String get identityUsernameTooLong => 'Dieser Name ist zu lang.';
+
+  @override
+  String get identityUsernameInvalidChars => 'Dieser Name enthält ungültige Zeichen.';
+
+  @override
+  String get identityPasswordLabel => 'Ein Passwort auswählen';
+
+  @override
+  String get identityPasswordRequired => 'Ein Passwort ist erforderlich';
+
+  @override
+  String get identityConfirmPasswordLabel => 'Bestätigen Sie Ihr Passwort';
+
+  @override
+  String get identityPasswordMismatch => 'Die Passwörter stimmen nicht überein';
+
+  @override
+  String get identityPasswordShow => 'Anzeigen';
+
+  @override
+  String get identityPasswordHide => 'Ausblenden';
+
+  @override
+  String get identityActiveDirectoryOption => 'Active Directory verwenden';
+
+  @override
+  String get identityActiveDirectoryInfo => 'Im nächsten Schritt geben Sie die Domäne und andere Details ein.';
 }
