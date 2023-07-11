@@ -77,8 +77,8 @@ void main() {
     await tester
         .runAsync(() => runInstallerApp(['--dry-run', '--', '--foo', 'bar']));
     verify(server.start(args: [
-      '--machine-config=examples/simple.json',
-      '--source-catalog=examples/desktop-sources.yaml',
+      '--machine-config=examples/machines/simple.json',
+      '--source-catalog=examples/sources/desktop.yaml',
       '--storage-version=2',
       '--foo',
       'bar',
