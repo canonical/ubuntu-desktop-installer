@@ -16,12 +16,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get changeButtonText => 'שינוי';
 
   @override
-  String get restartButtonText => 'הפעלה מחדש';
-
-  @override
-  String get revertButtonText => 'החזרה';
-
-  @override
   String get quitButtonText => 'יציאה מההתקנה';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get enableWifi => 'הפעלת רשת אלחוטית';
-
-  @override
-  String get connectButtonText => 'התחברות';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'יישומים ועדכונים';

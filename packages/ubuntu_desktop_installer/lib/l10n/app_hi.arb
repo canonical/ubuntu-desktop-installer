@@ -1,7 +1,5 @@
 {
   "@@locale": "hi",
-  "revertButtonText": "प्रत्यावर्त",
-  "@revertButtonText": {},
   "welcome": "सुस्वागतम",
   "@welcome": {},
   "windowTitle": "{RELEASE} को संस्थापित करें",

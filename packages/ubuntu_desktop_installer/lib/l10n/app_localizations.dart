@@ -255,18 +255,6 @@ abstract class AppLocalizations {
   /// **'Change'**
   String get changeButtonText;
 
-  /// No description provided for @restartButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'Restart'**
-  String get restartButtonText;
-
-  /// No description provided for @revertButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'Revert'**
-  String get revertButtonText;
-
   /// No description provided for @quitButtonText.
   ///
   /// In en, this message translates to:
@@ -512,12 +500,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enable Wi-Fi'**
   String get enableWifi;
-
-  /// No description provided for @connectButtonText.
-  ///
-  /// In en, this message translates to:
-  /// **'Connect'**
-  String get connectButtonText;
 
   /// No description provided for @updatesOtherSoftwarePageTitle.
   ///

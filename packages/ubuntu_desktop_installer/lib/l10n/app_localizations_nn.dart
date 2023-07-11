@@ -16,12 +16,6 @@ class AppLocalizationsNn extends AppLocalizations {
   String get changeButtonText => 'Change';
 
   @override
-  String get restartButtonText => 'Restart';
-
-  @override
-  String get revertButtonText => 'Tilbakestill';
-
-  @override
   String get quitButtonText => 'Quit installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsNn extends AppLocalizations {
 
   @override
   String get enableWifi => 'Enable Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Applications and updates';

@@ -16,12 +16,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get changeButtonText => 'Ändra';
 
   @override
-  String get restartButtonText => 'Starta om';
-
-  @override
-  String get revertButtonText => 'Återställ';
-
-  @override
   String get quitButtonText => 'Avbryt installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get enableWifi => 'Aktivera Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Anslut';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Program och uppdateringar';

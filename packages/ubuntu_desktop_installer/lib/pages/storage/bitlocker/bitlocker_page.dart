@@ -74,7 +74,7 @@ class BitLockerPage extends ConsumerWidget {
                         title: lang.bitlockerTitle,
                         message:
                             lang.restartIntoWindowsDescription(flavor.name),
-                        okLabel: lang.restartButtonText,
+                        okLabel: UbuntuLocalizations.of(context).restartLabel,
                         okElevated: true,
                       );
                       if (confirmed) {

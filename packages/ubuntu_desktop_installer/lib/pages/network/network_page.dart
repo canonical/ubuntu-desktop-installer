@@ -78,7 +78,7 @@ class NetworkPage extends ConsumerWidget {
         leading: WizardButton.previous(context),
         trailing: [
           WizardButton(
-            label: lang.connectButtonText,
+            label: UbuntuLocalizations.of(context).connectLabel,
             enabled: !model.isConnecting,
             visible: model.isEnabled && model.canConnect,
             onActivated: model.connect,

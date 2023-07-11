@@ -16,12 +16,6 @@ class AppLocalizationsEo extends AppLocalizations {
   String get changeButtonText => 'Ŝanĝi';
 
   @override
-  String get restartButtonText => 'Restartigi';
-
-  @override
-  String get revertButtonText => 'Malfari';
-
-  @override
   String get quitButtonText => 'Ĉesi instaladon';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsEo extends AppLocalizations {
 
   @override
   String get enableWifi => 'Ebligi sendratajn retojn';
-
-  @override
-  String get connectButtonText => 'Konekti';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Programoj kaj ĝisdatigoj';

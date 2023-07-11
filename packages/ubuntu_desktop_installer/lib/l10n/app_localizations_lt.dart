@@ -16,12 +16,6 @@ class AppLocalizationsLt extends AppLocalizations {
   String get changeButtonText => 'Keisti';
 
   @override
-  String get restartButtonText => 'Paleisti iš naujo';
-
-  @override
-  String get revertButtonText => 'Sugrąžinti';
-
-  @override
   String get quitButtonText => 'Baigti diegimą';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get enableWifi => 'Įjungti belaidį (Wi-Fi)';
-
-  @override
-  String get connectButtonText => 'Prisijungti';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Programos ir atnaujinimai';

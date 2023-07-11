@@ -4,8 +4,6 @@
   "@welcome": {},
   "changeButtonText": "পরিবর্তন",
   "@changeButtonText": {},
-  "revertButtonText": "পূর্বাবস্থায় প্রত্যাবর্তন",
-  "@revertButtonText": {},
   "windowTitle": "{RELEASE} ইনস্টল করুন",
   "@windowTitle": {
     "type": "text",

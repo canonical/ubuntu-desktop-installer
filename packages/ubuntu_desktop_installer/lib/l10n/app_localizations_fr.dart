@@ -16,12 +16,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get changeButtonText => 'Changer';
 
   @override
-  String get restartButtonText => 'Redémarrer';
-
-  @override
-  String get revertButtonText => 'Rétablir';
-
-  @override
   String get quitButtonText => 'Quitter l’installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get enableWifi => 'Activer le Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Se connecter';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Applications et mises à jour';

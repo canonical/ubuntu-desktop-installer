@@ -422,7 +422,7 @@ Future<void> testBitLockerPage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(l10n.restartButtonText);
+  await tester.tapButton(find.ul10n((l10n) => l10n.restartLabel));
   await expectLater(windowClosed, completes);
 }
 
@@ -450,7 +450,7 @@ Future<void> testRstPage(
   }
 
   final windowClosed = YaruTestWindow.waitForClosed();
-  await tester.tapButton(l10n.restartButtonText);
+  await tester.tapButton(find.ul10n((l10n) => l10n.restartLabel));
   await expectLater(windowClosed, completes);
 }
 

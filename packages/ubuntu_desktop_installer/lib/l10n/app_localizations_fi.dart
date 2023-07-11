@@ -16,12 +16,6 @@ class AppLocalizationsFi extends AppLocalizations {
   String get changeButtonText => 'Muuta';
 
   @override
-  String get restartButtonText => 'Käynnistä uudelleen';
-
-  @override
-  String get revertButtonText => 'Kumoa';
-
-  @override
   String get quitButtonText => 'Lopeta asennus';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get enableWifi => 'Ota Wi-Fi käyttöön';
-
-  @override
-  String get connectButtonText => 'Yhdistä';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Sovellukset ja päivitykset';

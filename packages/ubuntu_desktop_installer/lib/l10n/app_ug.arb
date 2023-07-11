@@ -15,7 +15,5 @@
     }
   },
   "welcome": "مەرھابا",
-  "@welcome": {},
-  "revertButtonText": "ئەسلىگە قايتۇر",
-  "@revertButtonText": {}
+  "@welcome": {}
 }

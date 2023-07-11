@@ -16,12 +16,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get changeButtonText => 'تغيير';
 
   @override
-  String get restartButtonText => 'إعادة تشغيل';
-
-  @override
-  String get revertButtonText => 'يرجع';
-
-  @override
   String get quitButtonText => 'قم بإنهاء التثبيت';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enableWifi => 'Enable Wi-Fi';
-
-  @override
-  String get connectButtonText => 'اتّصل';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'التطبيقات والتحديثات';

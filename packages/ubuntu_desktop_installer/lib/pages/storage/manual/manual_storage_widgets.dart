@@ -268,7 +268,7 @@ class PartitionButtonRow extends ConsumerWidget {
         ),
         OutlinedButton(
           onPressed: model.resetStorage,
-          child: Text(lang.revertButtonText),
+          child: Text(UbuntuLocalizations.of(context).revertLabel),
         ),
       ],
     );

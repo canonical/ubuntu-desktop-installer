@@ -16,12 +16,6 @@ class AppLocalizationsFa extends AppLocalizations {
   String get changeButtonText => 'تغییر';
 
   @override
-  String get restartButtonText => 'آغاز دوباره';
-
-  @override
-  String get revertButtonText => 'بازگردانی';
-
-  @override
   String get quitButtonText => 'خروج از نصب';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get enableWifi => 'به کار انداختن وای‌فای';
-
-  @override
-  String get connectButtonText => 'وصل شدن';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'برنامه‌ها و به‌روز رسانی‌ها';

@@ -16,12 +16,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get changeButtonText => '更改';
 
   @override
-  String get restartButtonText => '重启';
-
-  @override
-  String get revertButtonText => '撤销';
-
-  @override
   String get quitButtonText => '退出安装';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get enableWifi => '启用 Wi-Fi';
-
-  @override
-  String get connectButtonText => '连接';
 
   @override
   String get updatesOtherSoftwarePageTitle => '应用程序和更新';

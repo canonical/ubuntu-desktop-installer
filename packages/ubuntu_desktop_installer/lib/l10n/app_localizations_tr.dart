@@ -16,12 +16,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get changeButtonText => 'Değiştir';
 
   @override
-  String get restartButtonText => 'Yeniden başlat';
-
-  @override
-  String get revertButtonText => 'Geri al';
-
-  @override
   String get quitButtonText => 'Kurulumdan Çık';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get enableWifi => 'Wi-Fi\'yi etkinleştir';
-
-  @override
-  String get connectButtonText => 'Bağlan';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Uygulamalar ve güncellemeler';

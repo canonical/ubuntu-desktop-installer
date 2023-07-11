@@ -16,12 +16,6 @@ class AppLocalizationsKa extends AppLocalizations {
   String get changeButtonText => 'შეცვლა';
 
   @override
-  String get restartButtonText => 'გადატვირთვა';
-
-  @override
-  String get revertButtonText => 'აღდგენა';
-
-  @override
   String get quitButtonText => 'დაყენებიდან გასვლა';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsKa extends AppLocalizations {
 
   @override
   String get enableWifi => 'Enable Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Connect';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Applications and updates';

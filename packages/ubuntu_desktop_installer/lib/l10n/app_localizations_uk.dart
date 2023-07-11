@@ -16,12 +16,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get changeButtonText => 'Змінити';
 
   @override
-  String get restartButtonText => 'Перезавантажити';
-
-  @override
-  String get revertButtonText => 'Відбій';
-
-  @override
   String get quitButtonText => 'Скасувати встановлення';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get enableWifi => 'Ввімкнути Wi-Fi';
-
-  @override
-  String get connectButtonText => 'З\'єднатися';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Оновлення та інше програмне забезпечення';

@@ -73,7 +73,7 @@ class RstPage extends ConsumerWidget {
                           title: lang.restartIntoWindowsTitle,
                           message:
                               lang.restartIntoWindowsDescription(flavor.name),
-                          okLabel: lang.restartButtonText,
+                          okLabel: UbuntuLocalizations.of(context).restartLabel,
                           okElevated: true,
                         );
                         if (confirmed) {

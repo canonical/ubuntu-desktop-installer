@@ -16,12 +16,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get changeButtonText => 'Alterar';
 
   @override
-  String get restartButtonText => 'Reiniciar';
-
-  @override
-  String get revertButtonText => 'Reverter';
-
-  @override
   String get quitButtonText => 'Sair da instalação';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get enableWifi => 'Ativar Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Ligar';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Aplicações e atualizações';
@@ -741,12 +732,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get changeButtonText => 'Alterar';
 
   @override
-  String get restartButtonText => 'Reiniciar';
-
-  @override
-  String get revertButtonText => 'Desfazer';
-
-  @override
   String get quitButtonText => 'Sair da instalação';
 
   @override
@@ -886,9 +871,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get enableWifi => 'Habilitar WiFi';
-
-  @override
-  String get connectButtonText => 'Conectar';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Aplicativos e atualizações';

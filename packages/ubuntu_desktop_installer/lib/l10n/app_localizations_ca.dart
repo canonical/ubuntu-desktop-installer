@@ -16,12 +16,6 @@ class AppLocalizationsCa extends AppLocalizations {
   String get changeButtonText => 'Canvia';
 
   @override
-  String get restartButtonText => 'Reinicia';
-
-  @override
-  String get revertButtonText => 'Reverteix';
-
-  @override
   String get quitButtonText => 'Surt de la instal·lació';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsCa extends AppLocalizations {
 
   @override
   String get enableWifi => 'Enable Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Connecta';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Actualitzacions i altre programari';

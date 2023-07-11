@@ -16,12 +16,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get changeButtonText => 'Ubah';
 
   @override
-  String get restartButtonText => 'Jalankan Ulang';
-
-  @override
-  String get revertButtonText => 'Kembalikan';
-
-  @override
   String get quitButtonText => 'Quit installation';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get enableWifi => 'Fungsikan Wi-Fi';
-
-  @override
-  String get connectButtonText => 'Sambungkan';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Pembaruan dan perangkat lunak lainnya';

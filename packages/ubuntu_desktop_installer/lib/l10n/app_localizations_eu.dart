@@ -16,12 +16,6 @@ class AppLocalizationsEu extends AppLocalizations {
   String get changeButtonText => 'Aldatu';
 
   @override
-  String get restartButtonText => 'Berrabiarazi';
-
-  @override
-  String get revertButtonText => 'Berrezarri';
-
-  @override
   String get quitButtonText => 'Irten instalaziotik';
 
   @override
@@ -161,9 +155,6 @@ class AppLocalizationsEu extends AppLocalizations {
 
   @override
   String get enableWifi => 'Gaitu Wi-Fia';
-
-  @override
-  String get connectButtonText => 'Konektatu';
 
   @override
   String get updatesOtherSoftwarePageTitle => 'Eguneraketak eta beste softwarea';
