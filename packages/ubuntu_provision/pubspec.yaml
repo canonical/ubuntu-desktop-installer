@@ -31,6 +31,7 @@ dependencies:
       url: https://github.com/canonical/ubuntu-flutter-plugins.git
       path: packages/timezone_map
       ref: 5af6896c75b5ab8f78b93f7f358836a8c4c7857f
+  toml: ^0.14.0
   ubuntu_flavor: ^0.2.0
   ubuntu_localizations: ^0.3.3
   ubuntu_logger: ^0.0.3
@@ -43,6 +44,7 @@ dependencies:
     path: ../ubuntu_wizard
   udev: ^0.0.3
   upower: ^0.7.0
+  yaml: ^3.1.2
   yaru: ^0.9.0
   yaru_icons: ^1.0.0
   yaru_widgets: ^2.5.0

@@ -1,12 +1,15 @@
 import 'package:dartx/dartx.dart';
 import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_provision/services.dart';
 
 class InstallerService {
-  InstallerService(this._client, {List<String>? routes})
-      : _routes = routes?.map((r) => r.removePrefix('/')).toList();
+  InstallerService(this._client, {ConfigService? config, List<String>? routes})
+      : _config = config,
+        _routes = routes?.map((r) => r.removePrefix('/')).toList();
 
   List<String>? _routes;
   final SubiquityClient _client;
+  final ConfigService? _config;
 
   Future<void> init() async {
     await _client.setVariant(Variant.DESKTOP);
@@ -23,11 +26,12 @@ class InstallerService {
         'ubuntu_pro',
       ]);
     }
-    _routes ??= await _client.getInteractiveSections();
   }
 
-  Future<void> load() {
-    return monitorStatus().firstWhere((s) => s?.isLoading == false);
+  Future<void> load() async {
+    await monitorStatus().firstWhere((s) => s?.isLoading == false);
+    _routes ??=
+        await _client.getInteractiveSections() ?? await _config?.getRoutes();
   }
 
   Future<void> start() => _client.confirm('/dev/tty1');
@@ -47,4 +51,10 @@ extension ApplicationStatusX on ApplicationStatus {
   bool get isInstalling =>
       state.index >= ApplicationState.RUNNING.index &&
       state.index < ApplicationState.DONE.index;
+}
+
+extension on ConfigService {
+  Future<List<String>?> getRoutes() {
+    return get<List>('routes').then((value) => value?.cast());
+  }
 }

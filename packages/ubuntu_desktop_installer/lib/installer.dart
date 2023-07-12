@@ -31,6 +31,8 @@ Future<void> runInstallerApp(
   ThemeData? darkTheme,
 }) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
+    parser.addOption('config',
+        valueHelp: 'path', help: 'Path to a config file');
     parser.addFlag('dry-run',
         defaultsTo: Platform.environment['LIVE_RUN'] != '1',
         help: 'Run Subiquity server in dry-run mode');
@@ -69,12 +71,15 @@ Future<void> runInstallerApp(
   // conditional registration if not already registered by flavors or tests
   tryRegisterService<ActiveDirectoryService>(
       () => SubiquityActiveDirectoryService(getService<SubiquityClient>()));
-  tryRegisterService(() => PostInstallService('/tmp/$baseName.conf'));
+  if (options['config'] != null) {
+    tryRegisterService(() => ConfigService(options['config']!));
+  }
   tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService<IdentityService>(() => SubiquityIdentityService(
       getService<SubiquityClient>(), getService<PostInstallService>()));
   tryRegisterService<InstallerService>(() => InstallerService(
       getService<SubiquityClient>(),
+      config: tryGetService<ConfigService>(),
       routes: options['routes']?.split(',') ?? routes));
   tryRegisterService(JournalService.new);
   tryRegisterService<KeyboardService>(
@@ -83,6 +88,7 @@ Future<void> runInstallerApp(
       () => SubiquityLocaleService(getService<SubiquityClient>()));
   tryRegisterService<NetworkService>(
       () => SubiquityNetworkService(getService<SubiquityClient>()));
+  tryRegisterService(() => PostInstallService('/tmp/$baseName.conf'));
   tryRegisterService(PowerService.new);
   tryRegisterService(ProductService.new);
   tryRegisterService<SessionService>(
