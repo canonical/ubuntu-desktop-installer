@@ -17,10 +17,10 @@ void main() {
   test('get identity', () async {
     final client = MockSubiquityClient();
     when(client.getIdentity()).thenAnswer((_) async => testIdentity);
-    final config = MockConfigService();
-    when(config.get(SubiquityIdentityService.kAutoLoginUser))
+    final postInstall = MockPostInstallService();
+    when(postInstall.get(SubiquityIdentityService.kAutoLoginUser))
         .thenAnswer((_) async => testIdentity.username);
-    final service = SubiquityIdentityService(client, config);
+    final service = SubiquityIdentityService(client, postInstall);
     expect(
         await service.getIdentity(),
         equals(Identity(
@@ -31,13 +31,13 @@ void main() {
         )));
 
     verify(client.getIdentity()).called(1);
-    verify(config.get(SubiquityIdentityService.kAutoLoginUser)).called(1);
+    verify(postInstall.get(SubiquityIdentityService.kAutoLoginUser)).called(1);
   });
 
   test('set identity', () async {
     final client = MockSubiquityClient();
-    final config = MockConfigService();
-    final service = SubiquityIdentityService(client, config);
+    final postInstall = MockPostInstallService();
+    final service = SubiquityIdentityService(client, postInstall);
     await service.setIdentity(Identity(
       realname: testIdentity.realname,
       username: testIdentity.username,
@@ -53,7 +53,7 @@ void main() {
             .having((i) => i.cryptedPassword, 'cryptedPassword',
                 hasLength(greaterThan(8))))))
         .called(1);
-    verify(config.set(
+    verify(postInstall.set(
             SubiquityIdentityService.kAutoLoginUser, testIdentity.username))
         .called(1);
   });

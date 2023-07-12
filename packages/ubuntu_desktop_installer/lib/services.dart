@@ -6,6 +6,7 @@ export 'services/installer_service.dart';
 export 'services/keyboard_service.dart';
 export 'services/locale_service.dart';
 export 'services/network_service.dart';
+export 'services/post_install_service.dart' hide log;
 export 'services/product_service.dart';
 export 'services/session_service.dart';
 export 'services/storage_service.dart' hide log;

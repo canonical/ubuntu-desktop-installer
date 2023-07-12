@@ -33,6 +33,7 @@ extension InstallerTester on WidgetTester {
 
 @GenerateMocks([
   InstallerService,
+  PostInstallService,
   ProductService,
   StorageService,
 ])

@@ -1,6 +1,6 @@
 import 'package:file/memory.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ubuntu_provision/services.dart';
+import 'package:ubuntu_desktop_installer/services.dart';
 
 void main() {
   test('load existing config', () async {
@@ -15,31 +15,31 @@ Str="foo bar"
 Trim=  baz
 ''');
 
-    final config = ConfigService(file.path, fs: fs);
-    expect(await config.load(), {
+    final service = PostInstallService(file.path, fs: fs);
+    expect(await service.load(), {
       'Num': '1',
       'Empty': '',
       'Str': 'foo bar',
       'Trim': 'baz',
     });
 
-    expect(await config.get('Num'), equals('1'));
-    expect(await config.get('Empty'), isEmpty);
-    expect(await config.get('Str'), equals('foo bar'));
-    expect(await config.get('Trim'), equals('baz'));
-    expect(await config.get('None'), isNull);
+    expect(await service.get('Num'), equals('1'));
+    expect(await service.get('Empty'), isEmpty);
+    expect(await service.get('Str'), equals('foo bar'));
+    expect(await service.get('Trim'), equals('baz'));
+    expect(await service.get('None'), isNull);
   });
 
   test('initially missing config', () async {
     final fs = MemoryFileSystem.test();
     final file = fs.file('/foo/bar.conf');
 
-    final config = ConfigService(file.path, fs: fs);
-    expect(await config.load(), isEmpty);
-    expect(await config.get('Anything'), isNull);
+    final service = PostInstallService(file.path, fs: fs);
+    expect(await service.load(), isEmpty);
+    expect(await service.get('Anything'), isNull);
     expect(file.existsSync(), isFalse);
 
-    await config.set('Something', 'value');
+    await service.set('Something', 'value');
     expect(file.existsSync(), isTrue);
     expect(file.readAsStringSync(), '''
 Something=value
@@ -50,14 +50,14 @@ Something=value
     final fs = MemoryFileSystem.test();
     final file = fs.file('/foo/bar.conf');
 
-    final config = ConfigService(file.path, fs: fs);
-    await config.save({
+    final service = PostInstallService(file.path, fs: fs);
+    await service.save({
       'Num': '1',
       'Empty': '',
       'Str': 'foo bar',
       'Trim': '  baz  ',
     });
-    await config.set('Extra', 'value');
+    await service.set('Extra', 'value');
 
     expect(file.existsSync(), isTrue);
     expect(file.readAsStringSync(), '''

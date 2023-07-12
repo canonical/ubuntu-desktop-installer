@@ -69,10 +69,10 @@ Future<void> runInstallerApp(
   // conditional registration if not already registered by flavors or tests
   tryRegisterService<ActiveDirectoryService>(
       () => SubiquityActiveDirectoryService(getService<SubiquityClient>()));
-  tryRegisterService(() => ConfigService('/tmp/$baseName.conf'));
+  tryRegisterService(() => PostInstallService('/tmp/$baseName.conf'));
   tryRegisterService<DesktopService>(() => GnomeService());
   tryRegisterService<IdentityService>(() => SubiquityIdentityService(
-      getService<SubiquityClient>(), getService<ConfigService>()));
+      getService<SubiquityClient>(), getService<PostInstallService>()));
   tryRegisterService<InstallerService>(() => InstallerService(
       getService<SubiquityClient>(),
       routes: options['routes']?.split(',') ?? routes));

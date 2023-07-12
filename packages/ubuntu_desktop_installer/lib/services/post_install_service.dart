@@ -4,10 +4,10 @@ import 'package:meta/meta.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 
 /// @internal
-final log = Logger('config');
+final log = Logger('post-install');
 
-class ConfigService {
-  ConfigService(this._path, {@visibleForTesting FileSystem? fs})
+class PostInstallService {
+  PostInstallService(this._path, {@visibleForTesting FileSystem? fs})
       : _fs = fs ?? const LocalFileSystem();
 
   final String _path;
