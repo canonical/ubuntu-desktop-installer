@@ -9,8 +9,10 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:subiquity_client/subiquity_client.dart' as _i3;
 import 'package:ubuntu_desktop_installer/services/installer_service.dart'
     as _i4;
+import 'package:ubuntu_desktop_installer/services/post_install_service.dart'
+    as _i6;
 import 'package:ubuntu_desktop_installer/services/product_service.dart' as _i2;
-import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i6;
+import 'package:ubuntu_desktop_installer/services/storage_service.dart' as _i7;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -97,6 +99,59 @@ class MockInstallerService extends _i1.Mock implements _i4.InstallerService {
       ) as bool);
 }
 
+/// A class which mocks [PostInstallService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockPostInstallService extends _i1.Mock
+    implements _i6.PostInstallService {
+  MockPostInstallService() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i5.Future<String?> get(String? key) => (super.noSuchMethod(
+        Invocation.method(
+          #get,
+          [key],
+        ),
+        returnValue: _i5.Future<String?>.value(),
+      ) as _i5.Future<String?>);
+  @override
+  _i5.Future<void> set(
+    String? key,
+    String? value,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #set,
+          [
+            key,
+            value,
+          ],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+  @override
+  _i5.Future<Map<String, String?>> load() => (super.noSuchMethod(
+        Invocation.method(
+          #load,
+          [],
+        ),
+        returnValue:
+            _i5.Future<Map<String, String?>>.value(<String, String?>{}),
+      ) as _i5.Future<Map<String, String?>>);
+  @override
+  _i5.Future<void> save(Map<String, String?>? config) => (super.noSuchMethod(
+        Invocation.method(
+          #save,
+          [config],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+}
+
 /// A class which mocks [ProductService].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -124,7 +179,7 @@ class MockProductService extends _i1.Mock implements _i2.ProductService {
 /// A class which mocks [StorageService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockStorageService extends _i1.Mock implements _i6.StorageService {
+class MockStorageService extends _i1.Mock implements _i7.StorageService {
   MockStorageService() {
     _i1.throwOnMissingStub(this);
   }
