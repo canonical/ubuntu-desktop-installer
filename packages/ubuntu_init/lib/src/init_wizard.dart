@@ -4,14 +4,14 @@ import 'package:ubuntu_provision/ubuntu_provision.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-enum WelcomeStep {
+enum InitStep {
   locale,
   keyboard,
   timezone,
   identity,
 }
 
-class WelcomeRoutes {
+class InitRoutes {
   static const String initial = '/';
   static const String locale = '/locale';
   static const String keyboard = '/keyboard';
@@ -19,14 +19,14 @@ class WelcomeRoutes {
   static const String identity = '/identity';
 }
 
-class WelcomeWizard extends ConsumerStatefulWidget {
-  const WelcomeWizard({super.key});
+class InitWizard extends ConsumerStatefulWidget {
+  const InitWizard({super.key});
 
   @override
-  ConsumerState<WelcomeWizard> createState() => _WelcomeWizardState();
+  ConsumerState<InitWizard> createState() => _WelcomeWizardState();
 }
 
-class _WelcomeWizardState extends ConsumerState<WelcomeWizard> {
+class _WelcomeWizardState extends ConsumerState<InitWizard> {
   late final WizardController _controller;
 
   @override
@@ -36,38 +36,38 @@ class _WelcomeWizardState extends ConsumerState<WelcomeWizard> {
     _controller = WizardController(
       routes: {
         // TODO: loading screen?
-        WelcomeRoutes.initial: WizardRoute(
+        InitRoutes.initial: WizardRoute(
           builder: (_) => const SizedBox.shrink(),
         ),
-        WelcomeRoutes.locale: WizardRoute(
+        InitRoutes.locale: WizardRoute(
           builder: (_) => const LocalePage(),
           userData: WizardRouteData(
-            step: WelcomeStep.locale.index,
+            step: InitStep.locale.index,
           ),
           onLoad: (_) => LocalePage.load(context, ref),
         ),
-        WelcomeRoutes.keyboard: WizardRoute(
+        InitRoutes.keyboard: WizardRoute(
           builder: (_) => const KeyboardPage(),
           userData: WizardRouteData(
-            step: WelcomeStep.keyboard.index,
+            step: InitStep.keyboard.index,
           ),
           onLoad: (_) => KeyboardPage.load(ref),
         ),
-        WelcomeRoutes.timezone: WizardRoute(
+        InitRoutes.timezone: WizardRoute(
           builder: (_) => const TimezonePage(),
           userData: WizardRouteData(
-            step: WelcomeStep.timezone.index,
+            step: InitStep.timezone.index,
           ),
           onLoad: (_) => TimezonePage.load(context, ref),
         ),
-        WelcomeRoutes.identity: WizardRoute(
+        InitRoutes.identity: WizardRoute(
           builder: (_) => const IdentityPage(),
           userData: WizardRouteData(
-            step: WelcomeStep.identity.index,
+            step: InitStep.identity.index,
           ),
           onLoad: (_) => IdentityPage.load(ref),
           onNext: (_) =>
-              YaruWindow.of(context).close().then((_) => WelcomeRoutes.initial),
+              YaruWindow.of(context).close().then((_) => InitRoutes.initial),
         ),
       },
     )..replace();
@@ -83,7 +83,7 @@ class _WelcomeWizardState extends ConsumerState<WelcomeWizard> {
   Widget build(BuildContext context) {
     return Wizard(
       controller: _controller,
-      userData: WizardData(totalSteps: WelcomeStep.values.length),
+      userData: WizardData(totalSteps: InitStep.values.length),
     );
   }
 }

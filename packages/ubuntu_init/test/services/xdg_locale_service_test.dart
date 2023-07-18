@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_welcome/services/xdg_locale_service.dart';
+import 'package:ubuntu_init/src/services/xdg_locale_service.dart';
 import 'package:xdg_locale/xdg_locale.dart';
 
 import 'xdg_locale_service_test.mocks.dart';

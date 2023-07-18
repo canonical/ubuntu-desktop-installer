@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_init/src/init_wizard.dart';
+import 'package:ubuntu_localizations/ubuntu_localizations.dart';
 import 'package:ubuntu_provision/ubuntu_provision.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:ubuntu_welcome/l10n.dart';
-import 'package:ubuntu_welcome/welcome_wizard.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
@@ -21,7 +21,7 @@ void main() {
 
   setUp(() => YaruTestWindow.ensureInitialized(state: const YaruWindowState()));
 
-  testWidgets('welcome', (tester) async {
+  testWidgets('init', (tester) async {
     final localeModel = buildLocaleModel();
     final keyboardModel = buildKeyboardModel();
     final timezoneModel = buildTimezoneModel();
@@ -71,9 +71,12 @@ void main() {
 extension on WidgetTester {
   Widget buildTestWizard() {
     return WizardApp(
-      localizationsDelegates: localizationsDelegates,
+      localizationsDelegates: const [
+        ...UbuntuProvisionLocalizations.localizationsDelegates,
+        ...GlobalUbuntuLocalizations.delegates,
+      ],
       supportedLocales: supportedLocales,
-      home: const WelcomeWizard(),
+      home: const InitWizard(),
     );
   }
 }

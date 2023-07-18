@@ -21,7 +21,8 @@ class XdgKeyboardService implements KeyboardService {
   final GSettings _inputSourceSettings;
   final AssetBundle _assetBundle;
 
-  String _langFilename(String lang) => 'assets/kbds/$lang.jsonl';
+  String _langFilename(String lang) =>
+      'packages/ubuntu_init/assets/kbds/$lang.jsonl';
 
   Future<String> _getLanguage() async {
     await _client.connect();

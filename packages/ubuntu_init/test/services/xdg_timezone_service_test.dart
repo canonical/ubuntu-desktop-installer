@@ -2,7 +2,7 @@ import 'package:dbus/dbus.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:ubuntu_welcome/services/xdg_timezone_service.dart';
+import 'package:ubuntu_init/src/services/xdg_timezone_service.dart';
 
 import 'xdg_timezone_service_test.mocks.dart';
 

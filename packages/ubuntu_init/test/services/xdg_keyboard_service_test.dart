@@ -6,8 +6,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gsettings/gsettings.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:ubuntu_init/src/services/xdg_keyboard_service.dart';
 import 'package:ubuntu_provision/services.dart';
-import 'package:ubuntu_welcome/services/xdg_keyboard_service.dart';
 import 'package:xdg_locale/xdg_locale.dart';
 
 import 'xdg_keyboard_service_test.mocks.dart';
@@ -47,9 +47,10 @@ void main() {
 
     final fakeAssetBundle = FakeAssetBundle(
       {
-        'assets/kbds/en.jsonl': '["us", "English (US)", [["", "English (US)"],'
-            '["altgr-intl", "English (US) - English (intl., with AltGr dead keys)"]]]\n'
-            '["de", "German", [["", "German"]]]'
+        'packages/ubuntu_init/assets/kbds/en.jsonl':
+            '["us", "English (US)", [["", "English (US)"],'
+                '["altgr-intl", "English (US) - English (intl., with AltGr dead keys)"]]]\n'
+                '["de", "German", [["", "German"]]]'
       },
     );
 
