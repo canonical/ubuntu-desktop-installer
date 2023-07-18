@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:timezone_map/timezone_map.dart';
+import 'package:ubuntu_init/ubuntu_init.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_provision/ubuntu_provision.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
@@ -11,9 +12,6 @@ import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_welcome/l10n.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
-
-import 'services.dart';
-import 'welcome_wizard.dart';
 
 Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
@@ -55,7 +53,7 @@ Future<void> main(List<String> args) async {
           supportedLocales: supportedLocales,
           home: DefaultAssetBundle(
             bundle: ProxyAssetBundle(rootBundle, package: 'ubuntu_welcome'),
-            child: const WelcomeWizard(),
+            child: const InitWizard(),
           ),
         ),
       ),
