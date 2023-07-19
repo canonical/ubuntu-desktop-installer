@@ -6,6 +6,8 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_desktop_installer/services/installer_service.dart';
 
+import '../test_utils.dart';
+
 void main() {
   test('init interactive', () async {
     final client = MockSubiquityClient();
@@ -48,6 +50,7 @@ void main() {
 
   test('load interactive', () async {
     final client = MockSubiquityClient();
+    when(client.getInteractiveSections()).thenAnswer((_) async => null);
     when(client.monitorStatus()).thenAnswer(
       (_) => Stream.fromIterable([
         fakeApplicationStatus(ApplicationState.STARTING_UP),
@@ -65,6 +68,7 @@ void main() {
 
   test('load non-interactive', () async {
     final client = MockSubiquityClient();
+    when(client.getInteractiveSections()).thenAnswer((_) async => null);
     when(client.monitorStatus()).thenAnswer(
       (_) => Stream.fromIterable([
         fakeApplicationStatus(ApplicationState.STARTING_UP),
@@ -97,6 +101,7 @@ void main() {
 
   test('load error', () async {
     final client = MockSubiquityClient();
+    when(client.getInteractiveSections()).thenAnswer((_) async => null);
     when(client.monitorStatus()).thenAnswer(
       (_) => Stream.fromIterable([
         fakeApplicationStatus(ApplicationState.ERROR),
@@ -116,7 +121,7 @@ void main() {
         (_) => Stream.value(fakeApplicationStatus(ApplicationState.WAITING)));
 
     final service = InstallerService(client);
-    await service.init();
+    await service.load();
 
     expect(service.hasRoute('a'), isTrue);
     expect(service.hasRoute('b'), isTrue);
@@ -130,11 +135,28 @@ void main() {
         (_) => Stream.value(fakeApplicationStatus(ApplicationState.WAITING)));
 
     final service = InstallerService(client);
-    await service.init();
+    await service.load();
 
     expect(service.hasRoute('a'), isTrue);
     expect(service.hasRoute('b'), isTrue);
     expect(service.hasRoute('c'), isTrue);
+  });
+
+  test('configured routes', () async {
+    final client = MockSubiquityClient();
+    when(client.getInteractiveSections()).thenAnswer((_) async => null);
+    when(client.monitorStatus()).thenAnswer(
+        (_) => Stream.value(fakeApplicationStatus(ApplicationState.WAITING)));
+
+    final config = MockConfigService();
+    when(config.get('routes')).thenAnswer((_) async => ['a', 'b']);
+
+    final service = InstallerService(client, config: config);
+    await service.load();
+
+    expect(service.hasRoute('a'), isTrue);
+    expect(service.hasRoute('b'), isTrue);
+    expect(service.hasRoute('c'), isFalse);
   });
 
   test('start installation', () async {

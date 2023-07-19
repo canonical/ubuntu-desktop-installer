@@ -50,6 +50,7 @@ extension UbuntuProvisionTester on WidgetTester {
 
 @GenerateMocks([
   ActiveDirectoryService,
+  ConfigService,
   DesktopService,
   GeoService,
   IdentityService,
