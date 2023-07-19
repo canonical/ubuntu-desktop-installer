@@ -53,7 +53,8 @@ void main() {
     when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
     when(model.encryption).thenReturn(false);
     when(model.canInstallAlongside).thenReturn(false);
-    when(model.hasStorage).thenReturn(true);
+    when(model.canEraseDisk).thenReturn(true);
+    when(model.canManualPartition).thenReturn(true);
     when(model.hasBitLocker).thenReturn(false);
 
     await tester.pumpWidget(
@@ -88,7 +89,8 @@ void main() {
     when(model.advancedFeature).thenReturn(AdvancedFeature.lvm);
     when(model.encryption).thenReturn(false);
     when(model.canInstallAlongside).thenReturn(false);
-    when(model.hasStorage).thenReturn(true);
+    when(model.canEraseDisk).thenReturn(true);
+    when(model.canManualPartition).thenReturn(true);
     when(model.hasBitLocker).thenReturn(false);
 
     await tester.pumpWidget(

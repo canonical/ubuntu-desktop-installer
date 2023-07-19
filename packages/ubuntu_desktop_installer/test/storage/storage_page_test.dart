@@ -292,8 +292,8 @@ void main() {
     verify(model.type = StorageType.alongside).called(1);
   });
 
-  testWidgets('erase', (tester) async {
-    final model = buildStorageModel();
+  testWidgets('can erase disk', (tester) async {
+    final model = buildStorageModel(canEraseDisk: true);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(StoragePage));
@@ -306,7 +306,19 @@ void main() {
     verify(model.type = StorageType.erase).called(1);
   });
 
-  testWidgets('manual', (tester) async {
+  testWidgets('cannot erase disk', (tester) async {
+    final model = buildStorageModel(canEraseDisk: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
+    final radio =
+        find.radioButton<StorageType>(l10n.installationTypeErase('Ubuntu'));
+    expect(radio, findsNothing);
+  });
+
+  testWidgets('can manual partition', (tester) async {
     final model = buildStorageModel(type: StorageType.manual);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
@@ -319,6 +331,17 @@ void main() {
     verify(model.type = StorageType.manual).called(1);
 
     expect(find.button(l10n.installationTypeAdvancedLabel), isDisabled);
+  });
+
+  testWidgets('cannot manual partition', (tester) async {
+    final model = buildStorageModel(canManualPartition: false);
+    await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
+
+    final context = tester.element(find.byType(StoragePage));
+    final l10n = AppLocalizations.of(context);
+
+    final radio = find.radioButton<StorageType>(l10n.installationTypeManual);
+    expect(radio, findsNothing);
   });
 
   group('advanced features', () {
@@ -371,8 +394,8 @@ void main() {
     });
   });
 
-  testWidgets('no storage', (tester) async {
-    final model = buildStorageModel(hasStorage: false);
+  testWidgets('no type', (tester) async {
+    final model = buildStorageModel(type: null);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     expect(find.button(find.nextLabel), isDisabled);
@@ -382,7 +405,7 @@ void main() {
   });
 
   testWidgets('continue', (tester) async {
-    final model = buildStorageModel(hasStorage: true);
+    final model = buildStorageModel(type: StorageType.manual);
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     await tester.tapNext();

@@ -83,11 +83,6 @@ class MockStorageModel extends _i1.Mock implements _i3.StorageModel {
         ),
       ) as _i2.ProductInfo);
   @override
-  bool get hasStorage => (super.noSuchMethod(
-        Invocation.getter(#hasStorage),
-        returnValue: false,
-      ) as bool);
-  @override
   bool get hasBitLocker => (super.noSuchMethod(
         Invocation.getter(#hasBitLocker),
         returnValue: false,
@@ -95,6 +90,16 @@ class MockStorageModel extends _i1.Mock implements _i3.StorageModel {
   @override
   bool get canInstallAlongside => (super.noSuchMethod(
         Invocation.getter(#canInstallAlongside),
+        returnValue: false,
+      ) as bool);
+  @override
+  bool get canEraseDisk => (super.noSuchMethod(
+        Invocation.getter(#canEraseDisk),
+        returnValue: false,
+      ) as bool);
+  @override
+  bool get canManualPartition => (super.noSuchMethod(
+        Invocation.getter(#canManualPartition),
         returnValue: false,
       ) as bool);
   @override
