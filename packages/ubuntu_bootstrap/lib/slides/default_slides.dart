@@ -42,7 +42,7 @@ Widget _buildWelcomeSlide(BuildContext context) {
       ],
     ),
     image: MascotAvatar(
-      image: AssetImage(_slideAsset('mascot.png')),
+      image: AssetImage(_slideAsset('mascot.png'), package: 'ubuntu_bootstrap'),
       size: const Size.square(300),
     ),
   );
