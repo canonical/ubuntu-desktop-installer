@@ -95,9 +95,6 @@ class StorageModel extends SafeChangeNotifier {
   /// A list of existing OS installations or null if not detected.
   List<OsProber>? get existingOS => _storage.existingOS;
 
-  /// Whether storage information has been queried and installation can proceed.
-  bool get hasStorage => _targets != null;
-
   /// Whether BitLocker is detected.
   bool get hasBitLocker => _hasBitLocker;
 
@@ -110,11 +107,29 @@ class StorageModel extends SafeChangeNotifier {
         _getTargets<GuidedStorageTargetUseGap>().isNotEmpty;
   }
 
+  /// Whether erasing the disk is possible i.e. whether any guided reformat
+  /// targets are allowed.
+  bool get canEraseDisk {
+    return _getTargets<GuidedStorageTargetReformat>().isNotEmpty;
+  }
+
+  /// Whether manual partitioning is possible i.e. whether a manual partitioning
+  /// target is allowed.
+  bool get canManualPartition {
+    return _getTargets<GuidedStorageTargetManual>().isNotEmpty;
+  }
+
   /// Initializes the model.
   Future<void> init() async {
     await _storage.init();
     await _storage.getGuidedStorage().then((r) => _targets = r.targets);
-    _type ??= canInstallAlongside ? StorageType.alongside : StorageType.erase;
+    _type ??= canInstallAlongside
+        ? StorageType.alongside
+        : canEraseDisk
+            ? StorageType.erase
+            : canManualPartition
+                ? StorageType.manual
+                : null;
     _advancedFeature =
         _storage.useLvm ? AdvancedFeature.lvm : AdvancedFeature.none;
     _encryption = _storage.useEncryption;

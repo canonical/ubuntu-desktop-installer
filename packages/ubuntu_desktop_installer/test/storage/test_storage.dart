@@ -16,24 +16,26 @@ export 'test_storage.mocks.dart';
 
 @GenerateMocks([StorageModel])
 StorageModel buildStorageModel({
-  StorageType? type,
+  StorageType? type = StorageType.erase,
   AdvancedFeature? advancedFeature,
   bool? encryption,
   ProductInfo? productInfo,
   List<OsProber>? existingOS,
   bool? canInstallAlongside,
-  bool? hasStorage,
+  bool? canEraseDisk,
+  bool? canManualPartition,
   bool? hasBitLocker,
 }) {
   final model = MockStorageModel();
-  when(model.type).thenReturn(type ?? StorageType.erase);
+  when(model.type).thenReturn(type);
   when(model.advancedFeature)
       .thenReturn(advancedFeature ?? AdvancedFeature.none);
   when(model.encryption).thenReturn(encryption ?? false);
   when(model.productInfo).thenReturn(productInfo ?? ProductInfo(name: ''));
   when(model.existingOS).thenReturn(existingOS);
   when(model.canInstallAlongside).thenReturn(canInstallAlongside ?? false);
-  when(model.hasStorage).thenReturn(hasStorage ?? true);
+  when(model.canEraseDisk).thenReturn(canEraseDisk ?? true);
+  when(model.canManualPartition).thenReturn(canManualPartition ?? true);
   when(model.hasBitLocker).thenReturn(hasBitLocker ?? false);
   return model;
 }

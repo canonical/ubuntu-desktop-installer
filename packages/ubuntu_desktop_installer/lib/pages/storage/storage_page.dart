@@ -81,42 +81,47 @@ class StoragePage extends ConsumerWidget {
                 onChanged: (v) => model.type = v!,
               ),
             ),
-          YaruRadioButton<StorageType>(
-            title: Text(lang.installationTypeErase(flavor.name)),
-            subtitle: Html(
-              data: lang.installationTypeEraseWarning(
-                  Theme.of(context).colorScheme.error.toHex()),
-              style: {'body': Style(margin: Margins.zero)},
-            ),
-            value: StorageType.erase,
-            groupValue: model.type,
-            onChanged: (value) => model.type = value!,
-          ),
-          const SizedBox(height: kWizardSpacing),
-          Padding(
-            padding: kWizardIndentation,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                OutlinedButton(
-                  onPressed: model.type == StorageType.erase
-                      ? () => showAdvancedFeaturesDialog(context, model)
-                      : null,
-                  child: Text(lang.installationTypeAdvancedLabel),
+          if (model.canEraseDisk) ...[
+            Padding(
+              padding: const EdgeInsets.only(bottom: kWizardSpacing),
+              child: YaruRadioButton<StorageType>(
+                title: Text(lang.installationTypeErase(flavor.name)),
+                subtitle: Html(
+                  data: lang.installationTypeEraseWarning(
+                      Theme.of(context).colorScheme.error.toHex()),
+                  style: {'body': Style(margin: Margins.zero)},
                 ),
-                const SizedBox(width: kWizardSpacing),
-                Text(model.advancedFeature.localize(lang, model.encryption)),
-              ],
+                value: StorageType.erase,
+                groupValue: model.type,
+                onChanged: (value) => model.type = value!,
+              ),
             ),
-          ),
-          const SizedBox(height: kWizardSpacing),
-          YaruRadioButton<StorageType>(
-            title: Text(lang.installationTypeManual),
-            subtitle: Text(lang.installationTypeManualInfo(flavor.name)),
-            value: StorageType.manual,
-            groupValue: model.type,
-            onChanged: (v) => model.type = v!,
-          ),
+            Padding(
+              padding: kWizardIndentation,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  OutlinedButton(
+                    onPressed: model.type == StorageType.erase
+                        ? () => showAdvancedFeaturesDialog(context, model)
+                        : null,
+                    child: Text(lang.installationTypeAdvancedLabel),
+                  ),
+                  const SizedBox(width: kWizardSpacing),
+                  Text(model.advancedFeature.localize(lang, model.encryption)),
+                ],
+              ),
+            ),
+            const SizedBox(height: kWizardSpacing),
+          ],
+          if (model.canManualPartition)
+            YaruRadioButton<StorageType>(
+              title: Text(lang.installationTypeManual),
+              subtitle: Text(lang.installationTypeManualInfo(flavor.name)),
+              value: StorageType.manual,
+              groupValue: model.type,
+              onChanged: (v) => model.type = v!,
+            ),
         ],
       ),
       bottomBar: WizardBar(
@@ -124,7 +129,7 @@ class StoragePage extends ConsumerWidget {
         trailing: [
           WizardButton.next(
             context,
-            enabled: model.hasStorage,
+            enabled: model.type != null,
             arguments: model.type,
             onNext: model.save,
             // If the user returns back to select another installation type, the

@@ -156,7 +156,7 @@ void main() {
     verify(storage.useLvm = false).called(1);
   });
 
-  test('can install alongside', () async {
+  test('can install alongside, erase disk, manual partition', () async {
     final service = MockStorageService();
     when(service.useLvm).thenReturn(false);
     when(service.useEncryption).thenReturn(false);
@@ -175,6 +175,8 @@ void main() {
         .thenAnswer((_) async => fakeGuidedStorageResponse());
     await model.init();
     expect(model.canInstallAlongside, isFalse);
+    expect(model.canEraseDisk, isFalse);
+    expect(model.canManualPartition, isFalse);
 
     // reformat
     const reformat = GuidedStorageTargetReformat(
@@ -185,6 +187,8 @@ void main() {
         (_) async => fakeGuidedStorageResponse(targets: [reformat]));
     await model.init();
     expect(model.canInstallAlongside, isFalse);
+    expect(model.canEraseDisk, isTrue);
+    expect(model.canManualPartition, isFalse);
 
     // resize
     const resize = GuidedStorageTargetResize(
@@ -200,6 +204,8 @@ void main() {
         .thenAnswer((_) async => fakeGuidedStorageResponse(targets: [resize]));
     await model.init();
     expect(model.canInstallAlongside, isTrue);
+    expect(model.canEraseDisk, isFalse);
+    expect(model.canManualPartition, isFalse);
 
     // gap
     const gap = GuidedStorageTargetUseGap(
@@ -211,12 +217,27 @@ void main() {
         .thenAnswer((_) async => fakeGuidedStorageResponse(targets: [gap]));
     await model.init();
     expect(model.canInstallAlongside, isTrue);
+    expect(model.canEraseDisk, isFalse);
+    expect(model.canManualPartition, isFalse);
+
+    // manual
+    const manual = GuidedStorageTargetManual(
+      allowed: [GuidedCapability.MANUAL],
+    );
+    when(service.getGuidedStorage())
+        .thenAnswer((_) async => fakeGuidedStorageResponse(targets: [manual]));
+    await model.init();
+    expect(model.canInstallAlongside, isFalse);
+    expect(model.canEraseDisk, isFalse);
+    expect(model.canManualPartition, isTrue);
 
     // all
     when(service.getGuidedStorage()).thenAnswer((_) async =>
-        fakeGuidedStorageResponse(targets: [reformat, resize, gap]));
+        fakeGuidedStorageResponse(targets: [reformat, resize, gap, manual]));
     await model.init();
     expect(model.canInstallAlongside, isTrue);
+    expect(model.canEraseDisk, isTrue);
+    expect(model.canManualPartition, isTrue);
   });
 
   test('reset storage', () async {
