@@ -23,7 +23,7 @@ class SourcePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(sourceModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.updatesOtherSoftwarePageTitle),
@@ -133,9 +133,10 @@ extension on SourceSelection {
   String localizeTitle(BuildContext context) {
     switch (id) {
       case kNormalSourceId:
-        return AppLocalizations.of(context).normalInstallationTitle;
+        return UbuntuBootstrapLocalizations.of(context).normalInstallationTitle;
       case kMinimalSourceId:
-        return AppLocalizations.of(context).minimalInstallationTitle;
+        return UbuntuBootstrapLocalizations.of(context)
+            .minimalInstallationTitle;
       default:
         return name;
     }
@@ -144,9 +145,11 @@ extension on SourceSelection {
   String localizeSubtitle(BuildContext context) {
     switch (id) {
       case kNormalSourceId:
-        return AppLocalizations.of(context).normalInstallationSubtitle;
+        return UbuntuBootstrapLocalizations.of(context)
+            .normalInstallationSubtitle;
       case kMinimalSourceId:
-        return AppLocalizations.of(context).minimalInstallationSubtitle;
+        return UbuntuBootstrapLocalizations.of(context)
+            .minimalInstallationSubtitle;
       default:
         return description;
     }

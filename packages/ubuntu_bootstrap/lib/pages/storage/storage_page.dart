@@ -23,7 +23,7 @@ class StoragePage extends ConsumerWidget {
   }
 
   static String _formatHeader(BuildContext context, List<OsProber> os) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     switch (os.length) {
       case 0:
         return lang.installationTypeNoOSDetected;
@@ -39,7 +39,7 @@ class StoragePage extends ConsumerWidget {
   }
 
   static String _formatAlongside(
-      AppLocalizations lang, ProductInfo info, List<OsProber> os) {
+      UbuntuBootstrapLocalizations lang, ProductInfo info, List<OsProber> os) {
     final product = [info.name, info.version].whereType<String>().join(' ');
     switch (os.length) {
       case 0:
@@ -59,7 +59,7 @@ class StoragePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(storageModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final flavor = ref.watch(flavorProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
@@ -144,7 +144,7 @@ class StoragePage extends ConsumerWidget {
 }
 
 extension _AdvancedFeatureL10n on AdvancedFeature {
-  String localize(AppLocalizations lang, bool encryption) {
+  String localize(UbuntuBootstrapLocalizations lang, bool encryption) {
     switch (this) {
       case AdvancedFeature.none:
         return lang.installationTypeNoneSelected;

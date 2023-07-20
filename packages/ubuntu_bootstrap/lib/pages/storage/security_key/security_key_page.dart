@@ -23,7 +23,7 @@ class SecurityKeyPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final flavor = ref.watch(flavorProvider);
     return WizardPage(
       title: YaruWindowTitleBar(

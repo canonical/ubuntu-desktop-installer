@@ -62,7 +62,7 @@ void main() {
     }
 
     final context = tester.element(find.byType(Scaffold));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     expectLaunchUrl(
       l10n.installationSlidesSupportDocumentation,

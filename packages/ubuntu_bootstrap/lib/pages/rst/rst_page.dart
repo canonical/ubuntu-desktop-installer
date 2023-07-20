@@ -23,7 +23,7 @@ class RstPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final flavor = ref.watch(flavorProvider);
     final model = ref.watch(rstModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     return Scaffold(
       body: WizardPage(
         title: YaruWindowTitleBar(

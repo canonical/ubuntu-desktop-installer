@@ -140,7 +140,8 @@ Future<void> runInstallerApp(
             darkTheme: darkTheme,
             onGenerateTitle: (context) {
               final flavor = ref.watch(flavorProvider);
-              return AppLocalizations.of(context).windowTitle(flavor.name);
+              return UbuntuBootstrapLocalizations.of(context)
+                  .windowTitle(flavor.name);
             },
             locale: ref.watch(localeProvider),
             localizationsDelegates: localizationsDelegates,

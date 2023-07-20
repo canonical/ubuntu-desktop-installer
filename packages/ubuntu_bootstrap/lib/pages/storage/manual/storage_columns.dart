@@ -30,7 +30,7 @@ class StorageDeviceColumn extends StorageColumn {
   StorageDeviceColumn()
       : super(
           titleBuilder: (context) {
-            final lang = AppLocalizations.of(context);
+            final lang = UbuntuBootstrapLocalizations.of(context);
             return Text(lang.diskHeadersDevice);
           },
           diskBuilder: (context, disk) {
@@ -43,7 +43,7 @@ class StorageDeviceColumn extends StorageColumn {
             );
           },
           gapBuilder: (context, disk, gap) {
-            final lang = AppLocalizations.of(context);
+            final lang = UbuntuBootstrapLocalizations.of(context);
             final color = gap.tooManyPrimaryPartitions
                 ? Theme.of(context).disabledColor
                 : null;
@@ -88,7 +88,7 @@ class StorageTypeColumn extends StorageColumn {
   StorageTypeColumn()
       : super(
           titleBuilder: (context) {
-            final lang = AppLocalizations.of(context);
+            final lang = UbuntuBootstrapLocalizations.of(context);
             return Text(lang.diskHeadersType);
           },
           diskBuilder: (context, disk) {
@@ -107,7 +107,7 @@ class StorageMountColumn extends StorageColumn {
   StorageMountColumn()
       : super(
           titleBuilder: (context) {
-            final lang = AppLocalizations.of(context);
+            final lang = UbuntuBootstrapLocalizations.of(context);
             return Text(lang.diskHeadersMountPoint);
           },
           diskBuilder: (context, disk) {
@@ -126,14 +126,14 @@ class StorageSizeColumn extends StorageColumn {
   StorageSizeColumn()
       : super(
           titleBuilder: (context) {
-            final lang = AppLocalizations.of(context);
+            final lang = UbuntuBootstrapLocalizations.of(context);
             return Text(lang.diskHeadersSize);
           },
           diskBuilder: (context, disk) {
             return Text(context.formatByteSize(disk.size));
           },
           gapBuilder: (context, disk, gap) {
-            final lang = AppLocalizations.of(context);
+            final lang = UbuntuBootstrapLocalizations.of(context);
             final color = gap.tooManyPrimaryPartitions
                 ? Theme.of(context).disabledColor
                 : null;
@@ -157,7 +157,7 @@ class StorageSystemColumn extends StorageColumn {
   StorageSystemColumn()
       : super(
           titleBuilder: (context) {
-            final lang = AppLocalizations.of(context);
+            final lang = UbuntuBootstrapLocalizations.of(context);
             return Text(lang.diskHeadersSystem);
           },
           diskBuilder: (context, disk) {
@@ -176,7 +176,7 @@ class StorageWipeColumn extends StorageColumn {
   StorageWipeColumn({required this.onWipe})
       : super(
           titleBuilder: (context) {
-            final lang = AppLocalizations.of(context);
+            final lang = UbuntuBootstrapLocalizations.of(context);
             return Text(lang.diskHeadersFormat);
           },
           diskBuilder: (context, disk) {

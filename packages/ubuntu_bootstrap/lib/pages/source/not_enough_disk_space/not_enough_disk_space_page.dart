@@ -20,7 +20,7 @@ class NotEnoughDiskSpacePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(notEnoughDiskSpaceModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final flavor = ref.watch(flavorProvider);
     return Scaffold(
       body: WizardPage(

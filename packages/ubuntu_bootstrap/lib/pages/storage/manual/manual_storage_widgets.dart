@@ -83,7 +83,7 @@ class PartitionLegend extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(manualStorageModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
 
     final objects = model.selectedDisk?.partitions ?? [];
 
@@ -196,7 +196,7 @@ class PartitionButtonRow extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(manualStorageModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
 
     return Row(
       children: <Widget>[
@@ -276,7 +276,7 @@ class PartitionButtonRow extends ConsumerWidget {
 
   Future<void> _maybeReformatDisk(BuildContext context, WidgetRef ref) async {
     final model = ref.read(manualStorageModelProvider.notifier);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
 
     final disk = model.selectedDisk!;
     if (disk.ptable != null) {

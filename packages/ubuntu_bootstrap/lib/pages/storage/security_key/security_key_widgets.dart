@@ -14,7 +14,7 @@ class SecurityKeyFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final securityKey = ref
         .watch(securityKeyModelProvider.select((model) => model.securityKey));
     final showSecurityKey = ref.watch(
@@ -44,7 +44,7 @@ class ConfirmSecurityKeyFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final securityKey = ref
         .watch(securityKeyModelProvider.select((model) => model.securityKey));
     final confirmedSecurityKey = ref.watch(
@@ -77,7 +77,7 @@ class SecurityKeyShowButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final showSecurityKey = ref.watch(
         securityKeyModelProvider.select((model) => model.showSecurityKey));
 

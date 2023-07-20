@@ -98,7 +98,7 @@ void main() {
     await tester.pumpAndSettle();
 
     final context = tester.element(find.byType(InstallPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     expect(find.text(l10n.copyingFiles), findsOneWidget);
     expect(find.text(l10n.installingSystem), findsNothing);
@@ -149,7 +149,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(InstallPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final restartButton = find.button(l10n.restartNow);
     expect(restartButton, findsOneWidget);
@@ -168,7 +168,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(InstallPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final continueButton = find.button(l10n.continueTesting);
     expect(continueButton, findsOneWidget);

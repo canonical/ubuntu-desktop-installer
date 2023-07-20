@@ -147,7 +147,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(Wizard));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     await tester.pumpAndSettle();
     expect(find.byType(LocalePage), findsOneWidget);
@@ -349,7 +349,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(Wizard));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     await tester.pumpAndSettle();
     expect(find.byType(KeyboardPage), findsOneWidget);

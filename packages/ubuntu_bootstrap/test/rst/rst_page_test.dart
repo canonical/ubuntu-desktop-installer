@@ -18,7 +18,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildRstPage(model)));
 
     final context = tester.element(find.byType(RstPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final restartButton = find.button(l10n.restartIntoWindows);
     expect(restartButton, findsOneWidget);

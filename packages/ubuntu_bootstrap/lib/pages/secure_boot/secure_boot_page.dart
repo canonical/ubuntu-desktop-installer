@@ -22,7 +22,7 @@ class _SecureBootPageState extends ConsumerState<SecureBootPage> {
   @override
   Widget build(BuildContext context) {
     final model = ref.watch(secureBootModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(lang.configureSecureBootTitle),

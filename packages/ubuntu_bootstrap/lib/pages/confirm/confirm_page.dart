@@ -29,7 +29,7 @@ class ConfirmPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final model = ref.watch(confirmModelProvider);
     return WizardPage(
       title: YaruWindowTitleBar(
@@ -138,7 +138,7 @@ class _PartitionLabel extends StatelessWidget {
   final Partition? original;
 
   String formatPartition(BuildContext context) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     if (partition.resize == true) {
       return lang.confirmPartitionResize(
         partition.sysname,

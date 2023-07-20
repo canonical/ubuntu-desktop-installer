@@ -18,7 +18,7 @@ class SecurityKeyFormField extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(secureBootModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     return Padding(
       padding: kWizardIndentation,
       child: ValidatedFormField(
@@ -48,7 +48,7 @@ class SecurityKeyConfirmFormField extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(secureBootModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     return Padding(
       padding: kWizardIndentation,
       child: ValidatedFormField(

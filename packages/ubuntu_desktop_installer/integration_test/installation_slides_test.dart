@@ -56,7 +56,7 @@ void main() {
       await dumpSlide('welcome', locale);
     }
 
-    final l10n = await AppLocalizations.delegate.load(locale);
+    final l10n = await UbuntuBootstrapLocalizations.delegate.load(locale);
     expect(find.text(l10n.installationSlidesWelcomeTitle), findsOneWidget);
   }, variant: localeVariant);
 
@@ -67,7 +67,7 @@ void main() {
       await dumpSlide('software', locale);
     }
 
-    final l10n = await AppLocalizations.delegate.load(locale);
+    final l10n = await UbuntuBootstrapLocalizations.delegate.load(locale);
     expect(find.text(l10n.installationSlidesSoftwareTitle), findsOneWidget);
   }, variant: localeVariant);
 
@@ -78,7 +78,7 @@ void main() {
       await dumpSlide('development', locale);
     }
 
-    final l10n = await AppLocalizations.delegate.load(locale);
+    final l10n = await UbuntuBootstrapLocalizations.delegate.load(locale);
     expect(find.text(l10n.installationSlidesDevelopmentTitle), findsOneWidget);
   }, variant: localeVariant);
 
@@ -89,7 +89,7 @@ void main() {
       await dumpSlide('creativity', locale);
     }
 
-    final l10n = await AppLocalizations.delegate.load(locale);
+    final l10n = await UbuntuBootstrapLocalizations.delegate.load(locale);
     expect(find.text(l10n.installationSlidesCreativityTitle), findsOneWidget);
   }, variant: localeVariant);
 
@@ -100,7 +100,7 @@ void main() {
       await dumpSlide('gaming', locale);
     }
 
-    final l10n = await AppLocalizations.delegate.load(locale);
+    final l10n = await UbuntuBootstrapLocalizations.delegate.load(locale);
     expect(find.text(l10n.installationSlidesGamingTitle), findsOneWidget);
   }, variant: localeVariant);
 
@@ -111,7 +111,7 @@ void main() {
       await dumpSlide('security', locale);
     }
 
-    final l10n = await AppLocalizations.delegate.load(locale);
+    final l10n = await UbuntuBootstrapLocalizations.delegate.load(locale);
     expect(find.text(l10n.installationSlidesSecurityTitle), findsOneWidget);
   }, variant: localeVariant);
 
@@ -122,7 +122,7 @@ void main() {
       await dumpSlide('productivity', locale);
     }
 
-    final l10n = await AppLocalizations.delegate.load(locale);
+    final l10n = await UbuntuBootstrapLocalizations.delegate.load(locale);
     expect(find.text(l10n.installationSlidesProductivityTitle), findsOneWidget);
   }, variant: localeVariant);
 
@@ -133,7 +133,7 @@ void main() {
       await dumpSlide('accessibility', locale);
     }
 
-    final l10n = await AppLocalizations.delegate.load(locale);
+    final l10n = await UbuntuBootstrapLocalizations.delegate.load(locale);
     expect(
         find.text(l10n.installationSlidesAccessibilityTitle), findsOneWidget);
   }, variant: localeVariant);
@@ -145,7 +145,7 @@ void main() {
       await dumpSlide('support', locale);
     }
 
-    final l10n = await AppLocalizations.delegate.load(locale);
+    final l10n = await UbuntuBootstrapLocalizations.delegate.load(locale);
     expect(find.text(l10n.installationSlidesSupportTitle), findsOneWidget);
   }, variant: localeVariant);
 }
