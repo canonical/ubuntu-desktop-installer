@@ -60,7 +60,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(SecurityKeyPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final showSecurityKeyButton = find.checkButton(l10n.showSecurityKey);
     expect(showSecurityKeyButton, findsOneWidget);

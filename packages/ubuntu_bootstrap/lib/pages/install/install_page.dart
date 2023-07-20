@@ -14,7 +14,7 @@ import 'install_model.dart';
 import 'slide_view.dart';
 
 extension InstallationActionL10n on InstallationAction {
-  String localize(AppLocalizations lang) {
+  String localize(UbuntuBootstrapLocalizations lang) {
     switch (this) {
       case InstallationAction.installingSystem:
         return lang.installingSystem;
@@ -69,7 +69,7 @@ class _SlidePageState extends ConsumerState<_SlidePage> {
 
   @override
   Widget build(BuildContext context) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final model = ref.watch(installModelProvider);
     final slides = SlidesContext.of(context);
     return WizardPage(
@@ -198,7 +198,7 @@ class _DonePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final flavor = ref.watch(flavorProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final model = ref.watch(installModelProvider);
     return WizardPage(
       headerPadding: EdgeInsets.zero,

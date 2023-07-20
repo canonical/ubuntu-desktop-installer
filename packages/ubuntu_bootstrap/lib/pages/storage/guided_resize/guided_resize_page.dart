@@ -18,7 +18,7 @@ class GuidedResizePage extends ConsumerWidget {
   }
 
   static String _formatTitle(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final model = ref.read(guidedResizeModelProvider);
 
     switch (model.existingOS.length) {
@@ -43,7 +43,7 @@ class GuidedResizePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(guidedResizeModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     return WizardPage(
       title: YaruWindowTitleBar(
         title: Text(_formatTitle(context, ref)),

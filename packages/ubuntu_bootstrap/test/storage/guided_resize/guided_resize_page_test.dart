@@ -99,7 +99,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(GuidedResizePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     expect(
       find.html(l10n.installAlongsideHiddenPartitions(4, '')),
@@ -115,7 +115,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(GuidedResizePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     expect(
       find.text(l10n.installationTypeAlongsideUnknown('Ubuntu 22.10')),
@@ -131,7 +131,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(GuidedResizePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     expect(
       find.text(l10n.installationTypeAlongside('Ubuntu 22.10', 'Windows 10')),
@@ -147,7 +147,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(GuidedResizePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     expect(
       find.text(l10n.installationTypeAlongsideDual(
@@ -164,7 +164,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(GuidedResizePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     expect(
       find.text(l10n.installationTypeAlongsideMulti('Ubuntu 22.10')),

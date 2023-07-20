@@ -46,7 +46,7 @@ Future<void> testWelcomePage(
   await tester.pumpUntilPage(WelcomePage);
 
   final context = tester.element(find.byType(WelcomePage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   expect(find.title(l10n.welcomePageTitle('Ubuntu')), findsOneWidget);
 
@@ -142,7 +142,7 @@ Future<void> testSourcePage(
   await tester.pumpUntilPage(SourcePage);
 
   final context = tester.element(find.byType(SourcePage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   expect(find.title(l10n.updatesOtherSoftwarePageTitle), findsOneWidget);
 
@@ -165,7 +165,7 @@ Future<void> testNotEnoughDiskSpacePage(
   await tester.pumpUntilPage(NotEnoughDiskSpacePage);
 
   final context = tester.element(find.byType(NotEnoughDiskSpacePage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   expect(find.title(l10n.notEnoughDiskSpaceTitle), findsOneWidget);
 
@@ -188,7 +188,7 @@ Future<void> testStoragePage(
   await tester.pumpUntilPage(StoragePage);
 
   final context = tester.element(find.byType(StoragePage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   expect(find.title(l10n.installationTypeTitle), findsOneWidget);
 
@@ -236,7 +236,7 @@ Future<void> testSecurityKeyPage(
   await tester.pumpUntilPage(SecurityKeyPage);
 
   final context = tester.element(find.byType(SecurityKeyPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   expect(find.title(l10n.chooseSecurityKeyTitle), findsOneWidget);
 
@@ -266,7 +266,7 @@ Future<void> testManualStoragePage(
   await tester.pumpUntilPage(ManualStoragePage);
 
   final context = tester.element(find.byType(ManualStoragePage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   expect(find.title(l10n.allocateDiskSpace), findsOneWidget);
 
@@ -323,7 +323,7 @@ Future<void> testGuidedReformatPage(
   await tester.pumpUntilPage(GuidedReformatPage);
 
   final context = tester.element(find.byType(GuidedReformatPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   expect(
     find.title(l10n.selectGuidedStoragePageTitle('Ubuntu')),
@@ -345,7 +345,7 @@ Future<void> testGuidedResizePage(
   await tester.pumpUntilPage(GuidedResizePage);
 
   final context = tester.element(find.byType(GuidedResizePage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   final productInfo = getService<ProductService>().getProductInfo();
   expect(
@@ -385,7 +385,7 @@ Future<void> testConfirmPage(
   await tester.pumpUntilPage(ConfirmPage);
 
   final context = tester.element(find.byType(ConfirmPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   expect(find.title(l10n.confirmPageTitle), findsOneWidget);
 
@@ -403,7 +403,7 @@ Future<void> testBitLockerPage(
   await tester.pumpUntilPage(BitLockerPage);
 
   final context = tester.element(find.byType(BitLockerPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   expect(find.title(l10n.bitlockerTitle), findsOneWidget);
 
@@ -431,7 +431,7 @@ Future<void> testRstPage(
   await tester.pumpUntilPage(RstPage);
 
   final context = tester.element(find.byType(RstPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   expect(find.title(l10n.rstTitle), findsOneWidget);
 
@@ -618,7 +618,7 @@ Future<void> testInstallPage(
   await tester.pumpUntilPage(InstallPage);
 
   final context = tester.element(find.byType(InstallPage));
-  final l10n = AppLocalizations.of(context);
+  final l10n = UbuntuBootstrapLocalizations.of(context);
 
   if (screenshot != null) {
     await takeScreenshot(tester, screenshot);

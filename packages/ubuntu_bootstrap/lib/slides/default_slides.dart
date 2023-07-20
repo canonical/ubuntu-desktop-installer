@@ -28,7 +28,7 @@ final defaultSlides = <WidgetBuilder>[
 ];
 
 Widget _buildWelcomeSlide(BuildContext context) {
-  final lang = AppLocalizations.of(context);
+  final lang = UbuntuBootstrapLocalizations.of(context);
   final product = getService<ProductService>();
   return IntroSlideLayout(
     title: Text(lang.installationSlidesWelcomeTitle),
@@ -49,7 +49,7 @@ Widget _buildWelcomeSlide(BuildContext context) {
 }
 
 Widget _buildSoftwareSlide(BuildContext context) {
-  final lang = AppLocalizations.of(context);
+  final lang = UbuntuBootstrapLocalizations.of(context);
   return CinematicSlideLayout(
     title: Text(lang.installationSlidesSoftwareTitle),
     body: Consumer(builder: (context, ref, child) {
@@ -88,7 +88,7 @@ Widget _buildSoftwareSlide(BuildContext context) {
 }
 
 Widget _buildDevelopmentSlide(BuildContext context) {
-  final lang = AppLocalizations.of(context);
+  final lang = UbuntuBootstrapLocalizations.of(context);
   return PortraitSlideLayout(
     title: Text(lang.installationSlidesDevelopmentTitle),
     body: Consumer(builder: (context, ref, child) {
@@ -123,7 +123,7 @@ Widget _buildDevelopmentSlide(BuildContext context) {
 }
 
 Widget _buildCreativitySlide(BuildContext context) {
-  final lang = AppLocalizations.of(context);
+  final lang = UbuntuBootstrapLocalizations.of(context);
   return LandscapeSlideLayout(
     title: Text(lang.installationSlidesCreativityTitle),
     body: Consumer(builder: (context, ref, child) {
@@ -158,7 +158,7 @@ Widget _buildCreativitySlide(BuildContext context) {
 }
 
 Widget _buildGamingSlide(BuildContext context) {
-  final lang = AppLocalizations.of(context);
+  final lang = UbuntuBootstrapLocalizations.of(context);
   return CinematicSlideLayout(
     title: Text(lang.installationSlidesGamingTitle),
     body: Consumer(builder: (context, ref, child) {
@@ -200,7 +200,7 @@ Widget _buildGamingSlide(BuildContext context) {
 }
 
 Widget _buildSecuritySlide(BuildContext context) {
-  final lang = AppLocalizations.of(context);
+  final lang = UbuntuBootstrapLocalizations.of(context);
   return LandscapeSlideLayout(
     title: Text(lang.installationSlidesSecurityTitle),
     body: Consumer(builder: (context, ref, child) {
@@ -239,7 +239,7 @@ Widget _buildSecuritySlide(BuildContext context) {
 }
 
 Widget _buildProductivitySlide(BuildContext context) {
-  final lang = AppLocalizations.of(context);
+  final lang = UbuntuBootstrapLocalizations.of(context);
   return CinematicSlideLayout(
     title: Text(lang.installationSlidesProductivityTitle),
     body: Consumer(builder: (context, ref, child) {
@@ -281,7 +281,7 @@ Widget _buildProductivitySlide(BuildContext context) {
 }
 
 Widget _buildAccessibilitySlide(BuildContext context) {
-  final lang = AppLocalizations.of(context);
+  final lang = UbuntuBootstrapLocalizations.of(context);
   return PortraitSlideLayout(
     title: Text(lang.installationSlidesAccessibilityTitle),
     body: Consumer(builder: (context, ref, child) {
@@ -312,7 +312,7 @@ Widget _buildAccessibilitySlide(BuildContext context) {
 }
 
 Widget _buildSupportSlide(BuildContext context) {
-  final lang = AppLocalizations.of(context);
+  final lang = UbuntuBootstrapLocalizations.of(context);
   return OutroSlideLayout(
     title: Text(lang.installationSlidesSupportTitle),
     body: SlideColumn(

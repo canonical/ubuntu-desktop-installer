@@ -31,7 +31,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildSourcePage(model)));
 
     final context = tester.element(find.byType(SourcePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final checkbox = find.checkButton(l10n.installDriversTitle);
     expect(checkbox, findsOneWidget);
@@ -49,7 +49,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildSourcePage(model)));
 
     final context = tester.element(find.byType(SourcePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final checkbox = find.checkButton(l10n.installCodecsTitle);
     expect(checkbox, findsOneWidget);
@@ -68,7 +68,7 @@ void main() {
     await tester.pumpAndSettle();
 
     final context = tester.element(find.byType(SourcePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final warning = find.byType(Html);
     final theme = Theme.of(tester.element(find.byType(Scaffold)));
@@ -91,7 +91,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildSourcePage(model)));
 
     final context = tester.element(find.byType(SourcePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     expect(find.text(l10n.offlineWarning), findsNothing);
 

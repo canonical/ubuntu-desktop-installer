@@ -124,7 +124,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(ManualStoragePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final addButton = find.iconButton(Icons.add);
     expect(addButton, findsOneWidget);
@@ -159,7 +159,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(ManualStoragePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final editButton = find.button(l10n.changeButtonText);
     expect(editButton, findsOneWidget);
@@ -203,7 +203,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(ManualStoragePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final resetButton = find.button(l10n.newPartitionTable);
     expect(resetButton, findsOneWidget);
@@ -223,7 +223,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(ManualStoragePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final resetButton = find.button(l10n.newPartitionTable);
     expect(resetButton, findsOneWidget);
@@ -304,7 +304,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(ManualStoragePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final addButton = find.iconButton(Icons.add);
     expect(addButton, isDisabled);

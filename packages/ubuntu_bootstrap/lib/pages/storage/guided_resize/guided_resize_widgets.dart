@@ -37,7 +37,7 @@ class StorageSelector extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     return Row(
       children: <Widget>[
         Text(lang.selectGuidedStorageDropdownLabel),
@@ -79,7 +79,7 @@ class HiddenPartitionLabel extends StatelessWidget {
       return const SizedBox.shrink();
     }
 
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     return Html(
       data: lang.installAlongsideHiddenPartitions(hidden, ''),
       style: {

@@ -103,7 +103,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildConfirmPage(model)));
 
     final context = tester.element(find.byType(ConfirmPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     expect(
         find.html(l10n.confirmPartitionFormatMount('sdb3', 'ext3', '/mnt/3')),
@@ -122,7 +122,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildConfirmPage(model)));
 
     final context = tester.element(find.byType(ConfirmPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final installButton = find.button(l10n.confirmInstallButton);
     expect(installButton, findsOneWidget);

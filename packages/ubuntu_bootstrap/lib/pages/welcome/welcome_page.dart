@@ -27,7 +27,7 @@ class WelcomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final model = ref.watch(welcomeModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final flavor = ref.watch(flavorProvider);
     final brightness = Theme.of(context).brightness;
     final locale = Localizations.localeOf(context);

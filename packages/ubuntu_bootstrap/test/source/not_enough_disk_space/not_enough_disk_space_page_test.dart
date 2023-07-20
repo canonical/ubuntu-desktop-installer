@@ -26,7 +26,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(NotEnoughDiskSpacePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     expect(find.text(l10n.notEnoughDiskSpaceUbuntu('Ubuntu')), findsOneWidget);
     expect(find.text(context.formatByteSize(123456)), findsOneWidget);
@@ -38,7 +38,7 @@ void main() {
     await tester.pumpWidget(tester.buildApp((_) => buildPage(model)));
 
     final context = tester.element(find.byType(NotEnoughDiskSpacePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final button = find.button(l10n.quitButtonText);
     expect(button, findsOneWidget);

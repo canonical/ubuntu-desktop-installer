@@ -17,7 +17,7 @@ Future<void> showAdvancedFeaturesDialog(
   final result = await showDialog<bool>(
     context: context,
     builder: (context) {
-      final lang = AppLocalizations.of(context);
+      final lang = UbuntuBootstrapLocalizations.of(context);
 
       return AlertDialog(
         title: YaruDialogTitleBar(

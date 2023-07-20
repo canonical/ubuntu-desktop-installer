@@ -62,7 +62,7 @@ class _ManualStoragePageState extends ConsumerState<ManualStoragePage> {
   @override
   Widget build(BuildContext context) {
     final model = ref.watch(manualStorageModelProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
 
     return WizardPage(
       title: YaruWindowTitleBar(

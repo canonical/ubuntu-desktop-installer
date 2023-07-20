@@ -68,7 +68,7 @@ class StorageSizeDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final canAccept = size >= minimumSize && size <= maximumSize;
     return AlertDialog(
       title: YaruDialogTitleBar(

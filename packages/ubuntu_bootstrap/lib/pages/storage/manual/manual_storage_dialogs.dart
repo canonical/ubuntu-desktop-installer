@@ -28,7 +28,7 @@ Future<void> showCreatePartitionDialog(
           ValueNotifier<PartitionFormat?>(PartitionFormat.defaultValue);
       final partitionMount = ValueNotifier<String?>(null);
 
-      final lang = AppLocalizations.of(context);
+      final lang = UbuntuBootstrapLocalizations.of(context);
       return Consumer(builder: (context, ref, child) {
         final model = ref.read(manualStorageModelProvider);
         return AlertDialog(
@@ -147,7 +147,7 @@ Future<void> showEditPartitionDialog(
               : PartitionFormat.fromPartition(partition));
       final partitionMount = ValueNotifier(partition.mount);
 
-      final lang = AppLocalizations.of(context);
+      final lang = UbuntuBootstrapLocalizations.of(context);
       return Consumer(builder: (context, ref, child) {
         final model = ref.read(manualStorageModelProvider);
         return AlertDialog(
@@ -283,7 +283,7 @@ class _PartitionMountField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     return SizedBox(
       width: _kInputFieldWidth,
       child: ValueListenableBuilder<PartitionFormat?>(

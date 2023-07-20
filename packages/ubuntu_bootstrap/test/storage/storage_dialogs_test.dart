@@ -26,7 +26,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(StoragePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final result = showAdvancedFeaturesDialog(
         tester.element(find.byType(StoragePage)), model);
@@ -65,7 +65,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(StoragePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final result = showAdvancedFeaturesDialog(
         tester.element(find.byType(StoragePage)), model);
@@ -101,7 +101,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(StoragePage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final result = showAdvancedFeaturesDialog(
         tester.element(find.byType(StoragePage)), model);

@@ -87,7 +87,7 @@ class _StorageSplitViewState extends State<StorageSplitView> {
 
   @override
   Widget build(BuildContext context) {
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     return SplitView(
       key: ObjectKey(_controller),
       indicator: const SizedBox.shrink(key: Key('indicator')),

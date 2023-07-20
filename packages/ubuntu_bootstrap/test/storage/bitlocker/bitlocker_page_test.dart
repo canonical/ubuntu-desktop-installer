@@ -26,7 +26,7 @@ void main() {
     );
 
     final context = tester.element(find.byType(BitLockerPage));
-    final l10n = AppLocalizations.of(context);
+    final l10n = UbuntuBootstrapLocalizations.of(context);
 
     final restartButton = find.button(l10n.restartIntoWindows);
     expect(restartButton, findsOneWidget);

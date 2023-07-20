@@ -26,7 +26,7 @@ class _LoadingPageState extends ConsumerState<LoadingPage> {
   @override
   Widget build(BuildContext context) {
     final flavor = ref.watch(flavorProvider);
-    final lang = AppLocalizations.of(context);
+    final lang = UbuntuBootstrapLocalizations.of(context);
     final style = Theme.of(context).textTheme.headlineSmall!;
     return WizardPage(
       title: YaruWindowTitleBar(
