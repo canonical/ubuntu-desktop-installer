@@ -9,6 +9,7 @@ import 'services/xdg_locale_service.dart';
 import 'services/xdg_session_service.dart';
 import 'services/xdg_timezone_service.dart';
 
+export 'package:timezone_map/timezone_map.dart' show GeoService;
 export 'services/realmd_active_directory_service.dart';
 export 'services/xdg_identity_service.dart';
 export 'services/xdg_keyboard_service.dart';
