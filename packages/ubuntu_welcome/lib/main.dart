@@ -3,11 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:timezone_map/timezone_map.dart';
 import 'package:ubuntu_init/ubuntu_init.dart';
 import 'package:ubuntu_logger/ubuntu_logger.dart';
 import 'package:ubuntu_provision/ubuntu_provision.dart';
-import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:ubuntu_welcome/l10n.dart';
 import 'package:ubuntu_wizard/ubuntu_wizard.dart';
@@ -19,13 +17,6 @@ Future<void> main(List<String> args) async {
   })!;
   setupLogger(options);
 
-  tryRegisterService<ActiveDirectoryService>(RealmdActiveDirectoryService.new);
-  tryRegisterService<IdentityService>(XdgIdentityService.new);
-  tryRegisterService<KeyboardService>(XdgKeyboardService.new);
-  tryRegisterService<LocaleService>(XdgLocaleService.new);
-  tryRegisterService<NetworkService>(NetworkService.new);
-  tryRegisterService<TimezoneService>(XdgTimezoneService.new);
-
   final log = Logger();
 
   return runZonedGuarded(() async {
@@ -35,14 +26,7 @@ Future<void> main(List<String> args) async {
 
     await YaruWindowTitleBar.ensureInitialized();
 
-    var geo = tryGetService<GeoService>();
-    if (geo == null) {
-      final geodata = Geodata.asset();
-      final geoname = Geoname.ubuntu(geodata: geodata);
-      geo = GeoService(sources: [geodata, geoname]);
-      registerServiceInstance(geo);
-    }
-    await geo.init();
+    await registerInitServices();
 
     runApp(ProviderScope(
       child: Consumer(
