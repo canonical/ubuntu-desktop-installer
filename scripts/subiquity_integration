@@ -11,7 +11,7 @@ class Tests(unittest.TestCase):
         with open('snap/snapcraft.yaml', 'r') as udi_snapcraft:
             udi_data = yaml.safe_load(udi_snapcraft)
 
-        with open('packages/subiquity_client/subiquity/snapcraft.yaml', 'r') \
+        with open('vendor/ubuntu-desktop-provision/packages/subiquity_client/subiquity/snapcraft.yaml', 'r') \
                 as subiquity_snapcraft:
             subiquity_data = yaml.safe_load(subiquity_snapcraft)
 

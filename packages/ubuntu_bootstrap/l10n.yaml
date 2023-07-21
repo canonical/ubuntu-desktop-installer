@@ -1,6 +1,0 @@
-arb-dir: lib/l10n
-template-arb-file: ubuntu_bootstrap_en.arb
-output-class: UbuntuBootstrapLocalizations
-output-localization-file: ubuntu_bootstrap_localizations.dart
-synthetic-package: false
-nullable-getter: false

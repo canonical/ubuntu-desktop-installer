@@ -15,15 +15,15 @@ dependencies:
   flutter_spinbox: ^0.13.0
   handy_window: ^0.3.0
   subiquity_client:
-    path: ../subiquity_client
+    path: ../../vendor/ubuntu-desktop-provision/packages/subiquity_client
   ubuntu_bootstrap:
-    path: ../ubuntu_bootstrap
+    path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_bootstrap
   ubuntu_provision:
-    path: ../ubuntu_provision
+    path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_provision
   ubuntu_utils:
-    path: ../ubuntu_utils
+    path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_utils
   ubuntu_wizard:
-    path: ../ubuntu_wizard
+    path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_wizard
   yaru: ^0.9.0
   yaru_icons: ^1.0.0
   yaru_widgets: ^2.5.0
@@ -37,7 +37,7 @@ dev_dependencies:
     sdk: flutter
   mockito: 5.4.2
   subiquity_test:
-    path: ../subiquity_client/packages/subiquity_test
+    path: ../../vendor/ubuntu-desktop-provision/packages/subiquity_client/packages/subiquity_test
   ubuntu_test: ^0.1.0-0
   yaml: ^3.1.0
   yaru_test: ^0.1.0

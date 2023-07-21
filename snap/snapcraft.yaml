@@ -158,11 +158,11 @@ parts:
       mkdir -p $CRAFT_PART_INSTALL/bin/lib
       cp snap/local/launcher $CRAFT_PART_INSTALL/bin/
       cp snap/local/subiquity-server $CRAFT_PART_INSTALL/bin/
-      cp -r packages/subiquity_client/subiquity $CRAFT_PART_INSTALL/bin/
+      cp -r vendor/ubuntu-desktop-provision/packages/subiquity_client/subiquity $CRAFT_PART_INSTALL/bin/
       mkdir -p $CRAFT_PART_INSTALL/etc/subiquity
       cp -r snap/local/postinst.d $CRAFT_PART_INSTALL/etc/subiquity
       # https://github.com/canonical/ubuntu-desktop-installer/issues/1146
-      (cd packages/ubuntu_wizard && flutter pub get)
+      (cd vendor/ubuntu-desktop-provision/packages/ubuntu_wizard && flutter pub get)
       cd packages/ubuntu_desktop_installer
       flutter pub get
       flutter build linux --release -v

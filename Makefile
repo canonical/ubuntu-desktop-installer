@@ -1,4 +1,4 @@
-SUBIQUITY_DIR = packages/subiquity_client/subiquity
+SUBIQUITY_DIR = vendor/ubuntu-desktop-provision/packages/subiquity_client/subiquity
 
 $(SUBIQUITY_DIR):
 	[ -d $(SUBIQUITY_DIR) ] || git submodule update --init --recursive
