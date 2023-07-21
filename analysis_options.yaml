@@ -6,6 +6,7 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.mocks.dart"
     - "**/l10n/*.dart"
+    - "vendor/"
 
 linter:
   rules:
