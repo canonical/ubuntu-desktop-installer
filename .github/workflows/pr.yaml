@@ -3,12 +3,14 @@ name: PR
 on: [pull_request_target]
 
 jobs:
-  cla-check:
-    if: contains(fromJson('["weblate", "renovate[bot]"]'), github.event.pull_request.user.login) == false
-    runs-on: ubuntu-22.04
+  cla:
+    if: contains(fromJson('["weblate"]'), github.event.pull_request.user.login) == false
+    runs-on: ubuntu-latest
     steps:
       - name: Check if CLA signed
         uses: canonical/has-signed-canonical-cla@v1
+        with:
+          exempted-bots: dependabot,github-actions,renovate
 
   labeler:
     permissions:
@@ -17,3 +19,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/labeler@v4
+
+  title:
+    permissions:
+      pull-requests: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: amannn/action-semantic-pull-request@v5
+        id: semantic-pr
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - uses: marocchino/sticky-pull-request-comment@v2
+        if: always() && steps.semantic-pr.outputs.error_message != null
+        with:
+          header: semantic-pr-error
+          message: ${{steps.semantic-pr.outputs.error_message}}
+      - if: steps.semantic-pr.outputs.error_message == null
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: semantic-pr-error
+          delete: true
