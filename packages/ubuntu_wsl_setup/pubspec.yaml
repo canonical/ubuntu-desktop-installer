@@ -23,7 +23,7 @@ dependencies:
   subiquity_client:
     path: ../../vendor/ubuntu-desktop-provision/packages/subiquity_client
   ubuntu_localizations: ^0.3.3
-  ubuntu_logger: ^0.0.3
+  ubuntu_logger: ^0.1.0
   ubuntu_service: ^0.2.0
   ubuntu_utils:
     path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_utils
