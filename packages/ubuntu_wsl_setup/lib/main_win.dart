@@ -28,9 +28,7 @@ Future<void> main(List<String> args) async {
         defaultValue: 'Ubuntu-Preview',
       ),
     );
-    addLoggingOptions(parser);
   })!;
-  setupLogger(options);
 
   final liveRun = options['dry-run'] != true;
   final isReconf = options['reconfigure'] == true;

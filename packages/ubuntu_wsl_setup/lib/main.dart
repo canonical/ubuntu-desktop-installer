@@ -14,9 +14,7 @@ import 'services/language_fallback.dart';
 Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
     addCommonCliOptions(parser);
-    addLoggingOptions(parser);
   })!;
-  setupLogger(options);
 
   final liveRun = options['dry-run'] != true;
   final isReconf = options['reconfigure'] == true;

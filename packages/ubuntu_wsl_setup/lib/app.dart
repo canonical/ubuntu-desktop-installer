@@ -34,7 +34,7 @@ Future<void> runWslSetupApp({
     return subiquityMonitor.start(endpoint);
   });
 
-  final log = Logger();
+  final log = Logger.setup();
 
   return runZonedGuarded(() async {
     FlutterError.onError = (error) {
