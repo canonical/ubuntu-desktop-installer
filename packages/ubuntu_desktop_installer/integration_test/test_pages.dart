@@ -134,6 +134,24 @@ Future<void> testNetworkPage(
   await tester.tapNext();
 }
 
+Future<void> testRefreshPage(
+  WidgetTester tester, {
+  String? screenshot,
+}) async {
+  await tester.pumpUntilPage(RefreshPage);
+
+  final context = tester.element(find.byType(RefreshPage));
+  final l10n = UbuntuBootstrapLocalizations.of(context);
+
+  expect(find.title(l10n.refreshPageTitle), findsOneWidget);
+
+  if (screenshot != null) {
+    await takeScreenshot(tester, screenshot);
+  }
+
+  await tester.tapButton(find.ul10n((l10n) => l10n.skipLabel));
+}
+
 Future<void> testSourcePage(
   WidgetTester tester, {
   String? sourceId,
