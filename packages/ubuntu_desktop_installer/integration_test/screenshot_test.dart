@@ -7,15 +7,13 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_bootstrap/ubuntu_bootstrap.dart';
 import 'package:ubuntu_provision/ubuntu_provision.dart';
+import 'package:ubuntu_provision_test/ubuntu_provision_test.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_utils/ubuntu_utils.dart';
-import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
-
-import 'test_pages.dart';
 
 Future<void> main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -45,11 +43,9 @@ Future<void> main() async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await testLocalePage(
-      tester,
+    await tester.testLocalePage(
       screenshot: '$currentThemeName/1.locale',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('2.welcome', (tester) async {
@@ -57,15 +53,13 @@ Future<void> main() async {
         .runApp(() => runInstallerApp(['--welcome'], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.welcome);
+    await tester.jumpToPage(Routes.welcome);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(
-      tester,
+    await tester.testWelcomePage(
       option: Option.welcomeInstallOption,
       screenshot: '$currentThemeName/2.welcome',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('3.rst', (tester) async {
@@ -74,11 +68,10 @@ Future<void> main() async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.rst);
+    await tester.jumpToPage(Routes.rst);
     await tester.pumpAndSettle();
 
-    await testRstPage(
-      tester,
+    await tester.testRstPage(
       screenshot: '$currentThemeName/3.rst',
     );
   }, variant: themeVariant);
@@ -87,43 +80,49 @@ Future<void> main() async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.keyboard);
+    await tester.jumpToPage(Routes.keyboard);
     await tester.pumpAndSettle();
 
-    await testKeyboardPage(
-      tester,
+    await tester.testKeyboardPage(
       screenshot: '$currentThemeName/3.keyboard',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('4.network', (tester) async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.network);
+    await tester.jumpToPage(Routes.network);
     await tester.pumpAndSettle();
 
-    await testNetworkPage(
-      tester,
+    await tester.testNetworkPage(
       mode: ConnectMode.none,
       screenshot: '$currentThemeName/4.network',
     );
+  }, variant: themeVariant);
+
+  testWidgets('5.refresh', (tester) async {
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
+
+    await tester.jumpToPage(Routes.refresh);
+    await tester.pumpAndSettle();
+
+    await tester.testRefreshPage(
+      screenshot: '$currentThemeName/5.refresh',
+    );
   }, variant: themeVariant);
 
   testWidgets('5.updates', (tester) async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.source);
+    await tester.jumpToPage(Routes.source);
     await tester.pumpAndSettle();
 
-    await testSourcePage(
-      tester,
+    await tester.testSourcePage(
       screenshot: '$currentThemeName/5.updates',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('6.not-enough-space', (tester) async {
@@ -136,12 +135,11 @@ Future<void> main() async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.source);
-    await tester.jumpToWizardRoute(Routes.notEnoughDiskSpace);
+    await tester.jumpToPage(Routes.source);
+    await tester.jumpToPage(Routes.notEnoughDiskSpace);
     await tester.pumpAndSettle();
 
-    await testNotEnoughDiskSpacePage(
-      tester,
+    await tester.testNotEnoughDiskSpacePage(
       screenshot: '$currentThemeName/6.not-enough-space',
     );
   }, variant: themeVariant);
@@ -153,12 +151,10 @@ Future<void> main() async {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(
-      tester,
+    await tester.testStoragePage(
       type: StorageType.erase,
       screenshot: '$currentThemeName/6.erase-disk',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('6.advanced-features', (tester) async {
@@ -168,13 +164,11 @@ Future<void> main() async {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(
-      tester,
+    await tester.testStoragePage(
       type: StorageType.erase,
       advancedFeature: AdvancedFeature.lvm,
       screenshot: '$currentThemeName/6.advanced-features',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('6.alongside-windows', (tester) async {
@@ -186,12 +180,10 @@ Future<void> main() async {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(
-      tester,
+    await tester.testStoragePage(
       type: StorageType.alongside,
       screenshot: '$currentThemeName/6.alongside-windows',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('7.manual-partitioning', (tester) async {
@@ -204,11 +196,11 @@ Future<void> main() async {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(tester, type: StorageType.manual);
+    await tester.testStoragePage(type: StorageType.manual);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testManualStoragePage(
-      tester,
+    await tester.testManualStoragePage(
       storage: [
         fakeDisk(
           path: '/dev/sda',
@@ -223,8 +215,6 @@ Future<void> main() async {
       ],
       screenshot: '$currentThemeName/7.manual-partitioning',
     );
-    await tester.pumpUntil(find.byType(ConfirmPage));
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('7.guided-resize', (tester) async {
@@ -238,16 +228,14 @@ Future<void> main() async {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(tester, type: StorageType.alongside);
+    await tester.testStoragePage(type: StorageType.alongside);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testGuidedResizePage(
-      tester,
+    await tester.testGuidedResizePage(
       sizes: {'ext4': 32768},
       screenshot: '$currentThemeName/7.guided-resize',
     );
-    await tester.pumpUntil(find.byType(ConfirmPage));
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('7.guided-reformat', (tester) async {
@@ -259,15 +247,13 @@ Future<void> main() async {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(tester, type: StorageType.erase);
+    await tester.testStoragePage(type: StorageType.erase);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testGuidedReformatPage(
-      tester,
+    await tester.testGuidedReformatPage(
       screenshot: '$currentThemeName/7.guided-reformat',
     );
-    await tester.pumpUntil(find.byType(ConfirmPage));
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('7.bitlocker', (tester) async {
@@ -279,11 +265,11 @@ Future<void> main() async {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(tester, type: StorageType.alongside);
+    await tester.testStoragePage(type: StorageType.alongside);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testBitLockerPage(
-      tester,
+    await tester.testBitLockerPage(
       screenshot: '$currentThemeName/7.bitlocker',
     );
   }, variant: themeVariant);
@@ -297,20 +283,18 @@ Future<void> main() async {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(
-      tester,
+    await tester.testStoragePage(
       type: StorageType.erase,
       advancedFeature: AdvancedFeature.lvm,
       useEncryption: true,
     );
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testSecurityKeyPage(
-      tester,
+    await tester.testSecurityKeyPage(
       securityKey: 'password',
       screenshot: '$currentThemeName/8.security-key',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('9.confirm', (tester) async {
@@ -323,42 +307,37 @@ Future<void> main() async {
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(
-      tester,
+    await tester.testStoragePage(
       type: StorageType.erase,
     );
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testConfirmPage(
-      tester,
+    await tester.testConfirmPage(
       screenshot: '$currentThemeName/9.confirm',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('10.timezone', (tester) async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.timezone);
+    await tester.jumpToPage(Routes.timezone);
     await tester.pumpAndSettle();
 
-    await testTimezonePage(
-      tester,
+    await tester.testTimezonePage(
       screenshot: '$currentThemeName/10.timezone',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('11.identity', (tester) async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.identity);
+    await tester.jumpToPage(Routes.identity);
     await tester.pumpAndSettle();
 
-    await testIdentityPage(
-      tester,
+    await tester.testIdentityPage(
       identity: const Identity(
         realname: 'Ubuntu User',
         hostname: 'ubuntu',
@@ -367,7 +346,6 @@ Future<void> main() async {
       password: 'password',
       screenshot: '$currentThemeName/11.identity',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('12.active-directory', (tester) async {
@@ -380,30 +358,26 @@ Future<void> main() async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.activeDirectory);
+    await tester.jumpToPage(Routes.activeDirectory);
     await tester.pumpAndSettle();
 
-    await testActiveDirectoryPage(
-      tester,
+    await tester.testActiveDirectoryPage(
       adminName: 'admin',
       password: 'password',
       screenshot: '$currentThemeName/12.active-directory',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('13.theme', (tester) async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.theme);
+    await tester.jumpToPage(Routes.theme);
     await tester.pumpAndSettle();
 
-    await testThemePage(
-      tester,
+    await tester.testThemePage(
       screenshot: '$currentThemeName/13.theme',
     );
-    await tester.pumpAndSettle();
   }, variant: themeVariant);
 
   testWidgets('14.install', (tester) async {
@@ -414,12 +388,11 @@ Future<void> main() async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.install);
+    await tester.jumpToPage(Routes.install);
     await tester.pump(kThemeAnimationDuration);
 
     for (var i = 0; i < defaultSlides.length; ++i) {
-      await takeScreenshot(
-        tester,
+      await tester.takeScreenshot(
         '$currentThemeName/14.install-$i',
       );
       if (i < defaultSlides.length - 1) {
@@ -436,11 +409,10 @@ Future<void> main() async {
     await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.install);
+    await tester.jumpToPage(Routes.install);
     await tester.pumpAndSettle();
 
-    await testInstallPage(
-      tester,
+    await tester.testInstallPage(
       screenshot: '$currentThemeName/15.complete',
     );
   }, variant: themeVariant);
@@ -543,18 +515,9 @@ class YaruThemeVariant extends ValueVariant<ThemeData> {
 }
 
 extension on WidgetTester {
-  Future<void> jumpToWizardRoute(String route) async {
-    final context = element(find.byType(WizardPage));
-    Wizard.of(context).jump(route);
-    await pumpUntil(find.byElementPredicate((element) {
-      return Wizard.maybeOf(element)?.controller.currentRoute == route;
-    }));
-    await pumpAndSettle();
-  }
-
   Future<void> jumpToStorageWizard() async {
     // an installation source must be explicitly selected before calling storage APIs
-    await jumpToWizardRoute(Routes.source);
+    await jumpToPage(Routes.source);
     await tapNext();
     await pumpUntil(find.byType(StorageWizard));
   }

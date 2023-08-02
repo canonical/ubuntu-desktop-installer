@@ -20,6 +20,8 @@ dependencies:
     path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_bootstrap
   ubuntu_provision:
     path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_provision
+  ubuntu_provision_test:
+    path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_provision_test
   ubuntu_utils:
     path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_utils
   ubuntu_wizard:
