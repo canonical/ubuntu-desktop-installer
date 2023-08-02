@@ -2,6 +2,7 @@ name: ubuntu_desktop_installer
 
 packages:
   - packages/**
+  - vendor/ubuntu-desktop-provision/packages/**
 
 ignore:
   - synthetic_package
@@ -9,22 +10,22 @@ ignore:
 scripts:
   # analyze all packages
   analyze: >
-    melos exec -c 1 -- \
+    melos exec -c 1 --scope="ubuntu_desktop_installer" --scope="ubuntu_wsl_setup" -- \
       flutter analyze .
 
   # collect coverage information for all packages
   coverage: >
-    melos exec -c 1 --fail-fast --dir-exists=test -- \
+    melos exec -c 1 --fail-fast --dir-exists=test --scope="ubuntu_desktop_installer" --scope="ubuntu_wsl_setup" -- \
       flutter test --coverage && melos run coverage:cleanup
 
   # cleanup generated files from coverage
   coverage:cleanup: >
-    melos exec --file-exists=coverage/lcov.info -- \
+    melos exec --file-exists=coverage/lcov.info --scope="ubuntu_desktop_installer" --scope="ubuntu_wsl_setup" -- \
       lcov --remove coverage/lcov.info '**/*.g.dart' '**/*.freezed.dart' -o coverage/lcov.info
 
   # format all packages
   format: >
-    melos exec -c 1 --fail-fast --ignore="subiquity_*" -- \
+    melos exec -c 1 --fail-fast --scope="ubuntu_desktop_installer" --scope="ubuntu_wsl_setup" -- \
       "find $MELOS_PACKAGE_PATH -name '*.dart' \
           ! -name '*.g.dart' \
           ! -name '*.freezed.dart' \
@@ -34,17 +35,17 @@ scripts:
 
   # run build_runner to generate code in all packages
   generate: >
-    melos exec -c 1 --fail-fast --depends-on="build_runner" --ignore="subiquity_*" -- \
+    melos exec -c 1 --fail-fast --depends-on="build_runner" --scope="ubuntu_desktop_installer" --scope="ubuntu_wsl_setup" -- \
       dart run build_runner build --delete-conflicting-outputs
 
   # run gen-l10n to generate localizations in all packages
   gen-l10n: >
-    melos exec -c 1 --fail-fast --file-exists="lib/l10n.dart" -- \
+    melos exec -c 1 --fail-fast --file-exists="lib/l10n.dart" --scope="ubuntu_desktop_installer" --scope="ubuntu_wsl_setup" -- \
      flutter gen-l10n
 
   # run integration tests in all packages
   integration_test: >
-    melos exec -c 1 --fail-fast --dir-exists=integration_test -- \
+    melos exec -c 1 --fail-fast --dir-exists=integration_test --scope="ubuntu_desktop_installer" --scope="ubuntu_wsl_setup" -- \
       flutter test integration_test
 
   # runs "flutter pub <arg(s)>" in all packages
@@ -52,5 +53,5 @@ scripts:
 
   # run tests in all packages
   test: >
-    melos exec -c 1 --fail-fast --dir-exists=test -- \
+    melos exec -c 1 --fail-fast --dir-exists=test --scope="ubuntu_desktop_installer" --scope="ubuntu_wsl_setup" -- \
       flutter test
