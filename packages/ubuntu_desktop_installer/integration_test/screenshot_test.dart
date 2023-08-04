@@ -166,7 +166,7 @@ Future<void> main() async {
 
     await tester.testStoragePage(
       type: StorageType.erase,
-      advancedFeature: AdvancedFeature.lvm,
+      guidedCapability: GuidedCapability.LVM,
       screenshot: '$currentThemeName/6.advanced-features',
     );
   }, variant: themeVariant);
@@ -285,8 +285,7 @@ Future<void> main() async {
 
     await tester.testStoragePage(
       type: StorageType.erase,
-      advancedFeature: AdvancedFeature.lvm,
-      useEncryption: true,
+      guidedCapability: GuidedCapability.LVM_LUKS,
     );
     await tester.tapNext();
     await tester.pumpAndSettle();
