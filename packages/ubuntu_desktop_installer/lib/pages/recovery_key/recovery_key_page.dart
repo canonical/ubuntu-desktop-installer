@@ -29,7 +29,7 @@ class RecoveryKeyPage extends StatelessWidget {
             padding:
                 const EdgeInsetsDirectional.only(start: 4, top: 2, bottom: 3),
             child: SelectableText(
-              'snap recovery -show-keys',
+              'snap recovery --show-keys',
               style: TextStyle(
                 inherit: false,
                 fontFamily: 'Ubuntu Mono',
