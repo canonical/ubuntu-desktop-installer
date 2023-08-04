@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:collection/collection.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_bootstrap/ubuntu_bootstrap.dart';
 import 'package:ubuntu_desktop_installer/main.dart' as app;
@@ -129,8 +130,7 @@ void main() {
 
     await tester.testStoragePage(
       type: StorageType.erase,
-      advancedFeature: AdvancedFeature.lvm,
-      useEncryption: true,
+      guidedCapability: GuidedCapability.LVM_LUKS,
     );
     await tester.tapNext();
     await tester.pumpAndSettle();
