@@ -27,7 +27,7 @@ dependencies:
   ubuntu_service: ^0.2.0
   ubuntu_utils:
     path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_utils
-  ubuntu_widgets: ^0.1.0
+  ubuntu_widgets: ^0.2.0
   ubuntu_wizard:
     path: ../../vendor/ubuntu-desktop-provision/packages/ubuntu_wizard
   yaru: ^0.9.0
