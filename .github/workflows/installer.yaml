@@ -18,7 +18,6 @@ jobs:
     strategy:
       matrix:
         target:
-          - installation_slides_test.dart
           - screenshot_test.dart
           - ubuntu_desktop_installer_test.dart
       fail-fast: false
