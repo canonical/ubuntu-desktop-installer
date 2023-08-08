@@ -435,6 +435,10 @@ class FakeDesktopService implements DesktopService {
 class FakeProductService implements ProductService {
   @override
   ProductInfo getProductInfo() => ProductInfo(name: 'Ubuntu', version: '23.04');
+
+  @override
+  String getReleaseNotesURL(String languageCode) =>
+      'https://wiki.ubuntu.com/ManticMinotaur/ReleaseNotes';
 }
 
 class FakeStorageService extends StorageService {
