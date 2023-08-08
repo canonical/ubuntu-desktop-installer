@@ -3,9 +3,8 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
-import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 
 import '../../l10n.dart';
 import 'profile_setup_model.dart';
@@ -64,10 +63,10 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
         ),
       ),
       content: LayoutBuilder(builder: (context, constraints) {
-        final fieldPadding = EdgeInsets.symmetric(
-            horizontal: kContentPadding.left, vertical: 12);
+        final fieldPadding =
+            EdgeInsets.symmetric(horizontal: kWizardPadding.left, vertical: 12);
         final fieldWidth = (constraints.maxWidth - fieldPadding.horizontal) *
-            kContentWidthFraction;
+            kWizardWidthFraction;
 
         return ListView(
           children: <Widget>[
@@ -79,7 +78,7 @@ class _ProfileSetupPageState extends State<ProfileSetupPage> {
               padding: fieldPadding,
               child: UsernameFormField(fieldWidth: fieldWidth),
             ),
-            const SizedBox(height: kContentSpacing),
+            const SizedBox(height: kWizardSpacing),
             Padding(
               padding: fieldPadding,
               child: PasswordFormField(fieldWidth: fieldWidth),

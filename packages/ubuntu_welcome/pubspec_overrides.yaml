@@ -1,8 +1,0 @@
-dependency_overrides:
-  # TODO: remove subiquity dependencies
-  subiquity_client:
-    path: ../subiquity_client
-  subiquity_test:
-    path: ../subiquity_client/packages/subiquity_test
-  ubuntu_wizard:
-    path: ../ubuntu_wizard

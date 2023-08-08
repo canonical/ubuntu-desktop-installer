@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Provide a workaround so that ubuntu-desktop-installer does not
+# recreate LP: #1993318
+
+TARGET=/target
+
+for pool in $(zpool list -H | cut -f1); do
+    zpool set cachefile= "${pool}"
+    if [ ! -d "/etc/zfs/zfs-list.cache" ] ; then
+        mkdir -p "/etc/zfs/zfs-list.cache"
+    fi
+    if [ ! -d "${TARGET}/etc/zfs/zfs-list.cache" ] ; then
+        mkdir -p "${TARGET}/etc/zfs/zfs-list.cache"
+    fi
+    # Force cache generation
+    : >"/etc/zfs/zfs-list.cache/${pool}"
+    # Execute zfs-list-cacher with a manual fake event
+    env -i \
+        ZEVENT_POOL=${pool} \
+        ZED_ZEDLET_DIR=/etc/zfs/zed.d \
+        ZEVENT_SUBCLASS=history_event \
+        ZFS=zfs \
+        ZEVENT_HISTORY_INTERNAL_NAME=create \
+        /etc/zfs/zed.d/history_event-zfs-list-cacher.sh
+    # ZFS list doesn't honor target prefix for chroots for
+    # the mountpoint property
+    # https://github.com/openzfs/zfs/issues/1078
+    # Drop leading /target from all mountpoint fields
+    sed -E "s|\t${TARGET}/?|\t/|g" "/etc/zfs/zfs-list.cache/${pool}" \
+        > "${TARGET}/etc/zfs/zfs-list.cache/${pool}"
+    # Ensure installer system doesn't generate mount units
+    rm -f "/etc/zfs/zfs-list.cache/${pool}"
+done
+
+

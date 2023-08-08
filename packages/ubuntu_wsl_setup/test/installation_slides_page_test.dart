@@ -10,7 +10,7 @@ import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_service/ubuntu_service.dart';
 import 'package:ubuntu_widgets/ubuntu_widgets.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:ubuntu_wsl_setup/app_model.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/installation_slides/installation_slides_model.dart';
@@ -19,6 +19,7 @@ import 'package:ubuntu_wsl_setup/pages/installation_slides/slides.dart';
 import 'package:ubuntu_wsl_setup/services/journal.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_test/yaru_test.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import 'installation_slides_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -102,7 +103,7 @@ void main() {
     await tester
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
     expect(find.text(title), findsWidgets);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.byType(YaruCircularProgressIndicator), findsOneWidget);
     expect(find.text(tester.lang.installationSlidesUnpacking), findsOneWidget);
   });
 
@@ -112,7 +113,7 @@ void main() {
     await tester
         .pumpWidget(buildApp((_) => buildPage(model, [const Text(title)])));
     expect(find.text(title), findsWidgets);
-    expect(find.byType(CircularProgressIndicator), findsNothing);
+    expect(find.byType(YaruCircularProgressIndicator), findsNothing);
     expect(find.text(tester.lang.installationSlidesErrorTitle), findsOneWidget);
     expect(find.text(tester.lang.installationSlidesErrorMsg), findsOneWidget);
   });

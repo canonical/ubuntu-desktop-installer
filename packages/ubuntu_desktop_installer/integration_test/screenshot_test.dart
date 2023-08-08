@@ -5,22 +5,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
-import 'package:ubuntu_desktop_installer/installer.dart';
-import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/routes.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_bootstrap/ubuntu_bootstrap.dart';
+import 'package:ubuntu_provision/ubuntu_provision.dart';
+import 'package:ubuntu_provision_test/ubuntu_provision_test.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:yaru/yaru.dart';
 import 'package:yaru_icons/yaru_icons.dart';
 import 'package:yaru_test/yaru_test.dart';
 import 'package:yaru_widgets/yaru_widgets.dart';
 
-import 'test_pages.dart';
-
-void main() {
+Future<void> main() async {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
+  final window = await YaruWindow.ensureInitialized();
 
   setUpAll(() => autoUpdateGoldenFiles = true);
 
@@ -34,28 +32,32 @@ void main() {
     );
   });
 
-  tearDown(() async => await resetAllServices());
+  tearDown(() async {
+    final windowClosed = YaruTestWindow.waitForClosed();
+    window.close();
+    await windowClosed;
+    await resetAllServices();
+  });
 
   testWidgets('1.locale', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await testLocalePage(
-      tester,
+    await tester.testLocalePage(
       screenshot: '$currentThemeName/1.locale',
     );
   }, variant: themeVariant);
 
   testWidgets('2.welcome', (tester) async {
-    await runInstallerApp(['--welcome'], flavor: currentFlavor);
+    await tester
+        .runApp(() => runInstallerApp(['--welcome'], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.welcome);
+    await tester.jumpToPage(Routes.welcome);
     await tester.pumpAndSettle();
 
-    await testWelcomePage(
-      tester,
-      option: Option.installUbuntu,
+    await tester.testWelcomePage(
+      option: Option.welcomeInstallOption,
       screenshot: '$currentThemeName/2.welcome',
     );
   }, variant: themeVariant);
@@ -63,129 +65,142 @@ void main() {
   testWidgets('3.rst', (tester) async {
     registerService<SubiquityClient>(FakeSubiquityClient.new);
 
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.rst);
+    await tester.jumpToPage(Routes.rst);
     await tester.pumpAndSettle();
 
-    await testRstPage(
-      tester,
+    await tester.testRstPage(
       screenshot: '$currentThemeName/3.rst',
     );
   }, variant: themeVariant);
 
   testWidgets('3.keyboard', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.keyboard);
+    await tester.jumpToPage(Routes.keyboard);
     await tester.pumpAndSettle();
 
-    await testKeyboardPage(
-      tester,
+    await tester.testKeyboardPage(
       screenshot: '$currentThemeName/3.keyboard',
     );
   }, variant: themeVariant);
 
   testWidgets('4.network', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.network);
+    await tester.jumpToPage(Routes.network);
     await tester.pumpAndSettle();
 
-    await testNetworkPage(
-      tester,
+    await tester.testNetworkPage(
       mode: ConnectMode.none,
       screenshot: '$currentThemeName/4.network',
     );
   }, variant: themeVariant);
 
+  testWidgets('5.refresh', (tester) async {
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
+    await tester.pumpAndSettle();
+
+    await tester.jumpToPage(Routes.refresh);
+    await tester.pumpAndSettle();
+
+    await tester.testRefreshPage(
+      screenshot: '$currentThemeName/5.refresh',
+    );
+  }, variant: themeVariant);
+
   testWidgets('5.updates', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.source);
+    await tester.jumpToPage(Routes.source);
     await tester.pumpAndSettle();
 
-    await testSourcePage(
-      tester,
+    await tester.testSourcePage(
       screenshot: '$currentThemeName/5.updates',
     );
   }, variant: themeVariant);
 
   testWidgets('6.not-enough-space', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    final client = FakeSubiquityClient();
+    registerServiceInstance<SubiquityClient>(client);
+
+    final service = FakeStorageService(client);
+    registerServiceInstance<StorageService>(service);
+
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.source);
-    await tester.jumpToWizardRoute(Routes.notEnoughDiskSpace);
+    await tester.jumpToPage(Routes.source);
+    await tester.jumpToPage(Routes.notEnoughDiskSpace);
     await tester.pumpAndSettle();
 
-    await testNotEnoughDiskSpacePage(
-      tester,
+    await tester.testNotEnoughDiskSpacePage(
       screenshot: '$currentThemeName/6.not-enough-space',
     );
   }, variant: themeVariant);
 
   testWidgets('6.erase-disk', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(
-      tester,
+    await tester.testStoragePage(
       type: StorageType.erase,
       screenshot: '$currentThemeName/6.erase-disk',
     );
   }, variant: themeVariant);
 
   testWidgets('6.advanced-features', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(
-      tester,
+    await tester.testStoragePage(
       type: StorageType.erase,
-      advancedFeature: AdvancedFeature.lvm,
+      guidedCapability: GuidedCapability.LVM,
       screenshot: '$currentThemeName/6.advanced-features',
     );
   }, variant: themeVariant);
 
   testWidgets('6.alongside-windows', (tester) async {
-    await runInstallerApp([
-      '--machine-config=examples/win10.json',
-    ], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([
+          '--machine-config=examples/machines/win10.json',
+        ], theme: currentTheme));
     await tester.pumpAndSettle();
 
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(
-      tester,
-      type: StorageType.bitlocker,
+    await tester.testStoragePage(
+      type: StorageType.alongside,
       screenshot: '$currentThemeName/6.alongside-windows',
     );
   }, variant: themeVariant);
 
   testWidgets('7.manual-partitioning', (tester) async {
-    await runInstallerApp([
-      '--',
-      '--bootloader=uefi',
-    ], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([
+          '--',
+          '--bootloader=uefi',
+        ], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(StorageRoutes.manual);
+    await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testManualStoragePage(
-      tester,
+    await tester.testStoragePage(type: StorageType.manual);
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+
+    await tester.testManualStoragePage(
       storage: [
         fakeDisk(
           path: '/dev/sda',
@@ -203,110 +218,126 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('7.guided-resize', (tester) async {
-    await runInstallerApp([
-      '--machine-config=examples/win10-along-ubuntu.json',
-      '--',
-      '--bootloader=uefi',
-    ], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([
+          '--machine-config=examples/machines/win10-along-ubuntu.json',
+          '--',
+          '--bootloader=uefi',
+        ], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(StorageRoutes.guidedResize);
+    await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testGuidedResizePage(
-      tester,
+    await tester.testStoragePage(type: StorageType.alongside);
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+
+    await tester.testGuidedResizePage(
       sizes: {'ext4': 32768},
       screenshot: '$currentThemeName/7.guided-resize',
     );
   }, variant: themeVariant);
 
   testWidgets('7.guided-reformat', (tester) async {
-    await runInstallerApp([
-      '--machine-config=examples/win10.json',
-    ], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([
+          '--machine-config=examples/machines/imsm.json',
+        ], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(StorageRoutes.guidedReformat);
+    await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testGuidedReformatPage(
-      tester,
+    await tester.testStoragePage(type: StorageType.erase);
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+
+    await tester.testGuidedReformatPage(
       screenshot: '$currentThemeName/7.guided-reformat',
     );
   }, variant: themeVariant);
 
   testWidgets('7.bitlocker', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([
+          '--machine-config=examples/machines/win10.json',
+        ], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(StorageRoutes.bitlocker);
+    await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testBitLockerPage(
-      tester,
+    await tester.testStoragePage(type: StorageType.alongside);
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+
+    await tester.testBitLockerPage(
       screenshot: '$currentThemeName/7.bitlocker',
     );
   }, variant: themeVariant);
 
   testWidgets('8.security-key', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([
+          '--machine-config=examples/machines/win10-along-ubuntu.json',
+        ], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToStorageWizard(StorageRoutes.securityKey);
+    await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testSecurityKeyPage(
-      tester,
+    await tester.testStoragePage(
+      type: StorageType.erase,
+      guidedCapability: GuidedCapability.LVM_LUKS,
+    );
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+
+    await tester.testSecurityKeyPage(
       securityKey: 'password',
       screenshot: '$currentThemeName/8.security-key',
     );
   }, variant: themeVariant);
 
   testWidgets('9.confirm', (tester) async {
-    await runInstallerApp([
-      '--',
-      '--bootloader=uefi',
-    ], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([
+          '--',
+          '--bootloader=uefi',
+        ], theme: currentTheme));
     await tester.pumpAndSettle();
 
     await tester.jumpToStorageWizard();
     await tester.pumpAndSettle();
 
-    await testStoragePage(
-      tester,
+    await tester.testStoragePage(
       type: StorageType.erase,
     );
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testConfirmPage(
-      tester,
+    await tester.testConfirmPage(
       screenshot: '$currentThemeName/9.confirm',
     );
   }, variant: themeVariant);
 
   testWidgets('10.timezone', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.timezone);
+    await tester.jumpToPage(Routes.timezone);
     await tester.pumpAndSettle();
 
-    await testTimezonePage(
-      tester,
+    await tester.testTimezonePage(
       screenshot: '$currentThemeName/10.timezone',
     );
   }, variant: themeVariant);
 
   testWidgets('11.identity', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.identity);
+    await tester.jumpToPage(Routes.identity);
     await tester.pumpAndSettle();
 
-    await testIdentityPage(
-      tester,
-      identity: const IdentityData(
+    await tester.testIdentityPage(
+      identity: const Identity(
         realname: 'Ubuntu User',
         hostname: 'ubuntu',
         username: 'user',
@@ -323,14 +354,13 @@ void main() {
     final service = FakeActiveDirectoryService(client);
     registerServiceInstance<ActiveDirectoryService>(service);
 
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.activeDirectory);
+    await tester.jumpToPage(Routes.activeDirectory);
     await tester.pumpAndSettle();
 
-    await testActiveDirectoryPage(
-      tester,
+    await tester.testActiveDirectoryPage(
       adminName: 'admin',
       password: 'password',
       screenshot: '$currentThemeName/12.active-directory',
@@ -338,14 +368,13 @@ void main() {
   }, variant: themeVariant);
 
   testWidgets('13.theme', (tester) async {
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.theme);
+    await tester.jumpToPage(Routes.theme);
     await tester.pumpAndSettle();
 
-    await testThemePage(
-      tester,
+    await tester.testThemePage(
       screenshot: '$currentThemeName/13.theme',
     );
   }, variant: themeVariant);
@@ -355,15 +384,14 @@ void main() {
       state: const YaruWindowState(isActive: true, isClosable: false),
     );
 
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.install);
+    await tester.jumpToPage(Routes.install);
     await tester.pump(kThemeAnimationDuration);
 
     for (var i = 0; i < defaultSlides.length; ++i) {
-      await takeScreenshot(
-        tester,
+      await tester.takeScreenshot(
         '$currentThemeName/14.install-$i',
       );
       if (i < defaultSlides.length - 1) {
@@ -377,14 +405,13 @@ void main() {
     registerService<SubiquityClient>(
         () => FakeSubiquityClient(ApplicationState.DONE));
 
-    await runInstallerApp([], flavor: currentFlavor);
+    await tester.runApp(() => runInstallerApp([], theme: currentTheme));
     await tester.pumpAndSettle();
 
-    await tester.jumpToWizardRoute(Routes.install);
+    await tester.jumpToPage(Routes.install);
     await tester.pumpAndSettle();
 
-    await testInstallPage(
-      tester,
+    await tester.testInstallPage(
       screenshot: '$currentThemeName/15.complete',
     );
   }, variant: themeVariant);
@@ -402,15 +429,26 @@ class FakeDesktopService implements DesktopService {
   Future<void> inhibit() async {}
 
   @override
-  Future<void> setTheme(Brightness brightness) async {}
-
-  @override
   Future<void> close() async {}
 }
 
 class FakeProductService implements ProductService {
   @override
   ProductInfo getProductInfo() => ProductInfo(name: 'Ubuntu', version: '23.04');
+
+  @override
+  String getReleaseNotesURL(String languageCode) =>
+      'https://wiki.ubuntu.com/ManticMinotaur/ReleaseNotes';
+}
+
+class FakeStorageService extends StorageService {
+  FakeStorageService(super.client);
+
+  @override
+  int get installMinimumSize => 24426577920;
+
+  @override
+  int get largestDiskSize => 16284385280;
 }
 
 class FakeSubiquityClient extends SubiquityClient {
@@ -424,17 +462,15 @@ class FakeSubiquityClient extends SubiquityClient {
   }
 
   @override
+  Stream<ApplicationStatus?> monitorStatus() {
+    return Stream.value(fakeApplicationStatus(state));
+  }
+
+  @override
   Future<bool> hasRst() async => true;
 }
 
-FlavorData get currentFlavor {
-  return FlavorData(
-    name: 'Ubuntu',
-    theme: themeVariant.currentValue!,
-    darkTheme: themeVariant.currentValue!,
-  );
-}
-
+ThemeData get currentTheme => themeVariant.currentValue!;
 String get currentThemeName => themeVariant.currentName;
 
 final themeVariant = YaruThemeVariant();
@@ -482,19 +518,10 @@ class YaruThemeVariant extends ValueVariant<ThemeData> {
 }
 
 extension on WidgetTester {
-  Future<void> jumpToWizardRoute(String route) {
-    final context = element(find.byType(WizardPage));
-    Wizard.of(context).jump(route);
-    return pumpAndSettle();
-  }
-
-  Future<void> jumpToStorageWizard([String? subroute]) async {
+  Future<void> jumpToStorageWizard() async {
     // an installation source must be explicitly selected before calling storage APIs
-    await jumpToWizardRoute(Routes.source);
+    await jumpToPage(Routes.source);
     await tapNext();
-    await pumpAndSettle();
-    if (subroute != null) {
-      await jumpToWizardRoute(subroute);
-    }
+    await pumpUntil(find.byType(StorageWizard));
   }
 }

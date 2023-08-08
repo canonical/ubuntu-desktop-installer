@@ -1,19 +1,18 @@
 import 'dart:io';
 
 import 'package:collection/collection.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
+import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_test/subiquity_test.dart';
+import 'package:ubuntu_bootstrap/ubuntu_bootstrap.dart';
 import 'package:ubuntu_desktop_installer/main.dart' as app;
-import 'package:ubuntu_desktop_installer/pages.dart';
-import 'package:ubuntu_desktop_installer/services.dart';
+import 'package:ubuntu_provision/ubuntu_provision.dart';
+import 'package:ubuntu_provision_test/ubuntu_provision_test.dart';
 import 'package:ubuntu_test/ubuntu_test.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 import 'package:yaml/yaml.dart';
 import 'package:yaru_test/yaru_test.dart';
-
-import 'test_pages.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -29,10 +28,9 @@ void main() {
   testWidgets('minimal installation', (tester) async {
     const language = 'Français';
     const locale = 'fr_FR.UTF-8';
+    const keyboard = KeyboardSetting(layout: 'fr', variant: 'latin9');
     const timezone = 'Europe/Paris';
-    const keyboardLayout = KeyboardSetting(layout: 'Français');
-    const keyboardSetting = KeyboardSetting(layout: 'fr');
-    const identity = IdentityData(
+    const identity = Identity(
       realname: 'User',
       hostname: 'ubuntu',
       username: 'user',
@@ -41,50 +39,67 @@ void main() {
     await tester.runApp(() => app.main(<String>[]));
     await tester.pumpAndSettle();
 
-    await testLocalePage(tester, language: language);
+    await tester.testLocalePage(language: language);
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    await expectLocale(locale);
+
+    await tester.testKeyboardPage(layout: language);
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    await expectKeyboard(keyboard);
+
+    await tester.testNetworkPage(mode: ConnectMode.none);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testKeyboardPage(tester, keyboard: keyboardLayout);
+    await tester.testRefreshPage();
+    await tester.tapSkip();
     await tester.pumpAndSettle();
 
-    await testNetworkPage(tester, mode: ConnectMode.none);
+    await tester.testSourcePage(sourceId: kMinimalSourceId);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testSourcePage(tester, sourceId: kMinimalSourceId);
+    await tester.testStoragePage(type: StorageType.erase);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testStoragePage(tester, type: StorageType.erase);
+    await tester.testConfirmPage();
+    await tester.tapConfirm();
     await tester.pumpAndSettle();
 
-    await testConfirmPage(tester);
+    await tester.testTimezonePage(timezone: timezone);
+    await tester.tapNext();
     await tester.pumpAndSettle();
+    await expectTimezone(timezone);
 
-    await testTimezonePage(tester, timezone: timezone);
+    await tester.testIdentityPage(identity: identity, password: 'password');
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    await expectIdentity(identity);
+
+    await tester.testThemePage();
+    await tester.tapNext();
     await tester.pump();
 
-    await testIdentityPage(
-      tester,
-      identity: identity,
-      password: 'password',
-    );
+    await tester.testInstallPage();
     await tester.pumpAndSettle();
 
-    await testThemePage(tester);
-    await tester.pump();
+    final windowClosed = YaruTestWindow.waitForClosed();
+    await tester.tapContinueTesting();
+    await expectLater(windowClosed, completes);
 
-    await testInstallPage(tester);
-    await tester.pumpAndSettle();
-
-    await verifyConfig(
+    await verifySubiquityConfig(
       identity: identity,
-      keyboard: keyboardSetting,
+      keyboard: keyboard,
       locale: locale,
       timezone: timezone,
     );
   });
 
   testWidgets('guided lvm + encryption', (tester) async {
-    const identity = IdentityData(
+    const identity = Identity(
       realname: 'User',
       hostname: 'ubuntu',
       username: 'user',
@@ -93,49 +108,62 @@ void main() {
     await tester.runApp(() => app.main(<String>[]));
     await tester.pumpAndSettle();
 
-    await testLocalePage(tester);
+    await tester.testLocalePage();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testKeyboardPage(tester);
+    await tester.testKeyboardPage();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testNetworkPage(tester, mode: ConnectMode.none);
+    await tester.testNetworkPage(mode: ConnectMode.none);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testSourcePage(tester);
+    await tester.testRefreshPage();
+    await tester.tapSkip();
     await tester.pumpAndSettle();
 
-    await testStoragePage(
-      tester,
+    await tester.testSourcePage();
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+
+    await tester.testStoragePage(
       type: StorageType.erase,
-      advancedFeature: AdvancedFeature.lvm,
-      useEncryption: true,
+      guidedCapability: GuidedCapability.LVM_LUKS,
     );
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testSecurityKeyPage(tester, securityKey: 'password');
+    await tester.testSecurityKeyPage(securityKey: 'password');
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testConfirmPage(tester);
+    await tester.testConfirmPage();
+    await tester.tapConfirm();
     await tester.pumpAndSettle();
 
-    await testTimezonePage(tester);
+    await tester.testTimezonePage();
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+
+    await tester.testIdentityPage(identity: identity, password: 'password');
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+    await expectIdentity(identity);
+
+    await tester.testThemePage();
+    await tester.tapNext();
     await tester.pump();
 
-    await testIdentityPage(
-      tester,
-      identity: identity,
-      password: 'password',
-    );
-    await tester.pump();
-
-    await testThemePage(tester);
-    await tester.pump();
-
-    await testInstallPage(tester);
+    await tester.testInstallPage();
     await tester.pumpAndSettle();
 
-    await verifyConfig(
+    final windowClosed = YaruTestWindow.waitForClosed();
+    await tester.tapContinueTesting();
+    await expectLater(windowClosed, completes);
+
+    await verifySubiquityConfig(
       identity: identity,
       useLvm: true,
       useEncryption: true,
@@ -156,92 +184,126 @@ void main() {
     await tester.runApp(() => app.main(<String>[]));
     await tester.pumpAndSettle();
 
-    await testLocalePage(tester);
+    await tester.testLocalePage();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testKeyboardPage(tester);
+    await tester.testKeyboardPage();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testNetworkPage(tester, mode: ConnectMode.none);
+    await tester.testNetworkPage(mode: ConnectMode.none);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testSourcePage(tester, sourceId: kNormalSourceId);
+    await tester.testRefreshPage();
+    await tester.tapSkip();
     await tester.pumpAndSettle();
 
-    await testStoragePage(tester, type: StorageType.manual);
+    await tester.testSourcePage(sourceId: kNormalSourceId);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testManualStoragePage(tester, storage: storage);
+    await tester.testStoragePage(type: StorageType.manual);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testConfirmPage(tester);
+    await tester.testManualStoragePage(storage: storage);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testTimezonePage(tester);
-    await tester.pump();
+    await tester.testConfirmPage();
+    await tester.tapConfirm();
+    await tester.pumpAndSettle();
 
-    await testIdentityPage(
-      tester,
-      identity: const IdentityData(realname: 'a', hostname: 'b', username: 'c'),
+    await tester.testTimezonePage();
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+
+    await tester.testIdentityPage(
+      identity: const Identity(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testThemePage(tester);
+    await tester.testThemePage();
+    await tester.tapNext();
     await tester.pump();
 
-    await testInstallPage(tester);
+    await tester.testInstallPage();
     await tester.pumpAndSettle();
 
-    await verifyConfig(storage: storage);
+    final windowClosed = YaruTestWindow.waitForClosed();
+    await tester.tapContinueTesting();
+    await expectLater(windowClosed, completes);
+
+    await verifySubiquityConfig(storage: storage);
   });
 
   testWidgets('alongside windows', (tester) async {
     await tester.runApp(() => app.main(<String>[
-          '--machine-config=examples/win10-along-ubuntu.json',
+          '--machine-config=examples/machines/win10-along-ubuntu.json',
           '--',
           '--bootloader=uefi',
         ]));
     await tester.pumpAndSettle();
 
-    await testLocalePage(tester);
+    await tester.testLocalePage();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testKeyboardPage(tester);
+    await tester.testKeyboardPage();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testNetworkPage(tester, mode: ConnectMode.none);
+    await tester.testNetworkPage(mode: ConnectMode.none);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testSourcePage(tester, sourceId: kNormalSourceId);
+    await tester.testRefreshPage();
+    await tester.tapSkip();
     await tester.pumpAndSettle();
 
-    await testStoragePage(tester, type: StorageType.alongside);
+    await tester.testSourcePage(sourceId: kNormalSourceId);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testGuidedResizePage(tester, sizes: {'sda3 (ntfs)': 40000});
+    await tester.testStoragePage(type: StorageType.alongside);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testConfirmPage(tester);
+    await tester.testGuidedResizePage(sizes: {'sda3 (ntfs)': 40000});
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testTimezonePage(tester);
-    await tester.pump();
+    await tester.testConfirmPage();
+    await tester.tapConfirm();
+    await tester.pumpAndSettle();
 
-    await testIdentityPage(
-      tester,
-      identity: const IdentityData(realname: 'a', hostname: 'b', username: 'c'),
+    await tester.testTimezonePage();
+    await tester.tapNext();
+    await tester.pumpAndSettle();
+
+    await tester.testIdentityPage(
+      identity: const Identity(realname: 'a', hostname: 'b', username: 'c'),
       password: 'password',
     );
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testThemePage(tester);
+    await tester.testThemePage();
+    await tester.tapNext();
     await tester.pump();
 
-    await testInstallPage(tester);
+    await tester.testInstallPage();
     await tester.pumpAndSettle();
 
-    await verifyConfig(storage: [
+    final windowClosed = YaruTestWindow.waitForClosed();
+    await tester.tapContinueTesting();
+    await expectLater(windowClosed, completes);
+
+    await verifySubiquityConfig(storage: [
       fakeDisk(
         path: '/dev/sda',
         partitions: [
@@ -254,64 +316,84 @@ void main() {
 
   testWidgets('turn off bitlocker', (tester) async {
     await tester.runApp(() => app.main(<String>[
-          '--machine-config',
-          'examples/win10.json',
+          '--machine-config=examples/machines/win10.json',
         ]));
     await tester.pumpAndSettle();
 
-    await testLocalePage(tester);
+    await tester.testLocalePage();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testKeyboardPage(tester);
+    await tester.testKeyboardPage();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testNetworkPage(tester, mode: ConnectMode.none);
+    await tester.testNetworkPage(mode: ConnectMode.none);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testSourcePage(tester, sourceId: kNormalSourceId);
+    await tester.testRefreshPage();
+    await tester.tapSkip();
     await tester.pumpAndSettle();
 
-    await testStoragePage(tester, type: StorageType.bitlocker);
+    await tester.testSourcePage(sourceId: kNormalSourceId);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testBitLockerPage(tester);
+    await tester.testStoragePage(type: StorageType.alongside);
+    await tester.tapNext();
     await tester.pumpAndSettle();
+
+    await tester.testBitLockerPage();
+    await tester.pumpAndSettle();
+
+    final windowClosed = YaruTestWindow.waitForClosed();
+    await tester.tapRestart();
+    await expectLater(windowClosed, completes);
   });
 
   testWidgets('welcome', (tester) async {
     await tester.runApp(() => app.main(<String>['--welcome']));
     await tester.pumpAndSettle();
 
-    await testLocalePage(tester);
+    await tester.testLocalePage();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testWelcomePage(tester, option: Option.installUbuntu);
+    await tester.testWelcomePage(option: Option.welcomeInstallOption);
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testKeyboardPage(tester);
+    await tester.testKeyboardPage();
     await tester.pumpAndSettle();
   });
 
   testWidgets('semi-automated autoinstall', (tester) async {
     await tester.runApp(() => app.main(<String>[
           '--',
-          '--autoinstall=examples/autoinstall-interactive.yaml',
+          '--autoinstall=examples/autoinstall/interactive.yaml',
         ]));
     await tester.pumpAndSettle();
 
-    await testNetworkPage(tester);
+    await tester.testNetworkPage();
+    await tester.tapNext();
     await tester.pumpAndSettle();
 
-    await testConfirmPage(tester);
+    await tester.testConfirmPage();
+    await tester.tapConfirm();
+    await tester.pump();
+
+    await tester.testInstallPage();
     await tester.pumpAndSettle();
 
-    await testInstallPage(tester);
-    await tester.pumpAndSettle();
+    final windowClosed = YaruTestWindow.waitForClosed();
+    await tester.tapRestartNow();
+    await expectLater(windowClosed, completes);
   });
 }
 
-Future<void> verifyConfig({
-  IdentityData? identity,
+Future<void> verifySubiquityConfig({
+  Identity? identity,
   KeyboardSetting? keyboard,
   String? locale,
   String? timezone,
@@ -393,9 +475,6 @@ Future<void> verifyConfig({
 class FakeDesktopService implements DesktopService {
   @override
   Future<void> inhibit() async {}
-
-  @override
-  Future<void> setTheme(Brightness brightness) async {}
 
   @override
   Future<void> close() async {}

@@ -10,7 +10,7 @@ yaml.indent(mapping=2, sequence=2, offset=2)
 with open('snap/snapcraft.yaml', 'r') as fp:
     udi_data = yaml.load(fp)
 
-with open('packages/subiquity_client/subiquity/snapcraft.yaml', 'r') as fp:
+with open('vendor/ubuntu-desktop-provision/packages/subiquity_client/subiquity/snapcraft.yaml', 'r') as fp:
     subiquity_data = yaml.load(fp)
 
 for part in ('probert', 'curtin'):

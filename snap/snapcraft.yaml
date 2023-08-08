@@ -58,7 +58,7 @@ parts:
     plugin: nil
     source: https://git.launchpad.net/curtin
     source-type: git
-    source-commit: 8e74f621e1bd84f804bda280a370440b150f9f40
+    source-commit: 611f68afdc53c7c6d02bd64713c743380a77c59e
     override-pull: |
       craftctl default
       PACKAGED_VERSION="$(git describe --long --abbrev=9 --match=[0-9][0-9]*)"
@@ -82,7 +82,7 @@ parts:
     plugin: nil
     source: https://github.com/canonical/probert.git
     source-type: git
-    source-commit: a2053080cc9aacd38e36a37784299a0eda05e9f6
+    source-commit: ae758355b610e389099abdb2397bb41ad49409ec
     override-build: *pyinstall
     build-packages:
       - build-essential
@@ -170,13 +170,12 @@ parts:
       mkdir -p $CRAFT_PART_INSTALL/bin/lib
       cp snap/local/launcher $CRAFT_PART_INSTALL/bin/
       cp snap/local/subiquity-server $CRAFT_PART_INSTALL/bin/
-      # TODO: flutter build linux --target lib/main_core_desktop.dart
       cp snap/local/core-desktop $CRAFT_PART_INSTALL/bin/
-      cp -r packages/subiquity_client/subiquity $CRAFT_PART_INSTALL/bin/
+      cp -r vendor/ubuntu-desktop-provision/packages/subiquity_client/subiquity $CRAFT_PART_INSTALL/bin/
       mkdir -p $CRAFT_PART_INSTALL/etc/subiquity
       cp -r snap/local/postinst.d $CRAFT_PART_INSTALL/etc/subiquity
       # https://github.com/canonical/ubuntu-desktop-installer/issues/1146
-      (cd packages/ubuntu_wizard && flutter pub get)
+      (cd vendor/ubuntu-desktop-provision/packages/ubuntu_wizard && flutter pub get)
       cd packages/ubuntu_desktop_installer
       flutter pub get
       flutter build linux --release -v
@@ -224,7 +223,6 @@ parts:
       - libglapi-mesa
       - libgraphite2-3
       - libxshmfence1
-      - libllvm12
       - libpciaccess0
       - libvulkan1
       - shared-mime-info
@@ -254,7 +252,6 @@ parts:
       - usr/lib/*/libglapi*.so.*
       - usr/lib/*/libgraphite2*.so.*
       - usr/lib/*/libxshmfence*.so.*
-      - usr/lib/*/libLLVM-12.so.*
       - usr/lib/*/libpciaccess*.so.*
       - usr/lib/*/libsensors*.so.*
       - usr/lib/*/libvulkan*.so.*
