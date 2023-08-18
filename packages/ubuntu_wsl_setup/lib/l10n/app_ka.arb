@@ -111,5 +111,9 @@
   "installationSlidesFindOutMoreVisit": "ეწვიეთ ",
   "@installationSlidesFindOutMoreVisit": {},
   "installationSlidesFindOutMoreLink": "Ubuntu.com/wsl",
-  "@installationSlidesFindOutMoreLink": {}
+  "@installationSlidesFindOutMoreLink": {},
+  "installationSlidesUbuntuWslWebDev": "Ubuntu WSL\nვებ პროგრამირებისთვის",
+  "@installationSlidesUbuntuWslWebDev": {},
+  "installationSlidesUbuntuWslDataScience": "Ubuntu WSL მონაცემების მეცნიერებისთვის",
+  "@installationSlidesUbuntuWslDataScience": {}
 }
