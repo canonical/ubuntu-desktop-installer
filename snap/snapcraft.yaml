@@ -46,7 +46,7 @@ parts:
     plugin: nil
     source: https://git.launchpad.net/curtin
     source-type: git
-    source-commit: 611f68afdc53c7c6d02bd64713c743380a77c59e
+    source-commit: 70b1190170195602734bb60307e576f07564f6da
     override-pull: |
       craftctl default
       PACKAGED_VERSION="$(git describe --long --abbrev=9 --match=[0-9][0-9]*)"
