@@ -103,6 +103,7 @@ parts:
       - python3-apport
       - python3-attr
       - python3-bson
+      - python3-debian
       - python3-jsonschema
       - python3-minimal
       - python3-oauthlib
