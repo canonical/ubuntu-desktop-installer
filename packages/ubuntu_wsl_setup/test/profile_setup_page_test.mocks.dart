@@ -198,6 +198,14 @@ class MockUrlLauncher extends _i1.Mock implements _i7.UrlLauncher {
   }
 
   @override
+  _i5.Future<bool> canLaunchUrl(String? url) => (super.noSuchMethod(
+        Invocation.method(
+          #canLaunchUrl,
+          [url],
+        ),
+        returnValue: _i5.Future<bool>.value(false),
+      ) as _i5.Future<bool>);
+  @override
   _i5.Future<bool> launchUrl(String? url) => (super.noSuchMethod(
         Invocation.method(
           #launchUrl,

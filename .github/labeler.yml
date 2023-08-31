@@ -1,8 +1,0 @@
-ci:
-- all: ['.github/**']
-
-l10n:
-- all: ['**/l10n/**']
-
-test:
-- all: ['**/test/**']
