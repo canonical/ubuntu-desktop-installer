@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+target=/target
+source_bluetooth=/var/lib/bluetooth
+target_bluetooth=$target/$source_bluetooth
+
+if [ -d $source_bluetooth ]; then
+    rm -rf $target_bluetooth
+    cp -a $source_bluetooth $target_bluetooth
+fi

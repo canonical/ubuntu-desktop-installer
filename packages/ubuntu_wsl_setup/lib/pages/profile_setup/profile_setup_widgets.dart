@@ -1,10 +1,14 @@
-part of 'profile_setup_page.dart';
+import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
+import 'package:provider/provider.dart';
+import 'package:subiquity_client/subiquity_client.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:ubuntu_wsl_setup/l10n.dart';
 
-class _RealNameFormField extends StatelessWidget {
-  const _RealNameFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+import 'profile_setup_model.dart';
+
+class RealNameFormField extends StatelessWidget {
+  const RealNameFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -30,19 +34,38 @@ class _RealNameFormField extends StatelessWidget {
   }
 }
 
-class _UsernameFormField extends StatelessWidget {
-  const _UsernameFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+extension UsernameValidationL10n on UsernameValidation {
+  String localize(AppLocalizations lang) {
+    switch (this) {
+      case UsernameValidation.OK:
+        return '';
+      case UsernameValidation.ALREADY_IN_USE:
+        return lang.profileSetupUsernameInUse;
+      case UsernameValidation.SYSTEM_RESERVED:
+        return lang.profileSetupUsernameSystemReserved;
+      case UsernameValidation.INVALID_CHARS:
+        return lang.profileSetupUsernameInvalidChars;
+      case UsernameValidation.TOO_LONG:
+        return lang.profileSetupUsernameTooLong;
+      default:
+        throw UnimplementedError(toString());
+    }
+  }
+}
+
+class UsernameFormField extends StatelessWidget {
+  const UsernameFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
   @override
   Widget build(BuildContext context) {
     final lang = AppLocalizations.of(context);
+    final model = context.read<ProfileSetupModel>();
     final username =
         context.select<ProfileSetupModel, String>((model) => model.username);
+    final validation = context.select<ProfileSetupModel, UsernameValidation>(
+        (model) => model.usernameValidation);
 
     return ValidatedFormField(
       fieldWidth: fieldWidth,
@@ -55,21 +78,21 @@ class _UsernameFormField extends StatelessWidget {
         PatternValidator(
           kValidUsernamePattern,
           errorText: lang.profileSetupUsernameInvalid,
-        )
+        ),
+        CallbackValidator((_) => model.usernameOk,
+            errorText: validation.localize(lang)),
       ]),
-      onChanged: (value) {
+      onChanged: (value) async {
         final model = Provider.of<ProfileSetupModel>(context, listen: false);
         model.username = value;
+        await model.validate();
       },
     );
   }
 }
 
-class _PasswordFormField extends StatelessWidget {
-  const _PasswordFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+class PasswordFormField extends StatelessWidget {
+  const PasswordFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -99,11 +122,8 @@ class _PasswordFormField extends StatelessWidget {
   }
 }
 
-class _ConfirmPasswordFormField extends StatelessWidget {
-  const _ConfirmPasswordFormField({
-    Key? key,
-    required this.fieldWidth,
-  }) : super(key: key);
+class ConfirmPasswordFormField extends StatelessWidget {
+  const ConfirmPasswordFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -137,10 +157,8 @@ class _ConfirmPasswordFormField extends StatelessWidget {
 // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
 //       See [ProfileSetupModel.showAdvancedOptions] for more details.
 //
-// class _ShowAdvancedOptionsCheckButton extends StatelessWidget {
-//   const _ShowAdvancedOptionsCheckButton({
-//     Key? key,
-//   }) : super(key: key);
+// class ShowAdvancedOptionsCheckButton extends StatelessWidget {
+//   const ShowAdvancedOptionsCheckButton({super.key});
 
 //   @override
 //   Widget build(BuildContext context) {
@@ -151,7 +169,7 @@ class _ConfirmPasswordFormField extends StatelessWidget {
 //     return Align(
 //       alignment: Alignment.topLeft,
 //       child: IntrinsicWidth(
-//         child: CheckButton(
+//         child: YaruCheckButton(
 //           contentPadding: kContentPadding,
 //           title: Text(lang.profileSetupShowAdvancedOptions),
 //           value: showAdvancedOptions,

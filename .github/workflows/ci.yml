@@ -1,0 +1,129 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'ubuntu/**'
+      - 'canary-*'
+  pull_request:
+  workflow_dispatch:
+
+env:
+  FLUTTER_VERSION: '3.10.x'
+
+jobs:
+  analyze:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: ${{env.FLUTTER_VERSION}}
+    - run: flutter pub global activate melos
+    - run: melos pub get
+    - run: melos analyze
+
+  format:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: ${{env.FLUTTER_VERSION}}
+    - run: flutter pub global activate melos
+    - run: melos pub get
+    - run: melos format
+
+  mocks:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: ${{env.FLUTTER_VERSION}}
+    - run: flutter pub global activate melos
+    - run: melos pub get
+    - run: melos generate
+    - name: Check for outdated mocks
+      if: github.event_name == 'pull_request'
+      run: ./.github/scripts/check-outdated-files.sh
+    - name: Create PR
+      if: github.event_name == 'push'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        add-paths: '**/*.mocks.dart'
+        title: 'chore: regenerate mocks'
+        commit-message: 'chore: regenerate mocks'
+        branch: create-pull-request/mocks
+        delete-branch: true
+
+  l10n:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: ${{env.FLUTTER_VERSION}}
+    - run: flutter pub global activate melos
+    - run: melos pub get
+    - run: melos gen-l10n
+    - name: Check for outdated l10n
+      if: github.event_name == 'pull_request'
+      run: ./.github/scripts/check-outdated-files.sh
+    - name: Create PR
+      if: github.event_name == 'push'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        add-paths: '**/l10n/*.dart'
+        title: 'chore: regenerate l10n'
+        commit-message: 'chore: regenerate l10n'
+        branch: create-pull-request/l10n
+        delete-branch: true
+
+  subiquity:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - name: Check subiquity integration
+      run: ./scripts/subiquity_integration
+
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        flutter-version: ${{env.FLUTTER_VERSION}}
+    - run: flutter pub global activate melos
+    - name: Install dependencies
+      run: |
+        sudo apt update && sudo apt install lcov
+        make install_deps
+    - name: Setup environment
+      run: |
+        sudo loginctl enable-linger $USER
+        sudo systemctl start user@$UID.service
+        echo "XDG_RUNTIME_DIR=/run/user/$UID" >> $GITHUB_ENV
+    - run: melos pub get
+    - run: melos coverage
+    - uses: codecov/codecov-action@v3
+      with:
+        token: ${{secrets.CODECOV_TOKEN}}

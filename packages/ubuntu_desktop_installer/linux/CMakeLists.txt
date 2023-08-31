@@ -8,6 +8,8 @@ cmake_policy(SET CMP0063 NEW)
 
 set(CMAKE_INSTALL_RPATH "$ORIGIN/lib")
 
+set(USE_LIBHANDY ON)
+
 # Root filesystem for cross-building.
 if(FLUTTER_TARGET_PLATFORM_SYSROOT)
   set(CMAKE_SYSROOT ${FLUTTER_TARGET_PLATFORM_SYSROOT})
@@ -63,13 +65,6 @@ set_target_properties(${BINARY_NAME}
   PROPERTIES
   RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/intermediates_do_not_run"
 )
-
-pkg_check_modules(LIBHANDY IMPORTED_TARGET libhandy-1)
-if(LIBHANDY_FOUND)
-  set(ENABLE_LIBHANDY ON)
-  add_definitions("-DHAVE_LIBHANDY")
-  target_link_libraries(${BINARY_NAME} PRIVATE PkgConfig::LIBHANDY)
-endif(LIBHANDY_FOUND)
 
 # Generated plugin build rules, which manage building the plugins and adding
 # them to the application.

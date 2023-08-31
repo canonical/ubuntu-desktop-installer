@@ -1,52 +1,46 @@
+import 'dart:io';
+
 import 'package:flutter/widgets.dart';
 import 'package:subiquity_client/subiquity_client.dart';
 import 'package:subiquity_client/subiquity_server.dart';
-import 'package:ubuntu_wizard/app.dart';
-import 'package:ubuntu_wizard/services.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
 
 import 'app.dart';
+import 'app_model.dart';
+import 'args_common.dart';
+import 'services/language_fallback.dart';
 
-void main(List<String> args) {
+Future<void> main(List<String> args) async {
   final options = parseCommandLine(args, onPopulateOptions: (parser) {
-    parser.addFlag('reconfigure');
-    parser.addOption(
-      'prefill',
-      valueHelp: 'prefill',
-      help: '''
-Path of the YAML file containing prefill information, which
-feeds the installer with partial information to prefill the
-screens, yet allowing user to overwrite any of those during setup.
-  ''',
-    );
+    addCommonCliOptions(parser);
   })!;
-  final variant = ValueNotifier<Variant?>(null);
-  List<String>? serverArgs;
-  if (options['prefill'] != null) {
-    serverArgs = ['--prefill', options['prefill']];
-  }
+
+  final liveRun = options['dry-run'] != true;
+  final isReconf = options['reconfigure'] == true;
+  final serverMode = liveRun ? ServerMode.LIVE : ServerMode.DRY_RUN;
+  final subiquityPath = await getSubiquityPath()
+      .then((dir) => Directory(dir).existsSync() ? dir : null);
+  final endpoint = await defaultEndpoint(serverMode);
+  final process = SubiquityProcess.python(
+    'system_setup.cmd.server',
+    serverMode: serverMode,
+    subiquityPath: subiquityPath,
+  );
+
+  registerService(SubiquityClient.new);
+  registerService(() => SubiquityServer(process: process, endpoint: endpoint));
+  registerService(SubiquityStatusMonitor.new);
   registerService(UrlLauncher.new);
-  runWizardApp(
-    ValueListenableBuilder<Variant?>(
-      valueListenable: variant,
-      builder: (context, value, child) {
-        return UbuntuWslSetupApp(
-          variant: value,
-          initialRoute: options['initial-route'],
-        );
-      },
+  registerService(LanguageFallbackService.linux);
+
+  return runWslSetupApp(
+    appModel: ValueNotifier<AppModel>(
+      AppModel(routeFromOptions: options['initial-route']),
     ),
-    options: options,
-    subiquityClient: SubiquityClient(),
-    subiquityServer: SubiquityServer.wsl(),
-    onInitSubiquity: (client) {
-      client.variant().then((value) => variant.value = value);
-      client.markConfigured(['filesystem']);
-    },
-    serverArgs: serverArgs,
+    serverArgs: serverArgsFromOptions(options),
     serverEnvironment: {
-      if (!isLiveRun(options) && options['reconfigure'] == true)
-        'DRYRUN_RECONFIG': 'true',
+      if (!liveRun && isReconf) 'DRYRUN_RECONFIG': 'true',
     },
   );
 }

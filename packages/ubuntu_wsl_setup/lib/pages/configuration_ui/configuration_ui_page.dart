@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/constants.dart';
-import 'package:ubuntu_wizard/services.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'configuration_ui_model.dart';
@@ -13,8 +13,8 @@ class ConfigurationUIPage extends StatefulWidget {
   /// Use [create] instead.
   @visibleForTesting
   const ConfigurationUIPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   /// Creates an instance with [ConfigurationUIModel].
   static Widget create(BuildContext context) {
@@ -26,7 +26,7 @@ class ConfigurationUIPage extends StatefulWidget {
   }
 
   @override
-  _ConfigurationUIPageState createState() => _ConfigurationUIPageState();
+  State<ConfigurationUIPage> createState() => _ConfigurationUIPageState();
 }
 
 class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
@@ -43,74 +43,68 @@ class _ConfigurationUIPageState extends State<ConfigurationUIPage> {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<ConfigurationUIModel>(context);
     return WizardPage(
-      title: Text(lang.configurationUITitle),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.configurationUITitle),
+      ),
       headerPadding: EdgeInsets.zero,
       contentPadding: EdgeInsets.zero,
       content: ListView(
         children: <Widget>[
           Padding(
-            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            padding: const EdgeInsets.all(kYaruPagePadding),
             child: Text(lang.configurationUIAutoMountHeader),
           ),
-          CheckButton(
-            contentPadding: kContentPadding,
+          YaruCheckButton(
+            contentPadding: kWizardPadding,
             title: Text(lang.configurationUIAutoMountTitle),
             subtitle: Text(lang.configurationUIAutoMountSubtitle),
             value: model.automountEnabled,
             onChanged: (value) => model.automountEnabled = value!,
           ),
-          const SizedBox(height: kContentSpacing),
-          CheckButton(
-            contentPadding: kContentPadding,
+          const SizedBox(height: kWizardSpacing),
+          YaruCheckButton(
+            contentPadding: kWizardPadding,
             title: Text(lang.configurationUIMountFstabTitle),
             subtitle: Text(lang.configurationUIMountFstabSubtitle),
             value: model.automountMountfstab,
             onChanged: (value) => model.automountMountfstab = value!,
           ),
-          const SizedBox(height: kContentSpacing),
+          const SizedBox(height: kWizardSpacing),
           Padding(
-            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
+            padding: const EdgeInsets.all(kYaruPagePadding),
             child: Text(lang.configurationUIInteroperabilityHeader),
           ),
-          CheckButton(
-            contentPadding: kContentPadding,
+          YaruCheckButton(
+            contentPadding: kWizardPadding,
             title: Text(lang.configurationUIInteroperabilityTitle),
             subtitle: Text(lang.configurationUIInteroperabilitySubtitle),
             value: model.interopEnabled,
             onChanged: (value) => model.interopEnabled = value!,
           ),
-          const SizedBox(height: kContentSpacing),
-          CheckButton(
-            contentPadding: kContentPadding,
+          const SizedBox(height: kWizardSpacing),
+          YaruCheckButton(
+            contentPadding: kWizardPadding,
             title: Text(lang.configurationUIInteropAppendWindowsPathTitle),
             subtitle:
                 Text(lang.configurationUIInteropAppendWindowsPathSubtitle),
             value: model.interopAppendwindowspath,
             onChanged: (value) => model.interopAppendwindowspath = value!,
           ),
-          const SizedBox(height: kContentSpacing),
-          Padding(
-            padding: kHeaderPadding.copyWith(bottom: kContentSpacing),
-            child: Text(lang.configurationUISystemdHeader),
-          ),
-          CheckButton(
-            contentPadding: kContentPadding,
-            title: Text(lang.configurationUISystemdTitle),
-            subtitle: Text(lang.configurationUISystemdSubtitle),
-            value: model.systemdEnabled,
-            onChanged: (value) => model.systemdEnabled = value!,
+        ],
+      ),
+      bottomBar: WizardBar(
+        leading: WizardButton.previous(context),
+        trailing: [
+          WizardButton.next(
+            context,
+            highlighted: true,
+            label: lang.saveButton,
+            enabled: model.isValid,
+            onNext: model.saveConfiguration,
           ),
         ],
       ),
-      actions: <WizardAction>[
-        WizardAction.back(context),
-        WizardAction(
-          highlighted: true,
-          label: lang.saveButton,
-          enabled: model.isValid,
-          onActivated: model.saveConfiguration,
-        ),
-      ],
     );
   }
 }

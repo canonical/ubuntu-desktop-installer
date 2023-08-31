@@ -4,12 +4,14 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/services.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:subiquity_test/subiquity_test.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_model.dart';
 import 'package:ubuntu_wsl_setup/pages/configuration_ui/configuration_ui_page.dart';
+import 'package:yaru/yaru.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'configuration_ui_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -33,22 +35,22 @@ void main() {
         .thenReturn(interopAppendwindowspath ?? false);
     when(model.automountEnabled).thenReturn(automountEnabled ?? true);
     when(model.automountMountfstab).thenReturn(automountMountfstab ?? true);
-    when(model.systemdEnabled).thenReturn(systemdEnabled ?? true);
     return model;
   }
 
   Widget buildPage(ConfigurationUIModel model) {
     return ChangeNotifierProvider<ConfigurationUIModel>.value(
       value: model,
-      child: ConfigurationUIPage(),
+      child: const ConfigurationUIPage(),
     );
   }
 
   Widget buildApp(WidgetTester tester, ConfigurationUIModel model) {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(960, 680);
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
+      theme: yaruLight,
       home: Wizard(
         routes: {
           '/': WizardRoute(
@@ -64,8 +66,8 @@ void main() {
     final model = buildModel(automountEnabled: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIAutoMountSubtitle);
+    final checkbox =
+        find.checkButton(tester.lang.configurationUIAutoMountSubtitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.automountEnabled = true).called(1);
@@ -75,8 +77,8 @@ void main() {
     final model = buildModel(automountMountfstab: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIMountFstabTitle);
+    final checkbox =
+        find.checkButton(tester.lang.configurationUIMountFstabTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.automountMountfstab = true).called(1);
@@ -86,8 +88,8 @@ void main() {
     final model = buildModel(interopEnabled: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIInteroperabilitySubtitle);
+    final checkbox =
+        find.checkButton(tester.lang.configurationUIInteroperabilitySubtitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.interopEnabled = true).called(1);
@@ -97,8 +99,8 @@ void main() {
     final model = buildModel(interopAppendwindowspath: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.configurationUIInteropAppendWindowsPathTitle);
+    final checkbox = find
+        .checkButton(tester.lang.configurationUIInteropAppendWindowsPathTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.interopAppendwindowspath = true).called(1);
@@ -108,20 +110,18 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final saveButton =
-        find.widgetWithText(ElevatedButton, tester.lang.saveButton);
+    final saveButton = find.button(tester.lang.saveButton);
     expect(saveButton, findsOneWidget);
-    expect(tester.widget<ElevatedButton>(saveButton).enabled, isTrue);
+    expect(saveButton, isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final saveButton =
-        find.widgetWithText(ElevatedButton, tester.lang.saveButton);
+    final saveButton = find.button(tester.lang.saveButton);
     expect(saveButton, findsOneWidget);
-    expect(tester.widget<ElevatedButton>(saveButton).enabled, isFalse);
+    expect(saveButton, isDisabled);
   });
 
   testWidgets('loads and saves configuration', (tester) async {
@@ -131,8 +131,7 @@ void main() {
     verify(model.loadConfiguration()).called(1);
     verifyNever(model.saveConfiguration());
 
-    final saveButton =
-        find.widgetWithText(ElevatedButton, tester.lang.saveButton);
+    final saveButton = find.button(tester.lang.saveButton);
     expect(saveButton, findsOneWidget);
     await tester.tap(saveButton);
 
@@ -142,7 +141,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.wslConfigurationAdvanced())
-        .thenAnswer((_) async => WSLConfigurationAdvanced());
+        .thenAnswer((_) async => const WSLConfigurationAdvanced());
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(MaterialApp(

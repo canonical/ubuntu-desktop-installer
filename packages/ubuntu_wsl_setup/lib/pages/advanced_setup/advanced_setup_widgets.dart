@@ -1,8 +1,14 @@
-part of 'advanced_setup_page.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:ubuntu_wsl_setup/l10n.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
-class _MountLocationFormField extends StatelessWidget {
-  const _MountLocationFormField({Key? key, required this.fieldWidth})
-      : super(key: key);
+import 'advanced_setup_model.dart';
+
+class MountLocationFormField extends StatelessWidget {
+  const MountLocationFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -29,9 +35,8 @@ class _MountLocationFormField extends StatelessWidget {
   }
 }
 
-class _MountOptionFormField extends StatelessWidget {
-  const _MountOptionFormField({Key? key, required this.fieldWidth})
-      : super(key: key);
+class MountOptionFormField extends StatelessWidget {
+  const MountOptionFormField({super.key, required this.fieldWidth});
 
   final double? fieldWidth;
 
@@ -54,8 +59,8 @@ class _MountOptionFormField extends StatelessWidget {
   }
 }
 
-class _HostGenerationCheckButton extends StatelessWidget {
-  const _HostGenerationCheckButton({Key? key}) : super(key: key);
+class HostGenerationCheckButton extends StatelessWidget {
+  const HostGenerationCheckButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -66,8 +71,8 @@ class _HostGenerationCheckButton extends StatelessWidget {
     return Align(
       alignment: Alignment.topLeft,
       child: IntrinsicWidth(
-        child: CheckButton(
-          contentPadding: kContentPadding,
+        child: YaruCheckButton(
+          contentPadding: kWizardPadding,
           title: Text(lang.advancedSetupHostGenerationTitle),
           subtitle: Text(lang.advancedSetupHostGenerationSubtitle),
           value: enableHostGeneration,
@@ -82,10 +87,8 @@ class _HostGenerationCheckButton extends StatelessWidget {
   }
 }
 
-class _ResolvConfGenerationCheckButton extends StatelessWidget {
-  const _ResolvConfGenerationCheckButton({
-    Key? key,
-  }) : super(key: key);
+class ResolvConfGenerationCheckButton extends StatelessWidget {
+  const ResolvConfGenerationCheckButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -96,8 +99,8 @@ class _ResolvConfGenerationCheckButton extends StatelessWidget {
     return Align(
       alignment: Alignment.topLeft,
       child: IntrinsicWidth(
-        child: CheckButton(
-          contentPadding: kContentPadding,
+        child: YaruCheckButton(
+          contentPadding: kWizardPadding,
           title: Text(lang.advancedSetupResolvConfGenerationTitle),
           subtitle: Text(lang.advancedSetupResolvConfGenerationSubtitle),
           value: enableResolvConfGeneration,

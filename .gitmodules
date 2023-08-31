@@ -1,4 +1,3 @@
-[submodule "subiquity_client/subiquity"]
-	path = packages/subiquity_client/subiquity
-	url = https://github.com/canonical/subiquity.git
-	branch = main
+[submodule "ubuntu-desktop-provision"]
+	path = vendor/ubuntu-desktop-provision
+	url = https://github.com/canonical/ubuntu-desktop-provision.git

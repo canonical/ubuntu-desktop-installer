@@ -1,0 +1,23 @@
+#!/bin/sh
+
+telemetry=/var/log/installer/telemetry
+
+if [ ! -f $telemetry ]; then
+    exit
+fi
+
+current_time=$(date +%s)
+created_at=$(stat --format %W $telemetry)
+duration=$(($current_time - $created_at))
+
+# {
+#   ...
+#   "Stages": {
+#     "0": "welcome",
+#     ...
+#     "1234": "done" // <==
+#   }
+# }
+
+jq ".Stages.\"$duration\"=\"done\"" $telemetry > $telemetry.tmp
+mv $telemetry.tmp $telemetry

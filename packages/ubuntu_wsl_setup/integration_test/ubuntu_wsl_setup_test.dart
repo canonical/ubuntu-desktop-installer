@@ -1,24 +1,29 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/utils.dart';
-import 'package:ubuntu_wsl_setup/l10n.dart';
+import 'package:subiquity_test/subiquity_test.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
 import 'package:ubuntu_wsl_setup/main.dart' as app;
-import 'package:ubuntu_wsl_setup/pages.dart';
 import 'package:ubuntu_wsl_setup/routes.dart';
+import 'package:yaru_test/yaru_test.dart';
 
-import '../test/test_utils.dart';
+import 'test_pages.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
+  setUpAll(YaruTestWindow.ensureInitialized);
+
   setUp(() async => await cleanUpSubiquity());
+  tearDown(() async => await resetAllServices());
 
   // Select language and setup profile
   testWidgets('basic setup', (tester) async {
-    app.main(<String>[]);
-    await waitForSubiquityServer();
+    await tester.runApp(() => app.main(<String>[
+          '--initial-route',
+          Routes.selectLanguage,
+        ]));
     await tester.pumpAndSettle();
 
     await testSelectYourLanguagePage(tester, language: 'Français');
@@ -30,29 +35,20 @@ void main() {
       password: 'password123',
       confirmedPassword: 'password123',
     );
-    await tester.pumpAndSettle();
 
-    await testAdvancedSetupPage(tester);
-    await tester.pumpAndSettle();
+    await testApplyingChangesPage(tester, expectClose: true);
 
-    await testSetupCompletePage(tester, username: 'wsl-user');
-    await tester.pumpAndSettle();
-
-    await verifyStateFile('basic-setup/WSLLocale');
+    final stateFile = await getSubiquityStateFile('WSLLocale');
+    await expectLater(stateFile, existsLater);
+    expect(
+      stateFile,
+      matchesTextFile('integration_test/goldens/basic-setup/WSLLocale'),
+    );
   });
 
   // enter all WSLConfigurationBase values
   testWidgets('advanced setup', (tester) async {
-    app.main(<String>['--initial-route', Routes.profileSetup]);
-    await waitForSubiquityServer();
-    await tester.pumpAndSettle();
-
-    await testProfileSetupPage(
-      tester,
-      profile: const IdentityData(realname: 'WSL User', username: 'wsl-user'),
-      password: 'password123',
-      confirmedPassword: 'password123',
-    );
+    await tester.runApp(() => app.main(<String>['--reconfigure']));
     await tester.pumpAndSettle();
 
     // NOTE: opposites of the default values to force writing the config
@@ -65,18 +61,22 @@ void main() {
         networkGenerateresolvconf: false,
       ),
     );
-    await tester.pumpAndSettle();
 
-    await testSetupCompletePage(tester, username: 'wsl-user');
     await tester.pumpAndSettle();
+    await testConfigurationUIPage(tester);
+    await testApplyingChangesPage(tester, expectClose: true);
 
-    await verifyConfigFile('advanced-setup/wsl.conf');
+    final configFile = await getSubiquityConfigFile('wsl.conf');
+    await expectLater(configFile, existsLater);
+    expect(
+      configFile,
+      matchesTextFile('integration_test/goldens/advanced-setup/wsl.conf'),
+    );
   });
 
   // enter all WSLConfigurationAdvanced values
   testWidgets('reconfiguration', (tester) async {
-    app.main(<String>['--reconfigure']);
-    await waitForSubiquityServer();
+    await tester.runApp(() => app.main(<String>['--reconfigure']));
     await tester.pumpAndSettle();
 
     await testAdvancedSetupPage(tester);
@@ -90,153 +90,16 @@ void main() {
         interopAppendwindowspath: false,
         automountEnabled: false,
         automountMountfstab: false,
-        systemdEnabled: true,
       ),
     );
-    await tester.pumpAndSettle();
 
-    await verifyConfigFile('reconfiguration/wsl.conf');
-  });
-}
+    await testApplyingChangesPage(tester, expectClose: true);
 
-Future<void> testSelectYourLanguagePage(
-  WidgetTester tester, {
-  String? language,
-}) async {
-  expectPage(tester, SelectLanguagePage, (lang) => lang.selectLanguageTitle);
-
-  if (language != null) {
-    final tile = find.widgetWithText(ListTile, language, skipOffstage: false);
-    expect(tile, findsOneWidget);
-    final viewRect = tester.getRect(find.byType(ListView));
-    await tester.scrollUntilVisible(tile, viewRect.height / 2);
-    await tester.pump();
-    await tester.tap(tile);
-    await tester.pump();
-  }
-  await tester.pumpAndSettle();
-
-  await tester.tapContinue();
-}
-
-Future<void> testProfileSetupPage(
-  WidgetTester tester, {
-  IdentityData? profile,
-  String? password,
-  String? confirmedPassword,
-  bool? showAdvancedOptions,
-}) async {
-  expectPage(tester, ProfileSetupPage, (lang) => lang.profileSetupTitle);
-
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupRealnameLabel,
-    value: profile?.realname,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupUsernameHint,
-    value: profile?.username,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupPasswordHint,
-    value: password,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.profileSetupConfirmPasswordHint,
-    value: confirmedPassword,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.profileSetupShowAdvancedOptions,
-    value: showAdvancedOptions,
-  );
-  await tester.pumpAndSettle();
-
-  await tester.tapContinue();
-}
-
-Future<void> testAdvancedSetupPage(
-  WidgetTester tester, {
-  WSLConfigurationBase? config,
-}) async {
-  expectPage(tester, AdvancedSetupPage, (lang) => lang.advancedSetupTitle);
-
-  await tester.enterTextValue(
-    label: tester.lang.advancedSetupMountLocationHint,
-    value: config?.automountRoot,
-  );
-  await tester.enterTextValue(
-    label: tester.lang.advancedSetupMountOptionHint,
-    value: config?.automountOptions,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.advancedSetupHostGenerationTitle,
-    value: config?.networkGeneratehosts,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.advancedSetupResolvConfGenerationTitle,
-    value: config?.networkGenerateresolvconf,
-  );
-  await tester.pumpAndSettle();
-
-  await tester.tapButton(label: tester.lang.setupButton, highlighted: true);
-}
-
-Future<void> testConfigurationUIPage(
-  WidgetTester tester, {
-  WSLConfigurationAdvanced? config,
-}) async {
-  expectPage(tester, ConfigurationUIPage, (lang) => lang.configurationUITitle);
-
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIAutoMountSubtitle,
-    value: config?.automountEnabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIMountFstabSubtitle,
-    value: config?.automountMountfstab,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIInteroperabilitySubtitle,
-    value: config?.interopEnabled,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUIInteropAppendWindowsPathSubtitle,
-    value: config?.interopAppendwindowspath,
-  );
-  await tester.toggleCheckbox(
-    label: tester.lang.configurationUISystemdSubtitle,
-    value: config?.systemdEnabled,
-  );
-  await tester.pumpAndSettle();
-
-  final windowClosed = waitForWindowClosed();
-  await tester.tapButton(label: tester.lang.saveButton, highlighted: true);
-  expect(windowClosed, completion(isTrue));
-}
-
-Future<void> testSetupCompletePage(
-  WidgetTester tester, {
-  String? username,
-}) async {
-  expectPage(tester, SetupCompletePage, (lang) => lang.setupCompleteTitle);
-
-  if (username != null) {
+    final configFile = await getSubiquityConfigFile('wsl.conf');
+    await expectLater(configFile, existsLater);
     expect(
-      find.text(tester.lang.setupCompleteHeader(username)),
-      findsOneWidget,
+      configFile,
+      matchesTextFile('integration_test/goldens/reconfiguration/wsl.conf'),
     );
-  }
-
-  final windowClosed = waitForWindowClosed();
-  await tester.tapButton(label: tester.lang.finishButton);
-  expect(windowClosed, completion(isTrue));
-}
-
-void expectPage(
-  WidgetTester tester,
-  Type page,
-  String Function(AppLocalizations lang) title,
-) {
-  LangTester.type = page;
-  expect(find.byType(page), findsOneWidget);
-  expect(find.widgetWithText(AppBar, title(tester.lang)), findsOneWidget);
+  });
 }

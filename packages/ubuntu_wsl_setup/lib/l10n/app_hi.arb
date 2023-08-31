@@ -1,3 +1,27 @@
 {
-  "@@locale": "hi"
+  "@@locale": "hi",
+  "profileSetupRealnameLabel": "आपका नाम",
+  "@profileSetupRealnameLabel": {},
+  "profileSetupRealnameRequired": "एक नाम की आवश्यकता है",
+  "@profileSetupRealnameRequired": {},
+  "profileSetupUsernameHint": "एक उपयोगकर्ता नाम चुनें",
+  "@profileSetupUsernameHint": {},
+  "exitButton": "निकास",
+  "@exitButton": {},
+  "finishButton": "पूर्ण",
+  "@finishButton": {},
+  "saveButton": "संचय",
+  "@saveButton": {},
+  "selectLanguageTitle": "अपनी भाषा का चयन करें",
+  "@selectLanguageTitle": {},
+  "profileSetupTitle": "प्रोफ़ाइल सेटअप",
+  "@profileSetupTitle": {},
+  "setupButton": "सेटअप",
+  "@setupButton": {},
+  "windowTitle": "उबन्टू लिनक्स विंडोज सबसिस्टम",
+  "@windowTitle": {},
+  "appTitle": "उबन्टू लिनक्स विंडोज सबसिस्टम",
+  "@appTitle": {},
+  "profileSetupHeader": "कृपया एक डिफ़ॉल्ट UNIX उपयोगकर्ता खाता बनाएँ। ज्यादा जानकारी के लिये पधारें: <a href=\"https://aka.ms/wslusers\">https://aka.ms/wslusers</a>",
+  "@profileSetupHeader": {}
 }

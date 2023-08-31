@@ -23,6 +23,12 @@ fi
 export XDG_CACHE_HOME="$SNAP_USER_COMMON/.cache"
 [ -d "$XDG_CACHE_HOME" ] ||  mkdir -p "$XDG_CACHE_HOME"
 
+# Workaround for flickering corners and other graphical glitches with GTK's
+# OpenGL backend for X11. See:
+# - https://github.com/canonical/ubuntu-desktop-installer/issues/1397
+# - https://gitlab.gnome.org/GNOME/gtk/-/issues/5600
+export GDK_RENDERING=image
+
 export GDK_PIXBUF_MODULE_FILE="$XDG_CACHE_HOME/gdk-pixbuf-loaders.cache"
 export GDK_PIXBUF_MODULEDIR="$SNAP/usr/lib/$ARCH/gdk-pixbuf-2.0/2.10.0/loaders"
 if [ "$needs_update" = true ] || [ ! -f "$GDK_PIXBUF_MODULE_FILE" ]; then
@@ -34,4 +40,11 @@ fi
 
 [ "$needs_update" = true ] && echo "SNAP_DESKTOP_LAST_REVISION=$SNAP_REVISION" > "$SNAP_USER_DATA/.last_revision"
 
-exec "$@"
+# Disable storage automounting (/usr/lib/udisks2/udisks2-inhibit)
+sudo mkdir -p /run/udev/rules.d
+sudo sh -c 'echo "SUBSYSTEM==\"block\", ENV{UDISKS_IGNORE}=\"1\"" > /run/udev/rules.d/90-udisks-inhibit.rules'
+trap "sudo rm -f /run/udev/rules.d/90-udisks-inhibit.rules; sudo udevadm control --reload; sudo udevadm trigger --subsystem-match=block" EXIT HUP INT QUIT ILL ABRT FPE KILL SEGV PIPE ALRM TERM BUS
+sudo udevadm control --reload
+sudo udevadm trigger --subsystem-match=block
+
+"$@"

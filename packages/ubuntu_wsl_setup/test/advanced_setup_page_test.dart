@@ -4,12 +4,14 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/services.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:subiquity_test/subiquity_test.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_model.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_page.dart';
+import 'package:yaru/yaru.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'advanced_setup_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -38,13 +40,14 @@ void main() {
   Widget buildPage(AdvancedSetupModel model) {
     return ChangeNotifierProvider<AdvancedSetupModel>.value(
       value: model,
-      child: AdvancedSetupPage(),
+      child: const AdvancedSetupPage(),
     );
   }
 
   Widget buildApp(AdvancedSetupModel model) {
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
+      theme: yaruLight,
       home: Wizard(
         routes: {
           '/': WizardRoute(
@@ -60,7 +63,7 @@ void main() {
     final model = buildModel(mountLocation: '/foo');
     await tester.pumpWidget(buildApp(model));
 
-    final textField = find.widgetWithText(TextField, '/foo');
+    final textField = find.textField('/foo');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, '/foo/bar');
     await tester.pump();
@@ -71,7 +74,7 @@ void main() {
     final model = buildModel(mountOption: '--foo');
     await tester.pumpWidget(buildApp(model));
 
-    final textField = find.widgetWithText(TextField, '--foo');
+    final textField = find.textField('--foo');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, '--bar');
     await tester.pump();
@@ -82,8 +85,8 @@ void main() {
     final model = buildModel(enableHostGeneration: false);
     await tester.pumpWidget(buildApp(model));
 
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.advancedSetupHostGenerationTitle);
+    final checkbox =
+        find.checkButton(tester.lang.advancedSetupHostGenerationTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.enableHostGeneration = true).called(1);
@@ -93,8 +96,8 @@ void main() {
     final model = buildModel(enableResolvConfGeneration: false);
     await tester.pumpWidget(buildApp(model));
 
-    final checkbox = find.widgetWithText(
-        CheckButton, tester.lang.advancedSetupResolvConfGenerationTitle);
+    final checkbox =
+        find.checkButton(tester.lang.advancedSetupResolvConfGenerationTitle);
     expect(checkbox, findsOneWidget);
     await tester.tap(checkbox);
     verify(model.enableResolvConfGeneration = true).called(1);
@@ -104,20 +107,18 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(buildApp(model));
 
-    final setupButton =
-        find.widgetWithText(ElevatedButton, tester.lang.setupButton);
+    final setupButton = find.button(tester.lang.setupButton);
     expect(setupButton, findsOneWidget);
-    expect(tester.widget<ElevatedButton>(setupButton).enabled, isTrue);
+    expect(setupButton, isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(buildApp(model));
 
-    final setupButton =
-        find.widgetWithText(ElevatedButton, tester.lang.setupButton);
+    final setupButton = find.button(tester.lang.setupButton);
     expect(setupButton, findsOneWidget);
-    expect(tester.widget<ElevatedButton>(setupButton).enabled, isFalse);
+    expect(setupButton, isDisabled);
   });
 
   testWidgets('loads and saves advanced setup', (tester) async {
@@ -127,8 +128,7 @@ void main() {
     verify(model.loadAdvancedSetup()).called(1);
     verifyNever(model.saveAdvancedSetup());
 
-    final setupButton =
-        find.widgetWithText(ElevatedButton, tester.lang.setupButton);
+    final setupButton = find.button(tester.lang.setupButton);
     expect(setupButton, findsOneWidget);
 
     await tester.tap(setupButton);
@@ -138,7 +138,7 @@ void main() {
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
     when(client.wslConfigurationBase())
-        .thenAnswer((_) async => WSLConfigurationBase());
+        .thenAnswer((_) async => const WSLConfigurationBase());
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(MaterialApp(

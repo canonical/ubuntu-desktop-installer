@@ -1,6 +1,9 @@
+import 'package:crypt/crypt.dart';
 import 'package:flutter/foundation.dart';
+import 'package:safe_change_notifier/safe_change_notifier.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/utils.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
 
 /// The regular expression pattern for valid usernames:
 /// - must start with a lowercase letter
@@ -8,12 +11,13 @@ import 'package:ubuntu_wizard/utils.dart';
 const kValidUsernamePattern = r'^[a-z][a-z0-9-_]*$';
 
 /// View model for [ProfileSetupPage].
-class ProfileSetupModel extends ChangeNotifier {
+class ProfileSetupModel extends SafeChangeNotifier {
   /// Creates a profile setup model.
   ProfileSetupModel(this._client) {
     Listenable.merge([
       _realname,
       _username,
+      _usernameValidation,
       _password,
       _confirmedPassword,
       _showAdvanced,
@@ -23,6 +27,8 @@ class ProfileSetupModel extends ChangeNotifier {
   final SubiquityClient _client;
   final _realname = ValueNotifier<String?>(null);
   final _username = ValueNotifier<String?>(null);
+  final _usernameValidation =
+      ValueNotifier<UsernameValidation>(UsernameValidation.OK);
   final _password = ValueNotifier('');
   final _confirmedPassword = ValueNotifier('');
 
@@ -63,15 +69,27 @@ class ProfileSetupModel extends ChangeNotifier {
   bool get isValid =>
       realname.isNotEmpty &&
       username.isNotEmpty &&
+      usernameOk &&
       RegExp(kValidUsernamePattern).hasMatch(username) &&
       password.isNotEmpty &&
       password == confirmedPassword;
 
+  /// The server response on whether the desired username is available.
+  UsernameValidation get usernameValidation => _usernameValidation.value;
+  bool get usernameOk => _usernameValidation.value == UsernameValidation.OK;
+
+  Future<void> validate() async {
+    if (username.isNotEmpty &&
+        RegExp(kValidUsernamePattern).hasMatch(username)) {
+      _usernameValidation.value = await _client.validateUsername(username);
+    }
+  }
+
   /// Loads the profile setup.
   Future<void> loadProfileSetup() async {
-    final identity = await _client.identity();
-    _realname.value = identity.realname?.orIfEmpty(null);
-    _username.value = identity.username?.orIfEmpty(null);
+    final identity = await _client.getIdentity();
+    _realname.value = identity.realname.orIfEmpty(null);
+    _username.value = identity.username.orIfEmpty(null);
   }
 
   /// Saves the profile setup.
@@ -79,7 +97,7 @@ class ProfileSetupModel extends ChangeNotifier {
     final identity = IdentityData(
       realname: realname,
       username: username,
-      cryptedPassword: encryptPassword(password, salt: salt),
+      cryptedPassword: Crypt.sha512(password, salt: salt).toString(),
     );
     return _client.setIdentity(identity);
   }

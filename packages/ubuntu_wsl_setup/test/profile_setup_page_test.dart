@@ -5,13 +5,17 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/mocks.dart';
-import 'package:ubuntu_wizard/services.dart';
-import 'package:ubuntu_wizard/utils.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:subiquity_test/subiquity_test.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_test/ubuntu_test.dart';
+import 'package:ubuntu_utils/ubuntu_utils.dart';
+import 'package:ubuntu_widgets/ubuntu_widgets.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
 import 'package:ubuntu_wsl_setup/l10n.dart';
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_model.dart';
 import 'package:ubuntu_wsl_setup/pages/profile_setup/profile_setup_page.dart';
+import 'package:yaru/yaru.dart';
+import 'package:yaru_test/yaru_test.dart';
 
 import 'profile_setup_page_test.mocks.dart';
 import 'test_utils.dart';
@@ -38,26 +42,31 @@ void main() {
     when(model.passwordStrength)
         .thenReturn(passwordStrength ?? PasswordStrength.weak);
     when(model.showAdvancedOptions).thenReturn(showAdvancedOptions ?? false);
+    when(model.usernameValidation).thenReturn(UsernameValidation.OK);
+    when(model.usernameOk).thenReturn(true);
     return model;
   }
 
   Widget buildPage(ProfileSetupModel model) {
     return ChangeNotifierProvider<ProfileSetupModel>.value(
       value: model,
-      child: ProfileSetupPage(),
+      child: const ProfileSetupPage(),
     );
   }
 
   Widget buildApp(WidgetTester tester, ProfileSetupModel model) {
-    tester.binding.window.devicePixelRatioTestValue = 1;
-    tester.binding.window.physicalSizeTestValue = Size(960, 680);
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(960, 680);
     return MaterialApp(
       localizationsDelegates: localizationsDelegates,
+      theme: yaruLight,
       home: Wizard(
         routes: {
           '/': WizardRoute(
             builder: (_) => buildPage(model),
-            onNext: (settings) => '/',
+          ),
+          '/next': WizardRoute(
+            builder: (_) => const SizedBox.shrink(),
           ),
         },
       ),
@@ -68,7 +77,7 @@ void main() {
     final model = buildModel(realname: 'realname');
     await tester.pumpWidget(buildApp(tester, model));
 
-    final textField = find.widgetWithText(TextField, 'realname');
+    final textField = find.textField('realname');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.realname = 'ubuntu').called(1);
@@ -78,7 +87,7 @@ void main() {
     final model = buildModel(username: 'username');
     await tester.pumpWidget(buildApp(tester, model));
 
-    final textField = find.widgetWithText(TextField, 'username');
+    final textField = find.textField('username');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.username = 'ubuntu').called(1);
@@ -88,7 +97,7 @@ void main() {
     final model = buildModel(password: 'password');
     await tester.pumpWidget(buildApp(tester, model));
 
-    final textField = find.widgetWithText(TextField, 'password');
+    final textField = find.textField('password');
     expect(textField, findsOneWidget);
     await tester.enterText(textField, 'ubuntu');
     verify(model.password = 'ubuntu').called(1);
@@ -98,7 +107,7 @@ void main() {
     final model = buildModel(password: 'passwd', confirmedPassword: 'passwd');
     await tester.pumpWidget(buildApp(tester, model));
 
-    final textField = find.widgetWithText(TextField, 'passwd');
+    final textField = find.textField('passwd');
     expect(textField, findsNWidgets(2));
     await tester.enterText(textField.first, 'ubuntu');
     verify(model.password = 'ubuntu').called(1);
@@ -160,20 +169,14 @@ void main() {
     final model = buildModel(isValid: true);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final continueButton =
-        find.widgetWithText(OutlinedButton, tester.ulang.continueAction);
-    expect(continueButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, isTrue);
+    expect(find.button(tester.ulang.nextLabel), isEnabled);
   });
 
   testWidgets('invalid input', (tester) async {
     final model = buildModel(isValid: false);
     await tester.pumpWidget(buildApp(tester, model));
 
-    final continueButton =
-        find.widgetWithText(OutlinedButton, tester.ulang.continueAction);
-    expect(continueButton, findsOneWidget);
-    expect(tester.widget<OutlinedButton>(continueButton).enabled, isFalse);
+    expect(find.button(tester.ulang.nextLabel), isDisabled);
   });
 
   // NOTE: The "Show advanced options" checkbox was temporarily removed (#431).
@@ -183,16 +186,16 @@ void main() {
   //   final model = buildModel(showAdvancedOptions: true);
   //   await tester.pumpWidget(buildApp(tester, model));
 
-  //   final checkbox = find.widgetWithText(
-  //       CheckButton, tester.lang.profileSetupShowAdvancedOptions);
+  //   final checkbox =
+  //       find.checkButton(tester.lang.profileSetupShowAdvancedOptions);
   //   expect(checkbox, findsOneWidget);
-  //   expect(tester.widget<CheckButton>(checkbox).value, isTrue);
+  //   expect(checkbox, isChecked);
 
   //   when(model.showAdvancedOptions).thenReturn(true);
 
   //   await tester.tap(checkbox);
   //   verify(model.showAdvancedOptions = false).called(1);
-  //   expect(tester.widget<CheckButton>(checkbox).value, isTrue);
+  //   expect(checkbox, isChecked);
   // });
 
   testWidgets('load and save profile setup', (tester) async {
@@ -202,15 +205,11 @@ void main() {
     verify(model.loadProfileSetup()).called(1);
     verifyNever(model.saveProfileSetup());
 
-    final continueButton =
-        find.widgetWithText(OutlinedButton, tester.ulang.continueAction);
-    expect(continueButton, findsOneWidget);
-
-    await tester.tap(continueButton);
+    await tester.tapNext();
     verify(model.saveProfileSetup()).called(1);
   });
 
-  testWidgets('click link', (tester) async {
+  testWidgets('click link currently disabled', (tester) async {
     const url = 'https://aka.ms/wslusers';
     final urlLauncher = MockUrlLauncher();
     when(urlLauncher.launchUrl(url)).thenAnswer((_) async => true);
@@ -219,13 +218,13 @@ void main() {
     await tester.pumpWidget(buildApp(tester, buildModel()));
 
     expect(find.byType(Html), findsOneWidget);
-    await tester.tap(find.byType(Html));
-    verify(urlLauncher.launchUrl(url)).called(1);
+    await tester.tap(find.byType(Html), warnIfMissed: false);
+    verifyNever(urlLauncher.launchUrl(url));
   });
 
   testWidgets('creates a model', (tester) async {
     final client = MockSubiquityClient();
-    when(client.identity()).thenAnswer((_) async => IdentityData());
+    when(client.getIdentity()).thenAnswer((_) async => const IdentityData());
     registerMockService<SubiquityClient>(client);
 
     await tester.pumpWidget(MaterialApp(

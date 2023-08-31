@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_test/mocks.dart';
+import 'package:subiquity_test/subiquity_test.dart';
 import 'package:ubuntu_wsl_setup/pages/advanced_setup/advanced_setup_model.dart';
 
 void main() {
@@ -36,7 +36,7 @@ void main() {
     model.enableHostGeneration = false;
     model.enableResolvConfGeneration = false;
 
-    final conf = WSLConfigurationBase(
+    const conf = WSLConfigurationBase(
       automountRoot: 'path',
       automountOptions: 'opt',
       networkGeneratehosts: false,
@@ -54,7 +54,7 @@ void main() {
     model.addListener(() => wasNotified = true);
 
     wasNotified = false;
-    expect(model.mountLocation, isEmpty);
+    expect(model.mountLocation, '/mnt/');
     model.mountLocation = 'path';
     expect(wasNotified, isTrue);
 

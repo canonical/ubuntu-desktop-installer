@@ -1,3 +1,3 @@
-import 'installer.dart';
+import 'package:ubuntu_bootstrap/ubuntu_bootstrap.dart';
 
-void main(List<String> args) => runInstallerApp(args);
+Future<void> main(List<String> args) async => runInstallerApp(args);

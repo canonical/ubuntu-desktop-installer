@@ -2,28 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:subiquity_client/subiquity_client.dart';
-import 'package:ubuntu_wizard/services.dart';
-import 'package:ubuntu_wizard/settings.dart';
-import 'package:ubuntu_wizard/widgets.dart';
+import 'package:ubuntu_service/ubuntu_service.dart';
+import 'package:ubuntu_wizard/ubuntu_wizard.dart';
+import 'package:ubuntu_wsl_setup/locale.dart';
+import 'package:ubuntu_wsl_setup/services/language_fallback.dart';
+import 'package:yaru_widgets/yaru_widgets.dart';
 
 import '../../l10n.dart';
 import 'select_language_model.dart';
 
 class SelectLanguagePage extends StatefulWidget {
   const SelectLanguagePage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static Widget create(BuildContext context) {
     final client = getService<SubiquityClient>();
+    final languageFallbackService = getService<LanguageFallbackService>();
     return ChangeNotifierProvider(
-      create: (_) => SelectLanguageModel(client),
+      create: (_) => SelectLanguageModel(client, languageFallbackService),
       child: const SelectLanguagePage(),
     );
   }
 
   @override
-  _SelectLanguagePageState createState() => _SelectLanguagePageState();
+  State<SelectLanguagePage> createState() => _SelectLanguagePageState();
 }
 
 class _SelectLanguagePageState extends State<SelectLanguagePage> {
@@ -35,18 +38,13 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
 
     final model = Provider.of<SelectLanguageModel>(context, listen: false);
     model.loadLanguages().then((_) {
-      final settings = Settings.of(context, listen: false);
-      model.selectLocale(settings.locale);
-      model.getServerLocale().then((loc) {
-        if (loc == settings.locale) return;
-
-        model.selectLocale(loc);
-        settings.applyLocale(loc);
-        _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
-            preferPosition: AutoScrollPosition.middle,
-            duration: const Duration(milliseconds: 1));
-      });
+      final locale = InheritedLocale.of(context);
+      model.selectLocale(locale);
+      _languageListScrollController.scrollToIndex(model.selectedLanguageIndex,
+          preferPosition: AutoScrollPosition.middle,
+          duration: const Duration(milliseconds: 1));
     });
+    model.getInstallLanguagePacks();
   }
 
   @override
@@ -60,40 +58,62 @@ class _SelectLanguagePageState extends State<SelectLanguagePage> {
     final lang = AppLocalizations.of(context);
     final model = Provider.of<SelectLanguageModel>(context);
     return WizardPage(
-      title: Text(lang.selectLanguageTitle),
-      content: FractionallySizedBox(
-        widthFactor: 0.5,
-        child: RoundedListView.builder(
-          controller: _languageListScrollController,
-          itemCount: model.languageCount,
-          itemBuilder: (context, index) {
-            return AutoScrollTag(
-              index: index,
-              key: ValueKey(index),
-              controller: _languageListScrollController,
-              child: ListTile(
-                title: Text(model.language(index)),
-                selected: index == model.selectedLanguageIndex,
-                onTap: () {
-                  model.selectedLanguageIndex = index;
-                  final settings = Settings.of(context, listen: false);
-                  settings.applyLocale(model.locale(index));
-                },
-              ),
-            );
-          },
-        ),
+      title: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(lang.selectLanguageTitle),
       ),
-      actions: [
-        WizardAction.back(context),
-        WizardAction.next(
-          context,
-          onActivated: () {
-            model.applyLocale(model.locale(model.selectedLanguageIndex));
-            Wizard.of(context).next();
-          },
-        ),
-      ],
+      content: Column(
+        children: [
+          Flexible(
+            child: FractionallySizedBox(
+              widthFactor: 0.5,
+              child: YaruBorderContainer(
+                clipBehavior: Clip.antiAlias,
+                child: ListView.builder(
+                  controller: _languageListScrollController,
+                  itemCount: model.languageCount,
+                  itemBuilder: (context, index) {
+                    return AutoScrollTag(
+                      index: index,
+                      key: ValueKey(index),
+                      controller: _languageListScrollController,
+                      child: ListTile(
+                        title: Text(model.language(index)),
+                        selected: index == model.selectedLanguageIndex,
+                        onTap: () {
+                          model.selectedLanguageIndex = index;
+                          InheritedLocale.apply(context, model.uiLocale(index));
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: kWizardSpacing),
+          YaruCheckButton(
+            contentPadding: kWizardPadding,
+            title: Text(lang.installLangPacksTitle(
+                model.language(model.selectedLanguageIndex))),
+            subtitle: Text(lang.installLangPacksSubtitle),
+            value: model.installLanguagePacks,
+            onChanged: (value) => model.setInstallLanguagePacks(value!),
+          ),
+        ],
+      ),
+      bottomBar: WizardBar(
+        leading: WizardButton.previous(context),
+        trailing: [
+          WizardButton.next(
+            context,
+            onNext: () {
+              model.applyInstallLanguagePacks();
+              model.applyLocale(model.locale(model.selectedLanguageIndex));
+            },
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,0 +1,97 @@
+#!/bin/bash
+set -e
+
+installer_conf=/tmp/ubuntu_desktop_installer.conf
+
+if ! source $installer_conf 2>/dev/null || [ -z "$AutoLoginUser" ]; then
+    exit
+fi
+
+USER=$AutoLoginUser
+ROOT=/target
+chroot=chroot
+BACKUP=
+
+# Adapted from https://git.launchpad.net/ubiquity/tree/d-i/source/user-setup/user-setup-apply
+
+if [ -d "$ROOT/etc/gdm3" ]; then
+    # Configure GDM autologin
+    GDMCustomFile=$ROOT/etc/gdm3/custom.conf
+    if [ -e "$GDMCustomFile" ] && [ "$BACKUP" ]; then
+        cp "$GDMCustomFile" "${GDMCustomFile}$BACKUP"
+    fi
+    AutologinParameters="AutomaticLoginEnable=true\n\
+AutomaticLogin=$USER\n"
+
+    # Prevent from updating if parameters already present (persistent usb key)
+    if ! `grep -qs "AutomaticLogin=$USER" $GDMCustomFile` ; then
+        if [ -e "$GDMCustomFile" ]; then
+            sed -i '/\(Automatic\)Login/d' $GDMCustomFile
+        fi
+        if ! `grep -qs '\[daemon\]' $GDMCustomFile` ; then
+            echo '[daemon]' >> $GDMCustomFile
+        fi
+        sed -i "s/\[daemon\]/\[daemon\]\n$AutologinParameters/" $GDMCustomFile
+    fi
+fi
+
+if $chroot $ROOT [ -f /etc/kde4/kdm/kdmrc ]; then
+    # Configure KDM autologin
+    $chroot $ROOT sed -i$BACKUP -r \
+        -e "s/^#?AutoLoginEnable=.*\$/AutoLoginEnable=true/" \
+        -e "s/^#?AutoLoginUser=.*\$/AutoLoginUser=$USER/" \
+        -e "s/^#?AutoReLogin=.*\$/AutoReLogin=true/" \
+        /etc/kde4/kdm/kdmrc
+fi
+
+if $chroot $ROOT [ -f /etc/lxdm/lxdm.conf ]; then
+        # Configure LXDM autologin with LXDE session
+    $chroot $ROOT sed -i$BACKUP -r \
+            -e "s/^# autologin=dgod/autologin=$USER/" \
+            -e "s/^# session/session/" \
+            /etc/lxdm/lxdm.conf
+fi
+
+if $chroot $ROOT [ -f /etc/xdg/lubuntu/lxdm/lxdm.conf ]; then
+        # Configure LXDM autologin with Lubuntu session
+    $chroot $ROOT sed -i$BACKUP -r \
+            -e "s/^# autologin=dgod/autologin=$USER/" \
+            -e "s/^# session/session/" \
+            -e "s/startlxde/startlubuntu/" \
+            /etc/xdg/lubuntu/lxdm/lxdm.conf
+fi
+
+if $chroot $ROOT [ -f /usr/bin/sddm ]; then
+    # Configure SDDM autologin with an appropiate session
+    $chroot $ROOT /bin/sh -c "cat > /etc/sddm.conf" << EOF
+[Autologin]
+User=$USER
+Session=PLACEHOLDER
+EOF
+    if $chroot $ROOT [ -f /usr/share/xsessions/plasma.desktop ]; then
+        sed -i 's/PLACEHOLDER/plasma.desktop/' $ROOT/etc/sddm.conf
+    elif $chroot $ROOT [ -f /usr/share/xsessions/Lubuntu.desktop ]; then
+        sed -i 's/PLACEHOLDER/Lubuntu.desktop/' $ROOT/etc/sddm.conf
+    elif $chroot $ROOT [ -f /usr/share/xsessions/lxqt.desktop ]; then
+        sed -i 's/PLACEHOLDER/lxqt.desktop/' $ROOT/etc/sddm.conf
+    else #fallback if some other DE/WM is used
+        SDDMSESSION=$(ls /usr/share/xsessions | head -1)
+        sed -i "s/PLACEHOLDER/$SDDMSESSION/" $ROOT/etc/sddm.conf
+    fi
+fi
+if $chroot $ROOT [ -d /etc/lightdm ]; then
+    # Configure LightDM autologin
+    LightDMCustomFile=$ROOT/etc/lightdm/lightdm.conf
+    AutologinParameters="autologin-guest=false\n\
+autologin-user=$USER\n\
+autologin-user-timeout=0"
+    if ! grep -qs '^autologin-user' $LightDMCustomFile; then
+        if ! grep -qs '^\[Seat:\*\]' $LightDMCustomFile; then
+            echo '[Seat:*]' >> $LightDMCustomFile
+        fi
+        sed -i "s/\[Seat:\*\]/\[Seat:\*\]\n$AutologinParameters/" $LightDMCustomFile
+    #oem config scenario
+    else
+        sed -i "s/^\(\(str  *\)\?autologin-user\)=.*$/\1=$USER/g;" $ROOT/etc/lightdm/lightdm.conf
+    fi
+fi

@@ -6,13 +6,19 @@ description: |
   using subiquity as a backend and Flutter for the UI.
 grade: stable
 confinement: classic
-base: core20
+base: core22
+issues: https://bugs.launchpad.net/ubuntu-desktop-installer/+filebug
+contact: https://bugs.launchpad.net/ubuntu-desktop-installer/+filebug
 
 apps:
   subiquity-server:
     command: bin/subiquity-server
     daemon: simple
     restart-condition: always
+    environment:
+      PATH_ORIG: $PATH
+      PYTHONPATH_ORIG: $PYTHONPATH
+      LD_LIBRARY_PATH_ORIG: $LD_LIBRARY_PATH
 
   subiquity-loadkeys:
     command: bin/subiquity/bin/subiquity-loadkeys
@@ -23,8 +29,8 @@ apps:
     desktop: bin/data/flutter_assets/assets/ubuntu-desktop-installer.desktop
     environment:
       PATH: $SNAP/usr/bin:$SNAP/bin:$PATH
-      LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
-      GIO_MODULE_DIR: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gio/modules
+      LIBGL_DRIVERS_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/dri
+      GIO_MODULE_DIR: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gio/modules
       LIVE_RUN: 1
       LOG_LEVEL: debug
       SNAP_PYTHON: python3
@@ -37,84 +43,83 @@ apps:
 
 parts:
   curtin:
+    plugin: nil
+    source: https://git.launchpad.net/curtin
+    source-type: git
+    source-commit: bdd9069835f8e2c8e42b997c2d7a367ad7359882
     override-pull: |
-      snapcraftctl pull
+      craftctl default
       PACKAGED_VERSION="$(git describe --long --abbrev=9 --match=[0-9][0-9]*)"
       sed -e "s,@@PACKAGED_VERSION@@,$PACKAGED_VERSION,g" -i curtin/version.py
-    plugin: python
-    source-type: git
-    source: https://git.launchpad.net/curtin
-    source-commit: 8c13139961b9decc23a57f2f515f5248a21e1b06
+    override-build: &pyinstall |
+      # We install without dependencies because all dependencies come from
+      # archive packages.
+      # XXX: On core22, running `pip3 install --prefix xxx` does not do the
+      # right thing. The package ends up installed in xxx/local and the modules
+      # get installed to dist-packages instead of site-packages.
+      # See https://discuss.python.org/t/18240
+      # As a workaround, we use a fake user install to get the package
+      # installed in the expected place.
+      PYTHONUSERBASE="$CRAFT_PART_INSTALL" pip3 install --user --no-dependencies .
     build-packages:
-      - shared-mime-info
-      - zlib1g-dev
-    python-packages:
-      - pyyaml==5.3.1
-      - oauthlib
-      - jsonschema
-      - pyrsistent
-      - wheel
-      - setuptools
-      - pip
-      - bson
-      - urwid
-      - requests
-      - requests-unixsocket
+      - python3-pip
     organize:
       lib/python*/site-packages/usr/lib/curtin: usr/lib/
-    stage:
-      - '*'
-      - -lib/python*/site-packages/_yaml.*.so
-      - -lib/python*/site-packages/setuptools
-      - -lib/python*/site-packages/pip
-      - -lib/python*/site-packages/pkg_resources
-      - -lib/python*/site-packages/jsonschema
-      - -lib/python*/site-packages/wheel*
-      - -lib/python*/site-packages/probert
-      - -bin/activate*
-      - -bin/python3*
-      - -lib/python3.8/site-packages/__pycache__/six.cpython*
-      - -lib/python3.8/site-packages/pip-*.dist-info/RECORD
-      - -lib/python3.8/site-packages/wheel-*.dist-info/RECORD
-      - -lib/python3.8/site-packages/_distutils_hack
 
   probert:
-    plugin: python
+    plugin: nil
+    source: https://github.com/canonical/probert.git
+    source-type: git
+    source-commit: ae758355b610e389099abdb2397bb41ad49409ec
+    override-build: *pyinstall
     build-packages:
-      - python-setuptools
       - build-essential
       - libnl-3-dev
       - libnl-genl-3-dev
       - libnl-route-3-dev
-    source: https://github.com/canonical/probert.git
-    source-type: git
-    source-commit: e9da1c5958917c6ee39a90230ffc7497c0b8fa68
-    requirements: [requirements.txt]
+      - pkg-config
+      - python3-dev
+      - python3-pip
+    build-attributes: [enable-patchelf]
     stage:
       - '*'
       - -bin/python3*
 
   subiquitydeps:
     plugin: nil
+    build-attributes: [enable-patchelf]
     stage-packages:
+      # This list includes the dependencies for curtin and probert as well,
+      # there doesn't seem to be any real benefit to listing them separately.
       - cloud-init
-      - libsystemd0
       - iso-codes
-      - lsb-release
-      - ssh-import-id
-      - python3-aiohttp
-      - python3-bson
-      - python3-minimal
-      - python3.8-minimal
       - libpython3-stdlib
-      - libpython3.8-stdlib
-      - libpython3.8-minimal
+      - libpython3.10-minimal
+      - libpython3.10-stdlib
+      - libsystemd0
+      - lsb-release
+      - ntfs-3g
+      - python3-aiohttp
       - python3-apport
-      - python3-requests-unixsocket
+      - python3-attr
+      - python3-bson
+      - python3-debian
+      - python3-jsonschema
+      - python3-minimal
+      - python3-oauthlib
+      - python3-pkg-resources
+      - python3-pyroute2
+      - python3-pyrsistent
       - python3-pyudev
+      - python3-requests
+      - python3-requests-unixsocket
       - python3-systemd
       - python3-urwid
-      - util-linux
+      - python3-yaml
+      - python3-yarl
+      - python3.10-minimal
+      - ssh-import-id
+      - ubuntu-advantage-tools
       # WSL specifics:
       - language-selector-common
       - locales
@@ -123,14 +128,15 @@ parts:
 
   flutter-git:
     source: https://github.com/flutter/flutter.git
-    source-branch: stable
+    source-tag: 3.10.5
     source-depth: 1
     plugin: nil
     override-build: |
-      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
-      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
-      cp -r $SNAPCRAFT_PART_SRC $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter
-      ln -s $SNAPCRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $SNAPCRAFT_PART_INSTALL/usr/bin/flutter
+      mkdir -p $CRAFT_PART_INSTALL/usr/bin
+      mkdir -p $CRAFT_PART_INSTALL/usr/libexec
+      cp -r $CRAFT_PART_SRC $CRAFT_PART_INSTALL/usr/libexec/flutter
+      ln -s $CRAFT_PART_INSTALL/usr/libexec/flutter/bin/flutter $CRAFT_PART_INSTALL/usr/bin/flutter
+      $CRAFT_PART_INSTALL/usr/bin/flutter doctor
     build-packages:
       - clang
       - cmake
@@ -142,42 +148,26 @@ parts:
       - zip
     override-prime: ''
 
-  libhandy:
-    source: https://gitlab.gnome.org/GNOME/libhandy.git
-    source-branch: libhandy-1-2
-    source-depth: 1
-    plugin: meson
-    meson-parameters:
-      - --prefix=/usr
-      - --buildtype=release
-      - -Dvapi=false
-      - -Dintrospection=disabled
-      - -Dgtk_doc=false
-      - -Dtests=false
-      - -Dexamples=false
-      - -Dglade_catalog=disabled
-    build-packages:
-      - libgtk-3-dev
-
   ubuntu-desktop-installer:
-    after: [flutter-git, libhandy]
+    after: [flutter-git]
     source: .
     source-type: git
     plugin: nil
+    build-attributes: [enable-patchelf]
     override-build: |
       set -eux
-      mkdir -p $SNAPCRAFT_PART_INSTALL/bin/lib
-      cp snap/local/launcher $SNAPCRAFT_PART_INSTALL/bin/
-      cp snap/local/subiquity-server $SNAPCRAFT_PART_INSTALL/bin/
-      cp -r packages/subiquity_client/subiquity $SNAPCRAFT_PART_INSTALL/bin/
+      mkdir -p $CRAFT_PART_INSTALL/bin/lib
+      cp snap/local/launcher $CRAFT_PART_INSTALL/bin/
+      cp snap/local/subiquity-server $CRAFT_PART_INSTALL/bin/
+      cp -r vendor/ubuntu-desktop-provision/packages/subiquity_client/subiquity $CRAFT_PART_INSTALL/bin/
+      mkdir -p $CRAFT_PART_INSTALL/etc/subiquity
+      cp -r snap/local/postinst.d $CRAFT_PART_INSTALL/etc/subiquity
+      # https://github.com/canonical/ubuntu-desktop-installer/issues/1146
+      (cd vendor/ubuntu-desktop-provision/packages/ubuntu_wizard && flutter pub get)
       cd packages/ubuntu_desktop_installer
-      flutter channel stable
-      flutter upgrade
-      flutter config --enable-linux-desktop
-      flutter doctor
       flutter pub get
       flutter build linux --release -v
-      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/bin/
+      cp -r build/linux/*/release/bundle/* $CRAFT_PART_INSTALL/bin/
 
   ubuntu-wsl-setup:
     after: [flutter-git]
@@ -187,22 +177,19 @@ parts:
     override-build: |
       set -eux
       # ubuntu-desktop-install will install subiquity in bin/subiquity. It’s not a real build-dep ordering though.
-      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
-      mkdir -p $SNAPCRAFT_PART_INSTALL/usr/libexec
+      mkdir -p $CRAFT_PART_INSTALL/bin
+      mkdir -p $CRAFT_PART_INSTALL/usr/libexec
       cd packages/ubuntu_wsl_setup
-      flutter channel stable
-      flutter upgrade
-      flutter config --enable-linux-desktop
-      flutter doctor
       flutter pub get
       flutter build linux --release -v
-      cp -r build/linux/*/release/bundle/* $SNAPCRAFT_PART_INSTALL/usr/libexec
-      cp -p ubuntu-wsl-setup $SNAPCRAFT_PART_INSTALL/bin/
+      cp -r build/linux/*/release/bundle/* $CRAFT_PART_INSTALL/usr/libexec
+      cp -p ubuntu-wsl-setup $CRAFT_PART_INSTALL/bin/
       # Create the theme empty directories for bindmounting the common-themes snap
-      mkdir -p $SNAPCRAFT_PART_INSTALL/data-dir/icons $SNAPCRAFT_PART_INSTALL/data-dir/sounds $SNAPCRAFT_PART_INSTALL/data-dir/themes
+      mkdir -p $CRAFT_PART_INSTALL/data-dir/icons $CRAFT_PART_INSTALL/data-dir/sounds $CRAFT_PART_INSTALL/data-dir/themes
 
   libraries:
     plugin: nil
+    build-attributes: [enable-patchelf]
     stage-packages:
       - libatk1.0-0
       - libcairo-gobject2
@@ -224,10 +211,11 @@ parts:
       - libglapi-mesa
       - libgraphite2-3
       - libxshmfence1
-      - libllvm12
       - libpciaccess0
       - libvulkan1
       - shared-mime-info
+      - libglib2.0-bin
+      - libibus-1.0-5
     prime:
       - usr/lib/*/libEGL*.so.*
       - usr/lib/*/libGL*.so.*
@@ -238,6 +226,7 @@ parts:
       - usr/lib/*/libf*.so.*
       - usr/lib/*/libg*.so.*
       - usr/lib/*/libharfbuzz*.so.*
+      - usr/lib/*/libibus*.so.*
       - usr/lib/*/libpango*.so.*
       - usr/lib/*/libpixman*.so.*
       - usr/lib/*/libpng*.so.*
@@ -251,7 +240,6 @@ parts:
       - usr/lib/*/libglapi*.so.*
       - usr/lib/*/libgraphite2*.so.*
       - usr/lib/*/libxshmfence*.so.*
-      - usr/lib/*/libLLVM-12.so.*
       - usr/lib/*/libpciaccess*.so.*
       - usr/lib/*/libsensors*.so.*
       - usr/lib/*/libvulkan*.so.*
@@ -259,8 +247,11 @@ parts:
       - usr/lib/*/gdk-pixbuf-2.0
       - usr/lib/*/
       - usr/bin/update-mime-database
-      - usr/bin/gdk*
+      - usr/bin/g*
       - usr/share/mime
+      - -usr/lib/*/pkgconfig
+      - -usr/lib/pkgconfig
+      - -usr/share/pkgconfig
 
   dri-no-patchelf:
     after: [libraries]
@@ -270,14 +261,15 @@ parts:
     build-attributes:
       - no-patchelf # Otherwise snapcraft may strip the build ID and cause the driver to crash
     stage:
-      - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
+      - usr/lib/${CRAFT_ARCH_TRIPLET}/dri
       - usr/share/drirc.d
 
   os-prober:
     plugin: nil
     stage-packages: [os-prober]
+    build-attributes: [enable-patchelf]
     override-stage: |
-      snapcraftctl stage
+      craftctl default
       for file in $(grep -lr /usr | grep 'usr/[^/]*/[^/]*-probe[sr]'); do
         sed -i 's, \(/usr\), $SNAP\1,' $file
       done

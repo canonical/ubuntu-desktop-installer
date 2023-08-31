@@ -7,75 +7,40 @@ This project is a modern implementation of the Ubuntu Desktop installer, using [
 
 ![Preview Screenshot](.github/docs/images/preview_screenshot.png)
 
-## Availability
+## Availability and release
 
-The new Ubuntu Desktop installer is *planned* to ship with the next Ubuntu Desktop LTS 22.04 Jammy Jellyfish.
+Ubuntu Desktop Installer replaced [Ubiquity](https://launchpad.net/ubiquity) as the default installer starting from [Ubuntu Desktop 23.04 (Lunar Lobster)](https://ubuntu.com/blog/ubuntu-desktop-23-04-release-roundup).
+
+[![The New Ubuntu Installer | 23.04 Lunar Lobster](https://img.youtube.com/vi/oqohY6wKtcs/0.jpg)](https://www.youtube.com/watch?v=oqohY6wKtcs)
 
 ## Test a live image
 
-If you want to test the new installer before 22.04 goes live, you can download a preview canary image below and install it for example in a virtual machine:
+If you want to test new installer in a live session, you can download the latest
+[daily-live](https://cdimage.ubuntu.com/daily-live/current/) image and try it in
+a virtual machine.
 
-[Download](https://cdimage.ubuntu.com/daily-canary/current/)
+## Build and dry-run the installer
 
+If you want to build and dry-run the installer in a local Ubuntu installation
+for development or testing purposes without performing an actual installation,
+follow these steps:
 
-## Building and running manually
-
-If you prefer to build and run the installer from source you need to install Flutter.
-
-### Either: Install Flutter with Snapd
-
-```
-sudo snap install flutter --classic
-```
-
-### Or: Install Flutter manually
-
-Please follow the [official Linux setup instructions from flutter.dev](https://flutter.dev/docs/get-started/install/linux) to install Flutter and its dependencies for the Linux desktop support manually.
-
-### Configure Flutter
-
-NOTE: Notice to enable desktop support for Flutter:
-
-```
-flutter config --enable-linux-desktop
-```
-
-### Download and build the Ubuntu Desktop installer
-
-Grab the source:
-```sh
-git clone https://github.com/canonical/ubuntu-desktop-installer.git
-cd ubuntu-desktop-installer
-git submodule update --init --recursive
-```
-
-Install Subiquity dependencies:
-```sh
-cd packages/subiquity_client/subiquity
-sudo ./scripts/installdeps.sh
-```
-
-### Run the installer
-
-Run the installer either from within your IDE or by running the following command:
-
-```sh
-flutter run
-```
-
-### Run live installer
-
-In one terminal run:
-```sh
-cd /path/to/ubuntu-desktop-installer/packages/subiquity_client/subiquity
-sudo python3 -m subiquity.cmd.server
-```
-
-In another terminal run:
-```sh
-cd /path/to/ubuntu-desktop-installer/packages/ubuntu_desktop_installer
-LIVE_RUN=1 flutter run
-```
+- [Install Flutter](https://flutter.dev/docs/get-started/install/linux)
+- Fetch the source code
+    ```sh
+    git clone https://github.com/canonical/ubuntu-desktop-installer.git
+    cd ubuntu-desktop-installer
+    git submodule update --init --recursive
+    ```
+- Install dependencies:
+    ```sh
+    make install_deps
+    ```
+- Dry-run the installer either from within your IDE or by executing:
+    ```sh
+    cd packages/ubuntu_desktop_installer
+    flutter run
+    ```
 
 ## Contributing
 
