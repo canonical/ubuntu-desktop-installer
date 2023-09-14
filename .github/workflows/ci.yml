@@ -124,6 +124,6 @@ jobs:
         echo "XDG_RUNTIME_DIR=/run/user/$UID" >> $GITHUB_ENV
     - run: melos pub get
     - run: melos coverage
-    - uses: codecov/codecov-action@v3
+    - uses: codecov/codecov-action@v4
       with:
         token: ${{secrets.CODECOV_TOKEN}}
