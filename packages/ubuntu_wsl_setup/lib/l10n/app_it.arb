@@ -11,5 +11,9 @@
   "profileSetupRealnameLabel": "Il tuo nome",
   "@profileSetupRealnameLabel": {},
   "profileSetupUsernameHint": "Scegli uno username",
-  "@profileSetupUsernameHint": {}
+  "@profileSetupUsernameHint": {},
+  "exitButton": "Esci",
+  "@exitButton": {},
+  "finishButton": "Termina",
+  "@finishButton": {}
 }
