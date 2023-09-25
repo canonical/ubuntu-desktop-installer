@@ -45,11 +45,13 @@ class MockSelectLanguageModel extends _i1.Mock
         Invocation.getter(#installLanguagePacks),
         returnValue: false,
       ) as bool);
+
   @override
   int get selectedLanguageIndex => (super.noSuchMethod(
         Invocation.getter(#selectedLanguageIndex),
         returnValue: 0,
       ) as int);
+
   @override
   set selectedLanguageIndex(int? index) => super.noSuchMethod(
         Invocation.setter(
@@ -58,21 +60,25 @@ class MockSelectLanguageModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   int get languageCount => (super.noSuchMethod(
         Invocation.getter(#languageCount),
         returnValue: 0,
       ) as int);
+
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,
       ) as bool);
+
   @override
   bool get isDisposed => (super.noSuchMethod(
         Invocation.getter(#isDisposed),
         returnValue: false,
       ) as bool);
+
   @override
   void setInstallLanguagePacks(bool? value) => super.noSuchMethod(
         Invocation.method(
@@ -81,6 +87,7 @@ class MockSelectLanguageModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   _i4.Future<void> getInstallLanguagePacks() => (super.noSuchMethod(
         Invocation.method(
@@ -90,6 +97,7 @@ class MockSelectLanguageModel extends _i1.Mock
         returnValue: _i4.Future<void>.value(),
         returnValueForMissingStub: _i4.Future<void>.value(),
       ) as _i4.Future<void>);
+
   @override
   _i4.Future<void> applyInstallLanguagePacks() => (super.noSuchMethod(
         Invocation.method(
@@ -99,6 +107,7 @@ class MockSelectLanguageModel extends _i1.Mock
         returnValue: _i4.Future<void>.value(),
         returnValueForMissingStub: _i4.Future<void>.value(),
       ) as _i4.Future<void>);
+
   @override
   _i4.Future<void> loadLanguages() => (super.noSuchMethod(
         Invocation.method(
@@ -108,6 +117,7 @@ class MockSelectLanguageModel extends _i1.Mock
         returnValue: _i4.Future<void>.value(),
         returnValueForMissingStub: _i4.Future<void>.value(),
       ) as _i4.Future<void>);
+
   @override
   _i2.Locale locale(int? index) => (super.noSuchMethod(
         Invocation.method(
@@ -122,6 +132,7 @@ class MockSelectLanguageModel extends _i1.Mock
           ),
         ),
       ) as _i2.Locale);
+
   @override
   _i2.Locale uiLocale(int? index) => (super.noSuchMethod(
         Invocation.method(
@@ -136,6 +147,7 @@ class MockSelectLanguageModel extends _i1.Mock
           ),
         ),
       ) as _i2.Locale);
+
   @override
   _i4.Future<void> applyLocale(_i2.Locale? locale) => (super.noSuchMethod(
         Invocation.method(
@@ -145,6 +157,7 @@ class MockSelectLanguageModel extends _i1.Mock
         returnValue: _i4.Future<void>.value(),
         returnValueForMissingStub: _i4.Future<void>.value(),
       ) as _i4.Future<void>);
+
   @override
   String language(int? index) => (super.noSuchMethod(
         Invocation.method(
@@ -153,6 +166,7 @@ class MockSelectLanguageModel extends _i1.Mock
         ),
         returnValue: '',
       ) as String);
+
   @override
   void selectLocale(_i2.Locale? locale) => super.noSuchMethod(
         Invocation.method(
@@ -161,6 +175,7 @@ class MockSelectLanguageModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   _i4.Future<_i2.Locale> getServerLocale() => (super.noSuchMethod(
         Invocation.method(
@@ -175,6 +190,7 @@ class MockSelectLanguageModel extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.Locale>);
+
   @override
   void addListener(_i2.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
@@ -183,6 +199,7 @@ class MockSelectLanguageModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void removeListener(_i2.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
@@ -191,6 +208,7 @@ class MockSelectLanguageModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void dispose() => super.noSuchMethod(
         Invocation.method(
@@ -199,6 +217,7 @@ class MockSelectLanguageModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void notifyListeners() => super.noSuchMethod(
         Invocation.method(

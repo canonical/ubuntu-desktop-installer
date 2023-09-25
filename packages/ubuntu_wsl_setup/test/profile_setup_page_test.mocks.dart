@@ -37,6 +37,7 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         Invocation.getter(#realname),
         returnValue: '',
       ) as String);
+
   @override
   set realname(String? realname) => super.noSuchMethod(
         Invocation.setter(
@@ -45,11 +46,13 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   String get username => (super.noSuchMethod(
         Invocation.getter(#username),
         returnValue: '',
       ) as String);
+
   @override
   set username(String? username) => super.noSuchMethod(
         Invocation.setter(
@@ -58,11 +61,13 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   String get password => (super.noSuchMethod(
         Invocation.getter(#password),
         returnValue: '',
       ) as String);
+
   @override
   set password(String? password) => super.noSuchMethod(
         Invocation.setter(
@@ -71,11 +76,13 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   String get confirmedPassword => (super.noSuchMethod(
         Invocation.getter(#confirmedPassword),
         returnValue: '',
       ) as String);
+
   @override
   set confirmedPassword(String? password) => super.noSuchMethod(
         Invocation.setter(
@@ -84,16 +91,19 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   _i3.PasswordStrength get passwordStrength => (super.noSuchMethod(
         Invocation.getter(#passwordStrength),
         returnValue: _i3.PasswordStrength.weak,
       ) as _i3.PasswordStrength);
+
   @override
   bool get showAdvancedOptions => (super.noSuchMethod(
         Invocation.getter(#showAdvancedOptions),
         returnValue: false,
       ) as bool);
+
   @override
   set showAdvancedOptions(bool? value) => super.noSuchMethod(
         Invocation.setter(
@@ -102,31 +112,37 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   bool get isValid => (super.noSuchMethod(
         Invocation.getter(#isValid),
         returnValue: false,
       ) as bool);
+
   @override
   _i4.UsernameValidation get usernameValidation => (super.noSuchMethod(
         Invocation.getter(#usernameValidation),
         returnValue: _i4.UsernameValidation.OK,
       ) as _i4.UsernameValidation);
+
   @override
   bool get usernameOk => (super.noSuchMethod(
         Invocation.getter(#usernameOk),
         returnValue: false,
       ) as bool);
+
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,
       ) as bool);
+
   @override
   bool get isDisposed => (super.noSuchMethod(
         Invocation.getter(#isDisposed),
         returnValue: false,
       ) as bool);
+
   @override
   _i5.Future<void> validate() => (super.noSuchMethod(
         Invocation.method(
@@ -136,6 +152,7 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         returnValue: _i5.Future<void>.value(),
         returnValueForMissingStub: _i5.Future<void>.value(),
       ) as _i5.Future<void>);
+
   @override
   _i5.Future<void> loadProfileSetup() => (super.noSuchMethod(
         Invocation.method(
@@ -145,6 +162,7 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         returnValue: _i5.Future<void>.value(),
         returnValueForMissingStub: _i5.Future<void>.value(),
       ) as _i5.Future<void>);
+
   @override
   _i5.Future<void> saveProfileSetup({String? salt}) => (super.noSuchMethod(
         Invocation.method(
@@ -155,6 +173,7 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         returnValue: _i5.Future<void>.value(),
         returnValueForMissingStub: _i5.Future<void>.value(),
       ) as _i5.Future<void>);
+
   @override
   void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
@@ -163,6 +182,7 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
@@ -171,6 +191,7 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void dispose() => super.noSuchMethod(
         Invocation.method(
@@ -179,6 +200,7 @@ class MockProfileSetupModel extends _i1.Mock implements _i2.ProfileSetupModel {
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void notifyListeners() => super.noSuchMethod(
         Invocation.method(
@@ -205,6 +227,7 @@ class MockUrlLauncher extends _i1.Mock implements _i7.UrlLauncher {
         ),
         returnValue: _i5.Future<bool>.value(false),
       ) as _i5.Future<bool>);
+
   @override
   _i5.Future<bool> launchUrl(String? url) => (super.noSuchMethod(
         Invocation.method(

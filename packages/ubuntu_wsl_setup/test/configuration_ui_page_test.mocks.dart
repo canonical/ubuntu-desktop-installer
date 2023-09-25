@@ -35,6 +35,7 @@ class MockConfigurationUIModel extends _i1.Mock
         Invocation.getter(#interopAppendwindowspath),
         returnValue: false,
       ) as bool);
+
   @override
   set interopAppendwindowspath(bool? value) => super.noSuchMethod(
         Invocation.setter(
@@ -43,11 +44,13 @@ class MockConfigurationUIModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   bool get interopEnabled => (super.noSuchMethod(
         Invocation.getter(#interopEnabled),
         returnValue: false,
       ) as bool);
+
   @override
   set interopEnabled(bool? value) => super.noSuchMethod(
         Invocation.setter(
@@ -56,11 +59,13 @@ class MockConfigurationUIModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   bool get automountEnabled => (super.noSuchMethod(
         Invocation.getter(#automountEnabled),
         returnValue: false,
       ) as bool);
+
   @override
   set automountEnabled(bool? value) => super.noSuchMethod(
         Invocation.setter(
@@ -69,11 +74,13 @@ class MockConfigurationUIModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   bool get automountMountfstab => (super.noSuchMethod(
         Invocation.getter(#automountMountfstab),
         returnValue: false,
       ) as bool);
+
   @override
   set automountMountfstab(bool? value) => super.noSuchMethod(
         Invocation.setter(
@@ -82,21 +89,25 @@ class MockConfigurationUIModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   bool get isValid => (super.noSuchMethod(
         Invocation.getter(#isValid),
         returnValue: false,
       ) as bool);
+
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,
       ) as bool);
+
   @override
   bool get isDisposed => (super.noSuchMethod(
         Invocation.getter(#isDisposed),
         returnValue: false,
       ) as bool);
+
   @override
   _i3.Future<void> loadConfiguration() => (super.noSuchMethod(
         Invocation.method(
@@ -106,6 +117,7 @@ class MockConfigurationUIModel extends _i1.Mock
         returnValue: _i3.Future<void>.value(),
         returnValueForMissingStub: _i3.Future<void>.value(),
       ) as _i3.Future<void>);
+
   @override
   _i3.Future<void> saveConfiguration() => (super.noSuchMethod(
         Invocation.method(
@@ -115,6 +127,7 @@ class MockConfigurationUIModel extends _i1.Mock
         returnValue: _i3.Future<void>.value(),
         returnValueForMissingStub: _i3.Future<void>.value(),
       ) as _i3.Future<void>);
+
   @override
   void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
@@ -123,6 +136,7 @@ class MockConfigurationUIModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
@@ -131,6 +145,7 @@ class MockConfigurationUIModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void dispose() => super.noSuchMethod(
         Invocation.method(
@@ -139,6 +154,7 @@ class MockConfigurationUIModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void notifyListeners() => super.noSuchMethod(
         Invocation.method(
