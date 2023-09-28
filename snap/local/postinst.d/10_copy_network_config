@@ -8,3 +8,10 @@ target_nm=$target/$source_nm
 if [ -d $source_nm ] && [ -d $target_nm ]; then
     cp -anr $source_nm/. $target_nm
 fi
+
+source_netplan=/etc/netplan
+target_netplan=$target/$source_netplan
+
+if [ -d $source_netplan ] && [ -d $target_netplan ]; then
+    cp -anr $source_netplan/90-NM-* $target_netplan
+fi
