@@ -35,11 +35,13 @@ class MockApplyingChangesModel extends _i1.Mock
         Invocation.getter(#hasListeners),
         returnValue: false,
       ) as bool);
+
   @override
   bool get isDisposed => (super.noSuchMethod(
         Invocation.getter(#isDisposed),
         returnValue: false,
       ) as bool);
+
   @override
   _i3.Future<void> init() => (super.noSuchMethod(
         Invocation.method(
@@ -49,6 +51,7 @@ class MockApplyingChangesModel extends _i1.Mock
         returnValue: _i3.Future<void>.value(),
         returnValueForMissingStub: _i3.Future<void>.value(),
       ) as _i3.Future<void>);
+
   @override
   void dispose() => super.noSuchMethod(
         Invocation.method(
@@ -57,6 +60,7 @@ class MockApplyingChangesModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
@@ -65,6 +69,7 @@ class MockApplyingChangesModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
@@ -73,6 +78,7 @@ class MockApplyingChangesModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void notifyListeners() => super.noSuchMethod(
         Invocation.method(

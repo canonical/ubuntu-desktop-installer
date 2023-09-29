@@ -52,16 +52,19 @@ class MockInstallationSlidesModel extends _i1.Mock
           Invocation.getter(#monitor),
         ),
       ) as _i2.SubiquityStatusMonitor);
+
   @override
   _i3.InstallationState get state => (super.noSuchMethod(
         Invocation.getter(#state),
         returnValue: _i3.InstallationState.registering,
       ) as _i3.InstallationState);
+
   @override
   _i4.Stream<String> get journal => (super.noSuchMethod(
         Invocation.getter(#journal),
         returnValue: _i4.Stream<String>.empty(),
       ) as _i4.Stream<String>);
+
   @override
   set appModel(_i5.AppModel? details) => super.noSuchMethod(
         Invocation.setter(
@@ -70,41 +73,49 @@ class MockInstallationSlidesModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   bool get skipLanguageSelection => (super.noSuchMethod(
         Invocation.getter(#skipLanguageSelection),
         returnValue: false,
       ) as bool);
+
   @override
   bool get hasError => (super.noSuchMethod(
         Invocation.getter(#hasError),
         returnValue: false,
       ) as bool);
+
   @override
   bool get isRegistering => (super.noSuchMethod(
         Invocation.getter(#isRegistering),
         returnValue: false,
       ) as bool);
+
   @override
   bool get isLogVisible => (super.noSuchMethod(
         Invocation.getter(#isLogVisible),
         returnValue: false,
       ) as bool);
+
   @override
   bool get isServerUp => (super.noSuchMethod(
         Invocation.getter(#isServerUp),
         returnValue: false,
       ) as bool);
+
   @override
   bool get hasListeners => (super.noSuchMethod(
         Invocation.getter(#hasListeners),
         returnValue: false,
       ) as bool);
+
   @override
   bool get isDisposed => (super.noSuchMethod(
         Invocation.getter(#isDisposed),
         returnValue: false,
       ) as bool);
+
   @override
   void init({
     _i5.AppModel? current,
@@ -121,6 +132,7 @@ class MockInstallationSlidesModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void toggleLogVisibility() => super.noSuchMethod(
         Invocation.method(
@@ -129,6 +141,7 @@ class MockInstallationSlidesModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void dispose() => super.noSuchMethod(
         Invocation.method(
@@ -137,6 +150,7 @@ class MockInstallationSlidesModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
@@ -145,6 +159,7 @@ class MockInstallationSlidesModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
@@ -153,6 +168,7 @@ class MockInstallationSlidesModel extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
   @override
   void notifyListeners() => super.noSuchMethod(
         Invocation.method(
@@ -176,6 +192,7 @@ class MockJournalService extends _i1.Mock implements _i7.JournalService {
         Invocation.getter(#stream),
         returnValue: _i4.Stream<String>.empty(),
       ) as _i4.Stream<String>);
+
   @override
   _i4.Future<void> close() => (super.noSuchMethod(
         Invocation.method(
