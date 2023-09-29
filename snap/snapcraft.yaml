@@ -46,7 +46,7 @@ parts:
     plugin: nil
     source: https://git.launchpad.net/curtin
     source-type: git
-    source-commit: d5f5dde574aca60935fc9e1acf9cb669e24f22de
+    source-commit: 64ea5fbe827aa98ddc63ea87de2de45689180c82
     override-pull: |
       craftctl default
       PACKAGED_VERSION="$(git describe --long --abbrev=9 --match=[0-9][0-9]*)"
@@ -82,7 +82,7 @@ parts:
       - python3-pip
     build-attributes: [enable-patchelf]
     stage:
-      - '*'
+      - "*"
       - -bin/python3*
 
   subiquitydeps:
@@ -146,7 +146,7 @@ parts:
       - unzip
       - xz-utils
       - zip
-    override-prime: ''
+    override-prime: ""
 
   ubuntu-desktop-installer:
     after: [flutter-git]
