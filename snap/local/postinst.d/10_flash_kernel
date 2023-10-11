@@ -4,8 +4,8 @@ set -e
 # and generating initrd, but we need it on arm64
 # and we need to update-grub after flash-kernel installed dtb
 if [ -e /target/usr/sbin/flash-kernel ]; then
-	FK_FORCE=yes curtin in-target -t /target -- flash-kernel
+	FK_FORCE=yes $SNAP/bin/subiquity/bin/subiquity-cmd curtin in-target -t /target -- flash-kernel
 fi
 if [ -e /target/usr/sbin/update-grub ]; then
-	curtin in-target -t /target -- update-grub
+	$SNAP/bin/subiquity/bin/subiquity-cmd curtin in-target -t /target -- update-grub
 fi
