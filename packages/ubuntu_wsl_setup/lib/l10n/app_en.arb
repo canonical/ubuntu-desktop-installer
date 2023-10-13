@@ -166,7 +166,7 @@
   "@installationSlidesCancel": {},
   "installationSlidesUbuntuOnWsl": "Ubuntu on WSL",
   "@installationSlidesUbuntuOnWsl": {},
-  "installationSlidesUbuntuOnWslText": "A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IOT and fun!",
+  "installationSlidesUbuntuOnWslText": "A full Ubuntu environment, deeply integrated with Windows, for Linux application development and execution. Optimised for cloud, web, data science, IoT and fun!",
   "@installationSlidesUbuntuOnWslText": {},
   "installationSlidesUbuntuWslWebDev": "Ubuntu WSL for\nWeb Development",
   "@installationSlidesUbuntuWslWebDev": {},
