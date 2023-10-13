@@ -145,7 +145,7 @@
   "@installationSlidesErrorText": {},
   "installationSlidesDone": "Allt är Redo. Njut av att använda Ubuntu på WSL",
   "@installationSlidesDone": {},
-  "installationSlidesUbuntuOnWslText": "En komplett Ubuntu-miljö, djupt integrerad med Windows, för Linux-applikationsutveckling och exekvering. Optimerad för moln, webb, datavetenskap, IOT och kul!",
+  "installationSlidesUbuntuOnWslText": "En komplett Ubuntu-miljö, djupt integrerad med Windows, för Linux-applikationsutveckling och exekvering. Optimerad för moln, webb, datavetenskap, IoT och kul!",
   "@installationSlidesUbuntuOnWslText": {},
   "installationSlidesUbuntuWslWebDev": "Ubuntu WSL för\nWebbutveckling",
   "@installationSlidesUbuntuWslWebDev": {},
