@@ -149,7 +149,7 @@
   "@installationSlidesExitContents": {},
   "installationSlidesUbuntuWslDevOpsText": "Assegure a compatibilidade do CI/CD pipeline, desenvolvendo localmente no Ubuntu WSL antes de publicar num ambiente de produção do Ubuntu",
   "@installationSlidesUbuntuWslDevOpsText": {},
-  "installationSlidesUbuntuOnWslText": "Um ambiente do Ubuntu completo, profundamente integrado com Windows, para facilitar desenvolvimento e execução de aplicativos do Linux. Otimizado para nuvem, web, ciência de dados, IOT e diversão!",
+  "installationSlidesUbuntuOnWslText": "Um ambiente do Ubuntu completo, profundamente integrado com Windows, para facilitar desenvolvimento e execução de aplicativos do Linux. Otimizado para nuvem, web, ciência de dados, IoT e diversão!",
   "@installationSlidesUbuntuOnWslText": {},
   "installationSlidesUbuntuWslDataScienceText": "O Data Science Stack da NVIDIA permite maximizar o desempenho dos projetos de Ciência de Dados e Aprendizagem Automática em cima dos drivers nativos da NVIDIA do Windows.",
   "@installationSlidesUbuntuWslDataScienceText": {},
