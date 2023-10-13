@@ -181,7 +181,7 @@
   "@installationSlidesInstalling": {},
   "installationSlidesExitContents": "Az ablak bezárása nem akadályozza meg, hogy a telepítés a háttérben folytatódjon.\n\nEmellett folytathatja a WSL-en az Ubuntuval kapcsolatos lehetőségek felfedezését.",
   "@installationSlidesExitContents": {},
-  "installationSlidesUbuntuOnWslText": "Teljes Ubuntu környezet, amely mélyen integrálódik a Windowshoz, Linux alkalmazások fejlesztéséhez és futtatásához. Felhőre, webre, adattudományra, IOT-ra és szórakozásra optimalizálva!",
+  "installationSlidesUbuntuOnWslText": "Teljes Ubuntu környezet, amely mélyen integrálódik a Windowshoz, Linux alkalmazások fejlesztéséhez és futtatásához. Felhőre, webre, adattudományra, IoT-ra és szórakozásra optimalizálva!",
   "@installationSlidesUbuntuOnWslText": {},
   "installationSlidesFindOutMore": "Tudjon meg többet",
   "@installationSlidesFindOutMore": {},
