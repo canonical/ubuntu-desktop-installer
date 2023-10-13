@@ -189,7 +189,7 @@
   "@installationSlidesUbuntuWslGuiApps": {},
   "installationSlidesUbuntuWslGuiAppsText": "다중 플랫폼 개발을 위해 WSLg를 사용하여 Linux에서 웹 및 GUI 애플리케이션을 개발하고 미리 봅니다.",
   "@installationSlidesUbuntuWslGuiAppsText": {},
-  "installationSlidesUbuntuOnWslText": "리눅스 애플리케이션 개발 및 실행을 위해 Windows와 긴밀하게 통합된 완전한 우분투 환경. 클라우드, 웹, 데이터 과학, IOT 및 재미에 최적화 되었습니다!",
+  "installationSlidesUbuntuOnWslText": "리눅스 애플리케이션 개발 및 실행을 위해 Windows와 긴밀하게 통합된 완전한 우분투 환경. 클라우드, 웹, 데이터 과학, IoT 및 재미에 최적화 되었습니다!",
   "@installationSlidesUbuntuOnWslText": {},
   "installationSlidesUbuntuWslDevOps": "DevOps를 위한 우분투 WSL",
   "@installationSlidesUbuntuWslDevOps": {},
