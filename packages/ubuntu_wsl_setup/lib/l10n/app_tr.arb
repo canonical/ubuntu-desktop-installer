@@ -113,7 +113,7 @@
   "@installationSlidesFindOutMoreLink": {},
   "configurationUIAutoMountSubtitle": "Otomatik Bağlama özelliğinin etkin olup olmadığı. Bu özellik WSL'de Windows sürücüsünü bağlamanızı sağlar.",
   "@configurationUIAutoMountSubtitle": {},
-  "installationSlidesUbuntuOnWslText": "Linux uygulama geliştirme ve yürütme için Windows ile derinlemesine entegre edilmiş eksiksiz bir Ubuntu ortamı. Bulut, web, veri bilimi, IOT ve eğlence için optimize edilmiştir!",
+  "installationSlidesUbuntuOnWslText": "Linux uygulama geliştirme ve yürütme için Windows ile derinlemesine entegre edilmiş eksiksiz bir Ubuntu ortamı. Bulut, web, veri bilimi, IoT ve eğlence için optimize edilmiştir!",
   "@installationSlidesUbuntuOnWslText": {},
   "profileSetupUsernameInUse": "Bu kullanıcı adı zaten var.",
   "@profileSetupUsernameInUse": {},
