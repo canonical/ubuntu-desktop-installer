@@ -168,7 +168,7 @@
   "@installationSlidesLeave": {},
   "installationSlidesUbuntuOnWsl": "Ubuntu no WSL",
   "@installationSlidesUbuntuOnWsl": {},
-  "installationSlidesUbuntuOnWslText": "Um ambiente do Ubuntu completo, profundamente integrado com Windows, para facilitar desenvolvimento e execução de aplicações do Linux. Otimizado para nuvem, web, ciência de dados, IOT e diversão!",
+  "installationSlidesUbuntuOnWslText": "Um ambiente do Ubuntu completo, profundamente integrado com Windows, para facilitar desenvolvimento e execução de aplicações do Linux. Otimizado para nuvem, web, ciência de dados, IoT e diversão!",
   "@installationSlidesUbuntuOnWslText": {},
   "installationSlidesUbuntuWslWebDevText": "Desenvolva em WSL usando IDEs nativos do Windows, incluindo VS Code e IntelliJ e aproveite o suporte total do NodeJS e Ruby.",
   "@installationSlidesUbuntuWslWebDevText": {},
