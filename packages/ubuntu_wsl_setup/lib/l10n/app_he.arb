@@ -167,7 +167,7 @@
   "@installationSlidesCancel": {},
   "installationSlidesUbuntuOnWsl": "אובונטו על WSL",
   "@installationSlidesUbuntuOnWsl": {},
-  "installationSlidesErrorText": "\nאירעה שגיאה שלא ניתן להשתקם ממנה.\n\nנא לסגור את היישום הזה, לפתוח Powershell או את שורת הפקודה ולהריץ את הפקודות הבאות:\n",
+  "installationSlidesErrorText": "\nאירעה שגיאה שלא ניתן להשתקם ממנה.\n\nנא לסגור את היישום הזה, לפתוח PowerShell או את שורת הפקודה ולהריץ את הפקודות הבאות:\n",
   "@installationSlidesErrorText": {},
   "installationSlidesErrorSub": "נא להפעיל את WSL מחדש בעזרת הפקודות האלו ולנסות שוב:\n\twsl --shutdown\n\twsl --unregister DISTRO_NAME",
   "@installationSlidesErrorSub": {},
