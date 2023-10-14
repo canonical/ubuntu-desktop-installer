@@ -2,7 +2,7 @@
   "@@locale": "sk",
   "applyingChanges": "Uplatňovanie zmien…",
   "@applyingChanges": {},
-  "installationSlidesErrorText": "\nDošlo k chybe, z ktorej sa nemožno zotaviť.\n\nZatvorte túto aplikáciu, otvorte Powershell alebo príkazový riadok a zadajte nasledujúce príkazy:\n",
+  "installationSlidesErrorText": "\nDošlo k chybe, z ktorej sa nemožno zotaviť.\n\nZatvorte túto aplikáciu, otvorte PowerShell alebo príkazový riadok a zadajte nasledujúce príkazy:\n",
   "@installationSlidesErrorText": {},
   "installationSlidesUbuntuWslWebDevText": "Vyvíjajte vo WSL pomocou natívnych vývojárskych prostredí (IDE) pre Windows, vrátane VS Code a InteliJ a majte prospech z úplnej podpory NodeJS a Ruby.",
   "@installationSlidesUbuntuWslWebDevText": {},
