@@ -125,7 +125,7 @@
   "@installationSlidesErrorMsg": {},
   "installationSlidesErrorTitle": "Valami elromlott",
   "@installationSlidesErrorTitle": {},
-  "installationSlidesErrorText": "\nVisszafordíthatatlan hiba történt.\n\nZárja be ezt az alkalmazást, nyissa meg a Powershellt vagy a parancssort, és adja ki a következő parancsokat:\n",
+  "installationSlidesErrorText": "\nVisszafordíthatatlan hiba történt.\n\nZárja be ezt az alkalmazást, nyissa meg a PowerShellt vagy a parancssort, és adja ki a következő parancsokat:\n",
   "@installationSlidesErrorText": {},
   "installationSlidesDone": "Minden készen áll. Élvezze az Ubuntu használatát a WSL-en.",
   "@installationSlidesDone": {},
