@@ -157,7 +157,7 @@
   "@installationSlidesUbuntuOnWslText": {},
   "installationSlidesWelcome": "Bienvenido a Ubuntu WSL",
   "@installationSlidesWelcome": {},
-  "installationSlidesInitializing": "Iniciando...",
+  "installationSlidesInitializing": "Iniciando…",
   "@installationSlidesInitializing": {},
   "installationSlidesUnpacking": "Desembalando la distribución",
   "@installationSlidesUnpacking": {},
