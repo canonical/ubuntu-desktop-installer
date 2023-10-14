@@ -167,7 +167,7 @@
   "@installationSlidesErrorMsg": {},
   "installationSlidesErrorTitle": "有哪里出了问题",
   "@installationSlidesErrorTitle": {},
-  "installationSlidesErrorText": "\n一个不可恢复的错误发生了。\n\n请关闭这个程序，打开 Powershell 或者命令提示符运行以下命令：\n",
+  "installationSlidesErrorText": "\n一个不可恢复的错误发生了。\n\n请关闭这个程序，打开 PowerShell 或者命令提示符运行以下命令：\n",
   "@installationSlidesErrorText": {},
   "installationSlidesExitContents": "关闭这个窗口不会停止在后台运行的安装程序。\n\n同时，您可以继续探索您能在 Ubuntu on WSL 里做什么。",
   "@installationSlidesExitContents": {},
