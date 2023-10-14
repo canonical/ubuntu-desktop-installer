@@ -165,7 +165,7 @@
   "@installationSlidesUbuntuWslDevOps": {},
   "installationSlidesFindOutMoreText": " щоб дізнатися більше про Ubuntu на WSL і про те, як Canonical підтримує розробників і організації.",
   "@installationSlidesFindOutMoreText": {},
-  "installationSlidesErrorText": "\nСталася невиправна помилка.\n\nЗакрийте цю програму, відкрийте PowerShell або командний рядок і введіть такі команди:\n",
+  "installationSlidesErrorText": "\nСталася невиправна помилка.\n\nЗакрийте цю програму, відкрийте PowerShell або командний рядок і введіть наступні команди:\n",
   "@installationSlidesErrorText": {},
   "installationSlidesInstalling": "Майже зроблено. Інсталятор незабаром потребуватиме вашої уваги.",
   "@installationSlidesInstalling": {},
