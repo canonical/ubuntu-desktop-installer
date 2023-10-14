@@ -173,7 +173,7 @@
   "@installationSlidesUbuntuWslDataScienceText": {},
   "installationSlidesUbuntuWslGuiApps": "Ubuntu WSL do\naplikacji graficznych",
   "@installationSlidesUbuntuWslGuiApps": {},
-  "installationSlidesUbuntuWslDevOpsText": "Zapewnij zgodność potoku CI/CD, tworząc lokalnie na Ubuntu WSL przed opublikowaniem w środowisku produkcyjnym Ubuntu",
+  "installationSlidesUbuntuWslDevOpsText": "Zapewnij zgodność potoku CI/CD, tworząc lokalnie na Ubuntu WSL przed opublikowaniem w środowisku produkcyjnym Ubuntu.",
   "@installationSlidesUbuntuWslDevOpsText": {},
   "installationSlidesUbuntuWslEnterprises": "Ubuntu WSL dla przedsiębiorstw",
   "@installationSlidesUbuntuWslEnterprises": {},
