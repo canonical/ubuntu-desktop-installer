@@ -181,5 +181,19 @@
   "installationSlidesWelcome": "Velkommen til Ubuntu WSL",
   "@installationSlidesWelcome": {},
   "advancedSetupMountLocationInvalid": "Plasseringen er ugyldig",
-  "@advancedSetupMountLocationInvalid": {}
+  "@advancedSetupMountLocationInvalid": {},
+  "installationSlidesUbuntuWslWebDevText": "Start utvikling i WSL ved bruk av systemspesifikke Windows-IDE-er, inkludert VS Code og IntelliJ, og nyt godt av full NodeJS og Ruby-støtte.",
+  "@installationSlidesUbuntuWslWebDevText": {},
+  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Data Science Stack lar deg få mest mulig ytelse for datavitenskap- og maskinlæringsprosjekter på toppen av innebygde Windows-Nvidia-drivere.",
+  "@installationSlidesUbuntuWslDataScienceText": {},
+  "installationSlidesUbuntuWslGuiAppsText": "Utvikle og og forhåndsvis vev- og grafiske programmer på Linux ved bruk av WSLg for multiplattformsutvikling.",
+  "@installationSlidesUbuntuWslGuiAppsText": {},
+  "installationSlidesCustomExitContents": "Kun et par steg å fullføre i hovedinstallasjonsvinduet.\nAvslutt dette og fortsett der?",
+  "@installationSlidesCustomExitContents": {},
+  "installationSlidesUbuntuOnWslText": "Et fullstendig Ubuntu-miljø, med dyp integrering i Windows — for Linux-programutvikling og nyttegjørelse. Optimalisert for skyen, veven, datavitenskap, IoT, og gøy.",
+  "@installationSlidesUbuntuOnWslText": {},
+  "installationSlidesUbuntuWslEnterprisesText": "Styrk utviklere i et Windows-\nstorbedriftsmiljø med sertifisert\nUbuntu LTS.",
+  "@installationSlidesUbuntuWslEnterprisesText": {},
+  "installationSlidesUbuntuWslDevOpsText": "Garanter CI/CD-rørledningskompabilitet ved å utvikle på Ubuntu WSL lokalt, før du sender til et Ubuntu-produksjonsmiljø.",
+  "@installationSlidesUbuntuWslDevOpsText": {}
 }
