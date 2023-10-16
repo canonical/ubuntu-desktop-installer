@@ -147,7 +147,7 @@
   "@installationSlidesErrorText": {},
   "installationSlidesCustomExitContents": "Solo hay que completar algunos pasos en la ventana principal del instalador.\n¿Quiere salir de esta e ir allí?",
   "@installationSlidesCustomExitContents": {},
-  "installationSlidesUbuntuWslDevOpsText": "Garantice la compatibilidad de las canalizaciones de integración y entrega continuas desarrollando en Ubuntu en WSL antes de publicar en un entorno de producción Ubuntu.",
+  "installationSlidesUbuntuWslDevOpsText": "Asegure la compatibilidad de la bifurcación del CI/CD desarrollando en Ubuntu WSL localmente antes de publicar en el entorno de producción de Ubuntu.",
   "@installationSlidesUbuntuWslDevOpsText": {},
   "installationSlidesFindOutMoreLink": "Ubuntu.com/wsl",
   "@installationSlidesFindOutMoreLink": {},
