@@ -194,6 +194,6 @@
   },
   "installLangPacksSubtitle": "Не рекомендуется для медленных соединений.",
   "@installLangPacksSubtitle": {},
-  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Data Science Stack позволяет увеличить производительность проектов науки о данных и машинному обучению поверх нативных драйверов Windows NVIDIA.",
+  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Data Science Stack позволяет увеличить производительность проектов науки о данных и машинному обучению поверх нативных драйверов Nvidia Windows.",
   "@installationSlidesUbuntuWslDataScienceText": {}
 }
