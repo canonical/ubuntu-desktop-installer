@@ -204,10 +204,10 @@
   "@installationSlidesFindOutMore": {},
   "installationSlidesUbuntuWslEnterprisesText": "Styrka utvecklare i ett Windows\nföretagsekosystem med ett certifierat\nUbuntu LTS.",
   "@installationSlidesUbuntuWslEnterprisesText": {},
-  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Data Science Stack låter dig maximera prestandan för datavetenskap och maskininlärningsprojekt ovanpå vanliga Windows NVIDIA drivrutiner.",
+  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Data Science Stack låter dig maximera prestandan för datavetenskap och maskininlärningsprojekt ovanpå vanliga Windows Nvidia drivrutiner.",
   "@installationSlidesUbuntuWslDataScienceText": {},
   "installationSlidesUbuntuWslGuiAppsText": "Utveckla och förhandsgranska webb och grafiska program på Linux genom att använda WSLg för multiplattformsutveckling.",
   "@installationSlidesUbuntuWslGuiAppsText": {},
-  "installationSlidesUbuntuWslDevOpsText": "Säkerställ CI/CD pipelinekompatibilitet genom att utveckla på Ubuntu WSL lokalt innan du publicerar till en Ubuntu produktionsmiljö",
+  "installationSlidesUbuntuWslDevOpsText": "Säkerställ CI/CD pipelinekompatibilitet genom att utveckla på Ubuntu WSL lokalt innan du publicerar till en Ubuntu produktionsmiljö.",
   "@installationSlidesUbuntuWslDevOpsText": {}
 }
