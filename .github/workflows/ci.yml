@@ -16,7 +16,7 @@ jobs:
   analyze:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - uses: subosito/flutter-action@v2
@@ -30,7 +30,7 @@ jobs:
   format:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - uses: subosito/flutter-action@v2
@@ -44,7 +44,7 @@ jobs:
   mocks:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - uses: subosito/flutter-action@v2
@@ -70,7 +70,7 @@ jobs:
   l10n:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - uses: subosito/flutter-action@v2
@@ -96,7 +96,7 @@ jobs:
   subiquity:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: Check subiquity integration
@@ -105,7 +105,7 @@ jobs:
   test:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
     - uses: subosito/flutter-action@v2
