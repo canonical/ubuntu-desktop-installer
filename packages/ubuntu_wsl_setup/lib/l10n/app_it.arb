@@ -15,5 +15,22 @@
   "exitButton": "Esci",
   "@exitButton": {},
   "finishButton": "Termina",
-  "@finishButton": {}
+  "@finishButton": {},
+  "profileSetupTitle": "Setup del profilo",
+  "@profileSetupTitle": {},
+  "installLangPacksSubtitle": "Non raccomandato per connessioni lente.",
+  "@installLangPacksSubtitle": {},
+  "saveButton": "Salva",
+  "@saveButton": {},
+  "setupButton": "Setup",
+  "@setupButton": {},
+  "installLangPacksTitle": "Installare i pacchetti per un miglior supporto della lingua {lang}",
+  "@installLangPacksTitle": {
+    "type": "text",
+    "placeholders": {
+      "lang": {
+        "type": "String"
+      }
+    }
+  }
 }
