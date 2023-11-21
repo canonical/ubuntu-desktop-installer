@@ -1,3 +1,4 @@
 [submodule "ubuntu-desktop-provision"]
 	path = vendor/ubuntu-desktop-provision
 	url = https://github.com/canonical/ubuntu-desktop-provision.git
+	branch = archive/main
