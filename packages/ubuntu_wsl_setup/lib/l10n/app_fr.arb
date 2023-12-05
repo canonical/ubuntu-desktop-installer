@@ -157,7 +157,7 @@
   "@installationSlidesUbuntuWslWebDevText": {},
   "installationSlidesUbuntuWslDataScience": "Ubuntu WSL pour la Science des Données",
   "@installationSlidesUbuntuWslDataScience": {},
-  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Data Science Stack vous permet de maximiser les performaces de vos projets dans les sciences des données et l'apprentissage automatique en plus des pilotes natifs Windows NVIDIA.",
+  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Data Science Stack vous permet de maximiser les performaces de vos projets dans les sciences des données et l'apprentissage automatique en plus des pilotes natifs Windows Nvidia.",
   "@installationSlidesUbuntuWslDataScienceText": {},
   "installationSlidesUbuntuWslGuiApps": "Ubuntu WSL pour \nles Applications Graphiques",
   "@installationSlidesUbuntuWslGuiApps": {},
@@ -198,6 +198,6 @@
   "@installationSlidesExitContents": {},
   "installationSlidesUbuntuOnWslText": "Un environnement Ubuntu complet, intégré de manière profonde avec Windows, pour le développement et l'exécution d'applications Linux. Optimisé pour l'informatique en nuage, le Web, la science des données, l'Internet des Objets, et votre propre amusement !",
   "@installationSlidesUbuntuOnWslText": {},
-  "installationSlidesUbuntuWslDevOpsText": "Garantissez la compatibilité de la chaîne de traitement CI/CD en développant sur Ubuntu WSL localement avant de publier le tout sur un environnement de production Ubuntu",
+  "installationSlidesUbuntuWslDevOpsText": "Garantissez la compatibilité de la chaîne de traitement CI/CD en développant sur Ubuntu WSL localement avant de publier sur un environnement de production Ubuntu.",
   "@installationSlidesUbuntuWslDevOpsText": {}
 }
