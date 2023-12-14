@@ -37,7 +37,7 @@ dev_dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
-  mockito: 5.4.2
+  mockito: 5.4.4
   subiquity_test:
     path: ../../vendor/ubuntu-desktop-provision/packages/subiquity_client/packages/subiquity_test
   ubuntu_test: ^0.1.0-0
