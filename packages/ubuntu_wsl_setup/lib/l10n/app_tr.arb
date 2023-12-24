@@ -188,12 +188,12 @@
   "@installationSlidesUbuntuWslWebDevText": {},
   "installationSlidesUbuntuWslGuiAppsText": "Çoklu platform geliştirme için WSLg kullanarak Linux üzerinde web ve grafik uygulamaları geliştirin ve önizleyin.",
   "@installationSlidesUbuntuWslGuiAppsText": {},
-  "installationSlidesUbuntuWslDevOpsText": "Ubuntu üretim ortamında yayınlamadan önce yerel olarak Ubuntu WSL üzerinde geliştirme yaparak CI/CD işlem hattı uyumluluğunu sağlayın",
+  "installationSlidesUbuntuWslDevOpsText": "Ubuntu üretim ortamında yayınlamadan önce yerel olarak Ubuntu WSL üzerinde geliştirme yaparak CI/CD işlem hattı uyumluluğunu sağlayın.",
   "@installationSlidesUbuntuWslDevOpsText": {},
   "configurationUIInteropAppendWindowsPathSubtitle": "Windows Yolunun WSL'de PATH ortam değişkenine eklenip eklenmeyeceği",
   "@configurationUIInteropAppendWindowsPathSubtitle": {},
   "installationSlidesExitContents": "Bu pencerenin kapatılması kurulumun arka planda devam etmesini engellemeyecektir.\n\nAyrıca, WSL üzerinde Ubuntu ile neler yapabileceğinizi keşfetmeye devam edebilirsiniz.",
   "@installationSlidesExitContents": {},
-  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Veri Bilimi Yığını, yerel Windows NVIDIA sürücülerinin üzerinde Veri Bilimi ve Makine Öğrenimi projelerinin performansını en üst düzeye çıkarmanızı sağlar.",
+  "installationSlidesUbuntuWslDataScienceText": "NVIDIA Veri Bilimi Yığını, yerel Windows Nvidia sürücülerinin üzerinde Veri Bilimi ve Makine Öğrenimi projelerinin performansını en üst düzeye çıkarmanızı sağlar.",
   "@installationSlidesUbuntuWslDataScienceText": {}
 }
