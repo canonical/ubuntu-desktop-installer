@@ -163,7 +163,7 @@
   "@installationSlidesFindOutMore": {},
   "installationSlidesOk": "OK",
   "@installationSlidesOk": {},
-  "installationSlidesErrorText": "\nDošlo k chybě, ze které se nelze zotavit.\n\nZavřete tuto aplikaci, otevřete Powershell nebo příkazový řádek a zadejte následující příkazy:\n",
+  "installationSlidesErrorText": "\nDošlo k chybě, ze které se nelze zotavit.\n\nZavřete tuto aplikaci, otevřete PowerShell nebo příkazový řádek a zadejte následující příkazy:\n",
   "@installationSlidesErrorText": {},
   "installationSlidesExitTitle": "Opravdu chcete odejít?",
   "@installationSlidesExitTitle": {},

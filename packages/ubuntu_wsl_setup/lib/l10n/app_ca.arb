@@ -49,7 +49,7 @@
   "@configurationUISystemdTitle": {},
   "configurationUISystemdSubtitle": "Indica si «systemd» s'ha d'activar durant l'arrencada. COMPTE: és una funció experimental.",
   "@configurationUISystemdSubtitle": {},
-  "installationSlidesInitializing": "S'està inicialitzant...",
+  "installationSlidesInitializing": "S'està inicialitzant…",
   "@installationSlidesInitializing": {},
   "installationSlidesUnpacking": "S'està desempaquetant la distribució",
   "@installationSlidesUnpacking": {},
